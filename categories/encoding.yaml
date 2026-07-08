@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: encoding
+slug: encoding
+name:
+  en: Encoding
+summary:
+  en: Tools for encoding, decoding, validating, and formatting data.
+order: 40
+seo:
+  title:
+    en: Encoding Tools
+  description:
+    en: Encode, decode, validate, and format data with structured tools.

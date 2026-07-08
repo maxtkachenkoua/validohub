@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: finance
+slug: finance
+name:
+  en: Finance
+summary:
+  en: Tools for financial identifiers, payment data, and validation workflows.
+order: 30
+seo:
+  title:
+    en: Finance Tools
+  description:
+    en: Validate and inspect financial identifiers and payment-related data.

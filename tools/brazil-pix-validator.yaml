@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: brazil-pix-validator
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: Brazil Pix Validator
+summary:
+  en: Validate, parse, and explain Brazilian Pix payment identifiers.
+capabilities:
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-pix
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: pixKey
+        label:
+          en: Pix key
+        required: true
+    actions: [validate, parse, explain]
+related:
+  explicit: []
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Brazil Pix Validator
+  description:
+    en: Validate and inspect Brazilian Pix payment identifiers.

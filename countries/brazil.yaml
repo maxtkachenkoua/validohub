@@ -1,0 +1,9 @@
+schemaVersion: 1
+code: BR
+slug: brazil
+name:
+  en: Brazil
+region: South America
+languages: [pt, en]
+currency: BRL
+relatedCountries: []
