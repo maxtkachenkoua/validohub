@@ -1,0 +1,34 @@
+schemaVersion: 1
+algorithms:
+  - algorithmId: validohub.base64
+    javaClass: com.validohub.algorithms.encoding.Base64Algorithm
+    version: 1
+    capabilities: [encode, decode, validate, format, explain]
+    name:
+      en: Base64 Algorithm
+    summary:
+      en: Metadata entry for Base64 encoding, decoding, validation, formatting, and explanation.
+  - algorithmId: validohub.uuid
+    javaClass: com.validohub.algorithms.developer.UuidAlgorithm
+    version: 1
+    capabilities: [generate, validate, parse, convert, explain]
+    name:
+      en: UUID Algorithm
+    summary:
+      en: Metadata entry for UUID generation, validation, parsing, conversion, and explanation.
+  - algorithmId: validohub.pesel
+    javaClass: com.validohub.algorithms.poland.PeselAlgorithm
+    version: 1
+    capabilities: [validate, parse, generate, explain]
+    name:
+      en: PESEL Algorithm
+    summary:
+      en: Metadata entry for Polish PESEL validation, parsing, generation, and explanation.
+  - algorithmId: validohub.brazil-pix
+    javaClass: com.validohub.algorithms.brazil.PixAlgorithm
+    version: 1
+    capabilities: [validate, parse, explain]
+    name:
+      en: Brazil Pix Algorithm
+    summary:
+      en: Metadata entry for Brazilian Pix key validation, parsing, and explanation.
