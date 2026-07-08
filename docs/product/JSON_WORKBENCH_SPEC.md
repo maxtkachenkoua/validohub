@@ -23,6 +23,8 @@ Developers paste or drop JSON and quickly format, minify, validate, inspect, cop
 
 - Pretty print.
 - Minify.
+- Sort object keys alphabetically.
+- Remove empty values recursively.
 - Validate.
 - Explain.
 - Copy result.
@@ -34,6 +36,16 @@ Developers paste or drop JSON and quickly format, minify, validate, inspect, cop
 - Parsing runs fully in the browser with `JSON.parse`.
 - Invalid JSON reports line, column, position, parser message, and a practical repair hint.
 - Valid JSON reports character count, UTF-8 byte size, object count, array count, property count, and nesting depth.
+- Duplicate properties warn because later values overwrite earlier values in JavaScript parsing.
+- Large JSON mode caps tree rendering while preserving full formatted output.
+
+## Interactive Explorer
+
+- Tree nodes expand and collapse using native details controls.
+- The toolbar provides expand all, collapse all, focus search, clear search, next match, and previous match.
+- Every node exposes a JSONPath, type, child count, subtree size, and nesting depth.
+- Selecting a node enables copy helpers for value, key, JSONPath, and subtree JSON.
+- Search matches keys and visible values, highlights matches, and tracks current match position.
 
 ## Examples
 
