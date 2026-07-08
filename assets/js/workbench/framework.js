@@ -177,7 +177,9 @@
     };
 
     Workbench.prototype.primaryInput = function () {
-      return this.form.querySelector("textarea[name=\"input\"]");
+      return this.form.querySelector("textarea[name=\"input\"]")
+          || this.form.querySelector("textarea[name]")
+          || this.form.querySelector("input[name]:not([type=\"file\"]):not([type=\"checkbox\"]):not([type=\"hidden\"])");
     };
 
     Workbench.prototype.setMessage = function (text, state) {
