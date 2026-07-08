@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: url-decoder
+kind: tool
+module: validohub
+category: encoding
+status: active
+name:
+  en: URL Decoder
+summary:
+  en: Decode percent-encoded URL components and explain invalid sequences.
+capabilities: [decode, encode, validate, explain]
+algorithm:
+  algorithmId: validohub.url-decoder
+forms:
+  decode:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Encoded URL component
+        required: true
+    actions: [decode, encode, validate, explain]
+related:
+  explicit: [url-encoder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: URL Decoder
+  description:
+    en: Decode URL-encoded text and validate percent-encoding.

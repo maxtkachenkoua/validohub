@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: case-converter
+kind: tool
+module: validohub
+category: text
+status: active
+name:
+  en: Case Converter
+summary:
+  en: Convert text between common casing styles and explain transformations.
+capabilities: [convert, format, explain]
+algorithm:
+  algorithmId: validohub.case-converter
+forms:
+  convert:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Text
+        required: true
+      - type: select
+        name: style
+        label:
+          en: Case style
+        options: [lowercase, uppercase, title, sentence, camel, snake, kebab]
+        default: sentence
+    actions: [convert, format, explain]
+related:
+  explicit: [slug-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Case Converter
+  description:
+    en: Convert text to uppercase, lowercase, title case, camel case, snake case, and more.

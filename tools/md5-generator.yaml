@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: md5-generator
+kind: tool
+module: validohub
+category: hash
+status: active
+name:
+  en: MD5 Generator
+summary:
+  en: Generate MD5 hashes, validate digest shape, and explain limitations.
+capabilities: [generate, validate, explain]
+algorithm:
+  algorithmId: validohub.md5
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Input
+        required: true
+    actions: [generate]
+  validate:
+    inputs:
+      - type: text
+        name: hash
+        label:
+          en: MD5 hash
+        required: true
+    actions: [validate, explain]
+related:
+  explicit: [sha256-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: MD5 Generator
+  description:
+    en: Generate MD5 digests and understand where MD5 should not be used.

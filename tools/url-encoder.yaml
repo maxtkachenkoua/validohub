@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: url-encoder
+kind: tool
+module: validohub
+category: encoding
+status: active
+name:
+  en: URL Encoder
+summary:
+  en: Encode URL components and explain reserved-character escaping.
+capabilities: [encode, decode, validate, explain]
+algorithm:
+  algorithmId: validohub.url-encoder
+forms:
+  encode:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Text or URL component
+        required: true
+    actions: [encode, decode, validate, explain]
+related:
+  explicit: [url-decoder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: URL Encoder
+  description:
+    en: Percent-encode URL components and inspect encoded characters.

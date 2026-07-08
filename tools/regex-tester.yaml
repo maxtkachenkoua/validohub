@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: regex-tester
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Regex Tester
+summary:
+  en: Test regular expressions against sample text and explain match behavior.
+capabilities: [validate, explain]
+algorithm:
+  algorithmId: validohub.regex-tester
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: pattern
+        label:
+          en: Pattern
+        required: true
+      - type: textarea
+        name: input
+        label:
+          en: Test text
+        required: true
+    actions: [validate, explain]
+related:
+  explicit: [json-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Regex Tester
+  description:
+    en: Validate regular expressions and inspect matches against sample text.

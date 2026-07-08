@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: sha256-generator
+kind: tool
+module: validohub
+category: hash
+status: active
+name:
+  en: SHA-256 Generator
+summary:
+  en: Generate SHA-256 hashes, validate digest shape, and explain output.
+capabilities: [generate, validate, explain]
+algorithm:
+  algorithmId: validohub.sha256
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Input
+        required: true
+    actions: [generate]
+  validate:
+    inputs:
+      - type: text
+        name: hash
+        label:
+          en: SHA-256 hash
+        required: true
+    actions: [validate, explain]
+related:
+  explicit: [md5-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: SHA-256 Generator
+  description:
+    en: Generate SHA-256 digests and validate hexadecimal hash output.

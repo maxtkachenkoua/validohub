@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: json-validator
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: JSON Validator
+summary:
+  en: Validate JSON syntax and explain structural errors.
+capabilities: [validate, format, explain]
+algorithm:
+  algorithmId: validohub.json-validator
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: json
+        label:
+          en: JSON
+        required: true
+    actions: [validate, format, explain]
+related:
+  explicit: [json-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: JSON Validator
+  description:
+    en: Check JSON syntax and receive clear validation feedback.

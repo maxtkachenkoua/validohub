@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: html-encoder
+kind: tool
+module: validohub
+category: encoding
+status: active
+name:
+  en: HTML Encoder
+summary:
+  en: Encode text as HTML entities for safe display in markup.
+capabilities: [encode, decode, validate, explain]
+algorithm:
+  algorithmId: validohub.html-encoder
+forms:
+  encode:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Text
+        required: true
+    actions: [encode, decode, validate, explain]
+related:
+  explicit: [html-decoder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: HTML Encoder
+  description:
+    en: Convert special characters into HTML entities and inspect encoded output.

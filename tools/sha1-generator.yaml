@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: sha1-generator
+kind: tool
+module: validohub
+category: hash
+status: active
+name:
+  en: SHA-1 Generator
+summary:
+  en: Generate SHA-1 hashes, validate digest shape, and explain limitations.
+capabilities: [generate, validate, explain]
+algorithm:
+  algorithmId: validohub.sha1
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Input
+        required: true
+    actions: [generate]
+  validate:
+    inputs:
+      - type: text
+        name: hash
+        label:
+          en: SHA-1 hash
+        required: true
+    actions: [validate, explain]
+related:
+  explicit: [sha256-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: SHA-1 Generator
+  description:
+    en: Generate SHA-1 digests and understand modern security guidance.

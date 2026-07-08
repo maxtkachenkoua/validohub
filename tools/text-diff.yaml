@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: text-diff
+kind: tool
+module: validohub
+category: text
+status: active
+name:
+  en: Text Diff
+summary:
+  en: Compare two text blocks and explain differences.
+capabilities: [calculate, explain]
+algorithm:
+  algorithmId: validohub.text-diff
+forms:
+  calculate:
+    inputs:
+      - type: textarea
+        name: original
+        label:
+          en: Original text
+        required: true
+      - type: textarea
+        name: changed
+        label:
+          en: Changed text
+        required: true
+    actions: [calculate, explain]
+related:
+  explicit: [case-converter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Text Diff
+  description:
+    en: Compare text blocks and identify additions, removals, and changes.

@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: base64-decoder
+kind: tool
+module: validohub
+category: encoding
+status: active
+name:
+  en: Base64 Decoder
+summary:
+  en: Decode Base64 text, validate input, and explain decoding issues.
+capabilities: [decode, validate, explain]
+algorithm:
+  algorithmId: validohub.base64-decoder
+forms:
+  decode:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Base64 input
+        required: true
+    actions: [decode, validate, explain]
+related:
+  explicit: [base64-encoder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Base64 Decoder
+  description:
+    en: Decode Base64 values and validate malformed or padded input.

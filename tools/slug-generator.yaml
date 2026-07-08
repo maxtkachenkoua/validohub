@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: slug-generator
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Slug Generator
+summary:
+  en: Generate URL-friendly slugs from titles and free-form text.
+capabilities: [generate, format, explain]
+algorithm:
+  algorithmId: validohub.slug-generator
+forms:
+  generate:
+    inputs:
+      - type: text
+        name: title
+        label:
+          en: Title
+        required: true
+      - type: checkbox
+        name: lowercase
+        label:
+          en: Lowercase
+        default: true
+    actions: [generate, format, explain]
+related:
+  explicit: [case-converter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Slug Generator
+  description:
+    en: Create clean URL slugs from titles and phrases.

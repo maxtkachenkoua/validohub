@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: json-formatter
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: JSON Formatter
+summary:
+  en: Format JSON, validate syntax, and explain parsing errors.
+capabilities: [format, validate, explain]
+algorithm:
+  algorithmId: validohub.json-formatter
+forms:
+  format:
+    inputs:
+      - type: textarea
+        name: json
+        label:
+          en: JSON
+        required: true
+    actions: [format, validate, explain]
+related:
+  explicit: [json-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: JSON Formatter
+  description:
+    en: Pretty-print JSON and identify syntax problems.

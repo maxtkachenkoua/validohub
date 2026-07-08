@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: text
+slug: text
+name:
+  en: Text
+summary:
+  en: Tools for transforming, comparing, and preparing text.
+order: 50
+seo:
+  title:
+    en: Text Tools
+  description:
+    en: Convert, compare, and prepare text for publishing and development workflows.

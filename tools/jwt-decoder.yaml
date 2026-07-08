@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: jwt-decoder
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: JWT Decoder
+summary:
+  en: Decode JWT headers and payloads, validate structure, and explain claims.
+capabilities: [decode, validate, parse, explain]
+algorithm:
+  algorithmId: validohub.jwt-decoder
+forms:
+  decode:
+    inputs:
+      - type: textarea
+        name: token
+        label:
+          en: JWT
+        required: true
+    actions: [decode, validate, parse, explain]
+related:
+  explicit: [json-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: JWT Decoder
+  description:
+    en: Decode JSON Web Tokens and inspect headers, payloads, and claims.

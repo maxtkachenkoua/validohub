@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: html-decoder
+kind: tool
+module: validohub
+category: encoding
+status: active
+name:
+  en: HTML Decoder
+summary:
+  en: Decode HTML entities into readable text and explain entity handling.
+capabilities: [decode, encode, validate, explain]
+algorithm:
+  algorithmId: validohub.html-decoder
+forms:
+  decode:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: HTML entity text
+        required: true
+    actions: [decode, encode, validate, explain]
+related:
+  explicit: [html-encoder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: HTML Decoder
+  description:
+    en: Decode HTML entities and validate entity-like text.

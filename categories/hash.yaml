@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: hash
+slug: hash
+name:
+  en: Hash
+summary:
+  en: Tools for generating and checking hash digests.
+order: 60
+seo:
+  title:
+    en: Hash Tools
+  description:
+    en: Generate and inspect MD5, SHA-1, SHA-256, and related hash values.

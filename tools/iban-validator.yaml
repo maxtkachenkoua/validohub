@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: iban-validator
+kind: tool
+module: validohub
+category: finance
+status: active
+name:
+  en: IBAN Validator
+summary:
+  en: Validate IBAN structure, parse country information, and explain check digits.
+capabilities: [validate, parse, explain]
+algorithm:
+  algorithmId: validohub.iban
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: iban
+        label:
+          en: IBAN
+        required: true
+    actions: [validate, parse, explain]
+related:
+  explicit: [brazil-pix-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: IBAN Validator
+  description:
+    en: Validate International Bank Account Numbers and explain check-digit results.

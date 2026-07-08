@@ -32,3 +32,131 @@ algorithms:
       en: Brazil Pix Algorithm
     summary:
       en: Metadata entry for Brazilian Pix key validation, parsing, and explanation.
+  - algorithmId: validohub.base64-decoder
+    javaClass: com.validohub.algorithms.encoding.Base64DecoderAlgorithm
+    version: 1
+    capabilities: [decode, validate, explain]
+    name:
+      en: Base64 Decoder Algorithm
+    summary:
+      en: Metadata entry for Base64 decoding, validation, and explanation.
+  - algorithmId: validohub.url-encoder
+    javaClass: com.validohub.algorithms.encoding.UrlEncoderAlgorithm
+    version: 1
+    capabilities: [encode, decode, validate, explain]
+    name:
+      en: URL Encoder Algorithm
+    summary:
+      en: Metadata entry for URL component encoding, decoding, validation, and explanation.
+  - algorithmId: validohub.url-decoder
+    javaClass: com.validohub.algorithms.encoding.UrlDecoderAlgorithm
+    version: 1
+    capabilities: [decode, encode, validate, explain]
+    name:
+      en: URL Decoder Algorithm
+    summary:
+      en: Metadata entry for URL component decoding, encoding, validation, and explanation.
+  - algorithmId: validohub.html-encoder
+    javaClass: com.validohub.algorithms.encoding.HtmlEncoderAlgorithm
+    version: 1
+    capabilities: [encode, decode, validate, explain]
+    name:
+      en: HTML Encoder Algorithm
+    summary:
+      en: Metadata entry for HTML entity encoding, decoding, validation, and explanation.
+  - algorithmId: validohub.html-decoder
+    javaClass: com.validohub.algorithms.encoding.HtmlDecoderAlgorithm
+    version: 1
+    capabilities: [decode, encode, validate, explain]
+    name:
+      en: HTML Decoder Algorithm
+    summary:
+      en: Metadata entry for HTML entity decoding, encoding, validation, and explanation.
+  - algorithmId: validohub.json-formatter
+    javaClass: com.validohub.algorithms.developer.JsonFormatterAlgorithm
+    version: 1
+    capabilities: [format, validate, explain]
+    name:
+      en: JSON Formatter Algorithm
+    summary:
+      en: Metadata entry for JSON formatting, validation, and explanation.
+  - algorithmId: validohub.json-validator
+    javaClass: com.validohub.algorithms.developer.JsonValidatorAlgorithm
+    version: 1
+    capabilities: [validate, format, explain]
+    name:
+      en: JSON Validator Algorithm
+    summary:
+      en: Metadata entry for JSON validation, formatting, and explanation.
+  - algorithmId: validohub.jwt-decoder
+    javaClass: com.validohub.algorithms.developer.JwtDecoderAlgorithm
+    version: 1
+    capabilities: [decode, validate, parse, explain]
+    name:
+      en: JWT Decoder Algorithm
+    summary:
+      en: Metadata entry for JWT decoding, validation, parsing, and explanation.
+  - algorithmId: validohub.regex-tester
+    javaClass: com.validohub.algorithms.developer.RegexTesterAlgorithm
+    version: 1
+    capabilities: [validate, explain]
+    name:
+      en: Regex Tester Algorithm
+    summary:
+      en: Metadata entry for regular expression validation and explanation.
+  - algorithmId: validohub.slug-generator
+    javaClass: com.validohub.algorithms.developer.SlugGeneratorAlgorithm
+    version: 1
+    capabilities: [generate, format, explain]
+    name:
+      en: Slug Generator Algorithm
+    summary:
+      en: Metadata entry for URL slug generation, formatting, and explanation.
+  - algorithmId: validohub.case-converter
+    javaClass: com.validohub.algorithms.text.CaseConverterAlgorithm
+    version: 1
+    capabilities: [convert, format, explain]
+    name:
+      en: Case Converter Algorithm
+    summary:
+      en: Metadata entry for text case conversion, formatting, and explanation.
+  - algorithmId: validohub.text-diff
+    javaClass: com.validohub.algorithms.text.TextDiffAlgorithm
+    version: 1
+    capabilities: [calculate, explain]
+    name:
+      en: Text Diff Algorithm
+    summary:
+      en: Metadata entry for calculating and explaining text differences.
+  - algorithmId: validohub.md5
+    javaClass: com.validohub.algorithms.hash.Md5Algorithm
+    version: 1
+    capabilities: [generate, validate, explain]
+    name:
+      en: MD5 Algorithm
+    summary:
+      en: Metadata entry for MD5 hash generation, validation, and explanation.
+  - algorithmId: validohub.sha1
+    javaClass: com.validohub.algorithms.hash.Sha1Algorithm
+    version: 1
+    capabilities: [generate, validate, explain]
+    name:
+      en: SHA-1 Algorithm
+    summary:
+      en: Metadata entry for SHA-1 hash generation, validation, and explanation.
+  - algorithmId: validohub.sha256
+    javaClass: com.validohub.algorithms.hash.Sha256Algorithm
+    version: 1
+    capabilities: [generate, validate, explain]
+    name:
+      en: SHA-256 Algorithm
+    summary:
+      en: Metadata entry for SHA-256 hash generation, validation, and explanation.
+  - algorithmId: validohub.iban
+    javaClass: com.validohub.algorithms.finance.IbanAlgorithm
+    version: 1
+    capabilities: [validate, parse, explain]
+    name:
+      en: IBAN Algorithm
+    summary:
+      en: Metadata entry for IBAN validation, parsing, and explanation.
