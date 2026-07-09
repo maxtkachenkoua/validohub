@@ -203,3 +203,24 @@ Impact:
 - Country Hub V3 remains entirely in ValidoHub assets and docs.
 - No PIX, CPF, CNPJ, CEP, phone, banking validator, new workbench, or new country was implemented.
 - Future country hubs should reuse the same data-driven renderer and add country-specific data only.
+
+## Country Hub Visual Identity V2
+
+Changed:
+
+- Replaced the Brazil country-shape placeholder with a real SVG Brazil outline.
+- Replaced the dot-only location placeholder with a real miniature world map SVG highlighting Brazil.
+- Added a reusable product-owned visual asset registry keyed by country id.
+- Added asset-aware official logo rendering support while preserving safe text badges when logo usage rights are unclear.
+- Updated Country Hub documentation with the real asset policy, SVG outline policy, world map component policy, and logo licensing considerations.
+
+Reason:
+
+Country hubs should feel like production-quality developer intelligence pages, not wireframes. Real geographic visuals make the Brazil reference hub clearer and set the right quality standard for future country hubs.
+
+Impact:
+
+- The change remains entirely in ValidoHub assets and docs.
+- Valido Engine remains untouched.
+- No PIX, CPF, CNPJ, CEP, phone, banking validator, new workbench, or new country was implemented.
+- Future countries should add approved SVG assets and registry entries rather than custom rendering branches.

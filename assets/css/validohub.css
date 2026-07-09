@@ -230,75 +230,105 @@ a {
 
 .country-visual-panel {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr) auto;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr) minmax(150px, 0.6fr);
   gap: 12px;
   align-items: stretch;
 }
 
-.country-shape-placeholder,
-.country-map-placeholder,
-.country-continent-badge {
+.country-visual-card,
+.country-continent-card {
   min-width: 0;
   border: 1px solid rgba(225, 230, 238, 0.86);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.74);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.82)),
+    #ffffff;
   color: var(--strong-muted);
+  box-shadow: 0 14px 34px rgba(20, 26, 36, 0.07);
 }
 
-.country-shape-placeholder {
+.country-visual-card {
   display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 8px;
   min-height: 92px;
-  place-items: center;
+  padding: 12px;
   position: relative;
   overflow: hidden;
 }
 
-.country-shape-placeholder::before {
-  width: 76px;
-  height: 58px;
-  border: 2px solid rgba(15, 118, 110, 0.30);
-  border-radius: 44% 56% 48% 52% / 58% 38% 62% 42%;
-  background: linear-gradient(135deg, rgba(15, 118, 110, 0.14), rgba(37, 99, 235, 0.08));
-  content: "";
-  transform: rotate(-12deg);
+.country-visual-art {
+  display: grid;
+  min-height: 72px;
+  place-items: center;
+  border: 1px solid rgba(225, 230, 238, 0.7);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(16, 185, 129, 0.12), transparent 34%),
+    radial-gradient(circle at 78% 72%, rgba(37, 99, 235, 0.10), transparent 34%),
+    #ffffff;
+  overflow: hidden;
 }
 
-.country-shape-placeholder span {
-  position: absolute;
-  bottom: 10px;
+.country-visual-image {
+  display: block;
+  width: 100%;
+  max-height: 126px;
+  object-fit: contain;
+}
+
+.country-outline-card .country-visual-image {
+  max-width: 118px;
+}
+
+.country-world-map-card .country-visual-image {
+  max-height: 118px;
+}
+
+.country-visual-label {
+  color: var(--strong-muted);
   font-size: 0.76rem;
   font-weight: 760;
+  text-align: center;
 }
 
-.country-map-placeholder {
-  display: flex;
-  min-height: 92px;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px;
-  font-size: 0.84rem;
+.country-visual-fallback {
+  color: var(--muted);
+  font-size: 0.82rem;
   font-weight: 740;
+  text-align: center;
 }
 
-.country-map-dot {
-  width: 12px;
-  height: 12px;
-  border: 3px solid rgba(15, 118, 110, 0.26);
-  border-radius: 999px;
-  background: var(--accent);
-  box-shadow: 0 0 0 6px rgba(15, 118, 110, 0.10);
-}
-
-.country-continent-badge {
+.country-continent-card {
   display: grid;
+  grid-template-rows: minmax(0, 1fr) auto auto auto;
+  gap: 4px;
   min-height: 92px;
   place-items: center;
   padding: 12px;
   color: var(--accent-strong);
-  font-size: 0.84rem;
-  font-weight: 820;
   text-align: center;
+}
+
+.country-continent-label {
+  font-size: 0.9rem;
+  font-weight: 860;
+}
+
+.country-continent-caption,
+.country-visual-source {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 720;
+}
+
+.country-continent-flag {
+  font-size: 1.42rem;
+  line-height: 1;
+}
+
+.country-visual-source {
+  margin-top: 4px;
 }
 
 .country-flag {
@@ -465,16 +495,19 @@ a {
 
 .country-card-icon {
   display: inline-grid;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   place-items: center;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(15, 118, 110, 0.16);
   border-radius: 8px;
-  background: var(--surface-soft);
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.10), rgba(37, 99, 235, 0.06)),
+    #ffffff;
   color: var(--accent-strong);
   font-size: 0.96rem;
   font-weight: 800;
   line-height: 1;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78);
 }
 
 .country-metric-card strong {
@@ -602,6 +635,14 @@ a {
   font-size: 0.78rem;
   font-weight: 840;
   letter-spacing: 0;
+}
+
+.country-brand-logo {
+  display: block;
+  width: auto;
+  max-width: 136px;
+  max-height: 32px;
+  object-fit: contain;
 }
 
 .country-action-button,

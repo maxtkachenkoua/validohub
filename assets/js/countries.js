@@ -13,6 +13,16 @@
     deprecated: 'Deprecated'
   };
 
+  const COUNTRY_VISUAL_ASSETS = {
+    brazil: {
+      outlineSrc: '/assets/images/countries/brazil-outline.svg',
+      outlineAlt: 'Brazil country outline',
+      mapSrc: '/assets/images/countries/world-map-brazil.svg',
+      mapAlt: 'World map with Brazil highlighted',
+      source: 'Natural Earth geometry'
+    }
+  };
+
   const COUNTRY_HUBS = {
     brazil: {
       flag: '🇧🇷',
@@ -58,9 +68,11 @@
         metricVsImperial: 'Metric-first'
       },
       visualIdentity: {
-        shapeLabel: 'Brazil outline placeholder',
-        mapLabel: 'South America location',
-        continentBadge: 'South America'
+        countryId: 'brazil',
+        outlineLabel: 'Brazil outline',
+        mapLabel: 'Brazil in the world',
+        continentBadge: 'South America',
+        flagLabel: 'Brazil flag'
       },
       stats: [
         { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
@@ -602,19 +614,54 @@
     const visual = createElement('aside', 'country-visual-panel');
     visual.setAttribute('aria-label', `${country.name} visual identity`);
 
-    const shape = createElement('div', 'country-shape-placeholder');
-    const shapeLabel = createElement('span', null, country.visualIdentity.shapeLabel);
-    shape.appendChild(shapeLabel);
+    const visualIdentity = country.visualIdentity || {};
+    const assets = COUNTRY_VISUAL_ASSETS[visualIdentity.countryId] || {};
+    const sourceLabel = assets.source ? createElement('span', 'country-visual-source', assets.source) : null;
+    const outline = createVisualCard({
+      className: 'country-outline-card',
+      title: visualIdentity.outlineLabel || `${country.name} outline`,
+      src: assets.outlineSrc,
+      alt: assets.outlineAlt || `${country.name} country outline`
+    });
+    const map = createVisualCard({
+      className: 'country-world-map-card',
+      title: visualIdentity.mapLabel || `${country.name} location`,
+      src: assets.mapSrc,
+      alt: assets.mapAlt || `World map highlighting ${country.name}`
+    });
 
-    const map = createElement('div', 'country-map-placeholder');
-    map.append(
-      createElement('span', 'country-map-dot'),
-      createElement('span', null, country.visualIdentity.mapLabel)
+    const badge = createElement('div', 'country-continent-card');
+    badge.append(
+      createElement('span', 'country-continent-label', visualIdentity.continentBadge || country.metadata.continent),
+      createElement('span', 'country-continent-caption', 'Continent'),
+      createElement('span', 'country-continent-flag', country.flag)
     );
-
-    const badge = createElement('span', 'country-continent-badge', country.visualIdentity.continentBadge);
-    visual.append(shape, map, badge);
+    if (sourceLabel) {
+      badge.appendChild(sourceLabel);
+    }
+    visual.append(outline, map, badge);
     return visual;
+  }
+
+  function createVisualCard(options) {
+    const card = createElement('div', `country-visual-card ${options.className || ''}`.trim());
+    const art = createElement('div', 'country-visual-art');
+    if (options.src) {
+      const image = document.createElement('img');
+      image.src = options.src;
+      image.alt = options.alt || '';
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      image.className = 'country-visual-image';
+      art.appendChild(image);
+    } else {
+      art.appendChild(createElement('span', 'country-visual-fallback', options.title));
+    }
+    card.append(
+      art,
+      createElement('span', 'country-visual-label', options.title)
+    );
+    return card;
   }
 
   function createQuickActions(country) {
@@ -671,7 +718,15 @@
       top.appendChild(createStatusBadge(item.status));
     }
     card.appendChild(top);
-    if (item.brand) {
+    if (item.logoSrc) {
+      const logo = document.createElement('img');
+      logo.src = item.logoSrc;
+      logo.alt = item.logoAlt || `${item.brand || item.label || item.name || item.title} logo`;
+      logo.loading = 'lazy';
+      logo.decoding = 'async';
+      logo.className = 'country-brand-logo';
+      card.appendChild(logo);
+    } else if (item.brand) {
       card.appendChild(createElement('span', 'country-brand-placeholder', item.brand));
     }
     if (item.category) {

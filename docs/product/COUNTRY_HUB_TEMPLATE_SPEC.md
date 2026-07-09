@@ -2,7 +2,7 @@
 
 Country hubs are Developer Intelligence pages for country-specific implementation work. They are not validator pages and they are not a promise that every listed local format has a completed workbench.
 
-Brazil is the reference implementation for Country Hub Template V3.
+Brazil is the reference implementation for Country Hub Template V3 and Country Hub Visual Identity V2.
 
 ## Purpose
 
@@ -35,8 +35,8 @@ Country Hub Template V3 includes all V1 and V2 sections and adds a richer Develo
 
 - Hero with flag, country name, developer-focused description, status badge, and quick summary.
 - Rich Country Statistics.
-- Country visual identity placeholders.
-- Official brand/logo placeholder support.
+- Real country visual identity assets where suitable assets can be legally bundled.
+- Official brand/logo asset support with documented placeholder fallback when licensing is unclear.
 - Developer Quick Actions.
 - Developer Country Profile.
 - Developer Cheat Sheet.
@@ -102,16 +102,32 @@ Recommended country data shape:
 
 Do not add unsupported YAML fields to ValidoHub content. If the data model must move into Engine-generated static HTML later, use a generic architecture change or approved ACR.
 
-## Visual Identity And Brand Placeholders
+## Visual Identity V2 And Brand Assets
 
-Country Hub V3 supports reusable visual placeholders for:
+Country Hub Visual Identity V2 supports reusable visual components for:
 
 - Country shape / outline.
-- Small country location map panel.
+- Small world map panel with the active country highlighted.
 - Continent badge.
-- Official brand or logo placeholders for systems such as PIX, Banco Central do Brasil, Gov.br, Correios, SWIFT, Visa, Mastercard, and future country-specific brands.
+- Country flag.
+- Official brand or logo assets for systems such as PIX, Banco Central do Brasil, Gov.br, Correios, SWIFT, Visa, Mastercard, and future country-specific brands.
 
-Do not invent unofficial artwork. Use placeholders until official assets are approved.
+The default policy is real assets first. Use placeholders only when a suitable official, public-domain, permissively licensed, or otherwise legally usable asset is not available.
+
+Brazil currently uses real SVG geographic assets for:
+
+- Brazil country outline: `assets/images/countries/brazil-outline.svg`.
+- Miniature world map with Brazil highlighted: `assets/images/countries/world-map-brazil.svg`.
+
+These SVGs are generated from Natural Earth geometry via `world-atlas` TopoJSON. Natural Earth data is public domain. Keep source notes in the SVG files and keep the component reusable.
+
+The rendering contract is intentionally generic:
+
+- Country data provides a stable `visualIdentity.countryId`.
+- The renderer resolves that country id through the product-owned visual asset registry in `assets/js/countries.js`.
+- Future countries should add approved SVG assets and registry entries instead of custom rendering branches.
+
+Official logos must not be redrawn. If an approved official SVG or image can be legally bundled, provide it through `logoSrc` / `logoAlt` on the relevant country card. If licensing, trademark, or usage rights are unclear, keep the text brand badge and document the limitation. Do not bundle unofficial recreations of PIX, Banco Central do Brasil, Gov.br, Correios, card network, payment network, or bank logos.
 
 ## Copy UX
 
@@ -150,9 +166,11 @@ These statuses are UI components for country hubs and future product surfaces. T
 
 ## Brazil Reference
 
-Brazil V3 covers:
+Brazil V3 plus Visual Identity V2 covers:
 
 - Population, capital, largest city, continent, language, currency, calling code, TLD, driving side, ISO codes, locale, date/time, separators, address format, postal code format, and time zones.
+- Real Brazil SVG outline and real miniature world map highlighting Brazil.
+- Continent badge and flag presentation in the hero visual identity.
 - Developer Country Profile for area, measurement system, paper size, plug types, voltage, frequency, emergency number, week starts, RTL support, Unicode locale, ICU locale, CLDR locale, and metric/imperial context.
 - Localization examples for date, time, currency, decimal, percentage, phone, postal code, address, and person name.
 - Address and phone examples with field-level explanations.

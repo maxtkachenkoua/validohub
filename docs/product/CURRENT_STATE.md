@@ -42,12 +42,12 @@ Route rules:
 
 The Countries navigation is ValidoHub-owned product behavior in `assets/js/countries.js`. It groups generated country hub links under a scalable Countries menu without hardcoding country names or changing Engine templates.
 
-Brazil now uses Country Hub Template V3 as the reference Developer Country Intelligence Portal. The rich hub is rendered by `assets/js/countries.js` from a generic country metadata structure and keeps the Engine-generated country page as fallback HTML.
+Brazil now uses Country Hub Template V3 as the reference Developer Country Intelligence Portal. It also uses Country Hub Visual Identity V2 for real SVG geography. The rich hub is rendered by `assets/js/countries.js` from a generic country metadata structure and keeps the Engine-generated country page as fallback HTML.
 
 Country Hub Template V3 includes:
 
 - Hero and quick summary.
-- Country visual identity placeholders.
+- Real Brazil SVG outline and highlighted world map visual identity.
 - Rich Country Statistics.
 - Developer Quick Actions.
 - Developer Country Profile.

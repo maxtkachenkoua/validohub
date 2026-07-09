@@ -88,9 +88,20 @@ Country hubs should support:
 
 Current MVP hubs are generated from `countries/` plus related country tools. More advanced hub composition requires a future generic Engine capability and must not be hardcoded for one country.
 
-Brazil is the reference implementation for Country Hub Template V3. See `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`.
+Brazil is the reference implementation for Country Hub Template V3 and Country Hub Visual Identity V2. See `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`.
 
-Country Hub V3 keeps country-specific facts in product-owned country metadata and uses generic rendering logic for sections, visual identity placeholders, official brand placeholders, cards, status chips, copy controls, semantic discovery tags, snippets, ecosystem diagrams, and hidden future ad slots.
+Country Hub V3 keeps country-specific facts in product-owned country metadata and uses generic rendering logic for sections, visual identity assets, official brand placeholders, cards, status chips, copy controls, semantic discovery tags, snippets, ecosystem diagrams, and hidden future ad slots.
+
+Country Hub Visual Identity V2 keeps geographic visuals in ValidoHub-owned assets:
+
+- Country outline SVGs live under `assets/images/countries/`.
+- Highlighted world map SVGs live under `assets/images/countries/`.
+- `assets/js/countries.js` owns the product-side visual asset registry.
+- Country data provides a stable `visualIdentity.countryId`; the renderer resolves that id to approved SVG assets.
+
+Use real public-domain, official, permissively licensed, or otherwise legally usable assets whenever available. Use placeholders only when an appropriate asset genuinely cannot be bundled.
+
+Official logos and wordmarks must not be redrawn. Add official logo assets only when usage rights are clear enough for the product repository; otherwise keep the text brand badge and document the licensing limitation.
 
 ## Navigation
 
