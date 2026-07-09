@@ -52,7 +52,8 @@ Country-specific tools should be planned through specs before implementation. Th
 
 Country expansion priorities:
 
-- Strengthen country hub editorial content.
+- Extend Country Hub Template V1 from Brazil to Poland and future countries.
+- Decide whether rich country intelligence data should remain product-side browser data or move into a generic build-time Engine model for SEO.
 - Define metadata for featured workbenches, tags, display order, and icons through the architecture process.
 - Add more country hubs only when useful content or tools are ready.
 - Keep country slugs stable and non-localized.

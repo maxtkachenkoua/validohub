@@ -88,6 +88,8 @@ Country hubs should support:
 
 Current MVP hubs are generated from `countries/` plus related country tools. More advanced hub composition requires a future generic Engine capability and must not be hardcoded for one country.
 
+Brazil is the reference implementation for Country Hub Template V1. See `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`.
+
 ## Navigation
 
 Navigation must scale beyond two countries.

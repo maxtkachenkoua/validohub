@@ -143,3 +143,22 @@ Impact:
 - Country platform work belongs in ValidoHub unless a generic Engine capability is explicitly required.
 - Country-specific validators still need their own product specs before implementation.
 - Engine must not hardcode country, validator, or jurisdiction behavior.
+
+## Country Hub Template V1
+
+Changed:
+
+- Added `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`.
+- Implemented Brazil as the reference Country Intelligence Hub.
+- Added Brazil hero, Developer Cheat Sheet, local formats, payments and banking notes, official resource placeholders, available workbenches, planned workbenches, related global tools, developer notes, and hidden future ad-slot hooks.
+- Kept the implementation in ValidoHub-owned assets.
+
+Reason:
+
+Country hubs should be useful developer intelligence pages, not only lists of generated tools.
+
+Impact:
+
+- Brazil is the reference model for future country hubs.
+- PIX, CPF, CNPJ, CEP, phone, and banking validators are still not implemented.
+- Any future move from product-side data to build-time SEO-rendered country data must be generic and must not introduce country-specific Engine logic.
