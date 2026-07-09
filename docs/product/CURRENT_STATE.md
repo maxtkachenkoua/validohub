@@ -17,6 +17,33 @@ This document records the current ValidoHub and Valido Engine boundary so future
 - JSON Workbench: `assets/js/tools/json.js`
 - JWT Workbench: `assets/js/tools/jwt.js`
 
+
+## Countries Platform
+
+Countries are now treated as a first-class ValidoHub product section.
+
+Current country hubs:
+
+- Brazil: `/en/brazil/`
+- Poland: `/en/poland/`
+
+Current country workbench routes:
+
+- Brazil Pix Validator: `/en/brazil/brazil-pix-validator/`
+- PESEL Validator: `/en/poland/pesel-validator/`
+
+Route rules:
+
+- Locale is always the first path segment.
+- Global tools stay under `/{locale}/tools/{tool-slug}/`.
+- Country hubs stay under `/{locale}/{country-slug}/`.
+- Country workbenches stay under `/{locale}/{country-slug}/{tool-slug}/`.
+- Do not localize route slugs.
+
+The Countries navigation is ValidoHub-owned product behavior in `assets/js/countries.js`. It groups generated country hub links under a scalable Countries menu without hardcoding country names or changing Engine templates.
+
+Advanced metadata such as tags, featured status, display order, and icon remain future architecture requirements unless the Engine DSL explicitly supports them.
+
 ## Generated Site Root
 
 The generated static site root is:

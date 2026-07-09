@@ -135,3 +135,28 @@ This registry records production browser workbenches currently owned by ValidoHu
   - Claim expectation checks for issuer, audience, and subject
   - Token comparison
 - Current quality status: Production-quality V1 workbench.
+
+
+## Countries Platform
+
+This is a product platform section, not a browser workbench plugin.
+
+- Source JS: `assets/js/countries.js`
+- Related content/config:
+  - `countries/brazil.yaml`
+  - `countries/poland.yaml`
+  - `tools/brazil-pix-validator.yaml`
+  - `tools/pesel-validator.yaml`
+- Current capabilities:
+  - Locale-first country hub routes.
+  - Locale-first country workbench routes.
+  - Product-owned Countries navigation grouping.
+  - No hardcoded Brazil or Poland behavior in Engine or browser assets.
+  - Existing Engine country hub and breadcrumb generation.
+- Known future ideas:
+  - Country landing page editorial content.
+  - Featured workbenches.
+  - Country tool category grouping.
+  - Tags, display order, and icons through approved generic metadata.
+  - Country-specific validator specs before any implementation.
+- Current quality status: Platform foundation complete; hub content and country-specific validators remain future work.

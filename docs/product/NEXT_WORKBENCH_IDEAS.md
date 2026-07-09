@@ -45,6 +45,19 @@ Prioritize new workbenches by practical developer utility and how well they fit 
    - Query parameter table.
    - Normalize and copy parts.
 
+
+## Country Platform Expansion
+
+Country-specific tools should be planned through specs before implementation. The Countries Platform can host future tools such as CPF, CNPJ, PIX, PESEL, NIE, DNI, VAT, tax, payment, and national identifier workbenches, but none should be implemented without an explicit product spec and approval.
+
+Country expansion priorities:
+
+- Strengthen country hub editorial content.
+- Define metadata for featured workbenches, tags, display order, and icons through the architecture process.
+- Add more country hubs only when useful content or tools are ready.
+- Keep country slugs stable and non-localized.
+- Keep all country-specific browser behavior in ValidoHub assets, not Engine.
+
 ## Later Converter Section
 
 Create a dedicated converter section later for:

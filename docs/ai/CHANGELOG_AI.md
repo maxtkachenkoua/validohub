@@ -123,3 +123,23 @@ Impact:
 
 - AI sessions must start with `docs/ai/START_HERE_AI.md`.
 - Documentation updates are required after completed feature changes.
+
+
+## Countries Platform
+
+Changed:
+
+- Added the Countries Architecture product note.
+- Documented locale-first country hub and country workbench route rules.
+- Added product-owned Countries navigation grouping in ValidoHub assets.
+- Recorded Brazil and Poland as the current country hubs.
+
+Reason:
+
+ValidoHub needs a scalable country section for jurisdiction-specific developer tools without moving product logic into Valido Engine.
+
+Impact:
+
+- Country platform work belongs in ValidoHub unless a generic Engine capability is explicitly required.
+- Country-specific validators still need their own product specs before implementation.
+- Engine must not hardcode country, validator, or jurisdiction behavior.
