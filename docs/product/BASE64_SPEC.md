@@ -1,6 +1,6 @@
-# Base64 Encoder Product Spec
+# Base64 Workbench Product Spec
 
-Base64 Encoder is the reference implementation for ValidoHub tool quality.
+Base64 Workbench is the reference implementation for ValidoHub tool quality.
 
 ## Primary Jobs
 
@@ -23,6 +23,13 @@ Base64 Encoder is the reference implementation for ValidoHub tool quality.
 - File choose and drag-and-drop.
 - Sample inputs.
 - Detailed diagnostics and analysis.
+
+## Current Implementation
+
+- Source JS: `assets/js/tools/base64.js`
+- Primary tool page: `tools/base64-encoder.yaml`
+- Related tool page: `tools/base64-decoder.yaml`
+- Execution: browser-only, offline, no backend, no REST API, no Java execution.
 
 ## Input Mode Guidance
 
@@ -91,6 +98,19 @@ Show the first 64 decoded bytes with:
   - `.pdf`
   - `.bin` fallback
 
+## Keyboard And Workflow
+
+- Live mode is supported.
+- Copy, download, clear, and keyboard shortcuts use the shared Workbench Framework.
+- Sample buttons should remain available for common encode/decode/validate paths.
+
 ## Privacy Requirement
 
 All Base64 work must run locally in the browser. Files must not be uploaded.
+
+## Future Ideas
+
+- Batch encode/decode.
+- Optional line wrapping.
+- Data URL helper.
+- More MIME-specific download naming.

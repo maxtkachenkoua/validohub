@@ -2,21 +2,29 @@
 
 Valido Engine is feature-complete for the MVP and must stay generic.
 
-The current Base64 browser workbench proves the product direction, but ValidoHub-specific JavaScript and CSS should not live in Valido Engine long term.
+Phase 4 is complete. ValidoHub-specific JavaScript and CSS now live in ValidoHub, not in Valido Engine.
+
+## Completed Phase 4 Outcome
+
+- Site-specific assets moved to `validohub/assets`.
+- The browser-side Workbench Framework lives in `assets/js/workbench`.
+- Tool plugins live in `assets/js/tools`.
+- Valido Engine copies site-owned assets into generated output.
+- Valido Engine no longer contains Base64, URL, or JSON implementation logic.
+- Generated routes and content models stayed stable.
+- Future tools should not require Engine changes unless the change is truly generic.
 
 ## Target Direction
 
-Move site-specific assets into ValidoHub:
+Keep site-specific assets in ValidoHub:
 
 ```text
 validohub/
   assets/
     css/
     js/
-    images/
-    tools/
-      base64/
-      url-encoder/
+      workbench/
+      tools/
 ```
 
 The Engine should provide generic asset inclusion and static generation boundaries. ValidoHub should own product behavior, styling refinements, and tool-specific browser execution.
@@ -29,13 +37,12 @@ The Engine should provide generic asset inclusion and static generation boundari
 - Keep browser-only tool execution as site-owned assets where possible.
 - Preserve static output and no-runtime architecture.
 
-## Likely Future Work
+## Remaining Future Work
 
-- Add a generic Engine asset pipeline that copies site assets into generated output.
 - Add generic asset references without inventing tool-specific DSL fields prematurely.
-- Move Base64 JavaScript and CSS from Engine resources into `validohub/assets`.
 - Define a product spec before each new tool implementation.
 - Keep generated routes and content models stable unless an approved architecture change is created.
+- Continue moving product decisions into ValidoHub docs and assets, not Engine.
 
 ## Non-Goals
 
