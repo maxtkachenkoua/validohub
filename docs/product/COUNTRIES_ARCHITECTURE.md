@@ -88,7 +88,9 @@ Country hubs should support:
 
 Current MVP hubs are generated from `countries/` plus related country tools. More advanced hub composition requires a future generic Engine capability and must not be hardcoded for one country.
 
-Brazil is the reference implementation for Country Hub Template V1. See `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`.
+Brazil is the reference implementation for Country Hub Template V2. See `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`.
+
+Country Hub V2 keeps country-specific facts in product-owned country metadata and uses generic rendering logic for sections, cards, status chips, copy controls, semantic discovery tags, snippets, and hidden future ad slots.
 
 ## Navigation
 

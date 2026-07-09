@@ -151,9 +151,16 @@ This is a product platform section, not a browser workbench plugin.
   - Locale-first country hub routes.
   - Locale-first country workbench routes.
   - Product-owned Countries navigation grouping.
-  - Country Hub Template V1 renderer for Brazil.
+  - Country Hub Template V2 renderer for Brazil.
+  - Structured country metadata model.
+  - Rich Country Statistics.
+  - Developer Quick Actions.
+  - Copy buttons for important country values and code snippets.
+  - Reusable status chips for Ready, Available, Coming soon, Planned, Experimental, and Deprecated.
   - Brazil Developer Cheat Sheet.
   - Brazil local formats, payments, official resources, available workbenches, planned workbenches, related global tools, and developer notes.
+  - Developer Examples with copyable snippets.
+  - Discovery Links and semantic tags for future search/filtering.
   - Hidden future ad-slot hooks.
   - No hardcoded Brazil or Poland behavior in Engine or browser assets.
   - Existing Engine country hub and breadcrumb generation.
@@ -164,4 +171,4 @@ This is a product platform section, not a browser workbench plugin.
   - Country tool category grouping.
   - Tags, display order, and icons through approved generic metadata.
   - Country-specific validator specs before any implementation.
-- Current quality status: Brazil is the reference Country Intelligence Hub V1; country-specific validators remain future work.
+- Current quality status: Brazil is the reference Country Intelligence Hub V2; country-specific validators remain future work.

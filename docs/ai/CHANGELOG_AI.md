@@ -162,3 +162,24 @@ Impact:
 - Brazil is the reference model for future country hubs.
 - PIX, CPF, CNPJ, CEP, phone, and banking validators are still not implemented.
 - Any future move from product-side data to build-time SEO-rendered country data must be generic and must not introduce country-specific Engine logic.
+
+## Country Hub Template V2
+
+Changed:
+
+- Expanded Brazil into the gold-standard Country Intelligence Hub.
+- Added structured country metadata for stats, quick actions, cheat-sheet values, snippets, discovery cards, highlights, and future country references.
+- Added copyable quick actions, copy buttons for important values, and copyable developer snippets.
+- Added reusable status chips for Ready, Available, Coming soon, Planned, Experimental, and Deprecated.
+- Added semantic discovery tags for future client-side filtering/search.
+- Added richer internal discovery without broken links.
+
+Reason:
+
+Brazil should define the reusable quality bar for future country hubs without implementing country validators or moving product behavior into Engine.
+
+Impact:
+
+- Country Hub V2 remains entirely in ValidoHub assets and docs.
+- PIX, CPF, CNPJ, CEP, phone, and banking validators remain unimplemented.
+- Future country hubs should mostly require data additions, not custom rendering logic.

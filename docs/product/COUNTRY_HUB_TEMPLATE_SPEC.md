@@ -2,7 +2,7 @@
 
 Country hubs are Developer Intelligence pages for country-specific implementation work. They are not validator pages and they are not a promise that every listed local format has a completed workbench.
 
-Brazil is the reference implementation for Country Hub Template V1.
+Brazil is the reference implementation for Country Hub Template V2.
 
 ## Purpose
 
@@ -31,9 +31,11 @@ Only human-facing labels and body copy should localize in the future.
 
 ## Template Sections
 
-Country Hub Template V1 includes:
+Country Hub Template V2 includes all V1 sections and adds richer developer UX:
 
 - Hero with flag, country name, developer-focused description, status badge, and quick summary.
+- Rich Country Statistics.
+- Developer Quick Actions.
 - Developer Cheat Sheet.
 - Local Formats.
 - Payments & Banking.
@@ -41,7 +43,10 @@ Country Hub Template V1 includes:
 - Available Workbenches.
 - Planned Workbenches.
 - Related Global Tools.
+- Discovery Links.
+- Things Developers Should Know.
 - Developer Notes.
+- Developer Examples.
 - Disabled layout-safe ad slot regions for future sponsorship or advertising.
 
 ## Data Model
@@ -54,7 +59,9 @@ Recommended country data shape:
 - `name`
 - `badge`
 - `description`
-- `summary`
+- `metadata`
+- `stats`
+- `quickActions`
 - `cheatSheet`
 - `localFormats`
 - `payments`
@@ -62,26 +69,87 @@ Recommended country data shape:
 - `availableWorkbenches`
 - `plannedWorkbenches`
 - `relatedGlobalTools`
+- `relatedCategories`
+- `futureCountryPages`
+- `highlights`
 - `developerNotes`
+- `developerExamples`
 
 Do not add unsupported YAML fields to ValidoHub content. If the data model must move into Engine-generated static HTML later, use a generic architecture change or approved ACR.
 
+## Copy UX
+
+Country Hub V2 supports one-click copy for important developer values:
+
+- Locale.
+- ISO2.
+- ISO3.
+- Numeric ISO.
+- Currency code.
+- Currency symbol.
+- Calling code.
+- Internet TLD.
+- Date format.
+- Time format.
+- Decimal separator.
+- Thousands separator.
+- Postal code format.
+- Primary time zone.
+- Developer code snippets.
+
+Quick actions should hide when a value is unavailable. Copy behavior lives in ValidoHub assets only.
+
+## Status System
+
+Country Hub V2 uses reusable status chips:
+
+- Ready.
+- Available.
+- Coming soon.
+- Planned.
+- Experimental.
+- Deprecated.
+
+These statuses are UI components for country hubs and future product surfaces. They do not imply a validator exists unless the corresponding workbench is implemented.
+
 ## Brazil Reference
 
-Brazil V1 covers:
+Brazil V2 covers:
 
-- ISO2, ISO3, numeric ISO, locale, language, currency, phone code, TLD, date/time, separators, address format, postal code format, and time zones.
+- Population, capital, largest city, continent, language, currency, calling code, TLD, driving side, ISO codes, locale, date/time, separators, address format, postal code format, and time zones.
 - CPF, CNPJ, CEP, PIX, RG, CNH, RENAVAM, Brazilian phone numbers, and Brazil banking notes.
 - PIX, bank code, currency, payment identifier, QR payment, and SWIFT/BIC notes.
 - Label-only official resource references for Banco Central do Brasil, Receita Federal, Correios, Gov.br, and PIX documentation.
 - Existing Brazil-related generated page: Brazil Pix Validator, clearly labeled as a content scaffold rather than a working validator.
 - Planned workbenches: PIX Workbench, CPF Validator, CNPJ Validator, CEP Lookup, Brazil Phone Validator, and Brazil Banking Tools.
+- Related categories, related global tools, and future country hub placeholders without broken links.
+- Developer examples for Java Locale, JavaScript Intl, JavaScript Date, Python locale, ICU locale, SQL/PostgreSQL formatting, currency formatting, and date formatting.
 
 This does not implement PIX, CPF, CNPJ, CEP, phone, or banking validation.
 
+## Search And Discovery Preparation
+
+Country Hub V2 adds semantic `data-country-tags` attributes to cards for future filtering/search.
+
+Current tag families include:
+
+- identifiers
+- payments
+- government
+- addresses
+- phone
+- banking
+- locale
+- currency
+- tax
+- postal
+- developer
+- workbench
+- country
+
 ## SEO Strategy
 
-Current V1 is a product-side enhancement over the Engine-generated country hub. The fallback HTML remains a valid country page with canonical route and existing Engine SEO.
+Current V2 is a product-side enhancement over the Engine-generated country hub. The fallback HTML remains a valid country page with canonical route and existing Engine SEO.
 
 Future generic Engine work may be needed if rich country intelligence content must be fully rendered at build time for SEO. That change must stay country-agnostic and must not add Brazil-specific Engine logic.
 
