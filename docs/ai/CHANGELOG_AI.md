@@ -87,6 +87,27 @@ Impact:
 - JSON is now a production-quality V2 workbench.
 - Future JSON Diff, Merge, Schema, code generation, and conversion features remain out of scope until explicitly requested.
 
+## JWT Workbench V1
+
+Changed:
+
+- Added browser-only JWT decoding, validation, inspection, and analysis.
+- Added header, payload, signature, raw token, and decoded JSON sections.
+- Added payload tree view, search, and JSONPath display.
+- Added token health badges for structure, expiration, not-before, missing signature, weak algorithm, and unknown algorithm.
+- Added human-readable expiration and validity timing.
+- Added copy and download helpers for decoded sections.
+- Added malformed-section error UX and safe sample tokens.
+
+Reason:
+
+JWT is a high-priority developer workflow and can be handled privately in the browser without backend execution.
+
+Impact:
+
+- JWT Workbench lives entirely in ValidoHub assets.
+- Signature verification remains out of scope until key-handling UX is specified.
+
 ## AI Operating System
 
 Changed:

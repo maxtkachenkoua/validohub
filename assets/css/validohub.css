@@ -1026,6 +1026,129 @@ select:focus {
   padding: 7px 0;
 }
 
+.jwt-workbench .tool-output {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.jwt-workspace {
+  display: grid;
+  gap: 14px;
+}
+
+.jwt-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.jwt-badge {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--strong-muted);
+  padding: 4px 9px;
+  font-size: 0.8rem;
+  font-weight: 760;
+}
+
+.jwt-badge[data-state="success"] {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.jwt-badge[data-state="warning"] {
+  border-color: #fed7aa;
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.jwt-badge[data-state="error"] {
+  border-color: #fecaca;
+  background: #fff1f2;
+  color: #991b1b;
+}
+
+.jwt-section {
+  display: grid;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 12px;
+}
+
+.jwt-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.jwt-section-title span:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.jwt-raw,
+.jwt-signature {
+  overflow-x: auto;
+  margin: 0;
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 12px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.jwt-token-header {
+  color: #93c5fd;
+}
+
+.jwt-token-payload {
+  color: #86efac;
+}
+
+.jwt-token-signature {
+  color: #fbbf24;
+}
+
+.jwt-token-parts {
+  display: grid;
+  gap: 8px;
+}
+
+.jwt-token-part {
+  display: grid;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 10px;
+}
+
+.jwt-token-part.is-invalid {
+  border-color: #fecaca;
+  background: #fff1f2;
+}
+
+.jwt-token-part code {
+  overflow-wrap: anywhere;
+  color: var(--strong-muted);
+}
+
+.jwt-payload-explorer {
+  display: grid;
+  gap: 10px;
+}
+
 .preview-image {
   max-width: min(100%, 520px);
   max-height: 340px;

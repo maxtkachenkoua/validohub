@@ -4,48 +4,43 @@ Prioritize new workbenches by practical developer utility and how well they fit 
 
 ## High Priority
 
-1. JWT Workbench
-   - Decode header and payload.
-   - Validate shape and timestamps.
-   - Do not verify signatures until key-handling UX is specified.
-
-2. HTML Workbench
+1. HTML Workbench
    - Encode and decode HTML entities.
    - Preview encoded/decoded output safely.
    - Highlight dangerous rendering assumptions.
 
-3. XML Workbench
+2. XML Workbench
    - Format, minify, validate well-formed XML.
    - Tree view can reuse concepts from JSON Workbench.
 
-4. CSV Workbench
+3. CSV Workbench
    - Validate rows and columns.
    - Preview table.
    - Detect delimiters.
 
-5. Regex Workbench
+4. Regex Workbench
    - Test pattern against text.
    - Highlight matches and capture groups.
    - Explain flags and common mistakes.
 
 ## Medium Priority
 
-6. UUID Workbench
+5. UUID Workbench
    - Generate UUIDs.
    - Validate UUID versions.
    - Batch generation.
 
-7. Hash Workbench
+6. Hash Workbench
    - MD5, SHA-1, SHA-256.
    - Text and file hashing.
    - Clear security notes for weak hashes.
 
-8. Timestamp Workbench
+7. Timestamp Workbench
    - Unix timestamp conversion.
    - ISO date parsing.
    - Timezone display.
 
-9. URL Parser / URL Analyzer
+8. URL Parser / URL Analyzer
    - Split URL components.
    - Query parameter table.
    - Normalize and copy parts.

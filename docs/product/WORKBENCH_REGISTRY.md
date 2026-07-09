@@ -102,3 +102,36 @@ This registry records production browser workbenches currently owned by ValidoHu
   - Go structs
   - YAML conversion
 - Current quality status: Production-quality V2 workbench.
+
+## JWT Workbench
+
+- Source JS: `assets/js/tools/jwt.js`
+- Related YAML tool page:
+  - `tools/jwt-decoder.yaml`
+- Algorithm ID:
+  - `validohub.jwt-decoder`
+- Current capabilities:
+  - Decode
+  - Validate
+  - Inspect / parse
+  - Analyze / explain
+  - Header JSON pretty print and syntax highlighting
+  - Payload JSON pretty print and syntax highlighting
+  - Payload tree view
+  - Payload search
+  - Payload JSONPath display
+  - Raw token section display
+  - Signature display
+  - Token analysis for algorithm, issuer, audience, subject, JWT ID, issued at, not before, and expiration
+  - Token health badges for valid structure, expired, not yet valid, missing signature, weak algorithm, and unknown algorithm
+  - Human-readable expiration and validity timing
+  - Copy helpers for header, payload, signature, claims, raw token, and decoded JSON
+  - Download helpers for header, payload, and decoded JSON
+  - Error UX with malformed-section highlighting and repair suggestions
+  - Safe sample JWT tokens
+- Known future ideas:
+  - Signature verification with explicit key-handling UX
+  - JWKS fetching only if a future product spec approves network behavior
+  - Claim expectation checks for issuer, audience, and subject
+  - Token comparison
+- Current quality status: Production-quality V1 workbench.

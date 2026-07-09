@@ -15,6 +15,7 @@ This document records the current ValidoHub and Valido Engine boundary so future
 - Base64 Workbench: `assets/js/tools/base64.js`
 - URL Workbench: `assets/js/tools/url.js`
 - JSON Workbench: `assets/js/tools/json.js`
+- JWT Workbench: `assets/js/tools/jwt.js`
 
 ## Generated Site Root
 
