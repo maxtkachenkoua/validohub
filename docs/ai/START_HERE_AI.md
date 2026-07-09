@@ -4,6 +4,8 @@ This is the entry point for every AI session working on ValidoHub.
 
 Do not rely on prior chat history. Treat repository documentation as the source of project memory.
 
+If you arrived here from the repository root, keep `AGENTS.md` in mind as the canonical short entrypoint. If you did not read it yet, read `AGENTS.md` now.
+
 ## Mandatory Reading Order
 
 Read in this order before implementation:
@@ -34,7 +36,13 @@ Before continuing unfinished work:
 
 ## Engine Modification Rule
 
+ValidoHub is the product.
+
+If you are asked to implement a developer tool, browser feature, UX improvement, Workbench, plugin, browser behavior, or product capability, it almost certainly belongs in ValidoHub, not in Valido Engine.
+
 Valido Engine may be modified only when the change is truly generic and benefits future static tool sites. Never modify Engine for ValidoHub-specific workbench behavior, product CSS, product JavaScript, or tool-specific logic.
+
+Always verify before modifying Engine.
 
 ## Validation Expectations
 
