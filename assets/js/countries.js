@@ -21,6 +21,7 @@
       description: 'Developer intelligence for Brazilian identifiers, payments, banking formats, locale conventions, and official systems.',
       metadata: {
         population: '203M+',
+        area: '8,515,767 km²',
         capital: 'Brasilia',
         largestCity: 'Sao Paulo',
         continent: 'South America',
@@ -43,7 +44,23 @@
         addressFormat: 'Street, number, district, city, state, CEP',
         postalCodeFormat: 'NNNNN-NNN',
         primaryTimeZone: 'UTC-03',
-        utcRange: 'UTC-02 to UTC-05'
+        utcRange: 'UTC-02 to UTC-05',
+        measurementSystem: 'Metric',
+        paperSize: 'A4',
+        powerPlugTypes: 'Type C / Type N',
+        voltage: '127V / 220V',
+        frequency: '60Hz',
+        emergencyNumber: '190',
+        weekStarts: 'Sunday',
+        rtlSupport: 'No',
+        unicodeLocale: 'pt-BR',
+        cldrLocale: 'pt_BR',
+        metricVsImperial: 'Metric-first'
+      },
+      visualIdentity: {
+        shapeLabel: 'Brazil outline placeholder',
+        mapLabel: 'South America location',
+        continentBadge: 'South America'
       },
       stats: [
         { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
@@ -56,6 +73,31 @@
         { icon: '🌐', label: 'Internet TLD', valueKey: 'internetTld', tags: ['developer'] },
         { icon: '🚗', label: 'Driving side', valueKey: 'drivingSide', tags: ['locale'] },
         { icon: '🧭', label: 'UTC range', valueKey: 'utcRange', tags: ['time'] }
+      ],
+      countryProfile: [
+        { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
+        { icon: '▣', label: 'Area', valueKey: 'area', tags: ['locale'] },
+        { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
+        { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
+        { icon: '🌎', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
+        { icon: '🗣', label: 'Official language', valueKey: 'languages', tags: ['locale'] },
+        { icon: '🚗', label: 'Driving side', valueKey: 'drivingSide', tags: ['locale'] },
+        { icon: '📏', label: 'Measurement system', valueKey: 'measurementSystem', tags: ['locale'] },
+        { icon: '📄', label: 'Paper size', valueKey: 'paperSize', tags: ['developer'] },
+        { icon: '🔌', label: 'Power plug types', valueKey: 'powerPlugTypes', tags: ['developer'] },
+        { icon: '⚡', label: 'Voltage', valueKey: 'voltage', tags: ['developer'] },
+        { icon: '⏱', label: 'Frequency', valueKey: 'frequency', tags: ['developer'] },
+        { icon: '🚨', label: 'Emergency number', valueKey: 'emergencyNumber', tags: ['phone'] },
+        { icon: '🌐', label: 'Internet TLD', valueKey: 'internetTld', tags: ['developer'] },
+        { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
+        { icon: '💳', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency'] },
+        { icon: '🕒', label: 'Timezone range', valueKey: 'utcRange', tags: ['time'] },
+        { icon: '📅', label: 'Week starts', valueKey: 'weekStarts', tags: ['locale'] },
+        { icon: '↔', label: 'RTL support', valueKey: 'rtlSupport', tags: ['locale'] },
+        { icon: '🔤', label: 'Unicode locale', valueKey: 'unicodeLocale', tags: ['locale', 'developer'] },
+        { icon: '🌐', label: 'ICU locale', valueKey: 'icuLocale', tags: ['locale', 'developer'] },
+        { icon: '🌐', label: 'CLDR locale', valueKey: 'cldrLocale', tags: ['locale', 'developer'] },
+        { icon: '📐', label: 'Metric vs Imperial', valueKey: 'metricVsImperial', tags: ['locale'] }
       ],
       quickActions: [
         { label: 'Copy Locale', valueKey: 'locale' },
@@ -109,11 +151,11 @@
         { icon: '🌍', title: 'SWIFT/BIC notes', status: 'ready', tags: ['banking'], text: 'International transfers may involve SWIFT/BIC details, but domestic Brazilian payment UX is usually not IBAN-first.' }
       ],
       officialResources: [
-        { icon: '🏦', label: 'Banco Central do Brasil', status: 'available', tags: ['government', 'payments'], note: 'Central bank and PIX ecosystem authority. Confirm the exact documentation URL before linking deep references.' },
-        { icon: '🧾', label: 'Receita Federal', status: 'available', tags: ['government', 'tax', 'identifiers'], note: 'Federal tax authority for CPF and CNPJ context. Confirm exact service URLs before linking.' },
-        { icon: '✉', label: 'Correios', status: 'available', tags: ['government', 'postal', 'addresses'], note: 'Postal authority for CEP-related address information. Confirm official lookup URL before linking.' },
-        { icon: '🏛', label: 'Gov.br', status: 'available', tags: ['government'], note: 'Brazilian government services portal. Use as a starting point for official references.' },
-        { icon: '⚡', label: 'PIX documentation', status: 'planned', tags: ['payments', 'banking'], note: 'Use official Banco Central documentation when a future PIX Workbench spec is approved.' }
+        { icon: '🏦', label: 'Banco Central do Brasil', brand: 'BCB', status: 'available', tags: ['government', 'payments'], note: 'Central bank and PIX ecosystem authority. Confirm the exact documentation URL before linking deep references.' },
+        { icon: '🧾', label: 'Receita Federal', brand: 'RF', status: 'available', tags: ['government', 'tax', 'identifiers'], note: 'Federal tax authority for CPF and CNPJ context. Confirm exact service URLs before linking.' },
+        { icon: '✉', label: 'Correios', brand: 'Correios', status: 'available', tags: ['government', 'postal', 'addresses'], note: 'Postal authority for CEP-related address information. Confirm official lookup URL before linking.' },
+        { icon: '🏛', label: 'Gov.br', brand: 'gov.br', status: 'available', tags: ['government'], note: 'Brazilian government services portal. Use as a starting point for official references.' },
+        { icon: '⚡', label: 'PIX documentation', brand: 'PIX', status: 'planned', tags: ['payments', 'banking'], note: 'Use official Banco Central documentation when a future PIX Workbench spec is approved.' }
       ],
       plannedWorkbenches: [
         { name: 'PIX Workbench', status: 'comingSoon', tags: ['payments', 'banking'], description: 'Inspect PIX keys and QR payloads after a dedicated product spec is approved.' },
@@ -141,10 +183,117 @@
         { label: 'Spain', status: 'planned' },
         { label: 'Germany', status: 'planned' },
         { label: 'France', status: 'planned' },
+        { label: 'Austria', status: 'planned' },
+        { label: 'Portugal', status: 'planned' },
         { label: 'Italy', status: 'planned' },
+        { label: 'Netherlands', status: 'planned' },
+        { label: 'Belgium', status: 'planned' },
         { label: 'United Kingdom', status: 'planned' },
         { label: 'United States', status: 'planned' },
-        { label: 'Netherlands', status: 'planned' }
+        { label: 'Canada', status: 'planned' },
+        { label: 'Mexico', status: 'planned' },
+        { label: 'Argentina', status: 'planned' },
+        { label: 'Chile', status: 'planned' },
+        { label: 'Japan', status: 'planned' },
+        { label: 'South Korea', status: 'planned' },
+        { label: 'Singapore', status: 'planned' },
+        { label: 'Australia', status: 'planned' },
+        { label: 'India', status: 'planned' },
+        { label: 'Ukraine', status: 'planned' }
+      ],
+      localizationExamples: [
+        { label: 'Date', value: '31/12/2026', tags: ['locale', 'date'] },
+        { label: 'Time', value: '14:25', tags: ['locale', 'time'] },
+        { label: 'Currency', value: 'R$ 1.234,56', tags: ['currency'] },
+        { label: 'Decimal', value: '1.234,56', tags: ['locale', 'currency'] },
+        { label: 'Percentage', value: '35,7%', tags: ['locale'] },
+        { label: 'Phone', value: '+55 11 91234-5678', tags: ['phone'] },
+        { label: 'Postal code', value: '01310-100', tags: ['postal', 'addresses'] },
+        { label: 'Address example', value: 'Av. Paulista, 1000 - Bela Vista, Sao Paulo - SP, 01310-100', tags: ['addresses'] },
+        { label: 'Example person name', value: 'Ana Silva', tags: ['locale'] }
+      ],
+      addressExample: {
+        formatted: [
+          'Ana Silva',
+          'Av. Paulista, 1000',
+          'Bela Vista',
+          'Sao Paulo - SP',
+          '01310-100',
+          'Brazil'
+        ],
+        fields: [
+          { label: 'Recipient', value: 'Ana Silva', description: 'Person or organization receiving mail.' },
+          { label: 'Street and number', value: 'Av. Paulista, 1000', description: 'Street, avenue, or road plus building number.' },
+          { label: 'District', value: 'Bela Vista', description: 'Neighborhood or district, often useful for disambiguation.' },
+          { label: 'City and state', value: 'Sao Paulo - SP', description: 'Municipality plus two-letter state abbreviation.' },
+          { label: 'CEP', value: '01310-100', description: 'Brazilian postal code.' },
+          { label: 'Country', value: 'Brazil', description: 'Country label for international contexts.' }
+        ]
+      },
+      phoneExamples: [
+        { label: 'Mobile', value: '(11) 91234-5678', description: 'Mobile examples commonly include a 9 after the area code.', tags: ['phone'] },
+        { label: 'Landline', value: '(11) 3123-4567', description: 'Landlines use area code plus local subscriber number.', tags: ['phone'] },
+        { label: 'International', value: '+55 11 91234-5678', description: 'Use +55 for international display.', tags: ['phone'] },
+        { label: 'Formatted', value: '+55 (11) 91234-5678', description: 'Friendly display format for UI.', tags: ['phone'] },
+        { label: 'Normalized', value: '5511912345678', description: 'Digits-only normalization is useful for storage and comparison.', tags: ['phone', 'developer'] }
+      ],
+      integrationChecklist: [
+        'Locale configured',
+        'UTF-8',
+        'Currency formatting',
+        'Date formatting',
+        'CPF handling',
+        'CNPJ handling',
+        'CEP formatting',
+        'Phone formatting',
+        'PIX',
+        'Timezone',
+        'Address normalization'
+      ],
+      validationRules: [
+        { name: 'CPF', tags: ['identifiers', 'tax'], points: ['11 digits', 'Checksum digits', 'Formatted and normalized forms', 'Leading zeros must be preserved'] },
+        { name: 'CNPJ', tags: ['identifiers', 'tax'], points: ['14 digits', 'Checksum digits', 'Formatted and normalized forms', 'Business identifier, not CPF'] },
+        { name: 'CEP', tags: ['postal', 'addresses'], points: ['8 digits', 'Common display NNNNN-NNN', 'Postal code, not a ZIP code'] },
+        { name: 'Phone', tags: ['phone'], points: ['Country code +55', 'Area code required', 'Mobile and landline patterns differ'] },
+        { name: 'PIX', tags: ['payments', 'banking'], points: ['Keys may be CPF, CNPJ, email, phone, random key, or QR payload', 'Key type matters before validation'] },
+        { name: 'Bank code', tags: ['banking'], points: ['Bank code, branch, account, account type, and check digit may all appear', 'Domestic flows are not IBAN-first'] }
+      ],
+      commonMistakes: [
+        'Brazil is not IBAN-first for domestic transfers.',
+        'CPF and CNPJ are different identifiers.',
+        'Dates use DD/MM/YYYY in common display.',
+        'Decimal separator is comma.',
+        'CEP is not ZIP.',
+        'PIX keys are not always random.',
+        'Phone numbers require area codes.'
+      ],
+      bankingOverview: [
+        { icon: '⚡', name: 'PIX', brand: 'PIX', status: 'comingSoon', tags: ['payments', 'banking'], description: 'Instant payment ecosystem using keys and QR payloads.' },
+        { icon: '🏦', name: 'TED', status: 'planned', tags: ['payments', 'banking'], description: 'Bank transfer method historically used for same-day transfers.' },
+        { icon: '🏦', name: 'DOC', status: 'planned', tags: ['payments', 'banking'], description: 'Legacy bank transfer method still useful in historical data.' },
+        { icon: '📄', name: 'Boleto', status: 'planned', tags: ['payments'], description: 'Invoice-like payment slip used in Brazilian billing flows.' },
+        { icon: '🌍', name: 'SWIFT', brand: 'SWIFT', status: 'available', tags: ['banking'], description: 'Relevant for international transfers and bank identification.' },
+        { icon: '🏷', name: 'Bank Codes', status: 'planned', tags: ['banking'], description: 'Domestic bank identifiers often appear with branch and account data.' },
+        { icon: '🌐', name: 'IBAN', status: 'available', tags: ['banking'], description: 'Useful globally, but Brazil is not an IBAN-first domestic transfer market.' }
+      ],
+      localizationNotes: [
+        { name: 'Plural rules', description: 'Portuguese pluralization should use locale-aware message formatting.', tags: ['locale'] },
+        { name: 'Week starts', description: 'Many Brazilian calendars display Sunday as the first day of week.', tags: ['locale', 'date'] },
+        { name: 'Calendar', description: 'Gregorian calendar is the ordinary civil calendar.', tags: ['locale', 'date'] },
+        { name: 'Sorting', description: 'Use locale-aware collation instead of ASCII sorting for user-facing text.', tags: ['locale', 'developer'] },
+        { name: 'Unicode', description: 'Use UTF-8 and preserve accents in names and addresses.', tags: ['locale', 'developer'] },
+        { name: 'ICU', description: 'ICU locale commonly appears as pt_BR.', tags: ['locale', 'developer'] },
+        { name: 'Locale naming', description: 'Prefer BCP 47 pt-BR in web APIs and pt_BR where ICU/platform conventions require it.', tags: ['locale', 'developer'] }
+      ],
+      ecosystem: [
+        { name: 'PIX', description: 'Payment rail connected to banks, wallets, QR payments, and customer identifiers.', tags: ['payments', 'banking'] },
+        { name: 'CPF', description: 'Individual tax identifier that can also appear as a PIX key type.', tags: ['identifiers', 'tax'] },
+        { name: 'CNPJ', description: 'Company tax identifier used in business, tax, and payment workflows.', tags: ['identifiers', 'tax'] },
+        { name: 'CEP', description: 'Postal code used in address normalization and shipping flows.', tags: ['postal', 'addresses'] },
+        { name: 'Phone', description: 'Phone data intersects with identity, contact, and PIX key workflows.', tags: ['phone'] },
+        { name: 'Banks', description: 'Bank code, branch, account, and check digit often matter in integrations.', tags: ['banking'] },
+        { name: 'Government', description: 'Government systems are authoritative for many identifier contexts.', tags: ['government'] },
+        { name: 'Payments', description: 'Payments connect currency, identifiers, QR payloads, bank accounts, and receipts.', tags: ['payments'] }
       ],
       highlights: [
         'Brazil commonly uses the pt-BR locale.',
@@ -171,10 +320,22 @@
           note: 'Use BCP 47 locale tags for Java formatting APIs.'
         },
         {
+          title: 'Java currency format',
+          language: 'java',
+          code: 'NumberFormat.getCurrencyInstance(Locale.forLanguageTag("pt-BR")).format(value)',
+          note: 'Formats values using Brazilian Portuguese currency conventions.'
+        },
+        {
           title: 'JavaScript Intl Currency',
           language: 'javascript',
           code: 'new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" })',
           note: 'Formats BRL values with pt-BR separators and currency display.'
+        },
+        {
+          title: 'TypeScript locale constant',
+          language: 'typescript',
+          code: "const brazilLocale = 'pt-BR' as const;",
+          note: 'Keep locale constants explicit when building typed formatting helpers.'
         },
         {
           title: 'JavaScript Date',
@@ -189,6 +350,24 @@
           note: 'Requires the pt_BR locale to be installed on the host operating system.'
         },
         {
+          title: 'Go language tag',
+          language: 'go',
+          code: 'language.MustParse("pt-BR")',
+          note: 'Use golang.org/x/text/language when locale-aware behavior is needed.'
+        },
+        {
+          title: 'C# culture',
+          language: 'csharp',
+          code: 'CultureInfo.GetCultureInfo("pt-BR")',
+          note: 'Use CultureInfo for formatting Brazilian dates, numbers, and currency.'
+        },
+        {
+          title: 'Kotlin Locale',
+          language: 'kotlin',
+          code: 'Locale.forLanguageTag("pt-BR")',
+          note: 'Kotlin on the JVM can use Java Locale APIs.'
+        },
+        {
           title: 'ICU locale',
           language: 'text',
           code: 'pt_BR',
@@ -201,6 +380,12 @@
           note: 'Database formatting depends on locale/session settings; prefer app-layer Intl formatting when possible.'
         },
         {
+          title: 'JSON payload locale',
+          language: 'json',
+          code: '{\n  "country": "BR",\n  "locale": "pt-BR",\n  "currency": "BRL"\n}',
+          note: 'Formatting examples only; not a validation schema.'
+        },
+        {
           title: 'Currency formatting note',
           language: 'text',
           code: 'BRL uses comma decimals and dot thousands separators in pt-BR display.',
@@ -211,6 +396,28 @@
           language: 'text',
           code: 'DD/MM/YYYY',
           note: 'Validate machine-readable dates separately from localized presentation.'
+        }
+      ],
+      jsonExamples: [
+        {
+          title: 'Customer',
+          code: '{\n  "name": "Ana Silva",\n  "country": "BR",\n  "locale": "pt-BR"\n}'
+        },
+        {
+          title: 'Address',
+          code: '{\n  "street": "Av. Paulista",\n  "number": "1000",\n  "district": "Bela Vista",\n  "city": "Sao Paulo",\n  "state": "SP",\n  "postalCode": "01310-100"\n}'
+        },
+        {
+          title: 'CPF',
+          code: '{\n  "type": "CPF",\n  "formatted": "123.456.789-09",\n  "normalized": "12345678909"\n}'
+        },
+        {
+          title: 'PIX',
+          code: '{\n  "type": "PIX",\n  "keyType": "email",\n  "key": "ana@example.com"\n}'
+        },
+        {
+          title: 'Phone',
+          code: '{\n  "countryCode": "+55",\n  "areaCode": "11",\n  "localNumber": "91234-5678",\n  "normalized": "5511912345678"\n}'
         }
       ],
       availableWorkbenches: {
@@ -331,11 +538,11 @@
     return button;
   }
 
-  function createCodeValue(value, label) {
+  function createCodeValue(value, label, copyValue) {
     const wrapper = createElement('span', 'country-code-value');
     const text = createElement('code', null, value);
     wrapper.appendChild(text);
-    const copy = createCopyButton(value, label);
+    const copy = createCopyButton(copyValue || value, label);
     if (copy) {
       wrapper.appendChild(copy);
     }
@@ -352,7 +559,7 @@
       card.appendChild(icon);
     }
     card.appendChild(createElement('span', 'country-card-label', item.label));
-    card.appendChild(createCodeValue(value, item.label));
+    card.appendChild(createCodeValue(value, item.label, copyValueFor(country, item)));
     if (item.detailKey && country.metadata[item.detailKey]) {
       card.appendChild(createElement('span', 'country-card-detail', country.metadata[item.detailKey]));
     }
@@ -385,8 +592,29 @@
     const stats = createElement('div', 'country-summary-grid country-stats-grid');
     country.stats.forEach((item) => stats.appendChild(createMetricCard(country, item, 'country-stat-card')));
 
-    hero.append(main, stats);
+    const visual = createCountryVisual(country);
+
+    hero.append(main, visual, stats);
     return hero;
+  }
+
+  function createCountryVisual(country) {
+    const visual = createElement('aside', 'country-visual-panel');
+    visual.setAttribute('aria-label', `${country.name} visual identity`);
+
+    const shape = createElement('div', 'country-shape-placeholder');
+    const shapeLabel = createElement('span', null, country.visualIdentity.shapeLabel);
+    shape.appendChild(shapeLabel);
+
+    const map = createElement('div', 'country-map-placeholder');
+    map.append(
+      createElement('span', 'country-map-dot'),
+      createElement('span', null, country.visualIdentity.mapLabel)
+    );
+
+    const badge = createElement('span', 'country-continent-badge', country.visualIdentity.continentBadge);
+    visual.append(shape, map, badge);
+    return visual;
   }
 
   function createQuickActions(country) {
@@ -443,6 +671,9 @@
       top.appendChild(createStatusBadge(item.status));
     }
     card.appendChild(top);
+    if (item.brand) {
+      card.appendChild(createElement('span', 'country-brand-placeholder', item.brand));
+    }
     if (item.category) {
       card.appendChild(createElement('span', 'country-card-meta', item.category));
     }
@@ -459,6 +690,126 @@
     const section = createSection('Local formats', 'Identifiers, addresses, phones, and banking context', 'country-local-formats', 'Important Brazilian formats to account for before building validators or integrations.');
     const grid = createElement('div', 'country-card-grid');
     country.localFormats.forEach((item) => grid.appendChild(createInfoCard(item, { className: 'country-info-card' })));
+    section.appendChild(grid);
+    return section;
+  }
+
+  function createCountryProfile(country) {
+    const section = createSection('Developer Country Profile', `${country.name} implementation profile`, 'country-profile', 'Country metadata that future hubs can reuse as structured data.');
+    const grid = createElement('div', 'country-fact-grid');
+    country.countryProfile.forEach((item) => grid.appendChild(createMetricCard(country, item)));
+    section.appendChild(grid);
+    return section;
+  }
+
+  function createLocalizationExamples(country) {
+    const section = createSection('Localization examples', `${country.name} display examples`, 'country-localization-examples', 'Concrete examples for locale-aware UI formatting.');
+    const grid = createElement('div', 'country-fact-grid');
+    country.localizationExamples.forEach((item) => {
+      const card = createElement('article', 'country-metric-card country-example-card');
+      applyTags(card, item.tags);
+      card.append(
+        createElement('span', 'country-card-label', item.label),
+        createCodeValue(item.value, item.label)
+      );
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+    return section;
+  }
+
+  function createAddressExample(country) {
+    const section = createSection('Address example', `Formatted ${country.name} address`, 'country-address-example', 'A realistic display example plus field-level explanation.');
+    const layout = createElement('div', 'country-split-layout');
+    const addressCard = createElement('article', 'country-address-card');
+    const pre = createElement('pre', 'country-code-block');
+    pre.appendChild(createElement('code', null, country.addressExample.formatted.join('\n')));
+    addressCard.append(
+      createElement('h3', null, 'Display format'),
+      pre,
+      createCopyButton(country.addressExample.formatted.join('\n'), `${country.name} address example`)
+    );
+
+    const fields = createElement('div', 'country-card-grid country-card-grid-compact');
+    country.addressExample.fields.forEach((item) => {
+      fields.appendChild(createInfoCard({
+        icon: '📍',
+        name: item.label,
+        status: 'available',
+        tags: ['addresses'],
+        description: `${item.value} — ${item.description}`
+      }, { className: 'country-info-card' }));
+    });
+    layout.append(addressCard, fields);
+    section.appendChild(layout);
+    return section;
+  }
+
+  function createPhoneExamples(country) {
+    const section = createSection('Phone number examples', `${country.name} phone formats`, 'country-phone-examples', 'Examples only. Validate phone rules in a future dedicated workbench.');
+    const grid = createElement('div', 'country-card-grid country-card-grid-compact');
+    country.phoneExamples.forEach((item) => {
+      const card = createInfoCard({
+        icon: '☎',
+        name: item.label,
+        status: 'available',
+        tags: item.tags,
+        description: item.description
+      }, { className: 'country-info-card' });
+      card.appendChild(createCodeValue(item.value, item.label));
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+    return section;
+  }
+
+  function createIntegrationChecklist(country) {
+    const section = createSection('Developer Integration Checklist', `${country.name} integration reminders`, 'country-integration-checklist', 'Informational checklist only; no runtime validation.');
+    const list = createElement('ul', 'country-checklist');
+    country.integrationChecklist.forEach((item) => {
+      const li = createElement('li');
+      li.append(
+        createElement('span', 'country-check-box', '□'),
+        createElement('span', null, item)
+      );
+      list.appendChild(li);
+    });
+    section.appendChild(list);
+    return section;
+  }
+
+  function createValidationRules(country) {
+    const section = createSection('Validation rules', `${country.name} implementation expectations`, 'country-validation-rules', 'Rule summaries only. This section does not implement validators.');
+    const grid = createElement('div', 'country-card-grid country-card-grid-compact');
+    country.validationRules.forEach((item) => {
+      const card = createInfoCard({
+        icon: '✓',
+        name: item.name,
+        status: 'planned',
+        tags: item.tags,
+        description: 'Validation behavior requires a dedicated workbench spec before implementation.'
+      }, { className: 'country-info-card' });
+      const list = createElement('ul', 'country-compact-list');
+      item.points.forEach((point) => list.appendChild(createElement('li', null, point)));
+      card.appendChild(list);
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+    return section;
+  }
+
+  function createCommonMistakes(country) {
+    const section = createSection('Common integration mistakes', `${country.name} pitfalls to avoid`, 'country-common-mistakes');
+    const list = createElement('ul', 'country-highlight-list');
+    country.commonMistakes.forEach((note) => list.appendChild(createElement('li', null, note)));
+    section.appendChild(list);
+    return section;
+  }
+
+  function createBankingOverview(country) {
+    const section = createSection('Banking overview', `${country.name} payments and banking ecosystem`, 'country-banking-overview', 'Purpose summaries only. No banking or payment validation is implemented.');
+    const grid = createElement('div', 'country-card-grid');
+    country.bankingOverview.forEach((item) => grid.appendChild(createInfoCard(item, { className: 'country-info-card' })));
     section.appendChild(grid);
     return section;
   }
@@ -617,7 +968,7 @@
   }
 
   function createDeveloperExamples(country) {
-    const section = createSection('Developer examples', `Copy-ready ${country.name} locale snippets`, 'country-developer-examples', 'Examples only. No runtime execution.');
+    const section = createSection('Developer API examples', `Copy-ready ${country.name} API and locale snippets`, 'country-developer-examples', 'Examples only. No runtime execution.');
     const grid = createElement('div', 'country-code-grid');
     country.developerExamples.forEach((item) => {
       const card = createElement('article', 'country-code-card');
@@ -637,6 +988,58 @@
       }
       card.appendChild(createElement('p', null, item.note));
       grid.appendChild(card);
+    });
+    section.appendChild(grid);
+    return section;
+  }
+
+  function createJsonExamples(country) {
+    const section = createSection('JSON examples', `${country.name} payload examples`, 'country-json-examples', 'Formatting examples only. These are not validation schemas.');
+    const grid = createElement('div', 'country-code-grid');
+    country.jsonExamples.forEach((item) => {
+      const card = createElement('article', 'country-code-card');
+      applyTags(card, ['developer', 'json']);
+      const top = createElement('div', 'country-card-top');
+      top.append(
+        createElement('h3', null, item.title),
+        createElement('span', 'country-card-meta', 'json')
+      );
+      const pre = createElement('pre', 'country-code-block');
+      pre.appendChild(createElement('code', null, item.code));
+      card.append(top, pre, createCopyButton(item.code, `${item.title} JSON example`));
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+    return section;
+  }
+
+  function createLocalizationNotes(country) {
+    const section = createSection('Localization notes', `${country.name} locale behavior`, 'country-localization-notes', 'Implementation reminders for text, sorting, calendar, and locale APIs.');
+    const grid = createElement('div', 'country-card-grid country-card-grid-compact');
+    country.localizationNotes.forEach((item) => {
+      grid.appendChild(createInfoCard({
+        icon: '🌐',
+        name: item.name,
+        status: 'available',
+        tags: item.tags,
+        description: item.description
+      }, { className: 'country-info-card' }));
+    });
+    section.appendChild(grid);
+    return section;
+  }
+
+  function createCountryEcosystem(country) {
+    const section = createSection('Country ecosystem', `${country.name} developer relationships`, 'country-ecosystem', 'How identifiers, payments, banks, government, and addresses connect at a product-design level.');
+    const grid = createElement('div', 'country-ecosystem-grid');
+    country.ecosystem.forEach((item) => {
+      grid.appendChild(createInfoCard({
+        icon: '•',
+        name: item.name,
+        status: 'available',
+        tags: item.tags,
+        description: item.description
+      }, { className: 'country-info-card country-ecosystem-card' }));
     });
     section.appendChild(grid);
     return section;
@@ -721,9 +1124,17 @@
       createHero(country),
       createQuickActions(country),
       createAdSlot('country-hub-after-hero'),
+      createCountryProfile(country),
       createCheatSheet(country),
+      createLocalizationExamples(country),
+      createAddressExample(country),
+      createPhoneExamples(country),
       createLocalFormats(country),
+      createIntegrationChecklist(country),
+      createValidationRules(country),
+      createCommonMistakes(country),
       createPayments(country),
+      createBankingOverview(country),
       createOfficialResources(country),
       createAvailableWorkbenches(country, availableLinks),
       createPlannedWorkbenches(country),
@@ -732,6 +1143,9 @@
       createHighlights(country),
       createDeveloperNotes(country),
       createDeveloperExamples(country),
+      createJsonExamples(country),
+      createLocalizationNotes(country),
+      createCountryEcosystem(country),
       createAdSlot('country-hub-before-footer'),
       createCopyAnnouncer()
     );

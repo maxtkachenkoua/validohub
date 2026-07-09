@@ -183,3 +183,23 @@ Impact:
 - Country Hub V2 remains entirely in ValidoHub assets and docs.
 - PIX, CPF, CNPJ, CEP, phone, and banking validators remain unimplemented.
 - Future country hubs should mostly require data additions, not custom rendering logic.
+
+## Country Hub Template V3
+
+Changed:
+
+- Elevated Brazil into a premium Developer Country Intelligence Portal.
+- Added country visual identity placeholders and official brand/logo placeholder support.
+- Added Developer Country Profile, Localization Examples, Address Example, Phone Number Examples, Developer Integration Checklist, Validation Rules, Common Integration Mistakes, Banking Overview, JSON Examples, Localization Notes, and Country Ecosystem sections.
+- Expanded Developer API Examples across Java, JavaScript, TypeScript, Python, Go, C#, Kotlin, PostgreSQL, text notes, and JSON payload examples.
+- Expanded future country discovery placeholders without creating broken links.
+
+Reason:
+
+Brazil should be the reusable gold-standard template for future country hubs while keeping all product behavior in ValidoHub.
+
+Impact:
+
+- Country Hub V3 remains entirely in ValidoHub assets and docs.
+- No PIX, CPF, CNPJ, CEP, phone, banking validator, new workbench, or new country was implemented.
+- Future country hubs should reuse the same data-driven renderer and add country-specific data only.

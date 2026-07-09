@@ -2,7 +2,7 @@
 
 Country hubs are Developer Intelligence pages for country-specific implementation work. They are not validator pages and they are not a promise that every listed local format has a completed workbench.
 
-Brazil is the reference implementation for Country Hub Template V2.
+Brazil is the reference implementation for Country Hub Template V3.
 
 ## Purpose
 
@@ -31,14 +31,24 @@ Only human-facing labels and body copy should localize in the future.
 
 ## Template Sections
 
-Country Hub Template V2 includes all V1 sections and adds richer developer UX:
+Country Hub Template V3 includes all V1 and V2 sections and adds a richer Developer Country Intelligence Portal model:
 
 - Hero with flag, country name, developer-focused description, status badge, and quick summary.
 - Rich Country Statistics.
+- Country visual identity placeholders.
+- Official brand/logo placeholder support.
 - Developer Quick Actions.
+- Developer Country Profile.
 - Developer Cheat Sheet.
+- Localization Examples.
+- Address Example.
+- Phone Number Examples.
 - Local Formats.
+- Developer Integration Checklist.
+- Validation Rules.
+- Common Integration Mistakes.
 - Payments & Banking.
+- Banking Overview.
 - Government & Official Resources.
 - Available Workbenches.
 - Planned Workbenches.
@@ -46,7 +56,10 @@ Country Hub Template V2 includes all V1 sections and adds richer developer UX:
 - Discovery Links.
 - Things Developers Should Know.
 - Developer Notes.
-- Developer Examples.
+- Developer API Examples.
+- JSON Examples.
+- Localization Notes.
+- Country Ecosystem.
 - Disabled layout-safe ad slot regions for future sponsorship or advertising.
 
 ## Data Model
@@ -60,11 +73,20 @@ Recommended country data shape:
 - `badge`
 - `description`
 - `metadata`
+- `visualIdentity`
 - `stats`
+- `countryProfile`
 - `quickActions`
 - `cheatSheet`
+- `localizationExamples`
+- `addressExample`
+- `phoneExamples`
 - `localFormats`
+- `integrationChecklist`
+- `validationRules`
+- `commonMistakes`
 - `payments`
+- `bankingOverview`
 - `officialResources`
 - `availableWorkbenches`
 - `plannedWorkbenches`
@@ -74,12 +96,26 @@ Recommended country data shape:
 - `highlights`
 - `developerNotes`
 - `developerExamples`
+- `jsonExamples`
+- `localizationNotes`
+- `ecosystem`
 
 Do not add unsupported YAML fields to ValidoHub content. If the data model must move into Engine-generated static HTML later, use a generic architecture change or approved ACR.
 
+## Visual Identity And Brand Placeholders
+
+Country Hub V3 supports reusable visual placeholders for:
+
+- Country shape / outline.
+- Small country location map panel.
+- Continent badge.
+- Official brand or logo placeholders for systems such as PIX, Banco Central do Brasil, Gov.br, Correios, SWIFT, Visa, Mastercard, and future country-specific brands.
+
+Do not invent unofficial artwork. Use placeholders until official assets are approved.
+
 ## Copy UX
 
-Country Hub V2 supports one-click copy for important developer values:
+Country Hub V3 supports one-click copy for important developer values:
 
 - Locale.
 - ISO2.
@@ -101,7 +137,7 @@ Quick actions should hide when a value is unavailable. Copy behavior lives in Va
 
 ## Status System
 
-Country Hub V2 uses reusable status chips:
+Country Hub V3 uses reusable status chips:
 
 - Ready.
 - Available.
@@ -114,22 +150,30 @@ These statuses are UI components for country hubs and future product surfaces. T
 
 ## Brazil Reference
 
-Brazil V2 covers:
+Brazil V3 covers:
 
 - Population, capital, largest city, continent, language, currency, calling code, TLD, driving side, ISO codes, locale, date/time, separators, address format, postal code format, and time zones.
+- Developer Country Profile for area, measurement system, paper size, plug types, voltage, frequency, emergency number, week starts, RTL support, Unicode locale, ICU locale, CLDR locale, and metric/imperial context.
+- Localization examples for date, time, currency, decimal, percentage, phone, postal code, address, and person name.
+- Address and phone examples with field-level explanations.
+- Developer Integration Checklist.
+- Validation Rules summaries for CPF, CNPJ, CEP, phone, PIX, and bank code.
+- Common Integration Mistakes.
 - CPF, CNPJ, CEP, PIX, RG, CNH, RENAVAM, Brazilian phone numbers, and Brazil banking notes.
-- PIX, bank code, currency, payment identifier, QR payment, and SWIFT/BIC notes.
+- PIX, TED, DOC, Boleto, SWIFT, bank code, currency, payment identifier, QR payment, and IBAN notes.
 - Label-only official resource references for Banco Central do Brasil, Receita Federal, Correios, Gov.br, and PIX documentation.
 - Existing Brazil-related generated page: Brazil Pix Validator, clearly labeled as a content scaffold rather than a working validator.
 - Planned workbenches: PIX Workbench, CPF Validator, CNPJ Validator, CEP Lookup, Brazil Phone Validator, and Brazil Banking Tools.
-- Related categories, related global tools, and future country hub placeholders without broken links.
-- Developer examples for Java Locale, JavaScript Intl, JavaScript Date, Python locale, ICU locale, SQL/PostgreSQL formatting, currency formatting, and date formatting.
+- Related categories, related global tools, and expanded future country hub placeholders without broken links.
+- Developer API examples for Java, JavaScript, TypeScript, Python, Go, C#, Kotlin, PostgreSQL, text notes, and JSON payload examples.
+- Localization Notes for plural rules, week start, calendar, sorting, Unicode, ICU, and locale naming.
+- Country Ecosystem relationship cards connecting PIX, CPF, CNPJ, CEP, phone, banks, government, and payments.
 
 This does not implement PIX, CPF, CNPJ, CEP, phone, or banking validation.
 
 ## Search And Discovery Preparation
 
-Country Hub V2 adds semantic `data-country-tags` attributes to cards for future filtering/search.
+Country Hub V3 continues to add semantic `data-country-tags` attributes to cards for future filtering/search.
 
 Current tag families include:
 
@@ -149,7 +193,7 @@ Current tag families include:
 
 ## SEO Strategy
 
-Current V2 is a product-side enhancement over the Engine-generated country hub. The fallback HTML remains a valid country page with canonical route and existing Engine SEO.
+Current V3 is a product-side enhancement over the Engine-generated country hub. The fallback HTML remains a valid country page with canonical route and existing Engine SEO.
 
 Future generic Engine work may be needed if rich country intelligence content must be fully rendered at build time for SEO. That change must stay country-agnostic and must not add Brazil-specific Engine logic.
 
@@ -161,7 +205,7 @@ Do not translate country slugs.
 
 ## Ad Slot Strategy
 
-V1 includes disabled, hidden ad slot regions in the rendered hub. They are layout-safe hooks for future sponsorship or ads and do not render visible ad UI.
+The rendered hub includes disabled, hidden ad slot regions. They are layout-safe hooks for future sponsorship or ads and do not render visible ad UI.
 
 Future ad placement must not interrupt the main country intelligence flow.
 

@@ -42,16 +42,25 @@ Route rules:
 
 The Countries navigation is ValidoHub-owned product behavior in `assets/js/countries.js`. It groups generated country hub links under a scalable Countries menu without hardcoding country names or changing Engine templates.
 
-Brazil now uses Country Hub Template V2 as the reference Country Intelligence Hub. The rich hub is rendered by `assets/js/countries.js` from a generic country metadata structure and keeps the Engine-generated country page as fallback HTML.
+Brazil now uses Country Hub Template V3 as the reference Developer Country Intelligence Portal. The rich hub is rendered by `assets/js/countries.js` from a generic country metadata structure and keeps the Engine-generated country page as fallback HTML.
 
-Country Hub Template V2 includes:
+Country Hub Template V3 includes:
 
 - Hero and quick summary.
+- Country visual identity placeholders.
 - Rich Country Statistics.
 - Developer Quick Actions.
+- Developer Country Profile.
 - Developer Cheat Sheet.
+- Localization Examples.
+- Address Example.
+- Phone Number Examples.
 - Local Formats.
+- Developer Integration Checklist.
+- Validation Rules.
+- Common Integration Mistakes.
 - Payments & Banking.
+- Banking Overview.
 - Government & Official Resources.
 - Available Workbenches.
 - Planned Workbenches.
@@ -59,9 +68,13 @@ Country Hub Template V2 includes:
 - Discovery Links.
 - Things Developers Should Know.
 - Developer Notes.
-- Developer Examples with copyable snippets.
+- Developer API Examples with copyable snippets.
+- JSON Examples.
+- Localization Notes.
+- Country Ecosystem.
 - Copy buttons for important code/value fields.
 - Reusable status chips.
+- Official brand/logo placeholder support.
 - Semantic discovery tags for future filtering/search.
 - Hidden future ad-slot regions.
 
