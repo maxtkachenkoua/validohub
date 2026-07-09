@@ -152,8 +152,11 @@ This is a product platform section, not a browser workbench plugin.
   - Locale-first country workbench routes.
   - Product-owned Countries navigation grouping.
   - Country Hub Template V3 renderer for Brazil.
+  - Country Hub Design Guide as the permanent reusable design standard.
+  - Country Hub AI Guide for future AI implementation discipline.
   - Structured country metadata model.
   - Country visual identity and official brand placeholder support.
+  - Global brand asset policy for official logos, monochrome logo preference, and semantic icon fallback.
   - Rich Country Statistics.
   - Developer Quick Actions.
   - Developer Country Profile.
@@ -175,4 +178,4 @@ This is a product platform section, not a browser workbench plugin.
   - Country tool category grouping.
   - Tags, display order, and icons through approved generic metadata.
   - Country-specific validator specs before any implementation.
-- Current quality status: Brazil is the reference Country Intelligence Portal V3; country-specific validators remain future work.
+- Current quality status: Brazil is the reference Country Intelligence Portal V3 and design-system standard; country-specific validators remain future work.

@@ -18,6 +18,13 @@ Read in this order before implementation:
 6. `docs/ai/AI_DEVELOPMENT_PROTOCOL.md`
 7. The corresponding `docs/product/*_SPEC.md` for the workbench or area being changed
 
+For Country Hub work, also read:
+
+- `docs/ai/COUNTRY_HUB_AI_GUIDE.md`
+- `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md`
+- `docs/product/COUNTRIES_ARCHITECTURE.md`
+- `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`
+
 If the task may affect architecture, also read:
 
 8. `docs/ai/ARCHITECTURE_GUARDRAILS.md`

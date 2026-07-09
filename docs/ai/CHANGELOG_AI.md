@@ -224,3 +224,23 @@ Impact:
 - Valido Engine remains untouched.
 - No PIX, CPF, CNPJ, CEP, phone, banking validator, new workbench, or new country was implemented.
 - Future countries should add approved SVG assets and registry entries rather than custom rendering branches.
+
+## Country Hub Design Standard
+
+Changed:
+
+- Added `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md` as the canonical Country Hub design reference.
+- Added `docs/ai/COUNTRY_HUB_AI_GUIDE.md` as the implementation guide for future AI sessions.
+- Documented Brazil as the permanent golden reference for future country hubs.
+- Documented mandatory Country Hub sections, card anatomy, badge system, icon policy, logo policy, global brand asset policy, monochrome brand preference, copywriting style, localization strategy, responsive expectations, accessibility expectations, and visual QA checklist.
+- Updated current state, development rules, country architecture, country template spec, workbench registry, and AI startup guidance to reference the new guides.
+
+Reason:
+
+Future country hubs need to inherit one reusable product standard instead of drifting into separate layouts and inconsistent visual systems.
+
+Impact:
+
+- This is documentation and design-system standardization only.
+- Valido Engine remains untouched.
+- No new country-specific functionality, validator, workbench, country, route, YAML field, JavaScript behavior, CSS behavior, or generated output was added.

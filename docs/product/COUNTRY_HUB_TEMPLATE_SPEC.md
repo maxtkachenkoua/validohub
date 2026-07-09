@@ -4,6 +4,8 @@ Country hubs are Developer Intelligence pages for country-specific implementatio
 
 Brazil is the reference implementation for Country Hub Template V3 and Country Hub Visual Identity V2.
 
+The permanent visual and content standard is `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md`. Future AI assistants must also read `docs/ai/COUNTRY_HUB_AI_GUIDE.md`.
+
 ## Purpose
 
 A country hub helps developers quickly understand local identifiers, payment systems, banking formats, locale conventions, government systems, phone and address formats, currencies, time zones, and official references.
@@ -61,6 +63,33 @@ Country Hub Template V3 includes all V1 and V2 sections and adds a richer Develo
 - Localization Notes.
 - Country Ecosystem.
 - Disabled layout-safe ad slot regions for future sponsorship or advertising.
+
+The mature Country Hub section set is mandatory for future complete hubs:
+
+- Hero.
+- Developer Cheat Sheet.
+- Developer Country Profile.
+- Localization Examples.
+- Address Example.
+- Phone Examples.
+- Validation Rules.
+- Developer Notes.
+- Implementation Notes.
+- Common Integration Mistakes.
+- Developer Checklist.
+- Payments & Banking.
+- Government Systems.
+- Official Resources.
+- Available Workbenches.
+- Planned Workbenches.
+- Related Global Tools.
+- API Snippets.
+- JSON Examples.
+- Developer Tips.
+- Future Discovery Links.
+- Future Ad Slots.
+
+If a future country lacks data for a section, omit the empty UI rather than creating fake content. Preserve the model and fill it when data exists.
 
 ## Data Model
 
@@ -151,6 +180,23 @@ Country Hub V3 supports one-click copy for important developer values:
 
 Quick actions should hide when a value is unavailable. Copy behavior lives in ValidoHub assets only.
 
+## Card Design Standard
+
+Country Hub cards share one anatomy:
+
+- Header.
+- Logo or icon.
+- Title.
+- Badge.
+- Body.
+- Short description.
+- Optional footer.
+- Optional related tool.
+- Optional external docs.
+- Optional status.
+
+Do not introduce inconsistent one-off card layouts. New card variants must remain compatible with the same visual rhythm.
+
 ## Status System
 
 Country Hub V3 uses reusable status chips:
@@ -161,8 +207,26 @@ Country Hub V3 uses reusable status chips:
 - Planned.
 - Experimental.
 - Deprecated.
+- Global.
+- Country.
+- Developer.
+- Beta.
 
 These statuses are UI components for country hubs and future product surfaces. They do not imply a validator exists unless the corresponding workbench is implemented.
+
+Badges should be compact, pill-shaped, aligned with card headers, and consistent in height, padding, radius, typography, and spacing.
+
+## Icon And Brand System
+
+Use one cohesive icon language.
+
+New production UI should avoid emoji icons. Existing emoji-based country UI may remain until a deliberate visual-system pass replaces it.
+
+Use official visual identity whenever a legally usable organization, payment system, company, technology, framework, protocol, language, database, operating system, standard, API, or ecosystem mark exists.
+
+Prefer monochrome SVG logos for supporting brand references in documentation-grade UI. Use full-color branding only when intentional or required by brand guidelines.
+
+Use semantic icons for non-branded concepts such as CPF, CNPJ, CEP, Regex, JSON, Base64, URL, Unicode, Locale, Calendar, and ICU.
 
 ## Brazil Reference
 
@@ -232,3 +296,5 @@ Future ad placement must not interrupt the main country intelligence flow.
 Future country hubs should reuse the same model and sections for Poland, Spain, Germany, Austria, France, United Kingdom, Italy, Portugal, Netherlands, Belgium, United States, Canada, and Australia.
 
 Adding country-specific validators requires separate product specs before implementation.
+
+Brazil is the reference implementation. Spain must not invent a different layout. Germany must not invent a different layout. Japan must not invent a different layout. Every country inherits the same design language; only metadata and local content change.

@@ -1,0 +1,367 @@
+# Country Hub Design Guide
+
+This is the canonical design reference for ValidoHub Country Hubs.
+
+Brazil is the golden reference implementation. Future country hubs must inherit the same structure, visual language, section order, and interaction principles. Do not invent a different layout for Spain, Poland, Germany, France, Japan, or any other country.
+
+## Page Philosophy
+
+Country Hubs are Developer Intelligence pages.
+
+They help developers understand local identifiers, payment systems, banking formats, address rules, phone rules, locale conventions, government systems, official references, and available country-specific workbenches.
+
+They are not validator pages by themselves. They can point to validators and workbenches, but they must not imply that a country-specific validator exists until it is implemented.
+
+The page must feel useful before every local tool exists.
+
+## Visual Hierarchy
+
+Use the Brazil hub as the hierarchy standard:
+
+1. Hero and country identity.
+2. Quick facts and visual geography.
+3. Copy-ready developer constants.
+4. Implementation profile.
+5. Local formats and examples.
+6. Validation guidance and common mistakes.
+7. Payments, banking, government, and official resources.
+8. Available and planned workbenches.
+9. Developer snippets and JSON examples.
+10. Discovery, tips, ecosystem notes, and hidden future ad slots.
+
+Do not move documentation above the developer utility sections. Country Hubs are product surfaces, not essays.
+
+## Mandatory Sections
+
+Every mature Country Hub should contain:
+
+- Hero.
+- Developer Cheat Sheet.
+- Developer Country Profile.
+- Localization Examples.
+- Address Example.
+- Phone Examples.
+- Validation Rules.
+- Developer Notes.
+- Implementation Notes.
+- Common Integration Mistakes.
+- Developer Checklist.
+- Payments & Banking.
+- Government Systems.
+- Official Resources.
+- Available Workbenches.
+- Planned Workbenches.
+- Related Global Tools.
+- API Snippets.
+- JSON Examples.
+- Developer Tips.
+- Future Discovery Links.
+- Future Ad Slots.
+
+If a country lacks data for a section, keep the section structure available in the model and omit empty UI rather than showing fake content.
+
+## Reusable Sections
+
+Sections must be generic.
+
+A future country should provide data, not custom rendering. New sections should improve every country, not only Brazil. If a new section is genuinely reusable, update Brazil first, document the section here, then reuse it for future countries.
+
+Country-specific validators, parsers, lookups, and workbenches require their own product specs before implementation.
+
+## Card Anatomy
+
+Every Country Hub card should follow one shared anatomy:
+
+- Header.
+- Logo or icon.
+- Title.
+- Badge.
+- Body.
+- Short description.
+- Optional footer.
+- Optional related tool.
+- Optional external docs.
+- Optional status.
+
+Avoid one-off card layouts. Cards should look like members of the same system even when they represent identifiers, payments, government systems, localization examples, snippets, or future tools.
+
+Cards should be scan-friendly. A developer should understand the category, status, and purpose within a few seconds.
+
+## Spacing Rules
+
+Use calm, consistent spacing:
+
+- Page sections should breathe.
+- Cards should use consistent internal padding.
+- Grid gaps should remain regular across sections.
+- Related badges and chips should sit close to the content they describe.
+- Avoid dense walls of text.
+- Avoid oversized graphics that push useful developer data below the fold.
+
+Mobile spacing should be tighter but never cramped.
+
+## Typography
+
+Typography should feel like a premium documentation portal:
+
+- Headings are clear and compact.
+- Body copy is direct and technical.
+- Labels use small, strong type.
+- Codes and constants use monospace.
+- Long identifiers must wrap safely.
+- Avoid decorative type treatments.
+
+Do not scale typography with viewport width.
+
+## Badge System
+
+Use one global badge system.
+
+Statuses:
+
+- Available.
+- Ready.
+- Coming Soon.
+- Planned.
+- Experimental.
+- Deprecated.
+
+Context badges:
+
+- Global.
+- Country.
+- Developer.
+- Beta.
+
+Badge style:
+
+- Compact inline-flex shape.
+- Pill radius.
+- Small padding.
+- Medium-heavy font weight.
+- Single-line when possible.
+- Consistent height across cards.
+- Clear color semantics.
+
+Badges must not imply working validators or production tools unless the implementation exists.
+
+## Icon Policy
+
+Use one cohesive icon language.
+
+Production UI should avoid emoji as icons. Existing emoji-based country UI is legacy-compatible until replaced by a deliberate visual-system pass, but future work should use consistent SVG icons or approved brand marks.
+
+Do not mix random icon libraries. If an icon family is adopted, use it consistently.
+
+Use semantic icons for concepts that do not have official visual identities, such as:
+
+- CPF.
+- CNPJ.
+- CEP.
+- Regex.
+- JSON.
+- Base64.
+- URL.
+- Unicode.
+- Locale.
+- Calendar.
+- ICU.
+
+## Global Brand Asset Policy
+
+This policy applies to UI, Markdown, documentation, navigation, cards, Country Hubs, workbenches, future pages, and generated pages.
+
+Whenever an organization, payment system, company, technology, framework, protocol, language, database, operating system, standard, API, or ecosystem has an official visual identity, use it.
+
+Never replace famous brands with generic icons.
+
+Priority:
+
+1. Official SVG or logo.
+2. Carefully recreated vector version only when appropriate and legally safe.
+3. Generic semantic icon only when no official branding exists or when licensing prevents use.
+
+Examples that should use official visual identity when legally usable:
+
+- PIX.
+- Java.
+- Python.
+- Go.
+- Kotlin.
+- C#.
+- .NET.
+- Node.js.
+- React.
+- Next.js.
+- TypeScript.
+- JavaScript.
+- Docker.
+- Kubernetes.
+- PostgreSQL.
+- MySQL.
+- MongoDB.
+- Redis.
+- JWT.
+- Stripe.
+- Visa.
+- Mastercard.
+- American Express.
+- SWIFT.
+- SEPA.
+- IBAN.
+- Banco Central do Brasil.
+- Receita Federal.
+- gov.br.
+- GitHub.
+- OpenAPI.
+- GraphQL.
+
+Do not redraw official logos from memory. Do not bundle unclear trademark assets without documenting the licensing decision.
+
+## Monochrome Brand System
+
+Prefer tasteful monochrome SVG logos for a premium documentation appearance.
+
+Use monochrome branding when:
+
+- The page contains many logos.
+- The brand is supporting context, not the primary subject.
+- Full-color logos would create visual noise.
+- The card grid should feel calm and documentation-grade.
+
+Use full-color branding intentionally when:
+
+- The official brand guidelines require it.
+- Color carries important recognition.
+- The logo is the primary subject of a page or workbench.
+
+Monochrome logos must still be recognizable and must not violate brand usage rules.
+
+## Logo Policy
+
+Official logos belong in ValidoHub assets only when usage rights are clear enough for the product repository.
+
+If licensing, trademark, or usage rights are unclear:
+
+- Keep a text brand badge.
+- Document the limitation.
+- Do not create an unofficial imitation.
+
+Logo sizing:
+
+- Keep logos small and supporting.
+- Do not let logos dominate country cards.
+- Align logos with titles and badges.
+- Preserve aspect ratio.
+
+## Country Visual System
+
+Every mature Country Hub should include:
+
+- Flag.
+- Country outline.
+- Miniature world map highlighting the country.
+- Continent badge.
+- Country name.
+- Status.
+- Quick facts.
+
+Country outlines should be real SVG geography when legally usable data exists. The current Brazil SVGs are generated from Natural Earth geometry and are the reference.
+
+Future countries should add approved SVG assets and registry entries. They should not add country-specific renderer branches.
+
+## Responsive Behavior
+
+Country Hubs must work cleanly on:
+
+- Mobile.
+- Tablet.
+- Desktop.
+
+Rules:
+
+- No horizontal scrolling.
+- Card grids collapse predictably.
+- Copy controls remain reachable.
+- Badges wrap cleanly.
+- Maps and outlines shrink without cropping.
+- Code snippets wrap or scroll within their own code block, never the page.
+- No right sidebar.
+
+## Accessibility Expectations
+
+Country Hubs must be accessible by default:
+
+- Real images need meaningful `alt` text.
+- Decorative icons should be hidden from assistive tech when appropriate.
+- Buttons must have clear labels.
+- Copy feedback should be announced.
+- Color must not be the only status signal.
+- Keyboard users must be able to reach copy actions.
+- Text must remain readable at mobile widths.
+
+## Copywriting Style
+
+Write like a practical developer reference.
+
+Sentences should be:
+
+- Short.
+- Technical.
+- Direct.
+- Active voice.
+
+Avoid:
+
+- Marketing language.
+- Hype.
+- Empty adjectives.
+- Long paragraphs.
+- Claims that imply tools exist before they are implemented.
+
+Use concrete developer language: format, normalize, preserve, validate, parse, display, store, compare, copy.
+
+## Localization Strategy
+
+Routes are stable and not localized.
+
+Human-facing labels and copy may localize later. Country facts should be structured enough to support future localization without changing the layout.
+
+Locale remains the first URL segment.
+
+Do not translate country slugs.
+
+## Future Scalability
+
+The design must scale to many countries.
+
+Brazil defines the standard. Spain, Poland, Germany, France, Japan, and every future country inherit the same layout and design language.
+
+Only metadata and local content should change.
+
+Architecture remains generic.
+
+## Polish Pass Checklist
+
+Every future Country Hub should be reviewed for:
+
+- Spacing.
+- Padding.
+- Margins.
+- Card heights.
+- Logo sizing.
+- Badge alignment.
+- Typography.
+- Responsive layout.
+- Mobile.
+- Tablet.
+- Desktop.
+- Copy consistency.
+- Visual hierarchy.
+- Empty states.
+- Future scalability.
+- No horizontal overflow.
+- No console errors.
+- Generated output not committed.
+
+Do this review from the generated site root, not from source files.

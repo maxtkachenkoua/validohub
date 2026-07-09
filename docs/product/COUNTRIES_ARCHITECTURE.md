@@ -90,6 +90,8 @@ Current MVP hubs are generated from `countries/` plus related country tools. Mor
 
 Brazil is the reference implementation for Country Hub Template V3 and Country Hub Visual Identity V2. See `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`.
 
+The permanent Country Hub design standard lives in `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md`. Future AI sessions must also read `docs/ai/COUNTRY_HUB_AI_GUIDE.md` before country hub work.
+
 Country Hub V3 keeps country-specific facts in product-owned country metadata and uses generic rendering logic for sections, visual identity assets, official brand placeholders, cards, status chips, copy controls, semantic discovery tags, snippets, ecosystem diagrams, and hidden future ad slots.
 
 Country Hub Visual Identity V2 keeps geographic visuals in ValidoHub-owned assets:
@@ -102,6 +104,13 @@ Country Hub Visual Identity V2 keeps geographic visuals in ValidoHub-owned asset
 Use real public-domain, official, permissively licensed, or otherwise legally usable assets whenever available. Use placeholders only when an appropriate asset genuinely cannot be bundled.
 
 Official logos and wordmarks must not be redrawn. Add official logo assets only when usage rights are clear enough for the product repository; otherwise keep the text brand badge and document the licensing limitation.
+
+The global brand policy applies to Country Hubs, workbenches, Markdown, docs, navigation, generated pages, and future product surfaces:
+
+- Use official SVG/logo assets when legally usable.
+- Prefer monochrome brand marks for premium documentation UI.
+- Use semantic icons only when no official brand identity exists.
+- Avoid emoji icons in new production UI.
 
 ## Navigation
 
@@ -129,6 +138,8 @@ The product should be ready to add:
 - Australia
 
 Adding a country should not require Engine code changes unless a genuinely generic platform capability is missing.
+
+Future countries must inherit the Brazil layout and design language. Spain, Poland, Germany, France, Japan, and every future country should change metadata and local content, not the page architecture.
 
 ## Explicit Non-Goals For This Phase
 

@@ -44,6 +44,8 @@ The Countries navigation is ValidoHub-owned product behavior in `assets/js/count
 
 Brazil now uses Country Hub Template V3 as the reference Developer Country Intelligence Portal. It also uses Country Hub Visual Identity V2 for real SVG geography. The rich hub is rendered by `assets/js/countries.js` from a generic country metadata structure and keeps the Engine-generated country page as fallback HTML.
 
+Brazil is also the canonical Country Hub design reference. Future country hubs must read `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md` and `docs/ai/COUNTRY_HUB_AI_GUIDE.md` before implementation. Spain, Poland, Germany, France, Japan, and all future countries inherit the Brazil structure and design language; only metadata and local content should change.
+
 Country Hub Template V3 includes:
 
 - Hero and quick summary.
@@ -81,6 +83,15 @@ Country Hub Template V3 includes:
 This does not implement PIX, CPF, CNPJ, CEP, phone, or banking validators.
 
 Advanced metadata such as tags, featured status, display order, and icon remain future architecture requirements unless the Engine DSL explicitly supports them.
+
+Permanent Country Hub rules:
+
+- Brazil is the reference implementation.
+- Country Hub improvements must be reusable.
+- New country hubs must not invent different layouts.
+- Official and famous brand identities should use legally usable official SVG/logo assets where possible.
+- Monochrome SVG logos are preferred for a calm documentation-grade appearance.
+- Semantic icons are for non-branded concepts such as CPF, CNPJ, CEP, Regex, JSON, Base64, URL, Unicode, Locale, Calendar, and ICU.
 
 ## Generated Site Root
 

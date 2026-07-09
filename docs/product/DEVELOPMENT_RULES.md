@@ -16,6 +16,7 @@ These rules are mandatory for future ValidoHub work.
 
 - Before implementing any new workbench, read the Product Bible in `docs/product/`.
 - Before changing an existing workbench, read that workbench's spec first.
+- Before changing a Country Hub, read `docs/ai/COUNTRY_HUB_AI_GUIDE.md`, `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md`, `docs/product/COUNTRIES_ARCHITECTURE.md`, and `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`.
 - Every new workbench must have a product spec in `docs/product/` before implementation.
 - Every completed workbench change must update its spec.
 - Every completed workbench change must update `docs/product/WORKBENCH_REGISTRY.md` when capabilities, status, or source files change.
@@ -31,6 +32,17 @@ These rules are mandatory for future ValidoHub work.
 - Preserve production quality.
 - Tool pages are tool first, docs second.
 - Documentation belongs below the interactive tool.
+- Country Hubs must inherit the Brazil reference design unless the user explicitly approves a reusable architecture update.
+- Do not invent a different Country Hub layout for each country.
+
+## Brand And Icon Rules
+
+- Use official visual identity when an organization, payment system, company, technology, framework, protocol, language, database, operating system, standard, API, or ecosystem has one and the asset can be legally used.
+- Prefer tasteful monochrome SVG logos for documentation-grade UI.
+- Use generic semantic icons only when no official branding exists or licensing prevents use.
+- Do not redraw official logos from memory.
+- Do not replace famous brands with generic icons.
+- Avoid emoji icons in new production UI. Existing legacy emoji can remain until a deliberate visual-system pass replaces it.
 
 ## Architecture Boundary
 
