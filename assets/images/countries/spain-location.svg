@@ -1,16 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="30.767 241.591 784.077 458.627" role="img" aria-labelledby="title desc">
-  <title id="title">World map</title>
-  <desc id="desc">Web-optimized real-geography world map based on Natural Earth data.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="320 330 200 150" role="img" aria-labelledby="title desc">
+  <title id="title">Location Map</title>
+  <desc id="desc">Web-optimized real-geography location map focused and highlighted.</desc>
   <style>
     path {
       fill: #cbd5e1;
       stroke: #ffffff;
       stroke-width: 0.6;
       stroke-linejoin: round;
-      transition: fill 150ms ease;
     }
-    path:hover {
-      fill: #94a3b8;
+    #es path, path#es {
+      fill: #b91c1c;
+      stroke: #991b1b;
+      stroke-width: 0.8;
     }
   </style>
   <g>

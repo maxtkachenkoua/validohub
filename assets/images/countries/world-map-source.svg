@@ -1,19 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="30.767 241.591 784.077 458.627" role="img" aria-labelledby="title desc">
-  <title id="title">World map</title>
-  <desc id="desc">Web-optimized real-geography world map based on Natural Earth data.</desc>
-  <style>
-    path {
-      fill: #cbd5e1;
-      stroke: #ffffff;
-      stroke-width: 0.6;
-      stroke-linejoin: round;
-      transition: fill 150ms ease;
-    }
-    path:hover {
-      fill: #94a3b8;
-    }
-  </style>
-  <g>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     x="0px"
+     y="0px"
+     width="784.077px"
+     height="458.627px"
+     viewBox="30.767 241.591 784.077 458.627"
+     id="world-map">
+<title>Simple World Map</title>
+<desc>
+    Author: Al MacDonald
+    Editor: Fritz Lekschas
+    License: CC BY-SA 3.0
+    ID: ISO 3166-1 or "_[a-zA-Z]" if an ISO code is not available
+</desc>
+<g>
     <path id="_somaliland" d="M512.674,502.797l3.526,2.403l1.046-0.052l8.757-3.008l0.994,3.206l-0.701,2.706l-1.893,1.503l-4.729-0.302l-6.769-4.158L512.674,502.797L512.674,502.797z"/>
     <path id="ae" d="M528.466,468.135l0.753,3.008l8.522,0.752l0.596-6.172l1.644-0.897l0.448-2.257l-2.688,0.753l-2.99,4.521L528.466,468.135L528.466,468.135z"/>
     <path id="af" d="M545.85,435.383l1.374,10.771l3.423,0.752l0.32,1.937l-2.455,2.049l4.573,3.691l8.885-3.198l0.709-3.786l5.593-3.491l2.145-8.091l1.599-1.722l-1.659-2.887l5.412-3.347l-0.691-0.968l-2.498,0.155l-0.226,2.299l-3.354-0.033l-0.062-3.068l-1.079-1.288l-1.815,1.649l0.052,1.515l-2.739,1.036l-5.059-0.319l-6.568,6.881L545.85,435.383L545.85,435.383z"/>
@@ -403,5 +406,4 @@
     <path id="zm" d="M459.78,571.656l2.739,3.802l4.244,0.261l1.504,0.829l4.443,0.053l3.829-5.367l10.702-4.789l0.934-4.219l-1.244-6.043l-5.584-3.181l-3.727,0.26l-1.857,4.114l0.053,1.876l4.391,2.136l0.26,4.642l-3.775,0.208l-0.935-1.564l-10.495-4.479l-0.311,3.44l-4.962,0.155L459.78,571.656L459.78,571.656z"/>
     <path id="zw" d="M468.52,578.226l7.755,8.757l5.946,1.513l3.984-6.248l-0.312-8.281l-6.465-3.337l-2.431,1.098l-3.62,5.524l-5.014-0.053L468.52,578.226L468.52,578.226z"/>
 </g>
-
 </svg>

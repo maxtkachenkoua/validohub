@@ -19,17 +19,17 @@
     brazil: {
       outlineSrc: '/assets/images/countries/brazil-outline.svg',
       outlineAlt: 'Brazil country outline',
-      mapSrc: SHARED_WORLD_MAP_SRC,
+      mapSrc: '/assets/images/countries/brazil-location.svg',
       mapAlt: 'World map with Brazil location marker',
-      mapMarker: { x: 35, y: 59, label: 'Brazil' },
+      mapMarker: { x: 49, y: 52, label: 'Brazil' },
       source: 'Natural Earth geometry'
     },
     spain: {
       outlineSrc: '/assets/images/countries/spain-outline.svg',
       outlineAlt: 'Spain country outline',
-      mapSrc: SHARED_WORLD_MAP_SRC,
+      mapSrc: '/assets/images/countries/spain-location.svg',
       mapAlt: 'World map with Spain location marker',
-      mapMarker: { x: 50, y: 39, label: 'Spain' },
+      mapMarker: { x: 41, y: 63, label: 'Spain' },
       source: 'Simplified public-domain geographic reference'
     }
   };
@@ -939,7 +939,7 @@
       availableWorkbenches: ['Brazil Pix Validator'],
       plannedWorkbenches: COUNTRY_HUBS.brazil.plannedWorkbenches.map((item) => item.name),
       completion: 100,
-      coordinates: { x: 35, y: 59 }
+      coordinates: { x: 39, y: 67 }
     },
     {
       id: 'poland',
@@ -982,7 +982,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: COUNTRY_HUBS.spain.plannedWorkbenches.map((item) => item.name),
       completion: 68,
-      coordinates: { x: 50, y: 39 }
+      coordinates: { x: 49, y: 41 }
     },
     {
       id: 'germany',
@@ -1003,7 +1003,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['German VAT ID Notes', 'IBAN Context'],
       completion: 20,
-      coordinates: { x: 50, y: 38 }
+      coordinates: { x: 50, y: 35 }
     },
     {
       id: 'france',
@@ -1024,7 +1024,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['SIREN Validator', 'SIRET Validator'],
       completion: 20,
-      coordinates: { x: 48, y: 39 }
+      coordinates: { x: 49, y: 38 }
     },
     {
       id: 'austria',
@@ -1045,7 +1045,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['Austrian VAT ID Notes'],
       completion: 20,
-      coordinates: { x: 51, y: 40 }
+      coordinates: { x: 51, y: 37 }
     },
     {
       id: 'japan',
@@ -1066,7 +1066,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['Japanese Address Notes', 'Japan Postal Code Notes'],
       completion: 20,
-      coordinates: { x: 82, y: 43 }
+      coordinates: { x: 71, y: 37 }
     },
     {
       id: 'united-kingdom',
@@ -1087,7 +1087,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['UK Postcode Notes', 'NINO Validator'],
       completion: 20,
-      coordinates: { x: 47, y: 35 }
+      coordinates: { x: 48, y: 33 }
     },
     {
       id: 'united-states',
@@ -1108,7 +1108,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['ZIP Notes', 'Routing Number Notes'],
       completion: 20,
-      coordinates: { x: 24, y: 45 }
+      coordinates: { x: 30, y: 27 }
     },
     {
       id: 'canada',
@@ -1129,7 +1129,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['Canadian Postal Code Notes'],
       completion: 20,
-      coordinates: { x: 23, y: 34 }
+      coordinates: { x: 35, y: 16 }
     },
     {
       id: 'mexico',
@@ -1150,7 +1150,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['RFC Validator', 'CURP Validator', 'CLABE Notes'],
       completion: 20,
-      coordinates: { x: 20, y: 56 }
+      coordinates: { x: 32, y: 48 }
     },
     {
       id: 'argentina',
@@ -1171,7 +1171,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['CUIT Validator', 'CBU Notes'],
       completion: 20,
-      coordinates: { x: 41, y: 82 }
+      coordinates: { x: 39, y: 83 }
     },
     {
       id: 'chile',
@@ -1192,7 +1192,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['RUT Validator'],
       completion: 20,
-      coordinates: { x: 39, y: 80 }
+      coordinates: { x: 38, y: 86 }
     },
     {
       id: 'italy',
@@ -1213,7 +1213,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['Codice Fiscale Validator'],
       completion: 20,
-      coordinates: { x: 51, y: 44 }
+      coordinates: { x: 51, y: 40 }
     },
     {
       id: 'portugal',
@@ -1234,7 +1234,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['NIF Validator'],
       completion: 20,
-      coordinates: { x: 45, y: 43 }
+      coordinates: { x: 47, y: 43 }
     },
     {
       id: 'netherlands',
@@ -1255,7 +1255,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['BSN Validator', 'Dutch VAT Notes'],
       completion: 20,
-      coordinates: { x: 49, y: 37 }
+      coordinates: { x: 50, y: 34 }
     },
     {
       id: 'belgium',
@@ -1276,7 +1276,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['Belgian National Number Notes'],
       completion: 20,
-      coordinates: { x: 49, y: 38 }
+      coordinates: { x: 50, y: 35 }
     },
     {
       id: 'ukraine',
@@ -1297,7 +1297,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: ['RNOKPP Notes', 'EDRPOU Notes'],
       completion: 20,
-      coordinates: { x: 56, y: 39 }
+      coordinates: { x: 54, y: 36 }
     }
   ];
 
