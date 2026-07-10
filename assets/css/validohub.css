@@ -510,6 +510,54 @@ a {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78);
 }
 
+.brand-asset {
+  display: inline-flex;
+  max-width: 100%;
+  min-height: 30px;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 8px;
+  border: 1px solid rgba(15, 118, 110, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(37, 99, 235, 0.05)),
+    #ffffff;
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 840;
+  line-height: 1.15;
+  letter-spacing: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.brand-asset-symbol {
+  display: inline-grid;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  place-items: center;
+}
+
+.brand-asset-svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.brand-asset-label {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.brand-asset-monochrome {
+  color: var(--text);
+}
+
+.brand-asset-glyph,
+.brand-asset-semantic {
+  color: var(--accent-strong);
+}
+
 .country-metric-card strong {
   color: var(--text);
   font-size: 0.98rem;

@@ -171,6 +171,10 @@ Use semantic icons for concepts that do not have official visual identities, suc
 
 This policy applies to UI, Markdown, documentation, navigation, cards, Country Hubs, workbenches, future pages, and generated pages.
 
+The canonical project-wide architecture is `docs/product/BRAND_ASSET_SYSTEM.md`.
+
+The canonical registry is `docs/product/BRAND_REGISTRY.md`.
+
 Whenever an organization, payment system, company, technology, framework, protocol, language, database, operating system, standard, API, or ecosystem has an official visual identity, use it.
 
 Never replace famous brands with generic icons.
@@ -217,6 +221,8 @@ Examples that should use official visual identity when legally usable:
 - GraphQL.
 
 Do not redraw official logos from memory. Do not bundle unclear trademark assets without documenting the licensing decision.
+
+AI assistants must not choose logos or icons ad hoc. Check the Brand Registry first. If a brand is missing, add a Brand Registry entry and use the configured rendering mode.
 
 ## Monochrome Brand System
 

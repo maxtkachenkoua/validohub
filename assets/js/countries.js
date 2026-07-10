@@ -147,27 +147,27 @@
         { icon: '🧾', name: 'CPF', status: 'planned', category: 'Tax identifier', tags: ['identifiers', 'tax'], description: 'Individual taxpayer identifier. CPF numbers have 11 digits and checksum rules.', related: ['CPF Validator'] },
         { icon: '🏢', name: 'CNPJ', status: 'planned', category: 'Business identifier', tags: ['identifiers', 'tax'], description: 'Company taxpayer identifier. CNPJ numbers have 14 digits and checksum rules.', related: ['CNPJ Validator'] },
         { icon: '✉', name: 'CEP', status: 'planned', category: 'Postal', tags: ['postal', 'addresses'], description: 'Postal code format with 8 digits, commonly displayed as NNNNN-NNN.', related: ['CEP Lookup'] },
-        { icon: '⚡', name: 'PIX', status: 'comingSoon', category: 'Payments', tags: ['payments', 'banking'], description: 'Instant payment ecosystem. Keys can be CPF, CNPJ, email, phone, random key, or QR payload.', related: ['PIX Workbench'] },
+        { brandKey: 'pix', name: 'PIX', status: 'comingSoon', category: 'Payments', tags: ['payments', 'banking'], description: 'Instant payment ecosystem. Keys can be CPF, CNPJ, email, phone, random key, or QR payload.', related: ['PIX Workbench'] },
         { icon: '🪪', name: 'RG', status: 'planned', category: 'Identity', tags: ['identifiers', 'government'], description: 'State-issued identity document. Formats vary by issuing state.' },
         { icon: '🚗', name: 'CNH', status: 'planned', category: 'Identity', tags: ['identifiers', 'government'], description: 'Brazilian driver license identifier used in identity and mobility workflows.' },
         { icon: '🚙', name: 'RENAVAM', status: 'planned', category: 'Vehicle', tags: ['identifiers', 'government'], description: 'Vehicle registry identifier used for Brazilian vehicle records.' },
         { icon: '☎', name: 'Brazilian phone numbers', status: 'planned', category: 'Phone', tags: ['phone'], description: 'Phone numbers use country code +55, area codes, mobile prefixes, and local formatting rules.', related: ['Brazil Phone Validator'] },
-        { icon: '🏦', name: 'Brazil IBAN / banking notes', status: 'ready', category: 'Banking', tags: ['banking', 'payments'], description: 'Brazil is not an IBAN-first domestic transfer market; bank, branch, account, PIX, and SWIFT/BIC context matters.' }
+        { brandKey: 'iban', name: 'Brazil IBAN / banking notes', status: 'ready', category: 'Banking', tags: ['banking', 'payments'], description: 'Brazil is not an IBAN-first domestic transfer market; bank, branch, account, PIX, and SWIFT/BIC context matters.' }
       ],
       payments: [
-        { icon: '⚡', title: 'PIX', status: 'comingSoon', tags: ['payments', 'banking'], text: 'PIX is the central instant-payment system developers encounter in Brazilian payment flows. It can use keys or QR payloads.' },
+        { brandKey: 'pix', title: 'PIX', status: 'comingSoon', tags: ['payments', 'banking'], text: 'PIX is the central instant-payment system developers encounter in Brazilian payment flows. It can use keys or QR payloads.' },
         { icon: '🏦', title: 'Bank codes', status: 'planned', tags: ['banking'], text: 'Brazilian banking integrations often require bank code, agency/branch, account number, account type, and check digit handling.' },
         { icon: '💳', title: 'Currency', status: 'ready', tags: ['currency', 'payments'], text: 'Use BRL and display values with comma decimals and dot thousands separators for pt-BR user interfaces.' },
         { icon: '🔑', title: 'Payment identifiers', status: 'planned', tags: ['payments', 'identifiers'], text: 'CPF, CNPJ, email, phone numbers, random keys, and QR payloads can all appear in payment-related workflows.' },
         { icon: '▦', title: 'QR payments', status: 'planned', tags: ['payments'], text: 'PIX QR flows may contain static or dynamic payloads. Treat parsing and validation as separate future workbench tasks.' },
-        { icon: '🌍', title: 'SWIFT/BIC notes', status: 'ready', tags: ['banking'], text: 'International transfers may involve SWIFT/BIC details, but domestic Brazilian payment UX is usually not IBAN-first.' }
+        { brandKey: 'swift', title: 'SWIFT/BIC notes', status: 'ready', tags: ['banking'], text: 'International transfers may involve SWIFT/BIC details, but domestic Brazilian payment UX is usually not IBAN-first.' }
       ],
       officialResources: [
-        { icon: '🏦', label: 'Banco Central do Brasil', brand: 'BCB', status: 'available', tags: ['government', 'payments'], note: 'Central bank and PIX ecosystem authority. Confirm the exact documentation URL before linking deep references.' },
-        { icon: '🧾', label: 'Receita Federal', brand: 'RF', status: 'available', tags: ['government', 'tax', 'identifiers'], note: 'Federal tax authority for CPF and CNPJ context. Confirm exact service URLs before linking.' },
-        { icon: '✉', label: 'Correios', brand: 'Correios', status: 'available', tags: ['government', 'postal', 'addresses'], note: 'Postal authority for CEP-related address information. Confirm official lookup URL before linking.' },
-        { icon: '🏛', label: 'Gov.br', brand: 'gov.br', status: 'available', tags: ['government'], note: 'Brazilian government services portal. Use as a starting point for official references.' },
-        { icon: '⚡', label: 'PIX documentation', brand: 'PIX', status: 'planned', tags: ['payments', 'banking'], note: 'Use official Banco Central documentation when a future PIX Workbench spec is approved.' }
+        { brandKey: 'bancoCentralBrasil', label: 'Banco Central do Brasil', status: 'available', tags: ['government', 'payments'], note: 'Central bank and PIX ecosystem authority. Confirm the exact documentation URL before linking deep references.' },
+        { brandKey: 'receitaFederal', label: 'Receita Federal', status: 'available', tags: ['government', 'tax', 'identifiers'], note: 'Federal tax authority for CPF and CNPJ context. Confirm exact service URLs before linking.' },
+        { brandKey: 'correios', label: 'Correios', status: 'available', tags: ['government', 'postal', 'addresses'], note: 'Postal authority for CEP-related address information. Confirm official lookup URL before linking.' },
+        { brandKey: 'govbr', label: 'Gov.br', status: 'available', tags: ['government'], note: 'Brazilian government services portal. Use as a starting point for official references.' },
+        { brandKey: 'pix', label: 'PIX documentation', status: 'planned', tags: ['payments', 'banking'], note: 'Use official Banco Central documentation when a future PIX Workbench spec is approved.' }
       ],
       plannedWorkbenches: [
         { name: 'PIX Workbench', status: 'comingSoon', tags: ['payments', 'banking'], description: 'Inspect PIX keys and QR payloads after a dedicated product spec is approved.' },
@@ -179,11 +179,11 @@
       ],
       relatedGlobalTools: [
         { label: 'JSON Formatter', path: 'tools/json-formatter/', icon: '▣', tags: ['developer'] },
-        { label: 'JWT Decoder', path: 'tools/jwt-decoder/', icon: '🔐', tags: ['developer'] },
+        { label: 'JWT Decoder', path: 'tools/jwt-decoder/', brandKey: 'jwt', tags: ['developer'] },
         { label: 'Base64 Encoder', path: 'tools/base64-encoder/', icon: '⟲', tags: ['developer'] },
         { label: 'URL Encoder', path: 'tools/url-encoder/', icon: '🔗', tags: ['developer'] },
         { label: 'Regex Tester', path: 'tools/regex-tester/', icon: '.*', tags: ['developer'] },
-        { label: 'IBAN Validator', path: 'tools/iban-validator/', icon: '🏦', tags: ['banking'] }
+        { label: 'IBAN Validator', path: 'tools/iban-validator/', brandKey: 'iban', tags: ['banking'] }
       ],
       relatedCategories: [
         { label: 'Finance', path: 'categories/finance/', tags: ['payments', 'banking'] },
@@ -280,13 +280,13 @@
         'Phone numbers require area codes.'
       ],
       bankingOverview: [
-        { icon: '⚡', name: 'PIX', brand: 'PIX', status: 'comingSoon', tags: ['payments', 'banking'], description: 'Instant payment ecosystem using keys and QR payloads.' },
+        { brandKey: 'pix', name: 'PIX', status: 'comingSoon', tags: ['payments', 'banking'], description: 'Instant payment ecosystem using keys and QR payloads.' },
         { icon: '🏦', name: 'TED', status: 'planned', tags: ['payments', 'banking'], description: 'Bank transfer method historically used for same-day transfers.' },
         { icon: '🏦', name: 'DOC', status: 'planned', tags: ['payments', 'banking'], description: 'Legacy bank transfer method still useful in historical data.' },
         { icon: '📄', name: 'Boleto', status: 'planned', tags: ['payments'], description: 'Invoice-like payment slip used in Brazilian billing flows.' },
-        { icon: '🌍', name: 'SWIFT', brand: 'SWIFT', status: 'available', tags: ['banking'], description: 'Relevant for international transfers and bank identification.' },
+        { brandKey: 'swift', name: 'SWIFT', status: 'available', tags: ['banking'], description: 'Relevant for international transfers and bank identification.' },
         { icon: '🏷', name: 'Bank Codes', status: 'planned', tags: ['banking'], description: 'Domestic bank identifiers often appear with branch and account data.' },
-        { icon: '🌐', name: 'IBAN', status: 'available', tags: ['banking'], description: 'Useful globally, but Brazil is not an IBAN-first domestic transfer market.' }
+        { brandKey: 'iban', name: 'IBAN', status: 'available', tags: ['banking'], description: 'Useful globally, but Brazil is not an IBAN-first domestic transfer market.' }
       ],
       localizationNotes: [
         { name: 'Plural rules', description: 'Portuguese pluralization should use locale-aware message formatting.', tags: ['locale'] },
@@ -328,54 +328,63 @@
         {
           title: 'Java Locale',
           language: 'java',
+          brandKey: 'java',
           code: 'Locale.forLanguageTag("pt-BR")',
           note: 'Use BCP 47 locale tags for Java formatting APIs.'
         },
         {
           title: 'Java currency format',
           language: 'java',
+          brandKey: 'java',
           code: 'NumberFormat.getCurrencyInstance(Locale.forLanguageTag("pt-BR")).format(value)',
           note: 'Formats values using Brazilian Portuguese currency conventions.'
         },
         {
           title: 'JavaScript Intl Currency',
           language: 'javascript',
+          brandKey: 'javascript',
           code: 'new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" })',
           note: 'Formats BRL values with pt-BR separators and currency display.'
         },
         {
           title: 'TypeScript locale constant',
           language: 'typescript',
+          brandKey: 'typescript',
           code: "const brazilLocale = 'pt-BR' as const;",
           note: 'Keep locale constants explicit when building typed formatting helpers.'
         },
         {
           title: 'JavaScript Date',
           language: 'javascript',
+          brandKey: 'javascript',
           code: 'new Intl.DateTimeFormat("pt-BR")',
           note: 'Uses the browser Intl implementation for localized Brazilian date display.'
         },
         {
           title: 'Python locale',
           language: 'python',
+          brandKey: 'python',
           code: 'locale.setlocale(locale.LC_ALL, "pt_BR.UTF-8")',
           note: 'Requires the pt_BR locale to be installed on the host operating system.'
         },
         {
           title: 'Go language tag',
           language: 'go',
+          brandKey: 'go',
           code: 'language.MustParse("pt-BR")',
           note: 'Use golang.org/x/text/language when locale-aware behavior is needed.'
         },
         {
           title: 'C# culture',
           language: 'csharp',
+          brandKey: 'csharp',
           code: 'CultureInfo.GetCultureInfo("pt-BR")',
           note: 'Use CultureInfo for formatting Brazilian dates, numbers, and currency.'
         },
         {
           title: 'Kotlin Locale',
           language: 'kotlin',
+          brandKey: 'kotlin',
           code: 'Locale.forLanguageTag("pt-BR")',
           note: 'Kotlin on the JVM can use Java Locale APIs.'
         },
@@ -388,6 +397,7 @@
         {
           title: 'PostgreSQL formatting note',
           language: 'sql',
+          brandKey: 'postgresql',
           code: "to_char(amount, 'FM999G999G990D00')",
           note: 'Database formatting depends on locale/session settings; prefer app-layer Intl formatting when possible.'
         },
@@ -539,6 +549,13 @@
     return badge;
   }
 
+  function createBrandAsset(brandKey, options) {
+    if (!brandKey || !window.ValidoHubBrands || typeof window.ValidoHubBrands.createBrandMark !== 'function') {
+      return null;
+    }
+    return window.ValidoHubBrands.createBrandMark(brandKey, options || {});
+  }
+
   function createCopyButton(value, label) {
     if (!value) {
       return null;
@@ -565,7 +582,10 @@
     const value = valueFor(country, item);
     const card = createElement('article', `country-metric-card ${className || ''}`.trim());
     applyTags(card, item.tags);
-    if (item.icon) {
+    const brandMark = createBrandAsset(item.brandKey, { label: item.brandLabel });
+    if (brandMark) {
+      card.appendChild(brandMark);
+    } else if (item.icon) {
       const icon = createElement('span', 'country-card-icon', item.icon);
       icon.setAttribute('aria-hidden', 'true');
       card.appendChild(icon);
@@ -707,7 +727,10 @@
 
     const top = createElement('div', 'country-card-top');
     const title = createElement('div', 'country-title-row');
-    if (item.icon) {
+    const brandMark = createBrandAsset(item.brandKey, { label: item.brandLabel });
+    if (brandMark) {
+      title.appendChild(brandMark);
+    } else if (item.icon) {
       const icon = createElement('span', 'country-card-icon', item.icon);
       icon.setAttribute('aria-hidden', 'true');
       title.appendChild(icon);
@@ -726,7 +749,7 @@
       logo.decoding = 'async';
       logo.className = 'country-brand-logo';
       card.appendChild(logo);
-    } else if (item.brand) {
+    } else if (!brandMark && item.brand) {
       card.appendChild(createElement('span', 'country-brand-placeholder', item.brand));
     }
     if (item.category) {
@@ -1029,8 +1052,14 @@
       const card = createElement('article', 'country-code-card');
       applyTags(card, ['developer', 'locale']);
       const top = createElement('div', 'country-card-top');
+      const title = createElement('div', 'country-title-row');
+      const brandMark = createBrandAsset(item.brandKey, { label: item.brandLabel });
+      if (brandMark) {
+        title.appendChild(brandMark);
+      }
+      title.appendChild(createElement('h3', null, item.title));
       top.append(
-        createElement('h3', null, item.title),
+        title,
         createElement('span', 'country-card-meta', item.language)
       );
       const pre = createElement('pre', 'country-code-block');

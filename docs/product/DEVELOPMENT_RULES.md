@@ -37,12 +37,16 @@ These rules are mandatory for future ValidoHub work.
 
 ## Brand And Icon Rules
 
+- Before adding or changing a visual identity, read `docs/product/BRAND_ASSET_SYSTEM.md` and `docs/product/BRAND_REGISTRY.md`.
+- AI assistants must never independently decide which icon or logo to use.
+- If a brand is missing, add a Brand Registry entry before using it visually.
 - Use official visual identity when an organization, payment system, company, technology, framework, protocol, language, database, operating system, standard, API, or ecosystem has one and the asset can be legally used.
 - Prefer tasteful monochrome SVG logos for documentation-grade UI.
 - Use generic semantic icons only when no official branding exists or licensing prevents use.
 - Do not redraw official logos from memory.
 - Do not replace famous brands with generic icons.
 - Avoid emoji icons in new production UI. Existing legacy emoji can remain until a deliberate visual-system pass replaces it.
+- Use `brandKey` and the Brand Asset System renderer instead of page-specific icon logic.
 
 ## Architecture Boundary
 

@@ -220,6 +220,8 @@ Badges should be compact, pill-shaped, aligned with card headers, and consistent
 
 Use one cohesive icon language.
 
+Country Hubs must use the project-wide Brand Asset System for recognizable brands and standards. See `docs/product/BRAND_ASSET_SYSTEM.md` and `docs/product/BRAND_REGISTRY.md`.
+
 New production UI should avoid emoji icons. Existing emoji-based country UI may remain until a deliberate visual-system pass replaces it.
 
 Use official visual identity whenever a legally usable organization, payment system, company, technology, framework, protocol, language, database, operating system, standard, API, or ecosystem mark exists.
@@ -227,6 +229,8 @@ Use official visual identity whenever a legally usable organization, payment sys
 Prefer monochrome SVG logos for supporting brand references in documentation-grade UI. Use full-color branding only when intentional or required by brand guidelines.
 
 Use semantic icons for non-branded concepts such as CPF, CNPJ, CEP, Regex, JSON, Base64, URL, Unicode, Locale, Calendar, and ICU.
+
+Brazil is the reference Country Hub consumer of `brandKey` values for PIX, Banco Central do Brasil, gov.br, Receita Federal, Correios, SWIFT, IBAN, JWT, Java, Python, Go, Kotlin, C#, JavaScript, TypeScript, and PostgreSQL.
 
 ## Brazil Reference
 

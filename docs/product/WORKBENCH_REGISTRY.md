@@ -151,12 +151,14 @@ This is a product platform section, not a browser workbench plugin.
   - Locale-first country hub routes.
   - Locale-first country workbench routes.
   - Product-owned Countries navigation grouping.
+  - Brand Asset System consumer through `assets/js/brand-assets.js`.
   - Country Hub Template V3 renderer for Brazil.
   - Country Hub Design Guide as the permanent reusable design standard.
   - Country Hub AI Guide for future AI implementation discipline.
   - Structured country metadata model.
   - Country visual identity and official brand placeholder support.
   - Global brand asset policy for official logos, monochrome logo preference, and semantic icon fallback.
+  - Registered brand rendering for PIX, Banco Central do Brasil, gov.br, Receita Federal, Correios, SWIFT, IBAN, JWT, Java, Python, Go, Kotlin, C#, JavaScript, TypeScript, and PostgreSQL on the Brazil hub.
   - Rich Country Statistics.
   - Developer Quick Actions.
   - Developer Country Profile.

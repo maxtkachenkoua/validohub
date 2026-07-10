@@ -9,6 +9,7 @@ This document records the current ValidoHub and Valido Engine boundary so future
 - Site-specific browser behavior lives in `validohub/assets/`, not in Valido Engine.
 - The browser-side Workbench Framework lives in `validohub/assets/js/workbench/`.
 - Tool plugins live in `validohub/assets/js/tools/`.
+- The Brand Asset System lives in `validohub/assets/js/brand-assets.js`.
 
 ## Current Working Plugins
 
@@ -92,6 +93,21 @@ Permanent Country Hub rules:
 - Official and famous brand identities should use legally usable official SVG/logo assets where possible.
 - Monochrome SVG logos are preferred for a calm documentation-grade appearance.
 - Semantic icons are for non-branded concepts such as CPF, CNPJ, CEP, Regex, JSON, Base64, URL, Unicode, Locale, Calendar, and ICU.
+
+## Brand Asset System
+
+ValidoHub now has a project-wide Brand Asset System:
+
+- Architecture doc: `docs/product/BRAND_ASSET_SYSTEM.md`.
+- Registry doc: `docs/product/BRAND_REGISTRY.md`.
+- Runtime registry: `assets/js/brand-assets.js`.
+- First reference consumer: Brazil Country Hub through `assets/js/countries.js`.
+
+Every current and future page, workbench, Country Hub, card, navigation surface, Markdown page, and generated page must use the Brand Asset System when a recognizable brand, technology, organization, payment system, language, database, framework, protocol, standard, or ecosystem appears visually.
+
+AI assistants must check the Brand Registry before choosing a logo or icon. New brands require a registry entry first.
+
+Current registered brands include PIX, Java, Python, Go, Kotlin, C#, .NET, Node.js, React, Next.js, TypeScript, JavaScript, Docker, Kubernetes, PostgreSQL, MySQL, MongoDB, Redis, JWT, Stripe, Visa, Mastercard, American Express, SWIFT, SEPA, IBAN, GitHub, OpenAPI, GraphQL, gov.br, Banco Central do Brasil, Receita Federal, and Correios.
 
 ## Generated Site Root
 

@@ -34,6 +34,8 @@ Before country work, read:
 - `docs/product/COUNTRIES_ARCHITECTURE.md`.
 - `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`.
 - `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md`.
+- `docs/product/BRAND_ASSET_SYSTEM.md`.
+- `docs/product/BRAND_REGISTRY.md`.
 - `docs/product/DEVELOPMENT_RULES.md`.
 - `docs/product/WORKBENCH_REGISTRY.md`.
 
@@ -88,6 +90,8 @@ Official brand assets:
 - Prefer monochrome logos for documentation-grade UI.
 - Keep text badges when licensing is unclear.
 - Never redraw official logos from memory.
+- Check `docs/product/BRAND_REGISTRY.md` before choosing a logo or icon.
+- Use `brandKey` and the shared Brand Asset System renderer when a registered brand appears.
 
 Semantic icons are acceptable only when no official branding exists.
 

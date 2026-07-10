@@ -244,3 +244,25 @@ Impact:
 - This is documentation and design-system standardization only.
 - Valido Engine remains untouched.
 - No new country-specific functionality, validator, workbench, country, route, YAML field, JavaScript behavior, CSS behavior, or generated output was added.
+
+## Brand Asset System
+
+Changed:
+
+- Added `assets/js/brand-assets.js` as the shared browser-side Brand Asset System registry and renderer.
+- Added `docs/product/BRAND_ASSET_SYSTEM.md` as the permanent architecture guide.
+- Added `docs/product/BRAND_REGISTRY.md` as the source of truth for visual identity decisions.
+- Registered PIX, Java, Python, Go, Kotlin, C#, .NET, Node.js, React, Next.js, TypeScript, JavaScript, Docker, Kubernetes, PostgreSQL, MySQL, MongoDB, Redis, JWT, Stripe, Visa, Mastercard, American Express, SWIFT, SEPA, IBAN, GitHub, OpenAPI, GraphQL, gov.br, Banco Central do Brasil, Receita Federal, and Correios.
+- Updated the Brazil Country Hub to use `brandKey` values and the shared renderer for visible brand/standard references.
+- Updated AI and product documentation to require Brand Registry checks before logo/icon decisions.
+
+Reason:
+
+ValidoHub needs one permanent visual identity system so recognizable brands, technologies, payment systems, databases, languages, protocols, and standards are rendered consistently instead of through ad-hoc icons.
+
+Impact:
+
+- The change remains entirely in ValidoHub assets and docs.
+- Valido Engine remains untouched.
+- No official logos were bundled in this step.
+- No new country-specific validator, workbench, country, route, YAML field, backend behavior, or generated output was added.

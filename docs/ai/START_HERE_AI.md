@@ -18,6 +18,11 @@ Read in this order before implementation:
 6. `docs/ai/AI_DEVELOPMENT_PROTOCOL.md`
 7. The corresponding `docs/product/*_SPEC.md` for the workbench or area being changed
 
+For visual identity, logo, icon, or brand work, also read:
+
+- `docs/product/BRAND_ASSET_SYSTEM.md`
+- `docs/product/BRAND_REGISTRY.md`
+
 For Country Hub work, also read:
 
 - `docs/ai/COUNTRY_HUB_AI_GUIDE.md`
