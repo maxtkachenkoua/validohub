@@ -146,14 +146,14 @@ The default policy is real assets first. Use placeholders only when a suitable o
 Brazil currently uses real SVG geographic assets for:
 
 - Brazil country outline: `assets/images/countries/brazil-outline.svg`.
-- Miniature world map with Brazil highlighted: `assets/images/countries/world-map-brazil.svg`.
+- Shared world location map: `assets/images/countries/world-map.svg`, with the Brazil marker rendered by the shared Country Visual System.
 
-These SVGs are generated from Natural Earth geometry via `world-atlas` TopoJSON. Natural Earth data is public domain. Keep source notes in the SVG files and keep the component reusable.
+These SVGs are derived from Natural Earth geometry. Natural Earth data is public domain. Keep source notes in the SVG files and keep the component reusable.
 
-Spain currently uses ValidoHub-owned simplified SVG geographic assets for:
+Spain currently uses real SVG geographic assets for:
 
 - Spain country outline: `assets/images/countries/spain-outline.svg`.
-- Miniature world map with Spain highlighted: `assets/images/countries/world-map-spain.svg`.
+- Shared world location map: `assets/images/countries/world-map.svg`, with the Spain marker rendered by the shared Country Visual System.
 
 The rendering contract is intentionally generic:
 

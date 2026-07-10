@@ -203,13 +203,18 @@ a {
 }
 
 .country-hero {
+  --country-accent-1: 15 118 110;
+  --country-accent-2: 37 99 235;
+  --country-accent-3: 100 116 139;
   display: grid;
   gap: 24px;
   padding: clamp(22px, 4vw, 36px);
   overflow: hidden;
   border-color: var(--line-strong);
   background:
-    linear-gradient(135deg, rgba(15, 118, 110, 0.10), rgba(37, 99, 235, 0.08)),
+    radial-gradient(circle at 10% 0%, rgb(var(--country-accent-1) / 0.075), transparent 34%),
+    radial-gradient(circle at 86% 12%, rgb(var(--country-accent-2) / 0.055), transparent 34%),
+    linear-gradient(135deg, rgb(var(--country-accent-3) / 0.035), rgb(var(--country-accent-1) / 0.028)),
     #ffffff;
   box-shadow: var(--shadow);
 }
@@ -241,7 +246,7 @@ a {
   border: 1px solid rgba(225, 230, 238, 0.86);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.82)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 252, 0.86)),
     #ffffff;
   color: var(--strong-muted);
   box-shadow: 0 14px 34px rgba(20, 26, 36, 0.07);
@@ -258,14 +263,16 @@ a {
 }
 
 .country-visual-art {
+  position: relative;
   display: grid;
   min-height: 72px;
   place-items: center;
   border: 1px solid rgba(225, 230, 238, 0.7);
   border-radius: 8px;
   background:
-    radial-gradient(circle at 30% 20%, rgba(16, 185, 129, 0.12), transparent 34%),
-    radial-gradient(circle at 78% 72%, rgba(37, 99, 235, 0.10), transparent 34%),
+    radial-gradient(circle at 30% 20%, rgb(var(--country-accent-1) / 0.08), transparent 35%),
+    radial-gradient(circle at 78% 72%, rgb(var(--country-accent-2) / 0.06), transparent 35%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(241, 245, 249, 0.72)),
     #ffffff;
   overflow: hidden;
 }
@@ -283,6 +290,59 @@ a {
 
 .country-world-map-card .country-visual-image {
   max-height: 118px;
+}
+
+.country-location-marker {
+  position: absolute;
+  left: var(--marker-x, 50%);
+  top: var(--marker-y, 50%);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+}
+
+.country-location-marker::before {
+  position: absolute;
+  right: 12px;
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, rgb(var(--country-accent-1) / 0), rgb(var(--country-accent-1) / 0.52));
+  content: "";
+}
+
+.country-location-pulse {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgb(var(--country-accent-1) / 0.32);
+  border-radius: 999px;
+  background: rgb(var(--country-accent-1) / 0.08);
+}
+
+.country-location-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  background: rgb(var(--country-accent-1));
+  box-shadow: 0 8px 18px rgb(var(--country-accent-1) / 0.28);
+}
+
+.country-location-label {
+  position: absolute;
+  right: 28px;
+  white-space: nowrap;
+  border: 1px solid rgb(var(--country-accent-1) / 0.20);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: rgb(var(--country-accent-1));
+  font-size: 0.68rem;
+  font-weight: 820;
+  line-height: 1;
+  padding: 5px 7px;
+  box-shadow: 0 8px 18px rgba(20, 26, 36, 0.09);
 }
 
 .country-visual-label {
@@ -336,9 +396,11 @@ a {
   width: 70px;
   height: 70px;
   place-items: center;
-  border: 1px solid rgba(225, 230, 238, 0.82);
+  border: 1px solid rgb(var(--country-accent-1) / 0.14);
   border-radius: 8px;
-  background: #ffffff;
+  background:
+    radial-gradient(circle at 24% 16%, rgb(var(--country-accent-2) / 0.08), transparent 44%),
+    #ffffff;
   box-shadow: 0 14px 30px rgba(20, 26, 36, 0.10);
   font-size: 2.3rem;
   line-height: 1;
@@ -2426,19 +2488,16 @@ tr:last-child td {
 .countries-world-map-art {
   position: absolute;
   inset: 18px;
-  opacity: 0.86;
+  opacity: 0.95;
 }
 
-.countries-world-map-art svg {
+.countries-world-map-image {
   display: block;
   width: 100%;
   height: 100%;
-}
-
-.map-land {
-  fill: #dce5ee;
-  stroke: #c8d3df;
-  stroke-width: 2;
+  object-fit: contain;
+  opacity: 0.96;
+  filter: saturate(0.98);
 }
 
 .countries-map-marker {
@@ -2920,9 +2979,9 @@ tr:last-child td {
   min-height: 350px;
   border-color: rgba(207, 215, 227, 0.85);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(241, 245, 249, 0.82)),
-    radial-gradient(circle at 26% 34%, rgba(15, 118, 110, 0.10), transparent 28%),
-    radial-gradient(circle at 72% 46%, rgba(37, 99, 235, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.91), rgba(241, 245, 249, 0.84)),
+    radial-gradient(circle at 26% 34%, rgba(15, 118, 110, 0.055), transparent 28%),
+    radial-gradient(circle at 72% 46%, rgba(37, 99, 235, 0.045), transparent 30%),
     #ffffff;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
@@ -2936,17 +2995,6 @@ tr:last-child td {
   background-size: 42px 42px;
   content: "";
   pointer-events: none;
-}
-
-.map-land {
-  fill: #d6e0eb;
-  stroke: #bdc9d8;
-  transition: fill 180ms ease, opacity 180ms ease, stroke 180ms ease;
-}
-
-.countries-world-map:hover .map-land {
-  fill: #dbe8f0;
-  stroke: #afbdca;
 }
 
 .countries-map-focus-line {
@@ -3120,7 +3168,6 @@ tr:last-child td {
   .countries-map-marker,
   .countries-card,
   .countries-flag,
-  .map-land,
   .countries-map-focus-line {
     animation: none;
     transition: none;

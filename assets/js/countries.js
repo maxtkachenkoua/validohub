@@ -13,19 +13,23 @@
     deprecated: 'Deprecated'
   };
 
+  const SHARED_WORLD_MAP_SRC = '/assets/images/countries/world-map.svg';
+
   const COUNTRY_VISUAL_ASSETS = {
     brazil: {
       outlineSrc: '/assets/images/countries/brazil-outline.svg',
       outlineAlt: 'Brazil country outline',
-      mapSrc: '/assets/images/countries/world-map-brazil.svg',
-      mapAlt: 'World map with Brazil highlighted',
+      mapSrc: SHARED_WORLD_MAP_SRC,
+      mapAlt: 'World map with Brazil location marker',
+      mapMarker: { x: 35, y: 59, label: 'Brazil' },
       source: 'Natural Earth geometry'
     },
     spain: {
       outlineSrc: '/assets/images/countries/spain-outline.svg',
       outlineAlt: 'Spain country outline',
-      mapSrc: '/assets/images/countries/world-map-spain.svg',
-      mapAlt: 'World map with Spain highlighted',
+      mapSrc: SHARED_WORLD_MAP_SRC,
+      mapAlt: 'World map with Spain location marker',
+      mapMarker: { x: 50, y: 39, label: 'Spain' },
       source: 'Simplified public-domain geographic reference'
     }
   };
@@ -79,7 +83,10 @@
         outlineLabel: 'Brazil outline',
         mapLabel: 'Brazil in the world',
         continentBadge: 'South America',
-        flagLabel: 'Brazil flag'
+        flagLabel: 'Brazil flag',
+        heroAccentPrimary: '22 101 52',
+        heroAccentSecondary: '202 138 4',
+        heroAccentTertiary: '37 99 235'
       },
       stats: [
         { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
@@ -505,13 +512,16 @@
       cldrLocale: 'es_ES',
       metricVsImperial: 'Metric-first'
     },
-    visualIdentity: {
-      countryId: 'spain',
-      outlineLabel: 'Spain outline',
-      mapLabel: 'Spain in the world',
-      continentBadge: 'Europe',
-      flagLabel: 'Spain flag'
-    },
+      visualIdentity: {
+        countryId: 'spain',
+        outlineLabel: 'Spain outline',
+        mapLabel: 'Spain in the world',
+        continentBadge: 'Europe',
+        flagLabel: 'Spain flag',
+        heroAccentPrimary: '153 27 27',
+        heroAccentSecondary: '217 119 6',
+        heroAccentTertiary: '245 158 11'
+      },
     stats: [
       { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
       { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
@@ -929,7 +939,7 @@
       availableWorkbenches: ['Brazil Pix Validator'],
       plannedWorkbenches: COUNTRY_HUBS.brazil.plannedWorkbenches.map((item) => item.name),
       completion: 100,
-      coordinates: { x: 47, y: 72 }
+      coordinates: { x: 35, y: 59 }
     },
     {
       id: 'poland',
@@ -972,7 +982,7 @@
       availableWorkbenches: [],
       plannedWorkbenches: COUNTRY_HUBS.spain.plannedWorkbenches.map((item) => item.name),
       completion: 68,
-      coordinates: { x: 47, y: 41 }
+      coordinates: { x: 50, y: 39 }
     },
     {
       id: 'germany',
@@ -1439,6 +1449,7 @@
 
   function createHero(country) {
     const hero = createElement('header', 'country-hero');
+    applyCountryAccent(hero, country);
 
     const main = createElement('div', 'country-hero-main');
     const flag = createElement('span', 'country-flag', country.flag);
@@ -1469,6 +1480,19 @@
     return hero;
   }
 
+  function applyCountryAccent(element, country) {
+    const visualIdentity = country.visualIdentity || {};
+    if (visualIdentity.heroAccentPrimary) {
+      element.style.setProperty('--country-accent-1', visualIdentity.heroAccentPrimary);
+    }
+    if (visualIdentity.heroAccentSecondary) {
+      element.style.setProperty('--country-accent-2', visualIdentity.heroAccentSecondary);
+    }
+    if (visualIdentity.heroAccentTertiary) {
+      element.style.setProperty('--country-accent-3', visualIdentity.heroAccentTertiary);
+    }
+  }
+
   function createCountryVisual(country) {
     const visual = createElement('aside', 'country-visual-panel');
     visual.setAttribute('aria-label', `${country.name} visual identity`);
@@ -1486,7 +1510,8 @@
       className: 'country-world-map-card',
       title: visualIdentity.mapLabel || `${country.name} location`,
       src: assets.mapSrc,
-      alt: assets.mapAlt || `World map highlighting ${country.name}`
+      alt: assets.mapAlt || `World map highlighting ${country.name}`,
+      marker: assets.mapMarker
     });
 
     const badge = createElement('div', 'country-continent-card');
@@ -1513,6 +1538,18 @@
       image.decoding = 'async';
       image.className = 'country-visual-image';
       art.appendChild(image);
+      if (options.marker) {
+        const marker = createElement('span', 'country-location-marker');
+        marker.style.setProperty('--marker-x', `${options.marker.x}%`);
+        marker.style.setProperty('--marker-y', `${options.marker.y}%`);
+        marker.setAttribute('aria-label', `${options.marker.label} location`);
+        marker.append(
+          createElement('span', 'country-location-pulse'),
+          createElement('span', 'country-location-dot'),
+          createElement('span', 'country-location-label', options.marker.label)
+        );
+        art.appendChild(marker);
+      }
     } else {
       art.appendChild(createElement('span', 'country-visual-fallback', options.title));
     }

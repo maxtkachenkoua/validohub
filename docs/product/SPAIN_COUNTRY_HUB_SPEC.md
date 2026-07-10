@@ -61,7 +61,7 @@ Population is intentionally approximate and should not be treated as a timeless 
 Spain uses the existing Country Visual System:
 
 - Country outline: `assets/images/countries/spain-outline.svg`.
-- Highlighted world map: `assets/images/countries/world-map-spain.svg`.
+- Shared world location map: `assets/images/countries/world-map.svg`, with Spain marker metadata rendered by the shared Country Visual System.
 - Flag and Europe continent badge through the shared renderer.
 
 No Spain-specific renderer branch or CSS was introduced.

@@ -30,6 +30,7 @@
     bizum: 'bizum',
     vies: 'vies'
   };
+  const WORLD_MAP_ASSET = '/assets/images/countries/world-map.svg';
 
   function helpers() {
     return window.ValidoHubCountries || {};
@@ -350,7 +351,7 @@
     );
     const map = createElement('div', 'countries-world-map');
     map.setAttribute('aria-label', 'Interactive ValidoHub country map');
-    map.appendChild(createWorldMapSvg());
+    map.appendChild(createWorldMapImage());
     const focusLine = createElement('span', 'countries-map-focus-line');
     focusLine.setAttribute('aria-hidden', 'true');
     map.appendChild(focusLine);
@@ -373,18 +374,15 @@
     return section;
   }
 
-  function createWorldMapSvg() {
+  function createWorldMapImage() {
     const wrapper = createElement('div', 'countries-world-map-art');
-    wrapper.innerHTML = [
-      '<svg viewBox="0 0 960 420" role="img" aria-label="Stylized world map">',
-      '<path class="map-land" d="M78 128c32-58 96-76 150-48 30 16 62 14 96 7 35-7 69 5 83 34 17 36-12 63-45 77-42 18-83 3-121 16-37 13-54 53-96 47-45-6-72-49-67-133Z"/>',
-      '<path class="map-land" d="M220 252c38-23 83-7 103 35 25 52-7 102-42 126-44-29-82-71-92-119-4-19 8-31 31-42Z"/>',
-      '<path class="map-land" d="M423 86c44-37 124-38 171-5 29 21 31 56 7 82-32 35-83 19-128 28-40 8-74 37-108 10-29-23 12-77 58-115Z"/>',
-      '<path class="map-land" d="M500 190c52-18 99 2 116 45 18 46 2 105-45 126-39 18-70-5-86-41-20-44-40-112 15-130Z"/>',
-      '<path class="map-land" d="M620 91c77-32 182-4 233 53 37 41 26 88-24 106-48 17-87-17-130-8-51 10-91 60-141 28-49-32-13-147 62-179Z"/>',
-      '<path class="map-land" d="M745 287c44-23 103-11 126 23 19 29 0 62-39 68-46 8-94-7-118-35-19-22-7-38 31-56Z"/>',
-      '</svg>'
-    ].join('');
+    const image = document.createElement('img');
+    image.src = WORLD_MAP_ASSET;
+    image.alt = 'World map with ValidoHub country coverage markers';
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    image.className = 'countries-world-map-image';
+    wrapper.appendChild(image);
     return wrapper;
   }
 
