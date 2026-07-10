@@ -2789,3 +2789,395 @@ tr:last-child td {
     height: 26px;
   }
 }
+
+/* Countries Portal Visual Polish V1 */
+.countries-portal-page {
+  gap: 24px;
+}
+
+.countries-portal-hero,
+.countries-controls,
+.countries-map-section,
+.countries-featured,
+.countries-directory,
+.countries-preview-panel {
+  border-color: rgba(207, 215, 227, 0.78);
+}
+
+.countries-portal-hero {
+  position: relative;
+  align-items: center;
+  padding: clamp(34px, 6vw, 64px);
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.14), rgba(37, 99, 235, 0.08) 42%, rgba(255, 255, 255, 0.96) 78%),
+    linear-gradient(180deg, #ffffff, #f8fafc);
+}
+
+.countries-portal-hero::after {
+  position: absolute;
+  inset: auto 28px 24px auto;
+  width: 220px;
+  height: 90px;
+  border: 1px solid rgba(15, 118, 110, 0.12);
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(15, 118, 110, 0.08), rgba(37, 99, 235, 0.05));
+  content: "";
+  opacity: 0.8;
+  pointer-events: none;
+  transform: rotate(-8deg);
+}
+
+.countries-portal-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.countries-portal-hero h1 {
+  max-width: 900px;
+  margin: 10px 0 14px;
+  color: #111827;
+  letter-spacing: 0;
+}
+
+.countries-portal-hero-copy p {
+  max-width: 720px;
+  color: #3f4a5f;
+  font-size: 1.12rem;
+}
+
+.countries-hero-stats {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.countries-hero-stats div {
+  min-height: 82px;
+  padding: 16px;
+  border-color: rgba(207, 215, 227, 0.78);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 16px 34px rgba(20, 26, 36, 0.07);
+}
+
+.countries-hero-stats strong {
+  font-size: 1.7rem;
+}
+
+.countries-hero-stats span {
+  text-transform: uppercase;
+}
+
+.countries-controls {
+  gap: 16px;
+  padding: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.92)),
+    #ffffff;
+}
+
+.countries-search input,
+.countries-select-filter select {
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.74), 0 8px 20px rgba(20, 26, 36, 0.04);
+  transition: border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.countries-search input:hover,
+.countries-select-filter select:hover,
+.countries-search input:focus,
+.countries-select-filter select:focus {
+  border-color: var(--accent-line);
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.10), 0 10px 24px rgba(20, 26, 36, 0.06);
+  outline: none;
+}
+
+.countries-feature-chip {
+  min-height: 36px;
+  padding: 7px 12px;
+  border-color: rgba(207, 215, 227, 0.9);
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(20, 26, 36, 0.04);
+  transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease, color 150ms ease, transform 150ms ease;
+}
+
+.countries-feature-chip:hover,
+.countries-feature-chip:focus-within {
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.10);
+  transform: translateY(-1px);
+}
+
+.countries-feature-chip:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.12);
+}
+
+.countries-world-map {
+  min-height: 350px;
+  border-color: rgba(207, 215, 227, 0.85);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(241, 245, 249, 0.82)),
+    radial-gradient(circle at 26% 34%, rgba(15, 118, 110, 0.10), transparent 28%),
+    radial-gradient(circle at 72% 46%, rgba(37, 99, 235, 0.08), transparent 30%),
+    #ffffff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.countries-world-map::before {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(100, 116, 139, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 116, 139, 0.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+  content: "";
+  pointer-events: none;
+}
+
+.map-land {
+  fill: #d6e0eb;
+  stroke: #bdc9d8;
+  transition: fill 180ms ease, opacity 180ms ease, stroke 180ms ease;
+}
+
+.countries-world-map:hover .map-land {
+  fill: #dbe8f0;
+  stroke: #afbdca;
+}
+
+.countries-map-focus-line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: max(1px, calc(var(--focus-x, 50%) - 50%));
+  height: max(1px, calc(var(--focus-y, 50%) - 50%));
+  border-top: 1px solid rgba(15, 118, 110, 0.30);
+  border-left: 1px solid rgba(15, 118, 110, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: 0 0;
+  transition: opacity 180ms ease;
+}
+
+.countries-map-focus-line.is-visible {
+  opacity: 1;
+}
+
+.countries-map-marker {
+  animation: countries-marker-in 420ms ease both;
+  border-color: rgba(15, 118, 110, 0.32);
+  box-shadow: 0 10px 22px rgba(20, 26, 36, 0.14), 0 0 0 5px rgba(15, 118, 110, 0.06);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, opacity 180ms ease, filter 180ms ease;
+}
+
+.countries-map-marker:nth-of-type(3n) {
+  animation-delay: 40ms;
+}
+
+.countries-map-marker:nth-of-type(4n) {
+  animation-delay: 80ms;
+}
+
+.countries-map-marker:hover,
+.countries-map-marker:focus-visible,
+.countries-map-marker.is-country-active {
+  border-color: var(--accent);
+  box-shadow: 0 18px 36px rgba(15, 118, 110, 0.20), 0 0 0 8px rgba(15, 118, 110, 0.10);
+  filter: saturate(1.08);
+  transform: translate(-50%, -50%) scale(1.22);
+}
+
+.countries-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(207, 215, 227, 0.86);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9), 0 8px 22px rgba(20, 26, 36, 0.04);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease, opacity 180ms ease, background 180ms ease;
+}
+
+.countries-card::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: var(--country-accent, var(--accent));
+  content: "";
+  opacity: 0.7;
+}
+
+.countries-card:hover,
+.countries-card:focus-visible,
+.countries-card.is-country-active {
+  border-color: color-mix(in srgb, var(--country-accent, var(--accent)) 46%, var(--line));
+  box-shadow: 0 18px 40px rgba(20, 26, 36, 0.11);
+  transform: translateY(-3px);
+}
+
+.countries-card-featured {
+  border-color: rgba(15, 118, 110, 0.34);
+  box-shadow: 0 20px 46px rgba(15, 118, 110, 0.12);
+}
+
+.countries-card-featured::before {
+  height: 4px;
+  opacity: 1;
+}
+
+.countries-reference-badge {
+  border-color: rgba(15, 118, 110, 0.24);
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.14), rgba(37, 99, 235, 0.07)),
+    #ffffff;
+  box-shadow: 0 8px 18px rgba(15, 118, 110, 0.09);
+}
+
+.countries-flag {
+  box-shadow: 0 10px 22px rgba(20, 26, 36, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.countries-card:hover .countries-flag,
+.countries-card:focus-visible .countries-flag,
+.countries-card.is-country-active .countries-flag {
+  box-shadow: 0 14px 28px rgba(20, 26, 36, 0.12);
+  transform: translateY(-1px);
+}
+
+.countries-card[data-accent="brazil"] { --country-accent: #0f8f61; }
+.countries-card[data-accent="poland"] { --country-accent: #dc2626; }
+.countries-card[data-accent="spain"] { --country-accent: #dc2626; }
+.countries-card[data-accent="germany"] { --country-accent: #c99700; }
+.countries-card[data-accent="france"] { --country-accent: #2563eb; }
+.countries-card[data-accent="austria"] { --country-accent: #dc2626; }
+.countries-card[data-accent="japan"] { --country-accent: #dc2626; }
+.countries-card[data-accent="united-kingdom"] { --country-accent: #2563eb; }
+.countries-card[data-accent="united-states"] { --country-accent: #2563eb; }
+.countries-card[data-accent="canada"] { --country-accent: #dc2626; }
+.countries-card[data-accent="mexico"] { --country-accent: #0f8f61; }
+.countries-card[data-accent="argentina"] { --country-accent: #38bdf8; }
+.countries-card[data-accent="chile"] { --country-accent: #2563eb; }
+.countries-card[data-accent="italy"] { --country-accent: #0f8f61; }
+.countries-card[data-accent="portugal"] { --country-accent: #0f8f61; }
+.countries-card[data-accent="netherlands"] { --country-accent: #f97316; }
+.countries-card[data-accent="belgium"] { --country-accent: #c99700; }
+.countries-card[data-accent="ukraine"] { --country-accent: #2563eb; }
+
+.countries-continent-group {
+  padding-top: 14px;
+  border-top: 1px solid rgba(225, 230, 238, 0.82);
+}
+
+.countries-continent-heading {
+  padding-bottom: 2px;
+}
+
+.countries-continent-heading h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #111827;
+  font-size: 1.05rem;
+}
+
+.countries-continent-icon {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 820;
+}
+
+.countries-preview-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.94)),
+    #ffffff;
+}
+
+@keyframes countries-marker-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.72);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .countries-feature-chip,
+  .countries-map-marker,
+  .countries-card,
+  .countries-flag,
+  .map-land,
+  .countries-map-focus-line {
+    animation: none;
+    transition: none;
+  }
+
+  .countries-card:hover,
+  .countries-card:focus-visible,
+  .countries-card.is-country-active,
+  .countries-feature-chip:hover,
+  .countries-feature-chip:focus-within,
+  .countries-map-marker:hover,
+  .countries-map-marker:focus-visible,
+  .countries-map-marker.is-country-active {
+    transform: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .countries-hero-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .countries-portal-hero {
+    padding: 28px;
+  }
+
+  .countries-hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .countries-portal-hero {
+    padding: 22px;
+  }
+
+  .countries-portal-hero-copy p {
+    font-size: 1rem;
+  }
+
+  .countries-hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .countries-hero-stats div {
+    min-height: 0;
+  }
+
+  .countries-world-map {
+    min-height: 270px;
+  }
+
+  .countries-continent-heading h3 {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}

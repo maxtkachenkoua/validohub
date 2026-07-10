@@ -96,6 +96,34 @@ The portal supports:
 
 Countries without hubs must not show fake links. They show Coming Soon instead.
 
+## Visual Polish V1
+
+Visual Polish V1 keeps the existing architecture and functionality intact while improving the premium SaaS feel of the portal.
+
+Implemented visual refinements:
+
+- Stronger hero messaging: "Build country-aware software with confidence."
+- Clearer subtitle focused on validation, localization, identifiers, payments, banking standards, and implementation guidance.
+- More breathable hero spacing and stronger typography hierarchy.
+- Derived platform metrics for countries, workbenches, identifier rules, payment systems, developer guides, and brand assets.
+- Brazil presented as the flagship reference country with a premium Reference Implementation badge.
+- Subtle country identity accents through top card strips.
+- Smoother card hover, focus, lift, and shadow states.
+- Improved filter pills with clearer hover and selected states.
+- Refined continent headers.
+- More polished interactive world map, animated markers, active marker emphasis, and selected-country focus line.
+- Reduced-motion handling for users who prefer minimal motion.
+
+Visual Polish V1 does not change:
+
+- Route structure.
+- Country discovery.
+- Metadata ownership.
+- Generated page route materialization.
+- Validation behavior.
+- Workbench implementation status.
+- Valido Engine.
+
 ## Progress Calculation
 
 V1 uses an explicit product metadata completion score because the current Engine DSL does not expose a generic country readiness model.

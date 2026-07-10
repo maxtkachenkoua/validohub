@@ -14,6 +14,14 @@
     planned: 'Planned'
   };
   const CONTINENT_ORDER = ['South America', 'Europe', 'North America', 'Asia', 'Africa', 'Oceania'];
+  const CONTINENT_ICONS = {
+    'South America': 'South America',
+    Europe: 'Europe',
+    'North America': 'North America',
+    Asia: 'Asia',
+    Africa: 'Africa',
+    Oceania: 'Oceania'
+  };
   const BRAND_KEYS = {
     pix: 'pix',
     iban: 'iban',
@@ -150,6 +158,7 @@
     card.dataset.status = country.status;
     card.dataset.features = (country.features || []).join(' ');
     card.dataset.search = country.searchable;
+    card.dataset.accent = country.id;
     if (country.hasHub) {
       card.href = country.href;
       card.setAttribute('aria-label', `Open ${country.name} country hub`);
@@ -165,7 +174,7 @@
     badges.append(createBadge(country.iso2, 'countries-code-badge'));
     badges.append(createBadge(STATUS_LABELS[country.status] || country.status, `country-status-${country.status === 'inProgress' ? 'experimental' : country.status}`));
     if (country.reference) {
-      badges.append(createBadge('Reference Implementation', 'country-status-ready'));
+      badges.append(createBadge('⭐ Reference Implementation', 'country-status-ready countries-reference-badge'));
     } else if (country.status !== 'available') {
       badges.append(createBadge('Future', 'country-status-planned'));
     }
@@ -241,18 +250,27 @@
   function createHero(countries) {
     const available = countries.filter((country) => country.hasHub).length;
     const planned = countries.filter((country) => !country.hasHub).length;
+    const workbenchCount = countries.reduce((total, country) => total + (country.availableWorkbenches || []).length + (country.plannedWorkbenches || []).length, 0);
+    const identifiersCount = new Set(countries.flatMap((country) => country.identifiers || [])).size;
+    const paymentCount = new Set(countries.flatMap((country) => country.payments || [])).size;
+    const brandCount = window.ValidoHubBrands && window.ValidoHubBrands.registry
+      ? Object.keys(window.ValidoHubBrands.registry).length
+      : 0;
     const hero = createElement('header', 'countries-portal-hero');
     const copy = createElement('div', 'countries-portal-hero-copy');
     copy.append(
       createElement('span', 'eyebrow', 'Countries'),
-      createElement('h1', null, 'Global developer intelligence by country'),
-      createElement('p', null, 'Browse local identifiers, payment systems, banking notes, locale conventions, government references, and country-specific workbench roadmaps from one fast static portal.')
+      createElement('h1', null, 'Build country-aware software with confidence.'),
+      createElement('p', null, 'Developer intelligence for validation, localization, identifiers, payments, banking standards, and country-specific implementation guidance.')
     );
     const stats = createElement('div', 'countries-hero-stats');
     [
-      [String(countries.length), 'tracked countries'],
-      [String(available), 'live country hubs'],
-      [String(planned), 'roadmap countries']
+      [String(countries.length), 'Countries'],
+      [String(workbenchCount), 'Workbenches'],
+      [String(identifiersCount), 'Identifier rules'],
+      [String(paymentCount), 'Payment systems'],
+      [String(available), 'Developer guides'],
+      [String(brandCount), 'Brand assets']
     ].forEach(([value, label]) => {
       const item = createElement('div');
       item.append(createElement('strong', null, value), createElement('span', null, label));
@@ -261,7 +279,7 @@
     const badges = createElement('div', 'country-badge-row');
     badges.append(
       createBadge('Browser-first', 'country-status-ready'),
-      createBadge('No validators added', 'country-status-planned'),
+      createBadge(`${planned} roadmap countries`, 'country-status-planned'),
       createBadge('ValidoHub-owned UX', 'country-status-available')
     );
     copy.append(badges);
@@ -330,6 +348,9 @@
     const map = createElement('div', 'countries-world-map');
     map.setAttribute('aria-label', 'Interactive ValidoHub country map');
     map.appendChild(createWorldMapSvg());
+    const focusLine = createElement('span', 'countries-map-focus-line');
+    focusLine.setAttribute('aria-hidden', 'true');
+    map.appendChild(focusLine);
     countries.forEach((country) => {
       const marker = country.hasHub ? createElement('a', 'countries-map-marker') : createElement('button', 'countries-map-marker');
       if (country.hasHub) {
@@ -370,7 +391,7 @@
     card.classList.add('countries-card-featured');
     section.append(
       createElement('span', 'eyebrow', 'Featured Country'),
-      createElement('h2', null, 'Brazil is the reference implementation'),
+      createElement('h2', null, 'Brazil is the reference country'),
       createElement('p', null, 'Brazil currently defines the Country Hub quality bar for visual identity, metadata depth, developer snippets, copy controls, official resource structure, and future-workbench discovery.'),
       card
     );
@@ -394,7 +415,9 @@
       const group = createElement('section', 'countries-continent-group');
       group.dataset.continent = continent;
       const header = createElement('div', 'countries-continent-heading');
-      header.append(createElement('h3', null, continent), createElement('span', null, `${groupCountries.length} countries`));
+      const title = createElement('h3');
+      title.append(createElement('span', 'countries-continent-icon', CONTINENT_ICONS[continent] || continent), createElement('span', null, continent));
+      header.append(title, createElement('span', null, `${groupCountries.length} countries`));
       const grid = createElement('div', 'countries-grid');
       groupCountries
         .slice()
@@ -470,6 +493,18 @@
     root.querySelectorAll('[data-country-id]').forEach((element) => {
       element.classList.toggle('is-country-active', element.dataset.countryId === countryId);
     });
+    const map = root.querySelector('.countries-world-map');
+    const marker = map?.querySelector(`.countries-map-marker[data-country-id="${countryId}"]`);
+    const line = map?.querySelector('.countries-map-focus-line');
+    if (map && marker && line) {
+      const mapBox = map.getBoundingClientRect();
+      const markerBox = marker.getBoundingClientRect();
+      const x = markerBox.left + markerBox.width / 2 - mapBox.left;
+      const y = markerBox.top + markerBox.height / 2 - mapBox.top;
+      line.style.setProperty('--focus-x', `${x}px`);
+      line.style.setProperty('--focus-y', `${y}px`);
+      line.classList.add('is-visible');
+    }
     const oldPreview = root.querySelector('.countries-preview-panel');
     if (oldPreview) {
       oldPreview.replaceWith(createPreview(country));

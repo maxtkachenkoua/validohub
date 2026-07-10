@@ -289,3 +289,27 @@ Impact:
 - Available country hubs are discovered from generated links.
 - Roadmap countries are visible without creating fake hubs.
 - No PIX, CPF, CNPJ, CEP, PESEL, banking, payment, or country-specific validator was implemented.
+
+## Countries Portal Visual Polish V1
+
+Changed:
+
+- Improved Countries Portal hero messaging and hierarchy.
+- Added richer derived platform metrics.
+- Elevated Brazil as the flagship reference country with a premium Reference Implementation badge.
+- Added subtle country identity accent strips to country cards.
+- Improved card hover, focus, lift, and shadow states.
+- Improved filter control styling and selected states.
+- Improved world map presentation, marker animation, active-country emphasis, and selected-country focus line.
+- Refined continent section headers.
+- Added reduced-motion handling for portal microinteractions.
+
+Reason:
+
+The Countries Portal needed to feel more like a premium SaaS product while preserving the existing ValidoHub-owned architecture.
+
+Impact:
+
+- Visual polish only.
+- Valido Engine remains untouched.
+- Routes, metadata ownership, country discovery, validators, and workbench functionality did not change.

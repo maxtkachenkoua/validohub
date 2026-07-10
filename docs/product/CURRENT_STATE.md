@@ -58,6 +58,8 @@ Current source files:
 
 The portal discovers available country hubs from generated links, shows roadmap countries from product-owned country metadata, groups countries by continent, supports instant search and filters, includes a lightweight interactive world map, and highlights Brazil as the Reference Implementation.
 
+Countries Portal Visual Polish V1 is complete. The portal now uses stronger product messaging, richer derived platform metrics, subtle country identity accents, improved card elevation, polished filter controls, a more prominent world map interaction, refined continent headings, and a premium Brazil reference badge. This was a visual iteration only; routing, discovery, metadata ownership, and Engine boundaries did not change.
+
 Current Engine does not generate arbitrary product pages such as `/en/countries/`. To keep Engine generic, ValidoHub materializes this page after publish with `node scripts/build-countries-portal.mjs`. Do not move this product behavior into Engine unless a future generic static-page capability is approved.
 
 Brazil now uses Country Hub Template V3 as the reference Developer Country Intelligence Portal. It also uses Country Hub Visual Identity V2 for real SVG geography. The rich hub is rendered by `assets/js/countries.js` from a generic country metadata structure and keeps the Engine-generated country page as fallback HTML.
