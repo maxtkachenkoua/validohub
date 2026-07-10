@@ -20,6 +20,13 @@
       mapSrc: '/assets/images/countries/world-map-brazil.svg',
       mapAlt: 'World map with Brazil highlighted',
       source: 'Natural Earth geometry'
+    },
+    spain: {
+      outlineSrc: '/assets/images/countries/spain-outline.svg',
+      outlineAlt: 'Spain country outline',
+      mapSrc: '/assets/images/countries/world-map-spain.svg',
+      mapAlt: 'World map with Spain highlighted',
+      source: 'Simplified public-domain geographic reference'
     }
   };
 
@@ -192,7 +199,7 @@
       ],
       futureCountryPages: [
         { label: 'Poland', status: 'available', path: 'poland/' },
-        { label: 'Spain', status: 'planned' },
+        { label: 'Spain', status: 'available', path: 'spain/' },
         { label: 'Germany', status: 'planned' },
         { label: 'France', status: 'planned' },
         { label: 'Austria', status: 'planned' },
@@ -452,6 +459,454 @@
     }
   };
 
+  COUNTRY_HUBS.spain = {
+    flag: '🇪🇸',
+    name: 'Spain',
+    badge: 'Architecture reuse country hub',
+    description: 'Developer intelligence for Spanish identifiers, locale conventions, EU payments, banking context, government systems, and implementation pitfalls.',
+    metadata: {
+      nativeName: 'España',
+      population: 'approximately 49.6M',
+      populationNote: 'Approximate 2026 population estimate; do not treat as a timeless constant.',
+      area: '506,030 km²',
+      capital: 'Madrid',
+      largestCity: 'Madrid',
+      continent: 'Europe',
+      region: 'Southern Europe / European Union',
+      languages: 'Spanish; Catalan/Valencian, Galician, Basque, and Aranese co-official regionally',
+      currency: 'Euro',
+      currencyCode: 'EUR',
+      currencySymbol: '€',
+      callingCode: '+34',
+      internetTld: '.es',
+      drivingSide: 'Right',
+      iso2: 'ES',
+      iso3: 'ESP',
+      isoNumeric: '724',
+      locale: 'es-ES',
+      icuLocale: 'es_ES',
+      dateFormat: 'DD/MM/YYYY',
+      timeFormat: '24-hour, HH:mm',
+      decimalSeparator: 'Comma (,)',
+      thousandsSeparator: 'Dot (.)',
+      addressFormat: 'Street type/name, number, floor/door, postal code, municipality, province',
+      postalCodeFormat: 'NNNNN',
+      primaryTimeZone: 'Europe/Madrid (CET/CEST)',
+      utcRange: 'UTC+01/+02 mainland; UTC+00/+01 Canary Islands',
+      measurementSystem: 'Metric',
+      paperSize: 'A4',
+      powerPlugTypes: 'Type C / Type F',
+      voltage: '230V',
+      frequency: '50Hz',
+      emergencyNumber: '112',
+      weekStarts: 'Monday',
+      rtlSupport: 'No',
+      unicodeLocale: 'es-ES',
+      cldrLocale: 'es_ES',
+      metricVsImperial: 'Metric-first'
+    },
+    visualIdentity: {
+      countryId: 'spain',
+      outlineLabel: 'Spain outline',
+      mapLabel: 'Spain in the world',
+      continentBadge: 'Europe',
+      flagLabel: 'Spain flag'
+    },
+    stats: [
+      { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
+      { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
+      { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
+      { icon: '🌍', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
+      { icon: '🗣', label: 'Languages', valueKey: 'languages', tags: ['locale'] },
+      { brandKey: 'europeanUnion', label: 'Region', valueKey: 'region', tags: ['government', 'locale'] },
+      { brandKey: 'iban', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency', 'payments'] },
+      { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
+      { icon: '🌐', label: 'Internet TLD', valueKey: 'internetTld', tags: ['developer'] },
+      { icon: '🕒', label: 'UTC range', valueKey: 'utcRange', tags: ['time'] }
+    ],
+    countryProfile: [
+      { icon: '🏷', label: 'Native name', valueKey: 'nativeName', tags: ['locale'] },
+      { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
+      { icon: '▣', label: 'Area', valueKey: 'area', tags: ['locale'] },
+      { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
+      { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
+      { icon: '🌍', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
+      { icon: '🗣', label: 'Languages', valueKey: 'languages', tags: ['locale'] },
+      { icon: '🚗', label: 'Driving side', valueKey: 'drivingSide', tags: ['locale'] },
+      { icon: '📏', label: 'Measurement system', valueKey: 'measurementSystem', tags: ['locale'] },
+      { icon: '📄', label: 'Paper size', valueKey: 'paperSize', tags: ['developer'] },
+      { icon: '🔌', label: 'Power plug types', valueKey: 'powerPlugTypes', tags: ['developer'] },
+      { icon: '⚡', label: 'Voltage', valueKey: 'voltage', tags: ['developer'] },
+      { icon: '⏱', label: 'Frequency', valueKey: 'frequency', tags: ['developer'] },
+      { icon: '🚨', label: 'Emergency number', valueKey: 'emergencyNumber', tags: ['phone'] },
+      { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
+      { brandKey: 'iban', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency'] },
+      { icon: '🕒', label: 'Timezone range', valueKey: 'utcRange', tags: ['time'] },
+      { icon: '📅', label: 'Week starts', valueKey: 'weekStarts', tags: ['locale'] },
+      { icon: '↔', label: 'RTL support', valueKey: 'rtlSupport', tags: ['locale'] },
+      { icon: '🔤', label: 'Unicode locale', valueKey: 'unicodeLocale', tags: ['locale', 'developer'] },
+      { icon: '🌐', label: 'ICU locale', valueKey: 'icuLocale', tags: ['locale', 'developer'] },
+      { icon: '🌐', label: 'CLDR locale', valueKey: 'cldrLocale', tags: ['locale', 'developer'] },
+      { icon: '📐', label: 'Metric vs Imperial', valueKey: 'metricVsImperial', tags: ['locale'] }
+    ],
+    quickActions: [
+      { label: 'Copy Locale', valueKey: 'locale' },
+      { label: 'Copy Currency Code', valueKey: 'currencyCode' },
+      { label: 'Copy Currency Symbol', valueKey: 'currencySymbol' },
+      { label: 'Copy Phone Code', valueKey: 'callingCode' },
+      { label: 'Copy ISO2', valueKey: 'iso2' },
+      { label: 'Copy ISO3', valueKey: 'iso3' },
+      { label: 'Copy Numeric ISO', valueKey: 'isoNumeric' },
+      { label: 'Copy Internet TLD', valueKey: 'internetTld' },
+      { label: 'Copy Date Format', valueKey: 'dateFormat' },
+      { label: 'Copy Postal Code Format', valueKey: 'postalCodeFormat' },
+      { label: 'Copy Primary Time Zone', valueKey: 'primaryTimeZone' }
+    ],
+    cheatSheet: [
+      { label: 'ISO2', valueKey: 'iso2', icon: '🏷', tags: ['developer', 'locale'] },
+      { label: 'ISO3', valueKey: 'iso3', icon: '🏷', tags: ['developer', 'locale'] },
+      { label: 'Numeric ISO', valueKey: 'isoNumeric', icon: '🏷', tags: ['developer', 'locale'] },
+      { label: 'Locale', valueKey: 'locale', icon: '🌐', tags: ['locale', 'developer'] },
+      { label: 'ICU locale', valueKey: 'icuLocale', icon: '🌐', tags: ['locale', 'developer'] },
+      { label: 'Language', valueKey: 'languages', icon: '🗣', tags: ['locale'] },
+      { label: 'Currency', value: 'Euro (EUR)', copyValueKey: 'currencyCode', brandKey: 'iban', tags: ['currency', 'payments'] },
+      { label: 'Currency symbol', valueKey: 'currencySymbol', icon: '💵', tags: ['currency'] },
+      { label: 'Phone country code', valueKey: 'callingCode', icon: '☎', tags: ['phone'] },
+      { label: 'Internet TLD', valueKey: 'internetTld', icon: '🌐', tags: ['developer'] },
+      { label: 'Date format', valueKey: 'dateFormat', icon: '📅', tags: ['locale', 'date'] },
+      { label: 'Time format', valueKey: 'timeFormat', icon: '⏱', tags: ['locale', 'time'] },
+      { label: 'Decimal separator', valueKey: 'decimalSeparator', copyValue: 'comma decimal separator', icon: '🔢', tags: ['locale', 'currency'] },
+      { label: 'Thousands separator', valueKey: 'thousandsSeparator', copyValue: 'dot thousands separator', icon: '🔢', tags: ['locale', 'currency'] },
+      { label: 'Address format', valueKey: 'addressFormat', icon: '📍', tags: ['addresses'] },
+      { label: 'Postal code format', valueKey: 'postalCodeFormat', icon: '✉', tags: ['postal', 'addresses'] },
+      { label: 'Primary time zone', valueKey: 'primaryTimeZone', icon: '🕒', tags: ['time'] },
+      { label: 'Time zones', valueKey: 'utcRange', icon: '🕒', tags: ['time'] }
+    ],
+    localFormats: [
+      { icon: '🪪', name: 'DNI', status: 'planned', category: 'National identity', tags: ['identifiers', 'government'], description: 'Documento Nacional de Identidad for Spanish citizens. Typical developer handling includes eight digits plus a control letter, preserving formatted and normalized representations.', related: ['DNI Validator'] },
+      { icon: '🪪', name: 'NIE', status: 'planned', category: 'Foreigner identity', tags: ['identifiers', 'government'], description: 'Número de Identidad de Extranjero used for foreigner identification contexts. Common patterns use X, Y, or Z prefix, seven digits, and a control letter.', related: ['NIE Validator'] },
+      { brandKey: 'agenciaTributaria', name: 'NIF', status: 'planned', category: 'Tax identifier', tags: ['identifiers', 'tax'], description: 'Número de Identificación Fiscal is the tax-identification concept. It may relate to DNI, NIE, or legal-entity identifiers, so do not treat it as one universal format.', related: ['NIF Inspector'] },
+      { brandKey: 'agenciaTributaria', name: 'CIF legacy', status: 'planned', category: 'Legacy business tax term', tags: ['identifiers', 'tax'], description: 'CIF is a historical term still present in legacy data and user language. Prefer current NIF terminology for legal-entity tax identifiers.', related: ['Legacy CIF Inspector'] },
+      { brandKey: 'seguridadSocialEspana', name: 'NAF / Social Security number', status: 'planned', category: 'Social security', tags: ['identifiers', 'government'], description: 'High-level developer context for Spanish social-security affiliation numbers. Business meaning and verification require official systems.' },
+      { brandKey: 'correosEspana', name: 'Spanish postal code', status: 'planned', category: 'Postal', tags: ['postal', 'addresses'], description: 'Five-digit postal code. The first two digits broadly align with province or autonomous-city prefixes, but postal validation is not administrative validation.', related: ['Spain Postal Code Validator'] },
+      { icon: '☎', name: 'Spanish phone numbers', status: 'planned', category: 'Phone', tags: ['phone'], description: 'Phone data uses country code +34. Mobile, landline, and service ranges need dedicated parsing rules before validation.', related: ['Spain Phone Validator'] },
+      { brandKey: 'iban', name: 'Spanish IBAN', status: 'available', category: 'Banking', tags: ['banking', 'payments'], description: 'Spanish IBANs use the ES country prefix. The existing global IBAN Validator route is available for generic IBAN checks.', related: ['IBAN Validator'] },
+      { brandKey: 'swift', name: 'BIC / SWIFT', status: 'ready', category: 'Banking', tags: ['banking', 'payments'], description: 'BIC/SWIFT codes identify financial institutions for international banking contexts. Do not infer domestic account ownership from a BIC.' },
+      { brandKey: 'vies', name: 'EU VAT / VIES', status: 'planned', category: 'Tax and business', tags: ['tax', 'government'], description: 'Spanish VAT identifier syntax and EU VIES status checks are different concerns. VIES is a business-status lookup, not just string validation.', related: ['Spain VAT / VIES Workbench'] },
+      { icon: '🚗', name: 'Vehicle registration', status: 'planned', category: 'Vehicle', tags: ['identifiers', 'government'], description: 'Informational overview for Spanish vehicle registration formats. Do not implement plate validation without a dedicated workbench spec.' },
+      { brandKey: 'bizum', name: 'Bizum', status: 'planned', category: 'Payments', tags: ['payments', 'banking'], description: 'Domestic instant-payment experience commonly tied to Spanish banks and mobile numbers. Future tools should be informational unless a meaningful inspector is specified.', related: ['Bizum Reference / Inspector'] }
+    ],
+    payments: [
+      { brandKey: 'iban', title: 'EUR and Spanish IBAN', status: 'available', tags: ['payments', 'banking'], text: 'Spain uses EUR and participates in IBAN-based European banking flows. Use the global IBAN Validator for generic checksum-level checks only.' },
+      { brandKey: 'sepa', title: 'SEPA', status: 'ready', tags: ['payments', 'banking'], text: 'SEPA credit transfer and direct debit contexts matter for euro-denominated domestic and cross-border payment integrations.' },
+      { brandKey: 'swift', title: 'BIC / SWIFT', status: 'ready', tags: ['banking'], text: 'International transfers may require BIC/SWIFT details in addition to account identifiers and payment purpose data.' },
+      { brandKey: 'bizum', title: 'Bizum', status: 'planned', tags: ['payments', 'banking'], text: 'Bizum appears in Spanish consumer payment UX. Treat it as future product research, not a validation feature in this hub.' },
+      { icon: '💳', title: 'Card payments', status: 'ready', tags: ['payments'], text: 'Card flows use global payment-network behavior plus Spanish locale display conventions for amounts, receipts, and dates.' },
+      { icon: '🏦', title: 'Direct debit', status: 'planned', tags: ['payments', 'banking'], text: 'Direct debit usually intersects with SEPA mandates, creditor identifiers, account data, and authorization state.' },
+      { brandKey: 'vies', title: 'EU VAT / VIES', status: 'planned', tags: ['tax', 'payments'], text: 'VAT number format checks and EU VIES business-status lookups must remain separate in future workbenches.' }
+    ],
+    officialResources: [
+      { brandKey: 'gobiernoEspana', label: 'Gobierno de España / Administracion.gob.es', status: 'available', tags: ['government'], note: 'Primary government entry points for Spanish public administration references. Use official pages before deep-linking.' },
+      { icon: '🪪', label: 'Ministerio del Interior', status: 'available', tags: ['government', 'identifiers'], note: 'Authoritative starting point for DNI and NIE public-service context. Confirm exact procedural URLs before linking deep references.' },
+      { brandKey: 'agenciaTributaria', label: 'Agencia Tributaria', status: 'available', tags: ['government', 'tax', 'identifiers'], note: 'Tax authority for NIF, VAT, and fiscal-identification context. Keep legal interpretation out of this page.' },
+      { brandKey: 'seguridadSocialEspana', label: 'Seguridad Social', status: 'available', tags: ['government', 'identifiers'], note: 'Official social-security portal for affiliation and contribution contexts.' },
+      { brandKey: 'bancoEspana', label: 'Banco de España', status: 'available', tags: ['government', 'banking'], note: 'Central bank and banking-system reference point, including payment-system context.' },
+      { brandKey: 'correosEspana', label: 'Correos', status: 'available', tags: ['postal', 'addresses'], note: 'Postal authority and official postal-code lookup starting point.' },
+      { brandKey: 'vies', label: 'European Commission VIES', status: 'available', tags: ['tax', 'government'], note: 'Official EU VAT number validation entry point. Use for business-status lookup, not local syntax alone.' },
+      { brandKey: 'sepa', label: 'European Payments Council / SEPA', status: 'available', tags: ['payments', 'banking'], note: 'Reference source for SEPA payment scheme context.' }
+    ],
+    plannedWorkbenches: [
+      { name: 'DNI Validator', status: 'planned', tags: ['identifiers', 'government'], description: 'Explain DNI structure, normalization, and check-letter behavior after a dedicated product spec is approved.' },
+      { name: 'NIE Validator', status: 'planned', tags: ['identifiers', 'government'], description: 'Explain NIE prefix, digits, and control-letter behavior without identity verification claims.' },
+      { name: 'NIF Inspector', status: 'planned', tags: ['identifiers', 'tax'], description: 'Inspect NIF type context for personal and legal-entity identifiers.' },
+      { name: 'Legacy CIF Inspector', status: 'planned', tags: ['identifiers', 'tax'], description: 'Help developers handle legacy CIF-labeled data while migrating terminology to current NIF language.' },
+      { name: 'Spain Phone Validator', status: 'planned', tags: ['phone'], description: 'Validate Spanish phone display and normalized +34 forms after a dedicated spec.' },
+      { name: 'Spain Postal Code Validator', status: 'planned', tags: ['postal', 'addresses'], description: 'Explain five-digit postal codes and province-prefix context without claiming address validity.' },
+      { name: 'Spain VAT / VIES Workbench', status: 'planned', tags: ['tax', 'government'], description: 'Separate VAT syntax checks from VIES business-status lookup and audit notes.' },
+      { name: 'Spanish IBAN Tools', status: 'planned', tags: ['banking', 'payments'], description: 'Country-specific explanations around ES IBANs, domestic context, and SEPA usage.' },
+      { name: 'Bizum Reference / Inspector', status: 'planned', tags: ['payments', 'banking'], description: 'Only after a clear spec defines what can be inspected safely without payment initiation or bank access.' }
+    ],
+    relatedGlobalTools: [
+      { label: 'JSON Formatter', path: 'tools/json-formatter/', icon: '▣', tags: ['developer'] },
+      { label: 'JWT Decoder', path: 'tools/jwt-decoder/', brandKey: 'jwt', tags: ['developer'] },
+      { label: 'Base64 Encoder', path: 'tools/base64-encoder/', icon: '⟲', tags: ['developer'] },
+      { label: 'URL Encoder', path: 'tools/url-encoder/', icon: '🔗', tags: ['developer'] },
+      { label: 'Regex Tester', path: 'tools/regex-tester/', icon: '.*', tags: ['developer'] },
+      { label: 'IBAN Validator', path: 'tools/iban-validator/', brandKey: 'iban', tags: ['banking'] }
+    ],
+    relatedCategories: [
+      { label: 'Finance', path: 'categories/finance/', tags: ['payments', 'banking'] },
+      { label: 'National Identifiers', path: 'categories/national-identifiers/', tags: ['identifiers'] },
+      { label: 'Developer Tools', path: 'categories/developer-tools/', tags: ['developer'] }
+    ],
+    futureCountryPages: [
+      { label: 'Brazil', status: 'available', path: 'brazil/' },
+      { label: 'Poland', status: 'available', path: 'poland/' },
+      { label: 'Germany', status: 'planned' },
+      { label: 'France', status: 'planned' },
+      { label: 'Portugal', status: 'planned' },
+      { label: 'Italy', status: 'planned' },
+      { label: 'Netherlands', status: 'planned' },
+      { label: 'Belgium', status: 'planned' },
+      { label: 'United Kingdom', status: 'planned' },
+      { label: 'United States', status: 'planned' },
+      { label: 'Canada', status: 'planned' },
+      { label: 'Mexico', status: 'planned' },
+      { label: 'Argentina', status: 'planned' },
+      { label: 'Chile', status: 'planned' },
+      { label: 'Japan', status: 'planned' },
+      { label: 'Australia', status: 'planned' },
+      { label: 'India', status: 'planned' },
+      { label: 'Ukraine', status: 'planned' }
+    ],
+    localizationExamples: [
+      { label: 'Date', value: '31/12/2026', tags: ['locale', 'date'] },
+      { label: 'Time', value: '14:25', tags: ['locale', 'time'] },
+      { label: 'Currency', value: '1.234,56 €', tags: ['currency'] },
+      { label: 'Decimal', value: '1.234,56', tags: ['locale', 'currency'] },
+      { label: 'Percentage', value: '35,7 %', tags: ['locale'] },
+      { label: 'Mobile phone', value: '+34 612 34 56 78', tags: ['phone'] },
+      { label: 'Landline', value: '+34 91 123 45 67', tags: ['phone'] },
+      { label: 'Postal code', value: '28013', tags: ['postal', 'addresses'] },
+      { label: 'Address example', value: 'Calle Mayor, 10, 2º B, 28013 Madrid', tags: ['addresses'] },
+      { label: 'Example person name', value: 'Lucía Martín', tags: ['locale'] },
+      { label: 'Mainland time zone', value: 'Europe/Madrid', tags: ['time'] },
+      { label: 'Canary Islands note', value: 'Europe/Madrid is not correct for Canary Islands local time', tags: ['time'] }
+    ],
+    addressExample: {
+      formatted: [
+        'Lucía Martín',
+        'Calle Mayor, 10, 2º B',
+        '28013 Madrid',
+        'Madrid',
+        'Spain'
+      ],
+      fields: [
+        { label: 'Recipient', value: 'Lucía Martín', description: 'Fictional person or organization receiving mail.' },
+        { label: 'Street type and name', value: 'Calle Mayor', description: 'Spanish addresses often include the street type before the street name.' },
+        { label: 'Building number', value: '10', description: 'Number within the street.' },
+        { label: 'Floor and door', value: '2º B', description: 'Common optional apartment or unit context.' },
+        { label: 'Postal code', value: '28013', description: 'Five-digit postal code. The prefix 28 is associated with Madrid province context.' },
+        { label: 'Municipality', value: 'Madrid', description: 'City or municipality for display and delivery.' },
+        { label: 'Province', value: 'Madrid', description: 'Useful for structured data and disambiguation.' },
+        { label: 'Autonomous community', value: 'Community of Madrid', description: 'Optional structured regional field depending on the use case.' },
+        { label: 'Country', value: 'Spain', description: 'Country label for international mail and cross-border records.' }
+      ]
+    },
+    phoneExamples: [
+      { label: 'Mobile', value: '612 34 56 78', description: 'Informational mobile display example. Do not treat this as complete validation.', tags: ['phone'] },
+      { label: 'Landline', value: '91 123 45 67', description: 'Madrid-style landline display example using national formatting.', tags: ['phone'] },
+      { label: 'International mobile', value: '+34 612 34 56 78', description: 'Use +34 for international display.', tags: ['phone'] },
+      { label: 'International landline', value: '+34 91 123 45 67', description: 'International display form for a landline example.', tags: ['phone'] },
+      { label: 'Normalized', value: '34612345678', description: 'Digits-only normalization is useful for storage and comparison, but not full validation.', tags: ['phone', 'developer'] }
+    ],
+    integrationChecklist: [
+      'Locale configured',
+      'UTF-8',
+      'Currency formatting',
+      'Date formatting',
+      'DNI and NIE terminology',
+      'NIF versus legacy CIF terminology',
+      'Postal code display',
+      'Phone formatting',
+      'Mainland versus Canary Islands timezone',
+      'Regional language handling',
+      'SEPA and IBAN context',
+      'VIES versus local VAT syntax'
+    ],
+    validationRules: [
+      { name: 'DNI', tags: ['identifiers', 'government'], points: ['Eight digits plus control letter in common developer contexts', 'Formatted and normalized forms should be stored separately', 'Check-letter behavior is not identity verification'] },
+      { name: 'NIE', tags: ['identifiers', 'government'], points: ['Common prefix letters include X, Y, and Z', 'Uses digits and a control letter', 'Foreigner identification context differs from Spanish citizen DNI'] },
+      { name: 'NIF', tags: ['identifiers', 'tax'], points: ['Tax identification concept, not one universal string shape', 'May represent personal or legal-entity contexts', 'Business verification requires authoritative systems'] },
+      { name: 'CIF legacy', tags: ['identifiers', 'tax'], points: ['Legacy term appears in old data and user vocabulary', 'Current terminology should prefer NIF for legal entities', 'Migration logic should be explicit'] },
+      { name: 'Postal code', tags: ['postal', 'addresses'], points: ['Five digits', 'Province-prefix context is useful but not enough for address validation', 'Correos remains the official postal reference'] },
+      { name: 'Phone', tags: ['phone'], points: ['Country code +34', 'Mobile, landline, and service ranges differ', 'Normalize before comparison but preserve display format'] },
+      { name: 'IBAN', tags: ['banking', 'payments'], points: ['Spanish IBANs start with ES', 'Checksum validation does not prove account ownership', 'SEPA and domestic payment context still matters'] },
+      { name: 'VAT / VIES', tags: ['tax', 'government'], points: ['Spanish VAT syntax and EU VIES status lookup are separate', 'VIES responses are business-status checks', 'Do not cache regulatory status without a product spec'] }
+    ],
+    commonMistakes: [
+      'DNI, NIE, NIF, and legacy CIF are not interchangeable terms.',
+      'Formatting validation is not identity verification.',
+      'VIES status lookup is different from local syntax validation.',
+      'Mainland Spain and the Canary Islands do not always share the same local time.',
+      'Spain has multiple co-official languages in relevant autonomous communities.',
+      'Preserve accents and use locale-aware collation for names and addresses.',
+      'Postal code is not the same as province or administrative validation.',
+      'IBAN checksum validation does not prove account ownership.',
+      'Do not imply Bizum payment initiation or bank access from an informational page.'
+    ],
+    bankingOverview: [
+      { brandKey: 'iban', name: 'IBAN', status: 'available', tags: ['banking', 'payments'], description: 'Global IBAN validation exists; Spain-specific interpretation remains a future workbench.' },
+      { brandKey: 'sepa', name: 'SEPA', status: 'ready', tags: ['banking', 'payments'], description: 'Spain participates in SEPA euro payment schemes. Future tools may explain mandates and transfer contexts.' },
+      { brandKey: 'swift', name: 'SWIFT / BIC', status: 'ready', tags: ['banking'], description: 'Relevant for international bank identification and cross-border transfer metadata.' },
+      { brandKey: 'bizum', name: 'Bizum', status: 'planned', tags: ['payments', 'banking'], description: 'Domestic instant-payment ecosystem. No parsing or payment behavior is implemented.' },
+      { icon: '🏦', name: 'Domestic account context', status: 'planned', tags: ['banking'], description: 'Legacy domestic bank/account identifiers can appear in old records even when IBAN is the modern exchange format.' },
+      { brandKey: 'vies', name: 'VIES', status: 'planned', tags: ['tax', 'government'], description: 'Useful for EU VAT business-status checks. It is not a substitute for local tax advice.' },
+      { icon: '💳', name: 'Cards', status: 'ready', tags: ['payments'], description: 'Card acceptance and receipts should still localize EUR amounts, dates, and decimal separators.' }
+    ],
+    localizationNotes: [
+      { name: 'Plural rules', description: 'Spanish pluralization should use locale-aware message formatting.', tags: ['locale'] },
+      { name: 'Week starts', description: 'Most Spanish user interfaces expect Monday as the first day of week.', tags: ['locale', 'date'] },
+      { name: 'Calendar', description: 'Gregorian calendar is the ordinary civil calendar.', tags: ['locale', 'date'] },
+      { name: 'Sorting', description: 'Use locale-aware collation and preserve accents such as á, é, í, ó, ú, ü, and ñ.', tags: ['locale', 'developer'] },
+      { name: 'Regional languages', description: 'Catalan/Valencian, Galician, Basque, and Aranese may be co-official in relevant regions.', tags: ['locale'] },
+      { name: 'Unicode', description: 'Use UTF-8 and preserve accents and ordinal markers in names and addresses.', tags: ['locale', 'developer'] },
+      { name: 'ICU', description: 'ICU locale commonly appears as es_ES.', tags: ['locale', 'developer'] },
+      { name: 'Timezone', description: 'Use Europe/Madrid for mainland and Balearic contexts; Canary Islands need a separate timezone choice.', tags: ['time', 'developer'] }
+    ],
+    ecosystem: [
+      { name: 'DNI', description: 'National identity context for Spanish citizens. Future validators must avoid identity-verification claims.', tags: ['identifiers', 'government'] },
+      { name: 'NIE', description: 'Foreigner identification context used in many administrative and commercial flows.', tags: ['identifiers', 'government'] },
+      { name: 'NIF', description: 'Tax identification concept that intersects with DNI, NIE, and legal-entity identifiers.', tags: ['identifiers', 'tax'] },
+      { name: 'SEPA', description: 'Payment ecosystem connecting EUR, IBAN, direct debit, credit transfers, and cross-border flows.', tags: ['payments', 'banking'] },
+      { name: 'Bizum', description: 'Domestic instant-payment experience commonly encountered by Spanish users.', tags: ['payments', 'banking'] },
+      { name: 'Correos', description: 'Postal authority context for postal-code and addressing workflows.', tags: ['postal', 'addresses'] },
+      { name: 'VIES', description: 'EU VAT validation service context for business identifiers.', tags: ['tax', 'government'] },
+      { name: 'Regional languages', description: 'Localization work may need Spanish plus co-official regional languages.', tags: ['locale'] }
+    ],
+    highlights: [
+      'Spain commonly uses the es-ES locale for Spanish display conventions.',
+      'Dates are commonly written as DD/MM/YYYY and times use a 24-hour clock.',
+      'EUR uses comma decimals and dot thousands separators in Spanish display.',
+      'DNI, NIE, NIF, and legacy CIF have different meanings and should not be conflated.',
+      'Spanish postal codes use five digits, but postal syntax is not address verification.',
+      'Spain participates in SEPA and uses IBAN for modern bank account exchange.',
+      'Bizum is important in consumer payment UX but no Bizum tool is implemented yet.',
+      'Mainland Spain and the Canary Islands differ in local time.',
+      'Regional co-official languages can affect labels, names, sorting, and user expectations.'
+    ],
+    developerNotes: [
+      'Use es-ES formatting for user-facing currency, date, time, and number display unless a regional locale is explicitly selected.',
+      'Store normalized identifiers separately from display masks when future validator specs exist.',
+      'Treat DNI, NIE, NIF, VAT, phone, postal code, and IBAN as separate workflows.',
+      'Keep VIES business-status lookup separate from local syntax checks.',
+      'Confirm official references before deep-linking regulatory, tax, identity, postal, or banking documentation.'
+    ],
+    developerExamples: [
+      {
+        title: 'Java Locale',
+        language: 'java',
+        brandKey: 'java',
+        code: 'Locale.forLanguageTag("es-ES")',
+        note: 'Use BCP 47 locale tags for Java formatting APIs.'
+      },
+      {
+        title: 'Java currency format',
+        language: 'java',
+        brandKey: 'java',
+        code: 'NumberFormat.getCurrencyInstance(Locale.forLanguageTag("es-ES")).format(value)',
+        note: 'Formats values using Spanish currency conventions.'
+      },
+      {
+        title: 'JavaScript Intl Currency',
+        language: 'javascript',
+        brandKey: 'javascript',
+        code: 'new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" })',
+        note: 'Formats EUR values with es-ES separators and currency display.'
+      },
+      {
+        title: 'JavaScript Date',
+        language: 'javascript',
+        brandKey: 'javascript',
+        code: 'new Intl.DateTimeFormat("es-ES", { timeZone: "Europe/Madrid" })',
+        note: 'Use an explicit timezone when records may cross mainland and Canary Islands contexts.'
+      },
+      {
+        title: 'TypeScript locale constant',
+        language: 'typescript',
+        brandKey: 'typescript',
+        code: "const spainLocale = 'es-ES' as const;",
+        note: 'Keep locale constants explicit when building typed formatting helpers.'
+      },
+      {
+        title: 'Python locale',
+        language: 'python',
+        brandKey: 'python',
+        code: 'locale.setlocale(locale.LC_ALL, "es_ES.UTF-8")',
+        note: 'Requires the es_ES locale to be installed on the host operating system. Babel may be safer for portable apps.'
+      },
+      {
+        title: 'Go language tag',
+        language: 'go',
+        brandKey: 'go',
+        code: 'language.MustParse("es-ES")',
+        note: 'Use golang.org/x/text/language when locale-aware behavior is needed.'
+      },
+      {
+        title: 'C# culture',
+        language: 'csharp',
+        brandKey: 'csharp',
+        code: 'CultureInfo.GetCultureInfo("es-ES")',
+        note: 'Use CultureInfo for formatting Spanish dates, numbers, and currency.'
+      },
+      {
+        title: 'Kotlin Locale',
+        language: 'kotlin',
+        brandKey: 'kotlin',
+        code: 'Locale.forLanguageTag("es-ES")',
+        note: 'Kotlin on the JVM can use Java Locale APIs.'
+      },
+      {
+        title: 'ICU locale',
+        language: 'text',
+        code: 'es_ES',
+        note: 'Common ICU locale identifier for Spanish in Spain.'
+      },
+      {
+        title: 'PostgreSQL formatting note',
+        language: 'sql',
+        brandKey: 'postgresql',
+        code: "to_char(amount, 'FM999G999G990D00')",
+        note: 'Database formatting depends on locale/session settings; prefer app-layer Intl formatting when possible.'
+      },
+      {
+        title: 'JSON payload locale',
+        language: 'json',
+        code: '{\n  "country": "ES",\n  "locale": "es-ES",\n  "currency": "EUR",\n  "timeZone": "Europe/Madrid"\n}',
+        note: 'Formatting examples only; not a validation schema.'
+      },
+      {
+        title: 'Currency formatting note',
+        language: 'text',
+        code: 'EUR in es-ES display commonly uses comma decimals and dot thousands separators.',
+        note: 'Keep stored numeric values separate from localized display strings.'
+      },
+      {
+        title: 'Date formatting note',
+        language: 'text',
+        code: 'DD/MM/YYYY',
+        note: 'Validate machine-readable dates separately from localized presentation.'
+      }
+    ],
+    jsonExamples: [
+      {
+        title: 'Customer',
+        code: '{\n  "name": "Lucía Martín",\n  "country": "ES",\n  "locale": "es-ES"\n}'
+      },
+      {
+        title: 'Address',
+        code: '{\n  "streetType": "Calle",\n  "streetName": "Mayor",\n  "buildingNumber": "10",\n  "floorDoor": "2º B",\n  "postalCode": "28013",\n  "municipality": "Madrid",\n  "province": "Madrid",\n  "autonomousCommunity": "Community of Madrid"\n}'
+      },
+      {
+        title: 'DNI test fixture',
+        code: '{\n  "type": "DNI",\n  "formatted": "00000000-T",\n  "normalized": "00000000T",\n  "fixture": true,\n  "note": "Fictional test value; not identity verification."\n}'
+      },
+      {
+        title: 'Phone',
+        code: '{\n  "countryCode": "+34",\n  "nationalDisplay": "612 34 56 78",\n  "normalized": "34612345678"\n}'
+      },
+      {
+        title: 'Banking context',
+        code: '{\n  "country": "ES",\n  "currency": "EUR",\n  "ibanCountryPrefix": "ES",\n  "paymentArea": "SEPA",\n  "ownershipVerified": false\n}'
+      },
+      {
+        title: 'VAT context',
+        code: '{\n  "country": "ES",\n  "vatId": "ESX0000000T",\n  "syntaxChecked": false,\n  "viesStatusChecked": false,\n  "fixture": true\n}'
+      }
+    ],
+    availableWorkbenches: {}
+  };
+
   const COUNTRY_PORTAL_CATALOG = [
     {
       id: 'brazil',
@@ -501,21 +956,22 @@
       id: 'spain',
       flag: '🇪🇸',
       name: 'Spain',
+      nativeName: 'España',
       iso2: 'ES',
       iso3: 'ESP',
       continent: 'Europe',
       region: 'Europe',
-      language: 'Spanish',
+      language: 'Spanish / regional co-official languages',
       currency: 'EUR',
       currencyName: 'Euro',
-      status: 'planned',
-      summary: 'Future hub for Spanish identity, tax, address, and EU payment workflows.',
-      identifiers: ['DNI', 'NIE', 'CIF'],
-      payments: ['IBAN', 'SEPA'],
-      features: ['identity', 'government', 'banking'],
+      status: 'inProgress',
+      summary: COUNTRY_HUBS.spain.description,
+      identifiers: ['DNI', 'NIE', 'NIF', 'CIF legacy', 'NAF', 'postal code', 'phone'],
+      payments: ['IBAN', 'SEPA', 'SWIFT', 'Bizum', 'VIES'],
+      features: ['payments', 'identity', 'government', 'banking'],
       availableWorkbenches: [],
-      plannedWorkbenches: ['DNI Validator', 'NIE Validator', 'CIF Validator'],
-      completion: 20,
+      plannedWorkbenches: COUNTRY_HUBS.spain.plannedWorkbenches.map((item) => item.name),
+      completion: 68,
       coordinates: { x: 47, y: 41 }
     },
     {
@@ -1076,7 +1532,7 @@
       return null;
     }
 
-    const section = createSection('Quick actions', 'Copy common Brazil values', 'country-quick-actions', 'Fast copy controls for identifiers and locale values developers repeatedly need.');
+    const section = createSection('Quick actions', `Copy common ${country.name} values`, 'country-quick-actions', 'Fast copy controls for identifiers and locale values developers repeatedly need.');
     const bar = createElement('div', 'country-action-bar');
     actions.forEach((item) => {
       const button = createElement('button', 'country-action-button', item.label);
@@ -1148,7 +1604,7 @@
   }
 
   function createLocalFormats(country) {
-    const section = createSection('Local formats', 'Identifiers, addresses, phones, and banking context', 'country-local-formats', 'Important Brazilian formats to account for before building validators or integrations.');
+    const section = createSection('Local formats', 'Identifiers, addresses, phones, and banking context', 'country-local-formats', `Important ${country.name} formats to account for before building validators or integrations.`);
     const grid = createElement('div', 'country-card-grid');
     country.localFormats.forEach((item) => grid.appendChild(createInfoCard(item, { className: 'country-info-card' })));
     section.appendChild(grid);
@@ -1276,7 +1732,7 @@
   }
 
   function createPayments(country) {
-    const section = createSection('Payments & banking', 'Developer notes for Brazilian payment flows', 'country-payments', 'High-level context only. PIX and banking validators need separate specs before implementation.');
+    const section = createSection('Payments & banking', `Developer notes for ${country.name} payment flows`, 'country-payments', 'High-level context only. Payment and banking validators need separate specs before implementation.');
     const grid = createElement('div', 'country-card-grid country-card-grid-compact');
     country.payments.forEach((item) => grid.appendChild(createInfoCard(item, { className: 'country-info-card' })));
     section.appendChild(grid);
@@ -1364,6 +1820,8 @@
     country.relatedGlobalTools.forEach((item) => {
       grid.appendChild(createInfoCard({
         icon: item.icon,
+        brandKey: item.brandKey,
+        brandLabel: item.brandLabel,
         name: item.label,
         status: 'available',
         tags: item.tags,

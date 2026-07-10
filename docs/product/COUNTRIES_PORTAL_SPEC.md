@@ -27,9 +27,9 @@ Valido Engine must not contain Countries Portal product logic, country-specific 
 
 ## Route Generation
 
-Current Valido Engine generates home, tool, category, and country hub routes. It does not yet have a generic product page route for `/en/countries/`.
+Current Valido Engine generates home, tool, category, and country hub routes. It does not yet have a generic product page route for `/en/countries/`, and metadata-only country hubs can need ValidoHub-owned shell materialization before any country-specific tool exists.
 
-To keep Engine generic, ValidoHub creates the Countries Portal after Engine publish:
+To keep Engine generic, ValidoHub creates the Countries Portal and missing metadata-only country hub shells after Engine publish:
 
 ```bash
 cd /Users/maxtkachenko/work/validohub
@@ -41,6 +41,14 @@ The script uses the generated `/en/` shell, updates SEO for the Countries Portal
 ```text
 generated/validohub/en/countries/index.html
 ```
+
+For metadata-only countries such as Spain, the same script creates a valid locale-first country page shell such as:
+
+```text
+generated/validohub/en/spain/index.html
+```
+
+The browser-side shared `assets/js/countries.js` renderer then renders the full country hub from `COUNTRY_HUBS` metadata. The script must stay generic and must not duplicate the country renderer.
 
 Generated output remains ignored and must not be committed.
 
@@ -67,7 +75,7 @@ The portal catalog includes:
 - Completion score.
 - Lightweight map coordinates.
 
-Brazil reuses the rich Brazil Country Hub metadata where possible and is marked as the reference implementation.
+Brazil reuses the rich Brazil Country Hub metadata where possible and is marked as the reference implementation. Spain reuses the rich Country Hub renderer as the first architecture-reuse proof and is marked in progress because its Country Intelligence Hub exists while Spain-specific validators remain planned.
 
 ## Discovery
 
@@ -78,7 +86,7 @@ Rules:
 - If a country has metadata and a generated country hub link exists, the card and map marker open that hub.
 - If a country has metadata but no generated country hub link exists, it remains visible as a planned or in-progress country with a Coming Soon state.
 - Adding future metadata makes the country appear in the portal.
-- Adding a real generated country hub makes the country become clickable without Engine changes.
+- Adding a real generated country hub or metadata-only country shell makes the country become clickable without Engine changes.
 
 ## Interactions
 
@@ -182,6 +190,7 @@ Browser-verify:
 - Filters.
 - World map.
 - Brazil card and marker open `/en/brazil/`.
+- Spain card and marker open `/en/spain/`.
 - Planned countries show Coming Soon.
 - Desktop and mobile layout.
 - No horizontal overflow.

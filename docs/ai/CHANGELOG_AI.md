@@ -313,3 +313,29 @@ Impact:
 - Visual polish only.
 - Valido Engine remains untouched.
 - Routes, metadata ownership, country discovery, validators, and workbench functionality did not change.
+
+## Spain Country Hub V1
+
+Changed:
+
+- Added Spain as a generated country hub at `/en/spain/`.
+- Added `countries/spain.yaml`.
+- Added Spain country outline and highlighted world map assets.
+- Added Spain country metadata, local-format context, localization examples, address and phone examples, payments and banking context, official resource labels, planned workbenches, related global tools, developer snippets, JSON examples, localization notes, and ecosystem cards.
+- Added reusable Brand Asset entries for Bizum, VIES, European Union, Gobierno de España, Agencia Tributaria, Seguridad Social, Banco de España, and Correos Spain.
+- Updated the Countries Portal so Spain is an in-progress real hub instead of a roadmap-only country.
+- Extended the existing post-publish route materializer so metadata-only country hubs receive generated locale-first shells.
+- Added generic portal search support for country native names.
+- Cleaned generic Country Hub renderer copy that still mentioned Brazil in shared section headings.
+- Allowed related global tool cards to pass `brandKey` through the existing shared card renderer.
+
+Reason:
+
+Spain proves the Brazil Country Hub reference implementation can be reused for another country through metadata and assets rather than a Spain-specific page system.
+
+Impact:
+
+- The change remains entirely in ValidoHub assets, country config, and docs.
+- Valido Engine remains untouched.
+- No DNI, NIE, NIF, CIF, VAT, VIES, phone, postal-code, IBAN, Bizum, payment, banking, tax, vehicle, or identity validator was implemented.
+- Future Spain-specific tools require dedicated product specs before implementation.

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" role="img" aria-labelledby="title desc">
+  <title id="title">Spain country outline</title>
+  <desc id="desc">Simplified Spain country outline including mainland Spain, Balearic Islands, Canary Islands, Ceuta, and Melilla.</desc>
+  <!-- Simplified vector based on public-domain geographic reference material. -->
+  <rect width="360" height="260" rx="24" fill="#f8fafc"/>
+  <g fill="none" stroke-linejoin="round">
+    <path d="M82 77 L115 57 L154 52 L193 59 L231 57 L269 74 L282 99 L269 126 L246 143 L213 151 L178 146 L147 154 L113 147 L83 127 L67 101 Z" fill="#fee2e2" stroke="#991b1b" stroke-width="5"/>
+    <path d="M104 83 L132 68 L158 65 L184 70 L213 69 L249 82 L263 100 L251 119 L230 132 L203 137 L178 132 L148 141 L119 135 L93 119 L82 101 Z" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+    <path d="M166 154 L188 149 L204 151 L195 160 L176 163 Z" fill="#fee2e2" stroke="#991b1b" stroke-width="3"/>
+    <path d="M214 159 L230 155 L242 160 L233 168 L216 167 Z" fill="#fee2e2" stroke="#991b1b" stroke-width="3"/>
+    <path d="M256 151 L270 148 L280 153 L272 161 L258 159 Z" fill="#fee2e2" stroke="#991b1b" stroke-width="3"/>
+    <path d="M102 204 L118 199 L132 202 L128 211 L109 212 Z" fill="#fee2e2" stroke="#991b1b" stroke-width="3"/>
+    <path d="M141 211 L157 207 L171 211 L165 220 L146 220 Z" fill="#fee2e2" stroke="#991b1b" stroke-width="3"/>
+    <circle cx="278" cy="140" r="5" fill="#fee2e2" stroke="#991b1b" stroke-width="2"/>
+    <circle cx="289" cy="143" r="4" fill="#fee2e2" stroke="#991b1b" stroke-width="2"/>
+  </g>
+  <g fill="#991b1b" opacity="0.72">
+    <circle cx="181" cy="100" r="4"/>
+    <circle cx="170" cy="103" r="2.2"/>
+  </g>
+  <text x="181" y="235" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#334155">Spain</text>
+</svg>

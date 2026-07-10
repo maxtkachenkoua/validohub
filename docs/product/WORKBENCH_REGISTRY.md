@@ -147,6 +147,7 @@ This is a product platform section, not a browser workbench plugin.
 - Related content/config:
   - `countries/brazil.yaml`
   - `countries/poland.yaml`
+  - `countries/spain.yaml`
   - `tools/brazil-pix-validator.yaml`
   - `tools/pesel-validator.yaml`
 - Current capabilities:
@@ -154,6 +155,7 @@ This is a product platform section, not a browser workbench plugin.
   - Locale-first country workbench routes.
   - Global Countries Portal at `/en/countries/`.
   - Product-owned post-publish portal route generation.
+  - Product-owned post-publish metadata-only country hub shell generation.
   - Product-owned Countries navigation grouping.
   - `All Countries` menu entry.
   - Automatic discovery of generated country hubs from locale-first links.
@@ -180,6 +182,10 @@ This is a product platform section, not a browser workbench plugin.
   - Reusable status chips for Ready, Available, Coming soon, Planned, Experimental, and Deprecated.
   - Brazil Developer Cheat Sheet.
   - Brazil localization examples, address examples, phone examples, local formats, payments, banking overview, official resources, available workbenches, planned workbenches, related global tools, developer notes, and integration checklist.
+  - Spain Country Hub V1 as the first architecture-reuse proof for the Brazil Country Hub renderer and visual system.
+  - Spain country profile, localization examples, address examples, phone examples, local formats, payments, banking overview, official resources, planned workbenches, related global tools, developer notes, and integration checklist.
+  - Spain visual assets for country outline and highlighted world map.
+  - Registered brand rendering for Bizum, VIES, European Union, Gobierno de España, Agencia Tributaria, Seguridad Social, Banco de España, Correos Spain, SEPA, SWIFT, IBAN, JWT, Java, Python, Go, Kotlin, C#, JavaScript, TypeScript, and PostgreSQL on the Spain hub.
   - Validation Rules and Common Integration Mistakes summaries without implementing validators.
   - Developer API Examples and JSON Examples with copyable snippets.
   - Localization Notes and Country Ecosystem cards.
@@ -194,4 +200,4 @@ This is a product platform section, not a browser workbench plugin.
   - Country tool category grouping.
   - Tags, display order, and icons through approved generic metadata.
   - Country-specific validator specs before any implementation.
-- Current quality status: Brazil is the reference Country Intelligence Portal V3; the Countries Portal is production-quality V1 for global discovery; country-specific validators remain future work.
+- Current quality status: Brazil is the reference Country Intelligence Portal V3; Spain is the first reuse-proof Country Hub V1; the Countries Portal is production-quality V1 for global discovery; country-specific validators remain future work.

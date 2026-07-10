@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 260" role="img" aria-labelledby="title desc">
+  <title id="title">World map highlighting Spain</title>
+  <desc id="desc">Simplified world map with Spain highlighted in Europe.</desc>
+  <!-- Simplified ValidoHub-owned world map asset for country hub visual identity. -->
+  <rect width="520" height="260" rx="16" fill="#f8fafc"/>
+  <g fill="#dbe4ee" stroke="#cbd5e1" stroke-width="1.2" stroke-linejoin="round">
+    <path d="M43 81c24-38 74-49 116-32 24 10 48 11 78 6 32-6 63 7 76 29 17 29-7 52-37 64-35 14-70 3-103 14-35 12-53 44-88 39-39-6-57-43-42-120Z"/>
+    <path d="M149 168c30-14 68-5 84 27 19 38-6 76-37 91-37-22-63-52-70-88-3-14 6-23 23-30Z"/>
+    <path d="M245 65c39-27 112-27 152-4 24 14 27 40 8 59-28 28-72 14-110 22-34 7-65 27-94 7-25-18 5-58 44-84Z"/>
+    <path d="M295 139c45-14 86 2 101 36 15 36 1 82-39 99-34 14-61-4-75-32-17-35-34-88 13-103Z"/>
+    <path d="M368 70c65-24 149-4 192 38 30 30 21 66-21 80-38 13-73-12-110-5-42 8-74 45-116 22-41-24-8-111 55-135Z"/>
+    <path d="M436 187c35-15 82-8 102 17 16 20 0 45-31 50-37 6-76-5-95-25-16-16-7-29 24-42Z"/>
+  </g>
+  <g fill="#fecaca" stroke="#991b1b" stroke-width="1.8" stroke-linejoin="round">
+    <path d="M244 95 L255 89 L269 88 L283 92 L293 91 L305 98 L309 107 L302 115 L288 119 L273 117 L259 121 L246 116 L239 106 Z"/>
+    <path d="M280 123 L289 121 L294 124 L289 129 L281 128 Z"/>
+    <path d="M222 169 L232 166 L241 168 L238 174 L226 175 Z"/>
+    <path d="M248 173 L258 171 L266 174 L262 180 L251 180 Z"/>
+  </g>
+  <circle cx="272" cy="106" r="18" fill="none" stroke="#991b1b" stroke-width="4" opacity="0.26"/>
+  <circle cx="272" cy="106" r="4.5" fill="#991b1b"/>
+  <path d="M272 106 C294 84 326 69 359 62" fill="none" stroke="#991b1b" stroke-width="2" stroke-dasharray="4 6" opacity="0.45"/>
+  <text x="390" y="61" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#334155">Spain</text>
+</svg>

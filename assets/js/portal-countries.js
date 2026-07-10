@@ -26,7 +26,9 @@
     pix: 'pix',
     iban: 'iban',
     swift: 'swift',
-    sepa: 'sepa'
+    sepa: 'sepa',
+    bizum: 'bizum',
+    vies: 'vies'
   };
 
   function helpers() {
@@ -95,6 +97,7 @@
         status,
         searchable: [
           country.name,
+          country.nativeName,
           country.iso2,
           country.iso3,
           country.currency,

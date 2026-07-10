@@ -53,6 +53,7 @@ Country-specific tools should be planned through specs before implementation. Th
 Country expansion priorities:
 
 - Keep `/en/countries/` as the global country discovery homepage.
+- Treat Spain Country Hub V1 as the first proof that the Brazil Country Hub renderer can be reused without a new page system.
 - Expand Countries Portal metadata only when useful and truthful; do not create fake country hubs.
 - Add future country hubs so the portal can discover their generated routes automatically.
 - Extend Country Hub Template V3 from Brazil to Poland and future countries.
@@ -61,6 +62,20 @@ Country expansion priorities:
 - Add more country hubs only when useful content or tools are ready.
 - Keep country slugs stable and non-localized.
 - Keep all country-specific browser behavior in ValidoHub assets, not Engine.
+
+Spain-specific future workbench candidates:
+
+- DNI Validator.
+- NIE Validator.
+- NIF Inspector.
+- Legacy CIF Inspector.
+- Spain Phone Validator.
+- Spain Postal Code Validator.
+- Spain VAT / VIES Workbench.
+- Spanish IBAN Tools.
+- Bizum Reference / Inspector.
+
+Each Spain-specific workbench needs its own product spec and approval before implementation.
 
 ## Later Converter Section
 

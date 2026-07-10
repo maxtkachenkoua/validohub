@@ -2,7 +2,7 @@
 
 Country hubs are Developer Intelligence pages for country-specific implementation work. They are not validator pages and they are not a promise that every listed local format has a completed workbench.
 
-Brazil is the reference implementation for Country Hub Template V3 and Country Hub Visual Identity V2.
+Brazil is the reference implementation for Country Hub Template V3 and Country Hub Visual Identity V2. Spain Country Hub V1 is the first proof that the same renderer, section model, Brand Asset System, visual asset registry, cards, snippets, status chips, and copy controls can support another country without a new page system.
 
 The permanent visual and content standard is `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md`. Future AI assistants must also read `docs/ai/COUNTRY_HUB_AI_GUIDE.md`.
 
@@ -150,6 +150,11 @@ Brazil currently uses real SVG geographic assets for:
 
 These SVGs are generated from Natural Earth geometry via `world-atlas` TopoJSON. Natural Earth data is public domain. Keep source notes in the SVG files and keep the component reusable.
 
+Spain currently uses ValidoHub-owned simplified SVG geographic assets for:
+
+- Spain country outline: `assets/images/countries/spain-outline.svg`.
+- Miniature world map with Spain highlighted: `assets/images/countries/world-map-spain.svg`.
+
 The rendering contract is intentionally generic:
 
 - Country data provides a stable `visualIdentity.countryId`.
@@ -232,6 +237,8 @@ Use semantic icons for non-branded concepts such as CPF, CNPJ, CEP, Regex, JSON,
 
 Brazil is the reference Country Hub consumer of `brandKey` values for PIX, Banco Central do Brasil, gov.br, Receita Federal, Correios, SWIFT, IBAN, JWT, Java, Python, Go, Kotlin, C#, JavaScript, TypeScript, and PostgreSQL.
 
+Spain reuses the same Brand Asset System for Bizum, VIES, European Union, Gobierno de España, Agencia Tributaria, Seguridad Social, Banco de España, Correos, SEPA, SWIFT, IBAN, JWT, Java, Python, Go, Kotlin, C#, JavaScript, TypeScript, and PostgreSQL.
+
 ## Brazil Reference
 
 Brazil V3 plus Visual Identity V2 covers:
@@ -256,6 +263,19 @@ Brazil V3 plus Visual Identity V2 covers:
 - Country Ecosystem relationship cards connecting PIX, CPF, CNPJ, CEP, phone, banks, government, and payments.
 
 This does not implement PIX, CPF, CNPJ, CEP, phone, or banking validation.
+
+## Spain Reuse Proof
+
+Spain Country Hub V1 covers:
+
+- Spain profile data for native name, population context, area, capital, largest city, continent, region, languages, currency, calling code, TLD, driving side, ISO codes, locale, date/time, separators, address format, postal code format, and timezone notes.
+- Spain outline and highlighted world map assets through the existing visual registry.
+- Developer Country Profile, Quick Actions, Developer Cheat Sheet, Localization Examples, Address Example, Phone Number Examples, Local Formats, Developer Integration Checklist, Validation Rules, Common Integration Mistakes, Payments & Banking, Banking Overview, Official Resources, Planned Workbenches, Related Global Tools, Discovery Links, Developer Notes, API snippets, JSON Examples, Localization Notes, and Country Ecosystem.
+- Local-format context for DNI, NIE, NIF, legacy CIF terminology, NAF / Social Security number, Spanish postal codes, Spanish phone numbers, Spanish IBAN, BIC/SWIFT, EU VAT / VIES, vehicle registration, and Bizum.
+- Label-only official resource references for Spanish government, identity, tax, social-security, central-bank, postal, EU VAT, and SEPA resources.
+- Planned workbenches only; no Spain-specific validators are implemented.
+
+This does not implement DNI, NIE, NIF, CIF, VAT, VIES lookup, phone, postal-code, IBAN, Bizum, vehicle, payment, banking, tax, or identity validation.
 
 ## Search And Discovery Preparation
 

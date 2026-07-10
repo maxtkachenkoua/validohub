@@ -39,6 +39,7 @@ Current examples:
 /en/brazil/brazil-pix-validator/
 /en/poland/
 /en/poland/pesel-validator/
+/en/spain/
 /en/tools/base64-encoder/
 /en/countries/
 ```
@@ -49,7 +50,7 @@ The global Countries Portal route is a ValidoHub product route:
 /{locale}/countries/
 ```
 
-Current Valido Engine does not generate arbitrary product landing pages. ValidoHub therefore materializes `/en/countries/` after publish through `scripts/build-countries-portal.mjs`, using the generated site shell and ValidoHub-owned browser assets. This is intentionally product-owned and must not become country-specific Engine behavior.
+Current Valido Engine does not generate arbitrary product landing pages, and metadata-only country hubs may not have an Engine-generated route until a country-specific tool exists. ValidoHub therefore materializes `/en/countries/` and missing metadata-only country hub shells after publish through `scripts/build-countries-portal.mjs`, using the generated site shell and ValidoHub-owned browser assets. This is intentionally product-owned and must not become country-specific Engine behavior.
 
 ## Product Hierarchy
 
@@ -129,6 +130,8 @@ The permanent Country Hub design standard lives in `docs/product/COUNTRY_HUB_DES
 
 Country Hub V3 keeps country-specific facts in product-owned country metadata and uses generic rendering logic for sections, visual identity assets, official brand placeholders, cards, status chips, copy controls, semantic discovery tags, snippets, ecosystem diagrams, and hidden future ad slots.
 
+Spain Country Hub V1 proves that this model can be reused by adding country metadata and assets rather than a country-specific page system. Spain reuses the Brazil renderer, section order, status system, Brand Asset System, visual asset registry, copy controls, snippets, and Countries Portal discovery behavior.
+
 Country Hub Visual Identity V2 keeps geographic visuals in ValidoHub-owned assets:
 
 - Country outline SVGs live under `assets/images/countries/`.
@@ -161,7 +164,6 @@ The product should be ready to add:
 
 - Brazil
 - Poland
-- Spain
 - Germany
 - Austria
 - France

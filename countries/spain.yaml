@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: ES
+slug: spain
+name:
+  en: Spain
+region: Europe
+languages:
+  - es
+  - en
+currency: EUR
+relatedCountries:
+  - BR
+  - PL

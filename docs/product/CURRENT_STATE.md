@@ -27,6 +27,7 @@ Current country hubs:
 
 - Brazil: `/en/brazil/`
 - Poland: `/en/poland/`
+- Spain: `/en/spain/`
 
 Current country workbench routes:
 
@@ -60,9 +61,11 @@ The portal discovers available country hubs from generated links, shows roadmap 
 
 Countries Portal Visual Polish V1 is complete. The portal now uses stronger product messaging, richer derived platform metrics, subtle country identity accents, improved card elevation, polished filter controls, a more prominent world map interaction, refined continent headings, and a premium Brazil reference badge. This was a visual iteration only; routing, discovery, metadata ownership, and Engine boundaries did not change.
 
-Current Engine does not generate arbitrary product pages such as `/en/countries/`. To keep Engine generic, ValidoHub materializes this page after publish with `node scripts/build-countries-portal.mjs`. Do not move this product behavior into Engine unless a future generic static-page capability is approved.
+Current Engine does not generate arbitrary product pages such as `/en/countries/`, and it only emits country hubs that are connected to generated country-specific tools. To keep Engine generic, ValidoHub materializes the Countries Portal and metadata-only country hub shells after publish with `node scripts/build-countries-portal.mjs`. Do not move this product behavior into Engine unless a future generic static-page capability is approved.
 
 Brazil now uses Country Hub Template V3 as the reference Developer Country Intelligence Portal. It also uses Country Hub Visual Identity V2 for real SVG geography. The rich hub is rendered by `assets/js/countries.js` from a generic country metadata structure and keeps the Engine-generated country page as fallback HTML.
+
+Spain Country Hub V1 is complete as the first architecture-reuse proof for the Brazil reference system. Spain is implemented through the same shared country metadata model, renderer, Brand Asset System, Country Visual System, copy controls, status chips, snippets, cards, and Countries Portal discovery behavior. It adds Spain outline and world-map SVG assets plus Spain/EU reusable brand entries, but it does not implement DNI, NIE, NIF, VAT, phone, postal-code, Bizum, payment, banking, or identity validators.
 
 Brazil is also the canonical Country Hub design reference. Future country hubs must read `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md` and `docs/ai/COUNTRY_HUB_AI_GUIDE.md` before implementation. Spain, Poland, Germany, France, Japan, and all future countries inherit the Brazil structure and design language; only metadata and local content should change.
 
@@ -126,7 +129,7 @@ Every current and future page, workbench, Country Hub, card, navigation surface,
 
 AI assistants must check the Brand Registry before choosing a logo or icon. New brands require a registry entry first.
 
-Current registered brands include PIX, Java, Python, Go, Kotlin, C#, .NET, Node.js, React, Next.js, TypeScript, JavaScript, Docker, Kubernetes, PostgreSQL, MySQL, MongoDB, Redis, JWT, Stripe, Visa, Mastercard, American Express, SWIFT, SEPA, IBAN, GitHub, OpenAPI, GraphQL, gov.br, Banco Central do Brasil, Receita Federal, and Correios.
+Current registered brands include PIX, Java, Python, Go, Kotlin, C#, .NET, Node.js, React, Next.js, TypeScript, JavaScript, Docker, Kubernetes, PostgreSQL, MySQL, MongoDB, Redis, JWT, Stripe, Visa, Mastercard, American Express, SWIFT, SEPA, IBAN, Bizum, VIES, European Union, GitHub, OpenAPI, GraphQL, gov.br, Gobierno de España, Agencia Tributaria, Seguridad Social, Banco de España, Banco Central do Brasil, Receita Federal, Correos, and Correos Spain.
 
 ## Generated Site Root
 
@@ -154,7 +157,7 @@ Publish:
 mvn -q -pl valido-cli exec:java -Dexec.mainClass=com.validoengine.cli.EngineMain -Dexec.args="publish --site /Users/maxtkachenko/work/validohub/site.yaml"
 ```
 
-Countries Portal route after publish:
+ValidoHub post-publish route materialization:
 
 ```bash
 cd /Users/maxtkachenko/work/validohub
