@@ -266,3 +266,26 @@ Impact:
 - Valido Engine remains untouched.
 - No official logos were bundled in this step.
 - No new country-specific validator, workbench, country, route, YAML field, backend behavior, or generated output was added.
+
+## Countries Portal V1
+
+Changed:
+
+- Added the global Countries Portal product page at `/en/countries/`.
+- Added `assets/js/portal-countries.js` for portal rendering, search, filters, country previews, continent grouping, and lightweight map interactions.
+- Extended `assets/js/countries.js` with shared country portal metadata exports and an `All Countries` navigation entry.
+- Added ValidoHub-owned post-publish route generation through `scripts/build-countries-portal.mjs`.
+- Added `docs/product/COUNTRIES_PORTAL_SPEC.md`.
+- Updated country architecture, current state, registry, and future planning documentation.
+
+Reason:
+
+ValidoHub needs a global discovery homepage for country intelligence while Valido Engine remains a generic static site generator.
+
+Impact:
+
+- The change remains entirely in ValidoHub assets, scripts, and docs.
+- Valido Engine remains untouched.
+- Available country hubs are discovered from generated links.
+- Roadmap countries are visible without creating fake hubs.
+- No PIX, CPF, CNPJ, CEP, PESEL, banking, payment, or country-specific validator was implemented.

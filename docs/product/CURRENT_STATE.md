@@ -43,6 +43,23 @@ Route rules:
 
 The Countries navigation is ValidoHub-owned product behavior in `assets/js/countries.js`. It groups generated country hub links under a scalable Countries menu without hardcoding country names or changing Engine templates.
 
+The global Countries Portal is now a ValidoHub-owned product page at:
+
+```text
+/en/countries/
+```
+
+Current source files:
+
+- Portal metadata and shared country exports: `assets/js/countries.js`.
+- Portal renderer and interactions: `assets/js/portal-countries.js`.
+- Portal styling: `assets/css/validohub.css`.
+- Post-publish route materializer: `scripts/build-countries-portal.mjs`.
+
+The portal discovers available country hubs from generated links, shows roadmap countries from product-owned country metadata, groups countries by continent, supports instant search and filters, includes a lightweight interactive world map, and highlights Brazil as the Reference Implementation.
+
+Current Engine does not generate arbitrary product pages such as `/en/countries/`. To keep Engine generic, ValidoHub materializes this page after publish with `node scripts/build-countries-portal.mjs`. Do not move this product behavior into Engine unless a future generic static-page capability is approved.
+
 Brazil now uses Country Hub Template V3 as the reference Developer Country Intelligence Portal. It also uses Country Hub Visual Identity V2 for real SVG geography. The rich hub is rendered by `assets/js/countries.js` from a generic country metadata structure and keeps the Engine-generated country page as fallback HTML.
 
 Brazil is also the canonical Country Hub design reference. Future country hubs must read `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md` and `docs/ai/COUNTRY_HUB_AI_GUIDE.md` before implementation. Spain, Poland, Germany, France, Japan, and all future countries inherit the Brazil structure and design language; only metadata and local content should change.
@@ -133,6 +150,13 @@ Publish:
 
 ```bash
 mvn -q -pl valido-cli exec:java -Dexec.mainClass=com.validoengine.cli.EngineMain -Dexec.args="publish --site /Users/maxtkachenko/work/validohub/site.yaml"
+```
+
+Countries Portal route after publish:
+
+```bash
+cd /Users/maxtkachenko/work/validohub
+node scripts/build-countries-portal.mjs
 ```
 
 Local preview:

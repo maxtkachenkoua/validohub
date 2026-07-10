@@ -52,6 +52,9 @@ Country-specific tools should be planned through specs before implementation. Th
 
 Country expansion priorities:
 
+- Keep `/en/countries/` as the global country discovery homepage.
+- Expand Countries Portal metadata only when useful and truthful; do not create fake country hubs.
+- Add future country hubs so the portal can discover their generated routes automatically.
 - Extend Country Hub Template V3 from Brazil to Poland and future countries.
 - Decide whether rich country intelligence data should remain product-side browser data or move into a generic build-time Engine model for SEO.
 - Define metadata for featured workbenches, tags, display order, and icons through the architecture process.

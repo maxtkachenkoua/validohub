@@ -142,6 +142,8 @@ This registry records production browser workbenches currently owned by ValidoHu
 This is a product platform section, not a browser workbench plugin.
 
 - Source JS: `assets/js/countries.js`
+- Portal JS: `assets/js/portal-countries.js`
+- Portal builder: `scripts/build-countries-portal.mjs`
 - Related content/config:
   - `countries/brazil.yaml`
   - `countries/poland.yaml`
@@ -150,7 +152,19 @@ This is a product platform section, not a browser workbench plugin.
 - Current capabilities:
   - Locale-first country hub routes.
   - Locale-first country workbench routes.
+  - Global Countries Portal at `/en/countries/`.
+  - Product-owned post-publish portal route generation.
   - Product-owned Countries navigation grouping.
+  - `All Countries` menu entry.
+  - Automatic discovery of generated country hubs from locale-first links.
+  - Product-owned roadmap metadata for future countries.
+  - Search by country name, ISO code, currency, language, identifier, and payment system.
+  - Region, status, and developer feature filters.
+  - Lightweight interactive world map.
+  - Country card hover/focus previews.
+  - Continent grouping.
+  - Completion progress bars.
+  - Brazil featured as Reference Implementation.
   - Brand Asset System consumer through `assets/js/brand-assets.js`.
   - Country Hub Template V3 renderer for Brazil.
   - Country Hub Design Guide as the permanent reusable design standard.
@@ -180,4 +194,4 @@ This is a product platform section, not a browser workbench plugin.
   - Country tool category grouping.
   - Tags, display order, and icons through approved generic metadata.
   - Country-specific validator specs before any implementation.
-- Current quality status: Brazil is the reference Country Intelligence Portal V3 and design-system standard; country-specific validators remain future work.
+- Current quality status: Brazil is the reference Country Intelligence Portal V3; the Countries Portal is production-quality V1 for global discovery; country-specific validators remain future work.

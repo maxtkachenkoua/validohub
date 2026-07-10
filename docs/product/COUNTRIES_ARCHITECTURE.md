@@ -40,7 +40,16 @@ Current examples:
 /en/poland/
 /en/poland/pesel-validator/
 /en/tools/base64-encoder/
+/en/countries/
 ```
+
+The global Countries Portal route is a ValidoHub product route:
+
+```text
+/{locale}/countries/
+```
+
+Current Valido Engine does not generate arbitrary product landing pages. ValidoHub therefore materializes `/en/countries/` after publish through `scripts/build-countries-portal.mjs`, using the generated site shell and ValidoHub-owned browser assets. This is intentionally product-owned and must not become country-specific Engine behavior.
 
 ## Product Hierarchy
 
@@ -74,6 +83,32 @@ The Countries product model should eventually support reusable metadata such as:
 - Icon.
 
 These fields must be introduced only through a deliberate Engine architecture change or approved ACR if the current DSL cannot support them. Until then, use the existing fields and document future needs here.
+
+## Countries Portal
+
+The Countries Portal is documented in `docs/product/COUNTRIES_PORTAL_SPEC.md`.
+
+Source ownership:
+
+- `assets/js/countries.js` owns shared country metadata, generated country hub discovery helpers, Country Hub rendering, and Countries navigation.
+- `assets/js/portal-countries.js` owns portal rendering, search, filters, previews, and lightweight map interactions.
+- `scripts/build-countries-portal.mjs` creates `/en/countries/` in generated output after Engine publish.
+
+Discovery rules:
+
+- Available country hubs are discovered from generated locale-first country links.
+- Countries with metadata but no generated country hub remain visible as planned or in-progress entries.
+- Future metadata additions make countries appear in the portal.
+- Future generated country hubs become clickable automatically when their route exists.
+
+Progress rules:
+
+- V1 uses explicit ValidoHub product metadata because the current Engine DSL does not have a generic country readiness model.
+- Brazil is the reference country and appears as `100%`.
+- Countries with generated but incomplete hubs can be marked in progress.
+- Roadmap countries show planned progress.
+
+The portal must never imply that a validator exists when only a roadmap entry exists.
 
 ## Country Hub Requirements
 
@@ -117,6 +152,8 @@ The global brand policy applies to Country Hubs, workbenches, Markdown, docs, na
 Navigation must scale beyond two countries.
 
 Product-side navigation may group country hubs under a Countries entry, but it must not hardcode Brazil or Poland. It should derive countries from generated country links and preserve the original locale-first URLs.
+
+The Countries menu includes an `All Countries` entry pointing to `/en/countries/`. Generated country hub links are grouped beneath it.
 
 ## Future Countries
 
