@@ -1097,7 +1097,167 @@
         tags: ['identifiers', 'government'],
         description: 'Validate, parse, generate, and explain Polish PESEL numbers.'
       }
-    }
+    },
+    futureCountryPages: [
+      { label: 'Brazil', status: 'available', path: 'brazil/' },
+      { label: 'Poland', status: 'available', path: 'poland/' },
+      { label: 'Germany', status: 'planned' },
+      { label: 'France', status: 'planned' },
+      { label: 'Portugal', status: 'planned' },
+      { label: 'Italy', status: 'planned' },
+      { label: 'Netherlands', status: 'planned' },
+      { label: 'Belgium', status: 'planned' },
+      { label: 'United Kingdom', status: 'planned' },
+      { label: 'United States', status: 'planned' },
+      { label: 'Canada', status: 'planned' },
+      { label: 'Mexico', status: 'planned' },
+      { label: 'Argentina', status: 'planned' },
+      { label: 'Chile', status: 'planned' },
+      { label: 'Japan', status: 'planned' },
+      { label: 'Australia', status: 'planned' },
+      { label: 'India', status: 'planned' },
+      { label: 'Ukraine', status: 'planned' }
+    ],
+    localizationExamples: [
+      { label: 'Date', value: '11.07.2026', tags: ['locale', 'date'] },
+      { label: 'Time', value: '14:25', tags: ['locale', 'time'] },
+      { label: 'Currency', value: '1 234,56 zł', tags: ['currency'] },
+      { label: 'Decimal', value: '1 234,56', tags: ['locale', 'currency'] },
+      { label: 'Percentage', value: '35,7%', tags: ['locale'] },
+      { label: 'Mobile phone', value: '+48 501 234 567', tags: ['phone'] },
+      { label: 'Landline', value: '+48 22 123 45 67', tags: ['phone'] },
+      { label: 'Postal code', value: '00-001', tags: ['postal', 'addresses'] },
+      { label: 'Address example', value: 'ul. Marszałkowska 100/10, 00-001 Warszawa', tags: ['addresses'] },
+      { label: 'Example person name', value: 'Jan Kowalski', tags: ['locale'] },
+      { label: 'Mainland time zone', value: 'Europe/Warsaw', tags: ['time'] }
+    ],
+    addressExample: {
+      formatted: [
+        'Jan Kowalski',
+        'ul. Marszałkowska 100 m. 10',
+        '00-001 Warszawa',
+        'Poland'
+      ],
+      fields: [
+        { label: 'Recipient', value: 'Jan Kowalski', description: 'Fictional person or organization receiving mail.' },
+        { label: 'Street type and name', value: 'ul. Marszałkowska', description: 'Polish addresses usually include the street type and name.' },
+        { label: 'Building and flat number', value: '100 m. 10', description: 'Building number and apartment unit details.' },
+        { label: 'Postal code', value: '00-001', description: 'Five-digit postal code with hyphen (NN-NNN).' },
+        { label: 'City', value: 'Warszawa', description: 'City or municipality for display and delivery.' },
+        { label: 'Country', value: 'Poland', description: 'Country label for international mail and cross-border records.' }
+      ]
+    },
+    phoneExamples: [
+      { label: 'Mobile', value: '501 234 567', description: 'Polish mobile layout display example.', tags: ['phone'] },
+      { label: 'Landline', value: '22 123 45 67', description: 'Warsaw-style landline display example.', tags: ['phone'] },
+      { label: 'International mobile', value: '+48 501 234 567', description: 'Use +48 for international representation.', tags: ['phone'] },
+      { label: 'International landline', value: '+48 22 123 45 67', description: 'International layout for Warsaw landline.', tags: ['phone'] },
+      { label: 'Normalized', value: '48501234567', description: 'Digits-only normalization for databases.', tags: ['phone', 'developer'] }
+    ],
+    integrationChecklist: [
+      'Locale pl-PL configured',
+      'UTF-8 encoding preserved',
+      'Złoty (PLN) formatting with comma decimals and space thousands separators',
+      'PESEL validation rules and checksum',
+      'NIP tax identifier checksum rules',
+      'REGON business register length and checks',
+      'Polish postal code display mask (NN-NNN)',
+      'Phone code +48 formatting',
+      'NRB domestic format vs IBAN PL representation',
+      'BLIK payment system integration parameters'
+    ],
+    validationRules: [
+      { name: 'PESEL', tags: ['identifiers', 'government'], points: ['11 digits total', 'Checksum uses 1-3-7-9 weight factors', 'Encodes date of birth and gender (even for female, odd for male)'] },
+      { name: 'NIP', tags: ['identifiers', 'tax'], points: ['10 digits total', 'Checksum uses 6-5-7-2-3-4-5-6-7 weights', 'Used for tax administration and invoices'] },
+      { name: 'REGON', tags: ['identifiers', 'government'], points: ['Supports 9-digit local registry and 14-digit subdivision layouts', 'Weighted checksum algorithm verifies structural validity'] },
+      { name: 'Postal code', tags: ['postal', 'addresses'], points: ['Five digits in NN-NNN mask', 'First digit defines the main postal region (e.g. 0 for Warsaw)'] },
+      { name: 'Phone', tags: ['phone'], points: ['Nine digits excluding country code +48', 'Mobile ranges and regional landline prefixes have different shapes'] },
+      { name: 'IBAN', tags: ['banking', 'payments'], points: ['Polish IBAN starts with PL followed by control digits and 26-digit NRB', 'Direct checksum verification using modulo 97'] }
+    ],
+    commonMistakes: [
+      'Treating BLIK as a bank account identifier rather than a mobile payment token.',
+      'Conflating NIP (tax) and PESEL (personal) identifiers.',
+      'Using comma instead of space for thousands formatting, which looks unnatural to Polish users.',
+      'Forgetting the hyphen in the NN-NNN postal code display.',
+      'Hardcoding PLN symbol position before the amount (PLN should be formatted as 123,45 zł or 123,45 PLN).',
+      'Conflating 26-digit domestic NRB accounts with 28-character PL IBANs in databases.'
+    ],
+    bankingOverview: [
+      { brandKey: 'iban', name: 'IBAN', status: 'available', tags: ['banking', 'payments'], description: 'PL-prefixed IBAN format is standard for international transfers.' },
+      { brandKey: 'sepa', name: 'SEPA', status: 'ready', tags: ['banking', 'payments'], description: 'Euro accounts in Poland support SEPA, but domestic transfers use PLN clearing (Elixir).' },
+      { brandKey: 'swift', name: 'SWIFT / BIC', status: 'ready', tags: ['banking'], description: 'Required for international non-SEPA transfers.' },
+      { icon: '💸', name: 'BLIK', status: 'planned', tags: ['payments', 'banking'], description: 'Widely popular domestic instant mobile payment solution using 6-digit codes.' },
+      { icon: '🏦', name: 'Domestic account context', status: 'planned', tags: ['banking'], description: 'Elixir is the domestic clearing system processing PLN transfers in three daily sessions.' }
+    ],
+    localizationNotes: [
+      { name: 'Plural rules', description: 'Polish has complex plural forms (1, 2-4, 5-21, etc.) depending on the noun case.', tags: ['locale'] },
+      { name: 'Week starts', description: 'Most Polish user interfaces expect Monday as the first day of week.', tags: ['locale', 'date'] },
+      { name: 'Calendar', description: 'Gregorian calendar is the ordinary civil calendar.', tags: ['locale', 'date'] },
+      { name: 'Unicode', description: 'Ensure support for Polish diacritics: ą, ć, ę, ł, ń, ó, ś, ź, ż.', tags: ['locale', 'developer'] },
+      { name: 'Timezone', description: 'Use Europe/Warsaw for global civil time in Poland.', tags: ['time', 'developer'] }
+    ],
+    ecosystem: [
+      { name: 'PESEL', description: 'Personal identity register for citizens and residents.', tags: ['identifiers', 'government'] },
+      { name: 'NIP', description: 'Tax identification number register.', tags: ['identifiers', 'tax'] },
+      { name: 'REGON', description: 'National register of business entities.', tags: ['identifiers', 'government'] },
+      { name: 'BLIK', description: 'Mobile payment standard used by millions of bank customers.', tags: ['payments', 'banking'] }
+    ],
+    highlights: [
+      'Poland uses pl-PL locale for formatting.',
+      'PLN is displayed with space separators and \'zł\' symbol at the end (e.g. 1 234,56 zł).',
+      'Diacritics like ł and ż are common and must be preserved.',
+      'BLIK is the leading mobile payment method in Poland.',
+      'Date format is DD.MM.YYYY.'
+    ],
+    developerNotes: [
+      'Ensure database tables support UTF-8 for Polish diacritics.',
+      'Validate local PESEL, NIP, and REGON formats separately.',
+      'Use PL country prefix for IBAN validation on Polish accounts.'
+    ],
+    developerExamples: [
+      {
+        title: 'Java Locale',
+        language: 'java',
+        brandKey: 'java',
+        code: 'Locale.forLanguageTag("pl-PL")',
+        note: 'Use BCP 47 locale tags for Java formatting APIs.'
+      },
+      {
+        title: 'Java currency format',
+        language: 'java',
+        brandKey: 'java',
+        code: 'NumberFormat.getCurrencyInstance(Locale.forLanguageTag("pl-PL")).format(value)',
+        note: 'Formats values using Polish currency conventions.'
+      },
+      {
+        title: 'JavaScript Intl Currency',
+        language: 'javascript',
+        brandKey: 'javascript',
+        code: 'new Intl.NumberFormat("pl-PL", { style: "currency", currency: "PLN" })',
+        note: 'Formats PLN values with pl-PL separators and currency display.'
+      },
+      {
+        title: 'JavaScript Date',
+        language: 'javascript',
+        brandKey: 'javascript',
+        code: 'new Intl.DateTimeFormat("pl-PL", { timeZone: "Europe/Warsaw" })',
+        note: 'Use Europe/Warsaw timezone for Poland local dates.'
+      },
+      {
+        title: 'Python locale',
+        language: 'python',
+        brandKey: 'python',
+        code: 'locale.setlocale(locale.LC_ALL, "pl_PL.UTF-8")',
+        note: 'Requires the pl_PL locale to be installed on the host operating system.'
+      },
+      {
+        title: 'Go language tag',
+        language: 'go',
+        brandKey: 'go',
+        code: 'language.MustParse("pl-PL")',
+        note: 'Use golang.org/x/text/language package for locale representation.'
+      }
+    ]
   };
 
   const COUNTRY_PORTAL_CATALOG = [
@@ -2265,35 +2425,48 @@
     });
 
     stack.classList.add('country-hub-page');
-    stack.append(
-      createHero(country),
-      createQuickActions(country),
-      createAdSlot('country-hub-after-hero'),
-      createCountryProfile(country),
-      createCheatSheet(country),
-      createLocalizationExamples(country),
-      createAddressExample(country),
-      createPhoneExamples(country),
-      createLocalFormats(country),
-      createIntegrationChecklist(country),
-      createValidationRules(country),
-      createCommonMistakes(country),
-      createPayments(country),
-      createBankingOverview(country),
-      createOfficialResources(country),
-      createAvailableWorkbenches(country, availableLinks),
-      createPlannedWorkbenches(country),
-      createRelatedGlobalTools(country, locale),
-      createDiscoveryLinks(country, locale),
-      createHighlights(country),
-      createDeveloperNotes(country),
-      createDeveloperExamples(country),
-      createJsonExamples(country),
-      createLocalizationNotes(country),
-      createCountryEcosystem(country),
-      createAdSlot('country-hub-before-footer'),
-      createCopyAnnouncer()
-    );
+    
+    const elementsToAppend = [];
+    const appendSafely = (fn, ...args) => {
+      try {
+        const el = fn(...args);
+        if (el) {
+          elementsToAppend.push(el);
+        }
+      } catch (err) {
+        console.error('Error rendering country hub component:', err);
+      }
+    };
+
+    appendSafely(createHero, country);
+    appendSafely(createQuickActions, country);
+    appendSafely(createAdSlot, 'country-hub-after-hero');
+    appendSafely(createCountryProfile, country);
+    appendSafely(createCheatSheet, country);
+    appendSafely(createLocalizationExamples, country);
+    appendSafely(createAddressExample, country);
+    appendSafely(createPhoneExamples, country);
+    appendSafely(createLocalFormats, country);
+    appendSafely(createIntegrationChecklist, country);
+    appendSafely(createValidationRules, country);
+    appendSafely(createCommonMistakes, country);
+    appendSafely(createPayments, country);
+    appendSafely(createBankingOverview, country);
+    appendSafely(createOfficialResources, country);
+    appendSafely(createAvailableWorkbenches, country, availableLinks);
+    appendSafely(createPlannedWorkbenches, country);
+    appendSafely(createRelatedGlobalTools, country, locale);
+    appendSafely(createDiscoveryLinks, country, locale);
+    appendSafely(createHighlights, country);
+    appendSafely(createDeveloperNotes, country);
+    appendSafely(createDeveloperExamples, country);
+    appendSafely(createJsonExamples, country);
+    appendSafely(createLocalizationNotes, country);
+    appendSafely(createCountryEcosystem, country);
+    appendSafely(createAdSlot, 'country-hub-before-footer');
+    appendSafely(createCopyAnnouncer);
+
+    stack.append(...elementsToAppend);
     bindCopyControls(stack);
     stack.dataset.countryHubRendered = 'true';
   }
