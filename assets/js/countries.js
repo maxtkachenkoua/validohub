@@ -24,6 +24,14 @@
       mapMarker: { x: 49, y: 52, label: 'Brazil' },
       source: 'Natural Earth geometry'
     },
+    poland: {
+      outlineSrc: '/assets/images/countries/poland-outline.svg',
+      outlineAlt: 'Poland country outline',
+      mapSrc: '/assets/images/countries/poland-location.svg',
+      mapAlt: 'World map with Poland location marker',
+      mapMarker: { x: 42, y: 41, label: 'Poland' },
+      source: 'Natural Earth geometry'
+    },
     spain: {
       outlineSrc: '/assets/images/countries/spain-outline.svg',
       outlineAlt: 'Spain country outline',
@@ -917,6 +925,181 @@
     availableWorkbenches: {}
   };
 
+  COUNTRY_HUBS.poland = {
+    flag: '🇵🇱',
+    name: 'Poland',
+    badge: 'Central Europe country hub',
+    description: 'Developer intelligence for Polish identifiers, locale conventions, tax systems, EU payments, and banking context.',
+    metadata: {
+      nativeName: 'Polska',
+      population: 'approximately 37.6M',
+      populationNote: 'Approximate 2026 population estimate; do not treat as a timeless constant.',
+      area: '312,696 km²',
+      capital: 'Warsaw',
+      largestCity: 'Warsaw',
+      continent: 'Europe',
+      region: 'Central Europe / European Union',
+      languages: 'Polish',
+      currency: 'Polish złoty',
+      currencyCode: 'PLN',
+      currencySymbol: 'zł',
+      callingCode: '+48',
+      internetTld: '.pl',
+      drivingSide: 'Right',
+      iso2: 'PL',
+      iso3: 'POL',
+      isoNumeric: '616',
+      locale: 'pl-PL',
+      icuLocale: 'pl_PL',
+      dateFormat: 'DD.MM.YYYY',
+      timeFormat: '24-hour, HH:mm',
+      decimalSeparator: 'Comma (,)',
+      thousandsSeparator: 'Space ( ) or Dot (.)',
+      addressFormat: 'ul. Street name number/flat, postal code City',
+      postalCodeFormat: 'NN-NNN',
+      primaryTimeZone: 'Europe/Warsaw (CET/CEST)',
+      utcRange: 'UTC+01/+02',
+      measurementSystem: 'Metric',
+      paperSize: 'A4',
+      powerPlugTypes: 'Type C / Type E',
+      voltage: '230V',
+      frequency: '50Hz',
+      emergencyNumber: '112',
+      weekStarts: 'Monday',
+      rtlSupport: 'No',
+      unicodeLocale: 'pl-PL',
+      cldrLocale: 'pl_PL',
+      metricVsImperial: 'Metric-first'
+    },
+    visualIdentity: {
+      countryId: 'poland',
+      outlineLabel: 'Poland outline',
+      mapLabel: 'Poland in the world',
+      continentBadge: 'Europe',
+      flagLabel: 'Poland flag',
+      heroAccentPrimary: '159 18 57',     // Rose-800, red
+      heroAccentSecondary: '244 63 94',   // Rose-500, soft red
+      heroAccentTertiary: '228 228 231'   // Zinc-200, soft white
+    },
+    stats: [
+      { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
+      { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
+      { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
+      { icon: '🌍', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
+      { icon: '🗣', label: 'Languages', valueKey: 'languages', tags: ['locale'] },
+      { brandKey: 'europeanUnion', label: 'Region', valueKey: 'region', tags: ['government', 'locale'] },
+      { brandKey: 'iban', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency', 'payments'] },
+      { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
+      { icon: '🌐', label: 'Internet TLD', valueKey: 'internetTld', tags: ['developer'] },
+      { icon: '🕒', label: 'UTC range', valueKey: 'utcRange', tags: ['time'] }
+    ],
+    countryProfile: [
+      { icon: '🏷', label: 'Native name', valueKey: 'nativeName', tags: ['locale'] },
+      { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
+      { icon: '▣', label: 'Area', valueKey: 'area', tags: ['locale'] },
+      { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
+      { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
+      { icon: '🌍', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
+      { icon: '🗣', label: 'Languages', valueKey: 'languages', tags: ['locale'] },
+      { icon: '🚗', label: 'Driving side', valueKey: 'drivingSide', tags: ['locale'] },
+      { icon: '📏', label: 'Measurement system', valueKey: 'measurementSystem', tags: ['locale'] },
+      { icon: '📄', label: 'Paper size', valueKey: 'paperSize', tags: ['developer'] },
+      { icon: '🔌', label: 'Power plug types', valueKey: 'powerPlugTypes', tags: ['developer'] },
+      { icon: '⚡', label: 'Voltage', valueKey: 'voltage', tags: ['developer'] },
+      { icon: '⏱', label: 'Frequency', valueKey: 'frequency', tags: ['developer'] },
+      { icon: '🚨', label: 'Emergency number', valueKey: 'emergencyNumber', tags: ['phone'] },
+      { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
+      { brandKey: 'iban', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency'] },
+      { icon: '🕒', label: 'Timezone range', valueKey: 'utcRange', tags: ['time'] },
+      { icon: '📅', label: 'Week starts', valueKey: 'weekStarts', tags: ['locale'] },
+      { icon: '↔', label: 'RTL support', valueKey: 'rtlSupport', tags: ['locale'] },
+      { icon: '🔤', label: 'Unicode locale', valueKey: 'unicodeLocale', tags: ['locale', 'developer'] },
+      { icon: '🌐', label: 'ICU locale', valueKey: 'icuLocale', tags: ['locale', 'developer'] },
+      { icon: '🌐', label: 'CLDR locale', valueKey: 'cldrLocale', tags: ['locale', 'developer'] },
+      { icon: '📐', label: 'Metric vs Imperial', valueKey: 'metricVsImperial', tags: ['locale'] }
+    ],
+    quickActions: [
+      { label: 'Copy Locale', valueKey: 'locale' },
+      { label: 'Copy Currency Code', valueKey: 'currencyCode' },
+      { label: 'Copy Currency Symbol', valueKey: 'currencySymbol' },
+      { label: 'Copy Phone Code', valueKey: 'callingCode' },
+      { label: 'Copy ISO2', valueKey: 'iso2' },
+      { label: 'Copy ISO3', valueKey: 'iso3' },
+      { label: 'Copy Numeric ISO', valueKey: 'isoNumeric' },
+      { label: 'Copy Internet TLD', valueKey: 'internetTld' },
+      { label: 'Copy Date Format', valueKey: 'dateFormat' },
+      { label: 'Copy Postal Code Format', valueKey: 'postalCodeFormat' },
+      { label: 'Copy Primary Time Zone', valueKey: 'primaryTimeZone' }
+    ],
+    cheatSheet: [
+      { label: 'ISO2', valueKey: 'iso2', icon: '🏷', tags: ['developer', 'locale'] },
+      { label: 'ISO3', valueKey: 'iso3', icon: '🏷', tags: ['developer', 'locale'] },
+      { label: 'Numeric ISO', valueKey: 'isoNumeric', icon: '🏷', tags: ['developer', 'locale'] },
+      { label: 'Locale', valueKey: 'locale', icon: '🌐', tags: ['locale', 'developer'] },
+      { label: 'ICU locale', valueKey: 'icuLocale', icon: '🌐', tags: ['locale', 'developer'] },
+      { label: 'Language', valueKey: 'languages', icon: '🗣', tags: ['locale'] },
+      { label: 'Currency', value: 'Polish złoty (PLN)', copyValueKey: 'currencyCode', brandKey: 'iban', tags: ['currency', 'payments'] },
+      { label: 'Currency symbol', valueKey: 'currencySymbol', icon: '💵', tags: ['currency'] },
+      { label: 'Phone country code', valueKey: 'callingCode', icon: '☎', tags: ['phone'] },
+      { label: 'Internet TLD', valueKey: 'internetTld', icon: '🌐', tags: ['developer'] },
+      { label: 'Date format', valueKey: 'dateFormat', icon: '📅', tags: ['locale', 'date'] },
+      { label: 'Time format', valueKey: 'timeFormat', icon: '⏱', tags: ['locale', 'time'] },
+      { label: 'Decimal separator', valueKey: 'decimalSeparator', copyValue: 'comma decimal separator', icon: '🔢', tags: ['locale', 'currency'] },
+      { label: 'Thousands separator', valueKey: 'thousandsSeparator', copyValue: 'space thousands separator', icon: '🔢', tags: ['locale', 'currency'] },
+      { label: 'Address format', valueKey: 'addressFormat', icon: '📍', tags: ['addresses'] },
+      { label: 'Postal code format', valueKey: 'postalCodeFormat', icon: '✉', tags: ['postal', 'addresses'] },
+      { label: 'Primary time zone', valueKey: 'primaryTimeZone', icon: '🕒', tags: ['time'] },
+      { label: 'Time zones', valueKey: 'utcRange', icon: '🕒', tags: ['time'] }
+    ],
+    localFormats: [
+      { icon: '🪪', name: 'PESEL', status: 'available', category: 'National identity', tags: ['identifiers', 'government'], description: 'Universal Electronic System for Registration of the Population. 11-digit identifier containing date of birth, serial, gender, and checksum control digit.', related: ['PESEL Validator'] },
+      { icon: '🪪', name: 'NIP', status: 'planned', category: 'Tax identifier', tags: ['identifiers', 'tax'], description: 'Numer Identyfikacji Podatkowej. 10-digit tax identification number used by individuals and legal entities in Poland.', related: ['NIP Validator'] },
+      { icon: '🏢', name: 'REGON', status: 'planned', category: 'Business identifier', tags: ['identifiers', 'government'], description: 'National Official Register of Business Entities. Supports 9-digit local registry numbers and 14-digit subdivision registration concepts.', related: ['REGON Validator'] },
+      { brandKey: 'iban', name: 'Polish IBAN', status: 'planned', category: 'Banking', tags: ['banking', 'payments'], description: 'Polish accounts use PL country prefix followed by a two-digit control checksum and 26-digit basic bank account numbers.', related: ['Polish IBAN Notes'] },
+      { brandKey: 'swift', name: 'BIC / SWIFT', status: 'ready', category: 'Banking', tags: ['banking', 'payments'], description: 'BIC/SWIFT codes identify financial institutions for Polish and international bank account transfers.' },
+      { brandKey: 'vies', name: 'EU VAT / VIES', status: 'planned', category: 'Tax and business', tags: ['tax', 'government'], description: 'Polish VAT numbers prefix PL to the NIP string. EU VIES status checks represent a separate status query, not just local validation.' },
+      { icon: '✉', name: 'Polish postal code', status: 'planned', category: 'Postal', tags: ['postal', 'addresses'], description: 'Five-digit code using NN-NNN pattern (e.g. 00-001 for main Warsaw). Broadly maps to postal zones and districts.' },
+      { icon: '☎', name: 'Polish phone numbers', status: 'planned', category: 'Phone', tags: ['phone'], description: 'Nine-digit national number length using country code +48 for mobile and regional landline prefixes.' },
+      { icon: '💸', name: 'BLIK', status: 'planned', category: 'Payments', tags: ['payments', 'banking'], description: 'Six-digit mobile instant payment standard widely supported across Polish banking apps.' }
+    ],
+    payments: [
+      { brandKey: 'iban', title: 'PLN and Polish IBAN', status: 'ready', tags: ['payments', 'banking'], text: 'Poland uses PLN and participates in IBAN-based European banking flows. Domestic transfers use local clearing systems (Elixir).' },
+      { brandKey: 'sepa', title: 'SEPA', status: 'ready', tags: ['payments', 'banking'], text: 'SEPA credit transfers apply to Euro-denominated payments, but domestic flows mostly use PLN-native routing.' },
+      { brandKey: 'swift', title: 'BIC / SWIFT', status: 'ready', tags: ['banking'], text: 'BIC/SWIFT details are required for international SWIFT transfers and cross-border bank account payments.' },
+      { icon: '💸', title: 'BLIK', status: 'planned', tags: ['payments', 'banking'], text: 'BLIK appears in Polish consumer payment checkouts. Treat it as future product research, not a validation feature.' },
+      { icon: '💳', title: 'Card payments', status: 'ready', tags: ['payments'], text: 'Debit and credit card flows follow global card network schemas plus Polish locale amount formatting conventions.' }
+    ],
+    officialResources: [
+      { label: 'GUS / Portal Statystyczny', status: 'available', tags: ['government'], note: 'Central Statistical Office for official database, classification, and statistical context.' },
+      { label: 'Podatki.gov.pl', status: 'available', tags: ['government', 'tax'], note: 'Official tax administration portal for NIP, VAT, and business status references.' },
+      { label: 'ZUS', status: 'available', tags: ['government', 'identifiers'], note: 'Social Insurance Institution reference portal for social security context.' },
+      { label: 'Narodowy Bank Polski', status: 'available', tags: ['government', 'banking'], note: 'Central bank of Poland providing monetary policy and banking institution indexes.' },
+      { label: 'Poczta Polska', status: 'available', tags: ['postal', 'addresses'], note: 'Postal authority and official postcode database lookup.' }
+    ],
+    plannedWorkbenches: [
+      { name: 'NIP Validator', status: 'planned', tags: ['identifiers', 'tax'], description: 'Explain Polish NIP checksum math and registration status inspections.' },
+      { name: 'REGON Validator', status: 'planned', tags: ['identifiers', 'government'], description: 'Explain REGON 9-digit and 14-digit format checksums and structure.' },
+      { name: 'Polish IBAN Notes', status: 'planned', tags: ['banking', 'payments'], description: 'Country-specific explanations around Polish bank account layouts and Elixir clearing rails.' }
+    ],
+    relatedGlobalTools: [
+      { label: 'JSON Formatter', path: 'tools/json-formatter/', icon: '▣', tags: ['developer'] },
+      { label: 'Regex Tester', path: 'tools/regex-tester/', icon: '.*', tags: ['developer'] },
+      { label: 'IBAN Validator', path: 'tools/iban-validator/', brandKey: 'iban', tags: ['banking'] }
+    ],
+    relatedCategories: [
+      { label: 'Finance', path: 'categories/finance/', tags: ['payments', 'banking'] },
+      { label: 'National Identifiers', path: 'categories/national-identifiers/', tags: ['identifiers'] },
+      { label: 'Developer Tools', path: 'categories/developer-tools/', tags: ['developer'] }
+    ],
+    availableWorkbenches: {
+      'PESEL Validator': {
+        status: 'available',
+        tags: ['identifiers', 'government'],
+        description: 'Validate, parse, generate, and explain Polish PESEL numbers.'
+      }
+    }
+  };
+
   const COUNTRY_PORTAL_CATALOG = [
     {
       id: 'brazil',
@@ -952,7 +1135,7 @@
       language: 'Polish',
       currency: 'PLN',
       currencyName: 'Polish zloty',
-      status: 'inProgress',
+      status: 'available',
       summary: 'Developer intelligence for Polish identifiers, locale conventions, and EU-oriented validation workflows.',
       identifiers: ['PESEL', 'NIP', 'REGON'],
       payments: ['IBAN', 'BLIK', 'SEPA'],

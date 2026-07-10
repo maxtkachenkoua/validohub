@@ -13,9 +13,10 @@ async function main() {
   // 1. Extract paths and groups
   const esElement = extractElement(sourceSvg, 'es');
   const brElement = extractElement(sourceSvg, 'br');
+  const plElement = extractElement(sourceSvg, 'pl');
 
-  if (!esElement || !brElement) {
-    throw new Error('Failed to extract Spain or Brazil geometries from the master SVG source.');
+  if (!esElement || !brElement || !plElement) {
+    throw new Error('Failed to extract Spain, Brazil, or Poland geometries from the master SVG source.');
   }
 
   // 2. Generate clean, styled world-map.svg
@@ -33,6 +34,11 @@ async function main() {
   await writeFile(resolve(projectRoot, 'assets/images/countries/brazil-location.svg'), brazilLocationSvg, 'utf8');
   console.log('Generated: brazil-location.svg');
 
+  // 4b. Generate poland-location.svg
+  const polandLocationSvg = buildLocationMap(sourceSvg, 'pl', '380 340 160 120', '#b91c1c', '#991b1b');
+  await writeFile(resolve(projectRoot, 'assets/images/countries/poland-location.svg'), polandLocationSvg, 'utf8');
+  console.log('Generated: poland-location.svg');
+
   // 5. Generate spain-outline.svg
   const spainOutlineSvg = buildSpainOutline(esElement);
   await writeFile(resolve(projectRoot, 'assets/images/countries/spain-outline.svg'), spainOutlineSvg, 'utf8');
@@ -42,6 +48,11 @@ async function main() {
   const brazilOutlineSvg = buildBrazilOutline(brElement);
   await writeFile(resolve(projectRoot, 'assets/images/countries/brazil-outline.svg'), brazilOutlineSvg, 'utf8');
   console.log('Generated: brazil-outline.svg');
+
+  // 6b. Generate poland-outline.svg
+  const polandOutlineSvg = buildPolandOutline(plElement);
+  await writeFile(resolve(projectRoot, 'assets/images/countries/poland-outline.svg'), polandOutlineSvg, 'utf8');
+  console.log('Generated: poland-outline.svg');
 
   console.log('Map generation completed successfully.');
 }
@@ -171,6 +182,39 @@ function buildBrazilOutline(brElement) {
   </g>
   <circle cx="192" cy="142" r="4" fill="#14532d"/>
   <text x="181" y="238" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="760" fill="#475569">Brazil</text>
+</svg>`;
+}
+
+function buildPolandOutline(plElement) {
+  // Clean Poland element
+  const cleanPl = plElement
+    .replace(/class="mainland"/g, '')
+    .replace(/fill="[^"]+"/g, '')
+    .replace(/stroke="[^"]+"/g, '');
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" role="img" aria-labelledby="title desc">
+  <title id="title">Poland country outline</title>
+  <desc id="desc">Poland country outline centered on canvas, derived from Natural Earth public-domain admin-0 geometry.</desc>
+  <rect width="360" height="260" rx="24" fill="#f8fafc"/>
+  <defs>
+    <linearGradient id="polandLand" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff5f5"/>
+      <stop offset="0.55" stop-color="#ffe4e6"/>
+      <stop offset="1" stop-color="#fecdd3"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#881337" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <g transform="translate(-4018.228, -3513.293) scale(9.373)" fill="url(#polandLand)" stroke="#be123c" stroke-width="0.4" stroke-linejoin="round" filter="url(#softShadow)">
+    ${cleanPl}
+  </g>
+  <g fill="none" stroke="#e11d48" stroke-width="1.1" opacity="0.20">
+    <path d="M94 112 C130 98 172 104 214 94 C238 89 260 98 279 116"/>
+    <path d="M112 145 C148 132 188 136 224 126 C242 121 260 126 274 139"/>
+  </g>
+  <circle cx="180" cy="130" r="4" fill="#be123c"/>
+  <text x="181" y="238" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="760" fill="#475569">Poland</text>
 </svg>`;
 }
 
