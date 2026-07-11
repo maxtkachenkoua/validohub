@@ -218,7 +218,13 @@ function buildPolandOutline(plElement) {
 </svg>`;
 }
 
-main().catch(err => {
-  console.error(err);
-  process.exit(1);
-});
+export { extractElement, buildLocationMap, buildWorldMap };
+
+const isMain = process.argv[1] && (resolve(process.argv[1]) === resolve(fileURLToPath(import.meta.url)));
+if (isMain) {
+  main().catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+}
+
