@@ -1,0 +1,12 @@
+schemaVersion: 1
+code: DE
+slug: germany
+name:
+  en: Germany
+region: Europe
+languages:
+  - de
+currency: EUR
+relatedCountries:
+  - ES
+  - BR

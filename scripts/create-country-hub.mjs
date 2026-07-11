@@ -29,14 +29,16 @@ Usage:
   node scripts/create-country-hub.mjs [options]
 
 Options:
-  --id <id>          Unique lowercase country ID (e.g. germany) [Required]
-  --name <name>      Country display name (e.g. Germany) [Required]
-  --iso2 <iso2>      ISO 3166-1 alpha-2 code (e.g. DE) [Required]
-  --iso3 <iso3>      ISO 3166-1 alpha-3 code (e.g. DEU) [Required]
-  --viewbox <crop>   Custom viewBox override for location SVG (e.g. "380 340 160 120") [Optional]
-  --theme <colors>   Flag accent colors as comma-separated hex values (primary,secondary,tertiary) [Optional]
-  --dry-run          Run validations and print proposed changes without writing files
-  --help             Show this help screen
+  --id <id>            Unique lowercase country ID (e.g. germany) [Required]
+  --name <name>        Country display name (e.g. Germany) [Required]
+  --iso2 <iso2>        ISO 3166-1 alpha-2 code (e.g. DE) [Required]
+  --iso3 <iso3>        ISO 3166-1 alpha-3 code (e.g. DEU) [Required]
+  --viewbox <crop>     Custom viewBox override for location SVG (e.g. "380 340 160 120") [Optional]
+  --theme <colors>     Flag accent colors as comma-separated hex values (primary,secondary,tertiary) [Optional]
+  --capital <coords>   Raw SVG coordinates for the capital/marker (e.g. "435.833,388.684") [Optional]
+  --portal-marker <xy> Custom portal map coordinates (e.g. "50,35") [Optional]
+  --dry-run            Run validations and print proposed changes without writing files
+  --help               Show this help screen
 `);
 }
 
@@ -60,6 +62,10 @@ function parseArgs(args) {
       options.viewbox = args[++i];
     } else if (arg === '--theme') {
       options.theme = args[++i];
+    } else if (arg === '--capital') {
+      options.capital = args[++i];
+    } else if (arg === '--portal-marker') {
+      options.portalMarker = args[++i];
     }
   }
   return options;
@@ -237,6 +243,31 @@ function getBBox(polygon) {
   return { minX, maxX, minY, maxY, w: maxX - minX, h: maxY - minY };
 }
 
+function formatRgbAccent(color) {
+  if (color.startsWith('#')) {
+    const cleanHex = color.substring(1);
+    const r = parseInt(cleanHex.substring(0, 2), 16);
+    const g = parseInt(cleanHex.substring(2, 4), 16);
+    const b = parseInt(cleanHex.substring(4, 6), 16);
+    return `${r} ${g} ${b}`;
+  }
+  return color;
+}
+
+function lightenColor(color, factor = 0.90) {
+  if (!color.startsWith('#')) return color;
+  const cleanHex = color.substring(1);
+  const r = parseInt(cleanHex.substring(0, 2), 16);
+  const g = parseInt(cleanHex.substring(2, 4), 16);
+  const b = parseInt(cleanHex.substring(4, 6), 16);
+
+  const rSoft = Math.round(r * (1 - factor) + 255 * factor);
+  const gSoft = Math.round(g * (1 - factor) + 255 * factor);
+  const bSoft = Math.round(b * (1 - factor) + 255 * factor);
+
+  return '#' + [rSoft, gSoft, bSoft].map(x => x.toString(16).padStart(2, '0')).join('');
+}
+
 async function pathExists(path) {
   try {
     await access(path);
@@ -324,33 +355,58 @@ async function main() {
 
   // Calculate generic crop viewBox centered on centroid
   const interiorPoint = getPointOnSurface(largestPolygon);
+
+  // Parse capital coords if provided
+  let capitalPoint = interiorPoint;
+  if (options.capital) {
+    const parts = options.capital.split(',').map(Number);
+    if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
+      capitalPoint = { x: parts[0], y: parts[1] };
+    } else {
+      console.error('Error: Invalid format for --capital. Expected x,y (e.g. "435.833,388.684")');
+      process.exit(1);
+    }
+  }
+
   let viewBoxStr = options.viewbox;
   if (!viewBoxStr) {
     const pad = 2.5;
     const crop_w = Math.max(160, Math.min(400, Math.max(unionBBox.w, unionBBox.h * 4 / 3) * pad));
     const crop_h = crop_w * 3 / 4;
-    const x_min = Math.round(interiorPoint.x - crop_w / 2);
-    const y_min = Math.round(interiorPoint.y - crop_h / 2);
+    const x_min = Math.round(capitalPoint.x - crop_w / 2);
+    const y_min = Math.round(capitalPoint.y - crop_h / 2);
     viewBoxStr = `${x_min} ${y_min} ${Math.round(crop_w)} ${Math.round(crop_h)}`;
   }
 
   // Calculate outline transformation matrix
   const largestBBox = getBBox(largestPolygon);
   const s = Math.min(220 / largestBBox.w, 170 / largestBBox.h);
-  const tx = 180 - s * interiorPoint.x;
-  const ty = 130 - s * interiorPoint.y;
+  const tx = 180 - s * capitalPoint.x;
+  const ty = 130 - s * capitalPoint.y;
 
   // Calculate map coordinates using linear regression mapping (residuals documented in guide)
-  const rx = (interiorPoint.x - MAP_X_MIN) / MAP_WIDTH * 100;
-  const ry = (interiorPoint.y - MAP_Y_MIN) / MAP_HEIGHT * 100;
-  const portalX = Math.round(X_COEF * rx + X_OFFSET);
-  const portalY = Math.round(Y_COEF * ry + Y_OFFSET);
+  let portalX, portalY;
+  if (options.portalMarker) {
+    const parts = options.portalMarker.split(',').map(Number);
+    if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
+      portalX = parts[0];
+      portalY = parts[1];
+    } else {
+      console.error('Error: Invalid format for --portal-marker. Expected x,y (e.g. "50,35")');
+      process.exit(1);
+    }
+  } else {
+    const rx = (capitalPoint.x - MAP_X_MIN) / MAP_WIDTH * 100;
+    const ry = (capitalPoint.y - MAP_Y_MIN) / MAP_HEIGHT * 100;
+    portalX = Math.round(X_COEF * rx + X_OFFSET);
+    portalY = Math.round(Y_COEF * ry + Y_OFFSET);
+  }
 
   // Parse custom viewBox for location marker calculation
   const parsedVB = viewBoxStr.split(/\s+/).map(Number);
   const vbX = parsedVB[0], vbY = parsedVB[1], vbW = parsedVB[2], vbH = parsedVB[3];
-  const calloutX = Math.round((interiorPoint.x - vbX) / vbW * 100);
-  const calloutY = Math.round((interiorPoint.y - vbY) / vbH * 100);
+  const calloutX = Math.round((capitalPoint.x - vbX) / vbW * 100);
+  const calloutY = Math.round((capitalPoint.y - vbY) / vbH * 100);
 
   // Setup theme
   let themePrimary = '#0f766e';
@@ -362,6 +418,15 @@ async function main() {
     if (parts[1]) themeSecondary = parts[1];
     if (parts[2]) themeTertiary = parts[2];
   }
+
+  const rgbPrimary = formatRgbAccent(themePrimary);
+  const rgbSecondary = formatRgbAccent(themeSecondary);
+  const rgbTertiary = formatRgbAccent(themeTertiary);
+
+  const stop0 = lightenColor(themePrimary, 0.93);
+  const stop55 = lightenColor(themeSecondary, 0.92);
+  const stop100 = lightenColor(themeTertiary, 0.90);
+  const shadowColor = themeSecondary;
 
   // Load existing configuration for duplicate check & deep serialization check
   const jsContent = await readFile(countriesScript, 'utf8');
@@ -404,12 +469,12 @@ async function main() {
   <rect width="360" height="260" rx="24" fill="#f8fafc"/>
   <defs>
     <linearGradient id="${options.id}Land" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#fff5f5"/>
-      <stop offset="0.55" stop-color="#ffe4e6"/>
-      <stop offset="1" stop-color="#fecdd3"/>
+      <stop offset="0" stop-color="${stop0}"/>
+      <stop offset="0.55" stop-color="${stop55}"/>
+      <stop offset="1" stop-color="${stop100}"/>
     </linearGradient>
     <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#881337" flood-opacity="0.10"/>
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="${shadowColor}" flood-opacity="0.10"/>
     </filter>
   </defs>
   <g transform="translate(${tx.toFixed(3)}, ${ty.toFixed(3)}) scale(${s.toFixed(3)})" fill="url(#${options.id}Land)" stroke="${themePrimary}" stroke-width="${(1.5/s).toFixed(3)}" stroke-linejoin="round" filter="url(#softShadow)">
@@ -512,9 +577,14 @@ relatedCountries:
       { label: 'Currency', valueKey: 'currencyCode' }
     ],
     visualIdentity: {
-      heroAccentPrimary: '${themePrimary}',
-      heroAccentSecondary: '${themeSecondary}',
-      heroAccentTertiary: '${themeTertiary}'
+      countryId: '${options.id}',
+      outlineLabel: '${options.name} outline',
+      mapLabel: '${options.name} in the world',
+      continentBadge: 'Europe',
+      flagLabel: '${options.name} flag',
+      heroAccentPrimary: '${rgbPrimary}',
+      heroAccentSecondary: '${rgbSecondary}',
+      heroAccentTertiary: '${rgbTertiary}'
     },
     quickActions: [],
     cheatSheet: [],
@@ -717,6 +787,13 @@ relatedCountries:
     console.log(`  Location Crop viewBox:    "${viewBoxStr}"`);
     console.log(`  Location Map Callout:     { x: ${calloutX}, y: ${calloutY} }`);
     console.log(`  Outline Scale & Offset:  s: ${s.toFixed(3)}, tx: ${tx.toFixed(3)}, ty: ${ty.toFixed(3)}`);
+    console.log('\nProposed Visual Accent Colors:');
+    console.log(`  RGB Primary:   "${rgbPrimary}"`);
+    console.log(`  RGB Secondary: "${rgbSecondary}"`);
+    console.log(`  RGB Tertiary:  "${rgbTertiary}"`);
+    console.log(`  Stop 0 (93%):  "${stop0}"`);
+    console.log(`  Stop 55 (92%): "${stop55}"`);
+    console.log(`  Stop 100 (90%):"${stop100}"`);
     console.log('\nProposed Visual Asset Definition:');
     console.log(newVisualBlock.trim());
     console.log('\nProposed Catalog Entry:');
