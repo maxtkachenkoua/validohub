@@ -29,7 +29,7 @@
       outlineAlt: 'Poland country outline',
       mapSrc: '/assets/images/countries/poland-location.svg',
       mapAlt: 'World map with Poland location marker',
-      mapMarker: { x: 42, y: 41, label: 'Poland' },
+      mapMarker: { x: 46, y: 41, label: 'Poland' },
       source: 'Natural Earth geometry'
     },
     spain: {
