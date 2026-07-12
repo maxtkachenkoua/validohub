@@ -584,13 +584,13 @@
         flex-direction: column;
         gap: 8px;
       }
-      .pesel-formula-step {
+      .pesel-formula-summary .pesel-formula-step {
         display: flex;
         justify-content: space-between;
         border-bottom: 1px dashed var(--line);
         padding-bottom: 6px;
       }
-      .pesel-formula-step:last-child {
+      .pesel-formula-summary .pesel-formula-step:last-child {
         border-bottom: none;
         padding-bottom: 0;
         font-weight: 700;
@@ -947,7 +947,9 @@
         const presetsField = document.createElement('div');
         presetsField.className = 'field';
         presetsField.innerHTML = `
-          <span style="font-size: 0.92rem; font-weight: 720; color: var(--text);">Presets</span>
+          <div style="height: 18px; display: flex; align-items: center;">
+            <span style="font-size: 0.92rem; font-weight: 720; color: var(--text);">Presets</span>
+          </div>
           <select class="pesel-select" id="pesel-presets" style="width: 100%; height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer;">
             <option value="">-- Select Preset --</option>
             <option value="valid-male">Valid Male (92082612336)</option>
@@ -963,9 +965,9 @@
         const historyField = document.createElement('div');
         historyField.className = 'field';
         historyField.innerHTML = `
-          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+          <div style="height: 18px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
             <span style="font-size: 0.92rem; font-weight: 720; color: var(--text);">History</span>
-            <button type="button" class="button button-ghost compact" id="pesel-clear-history-btn" style="font-size: 0.72rem; padding: 2px 6px; height: auto; border: none; background: none; margin: 0; cursor: pointer;">Clear</button>
+            <button type="button" class="button button-ghost compact" id="pesel-clear-history-btn" style="font-size: 0.72rem; padding: 0; border: none; background: none; margin: 0; cursor: pointer; height: auto; line-height: 1; color: var(--muted); font-weight: 600;">Clear</button>
           </div>
           <select class="pesel-select" id="pesel-history" style="width: 100%; height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer;">
             <option value="">-- Recent Validations --</option>
