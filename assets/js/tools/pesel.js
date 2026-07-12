@@ -8,6 +8,62 @@
     return d.getFullYear() === year && d.getMonth() === (month - 1) && d.getDate() === day;
   };
 
+  const generateRandomPesel = function (gender, invalidType) {
+    const startYear = 1970 + Math.floor(Math.random() * 50); // 1970 to 2020
+    let yearVal = startYear % 100;
+    let monthVal = 1 + Math.floor(Math.random() * 12);
+
+    // Century offsets
+    let monthOffset = 0;
+    if (startYear >= 1800 && startYear < 1900) monthOffset = 80;
+    else if (startYear >= 2000 && startYear < 2100) monthOffset = 20;
+    else if (startYear >= 2100 && startYear < 2200) monthOffset = 40;
+    else if (startYear >= 2200 && startYear < 2300) monthOffset = 60;
+
+    let encodedMonth = monthVal + monthOffset;
+
+    // Day
+    let daysInMonth = new Date(startYear, monthVal, 0).getDate();
+    let dayVal = 1 + Math.floor(Math.random() * daysInMonth);
+
+    if (invalidType === 'date') {
+      dayVal = 35; // mathematically impossible day
+    }
+
+    // Serial (last digit represents gender)
+    let serialDigits = [];
+    for (let i = 0; i < 3; i++) serialDigits.push(Math.floor(Math.random() * 10));
+
+    let genderDigit = Math.floor(Math.random() * 10);
+    if (gender === 'male' && genderDigit % 2 === 0) {
+      genderDigit = (genderDigit + 1) % 10;
+    } else if (gender === 'female' && genderDigit % 2 !== 0) {
+      genderDigit = (genderDigit + 1) % 10;
+    }
+
+    const part = [
+      String(yearVal).padStart(2, '0'),
+      String(encodedMonth).padStart(2, '0'),
+      String(dayVal).padStart(2, '0'),
+      serialDigits.join(''),
+      String(genderDigit)
+    ].join('');
+
+    // Calculate checksum
+    const weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
+    let sum = 0;
+    for (let i = 0; i < 10; i++) {
+      sum += parseInt(part[i], 10) * weights[i];
+    }
+    let calculatedChecksum = (10 - (sum % 10)) % 10;
+
+    if (invalidType === 'checksum') {
+      calculatedChecksum = (calculatedChecksum + 1) % 10; // mismatch!
+    }
+
+    return part + calculatedChecksum;
+  };
+
   const syntaxHighlightJson = function (jsonObj) {
     let jsonStr = JSON.stringify(jsonObj, null, 2);
     jsonStr = jsonStr.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -64,37 +120,126 @@
         border-color: rgba(47, 128, 237, 0.3);
         color: #2f80ed;
       }
-      .pesel-controls-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        align-items: center;
-        margin-bottom: 16px;
-        background: var(--surface-soft);
-        padding: 12px 16px;
-        border: 1px solid var(--line);
+      .pesel-empty-state {
+        border: 1px dashed var(--line);
         border-radius: 8px;
+        padding: 40px 20px;
+        text-align: center;
+        background: var(--surface-soft);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        transition: opacity 0.2s;
       }
-      .pesel-control-item {
+      .pesel-empty-title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .pesel-empty-desc {
+        font-size: 0.85rem;
+        color: var(--muted);
+        max-width: 420px;
+        line-height: 1.5;
+      }
+      .pesel-trust-row {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 16px;
+      }
+      .pesel-trust-badge {
+        font-size: 0.72rem;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .pesel-playground-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .pesel-playground-btn {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 10px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--text);
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: center;
+      }
+      .pesel-playground-btn:hover {
+        border-color: var(--muted);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      }
+      .pesel-playground-btn:active {
+        transform: translateY(0);
+      }
+      .pesel-history-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        max-height: 280px;
+        overflow-y: auto;
+        margin-top: 8px;
+      }
+      .pesel-history-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        transition: all 0.2s;
+      }
+      .pesel-history-item:hover {
+        border-color: var(--muted);
+      }
+      .pesel-history-meta {
         display: flex;
         align-items: center;
         gap: 8px;
       }
-      .pesel-control-item label {
-        font-size: 0.75rem;
+      .pesel-history-value {
+        font-family: monospace;
         font-weight: 700;
-        text-transform: uppercase;
-        color: var(--muted);
-        letter-spacing: 0.05em;
-      }
-      .pesel-select {
-        font-size: 0.8rem;
-        padding: 4px 8px;
-        border-radius: 4px;
-        border: 1px solid var(--line);
-        background: var(--surface);
-        color: var(--text);
         cursor: pointer;
+        color: var(--text);
+      }
+      .pesel-history-badge {
+        font-size: 0.65rem;
+        font-weight: 700;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+      .pesel-history-badge.valid { background: rgba(22, 163, 74, 0.1); color: #16a34a; }
+      .pesel-history-badge.invalid { background: rgba(220, 38, 38, 0.1); color: #dc2626; }
+      .pesel-history-actions {
+        display: flex;
+        gap: 6px;
+      }
+      .pesel-history-action-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 0.75rem;
+        color: var(--muted);
+        padding: 2px 4px;
+        border-radius: 4px;
+        transition: background 0.2s, color 0.2s;
+      }
+      .pesel-history-action-btn:hover {
+        background: var(--line);
+        color: var(--text);
       }
       .pesel-pipeline {
         background: var(--surface-soft);
@@ -181,7 +326,7 @@
         color: var(--muted);
       }
 
-      /* Timeline styles */
+      /* Timeline Tracker Bar */
       .pesel-timeline-tracker {
         display: flex;
         align-items: center;
@@ -788,32 +933,61 @@
       const downloadBtn = workbench.form.querySelector('[data-tool-download]');
       if (downloadBtn) downloadBtn.style.display = 'none';
 
-      // Insert controls row (Presets & History) above the input
+      // Insert controls row (Presets & History & Generators) above the input
       if (!workbench.form.querySelector('.pesel-controls-row')) {
         const controlsRow = document.createElement('div');
         controlsRow.className = 'pesel-controls-row';
         controlsRow.innerHTML = `
-          <div class="pesel-control-item">
-            <label for="pesel-presets">Presets</label>
-            <select class="pesel-select" id="pesel-presets">
-              <option value="">-- Select Preset --</option>
-              <option value="valid-male">Valid Male (92082612336)</option>
-              <option value="valid-female">Valid Female (92082612343)</option>
-              <option value="invalid-checksum">Invalid Checksum (92082612335)</option>
-              <option value="invalid-date">Invalid Date (92023012346)</option>
-              <option value="non-digits">Contains Letters (9208261234a)</option>
-              <option value="too-short">Too Short (920826)</option>
-            </select>
-          </div>
-          <div class="pesel-control-item">
-            <label for="pesel-history">History</label>
-            <select class="pesel-select" id="pesel-history">
-              <option value="">-- Recent Validations --</option>
-            </select>
-            <button type="button" class="button button-ghost compact" id="pesel-clear-history-btn" style="font-size: 0.72rem; padding: 2px 6px;">Clear</button>
+          <div style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+              <div class="pesel-control-item">
+                <label for="pesel-presets">Presets</label>
+                <select class="pesel-select" id="pesel-presets">
+                  <option value="">-- Select Preset --</option>
+                  <option value="valid-male">Valid Male (92082612336)</option>
+                  <option value="valid-female">Valid Female (92082612343)</option>
+                  <option value="invalid-checksum">Invalid Checksum (92082612335)</option>
+                  <option value="invalid-date">Invalid Date (92023012346)</option>
+                  <option value="non-digits">Contains Letters (9208261234a)</option>
+                  <option value="too-short">Too Short (920826)</option>
+                </select>
+              </div>
+              <div class="pesel-control-item">
+                <label for="pesel-history">History</label>
+                <select class="pesel-select" id="pesel-history">
+                  <option value="">-- Recent Validations --</option>
+                </select>
+                <button type="button" class="button button-ghost compact" id="pesel-clear-history-btn" style="font-size: 0.72rem; padding: 2px 6px;">Clear</button>
+              </div>
+            </div>
+
+            <!-- Generators playground -->
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-top: 1px solid var(--line); padding-top: 12px;">
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 0.05em;">Generator Playground:</span>
+              <button type="button" class="pesel-playground-btn" id="gen-valid-rand" style="padding: 4px 8px; font-size: 0.72rem;">Valid Random</button>
+              <button type="button" class="pesel-playground-btn" id="gen-male-rand" style="padding: 4px 8px; font-size: 0.72rem;">Valid Male</button>
+              <button type="button" class="pesel-playground-btn" id="gen-female-rand" style="padding: 4px 8px; font-size: 0.72rem;">Valid Female</button>
+              <button type="button" class="pesel-playground-btn" id="gen-bad-sum" style="padding: 4px 8px; font-size: 0.72rem;">Bad Checksum</button>
+              <button type="button" class="pesel-playground-btn" id="gen-bad-date" style="padding: 4px 8px; font-size: 0.72rem;">Bad Date</button>
+            </div>
           </div>
         `;
         workbench.form.insertBefore(controlsRow, workbench.form.querySelector('.field-grid'));
+
+        // Generator handlers
+        const inputField = workbench.primaryInput();
+        const triggerGen = (gender, invalidType) => {
+          if (inputField) {
+            inputField.value = generateRandomPesel(gender, invalidType);
+            inputField.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+        };
+
+        controlsRow.querySelector('#gen-valid-rand').addEventListener('click', () => triggerGen(null, null));
+        controlsRow.querySelector('#gen-male-rand').addEventListener('click', () => triggerGen('male', null));
+        controlsRow.querySelector('#gen-female-rand').addEventListener('click', () => triggerGen('female', null));
+        controlsRow.querySelector('#gen-bad-sum').addEventListener('click', () => triggerGen(null, 'checksum'));
+        controlsRow.querySelector('#gen-bad-date').addEventListener('click', () => triggerGen(null, 'date'));
 
         // Handle preset changes
         controlsRow.querySelector('#pesel-presets').addEventListener('change', (e) => {
@@ -827,10 +1001,9 @@
         controlsRow.querySelector('#pesel-history').addEventListener('change', (e) => {
           const val = e.target.value;
           if (val) {
-            const input = workbench.primaryInput();
-            if (input) {
-              input.value = val;
-              input.dispatchEvent(new Event('input', { bubbles: true }));
+            if (inputField) {
+              inputField.value = val;
+              inputField.dispatchEvent(new Event('input', { bubbles: true }));
             }
           }
         });
@@ -860,11 +1033,23 @@
       };
       refreshHistorySelect();
 
-      // Insert pipeline and premium outputs elements
+      // Insert pipeline, empty states and premium outputs elements
       if (!workbench.form.querySelector('.pesel-premium-panel')) {
         const premiumPanel = document.createElement('div');
         premiumPanel.className = 'pesel-premium-panel';
         premiumPanel.innerHTML = `
+          <!-- Elegant default empty state -->
+          <div class="pesel-empty-state" id="pesel-empty-state-card">
+            <span style="font-size: 2rem;">🛡️</span>
+            <div class="pesel-empty-title">PESEL Verification Sandbox</div>
+            <div class="pesel-empty-desc">Enter or paste an 11-digit Polish national identity number above. Live validation executes instantly in your browser sandbox.</div>
+            <div class="pesel-trust-row">
+              <span class="pesel-trust-badge">🔒 Local Execution</span>
+              <span class="pesel-trust-badge">⚡ Zero Network Latency</span>
+              <span class="pesel-trust-badge">✓ Privacy Shield</span>
+            </div>
+          </div>
+
           <!-- Visual progress timeline -->
           <div class="pesel-timeline-tracker" style="display: none;">
             <div class="pesel-timeline-line"></div>
@@ -902,7 +1087,7 @@
           <div class="pesel-custom-actions button-row" style="display: none; margin-bottom: 8px;"></div>
 
           <!-- Live Pipeline progress indicator -->
-          <div class="pesel-pipeline">
+          <div class="pesel-pipeline" style="display: none;">
             <div class="pesel-section-title">
               <span>🧭</span> Validation Pipeline
             </div>
@@ -989,8 +1174,18 @@
         discoveryBlock.remove();
       }
 
-      // Attach keyboard shortcuts
+      // Attach keyboard shortcuts and live-validation debounce listener
       const inputField = workbench.primaryInput();
+      let debounceTimeout = null;
+      if (inputField) {
+        inputField.addEventListener('input', () => {
+          if (debounceTimeout) clearTimeout(debounceTimeout);
+          debounceTimeout = setTimeout(() => {
+            workbench.run();
+          }, 250);
+        });
+      }
+
       document.addEventListener('keydown', (e) => {
         // Focus Input shortcut: "/" (when not currently typing in inputs)
         if (e.key === '/' && document.activeElement !== inputField) {
@@ -1033,6 +1228,10 @@
       const breakdownPanel = workbench.form.querySelector('.pesel-breakdown');
       const checksumDebugger = workbench.form.querySelector('.pesel-checksum-debugger');
       const timelineTracker = workbench.form.querySelector('.pesel-timeline-tracker');
+      const pipelineBlock = workbench.form.querySelector('.pesel-pipeline');
+      const emptyStateCard = workbench.form.querySelector('#pesel-empty-state-card');
+
+      const startTime = performance.now();
 
       const setStepStatus = function (stepName, state, errorMsg) {
         if (!premiumPanel) return;
@@ -1059,6 +1258,8 @@
       const resetSteps = () => {
         ['present', 'digits', 'length', 'month', 'date', 'checksum'].forEach(s => setStepStatus(s, 'pending'));
         if (timelineTracker) timelineTracker.style.display = 'none';
+        if (pipelineBlock) pipelineBlock.style.display = 'none';
+        if (emptyStateCard) emptyStateCard.style.display = 'flex';
       };
 
       if (!inputVal) {
@@ -1074,10 +1275,10 @@
         return;
       }
 
-      // Display timeline tracker bar
-      if (timelineTracker) {
-        timelineTracker.style.display = 'flex';
-      }
+      // Hide empty state card and display pipelines
+      if (emptyStateCard) emptyStateCard.style.display = 'none';
+      if (timelineTracker) timelineTracker.style.display = 'flex';
+      if (pipelineBlock) pipelineBlock.style.display = 'block';
 
       setStepStatus('present', 'success');
 
@@ -1099,10 +1300,13 @@
         workbench.setBadge({ label: 'Error', state: 'error' });
         workbench.setStats([['Status', 'Failed'], ['Error Code', 'INVALID_CHARACTERS']], ['Input must contain exactly 11 numeric characters.'], 'error');
 
+        const elapsed = (performance.now() - startTime).toFixed(2);
+
         if (resultsContainer) {
           resultsContainer.innerHTML = `
-            <div class="pesel-results-header reveal-element" style="color: #dc2626;">
-              <span>✗</span> Validation Failed: Non-Digits Present
+            <div class="pesel-results-header reveal-element" style="color: #dc2626; justify-content: space-between;">
+              <span>✗ Validation Failed: Non-Digits Present</span>
+              <span style="font-size: 0.72rem; font-weight: 500; color: var(--muted);">Verification time: ${elapsed} ms</span>
             </div>
             <div class="pesel-results-grid reveal-element reveal-delay-1">
               <div class="pesel-result-row">
@@ -1110,8 +1314,8 @@
                 <span class="row-value">INVALID_CHARACTERS</span>
               </div>
               <div class="pesel-result-row">
-                <span class="row-label">Failed Step</span>
-                <span class="row-value">Digits Only Check</span>
+                <span class="row-label">Explanation</span>
+                <span class="row-value">Value contains characters other than digits 0-9.</span>
               </div>
             </div>
           `;
@@ -1172,10 +1376,13 @@
         workbench.setBadge({ label: 'Error', state: 'error' });
         workbench.setStats([['Status', 'Failed'], ['Error Code', 'INVALID_LENGTH']], [`Expected 11 digits, but got ${inputVal.length}.`], 'error');
 
+        const elapsed = (performance.now() - startTime).toFixed(2);
+
         if (resultsContainer) {
           resultsContainer.innerHTML = `
-            <div class="pesel-results-header reveal-element" style="color: #dc2626;">
-              <span>✗</span> Validation Failed: Invalid Length
+            <div class="pesel-results-header reveal-element" style="color: #dc2626; justify-content: space-between;">
+              <span>✗ Validation Failed: Invalid Length</span>
+              <span style="font-size: 0.72rem; font-weight: 500; color: var(--muted);">Verification time: ${elapsed} ms</span>
             </div>
             <div class="pesel-results-grid reveal-element reveal-delay-1">
               <div class="pesel-result-row">
@@ -1184,7 +1391,7 @@
               </div>
               <div class="pesel-result-row">
                 <span class="row-label">Actual Length</span>
-                <span class="row-value">${inputVal.length} characters</span>
+                <span class="row-value">${inputVal.length} characters (Expected: 11)</span>
               </div>
             </div>
           `;
@@ -1296,19 +1503,16 @@
         if (!historyItems.some(it => it.value === inputVal)) {
           historyItems.unshift({ value: inputVal, valid: false, date: new Date().toISOString().split('T')[0] });
           localStorage.setItem('validohub.pesel.history', JSON.stringify(historyItems.slice(0, 20)));
-          const select = workbench.form.querySelector('#pesel-history');
-          if (select) {
-            const opt = document.createElement('option');
-            opt.value = inputVal;
-            opt.textContent = `${inputVal} (✗ - ${new Date().toISOString().split('T')[0]})`;
-            select.appendChild(opt);
-          }
+          refreshHistorySelect();
         }
+
+        const elapsed = (performance.now() - startTime).toFixed(2);
 
         if (resultsContainer) {
           resultsContainer.innerHTML = `
-            <div class="pesel-results-header reveal-element" style="color: #dc2626;">
-              <span>✗</span> Validation Failed: Invalid Month Range
+            <div class="pesel-results-header reveal-element" style="color: #dc2626; justify-content: space-between;">
+              <span>✗ Validation Failed: Invalid Month Range</span>
+              <span style="font-size: 0.72rem; font-weight: 500; color: var(--muted);">Verification time: ${elapsed} ms</span>
             </div>
             <div class="pesel-results-grid reveal-element reveal-delay-1">
               <div class="pesel-result-row">
@@ -1316,8 +1520,8 @@
                 <span class="row-value">INVALID_MONTH_OFFSET</span>
               </div>
               <div class="pesel-result-row">
-                <span class="row-label">Raw Month Value</span>
-                <span class="row-value">${month}</span>
+                <span class="row-label">Decoded Month digits</span>
+                <span class="row-value">${month} (Decodes to impossible birth month: ${parsedMonth})</span>
               </div>
             </div>
           `;
@@ -1348,19 +1552,16 @@
         if (!historyItems.some(it => it.value === inputVal)) {
           historyItems.unshift({ value: inputVal, valid: false, date: new Date().toISOString().split('T')[0] });
           localStorage.setItem('validohub.pesel.history', JSON.stringify(historyItems.slice(0, 20)));
-          const select = workbench.form.querySelector('#pesel-history');
-          if (select) {
-            const opt = document.createElement('option');
-            opt.value = inputVal;
-            opt.textContent = `${inputVal} (✗ - ${new Date().toISOString().split('T')[0]})`;
-            select.appendChild(opt);
-          }
+          refreshHistorySelect();
         }
+
+        const elapsed = (performance.now() - startTime).toFixed(2);
 
         if (resultsContainer) {
           resultsContainer.innerHTML = `
-            <div class="pesel-results-header reveal-element" style="color: #dc2626;">
-              <span>✗</span> Validation Failed: Invalid Calendar Date
+            <div class="pesel-results-header reveal-element" style="color: #dc2626; justify-content: space-between;">
+              <span>✗ Validation Failed: Invalid Calendar Date</span>
+              <span style="font-size: 0.72rem; font-weight: 500; color: var(--muted);">Verification time: ${elapsed} ms</span>
             </div>
             <div class="pesel-results-grid reveal-element reveal-delay-1">
               <div class="pesel-result-row">
@@ -1369,7 +1570,7 @@
               </div>
               <div class="pesel-result-row">
                 <span class="row-label">Parsed Date</span>
-                <span class="row-value">${fullYear}-${String(parsedMonth).padStart(2, '0')}-${String(day).padStart(2, '0')}</span>
+                <span class="row-value">${fullYear}-${String(parsedMonth).padStart(2, '0')}-${String(day).padStart(2, '0')} (Exceeds day counts for ${monthNames[parsedMonth - 1]})</span>
               </div>
             </div>
           `;
@@ -1409,19 +1610,16 @@
         if (!historyItems.some(it => it.value === inputVal)) {
           historyItems.unshift({ value: inputVal, valid: false, date: new Date().toISOString().split('T')[0] });
           localStorage.setItem('validohub.pesel.history', JSON.stringify(historyItems.slice(0, 20)));
-          const select = workbench.form.querySelector('#pesel-history');
-          if (select) {
-            const opt = document.createElement('option');
-            opt.value = inputVal;
-            opt.textContent = `${inputVal} (✗ - ${new Date().toISOString().split('T')[0]})`;
-            select.appendChild(opt);
-          }
+          refreshHistorySelect();
         }
+
+        const elapsed = (performance.now() - startTime).toFixed(2);
 
         if (resultsContainer) {
           resultsContainer.innerHTML = `
-            <div class="pesel-results-header reveal-element" style="color: #dc2626;">
-              <span>✗</span> Validation Failed: Checksum Mismatch
+            <div class="pesel-results-header reveal-element" style="color: #dc2626; justify-content: space-between;">
+              <span>✗ Validation Failed: Checksum Mismatch</span>
+              <span style="font-size: 0.72rem; font-weight: 500; color: var(--muted);">Verification time: ${elapsed} ms</span>
             </div>
             <div class="pesel-results-grid reveal-element reveal-delay-1">
               <div class="pesel-result-row">
@@ -1429,12 +1627,12 @@
                 <span class="row-value">INVALID_CHECKSUM</span>
               </div>
               <div class="pesel-result-row">
-                <span class="row-label">Expected Check Digit</span>
+                <span class="row-label">Expected Check Digit (d11)</span>
                 <span class="row-value">${calculatedChecksum}</span>
               </div>
               <div class="pesel-result-row">
-                <span class="row-label">Actual Check Digit</span>
-                <span class="row-value">${expectedChecksum}</span>
+                <span class="row-label">Actual Received Digit</span>
+                <span class="row-value">${expectedChecksum} (Difference: ${Math.abs(calculatedChecksum - expectedChecksum)})</span>
               </div>
             </div>
           `;
@@ -1444,12 +1642,13 @@
         // Render Checksum Debugger even for failed checksums so they can learn why
         if (checksumDebugger) {
           checksumDebugger.innerHTML = `
-            <div class="pesel-section-title" style="color: #dc2626;">
+            <div class="pesel-section-title" style="color: #dc2626; justify-content: space-between;">
               <span>🧮</span> Checksum Debugger (Failed)
+              <button type="button" class="button button-secondary compact" id="pesel-replay-calc-btn" style="font-size: 0.72rem; padding: 2px 6px;">▶ Replay Calculation</button>
             </div>
             <p style="color: var(--muted); font-size: 0.8rem; margin: -8px 0 16px 0;">Formula: (1·d1 + 3·d2 + 7·d3 + 9·d4 + 1·d5 + 3·d6 + 7·d7 + 9·d8 + 1·d9 + 3·d10) % 10</p>
             <div class="pesel-debugger-table-container">
-              <table class="pesel-dev-table">
+              <table class="pesel-dev-table" id="pesel-debugger-table">
                 <thead>
                   <tr>
                     <th>Position</th>
@@ -1473,28 +1672,62 @@
               </table>
             </div>
             <div class="pesel-formula-summary">
-              <div class="pesel-formula-step">
+              <div class="pesel-formula-step" id="step-products-sum">
                 <span>Sum of Products</span>
                 <span>${sum}</span>
               </div>
-              <div class="pesel-formula-step">
+              <div class="pesel-formula-step" id="step-modulo">
                 <span>Modulo Operation (Sum % 10)</span>
                 <span>${modulo}</span>
               </div>
-              <div class="pesel-formula-step">
+              <div class="pesel-formula-step" id="step-calc-checksum">
                 <span>Calculated Check Digit ((10 - Modulo) % 10)</span>
                 <span style="color: #dc2626; font-weight: 700;">${calculatedChecksum}</span>
               </div>
-              <div class="pesel-formula-step">
+              <div class="pesel-formula-step" id="step-provided-checksum">
                 <span>Provided Check Digit (d11)</span>
                 <span style="font-weight: 700;">${expectedChecksum}</span>
               </div>
-              <div class="pesel-formula-step">
+              <div class="pesel-formula-step" id="step-final-status">
                 <span>Status</span>
                 <span style="color: #dc2626; font-weight: 700;">✗ Checksum Mismatch</span>
               </div>
             </div>
           `;
+
+          // Bind recalculate action
+          const runReplayAnimation = () => {
+            const rows = checksumDebugger.querySelectorAll('#pesel-debugger-table tbody tr');
+            const formulaSteps = checksumDebugger.querySelectorAll('.pesel-formula-summary .pesel-formula-step');
+
+            rows.forEach(r => r.classList.remove('is-active'));
+            formulaSteps.forEach(f => f.style.opacity = '0.3');
+
+            let step = 0;
+            const animateNextRow = () => {
+              if (step < rows.length) {
+                if (step > 0) rows[step - 1].classList.remove('is-active');
+                rows[step].classList.add('is-active');
+                step++;
+                setTimeout(animateNextRow, 120);
+              } else {
+                rows[step - 1].classList.remove('is-active');
+                let fStep = 0;
+                const animateFormula = () => {
+                  if (fStep < formulaSteps.length) {
+                    formulaSteps[fStep].style.opacity = '1';
+                    fStep++;
+                    setTimeout(animateFormula, 150);
+                  }
+                };
+                animateFormula();
+              }
+            };
+            animateNextRow();
+          };
+          checksumDebugger.querySelector('#pesel-replay-calc-btn').addEventListener('click', runReplayAnimation);
+          runReplayAnimation();
+
           checksumDebugger.style.display = 'block';
         }
 
@@ -1541,13 +1774,7 @@
       if (!historyItems.some(it => it.value === inputVal)) {
         historyItems.unshift({ value: inputVal, valid: true, date: new Date().toISOString().split('T')[0] });
         localStorage.setItem('validohub.pesel.history', JSON.stringify(historyItems.slice(0, 20)));
-        const select = workbench.form.querySelector('#pesel-history');
-        if (select) {
-          const opt = document.createElement('option');
-          opt.value = inputVal;
-          opt.textContent = `${inputVal} (✓ - ${new Date().toISOString().split('T')[0]})`;
-          select.appendChild(opt);
-        }
+        refreshHistorySelect();
       }
 
       // Valid state! Extract metadata
@@ -1585,11 +1812,14 @@
         ['Verification Status', '✓ Valid']
       ], [`Length Check: Pass (11 digits)`, `Checksum Check: Pass`], 'success');
 
-      // Render the single premium summary card with smooth reveal classes
+      const elapsed = (performance.now() - startTime).toFixed(2);
+
+      // Render the single premium summary card with smooth reveal classes and trust indicators
       if (resultsContainer) {
         resultsContainer.innerHTML = `
-          <div class="pesel-results-header reveal-element" style="color: #16a34a;">
-            <span>✓</span> Validation Success: Verified PESEL
+          <div class="pesel-results-header reveal-element" style="color: #16a34a; justify-content: space-between;">
+            <span>✓ Valid Polish PESEL</span>
+            <span style="font-size: 0.72rem; font-weight: 500; color: var(--muted);">Verification time: ${elapsed} ms</span>
           </div>
           <div class="pesel-results-grid reveal-element reveal-delay-1">
             <div class="pesel-result-row">
@@ -1612,7 +1842,7 @@
               <span class="row-value">${century}s</span>
             </div>
             <div class="pesel-result-row">
-              <span class="row-label">Serial Code</span>
+              <span class="row-label">Serial Number</span>
               <span class="row-value">${serialPart}</span>
               <button type="button" class="pesel-row-copy-btn" data-copy-val="${serialPart}" aria-label="Copy Serial Code">Copy</button>
             </div>
