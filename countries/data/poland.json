@@ -1,0 +1,1404 @@
+{
+  "id": "poland",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/poland-outline.svg",
+    "outlineAlt": "Poland country outline",
+    "mapSrc": "/assets/images/countries/poland-location.svg",
+    "mapAlt": "World map with Poland location marker",
+    "mapMarker": {
+      "x": 46,
+      "y": 41,
+      "label": "Poland"
+    },
+    "source": "Natural Earth geometry"
+  },
+  "catalog": {
+    "id": "poland",
+    "flag": "🇵🇱",
+    "name": "Poland",
+    "iso2": "PL",
+    "iso3": "POL",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "Polish",
+    "currency": "PLN",
+    "currencyName": "Polish zloty",
+    "status": "available",
+    "summary": "Developer intelligence for Polish identifiers, locale conventions, and EU-oriented validation workflows.",
+    "identifiers": [
+      "PESEL",
+      "NIP",
+      "REGON"
+    ],
+    "payments": [
+      "IBAN",
+      "BLIK",
+      "SEPA"
+    ],
+    "features": [
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "PESEL Validator"
+    ],
+    "plannedWorkbenches": [
+      "NIP Validator",
+      "REGON Validator",
+      "Polish IBAN Notes"
+    ],
+    "completion": 35,
+    "coordinates": {
+      "x": 52,
+      "y": 34
+    }
+  },
+  "hub": {
+    "flag": "🇵🇱",
+    "name": "Poland",
+    "badge": "Central Europe country hub",
+    "description": "Developer intelligence for Polish identifiers, locale conventions, tax systems, EU payments, and banking context.",
+    "metadata": {
+      "nativeName": "Polska",
+      "population": "approximately 37.6M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "area": "312,696 km²",
+      "capital": "Warsaw",
+      "largestCity": "Warsaw",
+      "continent": "Europe",
+      "region": "Central Europe / European Union",
+      "languages": "Polish",
+      "currency": "Polish złoty",
+      "currencyCode": "PLN",
+      "currencySymbol": "zł",
+      "callingCode": "+48",
+      "internetTld": ".pl",
+      "drivingSide": "Right",
+      "iso2": "PL",
+      "iso3": "POL",
+      "isoNumeric": "616",
+      "locale": "pl-PL",
+      "icuLocale": "pl_PL",
+      "dateFormat": "DD.MM.YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Space ( ) or Dot (.)",
+      "addressFormat": "ul. Street name number/flat, postal code City",
+      "postalCodeFormat": "NN-NNN",
+      "primaryTimeZone": "Europe/Warsaw (CET/CEST)",
+      "utcRange": "UTC+01/+02",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "powerPlugTypes": "Type C / Type E",
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "pl-PL",
+      "cldrLocale": "pl_PL",
+      "metricVsImperial": "Metric-first"
+    },
+    "visualIdentity": {
+      "countryId": "poland",
+      "outlineLabel": "Poland outline",
+      "mapLabel": "Poland in the world",
+      "continentBadge": "Europe",
+      "flagLabel": "Poland flag",
+      "heroAccentPrimary": "159 18 57",
+      "heroAccentSecondary": "244 63 94",
+      "heroAccentTertiary": "228 228 231"
+    },
+    "stats": [
+      {
+        "icon": "👥",
+        "label": "Population",
+        "valueKey": "population",
+        "tags": [
+          "people"
+        ]
+      },
+      {
+        "icon": "🏛",
+        "label": "Capital",
+        "valueKey": "capital",
+        "tags": [
+          "government"
+        ]
+      },
+      {
+        "icon": "🏙",
+        "label": "Largest city",
+        "valueKey": "largestCity",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🌍",
+        "label": "Continent",
+        "valueKey": "continent",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🗣",
+        "label": "Languages",
+        "valueKey": "languages",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "brandKey": "europeanUnion",
+        "label": "Region",
+        "valueKey": "region",
+        "tags": [
+          "government",
+          "locale"
+        ]
+      },
+      {
+        "brandKey": "iban",
+        "label": "Currency",
+        "valueKey": "currencyCode",
+        "detailKey": "currency",
+        "tags": [
+          "currency",
+          "payments"
+        ]
+      },
+      {
+        "icon": "☎",
+        "label": "Calling code",
+        "valueKey": "callingCode",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "icon": "🌐",
+        "label": "Internet TLD",
+        "valueKey": "internetTld",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "icon": "🕒",
+        "label": "UTC range",
+        "valueKey": "utcRange",
+        "tags": [
+          "time"
+        ]
+      }
+    ],
+    "countryProfile": [
+      {
+        "icon": "🏷",
+        "label": "Native name",
+        "valueKey": "nativeName",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "👥",
+        "label": "Population",
+        "valueKey": "population",
+        "tags": [
+          "people"
+        ]
+      },
+      {
+        "icon": "▣",
+        "label": "Area",
+        "valueKey": "area",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🏛",
+        "label": "Capital",
+        "valueKey": "capital",
+        "tags": [
+          "government"
+        ]
+      },
+      {
+        "icon": "🏙",
+        "label": "Largest city",
+        "valueKey": "largestCity",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🌍",
+        "label": "Continent",
+        "valueKey": "continent",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🗣",
+        "label": "Languages",
+        "valueKey": "languages",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🚗",
+        "label": "Driving side",
+        "valueKey": "drivingSide",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "📏",
+        "label": "Measurement system",
+        "valueKey": "measurementSystem",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "📄",
+        "label": "Paper size",
+        "valueKey": "paperSize",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "icon": "🔌",
+        "label": "Power plug types",
+        "valueKey": "powerPlugTypes",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "icon": "⚡",
+        "label": "Voltage",
+        "valueKey": "voltage",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "icon": "⏱",
+        "label": "Frequency",
+        "valueKey": "frequency",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "icon": "🚨",
+        "label": "Emergency number",
+        "valueKey": "emergencyNumber",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "icon": "☎",
+        "label": "Calling code",
+        "valueKey": "callingCode",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "brandKey": "iban",
+        "label": "Currency",
+        "valueKey": "currencyCode",
+        "detailKey": "currency",
+        "tags": [
+          "currency"
+        ]
+      },
+      {
+        "icon": "🕒",
+        "label": "Timezone range",
+        "valueKey": "utcRange",
+        "tags": [
+          "time"
+        ]
+      },
+      {
+        "icon": "📅",
+        "label": "Week starts",
+        "valueKey": "weekStarts",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "↔",
+        "label": "RTL support",
+        "valueKey": "rtlSupport",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🔤",
+        "label": "Unicode locale",
+        "valueKey": "unicodeLocale",
+        "tags": [
+          "locale",
+          "developer"
+        ]
+      },
+      {
+        "icon": "🌐",
+        "label": "ICU locale",
+        "valueKey": "icuLocale",
+        "tags": [
+          "locale",
+          "developer"
+        ]
+      },
+      {
+        "icon": "🌐",
+        "label": "CLDR locale",
+        "valueKey": "cldrLocale",
+        "tags": [
+          "locale",
+          "developer"
+        ]
+      },
+      {
+        "icon": "📐",
+        "label": "Metric vs Imperial",
+        "valueKey": "metricVsImperial",
+        "tags": [
+          "locale"
+        ]
+      }
+    ],
+    "quickActions": [
+      {
+        "label": "Copy Locale",
+        "valueKey": "locale"
+      },
+      {
+        "label": "Copy Currency Code",
+        "valueKey": "currencyCode"
+      },
+      {
+        "label": "Copy Currency Symbol",
+        "valueKey": "currencySymbol"
+      },
+      {
+        "label": "Copy Phone Code",
+        "valueKey": "callingCode"
+      },
+      {
+        "label": "Copy ISO2",
+        "valueKey": "iso2"
+      },
+      {
+        "label": "Copy ISO3",
+        "valueKey": "iso3"
+      },
+      {
+        "label": "Copy Numeric ISO",
+        "valueKey": "isoNumeric"
+      },
+      {
+        "label": "Copy Internet TLD",
+        "valueKey": "internetTld"
+      },
+      {
+        "label": "Copy Date Format",
+        "valueKey": "dateFormat"
+      },
+      {
+        "label": "Copy Postal Code Format",
+        "valueKey": "postalCodeFormat"
+      },
+      {
+        "label": "Copy Primary Time Zone",
+        "valueKey": "primaryTimeZone"
+      }
+    ],
+    "cheatSheet": [
+      {
+        "label": "ISO2",
+        "valueKey": "iso2",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "ISO3",
+        "valueKey": "iso3",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Numeric ISO",
+        "valueKey": "isoNumeric",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Locale",
+        "valueKey": "locale",
+        "icon": "🌐",
+        "tags": [
+          "locale",
+          "developer"
+        ]
+      },
+      {
+        "label": "ICU locale",
+        "valueKey": "icuLocale",
+        "icon": "🌐",
+        "tags": [
+          "locale",
+          "developer"
+        ]
+      },
+      {
+        "label": "Language",
+        "valueKey": "languages",
+        "icon": "🗣",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Currency",
+        "value": "Polish złoty (PLN)",
+        "copyValueKey": "currencyCode",
+        "brandKey": "iban",
+        "tags": [
+          "currency",
+          "payments"
+        ]
+      },
+      {
+        "label": "Currency symbol",
+        "valueKey": "currencySymbol",
+        "icon": "💵",
+        "tags": [
+          "currency"
+        ]
+      },
+      {
+        "label": "Phone country code",
+        "valueKey": "callingCode",
+        "icon": "☎",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "Internet TLD",
+        "valueKey": "internetTld",
+        "icon": "🌐",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "label": "Date format",
+        "valueKey": "dateFormat",
+        "icon": "📅",
+        "tags": [
+          "locale",
+          "date"
+        ]
+      },
+      {
+        "label": "Time format",
+        "valueKey": "timeFormat",
+        "icon": "⏱",
+        "tags": [
+          "locale",
+          "time"
+        ]
+      },
+      {
+        "label": "Decimal separator",
+        "valueKey": "decimalSeparator",
+        "copyValue": "comma decimal separator",
+        "icon": "🔢",
+        "tags": [
+          "locale",
+          "currency"
+        ]
+      },
+      {
+        "label": "Thousands separator",
+        "valueKey": "thousandsSeparator",
+        "copyValue": "space thousands separator",
+        "icon": "🔢",
+        "tags": [
+          "locale",
+          "currency"
+        ]
+      },
+      {
+        "label": "Address format",
+        "valueKey": "addressFormat",
+        "icon": "📍",
+        "tags": [
+          "addresses"
+        ]
+      },
+      {
+        "label": "Postal code format",
+        "valueKey": "postalCodeFormat",
+        "icon": "✉",
+        "tags": [
+          "postal",
+          "addresses"
+        ]
+      },
+      {
+        "label": "Primary time zone",
+        "valueKey": "primaryTimeZone",
+        "icon": "🕒",
+        "tags": [
+          "time"
+        ]
+      },
+      {
+        "label": "Time zones",
+        "valueKey": "utcRange",
+        "icon": "🕒",
+        "tags": [
+          "time"
+        ]
+      }
+    ],
+    "localFormats": [
+      {
+        "icon": "🪪",
+        "name": "PESEL",
+        "status": "available",
+        "category": "National identity",
+        "tags": [
+          "identifiers",
+          "government"
+        ],
+        "description": "Universal Electronic System for Registration of the Population. 11-digit identifier containing date of birth, serial, gender, and checksum control digit.",
+        "related": [
+          "PESEL Validator"
+        ]
+      },
+      {
+        "icon": "🪪",
+        "name": "NIP",
+        "status": "planned",
+        "category": "Tax identifier",
+        "tags": [
+          "identifiers",
+          "tax"
+        ],
+        "description": "Numer Identyfikacji Podatkowej. 10-digit tax identification number used by individuals and legal entities in Poland.",
+        "related": [
+          "NIP Validator"
+        ]
+      },
+      {
+        "icon": "🏢",
+        "name": "REGON",
+        "status": "planned",
+        "category": "Business identifier",
+        "tags": [
+          "identifiers",
+          "government"
+        ],
+        "description": "National Official Register of Business Entities. Supports 9-digit local registry numbers and 14-digit subdivision registration concepts.",
+        "related": [
+          "REGON Validator"
+        ]
+      },
+      {
+        "brandKey": "iban",
+        "name": "Polish IBAN",
+        "status": "planned",
+        "category": "Banking",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "Polish accounts use PL country prefix followed by a two-digit control checksum and 26-digit basic bank account numbers.",
+        "related": [
+          "Polish IBAN Notes"
+        ]
+      },
+      {
+        "brandKey": "swift",
+        "name": "BIC / SWIFT",
+        "status": "ready",
+        "category": "Banking",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "BIC/SWIFT codes identify financial institutions for Polish and international bank account transfers."
+      },
+      {
+        "brandKey": "vies",
+        "name": "EU VAT / VIES",
+        "status": "planned",
+        "category": "Tax and business",
+        "tags": [
+          "tax",
+          "government"
+        ],
+        "description": "Polish VAT numbers prefix PL to the NIP string. EU VIES status checks represent a separate status query, not just local validation."
+      },
+      {
+        "icon": "✉",
+        "name": "Polish postal code",
+        "status": "planned",
+        "category": "Postal",
+        "tags": [
+          "postal",
+          "addresses"
+        ],
+        "description": "Five-digit code using NN-NNN pattern (e.g. 00-001 for main Warsaw). Broadly maps to postal zones and districts."
+      },
+      {
+        "icon": "☎",
+        "name": "Polish phone numbers",
+        "status": "planned",
+        "category": "Phone",
+        "tags": [
+          "phone"
+        ],
+        "description": "Nine-digit national number length using country code +48 for mobile and regional landline prefixes."
+      },
+      {
+        "icon": "💸",
+        "name": "BLIK",
+        "status": "planned",
+        "category": "Payments",
+        "tags": [
+          "payments",
+          "banking"
+        ],
+        "description": "Six-digit mobile instant payment standard widely supported across Polish banking apps."
+      }
+    ],
+    "payments": [
+      {
+        "brandKey": "iban",
+        "title": "PLN and Polish IBAN",
+        "status": "ready",
+        "tags": [
+          "payments",
+          "banking"
+        ],
+        "text": "Poland uses PLN and participates in IBAN-based European banking flows. Domestic transfers use local clearing systems (Elixir)."
+      },
+      {
+        "brandKey": "sepa",
+        "title": "SEPA",
+        "status": "ready",
+        "tags": [
+          "payments",
+          "banking"
+        ],
+        "text": "SEPA credit transfers apply to Euro-denominated payments, but domestic flows mostly use PLN-native routing."
+      },
+      {
+        "brandKey": "swift",
+        "title": "BIC / SWIFT",
+        "status": "ready",
+        "tags": [
+          "banking"
+        ],
+        "text": "BIC/SWIFT details are required for international SWIFT transfers and cross-border bank account payments."
+      },
+      {
+        "icon": "💸",
+        "title": "BLIK",
+        "status": "planned",
+        "tags": [
+          "payments",
+          "banking"
+        ],
+        "text": "BLIK appears in Polish consumer payment checkouts. Treat it as future product research, not a validation feature."
+      },
+      {
+        "icon": "💳",
+        "title": "Card payments",
+        "status": "ready",
+        "tags": [
+          "payments"
+        ],
+        "text": "Debit and credit card flows follow global card network schemas plus Polish locale amount formatting conventions."
+      }
+    ],
+    "officialResources": [
+      {
+        "label": "GUS / Portal Statystyczny",
+        "status": "available",
+        "tags": [
+          "government"
+        ],
+        "note": "Central Statistical Office for official database, classification, and statistical context."
+      },
+      {
+        "label": "Podatki.gov.pl",
+        "status": "available",
+        "tags": [
+          "government",
+          "tax"
+        ],
+        "note": "Official tax administration portal for NIP, VAT, and business status references."
+      },
+      {
+        "label": "ZUS",
+        "status": "available",
+        "tags": [
+          "government",
+          "identifiers"
+        ],
+        "note": "Social Insurance Institution reference portal for social security context."
+      },
+      {
+        "label": "Narodowy Bank Polski",
+        "status": "available",
+        "tags": [
+          "government",
+          "banking"
+        ],
+        "note": "Central bank of Poland providing monetary policy and banking institution indexes."
+      },
+      {
+        "label": "Poczta Polska",
+        "status": "available",
+        "tags": [
+          "postal",
+          "addresses"
+        ],
+        "note": "Postal authority and official postcode database lookup."
+      }
+    ],
+    "plannedWorkbenches": [
+      {
+        "name": "NIP Validator",
+        "status": "planned",
+        "tags": [
+          "identifiers",
+          "tax"
+        ],
+        "description": "Explain Polish NIP checksum math and registration status inspections."
+      },
+      {
+        "name": "REGON Validator",
+        "status": "planned",
+        "tags": [
+          "identifiers",
+          "government"
+        ],
+        "description": "Explain REGON 9-digit and 14-digit format checksums and structure."
+      },
+      {
+        "name": "Polish IBAN Notes",
+        "status": "planned",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "Country-specific explanations around Polish bank account layouts and Elixir clearing rails."
+      }
+    ],
+    "relatedGlobalTools": [
+      {
+        "label": "JSON Formatter",
+        "path": "tools/json-formatter/",
+        "icon": "▣",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "label": "Regex Tester",
+        "path": "tools/regex-tester/",
+        "icon": ".*",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "label": "IBAN Validator",
+        "path": "tools/iban-validator/",
+        "brandKey": "iban",
+        "tags": [
+          "banking"
+        ]
+      }
+    ],
+    "relatedCategories": [
+      {
+        "label": "Finance",
+        "path": "categories/finance/",
+        "tags": [
+          "payments",
+          "banking"
+        ]
+      },
+      {
+        "label": "National Identifiers",
+        "path": "categories/national-identifiers/",
+        "tags": [
+          "identifiers"
+        ]
+      },
+      {
+        "label": "Developer Tools",
+        "path": "categories/developer-tools/",
+        "tags": [
+          "developer"
+        ]
+      }
+    ],
+    "availableWorkbenches": {
+      "PESEL Validator": {
+        "status": "available",
+        "tags": [
+          "identifiers",
+          "government"
+        ],
+        "description": "Validate, parse, generate, and explain Polish PESEL numbers."
+      }
+    },
+    "futureCountryPages": [
+      {
+        "label": "Brazil",
+        "status": "available",
+        "path": "brazil/"
+      },
+      {
+        "label": "Poland",
+        "status": "available",
+        "path": "poland/"
+      },
+      {
+        "label": "Germany",
+        "status": "planned"
+      },
+      {
+        "label": "France",
+        "status": "planned"
+      },
+      {
+        "label": "Portugal",
+        "status": "planned"
+      },
+      {
+        "label": "Italy",
+        "status": "planned"
+      },
+      {
+        "label": "Netherlands",
+        "status": "planned"
+      },
+      {
+        "label": "Belgium",
+        "status": "planned"
+      },
+      {
+        "label": "United Kingdom",
+        "status": "planned"
+      },
+      {
+        "label": "United States",
+        "status": "planned"
+      },
+      {
+        "label": "Canada",
+        "status": "planned"
+      },
+      {
+        "label": "Mexico",
+        "status": "planned"
+      },
+      {
+        "label": "Argentina",
+        "status": "planned"
+      },
+      {
+        "label": "Chile",
+        "status": "planned"
+      },
+      {
+        "label": "Japan",
+        "status": "planned"
+      },
+      {
+        "label": "Australia",
+        "status": "planned"
+      },
+      {
+        "label": "India",
+        "status": "planned"
+      },
+      {
+        "label": "Ukraine",
+        "status": "planned"
+      }
+    ],
+    "localizationExamples": [
+      {
+        "label": "Date",
+        "value": "11.07.2026",
+        "tags": [
+          "locale",
+          "date"
+        ]
+      },
+      {
+        "label": "Time",
+        "value": "14:25",
+        "tags": [
+          "locale",
+          "time"
+        ]
+      },
+      {
+        "label": "Currency",
+        "value": "1 234,56 zł",
+        "tags": [
+          "currency"
+        ]
+      },
+      {
+        "label": "Decimal",
+        "value": "1 234,56",
+        "tags": [
+          "locale",
+          "currency"
+        ]
+      },
+      {
+        "label": "Percentage",
+        "value": "35,7%",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Mobile phone",
+        "value": "+48 501 234 567",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "Landline",
+        "value": "+48 22 123 45 67",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "Postal code",
+        "value": "00-001",
+        "tags": [
+          "postal",
+          "addresses"
+        ]
+      },
+      {
+        "label": "Address example",
+        "value": "ul. Marszałkowska 100/10, 00-001 Warszawa",
+        "tags": [
+          "addresses"
+        ]
+      },
+      {
+        "label": "Example person name",
+        "value": "Jan Kowalski",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Mainland time zone",
+        "value": "Europe/Warsaw",
+        "tags": [
+          "time"
+        ]
+      }
+    ],
+    "addressExample": {
+      "formatted": [
+        "Jan Kowalski",
+        "ul. Marszałkowska 100 m. 10",
+        "00-001 Warszawa",
+        "Poland"
+      ],
+      "fields": [
+        {
+          "label": "Recipient",
+          "value": "Jan Kowalski",
+          "description": "Fictional person or organization receiving mail."
+        },
+        {
+          "label": "Street type and name",
+          "value": "ul. Marszałkowska",
+          "description": "Polish addresses usually include the street type and name."
+        },
+        {
+          "label": "Building and flat number",
+          "value": "100 m. 10",
+          "description": "Building number and apartment unit details."
+        },
+        {
+          "label": "Postal code",
+          "value": "00-001",
+          "description": "Five-digit postal code with hyphen (NN-NNN)."
+        },
+        {
+          "label": "City",
+          "value": "Warszawa",
+          "description": "City or municipality for display and delivery."
+        },
+        {
+          "label": "Country",
+          "value": "Poland",
+          "description": "Country label for international mail and cross-border records."
+        }
+      ]
+    },
+    "phoneExamples": [
+      {
+        "label": "Mobile",
+        "value": "501 234 567",
+        "description": "Polish mobile layout display example.",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "Landline",
+        "value": "22 123 45 67",
+        "description": "Warsaw-style landline display example.",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "International mobile",
+        "value": "+48 501 234 567",
+        "description": "Use +48 for international representation.",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "International landline",
+        "value": "+48 22 123 45 67",
+        "description": "International layout for Warsaw landline.",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "Normalized",
+        "value": "48501234567",
+        "description": "Digits-only normalization for databases.",
+        "tags": [
+          "phone",
+          "developer"
+        ]
+      }
+    ],
+    "integrationChecklist": [
+      "Locale pl-PL configured",
+      "UTF-8 encoding preserved",
+      "Złoty (PLN) formatting with comma decimals and space thousands separators",
+      "PESEL validation rules and checksum",
+      "NIP tax identifier checksum rules",
+      "REGON business register length and checks",
+      "Polish postal code display mask (NN-NNN)",
+      "Phone code +48 formatting",
+      "NRB domestic format vs IBAN PL representation",
+      "BLIK payment system integration parameters"
+    ],
+    "validationRules": [
+      {
+        "name": "PESEL",
+        "tags": [
+          "identifiers",
+          "government"
+        ],
+        "points": [
+          "11 digits total",
+          "Checksum uses 1-3-7-9 weight factors",
+          "Encodes date of birth and gender (even for female, odd for male)"
+        ]
+      },
+      {
+        "name": "NIP",
+        "tags": [
+          "identifiers",
+          "tax"
+        ],
+        "points": [
+          "10 digits total",
+          "Checksum uses 6-5-7-2-3-4-5-6-7 weights",
+          "Used for tax administration and invoices"
+        ]
+      },
+      {
+        "name": "REGON",
+        "tags": [
+          "identifiers",
+          "government"
+        ],
+        "points": [
+          "Supports 9-digit local registry and 14-digit subdivision layouts",
+          "Weighted checksum algorithm verifies structural validity"
+        ]
+      },
+      {
+        "name": "Postal code",
+        "tags": [
+          "postal",
+          "addresses"
+        ],
+        "points": [
+          "Five digits in NN-NNN mask",
+          "First digit defines the main postal region (e.g. 0 for Warsaw)"
+        ]
+      },
+      {
+        "name": "Phone",
+        "tags": [
+          "phone"
+        ],
+        "points": [
+          "Nine digits excluding country code +48",
+          "Mobile ranges and regional landline prefixes have different shapes"
+        ]
+      },
+      {
+        "name": "IBAN",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "points": [
+          "Polish IBAN starts with PL followed by control digits and 26-digit NRB",
+          "Direct checksum verification using modulo 97"
+        ]
+      }
+    ],
+    "commonMistakes": [
+      "Treating BLIK as a bank account identifier rather than a mobile payment token.",
+      "Conflating NIP (tax) and PESEL (personal) identifiers.",
+      "Using comma instead of space for thousands formatting, which looks unnatural to Polish users.",
+      "Forgetting the hyphen in the NN-NNN postal code display.",
+      "Hardcoding PLN symbol position before the amount (PLN should be formatted as 123,45 zł or 123,45 PLN).",
+      "Conflating 26-digit domestic NRB accounts with 28-character PL IBANs in databases."
+    ],
+    "bankingOverview": [
+      {
+        "brandKey": "iban",
+        "name": "IBAN",
+        "status": "available",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "PL-prefixed IBAN format is standard for international transfers."
+      },
+      {
+        "brandKey": "sepa",
+        "name": "SEPA",
+        "status": "ready",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "Euro accounts in Poland support SEPA, but domestic transfers use PLN clearing (Elixir)."
+      },
+      {
+        "brandKey": "swift",
+        "name": "SWIFT / BIC",
+        "status": "ready",
+        "tags": [
+          "banking"
+        ],
+        "description": "Required for international non-SEPA transfers."
+      },
+      {
+        "icon": "💸",
+        "name": "BLIK",
+        "status": "planned",
+        "tags": [
+          "payments",
+          "banking"
+        ],
+        "description": "Widely popular domestic instant mobile payment solution using 6-digit codes."
+      },
+      {
+        "icon": "🏦",
+        "name": "Domestic account context",
+        "status": "planned",
+        "tags": [
+          "banking"
+        ],
+        "description": "Elixir is the domestic clearing system processing PLN transfers in three daily sessions."
+      }
+    ],
+    "localizationNotes": [
+      {
+        "name": "Plural rules",
+        "description": "Polish has complex plural forms (1, 2-4, 5-21, etc.) depending on the noun case.",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "name": "Week starts",
+        "description": "Most Polish user interfaces expect Monday as the first day of week.",
+        "tags": [
+          "locale",
+          "date"
+        ]
+      },
+      {
+        "name": "Calendar",
+        "description": "Gregorian calendar is the ordinary civil calendar.",
+        "tags": [
+          "locale",
+          "date"
+        ]
+      },
+      {
+        "name": "Unicode",
+        "description": "Ensure support for Polish diacritics: ą, ć, ę, ł, ń, ó, ś, ź, ż.",
+        "tags": [
+          "locale",
+          "developer"
+        ]
+      },
+      {
+        "name": "Timezone",
+        "description": "Use Europe/Warsaw for global civil time in Poland.",
+        "tags": [
+          "time",
+          "developer"
+        ]
+      }
+    ],
+    "ecosystem": [
+      {
+        "name": "PESEL",
+        "description": "Personal identity register for citizens and residents.",
+        "tags": [
+          "identifiers",
+          "government"
+        ]
+      },
+      {
+        "name": "NIP",
+        "description": "Tax identification number register.",
+        "tags": [
+          "identifiers",
+          "tax"
+        ]
+      },
+      {
+        "name": "REGON",
+        "description": "National register of business entities.",
+        "tags": [
+          "identifiers",
+          "government"
+        ]
+      },
+      {
+        "name": "BLIK",
+        "description": "Mobile payment standard used by millions of bank customers.",
+        "tags": [
+          "payments",
+          "banking"
+        ]
+      }
+    ],
+    "highlights": [
+      "Poland uses pl-PL locale for formatting.",
+      "PLN is displayed with space separators and 'zł' symbol at the end (e.g. 1 234,56 zł).",
+      "Diacritics like ł and ż are common and must be preserved.",
+      "BLIK is the leading mobile payment method in Poland.",
+      "Date format is DD.MM.YYYY."
+    ],
+    "developerNotes": [
+      "Ensure database tables support UTF-8 for Polish diacritics.",
+      "Validate local PESEL, NIP, and REGON formats separately.",
+      "Use PL country prefix for IBAN validation on Polish accounts."
+    ],
+    "developerExamples": [
+      {
+        "title": "Java Locale",
+        "language": "java",
+        "brandKey": "java",
+        "code": "Locale.forLanguageTag(\"pl-PL\")",
+        "note": "Use BCP 47 locale tags for Java formatting APIs."
+      },
+      {
+        "title": "Java currency format",
+        "language": "java",
+        "brandKey": "java",
+        "code": "NumberFormat.getCurrencyInstance(Locale.forLanguageTag(\"pl-PL\")).format(value)",
+        "note": "Formats values using Polish currency conventions."
+      },
+      {
+        "title": "JavaScript Intl Currency",
+        "language": "javascript",
+        "brandKey": "javascript",
+        "code": "new Intl.NumberFormat(\"pl-PL\", { style: \"currency\", currency: \"PLN\" })",
+        "note": "Formats PLN values with pl-PL separators and currency display."
+      },
+      {
+        "title": "JavaScript Date",
+        "language": "javascript",
+        "brandKey": "javascript",
+        "code": "new Intl.DateTimeFormat(\"pl-PL\", { timeZone: \"Europe/Warsaw\" })",
+        "note": "Use Europe/Warsaw timezone for Poland local dates."
+      },
+      {
+        "title": "Python locale",
+        "language": "python",
+        "brandKey": "python",
+        "code": "locale.setlocale(locale.LC_ALL, \"pl_PL.UTF-8\")",
+        "note": "Requires the pl_PL locale to be installed on the host operating system."
+      },
+      {
+        "title": "Go language tag",
+        "language": "go",
+        "brandKey": "go",
+        "code": "language.MustParse(\"pl-PL\")",
+        "note": "Use golang.org/x/text/language package for locale representation."
+      }
+    ]
+  }
+}

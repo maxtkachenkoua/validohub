@@ -16,1961 +16,6714 @@
   const SHARED_WORLD_MAP_SRC = '/assets/images/countries/world-map.svg';
 
   const COUNTRY_VISUAL_ASSETS = {
-    brazil: {
-      outlineSrc: '/assets/images/countries/brazil-outline.svg',
-      outlineAlt: 'Brazil country outline',
-      mapSrc: '/assets/images/countries/brazil-location.svg',
-      mapAlt: 'World map with Brazil location marker',
-      mapMarker: { x: 49, y: 52, label: 'Brazil' },
-      source: 'Natural Earth geometry'
-    },
-    poland: {
-      outlineSrc: '/assets/images/countries/poland-outline.svg',
-      outlineAlt: 'Poland country outline',
-      mapSrc: '/assets/images/countries/poland-location.svg',
-      mapAlt: 'World map with Poland location marker',
-      mapMarker: { x: 46, y: 41, label: 'Poland' },
-      source: 'Natural Earth geometry'
-    },
-    spain: {
-      outlineSrc: '/assets/images/countries/spain-outline.svg',
-      outlineAlt: 'Spain country outline',
-      mapSrc: '/assets/images/countries/spain-location.svg',
-      mapAlt: 'World map with Spain location marker',
-      mapMarker: { x: 41, y: 63, label: 'Spain' },
-      source: 'Simplified public-domain geographic reference'
-    },
-    germany: {
-      outlineSrc: '/assets/images/countries/germany-outline.svg',
-      outlineAlt: 'Germany country outline',
-      mapSrc: '/assets/images/countries/germany-location.svg',
-      mapAlt: 'World map with Germany location marker',
-      mapMarker: { x: 50, y: 50, label: 'Germany' },
-      source: 'Natural Earth geometry'
-    },
-  };
-
-  const COUNTRY_HUBS = {
-    brazil: {
-      flag: '🇧🇷',
-      name: 'Brazil',
-      badge: 'Reference country hub',
-      description: 'Developer intelligence for Brazilian identifiers, payments, banking formats, locale conventions, and official systems.',
-      metadata: {
-        population: '203M+',
-        area: '8,515,767 km²',
-        capital: 'Brasilia',
-        largestCity: 'Sao Paulo',
-        continent: 'South America',
-        languages: 'Portuguese',
-        currency: 'Brazilian real',
-        currencyCode: 'BRL',
-        currencySymbol: 'R$',
-        callingCode: '+55',
-        internetTld: '.br',
-        drivingSide: 'Right',
-        iso2: 'BR',
-        iso3: 'BRA',
-        isoNumeric: '076',
-        locale: 'pt-BR',
-        icuLocale: 'pt_BR',
-        dateFormat: 'DD/MM/YYYY',
-        timeFormat: '24-hour, HH:mm',
-        decimalSeparator: 'Comma (,)',
-        thousandsSeparator: 'Dot (.)',
-        addressFormat: 'Street, number, district, city, state, CEP',
-        postalCodeFormat: 'NNNNN-NNN',
-        primaryTimeZone: 'UTC-03',
-        utcRange: 'UTC-02 to UTC-05',
-        measurementSystem: 'Metric',
-        paperSize: 'A4',
-        powerPlugTypes: 'Type C / Type N',
-        voltage: '127V / 220V',
-        frequency: '60Hz',
-        emergencyNumber: '190',
-        weekStarts: 'Sunday',
-        rtlSupport: 'No',
-        unicodeLocale: 'pt-BR',
-        cldrLocale: 'pt_BR',
-        metricVsImperial: 'Metric-first'
+    "brazil": {
+      "outlineSrc": "/assets/images/countries/brazil-outline.svg",
+      "outlineAlt": "Brazil country outline",
+      "mapSrc": "/assets/images/countries/brazil-location.svg",
+      "mapAlt": "World map with Brazil location marker",
+      "mapMarker": {
+        "x": 49,
+        "y": 52,
+        "label": "Brazil"
       },
-      visualIdentity: {
-        countryId: 'brazil',
-        outlineLabel: 'Brazil outline',
-        mapLabel: 'Brazil in the world',
-        continentBadge: 'South America',
-        flagLabel: 'Brazil flag',
-        heroAccentPrimary: '22 101 52',
-        heroAccentSecondary: '202 138 4',
-        heroAccentTertiary: '37 99 235'
+      "source": "Natural Earth geometry"
+    },
+    "germany": {
+      "outlineSrc": "/assets/images/countries/germany-outline.svg",
+      "outlineAlt": "Germany country outline",
+      "mapSrc": "/assets/images/countries/germany-location.svg",
+      "mapAlt": "World map with Germany location marker",
+      "mapMarker": {
+        "x": 50,
+        "y": 50,
+        "label": "Germany"
       },
-      stats: [
-        { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
-        { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
-        { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
-        { icon: '🌎', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
-        { icon: '🗣', label: 'Official language', valueKey: 'languages', tags: ['locale'] },
-        { icon: '💳', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency', 'payments'] },
-        { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
-        { icon: '🌐', label: 'Internet TLD', valueKey: 'internetTld', tags: ['developer'] },
-        { icon: '🚗', label: 'Driving side', valueKey: 'drivingSide', tags: ['locale'] },
-        { icon: '🧭', label: 'UTC range', valueKey: 'utcRange', tags: ['time'] }
-      ],
-      countryProfile: [
-        { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
-        { icon: '▣', label: 'Area', valueKey: 'area', tags: ['locale'] },
-        { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
-        { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
-        { icon: '🌎', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
-        { icon: '🗣', label: 'Official language', valueKey: 'languages', tags: ['locale'] },
-        { icon: '🚗', label: 'Driving side', valueKey: 'drivingSide', tags: ['locale'] },
-        { icon: '📏', label: 'Measurement system', valueKey: 'measurementSystem', tags: ['locale'] },
-        { icon: '📄', label: 'Paper size', valueKey: 'paperSize', tags: ['developer'] },
-        { icon: '🔌', label: 'Power plug types', valueKey: 'powerPlugTypes', tags: ['developer'] },
-        { icon: '⚡', label: 'Voltage', valueKey: 'voltage', tags: ['developer'] },
-        { icon: '⏱', label: 'Frequency', valueKey: 'frequency', tags: ['developer'] },
-        { icon: '🚨', label: 'Emergency number', valueKey: 'emergencyNumber', tags: ['phone'] },
-        { icon: '🌐', label: 'Internet TLD', valueKey: 'internetTld', tags: ['developer'] },
-        { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
-        { icon: '💳', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency'] },
-        { icon: '🕒', label: 'Timezone range', valueKey: 'utcRange', tags: ['time'] },
-        { icon: '📅', label: 'Week starts', valueKey: 'weekStarts', tags: ['locale'] },
-        { icon: '↔', label: 'RTL support', valueKey: 'rtlSupport', tags: ['locale'] },
-        { icon: '🔤', label: 'Unicode locale', valueKey: 'unicodeLocale', tags: ['locale', 'developer'] },
-        { icon: '🌐', label: 'ICU locale', valueKey: 'icuLocale', tags: ['locale', 'developer'] },
-        { icon: '🌐', label: 'CLDR locale', valueKey: 'cldrLocale', tags: ['locale', 'developer'] },
-        { icon: '📐', label: 'Metric vs Imperial', valueKey: 'metricVsImperial', tags: ['locale'] }
-      ],
-      quickActions: [
-        { label: 'Copy Locale', valueKey: 'locale' },
-        { label: 'Copy Currency Code', valueKey: 'currencyCode' },
-        { label: 'Copy Phone Code', valueKey: 'callingCode' },
-        { label: 'Copy ISO2', valueKey: 'iso2' },
-        { label: 'Copy ISO3', valueKey: 'iso3' },
-        { label: 'Copy Numeric ISO', valueKey: 'isoNumeric' },
-        { label: 'Copy Internet TLD', valueKey: 'internetTld' },
-        { label: 'Copy Date Format', valueKey: 'dateFormat' },
-        { label: 'Copy Postal Code Format', valueKey: 'postalCodeFormat' },
-        { label: 'Copy Primary Time Zone', valueKey: 'primaryTimeZone' }
-      ],
-      cheatSheet: [
-        { label: 'ISO2', valueKey: 'iso2', icon: '🏷', tags: ['developer', 'locale'] },
-        { label: 'ISO3', valueKey: 'iso3', icon: '🏷', tags: ['developer', 'locale'] },
-        { label: 'Numeric ISO', valueKey: 'isoNumeric', icon: '🏷', tags: ['developer', 'locale'] },
-        { label: 'Locale', valueKey: 'locale', icon: '🌐', tags: ['locale', 'developer'] },
-        { label: 'ICU locale', valueKey: 'icuLocale', icon: '🌐', tags: ['locale', 'developer'] },
-        { label: 'Language', valueKey: 'languages', icon: '🗣', tags: ['locale'] },
-        { label: 'Currency', value: 'Brazilian real (BRL)', copyValueKey: 'currencyCode', icon: '💳', tags: ['currency', 'payments'] },
-        { label: 'Currency symbol', valueKey: 'currencySymbol', icon: '💵', tags: ['currency'] },
-        { label: 'Phone country code', valueKey: 'callingCode', icon: '☎', tags: ['phone'] },
-        { label: 'Internet TLD', valueKey: 'internetTld', icon: '🌐', tags: ['developer'] },
-        { label: 'Date format', valueKey: 'dateFormat', icon: '📅', tags: ['locale', 'date'] },
-        { label: 'Time format', valueKey: 'timeFormat', icon: '⏱', tags: ['locale', 'time'] },
-        { label: 'Decimal separator', valueKey: 'decimalSeparator', copyValue: 'comma decimal separator', icon: '🔢', tags: ['locale', 'currency'] },
-        { label: 'Thousands separator', valueKey: 'thousandsSeparator', copyValue: 'dot thousands separator', icon: '🔢', tags: ['locale', 'currency'] },
-        { label: 'Address format', valueKey: 'addressFormat', icon: '📍', tags: ['addresses'] },
-        { label: 'Postal code format', valueKey: 'postalCodeFormat', icon: '✉', tags: ['postal', 'addresses'] },
-        { label: 'Primary time zone', valueKey: 'primaryTimeZone', icon: '🕒', tags: ['time'] },
-        { label: 'Time zones', valueKey: 'utcRange', icon: '🕒', tags: ['time'] }
-      ],
-      localFormats: [
-        { icon: '🧾', name: 'CPF', status: 'planned', category: 'Tax identifier', tags: ['identifiers', 'tax'], description: 'Individual taxpayer identifier. CPF numbers have 11 digits and checksum rules.', related: ['CPF Validator'] },
-        { icon: '🏢', name: 'CNPJ', status: 'planned', category: 'Business identifier', tags: ['identifiers', 'tax'], description: 'Company taxpayer identifier. CNPJ numbers have 14 digits and checksum rules.', related: ['CNPJ Validator'] },
-        { icon: '✉', name: 'CEP', status: 'planned', category: 'Postal', tags: ['postal', 'addresses'], description: 'Postal code format with 8 digits, commonly displayed as NNNNN-NNN.', related: ['CEP Lookup'] },
-        { brandKey: 'pix', name: 'PIX', status: 'comingSoon', category: 'Payments', tags: ['payments', 'banking'], description: 'Instant payment ecosystem. Keys can be CPF, CNPJ, email, phone, random key, or QR payload.', related: ['PIX Workbench'] },
-        { icon: '🪪', name: 'RG', status: 'planned', category: 'Identity', tags: ['identifiers', 'government'], description: 'State-issued identity document. Formats vary by issuing state.' },
-        { icon: '🚗', name: 'CNH', status: 'planned', category: 'Identity', tags: ['identifiers', 'government'], description: 'Brazilian driver license identifier used in identity and mobility workflows.' },
-        { icon: '🚙', name: 'RENAVAM', status: 'planned', category: 'Vehicle', tags: ['identifiers', 'government'], description: 'Vehicle registry identifier used for Brazilian vehicle records.' },
-        { icon: '☎', name: 'Brazilian phone numbers', status: 'planned', category: 'Phone', tags: ['phone'], description: 'Phone numbers use country code +55, area codes, mobile prefixes, and local formatting rules.', related: ['Brazil Phone Validator'] },
-        { brandKey: 'iban', name: 'Brazil IBAN / banking notes', status: 'ready', category: 'Banking', tags: ['banking', 'payments'], description: 'Brazil is not an IBAN-first domestic transfer market; bank, branch, account, PIX, and SWIFT/BIC context matters.' }
-      ],
-      payments: [
-        { brandKey: 'pix', title: 'PIX', status: 'comingSoon', tags: ['payments', 'banking'], text: 'PIX is the central instant-payment system developers encounter in Brazilian payment flows. It can use keys or QR payloads.' },
-        { icon: '🏦', title: 'Bank codes', status: 'planned', tags: ['banking'], text: 'Brazilian banking integrations often require bank code, agency/branch, account number, account type, and check digit handling.' },
-        { icon: '💳', title: 'Currency', status: 'ready', tags: ['currency', 'payments'], text: 'Use BRL and display values with comma decimals and dot thousands separators for pt-BR user interfaces.' },
-        { icon: '🔑', title: 'Payment identifiers', status: 'planned', tags: ['payments', 'identifiers'], text: 'CPF, CNPJ, email, phone numbers, random keys, and QR payloads can all appear in payment-related workflows.' },
-        { icon: '▦', title: 'QR payments', status: 'planned', tags: ['payments'], text: 'PIX QR flows may contain static or dynamic payloads. Treat parsing and validation as separate future workbench tasks.' },
-        { brandKey: 'swift', title: 'SWIFT/BIC notes', status: 'ready', tags: ['banking'], text: 'International transfers may involve SWIFT/BIC details, but domestic Brazilian payment UX is usually not IBAN-first.' }
-      ],
-      officialResources: [
-        { brandKey: 'bancoCentralBrasil', label: 'Banco Central do Brasil', status: 'available', tags: ['government', 'payments'], note: 'Central bank and PIX ecosystem authority. Confirm the exact documentation URL before linking deep references.' },
-        { brandKey: 'receitaFederal', label: 'Receita Federal', status: 'available', tags: ['government', 'tax', 'identifiers'], note: 'Federal tax authority for CPF and CNPJ context. Confirm exact service URLs before linking.' },
-        { brandKey: 'correios', label: 'Correios', status: 'available', tags: ['government', 'postal', 'addresses'], note: 'Postal authority for CEP-related address information. Confirm official lookup URL before linking.' },
-        { brandKey: 'govbr', label: 'Gov.br', status: 'available', tags: ['government'], note: 'Brazilian government services portal. Use as a starting point for official references.' },
-        { brandKey: 'pix', label: 'PIX documentation', status: 'planned', tags: ['payments', 'banking'], note: 'Use official Banco Central documentation when a future PIX Workbench spec is approved.' }
-      ],
-      plannedWorkbenches: [
-        { name: 'PIX Workbench', status: 'comingSoon', tags: ['payments', 'banking'], description: 'Inspect PIX keys and QR payloads after a dedicated product spec is approved.' },
-        { name: 'CPF Validator', status: 'planned', tags: ['identifiers', 'tax'], description: 'Validate and explain CPF structure and checksum rules.' },
-        { name: 'CNPJ Validator', status: 'planned', tags: ['identifiers', 'tax'], description: 'Validate and explain CNPJ structure and checksum rules.' },
-        { name: 'CEP Lookup', status: 'planned', tags: ['postal', 'addresses'], description: 'Parse and explain CEP postal-code format without implying live lookup until specified.' },
-        { name: 'Brazil Phone Validator', status: 'planned', tags: ['phone'], description: 'Validate Brazilian country code, area code, and local number patterns.' },
-        { name: 'Brazil Banking Tools', status: 'planned', tags: ['banking', 'payments'], description: 'Developer utilities for bank code, branch, account, and check digit workflows.' }
-      ],
-      relatedGlobalTools: [
-        { label: 'JSON Formatter', path: 'tools/json-formatter/', icon: '▣', tags: ['developer'] },
-        { label: 'JWT Decoder', path: 'tools/jwt-decoder/', brandKey: 'jwt', tags: ['developer'] },
-        { label: 'Base64 Encoder', path: 'tools/base64-encoder/', icon: '⟲', tags: ['developer'] },
-        { label: 'URL Encoder', path: 'tools/url-encoder/', icon: '🔗', tags: ['developer'] },
-        { label: 'Regex Tester', path: 'tools/regex-tester/', icon: '.*', tags: ['developer'] },
-        { label: 'IBAN Validator', path: 'tools/iban-validator/', brandKey: 'iban', tags: ['banking'] }
-      ],
-      relatedCategories: [
-        { label: 'Finance', path: 'categories/finance/', tags: ['payments', 'banking'] },
-        { label: 'National Identifiers', path: 'categories/national-identifiers/', tags: ['identifiers'] },
-        { label: 'Developer Tools', path: 'categories/developer-tools/', tags: ['developer'] }
-      ],
-      futureCountryPages: [
-        { label: 'Poland', status: 'available', path: 'poland/' },
-        { label: 'Spain', status: 'available', path: 'spain/' },
-        { label: 'Germany', status: 'planned' },
-        { label: 'France', status: 'planned' },
-        { label: 'Austria', status: 'planned' },
-        { label: 'Portugal', status: 'planned' },
-        { label: 'Italy', status: 'planned' },
-        { label: 'Netherlands', status: 'planned' },
-        { label: 'Belgium', status: 'planned' },
-        { label: 'United Kingdom', status: 'planned' },
-        { label: 'United States', status: 'planned' },
-        { label: 'Canada', status: 'planned' },
-        { label: 'Mexico', status: 'planned' },
-        { label: 'Argentina', status: 'planned' },
-        { label: 'Chile', status: 'planned' },
-        { label: 'Japan', status: 'planned' },
-        { label: 'South Korea', status: 'planned' },
-        { label: 'Singapore', status: 'planned' },
-        { label: 'Australia', status: 'planned' },
-        { label: 'India', status: 'planned' },
-        { label: 'Ukraine', status: 'planned' }
-      ],
-      localizationExamples: [
-        { label: 'Date', value: '31/12/2026', tags: ['locale', 'date'] },
-        { label: 'Time', value: '14:25', tags: ['locale', 'time'] },
-        { label: 'Currency', value: 'R$ 1.234,56', tags: ['currency'] },
-        { label: 'Decimal', value: '1.234,56', tags: ['locale', 'currency'] },
-        { label: 'Percentage', value: '35,7%', tags: ['locale'] },
-        { label: 'Phone', value: '+55 11 91234-5678', tags: ['phone'] },
-        { label: 'Postal code', value: '01310-100', tags: ['postal', 'addresses'] },
-        { label: 'Address example', value: 'Av. Paulista, 1000 - Bela Vista, Sao Paulo - SP, 01310-100', tags: ['addresses'] },
-        { label: 'Example person name', value: 'Ana Silva', tags: ['locale'] }
-      ],
-      addressExample: {
-        formatted: [
-          'Ana Silva',
-          'Av. Paulista, 1000',
-          'Bela Vista',
-          'Sao Paulo - SP',
-          '01310-100',
-          'Brazil'
-        ],
-        fields: [
-          { label: 'Recipient', value: 'Ana Silva', description: 'Person or organization receiving mail.' },
-          { label: 'Street and number', value: 'Av. Paulista, 1000', description: 'Street, avenue, or road plus building number.' },
-          { label: 'District', value: 'Bela Vista', description: 'Neighborhood or district, often useful for disambiguation.' },
-          { label: 'City and state', value: 'Sao Paulo - SP', description: 'Municipality plus two-letter state abbreviation.' },
-          { label: 'CEP', value: '01310-100', description: 'Brazilian postal code.' },
-          { label: 'Country', value: 'Brazil', description: 'Country label for international contexts.' }
-        ]
+      "source": "Natural Earth geometry"
+    },
+    "poland": {
+      "outlineSrc": "/assets/images/countries/poland-outline.svg",
+      "outlineAlt": "Poland country outline",
+      "mapSrc": "/assets/images/countries/poland-location.svg",
+      "mapAlt": "World map with Poland location marker",
+      "mapMarker": {
+        "x": 46,
+        "y": 41,
+        "label": "Poland"
       },
-      phoneExamples: [
-        { label: 'Mobile', value: '(11) 91234-5678', description: 'Mobile examples commonly include a 9 after the area code.', tags: ['phone'] },
-        { label: 'Landline', value: '(11) 3123-4567', description: 'Landlines use area code plus local subscriber number.', tags: ['phone'] },
-        { label: 'International', value: '+55 11 91234-5678', description: 'Use +55 for international display.', tags: ['phone'] },
-        { label: 'Formatted', value: '+55 (11) 91234-5678', description: 'Friendly display format for UI.', tags: ['phone'] },
-        { label: 'Normalized', value: '5511912345678', description: 'Digits-only normalization is useful for storage and comparison.', tags: ['phone', 'developer'] }
-      ],
-      integrationChecklist: [
-        'Locale configured',
-        'UTF-8',
-        'Currency formatting',
-        'Date formatting',
-        'CPF handling',
-        'CNPJ handling',
-        'CEP formatting',
-        'Phone formatting',
-        'PIX',
-        'Timezone',
-        'Address normalization'
-      ],
-      validationRules: [
-        { name: 'CPF', tags: ['identifiers', 'tax'], points: ['11 digits', 'Checksum digits', 'Formatted and normalized forms', 'Leading zeros must be preserved'] },
-        { name: 'CNPJ', tags: ['identifiers', 'tax'], points: ['14 digits', 'Checksum digits', 'Formatted and normalized forms', 'Business identifier, not CPF'] },
-        { name: 'CEP', tags: ['postal', 'addresses'], points: ['8 digits', 'Common display NNNNN-NNN', 'Postal code, not a ZIP code'] },
-        { name: 'Phone', tags: ['phone'], points: ['Country code +55', 'Area code required', 'Mobile and landline patterns differ'] },
-        { name: 'PIX', tags: ['payments', 'banking'], points: ['Keys may be CPF, CNPJ, email, phone, random key, or QR payload', 'Key type matters before validation'] },
-        { name: 'Bank code', tags: ['banking'], points: ['Bank code, branch, account, account type, and check digit may all appear', 'Domestic flows are not IBAN-first'] }
-      ],
-      commonMistakes: [
-        'Brazil is not IBAN-first for domestic transfers.',
-        'CPF and CNPJ are different identifiers.',
-        'Dates use DD/MM/YYYY in common display.',
-        'Decimal separator is comma.',
-        'CEP is not ZIP.',
-        'PIX keys are not always random.',
-        'Phone numbers require area codes.'
-      ],
-      bankingOverview: [
-        { brandKey: 'pix', name: 'PIX', status: 'comingSoon', tags: ['payments', 'banking'], description: 'Instant payment ecosystem using keys and QR payloads.' },
-        { icon: '🏦', name: 'TED', status: 'planned', tags: ['payments', 'banking'], description: 'Bank transfer method historically used for same-day transfers.' },
-        { icon: '🏦', name: 'DOC', status: 'planned', tags: ['payments', 'banking'], description: 'Legacy bank transfer method still useful in historical data.' },
-        { icon: '📄', name: 'Boleto', status: 'planned', tags: ['payments'], description: 'Invoice-like payment slip used in Brazilian billing flows.' },
-        { brandKey: 'swift', name: 'SWIFT', status: 'available', tags: ['banking'], description: 'Relevant for international transfers and bank identification.' },
-        { icon: '🏷', name: 'Bank Codes', status: 'planned', tags: ['banking'], description: 'Domestic bank identifiers often appear with branch and account data.' },
-        { brandKey: 'iban', name: 'IBAN', status: 'available', tags: ['banking'], description: 'Useful globally, but Brazil is not an IBAN-first domestic transfer market.' }
-      ],
-      localizationNotes: [
-        { name: 'Plural rules', description: 'Portuguese pluralization should use locale-aware message formatting.', tags: ['locale'] },
-        { name: 'Week starts', description: 'Many Brazilian calendars display Sunday as the first day of week.', tags: ['locale', 'date'] },
-        { name: 'Calendar', description: 'Gregorian calendar is the ordinary civil calendar.', tags: ['locale', 'date'] },
-        { name: 'Sorting', description: 'Use locale-aware collation instead of ASCII sorting for user-facing text.', tags: ['locale', 'developer'] },
-        { name: 'Unicode', description: 'Use UTF-8 and preserve accents in names and addresses.', tags: ['locale', 'developer'] },
-        { name: 'ICU', description: 'ICU locale commonly appears as pt_BR.', tags: ['locale', 'developer'] },
-        { name: 'Locale naming', description: 'Prefer BCP 47 pt-BR in web APIs and pt_BR where ICU/platform conventions require it.', tags: ['locale', 'developer'] }
-      ],
-      ecosystem: [
-        { name: 'PIX', description: 'Payment rail connected to banks, wallets, QR payments, and customer identifiers.', tags: ['payments', 'banking'] },
-        { name: 'CPF', description: 'Individual tax identifier that can also appear as a PIX key type.', tags: ['identifiers', 'tax'] },
-        { name: 'CNPJ', description: 'Company tax identifier used in business, tax, and payment workflows.', tags: ['identifiers', 'tax'] },
-        { name: 'CEP', description: 'Postal code used in address normalization and shipping flows.', tags: ['postal', 'addresses'] },
-        { name: 'Phone', description: 'Phone data intersects with identity, contact, and PIX key workflows.', tags: ['phone'] },
-        { name: 'Banks', description: 'Bank code, branch, account, and check digit often matter in integrations.', tags: ['banking'] },
-        { name: 'Government', description: 'Government systems are authoritative for many identifier contexts.', tags: ['government'] },
-        { name: 'Payments', description: 'Payments connect currency, identifiers, QR payloads, bank accounts, and receipts.', tags: ['payments'] }
-      ],
-      highlights: [
-        'Brazil commonly uses the pt-BR locale.',
-        'Dates are commonly written as DD/MM/YYYY.',
-        'The decimal separator is comma and the thousands separator is dot.',
-        'CPF has 11 digits and CNPJ has 14 digits.',
-        'CEP has 8 digits and is commonly displayed as NNNNN-NNN.',
-        'PIX is the primary instant payment system.',
-        'PIX keys can be CPF, CNPJ, email, phone, random key, or QR payload.',
-        'Brazil is not an IBAN-first domestic transfer market.',
-        'Brazilian banking integrations often require bank code, branch, account, account type, and check digit.'
-      ],
-      developerNotes: [
-        'Use pt-BR formatting for user-facing currency, date, time, and number display.',
-        'Store normalized identifiers separately from display masks when validation specs are available.',
-        'Treat CPF, CNPJ, CEP, phone, and PIX payload validation as separate workflows; do not mix format checks with business verification.',
-        'Confirm official references before deep-linking regulatory or government documentation.'
-      ],
-      developerExamples: [
-        {
-          title: 'Java Locale',
-          language: 'java',
-          brandKey: 'java',
-          code: 'Locale.forLanguageTag("pt-BR")',
-          note: 'Use BCP 47 locale tags for Java formatting APIs.'
-        },
-        {
-          title: 'Java currency format',
-          language: 'java',
-          brandKey: 'java',
-          code: 'NumberFormat.getCurrencyInstance(Locale.forLanguageTag("pt-BR")).format(value)',
-          note: 'Formats values using Brazilian Portuguese currency conventions.'
-        },
-        {
-          title: 'JavaScript Intl Currency',
-          language: 'javascript',
-          brandKey: 'javascript',
-          code: 'new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" })',
-          note: 'Formats BRL values with pt-BR separators and currency display.'
-        },
-        {
-          title: 'TypeScript locale constant',
-          language: 'typescript',
-          brandKey: 'typescript',
-          code: "const brazilLocale = 'pt-BR' as const;",
-          note: 'Keep locale constants explicit when building typed formatting helpers.'
-        },
-        {
-          title: 'JavaScript Date',
-          language: 'javascript',
-          brandKey: 'javascript',
-          code: 'new Intl.DateTimeFormat("pt-BR")',
-          note: 'Uses the browser Intl implementation for localized Brazilian date display.'
-        },
-        {
-          title: 'Python locale',
-          language: 'python',
-          brandKey: 'python',
-          code: 'locale.setlocale(locale.LC_ALL, "pt_BR.UTF-8")',
-          note: 'Requires the pt_BR locale to be installed on the host operating system.'
-        },
-        {
-          title: 'Go language tag',
-          language: 'go',
-          brandKey: 'go',
-          code: 'language.MustParse("pt-BR")',
-          note: 'Use golang.org/x/text/language when locale-aware behavior is needed.'
-        },
-        {
-          title: 'C# culture',
-          language: 'csharp',
-          brandKey: 'csharp',
-          code: 'CultureInfo.GetCultureInfo("pt-BR")',
-          note: 'Use CultureInfo for formatting Brazilian dates, numbers, and currency.'
-        },
-        {
-          title: 'Kotlin Locale',
-          language: 'kotlin',
-          brandKey: 'kotlin',
-          code: 'Locale.forLanguageTag("pt-BR")',
-          note: 'Kotlin on the JVM can use Java Locale APIs.'
-        },
-        {
-          title: 'ICU locale',
-          language: 'text',
-          code: 'pt_BR',
-          note: 'Common ICU locale identifier for Brazilian Portuguese.'
-        },
-        {
-          title: 'PostgreSQL formatting note',
-          language: 'sql',
-          brandKey: 'postgresql',
-          code: "to_char(amount, 'FM999G999G990D00')",
-          note: 'Database formatting depends on locale/session settings; prefer app-layer Intl formatting when possible.'
-        },
-        {
-          title: 'JSON payload locale',
-          language: 'json',
-          code: '{\n  "country": "BR",\n  "locale": "pt-BR",\n  "currency": "BRL"\n}',
-          note: 'Formatting examples only; not a validation schema.'
-        },
-        {
-          title: 'Currency formatting note',
-          language: 'text',
-          code: 'BRL uses comma decimals and dot thousands separators in pt-BR display.',
-          note: 'Keep stored numeric values separate from localized display strings.'
-        },
-        {
-          title: 'Date formatting note',
-          language: 'text',
-          code: 'DD/MM/YYYY',
-          note: 'Validate machine-readable dates separately from localized presentation.'
-        }
-      ],
-      jsonExamples: [
-        {
-          title: 'Customer',
-          code: '{\n  "name": "Ana Silva",\n  "country": "BR",\n  "locale": "pt-BR"\n}'
-        },
-        {
-          title: 'Address',
-          code: '{\n  "street": "Av. Paulista",\n  "number": "1000",\n  "district": "Bela Vista",\n  "city": "Sao Paulo",\n  "state": "SP",\n  "postalCode": "01310-100"\n}'
-        },
-        {
-          title: 'CPF',
-          code: '{\n  "type": "CPF",\n  "formatted": "123.456.789-09",\n  "normalized": "12345678909"\n}'
-        },
-        {
-          title: 'PIX',
-          code: '{\n  "type": "PIX",\n  "keyType": "email",\n  "key": "ana@example.com"\n}'
-        },
-        {
-          title: 'Phone',
-          code: '{\n  "countryCode": "+55",\n  "areaCode": "11",\n  "localNumber": "91234-5678",\n  "normalized": "5511912345678"\n}'
-        }
-      ],
-      availableWorkbenches: {
-        'Brazil Pix Validator': {
-          status: 'experimental',
-          tags: ['payments', 'banking'],
-          description: 'Discovery page only. The PIX validator workbench is not implemented in this phase.'
-        }
-      }
+      "source": "Natural Earth geometry"
+    },
+    "spain": {
+      "outlineSrc": "/assets/images/countries/spain-outline.svg",
+      "outlineAlt": "Spain country outline",
+      "mapSrc": "/assets/images/countries/spain-location.svg",
+      "mapAlt": "World map with Spain location marker",
+      "mapMarker": {
+        "x": 41,
+        "y": 63,
+        "label": "Spain"
+      },
+      "source": "Simplified public-domain geographic reference"
     }
   };
 
-  COUNTRY_HUBS.spain = {
-    flag: '🇪🇸',
-    name: 'Spain',
-    badge: 'Architecture reuse country hub',
-    description: 'Developer intelligence for Spanish identifiers, locale conventions, EU payments, banking context, government systems, and implementation pitfalls.',
-    metadata: {
-      nativeName: 'España',
-      population: 'approximately 49.6M',
-      populationNote: 'Approximate 2026 population estimate; do not treat as a timeless constant.',
-      area: '506,030 km²',
-      capital: 'Madrid',
-      largestCity: 'Madrid',
-      continent: 'Europe',
-      region: 'Southern Europe / European Union',
-      languages: 'Spanish; Catalan/Valencian, Galician, Basque, and Aranese co-official regionally',
-      currency: 'Euro',
-      currencyCode: 'EUR',
-      currencySymbol: '€',
-      callingCode: '+34',
-      internetTld: '.es',
-      drivingSide: 'Right',
-      iso2: 'ES',
-      iso3: 'ESP',
-      isoNumeric: '724',
-      locale: 'es-ES',
-      icuLocale: 'es_ES',
-      dateFormat: 'DD/MM/YYYY',
-      timeFormat: '24-hour, HH:mm',
-      decimalSeparator: 'Comma (,)',
-      thousandsSeparator: 'Dot (.)',
-      addressFormat: 'Street type/name, number, floor/door, postal code, municipality, province',
-      postalCodeFormat: 'NNNNN',
-      primaryTimeZone: 'Europe/Madrid (CET/CEST)',
-      utcRange: 'UTC+01/+02 mainland; UTC+00/+01 Canary Islands',
-      measurementSystem: 'Metric',
-      paperSize: 'A4',
-      powerPlugTypes: 'Type C / Type F',
-      voltage: '230V',
-      frequency: '50Hz',
-      emergencyNumber: '112',
-      weekStarts: 'Monday',
-      rtlSupport: 'No',
-      unicodeLocale: 'es-ES',
-      cldrLocale: 'es_ES',
-      metricVsImperial: 'Metric-first'
-    },
-      visualIdentity: {
-        countryId: 'spain',
-        outlineLabel: 'Spain outline',
-        mapLabel: 'Spain in the world',
-        continentBadge: 'Europe',
-        flagLabel: 'Spain flag',
-        heroAccentPrimary: '153 27 27',
-        heroAccentSecondary: '217 119 6',
-        heroAccentTertiary: '245 158 11'
+  const COUNTRY_HUBS = {
+    "brazil": {
+      "flag": "🇧🇷",
+      "name": "Brazil",
+      "badge": "Reference country hub",
+      "description": "Developer intelligence for Brazilian identifiers, payments, banking formats, locale conventions, and official systems.",
+      "metadata": {
+        "population": "203M+",
+        "area": "8,515,767 km²",
+        "capital": "Brasilia",
+        "largestCity": "Sao Paulo",
+        "continent": "South America",
+        "languages": "Portuguese",
+        "currency": "Brazilian real",
+        "currencyCode": "BRL",
+        "currencySymbol": "R$",
+        "callingCode": "+55",
+        "internetTld": ".br",
+        "drivingSide": "Right",
+        "iso2": "BR",
+        "iso3": "BRA",
+        "isoNumeric": "076",
+        "locale": "pt-BR",
+        "icuLocale": "pt_BR",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street, number, district, city, state, CEP",
+        "postalCodeFormat": "NNNNN-NNN",
+        "primaryTimeZone": "UTC-03",
+        "utcRange": "UTC-02 to UTC-05",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "powerPlugTypes": "Type C / Type N",
+        "voltage": "127V / 220V",
+        "frequency": "60Hz",
+        "emergencyNumber": "190",
+        "weekStarts": "Sunday",
+        "rtlSupport": "No",
+        "unicodeLocale": "pt-BR",
+        "cldrLocale": "pt_BR",
+        "metricVsImperial": "Metric-first"
       },
-    stats: [
-      { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
-      { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
-      { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
-      { icon: '🌍', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
-      { icon: '🗣', label: 'Languages', valueKey: 'languages', tags: ['locale'] },
-      { brandKey: 'europeanUnion', label: 'Region', valueKey: 'region', tags: ['government', 'locale'] },
-      { brandKey: 'iban', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency', 'payments'] },
-      { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
-      { icon: '🌐', label: 'Internet TLD', valueKey: 'internetTld', tags: ['developer'] },
-      { icon: '🕒', label: 'UTC range', valueKey: 'utcRange', tags: ['time'] }
-    ],
-    countryProfile: [
-      { icon: '🏷', label: 'Native name', valueKey: 'nativeName', tags: ['locale'] },
-      { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
-      { icon: '▣', label: 'Area', valueKey: 'area', tags: ['locale'] },
-      { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
-      { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
-      { icon: '🌍', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
-      { icon: '🗣', label: 'Languages', valueKey: 'languages', tags: ['locale'] },
-      { icon: '🚗', label: 'Driving side', valueKey: 'drivingSide', tags: ['locale'] },
-      { icon: '📏', label: 'Measurement system', valueKey: 'measurementSystem', tags: ['locale'] },
-      { icon: '📄', label: 'Paper size', valueKey: 'paperSize', tags: ['developer'] },
-      { icon: '🔌', label: 'Power plug types', valueKey: 'powerPlugTypes', tags: ['developer'] },
-      { icon: '⚡', label: 'Voltage', valueKey: 'voltage', tags: ['developer'] },
-      { icon: '⏱', label: 'Frequency', valueKey: 'frequency', tags: ['developer'] },
-      { icon: '🚨', label: 'Emergency number', valueKey: 'emergencyNumber', tags: ['phone'] },
-      { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
-      { brandKey: 'iban', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency'] },
-      { icon: '🕒', label: 'Timezone range', valueKey: 'utcRange', tags: ['time'] },
-      { icon: '📅', label: 'Week starts', valueKey: 'weekStarts', tags: ['locale'] },
-      { icon: '↔', label: 'RTL support', valueKey: 'rtlSupport', tags: ['locale'] },
-      { icon: '🔤', label: 'Unicode locale', valueKey: 'unicodeLocale', tags: ['locale', 'developer'] },
-      { icon: '🌐', label: 'ICU locale', valueKey: 'icuLocale', tags: ['locale', 'developer'] },
-      { icon: '🌐', label: 'CLDR locale', valueKey: 'cldrLocale', tags: ['locale', 'developer'] },
-      { icon: '📐', label: 'Metric vs Imperial', valueKey: 'metricVsImperial', tags: ['locale'] }
-    ],
-    quickActions: [
-      { label: 'Copy Locale', valueKey: 'locale' },
-      { label: 'Copy Currency Code', valueKey: 'currencyCode' },
-      { label: 'Copy Currency Symbol', valueKey: 'currencySymbol' },
-      { label: 'Copy Phone Code', valueKey: 'callingCode' },
-      { label: 'Copy ISO2', valueKey: 'iso2' },
-      { label: 'Copy ISO3', valueKey: 'iso3' },
-      { label: 'Copy Numeric ISO', valueKey: 'isoNumeric' },
-      { label: 'Copy Internet TLD', valueKey: 'internetTld' },
-      { label: 'Copy Date Format', valueKey: 'dateFormat' },
-      { label: 'Copy Postal Code Format', valueKey: 'postalCodeFormat' },
-      { label: 'Copy Primary Time Zone', valueKey: 'primaryTimeZone' }
-    ],
-    cheatSheet: [
-      { label: 'ISO2', valueKey: 'iso2', icon: '🏷', tags: ['developer', 'locale'] },
-      { label: 'ISO3', valueKey: 'iso3', icon: '🏷', tags: ['developer', 'locale'] },
-      { label: 'Numeric ISO', valueKey: 'isoNumeric', icon: '🏷', tags: ['developer', 'locale'] },
-      { label: 'Locale', valueKey: 'locale', icon: '🌐', tags: ['locale', 'developer'] },
-      { label: 'ICU locale', valueKey: 'icuLocale', icon: '🌐', tags: ['locale', 'developer'] },
-      { label: 'Language', valueKey: 'languages', icon: '🗣', tags: ['locale'] },
-      { label: 'Currency', value: 'Euro (EUR)', copyValueKey: 'currencyCode', brandKey: 'iban', tags: ['currency', 'payments'] },
-      { label: 'Currency symbol', valueKey: 'currencySymbol', icon: '💵', tags: ['currency'] },
-      { label: 'Phone country code', valueKey: 'callingCode', icon: '☎', tags: ['phone'] },
-      { label: 'Internet TLD', valueKey: 'internetTld', icon: '🌐', tags: ['developer'] },
-      { label: 'Date format', valueKey: 'dateFormat', icon: '📅', tags: ['locale', 'date'] },
-      { label: 'Time format', valueKey: 'timeFormat', icon: '⏱', tags: ['locale', 'time'] },
-      { label: 'Decimal separator', valueKey: 'decimalSeparator', copyValue: 'comma decimal separator', icon: '🔢', tags: ['locale', 'currency'] },
-      { label: 'Thousands separator', valueKey: 'thousandsSeparator', copyValue: 'dot thousands separator', icon: '🔢', tags: ['locale', 'currency'] },
-      { label: 'Address format', valueKey: 'addressFormat', icon: '📍', tags: ['addresses'] },
-      { label: 'Postal code format', valueKey: 'postalCodeFormat', icon: '✉', tags: ['postal', 'addresses'] },
-      { label: 'Primary time zone', valueKey: 'primaryTimeZone', icon: '🕒', tags: ['time'] },
-      { label: 'Time zones', valueKey: 'utcRange', icon: '🕒', tags: ['time'] }
-    ],
-    localFormats: [
-      { icon: '🪪', name: 'DNI', status: 'planned', category: 'National identity', tags: ['identifiers', 'government'], description: 'Documento Nacional de Identidad for Spanish citizens. Typical developer handling includes eight digits plus a control letter, preserving formatted and normalized representations.', related: ['DNI Validator'] },
-      { icon: '🪪', name: 'NIE', status: 'planned', category: 'Foreigner identity', tags: ['identifiers', 'government'], description: 'Número de Identidad de Extranjero used for foreigner identification contexts. Common patterns use X, Y, or Z prefix, seven digits, and a control letter.', related: ['NIE Validator'] },
-      { brandKey: 'agenciaTributaria', name: 'NIF', status: 'planned', category: 'Tax identifier', tags: ['identifiers', 'tax'], description: 'Número de Identificación Fiscal is the tax-identification concept. It may relate to DNI, NIE, or legal-entity identifiers, so do not treat it as one universal format.', related: ['NIF Inspector'] },
-      { brandKey: 'agenciaTributaria', name: 'CIF legacy', status: 'planned', category: 'Legacy business tax term', tags: ['identifiers', 'tax'], description: 'CIF is a historical term still present in legacy data and user language. Prefer current NIF terminology for legal-entity tax identifiers.', related: ['Legacy CIF Inspector'] },
-      { brandKey: 'seguridadSocialEspana', name: 'NAF / Social Security number', status: 'planned', category: 'Social security', tags: ['identifiers', 'government'], description: 'High-level developer context for Spanish social-security affiliation numbers. Business meaning and verification require official systems.' },
-      { brandKey: 'correosEspana', name: 'Spanish postal code', status: 'planned', category: 'Postal', tags: ['postal', 'addresses'], description: 'Five-digit postal code. The first two digits broadly align with province or autonomous-city prefixes, but postal validation is not administrative validation.', related: ['Spain Postal Code Validator'] },
-      { icon: '☎', name: 'Spanish phone numbers', status: 'planned', category: 'Phone', tags: ['phone'], description: 'Phone data uses country code +34. Mobile, landline, and service ranges need dedicated parsing rules before validation.', related: ['Spain Phone Validator'] },
-      { brandKey: 'iban', name: 'Spanish IBAN', status: 'available', category: 'Banking', tags: ['banking', 'payments'], description: 'Spanish IBANs use the ES country prefix. The existing global IBAN Validator route is available for generic IBAN checks.', related: ['IBAN Validator'] },
-      { brandKey: 'swift', name: 'BIC / SWIFT', status: 'ready', category: 'Banking', tags: ['banking', 'payments'], description: 'BIC/SWIFT codes identify financial institutions for international banking contexts. Do not infer domestic account ownership from a BIC.' },
-      { brandKey: 'vies', name: 'EU VAT / VIES', status: 'planned', category: 'Tax and business', tags: ['tax', 'government'], description: 'Spanish VAT identifier syntax and EU VIES status checks are different concerns. VIES is a business-status lookup, not just string validation.', related: ['Spain VAT / VIES Workbench'] },
-      { icon: '🚗', name: 'Vehicle registration', status: 'planned', category: 'Vehicle', tags: ['identifiers', 'government'], description: 'Informational overview for Spanish vehicle registration formats. Do not implement plate validation without a dedicated workbench spec.' },
-      { brandKey: 'bizum', name: 'Bizum', status: 'planned', category: 'Payments', tags: ['payments', 'banking'], description: 'Domestic instant-payment experience commonly tied to Spanish banks and mobile numbers. Future tools should be informational unless a meaningful inspector is specified.', related: ['Bizum Reference / Inspector'] }
-    ],
-    payments: [
-      { brandKey: 'iban', title: 'EUR and Spanish IBAN', status: 'available', tags: ['payments', 'banking'], text: 'Spain uses EUR and participates in IBAN-based European banking flows. Use the global IBAN Validator for generic checksum-level checks only.' },
-      { brandKey: 'sepa', title: 'SEPA', status: 'ready', tags: ['payments', 'banking'], text: 'SEPA credit transfer and direct debit contexts matter for euro-denominated domestic and cross-border payment integrations.' },
-      { brandKey: 'swift', title: 'BIC / SWIFT', status: 'ready', tags: ['banking'], text: 'International transfers may require BIC/SWIFT details in addition to account identifiers and payment purpose data.' },
-      { brandKey: 'bizum', title: 'Bizum', status: 'planned', tags: ['payments', 'banking'], text: 'Bizum appears in Spanish consumer payment UX. Treat it as future product research, not a validation feature in this hub.' },
-      { icon: '💳', title: 'Card payments', status: 'ready', tags: ['payments'], text: 'Card flows use global payment-network behavior plus Spanish locale display conventions for amounts, receipts, and dates.' },
-      { icon: '🏦', title: 'Direct debit', status: 'planned', tags: ['payments', 'banking'], text: 'Direct debit usually intersects with SEPA mandates, creditor identifiers, account data, and authorization state.' },
-      { brandKey: 'vies', title: 'EU VAT / VIES', status: 'planned', tags: ['tax', 'payments'], text: 'VAT number format checks and EU VIES business-status lookups must remain separate in future workbenches.' }
-    ],
-    officialResources: [
-      { brandKey: 'gobiernoEspana', label: 'Gobierno de España / Administracion.gob.es', status: 'available', tags: ['government'], note: 'Primary government entry points for Spanish public administration references. Use official pages before deep-linking.' },
-      { icon: '🪪', label: 'Ministerio del Interior', status: 'available', tags: ['government', 'identifiers'], note: 'Authoritative starting point for DNI and NIE public-service context. Confirm exact procedural URLs before linking deep references.' },
-      { brandKey: 'agenciaTributaria', label: 'Agencia Tributaria', status: 'available', tags: ['government', 'tax', 'identifiers'], note: 'Tax authority for NIF, VAT, and fiscal-identification context. Keep legal interpretation out of this page.' },
-      { brandKey: 'seguridadSocialEspana', label: 'Seguridad Social', status: 'available', tags: ['government', 'identifiers'], note: 'Official social-security portal for affiliation and contribution contexts.' },
-      { brandKey: 'bancoEspana', label: 'Banco de España', status: 'available', tags: ['government', 'banking'], note: 'Central bank and banking-system reference point, including payment-system context.' },
-      { brandKey: 'correosEspana', label: 'Correos', status: 'available', tags: ['postal', 'addresses'], note: 'Postal authority and official postal-code lookup starting point.' },
-      { brandKey: 'vies', label: 'European Commission VIES', status: 'available', tags: ['tax', 'government'], note: 'Official EU VAT number validation entry point. Use for business-status lookup, not local syntax alone.' },
-      { brandKey: 'sepa', label: 'European Payments Council / SEPA', status: 'available', tags: ['payments', 'banking'], note: 'Reference source for SEPA payment scheme context.' }
-    ],
-    plannedWorkbenches: [
-      { name: 'DNI Validator', status: 'planned', tags: ['identifiers', 'government'], description: 'Explain DNI structure, normalization, and check-letter behavior after a dedicated product spec is approved.' },
-      { name: 'NIE Validator', status: 'planned', tags: ['identifiers', 'government'], description: 'Explain NIE prefix, digits, and control-letter behavior without identity verification claims.' },
-      { name: 'NIF Inspector', status: 'planned', tags: ['identifiers', 'tax'], description: 'Inspect NIF type context for personal and legal-entity identifiers.' },
-      { name: 'Legacy CIF Inspector', status: 'planned', tags: ['identifiers', 'tax'], description: 'Help developers handle legacy CIF-labeled data while migrating terminology to current NIF language.' },
-      { name: 'Spain Phone Validator', status: 'planned', tags: ['phone'], description: 'Validate Spanish phone display and normalized +34 forms after a dedicated spec.' },
-      { name: 'Spain Postal Code Validator', status: 'planned', tags: ['postal', 'addresses'], description: 'Explain five-digit postal codes and province-prefix context without claiming address validity.' },
-      { name: 'Spain VAT / VIES Workbench', status: 'planned', tags: ['tax', 'government'], description: 'Separate VAT syntax checks from VIES business-status lookup and audit notes.' },
-      { name: 'Spanish IBAN Tools', status: 'planned', tags: ['banking', 'payments'], description: 'Country-specific explanations around ES IBANs, domestic context, and SEPA usage.' },
-      { name: 'Bizum Reference / Inspector', status: 'planned', tags: ['payments', 'banking'], description: 'Only after a clear spec defines what can be inspected safely without payment initiation or bank access.' }
-    ],
-    relatedGlobalTools: [
-      { label: 'JSON Formatter', path: 'tools/json-formatter/', icon: '▣', tags: ['developer'] },
-      { label: 'JWT Decoder', path: 'tools/jwt-decoder/', brandKey: 'jwt', tags: ['developer'] },
-      { label: 'Base64 Encoder', path: 'tools/base64-encoder/', icon: '⟲', tags: ['developer'] },
-      { label: 'URL Encoder', path: 'tools/url-encoder/', icon: '🔗', tags: ['developer'] },
-      { label: 'Regex Tester', path: 'tools/regex-tester/', icon: '.*', tags: ['developer'] },
-      { label: 'IBAN Validator', path: 'tools/iban-validator/', brandKey: 'iban', tags: ['banking'] }
-    ],
-    relatedCategories: [
-      { label: 'Finance', path: 'categories/finance/', tags: ['payments', 'banking'] },
-      { label: 'National Identifiers', path: 'categories/national-identifiers/', tags: ['identifiers'] },
-      { label: 'Developer Tools', path: 'categories/developer-tools/', tags: ['developer'] }
-    ],
-    futureCountryPages: [
-      { label: 'Brazil', status: 'available', path: 'brazil/' },
-      { label: 'Poland', status: 'available', path: 'poland/' },
-      { label: 'Germany', status: 'planned' },
-      { label: 'France', status: 'planned' },
-      { label: 'Portugal', status: 'planned' },
-      { label: 'Italy', status: 'planned' },
-      { label: 'Netherlands', status: 'planned' },
-      { label: 'Belgium', status: 'planned' },
-      { label: 'United Kingdom', status: 'planned' },
-      { label: 'United States', status: 'planned' },
-      { label: 'Canada', status: 'planned' },
-      { label: 'Mexico', status: 'planned' },
-      { label: 'Argentina', status: 'planned' },
-      { label: 'Chile', status: 'planned' },
-      { label: 'Japan', status: 'planned' },
-      { label: 'Australia', status: 'planned' },
-      { label: 'India', status: 'planned' },
-      { label: 'Ukraine', status: 'planned' }
-    ],
-    localizationExamples: [
-      { label: 'Date', value: '31/12/2026', tags: ['locale', 'date'] },
-      { label: 'Time', value: '14:25', tags: ['locale', 'time'] },
-      { label: 'Currency', value: '1.234,56 €', tags: ['currency'] },
-      { label: 'Decimal', value: '1.234,56', tags: ['locale', 'currency'] },
-      { label: 'Percentage', value: '35,7 %', tags: ['locale'] },
-      { label: 'Mobile phone', value: '+34 612 34 56 78', tags: ['phone'] },
-      { label: 'Landline', value: '+34 91 123 45 67', tags: ['phone'] },
-      { label: 'Postal code', value: '28013', tags: ['postal', 'addresses'] },
-      { label: 'Address example', value: 'Calle Mayor, 10, 2º B, 28013 Madrid', tags: ['addresses'] },
-      { label: 'Example person name', value: 'Lucía Martín', tags: ['locale'] },
-      { label: 'Mainland time zone', value: 'Europe/Madrid', tags: ['time'] },
-      { label: 'Canary Islands note', value: 'Europe/Madrid is not correct for Canary Islands local time', tags: ['time'] }
-    ],
-    addressExample: {
-      formatted: [
-        'Lucía Martín',
-        'Calle Mayor, 10, 2º B',
-        '28013 Madrid',
-        'Madrid',
-        'Spain'
+      "visualIdentity": {
+        "countryId": "brazil",
+        "outlineLabel": "Brazil outline",
+        "mapLabel": "Brazil in the world",
+        "continentBadge": "South America",
+        "flagLabel": "Brazil flag",
+        "heroAccentPrimary": "22 101 52",
+        "heroAccentSecondary": "202 138 4",
+        "heroAccentTertiary": "37 99 235"
+      },
+      "stats": [
+        {
+          "icon": "👥",
+          "label": "Population",
+          "valueKey": "population",
+          "tags": [
+            "people"
+          ]
+        },
+        {
+          "icon": "🏛",
+          "label": "Capital",
+          "valueKey": "capital",
+          "tags": [
+            "government"
+          ]
+        },
+        {
+          "icon": "🏙",
+          "label": "Largest city",
+          "valueKey": "largestCity",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🌎",
+          "label": "Continent",
+          "valueKey": "continent",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🗣",
+          "label": "Official language",
+          "valueKey": "languages",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "💳",
+          "label": "Currency",
+          "valueKey": "currencyCode",
+          "detailKey": "currency",
+          "tags": [
+            "currency",
+            "payments"
+          ]
+        },
+        {
+          "icon": "☎",
+          "label": "Calling code",
+          "valueKey": "callingCode",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "Internet TLD",
+          "valueKey": "internetTld",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🚗",
+          "label": "Driving side",
+          "valueKey": "drivingSide",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🧭",
+          "label": "UTC range",
+          "valueKey": "utcRange",
+          "tags": [
+            "time"
+          ]
+        }
       ],
-      fields: [
-        { label: 'Recipient', value: 'Lucía Martín', description: 'Fictional person or organization receiving mail.' },
-        { label: 'Street type and name', value: 'Calle Mayor', description: 'Spanish addresses often include the street type before the street name.' },
-        { label: 'Building number', value: '10', description: 'Number within the street.' },
-        { label: 'Floor and door', value: '2º B', description: 'Common optional apartment or unit context.' },
-        { label: 'Postal code', value: '28013', description: 'Five-digit postal code. The prefix 28 is associated with Madrid province context.' },
-        { label: 'Municipality', value: 'Madrid', description: 'City or municipality for display and delivery.' },
-        { label: 'Province', value: 'Madrid', description: 'Useful for structured data and disambiguation.' },
-        { label: 'Autonomous community', value: 'Community of Madrid', description: 'Optional structured regional field depending on the use case.' },
-        { label: 'Country', value: 'Spain', description: 'Country label for international mail and cross-border records.' }
+      "countryProfile": [
+        {
+          "icon": "👥",
+          "label": "Population",
+          "valueKey": "population",
+          "tags": [
+            "people"
+          ]
+        },
+        {
+          "icon": "▣",
+          "label": "Area",
+          "valueKey": "area",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🏛",
+          "label": "Capital",
+          "valueKey": "capital",
+          "tags": [
+            "government"
+          ]
+        },
+        {
+          "icon": "🏙",
+          "label": "Largest city",
+          "valueKey": "largestCity",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🌎",
+          "label": "Continent",
+          "valueKey": "continent",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🗣",
+          "label": "Official language",
+          "valueKey": "languages",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🚗",
+          "label": "Driving side",
+          "valueKey": "drivingSide",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "📏",
+          "label": "Measurement system",
+          "valueKey": "measurementSystem",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "📄",
+          "label": "Paper size",
+          "valueKey": "paperSize",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🔌",
+          "label": "Power plug types",
+          "valueKey": "powerPlugTypes",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "⚡",
+          "label": "Voltage",
+          "valueKey": "voltage",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "⏱",
+          "label": "Frequency",
+          "valueKey": "frequency",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🚨",
+          "label": "Emergency number",
+          "valueKey": "emergencyNumber",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "Internet TLD",
+          "valueKey": "internetTld",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "☎",
+          "label": "Calling code",
+          "valueKey": "callingCode",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "icon": "💳",
+          "label": "Currency",
+          "valueKey": "currencyCode",
+          "detailKey": "currency",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "icon": "🕒",
+          "label": "Timezone range",
+          "valueKey": "utcRange",
+          "tags": [
+            "time"
+          ]
+        },
+        {
+          "icon": "📅",
+          "label": "Week starts",
+          "valueKey": "weekStarts",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "↔",
+          "label": "RTL support",
+          "valueKey": "rtlSupport",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🔤",
+          "label": "Unicode locale",
+          "valueKey": "unicodeLocale",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "ICU locale",
+          "valueKey": "icuLocale",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "CLDR locale",
+          "valueKey": "cldrLocale",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "icon": "📐",
+          "label": "Metric vs Imperial",
+          "valueKey": "metricVsImperial",
+          "tags": [
+            "locale"
+          ]
+        }
+      ],
+      "quickActions": [
+        {
+          "label": "Copy Locale",
+          "valueKey": "locale"
+        },
+        {
+          "label": "Copy Currency Code",
+          "valueKey": "currencyCode"
+        },
+        {
+          "label": "Copy Phone Code",
+          "valueKey": "callingCode"
+        },
+        {
+          "label": "Copy ISO2",
+          "valueKey": "iso2"
+        },
+        {
+          "label": "Copy ISO3",
+          "valueKey": "iso3"
+        },
+        {
+          "label": "Copy Numeric ISO",
+          "valueKey": "isoNumeric"
+        },
+        {
+          "label": "Copy Internet TLD",
+          "valueKey": "internetTld"
+        },
+        {
+          "label": "Copy Date Format",
+          "valueKey": "dateFormat"
+        },
+        {
+          "label": "Copy Postal Code Format",
+          "valueKey": "postalCodeFormat"
+        },
+        {
+          "label": "Copy Primary Time Zone",
+          "valueKey": "primaryTimeZone"
+        }
+      ],
+      "cheatSheet": [
+        {
+          "label": "ISO2",
+          "valueKey": "iso2",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "ISO3",
+          "valueKey": "iso3",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Numeric ISO",
+          "valueKey": "isoNumeric",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Locale",
+          "valueKey": "locale",
+          "icon": "🌐",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "label": "ICU locale",
+          "valueKey": "icuLocale",
+          "icon": "🌐",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "label": "Language",
+          "valueKey": "languages",
+          "icon": "🗣",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Currency",
+          "value": "Brazilian real (BRL)",
+          "copyValueKey": "currencyCode",
+          "icon": "💳",
+          "tags": [
+            "currency",
+            "payments"
+          ]
+        },
+        {
+          "label": "Currency symbol",
+          "valueKey": "currencySymbol",
+          "icon": "💵",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "label": "Phone country code",
+          "valueKey": "callingCode",
+          "icon": "☎",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Internet TLD",
+          "valueKey": "internetTld",
+          "icon": "🌐",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "Date format",
+          "valueKey": "dateFormat",
+          "icon": "📅",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "label": "Time format",
+          "valueKey": "timeFormat",
+          "icon": "⏱",
+          "tags": [
+            "locale",
+            "time"
+          ]
+        },
+        {
+          "label": "Decimal separator",
+          "valueKey": "decimalSeparator",
+          "copyValue": "comma decimal separator",
+          "icon": "🔢",
+          "tags": [
+            "locale",
+            "currency"
+          ]
+        },
+        {
+          "label": "Thousands separator",
+          "valueKey": "thousandsSeparator",
+          "copyValue": "dot thousands separator",
+          "icon": "🔢",
+          "tags": [
+            "locale",
+            "currency"
+          ]
+        },
+        {
+          "label": "Address format",
+          "valueKey": "addressFormat",
+          "icon": "📍",
+          "tags": [
+            "addresses"
+          ]
+        },
+        {
+          "label": "Postal code format",
+          "valueKey": "postalCodeFormat",
+          "icon": "✉",
+          "tags": [
+            "postal",
+            "addresses"
+          ]
+        },
+        {
+          "label": "Primary time zone",
+          "valueKey": "primaryTimeZone",
+          "icon": "🕒",
+          "tags": [
+            "time"
+          ]
+        },
+        {
+          "label": "Time zones",
+          "valueKey": "utcRange",
+          "icon": "🕒",
+          "tags": [
+            "time"
+          ]
+        }
+      ],
+      "localFormats": [
+        {
+          "icon": "🧾",
+          "name": "CPF",
+          "status": "planned",
+          "category": "Tax identifier",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "Individual taxpayer identifier. CPF numbers have 11 digits and checksum rules.",
+          "related": [
+            "CPF Validator"
+          ]
+        },
+        {
+          "icon": "🏢",
+          "name": "CNPJ",
+          "status": "planned",
+          "category": "Business identifier",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "Company taxpayer identifier. CNPJ numbers have 14 digits and checksum rules.",
+          "related": [
+            "CNPJ Validator"
+          ]
+        },
+        {
+          "icon": "✉",
+          "name": "CEP",
+          "status": "planned",
+          "category": "Postal",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "description": "Postal code format with 8 digits, commonly displayed as NNNNN-NNN.",
+          "related": [
+            "CEP Lookup"
+          ]
+        },
+        {
+          "brandKey": "pix",
+          "name": "PIX",
+          "status": "comingSoon",
+          "category": "Payments",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "description": "Instant payment ecosystem. Keys can be CPF, CNPJ, email, phone, random key, or QR payload.",
+          "related": [
+            "PIX Workbench"
+          ]
+        },
+        {
+          "icon": "🪪",
+          "name": "RG",
+          "status": "planned",
+          "category": "Identity",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "State-issued identity document. Formats vary by issuing state."
+        },
+        {
+          "icon": "🚗",
+          "name": "CNH",
+          "status": "planned",
+          "category": "Identity",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "Brazilian driver license identifier used in identity and mobility workflows."
+        },
+        {
+          "icon": "🚙",
+          "name": "RENAVAM",
+          "status": "planned",
+          "category": "Vehicle",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "Vehicle registry identifier used for Brazilian vehicle records."
+        },
+        {
+          "icon": "☎",
+          "name": "Brazilian phone numbers",
+          "status": "planned",
+          "category": "Phone",
+          "tags": [
+            "phone"
+          ],
+          "description": "Phone numbers use country code +55, area codes, mobile prefixes, and local formatting rules.",
+          "related": [
+            "Brazil Phone Validator"
+          ]
+        },
+        {
+          "brandKey": "iban",
+          "name": "Brazil IBAN / banking notes",
+          "status": "ready",
+          "category": "Banking",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Brazil is not an IBAN-first domestic transfer market; bank, branch, account, PIX, and SWIFT/BIC context matters."
+        }
+      ],
+      "payments": [
+        {
+          "brandKey": "pix",
+          "title": "PIX",
+          "status": "comingSoon",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "text": "PIX is the central instant-payment system developers encounter in Brazilian payment flows. It can use keys or QR payloads."
+        },
+        {
+          "icon": "🏦",
+          "title": "Bank codes",
+          "status": "planned",
+          "tags": [
+            "banking"
+          ],
+          "text": "Brazilian banking integrations often require bank code, agency/branch, account number, account type, and check digit handling."
+        },
+        {
+          "icon": "💳",
+          "title": "Currency",
+          "status": "ready",
+          "tags": [
+            "currency",
+            "payments"
+          ],
+          "text": "Use BRL and display values with comma decimals and dot thousands separators for pt-BR user interfaces."
+        },
+        {
+          "icon": "🔑",
+          "title": "Payment identifiers",
+          "status": "planned",
+          "tags": [
+            "payments",
+            "identifiers"
+          ],
+          "text": "CPF, CNPJ, email, phone numbers, random keys, and QR payloads can all appear in payment-related workflows."
+        },
+        {
+          "icon": "▦",
+          "title": "QR payments",
+          "status": "planned",
+          "tags": [
+            "payments"
+          ],
+          "text": "PIX QR flows may contain static or dynamic payloads. Treat parsing and validation as separate future workbench tasks."
+        },
+        {
+          "brandKey": "swift",
+          "title": "SWIFT/BIC notes",
+          "status": "ready",
+          "tags": [
+            "banking"
+          ],
+          "text": "International transfers may involve SWIFT/BIC details, but domestic Brazilian payment UX is usually not IBAN-first."
+        }
+      ],
+      "officialResources": [
+        {
+          "brandKey": "bancoCentralBrasil",
+          "label": "Banco Central do Brasil",
+          "status": "available",
+          "tags": [
+            "government",
+            "payments"
+          ],
+          "note": "Central bank and PIX ecosystem authority. Confirm the exact documentation URL before linking deep references."
+        },
+        {
+          "brandKey": "receitaFederal",
+          "label": "Receita Federal",
+          "status": "available",
+          "tags": [
+            "government",
+            "tax",
+            "identifiers"
+          ],
+          "note": "Federal tax authority for CPF and CNPJ context. Confirm exact service URLs before linking."
+        },
+        {
+          "brandKey": "correios",
+          "label": "Correios",
+          "status": "available",
+          "tags": [
+            "government",
+            "postal",
+            "addresses"
+          ],
+          "note": "Postal authority for CEP-related address information. Confirm official lookup URL before linking."
+        },
+        {
+          "brandKey": "govbr",
+          "label": "Gov.br",
+          "status": "available",
+          "tags": [
+            "government"
+          ],
+          "note": "Brazilian government services portal. Use as a starting point for official references."
+        },
+        {
+          "brandKey": "pix",
+          "label": "PIX documentation",
+          "status": "planned",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "note": "Use official Banco Central documentation when a future PIX Workbench spec is approved."
+        }
+      ],
+      "plannedWorkbenches": [
+        {
+          "name": "PIX Workbench",
+          "status": "comingSoon",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "description": "Inspect PIX keys and QR payloads after a dedicated product spec is approved."
+        },
+        {
+          "name": "CPF Validator",
+          "status": "planned",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "Validate and explain CPF structure and checksum rules."
+        },
+        {
+          "name": "CNPJ Validator",
+          "status": "planned",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "Validate and explain CNPJ structure and checksum rules."
+        },
+        {
+          "name": "CEP Lookup",
+          "status": "planned",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "description": "Parse and explain CEP postal-code format without implying live lookup until specified."
+        },
+        {
+          "name": "Brazil Phone Validator",
+          "status": "planned",
+          "tags": [
+            "phone"
+          ],
+          "description": "Validate Brazilian country code, area code, and local number patterns."
+        },
+        {
+          "name": "Brazil Banking Tools",
+          "status": "planned",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Developer utilities for bank code, branch, account, and check digit workflows."
+        }
+      ],
+      "relatedGlobalTools": [
+        {
+          "label": "JSON Formatter",
+          "path": "tools/json-formatter/",
+          "icon": "▣",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "JWT Decoder",
+          "path": "tools/jwt-decoder/",
+          "brandKey": "jwt",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "Base64 Encoder",
+          "path": "tools/base64-encoder/",
+          "icon": "⟲",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "URL Encoder",
+          "path": "tools/url-encoder/",
+          "icon": "🔗",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "Regex Tester",
+          "path": "tools/regex-tester/",
+          "icon": ".*",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "IBAN Validator",
+          "path": "tools/iban-validator/",
+          "brandKey": "iban",
+          "tags": [
+            "banking"
+          ]
+        }
+      ],
+      "relatedCategories": [
+        {
+          "label": "Finance",
+          "path": "categories/finance/",
+          "tags": [
+            "payments",
+            "banking"
+          ]
+        },
+        {
+          "label": "National Identifiers",
+          "path": "categories/national-identifiers/",
+          "tags": [
+            "identifiers"
+          ]
+        },
+        {
+          "label": "Developer Tools",
+          "path": "categories/developer-tools/",
+          "tags": [
+            "developer"
+          ]
+        }
+      ],
+      "futureCountryPages": [
+        {
+          "label": "Poland",
+          "status": "available",
+          "path": "poland/"
+        },
+        {
+          "label": "Spain",
+          "status": "available",
+          "path": "spain/"
+        },
+        {
+          "label": "Germany",
+          "status": "planned"
+        },
+        {
+          "label": "France",
+          "status": "planned"
+        },
+        {
+          "label": "Austria",
+          "status": "planned"
+        },
+        {
+          "label": "Portugal",
+          "status": "planned"
+        },
+        {
+          "label": "Italy",
+          "status": "planned"
+        },
+        {
+          "label": "Netherlands",
+          "status": "planned"
+        },
+        {
+          "label": "Belgium",
+          "status": "planned"
+        },
+        {
+          "label": "United Kingdom",
+          "status": "planned"
+        },
+        {
+          "label": "United States",
+          "status": "planned"
+        },
+        {
+          "label": "Canada",
+          "status": "planned"
+        },
+        {
+          "label": "Mexico",
+          "status": "planned"
+        },
+        {
+          "label": "Argentina",
+          "status": "planned"
+        },
+        {
+          "label": "Chile",
+          "status": "planned"
+        },
+        {
+          "label": "Japan",
+          "status": "planned"
+        },
+        {
+          "label": "South Korea",
+          "status": "planned"
+        },
+        {
+          "label": "Singapore",
+          "status": "planned"
+        },
+        {
+          "label": "Australia",
+          "status": "planned"
+        },
+        {
+          "label": "India",
+          "status": "planned"
+        },
+        {
+          "label": "Ukraine",
+          "status": "planned"
+        }
+      ],
+      "localizationExamples": [
+        {
+          "label": "Date",
+          "value": "31/12/2026",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "label": "Time",
+          "value": "14:25",
+          "tags": [
+            "locale",
+            "time"
+          ]
+        },
+        {
+          "label": "Currency",
+          "value": "R$ 1.234,56",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "label": "Decimal",
+          "value": "1.234,56",
+          "tags": [
+            "locale",
+            "currency"
+          ]
+        },
+        {
+          "label": "Percentage",
+          "value": "35,7%",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Phone",
+          "value": "+55 11 91234-5678",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Postal code",
+          "value": "01310-100",
+          "tags": [
+            "postal",
+            "addresses"
+          ]
+        },
+        {
+          "label": "Address example",
+          "value": "Av. Paulista, 1000 - Bela Vista, Sao Paulo - SP, 01310-100",
+          "tags": [
+            "addresses"
+          ]
+        },
+        {
+          "label": "Example person name",
+          "value": "Ana Silva",
+          "tags": [
+            "locale"
+          ]
+        }
+      ],
+      "addressExample": {
+        "formatted": [
+          "Ana Silva",
+          "Av. Paulista, 1000",
+          "Bela Vista",
+          "Sao Paulo - SP",
+          "01310-100",
+          "Brazil"
+        ],
+        "fields": [
+          {
+            "label": "Recipient",
+            "value": "Ana Silva",
+            "description": "Person or organization receiving mail."
+          },
+          {
+            "label": "Street and number",
+            "value": "Av. Paulista, 1000",
+            "description": "Street, avenue, or road plus building number."
+          },
+          {
+            "label": "District",
+            "value": "Bela Vista",
+            "description": "Neighborhood or district, often useful for disambiguation."
+          },
+          {
+            "label": "City and state",
+            "value": "Sao Paulo - SP",
+            "description": "Municipality plus two-letter state abbreviation."
+          },
+          {
+            "label": "CEP",
+            "value": "01310-100",
+            "description": "Brazilian postal code."
+          },
+          {
+            "label": "Country",
+            "value": "Brazil",
+            "description": "Country label for international contexts."
+          }
+        ]
+      },
+      "phoneExamples": [
+        {
+          "label": "Mobile",
+          "value": "(11) 91234-5678",
+          "description": "Mobile examples commonly include a 9 after the area code.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Landline",
+          "value": "(11) 3123-4567",
+          "description": "Landlines use area code plus local subscriber number.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "International",
+          "value": "+55 11 91234-5678",
+          "description": "Use +55 for international display.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Formatted",
+          "value": "+55 (11) 91234-5678",
+          "description": "Friendly display format for UI.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Normalized",
+          "value": "5511912345678",
+          "description": "Digits-only normalization is useful for storage and comparison.",
+          "tags": [
+            "phone",
+            "developer"
+          ]
+        }
+      ],
+      "integrationChecklist": [
+        "Locale configured",
+        "UTF-8",
+        "Currency formatting",
+        "Date formatting",
+        "CPF handling",
+        "CNPJ handling",
+        "CEP formatting",
+        "Phone formatting",
+        "PIX",
+        "Timezone",
+        "Address normalization"
+      ],
+      "validationRules": [
+        {
+          "name": "CPF",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "points": [
+            "11 digits",
+            "Checksum digits",
+            "Formatted and normalized forms",
+            "Leading zeros must be preserved"
+          ]
+        },
+        {
+          "name": "CNPJ",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "points": [
+            "14 digits",
+            "Checksum digits",
+            "Formatted and normalized forms",
+            "Business identifier, not CPF"
+          ]
+        },
+        {
+          "name": "CEP",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "points": [
+            "8 digits",
+            "Common display NNNNN-NNN",
+            "Postal code, not a ZIP code"
+          ]
+        },
+        {
+          "name": "Phone",
+          "tags": [
+            "phone"
+          ],
+          "points": [
+            "Country code +55",
+            "Area code required",
+            "Mobile and landline patterns differ"
+          ]
+        },
+        {
+          "name": "PIX",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "points": [
+            "Keys may be CPF, CNPJ, email, phone, random key, or QR payload",
+            "Key type matters before validation"
+          ]
+        },
+        {
+          "name": "Bank code",
+          "tags": [
+            "banking"
+          ],
+          "points": [
+            "Bank code, branch, account, account type, and check digit may all appear",
+            "Domestic flows are not IBAN-first"
+          ]
+        }
+      ],
+      "commonMistakes": [
+        "Brazil is not IBAN-first for domestic transfers.",
+        "CPF and CNPJ are different identifiers.",
+        "Dates use DD/MM/YYYY in common display.",
+        "Decimal separator is comma.",
+        "CEP is not ZIP.",
+        "PIX keys are not always random.",
+        "Phone numbers require area codes."
+      ],
+      "bankingOverview": [
+        {
+          "brandKey": "pix",
+          "name": "PIX",
+          "status": "comingSoon",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "description": "Instant payment ecosystem using keys and QR payloads."
+        },
+        {
+          "icon": "🏦",
+          "name": "TED",
+          "status": "planned",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "description": "Bank transfer method historically used for same-day transfers."
+        },
+        {
+          "icon": "🏦",
+          "name": "DOC",
+          "status": "planned",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "description": "Legacy bank transfer method still useful in historical data."
+        },
+        {
+          "icon": "📄",
+          "name": "Boleto",
+          "status": "planned",
+          "tags": [
+            "payments"
+          ],
+          "description": "Invoice-like payment slip used in Brazilian billing flows."
+        },
+        {
+          "brandKey": "swift",
+          "name": "SWIFT",
+          "status": "available",
+          "tags": [
+            "banking"
+          ],
+          "description": "Relevant for international transfers and bank identification."
+        },
+        {
+          "icon": "🏷",
+          "name": "Bank Codes",
+          "status": "planned",
+          "tags": [
+            "banking"
+          ],
+          "description": "Domestic bank identifiers often appear with branch and account data."
+        },
+        {
+          "brandKey": "iban",
+          "name": "IBAN",
+          "status": "available",
+          "tags": [
+            "banking"
+          ],
+          "description": "Useful globally, but Brazil is not an IBAN-first domestic transfer market."
+        }
+      ],
+      "localizationNotes": [
+        {
+          "name": "Plural rules",
+          "description": "Portuguese pluralization should use locale-aware message formatting.",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "name": "Week starts",
+          "description": "Many Brazilian calendars display Sunday as the first day of week.",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "name": "Calendar",
+          "description": "Gregorian calendar is the ordinary civil calendar.",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "name": "Sorting",
+          "description": "Use locale-aware collation instead of ASCII sorting for user-facing text.",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "name": "Unicode",
+          "description": "Use UTF-8 and preserve accents in names and addresses.",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "name": "ICU",
+          "description": "ICU locale commonly appears as pt_BR.",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "name": "Locale naming",
+          "description": "Prefer BCP 47 pt-BR in web APIs and pt_BR where ICU/platform conventions require it.",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        }
+      ],
+      "ecosystem": [
+        {
+          "name": "PIX",
+          "description": "Payment rail connected to banks, wallets, QR payments, and customer identifiers.",
+          "tags": [
+            "payments",
+            "banking"
+          ]
+        },
+        {
+          "name": "CPF",
+          "description": "Individual tax identifier that can also appear as a PIX key type.",
+          "tags": [
+            "identifiers",
+            "tax"
+          ]
+        },
+        {
+          "name": "CNPJ",
+          "description": "Company tax identifier used in business, tax, and payment workflows.",
+          "tags": [
+            "identifiers",
+            "tax"
+          ]
+        },
+        {
+          "name": "CEP",
+          "description": "Postal code used in address normalization and shipping flows.",
+          "tags": [
+            "postal",
+            "addresses"
+          ]
+        },
+        {
+          "name": "Phone",
+          "description": "Phone data intersects with identity, contact, and PIX key workflows.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "name": "Banks",
+          "description": "Bank code, branch, account, and check digit often matter in integrations.",
+          "tags": [
+            "banking"
+          ]
+        },
+        {
+          "name": "Government",
+          "description": "Government systems are authoritative for many identifier contexts.",
+          "tags": [
+            "government"
+          ]
+        },
+        {
+          "name": "Payments",
+          "description": "Payments connect currency, identifiers, QR payloads, bank accounts, and receipts.",
+          "tags": [
+            "payments"
+          ]
+        }
+      ],
+      "highlights": [
+        "Brazil commonly uses the pt-BR locale.",
+        "Dates are commonly written as DD/MM/YYYY.",
+        "The decimal separator is comma and the thousands separator is dot.",
+        "CPF has 11 digits and CNPJ has 14 digits.",
+        "CEP has 8 digits and is commonly displayed as NNNNN-NNN.",
+        "PIX is the primary instant payment system.",
+        "PIX keys can be CPF, CNPJ, email, phone, random key, or QR payload.",
+        "Brazil is not an IBAN-first domestic transfer market.",
+        "Brazilian banking integrations often require bank code, branch, account, account type, and check digit."
+      ],
+      "developerNotes": [
+        "Use pt-BR formatting for user-facing currency, date, time, and number display.",
+        "Store normalized identifiers separately from display masks when validation specs are available.",
+        "Treat CPF, CNPJ, CEP, phone, and PIX payload validation as separate workflows; do not mix format checks with business verification.",
+        "Confirm official references before deep-linking regulatory or government documentation."
+      ],
+      "developerExamples": [
+        {
+          "title": "Java Locale",
+          "language": "java",
+          "brandKey": "java",
+          "code": "Locale.forLanguageTag(\"pt-BR\")",
+          "note": "Use BCP 47 locale tags for Java formatting APIs."
+        },
+        {
+          "title": "Java currency format",
+          "language": "java",
+          "brandKey": "java",
+          "code": "NumberFormat.getCurrencyInstance(Locale.forLanguageTag(\"pt-BR\")).format(value)",
+          "note": "Formats values using Brazilian Portuguese currency conventions."
+        },
+        {
+          "title": "JavaScript Intl Currency",
+          "language": "javascript",
+          "brandKey": "javascript",
+          "code": "new Intl.NumberFormat(\"pt-BR\", { style: \"currency\", currency: \"BRL\" })",
+          "note": "Formats BRL values with pt-BR separators and currency display."
+        },
+        {
+          "title": "TypeScript locale constant",
+          "language": "typescript",
+          "brandKey": "typescript",
+          "code": "const brazilLocale = 'pt-BR' as const;",
+          "note": "Keep locale constants explicit when building typed formatting helpers."
+        },
+        {
+          "title": "JavaScript Date",
+          "language": "javascript",
+          "brandKey": "javascript",
+          "code": "new Intl.DateTimeFormat(\"pt-BR\")",
+          "note": "Uses the browser Intl implementation for localized Brazilian date display."
+        },
+        {
+          "title": "Python locale",
+          "language": "python",
+          "brandKey": "python",
+          "code": "locale.setlocale(locale.LC_ALL, \"pt_BR.UTF-8\")",
+          "note": "Requires the pt_BR locale to be installed on the host operating system."
+        },
+        {
+          "title": "Go language tag",
+          "language": "go",
+          "brandKey": "go",
+          "code": "language.MustParse(\"pt-BR\")",
+          "note": "Use golang.org/x/text/language when locale-aware behavior is needed."
+        },
+        {
+          "title": "C# culture",
+          "language": "csharp",
+          "brandKey": "csharp",
+          "code": "CultureInfo.GetCultureInfo(\"pt-BR\")",
+          "note": "Use CultureInfo for formatting Brazilian dates, numbers, and currency."
+        },
+        {
+          "title": "Kotlin Locale",
+          "language": "kotlin",
+          "brandKey": "kotlin",
+          "code": "Locale.forLanguageTag(\"pt-BR\")",
+          "note": "Kotlin on the JVM can use Java Locale APIs."
+        },
+        {
+          "title": "ICU locale",
+          "language": "text",
+          "code": "pt_BR",
+          "note": "Common ICU locale identifier for Brazilian Portuguese."
+        },
+        {
+          "title": "PostgreSQL formatting note",
+          "language": "sql",
+          "brandKey": "postgresql",
+          "code": "to_char(amount, 'FM999G999G990D00')",
+          "note": "Database formatting depends on locale/session settings; prefer app-layer Intl formatting when possible."
+        },
+        {
+          "title": "JSON payload locale",
+          "language": "json",
+          "code": "{\n  \"country\": \"BR\",\n  \"locale\": \"pt-BR\",\n  \"currency\": \"BRL\"\n}",
+          "note": "Formatting examples only; not a validation schema."
+        },
+        {
+          "title": "Currency formatting note",
+          "language": "text",
+          "code": "BRL uses comma decimals and dot thousands separators in pt-BR display.",
+          "note": "Keep stored numeric values separate from localized display strings."
+        },
+        {
+          "title": "Date formatting note",
+          "language": "text",
+          "code": "DD/MM/YYYY",
+          "note": "Validate machine-readable dates separately from localized presentation."
+        }
+      ],
+      "jsonExamples": [
+        {
+          "title": "Customer",
+          "code": "{\n  \"name\": \"Ana Silva\",\n  \"country\": \"BR\",\n  \"locale\": \"pt-BR\"\n}"
+        },
+        {
+          "title": "Address",
+          "code": "{\n  \"street\": \"Av. Paulista\",\n  \"number\": \"1000\",\n  \"district\": \"Bela Vista\",\n  \"city\": \"Sao Paulo\",\n  \"state\": \"SP\",\n  \"postalCode\": \"01310-100\"\n}"
+        },
+        {
+          "title": "CPF",
+          "code": "{\n  \"type\": \"CPF\",\n  \"formatted\": \"123.456.789-09\",\n  \"normalized\": \"12345678909\"\n}"
+        },
+        {
+          "title": "PIX",
+          "code": "{\n  \"type\": \"PIX\",\n  \"keyType\": \"email\",\n  \"key\": \"ana@example.com\"\n}"
+        },
+        {
+          "title": "Phone",
+          "code": "{\n  \"countryCode\": \"+55\",\n  \"areaCode\": \"11\",\n  \"localNumber\": \"91234-5678\",\n  \"normalized\": \"5511912345678\"\n}"
+        }
+      ],
+      "availableWorkbenches": {
+        "Brazil Pix Validator": {
+          "status": "experimental",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "description": "Discovery page only. The PIX validator workbench is not implemented in this phase."
+        }
+      }
+    },
+    "germany": {
+      "flag": "🇩🇪",
+      "name": "Germany",
+      "badge": "Central Europe country hub",
+      "description": "Developer intelligence for German tax identifiers, locale conventions, postal layouts, phone parsing, and banking integration.",
+      "metadata": {
+        "nativeName": "Deutschland",
+        "population": "approximately 84.4M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "area": "357,022 km²",
+        "capital": "Berlin",
+        "largestCity": "Berlin",
+        "continent": "Europe",
+        "region": "Central Europe / European Union",
+        "languages": "German",
+        "currency": "Euro",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "callingCode": "+49",
+        "internetTld": ".de",
+        "drivingSide": "Right",
+        "iso2": "DE",
+        "iso3": "DEU",
+        "isoNumeric": "276",
+        "locale": "de-DE",
+        "icuLocale": "de_DE",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street name number, postal code City",
+        "postalCodeFormat": "NNNNN",
+        "primaryTimeZone": "Europe/Berlin (CET/CEST)",
+        "utcRange": "UTC+01/+02",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "powerPlugTypes": "Type C / Type F",
+        "voltage": "230V",
+        "frequency": "50Hz",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "de-DE",
+        "cldrLocale": "de_DE",
+        "metricVsImperial": "Metric-first"
+      },
+      "stats": [
+        {
+          "icon": "👥",
+          "label": "Population",
+          "valueKey": "population",
+          "tags": [
+            "people"
+          ]
+        },
+        {
+          "icon": "🏛",
+          "label": "Capital",
+          "valueKey": "capital",
+          "tags": [
+            "government"
+          ]
+        },
+        {
+          "icon": "🏙",
+          "label": "Largest city",
+          "valueKey": "largestCity",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🌍",
+          "label": "Continent",
+          "valueKey": "continent",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🗣",
+          "label": "Languages",
+          "valueKey": "languages",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "brandKey": "europeanUnion",
+          "label": "Region",
+          "valueKey": "region",
+          "tags": [
+            "government",
+            "locale"
+          ]
+        },
+        {
+          "brandKey": "iban",
+          "label": "Currency",
+          "valueKey": "currencyCode",
+          "detailKey": "currency",
+          "tags": [
+            "currency",
+            "payments"
+          ]
+        },
+        {
+          "icon": "☎",
+          "label": "Calling code",
+          "valueKey": "callingCode",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "Internet TLD",
+          "valueKey": "internetTld",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🕒",
+          "label": "UTC range",
+          "valueKey": "utcRange",
+          "tags": [
+            "time"
+          ]
+        }
+      ],
+      "countryProfile": [
+        {
+          "icon": "🏷",
+          "label": "Native name",
+          "valueKey": "nativeName",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "👥",
+          "label": "Population",
+          "valueKey": "population",
+          "tags": [
+            "people"
+          ]
+        },
+        {
+          "icon": "▣",
+          "label": "Area",
+          "valueKey": "area",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🏛",
+          "label": "Capital",
+          "valueKey": "capital",
+          "tags": [
+            "government"
+          ]
+        },
+        {
+          "icon": "🏙",
+          "label": "Largest city",
+          "valueKey": "largestCity",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🌍",
+          "label": "Continent",
+          "valueKey": "continent",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🗣",
+          "label": "Languages",
+          "valueKey": "languages",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🚗",
+          "label": "Driving side",
+          "valueKey": "drivingSide",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "📏",
+          "label": "Measurement system",
+          "valueKey": "measurementSystem",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "📄",
+          "label": "Paper size",
+          "valueKey": "paperSize",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🔌",
+          "label": "Power plug types",
+          "valueKey": "powerPlugTypes",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "⚡",
+          "label": "Voltage",
+          "valueKey": "voltage",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "⏱",
+          "label": "Frequency",
+          "valueKey": "frequency",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🚨",
+          "label": "Emergency number",
+          "valueKey": "emergencyNumber",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "icon": "☎",
+          "label": "Calling code",
+          "valueKey": "callingCode",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "brandKey": "iban",
+          "label": "Currency",
+          "valueKey": "currencyCode",
+          "detailKey": "currency",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "icon": "🕒",
+          "label": "Timezone range",
+          "valueKey": "utcRange",
+          "tags": [
+            "time"
+          ]
+        },
+        {
+          "icon": "📅",
+          "label": "Week starts",
+          "valueKey": "weekStarts",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "↔",
+          "label": "RTL support",
+          "valueKey": "rtlSupport",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🔤",
+          "label": "Unicode locale",
+          "valueKey": "unicodeLocale",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "ICU locale",
+          "valueKey": "icuLocale",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "CLDR locale",
+          "valueKey": "cldrLocale",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "icon": "📐",
+          "label": "Metric vs Imperial",
+          "valueKey": "metricVsImperial",
+          "tags": [
+            "locale"
+          ]
+        }
+      ],
+      "visualIdentity": {
+        "countryId": "germany",
+        "outlineLabel": "Germany outline",
+        "mapLabel": "Germany in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Germany flag",
+        "heroAccentPrimary": "17 17 17",
+        "heroAccentSecondary": "193 18 31",
+        "heroAccentTertiary": "242 201 76"
+      },
+      "quickActions": [
+        {
+          "label": "Copy Locale",
+          "valueKey": "locale"
+        },
+        {
+          "label": "Copy Currency Code",
+          "valueKey": "currencyCode"
+        },
+        {
+          "label": "Copy Currency Symbol",
+          "valueKey": "currencySymbol"
+        },
+        {
+          "label": "Copy Phone Code",
+          "valueKey": "callingCode"
+        },
+        {
+          "label": "Copy ISO2",
+          "valueKey": "iso2"
+        },
+        {
+          "label": "Copy ISO3",
+          "valueKey": "iso3"
+        },
+        {
+          "label": "Copy Numeric ISO",
+          "valueKey": "isoNumeric"
+        },
+        {
+          "label": "Copy Internet TLD",
+          "valueKey": "internetTld"
+        },
+        {
+          "label": "Copy Date Format",
+          "valueKey": "dateFormat"
+        },
+        {
+          "label": "Copy Postal Code Format",
+          "valueKey": "postalCodeFormat"
+        },
+        {
+          "label": "Copy Primary Time Zone",
+          "valueKey": "primaryTimeZone"
+        }
+      ],
+      "cheatSheet": [
+        {
+          "label": "ISO2",
+          "valueKey": "iso2",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "ISO3",
+          "valueKey": "iso3",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Numeric ISO",
+          "valueKey": "isoNumeric",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Locale",
+          "valueKey": "locale",
+          "icon": "🌐",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "label": "ICU locale",
+          "valueKey": "icuLocale",
+          "icon": "🌐",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "label": "Language",
+          "valueKey": "languages",
+          "icon": "🗣",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Currency",
+          "value": "Euro (EUR)",
+          "copyValueKey": "currencyCode",
+          "brandKey": "iban",
+          "tags": [
+            "currency",
+            "payments"
+          ]
+        },
+        {
+          "label": "Currency symbol",
+          "valueKey": "currencySymbol",
+          "icon": "💵",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "label": "Phone country code",
+          "valueKey": "callingCode",
+          "icon": "☎",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Internet TLD",
+          "valueKey": "internetTld",
+          "icon": "🌐",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "Date format",
+          "valueKey": "dateFormat",
+          "icon": "📅",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "label": "Time format",
+          "valueKey": "timeFormat",
+          "icon": "⏱",
+          "tags": [
+            "locale",
+            "time"
+          ]
+        },
+        {
+          "label": "Decimal separator",
+          "valueKey": "decimalSeparator",
+          "copyValue": "comma decimal separator",
+          "icon": "🔢",
+          "tags": [
+            "locale",
+            "currency"
+          ]
+        },
+        {
+          "label": "Thousands separator",
+          "valueKey": "thousandsSeparator",
+          "copyValue": "dot thousands separator",
+          "icon": "🔢",
+          "tags": [
+            "locale",
+            "currency"
+          ]
+        },
+        {
+          "label": "Address format",
+          "valueKey": "addressFormat",
+          "icon": "📍",
+          "tags": [
+            "addresses"
+          ]
+        },
+        {
+          "label": "Postal code format",
+          "valueKey": "postalCodeFormat",
+          "icon": "✉",
+          "tags": [
+            "postal",
+            "addresses"
+          ]
+        },
+        {
+          "label": "Primary time zone",
+          "valueKey": "primaryTimeZone",
+          "icon": "🕒",
+          "tags": [
+            "time"
+          ]
+        },
+        {
+          "label": "Time zones",
+          "valueKey": "utcRange",
+          "icon": "🕒",
+          "tags": [
+            "time"
+          ]
+        }
+      ],
+      "localFormats": [
+        {
+          "icon": "🪪",
+          "name": "Steueridentifikationsnummer (IdNr)",
+          "status": "planned",
+          "category": "National identity",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "11-digit personal tax identification number assigned to residents of Germany by the Bundeszentralamt für Steuern (BZSt). Does not change upon relocation or marriage.",
+          "related": [
+            "German Tax ID Inspector"
+          ]
+        },
+        {
+          "icon": "🪪",
+          "name": "Umsatzsteuer-Identifikationsnummer (USt-IdNr)",
+          "status": "planned",
+          "category": "Tax identifier",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "EU VAT number with DE prefix followed by 9 digits. Used for cross-border commerce validation.",
+          "related": [
+            "USt-IdNr / VAT Format Inspector"
+          ]
+        },
+        {
+          "icon": "🪪",
+          "name": "Steuernummer (St.-Nr.)",
+          "status": "planned",
+          "category": "Tax identifier",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "Federal-state-specific tax number formats used for local corporate and personal tax filings. Can change when relocating between tax districts.",
+          "related": [
+            "Steuernummer Reference Tool"
+          ]
+        },
+        {
+          "icon": "🏢",
+          "name": "Handelsregister context",
+          "status": "planned",
+          "category": "Business identifier",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "Company registration numbers (HRB/HRA) indicating registry district and corporate form context. Used to verify legal entities.",
+          "related": [
+            "German Address Formatter"
+          ]
+        },
+        {
+          "icon": "✉",
+          "name": "German postal code",
+          "status": "planned",
+          "category": "Postal",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "description": "Five-digit postal codes managed by Deutsche Post. First digit defines one of ten postal zones (Leitzonen).",
+          "related": [
+            "Germany Postal Code Validator"
+          ]
+        },
+        {
+          "icon": "☎",
+          "name": "German phone numbers",
+          "status": "planned",
+          "category": "Phone",
+          "tags": [
+            "phone"
+          ],
+          "description": "Landline and mobile formats regulated by the Bundesnetzagentur. Features variable-length area codes.",
+          "related": [
+            "Germany Phone Validator"
+          ]
+        },
+        {
+          "brandKey": "iban",
+          "name": "German IBAN",
+          "status": "available",
+          "category": "Banking",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "German bank accounts use DE prefix IBANs. Direct checksum verification is available.",
+          "related": [
+            "IBAN Validator"
+          ]
+        },
+        {
+          "brandKey": "swift",
+          "name": "BIC / SWIFT",
+          "status": "ready",
+          "category": "Banking",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "SWIFT identification for German credit institutions. Identifies banks in domestic and international clearings."
+        },
+        {
+          "brandKey": "vies",
+          "name": "EU VAT / VIES",
+          "status": "planned",
+          "category": "Tax and business",
+          "tags": [
+            "tax",
+            "government"
+          ],
+          "description": "German VAT registration status verification via VIES system context."
+        }
+      ],
+      "payments": [
+        {
+          "brandKey": "iban",
+          "title": "EUR and German IBAN",
+          "status": "available",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "text": "Germany uses EUR and participates in IBAN-based European banking flows. Use the global IBAN Validator for checksum-level checks."
+        },
+        {
+          "brandKey": "sepa",
+          "title": "SEPA",
+          "status": "ready",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "text": "Germany is a founding member of SEPA, supporting SEPA direct debits and credit transfers."
+        },
+        {
+          "brandKey": "swift",
+          "title": "BIC / SWIFT",
+          "status": "ready",
+          "tags": [
+            "banking"
+          ],
+          "text": "International bank transfers require BIC/SWIFT bank details along with account numbers."
+        },
+        {
+          "icon": "💳",
+          "title": "Card payments",
+          "status": "ready",
+          "tags": [
+            "payments"
+          ],
+          "text": "Standard international Visa/Mastercard schemes along with local Girocard (formerly EC-Karte) routing conventions."
+        }
+      ],
+      "officialResources": [
+        {
+          "label": "Bundeszentralamt für Steuern (BZSt)",
+          "status": "available",
+          "tags": [
+            "government",
+            "identifiers",
+            "tax"
+          ],
+          "note": "Federal Central Tax Office website providing official Tax ID and VAT validation specifications."
+        },
+        {
+          "label": "Deutsche Bundesbank",
+          "status": "available",
+          "tags": [
+            "government",
+            "banking"
+          ],
+          "note": "Central bank of Germany, providing currency indices, clearing rails, and bank code directory context."
+        },
+        {
+          "label": "Bundesnetzagentur",
+          "status": "available",
+          "tags": [
+            "government",
+            "phone"
+          ],
+          "note": "Federal Network Agency supervising telecommunication numbering plans and area prefixes."
+        },
+        {
+          "label": "Deutsche Post",
+          "status": "available",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "note": "Postal authority administering five-digit postal codes and official directory standards."
+        },
+        {
+          "brandKey": "vies",
+          "label": "European Commission VIES",
+          "status": "available",
+          "tags": [
+            "tax",
+            "government"
+          ],
+          "note": "EU official system for validating VAT registry records and registration validity."
+        },
+        {
+          "brandKey": "sepa",
+          "label": "European Payments Council / SEPA",
+          "status": "available",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "note": "SEPA schemes regulator detailing credit transfer and direct debit specifications."
+        }
+      ],
+      "plannedWorkbenches": [
+        {
+          "name": "German Tax ID Inspector",
+          "status": "planned",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "Inspect and explain German Tax ID (IdNr) structure and validation rules."
+        },
+        {
+          "name": "USt-IdNr / VAT Format Inspector",
+          "status": "planned",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "Validate the structural format of DE VAT numbers."
+        },
+        {
+          "name": "Steuernummer Reference Tool",
+          "status": "planned",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "Understand state-specific local tax number formats and schemas."
+        },
+        {
+          "name": "Germany Phone Validator",
+          "status": "planned",
+          "tags": [
+            "phone"
+          ],
+          "description": "Explain prefix layouts and digit counts for landline and mobile ranges."
+        },
+        {
+          "name": "Germany Postal Code Validator",
+          "status": "planned",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "description": "Identify five-digit postal zones and city mappings without full verification."
+        },
+        {
+          "name": "German IBAN Tools",
+          "status": "planned",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Explain country-specific bank code (BLZ) and account number offsets."
+        },
+        {
+          "name": "German Address Formatter",
+          "status": "planned",
+          "tags": [
+            "addresses"
+          ],
+          "description": "Format and normalize street, building, and town names using German postal layout standards."
+        }
+      ],
+      "relatedGlobalTools": [
+        {
+          "label": "JSON Formatter",
+          "path": "tools/json-formatter/",
+          "icon": "▣",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "Regex Tester",
+          "path": "tools/regex-tester/",
+          "icon": ".*",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "IBAN Validator",
+          "path": "tools/iban-validator/",
+          "brandKey": "iban",
+          "tags": [
+            "banking"
+          ]
+        }
+      ],
+      "relatedCategories": [
+        {
+          "label": "Finance",
+          "path": "categories/finance/",
+          "tags": [
+            "payments",
+            "banking"
+          ]
+        },
+        {
+          "label": "National Identifiers",
+          "path": "categories/national-identifiers/",
+          "tags": [
+            "identifiers"
+          ]
+        },
+        {
+          "label": "Developer Tools",
+          "path": "categories/developer-tools/",
+          "tags": [
+            "developer"
+          ]
+        }
+      ],
+      "availableWorkbenches": {},
+      "futureCountryPages": [
+        {
+          "label": "Brazil",
+          "status": "available",
+          "path": "brazil/"
+        },
+        {
+          "label": "Poland",
+          "status": "available",
+          "path": "poland/"
+        },
+        {
+          "label": "Spain",
+          "status": "available",
+          "path": "spain/"
+        },
+        {
+          "label": "France",
+          "status": "planned"
+        },
+        {
+          "label": "Portugal",
+          "status": "planned"
+        },
+        {
+          "label": "Italy",
+          "status": "planned"
+        },
+        {
+          "label": "Netherlands",
+          "status": "planned"
+        },
+        {
+          "label": "Belgium",
+          "status": "planned"
+        },
+        {
+          "label": "United Kingdom",
+          "status": "planned"
+        },
+        {
+          "label": "United States",
+          "status": "planned"
+        }
+      ],
+      "localizationExamples": [
+        {
+          "label": "Date",
+          "value": "12.07.2026",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "label": "Time",
+          "value": "14:25",
+          "tags": [
+            "locale",
+            "time"
+          ]
+        },
+        {
+          "label": "Currency",
+          "value": "1.234,56 €",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "label": "Decimal",
+          "value": "1.234,56",
+          "tags": [
+            "locale",
+            "currency"
+          ]
+        },
+        {
+          "label": "Percentage",
+          "value": "35,7 %",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Mobile phone",
+          "value": "+49 170 1234567",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Landline",
+          "value": "+49 30 12345678",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Postal code",
+          "value": "10117",
+          "tags": [
+            "postal",
+            "addresses"
+          ]
+        },
+        {
+          "label": "Address example",
+          "value": "Friedrichstraße 100, 10117 Berlin",
+          "tags": [
+            "addresses"
+          ]
+        },
+        {
+          "label": "Example person name",
+          "value": "Max Mustermann",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Mainland time zone",
+          "value": "Europe/Berlin",
+          "tags": [
+            "time"
+          ]
+        }
+      ],
+      "addressExample": {
+        "formatted": [
+          "Max Mustermann",
+          "Friedrichstraße 100",
+          "10117 Berlin",
+          "Germany"
+        ],
+        "fields": [
+          {
+            "label": "Recipient",
+            "value": "Max Mustermann",
+            "description": "Recipient name, company, or department."
+          },
+          {
+            "label": "Street and number",
+            "value": "Friedrichstraße 100",
+            "description": "German layouts place the street name before the house number."
+          },
+          {
+            "label": "Postal code and City",
+            "value": "10117 Berlin",
+            "description": "Five-digit numeric postal code (NNNNN) followed by city name."
+          },
+          {
+            "label": "Country",
+            "value": "Germany",
+            "description": "Country label for international delivery."
+          }
+        ]
+      },
+      "phoneExamples": [
+        {
+          "label": "Mobile",
+          "value": "0170 1234567",
+          "description": "German mobile network format display example.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Landline",
+          "value": "030 12345678",
+          "description": "Berlin landline display example.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "International mobile",
+          "value": "+49 170 1234567",
+          "description": "International mobile format using country code +49.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "International landline",
+          "value": "+49 30 12345678",
+          "description": "International landline format for Berlin.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Normalized",
+          "value": "491701234567",
+          "description": "Digits-only normalization for backend databases.",
+          "tags": [
+            "phone",
+            "developer"
+          ]
+        }
+      ],
+      "integrationChecklist": [
+        "Locale de-DE configured",
+        "UTF-8 encoding preserved",
+        "Euro (EUR) formatting with comma decimals and dot separators",
+        "Steuer-ID validation checksum rules",
+        "USt-IdNr VAT ID format structure checks",
+        "Steuernummer state-specific validation checks",
+        "German postal code numeric format validation",
+        "Phone code +49 prefix parsing",
+        "SEPA direct debit mandate handling",
+        "Girocard and Giropay clearing routes"
+      ],
+      "validationRules": [
+        {
+          "name": "Steuer-ID (IdNr)",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "points": [
+            "11 digits total",
+            "Checksum uses modulo 11 algorithm",
+            "Assigned by Bundeszentralamt für Steuern (BZSt)"
+          ]
+        },
+        {
+          "name": "USt-IdNr",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "points": [
+            "Starts with DE followed by 9 digits",
+            "Checksum uses ISO 7064 Mod 97,10 or similar validation"
+          ]
+        },
+        {
+          "name": "Steuernummer",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "points": [
+            "Can be 10, 11, or 13 digits depending on federal state schema",
+            "Used primarily for regional tax offices"
+          ]
+        },
+        {
+          "name": "Postal code",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "points": [
+            "Exactly five numeric digits",
+            "No hyphens or alphabetical characters allowed"
+          ]
+        },
+        {
+          "name": "Phone",
+          "tags": [
+            "phone"
+          ],
+          "points": [
+            "Variable-length area codes between 2 and 5 digits",
+            "Zero prefix must be omitted in international formats"
+          ]
+        },
+        {
+          "name": "IBAN",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "points": [
+            "German IBAN starts with DE followed by 2 control digits and 18-digit account details",
+            "Standard Mod 97,10 checksum check"
+          ]
+        }
+      ],
+      "commonMistakes": [
+        "Conflating Steuer-ID (personal) with Steuernummer (local tax office file number).",
+        "Expecting phone number area codes to have a fixed length (German area codes vary from 2 to 5 digits).",
+        "Omitting the space before the percent sign in formatting (e.g. using 35,7% instead of 35,7 %).",
+        "Formatting currency as €1.234,56 instead of the natural German 1.234,56 €.",
+        "Assuming postal codes starting with 0 do not exist (eastern Germany codes use leading zeros, e.g. Dresden is 01067).",
+        "Confusing Handelsregister numbers with personal tax or national identification numbers."
+      ],
+      "bankingOverview": [
+        {
+          "brandKey": "iban",
+          "name": "IBAN",
+          "status": "available",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "DE-prefixed IBAN format is standard for international transfers."
+        },
+        {
+          "brandKey": "sepa",
+          "name": "SEPA",
+          "status": "ready",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Euro accounts in Germany support SEPA credit transfers and direct debits."
+        },
+        {
+          "brandKey": "swift",
+          "name": "SWIFT / BIC",
+          "status": "ready",
+          "tags": [
+            "banking"
+          ],
+          "description": "Required for international non-SEPA transfers."
+        }
+      ],
+      "localizationNotes": [
+        {
+          "name": "Plural rules",
+          "description": "German uses standard Germanic plural forms (one, other).",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "name": "Week starts",
+          "description": "Most German user interfaces expect Monday as the first day of week.",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "name": "Calendar",
+          "description": "Gregorian calendar is the ordinary civil calendar.",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "name": "Unicode",
+          "description": "Ensure support for German diacritics and special characters: ä, ö, ü, ß.",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "name": "Timezone",
+          "description": "Use Europe/Berlin for global civil time in Germany.",
+          "tags": [
+            "time",
+            "developer"
+          ]
+        }
+      ],
+      "ecosystem": [
+        {
+          "name": "Steuer-ID",
+          "description": "Personal tax identification number database.",
+          "tags": [
+            "identifiers",
+            "government"
+          ]
+        },
+        {
+          "name": "USt-IdNr",
+          "description": "Commercial VAT identification registry.",
+          "tags": [
+            "identifiers",
+            "tax"
+          ]
+        },
+        {
+          "name": "Handelsregister",
+          "description": "Commercial company registry.",
+          "tags": [
+            "identifiers",
+            "government"
+          ]
+        }
+      ],
+      "highlights": [
+        "Germany uses de-DE locale for formatting.",
+        "EUR is formatted as 1.234,56 € with a space and trailing symbol.",
+        "Umlauts (ä, ö, ü) and ß must be supported.",
+        "Date format is DD.MM.YYYY.",
+        "Week starts on Monday."
+      ],
+      "developerNotes": [
+        "Validate German postal codes strictly as 5 digits.",
+        "Support variable-length area codes in phone validation.",
+        "Preserve case-sensitivity for character-coded Steuernummer configurations."
+      ],
+      "developerExamples": [
+        {
+          "title": "Java Locale",
+          "language": "java",
+          "brandKey": "java",
+          "code": "Locale.forLanguageTag(\"de-DE\")",
+          "note": "Use BCP 47 locale tags for Java formatting APIs."
+        },
+        {
+          "title": "Java currency format",
+          "language": "java",
+          "brandKey": "java",
+          "code": "NumberFormat.getCurrencyInstance(Locale.forLanguageTag(\"de-DE\")).format(value)",
+          "note": "Formats values using German currency conventions."
+        },
+        {
+          "title": "JavaScript Intl Currency",
+          "language": "javascript",
+          "brandKey": "javascript",
+          "code": "new Intl.NumberFormat(\"de-DE\", { style: \"currency\", currency: \"EUR\" })",
+          "note": "Formats EUR values with de-DE separators and currency display."
+        },
+        {
+          "title": "JavaScript Date",
+          "language": "javascript",
+          "brandKey": "javascript",
+          "code": "new Intl.DateTimeFormat(\"de-DE\", { timeZone: \"Europe/Berlin\" })",
+          "note": "Use Europe/Berlin timezone for Germany local dates."
+        },
+        {
+          "title": "Python locale",
+          "language": "python",
+          "brandKey": "python",
+          "code": "locale.setlocale(locale.LC_ALL, \"de_DE.UTF-8\")",
+          "note": "Requires the de_DE locale to be installed on the host operating system."
+        },
+        {
+          "title": "Go language tag",
+          "language": "go",
+          "brandKey": "go",
+          "code": "language.MustParse(\"de-DE\")",
+          "note": "Use golang.org/x/text/language package for locale representation."
+        }
       ]
     },
-    phoneExamples: [
-      { label: 'Mobile', value: '612 34 56 78', description: 'Informational mobile display example. Do not treat this as complete validation.', tags: ['phone'] },
-      { label: 'Landline', value: '91 123 45 67', description: 'Madrid-style landline display example using national formatting.', tags: ['phone'] },
-      { label: 'International mobile', value: '+34 612 34 56 78', description: 'Use +34 for international display.', tags: ['phone'] },
-      { label: 'International landline', value: '+34 91 123 45 67', description: 'International display form for a landline example.', tags: ['phone'] },
-      { label: 'Normalized', value: '34612345678', description: 'Digits-only normalization is useful for storage and comparison, but not full validation.', tags: ['phone', 'developer'] }
-    ],
-    integrationChecklist: [
-      'Locale configured',
-      'UTF-8',
-      'Currency formatting',
-      'Date formatting',
-      'DNI and NIE terminology',
-      'NIF versus legacy CIF terminology',
-      'Postal code display',
-      'Phone formatting',
-      'Mainland versus Canary Islands timezone',
-      'Regional language handling',
-      'SEPA and IBAN context',
-      'VIES versus local VAT syntax'
-    ],
-    validationRules: [
-      { name: 'DNI', tags: ['identifiers', 'government'], points: ['Eight digits plus control letter in common developer contexts', 'Formatted and normalized forms should be stored separately', 'Check-letter behavior is not identity verification'] },
-      { name: 'NIE', tags: ['identifiers', 'government'], points: ['Common prefix letters include X, Y, and Z', 'Uses digits and a control letter', 'Foreigner identification context differs from Spanish citizen DNI'] },
-      { name: 'NIF', tags: ['identifiers', 'tax'], points: ['Tax identification concept, not one universal string shape', 'May represent personal or legal-entity contexts', 'Business verification requires authoritative systems'] },
-      { name: 'CIF legacy', tags: ['identifiers', 'tax'], points: ['Legacy term appears in old data and user vocabulary', 'Current terminology should prefer NIF for legal entities', 'Migration logic should be explicit'] },
-      { name: 'Postal code', tags: ['postal', 'addresses'], points: ['Five digits', 'Province-prefix context is useful but not enough for address validation', 'Correos remains the official postal reference'] },
-      { name: 'Phone', tags: ['phone'], points: ['Country code +34', 'Mobile, landline, and service ranges differ', 'Normalize before comparison but preserve display format'] },
-      { name: 'IBAN', tags: ['banking', 'payments'], points: ['Spanish IBANs start with ES', 'Checksum validation does not prove account ownership', 'SEPA and domestic payment context still matters'] },
-      { name: 'VAT / VIES', tags: ['tax', 'government'], points: ['Spanish VAT syntax and EU VIES status lookup are separate', 'VIES responses are business-status checks', 'Do not cache regulatory status without a product spec'] }
-    ],
-    commonMistakes: [
-      'DNI, NIE, NIF, and legacy CIF are not interchangeable terms.',
-      'Formatting validation is not identity verification.',
-      'VIES status lookup is different from local syntax validation.',
-      'Mainland Spain and the Canary Islands do not always share the same local time.',
-      'Spain has multiple co-official languages in relevant autonomous communities.',
-      'Preserve accents and use locale-aware collation for names and addresses.',
-      'Postal code is not the same as province or administrative validation.',
-      'IBAN checksum validation does not prove account ownership.',
-      'Do not imply Bizum payment initiation or bank access from an informational page.'
-    ],
-    bankingOverview: [
-      { brandKey: 'iban', name: 'IBAN', status: 'available', tags: ['banking', 'payments'], description: 'Global IBAN validation exists; Spain-specific interpretation remains a future workbench.' },
-      { brandKey: 'sepa', name: 'SEPA', status: 'ready', tags: ['banking', 'payments'], description: 'Spain participates in SEPA euro payment schemes. Future tools may explain mandates and transfer contexts.' },
-      { brandKey: 'swift', name: 'SWIFT / BIC', status: 'ready', tags: ['banking'], description: 'Relevant for international bank identification and cross-border transfer metadata.' },
-      { brandKey: 'bizum', name: 'Bizum', status: 'planned', tags: ['payments', 'banking'], description: 'Domestic instant-payment ecosystem. No parsing or payment behavior is implemented.' },
-      { icon: '🏦', name: 'Domestic account context', status: 'planned', tags: ['banking'], description: 'Legacy domestic bank/account identifiers can appear in old records even when IBAN is the modern exchange format.' },
-      { brandKey: 'vies', name: 'VIES', status: 'planned', tags: ['tax', 'government'], description: 'Useful for EU VAT business-status checks. It is not a substitute for local tax advice.' },
-      { icon: '💳', name: 'Cards', status: 'ready', tags: ['payments'], description: 'Card acceptance and receipts should still localize EUR amounts, dates, and decimal separators.' }
-    ],
-    localizationNotes: [
-      { name: 'Plural rules', description: 'Spanish pluralization should use locale-aware message formatting.', tags: ['locale'] },
-      { name: 'Week starts', description: 'Most Spanish user interfaces expect Monday as the first day of week.', tags: ['locale', 'date'] },
-      { name: 'Calendar', description: 'Gregorian calendar is the ordinary civil calendar.', tags: ['locale', 'date'] },
-      { name: 'Sorting', description: 'Use locale-aware collation and preserve accents such as á, é, í, ó, ú, ü, and ñ.', tags: ['locale', 'developer'] },
-      { name: 'Regional languages', description: 'Catalan/Valencian, Galician, Basque, and Aranese may be co-official in relevant regions.', tags: ['locale'] },
-      { name: 'Unicode', description: 'Use UTF-8 and preserve accents and ordinal markers in names and addresses.', tags: ['locale', 'developer'] },
-      { name: 'ICU', description: 'ICU locale commonly appears as es_ES.', tags: ['locale', 'developer'] },
-      { name: 'Timezone', description: 'Use Europe/Madrid for mainland and Balearic contexts; Canary Islands need a separate timezone choice.', tags: ['time', 'developer'] }
-    ],
-    ecosystem: [
-      { name: 'DNI', description: 'National identity context for Spanish citizens. Future validators must avoid identity-verification claims.', tags: ['identifiers', 'government'] },
-      { name: 'NIE', description: 'Foreigner identification context used in many administrative and commercial flows.', tags: ['identifiers', 'government'] },
-      { name: 'NIF', description: 'Tax identification concept that intersects with DNI, NIE, and legal-entity identifiers.', tags: ['identifiers', 'tax'] },
-      { name: 'SEPA', description: 'Payment ecosystem connecting EUR, IBAN, direct debit, credit transfers, and cross-border flows.', tags: ['payments', 'banking'] },
-      { name: 'Bizum', description: 'Domestic instant-payment experience commonly encountered by Spanish users.', tags: ['payments', 'banking'] },
-      { name: 'Correos', description: 'Postal authority context for postal-code and addressing workflows.', tags: ['postal', 'addresses'] },
-      { name: 'VIES', description: 'EU VAT validation service context for business identifiers.', tags: ['tax', 'government'] },
-      { name: 'Regional languages', description: 'Localization work may need Spanish plus co-official regional languages.', tags: ['locale'] }
-    ],
-    highlights: [
-      'Spain commonly uses the es-ES locale for Spanish display conventions.',
-      'Dates are commonly written as DD/MM/YYYY and times use a 24-hour clock.',
-      'EUR uses comma decimals and dot thousands separators in Spanish display.',
-      'DNI, NIE, NIF, and legacy CIF have different meanings and should not be conflated.',
-      'Spanish postal codes use five digits, but postal syntax is not address verification.',
-      'Spain participates in SEPA and uses IBAN for modern bank account exchange.',
-      'Bizum is important in consumer payment UX but no Bizum tool is implemented yet.',
-      'Mainland Spain and the Canary Islands differ in local time.',
-      'Regional co-official languages can affect labels, names, sorting, and user expectations.'
-    ],
-    developerNotes: [
-      'Use es-ES formatting for user-facing currency, date, time, and number display unless a regional locale is explicitly selected.',
-      'Store normalized identifiers separately from display masks when future validator specs exist.',
-      'Treat DNI, NIE, NIF, VAT, phone, postal code, and IBAN as separate workflows.',
-      'Keep VIES business-status lookup separate from local syntax checks.',
-      'Confirm official references before deep-linking regulatory, tax, identity, postal, or banking documentation.'
-    ],
-    developerExamples: [
-      {
-        title: 'Java Locale',
-        language: 'java',
-        brandKey: 'java',
-        code: 'Locale.forLanguageTag("es-ES")',
-        note: 'Use BCP 47 locale tags for Java formatting APIs.'
+    "poland": {
+      "flag": "🇵🇱",
+      "name": "Poland",
+      "badge": "Central Europe country hub",
+      "description": "Developer intelligence for Polish identifiers, locale conventions, tax systems, EU payments, and banking context.",
+      "metadata": {
+        "nativeName": "Polska",
+        "population": "approximately 37.6M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "area": "312,696 km²",
+        "capital": "Warsaw",
+        "largestCity": "Warsaw",
+        "continent": "Europe",
+        "region": "Central Europe / European Union",
+        "languages": "Polish",
+        "currency": "Polish złoty",
+        "currencyCode": "PLN",
+        "currencySymbol": "zł",
+        "callingCode": "+48",
+        "internetTld": ".pl",
+        "drivingSide": "Right",
+        "iso2": "PL",
+        "iso3": "POL",
+        "isoNumeric": "616",
+        "locale": "pl-PL",
+        "icuLocale": "pl_PL",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Space ( ) or Dot (.)",
+        "addressFormat": "ul. Street name number/flat, postal code City",
+        "postalCodeFormat": "NN-NNN",
+        "primaryTimeZone": "Europe/Warsaw (CET/CEST)",
+        "utcRange": "UTC+01/+02",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "powerPlugTypes": "Type C / Type E",
+        "voltage": "230V",
+        "frequency": "50Hz",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "pl-PL",
+        "cldrLocale": "pl_PL",
+        "metricVsImperial": "Metric-first"
       },
-      {
-        title: 'Java currency format',
-        language: 'java',
-        brandKey: 'java',
-        code: 'NumberFormat.getCurrencyInstance(Locale.forLanguageTag("es-ES")).format(value)',
-        note: 'Formats values using Spanish currency conventions.'
+      "visualIdentity": {
+        "countryId": "poland",
+        "outlineLabel": "Poland outline",
+        "mapLabel": "Poland in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Poland flag",
+        "heroAccentPrimary": "159 18 57",
+        "heroAccentSecondary": "244 63 94",
+        "heroAccentTertiary": "228 228 231"
       },
-      {
-        title: 'JavaScript Intl Currency',
-        language: 'javascript',
-        brandKey: 'javascript',
-        code: 'new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" })',
-        note: 'Formats EUR values with es-ES separators and currency display.'
-      },
-      {
-        title: 'JavaScript Date',
-        language: 'javascript',
-        brandKey: 'javascript',
-        code: 'new Intl.DateTimeFormat("es-ES", { timeZone: "Europe/Madrid" })',
-        note: 'Use an explicit timezone when records may cross mainland and Canary Islands contexts.'
-      },
-      {
-        title: 'TypeScript locale constant',
-        language: 'typescript',
-        brandKey: 'typescript',
-        code: "const spainLocale = 'es-ES' as const;",
-        note: 'Keep locale constants explicit when building typed formatting helpers.'
-      },
-      {
-        title: 'Python locale',
-        language: 'python',
-        brandKey: 'python',
-        code: 'locale.setlocale(locale.LC_ALL, "es_ES.UTF-8")',
-        note: 'Requires the es_ES locale to be installed on the host operating system. Babel may be safer for portable apps.'
-      },
-      {
-        title: 'Go language tag',
-        language: 'go',
-        brandKey: 'go',
-        code: 'language.MustParse("es-ES")',
-        note: 'Use golang.org/x/text/language when locale-aware behavior is needed.'
-      },
-      {
-        title: 'C# culture',
-        language: 'csharp',
-        brandKey: 'csharp',
-        code: 'CultureInfo.GetCultureInfo("es-ES")',
-        note: 'Use CultureInfo for formatting Spanish dates, numbers, and currency.'
-      },
-      {
-        title: 'Kotlin Locale',
-        language: 'kotlin',
-        brandKey: 'kotlin',
-        code: 'Locale.forLanguageTag("es-ES")',
-        note: 'Kotlin on the JVM can use Java Locale APIs.'
-      },
-      {
-        title: 'ICU locale',
-        language: 'text',
-        code: 'es_ES',
-        note: 'Common ICU locale identifier for Spanish in Spain.'
-      },
-      {
-        title: 'PostgreSQL formatting note',
-        language: 'sql',
-        brandKey: 'postgresql',
-        code: "to_char(amount, 'FM999G999G990D00')",
-        note: 'Database formatting depends on locale/session settings; prefer app-layer Intl formatting when possible.'
-      },
-      {
-        title: 'JSON payload locale',
-        language: 'json',
-        code: '{\n  "country": "ES",\n  "locale": "es-ES",\n  "currency": "EUR",\n  "timeZone": "Europe/Madrid"\n}',
-        note: 'Formatting examples only; not a validation schema.'
-      },
-      {
-        title: 'Currency formatting note',
-        language: 'text',
-        code: 'EUR in es-ES display commonly uses comma decimals and dot thousands separators.',
-        note: 'Keep stored numeric values separate from localized display strings.'
-      },
-      {
-        title: 'Date formatting note',
-        language: 'text',
-        code: 'DD/MM/YYYY',
-        note: 'Validate machine-readable dates separately from localized presentation.'
-      }
-    ],
-    jsonExamples: [
-      {
-        title: 'Customer',
-        code: '{\n  "name": "Lucía Martín",\n  "country": "ES",\n  "locale": "es-ES"\n}'
-      },
-      {
-        title: 'Address',
-        code: '{\n  "streetType": "Calle",\n  "streetName": "Mayor",\n  "buildingNumber": "10",\n  "floorDoor": "2º B",\n  "postalCode": "28013",\n  "municipality": "Madrid",\n  "province": "Madrid",\n  "autonomousCommunity": "Community of Madrid"\n}'
-      },
-      {
-        title: 'DNI test fixture',
-        code: '{\n  "type": "DNI",\n  "formatted": "00000000-T",\n  "normalized": "00000000T",\n  "fixture": true,\n  "note": "Fictional test value; not identity verification."\n}'
-      },
-      {
-        title: 'Phone',
-        code: '{\n  "countryCode": "+34",\n  "nationalDisplay": "612 34 56 78",\n  "normalized": "34612345678"\n}'
-      },
-      {
-        title: 'Banking context',
-        code: '{\n  "country": "ES",\n  "currency": "EUR",\n  "ibanCountryPrefix": "ES",\n  "paymentArea": "SEPA",\n  "ownershipVerified": false\n}'
-      },
-      {
-        title: 'VAT context',
-        code: '{\n  "country": "ES",\n  "vatId": "ESX0000000T",\n  "syntaxChecked": false,\n  "viesStatusChecked": false,\n  "fixture": true\n}'
-      }
-    ],
-    availableWorkbenches: {}
-  };
-
-  COUNTRY_HUBS.poland = {
-    flag: '🇵🇱',
-    name: 'Poland',
-    badge: 'Central Europe country hub',
-    description: 'Developer intelligence for Polish identifiers, locale conventions, tax systems, EU payments, and banking context.',
-    metadata: {
-      nativeName: 'Polska',
-      population: 'approximately 37.6M',
-      populationNote: 'Approximate 2026 population estimate; do not treat as a timeless constant.',
-      area: '312,696 km²',
-      capital: 'Warsaw',
-      largestCity: 'Warsaw',
-      continent: 'Europe',
-      region: 'Central Europe / European Union',
-      languages: 'Polish',
-      currency: 'Polish złoty',
-      currencyCode: 'PLN',
-      currencySymbol: 'zł',
-      callingCode: '+48',
-      internetTld: '.pl',
-      drivingSide: 'Right',
-      iso2: 'PL',
-      iso3: 'POL',
-      isoNumeric: '616',
-      locale: 'pl-PL',
-      icuLocale: 'pl_PL',
-      dateFormat: 'DD.MM.YYYY',
-      timeFormat: '24-hour, HH:mm',
-      decimalSeparator: 'Comma (,)',
-      thousandsSeparator: 'Space ( ) or Dot (.)',
-      addressFormat: 'ul. Street name number/flat, postal code City',
-      postalCodeFormat: 'NN-NNN',
-      primaryTimeZone: 'Europe/Warsaw (CET/CEST)',
-      utcRange: 'UTC+01/+02',
-      measurementSystem: 'Metric',
-      paperSize: 'A4',
-      powerPlugTypes: 'Type C / Type E',
-      voltage: '230V',
-      frequency: '50Hz',
-      emergencyNumber: '112',
-      weekStarts: 'Monday',
-      rtlSupport: 'No',
-      unicodeLocale: 'pl-PL',
-      cldrLocale: 'pl_PL',
-      metricVsImperial: 'Metric-first'
-    },
-    visualIdentity: {
-      countryId: 'poland',
-      outlineLabel: 'Poland outline',
-      mapLabel: 'Poland in the world',
-      continentBadge: 'Europe',
-      flagLabel: 'Poland flag',
-      heroAccentPrimary: '159 18 57',     // Rose-800, red
-      heroAccentSecondary: '244 63 94',   // Rose-500, soft red
-      heroAccentTertiary: '228 228 231'   // Zinc-200, soft white
-    },
-    stats: [
-      { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
-      { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
-      { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
-      { icon: '🌍', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
-      { icon: '🗣', label: 'Languages', valueKey: 'languages', tags: ['locale'] },
-      { brandKey: 'europeanUnion', label: 'Region', valueKey: 'region', tags: ['government', 'locale'] },
-      { brandKey: 'iban', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency', 'payments'] },
-      { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
-      { icon: '🌐', label: 'Internet TLD', valueKey: 'internetTld', tags: ['developer'] },
-      { icon: '🕒', label: 'UTC range', valueKey: 'utcRange', tags: ['time'] }
-    ],
-    countryProfile: [
-      { icon: '🏷', label: 'Native name', valueKey: 'nativeName', tags: ['locale'] },
-      { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
-      { icon: '▣', label: 'Area', valueKey: 'area', tags: ['locale'] },
-      { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
-      { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
-      { icon: '🌍', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
-      { icon: '🗣', label: 'Languages', valueKey: 'languages', tags: ['locale'] },
-      { icon: '🚗', label: 'Driving side', valueKey: 'drivingSide', tags: ['locale'] },
-      { icon: '📏', label: 'Measurement system', valueKey: 'measurementSystem', tags: ['locale'] },
-      { icon: '📄', label: 'Paper size', valueKey: 'paperSize', tags: ['developer'] },
-      { icon: '🔌', label: 'Power plug types', valueKey: 'powerPlugTypes', tags: ['developer'] },
-      { icon: '⚡', label: 'Voltage', valueKey: 'voltage', tags: ['developer'] },
-      { icon: '⏱', label: 'Frequency', valueKey: 'frequency', tags: ['developer'] },
-      { icon: '🚨', label: 'Emergency number', valueKey: 'emergencyNumber', tags: ['phone'] },
-      { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
-      { brandKey: 'iban', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency'] },
-      { icon: '🕒', label: 'Timezone range', valueKey: 'utcRange', tags: ['time'] },
-      { icon: '📅', label: 'Week starts', valueKey: 'weekStarts', tags: ['locale'] },
-      { icon: '↔', label: 'RTL support', valueKey: 'rtlSupport', tags: ['locale'] },
-      { icon: '🔤', label: 'Unicode locale', valueKey: 'unicodeLocale', tags: ['locale', 'developer'] },
-      { icon: '🌐', label: 'ICU locale', valueKey: 'icuLocale', tags: ['locale', 'developer'] },
-      { icon: '🌐', label: 'CLDR locale', valueKey: 'cldrLocale', tags: ['locale', 'developer'] },
-      { icon: '📐', label: 'Metric vs Imperial', valueKey: 'metricVsImperial', tags: ['locale'] }
-    ],
-    quickActions: [
-      { label: 'Copy Locale', valueKey: 'locale' },
-      { label: 'Copy Currency Code', valueKey: 'currencyCode' },
-      { label: 'Copy Currency Symbol', valueKey: 'currencySymbol' },
-      { label: 'Copy Phone Code', valueKey: 'callingCode' },
-      { label: 'Copy ISO2', valueKey: 'iso2' },
-      { label: 'Copy ISO3', valueKey: 'iso3' },
-      { label: 'Copy Numeric ISO', valueKey: 'isoNumeric' },
-      { label: 'Copy Internet TLD', valueKey: 'internetTld' },
-      { label: 'Copy Date Format', valueKey: 'dateFormat' },
-      { label: 'Copy Postal Code Format', valueKey: 'postalCodeFormat' },
-      { label: 'Copy Primary Time Zone', valueKey: 'primaryTimeZone' }
-    ],
-    cheatSheet: [
-      { label: 'ISO2', valueKey: 'iso2', icon: '🏷', tags: ['developer', 'locale'] },
-      { label: 'ISO3', valueKey: 'iso3', icon: '🏷', tags: ['developer', 'locale'] },
-      { label: 'Numeric ISO', valueKey: 'isoNumeric', icon: '🏷', tags: ['developer', 'locale'] },
-      { label: 'Locale', valueKey: 'locale', icon: '🌐', tags: ['locale', 'developer'] },
-      { label: 'ICU locale', valueKey: 'icuLocale', icon: '🌐', tags: ['locale', 'developer'] },
-      { label: 'Language', valueKey: 'languages', icon: '🗣', tags: ['locale'] },
-      { label: 'Currency', value: 'Polish złoty (PLN)', copyValueKey: 'currencyCode', brandKey: 'iban', tags: ['currency', 'payments'] },
-      { label: 'Currency symbol', valueKey: 'currencySymbol', icon: '💵', tags: ['currency'] },
-      { label: 'Phone country code', valueKey: 'callingCode', icon: '☎', tags: ['phone'] },
-      { label: 'Internet TLD', valueKey: 'internetTld', icon: '🌐', tags: ['developer'] },
-      { label: 'Date format', valueKey: 'dateFormat', icon: '📅', tags: ['locale', 'date'] },
-      { label: 'Time format', valueKey: 'timeFormat', icon: '⏱', tags: ['locale', 'time'] },
-      { label: 'Decimal separator', valueKey: 'decimalSeparator', copyValue: 'comma decimal separator', icon: '🔢', tags: ['locale', 'currency'] },
-      { label: 'Thousands separator', valueKey: 'thousandsSeparator', copyValue: 'space thousands separator', icon: '🔢', tags: ['locale', 'currency'] },
-      { label: 'Address format', valueKey: 'addressFormat', icon: '📍', tags: ['addresses'] },
-      { label: 'Postal code format', valueKey: 'postalCodeFormat', icon: '✉', tags: ['postal', 'addresses'] },
-      { label: 'Primary time zone', valueKey: 'primaryTimeZone', icon: '🕒', tags: ['time'] },
-      { label: 'Time zones', valueKey: 'utcRange', icon: '🕒', tags: ['time'] }
-    ],
-    localFormats: [
-      { icon: '🪪', name: 'PESEL', status: 'available', category: 'National identity', tags: ['identifiers', 'government'], description: 'Universal Electronic System for Registration of the Population. 11-digit identifier containing date of birth, serial, gender, and checksum control digit.', related: ['PESEL Validator'] },
-      { icon: '🪪', name: 'NIP', status: 'planned', category: 'Tax identifier', tags: ['identifiers', 'tax'], description: 'Numer Identyfikacji Podatkowej. 10-digit tax identification number used by individuals and legal entities in Poland.', related: ['NIP Validator'] },
-      { icon: '🏢', name: 'REGON', status: 'planned', category: 'Business identifier', tags: ['identifiers', 'government'], description: 'National Official Register of Business Entities. Supports 9-digit local registry numbers and 14-digit subdivision registration concepts.', related: ['REGON Validator'] },
-      { brandKey: 'iban', name: 'Polish IBAN', status: 'planned', category: 'Banking', tags: ['banking', 'payments'], description: 'Polish accounts use PL country prefix followed by a two-digit control checksum and 26-digit basic bank account numbers.', related: ['Polish IBAN Notes'] },
-      { brandKey: 'swift', name: 'BIC / SWIFT', status: 'ready', category: 'Banking', tags: ['banking', 'payments'], description: 'BIC/SWIFT codes identify financial institutions for Polish and international bank account transfers.' },
-      { brandKey: 'vies', name: 'EU VAT / VIES', status: 'planned', category: 'Tax and business', tags: ['tax', 'government'], description: 'Polish VAT numbers prefix PL to the NIP string. EU VIES status checks represent a separate status query, not just local validation.' },
-      { icon: '✉', name: 'Polish postal code', status: 'planned', category: 'Postal', tags: ['postal', 'addresses'], description: 'Five-digit code using NN-NNN pattern (e.g. 00-001 for main Warsaw). Broadly maps to postal zones and districts.' },
-      { icon: '☎', name: 'Polish phone numbers', status: 'planned', category: 'Phone', tags: ['phone'], description: 'Nine-digit national number length using country code +48 for mobile and regional landline prefixes.' },
-      { icon: '💸', name: 'BLIK', status: 'planned', category: 'Payments', tags: ['payments', 'banking'], description: 'Six-digit mobile instant payment standard widely supported across Polish banking apps.' }
-    ],
-    payments: [
-      { brandKey: 'iban', title: 'PLN and Polish IBAN', status: 'ready', tags: ['payments', 'banking'], text: 'Poland uses PLN and participates in IBAN-based European banking flows. Domestic transfers use local clearing systems (Elixir).' },
-      { brandKey: 'sepa', title: 'SEPA', status: 'ready', tags: ['payments', 'banking'], text: 'SEPA credit transfers apply to Euro-denominated payments, but domestic flows mostly use PLN-native routing.' },
-      { brandKey: 'swift', title: 'BIC / SWIFT', status: 'ready', tags: ['banking'], text: 'BIC/SWIFT details are required for international SWIFT transfers and cross-border bank account payments.' },
-      { icon: '💸', title: 'BLIK', status: 'planned', tags: ['payments', 'banking'], text: 'BLIK appears in Polish consumer payment checkouts. Treat it as future product research, not a validation feature.' },
-      { icon: '💳', title: 'Card payments', status: 'ready', tags: ['payments'], text: 'Debit and credit card flows follow global card network schemas plus Polish locale amount formatting conventions.' }
-    ],
-    officialResources: [
-      { label: 'GUS / Portal Statystyczny', status: 'available', tags: ['government'], note: 'Central Statistical Office for official database, classification, and statistical context.' },
-      { label: 'Podatki.gov.pl', status: 'available', tags: ['government', 'tax'], note: 'Official tax administration portal for NIP, VAT, and business status references.' },
-      { label: 'ZUS', status: 'available', tags: ['government', 'identifiers'], note: 'Social Insurance Institution reference portal for social security context.' },
-      { label: 'Narodowy Bank Polski', status: 'available', tags: ['government', 'banking'], note: 'Central bank of Poland providing monetary policy and banking institution indexes.' },
-      { label: 'Poczta Polska', status: 'available', tags: ['postal', 'addresses'], note: 'Postal authority and official postcode database lookup.' }
-    ],
-    plannedWorkbenches: [
-      { name: 'NIP Validator', status: 'planned', tags: ['identifiers', 'tax'], description: 'Explain Polish NIP checksum math and registration status inspections.' },
-      { name: 'REGON Validator', status: 'planned', tags: ['identifiers', 'government'], description: 'Explain REGON 9-digit and 14-digit format checksums and structure.' },
-      { name: 'Polish IBAN Notes', status: 'planned', tags: ['banking', 'payments'], description: 'Country-specific explanations around Polish bank account layouts and Elixir clearing rails.' }
-    ],
-    relatedGlobalTools: [
-      { label: 'JSON Formatter', path: 'tools/json-formatter/', icon: '▣', tags: ['developer'] },
-      { label: 'Regex Tester', path: 'tools/regex-tester/', icon: '.*', tags: ['developer'] },
-      { label: 'IBAN Validator', path: 'tools/iban-validator/', brandKey: 'iban', tags: ['banking'] }
-    ],
-    relatedCategories: [
-      { label: 'Finance', path: 'categories/finance/', tags: ['payments', 'banking'] },
-      { label: 'National Identifiers', path: 'categories/national-identifiers/', tags: ['identifiers'] },
-      { label: 'Developer Tools', path: 'categories/developer-tools/', tags: ['developer'] }
-    ],
-    availableWorkbenches: {
-      'PESEL Validator': {
-        status: 'available',
-        tags: ['identifiers', 'government'],
-        description: 'Validate, parse, generate, and explain Polish PESEL numbers.'
-      }
-    },
-    futureCountryPages: [
-      { label: 'Brazil', status: 'available', path: 'brazil/' },
-      { label: 'Poland', status: 'available', path: 'poland/' },
-      { label: 'Germany', status: 'planned' },
-      { label: 'France', status: 'planned' },
-      { label: 'Portugal', status: 'planned' },
-      { label: 'Italy', status: 'planned' },
-      { label: 'Netherlands', status: 'planned' },
-      { label: 'Belgium', status: 'planned' },
-      { label: 'United Kingdom', status: 'planned' },
-      { label: 'United States', status: 'planned' },
-      { label: 'Canada', status: 'planned' },
-      { label: 'Mexico', status: 'planned' },
-      { label: 'Argentina', status: 'planned' },
-      { label: 'Chile', status: 'planned' },
-      { label: 'Japan', status: 'planned' },
-      { label: 'Australia', status: 'planned' },
-      { label: 'India', status: 'planned' },
-      { label: 'Ukraine', status: 'planned' }
-    ],
-    localizationExamples: [
-      { label: 'Date', value: '11.07.2026', tags: ['locale', 'date'] },
-      { label: 'Time', value: '14:25', tags: ['locale', 'time'] },
-      { label: 'Currency', value: '1 234,56 zł', tags: ['currency'] },
-      { label: 'Decimal', value: '1 234,56', tags: ['locale', 'currency'] },
-      { label: 'Percentage', value: '35,7%', tags: ['locale'] },
-      { label: 'Mobile phone', value: '+48 501 234 567', tags: ['phone'] },
-      { label: 'Landline', value: '+48 22 123 45 67', tags: ['phone'] },
-      { label: 'Postal code', value: '00-001', tags: ['postal', 'addresses'] },
-      { label: 'Address example', value: 'ul. Marszałkowska 100/10, 00-001 Warszawa', tags: ['addresses'] },
-      { label: 'Example person name', value: 'Jan Kowalski', tags: ['locale'] },
-      { label: 'Mainland time zone', value: 'Europe/Warsaw', tags: ['time'] }
-    ],
-    addressExample: {
-      formatted: [
-        'Jan Kowalski',
-        'ul. Marszałkowska 100 m. 10',
-        '00-001 Warszawa',
-        'Poland'
+      "stats": [
+        {
+          "icon": "👥",
+          "label": "Population",
+          "valueKey": "population",
+          "tags": [
+            "people"
+          ]
+        },
+        {
+          "icon": "🏛",
+          "label": "Capital",
+          "valueKey": "capital",
+          "tags": [
+            "government"
+          ]
+        },
+        {
+          "icon": "🏙",
+          "label": "Largest city",
+          "valueKey": "largestCity",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🌍",
+          "label": "Continent",
+          "valueKey": "continent",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🗣",
+          "label": "Languages",
+          "valueKey": "languages",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "brandKey": "europeanUnion",
+          "label": "Region",
+          "valueKey": "region",
+          "tags": [
+            "government",
+            "locale"
+          ]
+        },
+        {
+          "brandKey": "iban",
+          "label": "Currency",
+          "valueKey": "currencyCode",
+          "detailKey": "currency",
+          "tags": [
+            "currency",
+            "payments"
+          ]
+        },
+        {
+          "icon": "☎",
+          "label": "Calling code",
+          "valueKey": "callingCode",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "Internet TLD",
+          "valueKey": "internetTld",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🕒",
+          "label": "UTC range",
+          "valueKey": "utcRange",
+          "tags": [
+            "time"
+          ]
+        }
       ],
-      fields: [
-        { label: 'Recipient', value: 'Jan Kowalski', description: 'Fictional person or organization receiving mail.' },
-        { label: 'Street type and name', value: 'ul. Marszałkowska', description: 'Polish addresses usually include the street type and name.' },
-        { label: 'Building and flat number', value: '100 m. 10', description: 'Building number and apartment unit details.' },
-        { label: 'Postal code', value: '00-001', description: 'Five-digit postal code with hyphen (NN-NNN).' },
-        { label: 'City', value: 'Warszawa', description: 'City or municipality for display and delivery.' },
-        { label: 'Country', value: 'Poland', description: 'Country label for international mail and cross-border records.' }
+      "countryProfile": [
+        {
+          "icon": "🏷",
+          "label": "Native name",
+          "valueKey": "nativeName",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "👥",
+          "label": "Population",
+          "valueKey": "population",
+          "tags": [
+            "people"
+          ]
+        },
+        {
+          "icon": "▣",
+          "label": "Area",
+          "valueKey": "area",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🏛",
+          "label": "Capital",
+          "valueKey": "capital",
+          "tags": [
+            "government"
+          ]
+        },
+        {
+          "icon": "🏙",
+          "label": "Largest city",
+          "valueKey": "largestCity",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🌍",
+          "label": "Continent",
+          "valueKey": "continent",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🗣",
+          "label": "Languages",
+          "valueKey": "languages",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🚗",
+          "label": "Driving side",
+          "valueKey": "drivingSide",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "📏",
+          "label": "Measurement system",
+          "valueKey": "measurementSystem",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "📄",
+          "label": "Paper size",
+          "valueKey": "paperSize",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🔌",
+          "label": "Power plug types",
+          "valueKey": "powerPlugTypes",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "⚡",
+          "label": "Voltage",
+          "valueKey": "voltage",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "⏱",
+          "label": "Frequency",
+          "valueKey": "frequency",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🚨",
+          "label": "Emergency number",
+          "valueKey": "emergencyNumber",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "icon": "☎",
+          "label": "Calling code",
+          "valueKey": "callingCode",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "brandKey": "iban",
+          "label": "Currency",
+          "valueKey": "currencyCode",
+          "detailKey": "currency",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "icon": "🕒",
+          "label": "Timezone range",
+          "valueKey": "utcRange",
+          "tags": [
+            "time"
+          ]
+        },
+        {
+          "icon": "📅",
+          "label": "Week starts",
+          "valueKey": "weekStarts",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "↔",
+          "label": "RTL support",
+          "valueKey": "rtlSupport",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🔤",
+          "label": "Unicode locale",
+          "valueKey": "unicodeLocale",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "ICU locale",
+          "valueKey": "icuLocale",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "CLDR locale",
+          "valueKey": "cldrLocale",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "icon": "📐",
+          "label": "Metric vs Imperial",
+          "valueKey": "metricVsImperial",
+          "tags": [
+            "locale"
+          ]
+        }
+      ],
+      "quickActions": [
+        {
+          "label": "Copy Locale",
+          "valueKey": "locale"
+        },
+        {
+          "label": "Copy Currency Code",
+          "valueKey": "currencyCode"
+        },
+        {
+          "label": "Copy Currency Symbol",
+          "valueKey": "currencySymbol"
+        },
+        {
+          "label": "Copy Phone Code",
+          "valueKey": "callingCode"
+        },
+        {
+          "label": "Copy ISO2",
+          "valueKey": "iso2"
+        },
+        {
+          "label": "Copy ISO3",
+          "valueKey": "iso3"
+        },
+        {
+          "label": "Copy Numeric ISO",
+          "valueKey": "isoNumeric"
+        },
+        {
+          "label": "Copy Internet TLD",
+          "valueKey": "internetTld"
+        },
+        {
+          "label": "Copy Date Format",
+          "valueKey": "dateFormat"
+        },
+        {
+          "label": "Copy Postal Code Format",
+          "valueKey": "postalCodeFormat"
+        },
+        {
+          "label": "Copy Primary Time Zone",
+          "valueKey": "primaryTimeZone"
+        }
+      ],
+      "cheatSheet": [
+        {
+          "label": "ISO2",
+          "valueKey": "iso2",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "ISO3",
+          "valueKey": "iso3",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Numeric ISO",
+          "valueKey": "isoNumeric",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Locale",
+          "valueKey": "locale",
+          "icon": "🌐",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "label": "ICU locale",
+          "valueKey": "icuLocale",
+          "icon": "🌐",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "label": "Language",
+          "valueKey": "languages",
+          "icon": "🗣",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Currency",
+          "value": "Polish złoty (PLN)",
+          "copyValueKey": "currencyCode",
+          "brandKey": "iban",
+          "tags": [
+            "currency",
+            "payments"
+          ]
+        },
+        {
+          "label": "Currency symbol",
+          "valueKey": "currencySymbol",
+          "icon": "💵",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "label": "Phone country code",
+          "valueKey": "callingCode",
+          "icon": "☎",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Internet TLD",
+          "valueKey": "internetTld",
+          "icon": "🌐",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "Date format",
+          "valueKey": "dateFormat",
+          "icon": "📅",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "label": "Time format",
+          "valueKey": "timeFormat",
+          "icon": "⏱",
+          "tags": [
+            "locale",
+            "time"
+          ]
+        },
+        {
+          "label": "Decimal separator",
+          "valueKey": "decimalSeparator",
+          "copyValue": "comma decimal separator",
+          "icon": "🔢",
+          "tags": [
+            "locale",
+            "currency"
+          ]
+        },
+        {
+          "label": "Thousands separator",
+          "valueKey": "thousandsSeparator",
+          "copyValue": "space thousands separator",
+          "icon": "🔢",
+          "tags": [
+            "locale",
+            "currency"
+          ]
+        },
+        {
+          "label": "Address format",
+          "valueKey": "addressFormat",
+          "icon": "📍",
+          "tags": [
+            "addresses"
+          ]
+        },
+        {
+          "label": "Postal code format",
+          "valueKey": "postalCodeFormat",
+          "icon": "✉",
+          "tags": [
+            "postal",
+            "addresses"
+          ]
+        },
+        {
+          "label": "Primary time zone",
+          "valueKey": "primaryTimeZone",
+          "icon": "🕒",
+          "tags": [
+            "time"
+          ]
+        },
+        {
+          "label": "Time zones",
+          "valueKey": "utcRange",
+          "icon": "🕒",
+          "tags": [
+            "time"
+          ]
+        }
+      ],
+      "localFormats": [
+        {
+          "icon": "🪪",
+          "name": "PESEL",
+          "status": "available",
+          "category": "National identity",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "Universal Electronic System for Registration of the Population. 11-digit identifier containing date of birth, serial, gender, and checksum control digit.",
+          "related": [
+            "PESEL Validator"
+          ]
+        },
+        {
+          "icon": "🪪",
+          "name": "NIP",
+          "status": "planned",
+          "category": "Tax identifier",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "Numer Identyfikacji Podatkowej. 10-digit tax identification number used by individuals and legal entities in Poland.",
+          "related": [
+            "NIP Validator"
+          ]
+        },
+        {
+          "icon": "🏢",
+          "name": "REGON",
+          "status": "planned",
+          "category": "Business identifier",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "National Official Register of Business Entities. Supports 9-digit local registry numbers and 14-digit subdivision registration concepts.",
+          "related": [
+            "REGON Validator"
+          ]
+        },
+        {
+          "brandKey": "iban",
+          "name": "Polish IBAN",
+          "status": "planned",
+          "category": "Banking",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Polish accounts use PL country prefix followed by a two-digit control checksum and 26-digit basic bank account numbers.",
+          "related": [
+            "Polish IBAN Notes"
+          ]
+        },
+        {
+          "brandKey": "swift",
+          "name": "BIC / SWIFT",
+          "status": "ready",
+          "category": "Banking",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "BIC/SWIFT codes identify financial institutions for Polish and international bank account transfers."
+        },
+        {
+          "brandKey": "vies",
+          "name": "EU VAT / VIES",
+          "status": "planned",
+          "category": "Tax and business",
+          "tags": [
+            "tax",
+            "government"
+          ],
+          "description": "Polish VAT numbers prefix PL to the NIP string. EU VIES status checks represent a separate status query, not just local validation."
+        },
+        {
+          "icon": "✉",
+          "name": "Polish postal code",
+          "status": "planned",
+          "category": "Postal",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "description": "Five-digit code using NN-NNN pattern (e.g. 00-001 for main Warsaw). Broadly maps to postal zones and districts."
+        },
+        {
+          "icon": "☎",
+          "name": "Polish phone numbers",
+          "status": "planned",
+          "category": "Phone",
+          "tags": [
+            "phone"
+          ],
+          "description": "Nine-digit national number length using country code +48 for mobile and regional landline prefixes."
+        },
+        {
+          "icon": "💸",
+          "name": "BLIK",
+          "status": "planned",
+          "category": "Payments",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "description": "Six-digit mobile instant payment standard widely supported across Polish banking apps."
+        }
+      ],
+      "payments": [
+        {
+          "brandKey": "iban",
+          "title": "PLN and Polish IBAN",
+          "status": "ready",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "text": "Poland uses PLN and participates in IBAN-based European banking flows. Domestic transfers use local clearing systems (Elixir)."
+        },
+        {
+          "brandKey": "sepa",
+          "title": "SEPA",
+          "status": "ready",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "text": "SEPA credit transfers apply to Euro-denominated payments, but domestic flows mostly use PLN-native routing."
+        },
+        {
+          "brandKey": "swift",
+          "title": "BIC / SWIFT",
+          "status": "ready",
+          "tags": [
+            "banking"
+          ],
+          "text": "BIC/SWIFT details are required for international SWIFT transfers and cross-border bank account payments."
+        },
+        {
+          "icon": "💸",
+          "title": "BLIK",
+          "status": "planned",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "text": "BLIK appears in Polish consumer payment checkouts. Treat it as future product research, not a validation feature."
+        },
+        {
+          "icon": "💳",
+          "title": "Card payments",
+          "status": "ready",
+          "tags": [
+            "payments"
+          ],
+          "text": "Debit and credit card flows follow global card network schemas plus Polish locale amount formatting conventions."
+        }
+      ],
+      "officialResources": [
+        {
+          "label": "GUS / Portal Statystyczny",
+          "status": "available",
+          "tags": [
+            "government"
+          ],
+          "note": "Central Statistical Office for official database, classification, and statistical context."
+        },
+        {
+          "label": "Podatki.gov.pl",
+          "status": "available",
+          "tags": [
+            "government",
+            "tax"
+          ],
+          "note": "Official tax administration portal for NIP, VAT, and business status references."
+        },
+        {
+          "label": "ZUS",
+          "status": "available",
+          "tags": [
+            "government",
+            "identifiers"
+          ],
+          "note": "Social Insurance Institution reference portal for social security context."
+        },
+        {
+          "label": "Narodowy Bank Polski",
+          "status": "available",
+          "tags": [
+            "government",
+            "banking"
+          ],
+          "note": "Central bank of Poland providing monetary policy and banking institution indexes."
+        },
+        {
+          "label": "Poczta Polska",
+          "status": "available",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "note": "Postal authority and official postcode database lookup."
+        }
+      ],
+      "plannedWorkbenches": [
+        {
+          "name": "NIP Validator",
+          "status": "planned",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "Explain Polish NIP checksum math and registration status inspections."
+        },
+        {
+          "name": "REGON Validator",
+          "status": "planned",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "Explain REGON 9-digit and 14-digit format checksums and structure."
+        },
+        {
+          "name": "Polish IBAN Notes",
+          "status": "planned",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Country-specific explanations around Polish bank account layouts and Elixir clearing rails."
+        }
+      ],
+      "relatedGlobalTools": [
+        {
+          "label": "JSON Formatter",
+          "path": "tools/json-formatter/",
+          "icon": "▣",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "Regex Tester",
+          "path": "tools/regex-tester/",
+          "icon": ".*",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "IBAN Validator",
+          "path": "tools/iban-validator/",
+          "brandKey": "iban",
+          "tags": [
+            "banking"
+          ]
+        }
+      ],
+      "relatedCategories": [
+        {
+          "label": "Finance",
+          "path": "categories/finance/",
+          "tags": [
+            "payments",
+            "banking"
+          ]
+        },
+        {
+          "label": "National Identifiers",
+          "path": "categories/national-identifiers/",
+          "tags": [
+            "identifiers"
+          ]
+        },
+        {
+          "label": "Developer Tools",
+          "path": "categories/developer-tools/",
+          "tags": [
+            "developer"
+          ]
+        }
+      ],
+      "availableWorkbenches": {
+        "PESEL Validator": {
+          "status": "available",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "Validate, parse, generate, and explain Polish PESEL numbers."
+        }
+      },
+      "futureCountryPages": [
+        {
+          "label": "Brazil",
+          "status": "available",
+          "path": "brazil/"
+        },
+        {
+          "label": "Poland",
+          "status": "available",
+          "path": "poland/"
+        },
+        {
+          "label": "Germany",
+          "status": "planned"
+        },
+        {
+          "label": "France",
+          "status": "planned"
+        },
+        {
+          "label": "Portugal",
+          "status": "planned"
+        },
+        {
+          "label": "Italy",
+          "status": "planned"
+        },
+        {
+          "label": "Netherlands",
+          "status": "planned"
+        },
+        {
+          "label": "Belgium",
+          "status": "planned"
+        },
+        {
+          "label": "United Kingdom",
+          "status": "planned"
+        },
+        {
+          "label": "United States",
+          "status": "planned"
+        },
+        {
+          "label": "Canada",
+          "status": "planned"
+        },
+        {
+          "label": "Mexico",
+          "status": "planned"
+        },
+        {
+          "label": "Argentina",
+          "status": "planned"
+        },
+        {
+          "label": "Chile",
+          "status": "planned"
+        },
+        {
+          "label": "Japan",
+          "status": "planned"
+        },
+        {
+          "label": "Australia",
+          "status": "planned"
+        },
+        {
+          "label": "India",
+          "status": "planned"
+        },
+        {
+          "label": "Ukraine",
+          "status": "planned"
+        }
+      ],
+      "localizationExamples": [
+        {
+          "label": "Date",
+          "value": "11.07.2026",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "label": "Time",
+          "value": "14:25",
+          "tags": [
+            "locale",
+            "time"
+          ]
+        },
+        {
+          "label": "Currency",
+          "value": "1 234,56 zł",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "label": "Decimal",
+          "value": "1 234,56",
+          "tags": [
+            "locale",
+            "currency"
+          ]
+        },
+        {
+          "label": "Percentage",
+          "value": "35,7%",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Mobile phone",
+          "value": "+48 501 234 567",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Landline",
+          "value": "+48 22 123 45 67",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Postal code",
+          "value": "00-001",
+          "tags": [
+            "postal",
+            "addresses"
+          ]
+        },
+        {
+          "label": "Address example",
+          "value": "ul. Marszałkowska 100/10, 00-001 Warszawa",
+          "tags": [
+            "addresses"
+          ]
+        },
+        {
+          "label": "Example person name",
+          "value": "Jan Kowalski",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Mainland time zone",
+          "value": "Europe/Warsaw",
+          "tags": [
+            "time"
+          ]
+        }
+      ],
+      "addressExample": {
+        "formatted": [
+          "Jan Kowalski",
+          "ul. Marszałkowska 100 m. 10",
+          "00-001 Warszawa",
+          "Poland"
+        ],
+        "fields": [
+          {
+            "label": "Recipient",
+            "value": "Jan Kowalski",
+            "description": "Fictional person or organization receiving mail."
+          },
+          {
+            "label": "Street type and name",
+            "value": "ul. Marszałkowska",
+            "description": "Polish addresses usually include the street type and name."
+          },
+          {
+            "label": "Building and flat number",
+            "value": "100 m. 10",
+            "description": "Building number and apartment unit details."
+          },
+          {
+            "label": "Postal code",
+            "value": "00-001",
+            "description": "Five-digit postal code with hyphen (NN-NNN)."
+          },
+          {
+            "label": "City",
+            "value": "Warszawa",
+            "description": "City or municipality for display and delivery."
+          },
+          {
+            "label": "Country",
+            "value": "Poland",
+            "description": "Country label for international mail and cross-border records."
+          }
+        ]
+      },
+      "phoneExamples": [
+        {
+          "label": "Mobile",
+          "value": "501 234 567",
+          "description": "Polish mobile layout display example.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Landline",
+          "value": "22 123 45 67",
+          "description": "Warsaw-style landline display example.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "International mobile",
+          "value": "+48 501 234 567",
+          "description": "Use +48 for international representation.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "International landline",
+          "value": "+48 22 123 45 67",
+          "description": "International layout for Warsaw landline.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Normalized",
+          "value": "48501234567",
+          "description": "Digits-only normalization for databases.",
+          "tags": [
+            "phone",
+            "developer"
+          ]
+        }
+      ],
+      "integrationChecklist": [
+        "Locale pl-PL configured",
+        "UTF-8 encoding preserved",
+        "Złoty (PLN) formatting with comma decimals and space thousands separators",
+        "PESEL validation rules and checksum",
+        "NIP tax identifier checksum rules",
+        "REGON business register length and checks",
+        "Polish postal code display mask (NN-NNN)",
+        "Phone code +48 formatting",
+        "NRB domestic format vs IBAN PL representation",
+        "BLIK payment system integration parameters"
+      ],
+      "validationRules": [
+        {
+          "name": "PESEL",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "points": [
+            "11 digits total",
+            "Checksum uses 1-3-7-9 weight factors",
+            "Encodes date of birth and gender (even for female, odd for male)"
+          ]
+        },
+        {
+          "name": "NIP",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "points": [
+            "10 digits total",
+            "Checksum uses 6-5-7-2-3-4-5-6-7 weights",
+            "Used for tax administration and invoices"
+          ]
+        },
+        {
+          "name": "REGON",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "points": [
+            "Supports 9-digit local registry and 14-digit subdivision layouts",
+            "Weighted checksum algorithm verifies structural validity"
+          ]
+        },
+        {
+          "name": "Postal code",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "points": [
+            "Five digits in NN-NNN mask",
+            "First digit defines the main postal region (e.g. 0 for Warsaw)"
+          ]
+        },
+        {
+          "name": "Phone",
+          "tags": [
+            "phone"
+          ],
+          "points": [
+            "Nine digits excluding country code +48",
+            "Mobile ranges and regional landline prefixes have different shapes"
+          ]
+        },
+        {
+          "name": "IBAN",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "points": [
+            "Polish IBAN starts with PL followed by control digits and 26-digit NRB",
+            "Direct checksum verification using modulo 97"
+          ]
+        }
+      ],
+      "commonMistakes": [
+        "Treating BLIK as a bank account identifier rather than a mobile payment token.",
+        "Conflating NIP (tax) and PESEL (personal) identifiers.",
+        "Using comma instead of space for thousands formatting, which looks unnatural to Polish users.",
+        "Forgetting the hyphen in the NN-NNN postal code display.",
+        "Hardcoding PLN symbol position before the amount (PLN should be formatted as 123,45 zł or 123,45 PLN).",
+        "Conflating 26-digit domestic NRB accounts with 28-character PL IBANs in databases."
+      ],
+      "bankingOverview": [
+        {
+          "brandKey": "iban",
+          "name": "IBAN",
+          "status": "available",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "PL-prefixed IBAN format is standard for international transfers."
+        },
+        {
+          "brandKey": "sepa",
+          "name": "SEPA",
+          "status": "ready",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Euro accounts in Poland support SEPA, but domestic transfers use PLN clearing (Elixir)."
+        },
+        {
+          "brandKey": "swift",
+          "name": "SWIFT / BIC",
+          "status": "ready",
+          "tags": [
+            "banking"
+          ],
+          "description": "Required for international non-SEPA transfers."
+        },
+        {
+          "icon": "💸",
+          "name": "BLIK",
+          "status": "planned",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "description": "Widely popular domestic instant mobile payment solution using 6-digit codes."
+        },
+        {
+          "icon": "🏦",
+          "name": "Domestic account context",
+          "status": "planned",
+          "tags": [
+            "banking"
+          ],
+          "description": "Elixir is the domestic clearing system processing PLN transfers in three daily sessions."
+        }
+      ],
+      "localizationNotes": [
+        {
+          "name": "Plural rules",
+          "description": "Polish has complex plural forms (1, 2-4, 5-21, etc.) depending on the noun case.",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "name": "Week starts",
+          "description": "Most Polish user interfaces expect Monday as the first day of week.",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "name": "Calendar",
+          "description": "Gregorian calendar is the ordinary civil calendar.",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "name": "Unicode",
+          "description": "Ensure support for Polish diacritics: ą, ć, ę, ł, ń, ó, ś, ź, ż.",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "name": "Timezone",
+          "description": "Use Europe/Warsaw for global civil time in Poland.",
+          "tags": [
+            "time",
+            "developer"
+          ]
+        }
+      ],
+      "ecosystem": [
+        {
+          "name": "PESEL",
+          "description": "Personal identity register for citizens and residents.",
+          "tags": [
+            "identifiers",
+            "government"
+          ]
+        },
+        {
+          "name": "NIP",
+          "description": "Tax identification number register.",
+          "tags": [
+            "identifiers",
+            "tax"
+          ]
+        },
+        {
+          "name": "REGON",
+          "description": "National register of business entities.",
+          "tags": [
+            "identifiers",
+            "government"
+          ]
+        },
+        {
+          "name": "BLIK",
+          "description": "Mobile payment standard used by millions of bank customers.",
+          "tags": [
+            "payments",
+            "banking"
+          ]
+        }
+      ],
+      "highlights": [
+        "Poland uses pl-PL locale for formatting.",
+        "PLN is displayed with space separators and 'zł' symbol at the end (e.g. 1 234,56 zł).",
+        "Diacritics like ł and ż are common and must be preserved.",
+        "BLIK is the leading mobile payment method in Poland.",
+        "Date format is DD.MM.YYYY."
+      ],
+      "developerNotes": [
+        "Ensure database tables support UTF-8 for Polish diacritics.",
+        "Validate local PESEL, NIP, and REGON formats separately.",
+        "Use PL country prefix for IBAN validation on Polish accounts."
+      ],
+      "developerExamples": [
+        {
+          "title": "Java Locale",
+          "language": "java",
+          "brandKey": "java",
+          "code": "Locale.forLanguageTag(\"pl-PL\")",
+          "note": "Use BCP 47 locale tags for Java formatting APIs."
+        },
+        {
+          "title": "Java currency format",
+          "language": "java",
+          "brandKey": "java",
+          "code": "NumberFormat.getCurrencyInstance(Locale.forLanguageTag(\"pl-PL\")).format(value)",
+          "note": "Formats values using Polish currency conventions."
+        },
+        {
+          "title": "JavaScript Intl Currency",
+          "language": "javascript",
+          "brandKey": "javascript",
+          "code": "new Intl.NumberFormat(\"pl-PL\", { style: \"currency\", currency: \"PLN\" })",
+          "note": "Formats PLN values with pl-PL separators and currency display."
+        },
+        {
+          "title": "JavaScript Date",
+          "language": "javascript",
+          "brandKey": "javascript",
+          "code": "new Intl.DateTimeFormat(\"pl-PL\", { timeZone: \"Europe/Warsaw\" })",
+          "note": "Use Europe/Warsaw timezone for Poland local dates."
+        },
+        {
+          "title": "Python locale",
+          "language": "python",
+          "brandKey": "python",
+          "code": "locale.setlocale(locale.LC_ALL, \"pl_PL.UTF-8\")",
+          "note": "Requires the pl_PL locale to be installed on the host operating system."
+        },
+        {
+          "title": "Go language tag",
+          "language": "go",
+          "brandKey": "go",
+          "code": "language.MustParse(\"pl-PL\")",
+          "note": "Use golang.org/x/text/language package for locale representation."
+        }
       ]
     },
-    phoneExamples: [
-      { label: 'Mobile', value: '501 234 567', description: 'Polish mobile layout display example.', tags: ['phone'] },
-      { label: 'Landline', value: '22 123 45 67', description: 'Warsaw-style landline display example.', tags: ['phone'] },
-      { label: 'International mobile', value: '+48 501 234 567', description: 'Use +48 for international representation.', tags: ['phone'] },
-      { label: 'International landline', value: '+48 22 123 45 67', description: 'International layout for Warsaw landline.', tags: ['phone'] },
-      { label: 'Normalized', value: '48501234567', description: 'Digits-only normalization for databases.', tags: ['phone', 'developer'] }
-    ],
-    integrationChecklist: [
-      'Locale pl-PL configured',
-      'UTF-8 encoding preserved',
-      'Złoty (PLN) formatting with comma decimals and space thousands separators',
-      'PESEL validation rules and checksum',
-      'NIP tax identifier checksum rules',
-      'REGON business register length and checks',
-      'Polish postal code display mask (NN-NNN)',
-      'Phone code +48 formatting',
-      'NRB domestic format vs IBAN PL representation',
-      'BLIK payment system integration parameters'
-    ],
-    validationRules: [
-      { name: 'PESEL', tags: ['identifiers', 'government'], points: ['11 digits total', 'Checksum uses 1-3-7-9 weight factors', 'Encodes date of birth and gender (even for female, odd for male)'] },
-      { name: 'NIP', tags: ['identifiers', 'tax'], points: ['10 digits total', 'Checksum uses 6-5-7-2-3-4-5-6-7 weights', 'Used for tax administration and invoices'] },
-      { name: 'REGON', tags: ['identifiers', 'government'], points: ['Supports 9-digit local registry and 14-digit subdivision layouts', 'Weighted checksum algorithm verifies structural validity'] },
-      { name: 'Postal code', tags: ['postal', 'addresses'], points: ['Five digits in NN-NNN mask', 'First digit defines the main postal region (e.g. 0 for Warsaw)'] },
-      { name: 'Phone', tags: ['phone'], points: ['Nine digits excluding country code +48', 'Mobile ranges and regional landline prefixes have different shapes'] },
-      { name: 'IBAN', tags: ['banking', 'payments'], points: ['Polish IBAN starts with PL followed by control digits and 26-digit NRB', 'Direct checksum verification using modulo 97'] }
-    ],
-    commonMistakes: [
-      'Treating BLIK as a bank account identifier rather than a mobile payment token.',
-      'Conflating NIP (tax) and PESEL (personal) identifiers.',
-      'Using comma instead of space for thousands formatting, which looks unnatural to Polish users.',
-      'Forgetting the hyphen in the NN-NNN postal code display.',
-      'Hardcoding PLN symbol position before the amount (PLN should be formatted as 123,45 zł or 123,45 PLN).',
-      'Conflating 26-digit domestic NRB accounts with 28-character PL IBANs in databases.'
-    ],
-    bankingOverview: [
-      { brandKey: 'iban', name: 'IBAN', status: 'available', tags: ['banking', 'payments'], description: 'PL-prefixed IBAN format is standard for international transfers.' },
-      { brandKey: 'sepa', name: 'SEPA', status: 'ready', tags: ['banking', 'payments'], description: 'Euro accounts in Poland support SEPA, but domestic transfers use PLN clearing (Elixir).' },
-      { brandKey: 'swift', name: 'SWIFT / BIC', status: 'ready', tags: ['banking'], description: 'Required for international non-SEPA transfers.' },
-      { icon: '💸', name: 'BLIK', status: 'planned', tags: ['payments', 'banking'], description: 'Widely popular domestic instant mobile payment solution using 6-digit codes.' },
-      { icon: '🏦', name: 'Domestic account context', status: 'planned', tags: ['banking'], description: 'Elixir is the domestic clearing system processing PLN transfers in three daily sessions.' }
-    ],
-    localizationNotes: [
-      { name: 'Plural rules', description: 'Polish has complex plural forms (1, 2-4, 5-21, etc.) depending on the noun case.', tags: ['locale'] },
-      { name: 'Week starts', description: 'Most Polish user interfaces expect Monday as the first day of week.', tags: ['locale', 'date'] },
-      { name: 'Calendar', description: 'Gregorian calendar is the ordinary civil calendar.', tags: ['locale', 'date'] },
-      { name: 'Unicode', description: 'Ensure support for Polish diacritics: ą, ć, ę, ł, ń, ó, ś, ź, ż.', tags: ['locale', 'developer'] },
-      { name: 'Timezone', description: 'Use Europe/Warsaw for global civil time in Poland.', tags: ['time', 'developer'] }
-    ],
-    ecosystem: [
-      { name: 'PESEL', description: 'Personal identity register for citizens and residents.', tags: ['identifiers', 'government'] },
-      { name: 'NIP', description: 'Tax identification number register.', tags: ['identifiers', 'tax'] },
-      { name: 'REGON', description: 'National register of business entities.', tags: ['identifiers', 'government'] },
-      { name: 'BLIK', description: 'Mobile payment standard used by millions of bank customers.', tags: ['payments', 'banking'] }
-    ],
-    highlights: [
-      'Poland uses pl-PL locale for formatting.',
-      'PLN is displayed with space separators and \'zł\' symbol at the end (e.g. 1 234,56 zł).',
-      'Diacritics like ł and ż are common and must be preserved.',
-      'BLIK is the leading mobile payment method in Poland.',
-      'Date format is DD.MM.YYYY.'
-    ],
-    developerNotes: [
-      'Ensure database tables support UTF-8 for Polish diacritics.',
-      'Validate local PESEL, NIP, and REGON formats separately.',
-      'Use PL country prefix for IBAN validation on Polish accounts.'
-    ],
-    developerExamples: [
-      {
-        title: 'Java Locale',
-        language: 'java',
-        brandKey: 'java',
-        code: 'Locale.forLanguageTag("pl-PL")',
-        note: 'Use BCP 47 locale tags for Java formatting APIs.'
+    "spain": {
+      "flag": "🇪🇸",
+      "name": "Spain",
+      "badge": "Architecture reuse country hub",
+      "description": "Developer intelligence for Spanish identifiers, locale conventions, EU payments, banking context, government systems, and implementation pitfalls.",
+      "metadata": {
+        "nativeName": "España",
+        "population": "approximately 49.6M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "area": "506,030 km²",
+        "capital": "Madrid",
+        "largestCity": "Madrid",
+        "continent": "Europe",
+        "region": "Southern Europe / European Union",
+        "languages": "Spanish; Catalan/Valencian, Galician, Basque, and Aranese co-official regionally",
+        "currency": "Euro",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "callingCode": "+34",
+        "internetTld": ".es",
+        "drivingSide": "Right",
+        "iso2": "ES",
+        "iso3": "ESP",
+        "isoNumeric": "724",
+        "locale": "es-ES",
+        "icuLocale": "es_ES",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street type/name, number, floor/door, postal code, municipality, province",
+        "postalCodeFormat": "NNNNN",
+        "primaryTimeZone": "Europe/Madrid (CET/CEST)",
+        "utcRange": "UTC+01/+02 mainland; UTC+00/+01 Canary Islands",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "powerPlugTypes": "Type C / Type F",
+        "voltage": "230V",
+        "frequency": "50Hz",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "es-ES",
+        "cldrLocale": "es_ES",
+        "metricVsImperial": "Metric-first"
       },
-      {
-        title: 'Java currency format',
-        language: 'java',
-        brandKey: 'java',
-        code: 'NumberFormat.getCurrencyInstance(Locale.forLanguageTag("pl-PL")).format(value)',
-        note: 'Formats values using Polish currency conventions.'
+      "visualIdentity": {
+        "countryId": "spain",
+        "outlineLabel": "Spain outline",
+        "mapLabel": "Spain in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Spain flag",
+        "heroAccentPrimary": "153 27 27",
+        "heroAccentSecondary": "217 119 6",
+        "heroAccentTertiary": "245 158 11"
       },
-      {
-        title: 'JavaScript Intl Currency',
-        language: 'javascript',
-        brandKey: 'javascript',
-        code: 'new Intl.NumberFormat("pl-PL", { style: "currency", currency: "PLN" })',
-        note: 'Formats PLN values with pl-PL separators and currency display.'
-      },
-      {
-        title: 'JavaScript Date',
-        language: 'javascript',
-        brandKey: 'javascript',
-        code: 'new Intl.DateTimeFormat("pl-PL", { timeZone: "Europe/Warsaw" })',
-        note: 'Use Europe/Warsaw timezone for Poland local dates.'
-      },
-      {
-        title: 'Python locale',
-        language: 'python',
-        brandKey: 'python',
-        code: 'locale.setlocale(locale.LC_ALL, "pl_PL.UTF-8")',
-        note: 'Requires the pl_PL locale to be installed on the host operating system.'
-      },
-      {
-        title: 'Go language tag',
-        language: 'go',
-        brandKey: 'go',
-        code: 'language.MustParse("pl-PL")',
-        note: 'Use golang.org/x/text/language package for locale representation.'
-      }
-    ]
-  };
-
-  COUNTRY_HUBS.germany = {
-    flag: '🇩🇪',
-    name: 'Germany',
-    badge: 'Central Europe country hub',
-    description: 'Developer intelligence for German tax identifiers, locale conventions, postal layouts, phone parsing, and banking integration.',
-    metadata: {
-      nativeName: 'Deutschland',
-      population: 'approximately 84.4M',
-      populationNote: 'Approximate 2026 population estimate; do not treat as a timeless constant.',
-      area: '357,022 km²',
-      capital: 'Berlin',
-      largestCity: 'Berlin',
-      continent: 'Europe',
-      region: 'Central Europe / European Union',
-      languages: 'German',
-      currency: 'Euro',
-      currencyCode: 'EUR',
-      currencySymbol: '€',
-      callingCode: '+49',
-      internetTld: '.de',
-      drivingSide: 'Right',
-      iso2: 'DE',
-      iso3: 'DEU',
-      isoNumeric: '276',
-      locale: 'de-DE',
-      icuLocale: 'de_DE',
-      dateFormat: 'DD.MM.YYYY',
-      timeFormat: '24-hour, HH:mm',
-      decimalSeparator: 'Comma (,)',
-      thousandsSeparator: 'Dot (.)',
-      addressFormat: 'Street name number, postal code City',
-      postalCodeFormat: 'NNNNN',
-      primaryTimeZone: 'Europe/Berlin (CET/CEST)',
-      utcRange: 'UTC+01/+02',
-      measurementSystem: 'Metric',
-      paperSize: 'A4',
-      powerPlugTypes: 'Type C / Type F',
-      voltage: '230V',
-      frequency: '50Hz',
-      emergencyNumber: '112',
-      weekStarts: 'Monday',
-      rtlSupport: 'No',
-      unicodeLocale: 'de-DE',
-      cldrLocale: 'de_DE',
-      metricVsImperial: 'Metric-first'
-    },
-    stats: [
-      { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
-      { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
-      { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
-      { icon: '🌍', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
-      { icon: '🗣', label: 'Languages', valueKey: 'languages', tags: ['locale'] },
-      { brandKey: 'europeanUnion', label: 'Region', valueKey: 'region', tags: ['government', 'locale'] },
-      { brandKey: 'iban', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency', 'payments'] },
-      { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
-      { icon: '🌐', label: 'Internet TLD', valueKey: 'internetTld', tags: ['developer'] },
-      { icon: '🕒', label: 'UTC range', valueKey: 'utcRange', tags: ['time'] }
-    ],
-    countryProfile: [
-      { icon: '🏷', label: 'Native name', valueKey: 'nativeName', tags: ['locale'] },
-      { icon: '👥', label: 'Population', valueKey: 'population', tags: ['people'] },
-      { icon: '▣', label: 'Area', valueKey: 'area', tags: ['locale'] },
-      { icon: '🏛', label: 'Capital', valueKey: 'capital', tags: ['government'] },
-      { icon: '🏙', label: 'Largest city', valueKey: 'largestCity', tags: ['locale'] },
-      { icon: '🌍', label: 'Continent', valueKey: 'continent', tags: ['locale'] },
-      { icon: '🗣', label: 'Languages', valueKey: 'languages', tags: ['locale'] },
-      { icon: '🚗', label: 'Driving side', valueKey: 'drivingSide', tags: ['locale'] },
-      { icon: '📏', label: 'Measurement system', valueKey: 'measurementSystem', tags: ['locale'] },
-      { icon: '📄', label: 'Paper size', valueKey: 'paperSize', tags: ['developer'] },
-      { icon: '🔌', label: 'Power plug types', valueKey: 'powerPlugTypes', tags: ['developer'] },
-      { icon: '⚡', label: 'Voltage', valueKey: 'voltage', tags: ['developer'] },
-      { icon: '⏱', label: 'Frequency', valueKey: 'frequency', tags: ['developer'] },
-      { icon: '🚨', label: 'Emergency number', valueKey: 'emergencyNumber', tags: ['phone'] },
-      { icon: '☎', label: 'Calling code', valueKey: 'callingCode', tags: ['phone'] },
-      { brandKey: 'iban', label: 'Currency', valueKey: 'currencyCode', detailKey: 'currency', tags: ['currency'] },
-      { icon: '🕒', label: 'Timezone range', valueKey: 'utcRange', tags: ['time'] },
-      { icon: '📅', label: 'Week starts', valueKey: 'weekStarts', tags: ['locale'] },
-      { icon: '↔', label: 'RTL support', valueKey: 'rtlSupport', tags: ['locale'] },
-      { icon: '🔤', label: 'Unicode locale', valueKey: 'unicodeLocale', tags: ['locale', 'developer'] },
-      { icon: '🌐', label: 'ICU locale', valueKey: 'icuLocale', tags: ['locale', 'developer'] },
-      { icon: '🌐', label: 'CLDR locale', valueKey: 'cldrLocale', tags: ['locale', 'developer'] },
-      { icon: '📐', label: 'Metric vs Imperial', valueKey: 'metricVsImperial', tags: ['locale'] }
-    ],
-    visualIdentity: {
-      countryId: 'germany',
-      outlineLabel: 'Germany outline',
-      mapLabel: 'Germany in the world',
-      continentBadge: 'Europe',
-      flagLabel: 'Germany flag',
-      heroAccentPrimary: '17 17 17',
-      heroAccentSecondary: '193 18 31',
-      heroAccentTertiary: '242 201 76'
-    },
-    quickActions: [
-      { label: 'Copy Locale', valueKey: 'locale' },
-      { label: 'Copy Currency Code', valueKey: 'currencyCode' },
-      { label: 'Copy Currency Symbol', valueKey: 'currencySymbol' },
-      { label: 'Copy Phone Code', valueKey: 'callingCode' },
-      { label: 'Copy ISO2', valueKey: 'iso2' },
-      { label: 'Copy ISO3', valueKey: 'iso3' },
-      { label: 'Copy Numeric ISO', valueKey: 'isoNumeric' },
-      { label: 'Copy Internet TLD', valueKey: 'internetTld' },
-      { label: 'Copy Date Format', valueKey: 'dateFormat' },
-      { label: 'Copy Postal Code Format', valueKey: 'postalCodeFormat' },
-      { label: 'Copy Primary Time Zone', valueKey: 'primaryTimeZone' }
-    ],
-    cheatSheet: [
-      { label: 'ISO2', valueKey: 'iso2', icon: '🏷', tags: ['developer', 'locale'] },
-      { label: 'ISO3', valueKey: 'iso3', icon: '🏷', tags: ['developer', 'locale'] },
-      { label: 'Numeric ISO', valueKey: 'isoNumeric', icon: '🏷', tags: ['developer', 'locale'] },
-      { label: 'Locale', valueKey: 'locale', icon: '🌐', tags: ['locale', 'developer'] },
-      { label: 'ICU locale', valueKey: 'icuLocale', icon: '🌐', tags: ['locale', 'developer'] },
-      { label: 'Language', valueKey: 'languages', icon: '🗣', tags: ['locale'] },
-      { label: 'Currency', value: 'Euro (EUR)', copyValueKey: 'currencyCode', brandKey: 'iban', tags: ['currency', 'payments'] },
-      { label: 'Currency symbol', valueKey: 'currencySymbol', icon: '💵', tags: ['currency'] },
-      { label: 'Phone country code', valueKey: 'callingCode', icon: '☎', tags: ['phone'] },
-      { label: 'Internet TLD', valueKey: 'internetTld', icon: '🌐', tags: ['developer'] },
-      { label: 'Date format', valueKey: 'dateFormat', icon: '📅', tags: ['locale', 'date'] },
-      { label: 'Time format', valueKey: 'timeFormat', icon: '⏱', tags: ['locale', 'time'] },
-      { label: 'Decimal separator', valueKey: 'decimalSeparator', copyValue: 'comma decimal separator', icon: '🔢', tags: ['locale', 'currency'] },
-      { label: 'Thousands separator', valueKey: 'thousandsSeparator', copyValue: 'dot thousands separator', icon: '🔢', tags: ['locale', 'currency'] },
-      { label: 'Address format', valueKey: 'addressFormat', icon: '📍', tags: ['addresses'] },
-      { label: 'Postal code format', valueKey: 'postalCodeFormat', icon: '✉', tags: ['postal', 'addresses'] },
-      { label: 'Primary time zone', valueKey: 'primaryTimeZone', icon: '🕒', tags: ['time'] },
-      { label: 'Time zones', valueKey: 'utcRange', icon: '🕒', tags: ['time'] }
-    ],
-    localFormats: [
-      { icon: '🪪', name: 'Steueridentifikationsnummer (IdNr)', status: 'planned', category: 'National identity', tags: ['identifiers', 'government'], description: '11-digit personal tax identification number assigned to residents of Germany by the Bundeszentralamt für Steuern (BZSt). Does not change upon relocation or marriage.', related: ['German Tax ID Inspector'] },
-      { icon: '🪪', name: 'Umsatzsteuer-Identifikationsnummer (USt-IdNr)', status: 'planned', category: 'Tax identifier', tags: ['identifiers', 'tax'], description: 'EU VAT number with DE prefix followed by 9 digits. Used for cross-border commerce validation.', related: ['USt-IdNr / VAT Format Inspector'] },
-      { icon: '🪪', name: 'Steuernummer (St.-Nr.)', status: 'planned', category: 'Tax identifier', tags: ['identifiers', 'tax'], description: 'Federal-state-specific tax number formats used for local corporate and personal tax filings. Can change when relocating between tax districts.', related: ['Steuernummer Reference Tool'] },
-      { icon: '🏢', name: 'Handelsregister context', status: 'planned', category: 'Business identifier', tags: ['identifiers', 'government'], description: 'Company registration numbers (HRB/HRA) indicating registry district and corporate form context. Used to verify legal entities.', related: ['German Address Formatter'] },
-      { icon: '✉', name: 'German postal code', status: 'planned', category: 'Postal', tags: ['postal', 'addresses'], description: 'Five-digit postal codes managed by Deutsche Post. First digit defines one of ten postal zones (Leitzonen).', related: ['Germany Postal Code Validator'] },
-      { icon: '☎', name: 'German phone numbers', status: 'planned', category: 'Phone', tags: ['phone'], description: 'Landline and mobile formats regulated by the Bundesnetzagentur. Features variable-length area codes.', related: ['Germany Phone Validator'] },
-      { brandKey: 'iban', name: 'German IBAN', status: 'available', category: 'Banking', tags: ['banking', 'payments'], description: 'German bank accounts use DE prefix IBANs. Direct checksum verification is available.', related: ['IBAN Validator'] },
-      { brandKey: 'swift', name: 'BIC / SWIFT', status: 'ready', category: 'Banking', tags: ['banking', 'payments'], description: 'SWIFT identification for German credit institutions. Identifies banks in domestic and international clearings.' },
-      { brandKey: 'vies', name: 'EU VAT / VIES', status: 'planned', category: 'Tax and business', tags: ['tax', 'government'], description: 'German VAT registration status verification via VIES system context.' }
-    ],
-    payments: [
-      { brandKey: 'iban', title: 'EUR and German IBAN', status: 'available', tags: ['payments', 'banking'], text: 'Germany uses EUR and participates in IBAN-based European banking flows. Use the global IBAN Validator for checksum-level checks.' },
-      { brandKey: 'sepa', title: 'SEPA', status: 'ready', tags: ['payments', 'banking'], text: 'Germany is a founding member of SEPA, supporting SEPA direct debits and credit transfers.' },
-      { brandKey: 'swift', title: 'BIC / SWIFT', status: 'ready', tags: ['banking'], text: 'International bank transfers require BIC/SWIFT bank details along with account numbers.' },
-      { icon: '💳', title: 'Card payments', status: 'ready', tags: ['payments'], text: 'Standard international Visa/Mastercard schemes along with local Girocard (formerly EC-Karte) routing conventions.' }
-    ],
-    officialResources: [
-      { label: 'Bundeszentralamt für Steuern (BZSt)', status: 'available', tags: ['government', 'identifiers', 'tax'], note: 'Federal Central Tax Office website providing official Tax ID and VAT validation specifications.' },
-      { label: 'Deutsche Bundesbank', status: 'available', tags: ['government', 'banking'], note: 'Central bank of Germany, providing currency indices, clearing rails, and bank code directory context.' },
-      { label: 'Bundesnetzagentur', status: 'available', tags: ['government', 'phone'], note: 'Federal Network Agency supervising telecommunication numbering plans and area prefixes.' },
-      { label: 'Deutsche Post', status: 'available', tags: ['postal', 'addresses'], note: 'Postal authority administering five-digit postal codes and official directory standards.' },
-      { brandKey: 'vies', label: 'European Commission VIES', status: 'available', tags: ['tax', 'government'], note: 'EU official system for validating VAT registry records and registration validity.' },
-      { brandKey: 'sepa', label: 'European Payments Council / SEPA', status: 'available', tags: ['payments', 'banking'], note: 'SEPA schemes regulator detailing credit transfer and direct debit specifications.' }
-    ],
-    plannedWorkbenches: [
-      { name: 'German Tax ID Inspector', status: 'planned', tags: ['identifiers', 'government'], description: 'Inspect and explain German Tax ID (IdNr) structure and validation rules.' },
-      { name: 'USt-IdNr / VAT Format Inspector', status: 'planned', tags: ['identifiers', 'tax'], description: 'Validate the structural format of DE VAT numbers.' },
-      { name: 'Steuernummer Reference Tool', status: 'planned', tags: ['identifiers', 'tax'], description: 'Understand state-specific local tax number formats and schemas.' },
-      { name: 'Germany Phone Validator', status: 'planned', tags: ['phone'], description: 'Explain prefix layouts and digit counts for landline and mobile ranges.' },
-      { name: 'Germany Postal Code Validator', status: 'planned', tags: ['postal', 'addresses'], description: 'Identify five-digit postal zones and city mappings without full verification.' },
-      { name: 'German IBAN Tools', status: 'planned', tags: ['banking', 'payments'], description: 'Explain country-specific bank code (BLZ) and account number offsets.' },
-      { name: 'German Address Formatter', status: 'planned', tags: ['addresses'], description: 'Format and normalize street, building, and town names using German postal layout standards.' }
-    ],
-    relatedGlobalTools: [
-      { label: 'JSON Formatter', path: 'tools/json-formatter/', icon: '▣', tags: ['developer'] },
-      { label: 'Regex Tester', path: 'tools/regex-tester/', icon: '.*', tags: ['developer'] },
-      { label: 'IBAN Validator', path: 'tools/iban-validator/', brandKey: 'iban', tags: ['banking'] }
-    ],
-    relatedCategories: [
-      { label: 'Finance', path: 'categories/finance/', tags: ['payments', 'banking'] },
-      { label: 'National Identifiers', path: 'categories/national-identifiers/', tags: ['identifiers'] },
-      { label: 'Developer Tools', path: 'categories/developer-tools/', tags: ['developer'] }
-    ],
-    availableWorkbenches: {},
-    futureCountryPages: [
-      { label: 'Brazil', status: 'available', path: 'brazil/' },
-      { label: 'Poland', status: 'available', path: 'poland/' },
-      { label: 'Spain', status: 'available', path: 'spain/' },
-      { label: 'France', status: 'planned' },
-      { label: 'Portugal', status: 'planned' },
-      { label: 'Italy', status: 'planned' },
-      { label: 'Netherlands', status: 'planned' },
-      { label: 'Belgium', status: 'planned' },
-      { label: 'United Kingdom', status: 'planned' },
-      { label: 'United States', status: 'planned' }
-    ],
-    localizationExamples: [
-      { label: 'Date', value: '12.07.2026', tags: ['locale', 'date'] },
-      { label: 'Time', value: '14:25', tags: ['locale', 'time'] },
-      { label: 'Currency', value: '1.234,56 €', tags: ['currency'] },
-      { label: 'Decimal', value: '1.234,56', tags: ['locale', 'currency'] },
-      { label: 'Percentage', value: '35,7 %', tags: ['locale'] },
-      { label: 'Mobile phone', value: '+49 170 1234567', tags: ['phone'] },
-      { label: 'Landline', value: '+49 30 12345678', tags: ['phone'] },
-      { label: 'Postal code', value: '10117', tags: ['postal', 'addresses'] },
-      { label: 'Address example', value: 'Friedrichstraße 100, 10117 Berlin', tags: ['addresses'] },
-      { label: 'Example person name', value: 'Max Mustermann', tags: ['locale'] },
-      { label: 'Mainland time zone', value: 'Europe/Berlin', tags: ['time'] }
-    ],
-    addressExample: {
-      formatted: [
-        'Max Mustermann',
-        'Friedrichstraße 100',
-        '10117 Berlin',
-        'Germany'
+      "stats": [
+        {
+          "icon": "👥",
+          "label": "Population",
+          "valueKey": "population",
+          "tags": [
+            "people"
+          ]
+        },
+        {
+          "icon": "🏛",
+          "label": "Capital",
+          "valueKey": "capital",
+          "tags": [
+            "government"
+          ]
+        },
+        {
+          "icon": "🏙",
+          "label": "Largest city",
+          "valueKey": "largestCity",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🌍",
+          "label": "Continent",
+          "valueKey": "continent",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🗣",
+          "label": "Languages",
+          "valueKey": "languages",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "brandKey": "europeanUnion",
+          "label": "Region",
+          "valueKey": "region",
+          "tags": [
+            "government",
+            "locale"
+          ]
+        },
+        {
+          "brandKey": "iban",
+          "label": "Currency",
+          "valueKey": "currencyCode",
+          "detailKey": "currency",
+          "tags": [
+            "currency",
+            "payments"
+          ]
+        },
+        {
+          "icon": "☎",
+          "label": "Calling code",
+          "valueKey": "callingCode",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "Internet TLD",
+          "valueKey": "internetTld",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🕒",
+          "label": "UTC range",
+          "valueKey": "utcRange",
+          "tags": [
+            "time"
+          ]
+        }
       ],
-      fields: [
-        { label: 'Recipient', value: 'Max Mustermann', description: 'Recipient name, company, or department.' },
-        { label: 'Street and number', value: 'Friedrichstraße 100', description: 'German layouts place the street name before the house number.' },
-        { label: 'Postal code and City', value: '10117 Berlin', description: 'Five-digit numeric postal code (NNNNN) followed by city name.' },
-        { label: 'Country', value: 'Germany', description: 'Country label for international delivery.' }
-      ]
-    },
-    phoneExamples: [
-      { label: 'Mobile', value: '0170 1234567', description: 'German mobile network format display example.', tags: ['phone'] },
-      { label: 'Landline', value: '030 12345678', description: 'Berlin landline display example.', tags: ['phone'] },
-      { label: 'International mobile', value: '+49 170 1234567', description: 'International mobile format using country code +49.', tags: ['phone'] },
-      { label: 'International landline', value: '+49 30 12345678', description: 'International landline format for Berlin.', tags: ['phone'] },
-      { label: 'Normalized', value: '491701234567', description: 'Digits-only normalization for backend databases.', tags: ['phone', 'developer'] }
-    ],
-    integrationChecklist: [
-      'Locale de-DE configured',
-      'UTF-8 encoding preserved',
-      'Euro (EUR) formatting with comma decimals and dot separators',
-      'Steuer-ID validation checksum rules',
-      'USt-IdNr VAT ID format structure checks',
-      'Steuernummer state-specific validation checks',
-      'German postal code numeric format validation',
-      'Phone code +49 prefix parsing',
-      'SEPA direct debit mandate handling',
-      'Girocard and Giropay clearing routes'
-    ],
-    validationRules: [
-      { name: 'Steuer-ID (IdNr)', tags: ['identifiers', 'government'], points: ['11 digits total', 'Checksum uses modulo 11 algorithm', 'Assigned by Bundeszentralamt für Steuern (BZSt)'] },
-      { name: 'USt-IdNr', tags: ['identifiers', 'tax'], points: ['Starts with DE followed by 9 digits', 'Checksum uses ISO 7064 Mod 97,10 or similar validation'] },
-      { name: 'Steuernummer', tags: ['identifiers', 'tax'], points: ['Can be 10, 11, or 13 digits depending on federal state schema', 'Used primarily for regional tax offices'] },
-      { name: 'Postal code', tags: ['postal', 'addresses'], points: ['Exactly five numeric digits', 'No hyphens or alphabetical characters allowed'] },
-      { name: 'Phone', tags: ['phone'], points: ['Variable-length area codes between 2 and 5 digits', 'Zero prefix must be omitted in international formats'] },
-      { name: 'IBAN', tags: ['banking', 'payments'], points: ['German IBAN starts with DE followed by 2 control digits and 18-digit account details', 'Standard Mod 97,10 checksum check'] }
-    ],
-    commonMistakes: [
-      'Conflating Steuer-ID (personal) with Steuernummer (local tax office file number).',
-      'Expecting phone number area codes to have a fixed length (German area codes vary from 2 to 5 digits).',
-      'Omitting the space before the percent sign in formatting (e.g. using 35,7% instead of 35,7 %).',
-      'Formatting currency as €1.234,56 instead of the natural German 1.234,56 €.',
-      'Assuming postal codes starting with 0 do not exist (eastern Germany codes use leading zeros, e.g. Dresden is 01067).',
-      'Confusing Handelsregister numbers with personal tax or national identification numbers.'
-    ],
-    bankingOverview: [
-      { brandKey: 'iban', name: 'IBAN', status: 'available', tags: ['banking', 'payments'], description: 'DE-prefixed IBAN format is standard for international transfers.' },
-      { brandKey: 'sepa', name: 'SEPA', status: 'ready', tags: ['banking', 'payments'], description: 'Euro accounts in Germany support SEPA credit transfers and direct debits.' },
-      { brandKey: 'swift', name: 'SWIFT / BIC', status: 'ready', tags: ['banking'], description: 'Required for international non-SEPA transfers.' }
-    ],
-    localizationNotes: [
-      { name: 'Plural rules', description: 'German uses standard Germanic plural forms (one, other).', tags: ['locale'] },
-      { name: 'Week starts', description: 'Most German user interfaces expect Monday as the first day of week.', tags: ['locale', 'date'] },
-      { name: 'Calendar', description: 'Gregorian calendar is the ordinary civil calendar.', tags: ['locale', 'date'] },
-      { name: 'Unicode', description: 'Ensure support for German diacritics and special characters: ä, ö, ü, ß.', tags: ['locale', 'developer'] },
-      { name: 'Timezone', description: 'Use Europe/Berlin for global civil time in Germany.', tags: ['time', 'developer'] }
-    ],
-    ecosystem: [
-      { name: 'Steuer-ID', description: 'Personal tax identification number database.', tags: ['identifiers', 'government'] },
-      { name: 'USt-IdNr', description: 'Commercial VAT identification registry.', tags: ['identifiers', 'tax'] },
-      { name: 'Handelsregister', description: 'Commercial company registry.', tags: ['identifiers', 'government'] }
-    ],
-    highlights: [
-      'Germany uses de-DE locale for formatting.',
-      'EUR is formatted as 1.234,56 € with a space and trailing symbol.',
-      'Umlauts (ä, ö, ü) and ß must be supported.',
-      'Date format is DD.MM.YYYY.',
-      'Week starts on Monday.'
-    ],
-    developerNotes: [
-      'Validate German postal codes strictly as 5 digits.',
-      'Support variable-length area codes in phone validation.',
-      'Preserve case-sensitivity for character-coded Steuernummer configurations.'
-    ],
-    developerExamples: [
-      {
-        title: 'Java Locale',
-        language: 'java',
-        brandKey: 'java',
-        code: 'Locale.forLanguageTag("de-DE")',
-        note: 'Use BCP 47 locale tags for Java formatting APIs.'
+      "countryProfile": [
+        {
+          "icon": "🏷",
+          "label": "Native name",
+          "valueKey": "nativeName",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "👥",
+          "label": "Population",
+          "valueKey": "population",
+          "tags": [
+            "people"
+          ]
+        },
+        {
+          "icon": "▣",
+          "label": "Area",
+          "valueKey": "area",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🏛",
+          "label": "Capital",
+          "valueKey": "capital",
+          "tags": [
+            "government"
+          ]
+        },
+        {
+          "icon": "🏙",
+          "label": "Largest city",
+          "valueKey": "largestCity",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🌍",
+          "label": "Continent",
+          "valueKey": "continent",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🗣",
+          "label": "Languages",
+          "valueKey": "languages",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🚗",
+          "label": "Driving side",
+          "valueKey": "drivingSide",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "📏",
+          "label": "Measurement system",
+          "valueKey": "measurementSystem",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "📄",
+          "label": "Paper size",
+          "valueKey": "paperSize",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🔌",
+          "label": "Power plug types",
+          "valueKey": "powerPlugTypes",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "⚡",
+          "label": "Voltage",
+          "valueKey": "voltage",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "⏱",
+          "label": "Frequency",
+          "valueKey": "frequency",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🚨",
+          "label": "Emergency number",
+          "valueKey": "emergencyNumber",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "icon": "☎",
+          "label": "Calling code",
+          "valueKey": "callingCode",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "brandKey": "iban",
+          "label": "Currency",
+          "valueKey": "currencyCode",
+          "detailKey": "currency",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "icon": "🕒",
+          "label": "Timezone range",
+          "valueKey": "utcRange",
+          "tags": [
+            "time"
+          ]
+        },
+        {
+          "icon": "📅",
+          "label": "Week starts",
+          "valueKey": "weekStarts",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "↔",
+          "label": "RTL support",
+          "valueKey": "rtlSupport",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🔤",
+          "label": "Unicode locale",
+          "valueKey": "unicodeLocale",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "ICU locale",
+          "valueKey": "icuLocale",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "CLDR locale",
+          "valueKey": "cldrLocale",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "icon": "📐",
+          "label": "Metric vs Imperial",
+          "valueKey": "metricVsImperial",
+          "tags": [
+            "locale"
+          ]
+        }
+      ],
+      "quickActions": [
+        {
+          "label": "Copy Locale",
+          "valueKey": "locale"
+        },
+        {
+          "label": "Copy Currency Code",
+          "valueKey": "currencyCode"
+        },
+        {
+          "label": "Copy Currency Symbol",
+          "valueKey": "currencySymbol"
+        },
+        {
+          "label": "Copy Phone Code",
+          "valueKey": "callingCode"
+        },
+        {
+          "label": "Copy ISO2",
+          "valueKey": "iso2"
+        },
+        {
+          "label": "Copy ISO3",
+          "valueKey": "iso3"
+        },
+        {
+          "label": "Copy Numeric ISO",
+          "valueKey": "isoNumeric"
+        },
+        {
+          "label": "Copy Internet TLD",
+          "valueKey": "internetTld"
+        },
+        {
+          "label": "Copy Date Format",
+          "valueKey": "dateFormat"
+        },
+        {
+          "label": "Copy Postal Code Format",
+          "valueKey": "postalCodeFormat"
+        },
+        {
+          "label": "Copy Primary Time Zone",
+          "valueKey": "primaryTimeZone"
+        }
+      ],
+      "cheatSheet": [
+        {
+          "label": "ISO2",
+          "valueKey": "iso2",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "ISO3",
+          "valueKey": "iso3",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Numeric ISO",
+          "valueKey": "isoNumeric",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Locale",
+          "valueKey": "locale",
+          "icon": "🌐",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "label": "ICU locale",
+          "valueKey": "icuLocale",
+          "icon": "🌐",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "label": "Language",
+          "valueKey": "languages",
+          "icon": "🗣",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Currency",
+          "value": "Euro (EUR)",
+          "copyValueKey": "currencyCode",
+          "brandKey": "iban",
+          "tags": [
+            "currency",
+            "payments"
+          ]
+        },
+        {
+          "label": "Currency symbol",
+          "valueKey": "currencySymbol",
+          "icon": "💵",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "label": "Phone country code",
+          "valueKey": "callingCode",
+          "icon": "☎",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Internet TLD",
+          "valueKey": "internetTld",
+          "icon": "🌐",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "Date format",
+          "valueKey": "dateFormat",
+          "icon": "📅",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "label": "Time format",
+          "valueKey": "timeFormat",
+          "icon": "⏱",
+          "tags": [
+            "locale",
+            "time"
+          ]
+        },
+        {
+          "label": "Decimal separator",
+          "valueKey": "decimalSeparator",
+          "copyValue": "comma decimal separator",
+          "icon": "🔢",
+          "tags": [
+            "locale",
+            "currency"
+          ]
+        },
+        {
+          "label": "Thousands separator",
+          "valueKey": "thousandsSeparator",
+          "copyValue": "dot thousands separator",
+          "icon": "🔢",
+          "tags": [
+            "locale",
+            "currency"
+          ]
+        },
+        {
+          "label": "Address format",
+          "valueKey": "addressFormat",
+          "icon": "📍",
+          "tags": [
+            "addresses"
+          ]
+        },
+        {
+          "label": "Postal code format",
+          "valueKey": "postalCodeFormat",
+          "icon": "✉",
+          "tags": [
+            "postal",
+            "addresses"
+          ]
+        },
+        {
+          "label": "Primary time zone",
+          "valueKey": "primaryTimeZone",
+          "icon": "🕒",
+          "tags": [
+            "time"
+          ]
+        },
+        {
+          "label": "Time zones",
+          "valueKey": "utcRange",
+          "icon": "🕒",
+          "tags": [
+            "time"
+          ]
+        }
+      ],
+      "localFormats": [
+        {
+          "icon": "🪪",
+          "name": "DNI",
+          "status": "planned",
+          "category": "National identity",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "Documento Nacional de Identidad for Spanish citizens. Typical developer handling includes eight digits plus a control letter, preserving formatted and normalized representations.",
+          "related": [
+            "DNI Validator"
+          ]
+        },
+        {
+          "icon": "🪪",
+          "name": "NIE",
+          "status": "planned",
+          "category": "Foreigner identity",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "Número de Identidad de Extranjero used for foreigner identification contexts. Common patterns use X, Y, or Z prefix, seven digits, and a control letter.",
+          "related": [
+            "NIE Validator"
+          ]
+        },
+        {
+          "brandKey": "agenciaTributaria",
+          "name": "NIF",
+          "status": "planned",
+          "category": "Tax identifier",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "Número de Identificación Fiscal is the tax-identification concept. It may relate to DNI, NIE, or legal-entity identifiers, so do not treat it as one universal format.",
+          "related": [
+            "NIF Inspector"
+          ]
+        },
+        {
+          "brandKey": "agenciaTributaria",
+          "name": "CIF legacy",
+          "status": "planned",
+          "category": "Legacy business tax term",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "CIF is a historical term still present in legacy data and user language. Prefer current NIF terminology for legal-entity tax identifiers.",
+          "related": [
+            "Legacy CIF Inspector"
+          ]
+        },
+        {
+          "brandKey": "seguridadSocialEspana",
+          "name": "NAF / Social Security number",
+          "status": "planned",
+          "category": "Social security",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "High-level developer context for Spanish social-security affiliation numbers. Business meaning and verification require official systems."
+        },
+        {
+          "brandKey": "correosEspana",
+          "name": "Spanish postal code",
+          "status": "planned",
+          "category": "Postal",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "description": "Five-digit postal code. The first two digits broadly align with province or autonomous-city prefixes, but postal validation is not administrative validation.",
+          "related": [
+            "Spain Postal Code Validator"
+          ]
+        },
+        {
+          "icon": "☎",
+          "name": "Spanish phone numbers",
+          "status": "planned",
+          "category": "Phone",
+          "tags": [
+            "phone"
+          ],
+          "description": "Phone data uses country code +34. Mobile, landline, and service ranges need dedicated parsing rules before validation.",
+          "related": [
+            "Spain Phone Validator"
+          ]
+        },
+        {
+          "brandKey": "iban",
+          "name": "Spanish IBAN",
+          "status": "available",
+          "category": "Banking",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Spanish IBANs use the ES country prefix. The existing global IBAN Validator route is available for generic IBAN checks.",
+          "related": [
+            "IBAN Validator"
+          ]
+        },
+        {
+          "brandKey": "swift",
+          "name": "BIC / SWIFT",
+          "status": "ready",
+          "category": "Banking",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "BIC/SWIFT codes identify financial institutions for international banking contexts. Do not infer domestic account ownership from a BIC."
+        },
+        {
+          "brandKey": "vies",
+          "name": "EU VAT / VIES",
+          "status": "planned",
+          "category": "Tax and business",
+          "tags": [
+            "tax",
+            "government"
+          ],
+          "description": "Spanish VAT identifier syntax and EU VIES status checks are different concerns. VIES is a business-status lookup, not just string validation.",
+          "related": [
+            "Spain VAT / VIES Workbench"
+          ]
+        },
+        {
+          "icon": "🚗",
+          "name": "Vehicle registration",
+          "status": "planned",
+          "category": "Vehicle",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "Informational overview for Spanish vehicle registration formats. Do not implement plate validation without a dedicated workbench spec."
+        },
+        {
+          "brandKey": "bizum",
+          "name": "Bizum",
+          "status": "planned",
+          "category": "Payments",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "description": "Domestic instant-payment experience commonly tied to Spanish banks and mobile numbers. Future tools should be informational unless a meaningful inspector is specified.",
+          "related": [
+            "Bizum Reference / Inspector"
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "brandKey": "iban",
+          "title": "EUR and Spanish IBAN",
+          "status": "available",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "text": "Spain uses EUR and participates in IBAN-based European banking flows. Use the global IBAN Validator for generic checksum-level checks only."
+        },
+        {
+          "brandKey": "sepa",
+          "title": "SEPA",
+          "status": "ready",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "text": "SEPA credit transfer and direct debit contexts matter for euro-denominated domestic and cross-border payment integrations."
+        },
+        {
+          "brandKey": "swift",
+          "title": "BIC / SWIFT",
+          "status": "ready",
+          "tags": [
+            "banking"
+          ],
+          "text": "International transfers may require BIC/SWIFT details in addition to account identifiers and payment purpose data."
+        },
+        {
+          "brandKey": "bizum",
+          "title": "Bizum",
+          "status": "planned",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "text": "Bizum appears in Spanish consumer payment UX. Treat it as future product research, not a validation feature in this hub."
+        },
+        {
+          "icon": "💳",
+          "title": "Card payments",
+          "status": "ready",
+          "tags": [
+            "payments"
+          ],
+          "text": "Card flows use global payment-network behavior plus Spanish locale display conventions for amounts, receipts, and dates."
+        },
+        {
+          "icon": "🏦",
+          "title": "Direct debit",
+          "status": "planned",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "text": "Direct debit usually intersects with SEPA mandates, creditor identifiers, account data, and authorization state."
+        },
+        {
+          "brandKey": "vies",
+          "title": "EU VAT / VIES",
+          "status": "planned",
+          "tags": [
+            "tax",
+            "payments"
+          ],
+          "text": "VAT number format checks and EU VIES business-status lookups must remain separate in future workbenches."
+        }
+      ],
+      "officialResources": [
+        {
+          "brandKey": "gobiernoEspana",
+          "label": "Gobierno de España / Administracion.gob.es",
+          "status": "available",
+          "tags": [
+            "government"
+          ],
+          "note": "Primary government entry points for Spanish public administration references. Use official pages before deep-linking."
+        },
+        {
+          "icon": "🪪",
+          "label": "Ministerio del Interior",
+          "status": "available",
+          "tags": [
+            "government",
+            "identifiers"
+          ],
+          "note": "Authoritative starting point for DNI and NIE public-service context. Confirm exact procedural URLs before linking deep references."
+        },
+        {
+          "brandKey": "agenciaTributaria",
+          "label": "Agencia Tributaria",
+          "status": "available",
+          "tags": [
+            "government",
+            "tax",
+            "identifiers"
+          ],
+          "note": "Tax authority for NIF, VAT, and fiscal-identification context. Keep legal interpretation out of this page."
+        },
+        {
+          "brandKey": "seguridadSocialEspana",
+          "label": "Seguridad Social",
+          "status": "available",
+          "tags": [
+            "government",
+            "identifiers"
+          ],
+          "note": "Official social-security portal for affiliation and contribution contexts."
+        },
+        {
+          "brandKey": "bancoEspana",
+          "label": "Banco de España",
+          "status": "available",
+          "tags": [
+            "government",
+            "banking"
+          ],
+          "note": "Central bank and banking-system reference point, including payment-system context."
+        },
+        {
+          "brandKey": "correosEspana",
+          "label": "Correos",
+          "status": "available",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "note": "Postal authority and official postal-code lookup starting point."
+        },
+        {
+          "brandKey": "vies",
+          "label": "European Commission VIES",
+          "status": "available",
+          "tags": [
+            "tax",
+            "government"
+          ],
+          "note": "Official EU VAT number validation entry point. Use for business-status lookup, not local syntax alone."
+        },
+        {
+          "brandKey": "sepa",
+          "label": "European Payments Council / SEPA",
+          "status": "available",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "note": "Reference source for SEPA payment scheme context."
+        }
+      ],
+      "plannedWorkbenches": [
+        {
+          "name": "DNI Validator",
+          "status": "planned",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "Explain DNI structure, normalization, and check-letter behavior after a dedicated product spec is approved."
+        },
+        {
+          "name": "NIE Validator",
+          "status": "planned",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "description": "Explain NIE prefix, digits, and control-letter behavior without identity verification claims."
+        },
+        {
+          "name": "NIF Inspector",
+          "status": "planned",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "Inspect NIF type context for personal and legal-entity identifiers."
+        },
+        {
+          "name": "Legacy CIF Inspector",
+          "status": "planned",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "description": "Help developers handle legacy CIF-labeled data while migrating terminology to current NIF language."
+        },
+        {
+          "name": "Spain Phone Validator",
+          "status": "planned",
+          "tags": [
+            "phone"
+          ],
+          "description": "Validate Spanish phone display and normalized +34 forms after a dedicated spec."
+        },
+        {
+          "name": "Spain Postal Code Validator",
+          "status": "planned",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "description": "Explain five-digit postal codes and province-prefix context without claiming address validity."
+        },
+        {
+          "name": "Spain VAT / VIES Workbench",
+          "status": "planned",
+          "tags": [
+            "tax",
+            "government"
+          ],
+          "description": "Separate VAT syntax checks from VIES business-status lookup and audit notes."
+        },
+        {
+          "name": "Spanish IBAN Tools",
+          "status": "planned",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Country-specific explanations around ES IBANs, domestic context, and SEPA usage."
+        },
+        {
+          "name": "Bizum Reference / Inspector",
+          "status": "planned",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "description": "Only after a clear spec defines what can be inspected safely without payment initiation or bank access."
+        }
+      ],
+      "relatedGlobalTools": [
+        {
+          "label": "JSON Formatter",
+          "path": "tools/json-formatter/",
+          "icon": "▣",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "JWT Decoder",
+          "path": "tools/jwt-decoder/",
+          "brandKey": "jwt",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "Base64 Encoder",
+          "path": "tools/base64-encoder/",
+          "icon": "⟲",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "URL Encoder",
+          "path": "tools/url-encoder/",
+          "icon": "🔗",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "Regex Tester",
+          "path": "tools/regex-tester/",
+          "icon": ".*",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "label": "IBAN Validator",
+          "path": "tools/iban-validator/",
+          "brandKey": "iban",
+          "tags": [
+            "banking"
+          ]
+        }
+      ],
+      "relatedCategories": [
+        {
+          "label": "Finance",
+          "path": "categories/finance/",
+          "tags": [
+            "payments",
+            "banking"
+          ]
+        },
+        {
+          "label": "National Identifiers",
+          "path": "categories/national-identifiers/",
+          "tags": [
+            "identifiers"
+          ]
+        },
+        {
+          "label": "Developer Tools",
+          "path": "categories/developer-tools/",
+          "tags": [
+            "developer"
+          ]
+        }
+      ],
+      "futureCountryPages": [
+        {
+          "label": "Brazil",
+          "status": "available",
+          "path": "brazil/"
+        },
+        {
+          "label": "Poland",
+          "status": "available",
+          "path": "poland/"
+        },
+        {
+          "label": "Germany",
+          "status": "planned"
+        },
+        {
+          "label": "France",
+          "status": "planned"
+        },
+        {
+          "label": "Portugal",
+          "status": "planned"
+        },
+        {
+          "label": "Italy",
+          "status": "planned"
+        },
+        {
+          "label": "Netherlands",
+          "status": "planned"
+        },
+        {
+          "label": "Belgium",
+          "status": "planned"
+        },
+        {
+          "label": "United Kingdom",
+          "status": "planned"
+        },
+        {
+          "label": "United States",
+          "status": "planned"
+        },
+        {
+          "label": "Canada",
+          "status": "planned"
+        },
+        {
+          "label": "Mexico",
+          "status": "planned"
+        },
+        {
+          "label": "Argentina",
+          "status": "planned"
+        },
+        {
+          "label": "Chile",
+          "status": "planned"
+        },
+        {
+          "label": "Japan",
+          "status": "planned"
+        },
+        {
+          "label": "Australia",
+          "status": "planned"
+        },
+        {
+          "label": "India",
+          "status": "planned"
+        },
+        {
+          "label": "Ukraine",
+          "status": "planned"
+        }
+      ],
+      "localizationExamples": [
+        {
+          "label": "Date",
+          "value": "31/12/2026",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "label": "Time",
+          "value": "14:25",
+          "tags": [
+            "locale",
+            "time"
+          ]
+        },
+        {
+          "label": "Currency",
+          "value": "1.234,56 €",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "label": "Decimal",
+          "value": "1.234,56",
+          "tags": [
+            "locale",
+            "currency"
+          ]
+        },
+        {
+          "label": "Percentage",
+          "value": "35,7 %",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Mobile phone",
+          "value": "+34 612 34 56 78",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Landline",
+          "value": "+34 91 123 45 67",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Postal code",
+          "value": "28013",
+          "tags": [
+            "postal",
+            "addresses"
+          ]
+        },
+        {
+          "label": "Address example",
+          "value": "Calle Mayor, 10, 2º B, 28013 Madrid",
+          "tags": [
+            "addresses"
+          ]
+        },
+        {
+          "label": "Example person name",
+          "value": "Lucía Martín",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Mainland time zone",
+          "value": "Europe/Madrid",
+          "tags": [
+            "time"
+          ]
+        },
+        {
+          "label": "Canary Islands note",
+          "value": "Europe/Madrid is not correct for Canary Islands local time",
+          "tags": [
+            "time"
+          ]
+        }
+      ],
+      "addressExample": {
+        "formatted": [
+          "Lucía Martín",
+          "Calle Mayor, 10, 2º B",
+          "28013 Madrid",
+          "Madrid",
+          "Spain"
+        ],
+        "fields": [
+          {
+            "label": "Recipient",
+            "value": "Lucía Martín",
+            "description": "Fictional person or organization receiving mail."
+          },
+          {
+            "label": "Street type and name",
+            "value": "Calle Mayor",
+            "description": "Spanish addresses often include the street type before the street name."
+          },
+          {
+            "label": "Building number",
+            "value": "10",
+            "description": "Number within the street."
+          },
+          {
+            "label": "Floor and door",
+            "value": "2º B",
+            "description": "Common optional apartment or unit context."
+          },
+          {
+            "label": "Postal code",
+            "value": "28013",
+            "description": "Five-digit postal code. The prefix 28 is associated with Madrid province context."
+          },
+          {
+            "label": "Municipality",
+            "value": "Madrid",
+            "description": "City or municipality for display and delivery."
+          },
+          {
+            "label": "Province",
+            "value": "Madrid",
+            "description": "Useful for structured data and disambiguation."
+          },
+          {
+            "label": "Autonomous community",
+            "value": "Community of Madrid",
+            "description": "Optional structured regional field depending on the use case."
+          },
+          {
+            "label": "Country",
+            "value": "Spain",
+            "description": "Country label for international mail and cross-border records."
+          }
+        ]
       },
-      {
-        title: 'Java currency format',
-        language: 'java',
-        brandKey: 'java',
-        code: 'NumberFormat.getCurrencyInstance(Locale.forLanguageTag("de-DE")).format(value)',
-        note: 'Formats values using German currency conventions.'
-      },
-      {
-        title: 'JavaScript Intl Currency',
-        language: 'javascript',
-        brandKey: 'javascript',
-        code: 'new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" })',
-        note: 'Formats EUR values with de-DE separators and currency display.'
-      },
-      {
-        title: 'JavaScript Date',
-        language: 'javascript',
-        brandKey: 'javascript',
-        code: 'new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin" })',
-        note: 'Use Europe/Berlin timezone for Germany local dates.'
-      },
-      {
-        title: 'Python locale',
-        language: 'python',
-        brandKey: 'python',
-        code: 'locale.setlocale(locale.LC_ALL, "de_DE.UTF-8")',
-        note: 'Requires the de_DE locale to be installed on the host operating system.'
-      },
-      {
-        title: 'Go language tag',
-        language: 'go',
-        brandKey: 'go',
-        code: 'language.MustParse("de-DE")',
-        note: 'Use golang.org/x/text/language package for locale representation.'
-      }
-    ]
+      "phoneExamples": [
+        {
+          "label": "Mobile",
+          "value": "612 34 56 78",
+          "description": "Informational mobile display example. Do not treat this as complete validation.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Landline",
+          "value": "91 123 45 67",
+          "description": "Madrid-style landline display example using national formatting.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "International mobile",
+          "value": "+34 612 34 56 78",
+          "description": "Use +34 for international display.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "International landline",
+          "value": "+34 91 123 45 67",
+          "description": "International display form for a landline example.",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "label": "Normalized",
+          "value": "34612345678",
+          "description": "Digits-only normalization is useful for storage and comparison, but not full validation.",
+          "tags": [
+            "phone",
+            "developer"
+          ]
+        }
+      ],
+      "integrationChecklist": [
+        "Locale configured",
+        "UTF-8",
+        "Currency formatting",
+        "Date formatting",
+        "DNI and NIE terminology",
+        "NIF versus legacy CIF terminology",
+        "Postal code display",
+        "Phone formatting",
+        "Mainland versus Canary Islands timezone",
+        "Regional language handling",
+        "SEPA and IBAN context",
+        "VIES versus local VAT syntax"
+      ],
+      "validationRules": [
+        {
+          "name": "DNI",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "points": [
+            "Eight digits plus control letter in common developer contexts",
+            "Formatted and normalized forms should be stored separately",
+            "Check-letter behavior is not identity verification"
+          ]
+        },
+        {
+          "name": "NIE",
+          "tags": [
+            "identifiers",
+            "government"
+          ],
+          "points": [
+            "Common prefix letters include X, Y, and Z",
+            "Uses digits and a control letter",
+            "Foreigner identification context differs from Spanish citizen DNI"
+          ]
+        },
+        {
+          "name": "NIF",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "points": [
+            "Tax identification concept, not one universal string shape",
+            "May represent personal or legal-entity contexts",
+            "Business verification requires authoritative systems"
+          ]
+        },
+        {
+          "name": "CIF legacy",
+          "tags": [
+            "identifiers",
+            "tax"
+          ],
+          "points": [
+            "Legacy term appears in old data and user vocabulary",
+            "Current terminology should prefer NIF for legal entities",
+            "Migration logic should be explicit"
+          ]
+        },
+        {
+          "name": "Postal code",
+          "tags": [
+            "postal",
+            "addresses"
+          ],
+          "points": [
+            "Five digits",
+            "Province-prefix context is useful but not enough for address validation",
+            "Correos remains the official postal reference"
+          ]
+        },
+        {
+          "name": "Phone",
+          "tags": [
+            "phone"
+          ],
+          "points": [
+            "Country code +34",
+            "Mobile, landline, and service ranges differ",
+            "Normalize before comparison but preserve display format"
+          ]
+        },
+        {
+          "name": "IBAN",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "points": [
+            "Spanish IBANs start with ES",
+            "Checksum validation does not prove account ownership",
+            "SEPA and domestic payment context still matters"
+          ]
+        },
+        {
+          "name": "VAT / VIES",
+          "tags": [
+            "tax",
+            "government"
+          ],
+          "points": [
+            "Spanish VAT syntax and EU VIES status lookup are separate",
+            "VIES responses are business-status checks",
+            "Do not cache regulatory status without a product spec"
+          ]
+        }
+      ],
+      "commonMistakes": [
+        "DNI, NIE, NIF, and legacy CIF are not interchangeable terms.",
+        "Formatting validation is not identity verification.",
+        "VIES status lookup is different from local syntax validation.",
+        "Mainland Spain and the Canary Islands do not always share the same local time.",
+        "Spain has multiple co-official languages in relevant autonomous communities.",
+        "Preserve accents and use locale-aware collation for names and addresses.",
+        "Postal code is not the same as province or administrative validation.",
+        "IBAN checksum validation does not prove account ownership.",
+        "Do not imply Bizum payment initiation or bank access from an informational page."
+      ],
+      "bankingOverview": [
+        {
+          "brandKey": "iban",
+          "name": "IBAN",
+          "status": "available",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Global IBAN validation exists; Spain-specific interpretation remains a future workbench."
+        },
+        {
+          "brandKey": "sepa",
+          "name": "SEPA",
+          "status": "ready",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Spain participates in SEPA euro payment schemes. Future tools may explain mandates and transfer contexts."
+        },
+        {
+          "brandKey": "swift",
+          "name": "SWIFT / BIC",
+          "status": "ready",
+          "tags": [
+            "banking"
+          ],
+          "description": "Relevant for international bank identification and cross-border transfer metadata."
+        },
+        {
+          "brandKey": "bizum",
+          "name": "Bizum",
+          "status": "planned",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "description": "Domestic instant-payment ecosystem. No parsing or payment behavior is implemented."
+        },
+        {
+          "icon": "🏦",
+          "name": "Domestic account context",
+          "status": "planned",
+          "tags": [
+            "banking"
+          ],
+          "description": "Legacy domestic bank/account identifiers can appear in old records even when IBAN is the modern exchange format."
+        },
+        {
+          "brandKey": "vies",
+          "name": "VIES",
+          "status": "planned",
+          "tags": [
+            "tax",
+            "government"
+          ],
+          "description": "Useful for EU VAT business-status checks. It is not a substitute for local tax advice."
+        },
+        {
+          "icon": "💳",
+          "name": "Cards",
+          "status": "ready",
+          "tags": [
+            "payments"
+          ],
+          "description": "Card acceptance and receipts should still localize EUR amounts, dates, and decimal separators."
+        }
+      ],
+      "localizationNotes": [
+        {
+          "name": "Plural rules",
+          "description": "Spanish pluralization should use locale-aware message formatting.",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "name": "Week starts",
+          "description": "Most Spanish user interfaces expect Monday as the first day of week.",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "name": "Calendar",
+          "description": "Gregorian calendar is the ordinary civil calendar.",
+          "tags": [
+            "locale",
+            "date"
+          ]
+        },
+        {
+          "name": "Sorting",
+          "description": "Use locale-aware collation and preserve accents such as á, é, í, ó, ú, ü, and ñ.",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "name": "Regional languages",
+          "description": "Catalan/Valencian, Galician, Basque, and Aranese may be co-official in relevant regions.",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "name": "Unicode",
+          "description": "Use UTF-8 and preserve accents and ordinal markers in names and addresses.",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "name": "ICU",
+          "description": "ICU locale commonly appears as es_ES.",
+          "tags": [
+            "locale",
+            "developer"
+          ]
+        },
+        {
+          "name": "Timezone",
+          "description": "Use Europe/Madrid for mainland and Balearic contexts; Canary Islands need a separate timezone choice.",
+          "tags": [
+            "time",
+            "developer"
+          ]
+        }
+      ],
+      "ecosystem": [
+        {
+          "name": "DNI",
+          "description": "National identity context for Spanish citizens. Future validators must avoid identity-verification claims.",
+          "tags": [
+            "identifiers",
+            "government"
+          ]
+        },
+        {
+          "name": "NIE",
+          "description": "Foreigner identification context used in many administrative and commercial flows.",
+          "tags": [
+            "identifiers",
+            "government"
+          ]
+        },
+        {
+          "name": "NIF",
+          "description": "Tax identification concept that intersects with DNI, NIE, and legal-entity identifiers.",
+          "tags": [
+            "identifiers",
+            "tax"
+          ]
+        },
+        {
+          "name": "SEPA",
+          "description": "Payment ecosystem connecting EUR, IBAN, direct debit, credit transfers, and cross-border flows.",
+          "tags": [
+            "payments",
+            "banking"
+          ]
+        },
+        {
+          "name": "Bizum",
+          "description": "Domestic instant-payment experience commonly encountered by Spanish users.",
+          "tags": [
+            "payments",
+            "banking"
+          ]
+        },
+        {
+          "name": "Correos",
+          "description": "Postal authority context for postal-code and addressing workflows.",
+          "tags": [
+            "postal",
+            "addresses"
+          ]
+        },
+        {
+          "name": "VIES",
+          "description": "EU VAT validation service context for business identifiers.",
+          "tags": [
+            "tax",
+            "government"
+          ]
+        },
+        {
+          "name": "Regional languages",
+          "description": "Localization work may need Spanish plus co-official regional languages.",
+          "tags": [
+            "locale"
+          ]
+        }
+      ],
+      "highlights": [
+        "Spain commonly uses the es-ES locale for Spanish display conventions.",
+        "Dates are commonly written as DD/MM/YYYY and times use a 24-hour clock.",
+        "EUR uses comma decimals and dot thousands separators in Spanish display.",
+        "DNI, NIE, NIF, and legacy CIF have different meanings and should not be conflated.",
+        "Spanish postal codes use five digits, but postal syntax is not address verification.",
+        "Spain participates in SEPA and uses IBAN for modern bank account exchange.",
+        "Bizum is important in consumer payment UX but no Bizum tool is implemented yet.",
+        "Mainland Spain and the Canary Islands differ in local time.",
+        "Regional co-official languages can affect labels, names, sorting, and user expectations."
+      ],
+      "developerNotes": [
+        "Use es-ES formatting for user-facing currency, date, time, and number display unless a regional locale is explicitly selected.",
+        "Store normalized identifiers separately from display masks when future validator specs exist.",
+        "Treat DNI, NIE, NIF, VAT, phone, postal code, and IBAN as separate workflows.",
+        "Keep VIES business-status lookup separate from local syntax checks.",
+        "Confirm official references before deep-linking regulatory, tax, identity, postal, or banking documentation."
+      ],
+      "developerExamples": [
+        {
+          "title": "Java Locale",
+          "language": "java",
+          "brandKey": "java",
+          "code": "Locale.forLanguageTag(\"es-ES\")",
+          "note": "Use BCP 47 locale tags for Java formatting APIs."
+        },
+        {
+          "title": "Java currency format",
+          "language": "java",
+          "brandKey": "java",
+          "code": "NumberFormat.getCurrencyInstance(Locale.forLanguageTag(\"es-ES\")).format(value)",
+          "note": "Formats values using Spanish currency conventions."
+        },
+        {
+          "title": "JavaScript Intl Currency",
+          "language": "javascript",
+          "brandKey": "javascript",
+          "code": "new Intl.NumberFormat(\"es-ES\", { style: \"currency\", currency: \"EUR\" })",
+          "note": "Formats EUR values with es-ES separators and currency display."
+        },
+        {
+          "title": "JavaScript Date",
+          "language": "javascript",
+          "brandKey": "javascript",
+          "code": "new Intl.DateTimeFormat(\"es-ES\", { timeZone: \"Europe/Madrid\" })",
+          "note": "Use an explicit timezone when records may cross mainland and Canary Islands contexts."
+        },
+        {
+          "title": "TypeScript locale constant",
+          "language": "typescript",
+          "brandKey": "typescript",
+          "code": "const spainLocale = 'es-ES' as const;",
+          "note": "Keep locale constants explicit when building typed formatting helpers."
+        },
+        {
+          "title": "Python locale",
+          "language": "python",
+          "brandKey": "python",
+          "code": "locale.setlocale(locale.LC_ALL, \"es_ES.UTF-8\")",
+          "note": "Requires the es_ES locale to be installed on the host operating system. Babel may be safer for portable apps."
+        },
+        {
+          "title": "Go language tag",
+          "language": "go",
+          "brandKey": "go",
+          "code": "language.MustParse(\"es-ES\")",
+          "note": "Use golang.org/x/text/language when locale-aware behavior is needed."
+        },
+        {
+          "title": "C# culture",
+          "language": "csharp",
+          "brandKey": "csharp",
+          "code": "CultureInfo.GetCultureInfo(\"es-ES\")",
+          "note": "Use CultureInfo for formatting Spanish dates, numbers, and currency."
+        },
+        {
+          "title": "Kotlin Locale",
+          "language": "kotlin",
+          "brandKey": "kotlin",
+          "code": "Locale.forLanguageTag(\"es-ES\")",
+          "note": "Kotlin on the JVM can use Java Locale APIs."
+        },
+        {
+          "title": "ICU locale",
+          "language": "text",
+          "code": "es_ES",
+          "note": "Common ICU locale identifier for Spanish in Spain."
+        },
+        {
+          "title": "PostgreSQL formatting note",
+          "language": "sql",
+          "brandKey": "postgresql",
+          "code": "to_char(amount, 'FM999G999G990D00')",
+          "note": "Database formatting depends on locale/session settings; prefer app-layer Intl formatting when possible."
+        },
+        {
+          "title": "JSON payload locale",
+          "language": "json",
+          "code": "{\n  \"country\": \"ES\",\n  \"locale\": \"es-ES\",\n  \"currency\": \"EUR\",\n  \"timeZone\": \"Europe/Madrid\"\n}",
+          "note": "Formatting examples only; not a validation schema."
+        },
+        {
+          "title": "Currency formatting note",
+          "language": "text",
+          "code": "EUR in es-ES display commonly uses comma decimals and dot thousands separators.",
+          "note": "Keep stored numeric values separate from localized display strings."
+        },
+        {
+          "title": "Date formatting note",
+          "language": "text",
+          "code": "DD/MM/YYYY",
+          "note": "Validate machine-readable dates separately from localized presentation."
+        }
+      ],
+      "jsonExamples": [
+        {
+          "title": "Customer",
+          "code": "{\n  \"name\": \"Lucía Martín\",\n  \"country\": \"ES\",\n  \"locale\": \"es-ES\"\n}"
+        },
+        {
+          "title": "Address",
+          "code": "{\n  \"streetType\": \"Calle\",\n  \"streetName\": \"Mayor\",\n  \"buildingNumber\": \"10\",\n  \"floorDoor\": \"2º B\",\n  \"postalCode\": \"28013\",\n  \"municipality\": \"Madrid\",\n  \"province\": \"Madrid\",\n  \"autonomousCommunity\": \"Community of Madrid\"\n}"
+        },
+        {
+          "title": "DNI test fixture",
+          "code": "{\n  \"type\": \"DNI\",\n  \"formatted\": \"00000000-T\",\n  \"normalized\": \"00000000T\",\n  \"fixture\": true,\n  \"note\": \"Fictional test value; not identity verification.\"\n}"
+        },
+        {
+          "title": "Phone",
+          "code": "{\n  \"countryCode\": \"+34\",\n  \"nationalDisplay\": \"612 34 56 78\",\n  \"normalized\": \"34612345678\"\n}"
+        },
+        {
+          "title": "Banking context",
+          "code": "{\n  \"country\": \"ES\",\n  \"currency\": \"EUR\",\n  \"ibanCountryPrefix\": \"ES\",\n  \"paymentArea\": \"SEPA\",\n  \"ownershipVerified\": false\n}"
+        },
+        {
+          "title": "VAT context",
+          "code": "{\n  \"country\": \"ES\",\n  \"vatId\": \"ESX0000000T\",\n  \"syntaxChecked\": false,\n  \"viesStatusChecked\": false,\n  \"fixture\": true\n}"
+        }
+      ],
+      "availableWorkbenches": {}
+    }
   };
 
   const COUNTRY_PORTAL_CATALOG = [
     {
-      id: 'brazil',
-      flag: '🇧🇷',
-      name: 'Brazil',
-      iso2: 'BR',
-      iso3: 'BRA',
-      continent: 'South America',
-      region: 'South America',
-      language: 'Portuguese',
-      currency: 'BRL',
-      currencyName: 'Brazilian real',
-      status: 'available',
-      featured: true,
-      reference: true,
-      summary: COUNTRY_HUBS.brazil.description,
-      identifiers: ['CPF', 'CNPJ', 'CEP', 'RG', 'CNH', 'RENAVAM'],
-      payments: ['PIX', 'bank codes', 'boleto', 'SWIFT'],
-      features: ['payments', 'identity', 'government', 'banking'],
-      availableWorkbenches: ['Brazil Pix Validator'],
-      plannedWorkbenches: COUNTRY_HUBS.brazil.plannedWorkbenches.map((item) => item.name),
-      completion: 100,
-      coordinates: { x: 39, y: 67 }
+      "id": "argentina",
+      "flag": "🇦🇷",
+      "name": "Argentina",
+      "iso2": "AR",
+      "iso3": "ARG",
+      "continent": "South America",
+      "region": "South America",
+      "language": "Spanish",
+      "currency": "ARS",
+      "currencyName": "Argentine peso",
+      "status": "planned",
+      "summary": "Future hub for Argentinian tax identifiers, banking aliases, and localization details.",
+      "identifiers": [
+        "CUIT",
+        "CUIL",
+        "DNI"
+      ],
+      "payments": [
+        "CBU",
+        "CVU",
+        "Alias"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "CUIT Validator",
+        "CBU Notes"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 39,
+        "y": 83
+      }
     },
     {
-      id: 'poland',
-      flag: '🇵🇱',
-      name: 'Poland',
-      iso2: 'PL',
-      iso3: 'POL',
-      continent: 'Europe',
-      region: 'Europe',
-      language: 'Polish',
-      currency: 'PLN',
-      currencyName: 'Polish zloty',
-      status: 'available',
-      summary: 'Developer intelligence for Polish identifiers, locale conventions, and EU-oriented validation workflows.',
-      identifiers: ['PESEL', 'NIP', 'REGON'],
-      payments: ['IBAN', 'BLIK', 'SEPA'],
-      features: ['identity', 'government', 'banking'],
-      availableWorkbenches: ['PESEL Validator'],
-      plannedWorkbenches: ['NIP Validator', 'REGON Validator', 'Polish IBAN Notes'],
-      completion: 35,
-      coordinates: { x: 52, y: 34 }
+      "id": "austria",
+      "flag": "🇦🇹",
+      "name": "Austria",
+      "iso2": "AT",
+      "iso3": "AUT",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "German",
+      "currency": "EUR",
+      "currencyName": "Euro",
+      "status": "planned",
+      "summary": "Future hub for Austrian localization, identity, tax, and EU banking conventions.",
+      "identifiers": [
+        "UID",
+        "SVNR"
+      ],
+      "payments": [
+        "IBAN",
+        "SEPA"
+      ],
+      "features": [
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "Austrian VAT ID Notes"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 51,
+        "y": 37
+      }
     },
     {
-      id: 'spain',
-      flag: '🇪🇸',
-      name: 'Spain',
-      nativeName: 'España',
-      iso2: 'ES',
-      iso3: 'ESP',
-      continent: 'Europe',
-      region: 'Europe',
-      language: 'Spanish / regional co-official languages',
-      currency: 'EUR',
-      currencyName: 'Euro',
-      status: 'inProgress',
-      summary: COUNTRY_HUBS.spain.description,
-      identifiers: ['DNI', 'NIE', 'NIF', 'CIF legacy', 'NAF', 'postal code', 'phone'],
-      payments: ['IBAN', 'SEPA', 'SWIFT', 'Bizum', 'VIES'],
-      features: ['payments', 'identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: COUNTRY_HUBS.spain.plannedWorkbenches.map((item) => item.name),
-      completion: 68,
-      coordinates: { x: 49, y: 41 }
-    },
-
-    {
-      id: 'france',
-      flag: '🇫🇷',
-      name: 'France',
-      iso2: 'FR',
-      iso3: 'FRA',
-      continent: 'Europe',
-      region: 'Europe',
-      language: 'French',
-      currency: 'EUR',
-      currencyName: 'Euro',
-      status: 'planned',
-      summary: 'Future hub for French identifiers, localization, postal formats, and EU payment notes.',
-      identifiers: ['NIR', 'SIREN', 'SIRET'],
-      payments: ['IBAN', 'SEPA'],
-      features: ['identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['SIREN Validator', 'SIRET Validator'],
-      completion: 20,
-      coordinates: { x: 49, y: 38 }
+      "id": "belgium",
+      "flag": "🇧🇪",
+      "name": "Belgium",
+      "iso2": "BE",
+      "iso3": "BEL",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Dutch / French / German",
+      "currency": "EUR",
+      "currencyName": "Euro",
+      "status": "planned",
+      "summary": "Future hub for Belgian multilingual locale, identifiers, VAT, and EU payment context.",
+      "identifiers": [
+        "national number",
+        "VAT"
+      ],
+      "payments": [
+        "IBAN",
+        "SEPA"
+      ],
+      "features": [
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "Belgian National Number Notes"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 50,
+        "y": 35
+      }
     },
     {
-      id: 'austria',
-      flag: '🇦🇹',
-      name: 'Austria',
-      iso2: 'AT',
-      iso3: 'AUT',
-      continent: 'Europe',
-      region: 'Europe',
-      language: 'German',
-      currency: 'EUR',
-      currencyName: 'Euro',
-      status: 'planned',
-      summary: 'Future hub for Austrian localization, identity, tax, and EU banking conventions.',
-      identifiers: ['UID', 'SVNR'],
-      payments: ['IBAN', 'SEPA'],
-      features: ['identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['Austrian VAT ID Notes'],
-      completion: 20,
-      coordinates: { x: 51, y: 37 }
+      "id": "brazil",
+      "flag": "🇧🇷",
+      "name": "Brazil",
+      "iso2": "BR",
+      "iso3": "BRA",
+      "continent": "South America",
+      "region": "South America",
+      "language": "Portuguese",
+      "currency": "BRL",
+      "currencyName": "Brazilian real",
+      "status": "available",
+      "featured": true,
+      "reference": true,
+      "summary": "Developer intelligence for Brazilian identifiers, payments, banking formats, locale conventions, and official systems.",
+      "identifiers": [
+        "CPF",
+        "CNPJ",
+        "CEP",
+        "RG",
+        "CNH",
+        "RENAVAM"
+      ],
+      "payments": [
+        "PIX",
+        "bank codes",
+        "boleto",
+        "SWIFT"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Brazil Pix Validator"
+      ],
+      "plannedWorkbenches": [
+        "PIX Workbench",
+        "CPF Validator",
+        "CNPJ Validator",
+        "CEP Lookup",
+        "Brazil Phone Validator",
+        "Brazil Banking Tools"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 39,
+        "y": 67
+      }
     },
     {
-      id: 'japan',
-      flag: '🇯🇵',
-      name: 'Japan',
-      iso2: 'JP',
-      iso3: 'JPN',
-      continent: 'Asia',
-      region: 'Asia',
-      language: 'Japanese',
-      currency: 'JPY',
-      currencyName: 'Japanese yen',
-      status: 'planned',
-      summary: 'Future hub for Japanese localization, address formats, era dates, and payment context.',
-      identifiers: ['My Number', 'postal code'],
-      payments: ['bank codes', 'domestic transfers'],
-      features: ['identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['Japanese Address Notes', 'Japan Postal Code Notes'],
-      completion: 20,
-      coordinates: { x: 71, y: 37 }
+      "id": "canada",
+      "flag": "🇨🇦",
+      "name": "Canada",
+      "iso2": "CA",
+      "iso3": "CAN",
+      "continent": "North America",
+      "region": "North America",
+      "language": "English / French",
+      "currency": "CAD",
+      "currencyName": "Canadian dollar",
+      "status": "planned",
+      "summary": "Future hub for Canadian bilingual locale handling, postal codes, tax, and banking notes.",
+      "identifiers": [
+        "SIN",
+        "postal code",
+        "business number"
+      ],
+      "payments": [
+        "institution number",
+        "transit number"
+      ],
+      "features": [
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "Canadian Postal Code Notes"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 35,
+        "y": 16
+      }
     },
     {
-      id: 'united-kingdom',
-      flag: '🇬🇧',
-      name: 'United Kingdom',
-      iso2: 'GB',
-      iso3: 'GBR',
-      continent: 'Europe',
-      region: 'Europe',
-      language: 'English',
-      currency: 'GBP',
-      currencyName: 'Pound sterling',
-      status: 'planned',
-      summary: 'Future hub for UK identifiers, postcodes, banking, and localization behavior.',
-      identifiers: ['NINO', 'UTR', 'postcode'],
-      payments: ['sort code', 'IBAN', 'Faster Payments'],
-      features: ['identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['UK Postcode Notes', 'NINO Validator'],
-      completion: 20,
-      coordinates: { x: 48, y: 33 }
+      "id": "chile",
+      "flag": "🇨🇱",
+      "name": "Chile",
+      "iso2": "CL",
+      "iso3": "CHL",
+      "continent": "South America",
+      "region": "South America",
+      "language": "Spanish",
+      "currency": "CLP",
+      "currencyName": "Chilean peso",
+      "status": "planned",
+      "summary": "Future hub for Chilean RUT, banking, address, and localization notes.",
+      "identifiers": [
+        "RUT",
+        "RUN"
+      ],
+      "payments": [
+        "bank account",
+        "SWIFT"
+      ],
+      "features": [
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "RUT Validator"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 38,
+        "y": 86
+      }
     },
     {
-      id: 'united-states',
-      flag: '🇺🇸',
-      name: 'United States',
-      iso2: 'US',
-      iso3: 'USA',
-      continent: 'North America',
-      region: 'North America',
-      language: 'English',
-      currency: 'USD',
-      currencyName: 'US dollar',
-      status: 'planned',
-      summary: 'Future hub for US identifiers, postal formats, banking rails, and locale edge cases.',
-      identifiers: ['SSN', 'EIN', 'ZIP'],
-      payments: ['ACH', 'routing number', 'SWIFT'],
-      features: ['payments', 'identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['ZIP Notes', 'Routing Number Notes'],
-      completion: 20,
-      coordinates: { x: 30, y: 27 }
+      "id": "france",
+      "flag": "🇫🇷",
+      "name": "France",
+      "iso2": "FR",
+      "iso3": "FRA",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "French",
+      "currency": "EUR",
+      "currencyName": "Euro",
+      "status": "planned",
+      "summary": "Future hub for French identifiers, localization, postal formats, and EU payment notes.",
+      "identifiers": [
+        "NIR",
+        "SIREN",
+        "SIRET"
+      ],
+      "payments": [
+        "IBAN",
+        "SEPA"
+      ],
+      "features": [
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "SIREN Validator",
+        "SIRET Validator"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 49,
+        "y": 38
+      }
     },
     {
-      id: 'canada',
-      flag: '🇨🇦',
-      name: 'Canada',
-      iso2: 'CA',
-      iso3: 'CAN',
-      continent: 'North America',
-      region: 'North America',
-      language: 'English / French',
-      currency: 'CAD',
-      currencyName: 'Canadian dollar',
-      status: 'planned',
-      summary: 'Future hub for Canadian bilingual locale handling, postal codes, tax, and banking notes.',
-      identifiers: ['SIN', 'postal code', 'business number'],
-      payments: ['institution number', 'transit number'],
-      features: ['identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['Canadian Postal Code Notes'],
-      completion: 20,
-      coordinates: { x: 35, y: 16 }
+      "id": "germany",
+      "flag": "🇩🇪",
+      "name": "Germany",
+      "iso2": "DE",
+      "iso3": "DEU",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Placeholder",
+      "currency": "EUR",
+      "currencyName": "Euro",
+      "status": "inProgress",
+      "summary": "Future hub for Germany validation rules and locale formats.",
+      "identifiers": [],
+      "payments": [],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "Placeholder Workbench"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 50,
+        "y": 35
+      }
     },
     {
-      id: 'mexico',
-      flag: '🇲🇽',
-      name: 'Mexico',
-      iso2: 'MX',
-      iso3: 'MEX',
-      continent: 'North America',
-      region: 'North America',
-      language: 'Spanish',
-      currency: 'MXN',
-      currencyName: 'Mexican peso',
-      status: 'planned',
-      summary: 'Future hub for Mexican RFC, CURP, address, and payment implementation context.',
-      identifiers: ['RFC', 'CURP', 'postal code'],
-      payments: ['CLABE', 'SPEI'],
-      features: ['payments', 'identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['RFC Validator', 'CURP Validator', 'CLABE Notes'],
-      completion: 20,
-      coordinates: { x: 32, y: 48 }
+      "id": "italy",
+      "flag": "🇮🇹",
+      "name": "Italy",
+      "iso2": "IT",
+      "iso3": "ITA",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Italian",
+      "currency": "EUR",
+      "currencyName": "Euro",
+      "status": "planned",
+      "summary": "Future hub for Italian tax identifiers, VAT, fiscal code, and EU banking notes.",
+      "identifiers": [
+        "Codice fiscale",
+        "Partita IVA"
+      ],
+      "payments": [
+        "IBAN",
+        "SEPA"
+      ],
+      "features": [
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "Codice Fiscale Validator"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 51,
+        "y": 40
+      }
     },
     {
-      id: 'argentina',
-      flag: '🇦🇷',
-      name: 'Argentina',
-      iso2: 'AR',
-      iso3: 'ARG',
-      continent: 'South America',
-      region: 'South America',
-      language: 'Spanish',
-      currency: 'ARS',
-      currencyName: 'Argentine peso',
-      status: 'planned',
-      summary: 'Future hub for Argentinian tax identifiers, banking aliases, and localization details.',
-      identifiers: ['CUIT', 'CUIL', 'DNI'],
-      payments: ['CBU', 'CVU', 'Alias'],
-      features: ['payments', 'identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['CUIT Validator', 'CBU Notes'],
-      completion: 20,
-      coordinates: { x: 39, y: 83 }
+      "id": "japan",
+      "flag": "🇯🇵",
+      "name": "Japan",
+      "iso2": "JP",
+      "iso3": "JPN",
+      "continent": "Asia",
+      "region": "Asia",
+      "language": "Japanese",
+      "currency": "JPY",
+      "currencyName": "Japanese yen",
+      "status": "planned",
+      "summary": "Future hub for Japanese localization, address formats, era dates, and payment context.",
+      "identifiers": [
+        "My Number",
+        "postal code"
+      ],
+      "payments": [
+        "bank codes",
+        "domestic transfers"
+      ],
+      "features": [
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "Japanese Address Notes",
+        "Japan Postal Code Notes"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 71,
+        "y": 37
+      }
     },
     {
-      id: 'chile',
-      flag: '🇨🇱',
-      name: 'Chile',
-      iso2: 'CL',
-      iso3: 'CHL',
-      continent: 'South America',
-      region: 'South America',
-      language: 'Spanish',
-      currency: 'CLP',
-      currencyName: 'Chilean peso',
-      status: 'planned',
-      summary: 'Future hub for Chilean RUT, banking, address, and localization notes.',
-      identifiers: ['RUT', 'RUN'],
-      payments: ['bank account', 'SWIFT'],
-      features: ['identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['RUT Validator'],
-      completion: 20,
-      coordinates: { x: 38, y: 86 }
+      "id": "mexico",
+      "flag": "🇲🇽",
+      "name": "Mexico",
+      "iso2": "MX",
+      "iso3": "MEX",
+      "continent": "North America",
+      "region": "North America",
+      "language": "Spanish",
+      "currency": "MXN",
+      "currencyName": "Mexican peso",
+      "status": "planned",
+      "summary": "Future hub for Mexican RFC, CURP, address, and payment implementation context.",
+      "identifiers": [
+        "RFC",
+        "CURP",
+        "postal code"
+      ],
+      "payments": [
+        "CLABE",
+        "SPEI"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "RFC Validator",
+        "CURP Validator",
+        "CLABE Notes"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 32,
+        "y": 48
+      }
     },
     {
-      id: 'italy',
-      flag: '🇮🇹',
-      name: 'Italy',
-      iso2: 'IT',
-      iso3: 'ITA',
-      continent: 'Europe',
-      region: 'Europe',
-      language: 'Italian',
-      currency: 'EUR',
-      currencyName: 'Euro',
-      status: 'planned',
-      summary: 'Future hub for Italian tax identifiers, VAT, fiscal code, and EU banking notes.',
-      identifiers: ['Codice fiscale', 'Partita IVA'],
-      payments: ['IBAN', 'SEPA'],
-      features: ['identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['Codice Fiscale Validator'],
-      completion: 20,
-      coordinates: { x: 51, y: 40 }
+      "id": "netherlands",
+      "flag": "🇳🇱",
+      "name": "Netherlands",
+      "iso2": "NL",
+      "iso3": "NLD",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Dutch",
+      "currency": "EUR",
+      "currencyName": "Euro",
+      "status": "planned",
+      "summary": "Future hub for Dutch identifiers, addresses, VAT, and banking notes.",
+      "identifiers": [
+        "BSN",
+        "KvK",
+        "VAT"
+      ],
+      "payments": [
+        "IBAN",
+        "SEPA",
+        "iDEAL"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "BSN Validator",
+        "Dutch VAT Notes"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 50,
+        "y": 34
+      }
     },
     {
-      id: 'portugal',
-      flag: '🇵🇹',
-      name: 'Portugal',
-      iso2: 'PT',
-      iso3: 'PRT',
-      continent: 'Europe',
-      region: 'Europe',
-      language: 'Portuguese',
-      currency: 'EUR',
-      currencyName: 'Euro',
-      status: 'planned',
-      summary: 'Future hub for Portuguese NIF, postal, locale, and EU banking conventions.',
-      identifiers: ['NIF', 'postal code'],
-      payments: ['IBAN', 'SEPA'],
-      features: ['identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['NIF Validator'],
-      completion: 20,
-      coordinates: { x: 47, y: 43 }
+      "id": "poland",
+      "flag": "🇵🇱",
+      "name": "Poland",
+      "iso2": "PL",
+      "iso3": "POL",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Polish",
+      "currency": "PLN",
+      "currencyName": "Polish zloty",
+      "status": "available",
+      "summary": "Developer intelligence for Polish identifiers, locale conventions, and EU-oriented validation workflows.",
+      "identifiers": [
+        "PESEL",
+        "NIP",
+        "REGON"
+      ],
+      "payments": [
+        "IBAN",
+        "BLIK",
+        "SEPA"
+      ],
+      "features": [
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "PESEL Validator"
+      ],
+      "plannedWorkbenches": [
+        "NIP Validator",
+        "REGON Validator",
+        "Polish IBAN Notes"
+      ],
+      "completion": 35,
+      "coordinates": {
+        "x": 52,
+        "y": 34
+      }
     },
     {
-      id: 'netherlands',
-      flag: '🇳🇱',
-      name: 'Netherlands',
-      iso2: 'NL',
-      iso3: 'NLD',
-      continent: 'Europe',
-      region: 'Europe',
-      language: 'Dutch',
-      currency: 'EUR',
-      currencyName: 'Euro',
-      status: 'planned',
-      summary: 'Future hub for Dutch identifiers, addresses, VAT, and banking notes.',
-      identifiers: ['BSN', 'KvK', 'VAT'],
-      payments: ['IBAN', 'SEPA', 'iDEAL'],
-      features: ['payments', 'identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['BSN Validator', 'Dutch VAT Notes'],
-      completion: 20,
-      coordinates: { x: 50, y: 34 }
+      "id": "portugal",
+      "flag": "🇵🇹",
+      "name": "Portugal",
+      "iso2": "PT",
+      "iso3": "PRT",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Portuguese",
+      "currency": "EUR",
+      "currencyName": "Euro",
+      "status": "planned",
+      "summary": "Future hub for Portuguese NIF, postal, locale, and EU banking conventions.",
+      "identifiers": [
+        "NIF",
+        "postal code"
+      ],
+      "payments": [
+        "IBAN",
+        "SEPA"
+      ],
+      "features": [
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "NIF Validator"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 47,
+        "y": 43
+      }
     },
     {
-      id: 'belgium',
-      flag: '🇧🇪',
-      name: 'Belgium',
-      iso2: 'BE',
-      iso3: 'BEL',
-      continent: 'Europe',
-      region: 'Europe',
-      language: 'Dutch / French / German',
-      currency: 'EUR',
-      currencyName: 'Euro',
-      status: 'planned',
-      summary: 'Future hub for Belgian multilingual locale, identifiers, VAT, and EU payment context.',
-      identifiers: ['national number', 'VAT'],
-      payments: ['IBAN', 'SEPA'],
-      features: ['identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['Belgian National Number Notes'],
-      completion: 20,
-      coordinates: { x: 50, y: 35 }
+      "id": "spain",
+      "flag": "🇪🇸",
+      "name": "Spain",
+      "nativeName": "España",
+      "iso2": "ES",
+      "iso3": "ESP",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Spanish / regional co-official languages",
+      "currency": "EUR",
+      "currencyName": "Euro",
+      "status": "inProgress",
+      "summary": "Developer intelligence for Spanish identifiers, locale conventions, EU payments, banking context, government systems, and implementation pitfalls.",
+      "identifiers": [
+        "DNI",
+        "NIE",
+        "NIF",
+        "CIF legacy",
+        "NAF",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "IBAN",
+        "SEPA",
+        "SWIFT",
+        "Bizum",
+        "VIES"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "DNI Validator",
+        "NIE Validator",
+        "NIF Inspector",
+        "Legacy CIF Inspector",
+        "Spain Phone Validator",
+        "Spain Postal Code Validator",
+        "Spain VAT / VIES Workbench",
+        "Spanish IBAN Tools",
+        "Bizum Reference / Inspector"
+      ],
+      "completion": 68,
+      "coordinates": {
+        "x": 49,
+        "y": 41
+      }
     },
     {
-      id: 'ukraine',
-      flag: '🇺🇦',
-      name: 'Ukraine',
-      iso2: 'UA',
-      iso3: 'UKR',
-      continent: 'Europe',
-      region: 'Europe',
-      language: 'Ukrainian',
-      currency: 'UAH',
-      currencyName: 'Ukrainian hryvnia',
-      status: 'planned',
-      summary: 'Future hub for Ukrainian identifiers, banking, locale, and government integration notes.',
-      identifiers: ['RNOKPP', 'EDRPOU'],
-      payments: ['IBAN', 'bank codes'],
-      features: ['identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['RNOKPP Notes', 'EDRPOU Notes'],
-      completion: 20,
-      coordinates: { x: 54, y: 36 }
+      "id": "ukraine",
+      "flag": "🇺🇦",
+      "name": "Ukraine",
+      "iso2": "UA",
+      "iso3": "UKR",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Ukrainian",
+      "currency": "UAH",
+      "currencyName": "Ukrainian hryvnia",
+      "status": "planned",
+      "summary": "Future hub for Ukrainian identifiers, banking, locale, and government integration notes.",
+      "identifiers": [
+        "RNOKPP",
+        "EDRPOU"
+      ],
+      "payments": [
+        "IBAN",
+        "bank codes"
+      ],
+      "features": [
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "RNOKPP Notes",
+        "EDRPOU Notes"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 54,
+        "y": 36
+      }
     },
-
     {
-      id: 'germany',
-      flag: '🇩🇪',
-      name: 'Germany',
-      iso2: 'DE',
-      iso3: 'DEU',
-      continent: 'Europe',
-      region: 'Europe',
-      language: 'Placeholder',
-      currency: 'EUR',
-      currencyName: 'Euro',
-      status: 'inProgress',
-      summary: 'Future hub for Germany validation rules and locale formats.',
-      identifiers: [],
-      payments: [],
-      features: ['payments', 'identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['Placeholder Workbench'],
-      completion: 20,
-      coordinates: { x: 50, y: 35 }
+      "id": "united-kingdom",
+      "flag": "🇬🇧",
+      "name": "United Kingdom",
+      "iso2": "GB",
+      "iso3": "GBR",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "English",
+      "currency": "GBP",
+      "currencyName": "Pound sterling",
+      "status": "planned",
+      "summary": "Future hub for UK identifiers, postcodes, banking, and localization behavior.",
+      "identifiers": [
+        "NINO",
+        "UTR",
+        "postcode"
+      ],
+      "payments": [
+        "sort code",
+        "IBAN",
+        "Faster Payments"
+      ],
+      "features": [
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "UK Postcode Notes",
+        "NINO Validator"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 48,
+        "y": 33
+      }
+    },
+    {
+      "id": "united-states",
+      "flag": "🇺🇸",
+      "name": "United States",
+      "iso2": "US",
+      "iso3": "USA",
+      "continent": "North America",
+      "region": "North America",
+      "language": "English",
+      "currency": "USD",
+      "currencyName": "US dollar",
+      "status": "planned",
+      "summary": "Future hub for US identifiers, postal formats, banking rails, and locale edge cases.",
+      "identifiers": [
+        "SSN",
+        "EIN",
+        "ZIP"
+      ],
+      "payments": [
+        "ACH",
+        "routing number",
+        "SWIFT"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [],
+      "plannedWorkbenches": [
+        "ZIP Notes",
+        "Routing Number Notes"
+      ],
+      "completion": 20,
+      "coordinates": {
+        "x": 30,
+        "y": 27
+      }
     }
   ];
 

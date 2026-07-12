@@ -1,0 +1,41 @@
+{
+  "id": "italy",
+  "visualAssets": null,
+  "catalog": {
+    "id": "italy",
+    "flag": "🇮🇹",
+    "name": "Italy",
+    "iso2": "IT",
+    "iso3": "ITA",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "Italian",
+    "currency": "EUR",
+    "currencyName": "Euro",
+    "status": "planned",
+    "summary": "Future hub for Italian tax identifiers, VAT, fiscal code, and EU banking notes.",
+    "identifiers": [
+      "Codice fiscale",
+      "Partita IVA"
+    ],
+    "payments": [
+      "IBAN",
+      "SEPA"
+    ],
+    "features": [
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "Codice Fiscale Validator"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 51,
+      "y": 40
+    }
+  },
+  "hub": null
+}

@@ -1,0 +1,42 @@
+{
+  "id": "canada",
+  "visualAssets": null,
+  "catalog": {
+    "id": "canada",
+    "flag": "🇨🇦",
+    "name": "Canada",
+    "iso2": "CA",
+    "iso3": "CAN",
+    "continent": "North America",
+    "region": "North America",
+    "language": "English / French",
+    "currency": "CAD",
+    "currencyName": "Canadian dollar",
+    "status": "planned",
+    "summary": "Future hub for Canadian bilingual locale handling, postal codes, tax, and banking notes.",
+    "identifiers": [
+      "SIN",
+      "postal code",
+      "business number"
+    ],
+    "payments": [
+      "institution number",
+      "transit number"
+    ],
+    "features": [
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "Canadian Postal Code Notes"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 35,
+      "y": 16
+    }
+  },
+  "hub": null
+}

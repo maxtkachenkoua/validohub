@@ -1,0 +1,42 @@
+{
+  "id": "ukraine",
+  "visualAssets": null,
+  "catalog": {
+    "id": "ukraine",
+    "flag": "🇺🇦",
+    "name": "Ukraine",
+    "iso2": "UA",
+    "iso3": "UKR",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "Ukrainian",
+    "currency": "UAH",
+    "currencyName": "Ukrainian hryvnia",
+    "status": "planned",
+    "summary": "Future hub for Ukrainian identifiers, banking, locale, and government integration notes.",
+    "identifiers": [
+      "RNOKPP",
+      "EDRPOU"
+    ],
+    "payments": [
+      "IBAN",
+      "bank codes"
+    ],
+    "features": [
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "RNOKPP Notes",
+      "EDRPOU Notes"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 54,
+      "y": 36
+    }
+  },
+  "hub": null
+}

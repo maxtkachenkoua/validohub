@@ -1,0 +1,44 @@
+{
+  "id": "united-kingdom",
+  "visualAssets": null,
+  "catalog": {
+    "id": "united-kingdom",
+    "flag": "🇬🇧",
+    "name": "United Kingdom",
+    "iso2": "GB",
+    "iso3": "GBR",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "English",
+    "currency": "GBP",
+    "currencyName": "Pound sterling",
+    "status": "planned",
+    "summary": "Future hub for UK identifiers, postcodes, banking, and localization behavior.",
+    "identifiers": [
+      "NINO",
+      "UTR",
+      "postcode"
+    ],
+    "payments": [
+      "sort code",
+      "IBAN",
+      "Faster Payments"
+    ],
+    "features": [
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "UK Postcode Notes",
+      "NINO Validator"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 48,
+      "y": 33
+    }
+  },
+  "hub": null
+}

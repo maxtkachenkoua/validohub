@@ -1,0 +1,41 @@
+{
+  "id": "austria",
+  "visualAssets": null,
+  "catalog": {
+    "id": "austria",
+    "flag": "🇦🇹",
+    "name": "Austria",
+    "iso2": "AT",
+    "iso3": "AUT",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "German",
+    "currency": "EUR",
+    "currencyName": "Euro",
+    "status": "planned",
+    "summary": "Future hub for Austrian localization, identity, tax, and EU banking conventions.",
+    "identifiers": [
+      "UID",
+      "SVNR"
+    ],
+    "payments": [
+      "IBAN",
+      "SEPA"
+    ],
+    "features": [
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "Austrian VAT ID Notes"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 51,
+      "y": 37
+    }
+  },
+  "hub": null
+}

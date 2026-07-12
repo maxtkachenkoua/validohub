@@ -1,0 +1,45 @@
+{
+  "id": "argentina",
+  "visualAssets": null,
+  "catalog": {
+    "id": "argentina",
+    "flag": "🇦🇷",
+    "name": "Argentina",
+    "iso2": "AR",
+    "iso3": "ARG",
+    "continent": "South America",
+    "region": "South America",
+    "language": "Spanish",
+    "currency": "ARS",
+    "currencyName": "Argentine peso",
+    "status": "planned",
+    "summary": "Future hub for Argentinian tax identifiers, banking aliases, and localization details.",
+    "identifiers": [
+      "CUIT",
+      "CUIL",
+      "DNI"
+    ],
+    "payments": [
+      "CBU",
+      "CVU",
+      "Alias"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "CUIT Validator",
+      "CBU Notes"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 39,
+      "y": 83
+    }
+  },
+  "hub": null
+}

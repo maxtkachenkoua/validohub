@@ -1,0 +1,42 @@
+{
+  "id": "japan",
+  "visualAssets": null,
+  "catalog": {
+    "id": "japan",
+    "flag": "🇯🇵",
+    "name": "Japan",
+    "iso2": "JP",
+    "iso3": "JPN",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Japanese",
+    "currency": "JPY",
+    "currencyName": "Japanese yen",
+    "status": "planned",
+    "summary": "Future hub for Japanese localization, address formats, era dates, and payment context.",
+    "identifiers": [
+      "My Number",
+      "postal code"
+    ],
+    "payments": [
+      "bank codes",
+      "domestic transfers"
+    ],
+    "features": [
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "Japanese Address Notes",
+      "Japan Postal Code Notes"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 71,
+      "y": 37
+    }
+  },
+  "hub": null
+}

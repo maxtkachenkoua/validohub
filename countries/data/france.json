@@ -1,0 +1,43 @@
+{
+  "id": "france",
+  "visualAssets": null,
+  "catalog": {
+    "id": "france",
+    "flag": "🇫🇷",
+    "name": "France",
+    "iso2": "FR",
+    "iso3": "FRA",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "French",
+    "currency": "EUR",
+    "currencyName": "Euro",
+    "status": "planned",
+    "summary": "Future hub for French identifiers, localization, postal formats, and EU payment notes.",
+    "identifiers": [
+      "NIR",
+      "SIREN",
+      "SIRET"
+    ],
+    "payments": [
+      "IBAN",
+      "SEPA"
+    ],
+    "features": [
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "SIREN Validator",
+      "SIRET Validator"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 49,
+      "y": 38
+    }
+  },
+  "hub": null
+}

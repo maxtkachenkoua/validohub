@@ -1,0 +1,45 @@
+{
+  "id": "netherlands",
+  "visualAssets": null,
+  "catalog": {
+    "id": "netherlands",
+    "flag": "🇳🇱",
+    "name": "Netherlands",
+    "iso2": "NL",
+    "iso3": "NLD",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "Dutch",
+    "currency": "EUR",
+    "currencyName": "Euro",
+    "status": "planned",
+    "summary": "Future hub for Dutch identifiers, addresses, VAT, and banking notes.",
+    "identifiers": [
+      "BSN",
+      "KvK",
+      "VAT"
+    ],
+    "payments": [
+      "IBAN",
+      "SEPA",
+      "iDEAL"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "BSN Validator",
+      "Dutch VAT Notes"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 50,
+      "y": 34
+    }
+  },
+  "hub": null
+}

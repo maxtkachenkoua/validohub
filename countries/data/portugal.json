@@ -1,0 +1,41 @@
+{
+  "id": "portugal",
+  "visualAssets": null,
+  "catalog": {
+    "id": "portugal",
+    "flag": "🇵🇹",
+    "name": "Portugal",
+    "iso2": "PT",
+    "iso3": "PRT",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "Portuguese",
+    "currency": "EUR",
+    "currencyName": "Euro",
+    "status": "planned",
+    "summary": "Future hub for Portuguese NIF, postal, locale, and EU banking conventions.",
+    "identifiers": [
+      "NIF",
+      "postal code"
+    ],
+    "payments": [
+      "IBAN",
+      "SEPA"
+    ],
+    "features": [
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "NIF Validator"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 47,
+      "y": 43
+    }
+  },
+  "hub": null
+}

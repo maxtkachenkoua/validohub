@@ -1,0 +1,45 @@
+{
+  "id": "united-states",
+  "visualAssets": null,
+  "catalog": {
+    "id": "united-states",
+    "flag": "🇺🇸",
+    "name": "United States",
+    "iso2": "US",
+    "iso3": "USA",
+    "continent": "North America",
+    "region": "North America",
+    "language": "English",
+    "currency": "USD",
+    "currencyName": "US dollar",
+    "status": "planned",
+    "summary": "Future hub for US identifiers, postal formats, banking rails, and locale edge cases.",
+    "identifiers": [
+      "SSN",
+      "EIN",
+      "ZIP"
+    ],
+    "payments": [
+      "ACH",
+      "routing number",
+      "SWIFT"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "ZIP Notes",
+      "Routing Number Notes"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 30,
+      "y": 27
+    }
+  },
+  "hub": null
+}

@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
-import { readFile, writeFile, access } from 'node:fs/promises';
+import { readFile, writeFile, access, readdir } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { runInNewContext } from 'node:vm';
+import { execSync } from 'node:child_process';
 import { extractElement, buildLocationMap } from './generate-maps.mjs';
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDir, '..');
 const sourcePath = resolve(projectRoot, 'assets/images/countries/world-map-source.svg');
-const countriesScript = resolve(projectRoot, 'assets/js/countries.js');
+const dataDir = resolve(projectRoot, 'countries/data');
 
 const MAP_WIDTH = 784.077;
 const MAP_HEIGHT = 458.627;
@@ -23,16 +23,16 @@ const Y_OFFSET = 5.29045;
 
 function showHelp() {
   console.log(`
-ValidoHub Country Hub Scaffolder V1
+ValidoHub Country Hub Scaffolder V1 (Platform V2 Decoupled Data Edition)
 
 Usage:
   node scripts/create-country-hub.mjs [options]
 
 Options:
-  --id <id>            Unique lowercase country ID (e.g. germany) [Required]
-  --name <name>        Country display name (e.g. Germany) [Required]
-  --iso2 <iso2>        ISO 3166-1 alpha-2 code (e.g. DE) [Required]
-  --iso3 <iso3>        ISO 3166-1 alpha-3 code (e.g. DEU) [Required]
+  --id <id>            Unique lowercase country ID (e.g. italy) [Required]
+  --name <name>        Country display name (e.g. Italy) [Required]
+  --iso2 <iso2>        ISO 3166-1 alpha-2 code (e.g. IT) [Required]
+  --iso3 <iso3>        ISO 3166-1 alpha-3 code (e.g. ITA) [Required]
   --viewbox <crop>     Custom viewBox override for location SVG (e.g. "380 340 160 120") [Optional]
   --theme <colors>     Flag accent colors as comma-separated hex values (primary,secondary,tertiary) [Optional]
   --capital <coords>   Raw SVG coordinates for the capital/marker (e.g. "435.833,388.684") [Optional]
@@ -341,7 +341,7 @@ async function main() {
   // Filter out tiny islands to compute bbox of major landmasses (area >= 1% of largest)
   const threshold = maxArea * 0.01;
   const majorPolygons = polygons.filter(p => getPolygonArea(p) >= threshold);
-  
+
   // Calculate BBox of major landmasses
   let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
   for (const poly of majorPolygons) {
@@ -428,21 +428,18 @@ async function main() {
   const stop100 = lightenColor(themeTertiary, 0.90);
   const shadowColor = themeSecondary;
 
-  // Load existing configuration for duplicate check & deep serialization check
-  const jsContent = await readFile(countriesScript, 'utf8');
-  const sandbox = {
-    window: {},
-    document: { readyState: 'loading', addEventListener() {} }
-  };
-  runInNewContext(jsContent.replace('window.ValidoHubCountries = Object.freeze({', 'window.ValidoHubCountriesVisualAssets = COUNTRY_VISUAL_ASSETS;\nwindow.ValidoHubCountries = Object.freeze({'), sandbox);
-  const oldCatalog = sandbox.window.ValidoHubCountries.portalCatalog;
-  const oldHubs = sandbox.window.ValidoHubCountries.hubs;
-  const oldVisual = sandbox.window.ValidoHubCountriesVisualAssets;
+  // Duplicate checks in decoupled JSON files
+  const files = await readdir(dataDir);
+  const jsonFiles = files.filter(f => f.endsWith('.json') && f !== 'schema.json');
+  const existingCountries = [];
+  for (const file of jsonFiles) {
+    const content = await readFile(resolve(dataDir, file), 'utf8');
+    existingCountries.push(JSON.parse(content));
+  }
 
-  // Duplicate checks
-  const dupId = oldCatalog.find(c => c.id === options.id);
-  const dupIso2 = oldCatalog.find(c => c.iso2 === options.iso2 && c.id !== options.id);
-  const dupIso3 = oldCatalog.find(c => c.iso3 === options.iso3 && c.id !== options.id);
+  const dupId = existingCountries.find(c => c.id === options.id);
+  const dupIso2 = existingCountries.find(c => c.catalog.iso2 === options.iso2 && c.id !== options.id);
+  const dupIso3 = existingCountries.find(c => c.catalog.iso3 === options.iso3 && c.id !== options.id);
 
   if (dupId) {
     console.error(`Error: Country ID "${options.id}" is already registered.`);
@@ -486,7 +483,97 @@ async function main() {
 
   const locationSvg = buildLocationMap(sourceSvg, options.id, viewBoxStr, themePrimary, themeSecondary);
 
-  // Staged updates in memory
+  // Decoupled Country Data Document
+  const countryData = {
+    id: options.id,
+    visualAssets: {
+      outlineSrc: `/assets/images/countries/${options.id}-outline.svg`,
+      outlineAlt: `${options.name} country outline`,
+      mapSrc: `/assets/images/countries/${options.id}-location.svg`,
+      mapAlt: `World map with ${options.name} location marker`,
+      mapMarker: { x: calloutX, y: calloutY, label: options.name },
+      source: 'Natural Earth geometry'
+    },
+    catalog: {
+      id: options.id,
+      flag: options.id === 'germany' ? '🇩🇪' : '🏳️',
+      name: options.name,
+      iso2: options.iso2,
+      iso3: options.iso3,
+      continent: 'Europe',
+      region: 'Europe',
+      language: 'Placeholder',
+      currency: 'EUR',
+      currencyName: 'Euro',
+      status: 'inProgress',
+      summary: `Future hub for ${options.name} validation rules and locale formats.`,
+      identifiers: [],
+      payments: [],
+      features: ['payments', 'identity', 'government', 'banking'],
+      availableWorkbenches: [],
+      plannedWorkbenches: ['Placeholder Workbench'],
+      completion: 20,
+      coordinates: { x: portalX, y: portalY }
+    },
+    hub: {
+      flag: options.id === 'germany' ? '🇩🇪' : '🏳️',
+      name: options.name,
+      badge: 'Country hub under construction',
+      description: `Developer intelligence for ${options.name} validation, locale conventions, and official systems.`,
+      metadata: {
+        population: 'Placeholder',
+        area: 'Placeholder',
+        capital: 'Placeholder',
+        largestCity: 'Placeholder',
+        continent: 'Europe',
+        languages: 'Placeholder',
+        currency: 'Euro',
+        currencyCode: 'EUR',
+        currencySymbol: '€',
+        locale: 'Placeholder',
+        callingCode: 'Placeholder',
+        plugTypes: 'Placeholder',
+        timeZone: 'Placeholder'
+      },
+      stats: [
+        { label: 'Population', valueKey: 'population' },
+        { label: 'Capital', valueKey: 'capital' },
+        { label: 'Languages', valueKey: 'languages' },
+        { label: 'Currency', valueKey: 'currencyCode' }
+      ],
+      visualIdentity: {
+        countryId: options.id,
+        outlineLabel: `${options.name} outline`,
+        mapLabel: `${options.name} in the world`,
+        continentBadge: 'Europe',
+        flagLabel: `${options.name} flag`,
+        heroAccentPrimary: rgbPrimary,
+        heroAccentSecondary: rgbSecondary,
+        heroAccentTertiary: rgbTertiary
+      },
+      quickActions: [],
+      cheatSheet: [],
+      localizationExamples: [],
+      addressExample: {
+        formatted: [],
+        fields: []
+      },
+      phoneExamples: [],
+      localFormats: [],
+      integrationChecklist: [
+        { category: 'Validation', name: 'Placeholder', status: 'planned', description: 'Placeholder description.' }
+      ],
+      validationRules: [],
+      commonMistakes: [],
+      payments: [],
+      bankingOverview: [],
+      officialResources: [],
+      plannedWorkbenches: [
+        { name: 'Placeholder Workbench', status: 'planned', category: 'General', tags: ['general'], description: 'Placeholder description.' }
+      ]
+    }
+  };
+
   const yamlContent = `schemaVersion: 1
 code: ${options.iso2}
 slug: ${options.id}
@@ -501,284 +588,6 @@ relatedCountries:
   - BR
 `;
 
-  // Inject Visual Asset
-  let updatedJs = jsContent;
-  const visualAssetsMarker = '  const COUNTRY_VISUAL_ASSETS = {';
-  const visualAssetsEndIdx = updatedJs.indexOf(visualAssetsMarker);
-  if (visualAssetsEndIdx === -1) {
-    console.error('Error: Could not locate COUNTRY_VISUAL_ASSETS in countries.js');
-    process.exit(1);
-  }
-  
-  // Find closing brace of COUNTRY_VISUAL_ASSETS
-  let visualClosingBraceIdx = updatedJs.indexOf('  };', visualAssetsEndIdx);
-  if (visualClosingBraceIdx === -1) {
-    console.error('Error: Could not locate end of COUNTRY_VISUAL_ASSETS in countries.js');
-    process.exit(1);
-  }
-
-  // Visual definition block
-  const newVisualBlock = `    ${options.id}: {
-      outlineSrc: '/assets/images/countries/${options.id}-outline.svg',
-      outlineAlt: '${options.name} country outline',
-      mapSrc: '/assets/images/countries/${options.id}-location.svg',
-      mapAlt: 'World map with ${options.name} location marker',
-      mapMarker: { x: ${calloutX}, y: ${calloutY}, label: '${options.name}' },
-      source: 'Natural Earth geometry'
-    },
-`;
-
-  // Check if target visual asset already exists in config
-  const existingVisualKey = `    ${options.id}: {`;
-  const existingVisualIdx = updatedJs.indexOf(existingVisualKey, visualAssetsEndIdx);
-  if (existingVisualIdx !== -1 && existingVisualIdx < visualClosingBraceIdx) {
-    // replace existing
-    const nextItemIdx = updatedJs.indexOf('    }', existingVisualIdx);
-    updatedJs = updatedJs.slice(0, existingVisualIdx) + newVisualBlock.trimEnd() + updatedJs.slice(nextItemIdx + 5);
-  } else {
-    // insert new
-    // Check if we need to add a comma before inserting
-    let lastCharIdx = visualClosingBraceIdx - 1;
-    while (lastCharIdx > visualAssetsEndIdx && /\s/.test(updatedJs[lastCharIdx])) {
-      lastCharIdx--;
-    }
-    if (updatedJs[lastCharIdx] === '}' && updatedJs[lastCharIdx - 1] !== ',') {
-      updatedJs = updatedJs.slice(0, lastCharIdx + 1) + ',' + updatedJs.slice(lastCharIdx + 1);
-      visualClosingBraceIdx++;
-    }
-    updatedJs = updatedJs.slice(0, visualClosingBraceIdx) + newVisualBlock + updatedJs.slice(visualClosingBraceIdx);
-  }
-
-  // Inject Hub entry (using separate properties assignment at the end of COUNTRY_HUBS)
-  const newHubBlock = `  COUNTRY_HUBS.${options.id} = {
-    flag: '${options.id === 'germany' ? '🇩🇪' : '🏳️'}',
-    name: '${options.name}',
-    badge: 'Country hub under construction',
-    description: 'Developer intelligence for ${options.name} validation, locale conventions, and official systems.',
-    metadata: {
-      population: 'Placeholder',
-      area: 'Placeholder',
-      capital: 'Placeholder',
-      largestCity: 'Placeholder',
-      continent: 'Europe',
-      languages: 'Placeholder',
-      currency: 'Euro',
-      currencyCode: 'EUR',
-      currencySymbol: '€',
-      locale: 'Placeholder',
-      callingCode: 'Placeholder',
-      plugTypes: 'Placeholder',
-      timeZone: 'Placeholder'
-    },
-    stats: [
-      { label: 'Population', valueKey: 'population' },
-      { label: 'Capital', valueKey: 'capital' },
-      { label: 'Languages', valueKey: 'languages' },
-      { label: 'Currency', valueKey: 'currencyCode' }
-    ],
-    visualIdentity: {
-      countryId: '${options.id}',
-      outlineLabel: '${options.name} outline',
-      mapLabel: '${options.name} in the world',
-      continentBadge: 'Europe',
-      flagLabel: '${options.name} flag',
-      heroAccentPrimary: '${rgbPrimary}',
-      heroAccentSecondary: '${rgbSecondary}',
-      heroAccentTertiary: '${rgbTertiary}'
-    },
-    quickActions: [],
-    cheatSheet: [],
-    localizationExamples: [],
-    addressExample: {
-      format: 'Placeholder',
-      fields: []
-    },
-    phoneExamples: [],
-    localFormats: [],
-    integrationChecklist: [
-      { category: 'Validation', name: 'Placeholder', status: 'planned', description: 'Placeholder description.' }
-    ],
-    validationRules: [],
-    commonMistakes: [],
-    payments: [],
-    bankingOverview: {
-      clearingSystems: [],
-      formats: []
-    },
-    officialResources: [],
-    plannedWorkbenches: [
-      { name: 'Placeholder Workbench', status: 'planned', category: 'General', tags: ['general'], description: 'Placeholder description.' }
-    ]
-  };\n\n`;
-
-  const catalogMarker = '  const COUNTRY_PORTAL_CATALOG = [';
-  const catalogEndIdx = updatedJs.indexOf(catalogMarker);
-  if (catalogEndIdx === -1) {
-    console.error('Error: Could not locate COUNTRY_PORTAL_CATALOG in countries.js');
-    process.exit(1);
-  }
-
-  // Check if target hub assignment already exists in config
-  const existingHubKey = `  COUNTRY_HUBS.${options.id} = {`;
-  const existingHubIdx = updatedJs.indexOf(existingHubKey);
-  if (existingHubIdx !== -1) {
-    // replace existing
-    let braces = 1;
-    let scanIdx = existingHubIdx + existingHubKey.length;
-    while (braces > 0 && scanIdx < updatedJs.length) {
-      if (updatedJs[scanIdx] === '{') braces++;
-      else if (updatedJs[scanIdx] === '}') braces--;
-      scanIdx++;
-    }
-    if (updatedJs[scanIdx] === ';') scanIdx++;
-    updatedJs = updatedJs.slice(0, existingHubIdx) + newHubBlock + updatedJs.slice(scanIdx);
-  } else {
-    // insert right before COUNTRY_PORTAL_CATALOG
-    updatedJs = updatedJs.slice(0, catalogEndIdx) + newHubBlock + updatedJs.slice(catalogEndIdx);
-  }
-
-  // Inject or update Catalog entry
-  const finalCatalogEndIdx = updatedJs.indexOf(catalogMarker);
-  if (finalCatalogEndIdx === -1) {
-    console.error('Error: Could not locate COUNTRY_PORTAL_CATALOG after hub updates.');
-    process.exit(1);
-  }
-  let catalogClosingBracketIdx = updatedJs.indexOf('  ];', finalCatalogEndIdx);
-  if (catalogClosingBracketIdx === -1) {
-    console.error('Error: Could not locate end of COUNTRY_PORTAL_CATALOG in countries.js');
-    process.exit(1);
-  }
-
-  const newCatalogBlock = `    {
-      id: '${options.id}',
-      flag: '${options.id === 'germany' ? '🇩🇪' : '🏳️'}',
-      name: '${options.name}',
-      iso2: '${options.iso2}',
-      iso3: '${options.iso3}',
-      continent: 'Europe',
-      region: 'Europe',
-      language: 'Placeholder',
-      currency: 'EUR',
-      currencyName: 'Euro',
-      status: 'inProgress',
-      summary: 'Future hub for ${options.name} validation rules and locale formats.',
-      identifiers: [],
-      payments: [],
-      features: ['payments', 'identity', 'government', 'banking'],
-      availableWorkbenches: [],
-      plannedWorkbenches: ['Placeholder Workbench'],
-      completion: 20,
-      coordinates: { x: ${portalX}, y: ${portalY} }
-    }`;
-
-  const existingCatalogKey = `id: '${options.id}'`;
-  const existingCatalogIdx = updatedJs.indexOf(existingCatalogKey, finalCatalogEndIdx);
-  if (existingCatalogIdx !== -1 && existingCatalogIdx < catalogClosingBracketIdx) {
-    // Target the specific block containing this id
-    let startIdx = updatedJs.lastIndexOf('{', existingCatalogIdx);
-    let braces = 1;
-    let scanIdx = startIdx + 1;
-    while (braces > 0 && scanIdx < updatedJs.length) {
-      if (updatedJs[scanIdx] === '{') braces++;
-      else if (updatedJs[scanIdx] === '}') braces--;
-      scanIdx++;
-    }
-    updatedJs = updatedJs.slice(0, startIdx) + newCatalogBlock.trim() + updatedJs.slice(scanIdx);
-  } else {
-    // Append to catalog list
-    let lastCatCharIdx = catalogClosingBracketIdx - 1;
-    while (lastCatCharIdx > finalCatalogEndIdx && /\s/.test(updatedJs[lastCatCharIdx])) {
-      lastCatCharIdx--;
-    }
-    if (updatedJs[lastCatCharIdx] === '}') {
-      updatedJs = updatedJs.slice(0, lastCatCharIdx + 1) + ',\n' + updatedJs.slice(lastCatCharIdx + 1);
-      catalogClosingBracketIdx += 2;
-    }
-    updatedJs = updatedJs.slice(0, catalogClosingBracketIdx) + newCatalogBlock + '\n' + updatedJs.slice(catalogClosingBracketIdx);
-  }
-
-  // Assertions (atomic verification before writing files)
-  const assertSandbox = {
-    window: {},
-    document: { readyState: 'loading', addEventListener() {} }
-  };
-  try {
-    runInNewContext(updatedJs.replace('window.ValidoHubCountries = Object.freeze({', 'window.ValidoHubCountriesVisualAssets = COUNTRY_VISUAL_ASSETS;\nwindow.ValidoHubCountries = Object.freeze({'), assertSandbox);
-  } catch (err) {
-    console.error('Structural Error: Resulting countries.js has syntax errors:', err);
-    process.exit(1);
-  }
-
-  const newVisual = assertSandbox.window.ValidoHubCountriesVisualAssets;
-  const newHubs = assertSandbox.window.ValidoHubCountries.hubs;
-  const newCatalog = assertSandbox.window.ValidoHubCountries.portalCatalog;
-
-  // Visual assertions
-  const oldVisualKeys = Object.keys(oldVisual);
-  const newVisualKeys = Object.keys(newVisual);
-  const expectedVisualCount = oldVisualKeys.includes(options.id) ? oldVisualKeys.length : oldVisualKeys.length + 1;
-  if (newVisualKeys.length !== expectedVisualCount) {
-    console.error(`Structural Assertion Failed: COUNTRY_VISUAL_ASSETS entry count mismatch. Expected: ${expectedVisualCount}, Got: ${newVisualKeys.length}`);
-    process.exit(1);
-  }
-
-  const oldHubKeys = Object.keys(oldHubs);
-  const newHubKeys = Object.keys(newHubs);
-  const expectedHubsCount = oldHubKeys.includes(options.id) ? oldHubKeys.length : oldHubKeys.length + 1;
-  if (newHubKeys.length !== expectedHubsCount) {
-    console.error(`Structural Assertion Failed: COUNTRY_HUBS entry count mismatch. Expected: ${expectedHubsCount}, Got: ${newHubKeys.length}`);
-    process.exit(1);
-  }
-
-  const expectedCatalogCount = oldCatalog.find(c => c.id === options.id) ? oldCatalog.length : oldCatalog.length + 1;
-  if (newCatalog.length !== expectedCatalogCount) {
-    console.error(`Structural Assertion Failed: COUNTRY_PORTAL_CATALOG entry count mismatch. Expected: ${expectedCatalogCount}, Got: ${newCatalog.length}`);
-    process.exit(1);
-  }
-
-  // Spain, Brazil, Poland identical serialization assert
-  const targetCheckCountries = ['spain', 'brazil', 'poland'];
-  for (const c of targetCheckCountries) {
-    if (JSON.stringify(oldHubs[c]) !== JSON.stringify(newHubs[c])) {
-      console.error(`Structural Assertion Failed: COUNTRY_HUBS entry for "${c}" has changed.`);
-      process.exit(1);
-    }
-    if (JSON.stringify(oldVisual[c]) !== JSON.stringify(newVisual[c])) {
-      console.error(`Structural Assertion Failed: COUNTRY_VISUAL_ASSETS entry for "${c}" has changed.`);
-      process.exit(1);
-    }
-    const oldC = oldCatalog.find(item => item.id === c);
-    const newC = newCatalog.find(item => item.id === c);
-    if (JSON.stringify(oldC) !== JSON.stringify(newC)) {
-      console.error(`Structural Assertion Failed: COUNTRY_PORTAL_CATALOG entry for "${c}" has changed.`);
-      process.exit(1);
-    }
-  }
-
-  // Duplicate checks in new catalog
-  const ids = newCatalog.map(c => c.id);
-  const iso2s = newCatalog.map(c => c.iso2.toUpperCase());
-  const iso3s = newCatalog.map(c => c.iso3.toUpperCase());
-  if (new Set(ids).size !== ids.length) {
-    console.error('Structural Assertion Failed: Duplicate IDs detected in catalog.');
-    process.exit(1);
-  }
-  if (new Set(iso2s).size !== iso2s.length) {
-    console.error('Structural Assertion Failed: Duplicate ISO2 codes detected in catalog.');
-    process.exit(1);
-  }
-  if (new Set(iso3s).size !== iso3s.length) {
-    console.error('Structural Assertion Failed: Duplicate ISO3 codes detected in catalog.');
-    process.exit(1);
-  }
-
-  // Status defaults to inProgress check
-  const addedCat = newCatalog.find(c => c.id === options.id);
-  if (addedCat.status !== 'inProgress') {
-    console.error(`Structural Assertion Failed: Added country status is "${addedCat.status}" instead of "inProgress".`);
-    process.exit(1);
-  }
-
   if (options.dryRun) {
     console.log('=== DRY RUN SUCCESSFUL ===');
     console.log('No files have been modified.');
@@ -787,21 +596,8 @@ relatedCountries:
     console.log(`  Location Crop viewBox:    "${viewBoxStr}"`);
     console.log(`  Location Map Callout:     { x: ${calloutX}, y: ${calloutY} }`);
     console.log(`  Outline Scale & Offset:  s: ${s.toFixed(3)}, tx: ${tx.toFixed(3)}, ty: ${ty.toFixed(3)}`);
-    console.log('\nProposed Visual Accent Colors:');
-    console.log(`  RGB Primary:   "${rgbPrimary}"`);
-    console.log(`  RGB Secondary: "${rgbSecondary}"`);
-    console.log(`  RGB Tertiary:  "${rgbTertiary}"`);
-    console.log(`  Stop 0 (93%):  "${stop0}"`);
-    console.log(`  Stop 55 (92%): "${stop55}"`);
-    console.log(`  Stop 100 (90%):"${stop100}"`);
-    console.log('\nProposed Visual Asset Definition:');
-    console.log(newVisualBlock.trim());
-    console.log('\nProposed Catalog Entry:');
-    console.log(newCatalogBlock.trim());
-    console.log('\nProposed Hub Code Entry:');
-    console.log(newHubBlock.trim());
-    console.log('\nProposed YAML definition (countries/' + options.id + '.yaml):');
-    console.log(yamlContent.trim());
+    console.log('\nProposed JSON Data Payload (countries/data/' + options.id + '.json):');
+    console.log(JSON.stringify(countryData, null, 2));
     process.exit(0);
   }
 
@@ -810,22 +606,23 @@ relatedCountries:
     const yamlPath = resolve(projectRoot, 'countries', `${options.id}.yaml`);
     const outlinePath = resolve(projectRoot, 'assets/images/countries', `${options.id}-outline.svg`);
     const locationPath = resolve(projectRoot, 'assets/images/countries', `${options.id}-location.svg`);
+    const jsonPath = resolve(dataDir, `${options.id}.json`);
 
     await writeFile(yamlPath, yamlContent, 'utf8');
     await writeFile(outlinePath, outlineSvg, 'utf8');
     await writeFile(locationPath, locationSvg, 'utf8');
-    await writeFile(countriesScript, updatedJs, 'utf8');
+    await writeFile(jsonPath, JSON.stringify(countryData, null, 2) + '\n', 'utf8');
 
-    // Verify written assets exist
-    if (!await pathExists(yamlPath)) throw new Error(`YAML asset not created at ${yamlPath}`);
-    if (!await pathExists(outlinePath)) throw new Error(`Outline SVG not created at ${outlinePath}`);
-    if (!await pathExists(locationPath)) throw new Error(`Location SVG not created at ${locationPath}`);
+    // Run compile-countries-registry compiler to update assets/js/countries.js
+    console.log('Running compile-countries-registry.mjs...');
+    execSync('node scripts/compile-countries-registry.mjs', { cwd: projectRoot, stdio: 'inherit' });
 
     console.log(`Successfully scaffolded Country Hub for ${options.name}!`);
     console.log(`- Created countries/${options.id}.yaml`);
     console.log(`- Created assets/images/countries/${options.id}-outline.svg`);
     console.log(`- Created assets/images/countries/${options.id}-location.svg`);
-    console.log('- Updated assets/js/countries.js');
+    console.log(`- Created countries/data/${options.id}.json`);
+    console.log('- Recompiled assets/js/countries.js');
   } catch (err) {
     console.error('Error during staged writes:', err);
     process.exit(1);

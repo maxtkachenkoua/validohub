@@ -1,0 +1,41 @@
+{
+  "id": "chile",
+  "visualAssets": null,
+  "catalog": {
+    "id": "chile",
+    "flag": "🇨🇱",
+    "name": "Chile",
+    "iso2": "CL",
+    "iso3": "CHL",
+    "continent": "South America",
+    "region": "South America",
+    "language": "Spanish",
+    "currency": "CLP",
+    "currencyName": "Chilean peso",
+    "status": "planned",
+    "summary": "Future hub for Chilean RUT, banking, address, and localization notes.",
+    "identifiers": [
+      "RUT",
+      "RUN"
+    ],
+    "payments": [
+      "bank account",
+      "SWIFT"
+    ],
+    "features": [
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "RUT Validator"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 38,
+      "y": 86
+    }
+  },
+  "hub": null
+}

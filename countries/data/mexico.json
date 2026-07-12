@@ -1,0 +1,45 @@
+{
+  "id": "mexico",
+  "visualAssets": null,
+  "catalog": {
+    "id": "mexico",
+    "flag": "🇲🇽",
+    "name": "Mexico",
+    "iso2": "MX",
+    "iso3": "MEX",
+    "continent": "North America",
+    "region": "North America",
+    "language": "Spanish",
+    "currency": "MXN",
+    "currencyName": "Mexican peso",
+    "status": "planned",
+    "summary": "Future hub for Mexican RFC, CURP, address, and payment implementation context.",
+    "identifiers": [
+      "RFC",
+      "CURP",
+      "postal code"
+    ],
+    "payments": [
+      "CLABE",
+      "SPEI"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "RFC Validator",
+      "CURP Validator",
+      "CLABE Notes"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 32,
+      "y": 48
+    }
+  },
+  "hub": null
+}

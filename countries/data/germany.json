@@ -1,0 +1,1361 @@
+{
+  "id": "germany",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/germany-outline.svg",
+    "outlineAlt": "Germany country outline",
+    "mapSrc": "/assets/images/countries/germany-location.svg",
+    "mapAlt": "World map with Germany location marker",
+    "mapMarker": {
+      "x": 50,
+      "y": 50,
+      "label": "Germany"
+    },
+    "source": "Natural Earth geometry"
+  },
+  "catalog": {
+    "id": "germany",
+    "flag": "🇩🇪",
+    "name": "Germany",
+    "iso2": "DE",
+    "iso3": "DEU",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "Placeholder",
+    "currency": "EUR",
+    "currencyName": "Euro",
+    "status": "inProgress",
+    "summary": "Future hub for Germany validation rules and locale formats.",
+    "identifiers": [],
+    "payments": [],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [],
+    "plannedWorkbenches": [
+      "Placeholder Workbench"
+    ],
+    "completion": 20,
+    "coordinates": {
+      "x": 50,
+      "y": 35
+    }
+  },
+  "hub": {
+    "flag": "🇩🇪",
+    "name": "Germany",
+    "badge": "Central Europe country hub",
+    "description": "Developer intelligence for German tax identifiers, locale conventions, postal layouts, phone parsing, and banking integration.",
+    "metadata": {
+      "nativeName": "Deutschland",
+      "population": "approximately 84.4M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "area": "357,022 km²",
+      "capital": "Berlin",
+      "largestCity": "Berlin",
+      "continent": "Europe",
+      "region": "Central Europe / European Union",
+      "languages": "German",
+      "currency": "Euro",
+      "currencyCode": "EUR",
+      "currencySymbol": "€",
+      "callingCode": "+49",
+      "internetTld": ".de",
+      "drivingSide": "Right",
+      "iso2": "DE",
+      "iso3": "DEU",
+      "isoNumeric": "276",
+      "locale": "de-DE",
+      "icuLocale": "de_DE",
+      "dateFormat": "DD.MM.YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Dot (.)",
+      "addressFormat": "Street name number, postal code City",
+      "postalCodeFormat": "NNNNN",
+      "primaryTimeZone": "Europe/Berlin (CET/CEST)",
+      "utcRange": "UTC+01/+02",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "de-DE",
+      "cldrLocale": "de_DE",
+      "metricVsImperial": "Metric-first"
+    },
+    "stats": [
+      {
+        "icon": "👥",
+        "label": "Population",
+        "valueKey": "population",
+        "tags": [
+          "people"
+        ]
+      },
+      {
+        "icon": "🏛",
+        "label": "Capital",
+        "valueKey": "capital",
+        "tags": [
+          "government"
+        ]
+      },
+      {
+        "icon": "🏙",
+        "label": "Largest city",
+        "valueKey": "largestCity",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🌍",
+        "label": "Continent",
+        "valueKey": "continent",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🗣",
+        "label": "Languages",
+        "valueKey": "languages",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "brandKey": "europeanUnion",
+        "label": "Region",
+        "valueKey": "region",
+        "tags": [
+          "government",
+          "locale"
+        ]
+      },
+      {
+        "brandKey": "iban",
+        "label": "Currency",
+        "valueKey": "currencyCode",
+        "detailKey": "currency",
+        "tags": [
+          "currency",
+          "payments"
+        ]
+      },
+      {
+        "icon": "☎",
+        "label": "Calling code",
+        "valueKey": "callingCode",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "icon": "🌐",
+        "label": "Internet TLD",
+        "valueKey": "internetTld",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "icon": "🕒",
+        "label": "UTC range",
+        "valueKey": "utcRange",
+        "tags": [
+          "time"
+        ]
+      }
+    ],
+    "countryProfile": [
+      {
+        "icon": "🏷",
+        "label": "Native name",
+        "valueKey": "nativeName",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "👥",
+        "label": "Population",
+        "valueKey": "population",
+        "tags": [
+          "people"
+        ]
+      },
+      {
+        "icon": "▣",
+        "label": "Area",
+        "valueKey": "area",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🏛",
+        "label": "Capital",
+        "valueKey": "capital",
+        "tags": [
+          "government"
+        ]
+      },
+      {
+        "icon": "🏙",
+        "label": "Largest city",
+        "valueKey": "largestCity",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🌍",
+        "label": "Continent",
+        "valueKey": "continent",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🗣",
+        "label": "Languages",
+        "valueKey": "languages",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🚗",
+        "label": "Driving side",
+        "valueKey": "drivingSide",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "📏",
+        "label": "Measurement system",
+        "valueKey": "measurementSystem",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "📄",
+        "label": "Paper size",
+        "valueKey": "paperSize",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "icon": "🔌",
+        "label": "Power plug types",
+        "valueKey": "powerPlugTypes",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "icon": "⚡",
+        "label": "Voltage",
+        "valueKey": "voltage",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "icon": "⏱",
+        "label": "Frequency",
+        "valueKey": "frequency",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "icon": "🚨",
+        "label": "Emergency number",
+        "valueKey": "emergencyNumber",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "icon": "☎",
+        "label": "Calling code",
+        "valueKey": "callingCode",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "brandKey": "iban",
+        "label": "Currency",
+        "valueKey": "currencyCode",
+        "detailKey": "currency",
+        "tags": [
+          "currency"
+        ]
+      },
+      {
+        "icon": "🕒",
+        "label": "Timezone range",
+        "valueKey": "utcRange",
+        "tags": [
+          "time"
+        ]
+      },
+      {
+        "icon": "📅",
+        "label": "Week starts",
+        "valueKey": "weekStarts",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "↔",
+        "label": "RTL support",
+        "valueKey": "rtlSupport",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🔤",
+        "label": "Unicode locale",
+        "valueKey": "unicodeLocale",
+        "tags": [
+          "locale",
+          "developer"
+        ]
+      },
+      {
+        "icon": "🌐",
+        "label": "ICU locale",
+        "valueKey": "icuLocale",
+        "tags": [
+          "locale",
+          "developer"
+        ]
+      },
+      {
+        "icon": "🌐",
+        "label": "CLDR locale",
+        "valueKey": "cldrLocale",
+        "tags": [
+          "locale",
+          "developer"
+        ]
+      },
+      {
+        "icon": "📐",
+        "label": "Metric vs Imperial",
+        "valueKey": "metricVsImperial",
+        "tags": [
+          "locale"
+        ]
+      }
+    ],
+    "visualIdentity": {
+      "countryId": "germany",
+      "outlineLabel": "Germany outline",
+      "mapLabel": "Germany in the world",
+      "continentBadge": "Europe",
+      "flagLabel": "Germany flag",
+      "heroAccentPrimary": "17 17 17",
+      "heroAccentSecondary": "193 18 31",
+      "heroAccentTertiary": "242 201 76"
+    },
+    "quickActions": [
+      {
+        "label": "Copy Locale",
+        "valueKey": "locale"
+      },
+      {
+        "label": "Copy Currency Code",
+        "valueKey": "currencyCode"
+      },
+      {
+        "label": "Copy Currency Symbol",
+        "valueKey": "currencySymbol"
+      },
+      {
+        "label": "Copy Phone Code",
+        "valueKey": "callingCode"
+      },
+      {
+        "label": "Copy ISO2",
+        "valueKey": "iso2"
+      },
+      {
+        "label": "Copy ISO3",
+        "valueKey": "iso3"
+      },
+      {
+        "label": "Copy Numeric ISO",
+        "valueKey": "isoNumeric"
+      },
+      {
+        "label": "Copy Internet TLD",
+        "valueKey": "internetTld"
+      },
+      {
+        "label": "Copy Date Format",
+        "valueKey": "dateFormat"
+      },
+      {
+        "label": "Copy Postal Code Format",
+        "valueKey": "postalCodeFormat"
+      },
+      {
+        "label": "Copy Primary Time Zone",
+        "valueKey": "primaryTimeZone"
+      }
+    ],
+    "cheatSheet": [
+      {
+        "label": "ISO2",
+        "valueKey": "iso2",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "ISO3",
+        "valueKey": "iso3",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Numeric ISO",
+        "valueKey": "isoNumeric",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Locale",
+        "valueKey": "locale",
+        "icon": "🌐",
+        "tags": [
+          "locale",
+          "developer"
+        ]
+      },
+      {
+        "label": "ICU locale",
+        "valueKey": "icuLocale",
+        "icon": "🌐",
+        "tags": [
+          "locale",
+          "developer"
+        ]
+      },
+      {
+        "label": "Language",
+        "valueKey": "languages",
+        "icon": "🗣",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Currency",
+        "value": "Euro (EUR)",
+        "copyValueKey": "currencyCode",
+        "brandKey": "iban",
+        "tags": [
+          "currency",
+          "payments"
+        ]
+      },
+      {
+        "label": "Currency symbol",
+        "valueKey": "currencySymbol",
+        "icon": "💵",
+        "tags": [
+          "currency"
+        ]
+      },
+      {
+        "label": "Phone country code",
+        "valueKey": "callingCode",
+        "icon": "☎",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "Internet TLD",
+        "valueKey": "internetTld",
+        "icon": "🌐",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "label": "Date format",
+        "valueKey": "dateFormat",
+        "icon": "📅",
+        "tags": [
+          "locale",
+          "date"
+        ]
+      },
+      {
+        "label": "Time format",
+        "valueKey": "timeFormat",
+        "icon": "⏱",
+        "tags": [
+          "locale",
+          "time"
+        ]
+      },
+      {
+        "label": "Decimal separator",
+        "valueKey": "decimalSeparator",
+        "copyValue": "comma decimal separator",
+        "icon": "🔢",
+        "tags": [
+          "locale",
+          "currency"
+        ]
+      },
+      {
+        "label": "Thousands separator",
+        "valueKey": "thousandsSeparator",
+        "copyValue": "dot thousands separator",
+        "icon": "🔢",
+        "tags": [
+          "locale",
+          "currency"
+        ]
+      },
+      {
+        "label": "Address format",
+        "valueKey": "addressFormat",
+        "icon": "📍",
+        "tags": [
+          "addresses"
+        ]
+      },
+      {
+        "label": "Postal code format",
+        "valueKey": "postalCodeFormat",
+        "icon": "✉",
+        "tags": [
+          "postal",
+          "addresses"
+        ]
+      },
+      {
+        "label": "Primary time zone",
+        "valueKey": "primaryTimeZone",
+        "icon": "🕒",
+        "tags": [
+          "time"
+        ]
+      },
+      {
+        "label": "Time zones",
+        "valueKey": "utcRange",
+        "icon": "🕒",
+        "tags": [
+          "time"
+        ]
+      }
+    ],
+    "localFormats": [
+      {
+        "icon": "🪪",
+        "name": "Steueridentifikationsnummer (IdNr)",
+        "status": "planned",
+        "category": "National identity",
+        "tags": [
+          "identifiers",
+          "government"
+        ],
+        "description": "11-digit personal tax identification number assigned to residents of Germany by the Bundeszentralamt für Steuern (BZSt). Does not change upon relocation or marriage.",
+        "related": [
+          "German Tax ID Inspector"
+        ]
+      },
+      {
+        "icon": "🪪",
+        "name": "Umsatzsteuer-Identifikationsnummer (USt-IdNr)",
+        "status": "planned",
+        "category": "Tax identifier",
+        "tags": [
+          "identifiers",
+          "tax"
+        ],
+        "description": "EU VAT number with DE prefix followed by 9 digits. Used for cross-border commerce validation.",
+        "related": [
+          "USt-IdNr / VAT Format Inspector"
+        ]
+      },
+      {
+        "icon": "🪪",
+        "name": "Steuernummer (St.-Nr.)",
+        "status": "planned",
+        "category": "Tax identifier",
+        "tags": [
+          "identifiers",
+          "tax"
+        ],
+        "description": "Federal-state-specific tax number formats used for local corporate and personal tax filings. Can change when relocating between tax districts.",
+        "related": [
+          "Steuernummer Reference Tool"
+        ]
+      },
+      {
+        "icon": "🏢",
+        "name": "Handelsregister context",
+        "status": "planned",
+        "category": "Business identifier",
+        "tags": [
+          "identifiers",
+          "government"
+        ],
+        "description": "Company registration numbers (HRB/HRA) indicating registry district and corporate form context. Used to verify legal entities.",
+        "related": [
+          "German Address Formatter"
+        ]
+      },
+      {
+        "icon": "✉",
+        "name": "German postal code",
+        "status": "planned",
+        "category": "Postal",
+        "tags": [
+          "postal",
+          "addresses"
+        ],
+        "description": "Five-digit postal codes managed by Deutsche Post. First digit defines one of ten postal zones (Leitzonen).",
+        "related": [
+          "Germany Postal Code Validator"
+        ]
+      },
+      {
+        "icon": "☎",
+        "name": "German phone numbers",
+        "status": "planned",
+        "category": "Phone",
+        "tags": [
+          "phone"
+        ],
+        "description": "Landline and mobile formats regulated by the Bundesnetzagentur. Features variable-length area codes.",
+        "related": [
+          "Germany Phone Validator"
+        ]
+      },
+      {
+        "brandKey": "iban",
+        "name": "German IBAN",
+        "status": "available",
+        "category": "Banking",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "German bank accounts use DE prefix IBANs. Direct checksum verification is available.",
+        "related": [
+          "IBAN Validator"
+        ]
+      },
+      {
+        "brandKey": "swift",
+        "name": "BIC / SWIFT",
+        "status": "ready",
+        "category": "Banking",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "SWIFT identification for German credit institutions. Identifies banks in domestic and international clearings."
+      },
+      {
+        "brandKey": "vies",
+        "name": "EU VAT / VIES",
+        "status": "planned",
+        "category": "Tax and business",
+        "tags": [
+          "tax",
+          "government"
+        ],
+        "description": "German VAT registration status verification via VIES system context."
+      }
+    ],
+    "payments": [
+      {
+        "brandKey": "iban",
+        "title": "EUR and German IBAN",
+        "status": "available",
+        "tags": [
+          "payments",
+          "banking"
+        ],
+        "text": "Germany uses EUR and participates in IBAN-based European banking flows. Use the global IBAN Validator for checksum-level checks."
+      },
+      {
+        "brandKey": "sepa",
+        "title": "SEPA",
+        "status": "ready",
+        "tags": [
+          "payments",
+          "banking"
+        ],
+        "text": "Germany is a founding member of SEPA, supporting SEPA direct debits and credit transfers."
+      },
+      {
+        "brandKey": "swift",
+        "title": "BIC / SWIFT",
+        "status": "ready",
+        "tags": [
+          "banking"
+        ],
+        "text": "International bank transfers require BIC/SWIFT bank details along with account numbers."
+      },
+      {
+        "icon": "💳",
+        "title": "Card payments",
+        "status": "ready",
+        "tags": [
+          "payments"
+        ],
+        "text": "Standard international Visa/Mastercard schemes along with local Girocard (formerly EC-Karte) routing conventions."
+      }
+    ],
+    "officialResources": [
+      {
+        "label": "Bundeszentralamt für Steuern (BZSt)",
+        "status": "available",
+        "tags": [
+          "government",
+          "identifiers",
+          "tax"
+        ],
+        "note": "Federal Central Tax Office website providing official Tax ID and VAT validation specifications."
+      },
+      {
+        "label": "Deutsche Bundesbank",
+        "status": "available",
+        "tags": [
+          "government",
+          "banking"
+        ],
+        "note": "Central bank of Germany, providing currency indices, clearing rails, and bank code directory context."
+      },
+      {
+        "label": "Bundesnetzagentur",
+        "status": "available",
+        "tags": [
+          "government",
+          "phone"
+        ],
+        "note": "Federal Network Agency supervising telecommunication numbering plans and area prefixes."
+      },
+      {
+        "label": "Deutsche Post",
+        "status": "available",
+        "tags": [
+          "postal",
+          "addresses"
+        ],
+        "note": "Postal authority administering five-digit postal codes and official directory standards."
+      },
+      {
+        "brandKey": "vies",
+        "label": "European Commission VIES",
+        "status": "available",
+        "tags": [
+          "tax",
+          "government"
+        ],
+        "note": "EU official system for validating VAT registry records and registration validity."
+      },
+      {
+        "brandKey": "sepa",
+        "label": "European Payments Council / SEPA",
+        "status": "available",
+        "tags": [
+          "payments",
+          "banking"
+        ],
+        "note": "SEPA schemes regulator detailing credit transfer and direct debit specifications."
+      }
+    ],
+    "plannedWorkbenches": [
+      {
+        "name": "German Tax ID Inspector",
+        "status": "planned",
+        "tags": [
+          "identifiers",
+          "government"
+        ],
+        "description": "Inspect and explain German Tax ID (IdNr) structure and validation rules."
+      },
+      {
+        "name": "USt-IdNr / VAT Format Inspector",
+        "status": "planned",
+        "tags": [
+          "identifiers",
+          "tax"
+        ],
+        "description": "Validate the structural format of DE VAT numbers."
+      },
+      {
+        "name": "Steuernummer Reference Tool",
+        "status": "planned",
+        "tags": [
+          "identifiers",
+          "tax"
+        ],
+        "description": "Understand state-specific local tax number formats and schemas."
+      },
+      {
+        "name": "Germany Phone Validator",
+        "status": "planned",
+        "tags": [
+          "phone"
+        ],
+        "description": "Explain prefix layouts and digit counts for landline and mobile ranges."
+      },
+      {
+        "name": "Germany Postal Code Validator",
+        "status": "planned",
+        "tags": [
+          "postal",
+          "addresses"
+        ],
+        "description": "Identify five-digit postal zones and city mappings without full verification."
+      },
+      {
+        "name": "German IBAN Tools",
+        "status": "planned",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "Explain country-specific bank code (BLZ) and account number offsets."
+      },
+      {
+        "name": "German Address Formatter",
+        "status": "planned",
+        "tags": [
+          "addresses"
+        ],
+        "description": "Format and normalize street, building, and town names using German postal layout standards."
+      }
+    ],
+    "relatedGlobalTools": [
+      {
+        "label": "JSON Formatter",
+        "path": "tools/json-formatter/",
+        "icon": "▣",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "label": "Regex Tester",
+        "path": "tools/regex-tester/",
+        "icon": ".*",
+        "tags": [
+          "developer"
+        ]
+      },
+      {
+        "label": "IBAN Validator",
+        "path": "tools/iban-validator/",
+        "brandKey": "iban",
+        "tags": [
+          "banking"
+        ]
+      }
+    ],
+    "relatedCategories": [
+      {
+        "label": "Finance",
+        "path": "categories/finance/",
+        "tags": [
+          "payments",
+          "banking"
+        ]
+      },
+      {
+        "label": "National Identifiers",
+        "path": "categories/national-identifiers/",
+        "tags": [
+          "identifiers"
+        ]
+      },
+      {
+        "label": "Developer Tools",
+        "path": "categories/developer-tools/",
+        "tags": [
+          "developer"
+        ]
+      }
+    ],
+    "availableWorkbenches": {},
+    "futureCountryPages": [
+      {
+        "label": "Brazil",
+        "status": "available",
+        "path": "brazil/"
+      },
+      {
+        "label": "Poland",
+        "status": "available",
+        "path": "poland/"
+      },
+      {
+        "label": "Spain",
+        "status": "available",
+        "path": "spain/"
+      },
+      {
+        "label": "France",
+        "status": "planned"
+      },
+      {
+        "label": "Portugal",
+        "status": "planned"
+      },
+      {
+        "label": "Italy",
+        "status": "planned"
+      },
+      {
+        "label": "Netherlands",
+        "status": "planned"
+      },
+      {
+        "label": "Belgium",
+        "status": "planned"
+      },
+      {
+        "label": "United Kingdom",
+        "status": "planned"
+      },
+      {
+        "label": "United States",
+        "status": "planned"
+      }
+    ],
+    "localizationExamples": [
+      {
+        "label": "Date",
+        "value": "12.07.2026",
+        "tags": [
+          "locale",
+          "date"
+        ]
+      },
+      {
+        "label": "Time",
+        "value": "14:25",
+        "tags": [
+          "locale",
+          "time"
+        ]
+      },
+      {
+        "label": "Currency",
+        "value": "1.234,56 €",
+        "tags": [
+          "currency"
+        ]
+      },
+      {
+        "label": "Decimal",
+        "value": "1.234,56",
+        "tags": [
+          "locale",
+          "currency"
+        ]
+      },
+      {
+        "label": "Percentage",
+        "value": "35,7 %",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Mobile phone",
+        "value": "+49 170 1234567",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "Landline",
+        "value": "+49 30 12345678",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "Postal code",
+        "value": "10117",
+        "tags": [
+          "postal",
+          "addresses"
+        ]
+      },
+      {
+        "label": "Address example",
+        "value": "Friedrichstraße 100, 10117 Berlin",
+        "tags": [
+          "addresses"
+        ]
+      },
+      {
+        "label": "Example person name",
+        "value": "Max Mustermann",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Mainland time zone",
+        "value": "Europe/Berlin",
+        "tags": [
+          "time"
+        ]
+      }
+    ],
+    "addressExample": {
+      "formatted": [
+        "Max Mustermann",
+        "Friedrichstraße 100",
+        "10117 Berlin",
+        "Germany"
+      ],
+      "fields": [
+        {
+          "label": "Recipient",
+          "value": "Max Mustermann",
+          "description": "Recipient name, company, or department."
+        },
+        {
+          "label": "Street and number",
+          "value": "Friedrichstraße 100",
+          "description": "German layouts place the street name before the house number."
+        },
+        {
+          "label": "Postal code and City",
+          "value": "10117 Berlin",
+          "description": "Five-digit numeric postal code (NNNNN) followed by city name."
+        },
+        {
+          "label": "Country",
+          "value": "Germany",
+          "description": "Country label for international delivery."
+        }
+      ]
+    },
+    "phoneExamples": [
+      {
+        "label": "Mobile",
+        "value": "0170 1234567",
+        "description": "German mobile network format display example.",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "Landline",
+        "value": "030 12345678",
+        "description": "Berlin landline display example.",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "International mobile",
+        "value": "+49 170 1234567",
+        "description": "International mobile format using country code +49.",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "International landline",
+        "value": "+49 30 12345678",
+        "description": "International landline format for Berlin.",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "label": "Normalized",
+        "value": "491701234567",
+        "description": "Digits-only normalization for backend databases.",
+        "tags": [
+          "phone",
+          "developer"
+        ]
+      }
+    ],
+    "integrationChecklist": [
+      "Locale de-DE configured",
+      "UTF-8 encoding preserved",
+      "Euro (EUR) formatting with comma decimals and dot separators",
+      "Steuer-ID validation checksum rules",
+      "USt-IdNr VAT ID format structure checks",
+      "Steuernummer state-specific validation checks",
+      "German postal code numeric format validation",
+      "Phone code +49 prefix parsing",
+      "SEPA direct debit mandate handling",
+      "Girocard and Giropay clearing routes"
+    ],
+    "validationRules": [
+      {
+        "name": "Steuer-ID (IdNr)",
+        "tags": [
+          "identifiers",
+          "government"
+        ],
+        "points": [
+          "11 digits total",
+          "Checksum uses modulo 11 algorithm",
+          "Assigned by Bundeszentralamt für Steuern (BZSt)"
+        ]
+      },
+      {
+        "name": "USt-IdNr",
+        "tags": [
+          "identifiers",
+          "tax"
+        ],
+        "points": [
+          "Starts with DE followed by 9 digits",
+          "Checksum uses ISO 7064 Mod 97,10 or similar validation"
+        ]
+      },
+      {
+        "name": "Steuernummer",
+        "tags": [
+          "identifiers",
+          "tax"
+        ],
+        "points": [
+          "Can be 10, 11, or 13 digits depending on federal state schema",
+          "Used primarily for regional tax offices"
+        ]
+      },
+      {
+        "name": "Postal code",
+        "tags": [
+          "postal",
+          "addresses"
+        ],
+        "points": [
+          "Exactly five numeric digits",
+          "No hyphens or alphabetical characters allowed"
+        ]
+      },
+      {
+        "name": "Phone",
+        "tags": [
+          "phone"
+        ],
+        "points": [
+          "Variable-length area codes between 2 and 5 digits",
+          "Zero prefix must be omitted in international formats"
+        ]
+      },
+      {
+        "name": "IBAN",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "points": [
+          "German IBAN starts with DE followed by 2 control digits and 18-digit account details",
+          "Standard Mod 97,10 checksum check"
+        ]
+      }
+    ],
+    "commonMistakes": [
+      "Conflating Steuer-ID (personal) with Steuernummer (local tax office file number).",
+      "Expecting phone number area codes to have a fixed length (German area codes vary from 2 to 5 digits).",
+      "Omitting the space before the percent sign in formatting (e.g. using 35,7% instead of 35,7 %).",
+      "Formatting currency as €1.234,56 instead of the natural German 1.234,56 €.",
+      "Assuming postal codes starting with 0 do not exist (eastern Germany codes use leading zeros, e.g. Dresden is 01067).",
+      "Confusing Handelsregister numbers with personal tax or national identification numbers."
+    ],
+    "bankingOverview": [
+      {
+        "brandKey": "iban",
+        "name": "IBAN",
+        "status": "available",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "DE-prefixed IBAN format is standard for international transfers."
+      },
+      {
+        "brandKey": "sepa",
+        "name": "SEPA",
+        "status": "ready",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "Euro accounts in Germany support SEPA credit transfers and direct debits."
+      },
+      {
+        "brandKey": "swift",
+        "name": "SWIFT / BIC",
+        "status": "ready",
+        "tags": [
+          "banking"
+        ],
+        "description": "Required for international non-SEPA transfers."
+      }
+    ],
+    "localizationNotes": [
+      {
+        "name": "Plural rules",
+        "description": "German uses standard Germanic plural forms (one, other).",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "name": "Week starts",
+        "description": "Most German user interfaces expect Monday as the first day of week.",
+        "tags": [
+          "locale",
+          "date"
+        ]
+      },
+      {
+        "name": "Calendar",
+        "description": "Gregorian calendar is the ordinary civil calendar.",
+        "tags": [
+          "locale",
+          "date"
+        ]
+      },
+      {
+        "name": "Unicode",
+        "description": "Ensure support for German diacritics and special characters: ä, ö, ü, ß.",
+        "tags": [
+          "locale",
+          "developer"
+        ]
+      },
+      {
+        "name": "Timezone",
+        "description": "Use Europe/Berlin for global civil time in Germany.",
+        "tags": [
+          "time",
+          "developer"
+        ]
+      }
+    ],
+    "ecosystem": [
+      {
+        "name": "Steuer-ID",
+        "description": "Personal tax identification number database.",
+        "tags": [
+          "identifiers",
+          "government"
+        ]
+      },
+      {
+        "name": "USt-IdNr",
+        "description": "Commercial VAT identification registry.",
+        "tags": [
+          "identifiers",
+          "tax"
+        ]
+      },
+      {
+        "name": "Handelsregister",
+        "description": "Commercial company registry.",
+        "tags": [
+          "identifiers",
+          "government"
+        ]
+      }
+    ],
+    "highlights": [
+      "Germany uses de-DE locale for formatting.",
+      "EUR is formatted as 1.234,56 € with a space and trailing symbol.",
+      "Umlauts (ä, ö, ü) and ß must be supported.",
+      "Date format is DD.MM.YYYY.",
+      "Week starts on Monday."
+    ],
+    "developerNotes": [
+      "Validate German postal codes strictly as 5 digits.",
+      "Support variable-length area codes in phone validation.",
+      "Preserve case-sensitivity for character-coded Steuernummer configurations."
+    ],
+    "developerExamples": [
+      {
+        "title": "Java Locale",
+        "language": "java",
+        "brandKey": "java",
+        "code": "Locale.forLanguageTag(\"de-DE\")",
+        "note": "Use BCP 47 locale tags for Java formatting APIs."
+      },
+      {
+        "title": "Java currency format",
+        "language": "java",
+        "brandKey": "java",
+        "code": "NumberFormat.getCurrencyInstance(Locale.forLanguageTag(\"de-DE\")).format(value)",
+        "note": "Formats values using German currency conventions."
+      },
+      {
+        "title": "JavaScript Intl Currency",
+        "language": "javascript",
+        "brandKey": "javascript",
+        "code": "new Intl.NumberFormat(\"de-DE\", { style: \"currency\", currency: \"EUR\" })",
+        "note": "Formats EUR values with de-DE separators and currency display."
+      },
+      {
+        "title": "JavaScript Date",
+        "language": "javascript",
+        "brandKey": "javascript",
+        "code": "new Intl.DateTimeFormat(\"de-DE\", { timeZone: \"Europe/Berlin\" })",
+        "note": "Use Europe/Berlin timezone for Germany local dates."
+      },
+      {
+        "title": "Python locale",
+        "language": "python",
+        "brandKey": "python",
+        "code": "locale.setlocale(locale.LC_ALL, \"de_DE.UTF-8\")",
+        "note": "Requires the de_DE locale to be installed on the host operating system."
+      },
+      {
+        "title": "Go language tag",
+        "language": "go",
+        "brandKey": "go",
+        "code": "language.MustParse(\"de-DE\")",
+        "note": "Use golang.org/x/text/language package for locale representation."
+      }
+    ]
+  }
+}
