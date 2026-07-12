@@ -326,7 +326,7 @@
         color: var(--muted);
       }
 
-      /* Timeline Tracker Bar */
+      /* Timeline styles */
       .pesel-timeline-tracker {
         display: flex;
         align-items: center;
@@ -933,64 +933,51 @@
       const downloadBtn = workbench.form.querySelector('[data-tool-download]');
       if (downloadBtn) downloadBtn.style.display = 'none';
 
-      // Insert controls row (Presets & History & Generators) above the input
-      if (!workbench.form.querySelector('.pesel-controls-row')) {
-        const controlsRow = document.createElement('div');
-        controlsRow.className = 'pesel-controls-row';
-        controlsRow.innerHTML = `
-          <div style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
-            <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
-              <div class="pesel-control-item">
-                <label for="pesel-presets">Presets</label>
-                <select class="pesel-select" id="pesel-presets">
-                  <option value="">-- Select Preset --</option>
-                  <option value="valid-male">Valid Male (92082612336)</option>
-                  <option value="valid-female">Valid Female (92082612343)</option>
-                  <option value="invalid-checksum">Invalid Checksum (92082612335)</option>
-                  <option value="invalid-date">Invalid Date (92023012346)</option>
-                  <option value="non-digits">Contains Letters (9208261234a)</option>
-                  <option value="too-short">Too Short (920826)</option>
-                </select>
-              </div>
-              <div class="pesel-control-item">
-                <label for="pesel-history">History</label>
-                <select class="pesel-select" id="pesel-history">
-                  <option value="">-- Recent Validations --</option>
-                </select>
-                <button type="button" class="button button-ghost compact" id="pesel-clear-history-btn" style="font-size: 0.72rem; padding: 2px 6px;">Clear</button>
-              </div>
-            </div>
+      // Insert Presets & History into native field grid
+      const fieldGrid = workbench.form.querySelector('.field-grid');
+      const inputField = workbench.primaryInput();
+      if (fieldGrid && !workbench.form.querySelector('#pesel-presets')) {
+        // Style main input field's label parent to span across both grid columns
+        const peselField = fieldGrid.querySelector('label.field');
+        if (peselField) {
+          peselField.style.gridColumn = '1 / -1';
+        }
 
-            <!-- Generators playground -->
-            <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-top: 1px solid var(--line); padding-top: 12px;">
-              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 0.05em;">Generator Playground:</span>
-              <button type="button" class="pesel-playground-btn" id="gen-valid-rand" style="padding: 4px 8px; font-size: 0.72rem;">Valid Random</button>
-              <button type="button" class="pesel-playground-btn" id="gen-male-rand" style="padding: 4px 8px; font-size: 0.72rem;">Valid Male</button>
-              <button type="button" class="pesel-playground-btn" id="gen-female-rand" style="padding: 4px 8px; font-size: 0.72rem;">Valid Female</button>
-              <button type="button" class="pesel-playground-btn" id="gen-bad-sum" style="padding: 4px 8px; font-size: 0.72rem;">Bad Checksum</button>
-              <button type="button" class="pesel-playground-btn" id="gen-bad-date" style="padding: 4px 8px; font-size: 0.72rem;">Bad Date</button>
-            </div>
-          </div>
+        // Create Presets field
+        const presetsField = document.createElement('div');
+        presetsField.className = 'field';
+        presetsField.innerHTML = `
+          <span style="font-size: 0.92rem; font-weight: 720; color: var(--text);">Presets</span>
+          <select class="pesel-select" id="pesel-presets" style="width: 100%; height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer;">
+            <option value="">-- Select Preset --</option>
+            <option value="valid-male">Valid Male (92082612336)</option>
+            <option value="valid-female">Valid Female (92082612343)</option>
+            <option value="invalid-checksum">Invalid Checksum (92082612335)</option>
+            <option value="invalid-date">Invalid Date (92023012346)</option>
+            <option value="non-digits">Contains Letters (9208261234a)</option>
+            <option value="too-short">Too Short (920826)</option>
+          </select>
         `;
-        workbench.form.insertBefore(controlsRow, workbench.form.querySelector('.field-grid'));
 
-        // Generator handlers
-        const inputField = workbench.primaryInput();
-        const triggerGen = (gender, invalidType) => {
-          if (inputField) {
-            inputField.value = generateRandomPesel(gender, invalidType);
-            inputField.dispatchEvent(new Event('input', { bubbles: true }));
-          }
-        };
+        // Create History field
+        const historyField = document.createElement('div');
+        historyField.className = 'field';
+        historyField.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span style="font-size: 0.92rem; font-weight: 720; color: var(--text);">History</span>
+            <button type="button" class="button button-ghost compact" id="pesel-clear-history-btn" style="font-size: 0.72rem; padding: 2px 6px; height: auto; border: none; background: none; margin: 0; cursor: pointer;">Clear</button>
+          </div>
+          <select class="pesel-select" id="pesel-history" style="width: 100%; height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer;">
+            <option value="">-- Recent Validations --</option>
+          </select>
+        `;
 
-        controlsRow.querySelector('#gen-valid-rand').addEventListener('click', () => triggerGen(null, null));
-        controlsRow.querySelector('#gen-male-rand').addEventListener('click', () => triggerGen('male', null));
-        controlsRow.querySelector('#gen-female-rand').addEventListener('click', () => triggerGen('female', null));
-        controlsRow.querySelector('#gen-bad-sum').addEventListener('click', () => triggerGen(null, 'checksum'));
-        controlsRow.querySelector('#gen-bad-date').addEventListener('click', () => triggerGen(null, 'date'));
+        // Prepend inside fieldGrid
+        fieldGrid.insertBefore(historyField, fieldGrid.firstChild);
+        fieldGrid.insertBefore(presetsField, fieldGrid.firstChild);
 
         // Handle preset changes
-        controlsRow.querySelector('#pesel-presets').addEventListener('change', (e) => {
+        fieldGrid.querySelector('#pesel-presets').addEventListener('change', (e) => {
           const val = e.target.value;
           if (val) {
             PeselPlugin.applySample(workbench, val);
@@ -998,7 +985,7 @@
         });
 
         // Handle history selection
-        controlsRow.querySelector('#pesel-history').addEventListener('change', (e) => {
+        fieldGrid.querySelector('#pesel-history').addEventListener('change', (e) => {
           const val = e.target.value;
           if (val) {
             if (inputField) {
@@ -1009,9 +996,9 @@
         });
 
         // Handle history clear
-        controlsRow.querySelector('#pesel-clear-history-btn').addEventListener('click', () => {
+        fieldGrid.querySelector('#pesel-clear-history-btn').addEventListener('click', () => {
           localStorage.removeItem('validohub.pesel.history');
-          const select = controlsRow.querySelector('#pesel-history');
+          const select = fieldGrid.querySelector('#pesel-history');
           select.innerHTML = '<option value="">-- Recent Validations --</option>';
           workbench.setMessage('Validation history cleared.', 'success');
         });
@@ -1032,6 +1019,39 @@
         }
       };
       refreshHistorySelect();
+
+      // Insert Generator row right above the button row
+      if (!workbench.form.querySelector('.pesel-generator-row')) {
+        const genRow = document.createElement('div');
+        genRow.className = 'pesel-generator-row';
+        genRow.style.margin = '16px 0';
+        genRow.style.borderTop = '1px solid var(--line)';
+        genRow.style.paddingTop = '12px';
+        genRow.innerHTML = `
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+            <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 0.05em;">Generator:</span>
+            <button type="button" class="pesel-playground-btn" id="gen-valid-rand" style="padding: 4px 8px; font-size: 0.72rem;">Random Valid</button>
+            <button type="button" class="pesel-playground-btn" id="gen-male-rand" style="padding: 4px 8px; font-size: 0.72rem;">Male</button>
+            <button type="button" class="pesel-playground-btn" id="gen-female-rand" style="padding: 4px 8px; font-size: 0.72rem;">Female</button>
+            <button type="button" class="pesel-playground-btn" id="gen-bad-sum" style="padding: 4px 8px; font-size: 0.72rem;">Bad Checksum</button>
+            <button type="button" class="pesel-playground-btn" id="gen-bad-date" style="padding: 4px 8px; font-size: 0.72rem;">Bad Date</button>
+          </div>
+        `;
+        workbench.form.insertBefore(genRow, workbench.form.querySelector('.button-row'));
+
+        const triggerGen = (gender, invalidType) => {
+          if (inputField) {
+            inputField.value = generateRandomPesel(gender, invalidType);
+            inputField.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+        };
+
+        genRow.querySelector('#gen-valid-rand').addEventListener('click', () => triggerGen(null, null));
+        genRow.querySelector('#gen-male-rand').addEventListener('click', () => triggerGen('male', null));
+        genRow.querySelector('#gen-female-rand').addEventListener('click', () => triggerGen('female', null));
+        genRow.querySelector('#gen-bad-sum').addEventListener('click', () => triggerGen(null, 'checksum'));
+        genRow.querySelector('#gen-bad-date').addEventListener('click', () => triggerGen(null, 'date'));
+      }
 
       // Insert pipeline, empty states and premium outputs elements
       if (!workbench.form.querySelector('.pesel-premium-panel')) {
@@ -1175,7 +1195,6 @@
       }
 
       // Attach keyboard shortcuts and live-validation debounce listener
-      const inputField = workbench.primaryInput();
       let debounceTimeout = null;
       if (inputField) {
         inputField.addEventListener('input', () => {
@@ -1252,6 +1271,20 @@
         const node = premiumPanel.querySelector(`[data-node="${stepName}"]`);
         if (node) {
           node.className = `pesel-timeline-node ${state === 'success' ? 'active' : (state === 'failure' ? 'error' : '')}`;
+        }
+      };
+
+      const refreshHistorySelect = () => {
+        const historySelect = workbench.form.querySelector('#pesel-history');
+        if (historySelect) {
+          const items = JSON.parse(localStorage.getItem('validohub.pesel.history') || '[]');
+          historySelect.innerHTML = '<option value="">-- Recent Validations --</option>';
+          items.forEach(it => {
+            const opt = document.createElement('option');
+            opt.value = it.value;
+            opt.textContent = `${it.value} (${it.valid ? '✓' : '✗'} - ${it.date})`;
+            historySelect.appendChild(opt);
+          });
         }
       };
 
@@ -1590,9 +1623,10 @@
 
         const result = {
           valid: false,
+          gradient: null,
           errorCode: 'INVALID_CHECKSUM',
-          expected: expectedChecksum,
-          calculated: calculatedChecksum
+          expected: calculatedChecksum,
+          received: expectedChecksum
         };
         workbench.lastResult = result;
         workbench.setMessage('Invalid checksum control digit.', 'error');
@@ -1632,7 +1666,7 @@
               </div>
               <div class="pesel-result-row">
                 <span class="row-label">Actual Received Digit</span>
-                <span class="row-value">${expectedChecksum} (Difference: ${Math.abs(calculatedChecksum - expectedChecksum)})</span>
+                <span class="row-value">${expectedChecksum} (Difference at digit 11: expected ${calculatedChecksum}, received ${expectedChecksum})</span>
               </div>
             </div>
           `;
