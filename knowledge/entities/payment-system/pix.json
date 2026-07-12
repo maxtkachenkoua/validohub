@@ -1,0 +1,8 @@
+{
+  "id": "payment-system:pix",
+  "type": "payment-system",
+  "name": "PIX",
+  "shortDefinition": "Brazilian instant payment network managed by the Central Bank of Brazil.",
+  "aliases": [],
+  "stableReferences": []
+}

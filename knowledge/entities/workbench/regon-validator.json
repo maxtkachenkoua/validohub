@@ -1,0 +1,8 @@
+{
+  "id": "workbench:regon-validator",
+  "type": "workbench",
+  "name": "REGON Validator",
+  "shortDefinition": "",
+  "aliases": [],
+  "stableReferences": []
+}

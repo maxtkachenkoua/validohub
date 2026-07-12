@@ -1,0 +1,8 @@
+{
+  "id": "identifier:ccc",
+  "type": "identifier",
+  "name": "CCC",
+  "shortDefinition": "Código de Cuenta Corriente. Legacy Spanish bank account format.",
+  "aliases": [],
+  "stableReferences": []
+}

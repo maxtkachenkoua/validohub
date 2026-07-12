@@ -1,0 +1,8 @@
+{
+  "id": "identifier:renavam",
+  "type": "identifier",
+  "name": "RENAVAM",
+  "shortDefinition": "Registro Nacional de Veículos Automotores. Brazilian national vehicle registry number.",
+  "aliases": [],
+  "stableReferences": []
+}

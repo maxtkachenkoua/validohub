@@ -607,11 +607,22 @@ relatedCountries:
     const outlinePath = resolve(projectRoot, 'assets/images/countries', `${options.id}-outline.svg`);
     const locationPath = resolve(projectRoot, 'assets/images/countries', `${options.id}-location.svg`);
     const jsonPath = resolve(dataDir, `${options.id}.json`);
+    const entityPath = resolve(projectRoot, 'knowledge/entities/country', `${options.id}.json`);
+
+    const entityData = {
+      id: `country:${options.id}`,
+      type: 'country',
+      name: options.name,
+      shortDefinition: '',
+      aliases: [],
+      stableReferences: []
+    };
 
     await writeFile(yamlPath, yamlContent, 'utf8');
     await writeFile(outlinePath, outlineSvg, 'utf8');
     await writeFile(locationPath, locationSvg, 'utf8');
     await writeFile(jsonPath, JSON.stringify(countryData, null, 2) + '\n', 'utf8');
+    await writeFile(entityPath, JSON.stringify(entityData, null, 2) + '\n', 'utf8');
 
     // Run compile-countries-registry compiler to update assets/js/countries.js
     console.log('Running compile-countries-registry.mjs...');
@@ -622,6 +633,7 @@ relatedCountries:
     console.log(`- Created assets/images/countries/${options.id}-outline.svg`);
     console.log(`- Created assets/images/countries/${options.id}-location.svg`);
     console.log(`- Created countries/data/${options.id}.json`);
+    console.log(`- Created knowledge/entities/country/${options.id}.json`);
     console.log('- Recompiled assets/js/countries.js');
   } catch (err) {
     console.error('Error during staged writes:', err);

@@ -1,0 +1,8 @@
+{
+  "id": "banking-standard:bic",
+  "type": "banking-standard",
+  "name": "BIC",
+  "shortDefinition": "Business Identifier Code (also known as SWIFT code).",
+  "aliases": [],
+  "stableReferences": []
+}

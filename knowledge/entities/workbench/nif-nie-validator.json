@@ -1,0 +1,8 @@
+{
+  "id": "workbench:nif-nie-validator",
+  "type": "workbench",
+  "name": "NIF/NIE Validator",
+  "shortDefinition": "",
+  "aliases": [],
+  "stableReferences": []
+}

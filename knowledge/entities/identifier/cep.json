@@ -1,0 +1,8 @@
+{
+  "id": "identifier:cep",
+  "type": "identifier",
+  "name": "CEP",
+  "shortDefinition": "Código de Endereçamento Postal. Brazilian postal code system.",
+  "aliases": [],
+  "stableReferences": []
+}

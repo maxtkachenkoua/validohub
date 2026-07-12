@@ -1,0 +1,8 @@
+{
+  "id": "payment-system:bizum",
+  "type": "payment-system",
+  "name": "Bizum",
+  "shortDefinition": "Spanish instant mobile payment system.",
+  "aliases": [],
+  "stableReferences": []
+}

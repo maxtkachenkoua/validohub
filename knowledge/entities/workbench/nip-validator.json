@@ -1,0 +1,8 @@
+{
+  "id": "workbench:nip-validator",
+  "type": "workbench",
+  "name": "NIP Validator",
+  "shortDefinition": "",
+  "aliases": [],
+  "stableReferences": []
+}

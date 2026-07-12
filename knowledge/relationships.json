@@ -1,0 +1,252 @@
+[
+  {
+    "source": "country:brazil",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:cpf"
+  },
+  {
+    "source": "country:brazil",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:cnpj"
+  },
+  {
+    "source": "country:brazil",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:cep"
+  },
+  {
+    "source": "country:brazil",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:rg"
+  },
+  {
+    "source": "country:brazil",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:cnh"
+  },
+  {
+    "source": "country:brazil",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:renavam"
+  },
+  {
+    "source": "country:brazil",
+    "type": "SUPPORTS_PAYMENT_SYSTEM",
+    "target": "payment-system:pix"
+  },
+  {
+    "source": "country:brazil",
+    "type": "SUPPORTS_PAYMENT_SYSTEM",
+    "target": "payment-system:boleto"
+  },
+  {
+    "source": "country:brazil",
+    "type": "SUPPORTS_PAYMENT_SYSTEM",
+    "target": "payment-system:swift"
+  },
+  {
+    "source": "identifier:cpf",
+    "type": "GOVERNED_BY",
+    "target": "authority:receita-federal"
+  },
+  {
+    "source": "identifier:cnpj",
+    "type": "GOVERNED_BY",
+    "target": "authority:receita-federal"
+  },
+  {
+    "source": "payment-system:pix",
+    "type": "GOVERNED_BY",
+    "target": "authority:bcb"
+  },
+  {
+    "source": "workbench:brazil-pix-validator",
+    "type": "VALIDATES",
+    "target": "identifier:cpf"
+  },
+  {
+    "source": "country:spain",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:nif"
+  },
+  {
+    "source": "country:spain",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:nie"
+  },
+  {
+    "source": "country:spain",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:cif"
+  },
+  {
+    "source": "country:spain",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:ccc"
+  },
+  {
+    "source": "country:spain",
+    "type": "SUPPORTS_PAYMENT_SYSTEM",
+    "target": "payment-system:bizum"
+  },
+  {
+    "source": "country:spain",
+    "type": "SUPPORTS_PAYMENT_SYSTEM",
+    "target": "payment-system:sepa"
+  },
+  {
+    "source": "country:spain",
+    "type": "SUPPORTS_PAYMENT_SYSTEM",
+    "target": "payment-system:swift"
+  },
+  {
+    "source": "identifier:nif",
+    "type": "GOVERNED_BY",
+    "target": "authority:aeat"
+  },
+  {
+    "source": "identifier:nie",
+    "type": "GOVERNED_BY",
+    "target": "authority:aeat"
+  },
+  {
+    "source": "identifier:cif",
+    "type": "GOVERNED_BY",
+    "target": "authority:aeat"
+  },
+  {
+    "source": "workbench:nif-nie-validator",
+    "type": "VALIDATES",
+    "target": "identifier:nif"
+  },
+  {
+    "source": "workbench:nif-nie-validator",
+    "type": "VALIDATES",
+    "target": "identifier:nie"
+  },
+  {
+    "source": "country:poland",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:pesel"
+  },
+  {
+    "source": "country:poland",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:nip"
+  },
+  {
+    "source": "country:poland",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:regon"
+  },
+  {
+    "source": "country:poland",
+    "type": "SUPPORTS_PAYMENT_SYSTEM",
+    "target": "payment-system:blik"
+  },
+  {
+    "source": "country:poland",
+    "type": "SUPPORTS_PAYMENT_SYSTEM",
+    "target": "payment-system:sepa"
+  },
+  {
+    "source": "country:poland",
+    "type": "SUPPORTS_PAYMENT_SYSTEM",
+    "target": "payment-system:swift"
+  },
+  {
+    "source": "identifier:pesel",
+    "type": "GOVERNED_BY",
+    "target": "authority:zus"
+  },
+  {
+    "source": "identifier:nip",
+    "type": "GOVERNED_BY",
+    "target": "authority:zus"
+  },
+  {
+    "source": "identifier:regon",
+    "type": "GOVERNED_BY",
+    "target": "authority:gus"
+  },
+  {
+    "source": "workbench:pesel-validator",
+    "type": "VALIDATES",
+    "target": "identifier:pesel"
+  },
+  {
+    "source": "workbench:nip-validator",
+    "type": "VALIDATES",
+    "target": "identifier:nip"
+  },
+  {
+    "source": "workbench:regon-validator",
+    "type": "VALIDATES",
+    "target": "identifier:regon"
+  },
+  {
+    "source": "authority:nbp",
+    "type": "PUBLISHES_REFERENCE_FOR",
+    "target": "country:poland"
+  },
+  {
+    "source": "authority:poczta-polska",
+    "type": "PUBLISHES_REFERENCE_FOR",
+    "target": "country:poland"
+  },
+  {
+    "source": "country:germany",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:steuer-id"
+  },
+  {
+    "source": "country:germany",
+    "type": "USES_IDENTIFIER",
+    "target": "identifier:ust-idnr"
+  },
+  {
+    "source": "country:germany",
+    "type": "SUPPORTS_PAYMENT_SYSTEM",
+    "target": "payment-system:sepa"
+  },
+  {
+    "source": "country:germany",
+    "type": "SUPPORTS_PAYMENT_SYSTEM",
+    "target": "payment-system:swift"
+  },
+  {
+    "source": "identifier:steuer-id",
+    "type": "GOVERNED_BY",
+    "target": "authority:bzst"
+  },
+  {
+    "source": "identifier:ust-idnr",
+    "type": "GOVERNED_BY",
+    "target": "authority:bzst"
+  },
+  {
+    "source": "workbench:steuernummer-validator",
+    "type": "VALIDATES",
+    "target": "identifier:steuer-id"
+  },
+  {
+    "source": "tool:iban-validator",
+    "type": "VALIDATES",
+    "target": "banking-standard:iban"
+  },
+  {
+    "source": "country:germany",
+    "type": "PARTICIPATES_IN",
+    "target": "banking-standard:iban"
+  },
+  {
+    "source": "country:spain",
+    "type": "PARTICIPATES_IN",
+    "target": "banking-standard:iban"
+  },
+  {
+    "source": "country:poland",
+    "type": "PARTICIPATES_IN",
+    "target": "banking-standard:iban"
+  }
+]

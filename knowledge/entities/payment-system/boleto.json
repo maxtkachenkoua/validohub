@@ -1,0 +1,8 @@
+{
+  "id": "payment-system:boleto",
+  "type": "payment-system",
+  "name": "Boleto Bancário",
+  "shortDefinition": "Popular Brazilian invoice-based push payment method.",
+  "aliases": [],
+  "stableReferences": []
+}

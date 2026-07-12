@@ -1,0 +1,8 @@
+{
+  "id": "banking-standard:iban",
+  "type": "banking-standard",
+  "name": "IBAN",
+  "shortDefinition": "International Bank Account Number standard.",
+  "aliases": [],
+  "stableReferences": []
+}

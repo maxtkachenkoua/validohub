@@ -1,0 +1,8 @@
+{
+  "id": "identifier:cpf",
+  "type": "identifier",
+  "name": "CPF",
+  "shortDefinition": "Cadastro de Pessoas Físicas. Brazilian individual taxpayer registry number.",
+  "aliases": [],
+  "stableReferences": []
+}

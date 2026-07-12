@@ -1,0 +1,8 @@
+{
+  "id": "authority:bzst",
+  "type": "authority",
+  "name": "BZSt",
+  "shortDefinition": "Bundeszentralamt für Steuern. German Federal Central Tax Office.",
+  "aliases": [],
+  "stableReferences": []
+}

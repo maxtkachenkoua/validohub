@@ -1,0 +1,8 @@
+{
+  "id": "identifier:nip",
+  "type": "identifier",
+  "name": "NIP",
+  "shortDefinition": "Numer Identyfikacji Podatkowej. Polish tax identification number.",
+  "aliases": [],
+  "stableReferences": []
+}

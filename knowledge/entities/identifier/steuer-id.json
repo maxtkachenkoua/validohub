@@ -1,0 +1,8 @@
+{
+  "id": "identifier:steuer-id",
+  "type": "identifier",
+  "name": "Steuer-IdNr",
+  "shortDefinition": "Steueridentifikationsnummer. German personal tax identification number.",
+  "aliases": [],
+  "stableReferences": []
+}

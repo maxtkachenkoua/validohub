@@ -1,0 +1,8 @@
+{
+  "id": "identifier:cnh",
+  "type": "identifier",
+  "name": "CNH",
+  "shortDefinition": "Carteira Nacional de Habilitação. Brazilian driver license identifier.",
+  "aliases": [],
+  "stableReferences": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "identifier:nif",
+  "type": "identifier",
+  "name": "NIF",
+  "shortDefinition": "Número de Identificación Fiscal. Spanish tax identification number for individuals.",
+  "aliases": [],
+  "stableReferences": []
+}

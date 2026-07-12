@@ -1,0 +1,8 @@
+{
+  "id": "identifier:rg",
+  "type": "identifier",
+  "name": "RG",
+  "shortDefinition": "Registro Geral. Brazilian general identity card document.",
+  "aliases": [],
+  "stableReferences": []
+}

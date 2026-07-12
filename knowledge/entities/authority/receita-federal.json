@@ -1,0 +1,8 @@
+{
+  "id": "authority:receita-federal",
+  "type": "authority",
+  "name": "Receita Federal",
+  "shortDefinition": "Brazilian Federal Revenue authority.",
+  "aliases": [],
+  "stableReferences": []
+}

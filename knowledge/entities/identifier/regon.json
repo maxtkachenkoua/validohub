@@ -1,0 +1,8 @@
+{
+  "id": "identifier:regon",
+  "type": "identifier",
+  "name": "REGON",
+  "shortDefinition": "National Official Register of Business Entities in Poland.",
+  "aliases": [],
+  "stableReferences": []
+}

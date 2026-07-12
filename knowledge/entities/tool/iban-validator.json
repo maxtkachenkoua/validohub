@@ -1,0 +1,8 @@
+{
+  "id": "tool:iban-validator",
+  "type": "tool",
+  "name": "IBAN Validator",
+  "shortDefinition": "",
+  "aliases": [],
+  "stableReferences": []
+}

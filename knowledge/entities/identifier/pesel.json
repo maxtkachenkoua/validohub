@@ -1,0 +1,8 @@
+{
+  "id": "identifier:pesel",
+  "type": "identifier",
+  "name": "PESEL",
+  "shortDefinition": "Universal Electronic System for Registration of the Population. 11-digit Polish national ID.",
+  "aliases": [],
+  "stableReferences": []
+}

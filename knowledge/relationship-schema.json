@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KnowledgeRelationship",
+  "type": "object",
+  "properties": {
+    "source": { "type": "string", "pattern": "^[a-z-]+:[a-z0-9-]+$" },
+    "type": { "type": "string", "enum": ["USES_IDENTIFIER", "SUPPORTS_PAYMENT_SYSTEM", "PARTICIPATES_IN", "GOVERNED_BY", "VALIDATES", "IMPLEMENTS", "PUBLISHES_REFERENCE_FOR"] },
+    "target": { "type": "string", "pattern": "^[a-z-]+:[a-z0-9-]+$" },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "sourceUrl": { "type": "string" },
+        "authority": { "type": "string" },
+        "verifiedAt": { "type": "string" },
+        "confidence": { "type": ["string", "number"] },
+        "note": { "type": "string" }
+      }
+    }
+  },
+  "required": ["source", "type", "target"]
+}

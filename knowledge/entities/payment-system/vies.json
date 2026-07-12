@@ -1,0 +1,8 @@
+{
+  "id": "payment-system:vies",
+  "type": "payment-system",
+  "name": "VIES",
+  "shortDefinition": "VAT Information Exchange System checking platform managed by the European Commission.",
+  "aliases": [],
+  "stableReferences": []
+}

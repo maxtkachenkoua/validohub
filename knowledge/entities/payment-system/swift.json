@@ -1,0 +1,8 @@
+{
+  "id": "payment-system:swift",
+  "type": "payment-system",
+  "name": "SWIFT",
+  "shortDefinition": "Global financial messaging network for international bank wire transfers.",
+  "aliases": [],
+  "stableReferences": []
+}

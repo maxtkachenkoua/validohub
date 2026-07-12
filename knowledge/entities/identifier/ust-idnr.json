@@ -1,0 +1,8 @@
+{
+  "id": "identifier:ust-idnr",
+  "type": "identifier",
+  "name": "USt-IdNr",
+  "shortDefinition": "Umsatzsteuer-Identifikationsnummer. German VAT identification number.",
+  "aliases": [],
+  "stableReferences": []
+}

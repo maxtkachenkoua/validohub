@@ -1,0 +1,8 @@
+{
+  "id": "payment-system:blik",
+  "type": "payment-system",
+  "name": "BLIK",
+  "shortDefinition": "Polish mobile instant payment system.",
+  "aliases": [],
+  "stableReferences": []
+}

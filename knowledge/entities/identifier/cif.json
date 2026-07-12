@@ -1,0 +1,8 @@
+{
+  "id": "identifier:cif",
+  "type": "identifier",
+  "name": "CIF",
+  "shortDefinition": "Código de Identificación Fiscal. Spanish business tax identification number.",
+  "aliases": [],
+  "stableReferences": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "identifier:cnpj",
+  "type": "identifier",
+  "name": "CNPJ",
+  "shortDefinition": "Cadastro Nacional da Pessoa Jurídica. Brazilian business taxpayer identification number.",
+  "aliases": [],
+  "stableReferences": []
+}

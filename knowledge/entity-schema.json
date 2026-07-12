@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KnowledgeEntity",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z-]+:[a-z0-9-]+$" },
+    "type": { "type": "string", "enum": ["country", "identifier", "payment-system", "banking-standard", "authority", "workbench", "tool"] },
+    "name": { "type": "string" },
+    "shortDefinition": { "type": "string" },
+    "aliases": { "type": "array", "items": { "type": "string" } },
+    "stableReferences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": { "type": "string" },
+          "url": { "type": "string" }
+        },
+        "required": ["label", "url"]
+      }
+    }
+  },
+  "required": ["id", "type", "name"]
+}

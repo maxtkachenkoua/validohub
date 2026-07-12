@@ -1,0 +1,8 @@
+{
+  "id": "workbench:steuernummer-validator",
+  "type": "workbench",
+  "name": "Steuernummer Validator",
+  "shortDefinition": "",
+  "aliases": [],
+  "stableReferences": []
+}

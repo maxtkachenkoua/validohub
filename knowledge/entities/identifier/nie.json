@@ -1,0 +1,8 @@
+{
+  "id": "identifier:nie",
+  "type": "identifier",
+  "name": "NIE",
+  "shortDefinition": "Número de Identidad de Extranjero. Spanish identification number for foreigners.",
+  "aliases": [],
+  "stableReferences": []
+}

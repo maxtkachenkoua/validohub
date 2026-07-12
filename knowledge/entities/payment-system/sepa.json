@@ -1,0 +1,8 @@
+{
+  "id": "payment-system:sepa",
+  "type": "payment-system",
+  "name": "SEPA",
+  "shortDefinition": "Single Euro Payments Area bank transfer standard.",
+  "aliases": [],
+  "stableReferences": []
+}
