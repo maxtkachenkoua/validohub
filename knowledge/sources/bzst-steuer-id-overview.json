@@ -1,0 +1,13 @@
+{
+  "id": "source:bzst-steuer-id-overview",
+  "publisher": "authority:bzst",
+  "title": "Steuerliche Identifikationsnummer (IdNr) Overview",
+  "url": "https://www.bzst.de/DE/Steuern_National/Steueridentifikationsnummer/steueridentifikationsnummer_node.html",
+  "documentType": "official-specification",
+  "jurisdiction": "DE",
+  "language": "de",
+  "publishedAt": "2025-01-10T00:00:00Z",
+  "retrievedAt": "2026-07-10T12:00:00Z",
+  "version": "1.0",
+  "lifecycleStatus": "active"
+}

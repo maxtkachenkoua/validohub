@@ -1,0 +1,13 @@
+{
+  "id": "source:aeat-nif-rules",
+  "publisher": "authority:aeat",
+  "title": "NIF de personas físicas y jurídicas en España",
+  "url": "https://sede.agenciatributaria.gob.es/Sede/procedimiento-resolucion/G312.shtml",
+  "documentType": "official-specification",
+  "jurisdiction": "ES",
+  "language": "es",
+  "publishedAt": "2025-03-01T00:00:00Z",
+  "retrievedAt": "2026-07-05T12:00:00Z",
+  "version": "1.2",
+  "lifecycleStatus": "active"
+}

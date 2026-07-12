@@ -1,0 +1,13 @@
+{
+  "id": "source:gus-regon-spec",
+  "publisher": "authority:gus",
+  "title": "Rejestr REGON - Informacje ogólne",
+  "url": "https://stat.gov.pl/rejestry-urzedowe/regon/",
+  "documentType": "official-specification",
+  "jurisdiction": "PL",
+  "language": "pl",
+  "publishedAt": "2024-12-15T00:00:00Z",
+  "retrievedAt": "2026-07-02T12:00:00Z",
+  "version": "1.0",
+  "lifecycleStatus": "active"
+}

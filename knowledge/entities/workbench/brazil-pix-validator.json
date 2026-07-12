@@ -4,5 +4,13 @@
   "name": "Brazil Pix Validator",
   "shortDefinition": "",
   "aliases": [],
-  "stableReferences": []
+  "stableReferences": [],
+  "schemaVersion": "1.0.0",
+  "contentVersion": "1.0.0",
+  "createdAt": "2026-07-12T18:00:00Z",
+  "updatedAt": "2026-07-12T18:00:00Z",
+  "verificationStatus": "draft",
+  "reviewPolicy": "stable",
+  "recommendedReviewInterval": 365,
+  "lastReviewedAt": "2026-07-12T18:00:00Z"
 }

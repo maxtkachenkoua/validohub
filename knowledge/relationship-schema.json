@@ -7,13 +7,20 @@
     "type": { "type": "string", "enum": ["USES_IDENTIFIER", "SUPPORTS_PAYMENT_SYSTEM", "PARTICIPATES_IN", "GOVERNED_BY", "VALIDATES", "IMPLEMENTS", "PUBLISHES_REFERENCE_FOR"] },
     "target": { "type": "string", "pattern": "^[a-z-]+:[a-z0-9-]+$" },
     "evidence": {
-      "type": "object",
-      "properties": {
-        "sourceUrl": { "type": "string" },
-        "authority": { "type": "string" },
-        "verifiedAt": { "type": "string" },
-        "confidence": { "type": ["string", "number"] },
-        "note": { "type": "string" }
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sourceId": { "type": "string" },
+          "sourceIds": { "type": "array", "items": { "type": "string" } },
+          "evidenceStrength": { "type": "string", "enum": ["weak", "moderate", "strong", "authoritative"] },
+          "sourceAuthorityLevel": { "type": "string", "enum": ["community", "secondary", "standards-body", "government", "official-registry"] },
+          "interpretationConfidence": { "type": ["string", "number"] },
+          "verificationMethod": { "type": "string" },
+          "verifiedAt": { "type": "string" },
+          "note": { "type": "string" }
+        },
+        "required": ["verifiedAt"]
       }
     }
   },

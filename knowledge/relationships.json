@@ -2,7 +2,16 @@
   {
     "source": "country:brazil",
     "type": "USES_IDENTIFIER",
-    "target": "identifier:cpf"
+    "target": "identifier:cpf",
+    "evidence": [
+      {
+        "sourceId": "source:bcb-pix-manual",
+        "evidenceStrength": "moderate",
+        "sourceAuthorityLevel": "government",
+        "verifiedAt": "2026-07-12T18:00:00Z",
+        "note": "CPF usage verified under Central Bank Pix specs."
+      }
+    ]
   },
   {
     "source": "country:brazil",
@@ -32,7 +41,16 @@
   {
     "source": "country:brazil",
     "type": "SUPPORTS_PAYMENT_SYSTEM",
-    "target": "payment-system:pix"
+    "target": "payment-system:pix",
+    "evidence": [
+      {
+        "sourceId": "source:bcb-pix-manual",
+        "evidenceStrength": "authoritative",
+        "sourceAuthorityLevel": "official-registry",
+        "verifiedAt": "2026-07-12T18:00:00Z",
+        "note": "Pix governed by BCB manual specs."
+      }
+    ]
   },
   {
     "source": "country:brazil",
@@ -67,7 +85,16 @@
   {
     "source": "country:spain",
     "type": "USES_IDENTIFIER",
-    "target": "identifier:nif"
+    "target": "identifier:nif",
+    "evidence": [
+      {
+        "sourceId": "source:aeat-nif-rules",
+        "evidenceStrength": "authoritative",
+        "sourceAuthorityLevel": "official-registry",
+        "verifiedAt": "2026-07-12T18:00:00Z",
+        "note": "NIF rules governed by AEAT."
+      }
+    ]
   },
   {
     "source": "country:spain",
@@ -127,17 +154,26 @@
   {
     "source": "country:poland",
     "type": "USES_IDENTIFIER",
+    "target": "identifier:regon",
+    "evidence": [
+      {
+        "sourceId": "source:gus-regon-spec",
+        "evidenceStrength": "authoritative",
+        "sourceAuthorityLevel": "official-registry",
+        "verifiedAt": "2026-07-12T18:00:00Z",
+        "note": "REGON register specifications published by GUS."
+      }
+    ]
+  },
+  {
+    "source": "country:poland",
+    "type": "USES_IDENTIFIER",
     "target": "identifier:pesel"
   },
   {
     "source": "country:poland",
     "type": "USES_IDENTIFIER",
     "target": "identifier:nip"
-  },
-  {
-    "source": "country:poland",
-    "type": "USES_IDENTIFIER",
-    "target": "identifier:regon"
   },
   {
     "source": "country:poland",
@@ -197,7 +233,16 @@
   {
     "source": "country:germany",
     "type": "USES_IDENTIFIER",
-    "target": "identifier:steuer-id"
+    "target": "identifier:steuer-id",
+    "evidence": [
+      {
+        "sourceId": "source:bzst-steuer-id-overview",
+        "evidenceStrength": "authoritative",
+        "sourceAuthorityLevel": "official-registry",
+        "verifiedAt": "2026-07-12T18:00:00Z",
+        "note": "German Steuer-IdNr governance by BZSt verified."
+      }
+    ]
   },
   {
     "source": "country:germany",
@@ -232,12 +277,30 @@
   {
     "source": "tool:iban-validator",
     "type": "VALIDATES",
-    "target": "banking-standard:iban"
+    "target": "banking-standard:iban",
+    "evidence": [
+      {
+        "sourceId": "source:iso-13616-1",
+        "evidenceStrength": "authoritative",
+        "sourceAuthorityLevel": "standards-body",
+        "verifiedAt": "2026-07-12T18:00:00Z",
+        "note": "IBAN structure defined in ISO 13616-1."
+      }
+    ]
   },
   {
     "source": "country:germany",
     "type": "PARTICIPATES_IN",
-    "target": "banking-standard:iban"
+    "target": "banking-standard:iban",
+    "evidence": [
+      {
+        "sourceId": "source:iso-13616-1",
+        "evidenceStrength": "authoritative",
+        "sourceAuthorityLevel": "standards-body",
+        "verifiedAt": "2026-07-12T18:00:00Z",
+        "note": "Germany participation in IBAN standard is active."
+      }
+    ]
   },
   {
     "source": "country:spain",

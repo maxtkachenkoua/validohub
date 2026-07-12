@@ -1,0 +1,14 @@
+{
+  "nodeCount": 44,
+  "edgeCount": 50,
+  "density": 0.026427,
+  "countsByEntityType": {
+    "authority": 9,
+    "banking-standard": 2,
+    "country": 4,
+    "identifier": 15,
+    "payment-system": 7,
+    "tool": 1,
+    "workbench": 6
+  }
+}

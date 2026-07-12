@@ -1,5 +1,4 @@
 {
-  "compiledAt": "2026-07-12T15:21:35.481Z",
   "nodes": {
     "authority:aeat": {
       "entity": {
@@ -8,7 +7,15 @@
         "name": "Agencia Tributaria",
         "shortDefinition": "Spanish State Tax Administration Agency.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -38,7 +45,15 @@
         "name": "Banco Central do Brasil",
         "shortDefinition": "Central Bank of Brazil.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -56,7 +71,20 @@
         "name": "BZSt",
         "shortDefinition": "Bundeszentralamt für Steuern. German Federal Central Tax Office.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "verified",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z",
+        "provenance": {
+          "sourceId": "source:bzst-steuer-id-overview",
+          "reviewer": "human-auditor",
+          "note": "Authoritative primary source verified."
+        }
       },
       "relations": [
         {
@@ -80,7 +108,15 @@
         "name": "GUS",
         "shortDefinition": "Central Statistical Office of Poland.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -91,6 +127,27 @@
         }
       ]
     },
+    "authority:iso": {
+      "entity": {
+        "id": "authority:iso",
+        "type": "authority",
+        "name": "International Organization for Standardization",
+        "shortDefinition": "Independent, non-governmental international organization that develops standards.",
+        "aliases": [
+          "ISO"
+        ],
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
+      },
+      "relations": []
+    },
     "authority:nbp": {
       "entity": {
         "id": "authority:nbp",
@@ -98,7 +155,15 @@
         "name": "Narodowy Bank Polski",
         "shortDefinition": "Central Bank of Poland.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -116,7 +181,15 @@
         "name": "Poczta Polska",
         "shortDefinition": "Polish national postal administration.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -134,7 +207,15 @@
         "name": "Receita Federal",
         "shortDefinition": "Brazilian Federal Revenue authority.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -158,7 +239,15 @@
         "name": "ZUS",
         "shortDefinition": "Polish Social Insurance Institution.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -182,7 +271,15 @@
         "name": "BIC",
         "shortDefinition": "Business Identifier Code (also known as SWIFT code).",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": []
     },
@@ -193,20 +290,49 @@
         "name": "IBAN",
         "shortDefinition": "International Bank Account Number standard.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "verified",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z",
+        "provenance": {
+          "sourceId": "source:iso-13616-1",
+          "reviewer": "human-auditor",
+          "note": "Authoritative primary source verified."
+        }
       },
       "relations": [
         {
           "type": "VALIDATED_BY_ENTITY",
           "target": "tool:iban-validator",
           "direction": "in",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:iso-13616-1",
+              "evidenceStrength": "authoritative",
+              "sourceAuthorityLevel": "standards-body",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "IBAN structure defined in ISO 13616-1."
+            }
+          ]
         },
         {
           "type": "PARTICIPATED_IN_BY_COUNTRY",
           "target": "country:germany",
           "direction": "in",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:iso-13616-1",
+              "evidenceStrength": "authoritative",
+              "sourceAuthorityLevel": "standards-body",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "Germany participation in IBAN standard is active."
+            }
+          ]
         },
         {
           "type": "PARTICIPATED_IN_BY_COUNTRY",
@@ -229,14 +355,30 @@
         "name": "Brazil",
         "shortDefinition": "",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "researched",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
           "type": "USES_IDENTIFIER",
           "target": "identifier:cpf",
           "direction": "out",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:bcb-pix-manual",
+              "evidenceStrength": "moderate",
+              "sourceAuthorityLevel": "government",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "CPF usage verified under Central Bank Pix specs."
+            }
+          ]
         },
         {
           "type": "USES_IDENTIFIER",
@@ -272,7 +414,15 @@
           "type": "SUPPORTS_PAYMENT_SYSTEM",
           "target": "payment-system:pix",
           "direction": "out",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:bcb-pix-manual",
+              "evidenceStrength": "authoritative",
+              "sourceAuthorityLevel": "official-registry",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "Pix governed by BCB manual specs."
+            }
+          ]
         },
         {
           "type": "SUPPORTS_PAYMENT_SYSTEM",
@@ -295,14 +445,30 @@
         "name": "Germany",
         "shortDefinition": "",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "researched",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
           "type": "USES_IDENTIFIER",
           "target": "identifier:steuer-id",
           "direction": "out",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:bzst-steuer-id-overview",
+              "evidenceStrength": "authoritative",
+              "sourceAuthorityLevel": "official-registry",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "German Steuer-IdNr governance by BZSt verified."
+            }
+          ]
         },
         {
           "type": "USES_IDENTIFIER",
@@ -326,7 +492,15 @@
           "type": "PARTICIPATES_IN",
           "target": "banking-standard:iban",
           "direction": "out",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:iso-13616-1",
+              "evidenceStrength": "authoritative",
+              "sourceAuthorityLevel": "standards-body",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "Germany participation in IBAN standard is active."
+            }
+          ]
         }
       ]
     },
@@ -337,9 +511,31 @@
         "name": "Poland",
         "shortDefinition": "",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "researched",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
+        {
+          "type": "USES_IDENTIFIER",
+          "target": "identifier:regon",
+          "direction": "out",
+          "evidence": [
+            {
+              "sourceId": "source:gus-regon-spec",
+              "evidenceStrength": "authoritative",
+              "sourceAuthorityLevel": "official-registry",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "REGON register specifications published by GUS."
+            }
+          ]
+        },
         {
           "type": "USES_IDENTIFIER",
           "target": "identifier:pesel",
@@ -349,12 +545,6 @@
         {
           "type": "USES_IDENTIFIER",
           "target": "identifier:nip",
-          "direction": "out",
-          "evidence": null
-        },
-        {
-          "type": "USES_IDENTIFIER",
-          "target": "identifier:regon",
           "direction": "out",
           "evidence": null
         },
@@ -403,14 +593,30 @@
         "name": "Spain",
         "shortDefinition": "",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "researched",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
           "type": "USES_IDENTIFIER",
           "target": "identifier:nif",
           "direction": "out",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:aeat-nif-rules",
+              "evidenceStrength": "authoritative",
+              "sourceAuthorityLevel": "official-registry",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "NIF rules governed by AEAT."
+            }
+          ]
         },
         {
           "type": "USES_IDENTIFIER",
@@ -463,7 +669,15 @@
         "name": "CCC",
         "shortDefinition": "Código de Cuenta Corriente. Legacy Spanish bank account format.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -481,7 +695,15 @@
         "name": "CEP",
         "shortDefinition": "Código de Endereçamento Postal. Brazilian postal code system.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -499,7 +721,15 @@
         "name": "CIF",
         "shortDefinition": "Código de Identificación Fiscal. Spanish business tax identification number.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -523,7 +753,15 @@
         "name": "CNH",
         "shortDefinition": "Carteira Nacional de Habilitação. Brazilian driver license identifier.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -541,7 +779,15 @@
         "name": "CNPJ",
         "shortDefinition": "Cadastro Nacional da Pessoa Jurídica. Brazilian business taxpayer identification number.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -565,14 +811,30 @@
         "name": "CPF",
         "shortDefinition": "Cadastro de Pessoas Físicas. Brazilian individual taxpayer registry number.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
           "type": "USED_BY_COUNTRY",
           "target": "country:brazil",
           "direction": "in",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:bcb-pix-manual",
+              "evidenceStrength": "moderate",
+              "sourceAuthorityLevel": "government",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "CPF usage verified under Central Bank Pix specs."
+            }
+          ]
         },
         {
           "type": "GOVERNED_BY",
@@ -595,7 +857,15 @@
         "name": "NIE",
         "shortDefinition": "Número de Identidad de Extranjero. Spanish identification number for foreigners.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -625,14 +895,30 @@
         "name": "NIF",
         "shortDefinition": "Número de Identificación Fiscal. Spanish tax identification number for individuals.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
           "type": "USED_BY_COUNTRY",
           "target": "country:spain",
           "direction": "in",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:aeat-nif-rules",
+              "evidenceStrength": "authoritative",
+              "sourceAuthorityLevel": "official-registry",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "NIF rules governed by AEAT."
+            }
+          ]
         },
         {
           "type": "GOVERNED_BY",
@@ -655,7 +941,15 @@
         "name": "NIP",
         "shortDefinition": "Numer Identyfikacji Podatkowej. Polish tax identification number.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -685,7 +979,15 @@
         "name": "PESEL",
         "shortDefinition": "Universal Electronic System for Registration of the Population. 11-digit Polish national ID.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -715,14 +1017,30 @@
         "name": "REGON",
         "shortDefinition": "National Official Register of Business Entities in Poland.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
           "type": "USED_BY_COUNTRY",
           "target": "country:poland",
           "direction": "in",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:gus-regon-spec",
+              "evidenceStrength": "authoritative",
+              "sourceAuthorityLevel": "official-registry",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "REGON register specifications published by GUS."
+            }
+          ]
         },
         {
           "type": "GOVERNED_BY",
@@ -745,7 +1063,15 @@
         "name": "RENAVAM",
         "shortDefinition": "Registro Nacional de Veículos Automotores. Brazilian national vehicle registry number.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -763,7 +1089,15 @@
         "name": "RG",
         "shortDefinition": "Registro Geral. Brazilian general identity card document.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -781,14 +1115,35 @@
         "name": "Steuer-IdNr",
         "shortDefinition": "Steueridentifikationsnummer. German personal tax identification number.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "verified",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z",
+        "provenance": {
+          "sourceId": "source:bzst-steuer-id-overview",
+          "reviewer": "human-auditor",
+          "note": "Authoritative primary source verified."
+        }
       },
       "relations": [
         {
           "type": "USED_BY_COUNTRY",
           "target": "country:germany",
           "direction": "in",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:bzst-steuer-id-overview",
+              "evidenceStrength": "authoritative",
+              "sourceAuthorityLevel": "official-registry",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "German Steuer-IdNr governance by BZSt verified."
+            }
+          ]
         },
         {
           "type": "GOVERNED_BY",
@@ -811,7 +1166,15 @@
         "name": "USt-IdNr",
         "shortDefinition": "Umsatzsteuer-Identifikationsnummer. German VAT identification number.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -835,7 +1198,15 @@
         "name": "Bizum",
         "shortDefinition": "Spanish instant mobile payment system.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -853,7 +1224,15 @@
         "name": "BLIK",
         "shortDefinition": "Polish mobile instant payment system.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -871,7 +1250,15 @@
         "name": "Boleto Bancário",
         "shortDefinition": "Popular Brazilian invoice-based push payment method.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -889,14 +1276,30 @@
         "name": "PIX",
         "shortDefinition": "Brazilian instant payment network managed by the Central Bank of Brazil.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
           "type": "SUPPORTED_BY_COUNTRY",
           "target": "country:brazil",
           "direction": "in",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:bcb-pix-manual",
+              "evidenceStrength": "authoritative",
+              "sourceAuthorityLevel": "official-registry",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "Pix governed by BCB manual specs."
+            }
+          ]
         },
         {
           "type": "GOVERNED_BY",
@@ -913,7 +1316,15 @@
         "name": "SEPA",
         "shortDefinition": "Single Euro Payments Area bank transfer standard.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -943,7 +1354,15 @@
         "name": "SWIFT",
         "shortDefinition": "Global financial messaging network for international bank wire transfers.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -979,7 +1398,15 @@
         "name": "VIES",
         "shortDefinition": "VAT Information Exchange System checking platform managed by the European Commission.",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": []
     },
@@ -990,14 +1417,30 @@
         "name": "IBAN Validator",
         "shortDefinition": "",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
           "type": "VALIDATES",
           "target": "banking-standard:iban",
           "direction": "out",
-          "evidence": null
+          "evidence": [
+            {
+              "sourceId": "source:iso-13616-1",
+              "evidenceStrength": "authoritative",
+              "sourceAuthorityLevel": "standards-body",
+              "verifiedAt": "2026-07-12T18:00:00Z",
+              "note": "IBAN structure defined in ISO 13616-1."
+            }
+          ]
         }
       ]
     },
@@ -1008,7 +1451,15 @@
         "name": "Brazil Pix Validator",
         "shortDefinition": "",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -1026,7 +1477,15 @@
         "name": "NIF/NIE Validator",
         "shortDefinition": "",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -1050,7 +1509,15 @@
         "name": "NIP Validator",
         "shortDefinition": "",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -1068,7 +1535,15 @@
         "name": "PESEL Validator",
         "shortDefinition": "",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -1086,7 +1561,15 @@
         "name": "REGON Validator",
         "shortDefinition": "",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -1104,7 +1587,15 @@
         "name": "Steuernummer Validator",
         "shortDefinition": "",
         "aliases": [],
-        "stableReferences": []
+        "stableReferences": [],
+        "schemaVersion": "1.0.0",
+        "contentVersion": "1.0.0",
+        "createdAt": "2026-07-12T18:00:00Z",
+        "updatedAt": "2026-07-12T18:00:00Z",
+        "verificationStatus": "draft",
+        "reviewPolicy": "stable",
+        "recommendedReviewInterval": 365,
+        "lastReviewedAt": "2026-07-12T18:00:00Z"
       },
       "relations": [
         {
@@ -1120,7 +1611,16 @@
     {
       "source": "country:brazil",
       "type": "USES_IDENTIFIER",
-      "target": "identifier:cpf"
+      "target": "identifier:cpf",
+      "evidence": [
+        {
+          "sourceId": "source:bcb-pix-manual",
+          "evidenceStrength": "moderate",
+          "sourceAuthorityLevel": "government",
+          "verifiedAt": "2026-07-12T18:00:00Z",
+          "note": "CPF usage verified under Central Bank Pix specs."
+        }
+      ]
     },
     {
       "source": "country:brazil",
@@ -1150,7 +1650,16 @@
     {
       "source": "country:brazil",
       "type": "SUPPORTS_PAYMENT_SYSTEM",
-      "target": "payment-system:pix"
+      "target": "payment-system:pix",
+      "evidence": [
+        {
+          "sourceId": "source:bcb-pix-manual",
+          "evidenceStrength": "authoritative",
+          "sourceAuthorityLevel": "official-registry",
+          "verifiedAt": "2026-07-12T18:00:00Z",
+          "note": "Pix governed by BCB manual specs."
+        }
+      ]
     },
     {
       "source": "country:brazil",
@@ -1185,7 +1694,16 @@
     {
       "source": "country:spain",
       "type": "USES_IDENTIFIER",
-      "target": "identifier:nif"
+      "target": "identifier:nif",
+      "evidence": [
+        {
+          "sourceId": "source:aeat-nif-rules",
+          "evidenceStrength": "authoritative",
+          "sourceAuthorityLevel": "official-registry",
+          "verifiedAt": "2026-07-12T18:00:00Z",
+          "note": "NIF rules governed by AEAT."
+        }
+      ]
     },
     {
       "source": "country:spain",
@@ -1245,17 +1763,26 @@
     {
       "source": "country:poland",
       "type": "USES_IDENTIFIER",
+      "target": "identifier:regon",
+      "evidence": [
+        {
+          "sourceId": "source:gus-regon-spec",
+          "evidenceStrength": "authoritative",
+          "sourceAuthorityLevel": "official-registry",
+          "verifiedAt": "2026-07-12T18:00:00Z",
+          "note": "REGON register specifications published by GUS."
+        }
+      ]
+    },
+    {
+      "source": "country:poland",
+      "type": "USES_IDENTIFIER",
       "target": "identifier:pesel"
     },
     {
       "source": "country:poland",
       "type": "USES_IDENTIFIER",
       "target": "identifier:nip"
-    },
-    {
-      "source": "country:poland",
-      "type": "USES_IDENTIFIER",
-      "target": "identifier:regon"
     },
     {
       "source": "country:poland",
@@ -1315,7 +1842,16 @@
     {
       "source": "country:germany",
       "type": "USES_IDENTIFIER",
-      "target": "identifier:steuer-id"
+      "target": "identifier:steuer-id",
+      "evidence": [
+        {
+          "sourceId": "source:bzst-steuer-id-overview",
+          "evidenceStrength": "authoritative",
+          "sourceAuthorityLevel": "official-registry",
+          "verifiedAt": "2026-07-12T18:00:00Z",
+          "note": "German Steuer-IdNr governance by BZSt verified."
+        }
+      ]
     },
     {
       "source": "country:germany",
@@ -1350,12 +1886,30 @@
     {
       "source": "tool:iban-validator",
       "type": "VALIDATES",
-      "target": "banking-standard:iban"
+      "target": "banking-standard:iban",
+      "evidence": [
+        {
+          "sourceId": "source:iso-13616-1",
+          "evidenceStrength": "authoritative",
+          "sourceAuthorityLevel": "standards-body",
+          "verifiedAt": "2026-07-12T18:00:00Z",
+          "note": "IBAN structure defined in ISO 13616-1."
+        }
+      ]
     },
     {
       "source": "country:germany",
       "type": "PARTICIPATES_IN",
-      "target": "banking-standard:iban"
+      "target": "banking-standard:iban",
+      "evidence": [
+        {
+          "sourceId": "source:iso-13616-1",
+          "evidenceStrength": "authoritative",
+          "sourceAuthorityLevel": "standards-body",
+          "verifiedAt": "2026-07-12T18:00:00Z",
+          "note": "Germany participation in IBAN standard is active."
+        }
+      ]
     },
     {
       "source": "country:spain",

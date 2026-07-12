@@ -1,9 +1,11 @@
 {
-  "id": "payment-system:pix",
-  "type": "payment-system",
-  "name": "PIX",
-  "shortDefinition": "Brazilian instant payment network managed by the Central Bank of Brazil.",
-  "aliases": [],
+  "id": "authority:iso",
+  "type": "authority",
+  "name": "International Organization for Standardization",
+  "shortDefinition": "Independent, non-governmental international organization that develops standards.",
+  "aliases": [
+    "ISO"
+  ],
   "stableReferences": [],
   "schemaVersion": "1.0.0",
   "contentVersion": "1.0.0",

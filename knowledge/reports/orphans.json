@@ -1,0 +1,7 @@
+{
+  "orphans": [
+    "authority:iso",
+    "banking-standard:bic",
+    "payment-system:vies"
+  ]
+}

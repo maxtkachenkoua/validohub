@@ -18,7 +18,24 @@
         },
         "required": ["label", "url"]
       }
+    },
+    "createdAt": { "type": "string" },
+    "updatedAt": { "type": "string" },
+    "schemaVersion": { "type": "string" },
+    "contentVersion": { "type": "string" },
+    "verificationStatus": { "type": "string", "enum": ["draft", "researched", "reviewed", "verified", "deprecated"] },
+    "reviewPolicy": { "type": "string", "enum": ["static", "volatile", "stable"] },
+    "recommendedReviewInterval": { "type": "integer" },
+    "lastReviewedAt": { "type": "string" },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "sourceId": { "type": "string" },
+        "sourceIds": { "type": "array", "items": { "type": "string" } },
+        "reviewer": { "type": "string" },
+        "note": { "type": "string" }
+      }
     }
   },
-  "required": ["id", "type", "name"]
+  "required": ["id", "type", "name", "createdAt", "updatedAt", "schemaVersion", "contentVersion", "verificationStatus", "reviewPolicy", "recommendedReviewInterval", "lastReviewedAt"]
 }

@@ -1,0 +1,13 @@
+{
+  "id": "source:bcb-pix-manual",
+  "publisher": "authority:bcb",
+  "title": "Manual de Identidade Visual do Pix",
+  "url": "https://www.bcb.gov.br/estabilidadefinanceira/pix",
+  "documentType": "official-specification",
+  "jurisdiction": "BR",
+  "language": "pt-br",
+  "publishedAt": "2024-10-01T00:00:00Z",
+  "retrievedAt": "2026-07-01T12:00:00Z",
+  "version": "2.1",
+  "lifecycleStatus": "active"
+}
