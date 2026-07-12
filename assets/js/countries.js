@@ -7120,7 +7120,7 @@
     },
     "pesel-validator": {
       "authorities": [
-        "ZUS"
+        "Ministry of Digital Affairs"
       ],
       "countries": [
         "Poland"
@@ -7889,76 +7889,52 @@
     const stack = document.querySelector('.page-stack');
     if (!stack) return;
 
-    const card = createElement('article', 'content-card related-resources-discovery');
-    const heading = createElement('div', 'section-heading');
-    heading.appendChild(createElement('span', 'eyebrow', 'ValidoHub Knowledge Graph'));
-    heading.appendChild(createElement('h2', null, 'Graph-Powered Discovery'));
-    card.appendChild(heading);
+    if (workbenchSlug !== 'pesel-validator') {
+      const card = createElement('article', 'content-card related-resources-discovery');
+      const heading = createElement('div', 'section-heading');
+      heading.appendChild(createElement('span', 'eyebrow', 'ValidoHub Knowledge Graph'));
+      heading.appendChild(createElement('h2', null, 'Graph-Powered Discovery'));
+      card.appendChild(heading);
 
-    const desc = createElement('p', null, 'This metadata is verified against official source registries and updated by active audits.');
-    desc.style.color = 'var(--muted)';
-    desc.style.marginBottom = '20px';
-    card.appendChild(desc);
+      const desc = createElement('p', null, 'This metadata is verified against official source registries and updated by active audits.');
+      desc.style.color = 'var(--muted)';
+      desc.style.marginBottom = '20px';
+      card.appendChild(desc);
 
-    const ul = createElement('ul', 'country-highlight-list');
-    ul.style.marginTop = '16px';
+      const ul = createElement('ul', 'country-highlight-list');
+      ul.style.marginTop = '16px';
 
-    if (info.validates && info.validates.length > 0) {
-      const li = createElement('li');
-      li.innerHTML = `<strong>Validates:</strong> ${info.validates.join(', ')}`;
-      ul.appendChild(li);
-    }
-    if (info.standards && info.standards.length > 0) {
-      const li = createElement('li');
-      li.innerHTML = `<strong>Related Standards:</strong> ${info.standards.join(', ')}`;
-      ul.appendChild(li);
-    }
-    if (info.authorities && info.authorities.length > 0) {
-      const li = createElement('li');
-      li.innerHTML = `<strong>Official Authorities:</strong> ${info.authorities.join(', ')}`;
-      ul.appendChild(li);
-    }
-    if (info.countries && info.countries.length > 0) {
-      const li = createElement('li');
-      li.innerHTML = `<strong>Supported Countries:</strong> ${info.countries.join(', ')}`;
-      ul.appendChild(li);
-    }
+      if (info.validates && info.validates.length > 0) {
+        const li = createElement('li');
+        li.innerHTML = `<strong>Validates:</strong> ${info.validates.join(', ')}`;
+        ul.appendChild(li);
+      }
+      if (info.standards && info.standards.length > 0) {
+        const li = createElement('li');
+        li.innerHTML = `<strong>Related Standards:</strong> ${info.standards.join(', ')}`;
+        ul.appendChild(li);
+      }
+      if (info.authorities && info.authorities.length > 0) {
+        const li = createElement('li');
+        li.innerHTML = `<strong>Official Authorities:</strong> ${info.authorities.join(', ')}`;
+        ul.appendChild(li);
+      }
+      if (info.countries && info.countries.length > 0) {
+        const li = createElement('li');
+        li.innerHTML = `<strong>Supported Countries:</strong> ${info.countries.join(', ')}`;
+        ul.appendChild(li);
+      }
 
-    card.appendChild(ul);
+      card.appendChild(ul);
 
-    const wbCard = stack.querySelector('.workbench-card');
-    if (wbCard && wbCard.nextSibling) {
-      stack.insertBefore(card, wbCard.nextSibling);
-    } else {
-      stack.appendChild(card);
-    }
-
-    if (workbenchSlug === 'pesel-validator') {
-      const relatedSection = stack.querySelector('.related-section');
-      if (relatedSection) {
-        const relatedHeading = relatedSection.querySelector('h2');
-        if (relatedHeading) {
-          relatedHeading.textContent = 'PESEL Related Resources';
-        }
-        const relatedEyebrow = relatedSection.querySelector('.eyebrow');
-        if (relatedEyebrow) {
-          relatedEyebrow.textContent = 'Discovery';
-        }
-        const grid = relatedSection.querySelector('.card-grid');
-        if (grid) {
-          grid.innerHTML = `
-            <a href="/en/poland/" class="link-card">
-              <span>Poland Country Hub</span>
-              <span aria-hidden="true">→</span>
-            </a>
-            <a href="/en/categories/national-identifiers/" class="link-card">
-              <span>National Identifiers Spec</span>
-              <span aria-hidden="true">→</span>
-            </a>
-          `;
-        }
+      const wbCard = stack.querySelector('.workbench-card');
+      if (wbCard && wbCard.nextSibling) {
+        stack.insertBefore(card, wbCard.nextSibling);
+      } else {
+        stack.appendChild(card);
       }
     }
+
   }
 
   function createHighlights(country) {
@@ -8136,7 +8112,7 @@
     });
 
     stack.classList.add('country-hub-page');
-    
+
     const elementsToAppend = [];
     const appendSafely = (fn, ...args) => {
       try {

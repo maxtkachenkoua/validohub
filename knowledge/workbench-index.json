@@ -46,7 +46,7 @@
   },
   "pesel-validator": {
     "authorities": [
-      "ZUS"
+      "Ministry of Digital Affairs"
     ],
     "countries": [
       "Poland"

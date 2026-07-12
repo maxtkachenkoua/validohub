@@ -47,6 +47,20 @@
     "relationshipSummaries": [],
     "title": "International Organization for Standardization"
   },
+  "authority:mc": {
+    "aliases": [
+      "Ministerstwo Cyfryzacji",
+      "MC"
+    ],
+    "countryReferences": [],
+    "keywords": [
+      "authority",
+      "Ministerstwo Cyfryzacji",
+      "MC"
+    ],
+    "relationshipSummaries": [],
+    "title": "Ministry of Digital Affairs"
+  },
   "authority:nbp": {
     "aliases": [],
     "countryReferences": [
@@ -302,7 +316,7 @@
       "identifier"
     ],
     "relationshipSummaries": [
-      "governed by ZUS"
+      "governed by Ministry of Digital Affairs"
     ],
     "title": "PESEL"
   },

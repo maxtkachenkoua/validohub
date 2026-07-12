@@ -193,7 +193,7 @@
   {
     "source": "identifier:pesel",
     "type": "GOVERNED_BY",
-    "target": "authority:zus"
+    "target": "authority:mc"
   },
   {
     "source": "identifier:nip",
