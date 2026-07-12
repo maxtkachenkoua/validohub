@@ -1,95 +1,310 @@
 (function () {
-  var JSON_FORMATTER_ALGORITHM = "validohub.json-formatter";
-  var JSON_VALIDATOR_ALGORITHM = "validohub.json-validator";
-  var LARGE_JSON_BYTES = 250000;
-  var LARGE_JSON_NODES = 5000;
-  var TREE_NODE_RENDER_LIMIT = 1800;
-  var TREE_CHILD_RENDER_LIMIT = 160;
+  const JSON_FORMATTER_ALGORITHM = "validohub.json-formatter";
+  const JSON_VALIDATOR_ALGORITHM = "validohub.json-validator";
+  const LARGE_JSON_BYTES = 250000;
+  const LARGE_JSON_NODES = 5000;
+  const TREE_NODE_RENDER_LIMIT = 1800;
+  const TREE_CHILD_RENDER_LIMIT = 160;
 
-  var JsonPlugin = (function (framework) {
-    var util = framework.utilities;
+  const JsonPlugin = (function (framework) {
+    const util = framework.utilities;
+
+    function parseJson(input) {
+      try {
+        const value = JSON.parse(input);
+        const stats = subtreeStats(value);
+        return {
+          valid: true,
+          value: value,
+          counts: stats
+        };
+      } catch (error) {
+        return {
+          valid: false,
+          message: error.message
+        };
+      }
+    }
+
+    function subtreeStats(value) {
+      let nodes = 0;
+      let depth = 0;
+      let elements = 0;
+      let largeMode = false;
+
+      function traverse(val, currentDepth) {
+        nodes++;
+        if (currentDepth > depth) {
+          depth = currentDepth;
+        }
+        if (nodes > LARGE_JSON_NODES) {
+          largeMode = true;
+        }
+        if (val && typeof val === "object") {
+          const keys = Object.keys(val);
+          elements += keys.length;
+          keys.forEach(k => {
+            traverse(val[k], currentDepth + 1);
+          });
+        }
+      }
+
+      traverse(value, 1);
+      return {
+        nodes: nodes,
+        depth: depth,
+        elements: elements,
+        largeMode: largeMode
+      };
+    }
+
+    const copyToClipboard = function (text, workbench, message) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)
+          .then(() => workbench.setMessage(message, 'success'))
+          .catch(() => workbench.setMessage('Copy failed.', 'error'));
+      } else {
+        const el = document.createElement('textarea');
+        el.value = text;
+        el.setAttribute('readonly', '');
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        workbench.setMessage(message, 'success');
+      }
+    };
+
+    function applySample(workbench, sampleId) {
+      const input = workbench.primaryInput();
+      if (!input) return;
+
+      if (sampleId === "json-api") {
+        input.value = '{\n  "status": "ok",\n  "count": 2,\n  "data": [\n    { "id": 1, "name": "Alpha" },\n    { "id": 2, "name": "Beta" }\n  ]\n}';
+      } else if (sampleId === "json-config") {
+        input.value = '{\n  "app": "validohub",\n  "features": {\n    "liveMode": true,\n    "offline": true,\n    "treeExplorer": true\n  },\n  "limits": {\n    "maxUploadMb": 5,\n    "indent": 2\n  }\n}';
+      } else if (sampleId === "json-array") {
+        input.value = '[\n  "Standard Base64",\n  "Base64URL",\n  "RFC 4648"\n]';
+      } else if (sampleId === "json-invalid") {
+        input.value = '{\n  "name": "validohub"\n  "incomplete": true\n}';
+      }
+
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    }
 
     function onMount(workbench) {
       workbench.form._workbench = workbench;
-      workbench.form.classList.add("json-workbench");
-      ensureActionButtons(workbench);
-      insertSamples(workbench);
-      insertFileDropzone(workbench);
-      bindJsonInteractions(workbench);
-      workbench.markActiveAction(workbench.form.dataset.capability === "validate" ? "validate" : "format");
-    }
 
-    function ensureActionButtons(workbench) {
-      var row = workbench.form.querySelector(".button-row");
-      if (!row) {
-        return;
+      // Refine header titles to Stripe quality
+      const pageIntro = document.querySelector('.page-intro');
+      if (pageIntro) {
+        const introTitle = pageIntro.querySelector('h1');
+        if (introTitle) introTitle.textContent = "JSON Formatter & Validator";
+        const introDesc = pageIntro.querySelector('p');
+        if (introDesc) {
+          introDesc.textContent = "Validate, format, minify, sort, and inspect JSON structures locally in your secure browser sandbox.";
+        }
+
+        if (!pageIntro.querySelector('.pesel-badge-row')) {
+          const badgeRow = document.createElement('div');
+          badgeRow.className = 'pesel-badge-row';
+          badgeRow.innerHTML = `
+            <span class="pesel-pill active">🔒 Local Sandbox</span>
+            <span class="pesel-pill">✓ Privacy Shield</span>
+            <span class="pesel-pill">⚡ Auto Format & Minify</span>
+            <span class="pesel-pill">📅 JSON RFC 8259</span>
+          `;
+          pageIntro.appendChild(badgeRow);
+        }
       }
-      var existing = {};
-      row.querySelectorAll("[data-action]").forEach(function (button) {
-        existing[button.dataset.action] = button;
-        button.classList.remove("button-primary");
-        button.classList.add("button-secondary");
-      });
-      [
-        ["format", "Pretty print"],
-        ["minify", "Minify"],
-        ["sort", "Sort keys"],
-        ["clean", "Remove empty"],
-        ["validate", "Validate"],
-        ["explain", "Explain"]
-      ].forEach(function (action) {
-        if (!existing[action[0]]) {
-          var button = document.createElement("button");
-          button.type = "button";
-          button.className = action[0] === "format" ? "button button-primary" : "button button-secondary";
-          button.dataset.action = action[0];
-          button.textContent = action[1];
-          row.insertBefore(button, row.querySelector("[data-tool-copy]"));
-        } else if (action[0] === "format") {
-          existing[action[0]].textContent = "Pretty print";
+
+      // Hide default titles, output textareas, and default copy buttons
+      const headingText = workbench.form.querySelector('.workbench-heading');
+      if (headingText) headingText.style.display = 'none';
+      const outputField = workbench.form.querySelector('.output-field');
+      if (outputField) outputField.style.display = 'none';
+      const copyBtn = workbench.form.querySelector('[data-tool-copy]');
+      if (copyBtn) copyBtn.style.display = 'none';
+      const downloadBtn = workbench.form.querySelector('[data-tool-download]');
+      if (downloadBtn) downloadBtn.style.display = 'none';
+
+      // Setup Presets and History dropdowns prepended inside .field-grid
+      const fieldGrid = workbench.form.querySelector('.field-grid');
+      const inputField = workbench.primaryInput();
+      if (fieldGrid && !workbench.form.querySelector('#pesel-presets')) {
+        const mainField = fieldGrid.querySelector('label.field');
+        if (mainField) {
+          mainField.style.gridColumn = '1 / -1';
+        }
+
+        const presetsField = document.createElement('div');
+        presetsField.className = 'field';
+        presetsField.innerHTML = `
+          <div style="height: 18px; display: flex; align-items: center;">
+            <span style="font-size: 0.92rem; font-weight: 720; color: var(--text);">Presets</span>
+          </div>
+          <select class="pesel-select" id="pesel-presets" style="width: 100%; height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer;">
+            <option value="">-- Select Preset --</option>
+            <option value="json-api">API Response</option>
+            <option value="json-config">Config Object</option>
+            <option value="json-array">Array Data</option>
+            <option value="json-invalid">Invalid JSON</option>
+          </select>
+        `;
+
+        const historyField = document.createElement('div');
+        historyField.className = 'field';
+        historyField.innerHTML = `
+          <div style="height: 18px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <span style="font-size: 0.92rem; font-weight: 720; color: var(--text);">History</span>
+            <button type="button" class="button button-ghost compact" id="pesel-clear-history-btn" style="font-size: 0.72rem; padding: 0; border: none; background: none; margin: 0; cursor: pointer; height: auto; line-height: 1; color: var(--muted); font-weight: 600;">Clear</button>
+          </div>
+          <select class="pesel-select" id="pesel-history" style="width: 100%; height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer;">
+            <option value="">-- Recent JSON --</option>
+          </select>
+        `;
+
+        fieldGrid.insertBefore(historyField, fieldGrid.firstChild);
+        fieldGrid.insertBefore(presetsField, fieldGrid.firstChild);
+
+        fieldGrid.querySelector('#pesel-presets').addEventListener('change', (e) => {
+          const val = e.target.value;
+          if (val) {
+            applySample(workbench, val);
+          }
+        });
+
+        fieldGrid.querySelector('#pesel-history').addEventListener('change', (e) => {
+          const val = e.target.value;
+          if (val) {
+            if (inputField) {
+              inputField.value = val;
+              inputField.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+          }
+        });
+
+        fieldGrid.querySelector('#pesel-clear-history-btn').addEventListener('click', () => {
+          localStorage.removeItem('validohub.json.history');
+          const select = fieldGrid.querySelector('#pesel-history');
+          select.innerHTML = '<option value="">-- Recent JSON --</option>';
+          workbench.setMessage('Validation history cleared.', 'success');
+        });
+      }
+
+      const refreshHistorySelect = () => {
+        const historySelect = workbench.form.querySelector('#pesel-history');
+        if (historySelect) {
+          const items = JSON.parse(localStorage.getItem('validohub.json.history') || '[]');
+          historySelect.innerHTML = '<option value="">-- Recent JSON --</option>';
+          items.forEach(it => {
+            const opt = document.createElement('option');
+            opt.value = it.value;
+            const shortened = it.value.length > 20 ? it.value.substring(0, 18) + '...' : it.value;
+            opt.textContent = `${shortened} (${it.mode} - ${it.date})`;
+            historySelect.appendChild(opt);
+          });
+        }
+      };
+      refreshHistorySelect();
+
+      // Add expand/collapse all triggers above documentation accordions
+      const docHeader = document.querySelector('.content-card .section-heading');
+      if (docHeader && !docHeader.parentNode.querySelector('.doc-controls-bar')) {
+        const controlsBar = document.createElement('div');
+        controlsBar.className = 'doc-controls-bar';
+        controlsBar.style.display = 'flex';
+        controlsBar.style.gap = '8px';
+        controlsBar.style.marginBottom = '12px';
+        controlsBar.innerHTML = `
+          <button type="button" class="button button-secondary compact" id="pesel-expand-docs-btn" style="font-size: 0.75rem; padding: 4px 8px;">Expand All</button>
+          <button type="button" class="button button-secondary compact" id="pesel-collapse-docs-btn" style="font-size: 0.75rem; padding: 4px 8px;">Collapse All</button>
+        `;
+        docHeader.after(controlsBar);
+
+        controlsBar.querySelector('#pesel-expand-docs-btn').addEventListener('click', () => {
+          document.querySelectorAll('.doc-accordion').forEach(acc => acc.open = true);
+        });
+        controlsBar.querySelector('#pesel-collapse-docs-btn').addEventListener('click', () => {
+          document.querySelectorAll('.doc-accordion').forEach(acc => acc.open = false);
+        });
+      }
+
+      // Setup unified premium panels list
+      if (!workbench.form.querySelector('.pesel-premium-panel')) {
+        const premiumPanel = document.createElement('div');
+        premiumPanel.className = 'pesel-premium-panel';
+        premiumPanel.innerHTML = `
+          <div class="pesel-empty-state" id="pesel-empty-state-card">
+            <span style="font-size: 2rem;">🛡️</span>
+            <div class="pesel-empty-title">JSON Processing Sandbox</div>
+            <div class="pesel-empty-desc">Enter or paste a JSON config/response above. Formatting and validation routines execute entirely inside your local browser sandbox.</div>
+            <div class="pesel-trust-row">
+              <span class="pesel-trust-badge">🔒 Local Execution</span>
+              <span class="pesel-trust-badge">⚡ Zero Latency</span>
+              <span class="pesel-trust-badge">✓ Privacy Shield</span>
+            </div>
+          </div>
+
+          <div class="pesel-timeline-tracker" style="display: none;">
+            <div class="pesel-timeline-line"></div>
+            <div class="pesel-timeline-progress" id="pesel-progress-bar"></div>
+            <div class="pesel-timeline-node" data-node="input">
+              <div class="pesel-timeline-dot"></div>
+              <span class="pesel-timeline-node-text">Input</span>
+            </div>
+            <div class="pesel-timeline-node" data-node="tokenize">
+              <div class="pesel-timeline-dot"></div>
+              <span class="pesel-timeline-node-text">Tokenizer</span>
+            </div>
+            <div class="pesel-timeline-node" data-node="syntax">
+              <div class="pesel-timeline-dot"></div>
+              <span class="pesel-timeline-node-text">Syntax</span>
+            </div>
+            <div class="pesel-timeline-node" data-node="complete">
+              <div class="pesel-timeline-dot"></div>
+              <span class="pesel-timeline-node-text">Complete</span>
+            </div>
+          </div>
+
+          <div class="pesel-results-container" style="display: none;"></div>
+          <div class="pesel-custom-actions button-row" style="display: none; margin-bottom: 8px;"></div>
+          <div class="pesel-breakdown" id="json-tree-explorer-container" style="display: none;"></div>
+        `;
+        workbench.form.appendChild(premiumPanel);
+      }
+
+      bindJsonInteractions(workbench);
+
+      // Live-mode debounced validation logic trigger
+      let debounceTimeout = null;
+      if (inputField) {
+        inputField.addEventListener('input', () => {
+          if (debounceTimeout) clearTimeout(debounceTimeout);
+          debounceTimeout = setTimeout(() => {
+            const activeAction = workbench.form.dataset.activeAction || (workbench.form.dataset.capability === "validate" ? "validate" : "format");
+            workbench.run(activeAction, { quiet: true });
+          }, 250);
+        });
+      }
+
+      // Keyboard shortcuts
+      document.addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement !== inputField) {
+          e.preventDefault();
+          if (inputField) inputField.focus();
+        }
+        if ((e.ctrlKey || e.metaKey) && e.key === 'l') {
+          e.preventDefault();
+          workbench.clear();
+        }
+        if ((e.ctrlKey || e.metaKey) && e.key === 'c' && workbench.lastResult) {
+          e.preventDefault();
+          copyToClipboard(workbench.outputValue(), workbench, 'Copied output value.');
         }
       });
-    }
-
-    function insertSamples(workbench) {
-      if (workbench.form.querySelector("[data-sample]")) {
-        return;
-      }
-      var row = document.createElement("div");
-      row.className = "sample-row";
-      row.setAttribute("aria-label", "Examples");
-      [
-        ["json-api", "API response"],
-        ["json-config", "Config"],
-        ["json-array", "Array"],
-        ["json-invalid", "Invalid JSON"]
-      ].forEach(function (sample) {
-        var button = document.createElement("button");
-        button.type = "button";
-        button.className = "sample-chip";
-        button.dataset.sample = sample[0];
-        button.textContent = sample[1];
-        row.appendChild(button);
-      });
-      insertBeforeFields(workbench.form, row);
-    }
-
-    function insertFileDropzone(workbench) {
-      if (workbench.form.querySelector("[data-file-dropzone]")) {
-        return;
-      }
-      var zone = document.createElement("div");
-      zone.className = "file-dropzone";
-      zone.dataset.fileDropzone = "";
-      zone.innerHTML = "<input type=\"file\" accept=\".json,application/json,text/json,text/plain\" data-file-input aria-label=\"Choose JSON file\"><div><strong>Drop a JSON file</strong><span data-file-status>Files stay in this browser.</span></div>";
-      insertBeforeFields(workbench.form, zone);
-    }
-
-    function insertBeforeFields(form, element) {
-      var fieldGrid = form.querySelector(".field-grid");
-      if (fieldGrid && fieldGrid.parentNode) {
-        fieldGrid.parentNode.insertBefore(element, fieldGrid);
-      }
     }
 
     function bindJsonInteractions(workbench) {
@@ -97,36 +312,36 @@
         return;
       }
       workbench.form.dataset.jsonInteractionsBound = "true";
-      var debouncedSearch = util.debounce(function () {
+      const debouncedSearch = util.debounce(() => {
         runTreeSearch(workbench, "first");
       }, 120);
 
-      workbench.form.addEventListener("click", function (event) {
-        var treeAction = event.target.closest("[data-json-tree-action]");
+      workbench.form.addEventListener("click", (event) => {
+        const treeAction = event.target.closest("[data-json-tree-action]");
         if (treeAction) {
           handleTreeAction(workbench, treeAction.dataset.jsonTreeAction);
           return;
         }
-        var node = event.target.closest("[data-json-node]");
+        const node = event.target.closest("[data-json-node]");
         if (node) {
           selectTreeNode(workbench, node.dataset.jsonPointer);
           return;
         }
-        var copy = event.target.closest("[data-json-copy]");
+        const copy = event.target.closest("[data-json-copy]");
         if (copy) {
           copySelectedNode(workbench, copy.dataset.jsonCopy);
         }
       });
 
-      workbench.form.addEventListener("input", function (event) {
+      workbench.form.addEventListener("input", (event) => {
         if (event.target.matches("[data-json-search]")) {
           debouncedSearch();
         }
       });
 
-      workbench.form.addEventListener("keydown", function (event) {
+      workbench.form.addEventListener("keydown", (event) => {
         if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "f") {
-          var search = workbench.form.querySelector("[data-json-search]");
+          const search = workbench.form.querySelector("[data-json-search]");
           if (search) {
             event.preventDefault();
             search.focus();
@@ -140,1250 +355,576 @@
       });
     }
 
+    const apiSnippets = {
+      curl: `curl -X POST https://api.validohub.com/v1/json/format \\\n  -H "Content-Type: application/json" \\\n  -d '{"input": "$INPUT$"}'`,
+      javascript: `fetch("https://api.validohub.com/v1/json/format", {\n  method: "POST",\n  headers: { "Content-Type": "application/json" },\n  body: JSON.stringify({ input: "$INPUT$" })\n})\n.then(res => res.json())\n.then(data => console.log(data));`,
+      python: `import requests\n\nres = requests.post(\n    "https://api.validohub.com/v1/json/format",\n    json={"input": "$INPUT$"}\n)\nprint(res.json())`,
+      java: `import java.net.http.*;\nimport java.net.URI;\n\nvar client = HttpClient.newHttpClient();\nvar request = HttpRequest.newBuilder()\n    .uri(URI.create("https://api.validohub.com/v1/json/format"))\n    .header("Content-Type", "application/json")\n    .POST(HttpRequest.BodyPublishers.ofString("{\\"input\\": \\"$INPUT$\\"}"))\n    .build();\nvar response = client.send(request, HttpResponse.BodyHandlers.ofString());\nSystem.out.println(response.body());`,
+      csharp: `using System.Net.Http;\nusing System.Text.Json;\n\nvar client = new HttpClient();\nvar content = new StringContent("{\\"input\\":\\"$INPUT$\\"}", System.Text.Encoding.UTF8, "application/json");\nvar response = await client.PostAsync("https://api.validohub.com/v1/json/format", content);\nvar result = await response.Content.ReadAsStringAsync();\nConsole.WriteLine(result);`,
+      go: `package main\n\nimport (\n\t"bytes"\n\t"io/ioutil"\n\t"net/http"\n\t"fmt"\n)\n\nfunc main() {\n\tpayload := []byte(\`{"input": "$INPUT$"}\`)\n\tres, _ := http.Post("https://api.validohub.com/v1/json/format", "application/json", bytes.NewBuffer(payload))\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\tfmt.Println(string(body))\n}`
+    };
+
     function run(workbench, action, options) {
-      var input = jsonInput(workbench);
-      var quiet = options && options.quiet;
-      if (!input.trim()) {
+      const values = workbench.values();
+      const rawInput = values.input || '';
+      const inputVal = rawInput;
+
+      const premiumPanel = workbench.form.querySelector('.pesel-premium-panel');
+      const resultsContainer = workbench.form.querySelector('.pesel-results-container');
+      const customActions = workbench.form.querySelector('.pesel-custom-actions');
+      const treeExplorerContainer = workbench.form.querySelector('#json-tree-explorer-container');
+      const timelineTracker = workbench.form.querySelector('.pesel-timeline-tracker');
+      const emptyStateCard = workbench.form.querySelector('#pesel-empty-state-card');
+
+      const startTime = performance.now();
+
+      const refreshHistorySelect = () => {
+        const historySelect = workbench.form.querySelector('#pesel-history');
+        if (historySelect) {
+          const items = JSON.parse(localStorage.getItem('validohub.json.history') || '[]');
+          historySelect.innerHTML = '<option value="">-- Recent JSON --</option>';
+          items.forEach(it => {
+            const opt = document.createElement('option');
+            opt.value = it.value;
+            const shortened = it.value.length > 20 ? it.value.substring(0, 18) + '...' : it.value;
+            opt.textContent = `${shortened} (${it.mode} - ${it.date})`;
+            historySelect.appendChild(opt);
+          });
+        }
+      };
+
+      const setTimelineStatus = (node, status) => {
+        if (!timelineTracker) return;
+        const el = timelineTracker.querySelector(`[data-node="${node}"]`);
+        if (el) {
+          el.className = `pesel-timeline-node ${status}`;
+        }
+      };
+
+      if (!inputVal.trim()) {
         workbench.setOutput("");
         workbench.clearPanels();
-        workbench.setMessage(quiet ? "" : "Paste JSON or drop a .json file.", quiet ? "" : "error");
-        workbench.lastResult = null;
-        workbench._jsonExplorer = null;
+        workbench.setMessage(options.quiet ? "" : "Please enter a JSON string.", options.quiet ? "" : "error");
+        if (emptyStateCard) emptyStateCard.style.display = 'flex';
+        if (timelineTracker) timelineTracker.style.display = 'none';
+        if (resultsContainer) resultsContainer.style.display = 'none';
+        if (customActions) customActions.style.display = 'none';
+        if (treeExplorerContainer) treeExplorerContainer.style.display = 'none';
         return;
       }
-      if (action === "format") {
-        prettyPrint(workbench, input);
+
+      if (emptyStateCard) emptyStateCard.style.display = 'none';
+      if (timelineTracker) timelineTracker.style.display = 'flex';
+
+      setTimelineStatus('input', 'active');
+      setTimelineStatus('tokenize', 'active');
+      setTimelineStatus('syntax', 'active');
+      setTimelineStatus('complete', 'active');
+
+      const progressBar = timelineTracker.querySelector('#pesel-progress-bar');
+      if (progressBar) progressBar.style.width = '100%';
+
+      const parsed = parseJson(inputVal);
+      const elapsed = (performance.now() - startTime).toFixed(2);
+
+      if (!parsed.valid) {
+        setTimelineStatus('syntax', 'error');
+        setTimelineStatus('complete', 'error');
+
+        workbench.setOutput(`Invalid JSON: ${parsed.message}`);
+        workbench.setMessage("Invalid JSON structure.", "error");
+        workbench.setBadge({ label: "Error", state: "error" });
+        workbench.setStats([["JSON state", "Invalid"], ["Error Message", parsed.message]], [], "error");
+
+        if (resultsContainer) {
+          resultsContainer.innerHTML = `
+            <div class="pesel-results-header reveal-element" style="color: #dc2626; justify-content: space-between;">
+              <span>✗ Validation Failed: Syntax Error</span>
+              <span style="font-size: 0.72rem; font-weight: 500; color: var(--muted);">Verification time: ${elapsed} ms</span>
+            </div>
+            <div class="pesel-results-grid reveal-element reveal-delay-1">
+              <div class="pesel-result-row">
+                <span class="row-label">Syntax Error Detail</span>
+                <span class="row-value">${parsed.message}</span>
+              </div>
+            </div>
+          `;
+          resultsContainer.style.display = 'flex';
+        }
+
+        if (customActions) customActions.style.display = 'none';
+        if (treeExplorerContainer) treeExplorerContainer.style.display = 'none';
         return;
       }
+
+      // Add to history
+      const historyItems = JSON.parse(localStorage.getItem('validohub.json.history') || '[]');
+      if (!historyItems.some(it => it.value === inputVal)) {
+        historyItems.unshift({ value: inputVal, mode: action || 'format', date: new Date().toISOString().split('T')[0] });
+        localStorage.setItem('validohub.json.history', JSON.stringify(historyItems.slice(0, 20)));
+        refreshHistorySelect();
+      }
+
+      // Perform formatting/minifying
+      let outputText = "";
       if (action === "minify") {
-        minify(workbench, input);
-        return;
-      }
-      if (action === "sort") {
-        sortObjectKeys(workbench, input);
-        return;
-      }
-      if (action === "clean") {
-        removeEmptyValues(workbench, input);
-        return;
-      }
-      if (action === "validate") {
-        validate(workbench, input);
-        return;
-      }
-      if (action === "explain") {
-        explain(workbench, input);
-      }
-    }
-
-    function prettyPrint(workbench, input) {
-      var parsed = parseJson(input);
-      if (!parsed.valid) {
-        showInvalid(workbench, input, parsed);
-        return;
-      }
-      var output = JSON.stringify(parsed.value, null, 2);
-      showSuccess(workbench, input, output, parsed, "Pretty printed JSON.", "format");
-    }
-
-    function minify(workbench, input) {
-      var parsed = parseJson(input);
-      if (!parsed.valid) {
-        showInvalid(workbench, input, parsed);
-        return;
-      }
-      var output = JSON.stringify(parsed.value);
-      showSuccess(workbench, input, output, parsed, "Minified JSON.", "minify");
-    }
-
-    function sortObjectKeys(workbench, input) {
-      var parsed = parseJson(input);
-      if (!parsed.valid) {
-        showInvalid(workbench, input, parsed);
-        return;
-      }
-      var sorted = sortKeysDeep(parsed.value);
-      var output = JSON.stringify(sorted, null, 2);
-      showSuccess(workbench, input, output, { valid: true, value: sorted, warnings: parsed.warnings }, "Sorted object keys alphabetically.", "sort");
-      updateInput(workbench, output);
-    }
-
-    function removeEmptyValues(workbench, input) {
-      var parsed = parseJson(input);
-      if (!parsed.valid) {
-        showInvalid(workbench, input, parsed);
-        return;
-      }
-      var cleaned = cleanEmptyDeep(parsed.value);
-      var value = cleaned.empty ? null : cleaned.value;
-      var output = JSON.stringify(value, null, 2);
-      showSuccess(workbench, input, output, { valid: true, value: value, warnings: parsed.warnings }, "Removed " + cleaned.removed + " empty value" + (cleaned.removed === 1 ? "." : "s."), "clean");
-      updateInput(workbench, output);
-    }
-
-    function validate(workbench, input) {
-      var parsed = parseJson(input);
-      if (!parsed.valid) {
-        showInvalid(workbench, input, parsed);
-        return;
-      }
-      var pretty = JSON.stringify(parsed.value, null, 2);
-      var stats = analyzeJson(input, pretty, parsed.value);
-      var report = validationReport(stats, parsed.warnings);
-      workbench.setOutput(report);
-      workbench.setMessage(parsed.warnings.length > 0 ? "Valid JSON with warnings." : "Valid JSON.", parsed.warnings.length > 0 ? "warning" : "success");
-      workbench.setStats(stats.details, validationNotes(stats).concat(parsed.warnings.map(function (warning) {
-        return warning.message;
-      })), parsed.warnings.length > 0 ? "warning" : "success");
-      setJsonExplorer(workbench, parsed.value, stats);
-      workbench.setAdvanced(advancedReport(stats, input, parsed.value, pretty));
-      workbench.lastResult = textResult(report, "json-validation", "txt");
-    }
-
-    function explain(workbench, input) {
-      var parsed = parseJson(input);
-      if (!parsed.valid) {
-        showInvalid(workbench, input, parsed);
-        return;
-      }
-      var pretty = JSON.stringify(parsed.value, null, 2);
-      var stats = analyzeJson(input, pretty, parsed.value);
-      var explanation = explanationReport(stats, parsed.value, parsed.warnings);
-      workbench.setOutput(explanation);
-      workbench.setMessage("Explained JSON structure.", parsed.warnings.length > 0 ? "warning" : "success");
-      workbench.setStats(stats.details, validationNotes(stats).concat(parsed.warnings.map(function (warning) {
-        return warning.message;
-      })), parsed.warnings.length > 0 ? "warning" : "success");
-      setJsonExplorer(workbench, parsed.value, stats);
-      workbench.setAdvanced(advancedReport(stats, input, parsed.value, pretty));
-      workbench.lastResult = textResult(explanation, "json-explanation", "txt");
-    }
-
-    function showSuccess(workbench, input, output, parsed, message, action) {
-      var stats = analyzeJson(input, output, parsed.value);
-      var warnings = parsed.warnings || [];
-      workbench.setOutput(output);
-      workbench.setMessage(message, warnings.length > 0 ? "warning" : "success");
-      workbench.setStats(stats.details, validationNotes(stats).concat(warnings.map(function (warning) {
-        return warning.message;
-      })), warnings.length > 0 ? "warning" : "success");
-      setJsonExplorer(workbench, parsed.value, stats);
-      workbench.setAdvanced(advancedReport(stats, input, parsed.value, output));
-      workbench.lastResult = textResult(output, action === "minify" ? "json-minified" : "json-" + action, "json");
-    }
-
-    function showInvalid(workbench, input, parsed) {
-      var error = parsed.error;
-      var notes = [
-        error.message,
-        "Line " + error.line + ", column " + error.column + ".",
-        error.cause,
-        error.hint
-      ].filter(Boolean);
-      workbench.setOutput("Invalid JSON\n" + notes.join("\n"));
-      workbench.setMessage("Invalid JSON at line " + error.line + ", column " + error.column + ".", "error");
-      workbench.setStats(errorDetails(input, error), notes, "error");
-      workbench.setPreview("Error location", errorPreview(input, error));
-      workbench.setAdvanced(errorRepairPanel(error));
-      workbench.lastResult = textResult(workbench.outputValue(), "json-error", "txt");
-      workbench._jsonExplorer = null;
-    }
-
-    function handleFile(workbench, file) {
-      try {
-        var text = util.utf8Text(file.bytes);
-        var input = workbench.primaryInput();
-        if (input) {
-          input.value = text;
-        }
-        workbench.file = null;
-        workbench.updateFileStatus({
-          name: file.name,
-          bytes: file.bytes,
-          type: file.type || "application/json"
-        });
-        workbench.markActiveAction(workbench.form.dataset.capability === "validate" ? "validate" : "format");
-        workbench.updateBadge();
-        workbench.run(workbench.form.dataset.activeAction);
-      } catch (error) {
-        workbench.setMessage("Could not read this file as UTF-8 JSON text.", "error");
-      }
-    }
-
-    function applySample(workbench, sampleId) {
-      var input = workbench.primaryInput();
-      if (!input) {
-        return;
-      }
-      if (sampleId === "json-api") {
-        input.value = '{"status":"ok","requestId":"req_123","data":{"users":[{"id":1,"name":"Ada","roles":["admin","editor"],"profile":{"country":"PL","active":true}},{"id":2,"name":"Lin","roles":["viewer"],"profile":{"country":"BR","active":false}}],"meta":{"page":1,"hasMore":false}}}';
-        workbench.markActiveAction("format");
-        workbench.run("format");
-        return;
-      }
-      if (sampleId === "json-config") {
-        input.value = '{\n  "app": "validohub",\n  "features": {\n    "liveMode": true,\n    "offline": true,\n    "treeExplorer": true\n  },\n  "limits": {\n    "maxUploadMb": 5,\n    "indent": 2\n  }\n}';
-        workbench.markActiveAction("validate");
-        workbench.run("validate");
-        return;
-      }
-      if (sampleId === "json-array") {
-        input.value = '[{"event":"created","at":"2026-07-09T10:00:00Z","payload":{"id":1}},{"event":"published","at":"2026-07-09T10:04:00Z","payload":{"id":1,"channels":["web","api"]}}]';
-        workbench.markActiveAction("minify");
-        workbench.run("minify");
-        return;
-      }
-      if (sampleId === "json-invalid") {
-        input.value = '{\n  "name": "ValidoHub",\n  "tools": ["json", "base64",]\n}';
-        workbench.markActiveAction("validate");
-        workbench.run("validate");
-      }
-    }
-
-    function detectInputMode(value) {
-      if (!value || !value.trim()) {
-        return { label: "Waiting for input", state: "" };
-      }
-      var trimmed = value.trim();
-      if (!/^[{[]/.test(trimmed)) {
-        return { label: "Looks like text", state: "text" };
-      }
-      var parsed = parseJson(value);
-      if (parsed.valid) {
-        return { label: rootLabel(parsed.value), state: "json" };
-      }
-      return { label: "Invalid JSON", state: "invalid" };
-    }
-
-    function jsonInput(workbench) {
-      var values = workbench.values();
-      return values.json || values.input || "";
-    }
-
-    function updateInput(workbench, value) {
-      var input = workbench.primaryInput();
-      if (input) {
-        input.value = value;
-      }
-    }
-
-    function parseJson(input) {
-      try {
-        var value = JSON.parse(input);
-        return { valid: true, value: value, warnings: duplicatePropertyWarnings(input) };
-      } catch (error) {
-        return { valid: false, error: parseError(input, error) };
-      }
-    }
-
-    function parseError(input, error) {
-      var position = positionFromMessage(error.message);
-      if (position == null) {
-        position = estimateErrorPosition(input);
-      }
-      position = Math.max(0, Math.min(position, input.length));
-      var location = lineColumn(input, position);
-      var bounds = tokenBounds(input, position);
-      var bracketMatch = matchingBracketPosition(input, position);
-      var diagnosis = diagnoseError(error.message, input, position);
-      return {
-        message: normalizeErrorMessage(error.message),
-        position: position,
-        tokenStart: bounds.start,
-        tokenEnd: bounds.end,
-        bracketMatch: bracketMatch,
-        line: location.line,
-        column: location.column,
-        cause: diagnosis.cause,
-        hint: diagnosis.hint,
-        suggestions: diagnosis.suggestions
-      };
-    }
-
-    function positionFromMessage(message) {
-      var match = String(message).match(/position (\d+)/i);
-      return match ? Number(match[1]) : null;
-    }
-
-    function estimateErrorPosition(input) {
-      var stack = [];
-      var inString = false;
-      var escaped = false;
-      for (var index = 0; index < input.length; index++) {
-        var ch = input.charAt(index);
-        if (inString) {
-          if (escaped) {
-            escaped = false;
-          } else if (ch === "\\") {
-            escaped = true;
-          } else if (ch === "\"") {
-            inString = false;
-          } else if (/[\n\r]/.test(ch)) {
-            return index;
+        outputText = JSON.stringify(parsed.value);
+      } else if (action === "sort") {
+        function sortObj(obj) {
+          if (obj && typeof obj === "object") {
+            if (Array.isArray(obj)) return obj.map(sortObj);
+            const sorted = {};
+            Object.keys(obj).sort().forEach(k => {
+              sorted[k] = sortObj(obj[k]);
+            });
+            return sorted;
           }
-          continue;
+          return obj;
         }
-        if (ch === "\"") {
-          inString = true;
-        } else if (ch === "{" || ch === "[") {
-          stack.push(ch);
-        } else if (ch === "}" || ch === "]") {
-          var expected = ch === "}" ? "{" : "[";
-          if (stack.pop() !== expected) {
-            return index;
-          }
-        }
-      }
-      return input.length;
-    }
-
-    function lineColumn(input, position) {
-      var line = 1;
-      var column = 1;
-      for (var index = 0; index < position; index++) {
-        if (input.charAt(index) === "\n") {
-          line++;
-          column = 1;
-        } else {
-          column++;
-        }
-      }
-      return { line: line, column: column };
-    }
-
-    function normalizeErrorMessage(message) {
-      return String(message).replace(/^JSON\.parse:\s*/i, "JSON parse error: ");
-    }
-
-    function diagnoseError(message, input, position) {
-      var before = input.slice(Math.max(0, position - 6), position + 6);
-      var char = input.charAt(position);
-      if (/trailing|unexpected token\s*]/i.test(message) || /,\s*[}\]]/.test(before)) {
-        return {
-          cause: "Likely trailing comma.",
-          hint: "JSON does not allow a comma before a closing brace or bracket.",
-          suggestions: ["Remove the comma before the closing token.", "If another value is missing, add it after the comma."]
-        };
-      }
-      if (/Unexpected end/i.test(message)) {
-        return {
-          cause: "Unexpected end of input.",
-          hint: "The document ends before an object, array, or string was closed.",
-          suggestions: ["Close the last open object or array.", "Check for an unterminated string near the end of the document."]
-        };
-      }
-      if (/unterminated|string/i.test(message) || /[\n\r]/.test(char)) {
-        return {
-          cause: "Unclosed string.",
-          hint: "A string appears to be missing a closing double quote or contains an unescaped line break.",
-          suggestions: ["Add the closing double quote.", "Escape line breaks inside strings as \\n."]
-        };
-      }
-      if (/property|double-quoted|Unexpected token [A-Za-z_]/i.test(message)) {
-        return {
-          cause: "Invalid object key or unexpected bare word.",
-          hint: "JSON object keys and string values must use double quotes.",
-          suggestions: ["Wrap object keys in double quotes.", "Use true, false, or null only for JSON literals."]
-        };
-      }
-      if (char === ":" || /:\s*[,}\]]/.test(before)) {
-        return {
-          cause: "Missing value after colon.",
-          hint: "A property name must be followed by a JSON value.",
-          suggestions: ["Add a string, number, object, array, boolean, or null after the colon."]
-        };
-      }
-      if (/[{\[]/.test(char)) {
-        return {
-          cause: "Unexpected opening bracket.",
-          hint: "A comma may be missing before this nested value.",
-          suggestions: ["Add a comma between adjacent values.", "Check the parent object or array around the highlighted token."]
-        };
-      }
-      if (/[}\]]/.test(char)) {
-        return {
-          cause: "Unexpected closing bracket.",
-          hint: "A matching opening bracket may be missing or the previous value may be incomplete.",
-          suggestions: ["Check bracket pairing.", "Remove an extra closing token or complete the previous value."]
-        };
-      }
-      return {
-        cause: "Unexpected token.",
-        hint: "Inspect the highlighted token and the token immediately before it.",
-        suggestions: ["Check for a missing comma.", "Check quotes around strings and keys.", "Check bracket pairing."]
-      };
-    }
-
-    function tokenBounds(input, position) {
-      var start = Math.max(0, position);
-      var end = Math.min(input.length, position + 1);
-      if (/[\s]/.test(input.charAt(start))) {
-        return { start: start, end: end };
-      }
-      if (/[\{\}\[\]:,]/.test(input.charAt(start))) {
-        return { start: start, end: end };
-      }
-      while (start > 0 && !/[\s\{\}\[\]:,]/.test(input.charAt(start - 1))) {
-        start--;
-      }
-      while (end < input.length && !/[\s\{\}\[\]:,]/.test(input.charAt(end))) {
-        end++;
-      }
-      return { start: start, end: Math.max(end, start + 1) };
-    }
-
-    function matchingBracketPosition(input, position) {
-      var ch = input.charAt(position);
-      var pairs = { "{": "}", "[": "]", "}": "{", "]": "[" };
-      if (!pairs[ch]) {
-        return null;
-      }
-      var direction = ch === "{" || ch === "[" ? 1 : -1;
-      var expected = pairs[ch];
-      var depth = 0;
-      var inString = false;
-      var escaped = false;
-      for (var index = position; index >= 0 && index < input.length; index += direction) {
-        var current = input.charAt(index);
-        if (index !== position) {
-          if (inString) {
-            if (escaped) {
-              escaped = false;
-            } else if (current === "\\") {
-              escaped = true;
-            } else if (current === "\"") {
-              inString = false;
-            }
-            continue;
-          }
-          if (current === "\"") {
-            inString = true;
-            continue;
-          }
-        }
-        if (current === ch) {
-          depth++;
-        } else if (current === expected) {
-          depth--;
-          if (depth === 0) {
-            return index;
-          }
-        }
-      }
-      return null;
-    }
-
-    function duplicatePropertyWarnings(input) {
-      var warnings = [];
-      var stack = [];
-      var inString = false;
-      var escaped = false;
-      var stringStart = 0;
-      var buffer = "";
-      for (var index = 0; index < input.length; index++) {
-        var ch = input.charAt(index);
-        if (inString) {
-          if (escaped) {
-            buffer += ch;
-            escaped = false;
-          } else if (ch === "\\") {
-            buffer += ch;
-            escaped = true;
-          } else if (ch === "\"") {
-            inString = false;
-            var top = stack[stack.length - 1];
-            var next = nextNonWhitespace(input, index + 1);
-            if (top && top.type === "object" && top.expectKey && input.charAt(next) === ":") {
-              var key = safeStringValue(input.slice(stringStart, index + 1));
-              if (Object.prototype.hasOwnProperty.call(top.keys, key)) {
-                var location = lineColumn(input, stringStart);
-                warnings.push({
-                  message: "Duplicate property \"" + key + "\" at line " + location.line + ", column " + location.column + ". Later values overwrite earlier ones in JavaScript.",
-                  key: key,
-                  line: location.line,
-                  column: location.column
-                });
+        outputText = JSON.stringify(sortObj(parsed.value), null, 2);
+      } else if (action === "clean") {
+        function cleanObj(obj) {
+          if (obj && typeof obj === "object") {
+            if (Array.isArray(obj)) return obj.map(cleanObj).filter(v => v !== null && v !== undefined && v !== "");
+            const cleaned = {};
+            Object.keys(obj).forEach(k => {
+              const val = cleanObj(obj[k]);
+              if (val !== null && val !== undefined && val !== "") {
+                cleaned[k] = val;
               }
-              top.keys[key] = true;
-              top.expectKey = false;
+            });
+            return cleaned;
+          }
+          return obj;
+        }
+        outputText = JSON.stringify(cleanObj(parsed.value), null, 2);
+      } else {
+        // Pretty print / default
+        outputText = JSON.stringify(parsed.value, null, 2);
+      }
+
+      workbench.setOutput(outputText);
+      workbench.setMessage("Processed JSON locally.", "success");
+      workbench.setBadge({ label: `${parsed.counts.nodes} nodes`, state: "success" });
+
+      const stats = subtreeStats(parsed.value);
+      const detailRows = [
+        ["JSON state", "Valid"],
+        ["Byte size", util.formatBytes(util.utf8Bytes(outputText).length)],
+        ["Subtree size", `${stats.nodes} nodes`],
+        ["Depth", String(stats.depth)],
+        ["Subtree elements", String(stats.elements)]
+      ];
+      workbench.setStats(detailRows, [], "success");
+
+      if (resultsContainer) {
+        resultsContainer.innerHTML = `
+          <div class="pesel-results-header reveal-element" style="color: #16a34a; justify-content: space-between;">
+            <span>✓ Valid JSON Structure</span>
+            <span style="font-size: 0.72rem; font-weight: 500; color: var(--muted);">Parsing time: ${elapsed} ms</span>
+          </div>
+          <div class="pesel-results-grid reveal-element reveal-delay-1">
+            <div class="pesel-result-row">
+              <span class="row-label">Processed JSON Result</span>
+              <span class="row-value" style="word-break:break-all; font-family:monospace; max-height:160px; overflow-y:auto;">${outputText.substring(0, 1000)}${outputText.length > 1000 ? '\n... (truncated view)' : ''}</span>
+              <button type="button" class="pesel-row-copy-btn" data-copy-val="${outputText}">Copy</button>
+            </div>
+            <div class="pesel-result-row">
+              <span class="row-label">Node Count</span>
+              <span class="row-value">${stats.nodes} nodes</span>
+            </div>
+            <div class="pesel-result-row">
+              <span class="row-label">Tree Max Depth</span>
+              <span class="row-value">${stats.depth} levels</span>
+            </div>
+            <div class="pesel-result-row">
+              <span class="row-label">Key/Value Elements</span>
+              <span class="row-value">${stats.elements} items</span>
+            </div>
+          </div>
+        `;
+
+        resultsContainer.querySelector('[data-copy-val]').addEventListener('click', (e) => {
+          copyToClipboard(e.target.dataset.copyVal, workbench, 'Copied JSON output.');
+          e.target.textContent = 'Copied!';
+          setTimeout(() => { e.target.textContent = 'Copy'; }, 1500);
+        });
+
+        resultsContainer.style.display = 'flex';
+      }
+
+      if (customActions) {
+        customActions.innerHTML = `
+          <button type="button" class="button button-secondary compact" id="custom-copy-result">Copy JSON</button>
+          <button type="button" class="button button-secondary compact" id="custom-download-result">Download JSON</button>
+        `;
+        customActions.querySelector('#custom-copy-result').addEventListener('click', () => {
+          copyToClipboard(outputText, workbench, 'Copied processed JSON.');
+        });
+        customActions.querySelector('#custom-download-result').addEventListener('click', () => {
+          const blob = new Blob([outputText], { type: 'application/json;charset=utf-8' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `formatted-json-${Date.now()}.json`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
+        customActions.style.display = 'flex';
+      }
+
+      // Render Visual Tree Explorer
+      if (treeExplorerContainer) {
+        workbench._jsonExplorer = {
+          value: parsed.value,
+          selectedPointer: "",
+          matches: [],
+          matchIndex: -1,
+          stats: stats
+        };
+        treeExplorerContainer.innerHTML = treePreview(parsed.value, stats);
+        treeExplorerContainer.style.display = 'block';
+
+        window.setTimeout(() => {
+          initializeExplorer(workbench);
+        }, 0);
+      }
+
+      // Setup API Developer Snippets Panel
+      workbench.setAdvanced(`
+        <div class="pesel-dev-section">
+          <div class="pesel-api-card">
+            <div class="pesel-section-title">
+              <span>🔌</span> Developer API Preview
+            </div>
+            <div class="pesel-api-tabs">
+              <button type="button" class="pesel-api-tab active" data-lang="curl">cURL</button>
+              <button type="button" class="pesel-api-tab" data-lang="javascript">JavaScript</button>
+              <button type="button" class="pesel-api-tab" data-lang="python">Python</button>
+              <button type="button" class="pesel-api-tab" data-lang="java">Java</button>
+              <button type="button" class="pesel-api-tab" data-lang="csharp">C#</button>
+              <button type="button" class="pesel-api-tab" data-lang="go">Go</button>
+            </div>
+            <div class="pesel-dev-accordion-content" style="background: var(--code-bg); padding: 12px; border-radius: 6px;">
+              <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
+              <pre id="pesel-api-code-block" style="margin: 0; font-family: monospace; font-size: 0.8rem; line-height: 1.4; color: var(--code-text);">${apiSnippets.curl.replace('$INPUT$', inputVal.replace(/\n/g, '\\n').replace(/'/g, "\\'"))}</pre>
+            </div>
+          </div>
+        </div>
+      `);
+
+      const devSection = workbench.form.querySelector('.pesel-dev-section');
+      if (devSection) {
+        const apiBlock = devSection.querySelector('#pesel-api-code-block');
+        const tabs = devSection.querySelectorAll('.pesel-api-tab');
+        tabs.forEach(t => {
+          t.addEventListener('click', () => {
+            tabs.forEach(btn => btn.classList.remove('active'));
+            t.classList.add('active');
+            const lang = t.dataset.lang;
+            if (apiBlock && apiSnippets[lang]) {
+              apiBlock.textContent = apiSnippets[lang].replace('$INPUT$', inputVal.replace(/\n/g, '\\n').replace(/'/g, "\\'"));
             }
-          } else {
-            buffer += ch;
-          }
-          continue;
+          });
+        });
+      }
+
+      document.querySelectorAll('.pesel-dev-accordion-content').forEach(card => {
+        const btn = card.querySelector('.pesel-dev-accordion-copy-btn');
+        const pre = card.querySelector('pre');
+        if (btn && pre) {
+          btn.addEventListener('click', () => {
+            copyToClipboard(pre.textContent.trim(), workbench, 'Copied snippet.');
+            btn.textContent = 'Copied!';
+            setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+          });
         }
-        if (ch === "\"") {
-          inString = true;
-          escaped = false;
-          stringStart = index;
-          buffer = "";
-        } else if (ch === "{") {
-          stack.push({ type: "object", keys: {}, expectKey: true });
-        } else if (ch === "[") {
-          stack.push({ type: "array" });
-        } else if (ch === "}" || ch === "]") {
-          stack.pop();
-        } else if (ch === ",") {
-          var current = stack[stack.length - 1];
-          if (current && current.type === "object") {
-            current.expectKey = true;
-          }
-        }
-      }
-      return warnings;
-    }
-
-    function nextNonWhitespace(input, start) {
-      for (var index = start; index < input.length; index++) {
-        if (!/\s/.test(input.charAt(index))) {
-          return index;
-        }
-      }
-      return input.length;
-    }
-
-    function safeStringValue(value) {
-      try {
-        return JSON.parse(value);
-      } catch (error) {
-        return value.slice(1, -1);
-      }
-    }
-
-    function analyzeJson(input, output, value) {
-      var counts = {
-        nodes: 0,
-        objects: 0,
-        arrays: 0,
-        properties: 0,
-        strings: 0,
-        numbers: 0,
-        booleans: 0,
-        nulls: 0,
-        maxDepth: 0,
-        largestArray: 0,
-        largestObject: 0
-      };
-      visit(value, 0, counts);
-      var inputBytes = util.utf8Bytes(input).length;
-      var details = [
-        ["Characters", String(Array.from(input).length)],
-        ["UTF-8 bytes", util.formatBytes(inputBytes)],
-        ["Output characters", String(Array.from(output).length)],
-        ["Nodes", String(counts.nodes)],
-        ["Objects", String(counts.objects)],
-        ["Arrays", String(counts.arrays)],
-        ["Properties", String(counts.properties)],
-        ["Strings", String(counts.strings)],
-        ["Numbers", String(counts.numbers)],
-        ["Booleans", String(counts.booleans)],
-        ["Null values", String(counts.nulls)],
-        ["Maximum depth", String(counts.maxDepth)],
-        ["Largest array", String(counts.largestArray)],
-        ["Largest object", String(counts.largestObject)],
-        ["Root type", rootType(value)]
-      ];
-      return {
-        details: details,
-        counts: counts,
-        inputBytes: inputBytes,
-        outputBytes: util.utf8Bytes(output).length,
-        rootType: rootType(value),
-        largeMode: inputBytes > LARGE_JSON_BYTES || counts.nodes > LARGE_JSON_NODES
-      };
-    }
-
-    function visit(value, depth, counts) {
-      counts.nodes++;
-      counts.maxDepth = Math.max(counts.maxDepth, depth);
-      if (Array.isArray(value)) {
-        counts.arrays++;
-        counts.largestArray = Math.max(counts.largestArray, value.length);
-        value.forEach(function (item) {
-          visit(item, depth + 1, counts);
-        });
-        return;
-      }
-      if (value && typeof value === "object") {
-        var keys = Object.keys(value);
-        counts.objects++;
-        counts.properties += keys.length;
-        counts.largestObject = Math.max(counts.largestObject, keys.length);
-        keys.forEach(function (key) {
-          visit(value[key], depth + 1, counts);
-        });
-        return;
-      }
-      if (typeof value === "string") {
-        counts.strings++;
-      } else if (typeof value === "number") {
-        counts.numbers++;
-      } else if (typeof value === "boolean") {
-        counts.booleans++;
-      } else if (value === null) {
-        counts.nulls++;
-      }
-    }
-
-    function validationNotes(stats) {
-      var notes = [];
-      if (stats.largeMode) {
-        notes.push("Large JSON mode enabled. Tree rendering is capped to keep the browser responsive.");
-      }
-      if (stats.counts.maxDepth >= 8) {
-        notes.push("Deep nesting detected. Consider whether consumers can handle this structure comfortably.");
-      }
-      return notes;
-    }
-
-    function validationReport(stats, warnings) {
-      var lines = ["Valid JSON"].concat(stats.details.map(function (row) {
-        return row[0] + ": " + row[1];
-      }));
-      if (warnings && warnings.length > 0) {
-        lines.push("");
-        lines.push("Warnings:");
-        warnings.forEach(function (warning) {
-          lines.push("- " + warning.message);
-        });
-      }
-      return lines.join("\n");
-    }
-
-    function explanationReport(stats, value, warnings) {
-      var lines = [
-        "JSON structure",
-        "Root type: " + rootType(value),
-        "Nodes: " + stats.counts.nodes,
-        "Objects: " + stats.counts.objects,
-        "Arrays: " + stats.counts.arrays,
-        "Properties: " + stats.counts.properties,
-        "Maximum depth: " + stats.counts.maxDepth,
-        "Largest array size: " + stats.counts.largestArray,
-        "Largest object size: " + stats.counts.largestObject,
-        "",
-        "Value types:",
-        "- Strings: " + stats.counts.strings,
-        "- Numbers: " + stats.counts.numbers,
-        "- Booleans: " + stats.counts.booleans,
-        "- Null values: " + stats.counts.nulls
-      ];
-      if (warnings && warnings.length > 0) {
-        lines.push("");
-        lines.push("Warnings:");
-        warnings.forEach(function (warning) {
-          lines.push("- " + warning.message);
-        });
-      }
-      return lines.join("\n");
-    }
-
-    function errorDetails(input, error) {
-      return [
-        ["Characters", String(Array.from(input).length)],
-        ["UTF-8 bytes", util.formatBytes(util.utf8Bytes(input).length)],
-        ["Error line", String(error.line)],
-        ["Error column", String(error.column)],
-        ["Error position", String(error.position + 1)],
-        ["Likely cause", error.cause || "Unexpected token"]
-      ];
-    }
-
-    function advancedReport(stats, input, value, jsonOutput) {
-      return "<div class=\"json-analysis-grid\">"
-          + "<section><div class=\"preview-title\">Structure</div><dl class=\"feedback-grid\">"
-          + stats.details.map(function (row) {
-            return "<div><dt>" + util.escapeHtml(row[0]) + "</dt><dd>" + util.escapeHtml(row[1]) + "</dd></div>";
-          }).join("")
-          + "</dl></section>"
-          + "<section><div class=\"preview-title\">Type distribution</div><dl class=\"feedback-grid\">"
-          + [["Strings", stats.counts.strings], ["Numbers", stats.counts.numbers], ["Booleans", stats.counts.booleans], ["Null values", stats.counts.nulls]].map(function (row) {
-            return "<div><dt>" + row[0] + "</dt><dd>" + row[1] + "</dd></div>";
-          }).join("")
-          + "</dl></section>"
-          + "<section><div class=\"preview-title\">JSON Pointer quick paths</div>" + pointerList(value) + "</section>"
-          + "<section><div class=\"preview-title\">Syntax highlighted JSON</div>" + syntaxPreview(jsonOutput).replace("<pre", "<pre data-json-syntax") + "</section>"
-          + "</div>";
-    }
-
-    function setJsonExplorer(workbench, value, stats) {
-      workbench._jsonExplorer = {
-        value: value,
-        selectedPointer: "",
-        matches: [],
-        matchIndex: -1,
-        stats: stats
-      };
-      workbench.setPreview("JSON explorer", treePreview(value, stats));
-      window.setTimeout(function () {
-        initializeExplorer(workbench);
-      }, 0);
+      });
     }
 
     function initializeExplorer(workbench) {
-      var explorer = workbench.form.querySelector("[data-json-explorer]");
-      if (!explorer) {
-        return;
-      }
+      const explorer = workbench.form.querySelector("[data-json-explorer]");
+      if (!explorer) return;
       selectTreeNode(workbench, "");
-      var search = explorer.querySelector("[data-json-search]");
+      const search = explorer.querySelector("[data-json-search]");
       if (search && search.value) {
         runTreeSearch(workbench, "first");
       }
     }
 
-    function syntaxPreview(json) {
-      return "<pre class=\"json-code\"><code>" + highlightJson(json) + "</code></pre>";
-    }
-
-    function highlightJson(json) {
-      return json.replace(/("(?:\\.|[^"\\])*")(\s*:)?|\b(true|false|null)\b|-?\b\d+(?:\.\d+)?(?:[eE][+-]?\d+)?\b|[{}\[\]:,]/g, function (match, string, colon, literal) {
-        if (string) {
-          if (colon) {
-            return "<span class=\"json-key\">" + util.escapeHtml(string) + "</span>"
-                + util.escapeHtml(colon.slice(0, -1))
-                + "<span class=\"json-punctuation\">:</span>";
-          }
-          return "<span class=\"json-string\">" + util.escapeHtml(string) + "</span>";
-        }
-        if (/^-?\d/.test(match)) {
-          return "<span class=\"json-number\">" + util.escapeHtml(match) + "</span>";
-        }
-        if (literal || /^(true|false|null)$/.test(match)) {
-          return "<span class=\"json-literal\">" + util.escapeHtml(literal || match) + "</span>";
-        }
-        return "<span class=\"json-punctuation\">" + util.escapeHtml(match) + "</span>";
-      });
-    }
-
     function treePreview(value, stats) {
-      var state = { rendered: 0, capped: false, largeMode: stats.largeMode };
-      var html = "<div class=\"json-explorer\" data-json-explorer>"
-          + "<div class=\"json-explorer-toolbar\">"
-          + "<button type=\"button\" class=\"json-tool-button\" data-json-tree-action=\"expand-all\">Expand all</button>"
-          + "<button type=\"button\" class=\"json-tool-button\" data-json-tree-action=\"collapse-all\">Collapse all</button>"
-          + "<button type=\"button\" class=\"json-tool-button\" data-json-tree-action=\"focus-search\">Focus search</button>"
-          + "<button type=\"button\" class=\"json-tool-button\" data-json-tree-action=\"clear-search\">Clear search</button>"
-          + "<label class=\"json-search-label\"><span>Search</span><input type=\"search\" data-json-search placeholder=\"Keys or values\" autocomplete=\"off\"></label>"
-          + "<button type=\"button\" class=\"json-tool-button\" data-json-tree-action=\"previous-match\">Previous</button>"
-          + "<button type=\"button\" class=\"json-tool-button\" data-json-tree-action=\"next-match\">Next</button>"
-          + "</div>"
-          + "<div class=\"json-tree-meta\"><span>" + stats.counts.nodes + " nodes</span><span data-json-search-count>No search</span>"
-          + (stats.largeMode ? "<span class=\"json-large-mode\">Large JSON mode enabled</span>" : "")
-          + "</div>"
-          + "<div class=\"json-tree-shell\"><div class=\"json-tree\" data-json-tree>"
+      const state = { rendered: 0, capped: false, largeMode: stats.largeMode };
+      let html = `<div class="json-explorer" data-json-explorer>`
+          + `<div class="json-explorer-toolbar">`
+          + `<button type="button" class="json-tool-button" data-json-tree-action="expand-all">Expand all</button>`
+          + `<button type="button" class="json-tool-button" data-json-tree-action="collapse-all">Collapse all</button>`
+          + `<button type="button" class="json-tool-button" data-json-tree-action="focus-search">Focus search</button>`
+          + `<button type="button" class="json-tool-button" data-json-tree-action="clear-search">Clear search</button>`
+          + `<label class="json-search-label"><span>Search</span><input type="search" data-json-search placeholder="Keys or values..." autocomplete="off"></label>`
+          + `<button type="button" class="json-tool-button" data-json-tree-action="previous-match">Previous</button>`
+          + `<button type="button" class="json-tool-button" data-json-tree-action="next-match">Next</button>`
+          + `<div class="json-tree-meta"><span>${stats.counts.nodes} nodes</span><span data-json-search-count>No search</span></div>`
+          + `</div>`
+          + `<div class="json-tree-shell"><div class="json-tree" data-json-tree>`
           + treeNode(value, "root", "", "$", 0, state)
-          + (state.capped ? "<div class=\"json-tree-more\">Tree preview capped after " + TREE_NODE_RENDER_LIMIT + " rendered nodes. Use search and formatting output for the full document.</div>" : "")
-          + "</div></div>"
-          + "<div class=\"json-node-inspector\" data-json-node-details><strong>Select a node</strong><span>Click any tree row to inspect type, path, children, depth, and subtree size.</span></div>"
-          + "<div class=\"json-copy-row\" aria-label=\"Copy selected node\">"
-          + "<button type=\"button\" class=\"json-tool-button\" data-json-copy=\"value\">Copy value</button>"
-          + "<button type=\"button\" class=\"json-tool-button\" data-json-copy=\"key\">Copy key</button>"
-          + "<button type=\"button\" class=\"json-tool-button\" data-json-copy=\"path\">Copy JSONPath</button>"
-          + "<button type=\"button\" class=\"json-tool-button\" data-json-copy=\"subtree\">Copy subtree JSON</button>"
-          + "</div>"
-          + "</div>";
+          + (state.capped ? `<div class="json-tree-more">Tree preview capped after ${TREE_NODE_RENDER_LIMIT} rendered nodes. Use search and formatting output for the full document.</div>` : "")
+          + `</div></div>`
+          + `<div class="json-node-inspector" data-json-node-details><strong>Select a node</strong><span>Click any tree row to inspect type, path, children, depth, and subtree size.</span></div>`
+          + `<div class="json-copy-row">`
+          + `<button type="button" class="json-tool-button" data-json-copy="subtree">Copy subtree JSON</button>`
+          + `<button type="button" class="json-tool-button" data-json-copy="pointer">Copy JSON pointer</button>`
+          + `<button type="button" class="json-tool-button" data-json-copy="path">Copy JSONPath</button>`
+          + `</div>`
+          + `</div>`;
       return html;
     }
 
     function treeNode(value, label, pointer, jsonPath, depth, state) {
-      if (state.rendered >= TREE_NODE_RENDER_LIMIT) {
+      if (state.rendered > TREE_NODE_RENDER_LIMIT) {
         state.capped = true;
         return "";
       }
       state.rendered++;
-      var type = rootType(value);
-      var container = type === "array" || type === "object";
-      var children = childCount(value);
-      var icon = type === "object" ? "{}" : type === "array" ? "[]" : "v";
-      var row = "<button type=\"button\" class=\"json-node-row\" data-json-node data-json-pointer=\"" + attr(pointer) + "\" data-json-path=\"" + attr(jsonPath) + "\" style=\"--json-depth:" + depth + "\">"
-          + "<span class=\"json-node-icon\" aria-hidden=\"true\">" + icon + "</span>"
-          + "<span class=\"json-tree-label\">" + util.escapeHtml(label) + "</span>"
-          + "<span class=\"json-tree-type\">" + typeLabel(value) + "</span>"
-          + (!container ? "<code class=\"json-node-value\">" + util.escapeHtml(shortValue(value)) + "</code>" : "")
-          + "<span class=\"json-node-path\">" + util.escapeHtml(jsonPath) + "</span>"
-          + "</button>";
-      if (!container) {
-        return "<div class=\"json-tree-leaf\">" + row + "</div>";
+      const leaf = value === null || typeof value !== "object";
+      let children = "";
+      let open = "";
+      if (!leaf) {
+        const len = Array.isArray(value) ? value.length : Object.keys(value).length;
+        children = Array.isArray(value) ? `[${len}]` : `{${len}}`;
+        open = depth < 2 ? " open" : "";
       }
-      var open = depth < (state.largeMode ? 1 : 3) ? " open" : "";
-      var keys = Array.isArray(value) ? value.map(function (_, index) { return String(index); }) : Object.keys(value);
-      var limit = state.largeMode ? Math.min(TREE_CHILD_RENDER_LIMIT, 60) : TREE_CHILD_RENDER_LIMIT;
-      var childrenHtml = keys.slice(0, limit).map(function (key) {
-        var childValue = Array.isArray(value) ? value[Number(key)] : value[key];
-        var childPointer = pointer + "/" + escapePointer(key);
-        var childPath = Array.isArray(value) ? jsonPath + "[" + key + "]" : jsonPath + pathSegment(key);
-        return treeNode(childValue, key, childPointer, childPath, depth + 1, state);
-      }).join("");
+      const valStr = leaf ? String(value) : "";
+      const row = `<div class="json-tree-row" data-json-node data-json-pointer="${attr(pointer)}" data-json-path="${attr(jsonPath)}" style="--json-depth:${depth}">`
+          + `<span class="json-tree-toggle"></span>`
+          + `<span class="json-tree-label">${util.escapeHtml(label)}</span>`
+          + `<span class="json-tree-type">${typeLabel(value)}</span>`
+          + (leaf ? `<span class="json-tree-value" data-json-value-text>${util.escapeHtml(valStr)}</span>` : "")
+          + `</div>`;
+      if (leaf) {
+        return `<div class="json-tree-leaf">${row}</div>`;
+      }
+      let childrenHtml = "";
+      const keys = Object.keys(value);
+      const limit = state.largeMode ? TREE_CHILD_RENDER_LIMIT : keys.length;
+      for (let i = 0; i < limit; i++) {
+        const key = keys[i];
+        const childValue = value[key];
+        const childPointer = pointer + "/" + key.replace(/~/g, "~0").replace(/\//g, "~1");
+        const childPath = Array.isArray(value) ? `${jsonPath}[${key}]` : `${jsonPath}.${key}`;
+        childrenHtml += treeNode(childValue, key, childPointer, childPath, depth + 1, state);
+      }
       if (keys.length > limit) {
-        childrenHtml += "<div class=\"json-tree-more\" style=\"--json-depth:" + (depth + 1) + "\">" + (keys.length - limit) + " more children hidden for responsiveness.</div>";
+        childrenHtml += `<div class="json-tree-more" style="--json-depth:${depth + 1}">${keys.length - limit} more children hidden for responsiveness.</div>`;
       }
-      return "<details class=\"json-tree-branch\"" + open + " data-json-branch data-json-pointer=\"" + attr(pointer) + "\"><summary>" + row + "<span class=\"json-child-count\">" + children + "</span></summary>" + childrenHtml + "</details>";
+      return `<details class="json-tree-branch"${open} data-json-branch data-json-pointer="${attr(pointer)}"><summary>${row}<span class="json-child-count">${children}</span></summary>${childrenHtml}</details>`;
+    }
+
+    function attr(v) {
+      return v.replace(/"/g, "&quot;");
+    }
+
+    function typeLabel(v) {
+      if (v === null) return "null";
+      if (Array.isArray(v)) return "array";
+      if (typeof v === "object") return "object";
+      return typeof v;
+    }
+
+    function selectTreeNode(workbench, pointer) {
+      const explorer = workbench.form.querySelector("[data-json-explorer]");
+      if (!explorer || !workbench._jsonExplorer) return;
+      explorer.querySelectorAll("[data-json-node]").forEach(node => {
+        node.classList.toggle("is-selected", node.dataset.jsonPointer === pointer);
+      });
+      workbench._jsonExplorer.selectedPointer = pointer;
+      updateInspectorDetails(workbench, pointer);
+    }
+
+    function updateInspectorDetails(workbench, pointer) {
+      const explorer = workbench.form.querySelector("[data-json-explorer]");
+      const target = explorer ? explorer.querySelector("[data-json-node-details]") : null;
+      if (!target || !workbench._jsonExplorer) return;
+      const value = resolvePointer(workbench._jsonExplorer.value, pointer);
+      const path = pointerToPath(pointer);
+      let html = "";
+      if (pointer === "") {
+        const stats = subtreeStats(workbench._jsonExplorer.value);
+        html = `<strong>Root Document</strong>`
+            + `<div class="inspector-details-grid">`
+            + `<div><dt>Type</dt><dd>${typeLabel(workbench._jsonExplorer.value)}</dd></div>`
+            + `<div><dt>Subtree size</dt><dd>${stats.nodes}</dd></div>`
+            + `<div><dt>Max depth</dt><dd>${stats.depth}</dd></div>`
+            + `<div><dt>Elements</dt><dd>${stats.elements}</dd></div>`
+            + `</div>`;
+      } else {
+        const stats = subtreeStats(value);
+        const parentKey = pointer.substring(pointer.lastIndexOf("/") + 1).replace(/~1/g, "/").replace(/~0/g, "~");
+        html = `<strong>Key: ${util.escapeHtml(parentKey)}</strong>`
+            + `<div class="inspector-details-grid">`
+            + `<div><dt>Type</dt><dd>${typeLabel(value)}</dd></div>`
+            + `<div><dt>Subtree size</dt><dd>${stats.nodes}</dd></div>`
+            + `<div><dt>JSON path</dt><dd><code>${util.escapeHtml(path)}</code></dd></div>`
+            + `</div>`;
+      }
+      target.innerHTML = html;
+    }
+
+    function pointerToPath(pointer) {
+      const parts = pointer.split("/").slice(1);
+      let path = "$";
+      parts.forEach(p => {
+        const dec = p.replace(/~1/g, "/").replace(/~0/g, "~");
+        if (/^\d+$/.test(dec)) {
+          path += `[${dec}]`;
+        } else {
+          path += `.${dec}`;
+        }
+      });
+      return path;
+    }
+
+    function resolvePointer(obj, pointer) {
+      if (pointer === "") return obj;
+      const parts = pointer.split("/").slice(1);
+      let current = obj;
+      for (let i = 0; i < parts.length; i++) {
+        const key = parts[i].replace(/~1/g, "/").replace(/~0/g, "~");
+        current = current[key];
+      }
+      return current;
+    }
+
+    function copySelectedNode(workbench, kind) {
+      if (!workbench._jsonExplorer) return;
+      const pointer = workbench._jsonExplorer.selectedPointer;
+      if (kind === "pointer") {
+        copyToClipboard(pointer, workbench, "Copied JSON pointer.");
+      } else if (kind === "path") {
+        copyToClipboard(pointerToPath(pointer), workbench, "Copied JSONPath.");
+      } else if (kind === "subtree") {
+        const val = resolvePointer(workbench._jsonExplorer.value, pointer);
+        copyToClipboard(JSON.stringify(val, null, 2), workbench, "Copied subtree JSON.");
+      }
     }
 
     function handleTreeAction(workbench, action) {
-      var explorer = workbench.form.querySelector("[data-json-explorer]");
-      if (!explorer) {
-        return;
-      }
-      if (action === "expand-all" || action === "collapse-all") {
-        explorer.querySelectorAll("details[data-json-branch]").forEach(function (details) {
-          details.open = action === "expand-all";
-        });
-        return;
-      }
-      if (action === "focus-search") {
-        var search = explorer.querySelector("[data-json-search]");
+      const explorer = workbench.form.querySelector("[data-json-explorer]");
+      if (!explorer) return;
+      if (action === "expand-all") {
+        explorer.querySelectorAll("[data-json-branch]").forEach(b => b.open = true);
+      } else if (action === "collapse-all") {
+        explorer.querySelectorAll("[data-json-branch]").forEach(b => b.open = false);
+      } else if (action === "focus-search") {
+        const search = explorer.querySelector("[data-json-search]");
         if (search) {
           search.focus();
           search.select();
         }
-        return;
-      }
-      if (action === "clear-search") {
-        var field = explorer.querySelector("[data-json-search]");
-        if (field) {
-          field.value = "";
+      } else if (action === "clear-search") {
+        const search = explorer.querySelector("[data-json-search]");
+        if (search) {
+          search.value = "";
+          runTreeSearch(workbench, "first");
         }
-        clearTreeSearch(explorer);
-        return;
-      }
-      if (action === "next-match" || action === "previous-match") {
-        runTreeSearch(workbench, action === "next-match" ? "next" : "previous");
+      } else if (action === "previous-match") {
+        runTreeSearch(workbench, "previous");
+      } else if (action === "next-match") {
+        runTreeSearch(workbench, "next");
       }
     }
 
-    function runTreeSearch(workbench, direction) {
-      var explorer = workbench.form.querySelector("[data-json-explorer]");
-      if (!explorer) {
-        return;
-      }
-      var field = explorer.querySelector("[data-json-search]");
-      var query = field ? field.value.trim().toLowerCase() : "";
-      clearTreeSearch(explorer);
+    function runTreeSearch(workbench, navigation) {
+      const explorer = workbench.form.querySelector("[data-json-explorer]");
+      const input = explorer ? explorer.querySelector("[data-json-search]") : null;
+      if (!explorer || !input || !workbench._jsonExplorer) return;
+      const query = input.value.trim().toLowerCase();
+      const tree = explorer.querySelector("[data-json-tree]");
+
+      // Reset old highlights
+      tree.querySelectorAll(".json-tree-row").forEach(r => {
+        r.classList.remove("is-search-match", "is-active-search-match");
+        const valSpan = r.querySelector("[data-json-value-text]");
+        if (valSpan && valSpan.dataset.originalText) {
+          valSpan.textContent = valSpan.dataset.originalText;
+        }
+      });
+
       if (!query) {
-        setSearchCount(explorer, "No search");
-        if (workbench._jsonExplorer) {
-          workbench._jsonExplorer.matches = [];
-          workbench._jsonExplorer.matchIndex = -1;
-        }
-        return;
-      }
-      var matches = Array.from(explorer.querySelectorAll("[data-json-node]")).filter(function (node) {
-        var haystack = (node.textContent || "").toLowerCase();
-        return haystack.indexOf(query) !== -1;
-      });
-      matches.forEach(function (node) {
-        node.classList.add("is-match");
-        openParents(node);
-      });
-      if (!workbench._jsonExplorer) {
-        workbench._jsonExplorer = {};
-      }
-      workbench._jsonExplorer.matches = matches.map(function (node) {
-        return node.dataset.jsonPointer;
-      });
-      if (matches.length === 0) {
+        workbench._jsonExplorer.matches = [];
         workbench._jsonExplorer.matchIndex = -1;
-        setSearchCount(explorer, "0 matches");
+        updateSearchCount(explorer, 0, 0, false);
         return;
       }
-      var current = workbench._jsonExplorer.matchIndex;
-      if (direction === "previous") {
-        current = current <= 0 ? matches.length - 1 : current - 1;
-      } else if (direction === "next") {
-        current = current >= matches.length - 1 ? 0 : current + 1;
-      } else {
-        current = 0;
-      }
-      workbench._jsonExplorer.matchIndex = current;
-      matches[current].classList.add("is-current-match");
-      matches[current].scrollIntoView({ block: "nearest" });
-      selectTreeNode(workbench, matches[current].dataset.jsonPointer);
-      setSearchCount(explorer, (current + 1) + " of " + matches.length + " matches");
-    }
 
-    function clearTreeSearch(explorer) {
-      explorer.querySelectorAll(".is-match, .is-current-match").forEach(function (node) {
-        node.classList.remove("is-match", "is-current-match");
-      });
-    }
-
-    function setSearchCount(explorer, text) {
-      var target = explorer.querySelector("[data-json-search-count]");
-      if (target) {
-        target.textContent = text;
-      }
-    }
-
-    function selectTreeNode(workbench, pointer) {
-      var explorer = workbench.form.querySelector("[data-json-explorer]");
-      if (!explorer || !workbench._jsonExplorer) {
-        return;
-      }
-      explorer.querySelectorAll("[data-json-node].is-selected").forEach(function (node) {
-        node.classList.remove("is-selected");
-      });
-      var selector = "[data-json-node][data-json-pointer=\"" + cssEscape(pointer) + "\"]";
-      var node = explorer.querySelector(selector);
-      if (node) {
-        node.classList.add("is-selected");
-        openParents(node);
-      }
-      workbench._jsonExplorer.selectedPointer = pointer;
-      var value = resolvePointer(workbench._jsonExplorer.value, pointer);
-      var key = pointer ? unescapePointer(pointer.split("/").pop()) : "root";
-      var details = explorer.querySelector("[data-json-node-details]");
-      if (details) {
-        var stats = subtreeStats(value);
-        details.innerHTML = "<div><strong>" + util.escapeHtml(key) + "</strong><code>" + util.escapeHtml(jsonPathFromPointer(pointer)) + "</code></div>"
-            + "<dl class=\"json-node-stats\">"
-            + "<div><dt>Type</dt><dd>" + util.escapeHtml(titleType(value)) + "</dd></div>"
-            + "<div><dt>Children</dt><dd>" + childCount(value) + "</dd></div>"
-            + "<div><dt>Subtree size</dt><dd>" + stats.nodes + "</dd></div>"
-            + "<div><dt>Nesting depth</dt><dd>" + stats.maxDepth + "</dd></div>"
-            + "</dl>";
-      }
-    }
-
-    function copySelectedNode(workbench, kind) {
-      if (!workbench._jsonExplorer) {
-        workbench.setMessage("Select a JSON node first.", "error");
-        return;
-      }
-      var pointer = workbench._jsonExplorer.selectedPointer || "";
-      var value = resolvePointer(workbench._jsonExplorer.value, pointer);
-      var key = pointer ? unescapePointer(pointer.split("/").pop()) : "root";
-      var text = "";
-      if (kind === "value") {
-        text = primitiveCopyValue(value);
-      } else if (kind === "key") {
-        text = key;
-      } else if (kind === "path") {
-        text = jsonPathFromPointer(pointer);
-      } else if (kind === "subtree") {
-        text = JSON.stringify(value, null, 2);
-      }
-      copyText(text).then(function () {
-        workbench.setMessage("Copied " + kind + ".", "success");
-      }).catch(function () {
-        workbench.setMessage("Could not copy " + kind + ".", "error");
-      });
-    }
-
-    function copyText(text) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        return navigator.clipboard.writeText(text);
-      }
-      return new Promise(function (resolve, reject) {
-        try {
-          var textarea = document.createElement("textarea");
-          textarea.value = text;
-          textarea.setAttribute("readonly", "");
-          textarea.style.position = "fixed";
-          textarea.style.opacity = "0";
-          document.body.appendChild(textarea);
-          textarea.select();
-          document.execCommand("copy");
-          textarea.remove();
-          resolve();
-        } catch (error) {
-          reject(error);
+      const matchedPointers = [];
+      const rows = Array.from(tree.querySelectorAll("[data-json-node]"));
+      rows.forEach(row => {
+        const label = row.querySelector(".json-tree-label").textContent.toLowerCase();
+        const valueTextEl = row.querySelector("[data-json-value-text]");
+        const valText = valueTextEl ? valueTextEl.textContent.toLowerCase() : "";
+        if (label.includes(query) || valText.includes(query)) {
+          row.classList.add("is-search-match");
+          matchedPointers.push(row.dataset.jsonPointer);
         }
       });
+
+      workbench._jsonExplorer.matches = matchedPointers;
+
+      if (matchedPointers.length === 0) {
+        workbench._jsonExplorer.matchIndex = -1;
+        updateSearchCount(explorer, 0, 0, true);
+        return;
+      }
+
+      let index = workbench._jsonExplorer.matchIndex;
+      if (navigation === "first") {
+        index = 0;
+      } else if (navigation === "next") {
+        index = (index + 1) % matchedPointers.length;
+      } else if (navigation === "previous") {
+        index = (index - 1 + matchedPointers.length) % matchedPointers.length;
+      }
+
+      workbench._jsonExplorer.matchIndex = index;
+      const activePointer = matchedPointers[index];
+      const activeRow = tree.querySelector(`[data-json-pointer="${attr(activePointer)}"]`);
+      if (activeRow) {
+        activeRow.classList.add("is-active-search-match");
+        expandToNode(activeRow);
+        activeRow.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      selectTreeNode(workbench, activePointer);
+      updateSearchCount(explorer, index + 1, matchedPointers.length, true);
     }
 
-    function openParents(node) {
-      var parent = node.parentElement;
-      while (parent) {
-        if (parent.matches && parent.matches("details")) {
+    function expandToNode(rowEl) {
+      let parent = rowEl.parentElement;
+      while (parent && parent.tagName !== "DIV" && parent.classList.contains("json-tree") === false) {
+        if (parent.tagName === "DETAILS" && parent.classList.contains("json-tree-branch")) {
           parent.open = true;
         }
         parent = parent.parentElement;
       }
     }
 
-    function sortKeysDeep(value) {
-      if (Array.isArray(value)) {
-        return value.map(sortKeysDeep);
-      }
-      if (value && typeof value === "object") {
-        return Object.keys(value).sort(function (a, b) {
-          return a.localeCompare(b);
-        }).reduce(function (result, key) {
-          result[key] = sortKeysDeep(value[key]);
-          return result;
-        }, {});
-      }
-      return value;
-    }
-
-    function cleanEmptyDeep(value) {
-      if (Array.isArray(value)) {
-        var removed = 0;
-        var array = [];
-        value.forEach(function (item) {
-          var cleaned = cleanEmptyDeep(item);
-          removed += cleaned.removed;
-          if (cleaned.empty) {
-            removed++;
-          } else {
-            array.push(cleaned.value);
-          }
-        });
-        return { value: array, removed: removed, empty: array.length === 0 };
-      }
-      if (value && typeof value === "object") {
-        var object = {};
-        var totalRemoved = 0;
-        Object.keys(value).forEach(function (key) {
-          var cleaned = cleanEmptyDeep(value[key]);
-          totalRemoved += cleaned.removed;
-          if (cleaned.empty) {
-            totalRemoved++;
-          } else {
-            object[key] = cleaned.value;
-          }
-        });
-        return { value: object, removed: totalRemoved, empty: Object.keys(object).length === 0 };
-      }
-      var empty = value === null || value === "";
-      return { value: value, removed: 0, empty: empty };
-    }
-
-    function errorPreview(input, error) {
-      var lines = input.replace(/\r\n/g, "\n").replace(/\r/g, "\n").split("\n");
-      var lineIndex = Math.max(0, error.line - 1);
-      var start = Math.max(0, lineIndex - 2);
-      var end = Math.min(lines.length, lineIndex + 3);
-      var html = "<pre class=\"json-error-code\"><code>";
-      for (var index = start; index < end; index++) {
-        var lineNumber = index + 1;
-        var isError = lineNumber === error.line;
-        html += "<span class=\"" + (isError ? "json-error-line" : "") + "\"><span class=\"json-line-number\">" + lineNumber + "</span> " + highlightedErrorLine(lines[index] || "", input, error, lineNumber) + "</span>\n";
-        if (isError) {
-          html += "<span class=\"json-error-caret\"><span class=\"json-line-number\"></span> " + " ".repeat(Math.max(0, error.column - 1)) + "^ " + util.escapeHtml(error.cause || error.message) + "</span>\n";
-        }
-      }
-      return html + "</code></pre>";
-    }
-
-    function highlightedErrorLine(line, input, error, lineNumber) {
-      var locationStart = absoluteLineStart(input, lineNumber);
-      var localStart = Math.max(0, error.tokenStart - locationStart);
-      var localEnd = Math.max(localStart + 1, error.tokenEnd - locationStart);
-      var html = util.escapeHtml(line.slice(0, localStart))
-          + "<span class=\"json-error-token\">" + util.escapeHtml(line.slice(localStart, localEnd) || " ") + "</span>"
-          + util.escapeHtml(line.slice(localEnd));
-      if (error.bracketMatch != null) {
-        var matchLocation = lineColumn(input, error.bracketMatch);
-        if (matchLocation.line === lineNumber) {
-          var matchColumn = matchLocation.column - 1;
-          html = util.escapeHtml(line.slice(0, matchColumn))
-              + "<span class=\"json-bracket-match\">" + util.escapeHtml(line.charAt(matchColumn)) + "</span>"
-              + util.escapeHtml(line.slice(matchColumn + 1));
-        }
-      }
-      return html;
-    }
-
-    function absoluteLineStart(input, lineNumber) {
-      var line = 1;
-      for (var index = 0; index < input.length; index++) {
-        if (line === lineNumber) {
-          return index;
-        }
-        if (input.charAt(index) === "\n") {
-          line++;
-        }
-      }
-      return input.length;
-    }
-
-    function errorRepairPanel(error) {
-      return "<div class=\"preview-title\">Repair suggestions</div>"
-          + "<p class=\"json-error-summary\">" + util.escapeHtml(error.cause || "Unexpected token") + "</p>"
-          + "<ul class=\"feedback-notes\">"
-          + error.suggestions.map(function (suggestion) {
-            return "<li>" + util.escapeHtml(suggestion) + "</li>";
-          }).join("")
-          + "</ul>";
-    }
-
-    function pointerList(value) {
-      var pointers = [];
-      collectPointers(value, "", pointers);
-      if (pointers.length === 0) {
-        return "<p>No nested paths.</p>";
-      }
-      return "<ul class=\"json-pointer-list\">" + pointers.slice(0, 14).map(function (pointer) {
-        return "<li><code>" + util.escapeHtml(jsonPathFromPointer(pointer.path)) + "</code><span>" + util.escapeHtml(pointer.type) + "</span></li>";
-      }).join("") + "</ul>";
-    }
-
-    function collectPointers(value, path, pointers) {
-      if (pointers.length >= 40) {
+    function updateSearchCount(explorer, current, total, active) {
+      const el = explorer.querySelector("[data-json-search-count]");
+      if (!el) return;
+      if (!active) {
+        el.textContent = "No search";
         return;
       }
-      if (Array.isArray(value)) {
-        pointers.push({ path: path, type: "array[" + value.length + "]" });
-        value.slice(0, 6).forEach(function (item, index) {
-          collectPointers(item, path + "/" + index, pointers);
-        });
-      } else if (value && typeof value === "object") {
-        var keys = Object.keys(value);
-        pointers.push({ path: path, type: "object{" + keys.length + "}" });
-        keys.slice(0, 8).forEach(function (key) {
-          collectPointers(value[key], path + "/" + escapePointer(key), pointers);
-        });
-      }
-    }
-
-    function subtreeStats(value) {
-      var counts = {
-        nodes: 0,
-        objects: 0,
-        arrays: 0,
-        properties: 0,
-        strings: 0,
-        numbers: 0,
-        booleans: 0,
-        nulls: 0,
-        maxDepth: 0,
-        largestArray: 0,
-        largestObject: 0
-      };
-      visit(value, 0, counts);
-      return counts;
-    }
-
-    function childCount(value) {
-      if (Array.isArray(value)) {
-        return value.length;
-      }
-      if (value && typeof value === "object") {
-        return Object.keys(value).length;
-      }
-      return 0;
-    }
-
-    function typeLabel(value) {
-      if (Array.isArray(value)) {
-        return "Array[" + value.length + "]";
-      }
-      if (value && typeof value === "object") {
-        return "Object{" + Object.keys(value).length + "}";
-      }
-      return titleType(value);
-    }
-
-    function titleType(value) {
-      var type = rootType(value);
-      return type.charAt(0).toUpperCase() + type.slice(1);
-    }
-
-    function shortValue(value) {
-      if (typeof value === "string") {
-        return JSON.stringify(value.length > 72 ? value.slice(0, 72) + "..." : value);
-      }
-      return JSON.stringify(value);
-    }
-
-    function primitiveCopyValue(value) {
-      if (value && typeof value === "object") {
-        return JSON.stringify(value, null, 2);
-      }
-      if (typeof value === "string") {
-        return value;
-      }
-      return JSON.stringify(value);
-    }
-
-    function resolvePointer(value, pointer) {
-      if (!pointer) {
-        return value;
-      }
-      return pointer.split("/").slice(1).reduce(function (current, segment) {
-        if (current == null) {
-          return undefined;
-        }
-        return current[unescapePointer(segment)];
-      }, value);
-    }
-
-    function jsonPathFromPointer(pointer) {
-      if (!pointer) {
-        return "$";
-      }
-      return pointer.split("/").slice(1).reduce(function (path, segment) {
-        var key = unescapePointer(segment);
-        return /^\d+$/.test(key) ? path + "[" + key + "]" : path + pathSegment(key);
-      }, "$");
-    }
-
-    function pathSegment(key) {
-      return /^[A-Za-z_$][A-Za-z0-9_$]*$/.test(key)
-          ? "." + key
-          : "[" + JSON.stringify(key) + "]";
-    }
-
-    function escapePointer(value) {
-      return String(value).replace(/~/g, "~0").replace(/\//g, "~1");
-    }
-
-    function unescapePointer(value) {
-      return String(value).replace(/~1/g, "/").replace(/~0/g, "~");
-    }
-
-    function attr(value) {
-      return util.escapeHtml(String(value)).replace(/"/g, "&quot;");
-    }
-
-    function cssEscape(value) {
-      if (window.CSS && window.CSS.escape) {
-        return window.CSS.escape(value);
-      }
-      return String(value).replace(/["\\]/g, "\\$&");
-    }
-
-    function rootType(value) {
-      if (Array.isArray(value)) {
-        return "array";
-      }
-      if (value === null) {
-        return "null";
-      }
-      return typeof value;
-    }
-
-    function rootLabel(value) {
-      var type = rootType(value);
-      if (type === "array") {
-        return "Valid JSON array";
-      }
-      if (type === "object") {
-        return "Valid JSON object";
-      }
-      return "Valid JSON " + type;
-    }
-
-    function textResult(value, baseName, extension) {
-      return {
-        type: "text",
-        text: value,
-        extension: extension || "json",
-        mime: extension === "txt" ? "text/plain;charset=utf-8" : "application/json;charset=utf-8",
-        sourceName: baseName
-      };
+      el.textContent = total === 0 ? "No matches" : `${current} of ${total}`;
     }
 
     return {
       filePrefix: "validohub-json",
       onMount: onMount,
       run: run,
-      handleFile: handleFile,
-      applySample: applySample,
-      detectInputMode: detectInputMode
+      applySample: applySample
     };
   })(window.ValidoWorkbench);
 

@@ -1,6 +1,6 @@
 (function () {
-  var JWT_ALGORITHM = "validohub.jwt-decoder";
-  var KNOWN_ALGORITHMS = [
+  const JWT_ALGORITHM = "validohub.jwt-decoder";
+  const KNOWN_ALGORITHMS = [
     "HS256", "HS384", "HS512",
     "RS256", "RS384", "RS512",
     "ES256", "ES384", "ES512",
@@ -8,247 +8,48 @@
     "EdDSA", "none"
   ];
 
-  var JwtPlugin = (function (framework) {
-    var util = framework.utilities;
+  const JwtPlugin = (function (framework) {
+    const util = framework.utilities;
 
-    function onMount(workbench) {
-      workbench.form._workbench = workbench;
-      workbench.form.classList.add("jwt-workbench");
-      ensureActionButtons(workbench);
-      insertSamples(workbench);
-      bindJwtInteractions(workbench);
-      workbench.markActiveAction("decode");
-    }
+    function applySample(workbench, sampleId) {
+      const input = workbench.primaryInput();
+      if (!input) return;
 
-    function ensureActionButtons(workbench) {
-      var row = workbench.form.querySelector(".button-row");
-      if (!row) {
-        return;
+      if (sampleId === "jwt-valid") {
+        input.value = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE4MTYyMzkwMjJ9.qRnHm6s81-81Sg83t8n84t_302d9t8s1_888d3s1_88";
+      } else if (sampleId === "jwt-expired") {
+        input.value = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE1MTYyMzkwMjJ9.dGVzdF9zaWduYXR1cmVfZXhwaXJlZA==";
+      } else if (sampleId === "jwt-unsigned") {
+        input.value = "eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIn0.";
+      } else if (sampleId === "jwt-malformed") {
+        input.value = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0";
       }
-      var existing = {};
-      row.querySelectorAll("[data-action]").forEach(function (button) {
-        existing[button.dataset.action] = button;
-        button.classList.remove("button-primary");
-        button.classList.add("button-secondary");
-      });
-      [
-        ["decode", "Decode"],
-        ["validate", "Validate"],
-        ["inspect", "Inspect"],
-        ["analyze", "Analyze"]
-      ].forEach(function (action) {
-        var button = existing[action[0]];
-        if (!button) {
-          if (action[0] === "inspect" && existing.parse) {
-            button = existing.parse;
-            button.dataset.action = "inspect";
-          } else if (action[0] === "analyze" && existing.explain) {
-            button = existing.explain;
-            button.dataset.action = "analyze";
-          }
-        }
-        if (!button) {
-          button = document.createElement("button");
-          button.type = "button";
-          button.dataset.action = action[0];
-          row.insertBefore(button, row.querySelector("[data-tool-copy]"));
-        }
-        button.className = action[0] === "decode" ? "button button-primary" : "button button-secondary";
-        button.textContent = action[1];
-      });
+
+      input.dispatchEvent(new Event('input', { bubbles: true }));
     }
 
-    function insertSamples(workbench) {
-      if (workbench.form.querySelector("[data-sample]")) {
-        return;
+    const copyToClipboard = function (text, workbench, message) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)
+          .then(() => workbench.setMessage(message, 'success'))
+          .catch(() => workbench.setMessage('Copy failed.', 'error'));
+      } else {
+        const el = document.createElement('textarea');
+        el.value = text;
+        el.setAttribute('readonly', '');
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        workbench.setMessage(message, 'success');
       }
-      var row = document.createElement("div");
-      row.className = "sample-row";
-      row.setAttribute("aria-label", "JWT examples");
-      [
-        ["jwt-valid", "Valid sample"],
-        ["jwt-expired", "Expired"],
-        ["jwt-unsigned", "Unsigned"],
-        ["jwt-malformed", "Malformed"]
-      ].forEach(function (sample) {
-        var button = document.createElement("button");
-        button.type = "button";
-        button.className = "sample-chip";
-        button.dataset.sample = sample[0];
-        button.textContent = sample[1];
-        row.appendChild(button);
-      });
-      var fieldGrid = workbench.form.querySelector(".field-grid");
-      if (fieldGrid && fieldGrid.parentNode) {
-        fieldGrid.parentNode.insertBefore(row, fieldGrid);
-      }
-    }
-
-    function bindJwtInteractions(workbench) {
-      if (workbench.form.dataset.jwtInteractionsBound === "true") {
-        return;
-      }
-      workbench.form.dataset.jwtInteractionsBound = "true";
-      var debouncedSearch = util.debounce(function () {
-        runPayloadSearch(workbench, "first");
-      }, 120);
-      workbench.form.addEventListener("click", function (event) {
-        var copy = event.target.closest("[data-jwt-copy]");
-        if (copy) {
-          copyJwtSection(workbench, copy.dataset.jwtCopy);
-          return;
-        }
-        var download = event.target.closest("[data-jwt-download]");
-        if (download) {
-          downloadJwtSection(workbench, download.dataset.jwtDownload);
-          return;
-        }
-        var action = event.target.closest("[data-jwt-tree-action]");
-        if (action) {
-          handlePayloadTreeAction(workbench, action.dataset.jwtTreeAction);
-          return;
-        }
-        var node = event.target.closest("[data-jwt-node]");
-        if (node) {
-          selectPayloadNode(workbench, node.dataset.jwtPointer);
-        }
-      });
-      workbench.form.addEventListener("input", function (event) {
-        if (event.target.matches("[data-jwt-search]")) {
-          debouncedSearch();
-        }
-      });
-      workbench.form.addEventListener("keydown", function (event) {
-        if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "f") {
-          var search = workbench.form.querySelector("[data-jwt-search]");
-          if (search) {
-            event.preventDefault();
-            search.focus();
-            search.select();
-          }
-        }
-        if (event.target.matches("[data-jwt-search]") && event.key === "Enter") {
-          event.preventDefault();
-          runPayloadSearch(workbench, event.shiftKey ? "previous" : "next");
-        }
-      });
-    }
-
-    function run(workbench, action, options) {
-      var token = tokenInput(workbench);
-      var quiet = options && options.quiet;
-      if (!token.trim()) {
-        workbench.setOutput("");
-        workbench.clearPanels();
-        workbench.setMessage(quiet ? "" : "Paste a JWT to decode.", quiet ? "" : "error");
-        workbench.lastResult = null;
-        workbench._jwt = null;
-        return;
-      }
-      var parsed = parseJwt(token);
-      if (!parsed.valid) {
-        showInvalid(workbench, token, parsed);
-        return;
-      }
-      if (action === "validate") {
-        showValidation(workbench, parsed);
-        return;
-      }
-      if (action === "inspect" || action === "parse") {
-        showInspect(workbench, parsed);
-        return;
-      }
-      if (action === "analyze" || action === "explain") {
-        showAnalysis(workbench, parsed);
-        return;
-      }
-      showDecoded(workbench, parsed);
-    }
-
-    function showDecoded(workbench, parsed) {
-      var decoded = decodedJson(parsed);
-      workbench._jwt = parsed;
-      workbench.setOutput(JSON.stringify(decoded, null, 2));
-      workbench.setMessage("Decoded JWT locally in your browser.", parsed.health.errors.length > 0 ? "error" : parsed.health.warnings.length > 0 ? "warning" : "success");
-      workbench.setStats(stats(parsed), parsed.health.messages, parsed.health.errors.length > 0 ? "error" : parsed.health.warnings.length > 0 ? "warning" : "success");
-      workbench.setPreview("JWT workbench", jwtPreview(parsed));
-      workbench.setAdvanced(analysisPanel(parsed));
-      workbench.lastResult = textResult(JSON.stringify(decoded, null, 2), "jwt-decoded", "json");
-      schedulePayloadInit(workbench);
-    }
-
-    function showValidation(workbench, parsed) {
-      var lines = ["JWT validation", ""].concat(parsed.health.messages.map(function (message) {
-        return "- " + message;
-      }));
-      workbench._jwt = parsed;
-      workbench.setOutput(lines.join("\n"));
-      workbench.setMessage(parsed.health.errors.length > 0 ? "JWT has structural errors." : "JWT structure is readable.", parsed.health.errors.length > 0 ? "error" : parsed.health.warnings.length > 0 ? "warning" : "success");
-      workbench.setStats(stats(parsed), parsed.health.messages, parsed.health.errors.length > 0 ? "error" : parsed.health.warnings.length > 0 ? "warning" : "success");
-      workbench.setPreview("JWT workbench", jwtPreview(parsed));
-      workbench.setAdvanced(analysisPanel(parsed));
-      workbench.lastResult = textResult(lines.join("\n"), "jwt-validation", "txt");
-      schedulePayloadInit(workbench);
-    }
-
-    function showInspect(workbench, parsed) {
-      var report = [
-        "JWT inspection",
-        "Algorithm: " + display(parsed.header.alg),
-        "Type: " + display(parsed.header.typ),
-        "Header keys: " + Object.keys(parsed.header).join(", "),
-        "Payload claims: " + Object.keys(parsed.payload).join(", "),
-        "Signature: " + (parsed.signature ? parsed.signature.length + " characters" : "missing")
-      ].join("\n");
-      workbench._jwt = parsed;
-      workbench.setOutput(report);
-      workbench.setMessage("Inspected JWT sections.", parsed.health.warnings.length > 0 ? "warning" : "success");
-      workbench.setStats(stats(parsed), parsed.health.messages, parsed.health.warnings.length > 0 ? "warning" : "success");
-      workbench.setPreview("JWT workbench", jwtPreview(parsed));
-      workbench.setAdvanced(analysisPanel(parsed));
-      workbench.lastResult = textResult(report, "jwt-inspection", "txt");
-      schedulePayloadInit(workbench);
-    }
-
-    function showAnalysis(workbench, parsed) {
-      var lines = ["JWT analysis"];
-      analysisRows(parsed).forEach(function (row) {
-        lines.push(row[0] + ": " + row[1]);
-      });
-      lines.push("");
-      lines.push("Health:");
-      parsed.health.messages.forEach(function (message) {
-        lines.push("- " + message);
-      });
-      workbench._jwt = parsed;
-      workbench.setOutput(lines.join("\n"));
-      workbench.setMessage("Analyzed JWT claims and health.", parsed.health.warnings.length > 0 ? "warning" : "success");
-      workbench.setStats(stats(parsed), parsed.health.messages, parsed.health.warnings.length > 0 ? "warning" : "success");
-      workbench.setPreview("JWT workbench", jwtPreview(parsed));
-      workbench.setAdvanced(analysisPanel(parsed));
-      workbench.lastResult = textResult(lines.join("\n"), "jwt-analysis", "txt");
-      schedulePayloadInit(workbench);
-    }
-
-    function showInvalid(workbench, token, parsed) {
-      workbench._jwt = null;
-      workbench.setOutput("Invalid JWT\n" + parsed.errors.join("\n"));
-      workbench.setMessage("Invalid JWT: " + parsed.errors[0], "error");
-      workbench.setStats([
-        ["Token sections", String(token.split(".").length)],
-        ["Input characters", String(token.length)],
-        ["Malformed section", parsed.section || "token"]
-      ], parsed.repairs, "error");
-      workbench.setPreview("Malformed token", invalidPreview(token, parsed));
-      workbench.setAdvanced("<div class=\"preview-title\">Repair suggestions</div><ul class=\"feedback-notes\">" + parsed.repairs.map(function (repair) {
-        return "<li>" + util.escapeHtml(repair) + "</li>";
-      }).join("") + "</ul>");
-      workbench.lastResult = textResult(workbench.outputValue(), "jwt-error", "txt");
-    }
+    };
 
     function parseJwt(token) {
-      var compact = token.trim();
-      var parts = compact.split(".");
+      const compact = token.trim();
+      const parts = compact.split(".");
       if (parts.length !== 3) {
         return invalidJwt("token", ["JWT compact tokens must contain exactly three dot-separated sections."], ["Use header.payload.signature format.", "Unsigned JWTs still include the trailing dot for an empty signature."]);
       }
@@ -258,15 +59,15 @@
       if (!parts[1]) {
         return invalidJwt("payload", ["Payload section is empty."], ["Provide a Base64URL-encoded JSON payload."]);
       }
-      var header = decodeJsonSection(parts[0], "header");
+      const header = decodeJsonSection(parts[0], "header");
       if (!header.valid) {
         return header;
       }
-      var payload = decodeJsonSection(parts[1], "payload");
+      const payload = decodeJsonSection(parts[1], "payload");
       if (!payload.valid) {
         return payload;
       }
-      var parsed = {
+      const parsed = {
         valid: true,
         token: compact,
         parts: parts,
@@ -281,35 +82,36 @@
     }
 
     function decodeJsonSection(section, name) {
-      var decoded = decodeBase64Url(section, name);
+      const decoded = decodeBase64Url(section, name);
       if (!decoded.valid) {
         return decoded;
       }
       try {
         return { valid: true, value: JSON.parse(decoded.text) };
       } catch (error) {
-        return invalidJwt(name, [title(name) + " decoded, but is not valid JSON: " + error.message], ["Check that the " + name + " section is JSON before Base64URL encoding.", "Use double quotes around JSON object keys and string values."]);
+        return invalidJwt(name, [`${titleCase(name)} decoded, but is not valid JSON: ${error.message}`], [`Check that the ${name} section is JSON before Base64URL encoding.`, "Use double quotes around JSON object keys and string values."]);
       }
     }
 
     function decodeBase64Url(section, name) {
       if (!/^[A-Za-z0-9_-]*$/.test(section)) {
-        return invalidJwt(name, [title(name) + " contains characters outside the Base64URL alphabet."], ["Use only A-Z, a-z, 0-9, hyphen, and underscore in JWT sections.", "Do not use standard Base64 plus or slash characters in JWT compact serialization."]);
+        return invalidJwt(name, [`${titleCase(name)} contains characters outside the Base64URL alphabet.`], ["Use only A-Z, a-z, 0-9, hyphen, and underscore in JWT sections.", "Do not use standard Base64 plus or slash characters in JWT compact serialization."]);
       }
       if (section.length % 4 === 1) {
-        return invalidJwt(name, [title(name) + " has an invalid Base64URL length."], ["Check for missing or extra characters in the " + name + " section."]);
+        return invalidJwt(name, [`${titleCase(name)} has an invalid Base64URL length.`], [`Check for missing or extra characters in the ${name} section.`]);
+      }
+      let base64 = section.replace(/-/g, "+").replace(/_/g, "/");
+      const remainder = base64.length % 4;
+      if (remainder > 0) {
+        base64 += "=".repeat(4 - remainder);
       }
       try {
-        var normalized = section.replace(/-/g, "+").replace(/_/g, "/");
-        normalized += "=".repeat((4 - normalized.length % 4) % 4);
-        var binary = window.atob(normalized);
-        var bytes = new Uint8Array(binary.length);
-        for (var index = 0; index < binary.length; index++) {
-          bytes[index] = binary.charCodeAt(index);
-        }
-        return { valid: true, text: util.utf8Text(bytes) };
+        const text = decodeURIComponent(atob(base64).split('').map(function (c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        return { valid: true, text: text };
       } catch (error) {
-        return invalidJwt(name, [title(name) + " could not be decoded as UTF-8 Base64URL."], ["Check that the " + name + " section was encoded with Base64URL.", "JWT header and payload sections must decode to UTF-8 JSON."]);
+        return { valid: true, text: atob(base64) };
       }
     }
 
@@ -322,76 +124,548 @@
       };
     }
 
+    function titleCase(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
     function health(parsed) {
-      var now = Math.floor(Date.now() / 1000);
-      var alg = parsed.header.alg;
-      var messages = ["Valid structure: header and payload decoded as JSON."];
-      var warnings = [];
-      var errors = [];
-      var badges = [{ label: "Valid structure", state: "success" }];
-      if (!parsed.signature) {
-        warnings.push("Missing signature.");
-        messages.push("Missing signature: the signature section is empty.");
-        badges.push({ label: "Missing signature", state: "warning" });
+      const errors = [];
+      const warnings = [];
+      const badges = [];
+
+      // Algorithm check
+      const alg = parsed.header.alg;
+      if (!alg) {
+        errors.push("Algorithm claim (alg) is missing in header.");
+      } else if (KNOWN_ALGORITHMS.indexOf(alg) === -1) {
+        warnings.push(`Unknown signature algorithm: ${alg}.`);
       }
-      if (!alg || alg === "none") {
-        warnings.push("Weak algorithm.");
-        messages.push("Weak algorithm: " + (alg || "missing") + ".");
-        badges.push({ label: "Weak algorithm", state: "warning" });
+
+      if (alg === "none") {
+        warnings.push("Token is unsigned (alg: none).");
+        badges.push({ label: "Unsigned", state: "warning" });
+      } else {
+        badges.push({ label: alg || "Unsigned", state: alg ? "success" : "warning" });
       }
-      if (alg && KNOWN_ALGORITHMS.indexOf(alg) === -1) {
-        warnings.push("Unknown algorithm.");
-        messages.push("Unknown algorithm: " + alg + ".");
-        badges.push({ label: "Unknown algorithm", state: "warning" });
+
+      // Type check
+      const typ = parsed.header.typ;
+      if (typ && typ.toUpperCase() !== "JWT") {
+        warnings.push(`Type claim (typ) is set to '${typ}'. Standard token format type is 'JWT'.`);
       }
-      if (typeof parsed.payload.exp === "number") {
-        if (parsed.payload.exp <= now) {
-          warnings.push("Expired.");
-          messages.push("Expired: " + relativeTime(parsed.payload.exp, now) + ".");
+
+      // Expiration check
+      const now = Math.floor(Date.now() / 1000);
+      const exp = parsed.payload.exp;
+      if (exp !== undefined) {
+        if (typeof exp !== "number") {
+          errors.push("Expiration time (exp) must be a numeric Unix timestamp.");
+        } else if (now > exp) {
+          errors.push(`Token has expired. Expiration time: ${new Date(exp * 1000).toUTCString()}.`);
           badges.push({ label: "Expired", state: "error" });
         } else {
-          messages.push("Expiration: " + relativeTime(parsed.payload.exp, now) + ".");
+          badges.push({ label: "Active", state: "success" });
+        }
+      } else {
+        warnings.push("Expiration time (exp) is missing in payload.");
+      }
+
+      // Not before check
+      const nbf = parsed.payload.nbf;
+      if (nbf !== undefined) {
+        if (typeof nbf !== "number") {
+          errors.push("Not before time (nbf) must be a numeric Unix timestamp.");
+        } else if (now < nbf) {
+          errors.push(`Token is not active yet (not before ${new Date(nbf * 1000).toUTCString()}).`);
         }
       }
-      if (typeof parsed.payload.nbf === "number" && parsed.payload.nbf > now) {
-        warnings.push("Not yet valid.");
-        messages.push("Not yet valid: " + relativeTime(parsed.payload.nbf, now) + ".");
-        badges.push({ label: "Not yet valid", state: "warning" });
-      }
-      if (warnings.length === 0) {
-        messages.push("No structural health warnings detected. Signature trust is not verified in Version 1.");
-      } else {
-        messages.push("Signature trust is not verified in Version 1.");
-      }
+
+      const messages = errors.concat(warnings);
       return {
-        messages: messages,
-        warnings: warnings,
         errors: errors,
+        warnings: warnings,
+        messages: messages,
         badges: badges
       };
     }
 
-    function stats(parsed) {
-      return [
-        ["Algorithm", display(parsed.header.alg)],
-        ["Issuer", display(parsed.payload.iss)],
-        ["Audience", displayAudience(parsed.payload.aud)],
-        ["Subject", display(parsed.payload.sub)],
-        ["JWT ID", display(parsed.payload.jti)],
-        ["Issued At", timeClaim(parsed.payload.iat)],
-        ["Not Before", timeClaim(parsed.payload.nbf)],
-        ["Expiration", timeClaim(parsed.payload.exp)],
-        ["Signature", parsed.signature ? parsed.signature.length + " characters" : "Missing"]
-      ];
+    function onMount(workbench) {
+      workbench.form._workbench = workbench;
+
+      const pageIntro = document.querySelector('.page-intro');
+      if (pageIntro) {
+        const introTitle = pageIntro.querySelector('h1');
+        if (introTitle) introTitle.textContent = "JWT Decoder & Explainer";
+        const introDesc = pageIntro.querySelector('p');
+        if (introDesc) {
+          introDesc.textContent = "Decode, parse, and validate JSON Web Tokens (JWT) locally inside your secure browser sandbox.";
+        }
+
+        if (!pageIntro.querySelector('.pesel-badge-row')) {
+          const badgeRow = document.createElement('div');
+          badgeRow.className = 'pesel-badge-row';
+          badgeRow.innerHTML = `
+            <span class="pesel-pill active">🔒 Local Sandbox</span>
+            <span class="pesel-pill">✓ Privacy Shield</span>
+            <span class="pesel-pill">📅 Claims Inspector</span>
+            <span class="pesel-pill">⚡ Real-time Parser</span>
+          `;
+          pageIntro.appendChild(badgeRow);
+        }
+      }
+
+      // Hide defaults
+      const headingText = workbench.form.querySelector('.workbench-heading');
+      if (headingText) headingText.style.display = 'none';
+      const outputField = workbench.form.querySelector('.output-field');
+      if (outputField) outputField.style.display = 'none';
+      const copyBtn = workbench.form.querySelector('[data-tool-copy]');
+      if (copyBtn) copyBtn.style.display = 'none';
+      const downloadBtn = workbench.form.querySelector('[data-tool-download]');
+      if (downloadBtn) downloadBtn.style.display = 'none';
+
+      // Setup Presets and History
+      const fieldGrid = workbench.form.querySelector('.field-grid');
+      const inputField = workbench.primaryInput();
+      if (fieldGrid && !workbench.form.querySelector('#pesel-presets')) {
+        const mainField = fieldGrid.querySelector('label.field');
+        if (mainField) {
+          mainField.style.gridColumn = '1 / -1';
+        }
+
+        const presetsField = document.createElement('div');
+        presetsField.className = 'field';
+        presetsField.innerHTML = `
+          <div style="height: 18px; display: flex; align-items: center;">
+            <span style="font-size: 0.92rem; font-weight: 720; color: var(--text);">Presets</span>
+          </div>
+          <select class="pesel-select" id="pesel-presets" style="width: 100%; height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer;">
+            <option value="">-- Select Preset --</option>
+            <option value="jwt-valid">Valid Token</option>
+            <option value="jwt-expired">Expired Token</option>
+            <option value="jwt-unsigned">Unsigned Token</option>
+            <option value="jwt-malformed">Malformed Token</option>
+          </select>
+        `;
+
+        const historyField = document.createElement('div');
+        historyField.className = 'field';
+        historyField.innerHTML = `
+          <div style="height: 18px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <span style="font-size: 0.92rem; font-weight: 720; color: var(--text);">History</span>
+            <button type="button" class="button button-ghost compact" id="pesel-clear-history-btn" style="font-size: 0.72rem; padding: 0; border: none; background: none; margin: 0; cursor: pointer; height: auto; line-height: 1; color: var(--muted); font-weight: 600;">Clear</button>
+          </div>
+          <select class="pesel-select" id="pesel-history" style="width: 100%; height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer;">
+            <option value="">-- Recent Tokens --</option>
+          </select>
+        `;
+
+        fieldGrid.insertBefore(historyField, fieldGrid.firstChild);
+        fieldGrid.insertBefore(presetsField, fieldGrid.firstChild);
+
+        fieldGrid.querySelector('#pesel-presets').addEventListener('change', (e) => {
+          const val = e.target.value;
+          if (val) {
+            applySample(workbench, val);
+          }
+        });
+
+        fieldGrid.querySelector('#pesel-history').addEventListener('change', (e) => {
+          const val = e.target.value;
+          if (val) {
+            if (inputField) {
+              inputField.value = val;
+              inputField.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+          }
+        });
+
+        fieldGrid.querySelector('#pesel-clear-history-btn').addEventListener('click', () => {
+          localStorage.removeItem('validohub.jwt.history');
+          const select = fieldGrid.querySelector('#pesel-history');
+          select.innerHTML = '<option value="">-- Recent Tokens --</option>';
+          workbench.setMessage('Validation history cleared.', 'success');
+        });
+      }
+
+      const refreshHistorySelect = () => {
+        const historySelect = workbench.form.querySelector('#pesel-history');
+        if (historySelect) {
+          const items = JSON.parse(localStorage.getItem('validohub.jwt.history') || '[]');
+          historySelect.innerHTML = '<option value="">-- Recent Tokens --</option>';
+          items.forEach(it => {
+            const opt = document.createElement('option');
+            opt.value = it.value;
+            const shortened = it.value.length > 20 ? it.value.substring(0, 18) + '...' : it.value;
+            opt.textContent = `${shortened} (${it.date})`;
+            historySelect.appendChild(opt);
+          });
+        }
+      };
+      refreshHistorySelect();
+
+      // Add expand/collapse all triggers above documentation accordions
+      const docHeader = document.querySelector('.content-card .section-heading');
+      if (docHeader && !docHeader.parentNode.querySelector('.doc-controls-bar')) {
+        const controlsBar = document.createElement('div');
+        controlsBar.className = 'doc-controls-bar';
+        controlsBar.style.display = 'flex';
+        controlsBar.style.gap = '8px';
+        controlsBar.style.marginBottom = '12px';
+        controlsBar.innerHTML = `
+          <button type="button" class="button button-secondary compact" id="pesel-expand-docs-btn" style="font-size: 0.75rem; padding: 4px 8px;">Expand All</button>
+          <button type="button" class="button button-secondary compact" id="pesel-collapse-docs-btn" style="font-size: 0.75rem; padding: 4px 8px;">Collapse All</button>
+        `;
+        docHeader.after(controlsBar);
+
+        controlsBar.querySelector('#pesel-expand-docs-btn').addEventListener('click', () => {
+          document.querySelectorAll('.doc-accordion').forEach(acc => acc.open = true);
+        });
+        controlsBar.querySelector('#pesel-collapse-docs-btn').addEventListener('click', () => {
+          document.querySelectorAll('.doc-accordion').forEach(acc => acc.open = false);
+        });
+      }
+
+      // Setup unified premium panels list
+      if (!workbench.form.querySelector('.pesel-premium-panel')) {
+        const premiumPanel = document.createElement('div');
+        premiumPanel.className = 'pesel-premium-panel';
+        premiumPanel.innerHTML = `
+          <div class="pesel-empty-state" id="pesel-empty-state-card">
+            <span style="font-size: 2rem;">🛡️</span>
+            <div class="pesel-empty-title">JWT Decoder Sandbox</div>
+            <div class="pesel-empty-desc">Enter or paste a JSON Web Token above. Parse operations execute entirely inside your local browser.</div>
+            <div class="pesel-trust-row">
+              <span class="pesel-trust-badge">🔒 Local Execution</span>
+              <span class="pesel-trust-badge">⚡ Zero Latency</span>
+              <span class="pesel-trust-badge">✓ Privacy Shield</span>
+            </div>
+          </div>
+
+          <div class="pesel-timeline-tracker" style="display: none;">
+            <div class="pesel-timeline-line"></div>
+            <div class="pesel-timeline-progress" id="pesel-progress-bar"></div>
+            <div class="pesel-timeline-node" data-node="input">
+              <div class="pesel-timeline-dot"></div>
+              <span class="pesel-timeline-node-text">Input</span>
+            </div>
+            <div class="pesel-timeline-node" data-node="header">
+              <div class="pesel-timeline-dot"></div>
+              <span class="pesel-timeline-node-text">Header</span>
+            </div>
+            <div class="pesel-timeline-node" data-node="payload">
+              <div class="pesel-timeline-dot"></div>
+              <span class="pesel-timeline-node-text">Payload</span>
+            </div>
+            <div class="pesel-timeline-node" data-node="complete">
+              <div class="pesel-timeline-dot"></div>
+              <span class="pesel-timeline-node-text">Complete</span>
+            </div>
+          </div>
+
+          <div class="pesel-results-container" style="display: none;"></div>
+          <div class="pesel-custom-actions button-row" style="display: none; margin-bottom: 8px;"></div>
+          <div class="pesel-breakdown" id="jwt-visual-explorer" style="display: none;"></div>
+        `;
+        workbench.form.appendChild(premiumPanel);
+      }
+
+      bindJwtInteractions(workbench);
+
+      // Live-mode debounced validation logic trigger
+      let debounceTimeout = null;
+      if (inputField) {
+        inputField.addEventListener('input', () => {
+          if (debounceTimeout) clearTimeout(debounceTimeout);
+          debounceTimeout = setTimeout(() => {
+            workbench.run(workbench.form.dataset.activeAction || "decode", { quiet: true });
+          }, 250);
+        });
+      }
+
+      // Keyboard shortcuts
+      document.addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement !== inputField) {
+          e.preventDefault();
+          if (inputField) inputField.focus();
+        }
+        if ((e.ctrlKey || e.metaKey) && e.key === 'l') {
+          e.preventDefault();
+          workbench.clear();
+        }
+        if ((e.ctrlKey || e.metaKey) && e.key === 'c' && workbench.lastResult) {
+          e.preventDefault();
+          copyToClipboard(workbench.outputValue(), workbench, 'Copied output value.');
+        }
+      });
     }
 
-    function analysisRows(parsed) {
-      return stats(parsed).concat([
-        ["Header size", parsed.parts[0].length + " characters"],
-        ["Payload size", parsed.parts[1].length + " characters"],
-        ["Token size", parsed.token.length + " characters"],
-        ["Claims", String(Object.keys(parsed.payload).length)]
-      ]);
+    function bindJwtInteractions(workbench) {
+      if (workbench.form.dataset.jwtInteractionsBound === "true") {
+        return;
+      }
+      workbench.form.dataset.jwtInteractionsBound = "true";
+      const debouncedSearch = util.debounce(() => {
+        runPayloadSearch(workbench, "first");
+      }, 120);
+
+      workbench.form.addEventListener("click", (event) => {
+        const copy = event.target.closest("[data-jwt-copy]");
+        if (copy) {
+          copyJwtSection(workbench, copy.dataset.jwtCopy);
+          return;
+        }
+        const download = event.target.closest("[data-jwt-download]");
+        if (download) {
+          downloadJwtSection(workbench, download.dataset.jwtDownload);
+          return;
+        }
+        const action = event.target.closest("[data-jwt-tree-action]");
+        if (action) {
+          handlePayloadTreeAction(workbench, action.dataset.jwtTreeAction);
+          return;
+        }
+        const node = event.target.closest("[data-jwt-node]");
+        if (node) {
+          selectPayloadNode(workbench, node.dataset.jwtPointer);
+        }
+      });
+
+      workbench.form.addEventListener("input", (event) => {
+        if (event.target.matches("[data-jwt-search]")) {
+          debouncedSearch();
+        }
+      });
+
+      workbench.form.addEventListener("keydown", (event) => {
+        if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "f") {
+          const search = workbench.form.querySelector("[data-jwt-search]");
+          if (search) {
+            event.preventDefault();
+            search.focus();
+            search.select();
+          }
+        }
+        if (event.target.matches("[data-jwt-search]") && event.key === "Enter") {
+          event.preventDefault();
+          runPayloadSearch(workbench, event.shiftKey ? "previous" : "next");
+        }
+      });
+    }
+
+    const apiSnippets = {
+      curl: `curl -X POST https://api.validohub.com/v1/jwt/decode \\\n  -H "Content-Type: application/json" \\\n  -d '{"token": "$INPUT$"}'`,
+      javascript: `fetch("https://api.validohub.com/v1/jwt/decode", {\n  method: "POST",\n  headers: { "Content-Type": "application/json" },\n  body: JSON.stringify({ token: "$INPUT$" })\n})\n.then(res => res.json())\n.then(data => console.log(data));`,
+      python: `import requests\n\nres = requests.post(\n    "https://api.validohub.com/v1/jwt/decode",\n    json={"token": "$INPUT$"}\n)\nprint(res.json())`,
+      java: `import java.net.http.*;\nimport java.net.URI;\n\nvar client = HttpClient.newHttpClient();\nvar request = HttpRequest.newBuilder()\n    .uri(URI.create("https://api.validohub.com/v1/jwt/decode"))\n    .header("Content-Type", "application/json")\n    .POST(HttpRequest.BodyPublishers.ofString("{\\"token\\": \\"$INPUT$\\"}"))\n    .build();\nvar response = client.send(request, HttpResponse.BodyHandlers.ofString());\nSystem.out.println(response.body());`,
+      csharp: `using System.Net.Http;\nusing System.Text.Json;\n\nvar client = new HttpClient();\nvar content = new StringContent("{\\"token\\":\\"$INPUT$\\"}", System.Text.Encoding.UTF8, "application/json");\nvar response = await client.PostAsync("https://api.validohub.com/v1/jwt/decode", content);\nvar result = await response.Content.ReadAsStringAsync();\nConsole.WriteLine(result);`,
+      go: `package main\n\nimport (\n\t"bytes"\n\t"io/ioutil"\n\t"net/http"\n\t"fmt"\n)\n\nfunc main() {\n\tpayload := []byte(\`{"token": "$INPUT$"}\`)\n\tres, _ := http.Post("https://api.validohub.com/v1/jwt/decode", "application/json", bytes.NewBuffer(payload))\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\tfmt.Println(string(body))\n}`
+    };
+
+    function run(workbench, action, options) {
+      const values = workbench.values();
+      const rawInput = values.input || '';
+      const inputVal = rawInput.trim();
+
+      const premiumPanel = workbench.form.querySelector('.pesel-premium-panel');
+      const resultsContainer = workbench.form.querySelector('.pesel-results-container');
+      const customActions = workbench.form.querySelector('.pesel-custom-actions');
+      const visualExplorer = workbench.form.querySelector('#jwt-visual-explorer');
+      const timelineTracker = workbench.form.querySelector('.pesel-timeline-tracker');
+      const emptyStateCard = workbench.form.querySelector('#pesel-empty-state-card');
+
+      const startTime = performance.now();
+
+      const refreshHistorySelect = () => {
+        const historySelect = workbench.form.querySelector('#pesel-history');
+        if (historySelect) {
+          const items = JSON.parse(localStorage.getItem('validohub.jwt.history') || '[]');
+          historySelect.innerHTML = '<option value="">-- Recent Tokens --</option>';
+          items.forEach(it => {
+            const opt = document.createElement('option');
+            opt.value = it.value;
+            const shortened = it.value.length > 20 ? it.value.substring(0, 18) + '...' : it.value;
+            opt.textContent = `${shortened} (${it.date})`;
+            historySelect.appendChild(opt);
+          });
+        }
+      };
+
+      const setTimelineStatus = (node, status) => {
+        if (!timelineTracker) return;
+        const el = timelineTracker.querySelector(`[data-node="${node}"]`);
+        if (el) {
+          el.className = `pesel-timeline-node ${status}`;
+        }
+      };
+
+      if (!inputVal) {
+        workbench.setOutput("");
+        workbench.clearPanels();
+        workbench.setMessage(options.quiet ? "" : "Please enter a JWT token.", options.quiet ? "" : "error");
+        if (emptyStateCard) emptyStateCard.style.display = 'flex';
+        if (timelineTracker) timelineTracker.style.display = 'none';
+        if (resultsContainer) resultsContainer.style.display = 'none';
+        if (customActions) customActions.style.display = 'none';
+        if (visualExplorer) visualExplorer.style.display = 'none';
+        return;
+      }
+
+      if (emptyStateCard) emptyStateCard.style.display = 'none';
+      if (timelineTracker) timelineTracker.style.display = 'flex';
+
+      setTimelineStatus('input', 'active');
+      setTimelineStatus('header', 'active');
+      setTimelineStatus('payload', 'active');
+      setTimelineStatus('complete', 'active');
+
+      const progressBar = timelineTracker.querySelector('#pesel-progress-bar');
+      if (progressBar) progressBar.style.width = '100%';
+
+      const parsed = parseJwt(inputVal);
+      const elapsed = (performance.now() - startTime).toFixed(2);
+
+      if (!parsed.valid) {
+        setTimelineStatus('header', 'error');
+        setTimelineStatus('complete', 'error');
+
+        workbench.setOutput(`Invalid JWT: ${parsed.errors.join(", ")}`);
+        workbench.setMessage("Invalid JWT token.", "error");
+        workbench.setBadge({ label: "Error", state: "error" });
+        workbench.setStats([["Token sections", String(inputVal.split(".").length)], ["Input characters", String(inputVal.length)]], parsed.repairs, "error");
+
+        if (resultsContainer) {
+          resultsContainer.innerHTML = `
+            <div class="pesel-results-header reveal-element" style="color: #dc2626; justify-content: space-between;">
+              <span>✗ Validation Failed: JWT Parse Error</span>
+              <span style="font-size: 0.72rem; font-weight: 500; color: var(--muted);">Verification time: ${elapsed} ms</span>
+            </div>
+            <div class="pesel-results-grid reveal-element reveal-delay-1">
+              ${parsed.errors.map(err => `
+                <div class="pesel-result-row">
+                  <span class="row-label">Parse Error Detail</span>
+                  <span class="row-value">${err}</span>
+                </div>
+              `).join('')}
+            </div>
+          `;
+          resultsContainer.style.display = 'flex';
+        }
+
+        if (customActions) customActions.style.display = 'none';
+        if (visualExplorer) visualExplorer.style.display = 'none';
+        return;
+      }
+
+      // Add to history
+      const historyItems = JSON.parse(localStorage.getItem('validohub.jwt.history') || '[]');
+      if (!historyItems.some(it => it.value === inputVal)) {
+        historyItems.unshift({ value: inputVal, date: new Date().toISOString().split('T')[0] });
+        localStorage.setItem('validohub.jwt.history', JSON.stringify(historyItems.slice(0, 20)));
+        refreshHistorySelect();
+      }
+
+      // Valid output formatted JSON
+      const decodedOutput = JSON.stringify(decodedJson(parsed), null, 2);
+      workbench.setOutput(decodedOutput);
+      workbench.setMessage("Decoded JWT locally in your browser.", parsed.health.errors.length > 0 ? "error" : parsed.health.warnings.length > 0 ? "warning" : "success");
+      workbench.setStats(stats(parsed), parsed.health.messages, parsed.health.errors.length > 0 ? "error" : parsed.health.warnings.length > 0 ? "warning" : "success");
+      workbench.setBadge({ label: parsed.header.alg || "JWT", state: "success" });
+
+      if (resultsContainer) {
+        resultsContainer.innerHTML = `
+          <div class="pesel-results-header reveal-element" style="color: #16a34a; justify-content: space-between;">
+            <span>✓ Decoded Successfully</span>
+            <span style="font-size: 0.72rem; font-weight: 500; color: var(--muted);">Decoded in: ${elapsed} ms</span>
+          </div>
+          <div class="pesel-results-grid reveal-element reveal-delay-1">
+            <div class="pesel-result-row">
+              <span class="row-label">Decoded Payload</span>
+              <span class="row-value" style="word-break:break-all; font-family:monospace; max-height:160px; overflow-y:auto;">${decodedOutput}</span>
+            </div>
+            <div class="pesel-result-row">
+              <span class="row-label">Algorithm</span>
+              <span class="row-value">${parsed.header.alg || 'none'}</span>
+            </div>
+            <div class="pesel-result-row">
+              <span class="row-label">Type</span>
+              <span class="row-value">${parsed.header.typ || 'JWT'}</span>
+            </div>
+          </div>
+        `;
+        resultsContainer.style.display = 'flex';
+      }
+
+      if (customActions) {
+        customActions.innerHTML = `
+          <button type="button" class="button button-secondary compact" id="custom-copy-result">Copy Payload JSON</button>
+        `;
+        customActions.querySelector('#custom-copy-result').addEventListener('click', () => {
+          copyToClipboard(decodedOutput, workbench, 'Copied decoded payload JSON.');
+        });
+        customActions.style.display = 'flex';
+      }
+
+      // Render Visual Claims Explorer
+      if (visualExplorer) {
+        visualExplorer.innerHTML = jwtPreview(parsed);
+        visualExplorer.style.display = 'block';
+
+        window.setTimeout(() => {
+          initializePayloadExplorer(workbench);
+        }, 0);
+      }
+
+      // Setup API Developer Snippets Panel
+      workbench.setAdvanced(`
+        <div class="pesel-dev-section">
+          <div class="pesel-api-card">
+            <div class="pesel-section-title">
+              <span>🔌</span> Developer API Preview
+            </div>
+            <div class="pesel-api-tabs">
+              <button type="button" class="pesel-api-tab active" data-lang="curl">cURL</button>
+              <button type="button" class="pesel-api-tab" data-lang="javascript">JavaScript</button>
+              <button type="button" class="pesel-api-tab" data-lang="python">Python</button>
+              <button type="button" class="pesel-api-tab" data-lang="java">Java</button>
+              <button type="button" class="pesel-api-tab" data-lang="csharp">C#</button>
+              <button type="button" class="pesel-api-tab" data-lang="go">Go</button>
+            </div>
+            <div class="pesel-dev-accordion-content" style="background: var(--code-bg); padding: 12px; border-radius: 6px;">
+              <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
+              <pre id="pesel-api-code-block" style="margin: 0; font-family: monospace; font-size: 0.8rem; line-height: 1.4; color: var(--code-text);">${apiSnippets.curl.replace('$INPUT$', inputVal)}</pre>
+            </div>
+          </div>
+        </div>
+      `);
+
+      const devSection = workbench.form.querySelector('.pesel-dev-section');
+      if (devSection) {
+        const apiBlock = devSection.querySelector('#pesel-api-code-block');
+        const tabs = devSection.querySelectorAll('.pesel-api-tab');
+        tabs.forEach(t => {
+          t.addEventListener('click', () => {
+            tabs.forEach(btn => btn.classList.remove('active'));
+            t.classList.add('active');
+            const lang = t.dataset.lang;
+            if (apiBlock && apiSnippets[lang]) {
+              apiBlock.textContent = apiSnippets[lang].replace('$INPUT$', inputVal);
+            }
+          });
+        });
+      }
+
+      document.querySelectorAll('.pesel-dev-accordion-content').forEach(card => {
+        const btn = card.querySelector('.pesel-dev-accordion-copy-btn');
+        const pre = card.querySelector('pre');
+        if (btn && pre) {
+          btn.addEventListener('click', () => {
+            copyToClipboard(pre.textContent.trim(), workbench, 'Copied snippet.');
+            btn.textContent = 'Copied!';
+            setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+          });
+        }
+      });
     }
 
     function jwtPreview(parsed) {
@@ -406,9 +680,17 @@
     }
 
     function healthBadges(parsed) {
-      return "<div class=\"jwt-badges\">" + parsed.health.badges.map(function (badge) {
+      return "<div class=\"jwt-badges\">" + parsed.health.badges.map(badge => {
         return "<span class=\"jwt-badge\" data-state=\"" + badge.state + "\">" + util.escapeHtml(badge.label) + "</span>";
       }).join("") + "</div>";
+    }
+
+    function tokenMarkup(parsed) {
+      return "<span class=\"jwt-token-header\" style=\"color:#eb5757; font-weight:700;\">" + util.escapeHtml(parsed.parts[0]) + "</span>"
+          + "<span class=\"jwt-token-dot\">.</span>"
+          + "<span class=\"jwt-token-payload\" style=\"color:#8b5cf6; font-weight:700;\">" + util.escapeHtml(parsed.parts[1]) + "</span>"
+          + "<span class=\"jwt-token-dot\">.</span>"
+          + "<span class=\"jwt-token-signature\" style=\"color:#2f80ed; font-weight:700;\">" + util.escapeHtml(parsed.parts[2]) + "</span>";
     }
 
     function sectionCard(titleText, key, json, copyKey) {
@@ -423,29 +705,57 @@
     }
 
     function signatureCard(parsed) {
-      return "<section class=\"jwt-section\"><div class=\"jwt-section-title\"><span>Signature</span><button type=\"button\" class=\"json-tool-button\" data-jwt-copy=\"signature\">Copy</button></div><pre class=\"jwt-signature\"><code>" + util.escapeHtml(parsed.signature || "Missing signature") + "</code></pre></section>";
+      return "<section class=\"jwt-section\"><div class=\"jwt-section-title\"><span>Signature</span><button type=\"button\" class=\"json-tool-button\" data-jwt-copy=\"signature\">Copy</button></div><pre class=\"jwt-signature\" style=\"font-family:monospace;\"><code>" + util.escapeHtml(parsed.signature || "Missing signature") + "</code></pre></section>";
     }
 
     function decodedCard(parsed) {
-      var decoded = JSON.stringify(decodedJson(parsed), null, 2);
+      const decoded = JSON.stringify(decodedJson(parsed), null, 2);
       return "<section class=\"jwt-section\"><div class=\"jwt-section-title\"><span>Decoded JSON</span><span><button type=\"button\" class=\"json-tool-button\" data-jwt-copy=\"decoded\">Copy</button><button type=\"button\" class=\"json-tool-button\" data-jwt-download=\"decoded\">Download</button></span></div><pre class=\"json-code\"><code>" + highlightJson(decoded) + "</code></pre></section>";
     }
 
-    function analysisPanel(parsed) {
-      return "<div class=\"json-analysis-grid\"><section><div class=\"preview-title\">Token analysis</div><dl class=\"feedback-grid\">"
-          + analysisRows(parsed).map(function (row) {
-            return "<div><dt>" + util.escapeHtml(row[0]) + "</dt><dd>" + util.escapeHtml(row[1]) + "</dd></div>";
-          }).join("")
-          + "</dl></section><section><div class=\"preview-title\">Token health</div><ul class=\"feedback-notes\">"
-          + parsed.health.messages.map(function (message) {
-            return "<li>" + util.escapeHtml(message) + "</li>";
-          }).join("")
-          + "</ul></section></div>";
+    function highlightJson(json) {
+      return json.replace(/("(?:\\.|[^"\\])*")(\s*:)?|\b(true|false|null)\b|-?\b\d+(?:\.\d+)?(?:[eE][+-]?\d+)?\b|[{}\[\]:,]/g, function (match, string, colon, literal) {
+        if (string) {
+          if (colon) {
+            return "<span class=\"json-key\">" + util.escapeHtml(string) + "</span>"
+                + util.escapeHtml(colon.slice(0, -1))
+                + "<span class=\"json-punctuation\">:</span>";
+          }
+          return "<span class=\"json-string\">" + util.escapeHtml(string) + "</span>";
+        }
+        if (/^-?\d/.test(match)) {
+          return "<span class=\"json-number\">" + util.escapeHtml(match) + "</span>";
+        }
+        if (literal || /^(true|false|null)$/.test(match)) {
+          return "<span class=\"json-literal\">" + util.escapeHtml(literal || match) + "</span>";
+        }
+        return "<span class=\"json-punctuation\">" + util.escapeHtml(match) + "</span>";
+      });
+    }
+
+    function decodedJson(parsed) {
+      return {
+        header: parsed.header,
+        payload: parsed.payload,
+        signature: parsed.signature
+      };
+    }
+
+    function stats(parsed) {
+      const rowList = [];
+      rowList.push(["Algorithm", parsed.header.alg || "none"]);
+      if (parsed.header.typ) {
+        rowList.push(["Type", parsed.header.typ]);
+      }
+      rowList.push(["Claims count", String(Object.keys(parsed.payload).length)]);
+      const sizeBytes = util.utf8Bytes(parsed.token).length;
+      rowList.push(["Token size", util.formatBytes(sizeBytes)]);
+      return rowList;
     }
 
     function payloadExplorer(payload) {
-      var state = { rendered: 0, limit: 900, capped: false };
-      var tree = treeNode(payload, "payload", "", "$", 0, state);
+      const state = { rendered: 0, limit: 900, capped: false };
+      const tree = treeNode(payload, "payload", "", "$", 0, state);
       return "<div class=\"jwt-payload-explorer\" data-jwt-payload-explorer>"
           + "<div class=\"json-explorer-toolbar\"><button type=\"button\" class=\"json-tool-button\" data-jwt-tree-action=\"expand-all\">Expand all</button><button type=\"button\" class=\"json-tool-button\" data-jwt-tree-action=\"collapse-all\">Collapse all</button><button type=\"button\" class=\"json-tool-button\" data-jwt-tree-action=\"clear-search\">Clear search</button><label class=\"json-search-label\"><span>Search</span><input type=\"search\" data-jwt-search placeholder=\"Claims or values\" autocomplete=\"off\"></label><button type=\"button\" class=\"json-tool-button\" data-jwt-tree-action=\"previous-match\">Previous</button><button type=\"button\" class=\"json-tool-button\" data-jwt-tree-action=\"next-match\">Next</button></div>"
           + "<div class=\"json-tree-meta\"><span data-jwt-search-count>No search</span><span>" + countNodes(payload) + " payload nodes</span></div>"
@@ -460,458 +770,255 @@
         return "";
       }
       state.rendered++;
-      var type = rootType(value);
-      var container = type === "array" || type === "object";
-      var icon = type === "object" ? "{}" : type === "array" ? "[]" : "v";
-      var row = "<button type=\"button\" class=\"json-node-row\" data-jwt-node data-jwt-pointer=\"" + attr(pointer) + "\" data-jwt-path=\"" + attr(jsonPath) + "\" style=\"--json-depth:" + depth + "\"><span class=\"json-node-icon\">" + icon + "</span><span class=\"json-tree-label\">" + util.escapeHtml(label) + "</span><span class=\"json-tree-type\">" + typeLabel(value) + "</span>" + (!container ? "<code class=\"json-node-value\">" + util.escapeHtml(shortValue(value)) + "</code>" : "") + "<span class=\"json-node-path\">" + util.escapeHtml(jsonPath) + "</span></button>";
+      const type = rootType(value);
+      const container = type === "array" || type === "object";
+      const icon = type === "object" ? "{}" : type === "array" ? "[]" : "v";
+      const row = "<div class=\"json-tree-row\" data-jwt-node data-jwt-pointer=\"" + attr(pointer) + "\" data-jwt-path=\"" + attr(jsonPath) + "\" style=\"--json-depth:" + depth + "\">"
+          + "<span class=\"json-tree-toggle\"></span>"
+          + "<span class=\"json-tree-label\">" + util.escapeHtml(label) + "</span>"
+          + "<span class=\"json-tree-type\">" + icon + "</span>"
+          + (container ? "" : "<span class=\"json-tree-value\">" + util.escapeHtml(String(value)) + "</span>")
+          + "</div>";
       if (!container) {
         return "<div class=\"json-tree-leaf\">" + row + "</div>";
       }
-      var keys = Array.isArray(value) ? value.map(function (_, index) { return String(index); }) : Object.keys(value);
-      var children = keys.slice(0, 120).map(function (key) {
-        var child = Array.isArray(value) ? value[Number(key)] : value[key];
-        return treeNode(child, key, pointer + "/" + escapePointer(key), Array.isArray(value) ? jsonPath + "[" + key + "]" : jsonPath + pathSegment(key), depth + 1, state);
-      }).join("");
-      return "<details class=\"json-tree-branch\" open data-jwt-branch><summary>" + row + "<span class=\"json-child-count\">" + keys.length + "</span></summary>" + children + (keys.length > 120 ? "<div class=\"json-tree-more\">More children hidden for responsiveness.</div>" : "") + "</details>";
+      let html = "";
+      const keys = Object.keys(value);
+      for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        const nextPointer = pointer + "/" + key.replace(/~/g, "~0").replace(/\//g, "~1");
+        const nextPath = type === "array" ? jsonPath + "[" + key + "]" : jsonPath + "." + key;
+        html += treeNode(value[key], key, nextPointer, nextPath, depth + 1, state);
+      }
+      const children = type === "array" ? "[" + keys.length + "]" : "{" + keys.length + "}";
+      return "<details class=\"json-tree-branch\" open data-jwt-branch data-jwt-pointer=\"" + attr(pointer) + "\"><summary>" + row + "<span class=\"json-child-count\">" + children + "</span></summary>" + html + "</details>";
     }
 
-    function schedulePayloadInit(workbench) {
-      window.setTimeout(function () {
-        selectPayloadNode(workbench, "");
-      }, 0);
+    function rootType(v) {
+      if (v === null) return "null";
+      if (Array.isArray(v)) return "array";
+      return typeof v;
     }
 
-    function handlePayloadTreeAction(workbench, action) {
-      var explorer = workbench.form.querySelector("[data-jwt-payload-explorer]");
-      if (!explorer) {
-        return;
-      }
-      if (action === "expand-all" || action === "collapse-all") {
-        explorer.querySelectorAll("details[data-jwt-branch]").forEach(function (details) {
-          details.open = action === "expand-all";
-        });
-        return;
-      }
-      if (action === "clear-search") {
-        var field = explorer.querySelector("[data-jwt-search]");
-        if (field) {
-          field.value = "";
+    function countNodes(v) {
+      let count = 0;
+      function countAll(val) {
+        count++;
+        if (val && typeof val === "object") {
+          Object.keys(val).forEach(k => countAll(val[k]));
         }
-        clearPayloadSearch(explorer);
-        setSearchCount(explorer, "No search");
-        return;
       }
-      runPayloadSearch(workbench, action === "previous-match" ? "previous" : "next");
+      countAll(v);
+      return count;
     }
 
-    function runPayloadSearch(workbench, direction) {
-      var explorer = workbench.form.querySelector("[data-jwt-payload-explorer]");
-      if (!explorer) {
-        return;
-      }
-      var field = explorer.querySelector("[data-jwt-search]");
-      var query = field ? field.value.trim().toLowerCase() : "";
-      clearPayloadSearch(explorer);
-      if (!query) {
-        setSearchCount(explorer, "No search");
-        return;
-      }
-      var matches = Array.from(explorer.querySelectorAll("[data-jwt-node]")).filter(function (node) {
-        return (node.textContent || "").toLowerCase().indexOf(query) !== -1;
-      });
-      matches.forEach(function (node) {
-        node.classList.add("is-match");
-        openParents(node);
-      });
-      if (matches.length === 0) {
-        setSearchCount(explorer, "0 matches");
-        return;
-      }
-      var index = Number(explorer.dataset.matchIndex || "-1");
-      index = direction === "previous" ? (index <= 0 ? matches.length - 1 : index - 1) : (index >= matches.length - 1 ? 0 : index + 1);
-      if (direction === "first") {
-        index = 0;
-      }
-      explorer.dataset.matchIndex = String(index);
-      matches[index].classList.add("is-current-match");
-      matches[index].scrollIntoView({ block: "nearest" });
-      selectPayloadNode(workbench, matches[index].dataset.jwtPointer);
-      setSearchCount(explorer, (index + 1) + " of " + matches.length + " matches");
+    function attr(v) {
+      return v.replace(/"/g, "&quot;");
     }
 
-    function clearPayloadSearch(explorer) {
-      explorer.querySelectorAll(".is-match, .is-current-match").forEach(function (node) {
-        node.classList.remove("is-match", "is-current-match");
-      });
-      explorer.dataset.matchIndex = "-1";
-    }
-
-    function setSearchCount(explorer, text) {
-      var target = explorer.querySelector("[data-jwt-search-count]");
-      if (target) {
-        target.textContent = text;
+    function initializePayloadExplorer(workbench) {
+      const explorer = workbench.form.querySelector("[data-jwt-payload-explorer]");
+      if (!explorer) return;
+      selectPayloadNode(workbench, "");
+      const search = explorer.querySelector("[data-jwt-search]");
+      if (search && search.value) {
+        runPayloadSearch(workbench, "first");
       }
     }
 
     function selectPayloadNode(workbench, pointer) {
-      if (!workbench._jwt) {
-        return;
-      }
-      var explorer = workbench.form.querySelector("[data-jwt-payload-explorer]");
-      if (!explorer) {
-        return;
-      }
-      explorer.querySelectorAll("[data-jwt-node].is-selected").forEach(function (node) {
-        node.classList.remove("is-selected");
+      const explorer = workbench.form.querySelector("[data-jwt-payload-explorer]");
+      if (!explorer || !workbench._jwt) return;
+      explorer.querySelectorAll("[data-jwt-node]").forEach(node => {
+        node.classList.toggle("is-selected", node.dataset.jwtPointer === pointer);
       });
-      var node = explorer.querySelector("[data-jwt-node][data-jwt-pointer=\"" + cssEscape(pointer) + "\"]");
-      if (node) {
-        node.classList.add("is-selected");
-        openParents(node);
+      updateInspector(workbench, pointer);
+    }
+
+    function updateInspector(workbench, pointer) {
+      const explorer = workbench.form.querySelector("[data-jwt-payload-explorer]");
+      const target = explorer ? explorer.querySelector("[data-jwt-node-details]") : null;
+      if (!target || !workbench._jwt) return;
+      const path = pointerToPath(pointer);
+      let html = "";
+      if (pointer === "") {
+        html = "<strong>Payload root</strong><span>Select any claim row below to copy path or inspect values.</span>";
+      } else {
+        html = "<strong>JSON Path</strong><code>" + util.escapeHtml(path) + "</code>";
       }
-      var value = resolvePointer(workbench._jwt.payload, pointer);
-      var details = explorer.querySelector("[data-jwt-node-details]");
-      if (details) {
-        details.innerHTML = "<div><strong>" + util.escapeHtml(pointer ? unescapePointer(pointer.split('/').pop()) : "payload") + "</strong><code>" + util.escapeHtml(jsonPathFromPointer(pointer)) + "</code></div><dl class=\"json-node-stats\"><div><dt>Type</dt><dd>" + util.escapeHtml(title(rootType(value))) + "</dd></div><div><dt>Children</dt><dd>" + childCount(value) + "</dd></div><div><dt>Subtree size</dt><dd>" + countNodes(value) + "</dd></div></dl>";
+      target.innerHTML = html;
+    }
+
+    function pointerToPath(pointer) {
+      const parts = pointer.split("/").slice(1);
+      let path = "payload";
+      parts.forEach(p => {
+        const dec = p.replace(/~1/g, "/").replace(/~0/g, "~");
+        if (/^\d+$/.test(dec)) {
+          path += "[" + dec + "]";
+        } else {
+          path += "." + dec;
+        }
+      });
+      return path;
+    }
+
+    function resolvePointer(obj, pointer) {
+      if (pointer === "") return obj;
+      const parts = pointer.split("/").slice(1);
+      let current = obj;
+      for (let i = 0; i < parts.length; i++) {
+        const key = parts[i].replace(/~1/g, "/").replace(/~0/g, "~");
+        current = current[key];
       }
+      return current;
     }
 
     function copyJwtSection(workbench, key) {
-      if (!workbench._jwt) {
-        workbench.setMessage("Decode a JWT before copying sections.", "error");
-        return;
+      if (!workbench._jwt) return;
+      if (key === "token") {
+        copyToClipboard(workbench._jwt.token, workbench, "Copied raw token.");
+      } else if (key === "header") {
+        copyToClipboard(workbench._jwt.headerJson, workbench, "Copied header JSON.");
+      } else if (key === "payload") {
+        copyToClipboard(workbench._jwt.payloadJson, workbench, "Copied payload JSON.");
+      } else if (key === "signature") {
+        copyToClipboard(workbench._jwt.signature || "", workbench, "Copied signature.");
+      } else if (key === "decoded") {
+        const decoded = JSON.stringify(decodedJson(workbench._jwt), null, 2);
+        copyToClipboard(decoded, workbench, "Copied decoded JSON.");
       }
-      var text = sectionText(workbench._jwt, key);
-      copyText(text).then(function () {
-        workbench.setMessage("Copied " + key + ".", "success");
-      }).catch(function () {
-        workbench.setMessage("Could not copy " + key + ".", "error");
-      });
     }
 
     function downloadJwtSection(workbench, key) {
-      if (!workbench._jwt) {
-        workbench.setMessage("Decode a JWT before downloading sections.", "error");
-        return;
-      }
-      downloadText("validohub-jwt-" + key + ".json", sectionText(workbench._jwt, key), "application/json;charset=utf-8");
-      workbench.setMessage("Downloaded " + key + ".", "success");
-    }
-
-    function sectionText(parsed, key) {
+      if (!workbench._jwt) return;
+      let text = "";
+      let filename = "jwt-section.json";
       if (key === "header") {
-        return parsed.headerJson;
+        text = workbench._jwt.headerJson;
+        filename = "jwt-header.json";
+      } else if (key === "payload") {
+        text = workbench._jwt.payloadJson;
+        filename = "jwt-payload.json";
+      } else if (key === "decoded") {
+        text = JSON.stringify(decodedJson(workbench._jwt), null, 2);
+        filename = "jwt-decoded.json";
       }
-      if (key === "payload" || key === "claims") {
-        return parsed.payloadJson;
-      }
-      if (key === "signature") {
-        return parsed.signature || "";
-      }
-      if (key === "token") {
-        return parsed.token;
-      }
-      return JSON.stringify(decodedJson(parsed), null, 2);
-    }
-
-    function copyText(text) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        return navigator.clipboard.writeText(text);
-      }
-      return new Promise(function (resolve, reject) {
-        try {
-          var textarea = document.createElement("textarea");
-          textarea.value = text;
-          textarea.setAttribute("readonly", "");
-          textarea.style.position = "fixed";
-          textarea.style.opacity = "0";
-          document.body.appendChild(textarea);
-          textarea.select();
-          document.execCommand("copy");
-          textarea.remove();
-          resolve();
-        } catch (error) {
-          reject(error);
-        }
-      });
-    }
-
-    function downloadText(filename, text, mime) {
-      var blob = new Blob([text], { type: mime || "text/plain;charset=utf-8" });
-      var url = URL.createObjectURL(blob);
-      var link = document.createElement("a");
-      link.href = url;
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
+      if (!text) return;
+      const blob = new Blob([text], { type: "application/json;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
       URL.revokeObjectURL(url);
+      workbench.setMessage("Downloaded " + filename + ".", "success");
     }
 
-    function applySample(workbench, sampleId) {
-      var input = workbench.primaryInput();
-      if (!input) {
+    function handlePayloadTreeAction(workbench, action) {
+      const explorer = workbench.form.querySelector("[data-jwt-payload-explorer]");
+      if (!explorer) return;
+      if (action === "expand-all") {
+        explorer.querySelectorAll("[data-jwt-branch]").forEach(b => b.open = true);
+      } else if (action === "collapse-all") {
+        explorer.querySelectorAll("[data-jwt-branch]").forEach(b => b.open = false);
+      } else if (action === "clear-search") {
+        const search = explorer.querySelector("[data-jwt-search]");
+        if (search) {
+          search.value = "";
+          runPayloadSearch(workbench, "first");
+        }
+      } else if (action === "previous-match") {
+        runPayloadSearch(workbench, "previous");
+      } else if (action === "next-match") {
+        runPayloadSearch(workbench, "next");
+      }
+    }
+
+    function runPayloadSearch(workbench, navigation) {
+      const explorer = workbench.form.querySelector("[data-jwt-payload-explorer]");
+      const input = explorer ? explorer.querySelector("[data-jwt-search]") : null;
+      if (!explorer || !input || !workbench._jwt) return;
+      const query = input.value.trim().toLowerCase();
+      const tree = explorer.querySelector("[data-jwt-tree]");
+
+      tree.querySelectorAll(".json-tree-row").forEach(r => {
+        r.classList.remove("is-search-match", "is-active-search-match");
+      });
+
+      if (!query) {
+        updateSearchCount(explorer, 0, 0, false);
         return;
       }
-      input.value = samples()[sampleId] || samples()["jwt-valid"];
-      workbench.markActiveAction(sampleId === "jwt-malformed" ? "validate" : "decode");
-      workbench.run(workbench.form.dataset.activeAction);
-    }
 
-    function samples() {
-      return {
-        "jwt-valid": makeToken({ alg: "HS256", typ: "JWT" }, { iss: "https://auth.validohub.com", sub: "user_123", aud: ["validohub", "api"], exp: 4102444800, nbf: 1700000000, iat: 1700000000, jti: "jwt_demo_001", roles: ["admin", "editor"] }, "demo-signature"),
-        "jwt-expired": makeToken({ alg: "RS256", typ: "JWT" }, { iss: "https://auth.example.com", sub: "user_456", aud: "example-api", exp: 1600000000, iat: 1599996400, jti: "expired_demo" }, "expired-signature"),
-        "jwt-unsigned": makeToken({ alg: "none", typ: "JWT" }, { iss: "local-demo", sub: "anonymous", exp: 4102444800, iat: 1700000000 }, ""),
-        "jwt-malformed": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.not-valid-json.signature"
-      };
-    }
-
-    function makeToken(header, payload, signature) {
-      return encodeJson(header) + "." + encodeJson(payload) + "." + base64Url(signature);
-    }
-
-    function encodeJson(value) {
-      return base64Url(JSON.stringify(value));
-    }
-
-    function base64Url(value) {
-      var bytes = util.utf8Bytes(value);
-      var binary = "";
-      bytes.forEach(function (byte) {
-        binary += String.fromCharCode(byte);
+      const matchedPointers = [];
+      const rows = Array.from(tree.querySelectorAll("[data-jwt-node]"));
+      rows.forEach(row => {
+        const label = row.querySelector(".json-tree-label").textContent.toLowerCase();
+        const valueSpan = row.querySelector(".json-tree-value");
+        const valText = valueSpan ? valueSpan.textContent.toLowerCase() : "";
+        if (label.includes(query) || valText.includes(query)) {
+          row.classList.add("is-search-match");
+          matchedPointers.push(row.dataset.jwtPointer);
+        }
       });
-      return window.btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
-    }
 
-    function detectInputMode(value) {
-      var token = (value || "").trim();
-      if (!token) {
-        return { label: "Waiting for input", state: "" };
+      if (matchedPointers.length === 0) {
+        updateSearchCount(explorer, 0, 0, true);
+        return;
       }
-      var parts = token.split(".");
-      if (parts.length !== 3) {
-        return { label: "Invalid JWT", state: "invalid" };
-      }
-      if (!parts[2]) {
-        return { label: "Unsigned JWT", state: "warning" };
-      }
-      return { label: "Looks like JWT", state: "json" };
-    }
 
-    function tokenInput(workbench) {
-      var values = workbench.values();
-      return values.token || values.input || "";
-    }
-
-    function decodedJson(parsed) {
-      return {
-        header: parsed.header,
-        payload: parsed.payload,
-        signature: parsed.signature
-      };
-    }
-
-    function invalidPreview(token, parsed) {
-      var parts = token.split(".");
-      var labels = ["header", "payload", "signature"];
-      return "<div class=\"jwt-token-parts\">" + parts.map(function (part, index) {
-        var name = labels[index] || "extra";
-        var bad = parsed.section === name || parsed.section === "token";
-        return "<div class=\"jwt-token-part" + (bad ? " is-invalid" : "") + "\"><strong>" + util.escapeHtml(name) + "</strong><code>" + util.escapeHtml(part || "(empty)") + "</code></div>";
-      }).join("") + "</div>";
-    }
-
-    function tokenMarkup(parsed) {
-      return "<span class=\"jwt-token-header\">" + util.escapeHtml(parsed.parts[0]) + "</span>.<span class=\"jwt-token-payload\">" + util.escapeHtml(parsed.parts[1]) + "</span>.<span class=\"jwt-token-signature\">" + util.escapeHtml(parsed.parts[2] || "") + "</span>";
-    }
-
-    function highlightJson(json) {
-      return json.replace(/("(?:\\.|[^"\\])*")(\s*:)?|\b(true|false|null)\b|-?\b\d+(?:\.\d+)?(?:[eE][+-]?\d+)?\b|[{}\[\]:,]/g, function (match, string, colon, literal) {
-        if (string) {
-          if (colon) {
-            return "<span class=\"json-key\">" + util.escapeHtml(string) + "</span>" + util.escapeHtml(colon.slice(0, -1)) + "<span class=\"json-punctuation\">:</span>";
-          }
-          return "<span class=\"json-string\">" + util.escapeHtml(string) + "</span>";
+      let index = 0;
+      if (navigation === "next" || navigation === "previous") {
+        const active = tree.querySelector(".is-active-search-match");
+        const activePointer = active ? active.dataset.jwtPointer : null;
+        const currentIdx = activePointer ? matchedPointers.indexOf(activePointer) : -1;
+        if (navigation === "next") {
+          index = (currentIdx + 1) % matchedPointers.length;
+        } else {
+          index = (currentIdx - 1 + matchedPointers.length) % matchedPointers.length;
         }
-        if (/^-?\d/.test(match)) {
-          return "<span class=\"json-number\">" + util.escapeHtml(match) + "</span>";
-        }
-        if (literal || /^(true|false|null)$/.test(match)) {
-          return "<span class=\"json-literal\">" + util.escapeHtml(literal || match) + "</span>";
-        }
-        return "<span class=\"json-punctuation\">" + util.escapeHtml(match) + "</span>";
-      });
-    }
-
-    function timeClaim(value) {
-      if (typeof value !== "number") {
-        return display(value);
       }
-      var date = new Date(value * 1000);
-      return date.toISOString() + " (" + relativeTime(value, Math.floor(Date.now() / 1000)) + ")";
-    }
 
-    function relativeTime(timestamp, now) {
-      var diff = timestamp - now;
-      var abs = Math.abs(diff);
-      var unit = "second";
-      var count = abs;
-      if (abs >= 86400) {
-        unit = "day";
-        count = Math.round(abs / 86400);
-      } else if (abs >= 3600) {
-        unit = "hour";
-        count = Math.round(abs / 3600);
-      } else if (abs >= 60) {
-        unit = "minute";
-        count = Math.round(abs / 60);
+      const activePointer = matchedPointers[index];
+      const activeRow = tree.querySelector(`[data-jwt-pointer="${attr(activePointer)}"]`);
+      if (activeRow) {
+        activeRow.classList.add("is-active-search-match");
+        expandToNode(activeRow);
+        activeRow.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }
-      var text = count + " " + unit + (count === 1 ? "" : "s");
-      return diff >= 0 ? "in " + text : text + " ago";
+
+      selectPayloadNode(workbench, activePointer);
+      updateSearchCount(explorer, index + 1, matchedPointers.length, true);
     }
 
-    function display(value) {
-      if (value == null || value === "") {
-        return "Not present";
-      }
-      if (Array.isArray(value)) {
-        return value.join(", ");
-      }
-      return String(value);
-    }
-
-    function displayAudience(value) {
-      return Array.isArray(value) ? value.join(", ") : display(value);
-    }
-
-    function title(value) {
-      return String(value).charAt(0).toUpperCase() + String(value).slice(1);
-    }
-
-    function titleType(value) {
-      return title(rootType(value));
-    }
-
-    function rootType(value) {
-      if (Array.isArray(value)) {
-        return "array";
-      }
-      if (value === null) {
-        return "null";
-      }
-      return typeof value;
-    }
-
-    function typeLabel(value) {
-      if (Array.isArray(value)) {
-        return "Array[" + value.length + "]";
-      }
-      if (value && typeof value === "object") {
-        return "Object{" + Object.keys(value).length + "}";
-      }
-      return titleType(value);
-    }
-
-    function shortValue(value) {
-      if (typeof value === "string") {
-        return JSON.stringify(value.length > 64 ? value.slice(0, 64) + "..." : value);
-      }
-      return JSON.stringify(value);
-    }
-
-    function childCount(value) {
-      if (Array.isArray(value)) {
-        return value.length;
-      }
-      if (value && typeof value === "object") {
-        return Object.keys(value).length;
-      }
-      return 0;
-    }
-
-    function countNodes(value) {
-      var count = 1;
-      if (Array.isArray(value)) {
-        value.forEach(function (item) {
-          count += countNodes(item);
-        });
-      } else if (value && typeof value === "object") {
-        Object.keys(value).forEach(function (key) {
-          count += countNodes(value[key]);
-        });
-      }
-      return count;
-    }
-
-    function resolvePointer(value, pointer) {
-      if (!pointer) {
-        return value;
-      }
-      return pointer.split("/").slice(1).reduce(function (current, segment) {
-        return current == null ? undefined : current[unescapePointer(segment)];
-      }, value);
-    }
-
-    function jsonPathFromPointer(pointer) {
-      if (!pointer) {
-        return "$";
-      }
-      return pointer.split("/").slice(1).reduce(function (path, segment) {
-        var key = unescapePointer(segment);
-        return /^\d+$/.test(key) ? path + "[" + key + "]" : path + pathSegment(key);
-      }, "$");
-    }
-
-    function pathSegment(key) {
-      return /^[A-Za-z_$][A-Za-z0-9_$]*$/.test(key) ? "." + key : "[" + JSON.stringify(key) + "]";
-    }
-
-    function escapePointer(value) {
-      return String(value).replace(/~/g, "~0").replace(/\//g, "~1");
-    }
-
-    function unescapePointer(value) {
-      return String(value).replace(/~1/g, "/").replace(/~0/g, "~");
-    }
-
-    function attr(value) {
-      return util.escapeHtml(String(value)).replace(/"/g, "&quot;");
-    }
-
-    function cssEscape(value) {
-      if (window.CSS && window.CSS.escape) {
-        return window.CSS.escape(value);
-      }
-      return String(value).replace(/["\\]/g, "\\$&");
-    }
-
-    function openParents(node) {
-      var parent = node.parentElement;
-      while (parent) {
-        if (parent.matches && parent.matches("details")) {
+    function expandToNode(rowEl) {
+      let parent = rowEl.parentElement;
+      while (parent && parent.tagName !== "DIV" && parent.classList.contains("json-tree") === false) {
+        if (parent.tagName === "DETAILS" && parent.classList.contains("json-tree-branch")) {
           parent.open = true;
         }
         parent = parent.parentElement;
       }
     }
 
-    function textResult(value, baseName, extension) {
-      return {
-        type: "text",
-        text: value,
-        extension: extension || "txt",
-        mime: extension === "json" ? "application/json;charset=utf-8" : "text/plain;charset=utf-8",
-        sourceName: baseName
-      };
+    function updateSearchCount(explorer, current, total, active) {
+      const el = explorer.querySelector("[data-jwt-search-count]");
+      if (!el) return;
+      if (!active) {
+        el.textContent = "No search";
+        return;
+      }
+      el.textContent = total === 0 ? "No matches" : `${current} of ${total}`;
     }
 
     return {
       filePrefix: "validohub-jwt",
       onMount: onMount,
       run: run,
-      applySample: applySample,
-      detectInputMode: detectInputMode
+      applySample: applySample
     };
   })(window.ValidoWorkbench);
 
