@@ -64,7 +64,7 @@
       },
       "source": "Simplified public-domain geographic reference"
     }
-  };
+  }
 
   const COUNTRY_HUBS = {
     "brazil": {
@@ -6360,7 +6360,7 @@
         ]
       }
     }
-  };
+  }
 
   const COUNTRY_PORTAL_CATALOG = [
     {
@@ -7070,7 +7070,7 @@
         "y": 27
       }
     }
-  ];
+  ]
 
   const WORKBENCH_DISCOVERY = {
     "brazil-brazil-pix-validator": {
@@ -7154,7 +7154,7 @@
         "Steuer-IdNr"
       ]
     }
-  };
+  }
 
   function pathParts(href) {
     try {
@@ -7918,11 +7918,38 @@
 
     card.appendChild(ul);
 
-    const wbSection = stack.querySelector('.tool-workbench');
-    if (wbSection && wbSection.nextSibling) {
-      stack.insertBefore(card, wbSection.nextSibling);
+    const wbCard = stack.querySelector('.workbench-card');
+    if (wbCard && wbCard.nextSibling) {
+      stack.insertBefore(card, wbCard.nextSibling);
     } else {
       stack.appendChild(card);
+    }
+
+    if (workbenchSlug === 'pesel-validator') {
+      const relatedSection = stack.querySelector('.related-section');
+      if (relatedSection) {
+        const relatedHeading = relatedSection.querySelector('h2');
+        if (relatedHeading) {
+          relatedHeading.textContent = 'PESEL Related Resources';
+        }
+        const relatedEyebrow = relatedSection.querySelector('.eyebrow');
+        if (relatedEyebrow) {
+          relatedEyebrow.textContent = 'Discovery';
+        }
+        const grid = relatedSection.querySelector('.card-grid');
+        if (grid) {
+          grid.innerHTML = `
+            <a href="/en/poland/" class="link-card">
+              <span>Poland Country Hub</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="/en/categories/national-identifiers/" class="link-card">
+              <span>National Identifiers Spec</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          `;
+        }
+      }
     }
   }
 
@@ -8245,197 +8272,10 @@
     enhanceCountryHubPage();
     enhanceWorkbenchPage();
 
-    if (window.ValidoWorkbench) {
-      window.ValidoWorkbench.registerPlugin('validohub.pesel', {
-        applySample: function (workbench, name) {
-          const input = workbench.primaryInput();
-          if (input) {
-            if (name === 'valid-male') {
-              input.value = '92082612335';
-            } else if (name === 'valid-female') {
-              input.value = '92082612346';
-            } else if (name === 'invalid-checksum') {
-              input.value = '92082612345';
-            } else if (name === 'invalid-length') {
-              input.value = '920826';
-            }
-          }
-        },
-        onMount: function (workbench) {
-          const heading = workbench.form.querySelector('.workbench-form-heading');
-          if (heading) {
-            const btnContainer = document.createElement('div');
-            btnContainer.className = 'sample-buttons-container';
-            btnContainer.style.display = 'flex';
-            btnContainer.style.gap = '8px';
-            btnContainer.style.marginTop = '8px';
-
-            const samples = [
-              { name: 'valid-male', label: 'Valid Male' },
-              { name: 'valid-female', label: 'Valid Female' },
-              { name: 'invalid-checksum', label: 'Invalid Checksum' },
-              { name: 'invalid-length', label: 'Invalid Length' }
-            ];
-
-            samples.forEach(s => {
-              const btn = document.createElement('button');
-              btn.type = 'button';
-              btn.className = 'button button-ghost compact';
-              btn.style.fontSize = '0.78rem';
-              btn.style.padding = '4px 8px';
-              btn.style.cursor = 'pointer';
-              btn.textContent = s.label;
-              btn.setAttribute('data-sample', s.name);
-              btnContainer.appendChild(btn);
-            });
-
-            heading.after(btnContainer);
-          }
-        },
-        run: function (workbench, action, options) {
-          const values = workbench.values();
-          const inputVal = (values.pesel || '').trim();
-
-          if (!inputVal) {
-            workbench.setMessage('Please enter a PESEL number.', 'error');
-            workbench.setOutput('');
-            return;
-          }
-
-          const regex = /^\d{11}$/;
-          if (!regex.test(inputVal)) {
-            workbench.setMessage('Invalid structure: Must be exactly 11 digits.', 'error');
-            workbench.setOutput('Validation Failed: Regex pattern mismatch.\nExpected: 11 digits.');
-            return;
-          }
-
-          const weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
-          let sum = 0;
-          const digits = inputVal.split('').map(Number);
-          const checksumSteps = [];
-
-          for (let i = 0; i < 10; i++) {
-            const product = digits[i] * weights[i];
-            sum += product;
-            checksumSteps.push(`Digit ${i+1} (${digits[i]}) * Weight ${weights[i]} = ${product}`);
-          }
-
-          const checksumVal = (10 - (sum % 10)) % 10;
-          const isValidChecksum = checksumVal === digits[10];
-
-          let year = parseInt(inputVal.substring(0, 2), 10);
-          let month = parseInt(inputVal.substring(2, 4), 10);
-          const day = parseInt(inputVal.substring(4, 6), 10);
-
-          let century = 1900;
-          if (month > 80 && month < 93) {
-            century = 1800;
-            month -= 80;
-          } else if (month > 20 && month < 33) {
-            century = 2000;
-            month -= 20;
-          } else if (month > 40 && month < 53) {
-            century = 2100;
-            month -= 40;
-          } else if (month > 60 && month < 73) {
-            century = 2200;
-            month -= 60;
-          }
-
-          const fullYear = century + year;
-          const monthNames = [
-            'January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'
-          ];
-          const monthName = monthNames[month - 1] || 'Unknown';
-          const dateStr = `${day} ${monthName} ${fullYear}`;
-
-          const genderDigit = digits[9];
-          const gender = (genderDigit % 2 === 0) ? 'Female' : 'Male';
-
-          const result = {
-            valid: isValidChecksum,
-            input: inputVal,
-            length: inputVal.length,
-            checksum: {
-              calculated: checksumVal,
-              expected: digits[10],
-              isValid: isValidChecksum,
-              formula: 'Sum = (1*d1 + 3*d2 + 7*d3 + 9*d4 + 1*d5 + 3*d6 + 7*d7 + 9*d8 + 1*d9 + 3*d10) % 10',
-              steps: checksumSteps
-            },
-            metadata: {
-              birthDate: dateStr,
-              gender: gender,
-              century: `${century}s`
-            }
-          };
-
-          workbench.lastResult = result;
-
-          let outputText = `Validation Result: ${isValidChecksum ? 'VALID' : 'INVALID'}\n\n`;
-          outputText += `• Input Value: ${inputVal}\n`;
-          outputText += `• Length Check: Pass (11 digits)\n`;
-          outputText += `• Checksum Check: ${isValidChecksum ? 'Pass' : 'Fail (Expected: ' + digits[10] + ', Calculated: ' + checksumVal + ')'}\n\n`;
-
-          if (isValidChecksum) {
-            outputText += `Parsed Metadata:\n`;
-            outputText += `• Birth Date: ${dateStr}\n`;
-            outputText += `• Gender: ${gender}\n`;
-            outputText += `• Century: ${century}s\n`;
-          }
-
-          workbench.setOutput(outputText);
-          workbench.setMessage(isValidChecksum ? 'PESEL matches checksum formula.' : 'Invalid Checksum: Checksum digit mismatch.', isValidChecksum ? 'success' : 'error');
-
-          const feedback = workbench.form.querySelector('[data-tool-feedback]');
-          if (feedback) {
-            feedback.innerHTML = `
-              <div class="workbench-validation-feedback" style="margin-top: 16px; padding: 16px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface-soft);">
-                <h4 style="margin-top: 0; margin-bottom: 12px; font-size: 0.95rem;">Parsed Metadata</h4>
-                <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
-                  <tr style="border-bottom: 1px solid var(--line);">
-                    <td style="padding: 8px 0; color: var(--muted);">Birth Date</td>
-                    <td style="padding: 8px 0; font-weight: 600; text-align: right;">${dateStr}</td>
-                  </tr>
-                  <tr style="border-bottom: 1px solid var(--line);">
-                    <td style="padding: 8px 0; color: var(--muted);">Gender</td>
-                    <td style="padding: 8px 0; font-weight: 600; text-align: right;">${gender}</td>
-                  </tr>
-                  <tr style="border-bottom: 1px solid var(--line);">
-                    <td style="padding: 8px 0; color: var(--muted);">Century</td>
-                    <td style="padding: 8px 0; font-weight: 600; text-align: right;">${century}s</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px 0; color: var(--muted);">Verification Status</td>
-                    <td style="padding: 8px 0; font-weight: 600; text-align: right; color: ${isValidChecksum ? '#16a34a' : '#dc2626'};">${isValidChecksum ? '✓ Verified' : '✗ Failed'}</td>
-                  </tr>
-                </table>
-              </div>
-            `;
-          }
-
-          const advanced = workbench.form.querySelector('[data-tool-advanced]');
-          if (advanced) {
-            advanced.innerHTML = `
-              <div style="font-family: monospace; font-size: 0.8rem; padding: 12px; border-radius: 4px; background: var(--code-bg); color: var(--code-text); margin-top: 8px; line-height: 1.4;">
-                <p style="margin-top: 0; font-weight: 600; color: #f2c94c; font-size: 0.85rem;">[Checksum weighted multiplication steps]</p>
-                ${checksumSteps.map(step => `<div>${step}</div>`).join('')}
-                <div style="margin-top: 10px; border-top: 1px solid #444; padding-top: 8px; font-weight: 600;">
-                  Sum of Products = ${sum}<br>
-                  Sum % 10 = ${sum % 10}<br>
-                  (10 - Sum % 10) % 10 = ${checksumVal} (Matches last digit ${digits[10]}: ${isValidChecksum})
-                </div>
-                <p style="margin-top: 12px; font-weight: 600; color: #f2c94c; font-size: 0.85rem;">[Regex match status]</p>
-                <div>Pattern: /^\\d{11}$/</div>
-                <div>Match: ${regex.test(inputVal)}</div>
-                <p style="margin-top: 12px; font-weight: 600; color: #f2c94c; font-size: 0.85rem;">[Raw JSON Output]</p>
-                <pre style="margin: 0; white-space: pre-wrap; font-family: monospace;">${JSON.stringify(result, null, 2)}</pre>
-              </div>
-            `;
-          }
-        }
-      });
+    if (window.location.pathname.indexOf('/pesel-validator/') !== -1) {
+      const script = document.createElement('script');
+      script.src = '/assets/js/tools/pesel.js';
+      document.body.appendChild(script);
     }
   }
 

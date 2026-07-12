@@ -749,10 +749,10 @@ async function main() {
   };
 
   const compiledJs = template
-    .replace('/*__COUNTRY_VISUAL_ASSETS__*/', indent(visualAssets, 2))
-    .replace('/*__COUNTRY_HUBS__*/', indent(hubs, 2))
-    .replace('/*__COUNTRY_PORTAL_CATALOG__*/', indent(catalog, 2))
-    .replace('/*__WORKBENCH_DISCOVERY__*/', indent(sortObjectKeys(workbenchDiscovery), 2));
+    .replace('const COUNTRY_VISUAL_ASSETS = {}; // __COUNTRY_VISUAL_ASSETS__', `const COUNTRY_VISUAL_ASSETS = ${indent(visualAssets, 2)}`)
+    .replace('const COUNTRY_HUBS = {}; // __COUNTRY_HUBS__', `const COUNTRY_HUBS = ${indent(hubs, 2)}`)
+    .replace('const COUNTRY_PORTAL_CATALOG = []; // __COUNTRY_PORTAL_CATALOG__', `const COUNTRY_PORTAL_CATALOG = ${indent(catalog, 2)}`)
+    .replace('const WORKBENCH_DISCOVERY = {}; // __WORKBENCH_DISCOVERY__', `const WORKBENCH_DISCOVERY = ${indent(sortObjectKeys(workbenchDiscovery), 2)}`);
 
   await writeFile(outputScript, compiledJs, 'utf8');
 
