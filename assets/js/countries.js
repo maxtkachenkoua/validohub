@@ -7904,16 +7904,24 @@
     ul.style.marginTop = '16px';
 
     if (info.validates && info.validates.length > 0) {
-      ul.appendChild(createElement('li', null, `<strong>Validates:</strong> ${info.validates.join(', ')}`));
+      const li = createElement('li');
+      li.innerHTML = `<strong>Validates:</strong> ${info.validates.join(', ')}`;
+      ul.appendChild(li);
     }
     if (info.standards && info.standards.length > 0) {
-      ul.appendChild(createElement('li', null, `<strong>Related Standards:</strong> ${info.standards.join(', ')}`));
+      const li = createElement('li');
+      li.innerHTML = `<strong>Related Standards:</strong> ${info.standards.join(', ')}`;
+      ul.appendChild(li);
     }
     if (info.authorities && info.authorities.length > 0) {
-      ul.appendChild(createElement('li', null, `<strong>Official Authorities:</strong> ${info.authorities.join(', ')}`));
+      const li = createElement('li');
+      li.innerHTML = `<strong>Official Authorities:</strong> ${info.authorities.join(', ')}`;
+      ul.appendChild(li);
     }
     if (info.countries && info.countries.length > 0) {
-      ul.appendChild(createElement('li', null, `<strong>Supported Countries:</strong> ${info.countries.join(', ')}`));
+      const li = createElement('li');
+      li.innerHTML = `<strong>Supported Countries:</strong> ${info.countries.join(', ')}`;
+      ul.appendChild(li);
     }
 
     card.appendChild(ul);
