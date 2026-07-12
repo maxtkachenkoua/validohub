@@ -280,15 +280,13 @@
     onMount: function (workbench) {
       injectStyles();
 
-      // Format documentation list items using client-side regexp bold translation
-      workbench.form.parentNode.querySelectorAll('.doc-accordion .rich-text').forEach(el => {
-        el.querySelectorAll('li').forEach(li => {
-          let html = li.innerHTML;
-          if (html.includes('**')) {
-            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            li.innerHTML = html;
-          }
-        });
+      // Format documentation list items using client-side regexp bold translation globally in document
+      document.querySelectorAll('.doc-accordion .rich-text').forEach(el => {
+        let html = el.innerHTML;
+        if (html.includes('**')) {
+          html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+          el.innerHTML = html;
+        }
       });
 
       // Customize the top introductory details
@@ -379,18 +377,18 @@
         workbench.form.appendChild(premiumPanel);
       }
 
-      // Format documentation accordions
-      workbench.form.parentNode.querySelectorAll('.doc-accordion').forEach(acc => {
+      // Format documentation accordions globally
+      document.querySelectorAll('.doc-accordion').forEach(acc => {
         acc.style.border = '1px solid var(--line)';
         acc.style.borderRadius = '8px';
         acc.style.marginBottom = '12px';
         acc.style.overflow = 'hidden';
       });
 
-      // Clear duplicate Graph-Powered Discovery sections
+      // Clear duplicate Graph-Powered Discovery sections defensively
       const discoveryBlock = document.querySelector('.related-resources-discovery');
       if (discoveryBlock) {
-        discoveryBlock.style.display = 'none';
+        discoveryBlock.remove();
       }
 
       // Render the single unified ecosystem block at the bottom related tools section

@@ -26,7 +26,7 @@
   function pathParts(href) {
     try {
       const url = new URL(href, window.location.origin);
-      return url.pathname.split('/').filter(Boolean);
+      return url.pathname.split('/').filter(p => p && p !== 'index.html');
     } catch (error) {
       return [];
     }
@@ -742,6 +742,12 @@
   }
 
   function enhanceWorkbenchPage() {
+    const isPeselPage = !!document.querySelector('form[data-algorithm-id="validohub.pesel"]');
+    if (isPeselPage) {
+      const card = document.querySelector('.related-resources-discovery');
+      if (card) card.remove();
+      return;
+    }
     const parts = pathParts(window.location.pathname);
     if (parts.length !== 3 || !LOCALE_PATTERN.test(parts[0])) {
       return;
