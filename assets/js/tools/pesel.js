@@ -8,7 +8,6 @@
     return d.getFullYear() === year && d.getMonth() === (month - 1) && d.getDate() === day;
   };
 
-  // Helper to colorize JSON output like a real IDE/debugger
   const syntaxHighlightJson = function (jsonObj) {
     let jsonStr = JSON.stringify(jsonObj, null, 2);
     jsonStr = jsonStr.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -38,7 +37,7 @@
         margin-top: 24px;
         display: flex;
         flex-direction: column;
-        gap: 28px;
+        gap: 24px;
       }
       .pesel-badge-row {
         display: flex;
@@ -72,7 +71,7 @@
         padding: 20px;
       }
       .pesel-section-title {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         font-weight: 700;
         margin: 0 0 16px 0;
         color: var(--text);
@@ -85,54 +84,52 @@
         padding-bottom: 8px;
       }
       .pesel-pipeline-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
       }
       .pesel-step {
         display: flex;
-        align-items: flex-start;
+        flex-direction: column;
         justify-content: space-between;
-        font-size: 0.88rem;
+        font-size: 0.85rem;
         font-weight: 500;
-        padding: 10px 14px;
+        padding: 14px;
         border-radius: 6px;
         background: var(--surface);
         border: 1px solid var(--line);
-        transition: all 0.2s;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        gap: 10px;
       }
       .pesel-step.success {
-        border-color: rgba(22, 163, 74, 0.3);
-        color: var(--text);
-        background: rgba(22, 163, 74, 0.02);
+        border-color: rgba(22, 163, 74, 0.25);
+        background: rgba(22, 163, 74, 0.01);
       }
       .pesel-step.failure {
-        border-color: rgba(220, 38, 38, 0.3);
-        color: var(--text);
-        background: rgba(220, 38, 38, 0.02);
+        border-color: rgba(220, 38, 38, 0.25);
+        background: rgba(220, 38, 38, 0.01);
       }
       .pesel-step.pending {
         color: var(--muted);
-        opacity: 0.6;
+        opacity: 0.65;
       }
-      .pesel-step-left {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-      }
-      .pesel-step-label {
-        font-weight: 700;
+      .pesel-step-header {
         display: flex;
         align-items: center;
-        gap: 8px;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .pesel-step-title {
+        font-weight: 700;
+        color: var(--text);
       }
       .pesel-step-desc {
-        font-size: 0.78rem;
+        font-size: 0.76rem;
         color: var(--muted);
-        padding-left: 20px;
+        line-height: 1.4;
       }
       .pesel-step-badge {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         font-weight: 700;
         text-transform: uppercase;
         padding: 2px 6px;
@@ -161,7 +158,7 @@
         gap: 16px;
       }
       .pesel-results-header {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         font-weight: 700;
         display: flex;
         align-items: center;
@@ -169,7 +166,7 @@
       }
       .pesel-results-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 12px;
       }
       .pesel-result-row {
@@ -194,7 +191,7 @@
         letter-spacing: 0.05em;
       }
       .pesel-result-row .row-value {
-        font-size: 0.98rem;
+        font-size: 0.95rem;
         font-weight: 700;
         color: var(--text);
       }
@@ -215,8 +212,6 @@
         background: var(--line);
         color: var(--text);
       }
-
-      /* Premium PESEL Breakdown Visualization */
       .pesel-breakdown {
         background: var(--surface-soft);
         border: 1px solid var(--line);
@@ -241,12 +236,18 @@
         border: 1px solid var(--line);
         border-radius: 6px;
         background: var(--surface);
+        transition: all 0.2s ease;
       }
-      .pesel-digit-box.year { border-color: #2f80ed; color: #2f80ed; background: rgba(47, 128, 237, 0.03); }
-      .pesel-digit-box.month { border-color: #10b981; color: #10b981; background: rgba(16, 185, 129, 0.03); }
-      .pesel-digit-box.day { border-color: #f59e0b; color: #f59e0b; background: rgba(245, 158, 11, 0.03); }
-      .pesel-digit-box.serial { border-color: #8b5cf6; color: #8b5cf6; background: rgba(139, 92, 246, 0.03); }
-      .pesel-digit-box.checksum { border-color: #ec4899; color: #ec4899; background: rgba(236, 72, 153, 0.03); }
+      .pesel-digit-box.is-hovered {
+        background: var(--line) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      }
+      .pesel-digit-box.year { border-color: rgba(47, 128, 237, 0.4); color: #2f80ed; }
+      .pesel-digit-box.month { border-color: rgba(16, 185, 129, 0.4); color: #10b981; }
+      .pesel-digit-box.day { border-color: rgba(245, 158, 11, 0.4); color: #f59e0b; }
+      .pesel-digit-box.serial { border-color: rgba(139, 92, 246, 0.4); color: #8b5cf6; }
+      .pesel-digit-box.checksum { border-color: rgba(236, 72, 153, 0.4); color: #ec4899; }
 
       .pesel-breakdown-legend {
         display: flex;
@@ -265,6 +266,12 @@
         border-radius: 4px;
         border: 1px solid var(--line);
         background: var(--surface);
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+      .pesel-legend-item.is-hovered {
+        border-color: var(--muted);
+        background: var(--surface-soft);
       }
       .pesel-legend-item::before {
         content: '';
@@ -278,7 +285,6 @@
       .pesel-legend-item.serial::before { background: #8b5cf6; }
       .pesel-legend-item.checksum::before { background: #ec4899; }
 
-      /* Checksum Debugger */
       .pesel-checksum-debugger {
         background: var(--surface-soft);
         border: 1px solid var(--line);
@@ -301,6 +307,10 @@
         border-bottom: 1px solid var(--line);
         padding: 8px 10px;
         text-align: center;
+        transition: background 0.15s ease;
+      }
+      .pesel-dev-table tbody tr:hover td {
+        background: var(--line);
       }
       .pesel-dev-table th {
         background: var(--surface-soft);
@@ -334,25 +344,41 @@
         font-weight: 700;
       }
 
-      /* Collapsible DevTools Accordions */
+      /* DevTools Accordions */
+      .pesel-dev-section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
       .pesel-dev-accordion {
         border: 1px solid var(--line);
         border-radius: 6px;
         background: var(--surface-soft);
-        margin-bottom: 8px;
         overflow: hidden;
       }
       .pesel-dev-accordion summary {
-        font-size: 0.82rem;
+        font-size: 0.78rem;
         font-weight: 700;
         padding: 10px 14px;
         cursor: pointer;
         background: var(--surface);
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid transparent;
         user-select: none;
         color: var(--text);
         text-transform: uppercase;
         letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .pesel-dev-accordion summary::after {
+        content: '▼';
+        font-size: 0.65rem;
+        color: var(--muted);
+        transition: transform 0.2s;
+      }
+      .pesel-dev-accordion[open] summary::after {
+        transform: rotate(-180deg);
       }
       .pesel-dev-accordion[open] summary {
         border-bottom-color: var(--line);
@@ -360,15 +386,62 @@
       .pesel-dev-accordion-content {
         padding: 14px;
         background: var(--surface);
+        position: relative;
+      }
+      .pesel-dev-accordion-copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 10;
+        background: var(--surface-soft);
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-size: 0.72rem;
+        color: var(--muted);
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+      }
+      .pesel-dev-accordion-copy-btn:hover {
+        background: var(--line);
+        color: var(--text);
+      }
+      .pesel-dev-accordion-content pre {
+        margin: 0;
+        font-family: monospace;
+        font-size: 0.8rem;
+        line-height: 1.4;
+        white-space: pre-wrap;
       }
 
-      /* Pretty JSON syntax classes */
       .json-key { color: #f2c94c; font-weight: 600; }
       .json-string { color: #10b981; }
       .json-number { color: #2f80ed; }
       .json-boolean { color: #eb5757; }
       .json-null { color: #828282; }
 
+      /* Visual Reveal Keyframe Classes */
+      @keyframes reveal {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .reveal-element {
+        opacity: 0;
+        animation: reveal 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .reveal-delay-1 { animation-delay: 50ms; }
+      .reveal-delay-2 { animation-delay: 100ms; }
+      .reveal-delay-3 { animation-delay: 150ms; }
+      .reveal-delay-4 { animation-delay: 200ms; }
+      .reveal-delay-5 { animation-delay: 250ms; }
+
+      /* Interactive Discovery */
       .pesel-discovery-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -382,7 +455,7 @@
         background: var(--surface-soft);
         text-decoration: none;
         color: inherit;
-        transition: transform 0.2s, border-color 0.2s;
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -390,6 +463,7 @@
       .pesel-discovery-card:hover {
         transform: translateY(-2px);
         border-color: var(--muted);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       }
       .pesel-discovery-card h4 {
         margin: 0 0 8px 0;
@@ -398,6 +472,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+      }
+      .pesel-discovery-card h4 span {
+        transition: transform 0.2s;
+      }
+      .pesel-discovery-card:hover h4 span {
+        transform: translateX(3px);
       }
       .pesel-discovery-card p {
         margin: 0 0 12px 0;
@@ -412,6 +492,8 @@
         text-transform: uppercase;
         letter-spacing: 0.05em;
       }
+
+      /* Doc Accordions details summaries */
       .doc-accordion summary {
         font-weight: 600;
         padding: 12px;
@@ -422,27 +504,25 @@
       .doc-accordion summary:hover {
         background: var(--surface-soft);
       }
+      .doc-callout {
+        border-left: 3px solid #2f80ed;
+        padding: 12px 16px;
+        background: var(--surface-soft);
+        border-radius: 0 6px 6px 0;
+        margin: 16px 0;
+        font-size: 0.85rem;
+        color: var(--text);
+      }
+      .doc-callout.warning {
+        border-left-color: #eb5757;
+        background: rgba(235, 87, 87, 0.03);
+      }
+      .doc-callout.tip {
+        border-left-color: #10b981;
+        background: rgba(16, 185, 129, 0.03);
+      }
     `;
     document.head.appendChild(style);
-  };
-
-  const copyToClipboard = function (text, workbench, message) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text)
-        .then(() => workbench.setMessage(message, 'success'))
-        .catch(() => workbench.setMessage('Copy failed.', 'error'));
-    } else {
-      const el = document.createElement('textarea');
-      el.value = text;
-      el.setAttribute('readonly', '');
-      el.style.position = 'absolute';
-      el.style.left = '-9999px';
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-      workbench.setMessage(message, 'success');
-    }
   };
 
   const PeselPlugin = {
@@ -470,7 +550,7 @@
     onMount: function (workbench) {
       injectStyles();
 
-      // Format documentation accordions dynamically on client side
+      // Format documentation list items using client-side regexp bold translation globally in document
       document.querySelectorAll('.doc-accordion .rich-text').forEach(el => {
         el.querySelectorAll('li').forEach(li => {
           let html = li.innerHTML;
@@ -505,7 +585,7 @@
         }
       }
 
-      // Hide default generic workbench text
+      // Hide default introductory boilerplate inside the form card
       const headingText = workbench.form.querySelector('.workbench-heading');
       if (headingText) {
         headingText.style.display = 'none';
@@ -523,7 +603,7 @@
       const downloadBtn = workbench.form.querySelector('[data-tool-download]');
       if (downloadBtn) downloadBtn.style.display = 'none';
 
-      // Build out final DOM elements tree
+      // Insert pipeline and premium outputs elements
       if (!workbench.form.querySelector('.pesel-premium-panel')) {
         const premiumPanel = document.createElement('div');
         premiumPanel.className = 'pesel-premium-panel';
@@ -541,46 +621,46 @@
             </div>
             <div class="pesel-pipeline-list">
               <div class="pesel-step pending" data-step="present">
-                <div class="pesel-step-left">
-                  <div class="pesel-step-label">Input Present</div>
-                  <div class="pesel-step-desc">Ensures the input value is not blank.</div>
+                <div class="pesel-step-header">
+                  <span class="pesel-step-title">Input Present</span>
+                  <span class="pesel-step-badge">Pending</span>
                 </div>
-                <span class="pesel-step-badge">Pending</span>
+                <div class="pesel-step-desc">Ensures the input value is not blank.</div>
               </div>
               <div class="pesel-step pending" data-step="digits">
-                <div class="pesel-step-left">
-                  <div class="pesel-step-label">Digits Only</div>
-                  <div class="pesel-step-desc">Ensures no alphabetic or special characters.</div>
+                <div class="pesel-step-header">
+                  <span class="pesel-step-title">Digits Only</span>
+                  <span class="pesel-step-badge">Pending</span>
                 </div>
-                <span class="pesel-step-badge">Pending</span>
+                <div class="pesel-step-desc">Ensures no alphabetic or special characters.</div>
               </div>
               <div class="pesel-step pending" data-step="length">
-                <div class="pesel-step-left">
-                  <div class="pesel-step-label">Length Validation</div>
-                  <div class="pesel-step-desc">Ensures the value is exactly 11 digits.</div>
+                <div class="pesel-step-header">
+                  <span class="pesel-step-title">Length Validation</span>
+                  <span class="pesel-step-badge">Pending</span>
                 </div>
-                <span class="pesel-step-badge">Pending</span>
+                <div class="pesel-step-desc">Ensures the value is exactly 11 digits.</div>
               </div>
               <div class="pesel-step pending" data-step="month">
-                <div class="pesel-step-left">
-                  <div class="pesel-step-label">Century Offset</div>
-                  <div class="pesel-step-desc">Validates birth century month offset encoding.</div>
+                <div class="pesel-step-header">
+                  <span class="pesel-step-title">Century Offset</span>
+                  <span class="pesel-step-badge">Pending</span>
                 </div>
-                <span class="pesel-step-badge">Pending</span>
+                <div class="pesel-step-desc">Validates birth century month offset encoding.</div>
               </div>
               <div class="pesel-step pending" data-step="date">
-                <div class="pesel-step-left">
-                  <div class="pesel-step-label">Calendar Validation</div>
-                  <div class="pesel-step-desc">Verifies day existence in the calendar.</div>
+                <div class="pesel-step-header">
+                  <span class="pesel-step-title">Calendar Validation</span>
+                  <span class="pesel-step-badge">Pending</span>
                 </div>
-                <span class="pesel-step-badge">Pending</span>
+                <div class="pesel-step-desc">Verifies day existence in the calendar.</div>
               </div>
               <div class="pesel-step pending" data-step="checksum">
-                <div class="pesel-step-left">
-                  <div class="pesel-step-label">Checksum Verification</div>
-                  <div class="pesel-step-desc">Verifies Polish registry weight control digit.</div>
+                <div class="pesel-step-header">
+                  <span class="pesel-step-title">Checksum Verification</span>
+                  <span class="pesel-step-badge">Pending</span>
                 </div>
-                <span class="pesel-step-badge">Pending</span>
+                <div class="pesel-step-desc">Verifies Polish registry weight control digit.</div>
               </div>
             </div>
           </div>
@@ -602,6 +682,21 @@
         acc.style.overflow = 'hidden';
       });
 
+      // Style callout elements dynamically
+      document.querySelectorAll('.doc-accordion .rich-text blockquote').forEach(bq => {
+        const text = bq.textContent.trim();
+        if (text.startsWith('[!NOTE]')) {
+          bq.className = 'doc-callout';
+          bq.innerHTML = bq.innerHTML.replace('[!NOTE]', '');
+        } else if (text.startsWith('[!WARNING]')) {
+          bq.className = 'doc-callout warning';
+          bq.innerHTML = bq.innerHTML.replace('[!WARNING]', '');
+        } else if (text.startsWith('[!TIP]')) {
+          bq.className = 'doc-callout tip';
+          bq.innerHTML = bq.innerHTML.replace('[!TIP]', '');
+        }
+      });
+
       // Delete duplicate discovery sections
       const discoveryBlock = document.querySelector('.related-resources-discovery');
       if (discoveryBlock) {
@@ -620,21 +715,21 @@
           <div class="pesel-discovery-grid">
             <a href="/en/poland/" class="pesel-discovery-card">
               <div>
-                <h4>Poland Country Hub <span aria-hidden="true">→</span></h4>
+                <h4>Poland Country Hub <span>→</span></h4>
                 <p>Access domestic addresses, banking templates, payment networks, and compliance checklists.</p>
               </div>
               <div class="card-footer">Country Hub</div>
             </a>
             <a href="/en/categories/national-identifiers/" class="pesel-discovery-card">
               <div>
-                <h4>National Identifiers Spec <span aria-hidden="true">→</span></h4>
+                <h4>National Identifiers Spec <span>→</span></h4>
                 <p>Standard data structure specifications mapping PESEL, NIP, and REGON format rules.</p>
               </div>
               <div class="card-footer">Standards Spec</div>
             </a>
             <a href="https://www.gov.pl/web/cyfryzacja" target="_blank" rel="noopener" class="pesel-discovery-card">
               <div>
-                <h4>Ministry of Digital Affairs <span aria-hidden="true">↗</span></h4>
+                <h4>Ministry of Digital Affairs <span>↗</span></h4>
                 <p>Governing public registry authority managing the central PESEL register of citizens.</p>
               </div>
               <div class="card-footer">Official Authority</div>
@@ -739,10 +834,10 @@
 
         if (resultsContainer) {
           resultsContainer.innerHTML = `
-            <div class="pesel-results-header" style="color: #dc2626;">
+            <div class="pesel-results-header reveal-element" style="color: #dc2626;">
               <span>✗</span> Validation Failed: Non-Digits Present
             </div>
-            <div class="pesel-results-grid">
+            <div class="pesel-results-grid reveal-element reveal-delay-1">
               <div class="pesel-result-row">
                 <span class="row-label">Error Code</span>
                 <span class="row-value">INVALID_CHARACTERS</span>
@@ -762,17 +857,32 @@
             <details class="pesel-dev-accordion" open>
               <summary>Validation Pipeline Logs</summary>
               <div class="pesel-dev-accordion-content">
+                <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
                 <pre>✓ Input Present\n✗ Digits Only Check (Failed: non-numeric character found)\n○ Length Check (Skipped)\n○ Month Offset (Skipped)\n○ Date Verification (Skipped)\n○ Checksum Matching (Skipped)</pre>
               </div>
             </details>
             <details class="pesel-dev-accordion">
               <summary>Regex Details</summary>
               <div class="pesel-dev-accordion-content">
+                <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
                 <pre>Pattern: /^\\d{11}$/\nMatched: false</pre>
               </div>
             </details>
           </div>
         `);
+
+        // Attach copy button listeners to DevTools cards
+        document.querySelectorAll('.pesel-dev-accordion-content').forEach(card => {
+          const btn = card.querySelector('.pesel-dev-accordion-copy-btn');
+          const pre = card.querySelector('pre');
+          if (btn && pre) {
+            btn.addEventListener('click', () => {
+              copyToClipboard(pre.textContent.replace('Copy', '').trim(), workbench, 'Copied card content.');
+              btn.textContent = 'Copied!';
+              setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+            });
+          }
+        });
 
         if (customActions) customActions.style.display = 'none';
         if (breakdownPanel) breakdownPanel.style.display = 'none';
@@ -797,10 +907,10 @@
 
         if (resultsContainer) {
           resultsContainer.innerHTML = `
-            <div class="pesel-results-header" style="color: #dc2626;">
+            <div class="pesel-results-header reveal-element" style="color: #dc2626;">
               <span>✗</span> Validation Failed: Invalid Length
             </div>
-            <div class="pesel-results-grid">
+            <div class="pesel-results-grid reveal-element reveal-delay-1">
               <div class="pesel-result-row">
                 <span class="row-label">Error Code</span>
                 <span class="row-value">INVALID_LENGTH</span>
@@ -819,17 +929,32 @@
             <details class="pesel-dev-accordion" open>
               <summary>Validation Pipeline Logs</summary>
               <div class="pesel-dev-accordion-content">
+                <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
                 <pre>✓ Input Present\n✓ Digits Only Check\n✗ Length Check (Failed: got ${inputVal.length})\n○ Month Offset (Skipped)\n○ Date Verification (Skipped)\n○ Checksum Matching (Skipped)</pre>
               </div>
             </details>
             <details class="pesel-dev-accordion">
               <summary>Regex Details</summary>
               <div class="pesel-dev-accordion-content">
+                <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
                 <pre>Pattern: /^\\d{11}$/\nMatched: false</pre>
               </div>
             </details>
           </div>
         `);
+
+        // Attach copy button listeners to DevTools cards
+        document.querySelectorAll('.pesel-dev-accordion-content').forEach(card => {
+          const btn = card.querySelector('.pesel-dev-accordion-copy-btn');
+          const pre = card.querySelector('pre');
+          if (btn && pre) {
+            btn.addEventListener('click', () => {
+              copyToClipboard(pre.textContent.replace('Copy', '').trim(), workbench, 'Copied card content.');
+              btn.textContent = 'Copied!';
+              setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+            });
+          }
+        });
 
         if (customActions) customActions.style.display = 'none';
         if (breakdownPanel) breakdownPanel.style.display = 'none';
@@ -901,10 +1026,10 @@
 
         if (resultsContainer) {
           resultsContainer.innerHTML = `
-            <div class="pesel-results-header" style="color: #dc2626;">
+            <div class="pesel-results-header reveal-element" style="color: #dc2626;">
               <span>✗</span> Validation Failed: Invalid Month Range
             </div>
-            <div class="pesel-results-grid">
+            <div class="pesel-results-grid reveal-element reveal-delay-1">
               <div class="pesel-result-row">
                 <span class="row-label">Error Code</span>
                 <span class="row-value">INVALID_MONTH_OFFSET</span>
@@ -939,10 +1064,10 @@
 
         if (resultsContainer) {
           resultsContainer.innerHTML = `
-            <div class="pesel-results-header" style="color: #dc2626;">
+            <div class="pesel-results-header reveal-element" style="color: #dc2626;">
               <span>✗</span> Validation Failed: Invalid Calendar Date
             </div>
-            <div class="pesel-results-grid">
+            <div class="pesel-results-grid reveal-element reveal-delay-1">
               <div class="pesel-result-row">
                 <span class="row-label">Error Code</span>
                 <span class="row-value">INVALID_DATE</span>
@@ -986,10 +1111,10 @@
 
         if (resultsContainer) {
           resultsContainer.innerHTML = `
-            <div class="pesel-results-header" style="color: #dc2626;">
+            <div class="pesel-results-header reveal-element" style="color: #dc2626;">
               <span>✗</span> Validation Failed: Checksum Mismatch
             </div>
-            <div class="pesel-results-grid">
+            <div class="pesel-results-grid reveal-element reveal-delay-1">
               <div class="pesel-result-row">
                 <span class="row-label">Error Code</span>
                 <span class="row-value">INVALID_CHECKSUM</span>
@@ -1069,17 +1194,32 @@
             <details class="pesel-dev-accordion" open>
               <summary>Validation Pipeline Logs</summary>
               <div class="pesel-dev-accordion-content">
+                <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
                 <pre>✓ Input Present\n✓ Digits Only Check\n✓ Exactly 11 Digits Check\n✓ Century/Month Offset Valid\n✓ Calendar Date Valid\n✗ Checksum Valid (Failed: expected ${expectedChecksum}, calculated ${calculatedChecksum})</pre>
               </div>
             </details>
             <details class="pesel-dev-accordion">
               <summary>Raw JSON Output</summary>
               <div class="pesel-dev-accordion-content">
+                <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
                 <pre>${syntaxHighlightJson(result)}</pre>
               </div>
             </details>
           </div>
         `);
+
+        // Attach copy button listeners to DevTools cards
+        document.querySelectorAll('.pesel-dev-accordion-content').forEach(card => {
+          const btn = card.querySelector('.pesel-dev-accordion-copy-btn');
+          const pre = card.querySelector('pre');
+          if (btn && pre) {
+            btn.addEventListener('click', () => {
+              copyToClipboard(pre.textContent.replace('Copy', '').trim(), workbench, 'Copied card content.');
+              btn.textContent = 'Copied!';
+              setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+            });
+          }
+        });
 
         if (customActions) customActions.style.display = 'none';
         if (breakdownPanel) breakdownPanel.style.display = 'none';
@@ -1122,13 +1262,13 @@
         ['Verification Status', '✓ Valid']
       ], [`Length Check: Pass (11 digits)`, `Checksum Check: Pass`], 'success');
 
-      // Render the single premium summary card
+      // Render the single premium summary card with smooth reveal classes
       if (resultsContainer) {
         resultsContainer.innerHTML = `
-          <div class="pesel-results-header" style="color: #16a34a;">
+          <div class="pesel-results-header reveal-element" style="color: #16a34a;">
             <span>✓</span> Validation Success: Verified PESEL
           </div>
-          <div class="pesel-results-grid">
+          <div class="pesel-results-grid reveal-element reveal-delay-1">
             <div class="pesel-result-row">
               <span class="row-label">Normalized PESEL</span>
               <span class="row-value">${inputVal}</span>
@@ -1137,10 +1277,12 @@
             <div class="pesel-result-row">
               <span class="row-label">Birth Date</span>
               <span class="row-value">${dateStr}</span>
+              <button type="button" class="pesel-row-copy-btn" data-copy-val="${dateStr}" aria-label="Copy Birth Date">Copy</button>
             </div>
             <div class="pesel-result-row">
               <span class="row-label">Gender</span>
               <span class="row-value">${gender}</span>
+              <button type="button" class="pesel-row-copy-btn" data-copy-val="${gender}" aria-label="Copy Gender">Copy</button>
             </div>
             <div class="pesel-result-row">
               <span class="row-label">Century</span>
@@ -1149,6 +1291,7 @@
             <div class="pesel-result-row">
               <span class="row-label">Serial Code</span>
               <span class="row-value">${serialPart}</span>
+              <button type="button" class="pesel-row-copy-btn" data-copy-val="${serialPart}" aria-label="Copy Serial Code">Copy</button>
             </div>
             <div class="pesel-result-row">
               <span class="row-label">Control Digit</span>
@@ -1159,18 +1302,20 @@
 
         resultsContainer.querySelectorAll('[data-copy-val]').forEach(btn => {
           btn.addEventListener('click', () => {
-            copyToClipboard(btn.dataset.copyVal, workbench, 'Copied normalized value.');
+            copyToClipboard(btn.dataset.copyVal, workbench, 'Copied value.');
+            btn.textContent = 'Copied!';
+            setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
           });
         });
 
         resultsContainer.style.display = 'flex';
       }
 
-      // Render custom copy JSON and download button row
+      // Render custom copy JSON and download button row with reveal delay
       if (customActions) {
         customActions.innerHTML = `
-          <button type="button" class="button button-secondary compact" id="custom-copy-json">Copy JSON</button>
-          <button type="button" class="button button-secondary compact" id="custom-download-json">Download JSON</button>
+          <button type="button" class="button button-secondary compact reveal-element reveal-delay-2" id="custom-copy-json">Copy JSON</button>
+          <button type="button" class="button button-secondary compact reveal-element reveal-delay-2" id="custom-download-json">Download JSON</button>
         `;
         customActions.querySelector('#custom-copy-json').addEventListener('click', () => {
           copyToClipboard(JSON.stringify(result, null, 2), workbench, 'Copied raw JSON to clipboard.');
@@ -1190,23 +1335,24 @@
         customActions.style.display = 'flex';
       }
 
-      // Render the PESEL breakdown visualization card
+      // Render the PESEL breakdown visualization card with hover highlighting
       if (breakdownPanel) {
+        breakdownPanel.className = 'pesel-breakdown reveal-element reveal-delay-3';
         breakdownPanel.innerHTML = `
           <div class="pesel-section-title">
             <span>📊</span> Identifier Breakdown
           </div>
           <div class="pesel-breakdown-digits">
-            <span class="pesel-digit-box year" title="Year of Birth: ${inputVal.substring(0, 2)}">${inputVal.substring(0, 1)}</span>
-            <span class="pesel-digit-box year" title="Year of Birth: ${inputVal.substring(0, 2)}">${inputVal.substring(1, 2)}</span>
-            <span class="pesel-digit-box month" title="Month of Birth: ${inputVal.substring(2, 4)}">${inputVal.substring(2, 3)}</span>
-            <span class="pesel-digit-box month" title="Month of Birth: ${inputVal.substring(2, 4)}">${inputVal.substring(3, 4)}</span>
-            <span class="pesel-digit-box day" title="Day of Birth: ${inputVal.substring(4, 6)}">${inputVal.substring(4, 5)}</span>
-            <span class="pesel-digit-box day" title="Day of Birth: ${inputVal.substring(4, 6)}">${inputVal.substring(5, 6)}</span>
-            <span class="pesel-digit-box serial" title="Sequence Code: ${inputVal.substring(6, 10)}">${inputVal.substring(6, 7)}</span>
-            <span class="pesel-digit-box serial" title="Sequence Code: ${inputVal.substring(6, 10)}">${inputVal.substring(7, 8)}</span>
-            <span class="pesel-digit-box serial" title="Sequence Code: ${inputVal.substring(6, 10)}">${inputVal.substring(8, 9)}</span>
-            <span class="pesel-digit-box serial" title="Sequence Code & Gender: ${inputVal.substring(6, 10)}">${inputVal.substring(9, 10)}</span>
+            <span class="pesel-digit-box year" title="Year of Birth">${inputVal.substring(0, 1)}</span>
+            <span class="pesel-digit-box year" title="Year of Birth">${inputVal.substring(1, 2)}</span>
+            <span class="pesel-digit-box month" title="Month of Birth">${inputVal.substring(2, 3)}</span>
+            <span class="pesel-digit-box month" title="Month of Birth">${inputVal.substring(3, 4)}</span>
+            <span class="pesel-digit-box day" title="Day of Birth">${inputVal.substring(4, 5)}</span>
+            <span class="pesel-digit-box day" title="Day of Birth">${inputVal.substring(5, 6)}</span>
+            <span class="pesel-digit-box serial" title="Sequence Code">${inputVal.substring(6, 7)}</span>
+            <span class="pesel-digit-box serial" title="Sequence Code">${inputVal.substring(7, 8)}</span>
+            <span class="pesel-digit-box serial" title="Sequence Code">${inputVal.substring(8, 9)}</span>
+            <span class="pesel-digit-box serial" title="Sequence Code & Gender">${inputVal.substring(9, 10)}</span>
             <span class="pesel-digit-box checksum" title="Control Checksum Digit">${inputVal.substring(10, 11)}</span>
           </div>
           <div class="pesel-breakdown-legend">
@@ -1217,11 +1363,52 @@
             <span class="pesel-legend-item checksum">Check Digit</span>
           </div>
         `;
+
+        // Interactivity details explanation box
+        const descBox = document.createElement('div');
+        descBox.className = 'pesel-breakdown-desc-box';
+        descBox.style.marginTop = '16px';
+        descBox.style.padding = '12px 16px';
+        descBox.style.border = '1px solid var(--line)';
+        descBox.style.borderRadius = '6px';
+        descBox.style.background = 'var(--surface)';
+        descBox.style.fontSize = '0.85rem';
+        descBox.style.lineHeight = '1.4';
+        descBox.style.color = 'var(--muted)';
+        descBox.innerHTML = 'Hover over any digit group above to see its encoding rules and specifications.';
+        breakdownPanel.appendChild(descBox);
+
+        const setupHover = (selector, type, text) => {
+          breakdownPanel.querySelectorAll(selector).forEach(el => {
+            el.addEventListener('mouseenter', () => {
+              breakdownPanel.querySelectorAll(`.pesel-digit-box.${type}, .pesel-legend-item.${type}`).forEach(target => {
+                target.classList.add('is-hovered');
+              });
+              descBox.innerHTML = text;
+              descBox.style.color = 'var(--text)';
+            });
+            el.addEventListener('mouseleave', () => {
+              breakdownPanel.querySelectorAll(`.pesel-digit-box.${type}, .pesel-legend-item.${type}`).forEach(target => {
+                target.classList.remove('is-hovered');
+              });
+              descBox.innerHTML = 'Hover over any digit group above to see its encoding rules and specifications.';
+              descBox.style.color = 'var(--muted)';
+            });
+          });
+        };
+
+        setupHover('.year', 'year', '<strong>Birth Year (YY):</strong> The first two digits represent the last two digits of the birth year (e.g. <code>92</code> maps to 1992 or 2092 depending on the month offset).');
+        setupHover('.month', 'month', '<strong>Birth Month (MM):</strong> Digits 3 and 4 encode the birth month and the birth century. Add <code>+20</code> for 2000s, <code>+40</code> for 2100s, <code>+60</code> for 2200s, or <code>+80</code> for 1800s.');
+        setupHover('.day', 'day', '<strong>Birth Day (DD):</strong> Digits 5 and 6 encode the calendar day of birth (01-31). Calendar bounds and leap years are verified.');
+        setupHover('.serial', 'serial', '<strong>Sequence & Gender (ZZZG):</strong> Digits 7 through 10 represent the registration sequence. Digit 10 (G) encodes gender: even digits indicate Female, odd digits indicate Male.');
+        setupHover('.checksum', 'checksum', '<strong>Check Digit (X):</strong> The 11th digit is the mathematical checksum control control digit, verifying that the entire number matches the population weight calculation.');
+
         breakdownPanel.style.display = 'block';
       }
 
-      // Render Checksum Debugger matrix
+      // Render Checksum Debugger matrix with hover highlighting
       if (checksumDebugger) {
+        checksumDebugger.className = 'pesel-checksum-debugger reveal-element reveal-delay-4';
         checksumDebugger.innerHTML = `
           <div class="pesel-section-title" style="color: #16a34a;">
             <span>🧮</span> Checksum Debugger
@@ -1279,33 +1466,50 @@
 
       // Update DevTools structured accordions
       workbench.setAdvanced(`
-        <div class="pesel-dev-section">
+        <div class="pesel-dev-section reveal-element reveal-delay-5">
           <details class="pesel-dev-accordion" open>
             <summary>Validation Pipeline Logs</summary>
             <div class="pesel-dev-accordion-content">
+              <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
               <pre>✓ Input Present\n✓ Digits Only Check\n✓ Exactly 11 Digits Check\n✓ Century/Month Offset Valid\n✓ Calendar Date Valid\n✓ Checksum Valid</pre>
             </div>
           </details>
           <details class="pesel-dev-accordion">
             <summary>Regex & Structure Details</summary>
             <div class="pesel-dev-accordion-content">
+              <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
               <pre>Pattern: /^\\d{11}$/\nMatched: true</pre>
             </div>
           </details>
           <details class="pesel-dev-accordion">
             <summary>Decoded Date Internals</summary>
             <div class="pesel-dev-accordion-content">
+              <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
               <pre>Raw Year Digits: ${year}\nRaw Month Digits: ${month}\nRaw Day Digits: ${day}\nCentury Group Offset: ${monthOffset}\nParsed Month: ${parsedMonth}\nDecoded Year: ${fullYear}</pre>
             </div>
           </details>
           <details class="pesel-dev-accordion">
             <summary>Raw JSON Output</summary>
             <div class="pesel-dev-accordion-content" style="background: var(--code-bg); padding: 12px; border-radius: 6px;">
+              <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
               <pre style="margin: 0; font-family: monospace;">${syntaxHighlightJson(result)}</pre>
             </div>
           </details>
         </div>
       `);
+
+      // Attach copy button listeners to DevTools cards
+      document.querySelectorAll('.pesel-dev-accordion-content').forEach(card => {
+        const btn = card.querySelector('.pesel-dev-accordion-copy-btn');
+        const pre = card.querySelector('pre');
+        if (btn && pre) {
+          btn.addEventListener('click', () => {
+            copyToClipboard(pre.textContent.replace('Copy', '').trim(), workbench, 'Copied card content.');
+            btn.textContent = 'Copied!';
+            setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+          });
+        }
+      });
 
       let outputText = `Validation Result: VALID\n\n`;
       outputText += `• Normalized PESEL: ${inputVal}\n`;
