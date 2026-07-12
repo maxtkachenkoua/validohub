@@ -1,0 +1,47 @@
+{
+  "ccc": [
+    "Spain"
+  ],
+  "cep": [
+    "Brazil"
+  ],
+  "cif": [
+    "Spain"
+  ],
+  "cnh": [
+    "Brazil"
+  ],
+  "cnpj": [
+    "Brazil"
+  ],
+  "cpf": [
+    "Brazil"
+  ],
+  "nie": [
+    "Spain"
+  ],
+  "nif": [
+    "Spain"
+  ],
+  "nip": [
+    "Poland"
+  ],
+  "pesel": [
+    "Poland"
+  ],
+  "regon": [
+    "Poland"
+  ],
+  "renavam": [
+    "Brazil"
+  ],
+  "rg": [
+    "Brazil"
+  ],
+  "steuer-id": [
+    "Germany"
+  ],
+  "ust-idnr": [
+    "Germany"
+  ]
+}

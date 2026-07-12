@@ -1,0 +1,83 @@
+{
+  "brazil-pix-validator": {
+    "authorities": [
+      "Receita Federal"
+    ],
+    "countries": [
+      "Brazil"
+    ],
+    "standards": [],
+    "validates": [
+      "CPF"
+    ]
+  },
+  "iban-validator": {
+    "authorities": [],
+    "countries": [],
+    "standards": [
+      "IBAN"
+    ],
+    "validates": []
+  },
+  "nif-nie-validator": {
+    "authorities": [
+      "Agencia Tributaria"
+    ],
+    "countries": [
+      "Spain"
+    ],
+    "standards": [],
+    "validates": [
+      "NIE",
+      "NIF"
+    ]
+  },
+  "nip-validator": {
+    "authorities": [
+      "ZUS"
+    ],
+    "countries": [
+      "Poland"
+    ],
+    "standards": [],
+    "validates": [
+      "NIP"
+    ]
+  },
+  "pesel-validator": {
+    "authorities": [
+      "ZUS"
+    ],
+    "countries": [
+      "Poland"
+    ],
+    "standards": [],
+    "validates": [
+      "PESEL"
+    ]
+  },
+  "regon-validator": {
+    "authorities": [
+      "GUS"
+    ],
+    "countries": [
+      "Poland"
+    ],
+    "standards": [],
+    "validates": [
+      "REGON"
+    ]
+  },
+  "steuernummer-validator": {
+    "authorities": [
+      "BZSt"
+    ],
+    "countries": [
+      "Germany"
+    ],
+    "standards": [],
+    "validates": [
+      "Steuer-IdNr"
+    ]
+  }
+}

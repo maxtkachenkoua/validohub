@@ -1,0 +1,67 @@
+{
+  "countriesAdded": [
+    "Brazil",
+    "Germany",
+    "Poland",
+    "Spain"
+  ],
+  "developerEssentials": [
+    "BIC",
+    "CPF",
+    "IBAN",
+    "PESEL",
+    "Steuer-IdNr"
+  ],
+  "featuredWorkbenches": [
+    "Brazil Pix Validator",
+    "IBAN Validator",
+    "NIF/NIE Validator",
+    "NIP Validator",
+    "PESEL Validator",
+    "REGON Validator",
+    "Steuernummer Validator"
+  ],
+  "popularStandards": [
+    {
+      "count": 4,
+      "name": "SWIFT"
+    },
+    {
+      "count": 3,
+      "name": "IBAN"
+    },
+    {
+      "count": 3,
+      "name": "SEPA"
+    },
+    {
+      "count": 1,
+      "name": "Bizum"
+    },
+    {
+      "count": 1,
+      "name": "BLIK"
+    },
+    {
+      "count": 1,
+      "name": "Boleto Bancário"
+    },
+    {
+      "count": 1,
+      "name": "PIX"
+    },
+    {
+      "count": 0,
+      "name": "BIC"
+    },
+    {
+      "count": 0,
+      "name": "VIES"
+    }
+  ],
+  "recentlyVerified": [
+    "BZSt",
+    "IBAN",
+    "Steuer-IdNr"
+  ]
+}

@@ -21,6 +21,8 @@
 
   const COUNTRY_PORTAL_CATALOG = /*__COUNTRY_PORTAL_CATALOG__*/;
 
+  const WORKBENCH_DISCOVERY = /*__WORKBENCH_DISCOVERY__*/;
+
   function pathParts(href) {
     try {
       const url = new URL(href, window.location.origin);
@@ -627,6 +629,170 @@
     return section;
   }
 
+  function createRelatedResources(country, locale) {
+    if (!country.discovery || !country.discovery.relatedResources) return null;
+    const res = country.discovery.relatedResources;
+    const relCountries = country.discovery.relatedCountries || [];
+
+    const hasIdentifiers = res.identifiers && res.identifiers.length > 0;
+    const hasPayments = res.payments && res.payments.length > 0;
+    const hasStandards = res.standards && res.standards.length > 0;
+    const hasAuthorities = res.authorities && res.authorities.length > 0;
+    const hasWorkbenches = res.workbenches && res.workbenches.length > 0;
+
+    if (!hasIdentifiers && !hasPayments && !hasStandards && !hasAuthorities && !hasWorkbenches && relCountries.length === 0) {
+      return null;
+    }
+
+    const section = createSection('Related resources', 'Graph-powered developer metadata & navigation', 'country-related-resources', 'This navigation index is compiled dynamically from the ValidoHub Knowledge Graph.');
+    const grid = createElement('div', 'country-card-grid country-card-grid-compact');
+
+    if (hasIdentifiers) {
+      res.identifiers.forEach(item => {
+        grid.appendChild(createInfoCard({
+          icon: '🆔',
+          name: item.name,
+          status: 'available',
+          tags: ['identifier'],
+          description: item.description || 'Official country identifier.'
+        }, {
+          className: item.link ? 'country-info-card country-link-card' : 'country-info-card country-future-card',
+          href: item.link ? countryUrl(locale, item.link) : null
+        }));
+      });
+    }
+
+    if (hasPayments) {
+      res.payments.forEach(item => {
+        grid.appendChild(createInfoCard({
+          icon: '💳',
+          name: item.name,
+          status: 'available',
+          tags: ['payment'],
+          description: item.description || 'Supported payment system.'
+        }, {
+          className: item.link ? 'country-info-card country-link-card' : 'country-info-card country-future-card',
+          href: item.link ? countryUrl(locale, item.link) : null
+        }));
+      });
+    }
+
+    if (hasStandards) {
+      res.standards.forEach(item => {
+        grid.appendChild(createInfoCard({
+          icon: '📜',
+          name: item.name,
+          status: 'available',
+          tags: ['standard'],
+          description: item.description || 'Banking standard format.'
+        }, {
+          className: item.link ? 'country-info-card country-link-card' : 'country-info-card country-future-card',
+          href: item.link ? countryUrl(locale, item.link) : null
+        }));
+      });
+    }
+
+    if (hasAuthorities) {
+      res.authorities.forEach(item => {
+        grid.appendChild(createInfoCard({
+          icon: '🏛',
+          name: item.name,
+          status: 'available',
+          tags: ['authority'],
+          description: item.description || 'Governing authority.'
+        }, {
+          className: 'country-info-card country-future-card',
+          href: null
+        }));
+      });
+    }
+
+    if (hasWorkbenches) {
+      res.workbenches.forEach(item => {
+        grid.appendChild(createInfoCard({
+          icon: '🛠',
+          name: item.name,
+          status: 'available',
+          tags: ['workbench'],
+          description: item.description || 'Interactive validation tool.'
+        }, {
+          className: 'country-info-card country-link-card',
+          href: countryUrl(locale, item.link)
+        }));
+      });
+    }
+
+    if (relCountries.length > 0) {
+      relCountries.forEach(item => {
+        grid.appendChild(createInfoCard({
+          icon: '🌍',
+          name: item.name,
+          status: 'available',
+          tags: item.via.slice(0, 2),
+          description: `Shares standards: ${item.via.join(', ')}`
+        }, {
+          className: 'country-info-card country-link-card',
+          href: countryUrl(locale, item.slug)
+        }));
+      });
+    }
+
+    section.appendChild(grid);
+    return section;
+  }
+
+  function enhanceWorkbenchPage() {
+    const parts = pathParts(window.location.pathname);
+    if (parts.length !== 3 || !LOCALE_PATTERN.test(parts[0])) {
+      return;
+    }
+    const countrySlug = parts[1];
+    const workbenchSlug = parts[2];
+    const key = `${countrySlug}-${workbenchSlug}`;
+
+    const info = WORKBENCH_DISCOVERY[key] || WORKBENCH_DISCOVERY[workbenchSlug];
+    if (!info) return;
+
+    const stack = document.querySelector('.page-stack');
+    if (!stack) return;
+
+    const card = createElement('article', 'content-card related-resources-discovery');
+    const heading = createElement('div', 'section-heading');
+    heading.appendChild(createElement('span', 'eyebrow', 'ValidoHub Knowledge Graph'));
+    heading.appendChild(createElement('h2', null, 'Graph-Powered Discovery'));
+    card.appendChild(heading);
+
+    const desc = createElement('p', null, 'This metadata is verified against official source registries and updated by active audits.');
+    desc.style.color = 'var(--muted)';
+    desc.style.marginBottom = '20px';
+    card.appendChild(desc);
+
+    const ul = createElement('ul', 'country-highlight-list');
+    ul.style.marginTop = '16px';
+
+    if (info.validates && info.validates.length > 0) {
+      ul.appendChild(createElement('li', null, `<strong>Validates:</strong> ${info.validates.join(', ')}`));
+    }
+    if (info.standards && info.standards.length > 0) {
+      ul.appendChild(createElement('li', null, `<strong>Related Standards:</strong> ${info.standards.join(', ')}`));
+    }
+    if (info.authorities && info.authorities.length > 0) {
+      ul.appendChild(createElement('li', null, `<strong>Official Authorities:</strong> ${info.authorities.join(', ')}`));
+    }
+    if (info.countries && info.countries.length > 0) {
+      ul.appendChild(createElement('li', null, `<strong>Supported Countries:</strong> ${info.countries.join(', ')}`));
+    }
+
+    card.appendChild(ul);
+
+    const wbSection = stack.querySelector('.tool-workbench');
+    if (wbSection && wbSection.nextSibling) {
+      stack.insertBefore(card, wbSection.nextSibling);
+    } else {
+      stack.appendChild(card);
+    }
+  }
+
   function createHighlights(country) {
     const section = createSection('Things developers should know', `${country.name} implementation highlights`, 'country-highlights');
     const list = createElement('ul', 'country-highlight-list');
@@ -833,6 +999,7 @@
     appendSafely(createAvailableWorkbenches, country, availableLinks);
     appendSafely(createPlannedWorkbenches, country);
     appendSafely(createRelatedGlobalTools, country, locale);
+    appendSafely(createRelatedResources, country, locale);
     appendSafely(createDiscoveryLinks, country, locale);
     appendSafely(createHighlights, country);
     appendSafely(createDeveloperNotes, country);
@@ -943,6 +1110,7 @@
   function initCountriesPlatform() {
     document.querySelectorAll('.primary-nav').forEach(enhanceCountriesNavigation);
     enhanceCountryHubPage();
+    enhanceWorkbenchPage();
   }
 
   window.ValidoHubCountries = Object.freeze({

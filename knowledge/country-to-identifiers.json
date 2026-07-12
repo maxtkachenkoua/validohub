@@ -1,0 +1,25 @@
+{
+  "brazil": [
+    "CEP",
+    "CNH",
+    "CNPJ",
+    "CPF",
+    "RENAVAM",
+    "RG"
+  ],
+  "germany": [
+    "Steuer-IdNr",
+    "USt-IdNr"
+  ],
+  "poland": [
+    "NIP",
+    "PESEL",
+    "REGON"
+  ],
+  "spain": [
+    "CCC",
+    "CIF",
+    "NIE",
+    "NIF"
+  ]
+}

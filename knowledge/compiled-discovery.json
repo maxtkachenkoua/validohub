@@ -1,0 +1,432 @@
+{
+  "countries": {
+    "brazil": {
+      "relatedCountries": [
+        {
+          "name": "Germany",
+          "slug": "germany",
+          "via": [
+            "SWIFT"
+          ]
+        },
+        {
+          "name": "Poland",
+          "slug": "poland",
+          "via": [
+            "SWIFT"
+          ]
+        },
+        {
+          "name": "Spain",
+          "slug": "spain",
+          "via": [
+            "SWIFT"
+          ]
+        }
+      ],
+      "relatedResources": {
+        "authorities": [],
+        "identifiers": [
+          {
+            "description": "Código de Endereçamento Postal. Brazilian postal code system.",
+            "link": null,
+            "name": "CEP",
+            "slug": "cep"
+          },
+          {
+            "description": "Carteira Nacional de Habilitação. Brazilian driver license identifier.",
+            "link": null,
+            "name": "CNH",
+            "slug": "cnh"
+          },
+          {
+            "description": "Cadastro Nacional da Pessoa Jurídica. Brazilian business taxpayer identification number.",
+            "link": null,
+            "name": "CNPJ",
+            "slug": "cnpj"
+          },
+          {
+            "description": "Cadastro de Pessoas Físicas. Brazilian individual taxpayer registry number.",
+            "link": "brazil/brazil-pix-validator",
+            "name": "CPF",
+            "slug": "cpf"
+          },
+          {
+            "description": "Registro Nacional de Veículos Automotores. Brazilian national vehicle registry number.",
+            "link": null,
+            "name": "RENAVAM",
+            "slug": "renavam"
+          },
+          {
+            "description": "Registro Geral. Brazilian general identity card document.",
+            "link": null,
+            "name": "RG",
+            "slug": "rg"
+          }
+        ],
+        "payments": [
+          {
+            "description": "Popular Brazilian invoice-based push payment method.",
+            "link": null,
+            "name": "Boleto Bancário",
+            "slug": "boleto"
+          },
+          {
+            "description": "Brazilian instant payment network managed by the Central Bank of Brazil.",
+            "link": null,
+            "name": "PIX",
+            "slug": "pix"
+          },
+          {
+            "description": "Global financial messaging network for international bank wire transfers.",
+            "link": null,
+            "name": "SWIFT",
+            "slug": "swift"
+          }
+        ],
+        "standards": [],
+        "workbenches": [
+          {
+            "description": "",
+            "link": "brazil/brazil-pix-validator",
+            "name": "Brazil Pix Validator",
+            "slug": "brazil-pix-validator"
+          }
+        ]
+      }
+    },
+    "germany": {
+      "relatedCountries": [
+        {
+          "name": "Poland",
+          "slug": "poland",
+          "via": [
+            "IBAN",
+            "SEPA",
+            "SWIFT"
+          ]
+        },
+        {
+          "name": "Spain",
+          "slug": "spain",
+          "via": [
+            "IBAN",
+            "SEPA",
+            "SWIFT"
+          ]
+        },
+        {
+          "name": "Brazil",
+          "slug": "brazil",
+          "via": [
+            "SWIFT"
+          ]
+        }
+      ],
+      "relatedResources": {
+        "authorities": [],
+        "identifiers": [
+          {
+            "description": "Steueridentifikationsnummer. German personal tax identification number.",
+            "link": null,
+            "name": "Steuer-IdNr",
+            "slug": "steuer-id"
+          },
+          {
+            "description": "Umsatzsteuer-Identifikationsnummer. German VAT identification number.",
+            "link": null,
+            "name": "USt-IdNr",
+            "slug": "ust-idnr"
+          }
+        ],
+        "payments": [
+          {
+            "description": "Single Euro Payments Area bank transfer standard.",
+            "link": null,
+            "name": "SEPA",
+            "slug": "sepa"
+          },
+          {
+            "description": "Global financial messaging network for international bank wire transfers.",
+            "link": null,
+            "name": "SWIFT",
+            "slug": "swift"
+          }
+        ],
+        "standards": [
+          {
+            "description": "International Bank Account Number standard.",
+            "link": "tools/iban-validator",
+            "name": "IBAN",
+            "slug": "iban"
+          }
+        ],
+        "workbenches": []
+      }
+    },
+    "poland": {
+      "relatedCountries": [
+        {
+          "name": "Germany",
+          "slug": "germany",
+          "via": [
+            "IBAN",
+            "SEPA",
+            "SWIFT"
+          ]
+        },
+        {
+          "name": "Spain",
+          "slug": "spain",
+          "via": [
+            "IBAN",
+            "SEPA",
+            "SWIFT"
+          ]
+        },
+        {
+          "name": "Brazil",
+          "slug": "brazil",
+          "via": [
+            "SWIFT"
+          ]
+        }
+      ],
+      "relatedResources": {
+        "authorities": [
+          {
+            "description": "Central Bank of Poland.",
+            "link": null,
+            "name": "Narodowy Bank Polski",
+            "slug": "nbp"
+          },
+          {
+            "description": "Polish national postal administration.",
+            "link": null,
+            "name": "Poczta Polska",
+            "slug": "poczta-polska"
+          }
+        ],
+        "identifiers": [
+          {
+            "description": "Numer Identyfikacji Podatkowej. Polish tax identification number.",
+            "link": null,
+            "name": "NIP",
+            "slug": "nip"
+          },
+          {
+            "description": "Universal Electronic System for Registration of the Population. 11-digit Polish national ID.",
+            "link": null,
+            "name": "PESEL",
+            "slug": "pesel"
+          },
+          {
+            "description": "National Official Register of Business Entities in Poland.",
+            "link": null,
+            "name": "REGON",
+            "slug": "regon"
+          }
+        ],
+        "payments": [
+          {
+            "description": "Polish mobile instant payment system.",
+            "link": null,
+            "name": "BLIK",
+            "slug": "blik"
+          },
+          {
+            "description": "Single Euro Payments Area bank transfer standard.",
+            "link": null,
+            "name": "SEPA",
+            "slug": "sepa"
+          },
+          {
+            "description": "Global financial messaging network for international bank wire transfers.",
+            "link": null,
+            "name": "SWIFT",
+            "slug": "swift"
+          }
+        ],
+        "standards": [
+          {
+            "description": "International Bank Account Number standard.",
+            "link": "tools/iban-validator",
+            "name": "IBAN",
+            "slug": "iban"
+          }
+        ],
+        "workbenches": []
+      }
+    },
+    "spain": {
+      "relatedCountries": [
+        {
+          "name": "Germany",
+          "slug": "germany",
+          "via": [
+            "IBAN",
+            "SEPA",
+            "SWIFT"
+          ]
+        },
+        {
+          "name": "Poland",
+          "slug": "poland",
+          "via": [
+            "IBAN",
+            "SEPA",
+            "SWIFT"
+          ]
+        },
+        {
+          "name": "Brazil",
+          "slug": "brazil",
+          "via": [
+            "SWIFT"
+          ]
+        }
+      ],
+      "relatedResources": {
+        "authorities": [],
+        "identifiers": [
+          {
+            "description": "Código de Cuenta Corriente. Legacy Spanish bank account format.",
+            "link": null,
+            "name": "CCC",
+            "slug": "ccc"
+          },
+          {
+            "description": "Código de Identificación Fiscal. Spanish business tax identification number.",
+            "link": null,
+            "name": "CIF",
+            "slug": "cif"
+          },
+          {
+            "description": "Número de Identidad de Extranjero. Spanish identification number for foreigners.",
+            "link": null,
+            "name": "NIE",
+            "slug": "nie"
+          },
+          {
+            "description": "Número de Identificación Fiscal. Spanish tax identification number for individuals.",
+            "link": null,
+            "name": "NIF",
+            "slug": "nif"
+          }
+        ],
+        "payments": [
+          {
+            "description": "Spanish instant mobile payment system.",
+            "link": null,
+            "name": "Bizum",
+            "slug": "bizum"
+          },
+          {
+            "description": "Single Euro Payments Area bank transfer standard.",
+            "link": null,
+            "name": "SEPA",
+            "slug": "sepa"
+          },
+          {
+            "description": "Global financial messaging network for international bank wire transfers.",
+            "link": null,
+            "name": "SWIFT",
+            "slug": "swift"
+          }
+        ],
+        "standards": [
+          {
+            "description": "International Bank Account Number standard.",
+            "link": "tools/iban-validator",
+            "name": "IBAN",
+            "slug": "iban"
+          }
+        ],
+        "workbenches": []
+      }
+    }
+  },
+  "workbenches": {
+    "brazil-pix-validator": {
+      "authorities": [
+        "Receita Federal"
+      ],
+      "countries": [
+        "Brazil"
+      ],
+      "standards": [],
+      "validates": [
+        "CPF"
+      ]
+    },
+    "iban-validator": {
+      "authorities": [],
+      "countries": [],
+      "standards": [
+        "IBAN"
+      ],
+      "validates": []
+    },
+    "nif-nie-validator": {
+      "authorities": [
+        "Agencia Tributaria"
+      ],
+      "countries": [
+        "Spain"
+      ],
+      "standards": [],
+      "validates": [
+        "NIE",
+        "NIF"
+      ]
+    },
+    "nip-validator": {
+      "authorities": [
+        "ZUS"
+      ],
+      "countries": [
+        "Poland"
+      ],
+      "standards": [],
+      "validates": [
+        "NIP"
+      ]
+    },
+    "pesel-validator": {
+      "authorities": [
+        "ZUS"
+      ],
+      "countries": [
+        "Poland"
+      ],
+      "standards": [],
+      "validates": [
+        "PESEL"
+      ]
+    },
+    "regon-validator": {
+      "authorities": [
+        "GUS"
+      ],
+      "countries": [
+        "Poland"
+      ],
+      "standards": [],
+      "validates": [
+        "REGON"
+      ]
+    },
+    "steuernummer-validator": {
+      "authorities": [
+        "BZSt"
+      ],
+      "countries": [
+        "Germany"
+      ],
+      "standards": [],
+      "validates": [
+        "Steuer-IdNr"
+      ]
+    }
+  }
+}

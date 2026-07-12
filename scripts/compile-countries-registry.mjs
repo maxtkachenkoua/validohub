@@ -19,8 +19,8 @@ const outputScript = resolve(projectRoot, 'assets/js/countries.js');
 const graphOutputFile = resolve(graphDir, 'compiled-graph.json');
 
 // Inject Build Time (constant for entire run to support deterministic checks)
-const buildTime = new Date('2026-07-12T18:30:00Z'); // Staged reference time
-const CLOCK_SKEW_TOLERANCE_MS = 5 * 60 * 1000; // 5 minutes
+const buildTime = new Date('2026-07-12T18:30:00Z');
+const CLOCK_SKEW_TOLERANCE_MS = 5 * 60 * 1000;
 
 const STRICT_FRESHNESS = process.argv.includes('--strict-freshness') || process.env.STRICT_FRESHNESS === 'true';
 
@@ -63,7 +63,6 @@ const VOCABULARY = {
   }
 };
 
-// Assertion Helper
 function assertType(path, val, expectedType, nullable = false) {
   if (nullable && val === null) return;
   const actualType = Array.isArray(val) ? 'array' : typeof val;
@@ -78,13 +77,11 @@ function validateDate(path, dateStr) {
   if (isNaN(t)) {
     throw new Error(`Date Format Error at [${path}]: "${dateStr}" is not a valid ISO date.`);
   }
-  // Clock-skew audit
   if (t > buildTime.getTime() + CLOCK_SKEW_TOLERANCE_MS) {
     throw new Error(`Future Date Error at [${path}]: "${dateStr}" is set in the future relative to build time.`);
   }
 }
 
-// Recursive Directory Reader
 async function getJsonFiles(dir) {
   const dirents = await readdir(dir, { withFileTypes: true });
   const files = await Promise.all(dirents.map((dirent) => {
@@ -94,8 +91,24 @@ async function getJsonFiles(dir) {
   return files.flat().filter(f => f.endsWith('.json'));
 }
 
+// Helpers for sorting keys/arrays deterministically
+function sortObjectKeys(obj) {
+  const sorted = {};
+  Object.keys(obj).sort().forEach(key => {
+    let val = obj[key];
+    if (val && typeof val === 'object' && !Array.isArray(val)) {
+      sorted[key] = sortObjectKeys(val);
+    } else if (Array.isArray(val)) {
+      sorted[key] = val.map(item => typeof item === 'object' ? sortObjectKeys(item) : item);
+    } else {
+      sorted[key] = val;
+    }
+  });
+  return sorted;
+}
+
 async function main() {
-  console.log('--- STARTING PLATFORM V2 GRAPH COMPILER (PROVENANCE EDITION) ---');
+  console.log('--- STARTING PLATFORM V2 GRAPH COMPILER ---');
 
   // 1. Load and validate sources
   const sourceFiles = await readdir(sourcesDir);
@@ -138,7 +151,6 @@ async function main() {
   }
   console.log(`Loaded and validated ${sources.size} source reference documents.`);
 
-  // 2. Validate supersededBySourceId referential integrity
   for (const [id, src] of sources) {
     if (src.supersededBySourceId) {
       if (!sources.has(src.supersededBySourceId)) {
@@ -147,7 +159,7 @@ async function main() {
     }
   }
 
-  // 3. Load entities
+  // 2. Load entities
   const entityFiles = await getJsonFiles(entitiesDir);
   const entities = new Map();
 
@@ -180,7 +192,6 @@ async function main() {
       throw new Error(`Integrity Violation: Entity type "${data.type}" in file ${relativePath} must equal "${type}"`);
     }
 
-    // Versioning & Freshness validations
     assertType(`${path}.schemaVersion`, data.schemaVersion, 'string');
     assertType(`${path}.contentVersion`, data.contentVersion, 'string');
     assertType(`${path}.verificationStatus`, data.verificationStatus, 'string');
@@ -198,7 +209,6 @@ async function main() {
       throw new Error(`Review Policy Error at [${path}.reviewPolicy]: Invalid policy "${data.reviewPolicy}"`);
     }
 
-    // Provenance Source validation
     if (data.provenance) {
       assertType(`${path}.provenance`, data.provenance, 'object');
       if (data.provenance.sourceId) {
@@ -223,14 +233,13 @@ async function main() {
   }
   console.log(`Loaded and validated ${entities.size} knowledge entities.`);
 
-  // 4. Validate source publisher authorityId referential integrity
   for (const [id, src] of sources) {
     if (src.publisher && !entities.has(src.publisher) && src.publisher !== 'authority:iso') {
       throw new Error(`Referential Integrity Error: Source "${id}" references publisher authority ID "${src.publisher}" which does not exist as an entity.`);
     }
   }
 
-  // 5. Load relationships
+  // 3. Load relationships
   const relsContent = await readFile(relationshipsFile, 'utf8');
   let rawRelationships;
   try {
@@ -250,7 +259,6 @@ async function main() {
     assertType(`${path}.type`, rel.type, 'string');
     assertType(`${path}.target`, rel.target, 'string');
 
-    // Referential Integrity
     if (!entities.has(rel.source)) {
       throw new Error(`Referential Integrity Error: Source ID "${rel.source}" at ${path} is not a valid entity.`);
     }
@@ -258,7 +266,6 @@ async function main() {
       throw new Error(`Referential Integrity Error: Target ID "${rel.target}" at ${path} is not a valid entity.`);
     }
 
-    // Vocabulary rules validation
     const verb = VOCABULARY[rel.type];
     if (!verb) {
       throw new Error(`Vocabulary Error: Relationship type "${rel.type}" at ${path} is not part of the controlled vocabulary.`);
@@ -274,7 +281,6 @@ async function main() {
       throw new Error(`Semantic Constraint Mismatch: Verb "${rel.type}" at ${path} does not allow target type "${targetEnt.type}". Allowed: [${verb.targetTypes.join(', ')}]`);
     }
 
-    // Evidence checks
     if (rel.evidence) {
       assertType(`${path}.evidence`, rel.evidence, 'array');
       for (let eIdx = 0; eIdx < rel.evidence.length; eIdx++) {
@@ -315,7 +321,6 @@ async function main() {
       }
     }
 
-    // Duplicates check
     const key = `${rel.source}|${rel.type}|${rel.target}`;
     if (relKeys.has(key)) {
       throw new Error(`Duplicate Relationship Error: "${rel.source} --${rel.type}--> ${rel.target}" is declared multiple times.`);
@@ -326,7 +331,7 @@ async function main() {
   }
   console.log(`Loaded and validated ${relationships.length} semantic relationships.`);
 
-  // 6. Freshness and Overdue Reviews
+  // 4. Freshness and Overdue Reviews
   const overdueEntities = [];
   for (const [id, data] of entities) {
     if (data.lastReviewedAt && data.recommendedReviewInterval !== null) {
@@ -356,15 +361,13 @@ async function main() {
     }
   }
 
-  // 7. Graph compilation
+  // 5. Build Graph Adjacency representation
   const graph = {};
-  const inEdges = {};
   for (const [id, entity] of entities) {
     graph[id] = {
       entity,
       relations: []
     };
-    inEdges[id] = [];
   }
 
   for (const rel of relationships) {
@@ -381,7 +384,6 @@ async function main() {
       direction: 'in',
       evidence: rel.evidence || null
     });
-    inEdges[rel.target].push(rel.source);
   }
 
   // Directed cycle check
@@ -420,76 +422,290 @@ async function main() {
     }
   }
 
-  // 8. Generate Reports
-  await mkdir(reportsDir, { recursive: true });
+  // 6. Discovery Index Generation
+  console.log('--- COMPILING DISCOVERY INDEXES ---');
 
-  // coverage.json
-  const totalNodes = entities.size;
-  const verifiedNodes = Array.from(entities.values()).filter(e => e.verificationStatus === 'verified').length;
-
-  const coverage = {
-    criticalIdentifiersAndStandards: {
-      total: Array.from(entities.values()).filter(e => e.type === 'identifier' || e.type === 'banking-standard').length,
-      verified: Array.from(entities.values()).filter(e => (e.type === 'identifier' || e.type === 'banking-standard') && e.verificationStatus === 'verified').length,
-    },
-    totalAuthoritativeFactsCount: relationships.filter(r => r.evidence && r.evidence.some(e => e.evidenceStrength === 'authoritative')).length,
-    totalSecondaryFactsCount: relationships.filter(r => r.evidence && r.evidence.some(e => e.evidenceStrength === 'moderate')).length,
-    overallVerifiedRatio: totalNodes > 0 ? Number((verifiedNodes / totalNodes).toFixed(4)) : 0
+  const countryToIdentifiers = {};
+  const countryToPayments = {};
+  const identifierToCountries = {};
+  const workbenchIndex = {};
+  const workbenchDiscovery = {};
+  const compiledDiscovery = { countries: {}, workbenches: {} };
+  const searchIndex = {};
+  const homepageWidgets = {
+    popularStandards: [],
+    countriesAdded: [],
+    developerEssentials: [],
+    recentlyVerified: [],
+    featuredWorkbenches: []
   };
-  await writeFile(resolve(reportsDir, 'coverage.json'), JSON.stringify(coverage, null, 2) + '\n', 'utf8');
 
-  // verification.json
-  const countsByStatus = {};
-  for (const e of entities.values()) {
-    countsByStatus[e.verificationStatus] = (countsByStatus[e.verificationStatus] || 0) + 1;
+  const countries = Array.from(entities.values()).filter(e => e.type === 'country');
+  const workbenches = Array.from(entities.values()).filter(e => e.type === 'workbench' || e.type === 'tool');
+
+  // Compute identifiers used by country and vice versa
+  for (const c of countries) {
+    const cSlug = c.id.split(':')[1];
+    const node = graph[c.id];
+
+    const usedIds = node.relations
+      .filter(r => r.type === 'USES_IDENTIFIER' && r.direction === 'out')
+      .map(r => r.target);
+    countryToIdentifiers[cSlug] = usedIds.map(id => entities.get(id).name).sort();
+
+    usedIds.forEach(id => {
+      const iSlug = id.split(':')[1];
+      if (!identifierToCountries[iSlug]) {
+        identifierToCountries[iSlug] = [];
+      }
+      if (!identifierToCountries[iSlug].includes(c.name)) {
+        identifierToCountries[iSlug].push(c.name);
+      }
+    });
+
+    const supportedPayments = node.relations
+      .filter(r => r.type === 'SUPPORTS_PAYMENT_SYSTEM' && r.direction === 'out')
+      .map(r => r.target);
+    countryToPayments[cSlug] = supportedPayments.map(id => entities.get(id).name).sort();
   }
-  const verification = {
-    countsByStatus: Object.keys(countsByStatus).sort().reduce((acc, k) => {
-      acc[k] = countsByStatus[k];
-      return acc;
-    }, {})
-  };
-  await writeFile(resolve(reportsDir, 'verification.json'), JSON.stringify(verification, null, 2) + '\n', 'utf8');
 
-  // freshness.json
-  overdueEntities.sort((a, b) => a.id.localeCompare(b.id));
-  const freshness = {
-    overdueEntities,
-    freshCount: totalNodes - overdueEntities.length,
-    overdueCount: overdueEntities.length
-  };
-  await writeFile(resolve(reportsDir, 'freshness.json'), JSON.stringify(freshness, null, 2) + '\n', 'utf8');
-
-  // orphans.json
-  orphans.sort();
-  await writeFile(resolve(reportsDir, 'orphans.json'), JSON.stringify({ orphans }, null, 2) + '\n', 'utf8');
-
-  // statistics.json
-  const countsByType = {};
-  for (const e of entities.values()) {
-    countsByType[e.type] = (countsByType[e.type] || 0) + 1;
+  // Final sort on identifierToCountries
+  for (const k of Object.keys(identifierToCountries)) {
+    identifierToCountries[k].sort();
   }
-  const statistics = {
-    nodeCount: totalNodes,
-    edgeCount: relationships.length,
-    density: totalNodes > 1 ? Number((relationships.length / (totalNodes * (totalNodes - 1))).toFixed(6)) : 0,
-    countsByEntityType: Object.keys(countsByType).sort().reduce((acc, k) => {
-      acc[k] = countsByType[k];
-      return acc;
-    }, {})
-  };
-  await writeFile(resolve(reportsDir, 'statistics.json'), JSON.stringify(statistics, null, 2) + '\n', 'utf8');
-  console.log(`Provenance and Freshness reports compiled and written to ${reportsDir}.`);
 
-  // Write compiled graph JSON
-  const graphPayload = {
-    nodes: graph,
-    relationships
-  };
-  await writeFile(graphOutputFile, JSON.stringify(graphPayload, null, 2) + '\n', 'utf8');
-  console.log(`Knowledge Graph artifact written to ${graphOutputFile}`);
+  // Build Workbench Discovery Index
+  for (const w of workbenches) {
+    const wSlug = w.id.split(':')[1];
+    const node = graph[w.id];
 
-  // Compile assets/js/countries.js
+    // Find validated identifiers and standards
+    const validatesRels = node.relations.filter(r => r.type === 'VALIDATES' && r.direction === 'out');
+    const validatedIds = validatesRels.filter(r => r.target.startsWith('identifier:')).map(r => r.target);
+    const validatedStandards = validatesRels.filter(r => r.target.startsWith('banking-standard:')).map(r => r.target);
+
+    // Authorities governing these identifiers/standards
+    const auths = [];
+    validatesRels.forEach(r => {
+      const targetNode = graph[r.target];
+      if (targetNode) {
+        targetNode.relations
+          .filter(tr => tr.type === 'GOVERNED_BY' && tr.direction === 'out')
+          .forEach(tr => {
+            const authName = entities.get(tr.target).name;
+            if (!auths.includes(authName)) auths.push(authName);
+          });
+      }
+    });
+
+    // Supported countries (countries using the validated identifiers)
+    const supportedCountries = [];
+    validatedIds.forEach(id => {
+      const idNode = graph[id];
+      if (idNode) {
+        idNode.relations
+          .filter(r => r.type === 'USED_BY_COUNTRY' && r.direction === 'in')
+          .forEach(r => {
+            const countryName = entities.get(r.target).name;
+            if (!supportedCountries.includes(countryName)) {
+              supportedCountries.push(countryName);
+            }
+          });
+      }
+    });
+
+    const wRecord = {
+      validates: validatedIds.map(id => entities.get(id).name).sort(),
+      standards: validatedStandards.map(id => entities.get(id).name).sort(),
+      authorities: auths.sort(),
+      countries: supportedCountries.sort()
+    };
+
+    workbenchIndex[wSlug] = wRecord;
+    // Map to compound keys (like poland-pesel-validator) to prevent collisions
+    const belongsToCountry = w.id.split(':')[1].split('-')[0];
+    if (entities.has(`country:${belongsToCountry}`)) {
+      workbenchDiscovery[`${belongsToCountry}-${wSlug}`] = wRecord;
+    } else {
+      workbenchDiscovery[wSlug] = wRecord;
+    }
+  }
+
+  // Build Country-specific discovery data (Related Resources + Related Countries)
+  for (const c of countries) {
+    const cSlug = c.id.split(':')[1];
+    const node = graph[c.id];
+
+    const ids = node.relations.filter(r => r.type === 'USES_IDENTIFIER' && r.direction === 'out').map(r => r.target);
+    const pays = node.relations.filter(r => r.type === 'SUPPORTS_PAYMENT_SYSTEM' && r.direction === 'out').map(r => r.target);
+    const stds = node.relations.filter(r => r.type === 'PARTICIPATES_IN' && r.direction === 'out').map(r => r.target);
+
+    // Link resolution helper
+    const resolveLink = (targetId) => {
+      // Check if target is validated by a workbench owned by this country
+      const targetNode = graph[targetId];
+      if (targetNode) {
+        const validatorRel = targetNode.relations.find(r => r.type === 'VALIDATED_BY_ENTITY' && r.direction === 'in');
+        if (validatorRel) {
+          const valSlug = validatorRel.target.split(':')[1];
+          const valBelongs = valSlug.split('-')[0];
+          if (valBelongs === cSlug) {
+            return `${cSlug}/${valSlug}`;
+          } else if (validatorRel.target.startsWith('tool:')) {
+            return `tools/${valSlug}`;
+          }
+        }
+      }
+      return null;
+    };
+
+    const relatedResources = {
+      identifiers: ids.map(id => ({
+        name: entities.get(id).name,
+        slug: id.split(':')[1],
+        description: entities.get(id).shortDefinition,
+        link: resolveLink(id)
+      })).sort((a, b) => a.name.localeCompare(b.name)),
+      payments: pays.map(id => ({
+        name: entities.get(id).name,
+        slug: id.split(':')[1],
+        description: entities.get(id).shortDefinition,
+        link: resolveLink(id)
+      })).sort((a, b) => a.name.localeCompare(b.name)),
+      standards: stds.map(id => ({
+        name: entities.get(id).name,
+        slug: id.split(':')[1],
+        description: entities.get(id).shortDefinition,
+        link: resolveLink(id)
+      })).sort((a, b) => a.name.localeCompare(b.name)),
+      authorities: node.relations
+        .filter(r => r.type === 'REFERENCED_BY_AUTHORITY' && r.direction === 'in')
+        .map(r => ({
+          name: entities.get(r.target).name,
+          slug: r.target.split(':')[1],
+          description: entities.get(r.target).shortDefinition,
+          link: null
+        })).sort((a, b) => a.name.localeCompare(b.name)),
+      workbenches: node.relations
+        .filter(r => r.type === 'USES_IDENTIFIER' && r.direction === 'out')
+        .flatMap(r => {
+          const idNode = graph[r.target];
+          return idNode ? idNode.relations.filter(ir => ir.type === 'VALIDATED_BY_ENTITY' && ir.direction === 'in').map(ir => ir.target) : [];
+        })
+        .filter(id => id.startsWith('workbench:') && id.split(':')[1].split('-')[0] === cSlug)
+        .map(id => ({
+          name: entities.get(id).name,
+          slug: id.split(':')[1],
+          description: entities.get(id).shortDefinition,
+          link: `${cSlug}/${id.split(':')[1]}`
+        })).sort((a, b) => a.name.localeCompare(b.name))
+    };
+
+    // Remove duplicates from authorities/workbenches
+    relatedResources.authorities = Array.from(new Map(relatedResources.authorities.map(a => [a.slug, a])).values());
+    relatedResources.workbenches = Array.from(new Map(relatedResources.workbenches.map(w => [w.slug, w])).values());
+
+    // Related Countries (shares standards or payments)
+    const shareCounts = {};
+    for (const pId of pays) {
+      const pNode = graph[pId];
+      pNode.relations
+        .filter(r => r.type === 'SUPPORTED_BY_COUNTRY' && r.direction === 'in' && r.target !== c.id)
+        .forEach(r => {
+          const oSlug = r.target.split(':')[1];
+          if (!shareCounts[oSlug]) shareCounts[oSlug] = [];
+          shareCounts[oSlug].push(entities.get(pId).name);
+        });
+    }
+    for (const sId of stds) {
+      const sNode = graph[sId];
+      sNode.relations
+        .filter(r => r.type === 'PARTICIPATED_IN_BY_COUNTRY' && r.direction === 'in' && r.target !== c.id)
+        .forEach(r => {
+          const oSlug = r.target.split(':')[1];
+          if (!shareCounts[oSlug]) shareCounts[oSlug] = [];
+          shareCounts[oSlug].push(entities.get(sId).name);
+        });
+    }
+
+    const relatedCountries = Object.keys(shareCounts).map(slug => ({
+      name: entities.get(`country:${slug}`).name,
+      slug,
+      via: shareCounts[slug].sort()
+    })).sort((a, b) => {
+      // Sort by share count desc, then alphabetically
+      const diff = b.via.length - a.via.length;
+      if (diff !== 0) return diff;
+      return a.name.localeCompare(b.name);
+    }).slice(0, 3); // Limit to top 3
+
+    compiledDiscovery.countries[cSlug] = {
+      relatedResources,
+      relatedCountries
+    };
+  }
+
+  compiledDiscovery.workbenches = workbenchIndex;
+
+  // Build Search Index
+  for (const [id, data] of entities) {
+    const summary = [];
+    const node = graph[id];
+    node.relations.filter(r => r.direction === 'out').forEach(r => {
+      const targetName = entities.get(r.target) ? entities.get(r.target).name : r.target;
+      summary.push(`${r.type.toLowerCase().replace(/_/g, ' ')} ${targetName}`);
+    });
+
+    const countryRefs = [];
+    node.relations.forEach(r => {
+      if (r.target.startsWith('country:')) {
+        const cSlug = r.target.split(':')[1];
+        if (!countryRefs.includes(cSlug)) countryRefs.push(cSlug);
+      }
+    });
+
+    searchIndex[id] = {
+      title: data.name,
+      aliases: data.aliases || [],
+      keywords: [data.type, ...(data.aliases || [])],
+      countryReferences: countryRefs.sort(),
+      relationshipSummaries: summary.sort()
+    };
+  }
+
+  // Build Homepage Widgets
+  homepageWidgets.countriesAdded = countries.map(c => c.name).sort();
+  homepageWidgets.popularStandards = Array.from(entities.values())
+    .filter(e => e.type === 'banking-standard' || e.type === 'payment-system')
+    .map(e => {
+      const node = graph[e.id];
+      const count = node.relations.filter(r => r.direction === 'in' && r.target.startsWith('country:')).length;
+      return { name: e.name, count };
+    })
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
+  homepageWidgets.developerEssentials = Array.from(entities.values())
+    .filter(e => e.type === 'banking-standard' || e.id === 'identifier:steuer-id' || e.id === 'identifier:pesel' || e.id === 'identifier:cpf')
+    .map(e => e.name).sort();
+
+  homepageWidgets.recentlyVerified = Array.from(entities.values())
+    .filter(e => e.verificationStatus === 'verified')
+    .sort((a, b) => Date.parse(b.lastReviewedAt) - Date.parse(a.lastReviewedAt) || a.name.localeCompare(b.name))
+    .map(e => e.name);
+
+  homepageWidgets.featuredWorkbenches = workbenches.map(w => w.name).sort();
+
+  // Write all index outputs deterministically
+  await writeFile(resolve(graphDir, 'compiled-discovery.json'), JSON.stringify(sortObjectKeys(compiledDiscovery), null, 2) + '\n', 'utf8');
+  await writeFile(resolve(graphDir, 'country-to-identifiers.json'), JSON.stringify(sortObjectKeys(countryToIdentifiers), null, 2) + '\n', 'utf8');
+  await writeFile(resolve(graphDir, 'country-to-payments.json'), JSON.stringify(sortObjectKeys(countryToPayments), null, 2) + '\n', 'utf8');
+  await writeFile(resolve(graphDir, 'identifier-to-countries.json'), JSON.stringify(sortObjectKeys(identifierToCountries), null, 2) + '\n', 'utf8');
+  await writeFile(resolve(graphDir, 'workbench-index.json'), JSON.stringify(sortObjectKeys(workbenchIndex), null, 2) + '\n', 'utf8');
+  await writeFile(resolve(graphDir, 'search-index.json'), JSON.stringify(sortObjectKeys(searchIndex), null, 2) + '\n', 'utf8');
+  await writeFile(resolve(graphDir, 'homepage-widgets.json'), JSON.stringify(sortObjectKeys(homepageWidgets), null, 2) + '\n', 'utf8');
+  console.log('Deterministic lightweight indexes compiled successfully.');
+
+  // 7. Dynamic Compile step for assets/js/countries.js
   const countryFiles = await readdir(countriesDataDir);
   const jsonFiles = countryFiles.filter(f => f.endsWith('.json') && f !== 'schema.json');
   jsonFiles.sort();
@@ -507,9 +723,21 @@ async function main() {
       throw new Error(`Syntax Error: Failed to parse JSON in country profile file ${file}: ${err.message}`);
     }
 
-    if (data.visualAssets) visualAssets[data.id] = data.visualAssets;
+    if (data.visualAssets) {
+      visualAssets[data.id] = data.visualAssets;
+    }
+
+    // Attach compiled graph-powered discovery blocks to each country hub
+    const cSlug = data.id;
+    if (compiledDiscovery.countries[cSlug]) {
+      data.hub.discovery = compiledDiscovery.countries[cSlug];
+    }
+
     catalog.push(data.catalog);
-    if (data.hub) hubs[data.id] = data.hub;
+
+    if (data.hub) {
+      hubs[data.id] = data.hub;
+    }
   }
 
   const template = await readFile(templateScript, 'utf8');
@@ -523,9 +751,68 @@ async function main() {
   const compiledJs = template
     .replace('/*__COUNTRY_VISUAL_ASSETS__*/', indent(visualAssets, 2))
     .replace('/*__COUNTRY_HUBS__*/', indent(hubs, 2))
-    .replace('/*__COUNTRY_PORTAL_CATALOG__*/', indent(catalog, 2));
+    .replace('/*__COUNTRY_PORTAL_CATALOG__*/', indent(catalog, 2))
+    .replace('/*__WORKBENCH_DISCOVERY__*/', indent(sortObjectKeys(workbenchDiscovery), 2));
 
   await writeFile(outputScript, compiledJs, 'utf8');
+
+  // Write reports
+  await mkdir(reportsDir, { recursive: true });
+
+  const totalNodes = entities.size;
+  const verifiedNodes = Array.from(entities.values()).filter(e => e.verificationStatus === 'verified').length;
+
+  const coverage = {
+    criticalIdentifiersAndStandards: {
+      total: Array.from(entities.values()).filter(e => e.type === 'identifier' || e.type === 'banking-standard').length,
+      verified: Array.from(entities.values()).filter(e => (e.type === 'identifier' || e.type === 'banking-standard') && e.verificationStatus === 'verified').length,
+    },
+    totalAuthoritativeFactsCount: relationships.filter(r => r.evidence && r.evidence.some(e => e.evidenceStrength === 'authoritative')).length,
+    totalSecondaryFactsCount: relationships.filter(r => r.evidence && r.evidence.some(e => e.evidenceStrength === 'moderate')).length,
+    overallVerifiedRatio: totalNodes > 0 ? Number((verifiedNodes / totalNodes).toFixed(4)) : 0
+  };
+  await writeFile(resolve(reportsDir, 'coverage.json'), JSON.stringify(coverage, null, 2) + '\n', 'utf8');
+
+  const countsByStatus = {};
+  for (const e of entities.values()) {
+    countsByStatus[e.verificationStatus] = (countsByStatus[e.verificationStatus] || 0) + 1;
+  }
+  const verification = {
+    countsByStatus: Object.keys(countsByStatus).sort().reduce((acc, k) => {
+      acc[k] = countsByStatus[k];
+      return acc;
+    }, {})
+  };
+  await writeFile(resolve(reportsDir, 'verification.json'), JSON.stringify(verification, null, 2) + '\n', 'utf8');
+
+  overdueEntities.sort((a, b) => a.id.localeCompare(b.id));
+  const freshness = {
+    overdueEntities,
+    freshCount: totalNodes - overdueEntities.length,
+    overdueCount: overdueEntities.length
+  };
+  await writeFile(resolve(reportsDir, 'freshness.json'), JSON.stringify(freshness, null, 2) + '\n', 'utf8');
+
+  orphans.sort();
+  await writeFile(resolve(reportsDir, 'orphans.json'), JSON.stringify({ orphans }, null, 2) + '\n', 'utf8');
+
+  const countsByType = {};
+  for (const e of entities.values()) {
+    countsByType[e.type] = (countsByType[e.type] || 0) + 1;
+  }
+  const statistics = {
+    nodeCount: totalNodes,
+    edgeCount: relationships.length,
+    density: totalNodes > 1 ? Number((relationships.length / (totalNodes * (totalNodes - 1))).toFixed(6)) : 0,
+    countsByEntityType: Object.keys(countsByType).sort().reduce((acc, k) => {
+      acc[k] = countsByType[k];
+      return acc;
+    }, {})
+  };
+  await writeFile(resolve(reportsDir, 'statistics.json'), JSON.stringify(statistics, null, 2) + '\n', 'utf8');
+  console.log(`Reports updated in ${reportsDir}.`);
+
+  console.log(`Knowledge Graph artifact written to ${graphOutputFile}`);
   console.log(`PASS: Dynamic country registry compiled to assets/js/countries.js`);
 }
 

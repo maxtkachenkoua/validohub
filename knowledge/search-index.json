@@ -1,0 +1,530 @@
+{
+  "authority:aeat": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "authority"
+    ],
+    "relationshipSummaries": [],
+    "title": "Agencia Tributaria"
+  },
+  "authority:bcb": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "authority"
+    ],
+    "relationshipSummaries": [],
+    "title": "Banco Central do Brasil"
+  },
+  "authority:bzst": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "authority"
+    ],
+    "relationshipSummaries": [],
+    "title": "BZSt"
+  },
+  "authority:gus": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "authority"
+    ],
+    "relationshipSummaries": [],
+    "title": "GUS"
+  },
+  "authority:iso": {
+    "aliases": [
+      "ISO"
+    ],
+    "countryReferences": [],
+    "keywords": [
+      "authority",
+      "ISO"
+    ],
+    "relationshipSummaries": [],
+    "title": "International Organization for Standardization"
+  },
+  "authority:nbp": {
+    "aliases": [],
+    "countryReferences": [
+      "poland"
+    ],
+    "keywords": [
+      "authority"
+    ],
+    "relationshipSummaries": [
+      "publishes reference for Poland"
+    ],
+    "title": "Narodowy Bank Polski"
+  },
+  "authority:poczta-polska": {
+    "aliases": [],
+    "countryReferences": [
+      "poland"
+    ],
+    "keywords": [
+      "authority"
+    ],
+    "relationshipSummaries": [
+      "publishes reference for Poland"
+    ],
+    "title": "Poczta Polska"
+  },
+  "authority:receita-federal": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "authority"
+    ],
+    "relationshipSummaries": [],
+    "title": "Receita Federal"
+  },
+  "authority:zus": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "authority"
+    ],
+    "relationshipSummaries": [],
+    "title": "ZUS"
+  },
+  "banking-standard:bic": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "banking-standard"
+    ],
+    "relationshipSummaries": [],
+    "title": "BIC"
+  },
+  "banking-standard:iban": {
+    "aliases": [],
+    "countryReferences": [
+      "germany",
+      "poland",
+      "spain"
+    ],
+    "keywords": [
+      "banking-standard"
+    ],
+    "relationshipSummaries": [],
+    "title": "IBAN"
+  },
+  "country:brazil": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "country"
+    ],
+    "relationshipSummaries": [
+      "supports payment system Boleto Bancário",
+      "supports payment system PIX",
+      "supports payment system SWIFT",
+      "uses identifier CEP",
+      "uses identifier CNH",
+      "uses identifier CNPJ",
+      "uses identifier CPF",
+      "uses identifier RENAVAM",
+      "uses identifier RG"
+    ],
+    "title": "Brazil"
+  },
+  "country:germany": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "country"
+    ],
+    "relationshipSummaries": [
+      "participates in IBAN",
+      "supports payment system SEPA",
+      "supports payment system SWIFT",
+      "uses identifier Steuer-IdNr",
+      "uses identifier USt-IdNr"
+    ],
+    "title": "Germany"
+  },
+  "country:poland": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "country"
+    ],
+    "relationshipSummaries": [
+      "participates in IBAN",
+      "supports payment system BLIK",
+      "supports payment system SEPA",
+      "supports payment system SWIFT",
+      "uses identifier NIP",
+      "uses identifier PESEL",
+      "uses identifier REGON"
+    ],
+    "title": "Poland"
+  },
+  "country:spain": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "country"
+    ],
+    "relationshipSummaries": [
+      "participates in IBAN",
+      "supports payment system Bizum",
+      "supports payment system SEPA",
+      "supports payment system SWIFT",
+      "uses identifier CCC",
+      "uses identifier CIF",
+      "uses identifier NIE",
+      "uses identifier NIF"
+    ],
+    "title": "Spain"
+  },
+  "identifier:ccc": {
+    "aliases": [],
+    "countryReferences": [
+      "spain"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [],
+    "title": "CCC"
+  },
+  "identifier:cep": {
+    "aliases": [],
+    "countryReferences": [
+      "brazil"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [],
+    "title": "CEP"
+  },
+  "identifier:cif": {
+    "aliases": [],
+    "countryReferences": [
+      "spain"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [
+      "governed by Agencia Tributaria"
+    ],
+    "title": "CIF"
+  },
+  "identifier:cnh": {
+    "aliases": [],
+    "countryReferences": [
+      "brazil"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [],
+    "title": "CNH"
+  },
+  "identifier:cnpj": {
+    "aliases": [],
+    "countryReferences": [
+      "brazil"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [
+      "governed by Receita Federal"
+    ],
+    "title": "CNPJ"
+  },
+  "identifier:cpf": {
+    "aliases": [],
+    "countryReferences": [
+      "brazil"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [
+      "governed by Receita Federal"
+    ],
+    "title": "CPF"
+  },
+  "identifier:nie": {
+    "aliases": [],
+    "countryReferences": [
+      "spain"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [
+      "governed by Agencia Tributaria"
+    ],
+    "title": "NIE"
+  },
+  "identifier:nif": {
+    "aliases": [],
+    "countryReferences": [
+      "spain"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [
+      "governed by Agencia Tributaria"
+    ],
+    "title": "NIF"
+  },
+  "identifier:nip": {
+    "aliases": [],
+    "countryReferences": [
+      "poland"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [
+      "governed by ZUS"
+    ],
+    "title": "NIP"
+  },
+  "identifier:pesel": {
+    "aliases": [],
+    "countryReferences": [
+      "poland"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [
+      "governed by ZUS"
+    ],
+    "title": "PESEL"
+  },
+  "identifier:regon": {
+    "aliases": [],
+    "countryReferences": [
+      "poland"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [
+      "governed by GUS"
+    ],
+    "title": "REGON"
+  },
+  "identifier:renavam": {
+    "aliases": [],
+    "countryReferences": [
+      "brazil"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [],
+    "title": "RENAVAM"
+  },
+  "identifier:rg": {
+    "aliases": [],
+    "countryReferences": [
+      "brazil"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [],
+    "title": "RG"
+  },
+  "identifier:steuer-id": {
+    "aliases": [],
+    "countryReferences": [
+      "germany"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [
+      "governed by BZSt"
+    ],
+    "title": "Steuer-IdNr"
+  },
+  "identifier:ust-idnr": {
+    "aliases": [],
+    "countryReferences": [
+      "germany"
+    ],
+    "keywords": [
+      "identifier"
+    ],
+    "relationshipSummaries": [
+      "governed by BZSt"
+    ],
+    "title": "USt-IdNr"
+  },
+  "payment-system:bizum": {
+    "aliases": [],
+    "countryReferences": [
+      "spain"
+    ],
+    "keywords": [
+      "payment-system"
+    ],
+    "relationshipSummaries": [],
+    "title": "Bizum"
+  },
+  "payment-system:blik": {
+    "aliases": [],
+    "countryReferences": [
+      "poland"
+    ],
+    "keywords": [
+      "payment-system"
+    ],
+    "relationshipSummaries": [],
+    "title": "BLIK"
+  },
+  "payment-system:boleto": {
+    "aliases": [],
+    "countryReferences": [
+      "brazil"
+    ],
+    "keywords": [
+      "payment-system"
+    ],
+    "relationshipSummaries": [],
+    "title": "Boleto Bancário"
+  },
+  "payment-system:pix": {
+    "aliases": [],
+    "countryReferences": [
+      "brazil"
+    ],
+    "keywords": [
+      "payment-system"
+    ],
+    "relationshipSummaries": [
+      "governed by Banco Central do Brasil"
+    ],
+    "title": "PIX"
+  },
+  "payment-system:sepa": {
+    "aliases": [],
+    "countryReferences": [
+      "germany",
+      "poland",
+      "spain"
+    ],
+    "keywords": [
+      "payment-system"
+    ],
+    "relationshipSummaries": [],
+    "title": "SEPA"
+  },
+  "payment-system:swift": {
+    "aliases": [],
+    "countryReferences": [
+      "brazil",
+      "germany",
+      "poland",
+      "spain"
+    ],
+    "keywords": [
+      "payment-system"
+    ],
+    "relationshipSummaries": [],
+    "title": "SWIFT"
+  },
+  "payment-system:vies": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "payment-system"
+    ],
+    "relationshipSummaries": [],
+    "title": "VIES"
+  },
+  "tool:iban-validator": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "tool"
+    ],
+    "relationshipSummaries": [
+      "validates IBAN"
+    ],
+    "title": "IBAN Validator"
+  },
+  "workbench:brazil-pix-validator": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "workbench"
+    ],
+    "relationshipSummaries": [
+      "validates CPF"
+    ],
+    "title": "Brazil Pix Validator"
+  },
+  "workbench:nif-nie-validator": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "workbench"
+    ],
+    "relationshipSummaries": [
+      "validates NIE",
+      "validates NIF"
+    ],
+    "title": "NIF/NIE Validator"
+  },
+  "workbench:nip-validator": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "workbench"
+    ],
+    "relationshipSummaries": [
+      "validates NIP"
+    ],
+    "title": "NIP Validator"
+  },
+  "workbench:pesel-validator": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "workbench"
+    ],
+    "relationshipSummaries": [
+      "validates PESEL"
+    ],
+    "title": "PESEL Validator"
+  },
+  "workbench:regon-validator": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "workbench"
+    ],
+    "relationshipSummaries": [
+      "validates REGON"
+    ],
+    "title": "REGON Validator"
+  },
+  "workbench:steuernummer-validator": {
+    "aliases": [],
+    "countryReferences": [],
+    "keywords": [
+      "workbench"
+    ],
+    "relationshipSummaries": [
+      "validates Steuer-IdNr"
+    ],
+    "title": "Steuernummer Validator"
+  }
+}

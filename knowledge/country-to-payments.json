@@ -1,0 +1,21 @@
+{
+  "brazil": [
+    "Boleto Bancário",
+    "PIX",
+    "SWIFT"
+  ],
+  "germany": [
+    "SEPA",
+    "SWIFT"
+  ],
+  "poland": [
+    "BLIK",
+    "SEPA",
+    "SWIFT"
+  ],
+  "spain": [
+    "Bizum",
+    "SEPA",
+    "SWIFT"
+  ]
+}
