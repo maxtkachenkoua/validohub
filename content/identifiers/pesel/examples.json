@@ -1,0 +1,36 @@
+[
+  {
+    "input": "92082612343",
+    "name": "Valid Male (1992)",
+    "valid": true,
+    "gender": "male",
+    "birthDate": "1992-08-26",
+    "description": "Standard valid PESEL representing a male born on August 26, 1992."
+  },
+  {
+    "input": "92082612336",
+    "name": "Valid Female (1992)",
+    "valid": true,
+    "gender": "female",
+    "birthDate": "1992-08-26",
+    "description": "Standard valid PESEL representing a female born on August 26, 1992."
+  },
+  {
+    "input": "92082612340",
+    "name": "Invalid Checksum",
+    "valid": false,
+    "description": "Fails the weighted modulo 10 checksum verification (calculated checksum is 3, input ends with 0)."
+  },
+  {
+    "input": "92023012343",
+    "name": "Invalid Calendar Date",
+    "valid": false,
+    "description": "Parsed date decodes to February 30th, which is an invalid calendar day."
+  },
+  {
+    "input": "92132612343",
+    "name": "Invalid Month",
+    "valid": false,
+    "description": "Months field (13) exceeds normal calendar month limit and does not map to any valid century offset."
+  }
+]

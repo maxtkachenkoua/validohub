@@ -1,0 +1,13 @@
+{
+  "id": "source:gov-pl-pesel",
+  "publisher": "authority:mc",
+  "title": "Ewidencja PESEL - Informacje o numerze",
+  "url": "https://www.gov.pl/web/gov/sprawdz-swoje-dane-w-rejestrze-pesel",
+  "documentType": "official-specification",
+  "jurisdiction": "PL",
+  "language": "pl",
+  "publishedAt": "2025-01-01T00:00:00Z",
+  "retrievedAt": "2026-07-02T12:00:00Z",
+  "version": "1.0",
+  "lifecycleStatus": "active"
+}

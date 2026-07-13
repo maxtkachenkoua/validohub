@@ -308,12 +308,21 @@
     "title": "NIP"
   },
   "identifier:pesel": {
-    "aliases": [],
+    "aliases": [
+      "Polish National ID",
+      "Polish Personal Number",
+      "PESEL Number",
+      "PESEL Identifier"
+    ],
     "countryReferences": [
       "poland"
     ],
     "keywords": [
-      "identifier"
+      "identifier",
+      "Polish National ID",
+      "Polish Personal Number",
+      "PESEL Number",
+      "PESEL Identifier"
     ],
     "relationshipSummaries": [
       "governed by Ministry of Digital Affairs"

@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ TITLE }}</title>
+  <meta name="description" content="{{ DESCRIPTION }}">
+  <link rel="canonical" href="{{ CANONICAL }}">
+  <link rel="alternate" hreflang="en" href="{{ CANONICAL }}">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --surface-soft: #f7f7f8;
+      --text: #18181b;
+      --muted: #71717a;
+      --line: #e4e4e7;
+      --accent: #2563eb;
+      --danger: #b91c1c;
+      --code-bg: #18181b;
+      --code-text: #fafafa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header,
+    .site-footer {
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      border-bottom: 0;
+    }
+
+    .header-inner,
+    .footer-inner,
+    .primary-nav,
+    .button-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .header-inner,
+    .footer-inner {
+      justify-content: space-between;
+      min-height: 56px;
+    }
+
+    .brand,
+    .primary-nav a,
+    .breadcrumbs a,
+    .card-grid a {
+      text-decoration: none;
+    }
+
+    .brand {
+      font-weight: 700;
+    }
+
+    .brand-mark {
+      display: inline-grid;
+      width: 28px;
+      height: 28px;
+      margin-right: 8px;
+      place-items: center;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .primary-nav {
+      padding: 8px 0;
+    }
+
+    .primary-nav a,
+    .breadcrumbs,
+    .eyebrow,
+    .page-intro p,
+    .field small {
+      color: var(--muted);
+    }
+
+    .page-shell {
+      padding: 32px 0;
+    }
+
+    .page-stack {
+      display: grid;
+      gap: 28px;
+    }
+
+    .page-intro h1 {
+      margin: 8px 0;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.08;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .workbench-card,
+    .content-card,
+    .related-section {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 24px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    .button {
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
+      padding: 8px 12px;
+    }
+
+    .button-primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .button-secondary {
+      background: var(--surface-soft);
+    }
+
+    .button-ghost {
+      border-color: transparent;
+      background: transparent;
+    }
+
+    .button-ghost:hover {
+      background: var(--surface-soft);
+    }
+
+    .button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .site-main {
+      flex: 1;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+    }
+
+    .breadcrumbs span[aria-hidden] {
+      opacity: 0.5;
+    }
+
+    .section-heading {
+      margin-bottom: 20px;
+    }
+
+    .section-heading h2 {
+      margin: 4px 0 0;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .link-card:hover {
+      border-color: var(--accent);
+      background: var(--surface-soft);
+    }
+
+    /* Accordions */
+    .doc-accordion {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .doc-accordion summary {
+      padding: 14px 16px;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--surface);
+      user-select: none;
+      transition: background 0.15s;
+    }
+
+    .doc-accordion summary:hover {
+      background: var(--surface-soft);
+    }
+
+    .doc-accordion[open] summary {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .doc-accordion .rich-text {
+      padding: 16px;
+      background: var(--surface);
+    }
+
+    /* Details Grid and Lists */
+    .inspector-details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .inspector-details-grid div {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 12px;
+      background: var(--surface-soft);
+    }
+
+    .inspector-details-grid dt {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .inspector-details-grid dd {
+      margin: 0;
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+
+    .rich-text p {
+      margin: 0 0 1em;
+    }
+
+    .rich-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .rich-text ul {
+      margin: 0 0 1em;
+      padding-left: 20px;
+    }
+
+    .rich-text li {
+      margin-bottom: 4px;
+    }
+
+    /* Custom Design Badges */
+    .pesel-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pesel-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .pesel-pill.active {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: #1d4ed8;
+    }
+
+    /* Code Block Styles */
+    pre, code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85em;
+    }
+
+    pre {
+      background: var(--code-bg);
+      color: var(--code-text);
+      padding: 16px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1em;
+    }
+
+    /* API and Snippet tabs */
+    .pesel-api-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 24px;
+      background: var(--surface);
+    }
+
+    .pesel-section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pesel-api-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-soft);
+      overflow-x: auto;
+    }
+
+    .pesel-api-tab {
+      padding: 10px 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .pesel-api-tab:hover {
+      color: var(--text);
+    }
+
+    .pesel-api-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      background: var(--surface);
+    }
+
+    /* Table styles */
+    .pesel-debugger-table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .pesel-dev-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .pesel-dev-table th,
+    .pesel-dev-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pesel-dev-table th {
+      background: var(--surface-soft);
+      font-weight: 700;
+    }
+
+    .pesel-dev-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Structure Breakdown visualization styling */
+    .pesel-visual-blocks-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+      justify-content: center;
+    }
+
+    .pesel-visual-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface-soft);
+      overflow: hidden;
+      min-width: 60px;
+    }
+
+    .pesel-visual-block-header {
+      padding: 4px 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      width: 100%;
+      text-align: center;
+    }
+
+    .pesel-visual-block-body {
+      padding: 10px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* Graph Visual Tree */
+    .graph-visual-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .graph-visual-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .graph-node {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface-soft);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+
+    .graph-node:hover {
+      border-color: var(--accent);
+      background: var(--bg);
+    }
+
+    .graph-node-type {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #bfdbfe;
+      color: #1e3a8a;
+    }
+
+    .graph-arrow {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .inspector-details-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand compact" href="/en/">
+        <span class="brand-mark">V</span>
+        <span class="brand-text">ValidoHub</span>
+      </a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="/en/">Home</a>
+        <a href="/en/countries/">Countries</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="site-main">
+    <section class="page-shell">
+      <div class="container page-stack">
+        
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumbs">
+          <a href="/en/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/en/countries/">Countries</a>
+          <span aria-hidden="true">/</span>
+          <a href="/en/poland/">Poland</a>
+          <span aria-hidden="true">/</span>
+          <span>PESEL</span>
+        </nav>
+        
+        <!-- Hero Header -->
+        <header class="page-intro">
+          <span class="eyebrow">Identifier Knowledge Card</span>
+          <h1>{{ ENTITY_NAME }}</h1>
+          <p>{{ ENTITY_DESCRIPTION }}</p>
+          <div class="pesel-badge-row">
+            {{ FEATURE_BADGES }}
+          </div>
+        </header>
+
+        <!-- Quick Facts and Metadata -->
+        <section class="workbench-card">
+          <div class="section-heading">
+            <span class="eyebrow">Quick Facts</span>
+            <h2>Entity Summary</h2>
+          </div>
+          {{ QUICK_FACTS }}
+        </section>
+
+        <!-- Structured Overview -->
+        <section class="content-card">
+          <div class="section-heading">
+            <span class="eyebrow">Overview</span>
+            <h2>What is {{ ENTITY_NAME }}?</h2>
+          </div>
+          <div class="rich-text">
+            {{ OVERVIEW_HTML }}
+          </div>
+        </section>
+
+        <!-- Visual Structure Section -->
+        {{ VISUAL_STRUCTURE_SECTION }}
+
+        <!-- Checksum Math Section -->
+        {{ CHECKSUM_SECTION }}
+
+        <!-- Examples Section -->
+        <section class="content-card">
+          <div class="section-heading">
+            <span class="eyebrow">Test cases</span>
+            <h2>Validation Examples</h2>
+          </div>
+          {{ EXAMPLES_TABLES }}
+        </section>
+
+        <!-- Developer Notes Section -->
+        <section class="content-card">
+          <div class="section-heading">
+            <span class="eyebrow">Developers</span>
+            <h2>Implementation Guidance</h2>
+          </div>
+          <div class="rich-text">
+            {{ DEVELOPER_NOTES_HTML }}
+          </div>
+          <div class="pesel-api-card" style="margin-top:20px;">
+            <div class="pesel-section-title">
+              <span>🔌</span> Language Code Snippets
+            </div>
+            <div class="pesel-api-tabs">
+              <button type="button" class="pesel-api-tab active" data-lang="javascript">JavaScript</button>
+              <button type="button" class="pesel-api-tab" data-lang="python">Python</button>
+              <button type="button" class="pesel-api-tab" data-lang="java">Java</button>
+              <button type="button" class="pesel-api-tab" data-lang="go">Go</button>
+              <button type="button" class="pesel-api-tab" data-lang="rust">Rust</button>
+            </div>
+            <div class="pesel-dev-accordion-content" style="background: var(--code-bg); padding: 12px; border-radius: 6px; position:relative;">
+              <button type="button" class="pesel-dev-accordion-copy-btn" id="snippet-copy-btn" style="position:absolute; right:12px; top:12px; font-size:0.75rem; padding:4px 8px; border:1px solid var(--line); border-radius:4px; background:var(--surface); color:var(--text); cursor:pointer;">Copy</button>
+              <pre id="pesel-api-code-block" style="margin: 0; font-family: monospace; font-size: 0.8rem; line-height: 1.4; color: var(--code-text); overflow-x:auto;">{{ SNIPPET_JS }}</pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Graph Connections Section -->
+        <section class="content-card">
+          <div class="section-heading">
+            <span class="eyebrow">ValidoHub Knowledge Graph</span>
+            <h2>Semantic Ecosystem Connections</h2>
+          </div>
+          {{ GRAPH_CONNECTIONS }}
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="content-card">
+          <div class="section-heading">
+            <span class="eyebrow">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div class="doc-controls-bar" style="margin-bottom: 12px; display: flex; gap: 8px;">
+            <button type="button" class="button button-secondary compact" id="pesel-expand-docs-btn" style="font-size:0.75rem; padding:4px 8px;">Expand All</button>
+            <button type="button" class="button button-secondary compact" id="pesel-collapse-docs-btn" style="font-size:0.75rem; padding:4px 8px;">Collapse All</button>
+          </div>
+          {{ FAQ_ACCORDIONS }}
+        </section>
+
+        <!-- Official References Section -->
+        <section class="content-card">
+          <div class="section-heading">
+            <span class="eyebrow">References</span>
+            <h2>Official Registry Sources</h2>
+          </div>
+          <div class="rich-text">
+            {{ REFERENCES_HTML }}
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand compact" href="/en/">
+        <span class="brand-mark">V</span>
+        <span class="brand-text">ValidoHub</span>
+      </a>
+      <p>Static tools generated by Valido Engine.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Inline script for code snippets tabs
+    document.addEventListener('DOMContentLoaded', () => {
+      const snippets = {{ SNIPPET_DATA_JSON }};
+      const apiBlock = document.getElementById('pesel-api-code-block');
+      const copyBtn = document.getElementById('snippet-copy-btn');
+      const tabs = document.querySelectorAll('.pesel-api-tab');
+      
+      tabs.forEach(t => {
+        t.addEventListener('click', () => {
+          tabs.forEach(btn => btn.classList.remove('active'));
+          t.classList.add('active');
+          const lang = t.dataset.lang;
+          if (apiBlock && snippets[lang]) {
+            apiBlock.textContent = snippets[lang];
+          }
+        });
+      });
+
+      if (copyBtn && apiBlock) {
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(apiBlock.textContent).then(() => {
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1500);
+          });
+        });
+      }
+
+      // FAQ accordion expand/collapse
+      const expandBtn = document.getElementById('pesel-expand-docs-btn');
+      const collapseBtn = document.getElementById('pesel-collapse-docs-btn');
+      if (expandBtn && collapseBtn) {
+        expandBtn.addEventListener('click', () => {
+          document.querySelectorAll('.doc-accordion').forEach(acc => acc.open = true);
+        });
+        collapseBtn.addEventListener('click', () => {
+          document.querySelectorAll('.doc-accordion').forEach(acc => acc.open = false);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

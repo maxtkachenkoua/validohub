@@ -3,7 +3,12 @@
   "type": "identifier",
   "name": "PESEL",
   "shortDefinition": "Universal Electronic System for Registration of the Population. 11-digit Polish national ID.",
-  "aliases": [],
+  "aliases": [
+    "Polish National ID",
+    "Polish Personal Number",
+    "PESEL Number",
+    "PESEL Identifier"
+  ],
   "stableReferences": [],
   "schemaVersion": "1.0.0",
   "contentVersion": "1.0.0",
