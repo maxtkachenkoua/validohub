@@ -198,7 +198,7 @@
   {
     "source": "identifier:nip",
     "type": "GOVERNED_BY",
-    "target": "authority:zus"
+    "target": "authority:mf"
   },
   {
     "source": "identifier:regon",

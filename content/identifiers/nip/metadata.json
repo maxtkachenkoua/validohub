@@ -6,16 +6,19 @@
     {
       "id": "office",
       "positions": [1, 3],
+      "pattern": "OOO",
       "description": "Tax Office (Urząd Skarbowy) code."
     },
     {
       "id": "serial",
       "positions": [4, 9],
+      "pattern": "SSSSSS",
       "description": "Sequential serial number."
     },
     {
       "id": "checksum",
       "positions": [10, 10],
+      "pattern": "C",
       "description": "Control checksum digit."
     }
   ],

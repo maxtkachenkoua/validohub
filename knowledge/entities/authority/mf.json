@@ -1,0 +1,22 @@
+{
+  "id": "authority:mf",
+  "type": "authority",
+  "name": "Ministry of Finance",
+  "shortDefinition": "Ministerstwo Finansów - Government administration department of Poland responsible for tax administration, revenue collection, and national budget management.",
+  "aliases": ["Ministerstwo Finansów", "MF"],
+  "stableReferences": [
+    {
+      "sourceId": "source:gov-pl-nip",
+      "url": "https://www.podatki.gov.pl/abc-podatkow/identyfikator-podatkowy/",
+      "note": "Official website of the Ministry of Finance / National Revenue Administration of Poland"
+    }
+  ],
+  "schemaVersion": "1.0.0",
+  "contentVersion": "1.0.0",
+  "createdAt": "2026-07-12T18:00:00Z",
+  "updatedAt": "2026-07-12T18:00:00Z",
+  "verificationStatus": "verified",
+  "reviewPolicy": "stable",
+  "recommendedReviewInterval": 365,
+  "lastReviewedAt": "2026-07-12T18:00:00Z"
+}

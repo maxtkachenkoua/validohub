@@ -1,0 +1,30 @@
+.vh-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: var(--vh-space-md);
+  border: 1px solid var(--vh-color-border);
+  border-radius: var(--vh-radius-md);
+}
+
+.vh-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.vh-table th,
+.vh-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--vh-color-border);
+}
+
+.vh-table th {
+  background: var(--vh-color-surface-soft);
+  font-weight: 700;
+  color: var(--vh-color-muted);
+}
+
+.vh-table tr:last-child td {
+  border-bottom: none;
+}

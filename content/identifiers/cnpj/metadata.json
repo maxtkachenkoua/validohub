@@ -6,16 +6,19 @@
     {
       "id": "registration",
       "positions": [1, 8],
+      "pattern": "RRRRRRRR",
       "description": "Unique business registration number."
     },
     {
       "id": "branch",
       "positions": [9, 12],
+      "pattern": "BBBB",
       "description": "Headquarters/branch serial code (usually 0001 for main office)."
     },
     {
       "id": "checksum",
       "positions": [13, 14],
+      "pattern": "CC",
       "description": "Double control checksum verification digits."
     }
   ],

@@ -1,0 +1,48 @@
+:root {
+  color-scheme: light;
+  --vh-color-background: #ffffff;
+  --vh-color-surface: #ffffff;
+  --vh-color-surface-soft: #f7f7f8;
+  --vh-color-text: #18181b;
+  --vh-color-muted: #71717a;
+  --vh-color-border: #e4e4e7;
+  --vh-color-primary: #2563eb;
+  --vh-color-primary-light: #eff6ff;
+  --vh-color-primary-border: #bfdbfe;
+  --vh-color-danger: #dc2626;
+  --vh-color-danger-light: #fef2f2;
+  --vh-color-success: #16a34a;
+  --vh-color-success-light: #f0fdf4;
+  --vh-color-warning: #d97706;
+  --vh-color-code-bg: #18181b;
+  --vh-color-code-text: #fafafa;
+
+  --vh-space-xs: 4px;
+  --vh-space-sm: 8px;
+  --vh-space-md: 16px;
+  --vh-space-lg: 24px;
+  --vh-space-xl: 32px;
+
+  --vh-radius-sm: 4px;
+  --vh-radius-md: 6px;
+  --vh-radius-lg: 8px;
+
+  --vh-transition-fast: 0.15s ease-in-out;
+}
+
+/* Dark Mode Theme Preview support */
+.vh-theme-dark {
+  color-scheme: dark;
+  --vh-color-background: #09090b;
+  --vh-color-surface: #09090b;
+  --vh-color-surface-soft: #18181b;
+  --vh-color-text: #fafafa;
+  --vh-color-muted: #a1a1aa;
+  --vh-color-border: #27272a;
+  --vh-color-primary: #3b82f6;
+  --vh-color-primary-light: #172554;
+  --vh-color-primary-border: #1e3a8a;
+  --vh-color-danger: #ef4444;
+  --vh-color-success: #22c55e;
+  --vh-color-warning: #f59e0b;
+}

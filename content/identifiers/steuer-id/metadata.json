@@ -6,11 +6,13 @@
     {
       "id": "serial",
       "positions": [1, 10],
+      "pattern": "SSSSSSSSSS",
       "description": "Unique tax identifier number serial."
     },
     {
       "id": "checksum",
       "positions": [11, 11],
+      "pattern": "C",
       "description": "Control checksum digit."
     }
   ],

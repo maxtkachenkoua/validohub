@@ -1,6 +1,6 @@
 [
   {
-    "input": "7681682156",
+    "input": "7681682150",
     "name": "Valid NIP",
     "valid": true,
     "description": "Standard valid Polish Tax Identification Number (NIP)."

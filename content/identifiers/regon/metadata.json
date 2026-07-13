@@ -6,16 +6,19 @@
     {
       "id": "region",
       "positions": [1, 2],
+      "pattern": "RR",
       "description": "Region prefix identifier."
     },
     {
       "id": "serial",
       "positions": [3, 8],
+      "pattern": "SSSSSS",
       "description": "Sequential serial number assigned to company."
     },
     {
       "id": "checksum",
       "positions": [9, 9],
+      "pattern": "C",
       "description": "Control checksum digit."
     }
   ],

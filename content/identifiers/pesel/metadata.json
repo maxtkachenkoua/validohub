@@ -6,26 +6,31 @@
     {
       "id": "year",
       "positions": [1, 2],
+      "pattern": "YY",
       "description": "Last two digits of birth year."
     },
     {
       "id": "month",
       "positions": [3, 4],
+      "pattern": "MM",
       "description": "Month of birth (adjusted by century offsets)."
     },
     {
       "id": "day",
       "positions": [5, 6],
+      "pattern": "DD",
       "description": "Day of birth."
     },
     {
       "id": "serial",
       "positions": [7, 10],
+      "pattern": "SSSG",
       "description": "Sequential serial and gender indicator."
     },
     {
       "id": "checksum",
       "positions": [11, 11],
+      "pattern": "C",
       "description": "Control checksum digit."
     }
   ],

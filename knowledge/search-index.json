@@ -61,6 +61,20 @@
     "relationshipSummaries": [],
     "title": "Ministry of Digital Affairs"
   },
+  "authority:mf": {
+    "aliases": [
+      "Ministerstwo Finansów",
+      "MF"
+    ],
+    "countryReferences": [],
+    "keywords": [
+      "authority",
+      "Ministerstwo Finansów",
+      "MF"
+    ],
+    "relationshipSummaries": [],
+    "title": "Ministry of Finance"
+  },
   "authority:nbp": {
     "aliases": [],
     "countryReferences": [
@@ -326,7 +340,7 @@
       "NIP Identifier"
     ],
     "relationshipSummaries": [
-      "governed by ZUS"
+      "governed by Ministry of Finance"
     ],
     "title": "NIP"
   },

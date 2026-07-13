@@ -6,16 +6,19 @@
     {
       "id": "serial",
       "positions": [1, 8],
+      "pattern": "SSSSSSSS",
       "description": "Taxpayer unique registration serial."
     },
     {
       "id": "region",
       "positions": [9, 9],
+      "pattern": "R",
       "description": "Fiscal region digit code (defining state origin)."
     },
     {
       "id": "checksum",
       "positions": [10, 11],
+      "pattern": "CC",
       "description": "Double control checksum verification digits."
     }
   ],

@@ -7108,7 +7108,7 @@
     },
     "nip-validator": {
       "authorities": [
-        "ZUS"
+        "Ministry of Finance"
       ],
       "countries": [
         "Poland"

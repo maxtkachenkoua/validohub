@@ -2,3 +2,5 @@ generated/
 target/
 .idea/
 *.log
+node_modules/
+

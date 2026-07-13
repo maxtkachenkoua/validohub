@@ -1,0 +1,34 @@
+.vh-accordion {
+  border: 1px solid var(--vh-color-border);
+  border-radius: var(--vh-radius-md);
+  margin-bottom: var(--vh-space-sm);
+  overflow: hidden;
+}
+
+.vh-accordion summary {
+  padding: var(--vh-space-sm) var(--vh-space-md);
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--vh-color-surface);
+  user-select: none;
+  transition: background var(--vh-transition-fast);
+}
+
+.vh-accordion summary:hover {
+  background: var(--vh-color-surface-soft);
+}
+
+.vh-accordion[open] summary {
+  border-bottom: 1px solid var(--vh-color-border);
+}
+
+.vh-accordion .rich-text {
+  padding: var(--vh-space-md);
+  background: var(--vh-color-surface);
+}
+
+.vh-accordion-controls {
+  display: flex;
+  gap: var(--vh-space-sm);
+  margin-bottom: var(--vh-space-md);
+}

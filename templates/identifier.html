@@ -1,0 +1,96 @@
+<!-- Quick Facts and Metadata -->
+<section class="vh-card">
+  <div class="section-heading vh-hidden">
+    <span class="vh-eyebrow">Quick Facts</span>
+    <h2>Entity Summary</h2>
+  </div>
+  {{ QUICK_FACTS }}
+</section>
+
+<!-- Structured Overview -->
+<section class="vh-card">
+  <div class="section-heading vh-mt-md">
+    <span class="vh-eyebrow">Overview</span>
+    <h2>What is {{ ENTITY_NAME }}?</h2>
+  </div>
+  <div class="rich-text">
+    {{ OVERVIEW_HTML }}
+  </div>
+</section>
+
+<!-- Visual Structure Section -->
+{{ VISUAL_STRUCTURE_SECTION }}
+
+<!-- Checksum Math Section -->
+{{ CHECKSUM_SECTION }}
+
+<!-- Examples Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">Test cases</span>
+    <h2>Validation Examples</h2>
+  </div>
+  {{ EXAMPLES_TABLES }}
+</section>
+
+<!-- Developer Notes Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">Developers</span>
+    <h2>Implementation Guidance</h2>
+  </div>
+  <div class="rich-text">
+    {{ DEVELOPER_NOTES_HTML }}
+  </div>
+  
+  <!-- Snippet tabs layout -->
+  <div class="vh-code-card">
+    <div class="vh-code-card-header">
+      <span>🔌</span> Language Code Snippets
+    </div>
+    <div class="vh-code-tabs">
+      <button type="button" class="vh-tab active" data-lang="javascript">JavaScript</button>
+      <button type="button" class="vh-tab" data-lang="python">Python</button>
+      <button type="button" class="vh-tab" data-lang="java">Java</button>
+      <button type="button" class="vh-tab" data-lang="go">Go</button>
+      <button type="button" class="vh-tab" data-lang="rust">Rust</button>
+    </div>
+    <div class="vh-code-block-wrapper">
+      <button type="button" class="vh-copy-button" id="vh-snippet-copy-btn">Copy</button>
+      <pre class="vh-margin-zero"><code id="vh-code-block-content" class="vh-code">{{ SNIPPET_JS }}</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- Graph Connections Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">ValidoHub Knowledge Graph</span>
+    <h2>Semantic Ecosystem Connections</h2>
+  </div>
+  {{ GRAPH_CONNECTIONS }}
+</section>
+
+<!-- FAQ Section -->
+<section class="vh-card vh-faq-section">
+  <div class="section-heading">
+    <span class="vh-eyebrow">FAQ</span>
+    <h2>Frequently Asked Questions</h2>
+  </div>
+  <div class="vh-accordion-controls">
+    <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="expand">Expand All</button>
+    <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="collapse">Collapse All</button>
+  </div>
+  {{ FAQ_ACCORDIONS }}
+</section>
+
+<!-- Official References Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">References</span>
+    <h2>Official Registry Sources</h2>
+  </div>
+  <div class="rich-text">
+    {{ REFERENCES_HTML }}
+  </div>
+</section>

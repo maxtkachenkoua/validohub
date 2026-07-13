@@ -1,6 +1,6 @@
 [
   {
-    "input": "19123456000197",
+    "input": "11222333000181",
     "name": "Valid CNPJ",
     "valid": true,
     "description": "Standard valid Brazilian Cadastro Nacional da Pessoa Jurídica (CNPJ) number."
