@@ -1,0 +1,41 @@
+{
+  "name": "REGON",
+  "country": "Poland",
+  "length": 9,
+  "fields": [
+    {
+      "id": "region",
+      "positions": [1, 2],
+      "description": "Region prefix identifier."
+    },
+    {
+      "id": "serial",
+      "positions": [3, 8],
+      "description": "Sequential serial number assigned to company."
+    },
+    {
+      "id": "checksum",
+      "positions": [9, 9],
+      "description": "Control checksum digit."
+    }
+  ],
+  "checksum": {
+    "algorithm": "weighted-mod11",
+    "weights": [8, 9, 2, 3, 4, 5, 6, 7]
+  },
+  "layout": [
+    "Hero",
+    "QuickFacts",
+    "FieldExplorer",
+    "ChecksumExplorer",
+    "ExampleExplorer",
+    "ImplementationExplorer",
+    "KnowledgeGraphViewer",
+    "FAQExplorer",
+    "ReferencesExplorer"
+  ],
+  "decoder": {
+    "supportsDate": false,
+    "supportsGender": false
+  }
+}

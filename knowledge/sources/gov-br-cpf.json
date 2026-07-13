@@ -1,0 +1,13 @@
+{
+  "id": "source:gov-br-cpf",
+  "publisher": "authority:receita-federal",
+  "title": "Cadastro de Pessoas Físicas - CPF",
+  "url": "https://www.gov.br/receitafederal/pt-br/assuntos/cadastro-de-pessoas-fisicas-cpf",
+  "documentType": "official-specification",
+  "jurisdiction": "BR",
+  "language": "pt",
+  "publishedAt": "2025-01-01T00:00:00Z",
+  "retrievedAt": "2026-07-02T12:00:00Z",
+  "version": "1.0",
+  "lifecycleStatus": "active"
+}

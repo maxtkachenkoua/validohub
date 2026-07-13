@@ -3,7 +3,12 @@
   "type": "identifier",
   "name": "Steuer-IdNr",
   "shortDefinition": "Steueridentifikationsnummer. German personal tax identification number.",
-  "aliases": [],
+  "aliases": [
+    "German Personal Tax ID",
+    "steuerliche Identifikationsnummer",
+    "Steuer-IdNr",
+    "Steuer ID"
+  ],
   "stableReferences": [],
   "schemaVersion": "1.0.0",
   "contentVersion": "1.0.0",

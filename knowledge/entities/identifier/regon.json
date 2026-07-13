@@ -3,7 +3,11 @@
   "type": "identifier",
   "name": "REGON",
   "shortDefinition": "National Official Register of Business Entities in Poland.",
-  "aliases": [],
+  "aliases": [
+    "Polish Business Registry Number",
+    "REGON Number",
+    "REGON Identifier"
+  ],
   "stableReferences": [],
   "schemaVersion": "1.0.0",
   "contentVersion": "1.0.0",

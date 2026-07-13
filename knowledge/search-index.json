@@ -243,12 +243,19 @@
     "title": "CNH"
   },
   "identifier:cnpj": {
-    "aliases": [],
+    "aliases": [
+      "Brazilian Business Registry Number",
+      "CNPJ Number",
+      "CNPJ Identifier"
+    ],
     "countryReferences": [
       "brazil"
     ],
     "keywords": [
-      "identifier"
+      "identifier",
+      "Brazilian Business Registry Number",
+      "CNPJ Number",
+      "CNPJ Identifier"
     ],
     "relationshipSummaries": [
       "governed by Receita Federal"
@@ -256,12 +263,19 @@
     "title": "CNPJ"
   },
   "identifier:cpf": {
-    "aliases": [],
+    "aliases": [
+      "Brazilian Individual Taxpayer Registry",
+      "CPF Number",
+      "CPF Identifier"
+    ],
     "countryReferences": [
       "brazil"
     ],
     "keywords": [
-      "identifier"
+      "identifier",
+      "Brazilian Individual Taxpayer Registry",
+      "CPF Number",
+      "CPF Identifier"
     ],
     "relationshipSummaries": [
       "governed by Receita Federal"
@@ -295,12 +309,21 @@
     "title": "NIF"
   },
   "identifier:nip": {
-    "aliases": [],
+    "aliases": [
+      "Polish Tax ID",
+      "Numer Identyfikacji Podatkowej",
+      "NIP Number",
+      "NIP Identifier"
+    ],
     "countryReferences": [
       "poland"
     ],
     "keywords": [
-      "identifier"
+      "identifier",
+      "Polish Tax ID",
+      "Numer Identyfikacji Podatkowej",
+      "NIP Number",
+      "NIP Identifier"
     ],
     "relationshipSummaries": [
       "governed by ZUS"
@@ -330,12 +353,19 @@
     "title": "PESEL"
   },
   "identifier:regon": {
-    "aliases": [],
+    "aliases": [
+      "Polish Business Registry Number",
+      "REGON Number",
+      "REGON Identifier"
+    ],
     "countryReferences": [
       "poland"
     ],
     "keywords": [
-      "identifier"
+      "identifier",
+      "Polish Business Registry Number",
+      "REGON Number",
+      "REGON Identifier"
     ],
     "relationshipSummaries": [
       "governed by GUS"
@@ -365,12 +395,21 @@
     "title": "RG"
   },
   "identifier:steuer-id": {
-    "aliases": [],
+    "aliases": [
+      "German Personal Tax ID",
+      "steuerliche Identifikationsnummer",
+      "Steuer-IdNr",
+      "Steuer ID"
+    ],
     "countryReferences": [
       "germany"
     ],
     "keywords": [
-      "identifier"
+      "identifier",
+      "German Personal Tax ID",
+      "steuerliche Identifikationsnummer",
+      "Steuer-IdNr",
+      "Steuer ID"
     ],
     "relationshipSummaries": [
       "governed by BZSt"

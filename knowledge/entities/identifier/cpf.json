@@ -3,7 +3,11 @@
   "type": "identifier",
   "name": "CPF",
   "shortDefinition": "Cadastro de Pessoas Físicas. Brazilian individual taxpayer registry number.",
-  "aliases": [],
+  "aliases": [
+    "Brazilian Individual Taxpayer Registry",
+    "CPF Number",
+    "CPF Identifier"
+  ],
   "stableReferences": [],
   "schemaVersion": "1.0.0",
   "contentVersion": "1.0.0",

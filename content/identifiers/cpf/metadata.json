@@ -1,0 +1,41 @@
+{
+  "name": "CPF",
+  "country": "Brazil",
+  "length": 11,
+  "fields": [
+    {
+      "id": "serial",
+      "positions": [1, 8],
+      "description": "Taxpayer unique registration serial."
+    },
+    {
+      "id": "region",
+      "positions": [9, 9],
+      "description": "Fiscal region digit code (defining state origin)."
+    },
+    {
+      "id": "checksum",
+      "positions": [10, 11],
+      "description": "Double control checksum verification digits."
+    }
+  ],
+  "checksum": {
+    "algorithm": "double-mod11",
+    "weights": [10, 9, 8, 7, 6, 5, 4, 3, 2]
+  },
+  "layout": [
+    "Hero",
+    "QuickFacts",
+    "FieldExplorer",
+    "ChecksumExplorer",
+    "ExampleExplorer",
+    "ImplementationExplorer",
+    "KnowledgeGraphViewer",
+    "FAQExplorer",
+    "ReferencesExplorer"
+  ],
+  "decoder": {
+    "supportsDate": false,
+    "supportsGender": false
+  }
+}

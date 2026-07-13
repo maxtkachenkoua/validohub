@@ -1,0 +1,20 @@
+[
+  {
+    "input": "192598471",
+    "name": "Valid REGON",
+    "valid": true,
+    "description": "Standard valid Polish National Official Business Register (REGON) number."
+  },
+  {
+    "input": "123456789",
+    "name": "Invalid Checksum",
+    "valid": false,
+    "description": "Fails the weighted modulo 11 checksum verification."
+  },
+  {
+    "input": "12345",
+    "name": "Too Short",
+    "valid": false,
+    "description": "Must be exactly 9 numeric digits."
+  }
+]

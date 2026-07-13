@@ -1,0 +1,35 @@
+{
+  "name": "Steuer-IdNr",
+  "country": "Germany",
+  "length": 11,
+  "fields": [
+    {
+      "id": "serial",
+      "positions": [1, 10],
+      "description": "Unique tax identifier number serial."
+    },
+    {
+      "id": "checksum",
+      "positions": [11, 11],
+      "description": "Control checksum digit."
+    }
+  ],
+  "checksum": {
+    "algorithm": "iso-7064-mod11-10"
+  },
+  "layout": [
+    "Hero",
+    "QuickFacts",
+    "FieldExplorer",
+    "ChecksumExplorer",
+    "ExampleExplorer",
+    "ImplementationExplorer",
+    "KnowledgeGraphViewer",
+    "FAQExplorer",
+    "ReferencesExplorer"
+  ],
+  "decoder": {
+    "supportsDate": false,
+    "supportsGender": false
+  }
+}

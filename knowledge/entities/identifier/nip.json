@@ -3,7 +3,12 @@
   "type": "identifier",
   "name": "NIP",
   "shortDefinition": "Numer Identyfikacji Podatkowej. Polish tax identification number.",
-  "aliases": [],
+  "aliases": [
+    "Polish Tax ID",
+    "Numer Identyfikacji Podatkowej",
+    "NIP Number",
+    "NIP Identifier"
+  ],
   "stableReferences": [],
   "schemaVersion": "1.0.0",
   "contentVersion": "1.0.0",

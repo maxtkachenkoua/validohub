@@ -1,0 +1,13 @@
+{
+  "id": "source:gov-br-cnpj",
+  "publisher": "authority:receita-federal",
+  "title": "Cadastro Nacional da Pessoa Jurídica - CNPJ",
+  "url": "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/cnpj",
+  "documentType": "official-specification",
+  "jurisdiction": "BR",
+  "language": "pt",
+  "publishedAt": "2025-01-01T00:00:00Z",
+  "retrievedAt": "2026-07-02T12:00:00Z",
+  "version": "1.0",
+  "lifecycleStatus": "active"
+}

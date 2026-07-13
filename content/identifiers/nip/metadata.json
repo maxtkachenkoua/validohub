@@ -1,0 +1,41 @@
+{
+  "name": "NIP",
+  "country": "Poland",
+  "length": 10,
+  "fields": [
+    {
+      "id": "office",
+      "positions": [1, 3],
+      "description": "Tax Office (Urząd Skarbowy) code."
+    },
+    {
+      "id": "serial",
+      "positions": [4, 9],
+      "description": "Sequential serial number."
+    },
+    {
+      "id": "checksum",
+      "positions": [10, 10],
+      "description": "Control checksum digit."
+    }
+  ],
+  "checksum": {
+    "algorithm": "weighted-mod11",
+    "weights": [6, 5, 7, 2, 3, 4, 5, 6, 7]
+  },
+  "layout": [
+    "Hero",
+    "QuickFacts",
+    "FieldExplorer",
+    "ChecksumExplorer",
+    "ExampleExplorer",
+    "ImplementationExplorer",
+    "KnowledgeGraphViewer",
+    "FAQExplorer",
+    "ReferencesExplorer"
+  ],
+  "decoder": {
+    "supportsDate": false,
+    "supportsGender": false
+  }
+}

@@ -3,7 +3,11 @@
   "type": "identifier",
   "name": "CNPJ",
   "shortDefinition": "Cadastro Nacional da Pessoa Jurídica. Brazilian business taxpayer identification number.",
-  "aliases": [],
+  "aliases": [
+    "Brazilian Business Registry Number",
+    "CNPJ Number",
+    "CNPJ Identifier"
+  ],
   "stableReferences": [],
   "schemaVersion": "1.0.0",
   "contentVersion": "1.0.0",

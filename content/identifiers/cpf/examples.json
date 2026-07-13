@@ -1,0 +1,20 @@
+[
+  {
+    "input": "19123456793",
+    "name": "Valid CPF",
+    "valid": true,
+    "description": "Standard valid Brazilian Cadastro de Pessoas Físicas (CPF) number."
+  },
+  {
+    "input": "11111111111",
+    "name": "Trivial Sequential Code",
+    "valid": false,
+    "description": "Fails the Receita Federal rule blocking identical repeating digits."
+  },
+  {
+    "input": "12345",
+    "name": "Too Short",
+    "valid": false,
+    "description": "Must be exactly 11 numeric digits."
+  }
+]

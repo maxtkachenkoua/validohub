@@ -1,0 +1,20 @@
+[
+  {
+    "input": "7681682156",
+    "name": "Valid NIP",
+    "valid": true,
+    "description": "Standard valid Polish Tax Identification Number (NIP)."
+  },
+  {
+    "input": "1234567890",
+    "name": "Invalid Checksum",
+    "valid": false,
+    "description": "Fails the weighted modulo 11 checksum verification."
+  },
+  {
+    "input": "12345",
+    "name": "Too Short",
+    "valid": false,
+    "description": "Must be exactly 10 numeric digits."
+  }
+]
