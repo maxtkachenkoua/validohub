@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-tax-microaccount-calculator
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: Polish Tax Microaccount Calculator
+summary:
+  en: Inspect PESEL or NIP inputs for Polish tax microaccount workflows and explain safe offline limits.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: PESEL or NIP
+        required: true
+        placeholder:
+          en: 44051401458
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [pesel-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish Tax Microaccount Calculator
+  description:
+    en: Inspect PESEL or NIP inputs for Polish tax microaccount workflows and explain safe offline limits.

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-phone-number-validator
+kind: tool
+module: validohub
+country: PL
+category: national-identifiers
+status: active
+name:
+  en: Polish Phone Number Workbench
+summary:
+  en: Validate, normalize, classify, and format Polish phone numbers locally.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Phone number
+        required: true
+        placeholder:
+          en: +48 501 234 567
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [pesel-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish Phone Number Workbench
+  description:
+    en: Validate, normalize, classify, and format Polish phone numbers locally.

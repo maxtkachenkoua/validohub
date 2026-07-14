@@ -239,6 +239,7 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
     'validohub.pesel': 'pesel.js',
     'validohub.brazil-pix': 'pix.js',
     'validohub.spain-id': 'spain-id.js',
+    'validohub.poland-suite': 'poland-suite.js',
     'validohub.base64-decoder': 'base64.js',
     'validohub.base64': 'base64.js',
     'validohub.json-formatter': 'json.js',

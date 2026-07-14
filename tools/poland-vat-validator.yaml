@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-vat-validator
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: Polish VAT / EU VAT Syntax Workbench
+summary:
+  en: Validate Polish VAT syntax with PL prefix and local NIP checksum context, without VIES lookup.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: VAT number
+        required: true
+        placeholder:
+          en: PL1234563218
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [pesel-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish VAT / EU VAT Syntax Workbench
+  description:
+    en: Validate Polish VAT syntax with PL prefix and local NIP checksum context, without VIES lookup.

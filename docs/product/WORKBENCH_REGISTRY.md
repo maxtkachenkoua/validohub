@@ -189,6 +189,42 @@ This registry records production browser workbenches currently owned by ValidoHu
   - Spain phone, postal code, IBAN, and Bizum-specific tools.
 - Current quality status: Production-quality V1 workbench modeled after PESEL and PIX.
 
+## Poland Premium Workbench Suite
+
+- Source JS: `assets/js/tools/poland-suite.js`
+- Related YAML tool pages:
+  - `tools/poland-nip-validator.yaml`
+  - `tools/poland-regon-validator.yaml`
+  - `tools/poland-iban-nrb-validator.yaml`
+  - `tools/poland-tax-microaccount-calculator.yaml`
+  - `tools/poland-postal-code-validator.yaml`
+  - `tools/poland-phone-number-validator.yaml`
+  - `tools/poland-license-plate-inspector.yaml`
+  - `tools/poland-krs-inspector.yaml`
+  - `tools/poland-vat-validator.yaml`
+  - `tools/poland-bank-code-inspector.yaml`
+- Algorithm ID:
+  - `validohub.poland-suite`
+- Current capabilities:
+  - NIP checksum validation, normalization, safe fixture generation, and checksum debugger.
+  - REGON 9/14-digit validation, normalization, safe fixture generation, and checksum debugger.
+  - Polish IBAN / NRB MOD-97 validation and bank/account segment explanation.
+  - Tax microaccount input readiness checks for PESEL-shaped and valid NIP inputs with official-status boundary copy.
+  - Polish postal-code normalization and NN-NNN diagnostics.
+  - Polish phone number normalization and mobile/landline/service/premium-style classification hints.
+  - Polish license-plate structural inspection and region-prefix hints.
+  - KRS 10-digit format inspection with registry-status boundary copy.
+  - Polish VAT syntax validation using PL + NIP checksum and VIES boundary copy.
+  - Polish bank-code / branch segment inspection from valid NRB or PL IBAN.
+  - Shared presets, recent local inputs, validation timeline, result cards, field breakdown, debugger, developer JSON, copy normalized, copy JSON, and downloads through the shared framework.
+- Known future ideas:
+  - Batch CSV validation for each Polish identifier.
+  - Official lookup integrations only if a future privacy/network product spec explicitly approves them.
+  - Richer bank-code dictionary and administrative prefix coverage.
+  - Mask/anonymize helpers for logs and support tickets.
+- Current quality status: Production-quality V1 suite modeled after the PESEL gold standard.
+
+
 ## Countries Platform
 
 This is a product platform section, not a browser workbench plugin.

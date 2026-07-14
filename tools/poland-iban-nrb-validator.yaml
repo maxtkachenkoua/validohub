@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-iban-nrb-validator
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: Polish IBAN / NRB Workbench
+summary:
+  en: Validate Polish IBAN and domestic NRB numbers with MOD-97 and bank-code breakdown.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: IBAN or NRB
+        required: true
+        placeholder:
+          en: PL61109010140000071219812874
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [pesel-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish IBAN / NRB Workbench
+  description:
+    en: Validate Polish IBAN and domestic NRB numbers with MOD-97 and bank-code breakdown.

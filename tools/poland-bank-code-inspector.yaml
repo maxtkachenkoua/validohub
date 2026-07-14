@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-bank-code-inspector
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: Polish Bank Code / NRB Inspector
+summary:
+  en: Extract and explain Polish bank and branch code segments from NRB or PL IBAN numbers.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: NRB or IBAN
+        required: true
+        placeholder:
+          en: PL61109010140000071219812874
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [pesel-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish Bank Code / NRB Inspector
+  description:
+    en: Extract and explain Polish bank and branch code segments from NRB or PL IBAN numbers.

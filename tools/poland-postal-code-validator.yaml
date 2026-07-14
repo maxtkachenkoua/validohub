@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-postal-code-validator
+kind: tool
+module: validohub
+country: PL
+category: national-identifiers
+status: active
+name:
+  en: Polish Postal Code Validator
+summary:
+  en: Validate, normalize, and explain Polish postal code formats for address forms.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Postal code
+        required: true
+        placeholder:
+          en: 00-001
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [pesel-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish Postal Code Validator
+  description:
+    en: Validate, normalize, and explain Polish postal code formats for address forms.

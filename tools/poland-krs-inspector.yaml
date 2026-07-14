@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-krs-inspector
+kind: tool
+module: validohub
+country: PL
+category: national-identifiers
+status: active
+name:
+  en: KRS Number Inspector
+summary:
+  en: Validate and explain Polish National Court Register number formatting and registry context.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: KRS number
+        required: true
+        placeholder:
+          en: 0000123456
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [pesel-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: KRS Number Inspector
+  description:
+    en: Validate and explain Polish National Court Register number formatting and registry context.

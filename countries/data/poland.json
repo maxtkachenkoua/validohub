@@ -28,27 +28,44 @@
     "identifiers": [
       "PESEL",
       "NIP",
-      "REGON"
+      "REGON",
+      "KRS",
+      "VAT",
+      "NRB"
     ],
     "payments": [
       "IBAN",
       "BLIK",
-      "SEPA"
+      "SEPA",
+      "NRB",
+      "Tax microaccount"
     ],
     "features": [
       "identity",
       "government",
-      "banking"
+      "banking",
+      "tax",
+      "payments",
+      "postal",
+      "phone",
+      "vehicle",
+      "business"
     ],
     "availableWorkbenches": [
-      "PESEL Validator"
+      "PESEL Validator",
+      "NIP Validator & Explainer",
+      "REGON Validator & Explainer",
+      "Polish IBAN / NRB Workbench",
+      "Polish Tax Microaccount Calculator",
+      "Polish Postal Code Validator",
+      "Polish Phone Number Workbench",
+      "Polish License Plate Inspector",
+      "KRS Number Inspector",
+      "Polish VAT / EU VAT Syntax Workbench",
+      "Polish Bank Code / NRB Inspector"
     ],
-    "plannedWorkbenches": [
-      "NIP Validator",
-      "REGON Validator",
-      "Polish IBAN Notes"
-    ],
-    "completion": 35,
+    "plannedWorkbenches": [],
+    "completion": 78,
     "coordinates": {
       "x": 52,
       "y": 34
@@ -609,7 +626,7 @@
       {
         "icon": "🪪",
         "name": "NIP",
-        "status": "planned",
+        "status": "available",
         "category": "Tax identifier",
         "tags": [
           "identifiers",
@@ -617,13 +634,13 @@
         ],
         "description": "Numer Identyfikacji Podatkowej. 10-digit tax identification number used by individuals and legal entities in Poland.",
         "related": [
-          "NIP Validator"
+          "NIP Validator & Explainer"
         ]
       },
       {
         "icon": "🏢",
         "name": "REGON",
-        "status": "planned",
+        "status": "available",
         "category": "Business identifier",
         "tags": [
           "identifiers",
@@ -631,13 +648,13 @@
         ],
         "description": "National Official Register of Business Entities. Supports 9-digit local registry numbers and 14-digit subdivision registration concepts.",
         "related": [
-          "REGON Validator"
+          "REGON Validator & Explainer"
         ]
       },
       {
         "brandKey": "iban",
         "name": "Polish IBAN",
-        "status": "planned",
+        "status": "available",
         "category": "Banking",
         "tags": [
           "banking",
@@ -645,7 +662,8 @@
         ],
         "description": "Polish accounts use PL country prefix followed by a two-digit control checksum and 26-digit basic bank account numbers.",
         "related": [
-          "Polish IBAN Notes"
+          "Polish IBAN / NRB Workbench",
+          "Polish Bank Code / NRB Inspector"
         ]
       },
       {
@@ -662,34 +680,43 @@
       {
         "brandKey": "vies",
         "name": "EU VAT / VIES",
-        "status": "planned",
+        "status": "available",
         "category": "Tax and business",
         "tags": [
           "tax",
           "government"
         ],
-        "description": "Polish VAT numbers prefix PL to the NIP string. EU VIES status checks represent a separate status query, not just local validation."
+        "description": "Polish VAT numbers prefix PL to the NIP string. EU VIES status checks represent a separate status query, not just local validation.",
+        "related": [
+          "Polish VAT / EU VAT Syntax Workbench"
+        ]
       },
       {
         "icon": "✉",
         "name": "Polish postal code",
-        "status": "planned",
+        "status": "available",
         "category": "Postal",
         "tags": [
           "postal",
           "addresses"
         ],
-        "description": "Five-digit code using NN-NNN pattern (e.g. 00-001 for main Warsaw). Broadly maps to postal zones and districts."
+        "description": "Five-digit code using NN-NNN pattern (e.g. 00-001 for main Warsaw). Broadly maps to postal zones and districts.",
+        "related": [
+          "Polish Postal Code Validator"
+        ]
       },
       {
         "icon": "☎",
         "name": "Polish phone numbers",
-        "status": "planned",
+        "status": "available",
         "category": "Phone",
         "tags": [
           "phone"
         ],
-        "description": "Nine-digit national number length using country code +48 for mobile and regional landline prefixes."
+        "description": "Nine-digit national number length using country code +48 for mobile and regional landline prefixes.",
+        "related": [
+          "Polish Phone Number Workbench"
+        ]
       },
       {
         "icon": "💸",
@@ -799,35 +826,7 @@
         "note": "Postal authority and official postcode database lookup."
       }
     ],
-    "plannedWorkbenches": [
-      {
-        "name": "NIP Validator",
-        "status": "planned",
-        "tags": [
-          "identifiers",
-          "tax"
-        ],
-        "description": "Explain Polish NIP checksum math and registration status inspections."
-      },
-      {
-        "name": "REGON Validator",
-        "status": "planned",
-        "tags": [
-          "identifiers",
-          "government"
-        ],
-        "description": "Explain REGON 9-digit and 14-digit format checksums and structure."
-      },
-      {
-        "name": "Polish IBAN Notes",
-        "status": "planned",
-        "tags": [
-          "banking",
-          "payments"
-        ],
-        "description": "Country-specific explanations around Polish bank account layouts and Elixir clearing rails."
-      }
-    ],
+    "plannedWorkbenches": [],
     "relatedGlobalTools": [
       {
         "label": "JSON Formatter",
@@ -851,6 +850,24 @@
         "brandKey": "iban",
         "tags": [
           "banking"
+        ]
+      },
+      {
+        "label": "Polish IBAN / NRB Workbench",
+        "path": "poland/poland-iban-nrb-validator/",
+        "brandKey": "iban",
+        "tags": [
+          "banking",
+          "payments"
+        ]
+      },
+      {
+        "label": "Polish VAT / EU VAT Syntax Workbench",
+        "path": "poland/poland-vat-validator/",
+        "brandKey": "vies",
+        "tags": [
+          "tax",
+          "eu"
         ]
       }
     ],
@@ -886,6 +903,98 @@
           "government"
         ],
         "description": "Validate, parse, generate, and explain Polish PESEL numbers."
+      },
+      "NIP Validator & Explainer": {
+        "status": "available",
+        "tags": [
+          "identifiers",
+          "tax"
+        ],
+        "description": "Validate, normalize, generate fixtures, and explain Polish NIP checksum behavior.",
+        "path": "poland-nip-validator/"
+      },
+      "REGON Validator & Explainer": {
+        "status": "available",
+        "tags": [
+          "identifiers",
+          "government",
+          "business"
+        ],
+        "description": "Validate 9- and 14-digit REGON numbers with checksum math and business-register context.",
+        "path": "poland-regon-validator/"
+      },
+      "Polish IBAN / NRB Workbench": {
+        "status": "available",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "Validate PL IBAN and domestic NRB account numbers with MOD-97 and bank-segment diagnostics.",
+        "path": "poland-iban-nrb-validator/"
+      },
+      "Polish Tax Microaccount Calculator": {
+        "status": "available",
+        "tags": [
+          "tax",
+          "payments"
+        ],
+        "description": "Inspect PESEL or NIP inputs for Polish tax microaccount workflows with clear offline limits.",
+        "path": "poland-tax-microaccount-calculator/"
+      },
+      "Polish Postal Code Validator": {
+        "status": "available",
+        "tags": [
+          "postal",
+          "addresses"
+        ],
+        "description": "Normalize and validate Polish NN-NNN postal-code format.",
+        "path": "poland-postal-code-validator/"
+      },
+      "Polish Phone Number Workbench": {
+        "status": "available",
+        "tags": [
+          "phone",
+          "locale"
+        ],
+        "description": "Normalize +48 phone numbers and classify mobile, landline, service, and premium-like ranges.",
+        "path": "poland-phone-number-validator/"
+      },
+      "Polish License Plate Inspector": {
+        "status": "available",
+        "tags": [
+          "vehicle",
+          "identifiers"
+        ],
+        "description": "Inspect Polish license-plate structure and region-prefix hints.",
+        "path": "poland-license-plate-inspector/"
+      },
+      "KRS Number Inspector": {
+        "status": "available",
+        "tags": [
+          "business",
+          "government"
+        ],
+        "description": "Validate KRS number shape and explain National Court Register boundaries.",
+        "path": "poland-krs-inspector/"
+      },
+      "Polish VAT / EU VAT Syntax Workbench": {
+        "status": "available",
+        "tags": [
+          "tax",
+          "vat",
+          "eu"
+        ],
+        "description": "Validate PL VAT syntax using the underlying NIP checksum and explain VIES boundaries.",
+        "path": "poland-vat-validator/"
+      },
+      "Polish Bank Code / NRB Inspector": {
+        "status": "available",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "Extract Polish bank and branch segments from valid NRB or PL IBAN input.",
+        "path": "poland-bank-code-inspector/"
       }
     },
     "futureCountryPages": [

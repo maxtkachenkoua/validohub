@@ -381,3 +381,23 @@ Impact:
 - Valido Engine remains untouched.
 - No DNI, NIE, NIF, CIF, VAT, VIES, phone, postal-code, IBAN, Bizum, payment, banking, tax, vehicle, or identity validator was implemented.
 - Future Spain-specific tools require dedicated product specs before implementation.
+
+## Poland Premium Workbench Suite V1
+
+Changed:
+
+- Added ten browser-only Poland premium workbenches modeled after the PESEL reference page.
+- Added NIP, REGON, Polish IBAN / NRB, tax microaccount input, postal code, phone number, license plate, KRS, Polish VAT syntax, and bank-code tools.
+- Added shared `assets/js/tools/poland-suite.js` with presets, recent local inputs, validation timeline, result cards, field breakdown, debugger, developer JSON, copy helpers, safe fixture generation, and offline boundary explanations.
+- Updated Poland Country Hub metadata so the new pages are available and linked as country workbenches.
+- Added `docs/product/POLAND_PREMIUM_SUITE_SPEC.md`.
+
+Reason:
+
+Poland needed a premium country-specific suite around the PESEL gold standard so developers can validate and understand the most common Polish identifiers, payments, tax, banking, postal, phone, and vehicle formats without leaving the browser.
+
+Impact:
+
+- Poland Premium Workbench Suite lives entirely in ValidoHub assets, content, and metadata.
+- Valido Engine remains untouched.
+- No official registry lookup, VIES lookup, bank lookup, vehicle lookup, phone lookup, tax-status lookup, backend, REST API, database, or Java execution was added.

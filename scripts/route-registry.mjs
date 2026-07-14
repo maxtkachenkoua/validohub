@@ -4,6 +4,33 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(__dirname, '..');
+const siteRoot = resolve(projectRoot, 'generated', 'validohub');
+
+function decodeHtmlEntities(value) {
+  return String(value || '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+async function discoverGeneratedTitle(routePath) {
+  if (routePath === '/en/') return 'ValidoHub';
+  const outputPath = resolve(siteRoot, routePath.replace(/^\//, ''), 'index.html');
+  try {
+    const html = await readFile(outputPath, 'utf8');
+    const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+    if (h1 && h1[1]) return decodeHtmlEntities(h1[1].replace(/<[^>]+>/g, ''));
+    const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    if (title && title[1]) return decodeHtmlEntities(title[1].replace(/\s*\|\s*ValidoHub\s*$/i, ''));
+  } catch (err) {
+    // Keep registry construction resilient; integrity validation catches missing files later.
+  }
+  return 'Interactive Validator';
+}
 
 export class RouteRegistry {
   constructor() {
@@ -89,7 +116,7 @@ export async function buildRouteRegistry() {
 
     registry.register(routePath, {
       type,
-      title: routePath === '/en/' ? 'ValidoHub' : 'Java Component',
+      title: await discoverGeneratedTitle(routePath),
       sourceOwner: 'java'
     });
   }

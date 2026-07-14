@@ -19,6 +19,7 @@ This document records the current ValidoHub and Valido Engine boundary so future
 - JWT Workbench: `assets/js/tools/jwt.js`
 - PIX Workbench: `assets/js/tools/pix.js`
 - Spain ID Workbench: `assets/js/tools/spain-id.js`
+- Poland Premium Workbench Suite: `assets/js/tools/poland-suite.js`
 
 
 ## Countries Platform
@@ -35,6 +36,16 @@ Current country workbench routes:
 
 - Brazil PIX Workbench: `/en/brazil/brazil-pix-validator/`
 - PESEL Validator: `/en/poland/pesel-validator/`
+- Poland NIP Validator & Explainer: `/en/poland/poland-nip-validator/`
+- Poland REGON Validator & Explainer: `/en/poland/poland-regon-validator/`
+- Polish IBAN / NRB Workbench: `/en/poland/poland-iban-nrb-validator/`
+- Polish Tax Microaccount Calculator: `/en/poland/poland-tax-microaccount-calculator/`
+- Polish Postal Code Validator: `/en/poland/poland-postal-code-validator/`
+- Polish Phone Number Workbench: `/en/poland/poland-phone-number-validator/`
+- Polish License Plate Inspector: `/en/poland/poland-license-plate-inspector/`
+- KRS Number Inspector: `/en/poland/poland-krs-inspector/`
+- Polish VAT / EU VAT Syntax Workbench: `/en/poland/poland-vat-validator/`
+- Polish Bank Code / NRB Inspector: `/en/poland/poland-bank-code-inspector/`
 - Spain DNI/NIE/NIF/CIF Workbench: `/en/spain/spain-id-validator/`
 
 Route rules:
@@ -69,6 +80,8 @@ Current Engine does not generate arbitrary product pages such as `/en/countries/
 Brazil now uses Country Hub Template V3 as the reference Developer Country Intelligence Portal. It also uses Country Hub Visual Identity V2 for real SVG geography. The rich hub is rendered by `assets/js/countries.js` from a generic country metadata structure and keeps the Engine-generated country page as fallback HTML.
 
 Spain Country Hub V1 is complete as the first architecture-reuse proof for the Brazil reference system. Spain is implemented through the same shared country metadata model, renderer, Brand Asset System, Country Visual System, copy controls, status chips, snippets, cards, and Countries Portal discovery behavior. Spain ID Workbench V1 now implements browser-only DNI, NIE, NIF, legacy CIF-style, and ES VAT-prefix syntax validation. Spain still does not implement phone, postal-code, Bizum, payment, banking, live VIES lookup, tax-status lookup, or identity verification.
+
+Poland Premium Workbench Suite V1 is complete as a PESEL-inspired expansion of the Poland country hub. It adds ten browser-only premium workbenches for NIP, REGON, Polish IBAN/NRB, tax microaccount input checks, postal codes, phone numbers, license plates, KRS numbers, Polish VAT syntax, and bank-code inspection. These tools share `assets/js/tools/poland-suite.js`, use metadata-only `validohub.poland-suite`, run offline in the browser, and clearly separate syntax/checksum/format diagnostics from official registry, VIES, bank, tax, phone, or vehicle-status lookups.
 
 Brazil is also the canonical Country Hub design reference. Future country hubs must read `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md` and `docs/ai/COUNTRY_HUB_AI_GUIDE.md` before implementation. Spain, Poland, Germany, France, Japan, and all future countries inherit the Brazil structure and design language; only metadata and local content should change.
 
