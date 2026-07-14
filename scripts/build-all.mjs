@@ -237,6 +237,7 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
 
   const ALGORITHM_TO_SCRIPT = {
     'validohub.pesel': 'pesel.js',
+    'validohub.brazil-pix': 'pix.js',
     'validohub.base64-decoder': 'base64.js',
     'validohub.base64': 'base64.js',
     'validohub.json-formatter': 'json.js',
@@ -430,17 +431,21 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
   }
 
   // 4. Brazil Pix Draft Exclusion check (Constraint 1 & 9)
-  const pixRoutePath = resolve(siteRoot, 'en', 'brazil', 'brazil-pix-validator', 'index.html');
-  if (await pathExists(pixRoutePath)) {
-    throw new Error(`FATAL: Brazil Pix draft route is generated at: ${pixRoutePath}`);
-  }
-  const sitemapContent = await readFile(resolve(siteRoot, 'sitemap.xml'), 'utf8');
-  if (sitemapContent.includes('/brazil-pix-validator/')) {
-    throw new Error(`FATAL: Brazil Pix draft route found in sitemap.xml`);
-  }
-  const searchIndexContent = await readFile(resolve(siteRoot, 'search-index.json'), 'utf8');
-  if (searchIndexContent.includes('brazil-pix-validator')) {
-    throw new Error(`FATAL: Brazil Pix draft route found in search-index.json`);
+  const pixToolConfig = await readFile(resolve(projectRoot, 'tools', 'brazil-pix-validator.yaml'), 'utf8');
+  const pixToolIsDraft = /^\s*status:\s*draft\s*$/m.test(pixToolConfig);
+  if (pixToolIsDraft) {
+    const pixRoutePath = resolve(siteRoot, 'en', 'brazil', 'brazil-pix-validator', 'index.html');
+    if (await pathExists(pixRoutePath)) {
+      throw new Error(`FATAL: Brazil Pix draft route is generated at: `);
+    }
+    const sitemapContent = await readFile(resolve(siteRoot, 'sitemap.xml'), 'utf8');
+    if (sitemapContent.includes('/brazil-pix-validator/')) {
+      throw new Error(`FATAL: Brazil Pix draft route found in sitemap.xml`);
+    }
+    const searchIndexContent = await readFile(resolve(siteRoot, 'search-index.json'), 'utf8');
+    if (searchIndexContent.includes('brazil-pix-validator')) {
+      throw new Error(`FATAL: Brazil Pix draft route found in search-index.json`);
+    }
   }
 
   return {

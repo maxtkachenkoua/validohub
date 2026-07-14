@@ -328,6 +328,7 @@
 
       /* Timeline styles */
       .pesel-timeline-tracker {
+        --pesel-timeline-line-inset: 54px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -342,8 +343,8 @@
       .pesel-timeline-line {
         position: absolute;
         top: 28px;
-        left: calc(24px + 8px);
-        right: calc(24px + 8px);
+        left: var(--pesel-timeline-line-inset);
+        right: var(--pesel-timeline-line-inset);
         height: 2px;
         background: var(--line);
         z-index: 1;
@@ -351,11 +352,12 @@
       .pesel-timeline-progress {
         position: absolute;
         top: 28px;
-        left: calc(24px + 8px);
+        left: var(--pesel-timeline-line-inset);
         height: 2px;
         background: #16a34a;
         z-index: 2;
         width: 0%;
+        max-width: calc(100% - (var(--pesel-timeline-line-inset) * 2));
         transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .pesel-timeline-node {
@@ -2199,7 +2201,7 @@
       // Animate progress timeline progress-bar
       const progressBar = premiumPanel.querySelector('#pesel-progress-bar');
       if (progressBar) {
-        progressBar.style.width = '100%';
+        progressBar.style.width = 'calc(100% - (var(--pesel-timeline-line-inset) * 2))';
       }
 
       let outputText = `Validation Result: VALID\n\n`;

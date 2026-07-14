@@ -137,6 +137,34 @@ This registry records production browser workbenches currently owned by ValidoHu
 - Current quality status: Production-quality V1 workbench.
 
 
+## PIX Workbench
+
+- Source JS: `assets/js/tools/pix.js`
+- Related YAML tool page:
+  - `tools/brazil-pix-validator.yaml`
+- Algorithm ID:
+  - `validohub.brazil-pix`
+- Current capabilities:
+  - Validate PIX keys.
+  - Detect CPF, CNPJ, email, Brazilian phone, and EVP random UUID keys.
+  - Validate CPF and CNPJ check digits.
+  - Normalize Brazilian phone keys to +55 format.
+  - Parse BR Code / EMV payloads.
+  - Explain PIX GUI, key, merchant, city, amount, TXID, currency, country, and CRC fields.
+  - Generate static PIX BR Code payloads locally.
+  - Generate QR SVG locally in the browser.
+  - Copy payload and result JSON.
+  - Download result JSON and generated QR SVG.
+  - Show validation timeline, result cards, TLV table, CRC debugger, and developer JSON snapshot.
+  - Provide presets and local-only input history.
+- Known future ideas:
+  - Dynamic PIX URL parser.
+  - PIX copy-and-paste formatter.
+  - Merchant presets.
+  - Batch QR generation.
+  - Browser-only QR image import if a decoder is approved.
+- Current quality status: Production-quality V1 workbench modeled after the PESEL gold standard.
+
 ## Countries Platform
 
 This is a product platform section, not a browser workbench plugin.

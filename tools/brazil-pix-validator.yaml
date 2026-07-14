@@ -4,11 +4,11 @@ kind: tool
 module: validohub
 country: BR
 category: finance
-status: draft
+status: active
 name:
-  en: Brazil Pix Validator
+  en: Brazil PIX Workbench
 summary:
-  en: Validate, parse, and explain Brazilian Pix payment identifiers.
+  en: Validate PIX keys, parse BR Code payloads, generate static PIX QR codes, and debug CRC locally.
 capabilities:
   - validate
   - parse
@@ -33,6 +33,6 @@ related:
     sameModule: true
 seo:
   title:
-    en: Brazil Pix Validator
+    en: Brazil PIX Workbench
   description:
-    en: Validate and inspect Brazilian Pix payment identifiers.
+    en: Validate PIX keys, inspect BR Code payloads, generate static PIX QR codes, and debug PIX CRC in your browser.

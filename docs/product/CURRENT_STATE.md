@@ -17,6 +17,7 @@ This document records the current ValidoHub and Valido Engine boundary so future
 - URL Workbench: `assets/js/tools/url.js`
 - JSON Workbench: `assets/js/tools/json.js`
 - JWT Workbench: `assets/js/tools/jwt.js`
+- PIX Workbench: `assets/js/tools/pix.js`
 
 
 ## Countries Platform
@@ -31,7 +32,7 @@ Current country hubs:
 
 Current country workbench routes:
 
-- Brazil Pix Validator: `/en/brazil/brazil-pix-validator/`
+- Brazil PIX Workbench: `/en/brazil/brazil-pix-validator/`
 - PESEL Validator: `/en/poland/pesel-validator/`
 
 Route rules:

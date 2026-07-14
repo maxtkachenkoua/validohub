@@ -108,6 +108,27 @@ Impact:
 - JWT Workbench lives entirely in ValidoHub assets.
 - Signature verification remains out of scope until key-handling UX is specified.
 
+## PIX Workbench V1
+
+Changed:
+
+- Replaced the Brazil PIX preview with a production browser-only PIX Workbench.
+- Added PIX key validation for CPF, CNPJ, email, Brazilian phone, and EVP UUID keys.
+- Added CPF and CNPJ check digit validation.
+- Added BR Code / EMV TLV parsing and explanation.
+- Added static PIX payload generation with CRC16-CCITT-FALSE.
+- Added local SVG QR generation, payload copy, QR SVG download, presets, local history, validation timeline, result cards, TLV table, CRC debugger, and developer JSON snapshot.
+
+Reason:
+
+Brazil PIX is a core Brazil developer workflow and should match the PESEL gold-standard tool quality instead of remaining a preview page.
+
+Impact:
+
+- PIX Workbench lives in ValidoHub assets.
+- The workbench remains browser-only, offline, and privacy-first.
+- No Banco Central lookup, payment initiation, dynamic PIX URL fetching, backend, REST API, database, or Java execution was added.
+
 ## AI Operating System
 
 Changed:
