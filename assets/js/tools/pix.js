@@ -163,7 +163,6 @@
       workbench.form.addEventListener('click', function (event) {
         const customAction = event.target.closest('[data-pix-action]');
         if (customAction) {
-          workbench.markActiveAction(customAction.dataset.pixAction);
           run(workbench, customAction.dataset.pixAction);
           return;
         }
@@ -285,6 +284,7 @@
         return;
       }
       const payload = buildPixPayload({ key: key.normalized, amount: amount.value, merchant: merchant, city: city, txid: txid, description: sanitizeEmvText(fields.description || '', 72) });
+      workbench.markActiveAction('parse');
       setInput(workbench, payload);
       analyzePayload(workbench, payload, 'generate');
     }
@@ -451,7 +451,7 @@
     function detectBrCode(value) { return /^000201/.test((value || '').trim()) || /br\.gov\.bcb\.pix/i.test(value || ''); }
 
     function parseBrCode(payload) {
-      const clean = (payload || '').trim().replace(/\s+/g, '');
+      const clean = (payload || '').trim();
       const result = { payload: clean, fields: [], errors: [] };
       result.fields = parseTlv(clean, 0, clean.length, result.errors, 'root');
       return result;
@@ -510,10 +510,10 @@
       const crcValid = Boolean(crcField && crcActual === crcExpected);
       const syntaxValid = parsed.errors.length === 0;
       const publicJson = { kind: 'pix-brcode', valid: syntaxValid && diagnostics.length === 0 && crcValid, pixKey: key, pixKeyType: keyAnalysis ? keyAnalysis.type : 'Unknown', amount: amount || null, currency: currency || null, country: country || null, merchantName: fieldValue(fields, '59') || null, merchantCity: fieldValue(fields, '60') || null, txid: childValue(add, '05') || null, description: description || null, crc: { expected: crcExpected || null, calculated: crcActual || null, valid: crcValid }, diagnostics: diagnostics, warnings: warnings };
-      return { kind: 'BR Code', payload: payload.trim().replace(/\s+/g, ''), fields: fields, syntaxValid: syntaxValid, hasPixGui: gui === 'br.gov.bcb.pix', valid: publicJson.valid, pixKey: key, pixKeyType: keyAnalysis ? keyAnalysis.type : 'Unknown', initiationMethod: fieldValue(fields, '01') === '12' ? 'Dynamic' : fieldValue(fields, '01') === '11' ? 'Static' : 'Unspecified', amount: amount, currency: currency === '986' ? 'BRL (986)' : currency, country: country, merchantName: fieldValue(fields, '59'), merchantCity: fieldValue(fields, '60'), txid: childValue(add, '05'), crc: { expected: crcExpected, calculated: crcActual, valid: crcValid, label: crcField ? (crcValid ? 'Valid' : 'Mismatch') : 'Missing' }, diagnostics: diagnostics, warnings: warnings, publicJson: publicJson };
+      return { kind: 'BR Code', payload: payload.trim(), fields: fields, syntaxValid: syntaxValid, hasPixGui: gui === 'br.gov.bcb.pix', valid: publicJson.valid, pixKey: key, pixKeyType: keyAnalysis ? keyAnalysis.type : 'Unknown', initiationMethod: fieldValue(fields, '01') === '12' ? 'Dynamic' : fieldValue(fields, '01') === '11' ? 'Static' : 'Unspecified', amount: amount, currency: currency === '986' ? 'BRL (986)' : currency, country: country, merchantName: fieldValue(fields, '59'), merchantCity: fieldValue(fields, '60'), txid: childValue(add, '05'), crc: { expected: crcExpected, calculated: crcActual, valid: crcValid, label: crcField ? (crcValid ? 'Valid' : 'Mismatch') : 'Missing' }, diagnostics: diagnostics, warnings: warnings, publicJson: publicJson };
     }
 
-    function computePayloadCrc(payload) { return crc16Ccitt((payload || '').trim().replace(/\s+/g, '').replace(/6304[0-9A-Fa-f]{4}$/, '6304')); }
+    function computePayloadCrc(payload) { return crc16Ccitt((payload || '').trim().replace(/6304[0-9A-Fa-f]{4}$/, '6304')); }
 
     function buildPixPayload(options) {
       const mai = tlv('00', 'br.gov.bcb.pix') + tlv('01', options.key) + (options.description ? tlv('02', options.description) : '');

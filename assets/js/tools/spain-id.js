@@ -89,7 +89,7 @@
       if (history) history.addEventListener('change', function () { if (history.value) { setInput(workbench, history.value); run(workbench, 'validate'); } });
       workbench.form.addEventListener('click', function (event) {
         const action = event.target.closest('[data-spain-action]');
-        if (action) { workbench.markActiveAction('generate'); generateFixture(workbench, action.dataset.spainAction.replace('generate-', '')); return; }
+        if (action) { generateFixture(workbench, action.dataset.spainAction.replace('generate-', '')); return; }
         const copy = event.target.closest('[data-spain-copy]');
         if (copy) copySpecial(workbench, copy.dataset.spainCopy);
       });
@@ -151,6 +151,7 @@
       if (type === 'nie') value = generateNie();
       else if (type === 'cif') value = generateCif();
       else value = generateDni();
+      workbench.markActiveAction('validate');
       setInput(workbench, value);
       run(workbench, 'validate');
       workbench.setMessage('Generated a fictional Spanish test identifier.', 'success');
