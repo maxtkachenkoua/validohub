@@ -1,0 +1,50 @@
+schemaVersion: 1
+id: spain-id-validator
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: Spain DNI/NIE/NIF/CIF Workbench
+summary:
+  en: Validate, parse, generate, and explain Spanish DNI, NIE, NIF, CIF, and VAT-style identifiers locally.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.spain-id
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: spanishId
+        label:
+          en: Spanish identifier
+        required: true
+        placeholder:
+          en: 00000000T, X1234567L, B12345674, ESX1234567L
+    actions: [validate, parse, explain]
+  generate:
+    inputs:
+      - type: select
+        name: fixtureType
+        label:
+          en: Fixture type
+        options: [dni, nie, cif]
+        default: dni
+    actions: [generate]
+related:
+  explicit: []
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Spain DNI, NIE, NIF, and CIF Validator
+  description:
+    en: Validate and explain Spanish DNI, NIE, NIF, CIF, and VAT-style identifiers with local checksum diagnostics.

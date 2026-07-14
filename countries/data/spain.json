@@ -1797,5 +1797,13 @@
       }
     ],
     "availableWorkbenches": {}
-  }
+  },
+  "availableWorkbenches": [
+    {
+      "name": "Spain DNI/NIE/NIF/CIF Workbench",
+      "status": "available",
+      "link": "spain/spain-id-validator",
+      "description": "Validate and explain Spanish personal, foreigner, tax, legal-entity, and VAT-style identifier syntax locally."
+    }
+  ]
 }

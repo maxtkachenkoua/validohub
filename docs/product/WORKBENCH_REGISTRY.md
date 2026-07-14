@@ -165,6 +165,30 @@ This registry records production browser workbenches currently owned by ValidoHu
   - Browser-only QR image import if a decoder is approved.
 - Current quality status: Production-quality V1 workbench modeled after the PESEL gold standard.
 
+## Spain ID Workbench
+
+- Source JS: `assets/js/tools/spain-id.js`
+- Related YAML tool page:
+  - `tools/spain-id-validator.yaml`
+- Algorithm ID:
+  - `validohub.spain-id`
+- Current capabilities:
+  - Validate DNI, NIE, NIF, legal-entity NIF / legacy CIF-style identifiers, and optional `ES` VAT-prefixed syntax.
+  - Normalize separators and uppercase letters.
+  - Explain DNI/NIE modulo-23 control-letter calculation.
+  - Explain legal-entity CIF/NIF weighted control digit or letter calculation.
+  - Detect entity-family context from legal-entity prefix.
+  - Generate fictional DNI, NIE, and CIF/NIF test fixtures locally.
+  - Show validation timeline, result cards, token breakdown, checksum debugger, and developer JSON snapshot.
+  - Provide presets and local-only input history.
+  - Copy normalized identifier and download result JSON through the shared framework.
+- Known future ideas:
+  - Dedicated VAT / VIES Workbench with explicit network policy.
+  - Batch CSV validation.
+  - Mask/anonymize helper for logs.
+  - Spain phone, postal code, IBAN, and Bizum-specific tools.
+- Current quality status: Production-quality V1 workbench modeled after PESEL and PIX.
+
 ## Countries Platform
 
 This is a product platform section, not a browser workbench plugin.

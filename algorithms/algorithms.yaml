@@ -32,6 +32,14 @@ algorithms:
       en: Brazil Pix Algorithm
     summary:
       en: Metadata entry for Brazilian Pix key validation, parsing, and explanation.
+  - algorithmId: validohub.spain-id
+    javaClass: com.validohub.algorithms.spain.SpainIdAlgorithm
+    version: 1
+    capabilities: [validate, parse, generate, explain]
+    name:
+      en: Spain ID Algorithm
+    summary:
+      en: Metadata entry for Spanish DNI, NIE, NIF, CIF, and VAT-style identifier validation, parsing, generation, and explanation.
   - algorithmId: validohub.base64-decoder
     javaClass: com.validohub.algorithms.encoding.Base64DecoderAlgorithm
     version: 1

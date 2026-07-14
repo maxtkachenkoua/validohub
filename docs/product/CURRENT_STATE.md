@@ -18,6 +18,7 @@ This document records the current ValidoHub and Valido Engine boundary so future
 - JSON Workbench: `assets/js/tools/json.js`
 - JWT Workbench: `assets/js/tools/jwt.js`
 - PIX Workbench: `assets/js/tools/pix.js`
+- Spain ID Workbench: `assets/js/tools/spain-id.js`
 
 
 ## Countries Platform
@@ -34,6 +35,7 @@ Current country workbench routes:
 
 - Brazil PIX Workbench: `/en/brazil/brazil-pix-validator/`
 - PESEL Validator: `/en/poland/pesel-validator/`
+- Spain DNI/NIE/NIF/CIF Workbench: `/en/spain/spain-id-validator/`
 
 Route rules:
 
@@ -66,7 +68,7 @@ Current Engine does not generate arbitrary product pages such as `/en/countries/
 
 Brazil now uses Country Hub Template V3 as the reference Developer Country Intelligence Portal. It also uses Country Hub Visual Identity V2 for real SVG geography. The rich hub is rendered by `assets/js/countries.js` from a generic country metadata structure and keeps the Engine-generated country page as fallback HTML.
 
-Spain Country Hub V1 is complete as the first architecture-reuse proof for the Brazil reference system. Spain is implemented through the same shared country metadata model, renderer, Brand Asset System, Country Visual System, copy controls, status chips, snippets, cards, and Countries Portal discovery behavior. It adds Spain outline and world-map SVG assets plus Spain/EU reusable brand entries, but it does not implement DNI, NIE, NIF, VAT, phone, postal-code, Bizum, payment, banking, or identity validators.
+Spain Country Hub V1 is complete as the first architecture-reuse proof for the Brazil reference system. Spain is implemented through the same shared country metadata model, renderer, Brand Asset System, Country Visual System, copy controls, status chips, snippets, cards, and Countries Portal discovery behavior. Spain ID Workbench V1 now implements browser-only DNI, NIE, NIF, legacy CIF-style, and ES VAT-prefix syntax validation. Spain still does not implement phone, postal-code, Bizum, payment, banking, live VIES lookup, tax-status lookup, or identity verification.
 
 Brazil is also the canonical Country Hub design reference. Future country hubs must read `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md` and `docs/ai/COUNTRY_HUB_AI_GUIDE.md` before implementation. Spain, Poland, Germany, France, Japan, and all future countries inherit the Brazil structure and design language; only metadata and local content should change.
 

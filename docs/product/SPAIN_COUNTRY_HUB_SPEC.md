@@ -136,7 +136,7 @@ Planned Spain-specific workbenches:
 - Spanish IBAN Tools.
 - Bizum Reference / Inspector.
 
-None are implemented in Spain V1.
+Spain ID Workbench V1 now implements DNI, NIE, NIF, legal-entity NIF / legacy CIF-style syntax, and optional ES VAT-prefix syntax checks. Phone, postal-code, IBAN-specific interpretation, Bizum, payment, banking, vehicle, live VIES, tax-status, and identity-verification workbenches remain unimplemented.
 
 ## Reuse Audit
 

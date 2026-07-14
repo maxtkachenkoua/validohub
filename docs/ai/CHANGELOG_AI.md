@@ -129,6 +129,27 @@ Impact:
 - The workbench remains browser-only, offline, and privacy-first.
 - No Banco Central lookup, payment initiation, dynamic PIX URL fetching, backend, REST API, database, or Java execution was added.
 
+## Spain ID Workbench V1
+
+Changed:
+
+- Added a browser-only Spain DNI/NIE/NIF/CIF Workbench.
+- Added DNI and NIE modulo-23 control-letter validation and explanation.
+- Added legal-entity NIF / legacy CIF weighted control digit or letter validation.
+- Added optional `ES` VAT-prefix syntax handling without VIES lookup.
+- Added safe fictional fixture generation for DNI, NIE, and CIF/NIF patterns.
+- Added presets, local history, validation timeline, result cards, token breakdown, checksum debugger, and developer JSON snapshot.
+
+Reason:
+
+Spain needed a first production-quality country workbench comparable to PESEL and PIX while preserving browser-only privacy and avoiding identity or tax-status claims.
+
+Impact:
+
+- Spain ID Workbench lives in ValidoHub assets.
+- Valido Engine remains generic except for reusable asset-loading behavior when needed.
+- No identity verification, Agencia Tributaria lookup, VIES lookup, backend, REST API, database, or Java execution was added.
+
 ## AI Operating System
 
 Changed:
