@@ -1,60 +1,41 @@
-import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { access, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { runInNewContext } from 'node:vm';
+import { buildRouteRegistry } from './route-registry.mjs';
+import { normalizeCountryData } from './country-page-model.mjs';
+import { renderCountryVisualHero, renderCountryCompletionCard } from './render-country-visuals.mjs';
+import {
+  renderCountryIdentityFacts,
+  renderCountryLocaleFacts,
+  renderCountryTechnicalFacts,
+  renderCountryQuickCopyBar,
+  renderCountryFormattingExamples,
+  renderCountryAddressFormat,
+  renderCountryPhoneFormats,
+  renderCountryVehicleRegistration,
+  renderCountryAdministrativeDivisions,
+  renderCountryTaxSystem,
+  renderCountryBankingSystem,
+  renderCountryPaymentSystems,
+  renderCountryIdentifiers,
+  renderCountryValidators,
+  renderCountryIntegrationChecklist,
+  renderCountryRoadmap,
+  renderCountryOfficialResources,
+  renderCountryKnowledgeGraph,
+  renderCountryRelatedCountries,
+  renderCountryCommonMistakes,
+  renderCountryHighlights,
+  renderCountryDeveloperNotes,
+  renderCountryDeveloperExamples,
+  renderCountryLocalizationNotes,
+  renderCountryEcosystem
+} from './render-country-sections.mjs';
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDir, '..');
 const siteRoot = resolve(projectRoot, 'generated', 'validohub');
 const locale = 'en';
-const sourcePage = resolve(siteRoot, locale, 'index.html');
-const targetPage = resolve(siteRoot, locale, 'countries', 'index.html');
-const countriesScript = resolve(projectRoot, 'assets', 'js', 'countries.js');
-
-function portalContent(availableCountrySlugs, hubs) {
-  const availabilityLinks = availableCountrySlugs
-    .map((slug) => `          <a href="/${locale}/${slug}/">${escapeHtml(hubs[slug]?.name || slug)}</a>`)
-    .join('\n');
-  return `
-        <nav class="breadcrumbs" aria-label="Breadcrumbs">
-          <a href="/en/">Home</a>
-          <span aria-hidden="true">/</span>
-          <span>Countries</span>
-        </nav>
-        <div data-countries-portal></div>
-        <div hidden data-materialized-country-hubs>
-${availabilityLinks}
-        </div>
-`;
-}
-
-function countryContent(slug, country) {
-  return `
-        <nav class="breadcrumbs" aria-label="Breadcrumbs">
-          <a href="/${locale}/">Home</a>
-          <span aria-hidden="true">/</span>
-          <span>${escapeHtml(country.name || slug)}</span>
-        </nav>
-        <header class="page-intro">
-          <span class="eyebrow">Country</span>
-          <h1>${escapeHtml(country.name || slug)}</h1>
-          <p>${escapeHtml(country.description || `Tools and developer notes for ${country.name || slug}.`)}</p>
-        </header>
-        <section class="related-section">
-          <h2>Country workbenches</h2>
-          <div class="card-grid"></div>
-        </section>
-`;
-}
-
-function replaceBetween(html, startMarker, endMarker, replacement) {
-  const start = html.indexOf(startMarker);
-  const end = html.indexOf(endMarker, start);
-  if (start === -1 || end === -1) {
-    throw new Error(`Could not find page section between ${startMarker} and ${endMarker}`);
-  }
-  return `${html.slice(0, start + startMarker.length)}${replacement}${html.slice(end)}`;
-}
 
 function escapeHtml(value) {
   return String(value)
@@ -62,6 +43,15 @@ function escapeHtml(value) {
     .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;');
+}
+
+function escapeHtmlJson(jsonStr) {
+  return jsonStr
+    .replace(/&/g, '\\u0026')
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
 }
 
 async function pathExists(path) {
@@ -73,92 +63,432 @@ async function pathExists(path) {
   }
 }
 
-function loadCountryHubs(source) {
-  const sandbox = {
-    window: {},
-    document: {
-      readyState: 'loading',
-      addEventListener() {}
+function renderHeader() {
+  return `
+    <header class="site-header">
+      <div class="vh-container header-inner">
+        <a class="brand" href="/en/">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="/en/">Home</a>
+          <a href="/en/countries/" aria-current="page" class="is-active">Countries</a>
+          <a href="/en/categories/national-identifiers/">Identifiers</a>
+        </nav>
+      </div>
+    </header>
+  `;
+}
+
+function renderFooter() {
+  return `
+    <footer class="site-footer">
+      <div class="vh-container footer-inner">
+        <a class="brand" href="/en/">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <p>Static tools generated by Valido Engine.</p>
+      </div>
+    </footer>
+  `;
+}
+
+function renderBreadcrumbs(countryName) {
+  return `
+    <nav class="vh-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/countries/">Countries</a></li>
+        <li><span aria-current="page">${escapeHtml(countryName)}</span></li>
+      </ol>
+    </nav>
+  `;
+}
+
+function renderHero(countryName, flag, summary) {
+  return `
+    <header class="vh-page-intro">
+      <div class="vh-flex vh-align-center vh-gap-sm">
+        <span class="vh-flag">${flag}</span>
+        <span class="vh-eyebrow">Country Hub</span>
+      </div>
+      <h1>${escapeHtml(countryName)} Developer Portal</h1>
+      <p>${escapeHtml(summary)}</p>
+    </header>
+  `;
+}
+
+export async function compileCountriesPortal(routeRegistry, assetsManifest) {
+  console.log('--- Pass 2: Rendering Country Pages & Portal ---');
+
+  const layoutTemplate = await readFile(resolve(projectRoot, 'templates', 'layout.html'), 'utf8');
+  const countryTemplate = await readFile(resolve(projectRoot, 'templates', 'country.html'), 'utf8');
+
+  // Discover all registered country routes
+  const countryRoutes = routeRegistry.getAll().filter(r => r.type === 'country');
+  countryRoutes.sort((a, b) => a.path.localeCompare(b.path));
+
+  const discoveryData = JSON.parse(await readFile(resolve(projectRoot, 'knowledge', 'compiled-discovery.json'), 'utf8'));
+
+  // 1. Compile Country Hub pages
+  for (const route of countryRoutes) {
+    const data = route.metadata;
+    const slug = data.id;
+    const model = normalizeCountryData(data);
+    const countryDiscovery = discoveryData.countries[slug] || { relatedCountries: [], relatedResources: { authorities: [], identifiers: [], payments: [], standards: [], workbenches: [] } };
+
+    // Pre-render all developer portal sections in exact requested order
+    const sections = [];
+    sections.push(renderCountryCompletionCard(model));
+    sections.push(renderCountryIdentityFacts(model));
+    sections.push(renderCountryLocaleFacts(model));
+    sections.push(renderCountryTechnicalFacts(model));
+    sections.push(renderCountryQuickCopyBar(model));
+    sections.push(await renderCountryAddressFormat(model));
+    sections.push(renderCountryPhoneFormats(model));
+    sections.push(renderCountryVehicleRegistration(model, data.hub));
+    sections.push(renderCountryAdministrativeDivisions(model, data.hub));
+    sections.push(renderCountryIdentifiers(model, routeRegistry));
+    sections.push(renderCountryValidators(model, routeRegistry));
+    sections.push(renderCountryTaxSystem(model, data.hub));
+    sections.push(renderCountryBankingSystem(model));
+    sections.push(renderCountryPaymentSystems(model));
+    sections.push(renderCountryIntegrationChecklist(model));
+    sections.push(renderCountryRoadmap(model));
+    sections.push(renderCountryOfficialResources(model));
+    sections.push(renderCountryKnowledgeGraph(model, countryDiscovery, routeRegistry));
+    sections.push(renderCountryRelatedCountries(model, countryDiscovery, routeRegistry));
+    sections.push(renderCountryHighlights(model, data.hub));
+    sections.push(renderCountryDeveloperNotes(model, data.hub));
+    sections.push(renderCountryCommonMistakes(model, data.hub));
+    sections.push(renderCountryDeveloperExamples(model, data.hub));
+    sections.push(renderCountryEcosystem(model, data.hub));
+    sections.push(renderCountryLocalizationNotes(model, data.hub));
+
+    const bodyHtml = sections.filter(Boolean).join('\n');
+
+    // Populate Country Content template
+    let countryContent = countryTemplate.replaceAll('{{ COUNTRY_BODY }}', () => bodyHtml);
+
+    // Build head HTML
+    const headHtml = `
+      <title>${escapeHtml(data.catalog.name)} Developer Tools & Identifiers | ValidoHub</title>
+      <meta name="description" content="${escapeHtml(data.catalog.summary)}">
+      <link rel="canonical" href="https://validohub.com/en/${slug}/">
+      <link rel="alternate" hreflang="en" href="https://validohub.com/en/${slug}/">
+      <link rel="stylesheet" href="${assetsManifest.css}">
+    `;
+
+    const breadcrumbsHtml = renderBreadcrumbs(data.catalog.name);
+    const heroHtml = await renderCountryVisualHero(model);
+
+    // Generate JSON-LD payload (CollectionPage)
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": `${escapeHtml(data.catalog.name)} Developer Tools & Identifiers | ValidoHub`,
+      "description": data.catalog.summary,
+      "url": `https://validohub.com/en/${slug}/`,
+      "inLanguage": "en"
+    };
+    const jsonLdScript = `<script type="application/ld+json">${escapeHtmlJson(JSON.stringify(jsonLd))}</script>`;
+
+    // Assemble layout shell
+    let assembledHtml = layoutTemplate
+      .replaceAll('{{ HEAD }}', () => headHtml)
+      .replaceAll('{{ HEADER }}', () => renderHeader())
+      .replaceAll('{{ BREADCRUMBS }}', () => breadcrumbsHtml)
+      .replaceAll('{{ HERO }}', () => heroHtml)
+      .replaceAll('{{ CONTENT }}', () => countryContent)
+      .replaceAll('{{ FOOTER }}', () => renderFooter())
+      .replaceAll('{{ JSON_LD }}', () => jsonLdScript)
+      .replaceAll('{{ SCRIPTS }}', () => `<script src="${assetsManifest.js}" defer></script>`);
+
+    // Assert that every template slot marker is fully resolved
+    if (assembledHtml.includes('{{')) {
+      throw new Error(`FATAL: Unresolved template slot marker found in generated country page: ${slug}`);
     }
+
+    const outputFilePath = resolve(siteRoot, locale, slug, 'index.html');
+    await mkdir(dirname(outputFilePath), { recursive: true });
+    await writeFile(outputFilePath, assembledHtml, 'utf8');
+    console.log(`✓ Generated: /en/${slug}/`);
+  }
+
+  // 2. Compile Countries Portal Page
+  const totalCountries = countryRoutes.length;
+  let totalWorkbenches = 0;
+  const uniqueIdentifiers = new Set();
+  const uniquePayments = new Set();
+  let totalAvailableGuides = 0;
+
+  for (const r of countryRoutes) {
+    const d = r.metadata;
+    totalWorkbenches += (d.catalog.availableWorkbenches || []).length + (d.catalog.plannedWorkbenches || []).length;
+    (d.catalog.identifiers || []).forEach(id => uniqueIdentifiers.add(id));
+    (d.catalog.payments || []).forEach(p => uniquePayments.add(p));
+    if (d.catalog.status === 'available') {
+      totalAvailableGuides++;
+    }
+  }
+
+  const markersHtml = countryRoutes.map(r => {
+    const d = r.metadata;
+    const coords = d.catalog.coordinates || { x: 50, y: 50 };
+    const status = d.catalog.status || 'planned';
+    return `
+      <a class="vh-countries-map-marker vh-marker-${d.id} status-${status}" 
+         href="${r.path}" 
+         data-country-id="${d.id}" 
+         aria-label="${escapeHtml(d.catalog.name)} ${status === 'available' ? 'Hub' : 'Roadmap'}">
+        <span>${escapeHtml(d.catalog.flag)}</span>
+      </a>
+    `;
+  }).join('\n');
+
+  const continents = ['South America', 'Europe', 'North America', 'Asia', 'Africa', 'Oceania'];
+  const continentGridsHtml = continents.map(continent => {
+    const groupCountries = countryRoutes.filter(r => r.metadata.catalog.continent === continent);
+    if (groupCountries.length === 0) return '';
+
+    const cardsHtml = groupCountries.map(r => {
+      const d = r.metadata;
+      const progress = Number(d.catalog.completion) || 0;
+      const status = d.catalog.status || 'planned';
+      
+      const badgeClass = status === 'available'
+        ? 'vh-country-status-ready'
+        : (status === 'inProgress' ? 'vh-country-status-in-progress' : 'vh-country-status-badge vh-custom-badge');
+
+      const identifiersChips = (d.catalog.identifiers || []).slice(0, 3).map(id => `
+        <span class="vh-country-status-badge vh-custom-badge">${escapeHtml(id)}</span>
+      `).join('');
+
+      const paymentsChips = (d.catalog.payments || []).slice(0, 3).map(p => `
+        <span class="vh-country-status-badge vh-country-status-ready">${escapeHtml(p)}</span>
+      `).join('');
+
+      return `
+        <a class="vh-countries-card status-${status}" 
+           href="${r.path}" 
+           data-country-id="${d.id}"
+           data-flag="${escapeHtml(d.catalog.flag)}"
+           data-name="${escapeHtml(d.catalog.name)}"
+           data-summary="${escapeHtml(d.catalog.summary)}"
+           data-iso="${escapeHtml(d.catalog.iso2)} / ${escapeHtml(d.catalog.iso3)}"
+           data-lang="${escapeHtml(d.catalog.language)}"
+           data-currency="${escapeHtml(d.catalog.currency)} (${escapeHtml(d.catalog.currencyCode)})"
+           data-continent="${escapeHtml(d.catalog.continent)}"
+           data-region="${escapeHtml(d.catalog.region)}"
+           data-status="${status}"
+           data-features="${(d.catalog.features || []).join(' ')}"
+           data-search="${escapeHtml(`${d.catalog.name} ${d.catalog.iso2} ${d.catalog.iso3} ${d.catalog.currency} ${d.catalog.language}`).toLowerCase()}"
+           aria-label="Open ${escapeHtml(d.catalog.name)} Hub">
+          <div class="vh-countries-card-top">
+            <div class="vh-countries-card-identity">
+              <span class="vh-flag">${escapeHtml(d.catalog.flag)}</span>
+              <h3>${escapeHtml(d.catalog.name)}</h3>
+            </div>
+            <span class="${badgeClass}">${escapeHtml(status)}</span>
+          </div>
+          <p class="vh-mt-xs vh-mb-xs">${escapeHtml(d.catalog.summary)}</p>
+          <div class="vh-countries-card-facts">
+            <div><strong>ISO:</strong> ${escapeHtml(d.catalog.iso2)}</div>
+            <div><strong>Currency:</strong> ${escapeHtml(d.catalog.currency)}</div>
+            <div><strong>Region:</strong> ${escapeHtml(d.catalog.region)}</div>
+          </div>
+          <div class="vh-flex vh-align-center vh-justify-between vh-mb-xs">
+            <span class="vh-country-card-label">Roadmap</span>
+            <strong>${progress}%</strong>
+          </div>
+          <progress class="vh-progress-bar" max="100" value="${progress}"></progress>
+          <div class="vh-country-badge-row vh-mt-xs">
+            ${identifiersChips}
+            ${paymentsChips}
+          </div>
+        </a>
+      `;
+    }).join('\n');
+
+    return `
+      <section class="vh-countries-continent-group" data-continent="${escapeHtml(continent)}">
+        <div class="vh-countries-continent-heading">
+          <h3>${escapeHtml(continent)}</h3>
+          <span class="vh-country-status-badge vh-custom-badge">${groupCountries.length} countries</span>
+        </div>
+        <div class="vh-countries-grid">
+          ${cardsHtml}
+        </div>
+      </section>
+    `;
+  }).join('\n');
+
+  const previewPanelHtml = `
+    <aside class="vh-countries-preview-panel" data-preview-panel="true">
+      <span class="vh-eyebrow">Country Preview</span>
+      <div class="vh-countries-preview-flag" data-preview-flag="true">🇧🇷</div>
+      <h2 class="vh-text-center" data-preview-name="true">Brazil</h2>
+      <p class="vh-text-center vh-color-muted" data-preview-summary="true">Developer intelligence for Brazilian taxpayer identifiers, local banking integration, and instant payment frameworks.</p>
+      <div class="vh-countries-preview-list">
+        <div><dt>ISO Codes</dt><dd data-preview-iso="true">BR / BRA</dd></div>
+        <div><dt>Language</dt><dd data-preview-lang="true">Portuguese</dd></div>
+        <div><dt>Currency</dt><dd data-preview-currency="true">BRL (Brazilian real)</dd></div>
+        <div><dt>Region</dt><dd data-preview-region="true">South America</dd></div>
+      </div>
+      <div class="vh-flex vh-align-center vh-justify-between vh-mb-xs">
+        <span>Completion</span>
+        <strong data-preview-percent="true">45%</strong>
+      </div>
+      <progress class="vh-progress-bar" max="100" value="45" data-preview-progress="true"></progress>
+      <a class="vh-countries-preview-action" href="/en/brazil/" data-preview-link="true">Open Brazil Hub</a>
+    </aside>
+  `;
+
+  const portalContentHtml = `
+    <div class="vh-countries-portal-page">
+      <!-- Search & Filters Controls Section -->
+      <section class="vh-countries-controls">
+        <label class="vh-countries-search">
+          <span class="vh-sr-only">Search countries</span>
+          <input class="vh-countries-search-input" type="search" placeholder="Search name, ISO, currency, language, identifier, payment system..." autocomplete="off">
+        </label>
+        <div class="vh-countries-filter-grid">
+          <label class="vh-countries-select-filter">
+            <span>Filter Region</span>
+            <select data-filter="region">
+              <option value="all">All Regions</option>
+              <option value="South America">South America</option>
+              <option value="Europe">Europe</option>
+              <option value="North America">North America</option>
+              <option value="Asia">Asia</option>
+            </select>
+          </label>
+          <label class="vh-countries-select-filter">
+            <span>Filter Status</span>
+            <select data-filter="status">
+              <option value="all">All Statuses</option>
+              <option value="available">Available</option>
+              <option value="inProgress">In Progress</option>
+              <option value="planned">Planned</option>
+            </select>
+          </label>
+          <fieldset class="vh-countries-feature-filter">
+            <legend>Developer Features</legend>
+            <div class="vh-countries-feature-chips">
+              <label class="vh-countries-feature-chip"><input type="checkbox" value="payments"><span>Payments</span></label>
+              <label class="vh-countries-feature-chip"><input type="checkbox" value="identity"><span>Identity</span></label>
+              <label class="vh-countries-feature-chip"><input type="checkbox" value="government"><span>Government</span></label>
+              <label class="vh-countries-feature-chip"><input type="checkbox" value="banking"><span>Banking</span></label>
+            </div>
+          </fieldset>
+        </div>
+      </section>
+
+      <!-- Map Explorer Section -->
+      <section class="vh-countries-map-section vh-card">
+        <div class="section-heading">
+          <span class="vh-eyebrow">World Map</span>
+          <h2>Explore country coverage</h2>
+          <p>Hover a marker or country card to preview a country. Click available countries to open the developer hub.</p>
+        </div>
+        <div class="vh-countries-world-map">
+          <img class="vh-countries-world-map-image" src="/assets/images/countries/world-map.svg" alt="World map with ValidoHub country coverage markers" loading="lazy" decoding="async">
+          ${markersHtml}
+        </div>
+      </section>
+
+      <!-- Country Directory Layout (Grids + Preview Sidebar) -->
+      <div class="vh-countries-portal-layout">
+        <div class="vh-countries-directory">
+          ${continentGridsHtml}
+          <p class="vh-countries-empty-state is-filtered-out">No countries match the current search or filters.</p>
+        </div>
+        ${previewPanelHtml}
+      </div>
+    </div>
+  `;
+
+  const portalBreadcrumbsHtml = `
+    <nav class="vh-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/en/">Home</a></li>
+        <li><span aria-current="page">Countries</span></li>
+      </ol>
+    </nav>
+  `;
+
+  const portalHeroHtml = `
+    <header class="vh-page-intro">
+      <span class="vh-eyebrow">Global Registry</span>
+      <h1>Country Hubs</h1>
+      <p>Explore local developer specifications, tax structures, payment protocols, and regional validators.</p>
+      
+      <div class="vh-countries-hero-stats">
+        <div class="vh-countries-hero-stat-item">
+          <strong>${totalCountries}</strong>
+          <span>Countries</span>
+        </div>
+        <div class="vh-countries-hero-stat-item">
+          <strong>${totalWorkbenches}</strong>
+          <span>Workbenches</span>
+        </div>
+        <div class="vh-countries-hero-stat-item">
+          <strong>${uniqueIdentifiers.size}</strong>
+          <span>Identifiers</span>
+        </div>
+        <div class="vh-countries-hero-stat-item">
+          <strong>${uniquePayments.size}</strong>
+          <span>Payments</span>
+        </div>
+        <div class="vh-countries-hero-stat-item">
+          <strong>${totalAvailableGuides}</strong>
+          <span>Guides</span>
+        </div>
+        <div class="vh-countries-hero-stat-item">
+          <strong>6</strong>
+          <span>Brands</span>
+        </div>
+      </div>
+    </header>
+  `;
+
+  const portalHeadHtml = `
+    <title>Countries | ValidoHub</title>
+    <meta name="description" content="Explore ValidoHub country hubs, local identifiers, payment systems, banking notes, and country-specific developer tool roadmaps.">
+    <link rel="canonical" href="https://validohub.com/en/countries/">
+    <link rel="alternate" hreflang="en" href="https://validohub.com/en/countries/">
+    <link rel="stylesheet" href="${assetsManifest.css}">
+  `;
+
+  // Generate JSON-LD payload (CollectionPage) for the portal
+  const jsonLdPortal = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Countries | ValidoHub",
+    "description": "Explore ValidoHub country hubs, local identifiers, payment systems, banking notes, and country-specific developer tool roadmaps.",
+    "url": "https://validohub.com/en/countries/",
+    "inLanguage": "en"
   };
-  runInNewContext(source, sandbox, { filename: 'assets/js/countries.js' });
-  return sandbox.window.ValidoHubCountries?.hubs || {};
-}
+  const jsonLdPortalScript = `<script type="application/ld+json">${escapeHtmlJson(JSON.stringify(jsonLdPortal))}</script>`;
 
-function updatePortalHead(html) {
-  return html
-    .replace(/<title>.*?<\/title>/s, '<title>Countries | ValidoHub</title>')
-    .replace(
-      /<meta name="description" content=".*?">/s,
-      '<meta name="description" content="Explore ValidoHub country hubs, local identifiers, payment systems, banking notes, locale conventions, and country-specific developer tool roadmaps.">'
-    )
-    .replace(/<link rel="canonical" href=".*?">/s, '<link rel="canonical" href="https://validohub.com/en/countries/">')
-    .replace(/<link rel="alternate" hreflang="en" href=".*?">/s, '<link rel="alternate" hreflang="en" href="https://validohub.com/en/countries/">');
-}
+  let assembledPortalHtml = layoutTemplate
+    .replaceAll('{{ HEAD }}', () => portalHeadHtml)
+    .replaceAll('{{ HEADER }}', () => renderHeader())
+    .replaceAll('{{ BREADCRUMBS }}', () => portalBreadcrumbsHtml)
+    .replaceAll('{{ HERO }}', () => portalHeroHtml)
+    .replaceAll('{{ CONTENT }}', () => portalContentHtml)
+    .replaceAll('{{ FOOTER }}', () => renderFooter())
+    .replaceAll('{{ JSON_LD }}', () => jsonLdPortalScript)
+    .replaceAll('{{ SCRIPTS }}', () => `<script src="/assets/js/countries-portal.js"></script>\n<script src="${assetsManifest.js}" defer></script>`);
 
-function updateCountryHead(html, slug, country) {
-  const name = escapeHtml(country.name || slug);
-  const description = escapeHtml(country.description || `Developer tools and country intelligence for ${name}.`);
-  return html
-    .replace(/<title>.*?<\/title>/s, `<title>${name}</title>`)
-    .replace(/<meta name="description" content=".*?">/s, `<meta name="description" content="${description}">`)
-    .replace(/<link rel="canonical" href=".*?">/s, `<link rel="canonical" href="https://validohub.com/${locale}/${slug}/">`)
-    .replace(/<link rel="alternate" hreflang="en" href=".*?">/s, `<link rel="alternate" hreflang="en" href="https://validohub.com/${locale}/${slug}/">`);
-}
-
-function updatePortalNav(html) {
-  return html
-    .replace('href="/en/"\n           class="is-active"', 'href="/en/"')
-    .replace(
-      '</nav>',
-      '<a href="/en/countries/" class="is-active">Countries</a>\n      </nav>'
-    );
-}
-
-function ensurePortalScript(html) {
-  if (html.includes('/assets/js/portal-countries.js')) {
-    return html;
+  if (assembledPortalHtml.includes('{{')) {
+    throw new Error('FATAL: Unresolved template slot marker found in generated countries portal page');
   }
-  return html.replace('</body>', '  <script src="/assets/js/portal-countries.js"></script>\n</body>');
-}
 
-const source = await readFile(sourcePage, 'utf8');
-const hubs = loadCountryHubs(await readFile(countriesScript, 'utf8'));
-const availableCountrySlugs = [];
-const materializedCountrySlugs = [];
-
-for (const [slug, country] of Object.entries(hubs)) {
-  const countryPage = resolve(siteRoot, locale, slug, 'index.html');
-  const exists = await pathExists(countryPage);
-  if (!exists) {
-    let page = updateCountryHead(source, slug, country);
-    page = replaceBetween(
-      page,
-      '<div class="container page-stack">',
-      '      </div>\n    </section>',
-      countryContent(slug, country)
-    );
-    await mkdir(dirname(countryPage), { recursive: true });
-    await writeFile(countryPage, page, 'utf8');
-    materializedCountrySlugs.push(slug);
-  }
-  availableCountrySlugs.push(slug);
-}
-
-let page = updatePortalHead(source);
-page = updatePortalNav(page);
-page = replaceBetween(
-  page,
-  '<div class="container page-stack">',
-  '      </div>\n    </section>',
-  portalContent(availableCountrySlugs, hubs)
-);
-page = ensurePortalScript(page);
-
-await mkdir(dirname(targetPage), { recursive: true });
-await writeFile(targetPage, page, 'utf8');
-
-console.log(`Countries Portal written to ${targetPage}`);
-if (materializedCountrySlugs.length) {
-  console.log(`Country hub routes materialized: ${materializedCountrySlugs.map((slug) => `/${locale}/${slug}/`).join(', ')}`);
+  const portalOutputPath = resolve(siteRoot, locale, 'countries', 'index.html');
+  await mkdir(dirname(portalOutputPath), { recursive: true });
+  await writeFile(portalOutputPath, assembledPortalHtml, 'utf8');
+  console.log(`✓ Generated: /en/countries/`);
 }

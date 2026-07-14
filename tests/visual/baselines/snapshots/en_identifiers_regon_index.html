@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+      <title>REGON (PL) Specification & Schema | ValidoHub</title>
+      <meta name="description" content="National Official Register of Business Entities in Poland.">
+      <link rel="canonical" href="https://validohub.com/en/identifiers/regon/">
+      <link rel="alternate" hreflang="en" href="https://validohub.com/en/identifiers/regon/">
+      <link rel="stylesheet" href="/assets/css/bundle.9ba81e.css">
+    
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"REGON (PL) Specification \u0026 Schema | ValidoHub","description":"National Official Register of Business Entities in Poland.","url":"https://validohub.com/en/identifiers/regon/","inLanguage":"en","audience":{"@type":"Audience","audienceType":"Software Developers"}}</script>
+</head>
+<body>
+  
+    <header class="site-header">
+      <div class="vh-container header-inner">
+        <a class="brand" href="/en/">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="/en/">Home</a>
+          <a href="/en/countries/">Countries</a>
+          <a href="/en/categories/national-identifiers/" aria-current="page" class="is-active">Identifiers</a>
+        </nav>
+      </div>
+    </header>
+  
+
+  <main class="site-main">
+    <section class="vh-page-shell">
+      <div class="vh-container vh-page-stack">
+        
+    <nav class="vh-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/countries/">Countries</a></li>
+        <li><a href="/en/poland/">Poland</a></li>
+        <li><span aria-current="page">REGON</span></li>
+      </ol>
+    </nav>
+  
+        
+    <header class="vh-page-intro">
+      <span class="vh-eyebrow">Polish Business Statistical Registry Number</span>
+      <h1>REGON</h1>
+      <p>National Official Register of Business Entities in Poland.</p>
+      <div class="vh-flex vh-gap-sm vh-mt-md vh-flex-wrap">
+        <span class="vh-badge vh-badge--active">🔒 Local Spec</span>
+        <span class="vh-badge vh-badge--draft">⚠ Draft specification</span>
+        <span class="vh-badge">📅 Reviewed: 2026-07-12</span>
+        <span class="vh-badge">✓ Privacy Assured</span>
+      </div>
+    </header>
+  
+        <!-- Quick Facts and Metadata -->
+<section class="vh-card">
+  <div class="section-heading vh-hidden">
+    <span class="vh-eyebrow">Quick Facts</span>
+    <h2>Entity Summary</h2>
+  </div>
+  
+    <div class="vh-metadata-grid">
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Region / Jurisdiction</dt>
+        <dd class="vh-metadata-value">Poland (PL)</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Identifier Category</dt>
+        <dd class="vh-metadata-value">Polish Business Statistical Registry Number</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Format & Length</dt>
+        <dd class="vh-metadata-value">9 numeric digits</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Status Badge</dt>
+        <dd class="vh-metadata-value">DRAFT</dd>
+      </div>
+    </div>
+  
+</section>
+
+<!-- Structured Overview -->
+<section class="vh-card">
+  <div class="section-heading vh-mt-md">
+    <span class="vh-eyebrow">Overview</span>
+    <h2>What is REGON?</h2>
+  </div>
+  <div class="rich-text">
+    <h2>REGON (Rejestr Gospodarki Narodowej)</h2>
+<p>The <strong>REGON</strong> (Polish: <em>Krajowy Rejestr Urzędowy Podmiotów Gospodarki Narodowej</em>, National Official Register of Business Entities) is a statistical identification registry in Poland.</p>
+<p>Introduced in 1975, it is used by government agencies to gather and track statistical economic data on all registered businesses, civil partnerships, and public institutions operating in Poland.</p>
+<h2>Issuing Authority</h2>
+<p>The REGON registry is managed by the <strong>Central Statistical Office</strong> of Poland (<em>Główny Urząd Statystyczny - GUS</em>).</p>
+  </div>
+</section>
+
+<!-- Visual Structure Section -->
+
+    <section class="vh-card">
+      <div class="section-heading">
+        <span class="vh-eyebrow">Visualization</span>
+        <h2>Visual Structure Breakdown</h2>
+      </div>
+      <div class="vh-visual-blocks">
+        
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">region</div>
+        <div class="vh-visual-block-body ">RR</div>
+      </div>
+    
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">serial</div>
+        <div class="vh-visual-block-body ">SSSSSS</div>
+      </div>
+    
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">checksum</div>
+        <div class="vh-visual-block-body vh-success">C</div>
+      </div>
+    
+      </div>
+      <div class="vh-mt-lg">
+        <p>Standard REGON numbers consist of exactly 9 digits structured as:</p>
+<pre><code>[ R R ] [ S S S S S S ] [ C ]</code></pre>
+<div class="vh-table-container"><table class="vh-table"><tr><th>Field</th><th>Positions</th><th>Description</th></tr><tr><td><strong>RR</strong></td><td>1–2</td><td>Region code (assigned by the local statistical office branch).</td></tr><tr><td><strong>SSSSSS</strong></td><td>3–8</td><td>Unique business serial code.</td></tr><tr><td><strong>C</strong></td><td>9</td><td>Control checksum digit.</td></tr></table></div>
+      </div>
+    </section>
+  
+
+<!-- Checksum Math Section -->
+
+    <section class="vh-card">
+      <div class="section-heading">
+        <span class="vh-eyebrow">Verification Math</span>
+        <h2>Modulo Checksum Details</h2>
+      </div>
+      <p>The REGON checksum uses a weighted modulo 11 algorithm.</p>
+<h2>Multipliers</h2>
+<p>The first 8 digits are multiplied by corresponding weight constants:</p>
+<div class="vh-table-container"><table class="vh-table"><tr><th>Digit Position</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr><tr><td><strong>Weight</strong></td><td>8</td><td>9</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr></table></div>
+<h2>Calculation</h2>
+<p>Sum the multiplication products:</p>
+<p>\[S = \sum_{i=1}^{8} (d_i \times w_i)\]</p>
+<p>The remainder is calculated as:</p>
+<p>\[R = S \pmod{11}\]</p>
+<p>The control checksum digit \(C\) is computed as:</p>
+<ul>
+<li>If \(R &lt; 10\), then \(C = R\)</li>
+<li>If \(R = 10\), then \(C = 0\)</li>
+</ul>
+    </section>
+  
+
+<!-- Examples Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">Test cases</span>
+    <h2>Validation Examples</h2>
+  </div>
+  
+    <div class="vh-table-container">
+      <table class="vh-table">
+        <thead>
+          <tr>
+            <th>Sample Input</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+      <tr>
+        <td class="vh-font-mono vh-font-bold">192598474</td>
+        <td><strong>Valid REGON</strong> — Standard valid Polish National Official Business Register (REGON) number.</td>
+        <td><span class="vh-success">✓ Valid</span></td>
+      </tr>
+    
+      <tr>
+        <td class="vh-font-mono vh-font-bold">123456789</td>
+        <td><strong>Invalid Checksum</strong> — Fails the weighted modulo 11 checksum verification.</td>
+        <td><span class="vh-danger">✗ Invalid</span></td>
+      </tr>
+    
+      <tr>
+        <td class="vh-font-mono vh-font-bold">12345</td>
+        <td><strong>Too Short</strong> — Must be exactly 9 numeric digits.</td>
+        <td><span class="vh-danger">✗ Invalid</span></td>
+      </tr>
+    
+        </tbody>
+      </table>
+    </div>
+  
+</section>
+
+<!-- Developer Notes Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">Developers</span>
+    <h2>Implementation Guidance</h2>
+  </div>
+  <div class="rich-text">
+    <h2>Developer Guidelines</h2>
+<p>When implementing REGON validation:</p>
+<ul>
+<li>Standard REGON numbers must be exactly 9 numeric digits.</li>
+<li>Regex: <code>/^\d{9}$/</code>.</li>
+<li>Handle modulo 10 checksum adjustment: If <code>sum % 11 === 10</code>, the control digit is <code>0</code>.</li>
+<li>Verify the first two digits represent a valid region code.</li>
+</ul>
+  </div>
+  
+  <!-- Snippet tabs layout -->
+  <div class="vh-code-card">
+    <div class="vh-aria-live-status sr-only" aria-live="polite"></div>
+    <script type="application/json" class="vh-snippets-data">{"javascript":"function validateREGON(regon) {\n  if (!/^\\d{9}$/.test(regon)) return false;\n  const weights = [8, 9, 2, 3, 4, 5, 6, 7];\n  let sum = 0;\n  for (let i = 0; i \u003c 8; i++) {\n    sum += parseInt(regon[i]) * weights[i];\n  }\n  let remainder = sum % 11;\n  const checksum = remainder === 10 ? 0 : remainder;\n  return checksum === parseInt(regon[8]);\n}","python":"def validate_regon(regon: str) -\u003e bool:\n    if not regon.isdigit() or len(regon) != 9:\n        return False\n    weights = [8, 9, 2, 3, 4, 5, 6, 7]\n    digits = [int(d) for d in regon]\n    sum_val = sum(d * w for d, w in zip(digits[:8], weights))\n    remainder = sum_val % 11\n    checksum = 0 if remainder == 10 else remainder\n    return checksum == digits[8]","java":"public class RegonValidator {\n    public static boolean validate(String regon) {\n        if (regon == null || !regon.matches(\"\\\\d{9}\")) {\n            return false;\n        }\n        int[] weights = {8, 9, 2, 3, 4, 5, 6, 7};\n        int sum = 0;\n        for (int i = 0; i \u003c 8; i++) {\n            sum += Character.getNumericValue(regon.charAt(i)) * weights[i];\n        }\n        int remainder = sum % 11;\n        int checksum = remainder == 10 ? 0 : remainder;\n        return checksum == Character.getNumericValue(regon.charAt(8));\n    }\n}","go":"package main\n\nimport (\n\t\"regexp\"\n\t\"strconv\"\n)\n\nfunc ValidateREGON(regon string) bool {\n\tif matched, _ := regexp.MatchString(`^\\d{9}$`, regon); !matched {\n\t\treturn false\n\t}\n\tweights := []int{8, 9, 2, 3, 4, 5, 6, 7}\n\tsum := 0\n\tfor i := 0; i \u003c 8; i++ {\n\t\tdigit, _ := strconv.Atoi(string(regon[i]))\n\t\tsum += digit * weights[i]\n\t}\n\tremainder := sum % 11\n\tchecksum := remainder\n\tif remainder == 10 {\n\t\tchecksum = 0\n\t}\n\tlastDigit, _ := strconv.Atoi(string(regon[8]))\n\treturn checksum == lastDigit\n}","rust":"pub fn validate_regon(regon: \u0026str) -\u003e bool {\n    if regon.len() != 9 || !regon.chars().all(|c| c.is_ascii_digit()) {\n        return false;\n    }\n    let weights = [8, 9, 2, 3, 4, 5, 6, 7];\n    let digits: Vec\u003cu32\u003e = regon.chars().map(|c| c.to_digit(10).unwrap()).collect();\n    let sum: u32 = digits.iter().take(8).zip(weights.iter()).map(|(\u0026d, \u0026w)| d * w).sum();\n    let remainder = sum % 11;\n    let checksum = if remainder == 10 { 0 } else { remainder };\n    checksum == digits[8]\n}"}</script>
+    <div class="vh-code-card-header">
+      <span>🔌</span> Language Code Snippets
+    </div>
+    <div class="vh-code-tabs">
+      <button type="button" class="vh-tab active" data-lang="javascript">JavaScript</button>
+      <button type="button" class="vh-tab" data-lang="python">Python</button>
+      <button type="button" class="vh-tab" data-lang="java">Java</button>
+      <button type="button" class="vh-tab" data-lang="go">Go</button>
+      <button type="button" class="vh-tab" data-lang="rust">Rust</button>
+    </div>
+    <div class="vh-code-block-wrapper">
+      <button type="button" class="vh-copy-button">Copy</button>
+      <pre class="vh-margin-zero"><code class="vh-code">function validateREGON(regon) {
+  if (!/^\d{9}$/.test(regon)) return false;
+  const weights = [8, 9, 2, 3, 4, 5, 6, 7];
+  let sum = 0;
+  for (let i = 0; i < 8; i++) {
+    sum += parseInt(regon[i]) * weights[i];
+  }
+  let remainder = sum % 11;
+  const checksum = remainder === 10 ? 0 : remainder;
+  return checksum === parseInt(regon[8]);
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- Graph Connections Section -->
+
+
+<!-- FAQ Section -->
+
+        <section class="vh-card vh-faq-section">
+          <div class="section-heading">
+            <span class="vh-eyebrow">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div class="vh-accordion-controls">
+            <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="expand">Expand All</button>
+            <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="collapse">Collapse All</button>
+          </div>
+          
+        <details class="vh-accordion">
+          <summary>Can a REGON number have 14 digits?</summary>
+          <div class="rich-text">
+            <p>Yes. Polish entities with local branches in other regions receive a 14-digit REGON number. The first 9 digits represent the parent company, followed by 4 branch digits, and a final checksum digit calculated with different weights.</p>
+          </div>
+        </details>
+      
+        <details class="vh-accordion">
+          <summary>Is REGON mandatory for all companies?</summary>
+          <div class="rich-text">
+            <p>Yes. Every registered business partnership, cooperative, and enterprise in Poland must hold a REGON code for statistical reporting.</p>
+          </div>
+        </details>
+      
+        </section>
+      
+
+<!-- Official References Section -->
+
+        <section class="vh-card">
+          <div class="section-heading">
+            <span class="vh-eyebrow">References</span>
+            <h2>Official Registry Sources</h2>
+          </div>
+          <div class="rich-text">
+            <h2>References</h2>
+<p>1. <strong>GUS - Central Statistical Office (Poland):</strong> Central registry database lookup portal. <a href="https://stat.gov.pl/rejestry-urzedowe/regon/">Official GUS portal</a>.</p>
+<p>2. <strong>Act of 29 June 1995 on Official Statistics:</strong> The legal statutory basis establishing the REGON register schema.</p>
+          </div>
+        </section>
+      
+
+      </div>
+    </section>
+  </main>
+
+  
+    <footer class="site-footer">
+      <div class="vh-container footer-inner">
+        <a class="brand" href="/en/">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <p>Static tools generated by Valido Engine.</p>
+      </div>
+    </footer>
+  
+  <script src="/assets/js/bundle.0289df.js" defer></script>
+</body>
+</html>

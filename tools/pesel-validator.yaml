@@ -6,7 +6,7 @@ country: PL
 category: national-identifiers
 status: active
 name:
-  en: PESEL Validator
+  en: PESEL Validator & Explainer
 summary:
   en: Validate, parse, generate, and explain Polish PESEL numbers.
 capabilities:
@@ -50,6 +50,6 @@ related:
     sameModule: true
 seo:
   title:
-    en: PESEL Validator
+    en: PESEL Validator & Explainer
   description:
     en: Validate and explain Polish PESEL numbers with checksum and metadata.

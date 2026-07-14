@@ -1,3 +1,11 @@
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  max-width: 100%;
+}
+
 .vh-table-container {
   width: 100%;
   overflow-x: auto;

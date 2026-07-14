@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "node scripts/build-all.mjs",
+    "test": "node scripts/test-pages.mjs"
+  },
   "dependencies": {
     "playwright": "^1.61.1"
   }

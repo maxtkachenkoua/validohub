@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+      <title>CNPJ (BR) Specification & Schema | ValidoHub</title>
+      <meta name="description" content="Cadastro Nacional da Pessoa Jurídica. Brazilian business taxpayer identification number.">
+      <link rel="canonical" href="https://validohub.com/en/identifiers/cnpj/">
+      <link rel="alternate" hreflang="en" href="https://validohub.com/en/identifiers/cnpj/">
+      <link rel="stylesheet" href="/assets/css/bundle.9ba81e.css">
+    
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"CNPJ (BR) Specification \u0026 Schema | ValidoHub","description":"Cadastro Nacional da Pessoa Jurídica. Brazilian business taxpayer identification number.","url":"https://validohub.com/en/identifiers/cnpj/","inLanguage":"en","audience":{"@type":"Audience","audienceType":"Software Developers"}}</script>
+</head>
+<body>
+  
+    <header class="site-header">
+      <div class="vh-container header-inner">
+        <a class="brand" href="/en/">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="/en/">Home</a>
+          <a href="/en/countries/">Countries</a>
+          <a href="/en/categories/national-identifiers/" aria-current="page" class="is-active">Identifiers</a>
+        </nav>
+      </div>
+    </header>
+  
+
+  <main class="site-main">
+    <section class="vh-page-shell">
+      <div class="vh-container vh-page-stack">
+        
+    <nav class="vh-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/countries/">Countries</a></li>
+        <li><a href="/en/brazil/">Brazil</a></li>
+        <li><span aria-current="page">CNPJ</span></li>
+      </ol>
+    </nav>
+  
+        
+    <header class="vh-page-intro">
+      <span class="vh-eyebrow">Brazilian National Registry of Legal Entities</span>
+      <h1>CNPJ</h1>
+      <p>Cadastro Nacional da Pessoa Jurídica. Brazilian business taxpayer identification number.</p>
+      <div class="vh-flex vh-gap-sm vh-mt-md vh-flex-wrap">
+        <span class="vh-badge vh-badge--active">🔒 Local Spec</span>
+        <span class="vh-badge vh-badge--draft">⚠ Draft specification</span>
+        <span class="vh-badge">📅 Reviewed: 2026-07-12</span>
+        <span class="vh-badge">✓ Privacy Assured</span>
+      </div>
+    </header>
+  
+        <!-- Quick Facts and Metadata -->
+<section class="vh-card">
+  <div class="section-heading vh-hidden">
+    <span class="vh-eyebrow">Quick Facts</span>
+    <h2>Entity Summary</h2>
+  </div>
+  
+    <div class="vh-metadata-grid">
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Region / Jurisdiction</dt>
+        <dd class="vh-metadata-value">Brazil (BR)</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Identifier Category</dt>
+        <dd class="vh-metadata-value">Brazilian National Registry of Legal Entities</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Format & Length</dt>
+        <dd class="vh-metadata-value">14 numeric digits</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Status Badge</dt>
+        <dd class="vh-metadata-value">DRAFT</dd>
+      </div>
+    </div>
+  
+</section>
+
+<!-- Structured Overview -->
+<section class="vh-card">
+  <div class="section-heading vh-mt-md">
+    <span class="vh-eyebrow">Overview</span>
+    <h2>What is CNPJ?</h2>
+  </div>
+  <div class="rich-text">
+    <h2>CNPJ (Cadastro Nacional da Pessoa Jurídica)</h2>
+<p>The <strong>CNPJ</strong> (Portuguese: <em>Cadastro Nacional da Pessoa Jurídica</em>, National Registry of Legal Entities) is the tax registration number used to identify businesses, partnerships, and non-profits in Brazil.</p>
+<p>It is issued and administered by the Secretariat of the Federal Revenue of Brazil (Receita Federal).</p>
+<h2>Issuing Authority</h2>
+<p>Managed by the <strong>Secretariat of the Federal Revenue of Brazil</strong> (<em>Secretaria da Receita Federal do Brasil</em>).</p>
+  </div>
+</section>
+
+<!-- Visual Structure Section -->
+
+    <section class="vh-card">
+      <div class="section-heading">
+        <span class="vh-eyebrow">Visualization</span>
+        <h2>Visual Structure Breakdown</h2>
+      </div>
+      <div class="vh-visual-blocks">
+        
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">registration</div>
+        <div class="vh-visual-block-body ">RRRRRRRR</div>
+      </div>
+    
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">branch</div>
+        <div class="vh-visual-block-body ">BBBB</div>
+      </div>
+    
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">checksum</div>
+        <div class="vh-visual-block-body vh-success">CC</div>
+      </div>
+    
+      </div>
+      <div class="vh-mt-lg">
+        <p>Standard CNPJ numbers consist of exactly 14 digits structured as:</p>
+<pre><code>[ R R R R R R R R ] [ B B B B ] [ C C ]</code></pre>
+<div class="vh-table-container"><table class="vh-table"><tr><th>Field</th><th>Positions</th><th>Description</th></tr><tr><td><strong>RRRRRRRR</strong></td><td>1–8</td><td>Business registration number.</td></tr><tr><td><strong>BBBB</strong></td><td>9–12</td><td>Branch identifier (headquarters is usually <code>0001</code>).</td></tr><tr><td><strong>CC</strong></td><td>13–14</td><td>Double control checksum digits.</td></tr></table></div>
+      </div>
+    </section>
+  
+
+<!-- Checksum Math Section -->
+
+    <section class="vh-card">
+      <div class="section-heading">
+        <span class="vh-eyebrow">Verification Math</span>
+        <h2>Modulo Checksum Details</h2>
+      </div>
+      <p>The CNPJ checksum utilizes a sequential double modulo 11 calculation.</p>
+<h2>First Checksum Digit (Digit 13)</h2>
+<p>Weights are applied to digits 1-12: <code>5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2</code>.</p>
+<p>\[S_1 = \sum_{i=1}^{12} (d_i \times w_i)\]</p>
+<p>\[R_1 = S_1 \pmod{11}\]</p>
+<p>The control digit is computed as:</p>
+<ul>
+<li>If \(R_1 &lt; 2\), then \(d_{13} = 0\)</li>
+<li>If \(R_1 \ge 2\), then \(d_{13} = 11 - R_1\)</li>
+</ul>
+<h2>Second Checksum Digit (Digit 14)</h2>
+<p>Weights are applied to digits 1-13: <code>6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2</code>.</p>
+<p>\[S_2 = \sum_{i=1}^{13} (d_i \times w'_i)\]</p>
+<p>\[R_2 = S_2 \pmod{11}\]</p>
+<p>The control digit is computed as:</p>
+<ul>
+<li>If \(R_2 &lt; 2\), then \(d_{14} = 0\)</li>
+<li>If \(R_2 \ge 2\), then \(d_{14} = 11 - R_2\)</li>
+</ul>
+    </section>
+  
+
+<!-- Examples Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">Test cases</span>
+    <h2>Validation Examples</h2>
+  </div>
+  
+    <div class="vh-table-container">
+      <table class="vh-table">
+        <thead>
+          <tr>
+            <th>Sample Input</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+      <tr>
+        <td class="vh-font-mono vh-font-bold">11222333000181</td>
+        <td><strong>Valid CNPJ</strong> — Standard valid Brazilian Cadastro Nacional da Pessoa Jurídica (CNPJ) number.</td>
+        <td><span class="vh-success">✓ Valid</span></td>
+      </tr>
+    
+      <tr>
+        <td class="vh-font-mono vh-font-bold">11111111111111</td>
+        <td><strong>Trivial Sequential Code</strong> — Fails the Receita Federal rule blocking identical repeating digits.</td>
+        <td><span class="vh-danger">✗ Invalid</span></td>
+      </tr>
+    
+      <tr>
+        <td class="vh-font-mono vh-font-bold">12345</td>
+        <td><strong>Too Short</strong> — Must be exactly 14 numeric digits.</td>
+        <td><span class="vh-danger">✗ Invalid</span></td>
+      </tr>
+    
+        </tbody>
+      </table>
+    </div>
+  
+</section>
+
+<!-- Developer Notes Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">Developers</span>
+    <h2>Implementation Guidance</h2>
+  </div>
+  <div class="rich-text">
+    <h2>Developer Guidelines</h2>
+<p>When implementing CNPJ validation:</p>
+<ul>
+<li>CNPJ is formatted as: <code>00.000.000/0001-00</code>. Separators must be filtered before calculation.</li>
+<li>Digits length must be exactly 14.</li>
+<li>Regex: <code>/^\d{14}$/</code>.</li>
+<li>Like CPF, reject trivial sequential values (e.g. <code>00.000.000/0000-00</code>, <code>11.111.111/1111-11</code>), which are invalid.</li>
+</ul>
+  </div>
+  
+  <!-- Snippet tabs layout -->
+  <div class="vh-code-card">
+    <div class="vh-aria-live-status sr-only" aria-live="polite"></div>
+    <script type="application/json" class="vh-snippets-data">{"javascript":"function validateCNPJ(cnpj) {\n  if (!/^\\d{14}$/.test(cnpj)) return false;\n  if (/^(\\d)\\1{13}$/.test(cnpj)) return false;\n  let size = cnpj.length - 2;\n  let numbers = cnpj.substring(0, size);\n  const digits = cnpj.substring(size);\n  let sum = 0;\n  let pos = size - 7;\n  for (let i = size; i \u003e= 1; i--) {\n    sum += parseInt(numbers.charAt(size - i)) * pos--;\n    if (pos \u003c 2) pos = 9;\n  }\n  let result = sum % 11 \u003c 2 ? 0 : 11 - (sum % 11);\n  if (result !== parseInt(digits.charAt(0))) return false;\n  size = size + 1;\n  numbers = cnpj.substring(0, size);\n  sum = 0;\n  pos = size - 7;\n  for (let i = size; i \u003e= 1; i--) {\n    sum += parseInt(numbers.charAt(size - i)) * pos--;\n    if (pos \u003c 2) pos = 9;\n  }\n  result = sum % 11 \u003c 2 ? 0 : 11 - (sum % 11);\n  return result === parseInt(digits.charAt(1));\n}","python":"def validate_cnpj(cnpj: str) -\u003e bool:\n    if not cnpj.isdigit() or len(cnpj) != 14:\n        return False\n    if len(set(cnpj)) == 1:\n        return False\n    def calc_digit(s: str, weights: list) -\u003e int:\n        sum_val = sum(int(c) * w for c, w in zip(s, weights))\n        remainder = sum_val % 11\n        return 0 if remainder \u003c 2 else 11 - remainder\n    w1 = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]\n    w2 = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]\n    d1 = calc_digit(cnpj[:12], w1)\n    d2 = calc_digit(cnpj[:13], w2)\n    return d1 == int(cnpj[12]) and d2 == int(cnpj[13])","java":"public class CnpjValidator {\n    public static boolean validate(String cnpj) {\n        if (cnpj == null || !cnpj.matches(\"\\\\d{14}\") || cnpj.matches(\"(\\\\d)\\\\1{13}\")) {\n            return false;\n        }\n        int d1 = calcDigit(cnpj.substring(0, 12), new int[]{5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2});\n        int d2 = calcDigit(cnpj.substring(0, 13), new int[]{6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2});\n        return d1 == Character.getNumericValue(cnpj.charAt(12)) \u0026\u0026 d2 == Character.getNumericValue(cnpj.charAt(13));\n    }\n    private static int calcDigit(String s, int[] weights) {\n        int sum = 0;\n        for (int i = 0; i \u003c s.length(); i++) {\n            sum += Character.getNumericValue(s.charAt(i)) * weights[i];\n        }\n        int remainder = sum % 11;\n        return remainder \u003c 2 ? 0 : 11 - remainder;\n    }\n}","go":"package main\n\nimport (\n\t\"regexp\"\n\t\"strconv\"\n)\n\nfunc ValidateCNPJ(cnpj string) bool {\n\tif matched, _ := regexp.MatchString(`^\\d{14}$`, cnpj); !matched {\n\t\treturn false\n\t}\n\tif matched, _ := regexp.MatchString(`^(\\d)\\1{13}$`, cnpj); matched {\n\t\treturn false\n\t}\n\tcalcDigit := func(s string, weights []int) int {\n\t\tsum := 0\n\t\tfor i := 0; i \u003c len(s); i++ {\n\t\t\tdigit, _ := strconv.Atoi(string(s[i]))\n\t\t\tsum += digit * weights[i]\n\t\t}\n\t\tremainder := sum % 11\n\t\tif remainder \u003c 2 {\n\t\t\treturn 0\n\t\t}\n\t\treturn 11 - remainder\n\t}\n\tw1 := []int{5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2}\n\tw2 := []int{6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2}\n\td1 := calcDigit(cnpj[:12], w1)\n\td2 := calcDigit(cnpj[:13], w2)\n\tlastD12, _ := strconv.Atoi(string(cnpj[12]))\n\tlastD13, _ := strconv.Atoi(string(cnpj[13]))\n\treturn d1 == lastD12 \u0026\u0026 d2 == lastD13\n}","rust":"pub fn validate_cnpj(cnpj: \u0026str) -\u003e bool {\n    if cnpj.len() != 14 || !cnpj.chars().all(|c| c.is_ascii_digit()) {\n        return false;\n    }\n    if cnpj.chars().all(|c| c == cnpj.chars().next().unwrap()) {\n        return false;\n    }\n    let digits: Vec\u003cu32\u003e = cnpj.chars().map(|c| c.to_digit(10).unwrap()).collect();\n    let calc_digit = |slice: \u0026[u32], weights: \u0026[u32]| -\u003e u32 {\n        let sum: u32 = slice.iter().zip(weights.iter()).map(|(\u0026d, \u0026w)| d * w).sum();\n        let remainder = sum % 11;\n        if remainder \u003c 2 { 0 } else { 11 - remainder }\n    };\n    let w1 = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];\n    let w2 = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];\n    let d1 = calc_digit(\u0026digits[0..12], \u0026w1);\n    let d2 = calc_digit(\u0026digits[0..13], \u0026w2);\n    d1 == digits[12] \u0026\u0026 d2 == digits[13]\n}"}</script>
+    <div class="vh-code-card-header">
+      <span>🔌</span> Language Code Snippets
+    </div>
+    <div class="vh-code-tabs">
+      <button type="button" class="vh-tab active" data-lang="javascript">JavaScript</button>
+      <button type="button" class="vh-tab" data-lang="python">Python</button>
+      <button type="button" class="vh-tab" data-lang="java">Java</button>
+      <button type="button" class="vh-tab" data-lang="go">Go</button>
+      <button type="button" class="vh-tab" data-lang="rust">Rust</button>
+    </div>
+    <div class="vh-code-block-wrapper">
+      <button type="button" class="vh-copy-button">Copy</button>
+      <pre class="vh-margin-zero"><code class="vh-code">function validateCNPJ(cnpj) {
+  if (!/^\d{14}$/.test(cnpj)) return false;
+  if (/^(\d)\1{13}$/.test(cnpj)) return false;
+  let size = cnpj.length - 2;
+  let numbers = cnpj.substring(0, size);
+  const digits = cnpj.substring(size);
+  let sum = 0;
+  let pos = size - 7;
+  for (let i = size; i >= 1; i--) {
+    sum += parseInt(numbers.charAt(size - i)) * pos--;
+    if (pos < 2) pos = 9;
+  }
+  let result = sum % 11 < 2 ? 0 : 11 - (sum % 11);
+  if (result !== parseInt(digits.charAt(0))) return false;
+  size = size + 1;
+  numbers = cnpj.substring(0, size);
+  sum = 0;
+  pos = size - 7;
+  for (let i = size; i >= 1; i--) {
+    sum += parseInt(numbers.charAt(size - i)) * pos--;
+    if (pos < 2) pos = 9;
+  }
+  result = sum % 11 < 2 ? 0 : 11 - (sum % 11);
+  return result === parseInt(digits.charAt(1));
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- Graph Connections Section -->
+
+
+<!-- FAQ Section -->
+
+        <section class="vh-card vh-faq-section">
+          <div class="section-heading">
+            <span class="vh-eyebrow">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div class="vh-accordion-controls">
+            <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="expand">Expand All</button>
+            <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="collapse">Collapse All</button>
+          </div>
+          
+        <details class="vh-accordion">
+          <summary>Can a company have multiple CNPJ numbers?</summary>
+          <div class="rich-text">
+            <p>A business receives one base 8-digit registration number, but each branch or subsidiary receives its own 14-digit CNPJ code (e.g. branch 2 will end in <code>/0002-XX</code>).</p>
+          </div>
+        </details>
+      
+        <details class="vh-accordion">
+          <summary>Is CNPJ registration public?</summary>
+          <div class="rich-text">
+            <p>Yes. Registration details, active statuses, and company locations are public domain databases provided by the Receita Federal.</p>
+          </div>
+        </details>
+      
+        </section>
+      
+
+<!-- Official References Section -->
+
+        <section class="vh-card">
+          <div class="section-heading">
+            <span class="vh-eyebrow">References</span>
+            <h2>Official Registry Sources</h2>
+          </div>
+          <div class="rich-text">
+            <h2>References</h2>
+<p>1. <strong>Receita Federal (Brazil):</strong> Central business registry lookup portal. <a href="https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/cnpj">Official portal</a>.</p>
+<p>2. <strong>RFB Normative Instruction No. 1863/2018:</strong> Administrative base of CNPJ registration rules.</p>
+          </div>
+        </section>
+      
+
+      </div>
+    </section>
+  </main>
+
+  
+    <footer class="site-footer">
+      <div class="vh-container footer-inner">
+        <a class="brand" href="/en/">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <p>Static tools generated by Valido Engine.</p>
+      </div>
+    </footer>
+  
+  <script src="/assets/js/bundle.0289df.js" defer></script>
+</body>
+</html>

@@ -1,6 +1,18 @@
 pre, code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.85em;
+  overflow-wrap: break-word;
+}
+
+code {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+pre code {
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 pre {
@@ -10,6 +22,7 @@ pre {
   border-radius: var(--vh-radius-md);
   overflow-x: auto;
   margin-bottom: var(--vh-space-md);
+  max-width: 100%;
 }
 
 .vh-code-card {

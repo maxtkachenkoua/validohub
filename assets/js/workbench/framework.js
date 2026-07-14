@@ -404,6 +404,7 @@
     return {
       registerPlugin: registerPlugin,
       mountAll: mountAll,
+      plugins: plugins,
       utilities: {
         debounce: debounce,
         escapeHtml: escapeHtml,

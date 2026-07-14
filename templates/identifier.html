@@ -14,15 +14,15 @@
     <h2>What is {{ ENTITY_NAME }}?</h2>
   </div>
   <div class="rich-text">
-    {{ OVERVIEW_HTML }}
+    {{ OVERVIEW }}
   </div>
 </section>
 
 <!-- Visual Structure Section -->
-{{ VISUAL_STRUCTURE_SECTION }}
+{{ VISUAL_STRUCTURE }}
 
 <!-- Checksum Math Section -->
-{{ CHECKSUM_SECTION }}
+{{ CHECKSUM }}
 
 <!-- Examples Section -->
 <section class="vh-card">
@@ -30,7 +30,7 @@
     <span class="vh-eyebrow">Test cases</span>
     <h2>Validation Examples</h2>
   </div>
-  {{ EXAMPLES_TABLES }}
+  {{ EXAMPLES }}
 </section>
 
 <!-- Developer Notes Section -->
@@ -40,11 +40,13 @@
     <h2>Implementation Guidance</h2>
   </div>
   <div class="rich-text">
-    {{ DEVELOPER_NOTES_HTML }}
+    {{ IMPLEMENTATION }}
   </div>
   
   <!-- Snippet tabs layout -->
   <div class="vh-code-card">
+    <div class="vh-aria-live-status sr-only" aria-live="polite"></div>
+    {{ SNIPPET_DATA_JSON }}
     <div class="vh-code-card-header">
       <span>🔌</span> Language Code Snippets
     </div>
@@ -56,41 +58,17 @@
       <button type="button" class="vh-tab" data-lang="rust">Rust</button>
     </div>
     <div class="vh-code-block-wrapper">
-      <button type="button" class="vh-copy-button" id="vh-snippet-copy-btn">Copy</button>
-      <pre class="vh-margin-zero"><code id="vh-code-block-content" class="vh-code">{{ SNIPPET_JS }}</code></pre>
+      <button type="button" class="vh-copy-button">Copy</button>
+      <pre class="vh-margin-zero"><code class="vh-code">{{ SNIPPET_JS }}</code></pre>
     </div>
   </div>
 </section>
 
 <!-- Graph Connections Section -->
-<section class="vh-card">
-  <div class="section-heading">
-    <span class="vh-eyebrow">ValidoHub Knowledge Graph</span>
-    <h2>Semantic Ecosystem Connections</h2>
-  </div>
-  {{ GRAPH_CONNECTIONS }}
-</section>
+{{ GRAPH_SECTION }}
 
 <!-- FAQ Section -->
-<section class="vh-card vh-faq-section">
-  <div class="section-heading">
-    <span class="vh-eyebrow">FAQ</span>
-    <h2>Frequently Asked Questions</h2>
-  </div>
-  <div class="vh-accordion-controls">
-    <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="expand">Expand All</button>
-    <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="collapse">Collapse All</button>
-  </div>
-  {{ FAQ_ACCORDIONS }}
-</section>
+{{ FAQ }}
 
 <!-- Official References Section -->
-<section class="vh-card">
-  <div class="section-heading">
-    <span class="vh-eyebrow">References</span>
-    <h2>Official Registry Sources</h2>
-  </div>
-  <div class="rich-text">
-    {{ REFERENCES_HTML }}
-  </div>
-</section>
+{{ REFERENCES }}

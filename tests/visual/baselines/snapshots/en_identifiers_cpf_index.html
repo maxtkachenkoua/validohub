@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+      <title>CPF (BR) Specification & Schema | ValidoHub</title>
+      <meta name="description" content="Cadastro de Pessoas Físicas. Brazilian individual taxpayer registry number.">
+      <link rel="canonical" href="https://validohub.com/en/identifiers/cpf/">
+      <link rel="alternate" hreflang="en" href="https://validohub.com/en/identifiers/cpf/">
+      <link rel="stylesheet" href="/assets/css/bundle.9ba81e.css">
+    
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"CPF (BR) Specification \u0026 Schema | ValidoHub","description":"Cadastro de Pessoas Físicas. Brazilian individual taxpayer registry number.","url":"https://validohub.com/en/identifiers/cpf/","inLanguage":"en","audience":{"@type":"Audience","audienceType":"Software Developers"}}</script>
+</head>
+<body>
+  
+    <header class="site-header">
+      <div class="vh-container header-inner">
+        <a class="brand" href="/en/">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="/en/">Home</a>
+          <a href="/en/countries/">Countries</a>
+          <a href="/en/categories/national-identifiers/" aria-current="page" class="is-active">Identifiers</a>
+        </nav>
+      </div>
+    </header>
+  
+
+  <main class="site-main">
+    <section class="vh-page-shell">
+      <div class="vh-container vh-page-stack">
+        
+    <nav class="vh-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/countries/">Countries</a></li>
+        <li><a href="/en/brazil/">Brazil</a></li>
+        <li><span aria-current="page">CPF</span></li>
+      </ol>
+    </nav>
+  
+        
+    <header class="vh-page-intro">
+      <span class="vh-eyebrow">Brazilian Natural Persons Register</span>
+      <h1>CPF</h1>
+      <p>Cadastro de Pessoas Físicas. Brazilian individual taxpayer registry number.</p>
+      <div class="vh-flex vh-gap-sm vh-mt-md vh-flex-wrap">
+        <span class="vh-badge vh-badge--active">🔒 Local Spec</span>
+        <span class="vh-badge vh-badge--draft">⚠ Draft specification</span>
+        <span class="vh-badge">📅 Reviewed: 2026-07-12</span>
+        <span class="vh-badge">✓ Privacy Assured</span>
+      </div>
+    </header>
+  
+        <!-- Quick Facts and Metadata -->
+<section class="vh-card">
+  <div class="section-heading vh-hidden">
+    <span class="vh-eyebrow">Quick Facts</span>
+    <h2>Entity Summary</h2>
+  </div>
+  
+    <div class="vh-metadata-grid">
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Region / Jurisdiction</dt>
+        <dd class="vh-metadata-value">Brazil (BR)</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Identifier Category</dt>
+        <dd class="vh-metadata-value">Brazilian Natural Persons Register</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Format & Length</dt>
+        <dd class="vh-metadata-value">11 numeric digits</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Status Badge</dt>
+        <dd class="vh-metadata-value">DRAFT</dd>
+      </div>
+    </div>
+  
+</section>
+
+<!-- Structured Overview -->
+<section class="vh-card">
+  <div class="section-heading vh-mt-md">
+    <span class="vh-eyebrow">Overview</span>
+    <h2>What is CPF?</h2>
+  </div>
+  <div class="rich-text">
+    <h2>CPF (Cadastro de Pessoas Físicas)</h2>
+<p>The <strong>CPF</strong> (Portuguese: <em>Cadastro de Pessoas Físicas</em>, Natural Persons Register) is the Brazilian individual taxpayer identification number.</p>
+<p>Managed by the Receita Federal (RFB), it is mandatory for citizens, residents, and non-residents who hold assets or conduct financial transactions in Brazil.</p>
+<h2>Issuing Authority</h2>
+<p>The CPF registry is administered by the <strong>Secretariat of the Federal Revenue of Brazil</strong> (<em>Secretaria da Receita Federal do Brasil</em>).</p>
+  </div>
+</section>
+
+<!-- Visual Structure Section -->
+
+    <section class="vh-card">
+      <div class="section-heading">
+        <span class="vh-eyebrow">Visualization</span>
+        <h2>Visual Structure Breakdown</h2>
+      </div>
+      <div class="vh-visual-blocks">
+        
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">serial</div>
+        <div class="vh-visual-block-body ">SSSSSSSS</div>
+      </div>
+    
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">region</div>
+        <div class="vh-visual-block-body ">R</div>
+      </div>
+    
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">checksum</div>
+        <div class="vh-visual-block-body vh-success">CC</div>
+      </div>
+    
+      </div>
+      <div class="vh-mt-lg">
+        <p>Standard CPF numbers consist of exactly 11 digits structured as:</p>
+<pre><code>[ S S S S S S S S ] [ R ] [ C C ]</code></pre>
+<div class="vh-table-container"><table class="vh-table"><tr><th>Field</th><th>Positions</th><th>Description</th></tr><tr><td><strong>SSSSSSSS</strong></td><td>1–8</td><td>Unique taxpayer registration serial.</td></tr><tr><td><strong>R</strong></td><td>9</td><td>Fiscal region digit (defining state of registration, e.g. 1 for DF/GO, 8 for SP).</td></tr><tr><td><strong>CC</strong></td><td>10–11</td><td>Double control checksum digits.</td></tr></table></div>
+      </div>
+    </section>
+  
+
+<!-- Checksum Math Section -->
+
+    <section class="vh-card">
+      <div class="section-heading">
+        <span class="vh-eyebrow">Verification Math</span>
+        <h2>Modulo Checksum Details</h2>
+      </div>
+      <p>The CPF checksum uses a sequential double modulo 11 algorithm.</p>
+<h2>First Checksum Digit (Digit 10)</h2>
+<p>Multipliers are applied to the first 9 digits: <code>10, 9, 8, 7, 6, 5, 4, 3, 2</code>.</p>
+<p>\[S_1 = \sum_{i=1}^{9} (d_i \times (11 - i))\]</p>
+<p>\[R_1 = S_1 \pmod{11}\]</p>
+<p>The control digit is computed as:</p>
+<ul>
+<li>If \(R_1 &lt; 2\), then \(d_{10} = 0\)</li>
+<li>If \(R_1 \ge 2\), then \(d_{10} = 11 - R_1\)</li>
+</ul>
+<h2>Second Checksum Digit (Digit 11)</h2>
+<p>Multipliers are applied to the first 10 digits: <code>11, 10, 9, 8, 7, 6, 5, 4, 3, 2</code>.</p>
+<p>\[S_2 = \sum_{i=1}^{10} (d_i \times (12 - i))\]</p>
+<p>\[R_2 = S_2 \pmod{11}\]</p>
+<p>The control digit is computed as:</p>
+<ul>
+<li>If \(R_2 &lt; 2\), then \(d_{11} = 0\)</li>
+<li>If \(R_2 \ge 2\), then \(d_{11} = 11 - R_2\)</li>
+</ul>
+    </section>
+  
+
+<!-- Examples Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">Test cases</span>
+    <h2>Validation Examples</h2>
+  </div>
+  
+    <div class="vh-table-container">
+      <table class="vh-table">
+        <thead>
+          <tr>
+            <th>Sample Input</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+      <tr>
+        <td class="vh-font-mono vh-font-bold">19123456760</td>
+        <td><strong>Valid CPF</strong> — Standard valid Brazilian Cadastro de Pessoas Físicas (CPF) number.</td>
+        <td><span class="vh-success">✓ Valid</span></td>
+      </tr>
+    
+      <tr>
+        <td class="vh-font-mono vh-font-bold">11111111111</td>
+        <td><strong>Trivial Sequential Code</strong> — Fails the Receita Federal rule blocking identical repeating digits.</td>
+        <td><span class="vh-danger">✗ Invalid</span></td>
+      </tr>
+    
+      <tr>
+        <td class="vh-font-mono vh-font-bold">12345</td>
+        <td><strong>Too Short</strong> — Must be exactly 11 numeric digits.</td>
+        <td><span class="vh-danger">✗ Invalid</span></td>
+      </tr>
+    
+        </tbody>
+      </table>
+    </div>
+  
+</section>
+
+<!-- Developer Notes Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">Developers</span>
+    <h2>Implementation Guidance</h2>
+  </div>
+  <div class="rich-text">
+    <h2>Developer Guidelines</h2>
+<p>When implementing CPF validation:</p>
+<ul>
+<li>CPF is often written with formatting: <code>000.000.000-00</code>. Separators must be filtered.</li>
+<li>Check sum calculations sequentially: Calculate the 10th digit first, then use it to compute the 11th digit.</li>
+<li>Reject trivial sequential numbers (e.g. <code>111.111.111-11</code>, <code>222.222.222-22</code>), as they are technically invalid under RFB rules but might pass basic checksum tests.</li>
+</ul>
+  </div>
+  
+  <!-- Snippet tabs layout -->
+  <div class="vh-code-card">
+    <div class="vh-aria-live-status sr-only" aria-live="polite"></div>
+    <script type="application/json" class="vh-snippets-data">{"javascript":"function validateCPF(cpf) {\n  if (!/^\\d{11}$/.test(cpf)) return false;\n  if (/^(\\d)\\1{10}$/.test(cpf)) return false;\n  let sum = 0;\n  for (let i = 0; i \u003c 9; i++) sum += parseInt(cpf[i]) * (10 - i);\n  let rev = 11 - (sum % 11);\n  if (rev === 10 || rev === 11) rev = 0;\n  if (rev !== parseInt(cpf[9])) return false;\n  sum = 0;\n  for (let i = 0; i \u003c 10; i++) sum += parseInt(cpf[i]) * (11 - i);\n  rev = 11 - (sum % 11);\n  if (rev === 10 || rev === 11) rev = 0;\n  return rev === parseInt(cpf[10]);\n}","python":"def validate_cpf(cpf: str) -\u003e bool:\n    if not cpf.isdigit() or len(cpf) != 11:\n        return False\n    if len(set(cpf)) == 1:\n        return False\n    sum_val = sum(int(cpf[i]) * (10 - i) for i in range(9))\n    rev = 11 - (sum_val % 11)\n    if rev == 10 or rev == 11: rev = 0\n    if rev != int(cpf[9]):\n        return False\n    sum_val = sum(int(cpf[i]) * (11 - i) for i in range(10))\n    rev = 11 - (sum_val % 11)\n    if rev == 10 or rev == 11: rev = 0\n    return rev == int(cpf[10])","java":"public class CpfValidator {\n    public static boolean validate(String cpf) {\n        if (cpf == null || !cpf.matches(\"\\\\d{11}\") || cpf.matches(\"(\\\\d)\\\\1{10}\")) {\n            return false;\n        }\n        int sum = 0;\n        for (int i = 0; i \u003c 9; i++) {\n            sum += Character.getNumericValue(cpf.charAt(i)) * (10 - i);\n        }\n        int rev = 11 - (sum % 11);\n        if (rev == 10 || rev == 11) rev = 0;\n        if (rev != Character.getNumericValue(cpf.charAt(9))) return false;\n        sum = 0;\n        for (int i = 0; i \u003c 10; i++) {\n            sum += Character.getNumericValue(cpf.charAt(i)) * (11 - i);\n        }\n        rev = 11 - (sum % 11);\n        if (rev == 10 || rev == 11) rev = 0;\n        return rev == Character.getNumericValue(cpf.charAt(10));\n    }\n}","go":"package main\n\nimport (\n\t\"regexp\"\n\t\"strconv\"\n)\n\nfunc ValidateCPF(cpf string) bool {\n\tif matched, _ := regexp.MatchString(`^\\d{11}$`, cpf); !matched {\n\t\treturn false\n\t}\n\tif matched, _ := regexp.MatchString(`^(\\d)\\1{10}$`, cpf); matched {\n\t\treturn false\n\t}\n\tsum := 0\n\tfor i := 0; i \u003c 9; i++ {\n\t\tdigit, _ := strconv.Atoi(string(cpf[i]))\n\t\tsum += digit * (10 - i)\n\t}\n\trev := 11 - (sum % 11)\n\tif rev == 10 || rev == 11 {\n\t\trev = 0\n\t}\n\tlastD9, _ := strconv.Atoi(string(cpf[9]))\n\tif rev != lastD9 {\n\t\treturn false\n\t}\n\tsum = 0\n\tfor i := 0; i \u003c 10; i++ {\n\t\tdigit, _ := strconv.Atoi(string(cpf[i]))\n\t\tsum += digit * (11 - i)\n\t}\n\trev = 11 - (sum % 11)\n\tif rev == 10 || rev == 11 {\n\t\trev = 0\n\t}\n\tlastD10, _ := strconv.Atoi(string(cpf[10]))\n\treturn rev == lastD10\n}","rust":"pub fn validate_cpf(cpf: \u0026str) -\u003e bool {\n    if cpf.len() != 11 || !cpf.chars().all(|c| c.is_ascii_digit()) {\n        return false;\n    }\n    if cpf.chars().all(|c| c == cpf.chars().next().unwrap()) {\n        return false;\n    }\n    let digits: Vec\u003cu32\u003e = cpf.chars().map(|c| c.to_digit(10).unwrap()).collect();\n    let mut sum = 0;\n    for i in 0..9 {\n        sum += digits[i] * (10 - i as u32);\n    }\n    let mut rev = 11 - (sum % 11);\n    if rev == 10 || rev == 11 { rev = 0; }\n    if rev != digits[9] { return false; }\n    sum = 0;\n    for i in 0..10 {\n        sum += digits[i] * (11 - i as u32);\n    }\n    rev = 11 - (sum % 11);\n    if rev == 10 || rev == 11 { rev = 0; }\n    rev == digits[10]\n}"}</script>
+    <div class="vh-code-card-header">
+      <span>🔌</span> Language Code Snippets
+    </div>
+    <div class="vh-code-tabs">
+      <button type="button" class="vh-tab active" data-lang="javascript">JavaScript</button>
+      <button type="button" class="vh-tab" data-lang="python">Python</button>
+      <button type="button" class="vh-tab" data-lang="java">Java</button>
+      <button type="button" class="vh-tab" data-lang="go">Go</button>
+      <button type="button" class="vh-tab" data-lang="rust">Rust</button>
+    </div>
+    <div class="vh-code-block-wrapper">
+      <button type="button" class="vh-copy-button">Copy</button>
+      <pre class="vh-margin-zero"><code class="vh-code">function validateCPF(cpf) {
+  if (!/^\d{11}$/.test(cpf)) return false;
+  if (/^(\d)\1{10}$/.test(cpf)) return false;
+  let sum = 0;
+  for (let i = 0; i < 9; i++) sum += parseInt(cpf[i]) * (10 - i);
+  let rev = 11 - (sum % 11);
+  if (rev === 10 || rev === 11) rev = 0;
+  if (rev !== parseInt(cpf[9])) return false;
+  sum = 0;
+  for (let i = 0; i < 10; i++) sum += parseInt(cpf[i]) * (11 - i);
+  rev = 11 - (sum % 11);
+  if (rev === 10 || rev === 11) rev = 0;
+  return rev === parseInt(cpf[10]);
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- Graph Connections Section -->
+
+
+<!-- FAQ Section -->
+
+        <section class="vh-card vh-faq-section">
+          <div class="section-heading">
+            <span class="vh-eyebrow">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div class="vh-accordion-controls">
+            <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="expand">Expand All</button>
+            <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="collapse">Collapse All</button>
+          </div>
+          
+        <details class="vh-accordion">
+          <summary>What happens if I lose my CPF number?</summary>
+          <div class="rich-text">
+            <p>The CPF number is unique and assigned for life. If lost, you can recover it by submitting an application at a post office, bank, or Receita Federal registry desk.</p>
+          </div>
+        </details>
+      
+        <details class="vh-accordion">
+          <summary>Can a foreign citizen obtain a CPF?</summary>
+          <div class="rich-text">
+            <p>Yes. Foreigners who own property or hold assets in Brazil are legally required to obtain a CPF.</p>
+          </div>
+        </details>
+      
+        </section>
+      
+
+<!-- Official References Section -->
+
+        <section class="vh-card">
+          <div class="section-heading">
+            <span class="vh-eyebrow">References</span>
+            <h2>Official Registry Sources</h2>
+          </div>
+          <div class="rich-text">
+            <h2>References</h2>
+<p>1. <strong>Receita Federal (Brazil):</strong> Central registry database portal. <a href="https://www.gov.br/receitafederal/pt-br/assuntos/cadastro-de-pessoas-fisicas-cpf">Official portal</a>.</p>
+<p>2. <strong>RFB Normative Instruction No. 1548/2015:</strong> Administrative act defining the CPF registry rules.</p>
+          </div>
+        </section>
+      
+
+      </div>
+    </section>
+  </main>
+
+  
+    <footer class="site-footer">
+      <div class="vh-container footer-inner">
+        <a class="brand" href="/en/">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <p>Static tools generated by Valido Engine.</p>
+      </div>
+    </footer>
+  
+  <script src="/assets/js/bundle.0289df.js" defer></script>
+</body>
+</html>

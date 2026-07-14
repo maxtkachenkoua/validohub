@@ -53,6 +53,14 @@ a:hover {
 .primary-nav {
   display: flex;
   gap: var(--vh-space-md);
+  flex-shrink: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.primary-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .primary-nav a {

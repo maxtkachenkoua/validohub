@@ -57,3 +57,65 @@
 .vh-margin-zero {
   margin: 0;
 }
+
+/* Core Layout Flex utilities */
+.vh-align-center {
+  align-items: center;
+}
+
+.vh-justify-between {
+  justify-content: space-between;
+}
+
+.vh-gap-xs {
+  gap: var(--vh-space-xs);
+}
+
+.vh-mb-xs {
+  margin-bottom: var(--vh-space-xs);
+}
+
+.vh-mt-xs {
+  margin-top: var(--vh-space-xs);
+}
+
+/* Visually hidden screen reader elements */
+.vh-sr-only, .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.vh-section-content {
+  display: block;
+}
+
+.vh-code {
+  font-family: var(--vh-font-mono, monospace);
+}
+
+.vh-snippets-data, .vh-aria-live-status {
+  display: none;
+}
+
+.vh-faq-section, .doc-accordion, .mainland {
+  display: block;
+}
+
+.brand-text {
+  font-weight: inherit;
+}
+
+.compact {
+  font-size: 0.95rem;
+}
+
+.site-main {
+  min-height: calc(100vh - 180px);
+}

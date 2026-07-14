@@ -4,7 +4,7 @@ kind: tool
 module: validohub
 country: BR
 category: finance
-status: active
+status: draft
 name:
   en: Brazil Pix Validator
 summary:

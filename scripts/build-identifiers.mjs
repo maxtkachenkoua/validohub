@@ -1,4 +1,4 @@
-import { access, readdir, readFile, writeFile } from 'node:fs/promises';
+import { access, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -106,6 +106,24 @@ const algorithms = {
   'steuer-id': validateSteuerID
 };
 
+const categoryMap = {
+  'pesel': 'Polish Personal Identifier',
+  'nip': 'Polish Tax Identification Number',
+  'regon': 'Polish Business Statistical Registry Number',
+  'cpf': 'Brazilian Natural Persons Register',
+  'cnpj': 'Brazilian National Registry of Legal Entities',
+  'steuer-id': 'German Personal Tax Identification Number'
+};
+
+const countryCodeMap = {
+  'pesel': 'PL',
+  'nip': 'PL',
+  'regon': 'PL',
+  'cpf': 'BR',
+  'cnpj': 'BR',
+  'steuer-id': 'DE'
+};
+
 // Simple Markdown block parser
 function convertMarkdownToHtml(markdown) {
   const lines = markdown.split('\n');
@@ -160,7 +178,7 @@ function convertMarkdownToHtml(markdown) {
       inTable = false;
     }
 
-    // 4. Handle headings (skip redundant main sections headers)
+    // 4. Handle headings (skip redundant main sections headers and convert content H1s to H2)
     if (line.startsWith('### ')) {
       html.push(`<h3>${parseInlineMarkdown(line.substring(4))}</h3>`);
       continue;
@@ -186,7 +204,7 @@ function convertMarkdownToHtml(markdown) {
       ) {
         continue;
       }
-      html.push(`<h1>${parseInlineMarkdown(headingText)}</h1>`);
+      html.push(`<h2>${parseInlineMarkdown(headingText)}</h2>`); // Convert content H1 to H2!
       continue;
     }
 
@@ -228,9 +246,9 @@ function renderHtmlTable(rows) {
     html += '<tr>';
     for (let cell of cells) {
       if (!hasHeader) {
-        html += `<th>${cell}</th>`;
+        html += `<th>${parseInlineMarkdown(cell)}</th>`;
       } else {
-        html += `<td>${cell}</td>`;
+        html += `<td>${parseInlineMarkdown(cell)}</td>`;
       }
     }
     html += '</tr>';
@@ -291,7 +309,6 @@ function validatePageModel(model) {
   }
 }
 
-// Pure components rendering functions
 function renderHeader() {
   return `
     <header class="site-header">
@@ -303,6 +320,7 @@ function renderHeader() {
         <nav class="primary-nav" aria-label="Main navigation">
           <a href="/en/">Home</a>
           <a href="/en/countries/">Countries</a>
+          <a href="/en/categories/national-identifiers/" aria-current="page" class="is-active">Identifiers</a>
         </nav>
       </div>
     </header>
@@ -324,11 +342,19 @@ function renderFooter() {
 }
 
 function renderBreadcrumbs(model) {
+  const countrySlugMap = {
+    'pl': 'poland',
+    'br': 'brazil',
+    'de': 'germany',
+    'es': 'spain'
+  };
+  const slug = countrySlugMap[model.countryCode.toLowerCase()] || model.country.toLowerCase();
   return `
     <nav class="vh-breadcrumbs" aria-label="Breadcrumb">
       <ol>
         <li><a href="/en/">Home</a></li>
-        <li><a href="/en/${model.countryCode.toLowerCase()}/">${model.country}</a></li>
+        <li><a href="/en/countries/">Countries</a></li>
+        <li><a href="/en/${slug}/">${model.country}</a></li>
         <li><span aria-current="page">${model.displayName}</span></li>
       </ol>
     </nav>
@@ -336,6 +362,10 @@ function renderBreadcrumbs(model) {
 }
 
 function renderHero(model) {
+  const statusBadge = model.status === 'verified'
+    ? '<span class="vh-badge vh-badge--verified">✓ Verified Source</span>'
+    : '<span class="vh-badge vh-badge--draft">⚠ Draft specification</span>';
+  
   return `
     <header class="vh-page-intro">
       <span class="vh-eyebrow">${model.category}</span>
@@ -343,7 +373,7 @@ function renderHero(model) {
       <p>${model.description}</p>
       <div class="vh-flex vh-gap-sm vh-mt-md vh-flex-wrap">
         <span class="vh-badge vh-badge--active">🔒 Local Spec</span>
-        <span class="vh-badge vh-badge--verified">${model.status === 'verified' ? '✓ Verified Source' : '⚠ Draft specification'}</span>
+        ${statusBadge}
         <span class="vh-badge">📅 Reviewed: ${model.reviewedAt}</span>
         <span class="vh-badge">✓ Privacy Assured</span>
       </div>
@@ -447,14 +477,6 @@ function renderExamples(examples) {
   `;
 }
 
-function renderFAQ(faqHtml) {
-  return faqHtml;
-}
-
-function renderReferences(referencesHtml) {
-  return referencesHtml;
-}
-
 async function renderKnowledgeGraph(model, relationships) {
   const nodeRef = `identifier:${model.slug}`;
   const relNodes = [];
@@ -490,7 +512,8 @@ async function renderKnowledgeGraph(model, relationships) {
         typeBadge = 'Authority';
       } else if (other.startsWith('workbench:')) {
         displayName = `${model.displayName} Validator`;
-        targetHref = `/en/${model.country.toLowerCase()}/${model.slug}-validator/`;
+        const pathCode = model.countryCode.toLowerCase();
+        targetHref = `/en/${pathCode}/${model.slug}-validator/`;
         typeBadge = 'Workbench';
       }
 
@@ -514,9 +537,18 @@ async function renderKnowledgeGraph(model, relationships) {
     }
   }
 
+  if (relNodes.length === 0) {
+    return ''; // Skip entire graph rendering if empty
+  }
+
   let html = `
-    <p class="vh-color-muted vh-mb-md">Verified connections map for the ${model.displayName} identifier in the central knowledge graph:</p>
-    <div class="vh-graph">
+    <section class="vh-card">
+      <div class="section-heading">
+        <span class="vh-eyebrow">ValidoHub Knowledge Graph</span>
+        <h2>Semantic Ecosystem Connections</h2>
+      </div>
+      <p class="vh-color-muted vh-mb-md">Verified connections map for the ${model.displayName} identifier in the central knowledge graph:</p>
+      <div class="vh-graph">
   `;
 
   relNodes.forEach(node => {
@@ -539,12 +571,12 @@ async function renderKnowledgeGraph(model, relationships) {
     `;
   });
 
-  html += '</div>';
+  html += '</div></section>';
   return html;
 }
 
-async function main() {
-  console.log('--- STARTING VALIDO-ENGINE V2 PLATFORM COMPILER ---');
+export async function compileIdentifiers(routeRegistry, assetsManifest) {
+  console.log('--- Pass 2: Rendering Identifier Pages ---');
 
   const contentDir = resolve(projectRoot, 'content', 'identifiers');
   const items = await readdir(contentDir, { withFileTypes: true });
@@ -562,7 +594,6 @@ async function main() {
     const metaPath = resolve(dirPath, 'metadata.json');
     if (!(await pathExists(metaPath))) continue;
 
-    console.log(`Compiling entity page: ${id}`);
     const metadata = JSON.parse(await readFile(metaPath, 'utf8'));
 
     // Load segment markdown files
@@ -586,8 +617,8 @@ async function main() {
       displayName: metadata.name,
       formalName: schemaData.name,
       country: metadata.country,
-      countryCode: id === 'steuer-id' ? 'Germany' : id === 'cpf' || id === 'cnpj' ? 'Brazil' : 'Poland',
-      category: metadata.name === 'PESEL' ? 'Polish Personal Identifier' : metadata.name === 'Steuer-IdNr' ? 'German Personal Tax ID' : metadata.name === 'CPF' ? 'Brazilian Individual Taxpayer Registry' : metadata.name === 'CNPJ' ? 'Brazilian Business Taxpayer Registry' : 'Polish Tax ID',
+      countryCode: countryCodeMap[id] || 'PL',
+      category: categoryMap[id] || 'Polish Tax ID',
       description: schemaData.shortDefinition,
       status: schemaData.verificationStatus,
       reviewedAt: new Date(schemaData.lastReviewedAt).toISOString().split('T')[0],
@@ -633,44 +664,82 @@ async function main() {
       `;
     });
 
-    // Populate Content Template
+    const faqSectionHtml = faqAccordionsHtml !== ''
+      ? `
+        <section class="vh-card vh-faq-section">
+          <div class="section-heading">
+            <span class="vh-eyebrow">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div class="vh-accordion-controls">
+            <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="expand">Expand All</button>
+            <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="collapse">Collapse All</button>
+          </div>
+          ${faqAccordionsHtml}
+        </section>
+      `
+      : '';
+
+    // Populate Content Template with exact slots
+    const escapedJsonPayload = escapeHtmlJson(JSON.stringify(snippets));
+    const snippetJsonScript = `<script type="application/json" class="vh-snippets-data">${escapedJsonPayload}</script>`;
+
     let pageContent = contentTemplate
       .replaceAll('{{ ENTITY_NAME }}', () => pageModel.displayName)
-      .replaceAll('{{ OVERVIEW_HTML }}', () => overviewHtml)
-      .replaceAll('{{ VISUAL_STRUCTURE_SECTION }}', () => renderVisualStructure(pageModel, structureHtml))
-      .replaceAll('{{ CHECKSUM_SECTION }}', () => renderChecksum(checksumHtml))
-      .replaceAll('{{ EXAMPLES_TABLES }}', () => renderExamples(examples))
-      .replaceAll('{{ DEVELOPER_NOTES_HTML }}', () => devNotesHtml)
+      .replaceAll('{{ QUICK_FACTS }}', () => renderQuickFacts(pageModel))
+      .replaceAll('{{ OVERVIEW }}', () => overviewHtml)
+      .replaceAll('{{ VISUAL_STRUCTURE }}', () => renderVisualStructure(pageModel, structureHtml))
+      .replaceAll('{{ CHECKSUM }}', () => renderChecksum(checksumHtml))
+      .replaceAll('{{ EXAMPLES }}', () => renderExamples(examples))
+      .replaceAll('{{ IMPLEMENTATION }}', () => devNotesHtml)
+      .replaceAll('{{ SNIPPET_DATA_JSON }}', () => snippetJsonScript)
       .replaceAll('{{ SNIPPET_JS }}', () => snippets.javascript)
-      .replaceAll('{{ GRAPH_CONNECTIONS }}', () => '') // resolved later below
-      .replaceAll('{{ FAQ_ACCORDIONS }}', () => renderFAQ(faqAccordionsHtml))
-      .replaceAll('{{ REFERENCES_HTML }}', () => renderReferences(referencesHtml));
+      .replaceAll('{{ GRAPH_SECTION }}', () => '') // resolved dynamically below
+      .replaceAll('{{ FAQ }}', () => faqSectionHtml)
+      .replaceAll('{{ REFERENCES }}', () => `
+        <section class="vh-card">
+          <div class="section-heading">
+            <span class="vh-eyebrow">References</span>
+            <h2>Official Registry Sources</h2>
+          </div>
+          <div class="rich-text">
+            ${referencesHtml}
+          </div>
+        </section>
+      `);
 
     // Resolve dynamic graph relations connections asynchronously
     const graphHtml = await renderKnowledgeGraph(pageModel, relationships);
-    pageContent = pageContent.replaceAll('{{ GRAPH_CONNECTIONS }}', () => graphHtml);
+    pageContent = pageContent.replaceAll('{{ GRAPH_SECTION }}', () => graphHtml);
 
     // Build layout template slots replacements
     const headHtml = `
-      <title>${pageModel.displayName} | ValidoHub</title>
+      <title>${pageModel.displayName} (${pageModel.countryCode}) Specification & Schema | ValidoHub</title>
       <meta name="description" content="${pageModel.description}">
       <link rel="canonical" href="${pageModel.canonicalUrl}">
       <link rel="alternate" hreflang="en" href="${pageModel.canonicalUrl}">
+      <link rel="stylesheet" href="${assetsManifest.css}">
     `;
 
     const breadcrumbsHtml = renderBreadcrumbs(pageModel);
     const heroHtml = renderHero(pageModel);
-    const quickFactsHtml = renderQuickFacts(pageModel);
 
-    // Assemble page content cards
-    const finalContent = pageContent.replace('{{ QUICK_FACTS }}', () => quickFactsHtml);
+    // Generate JSON-LD payload
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": `${pageModel.displayName} (${pageModel.countryCode}) Specification & Schema | ValidoHub`,
+      "description": pageModel.description,
+      "url": pageModel.canonicalUrl,
+      "inLanguage": "en",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Software Developers"
+      }
+    };
+    const jsonLdScript = `<script type="application/ld+json">${escapeHtmlJson(JSON.stringify(jsonLd))}</script>`;
 
-    // Secure payload serialization to prevent script injection
-    const escapedJsonPayload = escapeHtmlJson(JSON.stringify(snippets));
-    const scriptsHtml = `
-      <script type="application/json" id="vh-snippets-data">${escapedJsonPayload}</script>
-      <script src="/assets/js/bundle.js" defer></script>
-    `;
+    const scriptsHtml = `<script src="${assetsManifest.js}" defer></script>`;
 
     // Reconstruct Layout shell
     let assembledHtml = layoutTemplate
@@ -678,19 +747,20 @@ async function main() {
       .replaceAll('{{ HEADER }}', () => renderHeader())
       .replaceAll('{{ BREADCRUMBS }}', () => breadcrumbsHtml)
       .replaceAll('{{ HERO }}', () => heroHtml)
-      .replaceAll('{{ CONTENT }}', () => finalContent)
+      .replaceAll('{{ CONTENT }}', () => pageContent)
       .replaceAll('{{ FOOTER }}', () => renderFooter())
+      .replaceAll('{{ JSON_LD }}', () => jsonLdScript)
       .replaceAll('{{ SCRIPTS }}', () => scriptsHtml);
 
+    // Assert that every template slot marker is fully resolved
+    if (assembledHtml.includes('{{')) {
+      throw new Error(`FATAL: Unresolved template slot marker found in generated identifier: ${id}`);
+    }
+
     const outputFilePath = resolve(siteRoot, locale, 'identifiers', id, 'index.html');
+    await mkdir(dirname(outputFilePath), { recursive: true });
     await writeFile(outputFilePath, assembledHtml, 'utf8');
-    console.log(`SUCCESS: Matched templates and generated static route /en/identifiers/${id}/`);
+
+    console.log(`✓ Generated: /en/identifiers/${id}/`);
   }
-
-  console.log('--- COMPLETED VALIDO-ENGINE V2 COMPILE PIPELINE ---');
 }
-
-main().catch(err => {
-  console.error('Fatal compilation failure:', err);
-  process.exit(1);
-});

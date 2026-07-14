@@ -7,6 +7,10 @@
   gap: var(--vh-space-xl);
 }
 
+.vh-page-stack > * {
+  min-width: 0;
+}
+
 .vh-page-intro {
   margin-bottom: var(--vh-space-md);
 }

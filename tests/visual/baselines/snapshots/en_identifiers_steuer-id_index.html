@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+      <title>Steuer-IdNr (DE) Specification & Schema | ValidoHub</title>
+      <meta name="description" content="Steueridentifikationsnummer. German personal tax identification number.">
+      <link rel="canonical" href="https://validohub.com/en/identifiers/steuer-id/">
+      <link rel="alternate" hreflang="en" href="https://validohub.com/en/identifiers/steuer-id/">
+      <link rel="stylesheet" href="/assets/css/bundle.9ba81e.css">
+    
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Steuer-IdNr (DE) Specification \u0026 Schema | ValidoHub","description":"Steueridentifikationsnummer. German personal tax identification number.","url":"https://validohub.com/en/identifiers/steuer-id/","inLanguage":"en","audience":{"@type":"Audience","audienceType":"Software Developers"}}</script>
+</head>
+<body>
+  
+    <header class="site-header">
+      <div class="vh-container header-inner">
+        <a class="brand" href="/en/">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="/en/">Home</a>
+          <a href="/en/countries/">Countries</a>
+          <a href="/en/categories/national-identifiers/" aria-current="page" class="is-active">Identifiers</a>
+        </nav>
+      </div>
+    </header>
+  
+
+  <main class="site-main">
+    <section class="vh-page-shell">
+      <div class="vh-container vh-page-stack">
+        
+    <nav class="vh-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/countries/">Countries</a></li>
+        <li><a href="/en/germany/">Germany</a></li>
+        <li><span aria-current="page">Steuer-IdNr</span></li>
+      </ol>
+    </nav>
+  
+        
+    <header class="vh-page-intro">
+      <span class="vh-eyebrow">German Personal Tax Identification Number</span>
+      <h1>Steuer-IdNr</h1>
+      <p>Steueridentifikationsnummer. German personal tax identification number.</p>
+      <div class="vh-flex vh-gap-sm vh-mt-md vh-flex-wrap">
+        <span class="vh-badge vh-badge--active">🔒 Local Spec</span>
+        <span class="vh-badge vh-badge--verified">✓ Verified Source</span>
+        <span class="vh-badge">📅 Reviewed: 2026-07-12</span>
+        <span class="vh-badge">✓ Privacy Assured</span>
+      </div>
+    </header>
+  
+        <!-- Quick Facts and Metadata -->
+<section class="vh-card">
+  <div class="section-heading vh-hidden">
+    <span class="vh-eyebrow">Quick Facts</span>
+    <h2>Entity Summary</h2>
+  </div>
+  
+    <div class="vh-metadata-grid">
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Region / Jurisdiction</dt>
+        <dd class="vh-metadata-value">Germany (DE)</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Identifier Category</dt>
+        <dd class="vh-metadata-value">German Personal Tax Identification Number</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Format & Length</dt>
+        <dd class="vh-metadata-value">11 numeric digits</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Status Badge</dt>
+        <dd class="vh-metadata-value">VERIFIED</dd>
+      </div>
+    </div>
+  
+</section>
+
+<!-- Structured Overview -->
+<section class="vh-card">
+  <div class="section-heading vh-mt-md">
+    <span class="vh-eyebrow">Overview</span>
+    <h2>What is Steuer-IdNr?</h2>
+  </div>
+  <div class="rich-text">
+    <h2>Steuer-IdNr (steuerliche Identifikationsnummer)</h2>
+<p>The <strong>Steuer-IdNr</strong> (German: <em>steuerliche Identifikationsnummer</em>, Personal Tax Identification Number) is the mandatory tax code assigned to every resident in Germany.</p>
+<p>Introduced in 2008 to replace the old tax numbers, it remains assigned to an individual for life (and is even kept for 20 years after death).</p>
+<h2>Issuing Authority</h2>
+<p>It is issued and administered by the <strong>Federal Central Tax Office</strong> of Germany (<em>Bundeszentralamt für Steuern - BZSt</em>).</p>
+  </div>
+</section>
+
+<!-- Visual Structure Section -->
+
+    <section class="vh-card">
+      <div class="section-heading">
+        <span class="vh-eyebrow">Visualization</span>
+        <h2>Visual Structure Breakdown</h2>
+      </div>
+      <div class="vh-visual-blocks">
+        
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">serial</div>
+        <div class="vh-visual-block-body ">SSSSSSSSSS</div>
+      </div>
+    
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">checksum</div>
+        <div class="vh-visual-block-body vh-success">C</div>
+      </div>
+    
+      </div>
+      <div class="vh-mt-lg">
+        <p>Standard German Steuer-ID numbers consist of exactly 11 digits structured as:</p>
+<pre><code>[ S S S S S S S S S S ] [ C ]</code></pre>
+<div class="vh-table-container"><table class="vh-table"><tr><th>Field</th><th>Positions</th><th>Description</th></tr><tr><td><strong>SSSSSSSSSS</strong></td><td>1–10</td><td>Unique personal serial tax number. The first digit must not be <code>0</code>. One digit must repeat exactly two or three times (others must be unique).</td></tr><tr><td><strong>C</strong></td><td>11</td><td>Control checksum digit.</td></tr></table></div>
+      </div>
+    </section>
+  
+
+<!-- Checksum Math Section -->
+
+    <section class="vh-card">
+      <div class="section-heading">
+        <span class="vh-eyebrow">Verification Math</span>
+        <h2>Modulo Checksum Details</h2>
+      </div>
+      <p>The German Steuer-ID control digit uses the international standard ISO 7064 (MOD 11-10) checksum method.</p>
+<h2>Algorithm Formula</h2>
+<p>Let \(d_1, \dots, d_{11}\) be the digits of the Steuer-ID.</p>
+<p>Initialize a remainder term \(R = 10\).</p>
+<p>For each digit \(i = 1\) to \(10\):</p>
+<p>1. Add the digit to the remainder:</p>
+<p>\[S = (R + d_i) \pmod{10}\]</p>
+<p>If \(S = 0\), set \(S = 10\).</p>
+<p>2. Compute the new remainder:</p>
+<p>\[R = (S \times 2) \pmod{11}\]</p>
+<p>The final checksum control digit \(C\) is computed as:</p>
+<p>\[C = (11 - R) \pmod{10}\]</p>
+<p>This control value must match the 11th digit \(d_{11}\).</p>
+    </section>
+  
+
+<!-- Examples Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">Test cases</span>
+    <h2>Validation Examples</h2>
+  </div>
+  
+    <div class="vh-table-container">
+      <table class="vh-table">
+        <thead>
+          <tr>
+            <th>Sample Input</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+      <tr>
+        <td class="vh-font-mono vh-font-bold">82938175409</td>
+        <td><strong>Valid Steuer-ID</strong> — Standard valid German personal tax identification number.</td>
+        <td><span class="vh-success">✓ Valid</span></td>
+      </tr>
+    
+      <tr>
+        <td class="vh-font-mono vh-font-bold">11111111111</td>
+        <td><strong>Invalid Repetition</strong> — Fails the German rule requiring exactly one digit to repeat exactly two or three times.</td>
+        <td><span class="vh-danger">✗ Invalid</span></td>
+      </tr>
+    
+      <tr>
+        <td class="vh-font-mono vh-font-bold">12345</td>
+        <td><strong>Too Short</strong> — Must be exactly 11 numeric digits.</td>
+        <td><span class="vh-danger">✗ Invalid</span></td>
+      </tr>
+    
+        </tbody>
+      </table>
+    </div>
+  
+</section>
+
+<!-- Developer Notes Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">Developers</span>
+    <h2>Implementation Guidance</h2>
+  </div>
+  <div class="rich-text">
+    <h2>Developer Guidelines</h2>
+<p>When implementing Steuer-ID validation:</p>
+<ul>
+<li>Input must be exactly 11 numeric digits.</li>
+<li>The first digit must not be <code>0</code>.</li>
+<li>Regex: <code>/^[1-9]\d{10}$/</code>.</li>
+<li>Validate the digit repetition rule: Out of the first 10 digits, exactly one digit must repeat either 2 or 3 times. The remaining digits must appear only once.</li>
+<li>Apply the ISO 7064 MOD 11-10 check algorithm.</li>
+</ul>
+  </div>
+  
+  <!-- Snippet tabs layout -->
+  <div class="vh-code-card">
+    <div class="vh-aria-live-status sr-only" aria-live="polite"></div>
+    <script type="application/json" class="vh-snippets-data">{"javascript":"function validateSteuerID(id) {\n  if (!/^[1-9]\\d{10}$/.test(id)) return false;\n  const counts = {};\n  for (let i = 0; i \u003c 10; i++) {\n    counts[id[i]] = (counts[id[i]] || 0) + 1;\n  }\n  const vals = Object.values(counts);\n  let doubleCount = vals.filter(v =\u003e v === 2).length;\n  let tripleCount = vals.filter(v =\u003e v === 3).length;\n  if (!((doubleCount === 1 \u0026\u0026 tripleCount === 0) || (doubleCount === 0 \u0026\u0026 tripleCount === 1))) {\n    return false;\n  }\n  let r = 10;\n  for (let i = 0; i \u003c 10; i++) {\n    let s = (r + parseInt(id[i])) % 10;\n    if (s === 0) s = 10;\n    r = (s * 2) % 11;\n  }\n  const checksum = (11 - r) % 10;\n  return checksum === parseInt(id[10]);\n}","python":"def validate_steuer_id(id_str: str) -\u003e bool:\n    if not id_str.isdigit() or len(id_str) != 11 or id_str[0] == '0':\n        return False\n    counts = {}\n    for c in id_str[:10]:\n        counts[c] = counts.get(c, 0) + 1\n    vals = list(counts.values())\n    double_count = vals.count(2)\n    triple_count = vals.count(3)\n    if not ((double_count == 1 and triple_count == 0) or (double_count == 0 and triple_count == 1)):\n        return False\n    r = 10\n    for i in range(10):\n        s = (r + int(id_str[i])) % 10\n        if s == 0: s = 10\n        r = (s * 2) % 11\n    checksum = (11 - r) % 10\n    return checksum == int(id_str[10])","java":"public class SteuerIdValidator {\n    public static boolean validate(String id) {\n        if (id == null || !id.matches(\"[1-9]\\\\d{10}\")) {\n            return false;\n        }\n        int[] counts = new int[10];\n        for (int i = 0; i \u003c 10; i++) {\n            counts[Character.getNumericValue(id.charAt(i))]++;\n        }\n        int doubleCount = 0, tripleCount = 0;\n        for (int count : counts) {\n            if (count == 2) doubleCount++;\n            if (count == 3) tripleCount++;\n        }\n        if (!((doubleCount == 1 \u0026\u0026 tripleCount == 0) || (doubleCount == 0 \u0026\u0026 tripleCount == 1))) {\n            return false;\n        }\n        int r = 10;\n        for (int i = 0; i \u003c 10; i++) {\n            int s = (r + Character.getNumericValue(id.charAt(i))) % 10;\n            if (s == 0) s = 10;\n            r = (s * 2) % 11;\n        }\n        int checksum = (11 - r) % 10;\n        return checksum == Character.getNumericValue(id.charAt(10));\n    }\n}","go":"package main\n\nimport (\n\t\"regexp\"\n\t\"strconv\"\n)\n\nfunc ValidateSteuerID(id string) bool {\n\tif matched, _ := regexp.MatchString(`^[1-9]\\d{10}$`, id); !matched {\n\t\treturn false\n\t}\n\tcounts := make(map[rune]int)\n\tfor _, char := range id[:10] {\n\t\tcounts[char]++\n\t}\n\tdoubleCount, tripleCount := 0, 0\n\tfor _, count := range counts {\n\t\tif count == 2 {\n\t\t\tdoubleCount++\n\t\t} else if count == 3 {\n\t\t\ttripleCount++\n\t\t}\n\t}\n\tif !((doubleCount == 1 \u0026\u0026 tripleCount == 0) || (doubleCount == 0 \u0026\u0026 tripleCount == 1)) {\n\t\treturn false\n\t}\n\tr := 10\n\tfor i := 0; i \u003c 10; i++ {\n\t\tdigit, _ := strconv.Atoi(string(id[i]))\n\t\ts := (r + digit) % 10\n\t\tif s == 0 {\n\t\t\ts = 10\n\t\t}\n\t\tr = (s * 2) % 11\n\t}\n\tchecksum := (11 - r) % 10\n\tlastDigit, _ := strconv.Atoi(string(id[10]))\n\treturn checksum == lastDigit\n}","rust":"pub fn validate_steuer_id(id: \u0026str) -\u003e bool {\n    if id.len() != 11 || !id.chars().all(|c| c.is_ascii_digit()) || id.starts_with('0') {\n        return false;\n    }\n    let mut counts = [0; 10];\n    for char in id.chars().take(10) {\n        counts[char.to_digit(10).unwrap() as usize] += 1;\n    }\n    let double_count = counts.iter().filter(|\u0026\u0026c| c == 2).count();\n    let triple_count = counts.iter().filter(|\u0026\u0026c| c == 3).count();\n    if !((double_count == 1 \u0026\u0026 triple_count == 0) || (double_count == 0 \u0026\u0026 triple_count == 1)) {\n        return false;\n    }\n    let digits: Vec\u003cu32\u003e = id.chars().map(|c| c.to_digit(10).unwrap()).collect();\n    let mut r = 10;\n    for i in 0..10 {\n        let mut s = (r + digits[i]) % 10;\n        if s == 0 { s = 10; }\n        r = (s * 2) % 11;\n    }\n    let checksum = (11 - r) % 10;\n    checksum == digits[10]\n}"}</script>
+    <div class="vh-code-card-header">
+      <span>🔌</span> Language Code Snippets
+    </div>
+    <div class="vh-code-tabs">
+      <button type="button" class="vh-tab active" data-lang="javascript">JavaScript</button>
+      <button type="button" class="vh-tab" data-lang="python">Python</button>
+      <button type="button" class="vh-tab" data-lang="java">Java</button>
+      <button type="button" class="vh-tab" data-lang="go">Go</button>
+      <button type="button" class="vh-tab" data-lang="rust">Rust</button>
+    </div>
+    <div class="vh-code-block-wrapper">
+      <button type="button" class="vh-copy-button">Copy</button>
+      <pre class="vh-margin-zero"><code class="vh-code">function validateSteuerID(id) {
+  if (!/^[1-9]\d{10}$/.test(id)) return false;
+  const counts = {};
+  for (let i = 0; i < 10; i++) {
+    counts[id[i]] = (counts[id[i]] || 0) + 1;
+  }
+  const vals = Object.values(counts);
+  let doubleCount = vals.filter(v => v === 2).length;
+  let tripleCount = vals.filter(v => v === 3).length;
+  if (!((doubleCount === 1 && tripleCount === 0) || (doubleCount === 0 && tripleCount === 1))) {
+    return false;
+  }
+  let r = 10;
+  for (let i = 0; i < 10; i++) {
+    let s = (r + parseInt(id[i])) % 10;
+    if (s === 0) s = 10;
+    r = (s * 2) % 11;
+  }
+  const checksum = (11 - r) % 10;
+  return checksum === parseInt(id[10]);
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- Graph Connections Section -->
+
+
+<!-- FAQ Section -->
+
+        <section class="vh-card vh-faq-section">
+          <div class="section-heading">
+            <span class="vh-eyebrow">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div class="vh-accordion-controls">
+            <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="expand">Expand All</button>
+            <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="collapse">Collapse All</button>
+          </div>
+          
+        <details class="vh-accordion">
+          <summary>When do I receive a Steueridentifikationsnummer?</summary>
+          <div class="rich-text">
+            <p>Every child born in Germany receives their Steuer-ID shortly after birth registration. Foreign residents receive theirs upon registering their residence at the local citizen registration office (<em>Bürgeramt</em>).</p>
+          </div>
+        </details>
+      
+        <details class="vh-accordion">
+          <summary>Can a Steuer-ID be deleted?</summary>
+          <div class="rich-text">
+            <p>No. To prevent duplicate registrations and tax evasion, the number remains active during the person's life and is stored for statistics for decades after.</p>
+          </div>
+        </details>
+      
+        </section>
+      
+
+<!-- Official References Section -->
+
+        <section class="vh-card">
+          <div class="section-heading">
+            <span class="vh-eyebrow">References</span>
+            <h2>Official Registry Sources</h2>
+          </div>
+          <div class="rich-text">
+            <h2>References</h2>
+<p>1. <strong>Federal Central Tax Office (Germany):</strong> Public portal explaining ID assignments. <a href="https://www.bzst.de/DE/Privatpersonen/Steueridentifikationsnummer/steueridentifikationsnummer_node.html">Official BZSt portal</a>.</p>
+<p>2. <strong>German Fiscal Code (Abgabenordnung - AO) § 139b:</strong> Statutory definition of the tax identification number registry format.</p>
+          </div>
+        </section>
+      
+
+      </div>
+    </section>
+  </main>
+
+  
+    <footer class="site-footer">
+      <div class="vh-container footer-inner">
+        <a class="brand" href="/en/">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <p>Static tools generated by Valido Engine.</p>
+      </div>
+    </footer>
+  
+  <script src="/assets/js/bundle.0289df.js" defer></script>
+</body>
+</html>

@@ -2012,73 +2012,177 @@ select:focus {
 }
 
 .section-heading {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.section-heading .eyebrow {
+  display: block;
+  margin-bottom: 4px;
 }
 
 .section-heading h2 {
   margin-bottom: 0;
+  font-size: 1.35rem;
 }
 
-.doc-accordion {
-  border-top: 1px solid var(--line);
+/* ============================================================
+   Documentation section — premium flat-list accordion
+   ============================================================ */
+
+/* Wrapper card gets a subtle gradient strip at top */
+article.content-card {
+  overflow: hidden;
 }
 
-.doc-accordion:last-child {
+article.content-card > .section-heading {
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--line);
+  margin-bottom: 0;
+}
+
+/* Individual accordion items */
+.doc-accordion {
+  border-bottom: 1px solid var(--line);
+  transition: background 0.2s ease;
+}
+
+.doc-accordion:first-of-type {
+  border-top: 1px solid var(--line);
 }
 
 .doc-accordion summary {
   position: relative;
-  min-height: 54px;
-  padding: 16px 34px 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 16px 52px 16px 0;
   cursor: pointer;
   color: var(--text);
-  font-size: 1rem;
-  font-weight: 760;
+  font-size: 0.95rem;
+  font-weight: 650;
   list-style: none;
+  user-select: none;
+  transition: color 0.15s ease, padding-left 0.15s ease;
 }
 
-.doc-accordion summary::-webkit-details-marker {
-  display: none;
-}
+.doc-accordion summary::-webkit-details-marker { display: none; }
 
+/* No ::before from accordion.css — we use ::after only */
+.doc-accordion summary::before { display: none !important; }
+
+/* Premium chevron button */
 .doc-accordion summary::after {
+  content: "";
   position: absolute;
+  right: 0;
   top: 50%;
-  right: 4px;
-  width: 22px;
-  height: 22px;
+  transform: translateY(-50%) rotate(0deg);
+  width: 28px;
+  height: 28px;
+  background: var(--surface-soft);
   border: 1px solid var(--line);
   border-radius: 8px;
-  color: var(--muted);
-  content: "+";
-  display: grid;
-  place-items: center;
-  transform: translateY(-50%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.doc-accordion summary:hover {
+  color: var(--accent-strong);
+  padding-left: 2px;
+}
+
+.doc-accordion summary:hover::after {
+  background-color: var(--surface-muted);
+  border-color: var(--accent-line);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%2316a34a' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.doc-accordion[open] > summary {
+  color: var(--accent-strong);
+  font-weight: 700;
+  padding-bottom: 12px;
 }
 
 .doc-accordion[open] summary::after {
-  content: "-";
+  transform: translateY(-50%) rotate(180deg);
+  background-color: rgba(22,163,74,0.08);
+  border-color: var(--accent-line);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%2316a34a' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
+/* Rich content inside open accordion */
+.doc-accordion .rich-text {
+  max-width: 100%;
+  padding: 0 0 20px 0;
+  border: none;
+  background: transparent;
+}
+
+/* ============================================================
+   Rich text content inside accordions and cards
+   ============================================================ */
 .rich-text {
   max-width: 760px;
   padding-bottom: 22px;
+  line-height: 1.65;
+}
+
+.rich-text h3 {
+  font-size: 0.9rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  margin: 20px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+
+.rich-text h3:first-child {
+  margin-top: 0;
 }
 
 .rich-text p {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .rich-text ul,
 .rich-text ol {
-  margin: 0 0 18px;
-  padding-left: 1.35rem;
-  color: var(--muted);
+  margin: 0 0 16px;
+  padding-left: 0;
+  list-style: none;
 }
 
-.rich-text li + li {
-  margin-top: 7px;
+.rich-text li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--muted);
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.rich-text li::before {
+  content: "—";
+  color: var(--accent-strong);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+}
+
+.rich-text li strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.rich-text li:last-child {
+  border-bottom: none;
 }
 
 .rich-text code {
@@ -2140,29 +2244,44 @@ tr:last-child td {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 10px;
+  margin-top: 4px;
 }
 
 .link-card {
   display: flex;
-  min-height: 50px;
+  min-height: 52px;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 13px 14px;
+  padding: 14px 16px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #ffffff;
+  background: var(--surface);
   color: var(--text);
-  font-weight: 720;
+  font-size: 0.9rem;
+  font-weight: 650;
   text-decoration: none;
-  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, color 160ms ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.link-card span:last-child {
+  color: var(--muted);
+  font-size: 1rem;
+  transition: transform 160ms ease, color 160ms ease;
 }
 
 .link-card:hover {
   border-color: var(--accent-line);
-  background: #f8fdfb;
+  background: var(--surface-soft);
   color: var(--accent-strong);
-  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.link-card:hover span:last-child {
+  color: var(--accent-strong);
+  transform: translateX(3px);
 }
 
 .site-footer {

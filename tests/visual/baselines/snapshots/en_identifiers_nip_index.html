@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+      <title>NIP (PL) Specification & Schema | ValidoHub</title>
+      <meta name="description" content="Numer Identyfikacji Podatkowej. Polish tax identification number.">
+      <link rel="canonical" href="https://validohub.com/en/identifiers/nip/">
+      <link rel="alternate" hreflang="en" href="https://validohub.com/en/identifiers/nip/">
+      <link rel="stylesheet" href="/assets/css/bundle.9ba81e.css">
+    
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"NIP (PL) Specification \u0026 Schema | ValidoHub","description":"Numer Identyfikacji Podatkowej. Polish tax identification number.","url":"https://validohub.com/en/identifiers/nip/","inLanguage":"en","audience":{"@type":"Audience","audienceType":"Software Developers"}}</script>
+</head>
+<body>
+  
+    <header class="site-header">
+      <div class="vh-container header-inner">
+        <a class="brand" href="/en/">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="/en/">Home</a>
+          <a href="/en/countries/">Countries</a>
+          <a href="/en/categories/national-identifiers/" aria-current="page" class="is-active">Identifiers</a>
+        </nav>
+      </div>
+    </header>
+  
+
+  <main class="site-main">
+    <section class="vh-page-shell">
+      <div class="vh-container vh-page-stack">
+        
+    <nav class="vh-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/countries/">Countries</a></li>
+        <li><a href="/en/poland/">Poland</a></li>
+        <li><span aria-current="page">NIP</span></li>
+      </ol>
+    </nav>
+  
+        
+    <header class="vh-page-intro">
+      <span class="vh-eyebrow">Polish Tax Identification Number</span>
+      <h1>NIP</h1>
+      <p>Numer Identyfikacji Podatkowej. Polish tax identification number.</p>
+      <div class="vh-flex vh-gap-sm vh-mt-md vh-flex-wrap">
+        <span class="vh-badge vh-badge--active">🔒 Local Spec</span>
+        <span class="vh-badge vh-badge--draft">⚠ Draft specification</span>
+        <span class="vh-badge">📅 Reviewed: 2026-07-12</span>
+        <span class="vh-badge">✓ Privacy Assured</span>
+      </div>
+    </header>
+  
+        <!-- Quick Facts and Metadata -->
+<section class="vh-card">
+  <div class="section-heading vh-hidden">
+    <span class="vh-eyebrow">Quick Facts</span>
+    <h2>Entity Summary</h2>
+  </div>
+  
+    <div class="vh-metadata-grid">
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Region / Jurisdiction</dt>
+        <dd class="vh-metadata-value">Poland (PL)</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Identifier Category</dt>
+        <dd class="vh-metadata-value">Polish Tax Identification Number</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Format & Length</dt>
+        <dd class="vh-metadata-value">10 numeric digits</dd>
+      </div>
+      <div class="vh-metadata-item">
+        <dt class="vh-metadata-label">Status Badge</dt>
+        <dd class="vh-metadata-value">DRAFT</dd>
+      </div>
+    </div>
+  
+</section>
+
+<!-- Structured Overview -->
+<section class="vh-card">
+  <div class="section-heading vh-mt-md">
+    <span class="vh-eyebrow">Overview</span>
+    <h2>What is NIP?</h2>
+  </div>
+  <div class="rich-text">
+    <h2>NIP (Numer Identyfikacji Podatkowej)</h2>
+<p>The <strong>NIP</strong> (Polish: <em>Numer Identyfikacji Podatkowej</em>, Tax Identification Number) is a 10-digit code used to identify taxpaying entities in Poland.</p>
+<p>Introduced in 1995, it is mandatory for all legal entities, enterprises, self-employed individuals, and registered business partnerships operating in Poland.</p>
+<h2>Issuing Authority</h2>
+<p>NIP numbers are assigned and managed by the <strong>Head of the National Revenue Administration</strong> (<em>Szef Krajowej Administracji Skarbowej</em>) through local tax offices (<em>Urząd Skarbowy</em>).</p>
+  </div>
+</section>
+
+<!-- Visual Structure Section -->
+
+    <section class="vh-card">
+      <div class="section-heading">
+        <span class="vh-eyebrow">Visualization</span>
+        <h2>Visual Structure Breakdown</h2>
+      </div>
+      <div class="vh-visual-blocks">
+        
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">office</div>
+        <div class="vh-visual-block-body ">OOO</div>
+      </div>
+    
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">serial</div>
+        <div class="vh-visual-block-body ">SSSSSS</div>
+      </div>
+    
+      <div class="vh-visual-block">
+        <div class="vh-visual-block-header">checksum</div>
+        <div class="vh-visual-block-body vh-success">C</div>
+      </div>
+    
+      </div>
+      <div class="vh-mt-lg">
+        <p>The NIP consists of exactly 10 digits structured as:</p>
+<pre><code>[ O O O ] [ S S S S S S ] [ C ]</code></pre>
+<div class="vh-table-container"><table class="vh-table"><tr><th>Field</th><th>Positions</th><th>Description</th></tr><tr><td><strong>OOO</strong></td><td>1–3</td><td>Tax Office Code (identifying the specific tax office branch assigning the number).</td></tr><tr><td><strong>SSSSSS</strong></td><td>4–9</td><td>Unique taxpayer serial number.</td></tr><tr><td><strong>C</strong></td><td>10</td><td>Control checksum digit.</td></tr></table></div>
+      </div>
+    </section>
+  
+
+<!-- Checksum Math Section -->
+
+    <section class="vh-card">
+      <div class="section-heading">
+        <span class="vh-eyebrow">Verification Math</span>
+        <h2>Modulo Checksum Details</h2>
+      </div>
+      <p>The NIP checksum utilizes a weighted modulo 11 algorithm.</p>
+<h2>Multipliers</h2>
+<p>The first 9 digits are multiplied by corresponding weight constants:</p>
+<div class="vh-table-container"><table class="vh-table"><tr><th>Digit Position</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr><tr><td><strong>Weight</strong></td><td>6</td><td>5</td><td>7</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr></table></div>
+<h2>Calculation</h2>
+<p>Sum the multiplication products:</p>
+<p>\[S = \sum_{i=1}^{9} (d_i \times w_i)\]</p>
+<p>The control checksum digit is computed as:</p>
+<p>\[C = S \pmod{11}\]</p>
+<p>Note: If \(C = 10\), the NIP is mathematically invalid and cannot be assigned.</p>
+    </section>
+  
+
+<!-- Examples Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">Test cases</span>
+    <h2>Validation Examples</h2>
+  </div>
+  
+    <div class="vh-table-container">
+      <table class="vh-table">
+        <thead>
+          <tr>
+            <th>Sample Input</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+      <tr>
+        <td class="vh-font-mono vh-font-bold">7681682150</td>
+        <td><strong>Valid NIP</strong> — Standard valid Polish Tax Identification Number (NIP).</td>
+        <td><span class="vh-success">✓ Valid</span></td>
+      </tr>
+    
+      <tr>
+        <td class="vh-font-mono vh-font-bold">1234567890</td>
+        <td><strong>Invalid Checksum</strong> — Fails the weighted modulo 11 checksum verification.</td>
+        <td><span class="vh-danger">✗ Invalid</span></td>
+      </tr>
+    
+      <tr>
+        <td class="vh-font-mono vh-font-bold">12345</td>
+        <td><strong>Too Short</strong> — Must be exactly 10 numeric digits.</td>
+        <td><span class="vh-danger">✗ Invalid</span></td>
+      </tr>
+    
+        </tbody>
+      </table>
+    </div>
+  
+</section>
+
+<!-- Developer Notes Section -->
+<section class="vh-card">
+  <div class="section-heading">
+    <span class="vh-eyebrow">Developers</span>
+    <h2>Implementation Guidance</h2>
+  </div>
+  <div class="rich-text">
+    <h2>Developer Guidelines</h2>
+<p>When implementing NIP validation:</p>
+<ul>
+<li>Filter formatting dashes before calculations. NIP numbers are often displayed with separators: <code>123-456-78-90</code> or <code>123-45-67-819</code>.</li>
+<li>Confirm digit length is exactly 10.</li>
+<li>Regex: <code>/^\d{10}$/</code>.</li>
+<li>Handle the modulo 11 result: If <code>sum % 11 === 10</code>, the input is invalid.</li>
+</ul>
+  </div>
+  
+  <!-- Snippet tabs layout -->
+  <div class="vh-code-card">
+    <div class="vh-aria-live-status sr-only" aria-live="polite"></div>
+    <script type="application/json" class="vh-snippets-data">{"javascript":"function validateNIP(nip) {\n  if (!/^\\d{10}$/.test(nip)) return false;\n  const weights = [6, 5, 7, 2, 3, 4, 5, 6, 7];\n  let sum = 0;\n  for (let i = 0; i \u003c 9; i++) {\n    sum += parseInt(nip[i]) * weights[i];\n  }\n  const remainder = sum % 11;\n  if (remainder === 10) return false;\n  return remainder === parseInt(nip[9]);\n}","python":"def validate_nip(nip: str) -\u003e bool:\n    if not nip.isdigit() or len(nip) != 10:\n        return False\n    weights = [6, 5, 7, 2, 3, 4, 5, 6, 7]\n    digits = [int(d) for d in nip]\n    sum_val = sum(d * w for d, w in zip(digits[:9], weights))\n    remainder = sum_val % 11\n    if remainder == 10:\n        return False\n    return remainder == digits[9]","java":"public class NipValidator {\n    public static boolean validate(String nip) {\n        if (nip == null || !nip.matches(\"\\\\d{10}\")) {\n            return false;\n        }\n        int[] weights = {6, 5, 7, 2, 3, 4, 5, 6, 7};\n        int sum = 0;\n        for (int i = 0; i \u003c 9; i++) {\n            sum += Character.getNumericValue(nip.charAt(i)) * weights[i];\n        }\n        int remainder = sum % 11;\n        if (remainder == 10) {\n            return false;\n        }\n        return remainder == Character.getNumericValue(nip.charAt(9));\n    }\n}","go":"package main\n\nimport (\n\t\"regexp\"\n\t\"strconv\"\n)\n\nfunc ValidateNIP(nip string) bool {\n\tif matched, _ := regexp.MatchString(`^\\d{10}$`, nip); !matched {\n\t\treturn false\n\t}\n\tweights := []int{6, 5, 7, 2, 3, 4, 5, 6, 7}\n\tsum := 0\n\tfor i := 0; i \u003c 9; i++ {\n\t\tdigit, _ := strconv.Atoi(string(nip[i]))\n\t\tsum += digit * weights[i]\n\t}\n\tremainder := sum % 11\n\tif remainder == 10 {\n\t\treturn false\n\t}\n\tlastDigit, _ := strconv.Atoi(string(nip[9]))\n\treturn remainder == lastDigit\n}","rust":"pub fn validate_nip(nip: \u0026str) -\u003e bool {\n    if nip.len() != 10 || !nip.chars().all(|c| c.is_ascii_digit()) {\n        return false;\n    }\n    let weights = [6, 5, 7, 2, 3, 4, 5, 6, 7];\n    let digits: Vec\u003cu32\u003e = nip.chars().map(|c| c.to_digit(10).unwrap()).collect();\n    let sum: u32 = digits.iter().take(9).zip(weights.iter()).map(|(\u0026d, \u0026w)| d * w).sum();\n    let remainder = sum % 11;\n    if remainder == 10 {\n        return false;\n    }\n    remainder == digits[9]\n}"}</script>
+    <div class="vh-code-card-header">
+      <span>🔌</span> Language Code Snippets
+    </div>
+    <div class="vh-code-tabs">
+      <button type="button" class="vh-tab active" data-lang="javascript">JavaScript</button>
+      <button type="button" class="vh-tab" data-lang="python">Python</button>
+      <button type="button" class="vh-tab" data-lang="java">Java</button>
+      <button type="button" class="vh-tab" data-lang="go">Go</button>
+      <button type="button" class="vh-tab" data-lang="rust">Rust</button>
+    </div>
+    <div class="vh-code-block-wrapper">
+      <button type="button" class="vh-copy-button">Copy</button>
+      <pre class="vh-margin-zero"><code class="vh-code">function validateNIP(nip) {
+  if (!/^\d{10}$/.test(nip)) return false;
+  const weights = [6, 5, 7, 2, 3, 4, 5, 6, 7];
+  let sum = 0;
+  for (let i = 0; i < 9; i++) {
+    sum += parseInt(nip[i]) * weights[i];
+  }
+  const remainder = sum % 11;
+  if (remainder === 10) return false;
+  return remainder === parseInt(nip[9]);
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- Graph Connections Section -->
+
+
+<!-- FAQ Section -->
+
+        <section class="vh-card vh-faq-section">
+          <div class="section-heading">
+            <span class="vh-eyebrow">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div class="vh-accordion-controls">
+            <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="expand">Expand All</button>
+            <button type="button" class="vh-btn vh-btn--secondary vh-btn--sm" data-faq-action="collapse">Collapse All</button>
+          </div>
+          
+        <details class="vh-accordion">
+          <summary>What is the difference between PESEL and NIP?</summary>
+          <div class="rich-text">
+            <p>PESEL is the personal registration identifier for individuals (citizens and residents). NIP is specifically a tax identification code. While all businesses must hold a NIP, individuals only need a NIP if they run a business or are registered tax payers not covered by PESEL.</p>
+          </div>
+        </details>
+      
+        <details class="vh-accordion">
+          <summary>Can a NIP number be changed?</summary>
+          <div class="rich-text">
+            <p>No. NIP is a permanent registration code assigned to a business or individual for their entire lifetime.</p>
+          </div>
+        </details>
+      
+        </section>
+      
+
+<!-- Official References Section -->
+
+        <section class="vh-card">
+          <div class="section-heading">
+            <span class="vh-eyebrow">References</span>
+            <h2>Official Registry Sources</h2>
+          </div>
+          <div class="rich-text">
+            <h2>References</h2>
+<p>1. <strong>National Revenue Administration (Poland):</strong> Central government registry portal for Tax ID tracking. <a href="https://www.podatki.gov.pl/abc-podatkow/identyfikator-podatkowy/">Official lookup</a>.</p>
+<p>2. <strong>Act of 13 October 1995 on Principles of Taxpayer Registration:</strong> Statutory base defining NIP allocation.</p>
+          </div>
+        </section>
+      
+
+      </div>
+    </section>
+  </main>
+
+  
+    <footer class="site-footer">
+      <div class="vh-container footer-inner">
+        <a class="brand" href="/en/">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">ValidoHub</span>
+        </a>
+        <p>Static tools generated by Valido Engine.</p>
+      </div>
+    </footer>
+  
+  <script src="/assets/js/bundle.0289df.js" defer></script>
+</body>
+</html>

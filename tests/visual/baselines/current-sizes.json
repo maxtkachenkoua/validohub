@@ -1,0 +1,57 @@
+{
+  "en/countries/index.html": {
+    "size": 3731,
+    "hash": "f27647b4bd0d15b227843c2c54364bfb82a98438583cce858f3262ffb94c5b06",
+    "snapshotFile": "/tests/visual/baselines/snapshots/en_countries_index.html"
+  },
+  "en/poland/index.html": {
+    "size": 6373,
+    "hash": "4099ca6e92a10b5d3a55fa5663564775f65373694c0378a705eb2e946550b509",
+    "snapshotFile": "/tests/visual/baselines/snapshots/en_poland_index.html"
+  },
+  "en/brazil/index.html": {
+    "size": 6169,
+    "hash": "29e1be4821bf48e4dc01b454028e4c228da06be6113d95cc0c49f54b26cb9f46",
+    "snapshotFile": "/tests/visual/baselines/snapshots/en_brazil_index.html"
+  },
+  "en/germany/index.html": {
+    "size": 5148,
+    "hash": "ca0a3b0cf8050b7d2b379fd2c99a9245c4f3eface334fd565cf7c1a9bec36caf",
+    "snapshotFile": "/tests/visual/baselines/snapshots/en_germany_index.html"
+  },
+  "en/spain/index.html": {
+    "size": 4844,
+    "hash": "0a4dea43c869cec55ba3e9afef00d760ae36c74a0e62df1392f31df452746e94",
+    "snapshotFile": "/tests/visual/baselines/snapshots/en_spain_index.html"
+  },
+  "en/identifiers/pesel/index.html": {
+    "size": 17826,
+    "hash": "24bfb984893769366151bdab702438f4a09e1d9977d9f986f5a8827218f4b91d",
+    "snapshotFile": "/tests/visual/baselines/snapshots/en_identifiers_pesel_index.html"
+  },
+  "en/identifiers/nip/index.html": {
+    "size": 14668,
+    "hash": "78be29b7746e1c6bdfb5ce0bdf86cacc46c7a016c59fd3a7b6b6cefdb2d2421c",
+    "snapshotFile": "/tests/visual/baselines/snapshots/en_identifiers_nip_index.html"
+  },
+  "en/identifiers/regon/index.html": {
+    "size": 14715,
+    "hash": "f69bdb6fc30a3ebabbf3bc200a3a3af9e3f69dc8253ac912720d2709ed6795c6",
+    "snapshotFile": "/tests/visual/baselines/snapshots/en_identifiers_regon_index.html"
+  },
+  "en/identifiers/cpf/index.html": {
+    "size": 16018,
+    "hash": "1b92301731ccaef4de8fa888dbe005881857826bf1703bf52b8fb814b7688966",
+    "snapshotFile": "/tests/visual/baselines/snapshots/en_identifiers_cpf_index.html"
+  },
+  "en/identifiers/cnpj/index.html": {
+    "size": 17074,
+    "hash": "a95a0f8d6b0cd34971fb28685177246acfd40a717813731fea7ae4c5632bb32f",
+    "snapshotFile": "/tests/visual/baselines/snapshots/en_identifiers_cnpj_index.html"
+  },
+  "en/identifiers/steuer-id/index.html": {
+    "size": 16819,
+    "hash": "9ce7b3e64e4a2f5c0f338c5f6280e0c87401731bc25bac3423b5987b911f5235",
+    "snapshotFile": "/tests/visual/baselines/snapshots/en_identifiers_steuer-id_index.html"
+  }
+}

@@ -334,29 +334,29 @@
         background: var(--surface);
         border: 1px solid var(--line);
         border-radius: 8px;
-        padding: 16px 20px;
+        padding: 20px 24px 16px;
         margin-bottom: 20px;
         position: relative;
-        overflow-x: auto;
+        overflow: hidden;
       }
       .pesel-timeline-line {
         position: absolute;
-        top: 24px;
-        left: 36px;
-        right: 36px;
+        top: 28px;
+        left: calc(24px + 8px);
+        right: calc(24px + 8px);
         height: 2px;
         background: var(--line);
         z-index: 1;
       }
       .pesel-timeline-progress {
         position: absolute;
-        top: 24px;
-        left: 36px;
+        top: 28px;
+        left: calc(24px + 8px);
         height: 2px;
         background: #16a34a;
         z-index: 2;
         width: 0%;
-        transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .pesel-timeline-node {
         display: flex;
@@ -842,6 +842,7 @@
 
   const PeselPlugin = {
     filePrefix: 'pesel-validation',
+    apiSnippets: apiSnippets,
     applySample: function (workbench, name) {
       const input = workbench.primaryInput();
       if (!input) return;
@@ -895,7 +896,6 @@
       const pageIntro = document.querySelector('.page-intro');
       if (pageIntro) {
         const introTitle = pageIntro.querySelector('h1');
-        if (introTitle) introTitle.textContent = 'PESEL Validator & Explainer';
         const introDesc = pageIntro.querySelector('p');
         if (introDesc) {
           introDesc.textContent = 'Validate an 11-digit Polish PESEL, decode birth date and gender, and inspect the checksum calculation locally in your browser.';
@@ -2096,6 +2096,41 @@
         checksumDebugger.style.display = 'block';
       }
 
+      // Dynamically build Developer API Preview block if snippets exist
+      let apiCardHtml = '';
+      if (apiSnippets && Object.keys(apiSnippets).length > 0) {
+        const tabLabels = {
+          curl: 'cURL',
+          javascript: 'JavaScript',
+          python: 'Python',
+          java: 'Java',
+          csharp: 'C#',
+          go: 'Go'
+        };
+
+        let tabsHtml = '';
+        Object.keys(apiSnippets).forEach((lang, idx) => {
+          const activeClass = idx === 0 ? 'active' : '';
+          const label = tabLabels[lang] || lang;
+          tabsHtml += `<button type="button" class="pesel-api-tab ${activeClass}" data-lang="${lang}">${label}</button>`;
+        });
+
+        apiCardHtml = `
+        <!-- Developer API Preview block -->
+        <div class="pesel-api-card" style="margin-top: 16px; border: 1px solid var(--vh-color-border, #334155); border-radius: 8px; background: var(--vh-color-surface-soft, #1e293b); padding: 20px;">
+          <div class="pesel-section-title">
+            <span>🔌</span> Developer API Preview
+          </div>
+          <div class="pesel-api-tabs">
+            ${tabsHtml}
+          </div>
+          <div style="background: var(--vh-color-code-bg, #18181b); color: var(--vh-color-code-text, #fafafa); padding: 12px; border-radius: 6px; position: relative;">
+            <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
+            <pre id="pesel-api-code-block" style="margin: 0; font-family: monospace; font-size: 0.8rem; line-height: 1.4; color: var(--vh-color-code-text, #fafafa); background: transparent;">${apiSnippets[Object.keys(apiSnippets)[0]].replace('$INPUT$', inputVal)}</pre>
+          </div>
+        </div>`;
+      }
+
       // Update DevTools structured accordions
       workbench.setAdvanced(`
         <div class="pesel-dev-section reveal-element reveal-delay-5">
@@ -2103,14 +2138,14 @@
             <summary>Validation Pipeline Logs</summary>
             <div class="pesel-dev-accordion-content">
               <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
-              <pre>✓ Input Present\n✓ Digits Only Check\n✓ Exactly 11 Digits Check\n✓ Century/Month Offset Valid\n✓ Calendar Date Valid\n✓ Checksum Valid</pre>
+              <pre>✓ Input Present\\n✓ Digits Only Check\\n✓ Exactly 11 Digits Check\\n✓ Century/Month Offset Valid\\n✓ Calendar Date Valid\\n✓ Checksum Valid</pre>
             </div>
           </details>
           <details class="pesel-dev-accordion">
             <summary>Regex & Structure Details</summary>
             <div class="pesel-dev-accordion-content">
               <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
-              <pre>Pattern: /^\\d{11}$/\nMatched: true</pre>
+              <pre>Pattern: /^\\\\d{11}$/\\nMatched: true</pre>
             </div>
           </details>
           <details class="pesel-dev-accordion">
@@ -2128,40 +2163,25 @@
             </div>
           </details>
         </div>
-
-        <!-- Developer API Preview block -->
-        <div class="pesel-api-card" style="margin-top: 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-soft); padding: 20px;">
-          <div class="pesel-section-title">
-            <span>🔌</span> Developer API Preview
-          </div>
-          <div class="pesel-api-tabs">
-            <button type="button" class="pesel-api-tab active" data-lang="curl">cURL</button>
-            <button type="button" class="pesel-api-tab" data-lang="javascript">JavaScript</button>
-            <button type="button" class="pesel-api-tab" data-lang="python">Python</button>
-            <button type="button" class="pesel-api-tab" data-lang="java">Java</button>
-            <button type="button" class="pesel-api-tab" data-lang="csharp">C#</button>
-            <button type="button" class="pesel-api-tab" data-lang="go">Go</button>
-          </div>
-          <div class="pesel-dev-accordion-content" style="background: var(--code-bg); padding: 12px; border-radius: 6px;">
-            <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
-            <pre id="pesel-api-code-block" style="margin: 0; font-family: monospace; font-size: 0.8rem; line-height: 1.4; color: var(--code-text);">${apiSnippets.curl.replace('$INPUT$', inputVal)}</pre>
-          </div>
-        </div>
+        ${apiCardHtml}
       `);
 
-      // Bind dynamic API tabs trigger
-      const apiCodeBlock = premiumPanel.querySelector('#pesel-api-code-block');
-      const tabs = premiumPanel.querySelectorAll('.pesel-api-tab');
-      tabs.forEach(t => {
-        t.addEventListener('click', () => {
-          tabs.forEach(btn => btn.classList.remove('active'));
-          t.classList.add('active');
-          const lang = t.dataset.lang;
-          if (apiCodeBlock && apiSnippets[lang]) {
-            apiCodeBlock.textContent = apiSnippets[lang].replace('$INPUT$', inputVal);
-          }
+      // Bind dynamic API tabs trigger relative to the advanced analysis container
+      const advancedContainer = workbench.form.querySelector('[data-tool-advanced]');
+      if (advancedContainer) {
+        const apiCodeBlock = advancedContainer.querySelector('#pesel-api-code-block');
+        const tabs = advancedContainer.querySelectorAll('.pesel-api-tab');
+        tabs.forEach(t => {
+          t.addEventListener('click', () => {
+            tabs.forEach(btn => btn.classList.remove('active'));
+            t.classList.add('active');
+            const lang = t.dataset.lang;
+            if (apiCodeBlock && apiSnippets[lang]) {
+              apiCodeBlock.textContent = apiSnippets[lang].replace('$INPUT$', inputVal);
+            }
+          });
         });
-      });
+      }
 
       // Attach copy button listeners to DevTools cards
       document.querySelectorAll('.pesel-dev-accordion-content').forEach(card => {
