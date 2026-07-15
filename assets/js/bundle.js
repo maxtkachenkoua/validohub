@@ -136,8 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
       catalog.classList.toggle('is-tool-search-empty', Boolean(query && matchCount === 0));
       if (status) {
         status.textContent = query
-          ? `${matchCount} of ${allCount} workbenches match “${rawQuery.trim()}”. Press Enter to jump to the first result.`
-          : `Search across ${allCount} available workbenches on this page.`;
+          ? `${matchCount}/${allCount} matches for “${rawQuery.trim()}” · Enter to jump`
+          : `Search ${allCount} country workbenches`;
       }
     }
   });
