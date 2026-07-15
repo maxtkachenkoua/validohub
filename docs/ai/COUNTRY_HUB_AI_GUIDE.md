@@ -4,15 +4,15 @@ This guide teaches future AI assistants how Country Hubs are built.
 
 Read this before changing any country hub, country visual, country metadata model, country navigation behavior, or country-specific workbench relationship.
 
-## Golden Reference
+## Golden References
 
-Brazil is the golden reference implementation.
+Brazil is the base Country Hub template reference. It defines the original country-hub architecture, visual system, section anatomy, and metadata-driven rendering model.
 
-Never invent a new Country Hub layout for another country.
+Poland is the mature, tool-rich Country Hub gold standard. It defines the target quality for large country portals with many workbenches, grouped tool catalogs, hero search, internal linking, country-specific copy, reference ecosystems, and premium developer UX.
 
-Future countries inherit the Brazil structure, section order, visual system, card anatomy, badge system, responsive behavior, and copy style.
+When a user says "make another country like Poland", read `docs/product/POLAND_COUNTRY_HUB_GOLD_STANDARD.md` and use Poland as the implementation benchmark. Do not copy Polish content; copy its structure, quality bar, discovery model, and linking behavior.
 
-Only country data changes.
+Future countries inherit the shared country architecture. Mature countries should reach the Poland standard when enough local tools and metadata exist.
 
 ## Repository Boundary
 

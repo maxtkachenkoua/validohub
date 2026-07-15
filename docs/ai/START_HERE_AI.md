@@ -29,6 +29,7 @@ For Country Hub work, also read:
 - `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md`
 - `docs/product/COUNTRIES_ARCHITECTURE.md`
 - `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`
+- `docs/product/POLAND_COUNTRY_HUB_GOLD_STANDARD.md`
 
 If the task may affect architecture, also read:
 

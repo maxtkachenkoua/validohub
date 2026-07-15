@@ -2,7 +2,7 @@
 
 This is the canonical design reference for ValidoHub Country Hubs.
 
-Brazil is the golden reference implementation. Future country hubs must inherit the same structure, visual language, section order, and interaction principles. Do not invent a different layout for Spain, Poland, Germany, France, Japan, or any other country.
+Brazil is the base Country Hub template reference. Poland is the mature, tool-rich Country Hub gold standard for countries with broad local tool portfolios. Future country hubs must inherit the shared structure, visual language, section order, and interaction principles; mature countries should also follow `docs/product/POLAND_COUNTRY_HUB_GOLD_STANDARD.md`. Do not invent unrelated layouts for Spain, Germany, France, Japan, or any other country.
 
 ## Page Philosophy
 
