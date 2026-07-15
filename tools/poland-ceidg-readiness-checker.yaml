@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-ceidg-readiness-checker
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: "CEIDG Data Readiness Checker"
+summary:
+  en: "Audit CEIDG-style company onboarding data locally before registry workflows, without performing official registry lookups."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "CEIDG Data Readiness Checker | ValidoHub"
+  description:
+    en: "Audit CEIDG-style company onboarding data locally before registry workflows, without performing official registry lookups."

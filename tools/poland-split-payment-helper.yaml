@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-split-payment-helper
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "Polish Split Payment / MPP Helper"
+summary:
+  en: "Build and audit Polish split-payment transfer data locally: VAT amount, supplier NIP, invoice reference, and payment-title boundaries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Split Payment / MPP Helper | ValidoHub"
+  description:
+    en: "Build and audit Polish split-payment transfer data locally: VAT amount, supplier NIP, invoice reference, and payment-title boundaries."

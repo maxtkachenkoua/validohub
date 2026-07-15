@@ -1686,5 +1686,271 @@
         "note": "Use golang.org/x/text/language package for locale representation."
       }
     ]
+  },
+  "availableWorkbenches": {
+    "KSeF Invoice XML Validator": {
+      "status": "available",
+      "path": "poland-ksef-invoice-xml-validator/",
+      "description": "Validate Polish KSeF invoice XML structure locally, inspect invoice fields, and prepare safe offline diagnostics before gateway or schema checks.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "JPK File Validator": {
+      "status": "available",
+      "path": "poland-jpk-file-validator/",
+      "description": "Inspect Polish JPK XML files locally for structure, document markers, tax identifiers, periods, and common offline readiness issues.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Split Payment / MPP Helper": {
+      "status": "available",
+      "path": "poland-split-payment-helper/",
+      "description": "Build and audit Polish split-payment transfer data locally: VAT amount, supplier NIP, invoice reference, and payment-title boundaries.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "PKD Code Inspector": {
+      "status": "available",
+      "path": "poland-pkd-code-inspector/",
+      "description": "Normalize and inspect Polish PKD classification codes, including section/class shape, formatting, and migration-ready notes.",
+      "tags": [
+        "Poland",
+        "Developer",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "PKWiU Code Inspector": {
+      "status": "available",
+      "path": "poland-pkwiu-code-inspector/",
+      "description": "Validate Polish PKWiU syntax locally, break down hierarchical segments, and prepare classification data for forms and catalogues.",
+      "tags": [
+        "Poland",
+        "Developer",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "BDO Number Inspector": {
+      "status": "available",
+      "path": "poland-bdo-number-inspector/",
+      "description": "Inspect Polish BDO register-number formatting, masking, batch lists, and offline data-quality boundaries.",
+      "tags": [
+        "Poland",
+        "Identity",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "CEIDG Data Readiness Checker": {
+      "status": "available",
+      "path": "poland-ceidg-readiness-checker/",
+      "description": "Audit CEIDG-style company onboarding data locally before registry workflows, without performing official registry lookups.",
+      "tags": [
+        "Poland",
+        "Developer",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Company Onboarding Auditor": {
+      "status": "available",
+      "path": "poland-company-onboarding-auditor/",
+      "description": "Run a local onboarding checklist for Polish company records: NIP, REGON, KRS, IBAN, address, VAT and evidence fields.",
+      "tags": [
+        "Poland",
+        "Developer",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Invoice Data Auditor": {
+      "status": "available",
+      "path": "poland-invoice-data-auditor/",
+      "description": "Inspect Polish invoice snippets for numbering, dates, VAT rates, seller/buyer identifiers, amounts, and offline consistency risks.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Receipt / Paragon Helper": {
+      "status": "available",
+      "path": "poland-receipt-paragon-helper/",
+      "description": "Check receipt-like Polish fiscal data locally, including NIP-on-receipt readiness, amounts, VAT lines, and audit-safe notes.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Transfer Title Builder": {
+      "status": "available",
+      "path": "poland-transfer-title-builder/",
+      "description": "Create and validate clean Polish bank transfer titles for invoices, taxes, deposits, payroll, and internal references.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Payment QR Generator": {
+      "status": "available",
+      "path": "poland-payment-qr-generator/",
+      "description": "Generate an offline payment QR payload from Polish transfer data and inspect IBAN, amount, recipient, and remittance fields.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Bank Statement Parser": {
+      "status": "available",
+      "path": "poland-bank-statement-parser/",
+      "description": "Parse pasted Polish bank statement rows locally, detect dates, amounts, IBANs, references, and export an audit summary.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Postal Address Parser Pro": {
+      "status": "available",
+      "path": "poland-postal-address-parser-pro/",
+      "description": "Parse and normalize Polish postal addresses locally, including street, building, apartment, postal code, city, and voivodeship hints.",
+      "tags": [
+        "Poland",
+        "Developer",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "TERYT Hierarchy Explorer": {
+      "status": "available",
+      "path": "poland-teryt-hierarchy-explorer/",
+      "description": "Inspect Polish TERYT hierarchy-shaped codes locally and explain voivodeship, county, municipality, SIMC, and ULIC segments.",
+      "tags": [
+        "Poland",
+        "Developer",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Municipality / Voivodeship Code Inspector": {
+      "status": "available",
+      "path": "poland-municipality-code-inspector/",
+      "description": "Inspect Polish local-government code shapes, voivodeship prefixes, municipality levels, and offline hierarchy readiness.",
+      "tags": [
+        "Poland",
+        "Developer",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish MRZ Passport / ID Parser": {
+      "status": "available",
+      "path": "poland-mrz-passport-id-parser/",
+      "description": "Parse Polish passport or ID MRZ lines locally, verify MRZ check digits where possible, and expose travel-document fields safely.",
+      "tags": [
+        "Poland",
+        "Identity",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Passport Number Inspector": {
+      "status": "available",
+      "path": "poland-passport-number-inspector/",
+      "description": "Normalize and inspect Polish passport-number style input locally with masking, batch checks, and document-boundary warnings.",
+      "tags": [
+        "Poland",
+        "Identity",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Driving Licence Inspector": {
+      "status": "available",
+      "path": "poland-driving-licence-inspector/",
+      "description": "Inspect Polish driving-licence style numbers and record snippets locally, including dates, categories, and privacy-safe masking.",
+      "tags": [
+        "Poland",
+        "Identity",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Vehicle Registration Certificate Helper": {
+      "status": "available",
+      "path": "poland-vehicle-registration-certificate-helper/",
+      "description": "Inspect Polish vehicle-registration certificate snippets locally, including plate, VIN, document number, dates, and data-quality notes.",
+      "tags": [
+        "Poland",
+        "Identity",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Insurance / Policy Number Helper": {
+      "status": "available",
+      "path": "poland-insurance-policy-number-helper/",
+      "description": "Audit Polish insurance policy references locally, detect dates, vehicle or person identifiers, and produce masked support-safe summaries.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Parcel / Tracking Number Inspector": {
+      "status": "available",
+      "path": "poland-parcel-tracking-inspector/",
+      "description": "Inspect Polish parcel tracking numbers locally, detect common courier-like shapes, mask IDs, and prepare support-safe diagnostics.",
+      "tags": [
+        "Poland",
+        "Developer",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Energy Meter / PPE Number Inspector": {
+      "status": "available",
+      "path": "poland-energy-meter-ppe-inspector/",
+      "description": "Inspect Polish PPE energy-meter point identifiers locally, normalize long codes, mask safely, and explain offline confidence.",
+      "tags": [
+        "Poland",
+        "Identity",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Data Quality Workbench": {
+      "status": "available",
+      "path": "poland-data-quality-workbench/",
+      "description": "Audit pasted Polish datasets locally for identifiers, addresses, phones, bank fields, missing values, duplicates, and privacy risks.",
+      "tags": [
+        "Poland",
+        "Developer",
+        "Offline",
+        "Premium"
+      ]
+    }
   }
 }

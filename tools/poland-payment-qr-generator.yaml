@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-payment-qr-generator
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "Polish Payment QR Generator"
+summary:
+  en: "Generate an offline payment QR payload from Polish transfer data and inspect IBAN, amount, recipient, and remittance fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Payment QR Generator | ValidoHub"
+  description:
+    en: "Generate an offline payment QR payload from Polish transfer data and inspect IBAN, amount, recipient, and remittance fields."

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-passport-number-inspector
+kind: tool
+module: validohub
+country: PL
+category: national-identifiers
+status: active
+name:
+  en: "Polish Passport Number Inspector"
+summary:
+  en: "Normalize and inspect Polish passport-number style input locally with masking, batch checks, and document-boundary warnings."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Passport Number Inspector | ValidoHub"
+  description:
+    en: "Normalize and inspect Polish passport-number style input locally with masking, batch checks, and document-boundary warnings."

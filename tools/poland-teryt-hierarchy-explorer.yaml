@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-teryt-hierarchy-explorer
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: "TERYT Hierarchy Explorer"
+summary:
+  en: "Inspect Polish TERYT hierarchy-shaped codes locally and explain voivodeship, county, municipality, SIMC, and ULIC segments."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "TERYT Hierarchy Explorer | ValidoHub"
+  description:
+    en: "Inspect Polish TERYT hierarchy-shaped codes locally and explain voivodeship, county, municipality, SIMC, and ULIC segments."

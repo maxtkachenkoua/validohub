@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-energy-meter-ppe-inspector
+kind: tool
+module: validohub
+country: PL
+category: national-identifiers
+status: active
+name:
+  en: "Polish Energy Meter / PPE Number Inspector"
+summary:
+  en: "Inspect Polish PPE energy-meter point identifiers locally, normalize long codes, mask safely, and explain offline confidence."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Energy Meter / PPE Number Inspector | ValidoHub"
+  description:
+    en: "Inspect Polish PPE energy-meter point identifiers locally, normalize long codes, mask safely, and explain offline confidence."

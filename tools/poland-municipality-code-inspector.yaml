@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-municipality-code-inspector
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: "Polish Municipality / Voivodeship Code Inspector"
+summary:
+  en: "Inspect Polish local-government code shapes, voivodeship prefixes, municipality levels, and offline hierarchy readiness."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Municipality / Voivodeship Code Inspector | ValidoHub"
+  description:
+    en: "Inspect Polish local-government code shapes, voivodeship prefixes, municipality levels, and offline hierarchy readiness."

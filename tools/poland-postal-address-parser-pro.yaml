@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-postal-address-parser-pro
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: "Polish Postal Address Parser Pro"
+summary:
+  en: "Parse and normalize Polish postal addresses locally, including street, building, apartment, postal code, city, and voivodeship hints."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Postal Address Parser Pro | ValidoHub"
+  description:
+    en: "Parse and normalize Polish postal addresses locally, including street, building, apartment, postal code, city, and voivodeship hints."

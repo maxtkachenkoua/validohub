@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-invoice-data-auditor
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "Polish Invoice Data Auditor"
+summary:
+  en: "Inspect Polish invoice snippets for numbering, dates, VAT rates, seller/buyer identifiers, amounts, and offline consistency risks."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Invoice Data Auditor | ValidoHub"
+  description:
+    en: "Inspect Polish invoice snippets for numbering, dates, VAT rates, seller/buyer identifiers, amounts, and offline consistency risks."

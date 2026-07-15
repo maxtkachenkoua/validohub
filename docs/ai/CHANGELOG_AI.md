@@ -1,5 +1,25 @@
 # AI Changelog
 
+## Poland Baseline Workbench Suite V1
+
+Changed:
+
+- Added 24 additional Poland country workbenches as the broad Poland baseline.
+- Added `assets/js/tools/poland-baseline.js` and metadata-only `validohub.poland-baseline`.
+- Added KSeF XML, JPK XML, split payment, PKD, PKWiU, BDO, CEIDG readiness, company onboarding, invoice data, receipts, transfer titles, payment QR, bank statements, postal addresses, TERYT hierarchy, municipality codes, MRZ/passport, passport number, driving licence, vehicle registration certificate, insurance policy, parcel tracking, PPE energy, and Polish data-quality pages.
+- Linked all new tools from the Poland country hub.
+- Added real browser-side SVG QR generation for the payment QR helper by reusing ValidoHub-owned QR infrastructure patterns.
+
+Reason:
+
+Poland needed a complete first country baseline beyond PESEL and the earlier premium/expansion suites.
+
+Impact:
+
+- Poland now has a broad suite of browser-only premium workbenches under `/en/poland/`.
+- Engine remains untouched and generic.
+- Official lookup, gateway submission, legal status, bank execution, and registry verification remain out of scope unless future product specs approve them.
+
 This is an AI-oriented project history. It is not release notes.
 
 Record changes that future AI assistants need to understand before continuing work.

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-receipt-paragon-helper
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "Polish Receipt / Paragon Helper"
+summary:
+  en: "Check receipt-like Polish fiscal data locally, including NIP-on-receipt readiness, amounts, VAT lines, and audit-safe notes."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Receipt / Paragon Helper | ValidoHub"
+  description:
+    en: "Check receipt-like Polish fiscal data locally, including NIP-on-receipt readiness, amounts, VAT lines, and audit-safe notes."

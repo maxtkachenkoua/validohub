@@ -274,6 +274,50 @@ This registry records production browser workbenches currently owned by ValidoHu
   - Larger bank/BIC dictionary and CSV import/export.
 - Current quality status: Production-quality V1 expansion pack modeled after PESEL and Poland Premium Suite.
 
+## Poland Baseline Workbench Suite
+
+- Source JS: `assets/js/tools/poland-baseline.js`
+- Related YAML tool pages:
+  - `tools/poland-ksef-invoice-xml-validator.yaml`
+  - `tools/poland-jpk-file-validator.yaml`
+  - `tools/poland-split-payment-helper.yaml`
+  - `tools/poland-pkd-code-inspector.yaml`
+  - `tools/poland-pkwiu-code-inspector.yaml`
+  - `tools/poland-bdo-number-inspector.yaml`
+  - `tools/poland-ceidg-readiness-checker.yaml`
+  - `tools/poland-company-onboarding-auditor.yaml`
+  - `tools/poland-invoice-data-auditor.yaml`
+  - `tools/poland-receipt-paragon-helper.yaml`
+  - `tools/poland-transfer-title-builder.yaml`
+  - `tools/poland-payment-qr-generator.yaml`
+  - `tools/poland-bank-statement-parser.yaml`
+  - `tools/poland-postal-address-parser-pro.yaml`
+  - `tools/poland-teryt-hierarchy-explorer.yaml`
+  - `tools/poland-municipality-code-inspector.yaml`
+  - `tools/poland-mrz-passport-id-parser.yaml`
+  - `tools/poland-passport-number-inspector.yaml`
+  - `tools/poland-driving-licence-inspector.yaml`
+  - `tools/poland-vehicle-registration-certificate-helper.yaml`
+  - `tools/poland-insurance-policy-number-helper.yaml`
+  - `tools/poland-parcel-tracking-inspector.yaml`
+  - `tools/poland-energy-meter-ppe-inspector.yaml`
+  - `tools/poland-data-quality-workbench.yaml`
+- Algorithm ID:
+  - `validohub.poland-baseline`
+- Current capabilities:
+  - KSeF and JPK XML readiness inspection.
+  - Split-payment, invoice, receipt, bank statement, transfer-title, payment QR, policy, and data-quality helpers.
+  - PKD, PKWiU, BDO, TERYT hierarchy, municipality, PPE, parcel, passport, MRZ, driving-licence, and vehicle-document inspectors.
+  - CEIDG and company-onboarding local evidence checklists.
+  - Real local SVG QR generation for the payment QR helper.
+  - Shared smart presets, recent local inputs, batch review, masking, normalized output, audit JSON, pipeline cards, domain panels, quality analysis, and mobile-safe layout.
+- Known future ideas:
+  - Deeper per-tool official-reference docs after source audit.
+  - Local dictionaries for PKD/PKWiU/TERYT/municipality/carrier/code systems if approved.
+  - CSV import/export and printable audit packs.
+  - Dedicated deeper product specs for any baseline tool promoted to a single-tool gold standard.
+- Current quality status: Production-quality V1 broad baseline suite modeled after PESEL, Poland Premium Suite, and Poland Expansion Suite.
+
 ## Countries Platform
 
 This is a product platform section, not a browser workbench plugin.

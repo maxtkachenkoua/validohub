@@ -184,3 +184,12 @@ algorithms:
       en: IBAN Algorithm
     summary:
       en: Metadata entry for IBAN validation, parsing, and explanation.
+
+  - algorithmId: validohub.poland-baseline
+    javaClass: com.validohub.algorithms.poland.PolandBaselineAlgorithm
+    version: 1
+    capabilities: [validate, parse, generate, format, calculate, explain]
+    name:
+      en: Polish Baseline Premium Workbench Algorithms
+    summary:
+      en: Metadata entry for ValidoHub browser-side Polish baseline workbenches.

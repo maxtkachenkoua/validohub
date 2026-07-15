@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-parcel-tracking-inspector
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: "Polish Parcel / Tracking Number Inspector"
+summary:
+  en: "Inspect Polish parcel tracking numbers locally, detect common courier-like shapes, mask IDs, and prepare support-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Parcel / Tracking Number Inspector | ValidoHub"
+  description:
+    en: "Inspect Polish parcel tracking numbers locally, detect common courier-like shapes, mask IDs, and prepare support-safe diagnostics."

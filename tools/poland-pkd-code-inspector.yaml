@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-pkd-code-inspector
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: "PKD Code Inspector"
+summary:
+  en: "Normalize and inspect Polish PKD classification codes, including section/class shape, formatting, and migration-ready notes."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "PKD Code Inspector | ValidoHub"
+  description:
+    en: "Normalize and inspect Polish PKD classification codes, including section/class shape, formatting, and migration-ready notes."

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-pkwiu-code-inspector
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: "PKWiU Code Inspector"
+summary:
+  en: "Validate Polish PKWiU syntax locally, break down hierarchical segments, and prepare classification data for forms and catalogues."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "PKWiU Code Inspector | ValidoHub"
+  description:
+    en: "Validate Polish PKWiU syntax locally, break down hierarchical segments, and prepare classification data for forms and catalogues."

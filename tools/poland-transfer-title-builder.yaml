@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-transfer-title-builder
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "Polish Transfer Title Builder"
+summary:
+  en: "Create and validate clean Polish bank transfer titles for invoices, taxes, deposits, payroll, and internal references."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Transfer Title Builder | ValidoHub"
+  description:
+    en: "Create and validate clean Polish bank transfer titles for invoices, taxes, deposits, payroll, and internal references."

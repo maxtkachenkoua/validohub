@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-ksef-invoice-xml-validator
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "KSeF Invoice XML Validator"
+summary:
+  en: "Validate Polish KSeF invoice XML structure locally, inspect invoice fields, and prepare safe offline diagnostics before gateway or schema checks."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "KSeF Invoice XML Validator | ValidoHub"
+  description:
+    en: "Validate Polish KSeF invoice XML structure locally, inspect invoice fields, and prepare safe offline diagnostics before gateway or schema checks."

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-jpk-file-validator
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "JPK File Validator"
+summary:
+  en: "Inspect Polish JPK XML files locally for structure, document markers, tax identifiers, periods, and common offline readiness issues."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "JPK File Validator | ValidoHub"
+  description:
+    en: "Inspect Polish JPK XML files locally for structure, document markers, tax identifiers, periods, and common offline readiness issues."

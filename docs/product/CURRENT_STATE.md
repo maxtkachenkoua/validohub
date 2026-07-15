@@ -20,6 +20,8 @@ This document records the current ValidoHub and Valido Engine boundary so future
 - PIX Workbench: `assets/js/tools/pix.js`
 - Spain ID Workbench: `assets/js/tools/spain-id.js`
 - Poland Premium Workbench Suite: `assets/js/tools/poland-suite.js`
+- Poland Expansion Workbench Suite: `assets/js/tools/poland-expansion.js`
+- Poland Baseline Workbench Suite: `assets/js/tools/poland-baseline.js`
 
 
 ## Countries Platform
@@ -84,6 +86,8 @@ Spain Country Hub V1 is complete as the first architecture-reuse proof for the B
 Poland Premium Workbench Suite V2 is complete as a PESEL-inspired expansion of the Poland country hub. It adds ten browser-only premium workbenches for NIP, REGON, Polish IBAN/NRB, tax microaccount input checks, postal codes, phone numbers, license plates, KRS numbers, Polish VAT syntax, and bank-code inspection. These tools share `assets/js/tools/poland-suite.js`, use metadata-only `validohub.poland-suite`, run offline in the browser, and clearly separate syntax/checksum/format diagnostics from official registry, VIES, bank, tax, phone, or vehicle-status lookups. V2 adds batch validation, masking, copyable test cases, versioned audit JSON, richer dictionaries, quality notes, and per-tool repair suggestions across all ten Poland tools.
 
 Poland Expansion Workbench Suite V1 is complete as a second browser-only Poland pack. It adds fifteen additional premium workbenches for Polish ID cards, BIC/SWIFT, TERYT-like administrative codes, BLIK, PLN amounts, VAT calculations, pl-PL dates, addresses, VIN, EORI, PII masking, test-data generation, invoice numbering, grosz conversion, and SEPA transfer readiness. These tools share `assets/js/tools/poland-expansion.js`, use metadata-only `validohub.poland-expansion`, run offline in the browser, and avoid official registry, payment, customs, vehicle, tax-status, and banking lookups.
+
+Poland Baseline Workbench Suite V1 is complete as the broad Poland baseline layer. It adds twenty-four additional premium browser-only tools for KSeF XML, JPK XML, split payment, PKD, PKWiU, BDO, CEIDG readiness, company onboarding, invoice data, receipts, transfer titles, payment QR, bank statements, postal addresses, TERYT hierarchy, municipality codes, MRZ/passport parsing, passport numbers, driving licence snippets, vehicle registration documents, insurance policies, parcel tracking, PPE energy codes, and Polish data quality. These tools share `assets/js/tools/poland-baseline.js`, use metadata-only `validohub.poland-baseline`, run offline in the browser, include a real local SVG QR generator for payment QR payloads, and keep official registry, bank, tax, gateway, utility, carrier, vehicle, insurance, and legal-status lookups out of scope.
 
 Brazil is also the canonical Country Hub design reference. Future country hubs must read `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md` and `docs/ai/COUNTRY_HUB_AI_GUIDE.md` before implementation. Spain, Poland, Germany, France, Japan, and all future countries inherit the Brazil structure and design language; only metadata and local content should change.
 

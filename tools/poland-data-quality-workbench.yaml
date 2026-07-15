@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-data-quality-workbench
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: "Polish Data Quality Workbench"
+summary:
+  en: "Audit pasted Polish datasets locally for identifiers, addresses, phones, bank fields, missing values, duplicates, and privacy risks."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit pasted Polish datasets locally for identifiers, addresses, phones, bank fields, missing values, duplicates, and privacy risks."

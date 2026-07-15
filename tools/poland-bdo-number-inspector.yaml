@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-bdo-number-inspector
+kind: tool
+module: validohub
+country: PL
+category: national-identifiers
+status: active
+name:
+  en: "BDO Number Inspector"
+summary:
+  en: "Inspect Polish BDO register-number formatting, masking, batch lists, and offline data-quality boundaries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [pesel-validator, poland-nip-validator, poland-regon-validator, poland-iban-nrb-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "BDO Number Inspector | ValidoHub"
+  description:
+    en: "Inspect Polish BDO register-number formatting, masking, batch lists, and offline data-quality boundaries."
