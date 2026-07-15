@@ -115,6 +115,47 @@ async function compileAssets() {
 }
 
 
+
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function stripHtml(value) {
+  return String(value || '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+}
+
+function pageTitleForDocumentation(content, route) {
+  if (route.title && route.title !== 'Java Component') return route.title;
+  const match = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+  if (match) return stripHtml(match[1]);
+  const slug = route.path.split('/').filter(Boolean).pop() || 'tool';
+  return slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function humanizeDocumentationSections(content, route) {
+  if (!/<summary>(developer-examples|examples|explanation|faq|references)<\/summary>/i.test(content)) {
+    return content;
+  }
+  const title = pageTitleForDocumentation(content, route);
+  const safeTitle = escapeHtml(title);
+  const labels = {
+    'developer-examples': safeTitle + ' developer examples',
+    examples: safeTitle + ' practical examples',
+    explanation: 'How ' + safeTitle + ' works',
+    faq: safeTitle + ' questions and edge cases',
+    references: safeTitle + ' references and limits'
+  };
+  let next = content.replace(/<h2>Reference notes<\/h2>/g, '<h2>' + safeTitle + ' guide</h2>');
+  for (const [raw, label] of Object.entries(labels)) {
+    next = next.replace(new RegExp('<summary>' + raw + '<\/summary>', 'g'), '<summary>' + label + '</summary>');
+  }
+  return next;
+}
+
 // 2. Post-process Java-owned pages to use hashed assets, strip inline styles, and inject schema JSON-LD
 async function postProcessJavaPages(routeRegistry, assetsManifest) {
   const javaRoutes = routeRegistry.getAll().filter(r => r.sourceOwner === 'java');
@@ -149,6 +190,8 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
       content = content.replace(/<!--__PLACEHOLDER_(\d+)__-->/g, (match, index) => {
         return placeholders[parseInt(index)];
       });
+
+      content = humanizeDocumentationSections(content, route);
 
       // Determine proper JSON-LD schema
       let type = 'WebPage';
