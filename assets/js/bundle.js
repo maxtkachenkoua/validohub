@@ -110,7 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let visibleMatches = [];
     let activeIntent = 'all';
 
-    const recentKey = 'validohub.country.search.recent';
+    const countrySearchId = input.id || searchForm.getAttribute('id') || window.location.pathname;
+    const recentKey = `validohub.country.search.recent.${countrySearchId}`;
     const initialShortcutEntries = shortcutsWrap
       ? Array.from(shortcutsWrap.querySelectorAll('[data-country-search-shortcut]')).map(chip => {
           const query = normalizeSearchText(chip.getAttribute('data-country-search-shortcut') || chip.textContent || '');
