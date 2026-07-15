@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-blik-code-helper
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: BLIK Code Helper
+summary:
+  en: Validate BLIK code shape, generate safe fictional fixtures, and explain browser-only security boundaries.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: BLIK code
+        required: true
+        placeholder:
+          en: 123456
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-pln-amount-formatter, poland-sepa-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: BLIK Code Helper
+  description:
+    en: Validate BLIK code shape, generate safe fictional fixtures, and explain browser-only security boundaries.

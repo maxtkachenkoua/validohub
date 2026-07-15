@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-date-locale-formatter
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: Polish Date / Locale Formatter
+summary:
+  en: Format dates for pl-PL, Europe/Warsaw, ISO, display, and developer payload workflows.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Date or timestamp
+        required: true
+        placeholder:
+          en: 2026-07-15T10:30:00Z
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-address-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish Date / Locale Formatter
+  description:
+    en: Format dates for pl-PL, Europe/Warsaw, ISO, display, and developer payload workflows.

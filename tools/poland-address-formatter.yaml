@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-address-formatter
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: Polish Address Formatter
+summary:
+  en: Normalize Polish address lines, postal codes, building/apartment hints, and developer payload shapes.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Address
+        required: true
+        placeholder:
+          en: ul. Marszalkowska 1/2, 00-001 Warszawa
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-postal-code-validator, poland-teryt-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish Address Formatter
+  description:
+    en: Normalize Polish address lines, postal codes, building/apartment hints, and developer payload shapes.

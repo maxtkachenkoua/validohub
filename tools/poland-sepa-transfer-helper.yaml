@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-sepa-transfer-helper
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: Polish SEPA Transfer Helper
+summary:
+  en: Inspect Polish SEPA transfer readiness using IBAN, BIC, amount, and reference-field diagnostics.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Transfer details
+        required: true
+        placeholder:
+          en: PL61109010140000071219812874 BPKOPLPW 123,45 PLN Invoice FV/1/2026
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-iban-nrb-validator, poland-swift-bic-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish SEPA Transfer Helper
+  description:
+    en: Inspect Polish SEPA transfer readiness using IBAN, BIC, amount, and reference-field diagnostics.

@@ -231,6 +231,49 @@ This registry records production browser workbenches currently owned by ValidoHu
 - Current quality status: Production-quality V2 suite modeled after the PESEL gold standard.
 
 
+## Poland Expansion Workbench Suite
+
+- Source JS: `assets/js/tools/poland-expansion.js`
+- Related YAML tool pages:
+  - `tools/poland-id-card-validator.yaml`
+  - `tools/poland-swift-bic-inspector.yaml`
+  - `tools/poland-teryt-code-inspector.yaml`
+  - `tools/poland-blik-code-helper.yaml`
+  - `tools/poland-pln-amount-formatter.yaml`
+  - `tools/poland-vat-calculator.yaml`
+  - `tools/poland-date-locale-formatter.yaml`
+  - `tools/poland-address-formatter.yaml`
+  - `tools/poland-vin-validator.yaml`
+  - `tools/poland-eori-inspector.yaml`
+  - `tools/poland-pii-masker.yaml`
+  - `tools/poland-test-data-generator.yaml`
+  - `tools/poland-invoice-number-helper.yaml`
+  - `tools/poland-grosz-converter.yaml`
+  - `tools/poland-sepa-transfer-helper.yaml`
+- Algorithm ID:
+  - `validohub.poland-expansion`
+- Current capabilities:
+  - Polish ID card structure and checksum diagnostics.
+  - Polish BIC/SWIFT syntax and PL country-code inspection.
+  - TERYT-like administrative-code shape inspection.
+  - BLIK six-digit code helper with security boundary copy.
+  - PLN amount formatting and grosz conversion.
+  - Polish VAT net/VAT/gross calculator for common offline rates.
+  - Polish date and locale formatter for `pl-PL` and `Europe/Warsaw`.
+  - Polish address formatter and postal-code extraction.
+  - VIN structure and checksum validation for vehicle intake workflows.
+  - PL EORI syntax and NIP-like root inspection.
+  - Polish PII masker for logs/support workflows.
+  - Safe fictional Poland test-data generator.
+  - Invoice number normalization and fixture generation.
+  - Polish SEPA transfer readiness inspection.
+  - Shared presets, local history, batch validation, masking, field breakdown, quality notes, audit JSON, copy helpers, and mobile-safe layout.
+- Known future ideas:
+  - Dedicated official-reference docs per tool after source audit.
+  - Deeper TERYT/SIMC/ULIC dictionaries if local datasets are approved.
+  - Larger bank/BIC dictionary and CSV import/export.
+- Current quality status: Production-quality V1 expansion pack modeled after PESEL and Poland Premium Suite.
+
 ## Countries Platform
 
 This is a product platform section, not a browser workbench plugin.

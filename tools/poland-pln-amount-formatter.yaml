@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-pln-amount-formatter
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: PLN Amount Formatter
+summary:
+  en: Normalize Polish zloty amounts, convert grosz, and format developer-safe money values.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Amount
+        required: true
+        placeholder:
+          en: 1 234,56 zł
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-grosz-converter, poland-vat-calculator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: PLN Amount Formatter
+  description:
+    en: Normalize Polish zloty amounts, convert grosz, and format developer-safe money values.

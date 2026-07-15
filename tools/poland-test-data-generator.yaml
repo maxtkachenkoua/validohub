@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-test-data-generator
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: Polish Test Data Generator
+summary:
+  en: Generate safe fictional Polish developer fixtures for identifiers, banking, phone, postal, and address forms.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Generation seed or profile
+        required: true
+        placeholder:
+          en: company checkout fixture
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-nip-validator, poland-regon-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish Test Data Generator
+  description:
+    en: Generate safe fictional Polish developer fixtures for identifiers, banking, phone, postal, and address forms.

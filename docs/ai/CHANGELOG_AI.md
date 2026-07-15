@@ -424,3 +424,23 @@ Impact:
 - The implementation remains entirely in ValidoHub assets and documentation.
 - Valido Engine remains generic and untouched.
 - No official registry lookup, VIES lookup, bank lookup, phone lookup, vehicle lookup, tax-status lookup, backend, REST API, database, or Java execution was added.
+
+## Poland Expansion Workbench Suite V1
+
+Changed:
+
+- Added fifteen additional browser-only Poland workbenches as a second premium country pack.
+- Added Polish ID card, BIC/SWIFT, TERYT, BLIK, PLN amount, VAT calculator, date/locale, address, VIN, EORI, PII masker, test-data generator, invoice number, grosz converter, and SEPA transfer helper pages.
+- Added shared `assets/js/tools/poland-expansion.js` with presets, local history, batch validation, masking, result cards, field breakdowns, quality notes, audit JSON, and copy helpers.
+- Added metadata-only `validohub.poland-expansion` and linked all new tools from the Poland country hub.
+- Added `docs/product/POLAND_EXPANSION_SUITE_SPEC.md`.
+
+Reason:
+
+Poland had enough high-confidence browser-only developer workflows to expand beyond PESEL and the first ten premium validators without changing Valido Engine or adding official lookup behavior.
+
+Impact:
+
+- The implementation remains entirely in ValidoHub assets, content, config, and documentation.
+- Valido Engine remains untouched.
+- No official registry lookup, banking lookup, payment execution, customs lookup, vehicle lookup, tax-status lookup, backend, REST API, database, or Java execution was added.

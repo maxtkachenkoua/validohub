@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-invoice-number-helper
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: Polish Invoice Number Helper
+summary:
+  en: Normalize invoice numbering patterns, detect year/sequence hints, and generate safe invoice fixtures.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Invoice number
+        required: true
+        placeholder:
+          en: FV/2026/07/00123
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-vat-calculator, poland-vat-calculator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish Invoice Number Helper
+  description:
+    en: Normalize invoice numbering patterns, detect year/sequence hints, and generate safe invoice fixtures.

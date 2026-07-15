@@ -40,6 +40,14 @@ algorithms:
       en: Poland Premium Suite Algorithm
     summary:
       en: Metadata entry for Polish NIP, REGON, IBAN/NRB, tax microaccount, postal code, phone, license plate, KRS, VAT, and bank-code workbenches.
+  - algorithmId: validohub.poland-expansion
+    javaClass: com.validohub.algorithms.poland.PolandExpansionAlgorithm
+    version: 1
+    capabilities: [validate, parse, generate, format, calculate, explain]
+    name:
+      en: Poland Expansion Suite Algorithm
+    summary:
+      en: Metadata entry for additional Polish browser-only workbenches covering ID cards, BIC/SWIFT, TERYT, BLIK, PLN, VAT, dates, addresses, VIN, EORI, PII masking, test data, invoices, grosz, and SEPA workflows.
   - algorithmId: validohub.spain-id
     javaClass: com.validohub.algorithms.spain.SpainIdAlgorithm
     version: 1

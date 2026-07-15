@@ -1,0 +1,1 @@
+Use official Polish government, tax, statistical, banking, postal, customs, transport, and EU resources when legal status matters. This page intentionally keeps network lookups out of the browser-only workflow.

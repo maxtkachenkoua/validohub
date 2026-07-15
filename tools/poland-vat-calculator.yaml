@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-vat-calculator
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: Polish VAT Calculator
+summary:
+  en: Calculate net, VAT, and gross values for common Polish VAT rates with rounding diagnostics.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Amount and VAT rate
+        required: true
+        placeholder:
+          en: 1234.56 23%
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-pln-amount-formatter, poland-vat-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish VAT Calculator
+  description:
+    en: Calculate net, VAT, and gross values for common Polish VAT rates with rounding diagnostics.

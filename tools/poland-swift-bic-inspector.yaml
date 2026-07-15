@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-swift-bic-inspector
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: Polish BIC / SWIFT Inspector
+summary:
+  en: Inspect BIC/SWIFT syntax, PL country code, branch segment, and banking integration boundaries.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: BIC / SWIFT
+        required: true
+        placeholder:
+          en: BPKOPLPW
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-iban-nrb-validator, poland-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish BIC / SWIFT Inspector
+  description:
+    en: Inspect BIC/SWIFT syntax, PL country code, branch segment, and banking integration boundaries.

@@ -31,14 +31,21 @@
       "REGON",
       "KRS",
       "VAT",
-      "NRB"
+      "NRB",
+      "ID card",
+      "EORI",
+      "VIN",
+      "TERYT"
     ],
     "payments": [
       "IBAN",
       "BLIK",
       "SEPA",
       "NRB",
-      "Tax microaccount"
+      "Tax microaccount",
+      "BIC",
+      "SWIFT",
+      "PLN"
     ],
     "features": [
       "identity",
@@ -49,7 +56,12 @@
       "postal",
       "phone",
       "vehicle",
-      "business"
+      "business",
+      "commerce",
+      "data-quality",
+      "localization",
+      "vehicles",
+      "customs"
     ],
     "availableWorkbenches": [
       "PESEL Validator",
@@ -62,10 +74,25 @@
       "Polish License Plate Inspector",
       "KRS Number Inspector",
       "Polish VAT / EU VAT Syntax Workbench",
-      "Polish Bank Code / NRB Inspector"
+      "Polish Bank Code / NRB Inspector",
+      "Polish ID Card Validator",
+      "Polish BIC / SWIFT Inspector",
+      "TERYT Code Inspector",
+      "BLIK Code Helper",
+      "PLN Amount Formatter",
+      "Polish VAT Calculator",
+      "Polish Date / Locale Formatter",
+      "Polish Address Formatter",
+      "VIN Validator for Poland Workflows",
+      "Polish EORI Inspector",
+      "Polish PII Masker",
+      "Polish Test Data Generator",
+      "Polish Invoice Number Helper",
+      "PLN Grosz Converter",
+      "Polish SEPA Transfer Helper"
     ],
     "plannedWorkbenches": [],
-    "completion": 78,
+    "completion": 90,
     "coordinates": {
       "x": 52,
       "y": 34
@@ -669,7 +696,7 @@
       {
         "brandKey": "swift",
         "name": "BIC / SWIFT",
-        "status": "ready",
+        "status": "available",
         "category": "Banking",
         "tags": [
           "banking",
@@ -995,6 +1022,156 @@
         ],
         "description": "Extract Polish bank and branch segments from valid NRB or PL IBAN input.",
         "path": "poland-bank-code-inspector/"
+      },
+      "Polish ID Card Validator": {
+        "status": "available",
+        "tags": [
+          "identifiers",
+          "poland",
+          "workbench"
+        ],
+        "description": "Validate and explain Polish dowod osobisty number structure and checksum with offline diagnostics.",
+        "path": "poland-id-card-validator/"
+      },
+      "Polish BIC / SWIFT Inspector": {
+        "status": "available",
+        "tags": [
+          "finance",
+          "poland",
+          "workbench"
+        ],
+        "description": "Inspect BIC/SWIFT syntax, PL country code, branch segment, and banking integration boundaries.",
+        "path": "poland-swift-bic-inspector/"
+      },
+      "TERYT Code Inspector": {
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "poland",
+          "workbench"
+        ],
+        "description": "Inspect Polish TERYT-like administrative code shapes for voivodeship, county, gmina, SIMC, and ULIC workflows.",
+        "path": "poland-teryt-code-inspector/"
+      },
+      "BLIK Code Helper": {
+        "status": "available",
+        "tags": [
+          "finance",
+          "poland",
+          "workbench"
+        ],
+        "description": "Validate BLIK code shape, generate safe fictional fixtures, and explain browser-only security boundaries.",
+        "path": "poland-blik-code-helper/"
+      },
+      "PLN Amount Formatter": {
+        "status": "available",
+        "tags": [
+          "finance",
+          "poland",
+          "workbench"
+        ],
+        "description": "Normalize Polish zloty amounts, convert grosz, and format developer-safe money values.",
+        "path": "poland-pln-amount-formatter/"
+      },
+      "Polish VAT Calculator": {
+        "status": "available",
+        "tags": [
+          "finance",
+          "poland",
+          "workbench"
+        ],
+        "description": "Calculate net, VAT, and gross values for common Polish VAT rates with rounding diagnostics.",
+        "path": "poland-vat-calculator/"
+      },
+      "Polish Date / Locale Formatter": {
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "poland",
+          "workbench"
+        ],
+        "description": "Format dates for pl-PL, Europe/Warsaw, ISO, display, and developer payload workflows.",
+        "path": "poland-date-locale-formatter/"
+      },
+      "Polish Address Formatter": {
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "poland",
+          "workbench"
+        ],
+        "description": "Normalize Polish address lines, postal codes, building/apartment hints, and developer payload shapes.",
+        "path": "poland-address-formatter/"
+      },
+      "VIN Validator for Poland Workflows": {
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "poland",
+          "workbench"
+        ],
+        "description": "Validate VIN structure and checksum for fleet, insurance, parking, and vehicle intake workflows.",
+        "path": "poland-vin-validator/"
+      },
+      "Polish EORI Inspector": {
+        "status": "available",
+        "tags": [
+          "finance",
+          "poland",
+          "workbench"
+        ],
+        "description": "Inspect PL EORI syntax, NIP-like roots, customs workflow boundaries, and safe fixture formats.",
+        "path": "poland-eori-inspector/"
+      },
+      "Polish PII Masker": {
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "poland",
+          "workbench"
+        ],
+        "description": "Mask Polish identifiers, account numbers, phones, emails, and address-like values for logs and support.",
+        "path": "poland-pii-masker/"
+      },
+      "Polish Test Data Generator": {
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "poland",
+          "workbench"
+        ],
+        "description": "Generate safe fictional Polish developer fixtures for identifiers, banking, phone, postal, and address forms.",
+        "path": "poland-test-data-generator/"
+      },
+      "Polish Invoice Number Helper": {
+        "status": "available",
+        "tags": [
+          "finance",
+          "poland",
+          "workbench"
+        ],
+        "description": "Normalize invoice numbering patterns, detect year/sequence hints, and generate safe invoice fixtures.",
+        "path": "poland-invoice-number-helper/"
+      },
+      "PLN Grosz Converter": {
+        "status": "available",
+        "tags": [
+          "finance",
+          "poland",
+          "workbench"
+        ],
+        "description": "Convert PLN to grosz and grosz to PLN with precise rounding and copyable developer payloads.",
+        "path": "poland-grosz-converter/"
+      },
+      "Polish SEPA Transfer Helper": {
+        "status": "available",
+        "tags": [
+          "finance",
+          "poland",
+          "workbench"
+        ],
+        "description": "Inspect Polish SEPA transfer readiness using IBAN, BIC, amount, and reference-field diagnostics.",
+        "path": "poland-sepa-transfer-helper/"
       }
     },
     "futureCountryPages": [

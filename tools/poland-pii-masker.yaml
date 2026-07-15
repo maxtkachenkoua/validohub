@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-pii-masker
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: Polish PII Masker
+summary:
+  en: Mask Polish identifiers, account numbers, phones, emails, and address-like values for logs and support.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Text containing Polish PII
+        required: true
+        placeholder:
+          en: NIP 1234563218, phone +48 501 234 567
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-nip-validator, poland-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish PII Masker
+  description:
+    en: Mask Polish identifiers, account numbers, phones, emails, and address-like values for logs and support.

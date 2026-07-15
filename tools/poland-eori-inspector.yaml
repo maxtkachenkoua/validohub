@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-eori-inspector
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: Polish EORI Inspector
+summary:
+  en: Inspect PL EORI syntax, NIP-like roots, customs workflow boundaries, and safe fixture formats.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: EORI
+        required: true
+        placeholder:
+          en: PL1234563218
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-nip-validator, poland-vat-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish EORI Inspector
+  description:
+    en: Inspect PL EORI syntax, NIP-like roots, customs workflow boundaries, and safe fixture formats.

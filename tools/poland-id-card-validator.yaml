@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-id-card-validator
+kind: tool
+module: validohub
+country: PL
+category: national-identifiers
+status: active
+name:
+  en: Polish ID Card Validator
+summary:
+  en: Validate and explain Polish dowod osobisty number structure and checksum with offline diagnostics.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: ID card number
+        required: true
+        placeholder:
+          en: ABA300000
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [pesel-validator, poland-nip-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Polish ID Card Validator
+  description:
+    en: Validate and explain Polish dowod osobisty number structure and checksum with offline diagnostics.

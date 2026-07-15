@@ -1,0 +1,1 @@
+Store normalized values separately from raw user input when audits require it. Keep masked values for logs and support tickets. Use the audit JSON and generated test case copy helpers to build repeatable unit tests around your own validation layer.

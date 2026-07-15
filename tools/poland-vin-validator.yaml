@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-vin-validator
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: VIN Validator for Poland Workflows
+summary:
+  en: Validate VIN structure and checksum for fleet, insurance, parking, and vehicle intake workflows.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: VIN
+        required: true
+        placeholder:
+          en: 1HGCM82633A004352
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-license-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: VIN Validator for Poland Workflows
+  description:
+    en: Validate VIN structure and checksum for fleet, insurance, parking, and vehicle intake workflows.

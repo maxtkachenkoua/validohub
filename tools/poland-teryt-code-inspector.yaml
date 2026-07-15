@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-teryt-code-inspector
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: TERYT Code Inspector
+summary:
+  en: Inspect Polish TERYT-like administrative code shapes for voivodeship, county, gmina, SIMC, and ULIC workflows.
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-expansion
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: TERYT code
+        required: true
+        placeholder:
+          en: 1465011
+    actions: [validate, parse, generate, explain]
+related:
+  explicit: [poland-postal-code-validator, poland-address-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: TERYT Code Inspector
+  description:
+    en: Inspect Polish TERYT-like administrative code shapes for voivodeship, county, gmina, SIMC, and ULIC workflows.
