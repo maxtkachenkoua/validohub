@@ -3,7 +3,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildRouteRegistry } from './route-registry.mjs';
 import { normalizeCountryData } from './country-page-model.mjs';
-import { renderCountryVisualHero, renderCountryCompletionCard } from './render-country-visuals.mjs';
+import { renderCountryVisualHero } from './render-country-visuals.mjs';
 import {
   renderCountryIdentityFacts,
   renderCountryLocaleFacts,
@@ -142,7 +142,6 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest) {
 
     // Pre-render country portal sections in a product-first order: actions, tools, then reference material.
     const sections = [];
-    sections.push(renderCountryCompletionCard(model));
     sections.push(renderCountryQuickCopyBar(model));
     sections.push(renderCountryWorkbenchCatalog(model, routeRegistry));
     sections.push(renderCountryIdentifiers(model, routeRegistry));

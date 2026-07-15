@@ -235,6 +235,7 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
     <div class="vh-country-route-groups">
       ${groups.map((group, index) => renderExpandableRouteGroup(group, index < 2)).join('\n')}
     </div>
+    <p class="vh-country-tool-search-empty" data-country-tool-search-empty>No matching workbenches found. Try PESEL, VAT, IBAN, BLIK, address, phone, or invoice.</p>
   `;
 
   const content = `

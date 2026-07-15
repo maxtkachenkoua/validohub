@@ -149,6 +149,14 @@ export async function renderCountryVisualHero(model) {
           <span class="vh-country-status-badge vh-country-status-ready">Static V2 Compiled</span>
           <span class="vh-country-status-badge vh-country-status-badge vh-custom-badge">${escapeHtml(model.region)}</span>
         </div>
+        <form class="vh-country-tool-search" role="search" data-country-tool-search>
+          <label for="vh-country-tool-search-${escapeHtml(model.slug)}">Find a country tool</label>
+          <div class="vh-country-tool-search-control">
+            <input id="vh-country-tool-search-${escapeHtml(model.slug)}" class="vh-country-tool-search-input" type="search" placeholder="Search PESEL, BLIK, VAT, IBAN..." autocomplete="off" data-country-tool-search-input>
+            <button type="button" data-country-tool-search-clear aria-label="Clear country tool search">Clear</button>
+          </div>
+          <p class="vh-country-tool-search-status" data-country-tool-search-status>Search across available workbenches on this page.</p>
+        </form>
       </div>
       <div class="vh-country-visual-grid">
         ${outlineHtml}
