@@ -9,6 +9,7 @@ import {
   renderCountryLocaleFacts,
   renderCountryTechnicalFacts,
   renderCountryQuickCopyBar,
+  renderCountryWorkbenchCatalog,
   renderCountryFormattingExamples,
   renderCountryAddressFormat,
   renderCountryPhoneFormats,
@@ -139,25 +140,26 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest) {
     const model = normalizeCountryData(data);
     const countryDiscovery = discoveryData.countries[slug] || { relatedCountries: [], relatedResources: { authorities: [], identifiers: [], payments: [], standards: [], workbenches: [] } };
 
-    // Pre-render all developer portal sections in exact requested order
+    // Pre-render country portal sections in a product-first order: actions, tools, then reference material.
     const sections = [];
     sections.push(renderCountryCompletionCard(model));
+    sections.push(renderCountryQuickCopyBar(model));
+    sections.push(renderCountryWorkbenchCatalog(model, routeRegistry));
+    sections.push(renderCountryIdentifiers(model, routeRegistry));
+    sections.push(renderCountryValidators(model, routeRegistry));
+    sections.push(renderCountryTaxSystem(model, data.hub));
+    sections.push(renderCountryBankingSystem(model, routeRegistry));
+    sections.push(renderCountryPaymentSystems(model, routeRegistry));
+    sections.push(renderCountryOfficialResources(model));
     sections.push(renderCountryIdentityFacts(model));
     sections.push(renderCountryLocaleFacts(model));
     sections.push(renderCountryTechnicalFacts(model));
-    sections.push(renderCountryQuickCopyBar(model));
     sections.push(await renderCountryAddressFormat(model));
     sections.push(renderCountryPhoneFormats(model));
     sections.push(renderCountryVehicleRegistration(model, data.hub));
     sections.push(renderCountryAdministrativeDivisions(model, data.hub));
-    sections.push(renderCountryIdentifiers(model, routeRegistry));
-    sections.push(renderCountryValidators(model, routeRegistry));
-    sections.push(renderCountryTaxSystem(model, data.hub));
-    sections.push(renderCountryBankingSystem(model));
-    sections.push(renderCountryPaymentSystems(model));
     sections.push(renderCountryIntegrationChecklist(model));
     sections.push(renderCountryRoadmap(model));
-    sections.push(renderCountryOfficialResources(model));
     sections.push(renderCountryKnowledgeGraph(model, countryDiscovery, routeRegistry));
     sections.push(renderCountryRelatedCountries(model, countryDiscovery, routeRegistry));
     sections.push(renderCountryHighlights(model, data.hub));

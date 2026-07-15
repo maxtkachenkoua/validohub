@@ -3771,6 +3771,16 @@
           "text": "Poland uses PLN and participates in IBAN-based European banking flows. Domestic transfers use local clearing systems (Elixir)."
         },
         {
+          "icon": "🏦",
+          "title": "NRB domestic account",
+          "status": "ready",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "text": "Domestic Polish account numbers use a 26-digit NRB structure that maps cleanly into a PL-prefixed IBAN."
+        },
+        {
           "brandKey": "sepa",
           "title": "SEPA",
           "status": "ready",
@@ -3779,6 +3789,36 @@
             "banking"
           ],
           "text": "SEPA credit transfers apply to Euro-denominated payments, but domestic flows mostly use PLN-native routing."
+        },
+        {
+          "icon": "🧾",
+          "title": "Split payment / MPP",
+          "status": "available",
+          "tags": [
+            "payments",
+            "tax"
+          ],
+          "text": "Polish split payment workflows separate VAT amount, supplier NIP, invoice reference, and gross transfer amount."
+        },
+        {
+          "icon": "▦",
+          "title": "Payment QR payloads",
+          "status": "available",
+          "tags": [
+            "payments",
+            "banking"
+          ],
+          "text": "QR-like payment payloads are useful for transfer intent, amount, recipient account, and reference-field testing."
+        },
+        {
+          "icon": "🏛",
+          "title": "Tax microaccount",
+          "status": "available",
+          "tags": [
+            "payments",
+            "tax"
+          ],
+          "text": "Tax microaccount calculations depend on PESEL or NIP input and must be treated as payment-routing support, not a bank lookup."
         },
         {
           "brandKey": "swift",
@@ -3792,12 +3832,12 @@
         {
           "icon": "💸",
           "title": "BLIK",
-          "status": "planned",
+          "status": "available",
           "tags": [
             "payments",
             "banking"
           ],
-          "text": "BLIK appears in Polish consumer payment checkouts. Treat it as future product research, not a validation feature."
+          "text": "BLIK uses short-lived six-digit consumer codes. The workbench validates shape and safe fixture behavior without pretending to verify live codes."
         },
         {
           "icon": "💳",
@@ -3807,6 +3847,16 @@
             "payments"
           ],
           "text": "Debit and credit card flows follow global card network schemas plus Polish locale amount formatting conventions."
+        },
+        {
+          "icon": "zł",
+          "title": "PLN amount and grosz",
+          "status": "available",
+          "tags": [
+            "payments",
+            "currency"
+          ],
+          "text": "Polish money tools normalize comma decimals, grosz integer values, VAT rates, and copyable developer payloads."
         }
       ],
       "officialResources": [
@@ -3853,6 +3903,96 @@
             "addresses"
           ],
           "note": "Postal authority and official postcode database lookup."
+        },
+        {
+          "label": "Krajowy Rejestr Sądowy",
+          "status": "available",
+          "tags": [
+            "government",
+            "business"
+          ],
+          "note": "National Court Register context for KRS-shaped business identifiers and company records."
+        },
+        {
+          "label": "CEIDG",
+          "status": "available",
+          "tags": [
+            "government",
+            "business"
+          ],
+          "note": "Central register context for sole-proprietor onboarding and business-data readiness checks."
+        },
+        {
+          "label": "KSeF / e-Faktura",
+          "status": "available",
+          "tags": [
+            "tax",
+            "invoices"
+          ],
+          "note": "National e-invoicing context for KSeF XML payloads, invoice identifiers, and offline readiness."
+        },
+        {
+          "label": "JPK / Ministerstwo Finansów",
+          "status": "available",
+          "tags": [
+            "tax",
+            "xml"
+          ],
+          "note": "Reference context for Polish tax control files, VAT reporting data, and XML submission readiness."
+        },
+        {
+          "label": "TERYT / SIMC / ULIC",
+          "status": "available",
+          "tags": [
+            "government",
+            "addresses"
+          ],
+          "note": "Territorial and locality classification context for voivodeships, counties, municipalities, towns, and streets."
+        },
+        {
+          "label": "BDO Registry",
+          "status": "available",
+          "tags": [
+            "government",
+            "environment"
+          ],
+          "note": "Waste database and product-packaging register context for BDO-shaped business identifiers."
+        },
+        {
+          "label": "CEPiK",
+          "status": "available",
+          "tags": [
+            "vehicles",
+            "government"
+          ],
+          "note": "Vehicle and driver registry context for plates, VIN workflows, registration certificates, and licence data."
+        },
+        {
+          "label": "UFG",
+          "status": "available",
+          "tags": [
+            "insurance",
+            "vehicles"
+          ],
+          "note": "Insurance guarantee fund context for vehicle insurance and policy-number workflows."
+        },
+        {
+          "label": "Krajowa Administracja Skarbowa",
+          "status": "available",
+          "tags": [
+            "customs",
+            "tax"
+          ],
+          "note": "Customs and tax administration context for EORI, VAT, tax microaccounts, and compliance identifiers."
+        },
+        {
+          "label": "NBP exchange and banking context",
+          "status": "available",
+          "tags": [
+            "banking",
+            "currency"
+          ],
+          "note": "Central-bank context for PLN, bank metadata, exchange-rate references, and financial institution naming."
         }
       ],
       "plannedWorkbenches": [],
@@ -4519,6 +4659,25 @@
           "description": "PL-prefixed IBAN format is standard for international transfers."
         },
         {
+          "icon": "🏦",
+          "name": "NRB domestic account",
+          "status": "available",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "The 26-digit domestic account layout carries control digits, bank segment, branch context, and account sequence."
+        },
+        {
+          "icon": "🏦",
+          "name": "Bank code segment",
+          "status": "available",
+          "tags": [
+            "banking"
+          ],
+          "description": "Bank and branch hints can be extracted from a structurally valid NRB or PL IBAN without doing an official lookup."
+        },
+        {
           "brandKey": "sepa",
           "name": "SEPA",
           "status": "ready",
@@ -4540,21 +4699,60 @@
         {
           "icon": "💸",
           "name": "BLIK",
-          "status": "planned",
+          "status": "available",
           "tags": [
             "payments",
             "banking"
           ],
-          "description": "Widely popular domestic instant mobile payment solution using 6-digit codes."
+          "description": "Widely popular domestic instant mobile payment solution using six-digit short-lived codes."
         },
         {
           "icon": "🏦",
           "name": "Domestic account context",
-          "status": "planned",
+          "status": "ready",
           "tags": [
             "banking"
           ],
           "description": "Elixir is the domestic clearing system processing PLN transfers in three daily sessions."
+        },
+        {
+          "icon": "🧾",
+          "name": "Split payment / MPP",
+          "status": "available",
+          "tags": [
+            "payments",
+            "tax"
+          ],
+          "description": "Split-payment transfers combine gross amount, VAT amount, invoice reference, and supplier NIP into one banking workflow."
+        },
+        {
+          "icon": "🏛",
+          "name": "Tax microaccount",
+          "status": "available",
+          "tags": [
+            "tax",
+            "payments"
+          ],
+          "description": "Tax microaccount helpers derive payment-account context from PESEL or NIP input for offline pre-checks."
+        },
+        {
+          "icon": "▦",
+          "name": "Payment QR and title fields",
+          "status": "available",
+          "tags": [
+            "payments"
+          ],
+          "description": "Payment QR and transfer title workflows standardize amount, account, recipient, reference, and invoice text before banking handoff."
+        },
+        {
+          "icon": "zł",
+          "name": "PLN, grosz and VAT amounts",
+          "status": "available",
+          "tags": [
+            "currency",
+            "payments"
+          ],
+          "description": "Polish money workflows need comma decimals, integer grosz payloads, VAT rounding, and copyable audit output."
         }
       ],
       "localizationNotes": [

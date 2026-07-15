@@ -53,6 +53,7 @@ function createInfoCard(title, text, icon = null, status = null, related = [], h
   const tag = href ? 'a' : 'article';
   const hrefAttr = href ? `href="${href}"` : '';
   const disabledClass = disabled ? 'is-disabled' : '';
+  const linkClass = href ? 'is-linked' : 'is-reference';
   
   const statusBadge = status 
     ? `<span class="vh-country-status-badge vh-country-status-${status.toLowerCase() === 'ready' ? 'ready' : (status.toLowerCase() === 'available' ? 'ready' : 'in-progress')}">${escapeHtml(status)}</span>`
@@ -65,7 +66,7 @@ function createInfoCard(title, text, icon = null, status = null, related = [], h
     : '';
 
   const html = `
-    <${tag} class="vh-country-info-card ${disabledClass}" ${hrefAttr}>
+    <${tag} class="vh-country-info-card ${disabledClass} ${linkClass}" ${hrefAttr}>
       <div class="vh-flex vh-align-center vh-justify-between vh-gap-sm">
         <div class="vh-flex vh-align-center vh-gap-xs">
           ${iconBlock}
@@ -78,6 +79,170 @@ function createInfoCard(title, text, icon = null, status = null, related = [], h
     </${tag}>
   `;
   return html;
+}
+
+function getCountryValidatorRoutes(model, routeRegistry) {
+  if (!routeRegistry) return [];
+  return routeRegistry.getAll()
+    .filter(r => r.type === 'validator' && r.path.startsWith(`/en/${model.slug}/`))
+    .sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+}
+
+function routeSlug(route) {
+  return route.path.split('/').filter(Boolean).at(-1) || '';
+}
+
+function createRouteCard(route, description, tags = [], status = 'available') {
+  return createInfoCard(
+    route.title || 'Interactive Workbench',
+    description || 'Run a browser-only country validation, formatting, or data-quality workflow.',
+    null,
+    status,
+    tags,
+    route.path
+  );
+}
+
+const POLAND_WORKBENCH_GROUPS = [
+  {
+    key: 'identity',
+    title: 'Identity, registry & official numbers',
+    summary: 'PESEL, NIP, REGON, KRS, documents, vehicle identifiers, and official registry-shaped data.',
+    tags: ['identity', 'registry'],
+    match: /(pesel|nip|regon|krs|id-card|passport|mrz|driving|license-plate|vehicle-registration|vin|eori|bdo|teryt|municipality)/
+  },
+  {
+    key: 'tax',
+    title: 'Tax, invoices & business compliance',
+    summary: 'VAT, KSeF, JPK, invoices, company onboarding, classifications, and fiscal record helpers.',
+    tags: ['tax', 'business'],
+    match: /(vat|ksef|jpk|invoice|receipt|paragon|pkd|pkwiu|ceidg|company|tax-microaccount)/
+  },
+  {
+    key: 'banking',
+    title: 'Banking, payments & money movement',
+    summary: 'IBAN, NRB, BIC, SEPA, BLIK, split payment, transfer titles, amounts, and payment QR payloads.',
+    tags: ['banking', 'payments'],
+    match: /(iban|nrb|bank|swift|bic|sepa|blik|split-payment|payment-qr|transfer-title|grosz|pln-amount|statement)/
+  },
+  {
+    key: 'address',
+    title: 'Address, phone, logistics & local format',
+    summary: 'Postal codes, addresses, phones, parcel numbers, date/locale formatting, and delivery-ready data.',
+    tags: ['localization', 'operations'],
+    match: /(postal|address|phone|parcel|date-locale)/
+  },
+  {
+    key: 'developer',
+    title: 'Developer data operations',
+    summary: 'Masking, test fixtures, privacy-safe demos, and whole-record Polish data-quality audits.',
+    tags: ['developer', 'data-quality'],
+    match: /(pii-masker|test-data|data-quality)/
+  }
+];
+
+function groupCountryWorkbenchRoutes(routes) {
+  const buckets = POLAND_WORKBENCH_GROUPS.map(group => ({ ...group, routes: [] }));
+  const other = { key: 'other', title: 'Other country developer workflows', summary: 'Additional country-specific tools and inspectors.', tags: ['country'], routes: [] };
+
+  for (const route of routes) {
+    const slug = routeSlug(route);
+    const group = buckets.find(item => item.match.test(slug));
+    (group || other).routes.push(route);
+  }
+
+  return [...buckets, other].filter(group => group.routes.length > 0);
+}
+
+function renderExpandableRouteGroup(group, open = false) {
+  const rows = group.routes.map(route => `
+    <a class="vh-country-catalog-row" href="${route.path}">
+      <span>
+        <strong>${escapeHtml(route.title || route.path)}</strong>
+        <small>${escapeHtml(route.path)}</small>
+      </span>
+      <span class="vh-country-row-arrow" aria-hidden="true">→</span>
+    </a>
+  `).join('\n');
+
+  return `
+    <details class="vh-country-route-group" ${open ? 'open' : ''}>
+      <summary>
+        <span>
+          <strong>${escapeHtml(group.title)}</strong>
+          <small>${escapeHtml(group.summary)}</small>
+        </span>
+        <span class="vh-country-group-count">${group.routes.length}</span>
+      </summary>
+      <div class="vh-country-route-list">
+        ${rows}
+      </div>
+    </details>
+  `;
+}
+
+function findRoutes(routes, pattern) {
+  return routes.filter(route => pattern.test(routeSlug(route)) || pattern.test((route.title || '').toLowerCase()));
+}
+
+function findFirstRoute(routes, patterns) {
+  for (const pattern of patterns) {
+    const found = routes.find(route => pattern.test(routeSlug(route)) || pattern.test((route.title || '').toLowerCase()));
+    if (found) return found;
+  }
+  return null;
+}
+
+function findCountryStandardRoute(routes, label) {
+  const text = String(label || '').toLowerCase();
+  if (text.includes('bank code')) return findFirstRoute(routes, [/bank-code/]);
+  if (text.includes('nrb domestic') || text.includes('iban') || text.includes('pln and polish iban')) return findFirstRoute(routes, [/iban-nrb/]);
+  if (text.includes('swift') || text.includes('bic')) return findFirstRoute(routes, [/swift-bic/]);
+  if (text.includes('sepa')) return findFirstRoute(routes, [/sepa-transfer/]);
+  if (text.includes('blik')) return findFirstRoute(routes, [/blik-code/]);
+  if (text.includes('split') || text.includes('mpp')) return findFirstRoute(routes, [/split-payment/]);
+  if (text.includes('payment qr')) return findFirstRoute(routes, [/payment-qr/]);
+  if (text.includes('tax microaccount')) return findFirstRoute(routes, [/tax-microaccount/]);
+  if (text.includes('grosz')) return findFirstRoute(routes, [/grosz-converter/]);
+  if (text.includes('pln amount')) return findFirstRoute(routes, [/pln-amount/]);
+  if (text.includes('domestic account')) return findFirstRoute(routes, [/bank-code/, /iban-nrb/]);
+  return null;
+}
+
+export function renderCountryWorkbenchCatalog(model, routeRegistry) {
+  const routes = getCountryValidatorRoutes(model, routeRegistry);
+  if (routes.length === 0) return '';
+
+  const featuredPatterns = /(pesel-validator|poland-nip-validator|poland-regon-validator|poland-iban-nrb-validator|poland-vat-validator|poland-krs-inspector|poland-postal-code-validator|poland-phone-number-validator|poland-blik-code-helper|poland-ksef-invoice-xml-validator)/;
+  const featured = routes.filter(route => featuredPatterns.test(routeSlug(route))).slice(0, 10);
+  const groups = groupCountryWorkbenchRoutes(routes);
+
+  const stats = `
+    <div class="vh-country-catalog-stats" aria-label="Country workbench coverage">
+      <span><strong>${routes.length}</strong><small>available workbenches</small></span>
+      <span><strong>${groups.length}</strong><small>organized domains</small></span>
+      <span><strong>0</strong><small>server calls required</small></span>
+    </div>
+  `;
+
+  const featuredHtml = featured.length > 0 ? `
+    <div class="vh-country-featured-tools" aria-label="Featured country workbenches">
+      ${featured.map(route => createRouteCard(route, 'Open the production-grade browser workbench for this country data standard.', ['featured', 'offline'])).join('\n')}
+    </div>
+  ` : '';
+
+  const groupsHtml = `
+    <div class="vh-country-route-groups">
+      ${groups.map((group, index) => renderExpandableRouteGroup(group, index < 2)).join('\n')}
+    </div>
+  `;
+
+  const content = `
+    ${stats}
+    ${featuredHtml}
+    ${groupsHtml}
+  `;
+  return createSection('Tool Catalog', `${model.displayName} workbench suite`, 'country-workbench-catalog', 'All country-specific tools grouped by user intent so developers can scan the whole country baseline without a wall of cards.', content);
 }
 
 // 1. Facts Sections
@@ -126,18 +291,25 @@ export function renderCountryTechnicalFacts(model) {
 // 2. Developer Cheat Sheets & Quick Copy
 export function renderCountryQuickCopyBar(model) {
   const items = [
-    { label: 'Locale', val: model.locale },
-    { label: 'ISO-2', val: model.iso2 },
-    { label: 'Calling Code', val: model.callingCode },
-    { label: 'TLD', val: model.internetTld },
-    { label: 'Postal Pattern', val: model.postalCode }
+    { label: 'Locale', val: model.locale, hint: 'BCP 47' },
+    { label: 'ISO-2', val: model.iso2, hint: 'country code' },
+    { label: 'ISO-3', val: model.iso3, hint: 'alpha-3' },
+    { label: 'Calling code', val: model.callingCode, hint: 'phone' },
+    { label: 'TLD', val: model.internetTld, hint: 'domain' },
+    { label: 'Date format', val: model.dateFormats, hint: 'display' },
+    { label: 'Currency', val: model.currency, hint: 'money' },
+    { label: 'Postal pattern', val: model.postalCode, hint: 'address' },
+    { label: 'Decimal', val: model.decimalSeparator, hint: 'numbers' },
+    { label: 'Thousands', val: model.thousandsSeparator, hint: 'numbers' }
   ].filter(i => i.val);
 
   if (items.length === 0) return '';
 
   const buttonsHtml = items.map(item => `
     <button class="vh-country-action-button" type="button" data-copy-value="${escapeHtml(item.val)}" data-copy-label="${escapeHtml(item.label)}">
-      Copy ${escapeHtml(item.label)}
+      <span>${escapeHtml(item.label)}</span>
+      <strong>${escapeHtml(item.val)}</strong>
+      <small>${escapeHtml(item.hint)}</small>
     </button>
   `).join('\n');
 
@@ -146,7 +318,7 @@ export function renderCountryQuickCopyBar(model) {
       ${buttonsHtml}
     </div>
   `;
-  return createSection('Developer Actions', 'Copy common developer values', 'country-quick-actions', 'Fast one-click copy buttons for constants and configurations.', content);
+  return createSection('Developer Actions', `Copy ${model.displayName} constants instantly`, 'country-quick-actions', 'One-click values developers repeatedly need for forms, payloads, tests, and locale-aware formatting.', content);
 }
 
 // 3. Formatting Examples (Currency, dates, percentages)
@@ -188,7 +360,7 @@ export function renderCountryAddressFormat(model) {
       ${fieldsGrid}
     </div>
   `;
-  return createSection('Address Standards', 'Structured address formatting', 'country-address-format', 'Polish display guidelines, fields sequence, and postal layout regulations.', content);
+  return createSection('Address Standards', 'Structured address formatting', 'country-address-format', 'Display order, postal mask, street notation, and delivery-ready field sequence.', content);
 }
 
 // 5. Phone & Vehicle Registration
@@ -248,30 +420,71 @@ export function renderCountryTaxSystem(model, rawHubData) {
   return createSection('Tax System', 'Business registration & tax overview', 'country-tax-system', 'Tax identification numbers, vat rules, and compliance requirements.', content);
 }
 
-export function renderCountryBankingSystem(model) {
+export function renderCountryBankingSystem(model, routeRegistry = null) {
   if (!model.bankingSystem || model.bankingSystem.length === 0) return '';
 
-  const cardsHtml = model.bankingSystem.map(bank => createInfoCard(bank.name, bank.description, '🏦', bank.status || 'available', bank.tags || [])).join('\n');
+  const routes = getCountryValidatorRoutes(model, routeRegistry);
+  const toolRoutes = findRoutes(routes, /(iban|nrb|bank|swift|bic|sepa|blik|split-payment|payment-qr|transfer-title|grosz|pln-amount|statement|tax-microaccount)/).slice(0, 12);
+
+  const cardsHtml = model.bankingSystem.map(bank => {
+    const relatedRoute = findCountryStandardRoute(routes, bank.name);
+    return createInfoCard(bank.name, bank.description, '🏦', bank.status || 'available', bank.tags || [], relatedRoute?.path || null);
+  }).join('\n');
+  const toolsHtml = toolRoutes.length > 0 ? `
+    <div class="vh-country-subsection">
+      <h3>Related banking workbenches</h3>
+      <div class="vh-country-route-list vh-country-route-list-compact">
+        ${toolRoutes.map(route => `
+          <a class="vh-country-catalog-row" href="${route.path}">
+            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(route.path)}</small></span>
+            <span class="vh-country-row-arrow" aria-hidden="true">→</span>
+          </a>
+        `).join('\n')}
+      </div>
+    </div>
+  ` : '';
 
   const content = `
     <div class="vh-country-card-grid-compact">
       ${cardsHtml}
     </div>
+    ${toolsHtml}
   `;
-  return createSection('Banking Standards', 'National banking routing structures', 'country-banking-system', 'Clearance rails, SWIFT transfers, and account layouts.', content);
+  return createSection('Banking Standards', 'Polish account, transfer & clearing standards', 'country-banking-system', 'IBAN, NRB, BIC, SEPA, Elixir-style routing context, and payment-ready developer workflows.', content);
 }
 
-export function renderCountryPaymentSystems(model) {
+export function renderCountryPaymentSystems(model, routeRegistry = null) {
   if (!model.paymentSystems || model.paymentSystems.length === 0) return '';
 
-  const cardsHtml = model.paymentSystems.map(pay => createInfoCard(pay.title || pay.name, pay.text || pay.description, '💳', pay.status || 'available', pay.tags || [])).join('\n');
+  const routes = getCountryValidatorRoutes(model, routeRegistry);
+  const toolRoutes = findRoutes(routes, /(blik|split-payment|payment-qr|sepa|transfer-title|tax-microaccount|vat-calculator|grosz|pln-amount|iban|nrb)/).slice(0, 12);
+
+  const cardsHtml = model.paymentSystems.map(pay => {
+    const title = pay.title || pay.name;
+    const relatedRoute = findCountryStandardRoute(routes, title);
+    return createInfoCard(title, pay.text || pay.description, '💳', pay.status || 'available', pay.tags || [], relatedRoute?.path || null);
+  }).join('\n');
+  const toolsHtml = toolRoutes.length > 0 ? `
+    <div class="vh-country-subsection">
+      <h3>Related payment workbenches</h3>
+      <div class="vh-country-route-list vh-country-route-list-compact">
+        ${toolRoutes.map(route => `
+          <a class="vh-country-catalog-row" href="${route.path}">
+            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(route.path)}</small></span>
+            <span class="vh-country-row-arrow" aria-hidden="true">→</span>
+          </a>
+        `).join('\n')}
+      </div>
+    </div>
+  ` : '';
 
   const content = `
     <div class="vh-country-card-grid-compact">
       ${cardsHtml}
     </div>
+    ${toolsHtml}
   `;
-  return createSection('Payment Networks', 'Supported payment networks and tools', 'country-payment-systems', 'Instant mobile tokens, clearing loops, and card network parameters.', content);
+  return createSection('Payment Networks', 'Polish payment rails & offline helpers', 'country-payment-systems', 'BLIK, SEPA, split payment, payment QR, PLN amounts, VAT amounts, and transfer-reference workflows.', content);
 }
 
 // 7. National Identifiers & Validators
@@ -279,7 +492,9 @@ export function renderCountryIdentifiers(model, routeRegistry) {
   if (!model.identifiers || model.identifiers.length === 0) return '';
 
   const idRoutes = routeRegistry.getAll().filter(r => r.type === 'identifier' && r.metadata.countryCode === model.iso2);
-  if (idRoutes.length === 0) return '';
+  const validatorRoutes = getCountryValidatorRoutes(model, routeRegistry);
+  const identifierRoutes = findRoutes(validatorRoutes, /(pesel|nip|regon|krs|id-card|passport|mrz|driving|license-plate|vehicle-registration|vin|eori|bdo|teryt|municipality|ppe|postal-code|phone-number)/);
+  if (idRoutes.length === 0 && identifierRoutes.length === 0) return '';
 
   const cardsHtml = idRoutes.map(r => {
     return createInfoCard(
@@ -292,18 +507,33 @@ export function renderCountryIdentifiers(model, routeRegistry) {
     );
   }).join('\n');
 
-  const content = `
-    <div class="vh-country-card-grid-compact">
-      ${cardsHtml}
+  const routeGroups = identifierRoutes.length > 0 ? `
+    <div class="vh-country-subsection">
+      <h3>${identifierRoutes.length} related identifier workbenches</h3>
+      <div class="vh-country-route-list vh-country-route-list-compact">
+        ${identifierRoutes.map(route => `
+          <a class="vh-country-catalog-row" href="${route.path}">
+            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(route.path)}</small></span>
+            <span class="vh-country-row-arrow" aria-hidden="true">→</span>
+          </a>
+        `).join('\n')}
+      </div>
     </div>
+  ` : '';
+
+  const content = `
+    ${cardsHtml ? `<div class="vh-country-card-grid-compact">
+      ${cardsHtml}
+    </div>` : ''}
+    ${routeGroups}
   `;
-  return createSection('National Identifiers', 'National Identifiers Registry Specs', 'country-identifiers-specs', 'Detailed checksum formulas and format rules for official country identifiers.', content);
+  return createSection('National Identifiers', 'Identifier registry specs & workbenches', 'country-identifiers-specs', 'Official identifier specs plus related browser tools for personal, business, vehicle, address, and registry-shaped Polish data.', content);
 }
 
 export function renderCountryValidators(model, routeRegistry) {
   if (!model.validators || model.validators.length === 0) return '';
 
-  const valRoutes = routeRegistry.getAll().filter(r => r.type === 'validator' && r.path.startsWith(`/en/${model.slug}/`));
+  const valRoutes = getCountryValidatorRoutes(model, routeRegistry);
 
   const cardsHtml = valRoutes.map(r => {
     return createInfoCard(
@@ -378,7 +608,7 @@ export function renderCountryOfficialResources(model) {
       res.status || 'available',
       res.tags || []
     );
-    const badge = `<span class="vh-country-visual-caption">Label-only reference source</span>`;
+    const badge = `<span class="vh-country-visual-caption">Reference note, not a link</span>`;
     return `<div class="vh-country-resource-card-wrapper">${card}${badge}</div>`;
   }).join('\n');
 
