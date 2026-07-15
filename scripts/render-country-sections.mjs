@@ -92,10 +92,52 @@ function routeSlug(route) {
   return route.path.split('/').filter(Boolean).at(-1) || '';
 }
 
+const ROUTE_QUALITY_FEATURES = [
+  { key: 'validate', label: 'Validate' },
+  { key: 'batch', label: 'Batch' },
+  { key: 'export', label: 'Export' },
+  { key: 'masking', label: 'Masking' },
+  { key: 'docs', label: 'Docs' }
+];
+
+function routeFeatures(route) {
+  const slug = routeSlug(route);
+  const title = String(route.title || '').toLowerCase();
+  const inText = (needle) => slug.includes(needle) || title.includes(needle);
+
+  const features = ['validate', 'docs'];
+  if (inText('validator') || inText('inspector') || inText('checker') || inText('helper')) {
+    features.push('validate');
+  }
+  if (inText('batch') || inText('data-quality') || inText('test-data')) {
+    features.push('batch');
+  }
+  if (inText('generator') || inText('formatter') || inText('converter') || inText('builder')) {
+    features.push('export');
+  }
+  if (inText('mask') || inText('pii')) {
+    features.push('masking');
+  }
+  return Array.from(new Set(features));
+}
+
+function routeQualitySummary(route) {
+  const features = routeFeatures(route);
+  const enabled = ROUTE_QUALITY_FEATURES.filter(item => features.includes(item.key));
+  const percent = Math.round((enabled.length / ROUTE_QUALITY_FEATURES.length) * 100);
+  return {
+    features,
+    percent,
+    labels: enabled.map(item => item.label)
+  };
+}
+
 function createRouteCard(route, description, tags = [], status = 'available') {
+  const quality = routeQualitySummary(route);
+  const qualityLabel = quality.labels.length > 0 ? quality.labels.join(' · ') : 'Validate';
   return createInfoCard(
     route.title || 'Interactive Workbench',
-    description || 'Run a browser-only country validation, formatting, or data-quality workflow.',
+    `${description || 'Run a browser-only country validation, formatting, or data-quality workflow.'} Quality ${quality.percent}%: ${qualityLabel}.`,
     null,
     status,
     tags,
@@ -156,10 +198,10 @@ function groupCountryWorkbenchRoutes(routes) {
 
 function renderExpandableRouteGroup(group, open = false) {
   const rows = group.routes.map(route => `
-    <a class="vh-country-catalog-row" href="${route.path}">
+    <a class="vh-country-catalog-row" data-intent-group="${escapeHtml(group.key)}" data-route-slug="${escapeHtml(routeSlug(route))}" href="${route.path}">
       <span>
         <strong>${escapeHtml(route.title || route.path)}</strong>
-        <small>${escapeHtml(route.path)}</small>
+        <small>${escapeHtml(route.path)} · quality ${routeQualitySummary(route).percent}%</small>
       </span>
       <span class="vh-country-row-arrow" aria-hidden="true">→</span>
     </a>
@@ -216,6 +258,36 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
   const featuredPatterns = /(pesel-validator|poland-nip-validator|poland-regon-validator|poland-iban-nrb-validator|poland-vat-validator|poland-krs-inspector|poland-postal-code-validator|poland-phone-number-validator|poland-blik-code-helper|poland-ksef-invoice-xml-validator)/;
   const featured = routes.filter(route => featuredPatterns.test(routeSlug(route))).slice(0, 10);
   const groups = groupCountryWorkbenchRoutes(routes);
+  const intentChips = groups.map(group => `<button class="vh-country-intent-chip" type="button" data-country-intent="${escapeHtml(group.key)}">${escapeHtml(group.title)} <span>${group.routes.length}</span></button>`).join('');
+
+  const routeBySlug = (patternList) => findFirstRoute(routes, patternList)?.path || routes[0].path;
+  const personPath = routeBySlug([/pesel-validator/, /id-card/, /passport/, /phone-number/, /postal-code/]);
+  const companyPath = routeBySlug([/poland-nip-validator/, /regon-validator/, /krs-inspector/, /company/]);
+  const paymentPath = routeBySlug([/poland-iban-nrb-validator/, /blik-code/, /swift-bic/, /sepa-transfer/, /payment-qr/]);
+
+  const quickStarts = `
+    <div class="vh-country-quick-starts" aria-label="Quick start scenarios">
+      <a class="vh-country-quick-start" href="${personPath}">
+        <strong>Validate person identity</strong>
+        <small>PESEL and document-related checks</small>
+      </a>
+      <a class="vh-country-quick-start" href="${companyPath}">
+        <strong>Validate company identity</strong>
+        <small>NIP, REGON, KRS and business references</small>
+      </a>
+      <a class="vh-country-quick-start" href="${paymentPath}">
+        <strong>Validate payment flow</strong>
+        <small>IBAN/NRB, BLIK and transfer-readiness</small>
+      </a>
+    </div>
+  `;
+
+  const offlineBoundary = `
+    <div class="vh-country-offline-boundary" role="note" aria-label="Offline validation boundary">
+      <strong>Trusted offline boundary</strong>
+      <p>Format, checksum, structure, and normalization run locally in browser. Registry status, bank account ownership, government confirmation, and legal identity verification require official external systems.</p>
+    </div>
+  `;
 
   const stats = `
     <div class="vh-country-catalog-stats" aria-label="Country workbench coverage">
@@ -232,13 +304,19 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
   ` : '';
 
   const groupsHtml = `
+    <div class="vh-country-intent-filters" data-country-intent-filters>
+      <button class="vh-country-intent-chip is-active" type="button" data-country-intent="all">All intents <span>${routes.length}</span></button>
+      ${intentChips}
+    </div>
     <div class="vh-country-route-groups">
       ${groups.map((group, index) => renderExpandableRouteGroup(group, index < 2)).join('\n')}
     </div>
-    <p class="vh-country-tool-search-empty" data-country-tool-search-empty>No matching workbenches found. Try PESEL, VAT, IBAN, BLIK, address, phone, or invoice.</p>
+    <p class="vh-country-tool-search-empty" data-country-tool-search-empty>No matching workbenches found for this country. Try local identifiers, payments, address, phone, or tax terms.</p>
   `;
 
   const content = `
+    ${quickStarts}
+    ${offlineBoundary}
     ${stats}
     ${featuredHtml}
     ${groupsHtml}

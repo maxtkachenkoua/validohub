@@ -22,3 +22,19 @@ engine doctor --site site.yaml
 ```
 
 The initial project is intentionally in demo mode while real algorithm implementations are added later.
+
+## Plugin Runtime Guardrails
+
+Use these checks for any new shared tool plugin (country baseline or multi-tool bundle).
+
+Detailed runbook: [docs/product/PLUGIN_RUNTIME_GUARDRAILS.md](docs/product/PLUGIN_RUNTIME_GUARDRAILS.md)
+
+- Scope rule: helpers used by top-level config builders (`tool()`, TOOLS map setup, preset factories) must be declared in module scope before they are referenced.
+- Naming rule: avoid name shadowing between top-level helpers and inner `Plugin()` locals; use explicit names such as `edgeFixtureForKind`.
+- Symptom rule: if many pages suddenly render generic fallback workbench UI, inspect shared plugin runtime errors first.
+
+### Pre-release Checklist
+
+- Open at least one page per new plugin family and confirm there are no runtime `pageError`/`ReferenceError` exceptions.
+- Hard reload (`Cmd+Shift+R`) and verify plugin-specific controls are rendered (not only generic fallback controls).
+- Re-run full site build and confirm integrity checks pass.

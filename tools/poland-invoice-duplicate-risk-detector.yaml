@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-invoice-duplicate-risk-detector
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "Polish Invoice Duplicate-Risk Detector"
+summary:
+  en: "Detect likely invoice duplicates and replay risk using invoice numbers, dates, parties, and amounts from pasted records."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [poland-invoice-data-auditor, poland-ksef-invoice-xml-validator, poland-bank-transfer-reconciliation-helper, poland-split-payment-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Invoice Duplicate-Risk Detector | ValidoHub"
+  description:
+    en: "Detect likely invoice duplicates and replay risk using invoice numbers, dates, parties, and amounts from pasted records."

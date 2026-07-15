@@ -37,11 +37,31 @@
     'poland-insurance-policy-number-helper': tool('Polish Insurance / Policy Number Helper','insurance policy data','finance','policy','Audit Polish insurance policy references locally, detect dates, vehicle or person identifiers, and produce masked support-safe summaries.','Policy: OC/2026/00012345\nPlate: WX12345\nVIN: WVGZZZ1TZFW123456\nValid from 2026-01-01 to 2026-12-31',['Insurance','Policy number','Vehicle link','Coverage dates','No status lookup']),
     'poland-parcel-tracking-inspector': tool('Polish Parcel / Tracking Number Inspector','parcel tracking number','logistics','parcel','Inspect Polish parcel tracking numbers locally, detect common courier-like shapes, mask IDs, and prepare support-safe diagnostics.','PL123456789012345678\n5901234123456789012345',['Parcel','Tracking','Support safe','Batch','Carrier boundary']),
     'poland-energy-meter-ppe-inspector': tool('Polish Energy Meter / PPE Number Inspector','PPE energy meter code','identity','ppe','Inspect Polish PPE energy-meter point identifiers locally, normalize long codes, mask safely, and explain offline confidence.','PL003712345678901234',['PPE','Energy meter','Long code','Masked logs','Utility boundary']),
+    'poland-vies-readiness-helper': tool('Polish VIES Readiness Helper','VAT payload','business','vies-readiness','Prepare and inspect offline VAT payload readiness for VIES checks: country prefix, VAT number shape, and optional company context.','Country: PL\nVAT: PL5260001246\nCompany: Valido Sp z o.o.\nAddress: Warszawa',['VIES prep','VAT payload','No lookup','EU context','Offline only']),
+    'poland-upo-edeklaracje-payload-checker': tool('Polish UPO / e-Deklaracje Payload Checker','e-Deklaracje payload','finance','upo-payload','Validate local payload readiness for UPO and e-Deklaracje workflows without submission: identifiers, form code, period, and contact fields.','Form: PIT-37\nPeriod: 2026\nNIP: 5260001246\nEmail: ksi@gov.example\nOffice: 1471',['UPO prep','e-Deklaracje','Payload','No submit','Offline only']),
+    'poland-ksef-fa2-field-mapper-assistant': tool('Polish KSeF FA(2) Field Mapper Assistant','FA(2) fields','finance','ksef-fa2-mapper','Map invoice snippets against common KSeF FA(2) field expectations and highlight missing key fields before schema validation.','<Faktura><Fa><P_1>2026-01-15</P_1><P_2>FV/2026/001</P_2><P_13_1>1000.00</P_13_1><KodWaluty>PLN</KodWaluty></Fa><Podmiot1><DaneIdentyfikacyjne><NIP>5260001246</NIP></DaneIdentyfikacyjne></Podmiot1></Faktura>',['KSeF FA2','Field map','Missing fields','No submission','Offline prep']),
+    'poland-payroll-net-gross-sanity-helper': tool('Polish Payroll Net/Gross Sanity Helper','payroll record','finance','payroll-sanity','Run a local payroll sanity check for gross, net, taxes, and deductions with consistency diagnostics for onboarding and QA.','Employee: Jan Kowalski\nGross: 10000.00 PLN\nNet: 7180.00 PLN\nTax: 1200.00 PLN\nSocial: 1620.00 PLN',['Payroll','Net vs gross','Deductions','QA helper','Offline only']),
+    'poland-bank-transfer-reconciliation-helper': tool('Polish Bank Transfer Reconciliation Helper','transfer rows','finance','transfer-reconcile','Reconcile pasted transfer rows locally against references and amounts to detect likely unmatched or duplicate entries.','2026-01-10;FV/2026/001;-1230.00 PLN\n2026-01-11;FV/2026/002;-615.00 PLN\n2026-01-12;FV/2026/003;-500.00 PLN',['Reconciliation','Duplicates','Reference match','Amounts','Offline only']),
+    'poland-iban-owner-name-precheck': tool('Polish IBAN Owner-Name Precheck','IBAN owner payload','finance','iban-owner-precheck','Perform a local pre-check of IBAN shape and recipient-name consistency hints before manual banking verification.','Owner: Valido Sp z o.o.\nIBAN: PL61109010140000071219812874\nTitle: FV/2026/001 payment to Valido',['IBAN','Owner name','Pre-check','No bank lookup','Offline only']),
+    'poland-address-transliteration-normalizer': tool('Polish Address Transliteration & Normalization','Polish address text','business','address-transliteration','Normalize and transliterate Polish address text into ASCII-safe variants for integrations that reject diacritics.','ul. Zolnierska 15/7, 80-001 Gdansk',['Address','Transliteration','ASCII variant','Normalization','Offline only']),
+    'poland-ocr-postprocessing-fixer': tool('Polish OCR Post-Processing Fixer','OCR extracted text','data','ocr-fixer','Repair common OCR mistakes in Polish business and document snippets, then emit cleaned and masked output for workflows.','N1P: 526O001246\nREG0N: O12345678\nul. Pr0sta 1, OO-OO1 Warszawa',['OCR','Data cleanup','PL docs','Normalization','Offline only']),
+    'poland-invoice-duplicate-risk-detector': tool('Polish Invoice Duplicate-Risk Detector','invoice lines','finance','invoice-duplicate-risk','Detect likely invoice duplicates and replay risk using invoice numbers, dates, parties, and amounts from pasted records.','FV/2026/001;2026-01-15;5260001246;1230.00 PLN\nFV/2026/002;2026-01-16;5252248481;615.00 PLN',['Invoice risk','Duplicates','Replay check','QA','Offline only']),
+    'poland-compliance-checklist-generator': tool('Polish Compliance Checklist Generator','compliance context','business','compliance-checklist','Generate an exportable offline compliance checklist for Polish onboarding, invoicing, tax, and payment readiness scenarios.','Scenario: B2B onboarding\nNIP: 5260001246\nInvoice flow: KSeF\nPayment: SEPA + MPP',['Checklist','Compliance','Exportable JSON','Offline only','Readiness']),
     'poland-data-quality-workbench': tool('Polish Data Quality Workbench','Polish dataset','data','data-quality','Audit pasted Polish datasets locally for identifiers, addresses, phones, bank fields, missing values, duplicates, and privacy risks.','name,nip,regon,iban,postal\nValido,5260001246,012345678,PL61109010140000071219812874,00-001\nDemo,1234563218,,PL27114020040000300201355387,31-001',['Data quality','PII patterns','Duplicates','Missing values','Import QA'])
   };
 
+  function edgeFixtureForKind(kind) {
+    const map = {
+      'transfer-reconcile': '2026-01-10;FV/2026/001;-1230.00 PLN\n2026-01-10;FV/2026/001;-1230.00 PLN',
+      'invoice-duplicate-risk': 'FV/2026/001;2026-01-15;1234563218;1230.00 PLN\nFV/2026/001;2026-01-15;1234563218;1230.00 PLN',
+      'compliance-checklist': 'Scenario: onboarding',
+      'data-quality': 'name,nip\nMissing,'
+    };
+    return map[kind] || 'invalid / incomplete sample';
+  }
+
   function tool(title, label, theme, kind, summary, sample, badges) {
-    return { title, label, theme, kind, summary, sample, samples: [sample, sample, 'invalid / incomplete sample'], badges };
+    return { title, label, theme, kind, summary, sample, samples: [sample, edgeFixtureForKind(kind), 'invalid / incomplete sample'], badges };
   }
 
   const Plugin = (function (framework) {
@@ -140,8 +160,20 @@
     function normalizeControls(workbench, config) {
       const heading = workbench.form.querySelector('.workbench-form-heading h3');
       if (heading) heading.textContent = config.title;
-      const input = workbench.primaryInput();
+      let input = workbench.primaryInput();
       if (input) {
+        if (input.tagName === 'INPUT') {
+          const area = document.createElement('textarea');
+          area.name = input.name || 'input';
+          area.rows = 4;
+          area.className = input.className;
+          area.placeholder = input.placeholder || '';
+          area.value = input.value || '';
+          area.autocomplete = 'off';
+          area.spellcheck = false;
+          input.parentNode.replaceChild(area, input);
+          input = area;
+        }
         input.placeholder = 'Paste ' + config.label + ' or choose a preset';
         input.autocomplete = 'off';
         input.spellcheck = false;
@@ -153,7 +185,8 @@
       if (advanced) advanced.style.display = 'none';
       const row = workbench.form.querySelector('.button-row');
       if (row && !row.querySelector('[data-plb-copy]')) {
-        row.insertAdjacentHTML('beforeend', '<button type="button" class="button button-secondary" data-plb-copy="normalized">Copy normalized</button><button type="button" class="button button-secondary" data-plb-copy="masked">Copy masked</button><button type="button" class="button button-secondary" data-plb-copy="json">Copy audit JSON</button><button type="button" class="button button-secondary" data-plb-copy="qr">Copy QR SVG</button>');
+        const qrButton = config.kind === 'payment-qr' ? '<button type="button" class="button button-secondary" data-plb-copy="qr">Copy QR SVG</button>' : '';
+        row.insertAdjacentHTML('beforeend', '<button type="button" class="button button-secondary" data-plb-copy="normalized">Copy normalized</button><button type="button" class="button button-secondary" data-plb-copy="masked">Copy masked</button><button type="button" class="button button-secondary" data-plb-copy="json">Copy audit JSON</button>' + qrButton);
       }
     }
 
@@ -295,6 +328,16 @@
         case 'policy': result = analyzeDocumentSnippet(input, 'Insurance policy record', ['policy','validity','vehicle']); break;
         case 'parcel': result = analyzeParcel(input); break;
         case 'ppe': result = analyzeCode(input.toUpperCase().replace(/\s+/g, ''), 'PPE energy point', /^PL[A-Z0-9]{12,24}$/, ['country','code']); break;
+        case 'vies-readiness': result = analyzeViesReadiness(input); break;
+        case 'upo-payload': result = analyzeUpoPayload(input); break;
+        case 'ksef-fa2-mapper': result = analyzeKsefFa2Mapper(input); break;
+        case 'payroll-sanity': result = analyzePayrollSanity(input); break;
+        case 'transfer-reconcile': result = analyzeTransferReconcile(input); break;
+        case 'iban-owner-precheck': result = analyzeIbanOwnerPrecheck(input); break;
+        case 'address-transliteration': result = analyzeAddressTransliteration(input); break;
+        case 'ocr-fixer': result = analyzeOcrFixer(input); break;
+        case 'invoice-duplicate-risk': result = analyzeInvoiceDuplicateRisk(input); break;
+        case 'compliance-checklist': result = analyzeComplianceChecklist(input); break;
         case 'data-quality': result = analyzeDataQuality(input); break;
         default: result = makeResult(input, input, false, config.title, 'Generic Polish record');
       }
@@ -488,6 +531,165 @@
       return makeResult(input, rows.length + ' rows / ' + header.length + ' columns', valid, valid ? 'Dataset parsed for Polish quality signals.' : 'Dataset needs tabular structure.', 'Polish data quality audit', { fields:[['Rows', String(Math.max(body.length,0))], ['Columns', String(header.length)], ['Missing cells', String(missing)], ['Duplicate rows', duplicates ? 'yes' : 'no'], ['PII hints', [found.nip&&'NIP',found.regon&&'REGON',found.iban&&'IBAN',found.postal&&'postal'].filter(Boolean).join(', ') || 'none']], masked: maskPii(input), tableRows: rows.slice(0,8), diagnostics:[{level:valid?'ok':'error',text:'Tabular input'}, {level:missing?'warn':'ok',text:'Missing cells'}, {level:duplicates?'warn':'ok',text:'Duplicate rows'}], recommendations:['Use masked output for QA tickets and keep raw imports local.'], boundary:'This is data-quality linting only. It does not certify legal correctness or official record status.' });
     }
 
+    function analyzeViesReadiness(input) {
+      const vatRaw = (input.match(/\b[A-Z]{2}\s*\d{8,12}\b/i) || [''])[0].replace(/\s+/g, '').toUpperCase();
+      const country = vatRaw.slice(0, 2) || pickLineValue(input, /country|kraj/i).toUpperCase();
+      const vatBody = vatRaw.slice(2) || (input.match(/\b\d{8,12}\b/) || [''])[0];
+      const company = pickLineValue(input, /company|firma|name/i) || 'n/a';
+      const address = pickLineValue(input, /address|adres/i) || 'n/a';
+      const valid = /^[A-Z]{2}$/.test(country) && /^\d{8,12}$/.test(vatBody);
+      const payload = JSON.stringify({ countryCode: country || 'PL', vatNumber: vatBody || '', companyName: company === 'n/a' ? '' : company, address: address === 'n/a' ? '' : address }, null, 2);
+      return makeResult(input, payload, valid, valid ? 'VIES payload is ready for manual/official lookup.' : 'VIES payload needs country code and VAT shape review.', 'VIES readiness payload', { fields:[['Country code', country || 'missing'], ['VAT body', vatBody || 'missing'], ['Company hint', company], ['Address hint', address]], masked: maskPii(payload), diagnostics:[{ level: /^[A-Z]{2}$/.test(country) ? 'ok':'error', text:'Country code shape' }, { level: /^\d{8,12}$/.test(vatBody) ? 'ok':'error', text:'VAT digits shape' }], recommendations:['Use this payload for readiness only, then run official VIES checks in approved systems.'], boundary:'No VIES request is sent. Company validity and VAT status are not checked online.' });
+    }
+
+    function analyzeUpoPayload(input) {
+      const form = pickLineValue(input, /form|deklarac|pit|cit|vat/i) || (input.match(/\b(PIT|CIT|VAT)-?[0-9A-Z]+\b/i) || [''])[0];
+      const period = pickLineValue(input, /period|rok|month|miesiac|year/i) || (input.match(/\b20\d{2}\b/) || [''])[0];
+      const nip = (input.match(/\b\d{10}\b/) || [''])[0];
+      const pesel = (input.match(/\b\d{11}\b/) || [''])[0];
+      const email = (input.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i) || [''])[0];
+      const office = pickLineValue(input, /office|urzad|urząd/i) || (input.match(/\b\d{4}\b/) || [''])[0];
+      const valid = !!form && !!period && (!!nip || !!pesel);
+      return makeResult(input, JSON.stringify({ form, period, taxId: nip || '', pesel: pesel || '', email: email || '', office: office || '' }, null, 2), valid, valid ? 'UPO/e-Deklaracje payload is structurally ready.' : 'UPO/e-Deklaracje payload is missing required fields.', 'UPO/e-Deklaracje payload', { fields:[['Form', form || 'missing'], ['Period', period || 'missing'], ['NIP', nip || 'missing'], ['PESEL', pesel || 'missing'], ['Email', email || 'missing'], ['Office code', office || 'missing']], masked: maskPii(input), diagnostics:[{level:form?'ok':'error',text:'Form marker'}, {level:period?'ok':'error',text:'Period marker'}, {level:(nip||pesel)?'ok':'error',text:'Taxpayer identifier'}], boundary:'No declaration is submitted. UPO generation, signatures, and legal acceptance are out of scope.' });
+    }
+
+    function analyzeKsefFa2Mapper(input) {
+      const required = [
+        ['P_1', /<P_1>|\bP_1\b/i],
+        ['P_2', /<P_2>|\bP_2\b/i],
+        ['P_13_1', /<P_13_1>|\bP_13_1\b/i],
+        ['KodWaluty', /<KodWaluty>|\bKodWaluty\b/i],
+        ['NIP', /<NIP>|\bNIP\b/i]
+      ];
+      const rows = required.map(function (r) { return [r[0], r[1].test(input) ? 'present' : 'missing']; });
+      const present = rows.filter(function (r) { return r[1] === 'present'; }).length;
+      const valid = present >= 4;
+      return makeResult(input, 'FA2 fields present: ' + present + '/' + required.length, valid, valid ? 'KSeF FA(2) mapping looks structurally ready.' : 'KSeF FA(2) mapping has missing key fields.', 'KSeF FA(2) field map', { fields:[['Detected fields', String(present)], ['Expected core fields', String(required.length)], ['Root marker', /<Faktura|\bFaktura\b/i.test(input) ? 'detected':'missing']], tableRows: rows, masked: maskPii(input), diagnostics:[{level:valid?'ok':'warn',text:'Core FA(2) field coverage'}], recommendations:['Use this map as pre-check before full schema/XSD and KSeF environment validation.'], boundary:'No FA(2) schema validation or KSeF submission is performed.' });
+    }
+
+    function analyzePayrollSanity(input) {
+      const gross = parseNumberByLabel(input, /gross|brutto/i);
+      const net = parseNumberByLabel(input, /net|netto/i);
+      const tax = parseNumberByLabel(input, /tax|pit|zaliczka/i);
+      const social = parseNumberByLabel(input, /social|zus|deduction|skladk|składk/i);
+      const totalCuts = (Number.isFinite(tax) ? tax : 0) + (Number.isFinite(social) ? social : 0);
+      const gap = Number.isFinite(gross) && Number.isFinite(net) ? gross - net : NaN;
+      const valid = Number.isFinite(gross) && Number.isFinite(net) && gross >= net;
+      return makeResult(input, JSON.stringify({ gross, net, tax, social, grossMinusNet: Number.isFinite(gap) ? Number(gap.toFixed(2)) : null }, null, 2), valid, valid ? 'Payroll amounts are internally consistent at sanity level.' : 'Payroll sanity check found missing or inconsistent amounts.', 'Payroll sanity check', { fields:[['Gross', Number.isFinite(gross) ? formatPln(gross) : 'missing'], ['Net', Number.isFinite(net) ? formatPln(net) : 'missing'], ['Tax', Number.isFinite(tax) ? formatPln(tax) : 'missing'], ['Social/deductions', Number.isFinite(social) ? formatPln(social) : 'missing'], ['Gross - net', Number.isFinite(gap) ? formatPln(gap) : 'missing'], ['Declared deductions', Number.isFinite(totalCuts) ? formatPln(totalCuts) : 'n/a']], masked: maskPii(input), diagnostics:[{level:Number.isFinite(gross)?'ok':'error',text:'Gross amount present'}, {level:Number.isFinite(net)?'ok':'error',text:'Net amount present'}, {level:valid?'ok':'error',text:'Gross >= net sanity'}], recommendations:['Treat this as sanity linting only. Payroll legal/tax correctness requires full payroll engine rules.'], boundary:'No ZUS, PIT, employer policy, contract type, or legal payroll compliance determination is performed.' });
+    }
+
+    function analyzeTransferReconcile(input) {
+      let lines = input.split(/\r?\n/).filter(Boolean);
+      if (lines.length <= 1) {
+        const inferred = String(input).match(/\d{4}-\d{2}-\d{2}[^\n]*?(?:PLN|zł)/gi) || [];
+        if (inferred.length > 1) lines = inferred.map(function (v) { return v.trim(); });
+      }
+      const refs = lines.map(function (line) { return (line.match(/[A-Z]{1,4}[\/\-]\d{4}[^\s,;]*/i) || [''])[0] || 'n/a'; });
+      const amounts = lines.map(function (line) { return parseAmount(line); });
+      const keyCount = {};
+      lines.forEach(function (line, idx) {
+        const key = refs[idx] + '|' + (Number.isFinite(amounts[idx]) ? amounts[idx].toFixed(2) : 'n/a');
+        keyCount[key] = (keyCount[key] || 0) + 1;
+      });
+      const duplicates = Object.keys(keyCount).filter(function (k) { return keyCount[k] > 1; });
+      const missingRefs = refs.filter(function (r) { return r === 'n/a'; }).length;
+      const valid = lines.length > 0 && missingRefs === 0;
+      const tableRows = lines.slice(0, 20).map(function (line, idx) {
+        const key = refs[idx] + '|' + (Number.isFinite(amounts[idx]) ? amounts[idx].toFixed(2) : 'n/a');
+        return [String(idx + 1), refs[idx], Number.isFinite(amounts[idx]) ? formatPln(amounts[idx]) : 'missing', keyCount[key] > 1 ? 'duplicate-risk' : 'unique'];
+      });
+      return makeResult(input, JSON.stringify({ rows: lines.length, duplicates: duplicates.length, missingReferences: missingRefs }, null, 2), valid && duplicates.length === 0, duplicates.length === 0 ? 'Reconciliation rows look unique at local pre-check level.' : 'Potential duplicate transfer rows detected.', 'Transfer reconciliation', { fields:[['Rows', String(lines.length)], ['Duplicate keys', String(duplicates.length)], ['Rows without refs', String(missingRefs)], ['Amount rows', String(amounts.filter(Number.isFinite).length)]], tableRows: tableRows, masked: maskPii(input), diagnostics:[{level:missingRefs ? 'warn':'ok',text:'Reference coverage'}, {level:duplicates.length ? 'warn':'ok',text:'Duplicate reference+amount keys'}], boundary:'No bank ledger matching, settlement confirmation, or statement authenticity verification is performed.' });
+    }
+
+    function analyzeIbanOwnerPrecheck(input) {
+      const found = findCommon(input);
+      const owner = pickLineValue(input, /owner|recipient|beneficiary|odbiorca|nazwa/i) || '';
+      const title = pickLineValue(input, /title|tytul|tytuł|reference/i) || '';
+      const ownerTokens = owner.toLowerCase().split(/\s+/).filter(function (t) { return t.length >= 3; });
+      const overlap = ownerTokens.filter(function (t) { return title.toLowerCase().includes(t); }).length;
+      const valid = Boolean(found.iban && owner);
+      return makeResult(input, JSON.stringify({ iban: found.iban || '', owner: owner || '', title: title || '', titleOwnerTokenOverlap: overlap }, null, 2), valid, valid ? 'IBAN and owner fields are present for manual verification.' : 'IBAN owner pre-check needs IBAN and recipient name.', 'IBAN owner-name pre-check', { fields:[['IBAN/NRB', found.iban || 'missing'], ['Owner/recipient', owner || 'missing'], ['Title', title || 'missing'], ['Owner token overlap in title', String(overlap)]], masked: maskPii(input), diagnostics:[{level:found.iban?'ok':'error',text:'IBAN/NRB present'}, {level:owner?'ok':'error',text:'Recipient name present'}, {level:overlap?'ok':'warn',text:'Name/title consistency hint'}], recommendations:['Always verify beneficiary ownership in approved banking channels before payment release.'], boundary:'No bank owner-name confirmation, account status, or sanctions screening is performed.' });
+    }
+
+    function analyzeAddressTransliteration(input) {
+      const collapsed = input.replace(/\s+/g, ' ').trim();
+      const ascii = transliteratePolish(collapsed);
+      const upper = ascii.toUpperCase();
+      const canonical = upper.replace(/[^A-Z0-9\-\/,. ]+/g, '').replace(/\s+/g, ' ').trim();
+      const changed = ascii !== collapsed;
+      return makeResult(input, ascii, canonical.length >= 5, canonical.length >= 5 ? 'Address transliteration and normalization generated.' : 'Address transliteration needs more text.', 'Address transliteration', { fields:[['Original length', String(collapsed.length)], ['ASCII length', String(ascii.length)], ['Changed by transliteration', changed ? 'yes' : 'no'], ['Postal code', (collapsed.match(/\b\d{2}-?\d{3}\b/) || ['missing'])[0]]], tableRows:[['Original', collapsed || 'n/a'], ['ASCII', ascii || 'n/a'], ['Uppercase canonical', canonical || 'n/a']], masked: maskAddress(ascii), diagnostics:[{level:changed ? 'ok':'warn',text:'Polish diacritics transliterated'}, {level:/\b\d{2}-?\d{3}\b/.test(collapsed) ? 'ok':'warn',text:'Postal code marker'}], boundary:'This is formatting assistance only. It does not validate official address registries or deliverability.' });
+    }
+
+    function analyzeOcrFixer(input) {
+      const lines = input.split(/\r?\n/);
+      const replacements = [];
+      const fixed = lines.map(function (line) {
+        let out = line;
+        const ops = [
+          [/\bN1P\b/gi, 'NIP'],
+          [/\bREG0N\b/gi, 'REGON'],
+          [/\bOO-OO1\b/g, '00-001'],
+          [/\bO(\d{2,})\b/g, '0$1'],
+          [/(\d)O(\d)/g, '$10$2'],
+          [/(\d)l(\d)/g, '$11$2']
+        ];
+        ops.forEach(function (op) {
+          const before = out;
+          out = out.replace(op[0], op[1]);
+          if (before !== out) replacements.push(op[0].toString());
+        });
+        return out;
+      }).join('\n');
+      const valid = fixed.length >= 5;
+      return makeResult(input, fixed, valid, valid ? 'OCR post-processing generated a cleaned variant.' : 'OCR post-processing needs more text.', 'OCR post-processing', { fields:[['Input chars', String(input.length)], ['Output chars', String(fixed.length)], ['Replacement groups', String(replacements.length)]], tableRows:[['Original', input.slice(0, 160) || 'n/a'], ['Cleaned', fixed.slice(0, 160) || 'n/a']], masked: maskPii(fixed), diagnostics:[{level:replacements.length ? 'ok':'warn',text:'OCR correction patterns applied'}], recommendations:['Review corrected output manually before legal, tax, or payment usage.'], boundary:'This is text cleanup assistance only. It does not certify OCR accuracy or document authenticity.' });
+    }
+
+    function analyzeInvoiceDuplicateRisk(input) {
+      let lines = input.split(/\r?\n/).filter(Boolean);
+      if (lines.length <= 1) {
+        const inferred = String(input).match(/[A-Z]{1,4}[\/\-]\d{4}[^\n]*?(?:PLN|zł)/gi) || [];
+        if (inferred.length > 1) lines = inferred.map(function (v) { return v.trim(); });
+      }
+      const parsed = lines.map(function (line, idx) {
+        const invoice = (line.match(/[A-Z]{1,4}[\/\-]\d{4}[^\s,;]*/i) || [''])[0] || 'n/a';
+        const date = (line.match(/\b\d{4}-\d{2}-\d{2}\b|\b\d{2}\.\d{2}\.\d{4}\b/) || [''])[0] || 'n/a';
+        const nip = (line.match(/\b\d{10}\b/) || [''])[0] || 'n/a';
+        const amount = parseAmount(line);
+        return { row: idx + 1, invoice: invoice, date: date, nip: nip, amount: Number.isFinite(amount) ? amount.toFixed(2) : 'n/a' };
+      });
+      const bucket = {};
+      parsed.forEach(function (p) {
+        const key = [p.invoice, p.date, p.nip, p.amount].join('|');
+        bucket[key] = (bucket[key] || 0) + 1;
+      });
+      const duplicates = Object.keys(bucket).filter(function (k) { return bucket[k] > 1; });
+      const risk = duplicates.length ? 'high' : parsed.length > 3 ? 'medium' : 'low';
+      const valid = risk !== 'high';
+      const tableRows = parsed.slice(0, 25).map(function (p) {
+        const key = [p.invoice, p.date, p.nip, p.amount].join('|');
+        return [String(p.row), p.invoice, p.date, p.amount, bucket[key] > 1 ? 'duplicate-risk' : 'ok'];
+      });
+      return makeResult(input, JSON.stringify({ rows: parsed.length, duplicateKeys: duplicates.length, risk: risk }, null, 2), valid, valid ? 'No high duplicate risk was detected in pasted rows.' : 'High duplicate-risk signals detected.', 'Invoice duplicate risk', { fields:[['Rows', String(parsed.length)], ['Duplicate keys', String(duplicates.length)], ['Risk level', risk], ['Rows with invoice ref', String(parsed.filter(function (p) { return p.invoice !== 'n/a'; }).length)]], tableRows: tableRows, masked: maskPii(input), diagnostics:[{level:duplicates.length ? 'warn':'ok',text:'Exact duplicate key detection'}, {level:parsed.length ? 'ok':'error',text:'Rows detected'}], recommendations:['Use risk output to prioritize manual review before posting invoices or payment batches.'], boundary:'No legal duplicate determination or accounting-system state is checked.' });
+    }
+
+    function analyzeComplianceChecklist(input) {
+      const lower = input.toLowerCase();
+      const checks = [
+        ['NIP present', /\b\d{10}\b/.test(input)],
+        ['REGON present', /\b\d{9}(?:\d{5})?\b/.test(input)],
+        ['IBAN/NRB present', /PL\d{26}|\b\d{26}\b/i.test(input)],
+        ['Invoice reference present', /[A-Z]{1,4}[\/\-]\d{4}/i.test(input)],
+        ['KSeF context present', /ksef|fa\(2\)|faktura/i.test(lower)],
+        ['UPO/e-Deklaracje context present', /upo|e-deklarac|pit|cit|vat-7/i.test(lower)],
+        ['Address/postal marker present', /\b\d{2}-?\d{3}\b/.test(input)],
+        ['Contact email present', /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(input)]
+      ];
+      const passed = checks.filter(function (c) { return c[1]; }).length;
+      const checklist = checks.map(function (c) { return { item: c[0], status: c[1] ? 'ready' : 'review' }; });
+      const valid = passed >= 4;
+      return makeResult(input, JSON.stringify({ checklist: checklist, passed: passed, total: checks.length }, null, 2), valid, valid ? 'Compliance checklist generated with enough readiness evidence.' : 'Compliance checklist generated; additional evidence is recommended.', 'Compliance checklist', { fields:[['Passed checks', String(passed)], ['Total checks', String(checks.length)], ['Readiness score', Math.round((passed / checks.length) * 100) + '%']], tableRows: checklist.map(function (c) { return [c.item, c.status]; }), masked: maskPii(input), diagnostics: checklist.map(function (c) { return { level: c.status === 'ready' ? 'ok' : 'warn', text: c.item + ': ' + c.status }; }), recommendations:['Export checklist JSON as an audit attachment and track unresolved review items explicitly.'], boundary:'This checklist is advisory only and does not replace legal, tax, AML, or regulatory review.' });
+    }
+
     function findCommon(input) {
       return {
         nip: (input.match(/\b\d{10}\b/) || [''])[0],
@@ -535,12 +737,10 @@
         'xml-jpk':'<JPK><Naglowek><KodFormularza>JPK_V7M</KodFormularza></Naglowek><Podmiot1><NIP>1234563218</NIP></Podmiot1></JPK>',
         'split-payment':'Amount: 615,00 PLN\nVAT: 115,00 PLN\nSupplier NIP: 1234563218\nInvoice: FV/2026/SAFE',
         'pkd':'62.01.Z','pkwiu':'62.01.11.0','bdo':'000123456','company':'Company: Demo Sp. z o.o.\nNIP 1234563218\nREGON 123456785\nKRS 0000123456\nIBAN PL61109010140000071219812874\nPKD 62.01.Z',
-        'invoice-data':'Invoice FV/2026/SAFE\nSeller NIP: 1234563218\nNet 500.00 VAT 23% Gross 615.00 PLN','receipt':'PARAGON\nNIP nabywcy: 1234563218\nPTU A 23% 18,70\nSUMA PLN 100,00','transfer-title':'FV/2026/SAFE payment for local development fixture','payment-qr':'Recipient: Demo Sp. z o.o.\nIBAN: PL61109010140000071219812874\nAmount: 123.45\nTitle: FV/2026/SAFE','statement':'2026-01-15;Fixture;PL61109010140000071219812874;-123.45 PLN','address':'ul. Prosta 1/2, 00-001 Warszawa','teryt':'1465011','municipality':'146501','mrz':'P<POLKOWALSKI<<JAN<<<<<<<<<<<<<<<<<<<<<<<<\nAA123456<7POL9208261M3001019<<<<<<<<<<<<<<06','passport':'AA1234567','driving':'PL/123456/2026\nCategories: B\nIssued: 2026-01-15','vehicle-doc':'Plate: WX12345\nVIN: WVGZZZ1TZFW123456\nDocument: DR/ABC123456','policy':'Policy: OC/2026/00012345\nPlate: WX12345\nValid from 2026-01-01 to 2026-12-31','parcel':'PL123456789012345678','ppe':'PL003712345678901234','data-quality':'name,nip,regon,iban,postal\nDemo,1234563218,123456785,PL61109010140000071219812874,00-001'
+        'invoice-data':'Invoice FV/2026/SAFE\nSeller NIP: 1234563218\nNet 500.00 VAT 23% Gross 615.00 PLN','receipt':'PARAGON\nNIP nabywcy: 1234563218\nPTU A 23% 18,70\nSUMA PLN 100,00','transfer-title':'FV/2026/SAFE payment for local development fixture','payment-qr':'Recipient: Demo Sp. z o.o.\nIBAN: PL61109010140000071219812874\nAmount: 123.45\nTitle: FV/2026/SAFE','statement':'2026-01-15;Fixture;PL61109010140000071219812874;-123.45 PLN','address':'ul. Prosta 1/2, 00-001 Warszawa','teryt':'1465011','municipality':'146501','mrz':'P<POLKOWALSKI<<JAN<<<<<<<<<<<<<<<<<<<<<<<<\nAA123456<7POL9208261M3001019<<<<<<<<<<<<<<06','passport':'AA1234567','driving':'PL/123456/2026\nCategories: B\nIssued: 2026-01-15','vehicle-doc':'Plate: WX12345\nVIN: WVGZZZ1TZFW123456\nDocument: DR/ABC123456','policy':'Policy: OC/2026/00012345\nPlate: WX12345\nValid from 2026-01-01 to 2026-12-31','parcel':'PL123456789012345678','ppe':'PL003712345678901234','vies-readiness':'Country: PL\nVAT: PL1234563218\nCompany: Demo Sp. z o.o.\nAddress: Warszawa','upo-payload':'Form: PIT-37\nPeriod: 2026\nNIP: 1234563218\nEmail: dev@example.com\nOffice: 1471','ksef-fa2-mapper':'<Faktura><Fa><P_1>2026-01-15</P_1><P_2>FV/2026/SAFE</P_2><P_13_1>500.00</P_13_1><KodWaluty>PLN</KodWaluty></Fa><Podmiot1><DaneIdentyfikacyjne><NIP>1234563218</NIP></DaneIdentyfikacyjne></Podmiot1></Faktura>','payroll-sanity':'Gross: 10000.00 PLN\nNet: 7180.00 PLN\nTax: 1200.00 PLN\nSocial: 1620.00 PLN','transfer-reconcile':'2026-01-10;FV/2026/001;-1230.00 PLN\n2026-01-11;FV/2026/002;-615.00 PLN\n2026-01-12;FV/2026/003;-500.00 PLN','iban-owner-precheck':'Owner: Demo Sp. z o.o.\nIBAN: PL61109010140000071219812874\nTitle: payment to Demo Sp. z o.o. for FV/2026/SAFE','address-transliteration':'ul. Zolnierska 15/7, 80-001 Gdansk','ocr-fixer':'N1P: 1234563218\nREG0N: O12345678\nul. Pr0sta 1, OO-OO1 Warszawa','invoice-duplicate-risk':'FV/2026/001;2026-01-15;1234563218;1230.00 PLN\nFV/2026/002;2026-01-16;5252248481;615.00 PLN','compliance-checklist':'Scenario: B2B onboarding\nNIP: 1234563218\nInvoice flow: KSeF\nPayment: SEPA + MPP','data-quality':'name,nip,regon,iban,postal\nDemo,1234563218,123456785,PL61109010140000071219812874,00-001'
       };
       return map[kind] || 'Polish fixture';
     }
-    function edgeFixture(kind) { return kind === 'data-quality' ? 'name,nip\nMissing,' : 'invalid / incomplete sample'; }
-
     function parseAmount(input) {
       const m = String(input).match(/-?\d+(?:[\s.]\d{3})*(?:[,.]\d{2})|-?\d+(?:[,.]\d+)?/);
       if (!m) return NaN;
@@ -549,7 +749,22 @@
       else s = s.replace(/,/g, '');
       return Number(s);
     }
+    function parseNumberByLabel(input, labelPattern) {
+      const value = pickLineValue(input, labelPattern);
+      if (value) {
+        const num = parseAmount(value);
+        if (Number.isFinite(num)) return num;
+      }
+      return parseAmount(String(input));
+    }
     function parseVat(input) { const m = String(input).match(/VAT[^\d-]*(-?\d+(?:[,.]\d{2})?)/i); return m ? Number(m[1].replace(',', '.')) : NaN; }
+    function transliteratePolish(value) {
+      const map = {
+        'ą':'a','ć':'c','ę':'e','ł':'l','ń':'n','ó':'o','ś':'s','ź':'z','ż':'z',
+        'Ą':'A','Ć':'C','Ę':'E','Ł':'L','Ń':'N','Ó':'O','Ś':'S','Ź':'Z','Ż':'Z'
+      };
+      return String(value || '').replace(/[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/g, function (ch) { return map[ch] || ch; });
+    }
     function formatPln(amount) { return new Intl.NumberFormat('pl-PL', { style:'currency', currency:'PLN' }).format(amount); }
     function digits(value) { return String(value || '').replace(/\D/g, ''); }
     function maskDigits(value, start, end) { const d = String(value || ''); return d.length <= start + end ? d[0] + '*'.repeat(Math.max(0, d.length - 1)) : d.slice(0, start) + '*'.repeat(Math.min(12, d.length - start - end)) + d.slice(-end); }
@@ -558,7 +773,22 @@
     function maskPii(value) { return String(value || '').replace(/PL\d{26}|\b\d{26}\b/gi, m => m.slice(0,4) + ' **** **** **** ' + m.slice(-4)).replace(/\b\d{11}\b/g, m => maskDigits(m, 3, 3)).replace(/\b\d{10}\b/g, m => maskDigits(m, 3, 3)); }
     function labelForSample(sample) { return String(sample).split(/\r?\n/)[0].slice(0, 44); }
     function setInput(workbench, value) { const input = workbench.primaryInput(); if (input) { input.value = value; input.dispatchEvent(new Event('input', { bubbles:true })); } }
-    function pickLineValue(input, pattern) { const line = String(input).split(/\r?\n/).find(l => pattern.test(l)); return line ? line.replace(/^.*?:\s*/, '').trim() : ''; }
+    function pickLineValue(input, pattern) {
+      const text = String(input || '');
+      const labelRegex = /([A-Za-z0-9\/_()\- ]{2,32})\s*:\s*/g;
+      let match;
+      while ((match = labelRegex.exec(text))) {
+        const label = String(match[1] || '').trim();
+        if (!pattern.test(label)) continue;
+        const start = labelRegex.lastIndex;
+        const nextRegex = /[A-Za-z0-9\/_()\- ]{2,32}\s*:\s*/g;
+        nextRegex.lastIndex = start;
+        const next = nextRegex.exec(text);
+        const end = next ? next.index : text.length;
+        return text.slice(start, end).replace(/^[\s,;|]+|[\s,;|]+$/g, '').trim();
+      }
+      return '';
+    }
     function copyText(value) { if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(value); const el = document.createElement('textarea'); el.value = value; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el); return Promise.resolve(); }
     function escapeAttr(value) { return String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
     function escapeHtml(value) { return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -657,6 +887,11 @@
       style.id = 'poland-baseline-styles';
       style.textContent = '.poland-baseline-workbench{--plb:#0f766e;--plb-soft:#ecfdf5;--plb-strong:#14b8a6}.plb-badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.plb-badge-row span{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.055em;border:1px solid color-mix(in srgb,var(--plb) 22%,var(--line));border-radius:999px;padding:6px 11px;background:#fff;color:var(--muted)}.plb-badge-row span.active{background:var(--plb-soft);color:var(--plb);border-color:color-mix(in srgb,var(--plb) 40%,var(--line))}.plb-panel{margin-top:24px;display:flex;flex-direction:column;gap:24px}.plb-empty,.plb-card,.plb-batch,.plb-results{border:1px solid var(--line);border-radius:12px;background:#fff;padding:20px;overflow:hidden;box-shadow:0 10px 28px rgba(15,23,42,.035)}.plb-empty{background:linear-gradient(135deg,var(--plb-soft),#fff);border-color:color-mix(in srgb,var(--plb) 24%,var(--line));color:var(--muted)}.plb-card h4{font-size:.9rem;font-weight:900;text-transform:uppercase;letter-spacing:.07em;border-bottom:1px solid var(--line);padding-bottom:14px;margin:0 0 18px;display:flex;align-items:center;gap:10px}.plb-card h4 span{color:var(--plb)}.plb-track{height:3px;background:#e5e7eb;margin:8px 24px 22px;border-radius:999px;overflow:hidden}.plb-track span{display:block;height:100%;max-width:100%;background:linear-gradient(90deg,var(--plb),#16a34a)}.plb-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.plb-steps article{border:1px solid var(--line);border-radius:10px;padding:14px;background:#fff;min-width:0}.plb-steps article.pass{border-color:rgba(22,163,74,.24);background:linear-gradient(135deg,rgba(22,163,74,.055),#fff)}.plb-steps article.fail{border-color:rgba(220,38,38,.24);background:linear-gradient(135deg,rgba(220,38,38,.055),#fff)}.plb-steps article.idle{background:var(--surface-soft)}.plb-steps article>div{display:flex;justify-content:space-between;gap:10px}.plb-steps strong{font-size:.9rem;color:var(--text)}.plb-steps span{font-size:.68rem;font-weight:900;letter-spacing:.08em;border-radius:8px;padding:4px 8px;background:var(--plb-soft);color:var(--plb)}.plb-steps p{margin:12px 0 0;color:var(--muted);font-size:.86rem;line-height:1.45;overflow-wrap:anywhere}.plb-results{background:linear-gradient(135deg,rgba(22,163,74,.055),#fff);border-color:rgba(22,163,74,.22)}.plb-results.error{background:linear-gradient(135deg,rgba(220,38,38,.055),#fff);border-color:rgba(220,38,38,.22)}.plb-results-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}.plb-results-header span{width:32px;height:32px;border-radius:999px;display:grid;place-items:center;background:rgba(22,163,74,.12);color:#16a34a;font-weight:900}.plb-results.error .plb-results-header span{background:rgba(220,38,38,.12);color:#dc2626}.plb-results-header strong{font-size:1rem;color:var(--text)}.plb-results-header em{display:block;font-style:normal;color:var(--muted);font-size:.82rem}.plb-results-grid,.plb-fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.plb-results-grid article,.plb-fields>div{border:1px solid var(--line);border-radius:10px;background:#fff;padding:16px;min-width:0;overflow:hidden}.plb-results-grid span,.plb-fields span{display:block;color:var(--muted);font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;margin-bottom:8px}.plb-results-grid strong,.plb-fields strong{display:block;max-width:100%;overflow-wrap:anywhere;word-break:break-word;line-height:1.28}.plb-results-grid article.is-long strong{font-size:clamp(.72rem,1.2vw,.95rem)}.plb-result-checks{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}.plb-result-checks p{display:flex;align-items:flex-start;gap:10px;margin:8px 0;color:var(--muted)}.plb-result-checks span{color:#16a34a;font-weight:900}.plb-token-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:10px 0 18px}.plb-token-row span{border:1px solid var(--line);border-radius:10px;min-width:42px;max-width:140px;padding:10px 9px;text-align:center;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#fff;font-weight:900;box-shadow:0 8px 18px rgba(15,23,42,.045);overflow:hidden}.plb-token-row b{display:block;font-size:1.02rem;overflow:hidden;text-overflow:ellipsis}.plb-token-row em{display:block;font-style:normal;font-size:.58rem;color:var(--muted);margin-top:2px}.plb-token-row .tone-0{border-color:rgba(47,128,237,.36);color:#2f80ed}.plb-token-row .tone-1{border-color:rgba(16,185,129,.36);color:#10b981}.plb-token-row .tone-2{border-color:rgba(245,158,11,.4);color:#d97706}.plb-token-row .tone-3{border-color:rgba(139,92,246,.36);color:#7c3aed}.plb-token-row .tone-4{border-color:rgba(236,72,153,.36);color:#db2777}.plb-token-row .tone-5{border-color:rgba(14,165,233,.36);color:#0284c7}.plb-quality-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.plb-quality-list article{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--surface-soft)}.plb-quality-list .ok{border-color:rgba(22,163,74,.25);background:rgba(22,163,74,.06)}.plb-quality-list .bad{border-color:rgba(220,38,38,.3);background:rgba(220,38,38,.06)}.plb-quality-list .warn{border-color:rgba(217,119,6,.28);background:rgba(217,119,6,.06)}.plb-quality-list p{margin:.4rem 0 0;color:var(--muted);line-height:1.45}.plb-code{margin:0;overflow:auto;padding:14px;border-radius:8px;background:#0f172a;color:#dbeafe;font-size:.78rem}.plb-json-key{color:#93c5fd}.plb-json-string{color:#86efac}.plb-json-number{color:#fbbf24}.plb-json-bool{color:#f0abfc}.plb-json-null{color:#cbd5e1}.plb-dev-accordion{border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden;margin-top:10px}.plb-dev-accordion summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;display:flex;justify-content:space-between;gap:12px}.plb-dev-accordion summary::-webkit-details-marker{display:none}.plb-dev-content{border-top:1px solid var(--line);padding:16px;position:relative;background:var(--surface-soft)}.plb-dev-copy{position:absolute;right:14px;top:14px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:5px 10px;color:var(--muted);font-weight:800}.plb-batch{margin:16px 0}.plb-batch summary{cursor:pointer;display:flex;justify-content:space-between;gap:12px}.plb-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.plb-batch-summary{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.plb-batch-summary>*{border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:var(--surface-soft)}.plb-batch-table{display:grid;gap:6px}.plb-batch-table>div{display:grid;grid-template-columns:44px minmax(0,1fr) 80px minmax(0,1fr);gap:8px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:8px}.plb-batch-table code,.plb-batch-table em{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.plb-batch-table .pass strong{color:#16a34a}.plb-batch-table .fail strong{color:#dc2626}.plb-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}.plb-table{width:100%;border-collapse:collapse;font-size:.85rem}.plb-table td{border-bottom:1px solid var(--line);padding:9px 10px;vertical-align:top}.plb-qr-wrap{display:grid;grid-template-columns:180px minmax(0,1fr);gap:18px;align-items:center;margin-bottom:16px}.plb-qr{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}.plb-qr svg{display:block;width:100%;height:auto}.plb-muted{color:var(--muted)}@media(max-width:900px){.plb-results-grid,.plb-fields,.plb-quality-list,.plb-qr-wrap{grid-template-columns:1fr}.plb-track{display:none}.plb-batch-table>div{grid-template-columns:36px minmax(0,1fr)}.plb-batch-table em{grid-column:2}.plb-results-header{align-items:flex-start;flex-direction:column}.plb-token-row{justify-content:flex-start}.plb-badge-row{gap:6px}.plb-card,.plb-results,.plb-batch{padding:16px}}';
       document.head.appendChild(style);
+      if (document.getElementById('poland-baseline-styles-hardening')) return;
+      const hardening = document.createElement('style');
+      hardening.id = 'poland-baseline-styles-hardening';
+      hardening.textContent = '.poland-baseline-workbench .field-grid,.poland-baseline-workbench .button-row{min-width:0}.poland-baseline-workbench textarea,.poland-baseline-workbench input,.poland-baseline-workbench select{max-width:100%;min-width:0}.poland-baseline-workbench [name="input"]{resize:vertical;line-height:1.4}.poland-baseline-workbench .button-row{display:flex;flex-wrap:wrap;gap:10px}.poland-baseline-workbench .button-row .button{max-width:100%}.poland-baseline-workbench .plb-results-grid strong,.poland-baseline-workbench .plb-fields strong,.poland-baseline-workbench .plb-table td,.poland-baseline-workbench .plb-dev-content p,.poland-baseline-workbench .plb-batch-table code,.poland-baseline-workbench .plb-batch-table em{overflow-wrap:anywhere;word-break:break-word;white-space:normal}.poland-baseline-workbench .plb-token-row span,.poland-baseline-workbench .plb-token-row b,.poland-baseline-workbench .plb-token-row em{max-width:100%;overflow-wrap:anywhere;word-break:break-word}.poland-baseline-workbench .plb-code{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;max-height:420px}.poland-baseline-workbench .plb-dev-content{overflow:auto}@media(max-width:900px){.poland-baseline-workbench .field,.poland-baseline-workbench .plb-select{min-width:0}.poland-baseline-workbench [name="input"]{min-height:120px}}';
+      document.head.appendChild(hardening);
     }
 
     return { filePrefix: 'poland-baseline', onMount, run, applySample, detectInputMode };

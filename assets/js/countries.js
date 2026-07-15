@@ -7339,7 +7339,17 @@
         "Polish Test Data Generator",
         "Polish Invoice Number Helper",
         "PLN Grosz Converter",
-        "Polish SEPA Transfer Helper"
+        "Polish SEPA Transfer Helper",
+        "Polish VIES Readiness Helper",
+        "Polish UPO / e-Deklaracje Payload Checker",
+        "Polish KSeF FA(2) Field Mapper Assistant",
+        "Polish Payroll Net/Gross Sanity Helper",
+        "Polish Bank Transfer Reconciliation Helper",
+        "Polish IBAN Owner-Name Precheck",
+        "Polish Address Transliteration & Normalization",
+        "Polish OCR Post-Processing Fixer",
+        "Polish Invoice Duplicate-Risk Detector",
+        "Polish Compliance Checklist Generator"
       ],
       "plannedWorkbenches": [],
       "completion": 90,

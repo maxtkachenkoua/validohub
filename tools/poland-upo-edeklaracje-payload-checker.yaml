@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-upo-edeklaracje-payload-checker
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "Polish UPO / e-Deklaracje Payload Checker"
+summary:
+  en: "Validate local payload readiness for UPO and e-Deklaracje workflows without submission: identifiers, form code, period, and contact fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [poland-tax-microaccount-calculator, poland-nip-validator, poland-regon-validator, poland-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish UPO / e-Deklaracje Payload Checker | ValidoHub"
+  description:
+    en: "Validate local payload readiness for UPO and e-Deklaracje workflows without submission: identifiers, form code, period, and contact fields."

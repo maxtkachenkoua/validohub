@@ -4,7 +4,7 @@ name:
   en: ValidoHub
 baseUrl: https://validohub.com
 defaultLocale: en
-locales: [en]
+locales: [en, pl, de, es, pt-BR]
 mode: demo
 modules:
   - validohub

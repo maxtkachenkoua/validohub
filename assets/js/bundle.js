@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
+  initGlobalLanguageSwitcher();
+
   // 1. Component-Scoped Code Snippets Language Tabs
   const snippetBlock = document.getElementById('vh-code-block-content');
   if (snippetBlock) {
@@ -94,9 +96,142 @@ document.addEventListener('DOMContentLoaded', () => {
     const rows = Array.from(catalog.querySelectorAll('.vh-country-catalog-row'));
     const groups = Array.from(catalog.querySelectorAll('.vh-country-route-group'));
     const allCount = rows.length;
+    const intentFilters = Array.from(catalog.querySelectorAll('[data-country-intent]'));
+    const shortcutsWrap = searchForm.querySelector('[data-country-search-shortcuts]');
+    const searchControl = searchForm.querySelector('.vh-country-tool-search-control');
+    const suggestions = document.createElement('div');
+    suggestions.className = 'vh-country-search-suggestions';
+    suggestions.hidden = true;
+    suggestions.setAttribute('data-country-search-suggestions', '');
+    suggestions.setAttribute('role', 'listbox');
+    searchControl?.appendChild(suggestions);
+
+    let activeSuggestionIndex = -1;
+    let visibleMatches = [];
+    let activeIntent = 'all';
+
+    const recentKey = 'validohub.country.search.recent';
+    const initialShortcutEntries = shortcutsWrap
+      ? Array.from(shortcutsWrap.querySelectorAll('[data-country-search-shortcut]')).map(chip => {
+          const query = normalizeSearchText(chip.getAttribute('data-country-search-shortcut') || chip.textContent || '');
+          const label = String(chip.textContent || '').trim();
+          return query ? { query, label: label || query } : null;
+        }).filter(Boolean)
+      : [];
+    const popularFallback = initialShortcutEntries.length > 0
+      ? initialShortcutEntries
+      : [
+          { query: 'tool', label: 'tool' },
+          { query: 'identifier', label: 'identifier' },
+          { query: 'payment', label: 'payment' }
+        ];
+    const shortcutLabelByQuery = new Map(popularFallback.map(entry => [entry.query, entry.label]));
+    const aliases = new Map([
+      ['pasel', 'pesel'],
+      ['pesel id', 'pesel'],
+      ['vat pl', 'poland vat'],
+      ['nrb', 'iban nrb'],
+      ['iban', 'iban nrb'],
+      ['swift', 'swift bic'],
+      ['bic', 'swift bic'],
+      ['ksef xml', 'ksef'],
+      ['jpk xml', 'jpk'],
+      ['regon company', 'regon']
+    ]);
+
+    function getRecentTerms() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(recentKey) || '[]');
+        return Array.isArray(parsed) ? parsed.filter(Boolean).slice(0, 5) : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveRecentTerm(rawQuery) {
+      const value = normalizeSearchText(rawQuery);
+      if (!value) return;
+      const current = getRecentTerms().filter(item => item !== value);
+      current.unshift(value);
+      localStorage.setItem(recentKey, JSON.stringify(current.slice(0, 5)));
+    }
+
+    function renderShortcutChips() {
+      if (!shortcutsWrap) return;
+      const recent = getRecentTerms();
+      const baseQueries = popularFallback.map(entry => entry.query);
+      const terms = Array.from(new Set([...recent, ...baseQueries])).slice(0, 8);
+      shortcutsWrap.innerHTML = terms.map(term => {
+        const label = shortcutLabelByQuery.get(term) || term;
+        return `<button class="vh-country-search-chip" type="button" data-country-search-shortcut="${escapeHtml(term)}">${escapeHtml(label)}</button>`;
+      }).join('');
+    }
+
+    function canonicalizeQuery(value) {
+      const normalized = normalizeSearchText(value);
+      return aliases.get(normalized) || normalized;
+    }
+
+    function buildSuggestionItem(row, index, rawQuery) {
+      const href = row.getAttribute('href') || '#';
+      const title = (row.querySelector('strong')?.textContent || '').trim() || (row.textContent || '').trim();
+      const meta = (row.querySelector('small')?.textContent || href).trim();
+      return `
+        <a class="vh-country-search-suggestion" href="${escapeHtml(href)}" role="option" data-suggestion-index="${index}">
+          <span class="vh-country-search-suggestion-title">${highlightMatches(title, rawQuery)}</span>
+          <span class="vh-country-search-suggestion-meta">${highlightMatches(meta, rawQuery)}</span>
+        </a>
+      `;
+    }
+
+    function renderSuggestions(rawQuery) {
+      const query = canonicalizeQuery(rawQuery);
+      if (!query) {
+        suggestions.hidden = true;
+        suggestions.innerHTML = '';
+        activeSuggestionIndex = -1;
+        return;
+      }
+
+      visibleMatches = rows.filter(row => !row.hidden);
+      const topMatches = visibleMatches.slice(0, 8);
+      if (!topMatches.length) {
+        suggestions.hidden = true;
+        suggestions.innerHTML = '';
+        activeSuggestionIndex = -1;
+        return;
+      }
+
+      suggestions.innerHTML = topMatches.map((row, index) => buildSuggestionItem(row, index, query)).join('');
+      suggestions.hidden = false;
+      activeSuggestionIndex = -1;
+    }
+
+    function setActiveSuggestion(index) {
+      const items = Array.from(suggestions.querySelectorAll('.vh-country-search-suggestion'));
+      if (!items.length) {
+        activeSuggestionIndex = -1;
+        return;
+      }
+      activeSuggestionIndex = Math.max(0, Math.min(index, items.length - 1));
+      items.forEach((item, itemIndex) => item.classList.toggle('is-active', itemIndex === activeSuggestionIndex));
+      const activeItem = items[activeSuggestionIndex];
+      activeItem?.scrollIntoView({ block: 'nearest' });
+    }
+
+    function openActiveSuggestion() {
+      const active = suggestions.querySelector('.vh-country-search-suggestion.is-active') || suggestions.querySelector('.vh-country-search-suggestion');
+      if (active) {
+        window.location.href = active.getAttribute('href');
+      }
+    }
 
     searchForm.addEventListener('submit', event => {
       event.preventDefault();
+      if (!suggestions.hidden) {
+        openActiveSuggestion();
+        return;
+      }
       const firstMatch = catalog.querySelector('.vh-country-catalog-row.is-tool-search-match') || rows[0];
       if (firstMatch) {
         firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -105,20 +240,85 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     input.addEventListener('input', () => updateCountryToolSearch(input.value));
-    clearButton?.addEventListener('click', () => {
-      input.value = '';
-      updateCountryToolSearch('');
+    input.addEventListener('keydown', event => {
+      if (suggestions.hidden) return;
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        setActiveSuggestion(activeSuggestionIndex + 1);
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        setActiveSuggestion(activeSuggestionIndex - 1);
+      } else if (event.key === 'Enter') {
+        event.preventDefault();
+        openActiveSuggestion();
+      } else if (event.key === 'Escape') {
+        suggestions.hidden = true;
+        activeSuggestionIndex = -1;
+      }
+    });
+    input.addEventListener('blur', () => {
+      window.setTimeout(() => {
+        suggestions.hidden = true;
+      }, 120);
+    });
+    input.addEventListener('focus', () => {
+      if (input.value.trim()) {
+        renderSuggestions(input.value);
+      }
+    });
+
+    suggestions.addEventListener('mousedown', event => {
+      event.preventDefault();
+      const link = event.target.closest('.vh-country-search-suggestion');
+      if (!link) return;
+      window.location.href = link.getAttribute('href');
+    });
+
+    shortcutsWrap?.addEventListener('click', event => {
+      const chip = event.target.closest('[data-country-search-shortcut]');
+      if (!chip) return;
+      const shortcut = chip.getAttribute('data-country-search-shortcut') || '';
+      input.value = shortcut;
+      updateCountryToolSearch(shortcut);
       input.focus();
     });
 
+    intentFilters.forEach(button => {
+      button.addEventListener('click', () => {
+        activeIntent = button.dataset.countryIntent || 'all';
+        intentFilters.forEach(item => item.classList.toggle('is-active', item === button));
+        updateCountryToolSearch(input.value);
+      });
+    });
+
+    clearButton?.addEventListener('click', () => {
+      input.value = '';
+      updateCountryToolSearch('');
+      suggestions.hidden = true;
+      activeSuggestionIndex = -1;
+      input.focus();
+    });
+
+    document.addEventListener('keydown', event => {
+      const key = String(event.key || '').toLowerCase();
+      if ((event.metaKey || event.ctrlKey) && key === 'k') {
+        event.preventDefault();
+        input.focus();
+        input.select();
+      }
+    });
+
     function updateCountryToolSearch(rawQuery) {
-      const query = normalizeSearchText(rawQuery);
+      const query = canonicalizeQuery(rawQuery);
       let matchCount = 0;
       catalog.classList.toggle('is-searching', Boolean(query));
+      catalog.dataset.activeIntent = activeIntent;
 
       rows.forEach(row => {
         const haystack = normalizeSearchText(row.textContent || '');
-        const matches = !query || haystack.includes(query);
+        const rowIntent = row.dataset.intentGroup || 'other';
+        const matchesIntent = activeIntent === 'all' || activeIntent === rowIntent;
+        const matches = matchesIntent && (!query || haystack.includes(query));
         row.hidden = !matches;
         row.classList.toggle('is-tool-search-match', Boolean(query && matches));
         if (matches) matchCount += 1;
@@ -126,20 +326,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
       groups.forEach(group => {
         const visibleRows = group.querySelectorAll('.vh-country-catalog-row:not([hidden])').length;
+        const countEl = group.querySelector('.vh-country-group-count');
+        if (countEl) {
+          const totalRows = group.querySelectorAll('.vh-country-catalog-row').length;
+          countEl.textContent = query || activeIntent !== 'all' ? `${visibleRows}/${totalRows}` : String(totalRows);
+        }
         const isEmpty = visibleRows === 0;
         group.classList.toggle('is-tool-search-empty', Boolean(query && isEmpty));
-        if (query && !isEmpty) {
+        if ((query || activeIntent !== 'all') && !isEmpty) {
           group.open = true;
         }
       });
 
       catalog.classList.toggle('is-tool-search-empty', Boolean(query && matchCount === 0));
       if (status) {
-        status.textContent = query
-          ? `${matchCount}/${allCount} matches for “${rawQuery.trim()}” · Enter to jump`
-          : `Search ${allCount} country workbenches`;
+        if (query) {
+          const matchLabel = matchCount === 1 ? 'match' : 'matches';
+          status.textContent = `${matchCount} ${matchLabel} for “${rawQuery.trim()}” · Enter to jump`;
+        } else if (activeIntent !== 'all') {
+          status.textContent = `${matchCount} tools in ${activeIntent.replace(/-/g, ' ')}`;
+        } else {
+          status.textContent = `Search ${allCount} country workbenches`;
+        }
       }
+
+      if (query) {
+        saveRecentTerm(query);
+      }
+      renderShortcutChips();
+      renderSuggestions(rawQuery);
     }
+
+    renderShortcutChips();
   });
 
   function copyText(value) {
@@ -172,6 +390,40 @@ document.addEventListener('DOMContentLoaded', () => {
       .trim();
   }
 
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function highlightMatches(text, rawQuery) {
+    const source = String(text || '');
+    const needle = String(rawQuery || '').trim();
+    if (!source || !needle) {
+      return escapeHtml(source);
+    }
+
+    const sourceLower = source.toLowerCase();
+    const needleLower = needle.toLowerCase();
+    let from = 0;
+    let at = sourceLower.indexOf(needleLower, from);
+    if (at === -1) {
+      return escapeHtml(source);
+    }
+
+    let out = '';
+    while (at !== -1) {
+      out += escapeHtml(source.slice(from, at));
+      out += `<mark class="vh-country-search-highlight">${escapeHtml(source.slice(at, at + needle.length))}</mark>`;
+      from = at + needle.length;
+      at = sourceLower.indexOf(needleLower, from);
+    }
+    out += escapeHtml(source.slice(from));
+    return out;
+  }
+
   function showCountryCopiedStatus(button, label) {
     button.classList.add('vh-copied');
     let announcer = document.querySelector('.vh-copy-announcer');
@@ -193,6 +445,327 @@ document.addEventListener('DOMContentLoaded', () => {
       button.classList.remove('vh-copy-unavailable');
       button.textContent = originalText;
     }, 1300);
+  }
+
+  function initGlobalLanguageSwitcher() {
+    const headerInner = document.querySelector('.site-header .header-inner');
+    if (!headerInner) return;
+
+    const nav = headerInner.querySelector('.primary-nav');
+    const localeState = resolveLocaleState();
+    const panel = createLocaleSwitcher(localeState);
+    if (!panel) return;
+
+    headerInner.appendChild(panel);
+    const select = panel.querySelector('.vh-locale-switcher-select');
+    mountOfficialLanguageQuickActions(localeState, select);
+    if (!nav) return;
+
+    applyAutoLocale(localeState);
+  }
+
+  function resolveLocaleState() {
+    const supportedLocales = [
+      { code: 'en', label: 'English', icon: 'US' },
+      { code: 'pl', label: 'Polish', icon: 'PL' },
+      { code: 'de', label: 'German', icon: 'DE' },
+      { code: 'es', label: 'Spanish', icon: 'ES' },
+      { code: 'pt-BR', label: 'Portuguese (Brazil)', icon: 'BR' },
+      { code: 'fr', label: 'French', icon: 'FR' },
+      { code: 'it', label: 'Italian', icon: 'IT' },
+      { code: 'nl', label: 'Dutch', icon: 'NL' },
+      { code: 'pt-PT', label: 'Portuguese (Portugal)', icon: 'PT' },
+      { code: 'cs', label: 'Czech', icon: 'CZ' },
+      { code: 'sk', label: 'Slovak', icon: 'SK' },
+      { code: 'uk', label: 'Ukrainian', icon: 'UA' },
+      { code: 'tr', label: 'Turkish', icon: 'TR' },
+      { code: 'ro', label: 'Romanian', icon: 'RO' },
+      { code: 'hu', label: 'Hungarian', icon: 'HU' },
+      { code: 'sv', label: 'Swedish', icon: 'SE' },
+      { code: 'no', label: 'Norwegian', icon: 'NO' },
+      { code: 'fi', label: 'Finnish', icon: 'FI' },
+      { code: 'da', label: 'Danish', icon: 'DK' },
+      { code: 'ja', label: 'Japanese', icon: 'JP' },
+      { code: 'ko', label: 'Korean', icon: 'KR' },
+      { code: 'zh-CN', label: 'Chinese (Simplified)', icon: 'CN' },
+      { code: 'zh-TW', label: 'Chinese (Traditional)', icon: 'TW' },
+      { code: 'ar', label: 'Arabic', icon: 'SA' },
+      { code: 'he', label: 'Hebrew', icon: 'IL' },
+      { code: 'hi', label: 'Hindi', icon: 'IN' },
+      { code: 'id', label: 'Indonesian', icon: 'ID' },
+      { code: 'vi', label: 'Vietnamese', icon: 'VN' },
+      { code: 'th', label: 'Thai', icon: 'TH' },
+      { code: 'ms', label: 'Malay', icon: 'MY' }
+    ];
+
+    const alternates = collectAlternateLocaleLinks();
+    const currentLocale = detectCurrentLocale();
+    const storageKey = 'validohub.locale';
+    const savedLocale = normalizeLocaleTag(localStorage.getItem(storageKey) || '');
+    const browserLocale = detectBrowserLocale(supportedLocales);
+    const countryLocaleHints = resolveCountryLocaleHints();
+
+    return {
+      supportedLocales,
+      alternates,
+      currentLocale,
+      savedLocale,
+      browserLocale,
+      storageKey,
+      countryLocaleHints
+    };
+  }
+
+  function createLocaleSwitcher(state) {
+    const wrap = document.createElement('form');
+    wrap.className = 'vh-locale-switcher';
+    wrap.setAttribute('data-locale-switcher', '');
+
+    const label = document.createElement('label');
+    label.className = 'vh-locale-switcher-label';
+    label.setAttribute('for', 'vh-locale-select');
+    label.textContent = 'Language';
+
+    const select = document.createElement('select');
+    select.id = 'vh-locale-select';
+    select.className = 'vh-locale-switcher-select';
+    select.setAttribute('aria-label', 'Select language');
+
+    const selectedLocale = state.savedLocale || state.currentLocale || 'en';
+    populateLocaleOptions(select, state, selectedLocale);
+
+    select.addEventListener('change', () => {
+      const requested = normalizeLocaleTag(select.value);
+      if (!requested) return;
+      localStorage.setItem(state.storageKey, requested);
+      document.documentElement.lang = requested;
+      const switched = navigateToLocaleIfAvailable(state, requested);
+      if (!switched) return;
+    });
+
+    wrap.append(select);
+    return wrap;
+  }
+
+  function populateLocaleOptions(select, state, selectedLocale) {
+    const orderedCodes = dedupeLocaleList([
+      ...(state.countryLocaleHints || []),
+      ...state.supportedLocales.map(item => item.code)
+    ]);
+
+    orderedCodes.forEach(code => {
+      const option = createLocaleOption(state.supportedLocales, code);
+      if (!option) return;
+      select.appendChild(option);
+    });
+
+    const hasSelected = Array.from(select.options).some(option => normalizeLocaleTag(option.value) === normalizeLocaleTag(selectedLocale));
+    select.value = hasSelected ? selectedLocale : 'en';
+  }
+
+  function createLocaleOption(supportedLocales, code) {
+    const normalized = normalizeLocaleTag(code);
+    const match = supportedLocales.find(item => normalizeLocaleTag(item.code) === normalized);
+    if (!match) return null;
+    const option = document.createElement('option');
+    option.value = match.code;
+    option.textContent = createLocaleOptionLabel(match);
+    return option;
+  }
+
+  function createCountryLanguageQuickActions(state, select) {
+    const row = document.createElement('div');
+    row.className = 'vh-country-language-quick';
+
+    const hints = dedupeLocaleList(state.countryLocaleHints || []);
+    if (!hints.length) {
+      row.hidden = true;
+      return row;
+    }
+
+    const title = document.createElement('span');
+    title.className = 'vh-country-language-quick-title';
+    title.textContent = 'Official';
+    row.appendChild(title);
+
+    hints.forEach(code => {
+      const localeItem = state.supportedLocales.find(item => normalizeLocaleTag(item.code) === normalizeLocaleTag(code));
+      if (!localeItem) return;
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'vh-country-language-pill';
+      button.textContent = `${toFlagEmoji(localeItem.icon)} ${localeItem.label}`.trim();
+      button.addEventListener('click', () => {
+        localStorage.setItem(state.storageKey, localeItem.code);
+        if (select) {
+          select.value = localeItem.code;
+        }
+        navigateToLocaleIfAvailable(state, localeItem.code);
+      });
+      row.appendChild(button);
+    });
+
+    return row;
+  }
+
+  function mountOfficialLanguageQuickActions(state, select) {
+    const breadcrumbs = document.querySelector('.breadcrumbs, nav[aria-label="Breadcrumb"]');
+    if (!breadcrumbs) return;
+
+    breadcrumbs.classList.add('breadcrumbs');
+
+    const row = createCountryLanguageQuickActions(state, select);
+    if (!row || row.hidden) return;
+
+    row.classList.add('vh-breadcrumb-language-quick');
+    breadcrumbs.appendChild(row);
+  }
+
+  function createLocaleOptionLabel(item) {
+    const icon = toFlagEmoji(item.icon);
+    return icon ? `${icon} ${item.label}` : item.label;
+  }
+
+  function toFlagEmoji(countryCode) {
+    const code = String(countryCode || '').trim().toUpperCase();
+    if (!/^[A-Z]{2}$/.test(code)) return '';
+    const first = code.codePointAt(0) + 127397;
+    const second = code.codePointAt(1) + 127397;
+    return String.fromCodePoint(first, second);
+  }
+
+  function collectAlternateLocaleLinks() {
+    const map = new Map();
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(link => {
+      const locale = normalizeLocaleTag(link.getAttribute('hreflang') || '');
+      const href = link.getAttribute('href') || '';
+      if (!locale || !href || locale === 'x-default') return;
+      map.set(locale, href);
+    });
+    return map;
+  }
+
+  function detectCurrentLocale() {
+    const htmlLang = normalizeLocaleTag(document.documentElement.lang || '');
+    if (htmlLang) return htmlLang;
+    const parts = String(window.location.pathname || '/').split('/').filter(Boolean);
+    return normalizeLocaleTag(parts[0] || 'en') || 'en';
+  }
+
+  function detectBrowserLocale(supportedLocales) {
+    const browserTags = Array.isArray(navigator.languages) && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || ''];
+
+    const supported = supportedLocales.map(item => normalizeLocaleTag(item.code));
+    for (const browserTag of browserTags) {
+      const normalized = normalizeLocaleTag(browserTag);
+      if (!normalized) continue;
+      if (supported.includes(normalized)) return normalized;
+      const base = normalized.split('-')[0];
+      const fallback = supported.find(code => code === base || code.startsWith(`${base}-`));
+      if (fallback) return fallback;
+    }
+    return '';
+  }
+
+  function resolveCountryLocaleHints() {
+    const parts = String(window.location.pathname || '/').split('/').filter(Boolean);
+    const maybeCountry = parts.length >= 2 ? parts[1] : '';
+    if (!maybeCountry) return [];
+
+    const countryRegistry = window.ValidoHubCountries && window.ValidoHubCountries.hubs;
+    const hub = countryRegistry && countryRegistry[maybeCountry];
+    const metadata = hub && hub.metadata ? hub.metadata : null;
+
+    const localeHints = [];
+    if (metadata && metadata.locale) {
+      localeHints.push(metadata.locale);
+    }
+
+    if (!localeHints.length) {
+      const countryLocaleFallback = {
+        brazil: 'pt-BR',
+        poland: 'pl',
+        germany: 'de',
+        spain: 'es'
+      };
+      if (countryLocaleFallback[maybeCountry]) {
+        localeHints.push(countryLocaleFallback[maybeCountry]);
+      }
+    }
+
+    // Keep English available as a stable secondary fallback across country hubs.
+    localeHints.push('en');
+
+    return dedupeLocaleList(localeHints);
+  }
+
+  function applyAutoLocale(state) {
+    if (state.savedLocale) return;
+    const preferred = state.browserLocale;
+    if (!preferred || preferred === state.currentLocale) return;
+    const preferredAlternate = state.alternates.get(preferred);
+    if (!preferredAlternate) return;
+
+    const targetHref = attachCurrentQueryAndHash(preferredAlternate);
+    if (isSameLocation(targetHref)) return;
+    window.location.href = targetHref;
+  }
+
+  function navigateToLocaleIfAvailable(state, requestedLocale) {
+    const normalizedRequested = normalizeLocaleTag(requestedLocale);
+    if (!normalizedRequested) return false;
+
+    const directAlternate = state.alternates.get(normalizedRequested);
+    if (directAlternate) {
+      const targetHref = attachCurrentQueryAndHash(directAlternate);
+      if (isSameLocation(targetHref)) return false;
+      window.location.href = targetHref;
+      return true;
+    }
+
+    return false;
+  }
+
+  function attachCurrentQueryAndHash(href) {
+    const alternateUrl = new URL(href, window.location.origin);
+    const localUrl = new URL(alternateUrl.pathname, window.location.origin);
+    localUrl.search = alternateUrl.search || window.location.search;
+    localUrl.hash = alternateUrl.hash || window.location.hash;
+    return localUrl.toString();
+  }
+
+  function isSameLocation(href) {
+    const target = new URL(href, window.location.origin);
+    const current = new URL(window.location.href);
+    return target.pathname === current.pathname && target.search === current.search && target.hash === current.hash;
+  }
+
+  function normalizeLocaleTag(value) {
+    const raw = String(value || '').trim();
+    if (!raw) return '';
+    const [language, region] = raw.split('-');
+    if (!language) return '';
+    const base = language.toLowerCase();
+    if (!/^[a-z]{2,3}$/.test(base)) return '';
+    if (!region) return base;
+    const normalizedRegion = region.toUpperCase();
+    if (!/^[A-Z]{2}$/.test(normalizedRegion)) return base;
+    return `${base}-${normalizedRegion}`;
+  }
+
+  function dedupeLocaleList(items) {
+    const out = [];
+    const seen = new Set();
+    items.forEach(item => {
+      const normalized = normalizeLocaleTag(item);
+      if (!normalized || seen.has(normalized)) return;
+      seen.add(normalized);
+      out.push(normalized);
+    });
+    return out;
   }
 
   function showCopiedStatus(btn) {

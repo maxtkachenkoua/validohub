@@ -89,7 +89,17 @@
       "Polish Test Data Generator",
       "Polish Invoice Number Helper",
       "PLN Grosz Converter",
-      "Polish SEPA Transfer Helper"
+      "Polish SEPA Transfer Helper",
+      "Polish VIES Readiness Helper",
+      "Polish UPO / e-Deklaracje Payload Checker",
+      "Polish KSeF FA(2) Field Mapper Assistant",
+      "Polish Payroll Net/Gross Sanity Helper",
+      "Polish Bank Transfer Reconciliation Helper",
+      "Polish IBAN Owner-Name Precheck",
+      "Polish Address Transliteration & Normalization",
+      "Polish OCR Post-Processing Fixer",
+      "Polish Invoice Duplicate-Risk Detector",
+      "Polish Compliance Checklist Generator"
     ],
     "plannedWorkbenches": [],
     "completion": 90,
@@ -2146,6 +2156,116 @@
       "tags": [
         "Poland",
         "Developer",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish VIES Readiness Helper": {
+      "status": "available",
+      "path": "poland-vies-readiness-helper/",
+      "description": "Prepare and inspect offline VAT payload readiness for VIES checks: country prefix, VAT number shape, and optional company context.",
+      "tags": [
+        "Poland",
+        "Business",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish UPO / e-Deklaracje Payload Checker": {
+      "status": "available",
+      "path": "poland-upo-edeklaracje-payload-checker/",
+      "description": "Validate local payload readiness for UPO and e-Deklaracje workflows without submission: identifiers, form code, period, and contact fields.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish KSeF FA(2) Field Mapper Assistant": {
+      "status": "available",
+      "path": "poland-ksef-fa2-field-mapper-assistant/",
+      "description": "Map invoice snippets against common KSeF FA(2) field expectations and highlight missing key fields before schema validation.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Payroll Net/Gross Sanity Helper": {
+      "status": "available",
+      "path": "poland-payroll-net-gross-sanity-helper/",
+      "description": "Run a local payroll sanity check for gross, net, taxes, and deductions with consistency diagnostics for onboarding and QA.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Bank Transfer Reconciliation Helper": {
+      "status": "available",
+      "path": "poland-bank-transfer-reconciliation-helper/",
+      "description": "Reconcile pasted transfer rows locally against references and amounts to detect likely unmatched or duplicate entries.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish IBAN Owner-Name Precheck": {
+      "status": "available",
+      "path": "poland-iban-owner-name-precheck/",
+      "description": "Perform a local pre-check of IBAN shape and recipient-name consistency hints before manual banking verification.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Address Transliteration & Normalization": {
+      "status": "available",
+      "path": "poland-address-transliteration-normalizer/",
+      "description": "Normalize and transliterate Polish address text into ASCII-safe variants for integrations that reject diacritics.",
+      "tags": [
+        "Poland",
+        "Business",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish OCR Post-Processing Fixer": {
+      "status": "available",
+      "path": "poland-ocr-postprocessing-fixer/",
+      "description": "Repair common OCR mistakes in Polish business and document snippets, then emit cleaned and masked output for workflows.",
+      "tags": [
+        "Poland",
+        "Data Quality",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Invoice Duplicate-Risk Detector": {
+      "status": "available",
+      "path": "poland-invoice-duplicate-risk-detector/",
+      "description": "Detect likely invoice duplicates and replay risk using invoice numbers, dates, parties, and amounts from pasted records.",
+      "tags": [
+        "Poland",
+        "Finance",
+        "Offline",
+        "Premium"
+      ]
+    },
+    "Polish Compliance Checklist Generator": {
+      "status": "available",
+      "path": "poland-compliance-checklist-generator/",
+      "description": "Generate an exportable offline compliance checklist for Polish onboarding, invoicing, tax, and payment readiness scenarios.",
+      "tags": [
+        "Poland",
+        "Business",
         "Offline",
         "Premium"
       ]

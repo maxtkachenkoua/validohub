@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: "Polish Address Transliteration & Normalization"
+summary:
+  en: "Normalize and transliterate Polish address text into ASCII-safe variants for integrations that reject diacritics."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [poland-address-formatter, poland-postal-code-validator, poland-postal-address-parser-pro, poland-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Address Transliteration & Normalization | ValidoHub"
+  description:
+    en: "Normalize and transliterate Polish address text into ASCII-safe variants for integrations that reject diacritics."

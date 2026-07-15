@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-ksef-fa2-field-mapper-assistant
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "Polish KSeF FA(2) Field Mapper Assistant"
+summary:
+  en: "Map invoice snippets against common KSeF FA(2) field expectations and highlight missing key fields before schema validation."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [poland-ksef-invoice-xml-validator, poland-jpk-file-validator, poland-invoice-data-auditor, poland-split-payment-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish KSeF FA(2) Field Mapper Assistant | ValidoHub"
+  description:
+    en: "Map invoice snippets against common KSeF FA(2) field expectations and highlight missing key fields before schema validation."

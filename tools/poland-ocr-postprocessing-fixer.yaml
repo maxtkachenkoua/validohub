@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-ocr-postprocessing-fixer
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: "Polish OCR Post-Processing Fixer"
+summary:
+  en: "Repair common OCR mistakes in Polish business and document snippets, then emit cleaned and masked output for workflows."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [poland-data-quality-workbench, poland-pii-masker, poland-invoice-data-auditor, poland-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish OCR Post-Processing Fixer | ValidoHub"
+  description:
+    en: "Repair common OCR mistakes in Polish business and document snippets, then emit cleaned and masked output for workflows."

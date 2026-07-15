@@ -183,7 +183,7 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest) {
     `;
 
     const breadcrumbsHtml = renderBreadcrumbs(data.catalog.name);
-    const heroHtml = await renderCountryVisualHero(model);
+    const heroHtml = await renderCountryVisualHero(model, routeRegistry);
 
     // Generate JSON-LD payload (CollectionPage)
     const jsonLd = {

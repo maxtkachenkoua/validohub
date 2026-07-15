@@ -301,6 +301,16 @@ This registry records production browser workbenches currently owned by ValidoHu
   - `tools/poland-insurance-policy-number-helper.yaml`
   - `tools/poland-parcel-tracking-inspector.yaml`
   - `tools/poland-energy-meter-ppe-inspector.yaml`
+  - `tools/poland-vies-readiness-helper.yaml`
+  - `tools/poland-upo-edeklaracje-payload-checker.yaml`
+  - `tools/poland-ksef-fa2-field-mapper-assistant.yaml`
+  - `tools/poland-payroll-net-gross-sanity-helper.yaml`
+  - `tools/poland-bank-transfer-reconciliation-helper.yaml`
+  - `tools/poland-iban-owner-name-precheck.yaml`
+  - `tools/poland-address-transliteration-normalizer.yaml`
+  - `tools/poland-ocr-postprocessing-fixer.yaml`
+  - `tools/poland-invoice-duplicate-risk-detector.yaml`
+  - `tools/poland-compliance-checklist-generator.yaml`
   - `tools/poland-data-quality-workbench.yaml`
 - Algorithm ID:
   - `validohub.poland-baseline`
@@ -308,6 +318,9 @@ This registry records production browser workbenches currently owned by ValidoHu
   - KSeF and JPK XML readiness inspection.
   - Split-payment, invoice, receipt, bank statement, transfer-title, payment QR, policy, and data-quality helpers.
   - PKD, PKWiU, BDO, TERYT hierarchy, municipality, PPE, parcel, passport, MRZ, driving-licence, and vehicle-document inspectors.
+  - VIES readiness payload preparation, UPO/e-Deklaracje payload checks, KSeF FA(2) field mapping, payroll net/gross sanity checks.
+  - Bank transfer reconciliation helper, IBAN owner-name pre-check, address transliteration and normalization, OCR post-processing fixes.
+  - Invoice duplicate-risk detection and exportable compliance checklist generation.
   - CEIDG and company-onboarding local evidence checklists.
   - Real local SVG QR generation for the payment QR helper.
   - Shared smart presets, recent local inputs, batch review, masking, normalized output, audit JSON, pipeline cards, domain panels, quality analysis, and mobile-safe layout.

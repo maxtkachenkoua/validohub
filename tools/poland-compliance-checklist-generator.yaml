@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-compliance-checklist-generator
+kind: tool
+module: validohub
+country: PL
+category: developer-tools
+status: active
+name:
+  en: "Polish Compliance Checklist Generator"
+summary:
+  en: "Generate an exportable offline compliance checklist for Polish onboarding, invoicing, tax, and payment readiness scenarios."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [poland-company-onboarding-auditor, poland-vies-readiness-helper, poland-upo-edeklaracje-payload-checker, poland-ksef-fa2-field-mapper-assistant]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Compliance Checklist Generator | ValidoHub"
+  description:
+    en: "Generate an exportable offline compliance checklist for Polish onboarding, invoicing, tax, and payment readiness scenarios."

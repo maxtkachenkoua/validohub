@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-iban-owner-name-precheck
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "Polish IBAN Owner-Name Precheck"
+summary:
+  en: "Perform a local pre-check of IBAN shape and recipient-name consistency hints before manual banking verification."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [poland-iban-nrb-validator, poland-payment-qr-generator, poland-transfer-title-builder, poland-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish IBAN Owner-Name Precheck | ValidoHub"
+  description:
+    en: "Perform a local pre-check of IBAN shape and recipient-name consistency hints before manual banking verification."

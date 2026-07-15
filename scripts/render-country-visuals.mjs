@@ -59,6 +59,67 @@ function escapeHtml(value) {
     .replaceAll('"', '&quot;');
 }
 
+function getCountryValidatorRoutes(model, routeRegistry) {
+  if (!routeRegistry || typeof routeRegistry.getAll !== 'function') return [];
+  return routeRegistry.getAll().filter(route => route.type === 'validator' && route.path.startsWith(`/en/${model.slug}/`));
+}
+
+const COUNTRY_SEARCH_HINTS = [
+  { label: 'PESEL', pattern: /pesel/ },
+  { label: 'NIP', pattern: /\bnip\b/ },
+  { label: 'REGON', pattern: /regon/ },
+  { label: 'KRS', pattern: /\bkrs\b/ },
+  { label: 'BLIK', pattern: /blik/ },
+  { label: 'PIX', pattern: /\bpix\b/ },
+  { label: 'CPF', pattern: /\bcpf\b/ },
+  { label: 'CNPJ', pattern: /cnpj/ },
+  { label: 'DNI', pattern: /\bdni\b/ },
+  { label: 'NIE', pattern: /\bnie\b/ },
+  { label: 'NIF', pattern: /\bnif\b/ },
+  { label: 'CIF', pattern: /\bcif\b/ },
+  { label: 'IBAN/NRB', pattern: /iban.*nrb|nrb.*iban|\bnrb\b/ },
+  { label: 'IBAN', pattern: /\biban\b/ },
+  { label: 'SWIFT/BIC', pattern: /swift|\bbic\b/ },
+  { label: 'SEPA', pattern: /\bsepa\b/ },
+  { label: 'VAT', pattern: /\bvat\b|vies/ },
+  { label: 'INVOICE', pattern: /invoice|ksef|jpk|paragon|receipt/ },
+  { label: 'POSTAL', pattern: /postal|postcode|zip|cep/ },
+  { label: 'PHONE', pattern: /phone|telefon/ },
+  { label: 'ADDRESS', pattern: /address/ },
+  { label: 'VIN', pattern: /\bvin\b/ },
+  { label: 'MRZ', pattern: /\bmrz\b/ }
+];
+
+function deriveCountrySearchHints(model, routeRegistry) {
+  const routes = getCountryValidatorRoutes(model, routeRegistry);
+  const routeText = routes
+    .map(route => `${String(route.title || '').toLowerCase()} ${String(route.path || '').toLowerCase()}`)
+    .join(' ');
+
+  const hints = COUNTRY_SEARCH_HINTS
+    .filter(item => item.pattern.test(routeText))
+    .map(item => item.label)
+    .slice(0, 5);
+
+  if (hints.length === 0) {
+    const fallback = routes
+      .map(route => String(route.title || '').trim())
+      .filter(Boolean)
+      .map(title => title.split(/\s+/)[0])
+      .filter(Boolean)
+      .slice(0, 5);
+    if (fallback.length > 0) {
+      hints.push(...fallback);
+    }
+  }
+
+  if (hints.length === 0) {
+    hints.push('tool', 'identifier', 'payment');
+  }
+
+  return hints;
+}
+
 export async function renderCountryOutlineCard(model) {
   const assetPath = model.visualAssets.outlineSrc;
   if (!assetPath) return '';
@@ -132,9 +193,16 @@ export function renderCountryCompletionCard(model) {
   return cleanHtml(html);
 }
 
-export async function renderCountryVisualHero(model) {
+export async function renderCountryVisualHero(model, routeRegistry = null) {
   const outlineHtml = await renderCountryOutlineCard(model);
   const locationHtml = await renderCountryLocationMapCard(model);
+  const searchHints = deriveCountrySearchHints(model, routeRegistry);
+  const placeholder = `Search ${searchHints.join(', ')}...`;
+  const searchStatus = `Search across available ${model.displayName} workbenches on this page.`;
+  const shortcutButtons = searchHints.map(hint => {
+    const shortcut = hint.toLowerCase();
+    return `<button class="vh-country-search-chip" type="button" data-country-search-shortcut="${escapeHtml(shortcut)}">${escapeHtml(hint)}</button>`;
+  }).join('\n');
 
   const html = `
     <header class="vh-country-hero vh-country-${model.slug} vh-country-theme--${model.slug}">
@@ -149,19 +217,22 @@ export async function renderCountryVisualHero(model) {
           <span class="vh-country-status-badge vh-country-status-ready">Static V2 Compiled</span>
           <span class="vh-country-status-badge vh-country-status-badge vh-custom-badge">${escapeHtml(model.region)}</span>
         </div>
-        <form class="vh-country-tool-search" role="search" data-country-tool-search>
-          <label for="vh-country-tool-search-${escapeHtml(model.slug)}">Find a country tool</label>
-          <div class="vh-country-tool-search-control">
-            <input id="vh-country-tool-search-${escapeHtml(model.slug)}" class="vh-country-tool-search-input" type="search" placeholder="Search PESEL, BLIK, VAT, IBAN..." autocomplete="off" data-country-tool-search-input>
-            <button type="button" data-country-tool-search-clear aria-label="Clear country tool search">Clear</button>
-          </div>
-          <p class="vh-country-tool-search-status" data-country-tool-search-status>Search across available workbenches on this page.</p>
-        </form>
       </div>
       <div class="vh-country-visual-grid">
         ${outlineHtml}
         ${locationHtml}
       </div>
+      <form class="vh-country-tool-search" role="search" data-country-tool-search>
+        <label for="vh-country-tool-search-${escapeHtml(model.slug)}">Find a country tool</label>
+        <div class="vh-country-tool-search-control">
+          <input id="vh-country-tool-search-${escapeHtml(model.slug)}" class="vh-country-tool-search-input" type="search" placeholder="${escapeHtml(placeholder)}" autocomplete="off" data-country-tool-search-input>
+          <button type="button" data-country-tool-search-clear aria-label="Clear country tool search">Clear</button>
+        </div>
+        <p class="vh-country-tool-search-status" data-country-tool-search-status>${escapeHtml(searchStatus)}</p>
+        <div class="vh-country-search-shortcuts" data-country-search-shortcuts>
+          ${shortcutButtons}
+        </div>
+      </form>
     </header>
   `;
   return cleanHtml(html);

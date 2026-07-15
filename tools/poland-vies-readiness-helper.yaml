@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-vies-readiness-helper
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "Polish VIES Readiness Helper"
+summary:
+  en: "Prepare and inspect offline VAT payload readiness for VIES checks: country prefix, VAT number shape, and optional company context."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [poland-vat-validator, poland-nip-validator, poland-company-onboarding-auditor, poland-ceidg-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish VIES Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare and inspect offline VAT payload readiness for VIES checks: country prefix, VAT number shape, and optional company context."

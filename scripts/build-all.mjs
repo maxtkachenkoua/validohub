@@ -106,7 +106,8 @@ async function compileAssets() {
     js: `/assets/js/${jsFileName}`
   };
 
-  // Write manifest to generated output only
+  // Keep source and generated manifests in sync so every pipeline stage reads the same bundle hashes.
+  await writeFile(resolve(projectRoot, 'assets', 'assets-manifest.json'), JSON.stringify(manifest, null, 2), 'utf8');
   await writeFile(resolve(siteRoot, 'assets-manifest.json'), JSON.stringify(manifest, null, 2), 'utf8');
 
   console.log(`✓ Compiled CSS bundle: ${manifest.css}`);
@@ -126,6 +127,17 @@ function escapeHtml(value) {
 
 function stripHtml(value) {
   return String(value || '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+}
+
+async function getConfiguredLocales() {
+  const siteConfig = await readFile(resolve(projectRoot, 'site.yaml'), 'utf8');
+  const inline = siteConfig.match(/^locales:\s*\[(.*?)\]\s*$/m);
+  if (!inline) return ['en'];
+  const values = inline[1]
+    .split(',')
+    .map(item => item.trim())
+    .filter(Boolean);
+  return values.length > 0 ? values : ['en'];
 }
 
 function pageTitleForDocumentation(content, route) {
@@ -193,6 +205,10 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
 
       content = humanizeDocumentationSections(content, route);
 
+      // Force current hashed bundles on Java-owned pages to avoid stale hash drift across publish stages.
+      content = content.replace(/<link rel="stylesheet" href="\/assets\/css\/bundle\.[a-f0-9]{6}\.css">/gi, `<link rel="stylesheet" href="${assetsManifest.css}">`);
+      content = content.replace(/<script src="\/assets\/js\/bundle\.[a-f0-9]{6}\.js"><\/script>/gi, `<script src="${assetsManifest.js}"></script>`);
+
       // Determine proper JSON-LD schema
       let type = 'WebPage';
       let title = route.title || 'ValidoHub';
@@ -233,6 +249,93 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
 
       await writeFile(filePath, content, 'utf8');
       console.log(`✓ Post-processed Java page: ${route.path}`);
+    }
+  }
+}
+
+async function ensureLocalizedCountryHubFallbacks(routeRegistry, assetsManifest) {
+  const locales = await getConfiguredLocales();
+  const countryRoutes = routeRegistry.getAll().filter(route => route.type === 'country' && route.path.startsWith('/en/'));
+
+  for (const localeCode of locales) {
+    if (localeCode === 'en') continue;
+
+    for (const countryRoute of countryRoutes) {
+      const slug = countryRoute.path.split('/').filter(Boolean)[1];
+      const localizedPath = `/${localeCode}/${slug}/`;
+      const outputPath = resolve(siteRoot, localeCode, slug, 'index.html');
+
+      if (!routeRegistry.has(localizedPath)) {
+        routeRegistry.register(localizedPath, {
+          type: 'country',
+          title: `${slug.replace(/-/g, ' ')} | ValidoHub`,
+          sourceOwner: 'node',
+          outputPath,
+          metadata: {
+            fallback: true,
+            sourcePath: countryRoute.path,
+            locale: localeCode,
+            slug
+          }
+        });
+      }
+
+      const localeHomePath = routeRegistry.has(`/${localeCode}/`) ? `/${localeCode}/` : '/en/';
+      const localeCountriesPath = routeRegistry.has(`/${localeCode}/countries/`) ? `/${localeCode}/countries/` : '/en/countries/';
+      const localeCategoriesPath = routeRegistry.has(`/${localeCode}/categories/`) ? `/${localeCode}/categories/` : null;
+      const englishHubPath = `/en/${slug}/`;
+      const hubTitle = countryRoute.metadata?.catalog?.name || slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+      const html = `<!doctype html>
+<html lang="${localeCode}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(hubTitle)} | ValidoHub</title>
+  <meta name="description" content="Localized country hub shell for ${escapeHtml(hubTitle)}. Full hub content remains available in English while localization rollout is in progress.">
+  <link rel="canonical" href="https://validohub.com${englishHubPath}">
+  <link rel="stylesheet" href="${assetsManifest.css}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="${localeHomePath}" aria-label="ValidoHub home">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span class="brand-text">ValidoHub</span>
+      </a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="${localeHomePath}">Home</a>
+        <a href="${localeCountriesPath}">Countries</a>
+      </nav>
+    </div>
+  </header>
+  <main class="site-main">
+    <div class="container page-shell country-hub-page">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="${localeHomePath}">Home</a></li>
+          <li><a href="${localeCategoriesPath || localeCountriesPath}">Countries</a></li>
+          <li><span>${escapeHtml(hubTitle)}</span></li>
+        </ol>
+      </nav>
+      <section class="country-hero" aria-label="Localized country hub fallback">
+        <div class="country-hero-copy">
+          <p class="eyebrow">Localization rollout</p>
+          <h1>${escapeHtml(hubTitle)} country hub</h1>
+          <p>This locale is enabled, but this country hub is still being fully localized. You can continue in the English hub now.</p>
+          <p><a class="button button-primary" href="${englishHubPath}">Open English hub</a></p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="${assetsManifest.js}"></script>
+</body>
+</html>
+`;
+
+      await mkdir(dirname(outputPath), { recursive: true });
+      await writeFile(outputPath, html, 'utf8');
+      console.log(`✓ Generated localized country fallback page: ${localizedPath}`);
     }
   }
 }
@@ -530,6 +633,7 @@ async function main() {
     console.log('\n[Step 5/5] Re-compiling Template Archetypes...');
     await compileCountriesPortal(routeRegistry, assetsManifest);
     await compileIdentifiers(routeRegistry, assetsManifest);
+    await ensureLocalizedCountryHubFallbacks(routeRegistry, assetsManifest);
     await postProcessJavaPages(routeRegistry, assetsManifest);
     await writeSitemap(routeRegistry);
 

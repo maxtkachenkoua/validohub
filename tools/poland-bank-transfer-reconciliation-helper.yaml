@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: poland-bank-transfer-reconciliation-helper
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: "Polish Bank Transfer Reconciliation Helper"
+summary:
+  en: "Reconcile pasted transfer rows locally against references and amounts to detect likely unmatched or duplicate entries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - explain
+algorithm:
+  algorithmId: validohub.poland-baseline
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
+related:
+  explicit: [poland-bank-statement-parser, poland-transfer-title-builder, poland-payment-qr-generator, poland-split-payment-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Polish Bank Transfer Reconciliation Helper | ValidoHub"
+  description:
+    en: "Reconcile pasted transfer rows locally against references and amounts to detect likely unmatched or duplicate entries."
