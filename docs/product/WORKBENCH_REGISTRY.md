@@ -217,12 +217,18 @@ This registry records production browser workbenches currently owned by ValidoHu
   - Polish VAT syntax validation using PL + NIP checksum and VIES boundary copy.
   - Polish bank-code / branch segment inspection from valid NRB or PL IBAN.
   - Shared presets, recent local inputs, validation timeline, result cards, field breakdown, debugger, developer JSON, copy normalized, copy JSON, and downloads through the shared framework.
+  - Batch validation for every tool with mixed valid/invalid reporting.
+  - Mask/anonymize helpers for logs, screenshots, support tickets, and developer fixtures.
+  - Copy helpers for normalized value, masked value, generated test case, and audit JSON.
+  - Versioned audit JSON with masked, proves, fields, diagnostics, warnings, and recommendations.
+  - Richer offline dictionaries for Polish bank codes, phone area prefixes, mobile-like prefixes, and license-plate prefixes.
+  - Tool-specific repair suggestions and clearer offline/live-boundary language.
 - Known future ideas:
-  - Batch CSV validation for each Polish identifier.
+  - CSV import/export for larger batch files.
   - Official lookup integrations only if a future privacy/network product spec explicitly approves them.
-  - Richer bank-code dictionary and administrative prefix coverage.
-  - Mask/anonymize helpers for logs and support tickets.
-- Current quality status: Production-quality V1 suite modeled after the PESEL gold standard.
+  - Even deeper administrative license-plate coverage and bank-code dictionary expansion.
+  - Dedicated printable audit report layout.
+- Current quality status: Production-quality V2 suite modeled after the PESEL gold standard.
 
 
 ## Countries Platform

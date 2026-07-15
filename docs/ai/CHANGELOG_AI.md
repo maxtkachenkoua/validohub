@@ -401,3 +401,26 @@ Impact:
 - Poland Premium Workbench Suite lives entirely in ValidoHub assets, content, and metadata.
 - Valido Engine remains untouched.
 - No official registry lookup, VIES lookup, bank lookup, vehicle lookup, phone lookup, tax-status lookup, backend, REST API, database, or Java execution was added.
+
+## Poland Premium Workbench Suite V2
+
+Changed:
+
+- Upgraded all ten Poland Premium Suite workbenches in the shared browser plugin.
+- Added batch validation for every tool with mixed valid/invalid summaries and copyable batch JSON.
+- Added masking/anonymization helpers for Polish identifiers, IBAN/NRB, phone numbers, license plates, VAT numbers, and bank-account inputs.
+- Added copy helpers for masked value and generated test case in addition to normalized value and audit JSON.
+- Added versioned audit JSON with fields, warnings, diagnostics, repair recommendations, proof scope, and boundary copy.
+- Expanded offline bank-code, phone-prefix, mobile-prefix, and license-plate prefix dictionaries.
+- Improved per-tool diagnostics, field tables, quality notes, and repair suggestions.
+- Preserved browser-only execution and kept Valido Engine untouched.
+
+Reason:
+
+The first Poland suite pass established the pages. V2 moves all ten tools closer to the PESEL gold standard by making them more useful for real developer workflows, test fixtures, support logs, batch cleanup, and safe offline diagnostics.
+
+Impact:
+
+- The implementation remains entirely in ValidoHub assets and documentation.
+- Valido Engine remains generic and untouched.
+- No official registry lookup, VIES lookup, bank lookup, phone lookup, vehicle lookup, tax-status lookup, backend, REST API, database, or Java execution was added.
