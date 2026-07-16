@@ -1,4 +1,23 @@
 
+## All-Locale Localization Baseline
+
+Changed:
+
+- Promoted the language switcher list to the required localization matrix for country pages, tool pages, Workbenches, and visible UI.
+- Expanded ValidoHub localized route generation beyond the earlier five-locale set.
+- Added Poland as the first all-locale country-page acceptance test target.
+
+Reason:
+
+Future localization work must not silently ship partial language coverage when the product exposes more languages in the selector.
+
+Impact:
+
+- Any new localized country or tool must include every supported locale by default.
+- Localized internal links must point at the selected locale route when that route exists.
+- Valido Engine remains generic and untouched.
+
+
 ## Poland Localization Completion Sweep
 
 - Tightened the Poland country-page localization pass for remaining rich country hub strings across supported locales.

@@ -779,13 +779,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function uiLabel(localeCode, key) {
     const locale = normalizeLocaleTag(localeCode || 'en');
-    const lang = locale.startsWith('pt-') ? 'pt-BR' : (locale.split('-')[0] || 'en');
+    const lang = locale === 'pt-PT' ? 'pt-PT' : locale === 'zh-CN' || locale === 'zh-TW' ? locale : locale.startsWith('pt-') ? 'pt-BR' : (locale.split('-')[0] || 'en');
     const dict = {
       en: { language: 'Language', selectLanguage: 'Select language', official: 'Official' },
       de: { language: 'Sprache', selectLanguage: 'Sprache wählen', official: 'Offiziell' },
       es: { language: 'Idioma', selectLanguage: 'Seleccionar idioma', official: 'Oficial' },
       pl: { language: 'Język', selectLanguage: 'Wybierz język', official: 'Urzędowy' },
-      'pt-BR': { language: 'Idioma', selectLanguage: 'Selecionar idioma', official: 'Oficial' }
+      'pt-BR': { language: 'Idioma', selectLanguage: 'Selecionar idioma', official: 'Oficial' },
+      'pt-PT': { language: 'Idioma', selectLanguage: 'Selecionar idioma', official: 'Oficial' },
+      fr: { language: 'Langue', selectLanguage: 'Choisir la langue', official: 'Officiel' },
+      it: { language: 'Lingua', selectLanguage: 'Seleziona lingua', official: 'Ufficiale' },
+      nl: { language: 'Taal', selectLanguage: 'Taal kiezen', official: 'Officieel' },
+      cs: { language: 'Jazyk', selectLanguage: 'Vybrat jazyk', official: 'Úřední' },
+      sk: { language: 'Jazyk', selectLanguage: 'Vybrať jazyk', official: 'Úradné' },
+      uk: { language: 'Мова', selectLanguage: 'Виберіть мову', official: 'Офіційна' },
+      tr: { language: 'Dil', selectLanguage: 'Dil seç', official: 'Resmî' },
+      ro: { language: 'Limbă', selectLanguage: 'Selectează limba', official: 'Oficial' },
+      hu: { language: 'Nyelv', selectLanguage: 'Nyelv kiválasztása', official: 'Hivatalos' },
+      sv: { language: 'Språk', selectLanguage: 'Välj språk', official: 'Officiellt' },
+      no: { language: 'Språk', selectLanguage: 'Velg språk', official: 'Offisiell' },
+      fi: { language: 'Kieli', selectLanguage: 'Valitse kieli', official: 'Virallinen' },
+      da: { language: 'Sprog', selectLanguage: 'Vælg sprog', official: 'Officiel' },
+      ja: { language: '言語', selectLanguage: '言語を選択', official: '公式' },
+      ko: { language: '언어', selectLanguage: '언어 선택', official: '공식' },
+      'zh-CN': { language: '语言', selectLanguage: '选择语言', official: '官方' },
+      'zh-TW': { language: '語言', selectLanguage: '選擇語言', official: '官方' },
+      ar: { language: 'اللغة', selectLanguage: 'اختر اللغة', official: 'رسمي' },
+      he: { language: 'שפה', selectLanguage: 'בחר שפה', official: 'רשמי' },
+      hi: { language: 'भाषा', selectLanguage: 'भाषा चुनें', official: 'आधिकारिक' },
+      id: { language: 'Bahasa', selectLanguage: 'Pilih bahasa', official: 'Resmi' },
+      vi: { language: 'Ngôn ngữ', selectLanguage: 'Chọn ngôn ngữ', official: 'Chính thức' },
+      th: { language: 'ภาษา', selectLanguage: 'เลือกภาษา', official: 'ทางการ' },
+      ms: { language: 'Bahasa', selectLanguage: 'Pilih bahasa', official: 'Rasmi' }
     };
 
     const selected = dict[lang] || dict[locale] || dict.en;

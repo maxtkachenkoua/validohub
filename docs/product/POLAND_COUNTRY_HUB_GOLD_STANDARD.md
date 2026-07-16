@@ -94,6 +94,8 @@ The country page, available tool catalog, official-source cards, identity facts,
 
 For future countries, Poland is the localization acceptance benchmark: copy the completeness standard, not the Polish text.
 
+Any future country that is built "like Poland" must ship localized routes and visible copy for every supported ValidoHub locale listed in `docs/product/COUNTRY_LOCALIZATION_STANDARD.md`. Do not treat the current official languages of that country as the full localization scope; official-language quick links are only shortcuts, while the product localization matrix is global.
+
 Deep lower-page sections are part of the product surface. Developer checklists, knowledge graphs, regional cross-links, highlights, developer notes, common mistakes, code examples, ecosystem directories, and localization notes must be localized before a country is called Poland-grade.
 
 A Poland-grade localization must also translate the dense product surface, not only the shell. Intent tabs, catalog rows, workbench titles, chips, banking/payment descriptions, identifier specs, sandbox copy, graph nodes, source notes, and repeated related-tool rows are part of the user experience and must be localized in every supported locale.

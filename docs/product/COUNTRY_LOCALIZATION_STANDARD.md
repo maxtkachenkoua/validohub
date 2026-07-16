@@ -6,15 +6,42 @@ When a future AI agent is asked to localize a country, it must use Poland as the
 
 ## Supported Locales
 
-Current ValidoHub localized routes are:
+ValidoHub localization support is defined by the full language switcher list. These locales are mandatory for any new localized page, country, tool, Workbench, or UI surface:
 
 - English: `/en/`
 - Polish: `/pl/`
 - German: `/de/`
 - Spanish: `/es/`
 - Brazilian Portuguese: `/pt-BR/`
+- French: `/fr/`
+- Italian: `/it/`
+- Dutch: `/nl/`
+- Portuguese (Portugal): `/pt-PT/`
+- Czech: `/cs/`
+- Slovak: `/sk/`
+- Ukrainian: `/uk/`
+- Turkish: `/tr/`
+- Romanian: `/ro/`
+- Hungarian: `/hu/`
+- Swedish: `/sv/`
+- Norwegian: `/no/`
+- Finnish: `/fi/`
+- Danish: `/da/`
+- Japanese: `/ja/`
+- Korean: `/ko/`
+- Chinese (Simplified): `/zh-CN/`
+- Chinese (Traditional): `/zh-TW/`
+- Arabic: `/ar/`
+- Hebrew: `/he/`
+- Hindi: `/hi/`
+- Indonesian: `/id/`
+- Vietnamese: `/vi/`
+- Thai: `/th/`
+- Malay: `/ms/`
 
-A country is not localization-complete until every supported non-English locale has been checked.
+A page is not localization-complete until every supported locale above exists, has localized visible UI, and uses locale-prefixed internal links. Partial localization such as only Polish/German/Spanish/Portuguese is no longer acceptable unless the user explicitly asks for a temporary prototype.
+
+When localization is requested for anything, assume it means all supported locales by default. Add or update every locale in the same change.
 
 ## What Must Be Localized
 

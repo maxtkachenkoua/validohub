@@ -5,15 +5,24 @@ function escapeRegExp(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-function normalizeLocale(localeCode) {
+const SUPPORTED_LOCALES = new Set(["en","pl","de","es","pt-BR","fr","it","nl","pt-PT","cs","sk","uk","tr","ro","hu","sv","no","fi","da","ja","ko","zh-CN","zh-TW","ar","he","hi","id","vi","th","ms"]);
+
+function canonicalLocale(localeCode) {
   const raw = String(localeCode || 'en').trim();
   if (!raw) return 'en';
-  const lower = raw.toLowerCase();
-  if (lower.startsWith('pt-')) return 'pt-BR';
-  if (lower === 'pl') return 'pl';
-  if (lower === 'de') return 'de';
-  if (lower === 'es') return 'es';
+  const parts = raw.split('-');
+  const base = (parts[0] || '').toLowerCase();
+  const region = parts[1] ? parts[1].toUpperCase() : '';
+  const candidate = region ? base + '-' + region : base;
+  if (SUPPORTED_LOCALES.has(candidate)) return candidate;
+  if (base === 'pt') return region === 'PT' ? 'pt-PT' : 'pt-BR';
+  if (base === 'zh') return region === 'TW' || region === 'HK' || region === 'MO' ? 'zh-TW' : 'zh-CN';
+  if (SUPPORTED_LOCALES.has(base)) return base;
   return 'en';
+}
+
+function normalizeLocale(localeCode) {
+  return canonicalLocale(localeCode);
 }
 
 function splitRouteLocale(pathname) {
@@ -680,6 +689,203 @@ const COUNTRY_PAGE_RICH_LABELS = {
   }
 };
 
+
+const EN_UI_BASE = {
+  language: 'Language', selectLanguage: 'Select language', official: 'Official', home: 'Home', countries: 'Countries', identifiers: 'Identifiers', developerTools: 'Developer Tools', encoding: 'Encoding', finance: 'Finance', hash: 'Hash', text: 'Text', nationalIdentifiers: 'National Identifiers', tool: 'Tool', workbench: 'Workbench', countryHub: 'Country Hub', countryShape: 'Country Shape', location: 'Location', findCountryTool: 'Find a country tool', clearCountryToolSearch: 'Clear country tool search', searchCountryWorkbenches: 'Search country workbenches', staticCompiled: 'Static V2 Compiled', developerPortal: 'Developer Portal', developerIntelligence: 'Developer intelligence for local identifiers, regional payment protocols, bank routing details, and locale conventions.', officialAdministrativeOutline: 'Official administrative outline', geographicPosition: 'Geographic position', inTheWorld: 'in the world', shapeOutline: 'shape outline', mapHighlight: 'map highlight', copy: 'Copy', copied: 'Copied', available: 'available', ready: 'ready', planned: 'planned', reference: 'reference', runTool: 'Run the tool', pasteInput: 'Paste input, choose an action, and copy the result directly in your browser.', relatedTools: 'Related tools', continueWithRelated: 'Continue with related tools', validate: 'Validate', copyResult: 'Copy result', downloadResult: 'Download result', clear: 'Clear', output: 'Output', waitingForInput: 'Waiting for input', advancedAnalysis: 'Advanced analysis', documentation: 'Documentation', guide: 'Guide', faq: 'FAQ', references: 'References', examples: 'Examples', developerExamples: 'Developer examples', explanation: 'Explanation', practicalExamples: 'practical examples', questionsAndEdgeCases: 'questions and edge cases', referencesAndLimits: 'references and limits', expandAll: 'Expand All', collapseAll: 'Collapse All', mainNavigation: 'Main navigation', breadcrumb: 'Breadcrumb'
+};
+
+const EXPANDED_COUNTRY_NAMES = {
+  fr: { Poland: 'Pologne', Brazil: 'Brésil', Spain: 'Espagne', Germany: 'Allemagne', Europe: 'Europe', 'South America': 'Amérique du Sud' },
+  it: { Poland: 'Polonia', Brazil: 'Brasile', Spain: 'Spagna', Germany: 'Germania', Europe: 'Europa', 'South America': 'Sud America' },
+  nl: { Poland: 'Polen', Brazil: 'Brazilië', Spain: 'Spanje', Germany: 'Duitsland', Europe: 'Europa', 'South America': 'Zuid-Amerika' },
+  'pt-PT': { Poland: 'Polónia', Brazil: 'Brasil', Spain: 'Espanha', Germany: 'Alemanha', Europe: 'Europa', 'South America': 'América do Sul' },
+  cs: { Poland: 'Polsko', Brazil: 'Brazílie', Spain: 'Španělsko', Germany: 'Německo', Europe: 'Evropa', 'South America': 'Jižní Amerika' },
+  sk: { Poland: 'Poľsko', Brazil: 'Brazília', Spain: 'Španielsko', Germany: 'Nemecko', Europe: 'Európa', 'South America': 'Južná Amerika' },
+  uk: { Poland: 'Польща', Brazil: 'Бразилія', Spain: 'Іспанія', Germany: 'Німеччина', Europe: 'Європа', 'South America': 'Південна Америка' },
+  tr: { Poland: 'Polonya', Brazil: 'Brezilya', Spain: 'İspanya', Germany: 'Almanya', Europe: 'Avrupa', 'South America': 'Güney Amerika' },
+  ro: { Poland: 'Polonia', Brazil: 'Brazilia', Spain: 'Spania', Germany: 'Germania', Europe: 'Europa', 'South America': 'America de Sud' },
+  hu: { Poland: 'Lengyelország', Brazil: 'Brazília', Spain: 'Spanyolország', Germany: 'Németország', Europe: 'Európa', 'South America': 'Dél-Amerika' },
+  sv: { Poland: 'Polen', Brazil: 'Brasilien', Spain: 'Spanien', Germany: 'Tyskland', Europe: 'Europa', 'South America': 'Sydamerika' },
+  no: { Poland: 'Polen', Brazil: 'Brasil', Spain: 'Spania', Germany: 'Tyskland', Europe: 'Europa', 'South America': 'Sør-Amerika' },
+  fi: { Poland: 'Puola', Brazil: 'Brasilia', Spain: 'Espanja', Germany: 'Saksa', Europe: 'Eurooppa', 'South America': 'Etelä-Amerikka' },
+  da: { Poland: 'Polen', Brazil: 'Brasilien', Spain: 'Spanien', Germany: 'Tyskland', Europe: 'Europa', 'South America': 'Sydamerika' },
+  ja: { Poland: 'ポーランド', Brazil: 'ブラジル', Spain: 'スペイン', Germany: 'ドイツ', Europe: 'ヨーロッパ', 'South America': '南アメリカ' },
+  ko: { Poland: '폴란드', Brazil: '브라질', Spain: '스페인', Germany: '독일', Europe: '유럽', 'South America': '남아메리카' },
+  'zh-CN': { Poland: '波兰', Brazil: '巴西', Spain: '西班牙', Germany: '德国', Europe: '欧洲', 'South America': '南美洲' },
+  'zh-TW': { Poland: '波蘭', Brazil: '巴西', Spain: '西班牙', Germany: '德國', Europe: '歐洲', 'South America': '南美洲' },
+  ar: { Poland: 'بولندا', Brazil: 'البرازيل', Spain: 'إسبانيا', Germany: 'ألمانيا', Europe: 'أوروبا', 'South America': 'أمريكا الجنوبية' },
+  he: { Poland: 'פולין', Brazil: 'ברזיל', Spain: 'ספרד', Germany: 'גרמניה', Europe: 'אירופה', 'South America': 'אמריקה הדרומית' },
+  hi: { Poland: 'पोलैंड', Brazil: 'ब्राज़ील', Spain: 'स्पेन', Germany: 'जर्मनी', Europe: 'यूरोप', 'South America': 'दक्षिण अमेरिका' },
+  id: { Poland: 'Polandia', Brazil: 'Brasil', Spain: 'Spanyol', Germany: 'Jerman', Europe: 'Eropa', 'South America': 'Amerika Selatan' },
+  vi: { Poland: 'Ba Lan', Brazil: 'Brazil', Spain: 'Tây Ban Nha', Germany: 'Đức', Europe: 'Châu Âu', 'South America': 'Nam Mỹ' },
+  th: { Poland: 'โปแลนด์', Brazil: 'บราซิล', Spain: 'สเปน', Germany: 'เยอรมนี', Europe: 'ยุโรป', 'South America': 'อเมริกาใต้' },
+  ms: { Poland: 'Poland', Brazil: 'Brazil', Spain: 'Sepanyol', Germany: 'Jerman', Europe: 'Eropah', 'South America': 'Amerika Selatan' }
+};
+
+const EXPANDED_UI_LABELS = {
+  fr: { language:'Langue', selectLanguage:'Choisir la langue', official:'Officiel', home:'Accueil', countries:'Pays', identifiers:'Identifiants', developerTools:'Outils développeur', countryHub:'Hub pays', findCountryTool:'Trouver un outil pays', clear:'Effacer', copy:'Copier', available:'disponible', ready:'prêt', planned:'prévu', workbench:'Atelier', tool:'Outil', references:'Références', documentation:'Documentation', developerPortal:'Portail développeur' },
+  it: { language:'Lingua', selectLanguage:'Seleziona lingua', official:'Ufficiale', home:'Home', countries:'Paesi', identifiers:'Identificatori', developerTools:'Strumenti sviluppatore', countryHub:'Hub paese', findCountryTool:'Trova uno strumento paese', clear:'Cancella', copy:'Copia', available:'disponibile', ready:'pronto', planned:'pianificato', workbench:'Workbench', tool:'Strumento', references:'Riferimenti', documentation:'Documentazione', developerPortal:'Portale sviluppatori' },
+  nl: { language:'Taal', selectLanguage:'Taal kiezen', official:'Officieel', home:'Home', countries:'Landen', identifiers:'Identifiers', developerTools:'Ontwikkelaarstools', countryHub:'Landhub', findCountryTool:'Landtool zoeken', clear:'Wissen', copy:'Kopiëren', available:'beschikbaar', ready:'gereed', planned:'gepland', workbench:'Werkbank', tool:'Tool', references:'Referenties', documentation:'Documentatie', developerPortal:'Ontwikkelaarsportaal' },
+  'pt-PT': { language:'Idioma', selectLanguage:'Selecionar idioma', official:'Oficial', home:'Início', countries:'Países', identifiers:'Identificadores', developerTools:'Ferramentas para programadores', countryHub:'Hub do país', findCountryTool:'Encontrar ferramenta do país', clear:'Limpar', copy:'Copiar', available:'disponível', ready:'pronto', planned:'planeado', workbench:'Workbench', tool:'Ferramenta', references:'Referências', documentation:'Documentação', developerPortal:'Portal para programadores' },
+  cs: { language:'Jazyk', selectLanguage:'Vybrat jazyk', official:'Úřední', home:'Domů', countries:'Země', identifiers:'Identifikátory', developerTools:'Vývojářské nástroje', countryHub:'Centrum země', findCountryTool:'Najít nástroj země', clear:'Vymazat', copy:'Kopírovat', available:'dostupné', ready:'připraveno', planned:'plánováno', workbench:'Pracovní nástroj', tool:'Nástroj', references:'Reference', documentation:'Dokumentace', developerPortal:'Portál pro vývojáře' },
+  sk: { language:'Jazyk', selectLanguage:'Vybrať jazyk', official:'Úradné', home:'Domov', countries:'Krajiny', identifiers:'Identifikátory', developerTools:'Vývojárske nástroje', countryHub:'Centrum krajiny', findCountryTool:'Nájsť nástroj krajiny', clear:'Vymazať', copy:'Kopírovať', available:'dostupné', ready:'pripravené', planned:'plánované', workbench:'Pracovný nástroj', tool:'Nástroj', references:'Referencie', documentation:'Dokumentácia', developerPortal:'Portál pre vývojárov' },
+  uk: { language:'Мова', selectLanguage:'Виберіть мову', official:'Офіційна', home:'Головна', countries:'Країни', identifiers:'Ідентифікатори', developerTools:'Інструменти розробника', countryHub:'Хаб країни', findCountryTool:'Знайти інструмент країни', clear:'Очистити', copy:'Копіювати', available:'доступно', ready:'готово', planned:'заплановано', workbench:'Воркбенч', tool:'Інструмент', references:'Джерела', documentation:'Документація', developerPortal:'Портал розробника' },
+  tr: { language:'Dil', selectLanguage:'Dil seç', official:'Resmî', home:'Ana sayfa', countries:'Ülkeler', identifiers:'Tanımlayıcılar', developerTools:'Geliştirici araçları', countryHub:'Ülke merkezi', findCountryTool:'Ülke aracı bul', clear:'Temizle', copy:'Kopyala', available:'mevcut', ready:'hazır', planned:'planlandı', workbench:'Çalışma alanı', tool:'Araç', references:'Kaynaklar', documentation:'Dokümantasyon', developerPortal:'Geliştirici portalı' },
+  ro: { language:'Limbă', selectLanguage:'Selectează limba', official:'Oficial', home:'Acasă', countries:'Țări', identifiers:'Identificatori', developerTools:'Instrumente pentru dezvoltatori', countryHub:'Hub de țară', findCountryTool:'Găsește un instrument de țară', clear:'Șterge', copy:'Copiază', available:'disponibil', ready:'gata', planned:'planificat', workbench:'Banc de lucru', tool:'Instrument', references:'Referințe', documentation:'Documentație', developerPortal:'Portal pentru dezvoltatori' },
+  hu: { language:'Nyelv', selectLanguage:'Nyelv kiválasztása', official:'Hivatalos', home:'Kezdőlap', countries:'Országok', identifiers:'Azonosítók', developerTools:'Fejlesztői eszközök', countryHub:'Országközpont', findCountryTool:'Országeszköz keresése', clear:'Törlés', copy:'Másolás', available:'elérhető', ready:'kész', planned:'tervezett', workbench:'Munkapad', tool:'Eszköz', references:'Hivatkozások', documentation:'Dokumentáció', developerPortal:'Fejlesztői portál' },
+  sv: { language:'Språk', selectLanguage:'Välj språk', official:'Officiellt', home:'Hem', countries:'Länder', identifiers:'Identifierare', developerTools:'Utvecklarverktyg', countryHub:'Landshubb', findCountryTool:'Hitta landsverktyg', clear:'Rensa', copy:'Kopiera', available:'tillgänglig', ready:'klar', planned:'planerad', workbench:'Arbetsbänk', tool:'Verktyg', references:'Referenser', documentation:'Dokumentation', developerPortal:'Utvecklarportal' },
+  no: { language:'Språk', selectLanguage:'Velg språk', official:'Offisiell', home:'Hjem', countries:'Land', identifiers:'Identifikatorer', developerTools:'Utviklerverktøy', countryHub:'Landhub', findCountryTool:'Finn landverktøy', clear:'Tøm', copy:'Kopier', available:'tilgjengelig', ready:'klar', planned:'planlagt', workbench:'Arbeidsbenk', tool:'Verktøy', references:'Referanser', documentation:'Dokumentasjon', developerPortal:'Utviklerportal' },
+  fi: { language:'Kieli', selectLanguage:'Valitse kieli', official:'Virallinen', home:'Etusivu', countries:'Maat', identifiers:'Tunnisteet', developerTools:'Kehittäjätyökalut', countryHub:'Maakeskus', findCountryTool:'Etsi maan työkalu', clear:'Tyhjennä', copy:'Kopioi', available:'saatavilla', ready:'valmis', planned:'suunniteltu', workbench:'Työpöytä', tool:'Työkalu', references:'Viitteet', documentation:'Dokumentaatio', developerPortal:'Kehittäjäportaali' },
+  da: { language:'Sprog', selectLanguage:'Vælg sprog', official:'Officiel', home:'Hjem', countries:'Lande', identifiers:'Identifikatorer', developerTools:'Udviklerværktøjer', countryHub:'Landhub', findCountryTool:'Find landeværktøj', clear:'Ryd', copy:'Kopiér', available:'tilgængelig', ready:'klar', planned:'planlagt', workbench:'Arbejdsbord', tool:'Værktøj', references:'Referencer', documentation:'Dokumentation', developerPortal:'Udviklerportal' },
+  ja: { language:'言語', selectLanguage:'言語を選択', official:'公式', home:'ホーム', countries:'国', identifiers:'識別子', developerTools:'開発者ツール', countryHub:'国別ハブ', findCountryTool:'国別ツールを検索', clear:'クリア', copy:'コピー', available:'利用可能', ready:'準備完了', planned:'予定', workbench:'ワークベンチ', tool:'ツール', references:'参照', documentation:'ドキュメント', developerPortal:'開発者ポータル' },
+  ko: { language:'언어', selectLanguage:'언어 선택', official:'공식', home:'홈', countries:'국가', identifiers:'식별자', developerTools:'개발자 도구', countryHub:'국가 허브', findCountryTool:'국가 도구 찾기', clear:'지우기', copy:'복사', available:'사용 가능', ready:'준비됨', planned:'예정', workbench:'워크벤치', tool:'도구', references:'참조', documentation:'문서', developerPortal:'개발자 포털' },
+  'zh-CN': { language:'语言', selectLanguage:'选择语言', official:'官方', home:'首页', countries:'国家', identifiers:'标识符', developerTools:'开发者工具', countryHub:'国家中心', findCountryTool:'查找国家工具', clear:'清除', copy:'复制', available:'可用', ready:'就绪', planned:'计划中', workbench:'工作台', tool:'工具', references:'参考', documentation:'文档', developerPortal:'开发者门户' },
+  'zh-TW': { language:'語言', selectLanguage:'選擇語言', official:'官方', home:'首頁', countries:'國家', identifiers:'識別碼', developerTools:'開發者工具', countryHub:'國家中心', findCountryTool:'尋找國家工具', clear:'清除', copy:'複製', available:'可用', ready:'就緒', planned:'規劃中', workbench:'工作台', tool:'工具', references:'參考', documentation:'文件', developerPortal:'開發者入口' },
+  ar: { language:'اللغة', selectLanguage:'اختر اللغة', official:'رسمي', home:'الرئيسية', countries:'الدول', identifiers:'المعرّفات', developerTools:'أدوات المطورين', countryHub:'مركز الدولة', findCountryTool:'ابحث عن أداة الدولة', clear:'مسح', copy:'نسخ', available:'متاح', ready:'جاهز', planned:'مخطط', workbench:'منضدة العمل', tool:'أداة', references:'مراجع', documentation:'توثيق', developerPortal:'بوابة المطورين' },
+  he: { language:'שפה', selectLanguage:'בחר שפה', official:'רשמי', home:'בית', countries:'מדינות', identifiers:'מזהים', developerTools:'כלי מפתחים', countryHub:'מרכז מדינה', findCountryTool:'חפש כלי מדינה', clear:'נקה', copy:'העתק', available:'זמין', ready:'מוכן', planned:'מתוכנן', workbench:'סביבת עבודה', tool:'כלי', references:'מקורות', documentation:'תיעוד', developerPortal:'פורטל מפתחים' },
+  hi: { language:'भाषा', selectLanguage:'भाषा चुनें', official:'आधिकारिक', home:'होम', countries:'देश', identifiers:'पहचानकर्ता', developerTools:'डेवलपर उपकरण', countryHub:'देश हब', findCountryTool:'देश उपकरण खोजें', clear:'साफ़ करें', copy:'कॉपी', available:'उपलब्ध', ready:'तैयार', planned:'योजित', workbench:'वर्कबेंच', tool:'उपकरण', references:'संदर्भ', documentation:'दस्तावेज़', developerPortal:'डेवलपर पोर्टल' },
+  id: { language:'Bahasa', selectLanguage:'Pilih bahasa', official:'Resmi', home:'Beranda', countries:'Negara', identifiers:'Pengidentifikasi', developerTools:'Alat pengembang', countryHub:'Hub negara', findCountryTool:'Cari alat negara', clear:'Bersihkan', copy:'Salin', available:'tersedia', ready:'siap', planned:'direncanakan', workbench:'Workbench', tool:'Alat', references:'Referensi', documentation:'Dokumentasi', developerPortal:'Portal pengembang' },
+  vi: { language:'Ngôn ngữ', selectLanguage:'Chọn ngôn ngữ', official:'Chính thức', home:'Trang chủ', countries:'Quốc gia', identifiers:'Định danh', developerTools:'Công cụ nhà phát triển', countryHub:'Hub quốc gia', findCountryTool:'Tìm công cụ quốc gia', clear:'Xóa', copy:'Sao chép', available:'có sẵn', ready:'sẵn sàng', planned:'đã lên kế hoạch', workbench:'Workbench', tool:'Công cụ', references:'Tham khảo', documentation:'Tài liệu', developerPortal:'Cổng nhà phát triển' },
+  th: { language:'ภาษา', selectLanguage:'เลือกภาษา', official:'ทางการ', home:'หน้าแรก', countries:'ประเทศ', identifiers:'ตัวระบุ', developerTools:'เครื่องมือนักพัฒนา', countryHub:'ฮับประเทศ', findCountryTool:'ค้นหาเครื่องมือประเทศ', clear:'ล้าง', copy:'คัดลอก', available:'พร้อมใช้งาน', ready:'พร้อม', planned:'วางแผนแล้ว', workbench:'เวิร์กเบนช์', tool:'เครื่องมือ', references:'อ้างอิง', documentation:'เอกสาร', developerPortal:'พอร์ทัลนักพัฒนา' },
+  ms: { language:'Bahasa', selectLanguage:'Pilih bahasa', official:'Rasmi', home:'Laman utama', countries:'Negara', identifiers:'Pengecam', developerTools:'Alat pembangun', countryHub:'Hab negara', findCountryTool:'Cari alat negara', clear:'Kosongkan', copy:'Salin', available:'tersedia', ready:'sedia', planned:'dirancang', workbench:'Workbench', tool:'Alat', references:'Rujukan', documentation:'Dokumentasi', developerPortal:'Portal pembangun' }
+};
+
+const POLAND_CORE_TRANSLATIONS = {
+  fr: ['Portail développeur de la Pologne','Intelligence développeur pour les identifiants polonais, les conventions locales et les workflows de validation orientés UE.','Profil identité et standards','Actions développeur','Catalogue d’outils','Sources officielles','Ateliers de validation développeur','Checklist d’intégration','Écosystème national','Notes de localisation'],
+  it: ['Portale sviluppatori della Polonia','Informazioni per sviluppatori su identificatori polacchi, convenzioni locali e workflow di validazione orientati all’UE.','Profilo identità e standard','Azioni sviluppatore','Catalogo strumenti','Fonti ufficiali','Workbench di validazione per sviluppatori','Checklist di integrazione','Ecosistema nazionale','Note di localizzazione'],
+  nl: ['Ontwikkelaarsportaal Polen','Ontwikkelaarsinformatie voor Poolse identifiers, lokale conventies en EU-gerichte validatieworkflows.','Identiteits- en standaardenprofiel','Ontwikkelaarsacties','Toolcatalogus','Officiële bronnen','Validator-workbenches voor ontwikkelaars','Integratiechecklist','Nationaal ecosysteem','Lokalisatienotities'],
+  'pt-PT': ['Portal de programadores da Polónia','Informação para programadores sobre identificadores polacos, convenções locais e fluxos de validação orientados para a UE.','Perfil de identidade e padrões','Ações para programadores','Catálogo de ferramentas','Fontes oficiais','Workbenches de validação para programadores','Checklist de integração','Ecossistema nacional','Notas de localização'],
+  cs: ['Vývojářský portál Polska','Vývojářské informace o polských identifikátorech, místních konvencích a validačních tocích orientovaných na EU.','Profil identity a standardů','Vývojářské akce','Katalog nástrojů','Oficiální zdroje','Validační pracovní nástroje pro vývojáře','Integrační checklist','Národní ekosystém','Lokalizační poznámky'],
+  sk: ['Vývojársky portál Poľska','Vývojárske informácie o poľských identifikátoroch, miestnych konvenciách a validačných tokoch orientovaných na EÚ.','Profil identity a štandardov','Vývojárske akcie','Katalóg nástrojov','Oficiálne zdroje','Validačné pracovné nástroje pre vývojárov','Integračný checklist','Národný ekosystém','Lokalizačné poznámky'],
+  uk: ['Портал розробника Польщі','Інформація для розробників про польські ідентифікатори, локальні правила та EU-орієнтовані сценарії валідації.','Профіль ідентичності та стандартів','Дії розробника','Каталог інструментів','Офіційні джерела','Валідаційні воркбенчі для розробників','Інтеграційний чеклист','Національна екосистема','Нотатки локалізації'],
+  tr: ['Polonya geliştirici portalı','Polonya tanımlayıcıları, yerel kurallar ve AB odaklı doğrulama iş akışları için geliştirici bilgileri.','Kimlik ve standartlar profili','Geliştirici eylemleri','Araç kataloğu','Resmî kaynaklar','Geliştirici doğrulama çalışma alanları','Entegrasyon kontrol listesi','Ulusal ekosistem','Yerelleştirme notları'],
+  ro: ['Portalul dezvoltatorilor pentru Polonia','Informații pentru dezvoltatori despre identificatori polonezi, convenții locale și fluxuri de validare orientate UE.','Profil de identitate și standarde','Acțiuni pentru dezvoltatori','Catalog de instrumente','Surse oficiale','Workbench-uri de validare pentru dezvoltatori','Listă de verificare a integrării','Ecosistem național','Note de localizare'],
+  hu: ['Lengyelország fejlesztői portál','Fejlesztői információk lengyel azonosítókról, helyi szabályokról és EU-orientált validációs folyamatokról.','Identitás- és szabványprofil','Fejlesztői műveletek','Eszközkatalógus','Hivatalos források','Fejlesztői validációs munkapadok','Integrációs ellenőrzőlista','Nemzeti ökoszisztéma','Lokalizációs jegyzetek'],
+  sv: ['Polens utvecklarportal','Utvecklarinformation om polska identifierare, lokala konventioner och EU-orienterade valideringsflöden.','Identitets- och standardprofil','Utvecklaråtgärder','Verktygskatalog','Officiella källor','Valideringsarbetsbänkar för utvecklare','Integrationschecklista','Nationellt ekosystem','Lokaliseringsanteckningar'],
+  no: ['Polens utviklerportal','Utviklerinformasjon om polske identifikatorer, lokale konvensjoner og EU-orienterte valideringsflyter.','Identitets- og standardprofil','Utviklerhandlinger','Verktøykatalog','Offisielle kilder','Valideringsarbeidsbenker for utviklere','Integrasjonssjekkliste','Nasjonalt økosystem','Lokaliseringsnotater'],
+  fi: ['Puolan kehittäjäportaali','Kehittäjätietoa puolalaisista tunnisteista, paikallisista käytännöistä ja EU-suuntaisista validointivirroista.','Identiteetti- ja standardiprofiili','Kehittäjätoiminnot','Työkaluluettelo','Viralliset lähteet','Kehittäjien validointityöpöydät','Integraation tarkistuslista','Kansallinen ekosysteemi','Lokalisointihuomiot'],
+  da: ['Polens udviklerportal','Udviklerinformation om polske identifikatorer, lokale konventioner og EU-orienterede valideringsflows.','Identitets- og standardprofil','Udviklerhandlinger','Værktøjskatalog','Officielle kilder','Valideringsarbejdsborde for udviklere','Integrationscheckliste','Nationalt økosystem','Lokaliseringsnoter'],
+  ja: ['ポーランド開発者ポータル','ポーランドの識別子、ローカル規則、EU向け検証ワークフローに関する開発者向け情報。','IDと標準のプロファイル','開発者アクション','ツールカタログ','公式情報源','開発者向け検証ワークベンチ','統合チェックリスト','国家エコシステム','ローカライズメモ'],
+  ko: ['폴란드 개발자 포털','폴란드 식별자, 로케일 규칙, EU 지향 검증 워크플로에 대한 개발자 정보.','식별 및 표준 프로필','개발자 작업','도구 카탈로그','공식 출처','개발자 검증 워크벤치','통합 체크리스트','국가 생태계','현지화 참고'],
+  'zh-CN': ['波兰开发者门户','面向开发者的波兰标识符、本地规则和欧盟导向验证流程信息。','身份与标准档案','开发者操作','工具目录','官方来源','开发者验证工作台','集成检查清单','国家生态系统','本地化说明'],
+  'zh-TW': ['波蘭開發者入口','面向開發者的波蘭識別碼、本地規則與歐盟導向驗證流程資訊。','身分與標準檔案','開發者操作','工具目錄','官方來源','開發者驗證工作台','整合檢查清單','國家生態系','在地化備註'],
+  ar: ['بوابة مطوري بولندا','معلومات للمطورين حول المعرّفات البولندية والقواعد المحلية وسير التحقق المتوافق مع الاتحاد الأوروبي.','ملف الهوية والمعايير','إجراءات المطور','كتالوج الأدوات','مصادر رسمية','مناضد تحقق للمطورين','قائمة تحقق التكامل','النظام الوطني','ملاحظات التوطين'],
+  he: ['פורטל מפתחים לפולין','מידע למפתחים על מזהים פולניים, כללים מקומיים ותהליכי אימות מוכווני האיחוד האירופי.','פרופיל זהות ותקנים','פעולות מפתחים','קטלוג כלים','מקורות רשמיים','סביבות אימות למפתחים','רשימת בדיקת אינטגרציה','מערכת אקולוגית לאומית','הערות לוקליזציה'],
+  hi: ['पोलैंड डेवलपर पोर्टल','पोलिश पहचानकर्ताओं, स्थानीय नियमों और EU-केंद्रित सत्यापन workflows पर डेवलपर जानकारी।','पहचान और मानक प्रोफ़ाइल','डेवलपर क्रियाएँ','उपकरण कैटलॉग','आधिकारिक स्रोत','डेवलपर सत्यापन वर्कबेंच','इंटीग्रेशन चेकलिस्ट','राष्ट्रीय पारिस्थितिकी तंत्र','लोकलाइज़ेशन नोट्स'],
+  id: ['Portal Pengembang Polandia','Intelijen pengembang untuk pengidentifikasi Polandia, konvensi lokal, dan alur validasi berorientasi UE.','Profil identitas dan standar','Aksi pengembang','Katalog alat','Sumber resmi','Workbench validator pengembang','Checklist integrasi','Ekosistem nasional','Catatan lokalisasi'],
+  vi: ['Cổng nhà phát triển Ba Lan','Thông tin cho nhà phát triển về định danh Ba Lan, quy ước địa phương và luồng xác thực hướng EU.','Hồ sơ định danh và tiêu chuẩn','Hành động nhà phát triển','Danh mục công cụ','Nguồn chính thức','Workbench xác thực cho nhà phát triển','Checklist tích hợp','Hệ sinh thái quốc gia','Ghi chú bản địa hóa'],
+  th: ['พอร์ทัลนักพัฒนาโปแลนด์','ข้อมูลสำหรับนักพัฒนาเกี่ยวกับตัวระบุโปแลนด์ กฎท้องถิ่น และเวิร์กโฟลว์ตรวจสอบแบบสหภาพยุโรป','โปรไฟล์ตัวตนและมาตรฐาน','การทำงานสำหรับนักพัฒนา','แคตตาล็อกเครื่องมือ','แหล่งข้อมูลทางการ','เวิร์กเบนช์ตรวจสอบสำหรับนักพัฒนา','เช็กลิสต์การผสานระบบ','ระบบนิเวศระดับประเทศ','บันทึกการแปลภาษา'],
+  ms: ['Portal pembangun Poland','Maklumat pembangun untuk pengecam Poland, konvensyen setempat dan aliran pengesahan berorientasikan EU.','Profil identiti dan piawaian','Tindakan pembangun','Katalog alat','Sumber rasmi','Workbench pengesahan pembangun','Senarai semak integrasi','Ekosistem nasional','Nota penyetempatan']
+};
+
+const COMMON_POLAND_SOURCE_STRINGS = {
+  'Developer intelligence for local identifiers, regional payment protocols, bank routing details, and locale conventions.': 'summary',
+  'Developer intelligence for Polish identifiers, locale conventions, and EU-oriented validation workflows.': 'summary',
+  'Identity & Standards Profile': 'profile',
+  'Identity &amp; Standards Profile': 'profile',
+  'Developer Actions': 'actions',
+  'Tool Catalog': 'catalog',
+  'Official Sources': 'officialSources',
+  'Interactive Validator Workbenches': 'validatorWorkbenches',
+  'Developer Validator Workbenches': 'validatorWorkbenches',
+  'Developer Checklist': 'checklist',
+  'Integration checklist reminders': 'checklist',
+  'Country Ecosystem': 'ecosystem',
+  'Localization Notes': 'localizationNotes',
+  'National regulatory & reference portals': 'officialSources',
+  'National regulatory &amp; reference portals': 'officialSources'
+};
+
+function buildExpandedPolandMap(locale) {
+  const phrases = POLAND_CORE_TRANSLATIONS[locale];
+  if (!phrases) return {};
+  const [portal, summary, profile, actions, catalog, officialSources, validatorWorkbenches, checklist, ecosystem, localizationNotes] = phrases;
+  const ui = UI[locale] || { ...EN_UI_BASE, ...(EXPANDED_UI_LABELS[locale] || {}) };
+  const country = COUNTRY_NAMES[locale]?.Poland || EXPANDED_COUNTRY_NAMES[locale]?.Poland || 'Poland';
+  const toolLabel = ui.tool || EN_UI_BASE.tool;
+  const workbenchLabel = ui.workbench || EN_UI_BASE.workbench;
+  const identifierLabel = ui.identifiers || EN_UI_BASE.identifiers;
+  const referenceLabel = ui.reference || ui.references || EN_UI_BASE.reference;
+  const map = {
+    'Poland Developer Portal': portal,
+    'Poland Developer Tools & Identifiers | ValidoHub': country + ' | ValidoHub',
+    'Copy common developer values': actions,
+    'Fast one-click copy buttons for constants and configurations.': summary,
+    'Available country workbenches': catalog,
+    'Browse implemented browser-only tools grouped by developer intent.': summary,
+    'Identity, registry & official numbers': profile,
+    'Identity, registry &amp; official numbers': profile,
+    'Tax, invoices & business compliance': profile,
+    'Tax, invoices &amp; business compliance': profile,
+    'Banking, payments & money movement': catalog,
+    'Banking, payments &amp; money movement': catalog,
+    'Address, phone, logistics & local format': localizationNotes,
+    'Address, phone, logistics &amp; local format': localizationNotes,
+    'Developer data operations': actions,
+    'Geography & Standards': profile,
+    'Geography &amp; Standards': profile,
+    'Core country registry details and national system standards.': summary,
+    'Official administrative outline': profile,
+    'Geographic position in Europe': (COUNTRY_NAMES[locale]?.Europe || 'Europe') + ' - ' + profile,
+    'Poland Shape Outline': country + ' - ' + profile,
+    'Poland Map Highlight': country + ' - ' + profile,
+    'Locale Conventions': localizationNotes,
+    'Local Formats & Layouts': localizationNotes,
+    'Local Formats &amp; Layouts': localizationNotes,
+    'Technical Standards': profile,
+    'Utility & Electrical Profile': profile,
+    'Utility &amp; Electrical Profile': profile,
+    'Address Standards': localizationNotes,
+    'Structured address formatting': localizationNotes,
+    'Identifier registry specs & workbenches': profile,
+    'Identifier registry specs &amp; workbenches': profile,
+    'Structure breakdowns, weighted checksum math, and developer implementation guidelines.': summary,
+    'Run interactive client-side validations, format conversions, and integrity checks.': summary,
+    'Knowledge Graph': ecosystem,
+    'Graph-powered developer metadata & navigation': ecosystem,
+    'Graph-powered developer metadata &amp; navigation': ecosystem,
+    'Pre-rendered relationship paths compiled directly from the ValidoHub central index.': summary,
+    'Regional Cross-Links': ecosystem,
+    'Related regional standard conventions': ecosystem,
+    'Countries sharing overlapping currency codes, payment gateways, or regulatory acts.': summary,
+    'Key Highlights': summary,
+    'Highlights and quick summaries': summary,
+    'Summary overview of national localization rules.': summary,
+    'Developer Notes': actions,
+    'Developer implementation instructions': actions,
+    'Important coding notes for storage, parameters, and validations.': summary,
+    'Common Mistakes': checklist,
+    'Integration pitfalls to avoid': checklist,
+    'Locale formatting and validation traps developers frequently encounter.': summary,
+    'Code Examples': actions,
+    'Developer integration code snippets': actions,
+    'Ready-to-use programming snippets in JavaScript, Java, Python, and Go.': summary,
+    'National ecosystem directories': ecosystem,
+    'Canonical national portals, APIs, and registries related to compliance formats.': summary,
+    'Local conventions and grammar exceptions': localizationNotes,
+    'Grammar peculiarities, diacritics, and calendar configurations.': summary,
+    'Reference note, not a link': referenceLabel
+  };
+  for (const [source, key] of Object.entries(COMMON_POLAND_SOURCE_STRINGS)) {
+    map[source] = { summary, profile, actions, catalog, officialSources, validatorWorkbenches, checklist, ecosystem, localizationNotes }[key];
+  }
+  return map;
+}
+
+function applyExpandedLocalePacks() {
+  for (const [locale, names] of Object.entries(EXPANDED_COUNTRY_NAMES)) {
+    COUNTRY_NAMES[locale] = names;
+    UI[locale] = { ...EN_UI_BASE, ...(EXPANDED_UI_LABELS[locale] || {}) };
+    const baseMap = buildExpandedPolandMap(locale);
+    SECTION_LABELS[locale] = { ...(SECTION_LABELS[locale] || {}), ...baseMap };
+    COMMON_LABELS[locale] = { ...(COMMON_LABELS[locale] || {}), ...baseMap };
+    COUNTRY_PAGE_LABELS[locale] = { ...(COUNTRY_PAGE_LABELS[locale] || {}), ...baseMap };
+    COUNTRY_PAGE_RICH_LABELS[locale] = { ...(COUNTRY_PAGE_RICH_LABELS[locale] || {}), ...baseMap };
+    COUNTRY_PAGE_COMPLETION_LABELS[locale] = { ...(COUNTRY_PAGE_COMPLETION_LABELS[locale] || {}), ...baseMap };
+    COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] = { ...(COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] || {}), ...baseMap };
+  }
+}
+
 function applyCountryProtectedValueTranslations(content, locale) {
   const map = COUNTRY_PAGE_RICH_LABELS[locale] || {};
   const values = ['Comma (,)', 'Space ( ) or Dot (.)'];
@@ -1216,6 +1422,8 @@ const COUNTRY_PAGE_FINAL_SWEEP_LABELS = {
     'Static tools generated by Valido Engine.': 'Ferramentas estáticas geradas pelo Valido Engine.'
   }
 };
+
+applyExpandedLocalePacks();
 
 const COUNTRY_PAGE_FINAL_SWEEP_TEXT_ONLY_LABELS = new Set([
   'payments', 'validator', 'workbench', 'identifier', 'specification', 'payment', 'graph-node', 'standard', 'developer', 'locale', 'date', 'time'
