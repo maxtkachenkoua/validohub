@@ -7,6 +7,22 @@
 
 # AI Changelog
 
+## Poland Four-Locale Deep Localization Parity
+
+Changed:
+
+- Brought the Poland Country Hub deep-section localization sweep to parity across Polish, German, Spanish, and Brazilian Portuguese.
+- The developer checklist, knowledge graph, regional cross-links, highlights, developer notes, common mistakes, code examples, ecosystem, localization notes, and footer now share the same source-string coverage in every supported localized route.
+
+Reason:
+
+Any string localized in one supported language must be available in all supported localized languages.
+
+Impact:
+
+- Future country localization work should keep locale maps symmetrical for shared rich-section source strings.
+- Valido Engine remains generic and untouched.
+
 ## Poland Localization Deep Section Sweep
 
 Changed:
