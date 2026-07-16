@@ -1,5 +1,23 @@
 # AI Changelog
 
+## Poland Localization Pass V2
+
+Changed:
+
+- Completed the rich Poland Country Hub localization pass across Polish, German, Spanish, and Brazilian Portuguese for the remaining country facts, official sources, address, technical, locale, tags, badges, and copy controls.
+- Added `docs/product/COUNTRY_LOCALIZATION_STANDARD.md` as the future-country localization checklist.
+- Linked the localization standard from `docs/product/POLAND_COUNTRY_HUB_GOLD_STANDARD.md`.
+
+Reason:
+
+Localized country pages must feel fully native, not partially translated navigation around English rich sections.
+
+Impact:
+
+- Poland remains the mature Country Hub baseline for both structure and localization completeness.
+- Future country work should localize every supported route before calling the country Poland-grade.
+- Valido Engine remains generic and untouched.
+
 ## Poland Baseline Workbench Suite V1
 
 Changed:

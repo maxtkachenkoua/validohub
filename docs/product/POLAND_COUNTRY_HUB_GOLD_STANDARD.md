@@ -33,6 +33,7 @@ Before creating or upgrading another country to Poland quality, read:
 - `docs/ai/COUNTRY_HUB_AI_GUIDE.md`
 - `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md`
 - `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`
+- `docs/product/COUNTRY_LOCALIZATION_STANDARD.md`
 - `docs/product/COUNTRIES_ARCHITECTURE.md`
 - `docs/product/POLAND_COUNTRY_HUB_GOLD_STANDARD.md`
 - `docs/product/POLAND_PREMIUM_SUITE_SPEC.md`
@@ -84,6 +85,14 @@ Build a country-specific tool portfolio across these categories when locally rel
 - Developer data quality tools.
 
 Every available tool must have a real workbench or useful browser-side behavior. Do not mark a tool available if it is only an idea.
+
+## Localization Standard
+
+A Poland-grade country is not complete if only the English page is polished.
+
+The country page, available tool catalog, official-source cards, identity facts, locale facts, address examples, copy controls, tags, badges, helper captions, and generated JavaScript UI must be localized for every supported ValidoHub locale. Use `docs/product/COUNTRY_LOCALIZATION_STANDARD.md` as the canonical checklist.
+
+For future countries, Poland is the localization acceptance benchmark: copy the completeness standard, not the Polish text.
 
 ## Workbench Quality Standard
 
