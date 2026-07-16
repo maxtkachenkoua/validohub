@@ -53,6 +53,18 @@ If a new section is added to the Poland-style Country Hub, add its localization 
 
 If a new country becomes Poland-grade, add localized country names, local values, official-source explanations, address examples, search labels, and all section copy for every supported locale before calling the country done.
 
+## Poland-Grade Acceptance Sweep
+
+For Poland-grade pages, localization is not complete until the generated country page has been swept for every visible layer:
+
+- Intent tab labels and grouped catalog headings.
+- Tool card titles, descriptions, status badges, and chips.
+- Identifier/specification cards and interactive sandbox cards.
+- Banking, payment, phone, locale, knowledge-graph, official-source, and related-workbench prose.
+- Repeated catalog row titles, not only the first card instance.
+
+For localized pages, do not ship mixed strings such as `Polish ... - walidator`, `Run interactive client-side...`, `Structure breakdowns...`, `identifier`, `specification`, `validator`, `workbench`, or `payments` when the surrounding page is non-English. These are acceptance failures, not minor polish.
+
 ## Verification Checklist
 
 Before committing localization work:

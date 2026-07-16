@@ -1,3 +1,10 @@
+
+## Poland Localization Completion Sweep
+
+- Tightened the Poland country-page localization pass for remaining rich country hub strings across supported locales.
+- Added explicit localization coverage for intent tabs, catalog rows, identifier/specification cards, interactive sandbox copy, banking/payment prose, phone examples, graph labels, and short chips.
+- Updated the country localization standard so future Poland-grade countries must sweep dense product surfaces, not just navigation and headings.
+
 # AI Changelog
 
 ## Poland Localization Pass V2

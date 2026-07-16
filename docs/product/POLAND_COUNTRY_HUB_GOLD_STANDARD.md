@@ -94,6 +94,8 @@ The country page, available tool catalog, official-source cards, identity facts,
 
 For future countries, Poland is the localization acceptance benchmark: copy the completeness standard, not the Polish text.
 
+A Poland-grade localization must also translate the dense product surface, not only the shell. Intent tabs, catalog rows, workbench titles, chips, banking/payment descriptions, identifier specs, sandbox copy, graph nodes, source notes, and repeated related-tool rows are part of the user experience and must be localized in every supported locale.
+
 ## Workbench Quality Standard
 
 Country workbenches should follow the PESEL-quality bar and the Poland suite visual system.
