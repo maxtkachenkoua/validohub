@@ -1,6 +1,6 @@
 # Localization Phase 2 Plan
 
-Status: In progress
+Status: Completed foundation pass
 
 ## Goals
 
@@ -30,10 +30,18 @@ Priority order for language selection:
 - Country pages show dedicated quick buttons for official language(s).
 - If target locale page does not exist yet, keep user on current page and persist preference.
 
-## Next implementation steps
+## Completed foundation
 
-1. Add locale-aware content packs for selected pilot locales.
-2. Generate localized route variants for pilot locale set.
-3. Emit hreflang alternates for all generated locale siblings.
-4. Add translation completeness checks into build validation.
-5. Expand locale matrix in waves based on traffic and country coverage.
+- Initial locale set is enabled: `en`, `pl`, `de`, `es`, `pt-BR`.
+- Locale-first route variants are generated for every discovered route.
+- Route slugs stay stable and are not translated.
+- Hreflang alternates are emitted for generated locale siblings.
+- The final build pass rewrites canonical URLs, same-locale links, document language, common UI labels, and major country-page shell text.
+- Node-owned rich pages such as country hubs, the Countries Portal, and identifier reference pages are materialized into localized routes instead of leaving Java fallback shells in place.
+- Technical identifiers such as IANA time zones remain unlocalized, for example `Europe/Warsaw`, `Europe/Madrid`, and `Europe/Berlin`.
+
+## Remaining future work
+
+1. Add human-reviewed content packs for deep editorial copy per language.
+2. Add translation completeness checks into build validation.
+3. Expand the locale matrix in waves based on traffic and country coverage.

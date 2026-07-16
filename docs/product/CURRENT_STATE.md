@@ -153,6 +153,14 @@ AI assistants must check the Brand Registry before choosing a logo or icon. New 
 
 Current registered brands include PIX, Java, Python, Go, Kotlin, C#, .NET, Node.js, React, Next.js, TypeScript, JavaScript, Docker, Kubernetes, PostgreSQL, MySQL, MongoDB, Redis, JWT, Stripe, Visa, Mastercard, American Express, SWIFT, SEPA, IBAN, Bizum, VIES, European Union, GitHub, OpenAPI, GraphQL, gov.br, Gobierno de España, Agencia Tributaria, Seguridad Social, Banco de España, Banco Central do Brasil, Receita Federal, Correos, and Correos Spain.
 
+## Localization
+
+ValidoHub now has a localization foundation for `en`, `pl`, `de`, `es`, and `pt-BR`. Locale remains the first path segment and route slugs are not translated. The language switcher is available globally, country pages expose official-language quick choices, and the build produces localized route variants for all discovered pages.
+
+The final ValidoHub post-publish pass in `scripts/localization-pass.mjs` localizes common UI shell text, country names, canonical URLs, hreflang alternates, same-locale links, rich Node-owned country pages, the Countries Portal, and identifier reference pages. This is a build-time localization layer; Valido Engine remains generic and unchanged.
+
+Deep editorial body content is still treated as a future human-reviewed content-pack layer. Do not change the Poland page structure while adding translations. Keep technical identifiers such as `Europe/Warsaw`, locale codes, route slugs, and code snippets stable.
+
 ## Generated Site Root
 
 The generated static site root is:

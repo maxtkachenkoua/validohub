@@ -7,6 +7,7 @@ import { createHash } from 'node:crypto';
 import { buildRouteRegistry } from './route-registry.mjs';
 import { compileCountriesPortal } from './build-countries-portal.mjs';
 import { compileIdentifiers } from './build-identifiers.mjs';
+import { applyFinalLocalizationPass } from './localization-pass.mjs';
 
 const execAsync = promisify(exec);
 const scriptDir = dirname(fileURLToPath(import.meta.url));
@@ -140,6 +141,521 @@ async function getConfiguredLocales() {
   return values.length > 0 ? values : ['en'];
 }
 
+function splitRouteLocale(pathname) {
+  const parts = String(pathname || '/').split('/').filter(Boolean);
+  if (!parts.length) return { locale: 'en', suffix: '/' };
+  const localeCode = parts[0];
+  const suffixParts = parts.slice(1);
+  const suffix = suffixParts.length ? `/${suffixParts.join('/')}/` : '/';
+  return { locale: localeCode, suffix };
+}
+
+function routeForLocale(localeCode, suffix) {
+  if (suffix === '/') {
+    return `/${localeCode}/`;
+  }
+  return `/${localeCode}${suffix}`;
+}
+
+function localizedOutputPath(localePath) {
+  return resolve(siteRoot, localePath.replace(/^\//, ''), 'index.html');
+}
+
+function rewriteHrefLocale(content, localeCode, routeRegistry) {
+  return content.replace(/href="\/en\/([^"]*)"/g, (match, target) => {
+    const normalizedTarget = String(target || '').replace(/^\/+/, '');
+    const localizedCandidate = `/${localeCode}/${normalizedTarget}`;
+    const normalizedLocalized = localizedCandidate.endsWith('/') ? localizedCandidate : `${localizedCandidate}/`;
+    if (!routeRegistry.has(normalizedLocalized)) return match;
+    return `href="${localizedCandidate}"`;
+  });
+}
+
+function injectAlternateLinks(content, currentPath, routeRegistry, locales) {
+  const { locale: currentLocale, suffix } = splitRouteLocale(currentPath);
+  const alternateTags = [];
+  for (const localeCode of locales) {
+    const candidatePath = routeForLocale(localeCode, suffix);
+    if (routeRegistry.has(candidatePath)) {
+      alternateTags.push(`<link rel="alternate" hreflang="${localeCode}" href="https://validohub.com${candidatePath}">`);
+    }
+  }
+  const englishPath = routeForLocale('en', suffix);
+  if (routeRegistry.has(englishPath)) {
+    alternateTags.push(`<link rel="alternate" hreflang="x-default" href="https://validohub.com${englishPath}">`);
+  }
+
+  let next = content.replace(/<link rel="alternate" hreflang="[^"]+" href="[^"]+">\s*/gi, '');
+  const alternatesBlock = alternateTags.join('\n  ');
+  if (alternatesBlock) {
+    next = next.replace('</head>', `  ${alternatesBlock}\n</head>`);
+  }
+
+  // Keep the document language attribute in sync with route locale.
+  next = next.replace(/<html\s+lang="[^"]+">/i, `<html lang="${currentLocale}">`);
+  return next;
+}
+
+function normalizeUiLocale(localeCode) {
+  const normalized = String(localeCode || '').toLowerCase();
+  if (normalized.startsWith('pt-')) return 'pt-BR';
+  if (normalized === 'de') return 'de';
+  if (normalized === 'es') return 'es';
+  if (normalized === 'pl') return 'pl';
+  return 'en';
+}
+
+function applyUiLocaleTranslations(content, localeCode) {
+  const uiLocale = normalizeUiLocale(localeCode);
+  if (uiLocale === 'en') return content;
+
+  const dictionary = {
+    de: {
+      home: 'Startseite',
+      countries: 'Laender',
+      identifiers: 'Kennungen',
+      developerTools: 'Entwicklertools',
+      finance: 'Finanzen',
+      text: 'Text',
+      tool: 'Werkzeug',
+      runTool: 'Tool ausfuehren',
+      relatedTools: 'Aehnliche Tools',
+      continueWithRelated: 'Mit aehnlichen Tools fortfahren',
+      validate: 'Pruefen',
+      copyResult: 'Ergebnis kopieren',
+      downloadResult: 'Ergebnis herunterladen',
+      clear: 'Leeren',
+      output: 'Ausgabe',
+      waitingForInput: 'Warte auf Eingabe',
+      advancedAnalysis: 'Erweiterte Analyse',
+      faq: 'FAQ',
+      expandAll: 'Alle ausklappen',
+      collapseAll: 'Alle einklappen',
+      references: 'Referenzen',
+      officialSources: 'Offizielle Quellen',
+      quickFacts: 'Kurzinfos',
+      overview: 'Ueberblick',
+      visualization: 'Visualisierung',
+      implementation: 'Implementierung',
+      summary: 'Zusammenfassung',
+      testCases: 'Testfaelle',
+      developers: 'Entwickler',
+      frequentlyAskedQuestions: 'Haeufig gestellte Fragen',
+      officialSourcesPlain: 'Offizielle Quellen',
+      implementationGuidance: 'Implementierungshinweise',
+      validationExamples: 'Validierungsbeispiele',
+      visualStructureBreakdown: 'Visuelle Strukturaufteilung',
+      moduloChecksumDetails: 'Modulo-Pruefsummen-Details',
+      whatIs: 'Was ist',
+      verificationMath: 'Pruefmathematik',
+      issuingAuthority: 'Ausstellende Behoerde',
+      developerGuidelines: 'Entwickler-Richtlinien',
+      languageCodeSnippets: 'Sprach-Codebeispiele',
+      field: 'Feld',
+      positions: 'Positionen',
+      description: 'Beschreibung',
+      sampleInput: 'Beispieleingabe',
+      status: 'Status',
+      regionJurisdiction: 'Region / Gerichtsbarkeit',
+      identifierCategory: 'Kennungskategorie',
+      formatLength: 'Format und Laenge',
+      statusBadge: 'Statusabzeichen',
+      reviewed: 'Geprueft',
+      localSpec: 'Lokale Spezifikation',
+      draftSpecification: 'Entwurfsspezifikation',
+      privacyAssured: 'Datenschutz zugesichert',
+      serial: 'Seriennummer',
+      region: 'Region',
+      checksum: 'Pruefsumme',
+      controlDigitComputed: 'Die Pruefziffer wird wie folgt berechnet:',
+      multipliersFirst9: 'Multiplikatoren werden auf die ersten 9 Ziffern angewendet:',
+      multipliersFirst10: 'Multiplikatoren werden auf die ersten 10 Ziffern angewendet:',
+      firstChecksumDigit: 'Erste Pruefziffer (Ziffer 10)',
+      secondChecksumDigit: 'Zweite Pruefziffer (Ziffer 11)',
+      standardCpfStructure: 'Standard-CPF-Nummern bestehen aus genau 11 Ziffern und sind wie folgt aufgebaut:',
+      whenImplementingCpf: 'Bei der Implementierung der CPF-Validierung:',
+      officialPortal: 'Offizielles Portal',
+      workbench: 'Werkbank',
+      findCountryTool: 'Landes-Tool finden',
+      clearCountryToolSearch: 'Suche leeren',
+      mainNavigation: 'Hauptnavigation',
+      breadcrumb: 'Pfadnavigation'
+    },
+    es: {
+      home: 'Inicio',
+      countries: 'Paises',
+      identifiers: 'Identificadores',
+      developerTools: 'Herramientas para desarrolladores',
+      finance: 'Finanzas',
+      text: 'Texto',
+      tool: 'Herramienta',
+      runTool: 'Ejecutar herramienta',
+      relatedTools: 'Herramientas relacionadas',
+      continueWithRelated: 'Continuar con herramientas relacionadas',
+      validate: 'Validar',
+      copyResult: 'Copiar resultado',
+      downloadResult: 'Descargar resultado',
+      clear: 'Limpiar',
+      output: 'Salida',
+      waitingForInput: 'Esperando entrada',
+      advancedAnalysis: 'Analisis avanzado',
+      faq: 'Preguntas frecuentes',
+      expandAll: 'Expandir todo',
+      collapseAll: 'Contraer todo',
+      references: 'Referencias',
+      officialSources: 'Fuentes oficiales',
+      quickFacts: 'Datos rapidos',
+      overview: 'Resumen',
+      visualization: 'Visualizacion',
+      implementation: 'Implementacion',
+      summary: 'Resumen',
+      testCases: 'Casos de prueba',
+      developers: 'Desarrolladores',
+      frequentlyAskedQuestions: 'Preguntas frecuentes',
+      officialSourcesPlain: 'Fuentes oficiales',
+      implementationGuidance: 'Guia de implementacion',
+      validationExamples: 'Ejemplos de validacion',
+      visualStructureBreakdown: 'Desglose de estructura visual',
+      moduloChecksumDetails: 'Detalles de checksum modulo',
+      whatIs: 'Que es',
+      verificationMath: 'Matematica de verificacion',
+      issuingAuthority: 'Autoridad emisora',
+      developerGuidelines: 'Guia para desarrolladores',
+      languageCodeSnippets: 'Fragmentos de codigo por lenguaje',
+      field: 'Campo',
+      positions: 'Posiciones',
+      description: 'Descripcion',
+      sampleInput: 'Entrada de ejemplo',
+      status: 'Estado',
+      regionJurisdiction: 'Region / Jurisdiccion',
+      identifierCategory: 'Categoria del identificador',
+      formatLength: 'Formato y longitud',
+      statusBadge: 'Insignia de estado',
+      reviewed: 'Revisado',
+      localSpec: 'Especificacion local',
+      draftSpecification: 'Especificacion en borrador',
+      privacyAssured: 'Privacidad garantizada',
+      serial: 'serie',
+      region: 'region',
+      checksum: 'checksum',
+      controlDigitComputed: 'El digito de control se calcula de la siguiente forma:',
+      multipliersFirst9: 'Los multiplicadores se aplican a los primeros 9 digitos:',
+      multipliersFirst10: 'Los multiplicadores se aplican a los primeros 10 digitos:',
+      firstChecksumDigit: 'Primer digito de control (Digito 10)',
+      secondChecksumDigit: 'Segundo digito de control (Digito 11)',
+      standardCpfStructure: 'Los numeros CPF estandar constan de exactamente 11 digitos estructurados asi:',
+      whenImplementingCpf: 'Al implementar la validacion de CPF:',
+      officialPortal: 'Portal oficial',
+      workbench: 'Banco de trabajo',
+      findCountryTool: 'Buscar herramienta del pais',
+      clearCountryToolSearch: 'Limpiar busqueda',
+      mainNavigation: 'Navegacion principal',
+      breadcrumb: 'Ruta de navegacion'
+    },
+    pl: {
+      home: 'Start',
+      countries: 'Kraje',
+      identifiers: 'Identyfikatory',
+      developerTools: 'Narzedzia deweloperskie',
+      finance: 'Finanse',
+      text: 'Tekst',
+      tool: 'Narzedzie',
+      runTool: 'Uruchom narzedzie',
+      relatedTools: 'Powiazane narzedzia',
+      continueWithRelated: 'Przejdz do powiazanych narzedzi',
+      validate: 'Sprawdz',
+      copyResult: 'Kopiuj wynik',
+      downloadResult: 'Pobierz wynik',
+      clear: 'Wyczysc',
+      output: 'Wynik',
+      waitingForInput: 'Oczekiwanie na dane',
+      advancedAnalysis: 'Analiza zaawansowana',
+      faq: 'FAQ',
+      expandAll: 'Rozwin wszystko',
+      collapseAll: 'Zwin wszystko',
+      references: 'Zrodla',
+      officialSources: 'Oficjalne zrodla',
+      quickFacts: 'Szybkie fakty',
+      overview: 'Przeglad',
+      visualization: 'Wizualizacja',
+      implementation: 'Implementacja',
+      summary: 'Podsumowanie',
+      testCases: 'Przypadki testowe',
+      developers: 'Deweloperzy',
+      frequentlyAskedQuestions: 'Najczesciej zadawane pytania',
+      officialSourcesPlain: 'Oficjalne zrodla',
+      implementationGuidance: 'Wskazowki implementacyjne',
+      validationExamples: 'Przyklady walidacji',
+      visualStructureBreakdown: 'Podzial struktury wizualnej',
+      moduloChecksumDetails: 'Szczegoly sumy kontrolnej modulo',
+      whatIs: 'Czym jest',
+      verificationMath: 'Matematyka weryfikacji',
+      issuingAuthority: 'Organ wydajacy',
+      developerGuidelines: 'Wytyczne dla deweloperow',
+      languageCodeSnippets: 'Fragmenty kodu jezykow',
+      field: 'Pole',
+      positions: 'Pozycje',
+      description: 'Opis',
+      sampleInput: 'Przykladowe dane',
+      status: 'Status',
+      regionJurisdiction: 'Region / Jurysdykcja',
+      identifierCategory: 'Kategoria identyfikatora',
+      formatLength: 'Format i dlugosc',
+      statusBadge: 'Odznaka statusu',
+      reviewed: 'Sprawdzone',
+      localSpec: 'Lokalna specyfikacja',
+      draftSpecification: 'Wersja robocza specyfikacji',
+      privacyAssured: 'Prywatnosc zapewniona',
+      serial: 'seria',
+      region: 'region',
+      checksum: 'suma kontrolna',
+      controlDigitComputed: 'Cyfra kontrolna jest obliczana nastepujaco:',
+      multipliersFirst9: 'Mnozniki stosuje sie do pierwszych 9 cyfr:',
+      multipliersFirst10: 'Mnozniki stosuje sie do pierwszych 10 cyfr:',
+      firstChecksumDigit: 'Pierwsza cyfra kontrolna (Cyfra 10)',
+      secondChecksumDigit: 'Druga cyfra kontrolna (Cyfra 11)',
+      standardCpfStructure: 'Standardowe numery CPF skladaja sie dokladnie z 11 cyfr o strukturze:',
+      whenImplementingCpf: 'Podczas wdrazania walidacji CPF:',
+      officialPortal: 'Portal oficjalny',
+      workbench: 'Workbench',
+      findCountryTool: 'Znajdz narzedzie kraju',
+      clearCountryToolSearch: 'Wyczysc wyszukiwanie',
+      mainNavigation: 'Nawigacja glowna',
+      breadcrumb: 'Okruszki'
+    },
+    'pt-BR': {
+      home: 'Inicio',
+      countries: 'Paises',
+      identifiers: 'Identificadores',
+      developerTools: 'Ferramentas para desenvolvedores',
+      finance: 'Financas',
+      text: 'Texto',
+      tool: 'Ferramenta',
+      runTool: 'Executar ferramenta',
+      relatedTools: 'Ferramentas relacionadas',
+      continueWithRelated: 'Continuar com ferramentas relacionadas',
+      validate: 'Validar',
+      copyResult: 'Copiar resultado',
+      downloadResult: 'Baixar resultado',
+      clear: 'Limpar',
+      output: 'Saida',
+      waitingForInput: 'Aguardando entrada',
+      advancedAnalysis: 'Analise avancada',
+      faq: 'Perguntas frequentes',
+      expandAll: 'Expandir tudo',
+      collapseAll: 'Recolher tudo',
+      references: 'Referencias',
+      officialSources: 'Fontes oficiais',
+      quickFacts: 'Resumo rapido',
+      overview: 'Visao geral',
+      visualization: 'Visualizacao',
+      implementation: 'Implementacao',
+      summary: 'Resumo',
+      testCases: 'Casos de teste',
+      developers: 'Desenvolvedores',
+      frequentlyAskedQuestions: 'Perguntas frequentes',
+      officialSourcesPlain: 'Fontes oficiais',
+      implementationGuidance: 'Guia de implementacao',
+      validationExamples: 'Exemplos de validacao',
+      visualStructureBreakdown: 'Quebra da estrutura visual',
+      moduloChecksumDetails: 'Detalhes do checksum modulo',
+      whatIs: 'O que e',
+      verificationMath: 'Matematica de verificacao',
+      issuingAuthority: 'Autoridade emissora',
+      developerGuidelines: 'Diretrizes para desenvolvedores',
+      languageCodeSnippets: 'Trechos de codigo por linguagem',
+      field: 'Campo',
+      positions: 'Posicoes',
+      description: 'Descricao',
+      sampleInput: 'Entrada de exemplo',
+      status: 'Status',
+      regionJurisdiction: 'Regiao / Jurisdicao',
+      identifierCategory: 'Categoria do identificador',
+      formatLength: 'Formato e comprimento',
+      statusBadge: 'Selo de status',
+      reviewed: 'Revisado',
+      localSpec: 'Especificacao local',
+      draftSpecification: 'Especificacao em rascunho',
+      privacyAssured: 'Privacidade assegurada',
+      serial: 'serie',
+      region: 'regiao',
+      checksum: 'checksum',
+      controlDigitComputed: 'O digito de controle e calculado da seguinte forma:',
+      multipliersFirst9: 'Os multiplicadores sao aplicados aos primeiros 9 digitos:',
+      multipliersFirst10: 'Os multiplicadores sao aplicados aos primeiros 10 digitos:',
+      firstChecksumDigit: 'Primeiro digito de controle (Digito 10)',
+      secondChecksumDigit: 'Segundo digito de controle (Digito 11)',
+      standardCpfStructure: 'Os numeros CPF padrao consistem em exatamente 11 digitos estruturados assim:',
+      whenImplementingCpf: 'Ao implementar a validacao de CPF:',
+      officialPortal: 'Portal oficial',
+      workbench: 'Workbench',
+      findCountryTool: 'Encontrar ferramenta do pais',
+      clearCountryToolSearch: 'Limpar busca',
+      mainNavigation: 'Navegacao principal',
+      breadcrumb: 'Trilha de navegacao'
+    }
+  };
+
+  const t = dictionary[uiLocale];
+  let next = content;
+
+  const replacements = [
+    ['>Home<', `>${t.home}<`],
+    ['>Countries<', `>${t.countries}<`],
+    ['>Identifiers<', `>${t.identifiers}<`],
+    ['>Developer Tools<', `>${t.developerTools}<`],
+    ['>Finance<', `>${t.finance}<`],
+    ['>Text<', `>${t.text}<`],
+    ['>Tool<', `>${t.tool}<`],
+    ['>Run the tool<', `>${t.runTool}<`],
+    ['>Related tools<', `>${t.relatedTools}<`],
+    ['>Continue with related tools<', `>${t.continueWithRelated}<`],
+    ['>Validate<', `>${t.validate}<`],
+    ['>Copy result<', `>${t.copyResult}<`],
+    ['>Download result<', `>${t.downloadResult}<`],
+    ['>Clear<', `>${t.clear}<`],
+    ['>Output<', `>${t.output}<`],
+    ['>Waiting for input<', `>${t.waitingForInput}<`],
+    ['>Advanced analysis<', `>${t.advancedAnalysis}<`],
+    ['>FAQ<', `>${t.faq}<`],
+    ['>Expand All<', `>${t.expandAll}<`],
+    ['>Collapse All<', `>${t.collapseAll}<`],
+    ['>References<', `>${t.references}<`],
+    ['>Official Registry Sources<', `>${t.officialSources}<`],
+    ['>Official Sources<', `>${t.officialSourcesPlain}<`],
+    ['>Quick Facts<', `>${t.quickFacts}<`],
+    ['>Overview<', `>${t.overview}<`],
+    ['>Summary<', `>${t.summary}<`],
+    ['>Visualization<', `>${t.visualization}<`],
+    ['>Implementation<', `>${t.implementation}<`],
+    ['>Test cases<', `>${t.testCases}<`],
+    ['>Developers<', `>${t.developers}<`],
+    ['>Frequently Asked Questions<', `>${t.frequentlyAskedQuestions}<`],
+    ['>Implementation Guidance<', `>${t.implementationGuidance}<`],
+    ['>Validation Examples<', `>${t.validationExamples}<`],
+    ['>Visual Structure Breakdown<', `>${t.visualStructureBreakdown}<`],
+    ['>Modulo Checksum Details<', `>${t.moduloChecksumDetails}<`],
+    ['>Verification Math<', `>${t.verificationMath}<`],
+    ['>Issuing Authority<', `>${t.issuingAuthority}<`],
+    ['>Developer Guidelines<', `>${t.developerGuidelines}<`],
+    ['>Language Code Snippets<', `>${t.languageCodeSnippets}<`],
+    ['>Field<', `>${t.field}<`],
+    ['>Positions<', `>${t.positions}<`],
+    ['>Description<', `>${t.description}<`],
+    ['>Sample Input<', `>${t.sampleInput}<`],
+    ['>Status<', `>${t.status}<`],
+    ['>Region / Jurisdiction<', `>${t.regionJurisdiction}<`],
+    ['>Identifier Category<', `>${t.identifierCategory}<`],
+    ['>Format & Length<', `>${t.formatLength}<`],
+    ['>Status Badge<', `>${t.statusBadge}<`],
+    ['>Reviewed:<', `>${t.reviewed}:<`],
+    ['>Local Spec<', `>${t.localSpec}<`],
+    ['>Draft specification<', `>${t.draftSpecification}<`],
+    ['>Privacy Assured<', `>${t.privacyAssured}<`],
+    ['>serial<', `>${t.serial}<`],
+    ['>region<', `>${t.region}<`],
+    ['>checksum<', `>${t.checksum}<`],
+    ['The control digit is computed as:', t.controlDigitComputed],
+    ['Multipliers are applied to the first 9 digits:', t.multipliersFirst9],
+    ['Multipliers are applied to the first 10 digits:', t.multipliersFirst10],
+    ['First Checksum Digit (Digit 10)', t.firstChecksumDigit],
+    ['Second Checksum Digit (Digit 11)', t.secondChecksumDigit],
+    ['Standard CPF numbers consist of exactly 11 digits structured as:', t.standardCpfStructure],
+    ['When implementing CPF validation:', t.whenImplementingCpf],
+    ['>Official portal<', `>${t.officialPortal}<`],
+    ['>What is ', `>${t.whatIs} `],
+    ['>Workbench<', `>${t.workbench}<`],
+    ['>Find a country tool<', `>${t.findCountryTool}<`],
+    ['>Clear country tool search<', `>${t.clearCountryToolSearch}<`],
+    ['aria-label="Main navigation"', `aria-label="${t.mainNavigation}"`],
+    ['aria-label="Breadcrumb"', `aria-label="${t.breadcrumb}"`]
+  ];
+
+  for (const [from, to] of replacements) {
+    next = next.split(from).join(to);
+  }
+  return next;
+}
+
+function localizeSeoUrls(content, localeCode) {
+  const locale = String(localeCode || 'en');
+  if (locale === 'en') return content;
+
+  return content
+    .replace(
+      /<link rel="canonical" href="https:\/\/validohub\.com\/en\//g,
+      `<link rel="canonical" href="https://validohub.com/${locale}/`
+    )
+    .replace(/("url"\s*:\s*")https:\/\/validohub\.com\/en\//g, `$1https://validohub.com/${locale}/`)
+    .replace(/("url"\s*:\s*")https:\\\/\\\/validohub\.com\\\/en\\\//g, `$1https:\/\/validohub.com\/${locale}\/`)
+    .replace(/content="\/en\//g, `content="/${locale}/`);
+}
+
+async function ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest) {
+  const locales = await getConfiguredLocales();
+  const englishRoutes = routeRegistry.getAll().filter(route => route.path.startsWith('/en/'));
+
+  // Register missing locale routes for every English route.
+  for (const localeCode of locales) {
+    if (localeCode === 'en') continue;
+
+    for (const englishRoute of englishRoutes) {
+      const { suffix } = splitRouteLocale(englishRoute.path);
+      const localizedPath = routeForLocale(localeCode, suffix);
+      if (routeRegistry.has(localizedPath)) continue;
+
+      routeRegistry.register(localizedPath, {
+        type: englishRoute.type,
+        title: englishRoute.title,
+        sourceOwner: 'node',
+        outputPath: localizedOutputPath(localizedPath),
+        metadata: {
+          fallback: true,
+          sourcePath: englishRoute.path,
+          locale: localeCode
+        }
+      });
+    }
+  }
+
+  // Materialize any route that is still missing output by cloning the English equivalent.
+  for (const route of routeRegistry.getAll()) {
+    const { locale: routeLocale, suffix } = splitRouteLocale(route.path);
+    if (routeLocale === 'en') continue;
+    if (await pathExists(route.outputPath)) continue;
+
+    const englishPath = routeForLocale('en', suffix);
+    const englishRoute = routeRegistry.get(englishPath);
+    if (!englishRoute || !(await pathExists(englishRoute.outputPath))) {
+      continue;
+    }
+
+    let localizedContent = await readFile(englishRoute.outputPath, 'utf8');
+    localizedContent = rewriteHrefLocale(localizedContent, routeLocale, routeRegistry);
+    localizedContent = localizedContent.replace(/<html\s+lang="[^"]+">/i, `<html lang="${routeLocale}">`);
+    localizedContent = localizedContent.replace(/"inLanguage"\s*:\s*"en"/g, `"inLanguage":"${routeLocale}"`);
+    localizedContent = localizeSeoUrls(localizedContent, routeLocale);
+
+    await mkdir(dirname(route.outputPath), { recursive: true });
+    await writeFile(route.outputPath, localizedContent, 'utf8');
+    console.log(`✓ Generated localized route fallback: ${route.path}`);
+  }
+
+  // Normalize alternate locale links and locale-pinned internal hrefs on every route.
+  for (const route of routeRegistry.getAll()) {
+    if (!(await pathExists(route.outputPath))) continue;
+    const { locale: routeLocale } = splitRouteLocale(route.path);
+    let content = await readFile(route.outputPath, 'utf8');
+    if (routeLocale !== 'en') {
+      content = rewriteHrefLocale(content, routeLocale, routeRegistry);
+      content = localizeSeoUrls(content, routeLocale);
+      content = applyUiLocaleTranslations(content, routeLocale);
+    }
+    content = injectAlternateLinks(content, route.path, routeRegistry, locales);
+    await writeFile(route.outputPath, content, 'utf8');
+  }
+}
+
 function pageTitleForDocumentation(content, route) {
   if (route.title && route.title !== 'Java Component') return route.title;
   const match = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
@@ -249,93 +765,6 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
 
       await writeFile(filePath, content, 'utf8');
       console.log(`✓ Post-processed Java page: ${route.path}`);
-    }
-  }
-}
-
-async function ensureLocalizedCountryHubFallbacks(routeRegistry, assetsManifest) {
-  const locales = await getConfiguredLocales();
-  const countryRoutes = routeRegistry.getAll().filter(route => route.type === 'country' && route.path.startsWith('/en/'));
-
-  for (const localeCode of locales) {
-    if (localeCode === 'en') continue;
-
-    for (const countryRoute of countryRoutes) {
-      const slug = countryRoute.path.split('/').filter(Boolean)[1];
-      const localizedPath = `/${localeCode}/${slug}/`;
-      const outputPath = resolve(siteRoot, localeCode, slug, 'index.html');
-
-      if (!routeRegistry.has(localizedPath)) {
-        routeRegistry.register(localizedPath, {
-          type: 'country',
-          title: `${slug.replace(/-/g, ' ')} | ValidoHub`,
-          sourceOwner: 'node',
-          outputPath,
-          metadata: {
-            fallback: true,
-            sourcePath: countryRoute.path,
-            locale: localeCode,
-            slug
-          }
-        });
-      }
-
-      const localeHomePath = routeRegistry.has(`/${localeCode}/`) ? `/${localeCode}/` : '/en/';
-      const localeCountriesPath = routeRegistry.has(`/${localeCode}/countries/`) ? `/${localeCode}/countries/` : '/en/countries/';
-      const localeCategoriesPath = routeRegistry.has(`/${localeCode}/categories/`) ? `/${localeCode}/categories/` : null;
-      const englishHubPath = `/en/${slug}/`;
-      const hubTitle = countryRoute.metadata?.catalog?.name || slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-
-      const html = `<!doctype html>
-<html lang="${localeCode}">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${escapeHtml(hubTitle)} | ValidoHub</title>
-  <meta name="description" content="Localized country hub shell for ${escapeHtml(hubTitle)}. Full hub content remains available in English while localization rollout is in progress.">
-  <link rel="canonical" href="https://validohub.com${englishHubPath}">
-  <link rel="stylesheet" href="${assetsManifest.css}">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="${localeHomePath}" aria-label="ValidoHub home">
-        <span class="brand-mark" aria-hidden="true">V</span>
-        <span class="brand-text">ValidoHub</span>
-      </a>
-      <nav class="primary-nav" aria-label="Main navigation">
-        <a href="${localeHomePath}">Home</a>
-        <a href="${localeCountriesPath}">Countries</a>
-      </nav>
-    </div>
-  </header>
-  <main class="site-main">
-    <div class="container page-shell country-hub-page">
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <ol>
-          <li><a href="${localeHomePath}">Home</a></li>
-          <li><a href="${localeCategoriesPath || localeCountriesPath}">Countries</a></li>
-          <li><span>${escapeHtml(hubTitle)}</span></li>
-        </ol>
-      </nav>
-      <section class="country-hero" aria-label="Localized country hub fallback">
-        <div class="country-hero-copy">
-          <p class="eyebrow">Localization rollout</p>
-          <h1>${escapeHtml(hubTitle)} country hub</h1>
-          <p>This locale is enabled, but this country hub is still being fully localized. You can continue in the English hub now.</p>
-          <p><a class="button button-primary" href="${englishHubPath}">Open English hub</a></p>
-        </div>
-      </section>
-    </div>
-  </main>
-  <script src="${assetsManifest.js}"></script>
-</body>
-</html>
-`;
-
-      await mkdir(dirname(outputPath), { recursive: true });
-      await writeFile(outputPath, html, 'utf8');
-      console.log(`✓ Generated localized country fallback page: ${localizedPath}`);
     }
   }
 }
@@ -633,8 +1062,10 @@ async function main() {
     console.log('\n[Step 5/5] Re-compiling Template Archetypes...');
     await compileCountriesPortal(routeRegistry, assetsManifest);
     await compileIdentifiers(routeRegistry, assetsManifest);
-    await ensureLocalizedCountryHubFallbacks(routeRegistry, assetsManifest);
+    const configuredLocales = await getConfiguredLocales();
+    await ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest);
     await postProcessJavaPages(routeRegistry, assetsManifest);
+    await applyFinalLocalizationPass(routeRegistry, siteRoot, configuredLocales);
     await writeSitemap(routeRegistry);
 
     // 6. Site Integrity Verification & Metrics

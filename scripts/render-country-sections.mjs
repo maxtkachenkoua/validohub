@@ -268,16 +268,16 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
   const quickStarts = `
     <div class="vh-country-quick-starts" aria-label="Quick start scenarios">
       <a class="vh-country-quick-start" href="${personPath}">
-        <strong>Validate person identity</strong>
-        <small>PESEL and document-related checks</small>
+        <strong>Validate personal identifiers</strong>
+        <small>Personal IDs, documents, contact and address formats</small>
       </a>
       <a class="vh-country-quick-start" href="${companyPath}">
-        <strong>Validate company identity</strong>
-        <small>NIP, REGON, KRS and business references</small>
+        <strong>Validate organization identifiers</strong>
+        <small>Tax, registry, company and compliance references</small>
       </a>
       <a class="vh-country-quick-start" href="${paymentPath}">
-        <strong>Validate payment flow</strong>
-        <small>IBAN/NRB, BLIK and transfer-readiness</small>
+        <strong>Validate payment data</strong>
+        <small>Accounts, transfers, payment references and amount formats</small>
       </a>
     </div>
   `;
@@ -529,7 +529,13 @@ export function renderCountryBankingSystem(model, routeRegistry = null) {
     </div>
     ${toolsHtml}
   `;
-  return createSection('Banking Standards', 'Polish account, transfer & clearing standards', 'country-banking-system', 'IBAN, NRB, BIC, SEPA, Elixir-style routing context, and payment-ready developer workflows.', content);
+  const countryName = model.displayName || model.name || 'Country';
+  const isPoland = model.iso2 === 'PL';
+  const sectionTitle = isPoland ? 'Polish account, transfer & clearing standards' : countryName + ' account, transfer & banking standards';
+  const sectionDescription = isPoland
+    ? 'IBAN, NRB, BIC, SEPA, Elixir-style routing context, and payment-ready developer workflows.'
+    : 'IBAN, domestic account context, BIC/SWIFT, SEPA or local clearing notes, and payment-ready developer workflows.';
+  return createSection('Banking Standards', sectionTitle, 'country-banking-system', sectionDescription, content);
 }
 
 export function renderCountryPaymentSystems(model, routeRegistry = null) {
@@ -563,7 +569,13 @@ export function renderCountryPaymentSystems(model, routeRegistry = null) {
     </div>
     ${toolsHtml}
   `;
-  return createSection('Payment Networks', 'Polish payment rails & offline helpers', 'country-payment-systems', 'BLIK, SEPA, split payment, payment QR, PLN amounts, VAT amounts, and transfer-reference workflows.', content);
+  const countryName = model.displayName || model.name || 'Country';
+  const isPoland = model.iso2 === 'PL';
+  const sectionTitle = isPoland ? 'Polish payment rails & offline helpers' : countryName + ' payment rails & offline helpers';
+  const sectionDescription = isPoland
+    ? 'BLIK, SEPA, split payment, payment QR, PLN amounts, VAT amounts, and transfer-reference workflows.'
+    : 'Local payment systems, card context, bank transfer references, currency formatting, and browser-only payment data helpers.';
+  return createSection('Payment Networks', sectionTitle, 'country-payment-systems', sectionDescription, content);
 }
 
 // 7. National Identifiers & Validators

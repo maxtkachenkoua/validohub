@@ -464,3 +464,22 @@ Impact:
 - The implementation remains entirely in ValidoHub assets, content, config, and documentation.
 - Valido Engine remains untouched.
 - No official registry lookup, banking lookup, payment execution, customs lookup, vehicle lookup, tax-status lookup, backend, REST API, database, or Java execution was added.
+
+## Localization Foundation Pass
+
+Changed:
+
+- Completed the initial ValidoHub localization foundation for `pl`, `de`, `es`, and `pt-BR`.
+- Added a final build-time localization pass for route materialization, canonical URLs, hreflang alternates, same-locale links, common UI labels, and country-page shell text.
+- Ensured rich Node-owned pages such as country hubs, the Countries Portal, and identifier reference pages are generated for localized routes instead of keeping Java fallback shells.
+- Kept technical identifiers such as route slugs, locale codes, and IANA time zones stable.
+
+Reason:
+
+Users should be able to choose a supported language from any page and stay in that locale across the generated site without changing Valido Engine.
+
+Impact:
+
+- The change remains in ValidoHub scripts, assets, and documentation.
+- Valido Engine remains untouched.
+- Deep human editorial translations remain future content-pack work.

@@ -460,6 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
     headerInner.appendChild(panel);
     const select = panel.querySelector('.vh-locale-switcher-select');
     mountOfficialLanguageQuickActions(localeState, select);
+    applyRuntimeUiLocalization(localeState.currentLocale);
     if (!nav) return;
 
     applyAutoLocale(localeState);
@@ -525,14 +526,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const label = document.createElement('label');
     label.className = 'vh-locale-switcher-label';
     label.setAttribute('for', 'vh-locale-select');
-    label.textContent = 'Language';
+    label.textContent = uiLabel(state.currentLocale, 'language');
 
     const select = document.createElement('select');
     select.id = 'vh-locale-select';
     select.className = 'vh-locale-switcher-select';
-    select.setAttribute('aria-label', 'Select language');
+    select.setAttribute('aria-label', uiLabel(state.currentLocale, 'selectLanguage'));
 
-    const selectedLocale = state.savedLocale || state.currentLocale || 'en';
+    const selectedLocale = state.currentLocale || state.savedLocale || 'en';
     populateLocaleOptions(select, state, selectedLocale);
 
     select.addEventListener('change', () => {
@@ -586,7 +587,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const title = document.createElement('span');
     title.className = 'vh-country-language-quick-title';
-    title.textContent = 'Official';
+    title.textContent = uiLabel(state.currentLocale, 'official');
     row.appendChild(title);
 
     hints.forEach(code => {
@@ -648,10 +649,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function detectCurrentLocale() {
+    const pathLocale = detectPathLocale();
+    if (pathLocale) return pathLocale;
     const htmlLang = normalizeLocaleTag(document.documentElement.lang || '');
     if (htmlLang) return htmlLang;
+    return 'en';
+  }
+
+  function detectPathLocale() {
     const parts = String(window.location.pathname || '/').split('/').filter(Boolean);
-    return normalizeLocaleTag(parts[0] || 'en') || 'en';
+    return normalizeLocaleTag(parts[0] || '');
   }
 
   function detectBrowserLocale(supportedLocales) {
@@ -704,6 +711,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function applyAutoLocale(state) {
+    if (detectPathLocale()) return;
     if (state.savedLocale) return;
     const preferred = state.browserLocale;
     if (!preferred || preferred === state.currentLocale) return;
@@ -767,6 +775,99 @@ document.addEventListener('DOMContentLoaded', () => {
       out.push(normalized);
     });
     return out;
+  }
+
+  function uiLabel(localeCode, key) {
+    const locale = normalizeLocaleTag(localeCode || 'en');
+    const lang = locale.startsWith('pt-') ? 'pt-BR' : (locale.split('-')[0] || 'en');
+    const dict = {
+      en: { language: 'Language', selectLanguage: 'Select language', official: 'Official' },
+      de: { language: 'Sprache', selectLanguage: 'Sprache wählen', official: 'Offiziell' },
+      es: { language: 'Idioma', selectLanguage: 'Seleccionar idioma', official: 'Oficial' },
+      pl: { language: 'Język', selectLanguage: 'Wybierz język', official: 'Urzędowy' },
+      'pt-BR': { language: 'Idioma', selectLanguage: 'Selecionar idioma', official: 'Oficial' }
+    };
+
+    const selected = dict[lang] || dict[locale] || dict.en;
+    return selected[key] || dict.en[key] || '';
+  }
+
+  function applyRuntimeUiLocalization(localeCode) {
+    const locale = normalizeLocaleTag(localeCode || 'en');
+    const lang = locale.startsWith('pt-') ? 'pt-BR' : (locale.split('-')[0] || 'en');
+    if (!['de', 'es', 'pl', 'pt-BR'].includes(lang)) return;
+
+    const ui = {
+      de: {
+        home: 'Startseite', countries: 'Länder', identifiers: 'Kennungen',
+        tool: 'Werkzeug', runTool: 'Tool ausführen', workbench: 'Werkbank',
+        relatedTools: 'Ähnliche Tools', continueWithRelated: 'Mit ähnlichen Tools fortfahren',
+        validate: 'Prüfen', copyResult: 'Ergebnis kopieren', downloadResult: 'Ergebnis herunterladen', clear: 'Leeren',
+        output: 'Ausgabe', waiting: 'Warte auf Eingabe', advanced: 'Erweiterte Analyse'
+      },
+      es: {
+        home: 'Inicio', countries: 'Países', identifiers: 'Identificadores',
+        tool: 'Herramienta', runTool: 'Ejecutar herramienta', workbench: 'Banco de trabajo',
+        relatedTools: 'Herramientas relacionadas', continueWithRelated: 'Continuar con herramientas relacionadas',
+        validate: 'Validar', copyResult: 'Copiar resultado', downloadResult: 'Descargar resultado', clear: 'Limpiar',
+        output: 'Salida', waiting: 'Esperando entrada', advanced: 'Análisis avanzado'
+      },
+      pl: {
+        home: 'Start', countries: 'Kraje', identifiers: 'Identyfikatory',
+        tool: 'Narzędzie', runTool: 'Uruchom narzędzie', workbench: 'Workbench',
+        relatedTools: 'Powiązane narzędzia', continueWithRelated: 'Przejdź do powiązanych narzędzi',
+        validate: 'Sprawdź', copyResult: 'Kopiuj wynik', downloadResult: 'Pobierz wynik', clear: 'Wyczyść',
+        output: 'Wynik', waiting: 'Oczekiwanie na dane', advanced: 'Analiza zaawansowana'
+      },
+      'pt-BR': {
+        home: 'Início', countries: 'Países', identifiers: 'Identificadores',
+        tool: 'Ferramenta', runTool: 'Executar ferramenta', workbench: 'Workbench',
+        relatedTools: 'Ferramentas relacionadas', continueWithRelated: 'Continuar com ferramentas relacionadas',
+        validate: 'Validar', copyResult: 'Copiar resultado', downloadResult: 'Baixar resultado', clear: 'Limpar',
+        output: 'Saída', waiting: 'Aguardando entrada', advanced: 'Análise avançada'
+      }
+    }[lang];
+
+    document.querySelectorAll('.primary-nav a').forEach(a => {
+      const txt = (a.textContent || '').trim();
+      if (txt === 'Home') a.textContent = ui.home;
+      if (txt === 'Countries') a.textContent = ui.countries;
+      if (txt === 'Identifiers') a.textContent = ui.identifiers;
+    });
+
+    document.querySelectorAll('.eyebrow').forEach(el => {
+      const txt = (el.textContent || '').trim();
+      if (txt === 'Tool') el.textContent = ui.tool;
+      if (txt === 'Workbench') el.textContent = ui.workbench;
+      if (txt === 'Related tools') el.textContent = ui.relatedTools;
+    });
+
+    document.querySelectorAll('h2').forEach(el => {
+      const txt = (el.textContent || '').trim();
+      if (txt === 'Run the tool') el.textContent = ui.runTool;
+      if (txt === 'Continue with related tools') el.textContent = ui.continueWithRelated;
+    });
+
+    document.querySelectorAll('button').forEach(btn => {
+      const txt = (btn.textContent || '').trim();
+      if (txt === 'Validate') btn.textContent = ui.validate;
+      if (txt === 'Copy result') btn.textContent = ui.copyResult;
+      if (txt === 'Download result') btn.textContent = ui.downloadResult;
+      if (txt === 'Clear') btn.textContent = ui.clear;
+    });
+
+    document.querySelectorAll('summary').forEach(el => {
+      const txt = (el.textContent || '').trim();
+      if (txt === 'Advanced analysis') el.textContent = ui.advanced;
+    });
+
+    document.querySelectorAll('.output-field > span').forEach(el => {
+      if ((el.textContent || '').trim() === 'Output') el.textContent = ui.output;
+    });
+
+    document.querySelectorAll('.input-mode-badge').forEach(el => {
+      if ((el.textContent || '').trim() === 'Waiting for input') el.textContent = ui.waiting;
+    });
   }
 
   function showCopiedStatus(btn) {
