@@ -189,6 +189,213 @@ const COMMON_LABELS = {
   }
 };
 
+const COUNTRY_PAGE_LABELS = {
+  pl: {
+    'Locale': 'Locale',
+    'ISO-2': 'ISO-2',
+    'ISO-3': 'ISO-3',
+    'Calling code': 'Kod kierunkowy',
+    'TLD': 'TLD',
+    'Date format': 'Format daty',
+    'Currency': 'Waluta',
+    'Currency Name': 'Nazwa waluty',
+    'Postal pattern': 'Format kodu pocztowego',
+    'Decimal': 'Separator dziesiętny',
+    'Thousands': 'Separator tysięcy',
+    'country code': 'kod kraju',
+    'alpha-3': 'alpha-3',
+    'phone': 'telefon',
+    'domain': 'domena',
+    'display': 'wyświetlanie',
+    'money': 'waluta',
+    'address': 'adres',
+    'numbers': 'liczby',
+    'Polish złoty': 'polski złoty',
+    'Date format is DD.MM.YYYY.': 'Format daty to DD.MM.YYYY.',
+    'Copy Code': 'Kopiuj kod',
+    'JavaScript Intl Currency': 'Waluta JavaScript Intl',
+    'Browser-only local workbench': 'Lokalny workbench w przeglądarce',
+    'Related browser-only workbench': 'Powiązany workbench przeglądarkowy',
+    'Open the production-grade browser workbench for this country data standard.': 'Otwórz produkcyjny workbench przeglądarkowy dla tego standardu danych.',
+    'PESEL, NIP, REGON, KRS, documents, vehicle identifiers, and official registry-shaped data.': 'PESEL, NIP, REGON, KRS, dokumenty, identyfikatory pojazdów i dane zgodne z rejestrami urzędowymi.',
+    'VAT, KSeF, JPK, invoices, company onboarding, classifications, and fiscal record helpers.': 'VAT, KSeF, JPK, faktury, onboarding firm, klasyfikacje i pomocniki dokumentów fiskalnych.',
+    'IBAN, NRB, BIC, SEPA, BLIK, split payment, transfer titles, amounts, and payment QR payloads.': 'IBAN, NRB, BIC, SEPA, BLIK, split payment, tytuły przelewów, kwoty i payloady QR płatności.',
+    'Postal codes, addresses, phones, parcel numbers, date/locale formatting, and delivery-ready data.': 'Kody pocztowe, adresy, telefony, numery paczek, formatowanie dat i locale oraz dane gotowe do dostawy.',
+    'Masking, test fixtures, privacy-safe demos, and whole-record Polish data-quality audits.': 'Maskowanie, dane testowe, bezpieczne demo i audyty jakości polskich rekordów.',
+    'Related banking workbenches': 'Powiązane workbenche bankowe',
+    'Related payment workbenches': 'Powiązane workbenche płatności',
+    'Identifier registry specs & workbenches': 'Specyfikacje rejestrów identyfikatorów i workbenche',
+    'Official identifier specs plus related browser tools for personal, business, vehicle, address, and registry-shaped Polish data.': 'Oficjalne specyfikacje identyfikatorów oraz narzędzia przeglądarkowe dla danych osobowych, biznesowych, pojazdów, adresów i rejestrów w Polsce.',
+    'Interactive Validator Workbenches': 'Interaktywne workbenche walidatorów',
+    'Pre-rendered interactive validator tools to test identifiers in a real browser.': 'Wstępnie wygenerowane interaktywne walidatory do testowania identyfikatorów w przeglądarce.',
+    'Quality': 'Jakość'
+  },
+  de: {
+    'Locale': 'Locale',
+    'ISO-2': 'ISO-2',
+    'ISO-3': 'ISO-3',
+    'Calling code': 'Vorwahl',
+    'TLD': 'TLD',
+    'Date format': 'Datumsformat',
+    'Currency': 'Währung',
+    'Currency Name': 'Währungsname',
+    'Postal pattern': 'Postleitzahlformat',
+    'Decimal': 'Dezimalzeichen',
+    'Thousands': 'Tausendertrennzeichen',
+    'country code': 'Ländercode',
+    'alpha-3': 'Alpha-3',
+    'phone': 'Telefon',
+    'domain': 'Domain',
+    'display': 'Anzeige',
+    'money': 'Währung',
+    'address': 'Adresse',
+    'numbers': 'Zahlen',
+    'Polish złoty': 'Polnischer Złoty',
+    'Date format is DD.MM.YYYY.': 'Das Datumsformat ist DD.MM.YYYY.',
+    'Copy Code': 'Code kopieren',
+    'JavaScript Intl Currency': 'JavaScript-Intl-Währung',
+    'Browser-only local workbench': 'Lokale Browser-Workbench',
+    'Related browser-only workbench': 'Ähnliche Browser-Workbench',
+    'Open the production-grade browser workbench for this country data standard.': 'Öffne die produktionsreife Browser-Workbench für diesen Datenstandard.',
+    'PESEL, NIP, REGON, KRS, documents, vehicle identifiers, and official registry-shaped data.': 'PESEL, NIP, REGON, KRS, Dokumente, Fahrzeugkennungen und amtlich registerförmige Daten.',
+    'VAT, KSeF, JPK, invoices, company onboarding, classifications, and fiscal record helpers.': 'VAT, KSeF, JPK, Rechnungen, Unternehmens-Onboarding, Klassifikationen und Fiskaldaten-Helfer.',
+    'IBAN, NRB, BIC, SEPA, BLIK, split payment, transfer titles, amounts, and payment QR payloads.': 'IBAN, NRB, BIC, SEPA, BLIK, Split Payment, Überweisungstitel, Beträge und Zahlungs-QR-Payloads.',
+    'Postal codes, addresses, phones, parcel numbers, date/locale formatting, and delivery-ready data.': 'Postleitzahlen, Adressen, Telefonnummern, Paketnummern, Datums-/Locale-Formatierung und lieferfertige Daten.',
+    'Masking, test fixtures, privacy-safe demos, and whole-record Polish data-quality audits.': 'Maskierung, Testdaten, datenschutzfreundliche Demos und Qualitätsaudits polnischer Datensätze.',
+    'Related banking workbenches': 'Ähnliche Banking-Workbenches',
+    'Related payment workbenches': 'Ähnliche Zahlungs-Workbenches',
+    'Identifier registry specs & workbenches': 'Register-Spezifikationen und Workbenches für Kennungen',
+    'Official identifier specs plus related browser tools for personal, business, vehicle, address, and registry-shaped Polish data.': 'Offizielle Kennungsspezifikationen plus Browser-Tools für Personen-, Unternehmens-, Fahrzeug-, Adress- und Registerdaten in Polen.',
+    'Interactive Validator Workbenches': 'Interaktive Validator-Workbenches',
+    'Pre-rendered interactive validator tools to test identifiers in a real browser.': 'Vorgenerierte interaktive Validatoren zum Testen von Kennungen im Browser.',
+    'Quality': 'Qualität'
+  },
+  es: {
+    'Locale': 'Configuración regional',
+    'ISO-2': 'ISO-2',
+    'ISO-3': 'ISO-3',
+    'Calling code': 'Prefijo telefónico',
+    'TLD': 'TLD',
+    'Date format': 'Formato de fecha',
+    'Currency': 'Moneda',
+    'Currency Name': 'Nombre de la moneda',
+    'Postal pattern': 'Formato postal',
+    'Decimal': 'Separador decimal',
+    'Thousands': 'Separador de miles',
+    'country code': 'código de país',
+    'alpha-3': 'alpha-3',
+    'phone': 'teléfono',
+    'domain': 'dominio',
+    'display': 'visualización',
+    'money': 'moneda',
+    'address': 'dirección',
+    'numbers': 'números',
+    'Polish złoty': 'złoty polaco',
+    'Date format is DD.MM.YYYY.': 'El formato de fecha es DD.MM.YYYY.',
+    'Copy Code': 'Copiar código',
+    'JavaScript Intl Currency': 'Moneda con JavaScript Intl',
+    'Browser-only local workbench': 'Workbench local en el navegador',
+    'Related browser-only workbench': 'Workbench relacionado en el navegador',
+    'Open the production-grade browser workbench for this country data standard.': 'Abre el workbench de navegador de nivel producción para este estándar de datos.',
+    'PESEL, NIP, REGON, KRS, documents, vehicle identifiers, and official registry-shaped data.': 'PESEL, NIP, REGON, KRS, documentos, identificadores de vehículos y datos con forma de registro oficial.',
+    'VAT, KSeF, JPK, invoices, company onboarding, classifications, and fiscal record helpers.': 'IVA, KSeF, JPK, facturas, onboarding de empresas, clasificaciones y ayudas de registros fiscales.',
+    'IBAN, NRB, BIC, SEPA, BLIK, split payment, transfer titles, amounts, and payment QR payloads.': 'IBAN, NRB, BIC, SEPA, BLIK, pago dividido, conceptos de transferencia, importes y payloads QR de pago.',
+    'Postal codes, addresses, phones, parcel numbers, date/locale formatting, and delivery-ready data.': 'Códigos postales, direcciones, teléfonos, paquetes, formato de fecha/configuración regional y datos listos para entrega.',
+    'Masking, test fixtures, privacy-safe demos, and whole-record Polish data-quality audits.': 'Enmascaramiento, datos de prueba, demos privadas y auditorías de calidad de datos polacos.',
+    'Related banking workbenches': 'Workbenches bancarios relacionados',
+    'Related payment workbenches': 'Workbenches de pago relacionados',
+    'Identifier registry specs & workbenches': 'Especificaciones de registros de identificadores y workbenches',
+    'Official identifier specs plus related browser tools for personal, business, vehicle, address, and registry-shaped Polish data.': 'Especificaciones oficiales y herramientas de navegador para datos personales, empresariales, vehiculares, de dirección y registros polacos.',
+    'Interactive Validator Workbenches': 'Workbenches interactivos de validación',
+    'Pre-rendered interactive validator tools to test identifiers in a real browser.': 'Validadores interactivos pregenerados para probar identificadores en el navegador.',
+    'Quality': 'Calidad'
+  },
+  'pt-BR': {
+    'Locale': 'Localidade',
+    'ISO-2': 'ISO-2',
+    'ISO-3': 'ISO-3',
+    'Calling code': 'Código telefônico',
+    'TLD': 'TLD',
+    'Date format': 'Formato de data',
+    'Currency': 'Moeda',
+    'Currency Name': 'Nome da moeda',
+    'Postal pattern': 'Formato postal',
+    'Decimal': 'Separador decimal',
+    'Thousands': 'Separador de milhares',
+    'country code': 'código do país',
+    'alpha-3': 'alpha-3',
+    'phone': 'telefone',
+    'domain': 'domínio',
+    'display': 'exibição',
+    'money': 'moeda',
+    'address': 'endereço',
+    'numbers': 'números',
+    'Polish złoty': 'złoty polonês',
+    'Date format is DD.MM.YYYY.': 'O formato de data é DD.MM.YYYY.',
+    'Copy Code': 'Copiar código',
+    'JavaScript Intl Currency': 'Moeda com JavaScript Intl',
+    'Browser-only local workbench': 'Workbench local no navegador',
+    'Related browser-only workbench': 'Workbench relacionado no navegador',
+    'Open the production-grade browser workbench for this country data standard.': 'Abra o workbench de navegador de nível produção para este padrão de dados.',
+    'PESEL, NIP, REGON, KRS, documents, vehicle identifiers, and official registry-shaped data.': 'PESEL, NIP, REGON, KRS, documentos, identificadores de veículos e dados em formato de registros oficiais.',
+    'VAT, KSeF, JPK, invoices, company onboarding, classifications, and fiscal record helpers.': 'IVA, KSeF, JPK, notas fiscais, onboarding de empresas, classificações e auxiliares fiscais.',
+    'IBAN, NRB, BIC, SEPA, BLIK, split payment, transfer titles, amounts, and payment QR payloads.': 'IBAN, NRB, BIC, SEPA, BLIK, pagamento dividido, títulos de transferência, valores e payloads QR de pagamento.',
+    'Postal codes, addresses, phones, parcel numbers, date/locale formatting, and delivery-ready data.': 'Códigos postais, endereços, telefones, encomendas, formatação de data/localidade e dados prontos para entrega.',
+    'Masking, test fixtures, privacy-safe demos, and whole-record Polish data-quality audits.': 'Mascaramento, dados de teste, demos privadas e auditorias de qualidade de dados poloneses.',
+    'Related banking workbenches': 'Workbenches bancários relacionados',
+    'Related payment workbenches': 'Workbenches de pagamento relacionados',
+    'Identifier registry specs & workbenches': 'Especificações de registros de identificadores e workbenches',
+    'Official identifier specs plus related browser tools for personal, business, vehicle, address, and registry-shaped Polish data.': 'Especificações oficiais e ferramentas de navegador para dados pessoais, comerciais, veiculares, de endereço e registros poloneses.',
+    'Interactive Validator Workbenches': 'Workbenches interativos de validação',
+    'Pre-rendered interactive validator tools to test identifiers in a real browser.': 'Validadores interativos pré-renderizados para testar identificadores no navegador.',
+    'Quality': 'Qualidade'
+  }
+};
+
+const TITLE_PHRASES = {
+  pl: [
+    [' Validator &amp; Explainer', ' - walidator i objaśnienie'], [' Number Inspector', ' - inspektor numeru'], [' Validator', ' - walidator'], [' Inspector', ' - inspektor'], [' Workbench', ' - workbench'], [' Helper', ' - pomocnik'], [' Formatter', ' - formatter'], [' Converter', ' - konwerter'], [' Generator', ' - generator'], [' Builder', ' - builder'], [' Parser', ' - parser'], [' Auditor', ' - audytor'], [' Assistant', ' - asystent'], [' Calculator', ' - kalkulator'], [' Checker', ' - checker'], [' Detector', ' - detektor'], [' Normalizer', ' - normalizator']
+  ],
+  de: [
+    [' Validator &amp; Explainer', ' Validator und Erklärung'], [' Number Inspector', ' Nummerninspektor'], [' Validator', ' Validator'], [' Inspector', ' Inspektor'], [' Workbench', ' Workbench'], [' Helper', ' Helfer'], [' Formatter', ' Formatter'], [' Converter', ' Konverter'], [' Generator', ' Generator'], [' Builder', ' Builder'], [' Parser', ' Parser'], [' Auditor', ' Auditor'], [' Assistant', ' Assistent'], [' Calculator', ' Rechner'], [' Checker', ' Checker'], [' Detector', ' Detektor'], [' Normalizer', ' Normalisierer']
+  ],
+  es: [
+    [' Validator &amp; Explainer', ' - validador y explicación'], [' Number Inspector', ' - inspector de número'], [' Validator', ' - validador'], [' Inspector', ' - inspector'], [' Workbench', ' - workbench'], [' Helper', ' - asistente'], [' Formatter', ' - formateador'], [' Converter', ' - conversor'], [' Generator', ' - generador'], [' Builder', ' - constructor'], [' Parser', ' - parser'], [' Auditor', ' - auditor'], [' Assistant', ' - asistente'], [' Calculator', ' - calculadora'], [' Checker', ' - verificador'], [' Detector', ' - detector'], [' Normalizer', ' - normalizador']
+  ],
+  'pt-BR': [
+    [' Validator &amp; Explainer', ' - validador e explicação'], [' Number Inspector', ' - inspetor de número'], [' Validator', ' - validador'], [' Inspector', ' - inspetor'], [' Workbench', ' - workbench'], [' Helper', ' - auxiliar'], [' Formatter', ' - formatador'], [' Converter', ' - conversor'], [' Generator', ' - gerador'], [' Builder', ' - construtor'], [' Parser', ' - parser'], [' Auditor', ' - auditor'], [' Assistant', ' - assistente'], [' Calculator', ' - calculadora'], [' Checker', ' - verificador'], [' Detector', ' - detector'], [' Normalizer', ' - normalizador']
+  ]
+};
+
+const COUNTRY_PAGE_TEXT_ONLY_LABELS = new Set([
+  'Locale', 'ISO-2', 'ISO-3', 'Calling code', 'TLD', 'Date format', 'Currency', 'Currency Name',
+  'Postal pattern', 'Decimal', 'Thousands', 'country code', 'alpha-3', 'phone',
+  'domain', 'display', 'money', 'address', 'numbers', 'Quality'
+]);
+
+function applyCountryPageTranslations(content, locale) {
+  let next = content;
+  for (const [from, to] of Object.entries(COUNTRY_PAGE_LABELS[locale] || {})) {
+    if (COUNTRY_PAGE_TEXT_ONLY_LABELS.has(from)) {
+      next = replaceAllLiteral(next, '>' + from + '<', '>' + to + '<');
+      next = replaceAllLiteral(next, 'data-copy-label="' + from + '"', 'data-copy-label="' + to + '"');
+    } else {
+      next = replaceAllLiteral(next, from, to);
+    }
+  }
+  for (const [from, to] of TITLE_PHRASES[locale] || []) {
+    next = replaceAllLiteral(next, from, to);
+  }
+  next = next.replace(/(\d+) related identifier workbenches/g, (_, count) => {
+    if (locale === 'pl') return count + ' powiązanych workbenchy identyfikatorów';
+    if (locale === 'de') return count + ' ähnliche Kennungs-Workbenches';
+    if (locale === 'es') return count + ' workbenches de identificadores relacionados';
+    return count + ' workbenches de identificadores relacionados';
+  });
+  return next;
+}
+
+
 function protectBlocks(content) {
   const blocks = [];
   const protectedHtml = content.replace(/<(script|style|pre|code|textarea)\b[^>]*>[\s\S]*?<\/\1>/gi, match => {
@@ -455,6 +662,7 @@ function translateVisibleHtml(content, locale) {
   next = applyParameterizedCountryTranslations(next, normalized);
   next = applyCountryTitleTranslations(next, normalized);
   next = applyDocumentationSummaryTranslations(next, normalized);
+  next = applyCountryPageTranslations(next, normalized);
   next = localizeCountryNames(next, normalized);
   return restoreBlocks(next, blocks);
 }

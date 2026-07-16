@@ -92,52 +92,10 @@ function routeSlug(route) {
   return route.path.split('/').filter(Boolean).at(-1) || '';
 }
 
-const ROUTE_QUALITY_FEATURES = [
-  { key: 'validate', label: 'Validate' },
-  { key: 'batch', label: 'Batch' },
-  { key: 'export', label: 'Export' },
-  { key: 'masking', label: 'Masking' },
-  { key: 'docs', label: 'Docs' }
-];
-
-function routeFeatures(route) {
-  const slug = routeSlug(route);
-  const title = String(route.title || '').toLowerCase();
-  const inText = (needle) => slug.includes(needle) || title.includes(needle);
-
-  const features = ['validate', 'docs'];
-  if (inText('validator') || inText('inspector') || inText('checker') || inText('helper')) {
-    features.push('validate');
-  }
-  if (inText('batch') || inText('data-quality') || inText('test-data')) {
-    features.push('batch');
-  }
-  if (inText('generator') || inText('formatter') || inText('converter') || inText('builder')) {
-    features.push('export');
-  }
-  if (inText('mask') || inText('pii')) {
-    features.push('masking');
-  }
-  return Array.from(new Set(features));
-}
-
-function routeQualitySummary(route) {
-  const features = routeFeatures(route);
-  const enabled = ROUTE_QUALITY_FEATURES.filter(item => features.includes(item.key));
-  const percent = Math.round((enabled.length / ROUTE_QUALITY_FEATURES.length) * 100);
-  return {
-    features,
-    percent,
-    labels: enabled.map(item => item.label)
-  };
-}
-
 function createRouteCard(route, description, tags = [], status = 'available') {
-  const quality = routeQualitySummary(route);
-  const qualityLabel = quality.labels.length > 0 ? quality.labels.join(' · ') : 'Validate';
   return createInfoCard(
     route.title || 'Interactive Workbench',
-    `${description || 'Run a browser-only country validation, formatting, or data-quality workflow.'} Quality ${quality.percent}%: ${qualityLabel}.`,
+    description || 'Run a browser-only country validation, formatting, or data-quality workflow.',
     null,
     status,
     tags,
@@ -201,7 +159,7 @@ function renderExpandableRouteGroup(group, open = false) {
     <a class="vh-country-catalog-row" data-intent-group="${escapeHtml(group.key)}" data-route-slug="${escapeHtml(routeSlug(route))}" href="${route.path}">
       <span>
         <strong>${escapeHtml(route.title || route.path)}</strong>
-        <small>${escapeHtml(route.path)} · quality ${routeQualitySummary(route).percent}%</small>
+        <small>Browser-only local workbench</small>
       </span>
       <span class="vh-country-row-arrow" aria-hidden="true">→</span>
     </a>
@@ -299,7 +257,7 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
 
   const featuredHtml = featured.length > 0 ? `
     <div class="vh-country-featured-tools" aria-label="Featured country workbenches">
-      ${featured.map(route => createRouteCard(route, 'Open the production-grade browser workbench for this country data standard.', ['featured', 'offline'])).join('\n')}
+      ${featured.map(route => createRouteCard(route, 'Open the production-grade browser workbench for this country data standard.')).join('\n')}
     </div>
   ` : '';
 
@@ -515,7 +473,7 @@ export function renderCountryBankingSystem(model, routeRegistry = null) {
       <div class="vh-country-route-list vh-country-route-list-compact">
         ${toolRoutes.map(route => `
           <a class="vh-country-catalog-row" href="${route.path}">
-            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(route.path)}</small></span>
+            <span><strong>${escapeHtml(route.title)}</strong><small>Related browser-only workbench</small></span>
             <span class="vh-country-row-arrow" aria-hidden="true">→</span>
           </a>
         `).join('\n')}
@@ -555,7 +513,7 @@ export function renderCountryPaymentSystems(model, routeRegistry = null) {
       <div class="vh-country-route-list vh-country-route-list-compact">
         ${toolRoutes.map(route => `
           <a class="vh-country-catalog-row" href="${route.path}">
-            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(route.path)}</small></span>
+            <span><strong>${escapeHtml(route.title)}</strong><small>Related browser-only workbench</small></span>
             <span class="vh-country-row-arrow" aria-hidden="true">→</span>
           </a>
         `).join('\n')}
@@ -604,7 +562,7 @@ export function renderCountryIdentifiers(model, routeRegistry) {
       <div class="vh-country-route-list vh-country-route-list-compact">
         ${identifierRoutes.map(route => `
           <a class="vh-country-catalog-row" href="${route.path}">
-            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(route.path)}</small></span>
+            <span><strong>${escapeHtml(route.title)}</strong><small>Related browser-only workbench</small></span>
             <span class="vh-country-row-arrow" aria-hidden="true">→</span>
           </a>
         `).join('\n')}
