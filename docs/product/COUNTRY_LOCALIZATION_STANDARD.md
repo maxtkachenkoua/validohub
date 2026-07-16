@@ -61,7 +61,10 @@ For Poland-grade pages, localization is not complete until the generated country
 - Tool card titles, descriptions, status badges, and chips.
 - Identifier/specification cards and interactive sandbox cards.
 - Banking, payment, phone, locale, knowledge-graph, official-source, and related-workbench prose.
+- Deep auxiliary sections: developer checklists, key highlights, developer notes, common mistakes, code examples, country ecosystem directories, regional cross-links, and localization notes.
 - Repeated catalog row titles, not only the first card instance.
+
+Screenshots of lower-page sections are part of acceptance. Grepping only hero, navigation, and catalog cards is insufficient for Poland-grade localization.
 
 For localized pages, do not ship mixed strings such as `Polish ... - walidator`, `Run interactive client-side...`, `Structure breakdowns...`, `identifier`, `specification`, `validator`, `workbench`, or `payments` when the surrounding page is non-English. These are acceptance failures, not minor polish.
 

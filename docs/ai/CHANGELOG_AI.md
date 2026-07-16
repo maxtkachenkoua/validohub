@@ -7,6 +7,22 @@
 
 # AI Changelog
 
+## Poland Localization Deep Section Sweep
+
+Changed:
+
+- Translated the remaining deep Poland Country Hub sections that appear below the primary catalog: developer checklist, knowledge graph, regional cross-links, key highlights, developer notes, common mistakes, code examples, country ecosystem, and localization notes.
+- Updated the country localization standard and Poland gold standard so future countries must localize these lower-page product sections before being considered complete.
+
+Reason:
+
+Poland-grade localization must cover the full visible page, not only navigation, hero, cards, and top-level catalogs.
+
+Impact:
+
+- Future country localization work should include a lower-page screenshot/text sweep.
+- Valido Engine remains generic and untouched.
+
 ## Poland Localization Pass V2
 
 Changed:
