@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brazil Gradient Test</title>
+  <style>
+    :root {
+      --bg: #061117;
+      --card: #0d1c24;
+      --text: #e9f3ef;
+      --muted: #9fb8ab;
+      --green: #009c3b;
+      --yellow: #ffdf00;
+      --blue: #002776;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(1200px 700px at -10% -20%, #11302a 0%, transparent 60%),
+        radial-gradient(900px 500px at 110% 120%, #102239 0%, transparent 65%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 28px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 4vw, 38px);
+      letter-spacing: 0.01em;
+    }
+
+    p.desc {
+      margin: 0 0 24px;
+      color: var(--muted);
+      max-width: 860px;
+      line-height: 1.4;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--card);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .swatch {
+      height: 220px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .meta {
+      padding: 12px 14px 14px;
+      background: rgba(3, 8, 10, 0.75);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .meta strong { display: block; margin-bottom: 6px; font-size: 14px; }
+    .meta span { color: var(--muted); font-size: 13px; line-height: 1.35; }
+
+    /* 1. Silk Bands */
+    .g1 {
+      background:
+        radial-gradient(140% 95% at 10% 10%, rgba(255, 255, 255, 0.2), transparent 45%),
+        linear-gradient(125deg,
+          #00a447 0%,
+          #00a447 30%,
+          #ffd900 50%,
+          #1f4eb4 70%,
+          #002776 100%);
+    }
+
+    /* 2. Diamond Echo */
+    .g2 {
+      background:
+        radial-gradient(80% 60% at 50% 50%, rgba(255, 223, 0, 0.45), transparent 65%),
+        conic-gradient(from 210deg at 50% 50%,
+          #009c3b 0deg,
+          #1ea857 70deg,
+          #ffdf00 130deg,
+          #1f50c0 235deg,
+          #002776 315deg,
+          #009c3b 360deg);
+    }
+
+    /* 3. Aurora Waves */
+    .g3 {
+      background:
+        radial-gradient(100% 80% at 100% 10%, rgba(255, 223, 0, 0.28), transparent 55%),
+        radial-gradient(90% 70% at 10% 90%, rgba(0, 39, 118, 0.45), transparent 60%),
+        linear-gradient(160deg,
+          #007d31 0%,
+          #00a447 35%,
+          #ffd800 58%,
+          #1355bf 78%,
+          #002776 100%);
+      filter: saturate(1.12) contrast(1.04);
+    }
+
+    /* 4. Neon Ribbon */
+    .g4 {
+      background:
+        radial-gradient(120% 120% at 50% -20%, rgba(255, 255, 255, 0.2), transparent 55%),
+        linear-gradient(100deg,
+          #00b44c 0%,
+          #0f9f43 32%,
+          #ffe45b 53%,
+          #1c63e0 76%,
+          #00308f 100%);
+    }
+
+    .g4::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.14) 50%, transparent 60%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Brazil Flag Gradient Variants</h1>
+  <p class="desc">Тестовые варианты, как можно подать цвета флага по-другому: от более официального и спокойного до более «премиального» и энергичного. Можно взять любой за основу и адаптировать под hero.</p>
+
+  <div class="grid">
+    <article class="card">
+      <div class="swatch g1"></div>
+      <div class="meta">
+        <strong>V1: Silk Bands</strong>
+        <span>Мягкие диагональные полосы, чистый и читаемый вариант для большого hero-блока.</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="swatch g2"></div>
+      <div class="meta">
+        <strong>V2: Diamond Echo</strong>
+        <span>Conic-градиент с намеком на ромб флага, выглядит необычно и динамично.</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="swatch g3"></div>
+      <div class="meta">
+        <strong>V3: Aurora Waves</strong>
+        <span>Глубокий многослойный вариант с объемом, хорошо подходит для премиум-стиля.</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="swatch g4"></div>
+      <div class="meta">
+        <strong>V4: Neon Ribbon</strong>
+        <span>Более контрастный, яркий и современный стиль для акцентного визуала.</span>
+      </div>
+    </article>
+  </div>
+</body>
+</html>

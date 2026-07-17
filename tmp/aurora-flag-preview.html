@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurora Flag Preview</title>
+  <style>
+    :root {
+      --bg: #0a0b0f;
+      --panel: #0f1117;
+      --text: #f3f5f8;
+      --muted: #a5adba;
+      --black: #07080c;
+      --red: #d2232a;
+      --gold: #f2c136;
+      --white: #dfe6f4;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1000px 560px at 15% -20%, rgba(255, 255, 255, 0.07), transparent 60%),
+        radial-gradient(980px 620px at 90% 120%, rgba(210, 35, 42, 0.1), transparent 64%),
+        var(--bg);
+      min-height: 100vh;
+      padding: 28px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(26px, 4vw, 42px);
+      letter-spacing: 0.01em;
+    }
+
+    .intro {
+      margin: 0 0 22px;
+      color: var(--muted);
+      line-height: 1.45;
+      max-width: 950px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 18px;
+      max-width: 1100px;
+    }
+
+    .hero {
+      position: relative;
+      border-radius: 24px;
+      min-height: 250px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow:
+        0 26px 60px rgba(0, 0, 0, 0.52),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      padding: 26px;
+      isolation: isolate;
+    }
+
+    .hero h2 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 4vw, 38px);
+      line-height: 1.08;
+      max-width: 620px;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 660px;
+      color: rgba(235, 241, 255, 0.9);
+      line-height: 1.4;
+    }
+
+    .chip {
+      margin-top: 18px;
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #f2f6ff;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Variant 1: Aurora classic */
+    .aurora {
+      background:
+        radial-gradient(74% 78% at 8% 10%, rgba(7, 8, 12, 0.95), transparent 60%),
+        radial-gradient(62% 62% at 84% 13%, rgba(210, 35, 42, 0.78), transparent 62%),
+        radial-gradient(66% 68% at 86% 88%, rgba(242, 193, 54, 0.64), transparent 64%),
+        linear-gradient(165deg, #0b0d13 0%, #10131b 62%, #161822 100%);
+    }
+
+    .aurora::before {
+      /* subtle white mist/noise layer */
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(120% 80% at 40% -10%, rgba(255, 255, 255, 0.08), transparent 58%),
+        radial-gradient(140% 90% at 50% 130%, rgba(255, 255, 255, 0.04), transparent 64%);
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .aurora::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.06) 0.6px, transparent 0.6px);
+      background-size: 2px 2px;
+      opacity: 0.16;
+      pointer-events: none;
+    }
+
+    /* Variant 2: Stripe/Vercel glass depth */
+    .glass {
+      background:
+        radial-gradient(58% 64% at 8% 14%, rgba(7, 8, 12, 0.96), transparent 64%),
+        radial-gradient(54% 54% at 82% 16%, rgba(210, 35, 42, 0.74), transparent 66%),
+        radial-gradient(72% 76% at 80% 90%, rgba(242, 193, 54, 0.62), transparent 66%),
+        radial-gradient(42% 42% at 24% 44%, rgba(226, 233, 248, 0.18), transparent 74%),
+        linear-gradient(160deg, #0a0c13 0%, #121621 58%, #171a25 100%);
+    }
+
+    .glass .glass-pane {
+      position: absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015));
+      backdrop-filter: blur(4px) saturate(1.12);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Пример Aurora-градиента</h1>
+  <p class="intro">Собрал два варианта под твой референс: черный в левом верхнем, красный справа сверху, золотой справа снизу и легкий белый шум сверху. Второй вариант добавляет ощущение глубины «под стеклом».</p>
+
+  <section class="stack">
+    <article class="hero aurora">
+      <h2>Germany Developer Portal</h2>
+      <p>Мягкие большие цветовые пятна. Выглядит дорого и не перетягивает фокус с контента.</p>
+      <span class="chip">Variant A - Aurora</span>
+    </article>
+
+    <article class="hero glass">
+      <div class="glass-pane"></div>
+      <h2>Germany Developer Portal</h2>
+      <p>Более современная подача в стиле Stripe/Vercel: цвета как будто плавают под стеклом.</p>
+      <span class="chip">Variant B - Aurora Glass</span>
+    </article>
+  </section>
+
+  <p class="note">Это демо-мок. Если зайдет, перенесу в прод-hero с адаптацией под все страны.</p>
+</body>
+</html>
