@@ -1604,17 +1604,31 @@ select:focus {
 }
 
 .feedback-grid dt {
-  margin-bottom: 3px;
+  margin: 0 0 8px;
   color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 760;
+  font-size: var(--vh-tool-metric-label-size, 0.68rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
 }
 
 .feedback-grid dd {
   margin: 0;
   color: var(--text);
-  font-size: 0.96rem;
+  font-size: var(--vh-tool-metric-value-size, 0.92rem);
   font-weight: 760;
+  line-height: var(--vh-tool-metric-value-line, 1.38);
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.feedback-grid .is-long dd {
+  color: var(--strong-muted);
+  font-size: var(--vh-tool-metric-note-size, 0.82rem);
+  font-weight: 620;
+  line-height: 1.48;
 }
 
 .feedback-notes {
@@ -1626,6 +1640,94 @@ select:focus {
 
 .feedback-notes li + li {
   margin-top: 5px;
+}
+
+
+/* Shared country workbench metric-card standard. Poland, Brazil, and future country tools inherit this. */
+:root {
+  --vh-tool-metric-label-size: 0.68rem;
+  --vh-tool-metric-value-size: 0.92rem;
+  --vh-tool-metric-note-size: 0.82rem;
+  --vh-tool-metric-value-line: 1.38;
+}
+
+.feedback-grid,
+.poland-results-grid,
+.poland-detail-grid,
+.poland-field-table,
+.plb-results-grid,
+.plb-fields,
+.br-result-grid,
+.br-breakdown-grid {
+  align-items: stretch;
+}
+
+.feedback-grid > div,
+.poland-summary-card,
+.poland-detail-grid > div,
+.poland-field-table > div,
+.plb-results-grid > article,
+.plb-fields > div,
+.br-result-grid > div,
+.br-breakdown-grid > div {
+  min-width: 0;
+}
+
+.poland-summary-card span,
+.poland-detail-grid span,
+.poland-field-table span,
+.plb-results-grid span,
+.plb-fields span,
+.br-result-grid span,
+.br-breakdown-grid span {
+  display: block;
+  color: var(--muted);
+  font-size: var(--vh-tool-metric-label-size) !important;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.poland-summary-card strong,
+.poland-detail-grid strong,
+.poland-field-table strong,
+.plb-results-grid strong,
+.plb-fields strong,
+.br-result-grid strong,
+.br-breakdown-grid strong {
+  display: block;
+  max-width: 100%;
+  min-width: 0;
+  color: var(--text);
+  font-size: var(--vh-tool-metric-value-size) !important;
+  font-weight: 760 !important;
+  line-height: var(--vh-tool-metric-value-line) !important;
+  letter-spacing: 0 !important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.poland-summary-card.is-long strong,
+.plb-results-grid article.is-long strong,
+.br-result-grid .br-card-text strong,
+.br-breakdown-grid .br-card-text strong {
+  color: var(--strong-muted) !important;
+  font-size: var(--vh-tool-metric-note-size) !important;
+  font-weight: 620 !important;
+  line-height: 1.48 !important;
+}
+
+.br-breakdown-grid small,
+.plb-fields small,
+.poland-field-table small {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: var(--vh-tool-metric-note-size);
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .preview-panel,

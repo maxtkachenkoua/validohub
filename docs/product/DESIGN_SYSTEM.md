@@ -41,6 +41,13 @@ ValidoHub should feel like a modern developer product: calm, sharp, fast, and tr
 - Validation feedback should be structured, not a wall of text.
 - Advanced analysis can use compact metric cards and collapsible details.
 
+### Country Tool Metric Cards
+
+- Poland and Brazil country tools share the same metric-card typography from `assets/css/validohub.css`.
+- Metric labels are small, uppercase, muted, and letter-spaced.
+- Metric values are compact and moderately bold, not oversized. Long explanations become muted note text.
+- Do not create country-specific oversized result-card typography. Future country tools must reuse the shared metric-card standard so one CSS change updates every country workbench.
+
 ### Code, Tables, Lists
 
 - Code blocks must be readable on desktop and mobile.

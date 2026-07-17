@@ -233,7 +233,9 @@
       if (rows.length > 0) {
         html += "<dl class=\"feedback-grid\">";
         rows.forEach(function (row) {
-          html += "<div><dt>" + escapeHtml(row[0]) + "</dt><dd>" + escapeHtml(row[1]) + "</dd></div>";
+          var value = row[1] == null ? "" : String(row[1]);
+          var itemClass = value.length > 28 ? " class=\"is-long\"" : "";
+          html += "<div" + itemClass + "><dt>" + escapeHtml(row[0]) + "</dt><dd>" + escapeHtml(value) + "</dd></div>";
         });
         html += "</dl>";
       }

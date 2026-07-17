@@ -142,9 +142,11 @@ async function main() {
       throw new Error(`FATAL: Expected exactly one stylesheet link, found: ${cssMatches ? cssMatches.length : 0}`);
     }
 
-    // No JavaScript tags checks
-    if (content.includes('<script src=')) {
-      throw new Error(`FATAL: Country page must load no JS libraries unless required!`);
+    // JavaScript assets must be site-owned when country pages require interactivity.
+    const scriptSrcs = [...content.matchAll(/<script src="([^"]+)"/g)].map(match => match[1]);
+    const unexpectedScripts = scriptSrcs.filter(src => !src.startsWith('/assets/js/'));
+    if (unexpectedScripts.length > 0) {
+      throw new Error("FATAL: Country page loads unexpected JS assets: " + unexpectedScripts.join(", "));
     }
 
     // Content Specifications check
