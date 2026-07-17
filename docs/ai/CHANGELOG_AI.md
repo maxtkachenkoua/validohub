@@ -1,5 +1,11 @@
 # AI Changelog
 
+## 2026-07-17 - Brazil Premium Diagnostics Pass
+
+- Upgraded the shared Brazil suite workbench renderer with premium pipeline progress, local result cards, tailored field breakdowns, quality notes, and advanced analysis.
+- Documented Brazil as the diagnostics reference for broad country tool suites alongside Poland.
+- Kept the implementation entirely in ValidoHub browser assets; Valido Engine remains untouched.
+
 ## Country Tool Header Standard
 
 Changed:

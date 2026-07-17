@@ -18,6 +18,18 @@ Brazil suite pages use the vivid country-color header pattern: Brazilian flag-in
 
 Every Brazil tool must provide a real interactive workbench, not a decorative card. At minimum it must support local validation or normalization, masking, sample generation, copy/download through the shared framework, diagnostics, advanced analysis, and explicit official-lookup boundaries.
 
+## Premium Diagnostics Standard
+
+Every Brazil suite tool now renders the same premium diagnostics stack:
+
+- country-colored validation pipeline with pass/check cards and progress bar;
+- local result cards for normalized value, masked value, tool kind, offline scope, and official boundary;
+- field breakdown or payload breakdown tailored to CPF, CNPJ, fiscal access keys, boleto, CEP, phone, vehicle, money, or generic Brazilian payloads;
+- quality notes explaining privacy, fixture safety, official lookup limits, and developer handling;
+- advanced analysis with developer JSON snapshot, validation trace, and integration hints.
+
+This is the Brazil reference for high-density country tools. Future Brazil tools must join this shared renderer unless they have a stronger dedicated workbench like Pix.
+
 ## Tool Domains
 
 - Identity and registry: CPF, CNPJ, RG, CNH, RENACH, RENAVAM, plates, voter title, NIS/PIS/PASEP, SUS/CNS, IE, IM, CNAE, IBGE.

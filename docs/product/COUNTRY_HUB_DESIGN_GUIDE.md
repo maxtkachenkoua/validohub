@@ -203,6 +203,21 @@ The header must include:
 
 Poland and Brazil are the reference implementations for this pattern: Poland proves the standard across a broad tool suite, and Brazil proves vivid country-color treatment for payment-heavy and registry-heavy tools. Future country tools should inherit this pattern before inventing a different header layout.
 
+### Country Workbench Diagnostics Standard
+
+Every mature country-specific tool should provide a premium diagnostics stack, not only a basic output box.
+
+Required sections:
+
+- validation pipeline with progress and per-step pass/check cards;
+- local result cards with normalized value, masked value, tool type, confidence, and official-boundary text;
+- field breakdown for identifiers, fiscal keys, payment payloads, phone numbers, postal codes, amounts, or other structured inputs;
+- quality notes that separate browser-only proof from official lookup requirements;
+- advanced analysis with developer JSON, validation trace, and integration hints;
+- per-tool identity mark, country-color accent, and domain-specific language.
+
+Brazil and Poland are the reference implementations. A future country tool may be simpler only while it is explicitly experimental; once marked available, it should meet this diagnostics standard.
+
 ## Global Brand Asset Policy
 
 This policy applies to UI, Markdown, documentation, navigation, cards, Country Hubs, workbenches, future pages, and generated pages.
