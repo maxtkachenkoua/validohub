@@ -404,3 +404,29 @@ This is a product platform section, not a browser workbench plugin.
 - Related pages: Brazil country-specific tool YAML files under `tools/brazil-*.yaml` except `brazil-pix-validator`, which uses the dedicated Pix plugin.
 - Capabilities: browser-only validation, normalization, masking, fictional fixture generation, diagnostics, batch-ready text input, advanced JSON analysis, and offline/official-lookup boundaries for Brazilian identifiers, fiscal documents, banking, payment, address, and developer-data workflows.
 - Quality status: Premium baseline, modeled after the Poland country-hub gold standard.
+
+## Generic Utility Workbench Suite
+
+- Source JS file: `assets/js/tools/generic-suite.js`
+- Build wiring: `scripts/build-all.mjs`
+- Related pages:
+  - `tools/case-converter.yaml`
+  - `tools/html-decoder.yaml`
+  - `tools/html-encoder.yaml`
+  - `tools/iban-validator.yaml`
+  - `tools/md5-generator.yaml`
+  - `tools/regex-tester.yaml`
+  - `tools/sha1-generator.yaml`
+  - `tools/sha256-generator.yaml`
+  - `tools/slug-generator.yaml`
+  - `tools/text-diff.yaml`
+  - `tools/uuid-generator.yaml`
+- Current capabilities:
+  - Browser-only execution with no backend, REST API, database, or Java execution.
+  - Tool-specific validation, normalization, diagnostics, samples, copy, download, local result cards, preview, and expanded advanced analysis.
+  - HTML encode/decode, slug generation, case conversion, UUID v4/v7 generation and validation, IBAN MOD-97 validation, regular-expression testing, text diffing, and MD5/SHA-1/SHA-256 hashing.
+  - Shared premium card styling so global tools visually match country workbench standards.
+- Known future ideas:
+  - Promote high-traffic generic tools into dedicated gold-standard plugins when their domain requires deeper product UX.
+  - Add human-reviewed documentation packs for each generic utility after usage data confirms priority.
+- Current quality status: Production-quality V1 shared baseline for global non-country tools.

@@ -227,3 +227,7 @@ Never serve from the ValidoHub project root. Always serve from `generated/valido
 ## Brazil Premium Suite
 
 Brazil now follows the Poland country-hub gold-standard layout with its own local tool portfolio. Brazil owns 60 available country workbenches through ValidoHub content/config and browser assets. Engine remains generic. Pix keeps its dedicated workbench; the broader Brazil portfolio uses `assets/js/tools/brazil-suite.js`.
+
+## Generic Utility Workbench Suite
+
+Global non-country tools now use the ValidoHub-owned Generic Utility Workbench Suite when they do not yet justify a dedicated gold-standard plugin. The suite lives in `assets/js/tools/generic-suite.js` and covers HTML encode/decode, slug generation, case conversion, UUID, IBAN, regex, text diff, and hash tools with real browser-only behavior.

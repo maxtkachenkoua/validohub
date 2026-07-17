@@ -57,3 +57,13 @@ ValidoHub should feel like a modern developer product: calm, sharp, fast, and tr
 ## Asset Direction
 
 For the MVP, Engine emits the current shared static assets. Future architecture should move ValidoHub-specific CSS, JavaScript, and static assets into `validohub/assets`.
+
+### Global Utility Workbench Cards
+
+Generic utility tools, Poland tools, Brazil tools, and future country tools must share the same compact result-card rhythm.
+
+- Card labels: small, uppercase, muted, letter-spaced.
+- Card values: readable but not hero-sized; long values wrap and may use muted note styling.
+- Descriptive text: normal-weight muted body copy, never giant bold copy.
+- Advanced analysis: visually rich, expanded by default after execution, and organized into small panels rather than raw walls of text.
+- One CSS-layer improvement should improve all equivalent tool cards across countries and global utilities.

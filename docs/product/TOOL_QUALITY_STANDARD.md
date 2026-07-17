@@ -50,3 +50,25 @@ Future tools should meet or exceed Base64 Encoder for:
 ## Engine Rule
 
 Do not solve site-specific product behavior by making Valido Engine less generic. If a tool needs custom behavior, prefer a ValidoHub-owned product spec and, after the future refactor, ValidoHub-owned assets.
+
+## Generic Tool Baseline
+
+Generic non-country tools must not ship as plain documentation pages. If a generic tool is available, it needs either a dedicated plugin or the shared `assets/js/tools/generic-suite.js` baseline with real browser-side behavior.
+
+Generic utility pages must include:
+
+- Tool-specific descriptions. Never repeat generic copy such as "open the production-grade workbench" across cards.
+- Real local actions for the domain whenever browser APIs make them possible.
+- Samples, copy, download, diagnostics, result cards, and advanced analysis.
+- Expanded advanced analysis by default after a result is produced.
+- Compact premium card typography: small uppercase labels, moderate-weight values, muted explanatory text, and wrapped long strings.
+- No oversized bold paragraph blocks inside result cards.
+
+## Identity Rules
+
+Every country, country tool, generic tool, related-country card, and ecosystem card should have a recognizable identity marker.
+
+- Use an official logo only when it is permitted and already registered in the Brand Asset System.
+- If no official mark is available, use a compact text mark, standard badge, or semantic icon.
+- Related country cards must use the country flag instead of a generic planet icon.
+- Future tools must add identity metadata or a documented fallback before visual launch.

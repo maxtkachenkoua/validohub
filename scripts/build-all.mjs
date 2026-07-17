@@ -125,7 +125,18 @@ const TOOL_SCRIPT_BY_ALGORITHM = {
   'validohub.spain-id': 'spain-id.js',
   'validohub.poland-suite': 'poland-suite.js',
   'validohub.poland-expansion': 'poland-expansion.js',
-  'validohub.poland-baseline': 'poland-baseline.js'
+  'validohub.poland-baseline': 'poland-baseline.js',
+  'validohub.case-converter': 'generic-suite.js',
+  'validohub.html-decoder': 'generic-suite.js',
+  'validohub.html-encoder': 'generic-suite.js',
+  'validohub.iban': 'generic-suite.js',
+  'validohub.md5': 'generic-suite.js',
+  'validohub.regex-tester': 'generic-suite.js',
+  'validohub.sha1': 'generic-suite.js',
+  'validohub.sha256': 'generic-suite.js',
+  'validohub.slug-generator': 'generic-suite.js',
+  'validohub.text-diff': 'generic-suite.js',
+  'validohub.uuid': 'generic-suite.js'
 };
 
 function ensureToolScript(content) {
@@ -846,17 +857,17 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
     'validohub.jwt-decoder': 'jwt.js',
     'validohub.url-decoder': 'url.js',
     'validohub.url-encoder': 'url.js',
-    'validohub.case-converter': 'case-converter.js',
-    'validohub.html-decoder': 'html.js',
-    'validohub.html-encoder': 'html.js',
-    'validohub.iban': 'iban.js',
-    'validohub.md5': 'md5.js',
-    'validohub.regex-tester': 'regex.js',
-    'validohub.sha1': 'sha.js',
-    'validohub.sha256': 'sha.js',
-    'validohub.slug-generator': 'slug.js',
-    'validohub.text-diff': 'text-diff.js',
-    'validohub.uuid': 'uuid.js'
+    'validohub.case-converter': 'generic-suite.js',
+    'validohub.html-decoder': 'generic-suite.js',
+    'validohub.html-encoder': 'generic-suite.js',
+    'validohub.iban': 'generic-suite.js',
+    'validohub.md5': 'generic-suite.js',
+    'validohub.regex-tester': 'generic-suite.js',
+    'validohub.sha1': 'generic-suite.js',
+    'validohub.sha256': 'generic-suite.js',
+    'validohub.slug-generator': 'generic-suite.js',
+    'validohub.text-diff': 'generic-suite.js',
+    'validohub.uuid': 'generic-suite.js'
   };
 
   const forbiddenPhrases = [

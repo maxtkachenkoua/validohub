@@ -588,3 +588,22 @@ Impact:
 - Added Brazil country-hub portfolio with 60 available local workbenches.
 - Added `validohub.brazil-suite` metadata and browser-side suite plugin.
 - Updated country renderer to support Brazil-specific identities, descriptions, workbench grouping, and quick-start routing without Valido Engine changes.
+
+## Generic Utility Workbench Suite V1
+
+Changed:
+
+- Added `assets/js/tools/generic-suite.js` as a shared browser-only plugin for global non-country tools.
+- Wired generic algorithm IDs through the ValidoHub build process without changing Valido Engine.
+- Added premium shared workbench card styling for generic utility result cards, pipeline panels, quality notes, previews, and advanced analysis.
+- Documented the baseline that available generic tools must provide real browser behavior, tool-specific descriptions, identity markers, compact card typography, and expanded advanced analysis.
+
+Reason:
+
+Global utility tools such as HTML, UUID, hash, regex, IBAN, case conversion, slug generation, and text diff needed to stop looking like weak documentation pages and meet the same product-quality direction as country tools.
+
+Impact:
+
+- ValidoHub owns the browser behavior and styling.
+- Valido Engine remains generic and untouched.
+- No backend, REST API, database, Java execution, or server-side runtime was added.
