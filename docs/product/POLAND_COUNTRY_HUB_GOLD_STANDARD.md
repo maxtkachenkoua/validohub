@@ -100,6 +100,21 @@ Deep lower-page sections are part of the product surface. Developer checklists, 
 
 A Poland-grade localization must also translate the dense product surface, not only the shell. Intent tabs, catalog rows, workbench titles, chips, banking/payment descriptions, identifier specs, sandbox copy, graph nodes, source notes, and repeated related-tool rows are part of the user experience and must be localized in every supported locale.
 
+## Country Tool Header Standard
+
+Every Poland-style country workbench must start with a premium tool header. This is now part of the mature country standard.
+
+The header must combine:
+
+- Country-aware visual tone using flag colors or local identity colors.
+- Tool identity mark, official logo, or short acronym.
+- Specific title and summary for that tool.
+- Real presets/sample chips when examples are useful.
+- Local input history when the suite supports it.
+- Direct continuity into the workbench input area.
+
+The Poland suites and Brazil suite are the current references. Future countries built "like Poland" must include this pattern for all available country tools unless a product spec explicitly explains why a tool cannot support presets or local history.
+
 ## Workbench Quality Standard
 
 Country workbenches should follow the PESEL-quality bar and the Poland suite visual system.

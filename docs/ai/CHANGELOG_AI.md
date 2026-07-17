@@ -1,3 +1,22 @@
+# AI Changelog
+
+## Country Tool Header Standard
+
+Changed:
+
+- Added premium country-aware headers to Poland Premium, Expansion, and Baseline suite tools.
+- Upgraded Brazil suite headers with brighter flag-color treatment and real sample chips.
+- Documented country tool headers as the standard for future mature country suites.
+
+Reason:
+
+Country tool pages should immediately communicate local identity, presets, and useful entry points instead of opening with generic controls.
+
+Impact:
+
+- Future country tools should start with an identity-rich header using local colors, approved marks/acronyms, presets, samples, and local history when available.
+- Valido Engine remains generic and untouched.
+
 
 ## All-Locale Localization Baseline
 
@@ -23,8 +42,6 @@ Impact:
 - Tightened the Poland country-page localization pass for remaining rich country hub strings across supported locales.
 - Added explicit localization coverage for intent tabs, catalog rows, identifier/specification cards, interactive sandbox copy, banking/payment prose, phone examples, graph labels, and short chips.
 - Updated the country localization standard so future Poland-grade countries must sweep dense product surfaces, not just navigation and headings.
-
-# AI Changelog
 
 ## Poland Four-Locale Deep Localization Parity
 

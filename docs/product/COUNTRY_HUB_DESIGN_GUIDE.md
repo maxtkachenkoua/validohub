@@ -188,6 +188,21 @@ Related country cards must use country flags instead of globe or planet icons.
 
 Do not ship random emoji as permanent identity for official standards, payment systems, registries, or developer tools.
 
+### Country Workbench Header Standard
+
+Every mature country-specific workbench page must open with a premium country-aware tool header before the main input area. This header is part of the product standard, not decorative chrome.
+
+The header must include:
+
+- A stable identity mark or approved logo/acronym for the tool.
+- The tool title and a concise, domain-specific summary.
+- A flag-aware or country-color gradient that feels native to the country without overpowering the page.
+- Presets or sample chips when the tool has useful examples.
+- Local input history when supported.
+- No fake buttons, no dead controls, and no generic repeated copy.
+
+Poland and Brazil are the reference implementations for this pattern: Poland proves the standard across a broad tool suite, and Brazil proves vivid country-color treatment for payment-heavy and registry-heavy tools. Future country tools should inherit this pattern before inventing a different header layout.
+
 ## Global Brand Asset Policy
 
 This policy applies to UI, Markdown, documentation, navigation, cards, Country Hubs, workbenches, future pages, and generated pages.

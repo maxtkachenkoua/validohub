@@ -21,6 +21,10 @@ Every page must follow the PESEL gold-standard direction: tool first, local sand
 
 V2 raises the suite toward the PESEL quality bar for all ten pages with batch validation, masking/anonymization helpers, audit JSON, copyable test cases, richer field tables, quality notes, stronger diagnostics, repair suggestions, expanded bank-code hints, expanded phone-prefix hints, and expanded license-plate prefix hints.
 
+## Premium Header Standard
+
+All Poland Premium Suite pages use the country tool header pattern: PL-aware gradient treatment, tool identity mark, specific title/summary, preset selector, local history selector, and quick sample chips above the main workbench controls.
+
 ## Browser-Only Rule
 
 All checks run locally. No backend, REST API, database, Java execution, official registry lookup, VIES lookup, bank lookup, phone lookup, vehicle lookup, or network call is implemented.

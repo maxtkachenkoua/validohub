@@ -42,6 +42,10 @@ The Poland Baseline Workbench Suite completes the first broad Poland country bas
 - Polish Energy Meter / PPE Number Inspector: `/en/poland/poland-energy-meter-ppe-inspector/`
 - Polish Data Quality Workbench: `/en/poland/poland-data-quality-workbench/`
 
+## Premium Header Standard
+
+All Poland Baseline Suite pages use the country tool header pattern: PL-aware gradient treatment, tool identity mark, specific title/summary, preset selector, local history selector, and quick sample chips above the main workbench controls.
+
 ## Shared Capabilities
 
 Every baseline tool provides:

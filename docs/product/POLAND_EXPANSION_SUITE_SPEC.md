@@ -24,6 +24,10 @@ This suite adds fifteen additional browser-only premium Poland workbenches:
 
 The suite follows the PESEL and Poland Premium Suite standard: tool first, local sandbox reassurance, presets, batch validation, result cards, field breakdowns, masking, copy helpers, audit JSON, generated fixtures, clear diagnostics, mobile-safe layout, and honest offline boundaries.
 
+## Premium Header Standard
+
+All Poland Expansion Suite pages use the country tool header pattern: PL-aware gradient treatment, tool identity mark, specific title/summary, preset selector, local history selector, and quick sample chips above the main workbench controls.
+
 ## Browser-Only Rule
 
 All checks run locally. No backend, REST API, database, Java execution, official registry lookup, banking lookup, customs lookup, vehicle lookup, tax-status lookup, or network call is implemented.

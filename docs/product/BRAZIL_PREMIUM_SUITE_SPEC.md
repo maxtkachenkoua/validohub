@@ -10,6 +10,10 @@ Brazil is being upgraded to the Poland country-hub gold standard while keeping B
 - Pix keeps its dedicated production workbench.
 - The rest of the Brazil country tools use `validohub.brazil-suite` and `assets/js/tools/brazil-suite.js`.
 
+## Header And Interaction Standard
+
+Brazil suite pages use the vivid country-color header pattern: Brazilian flag-inspired gradient, stable tool identity mark, tool-specific summary, preset selector, and sample chips that immediately populate representative local data. This header is the visual reference for brighter country tool identities, while Poland is the breadth reference for applying the pattern across many tools.
+
 ## Quality Bar
 
 Every Brazil tool must provide a real interactive workbench, not a decorative card. At minimum it must support local validation or normalization, masking, sample generation, copy/download through the shared framework, diagnostics, advanced analysis, and explicit official-lookup boundaries.
