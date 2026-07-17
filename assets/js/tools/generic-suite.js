@@ -62,7 +62,63 @@
     return '<div class="generic-status generic-status-' + escape(status || 'info') + '"><strong>' + escape(title) + '</strong><span>' + escape(body || '') + '</span></div>';
   }
 
+  const defaultPremiumChips = ['Browser-only', 'Offline', 'Copy / download', 'Advanced diagnostics'];
+
+  function ensurePremiumChrome(workbench, config) {
+    workbench.form.dataset.genericTheme = config.theme || 'utility';
+    if (workbench.form.querySelector('.generic-premium-hero')) return;
+    const chips = (config.chips || defaultPremiumChips)
+      .map((chip) => '<span>' + escape(chip) + '</span>')
+      .join('');
+    const hero = [
+      '<section class="generic-premium-hero" aria-label="' + escape(config.title) + ' workbench overview">',
+      '  <div class="generic-premium-mark" aria-hidden="true">' + escape(config.mark || config.title.slice(0, 4).toUpperCase()) + '</div>',
+      '  <div class="generic-premium-copy">',
+      '    <p class="generic-premium-kicker">' + escape(config.kicker || 'Browser workbench') + '</p>',
+      '    <h3>' + escape(config.title) + '</h3>',
+      '    <p>' + escape(config.summary || 'Run a private, offline developer workflow directly in this browser.') + '</p>',
+      '    <div class="generic-premium-chips">' + chips + '</div>',
+      '  </div>',
+      '  <div class="generic-premium-boundary">',
+      '    <span>Privacy boundary</span>',
+      '    <strong>Runs locally</strong>',
+      '    <small>No upload, database, runtime API, or server-side execution.</small>',
+      '  </div>',
+      '</section>'
+    ].join('');
+    workbench.form.insertAdjacentHTML('afterbegin', hero);
+  }
+
+  function enrichResult(config, result) {
+    const next = result || {};
+    if (!next.previewHtml && next.output) {
+      next.previewTitle = config.previewTitle || 'Result preview';
+      next.previewHtml = premiumPreviewHtml(config, next);
+    }
+    return next;
+  }
+
+  function premiumPreviewHtml(config, result) {
+    const output = String(result.output || '');
+    const clipped = output.length > 420 ? output.slice(0, 420) + '...' : output;
+    const rows = [
+      { label: 'Mode', value: result.mode || config.title },
+      { label: 'Characters', value: String(output.length) },
+      { label: 'UTF-8 bytes', value: byteCount(output) + ' bytes' },
+      { label: 'Execution', value: 'Local browser only' }
+    ];
+    return [
+      '<div class="generic-result-preview">',
+      '  <div class="generic-result-preview__grid">',
+      rows.map((row) => '<div><span>' + escape(row.label) + '</span><strong>' + escape(row.value) + '</strong></div>').join(''),
+      '  </div>',
+      '  <pre class="generic-result-preview__code">' + escape(clipped) + '</pre>',
+      '</div>'
+    ].join('');
+  }
+
   function render(workbench, config, result) {
+    result = enrichResult(config, result || {});
     const ok = result.ok !== false;
     const output = result.output == null ? "" : String(result.output);
     workbench.setOutput(output);
@@ -82,7 +138,7 @@
     const sections = [];
     if (result.pipeline) {
       sections.push(advancedSection('Validation pipeline', '<div class="generic-pipeline">' + result.pipeline.map((step) =>
-        '<div class="generic-pipeline-step is-' + (step.ok === false ? 'warn' : 'pass') + '"><b>' + escape(step.name) + '</b><span>' + escape(step.detail || (step.ok === false ? 'Review' : 'Pass')) + '</span></div>'
+        '<div class="generic-pipeline-step is-' + (step.ok === false ? 'warn' : 'pass') + '"><em>' + escape(step.ok === false ? 'Review' : 'Pass') + '</em><b>' + escape(step.name) + '</b><span>' + escape(step.detail || (step.ok === false ? 'Review' : 'Pass')) + '</span></div>'
       ).join('') + '</div>'));
     }
     if (result.breakdown) {
@@ -136,6 +192,8 @@
       onMount(workbench) {
         workbench.form.classList.add('generic-suite-workbench');
         workbench.form.dataset.genericSuite = config.slug;
+        workbench.form.dataset.genericTheme = config.theme || 'utility';
+        ensurePremiumChrome(workbench, config);
         ensureSamples(workbench, config);
       },
       applySample(workbench, id) {
@@ -479,17 +537,61 @@
   };
 
   const configs = [
-    ['validohub.html-encoder', { slug: 'html-encoder', title: 'HTML Encoder', defaultAction: 'encode', samples: commonSamples.text }, htmlHandler('encoder')],
-    ['validohub.html-decoder', { slug: 'html-decoder', title: 'HTML Decoder', defaultAction: 'decode', samples: [{ id: 'entities', label: 'Entities', values: { input: '&lt;strong&gt;ValidoHub&lt;/strong&gt; &amp; tools' } }] }, htmlHandler('decoder')],
-    ['validohub.slug-generator', { slug: 'slug-generator', title: 'Slug Generator', defaultAction: 'generate', samples: [{ id: 'title', label: 'Title', values: { input: 'Build Better Developer Tools in 2026' } }, { id: 'unicode', label: 'Unicode', values: { input: 'Zażółć gęślą jaźń: URL-ready title' } }] }, slugHandler],
-    ['validohub.case-converter', { slug: 'case-converter', title: 'Case Converter', defaultAction: 'convert', samples: [{ id: 'api', label: 'API field', values: { input: 'customer invoice id' } }, { id: 'mixed', label: 'Mixed case', values: { input: 'userProfileURL value' } }] }, caseHandler],
-    ['validohub.uuid', { slug: 'uuid-generator', title: 'UUID Workbench', defaultAction: 'generate', samples: [{ id: 'uuid', label: 'Validate UUID', values: { input: '550e8400-e29b-41d4-a716-446655440000' }, action: 'validate' }] }, uuidHandler],
-    ['validohub.iban', { slug: 'iban-validator', title: 'IBAN Validator', defaultAction: 'validate', samples: [{ id: 'pl', label: 'Poland', values: { input: 'PL61109010140000071219812874' } }, { id: 'de', label: 'Germany', values: { input: 'DE89370400440532013000' } }] }, ibanHandler],
-    ['validohub.regex-tester', { slug: 'regex-tester', title: 'Regex Tester', defaultAction: 'validate', samples: [{ id: 'email', label: 'Email', values: { pattern: '/[\\w.-]+@[\\w.-]+\\.\\w+/g', input: 'team@validohub.com hello@example.org' } }, { id: 'uuid', label: 'UUID', values: { pattern: '/[0-9a-f]{8}-[0-9a-f-]{27}/gi', input: '550e8400-e29b-41d4-a716-446655440000' } }] }, regexHandler],
-    ['validohub.text-diff', { slug: 'text-diff', title: 'Text Diff', defaultAction: 'calculate', samples: [{ id: 'lines', label: 'Lines', values: { original: 'alpha\nbeta\ngamma', changed: 'alpha\nbeta changed\ngamma\ndelta' } }] }, textDiffHandler],
-    ['validohub.md5', { slug: 'md5-generator', title: 'MD5 Generator', defaultAction: 'generate', samples: commonSamples.text }, hashHandler('md5')],
-    ['validohub.sha1', { slug: 'sha1-generator', title: 'SHA-1 Generator', defaultAction: 'generate', samples: commonSamples.text }, hashHandler('sha1')],
-    ['validohub.sha256', { slug: 'sha256-generator', title: 'SHA-256 Generator', defaultAction: 'generate', samples: commonSamples.text }, hashHandler('sha256')]
+    ['validohub.html-encoder', {
+      slug: 'html-encoder', title: 'HTML Encoder', defaultAction: 'encode', theme: 'markup', mark: 'HTML', kicker: 'Markup safety',
+      summary: 'Escape unsafe characters for HTML text nodes, attributes, examples, and copy-safe documentation snippets.',
+      chips: ['Entity escaping', 'Unicode-safe', 'Copy-ready', 'XSS hygiene'], samples: commonSamples.text
+    }, htmlHandler('encoder')],
+    ['validohub.html-decoder', {
+      slug: 'html-decoder', title: 'HTML Decoder', defaultAction: 'decode', theme: 'markup', mark: 'ENT', kicker: 'Entity inspection',
+      summary: 'Decode HTML entities, inspect normalized text, and verify that copied markup examples resolve as expected.',
+      chips: ['Named entities', 'Numeric entities', 'Text preview', 'Offline'], samples: [{ label: 'Entities', value: '&lt;strong&gt;Hello&lt;/strong&gt;' }]
+    }, htmlHandler('decoder')],
+    ['validohub.slug-generator', {
+      slug: 'slug-generator', title: 'Slug Generator', defaultAction: 'slug', theme: 'publishing', mark: 'SLUG', kicker: 'URL publishing',
+      summary: 'Turn titles into clean URL slugs, remove unsafe punctuation, normalize spacing, and audit SEO-friendly output.',
+      chips: ['URL-safe', 'SEO-ready', 'Whitespace cleanup', 'Copy slug'], samples: [{ label: 'Title', value: 'ValidoHub: Premium Developer Tools!' }]
+    }, caseHandler('slug')],
+    ['validohub.case-converter', {
+      slug: 'case-converter', title: 'Case Converter', defaultAction: 'sentence', theme: 'text', mark: 'Aa', kicker: 'Text normalization',
+      summary: 'Convert text between sentence, title, upper, lower, camel, snake, kebab, and constant case without leaving the browser.',
+      chips: ['8 case modes', 'Unicode input', 'Naming helpers', 'Local only'], samples: [{ label: 'Phrase', value: 'hello world from ValidoHub' }]
+    }, caseHandler('case')],
+    ['validohub.uuid', {
+      slug: 'uuid-generator', title: 'UUID Workbench', defaultAction: 'generate', theme: 'identity', mark: 'UUID', kicker: 'Identifier fixtures',
+      summary: 'Generate UUIDs, validate version and variant bits, normalize casing, and copy safe identifier fixtures for tests.',
+      chips: ['Generate v4', 'Validate', 'Version bits', 'Fixture-safe'], samples: [{ label: 'UUID v4', value: '550e8400-e29b-41d4-a716-446655440000' }]
+    }, uuidHandler],
+    ['validohub.iban', {
+      slug: 'iban-validator', title: 'IBAN Validator', defaultAction: 'validate', theme: 'finance', mark: 'IBAN', kicker: 'Banking syntax',
+      summary: 'Validate IBAN shape and MOD-97 control digits, normalize spacing, and separate offline syntax from bank ownership checks.',
+      chips: ['MOD-97', 'Country prefix', 'Masked output', 'No lookup'], samples: [{ label: 'Poland', value: 'PL61109010140000071219812874' }]
+    }, ibanHandler],
+    ['validohub.regex-tester', {
+      slug: 'regex-tester', title: 'Regex Tester', defaultAction: 'test', theme: 'developer', mark: '.*', kicker: 'Pattern debugger',
+      summary: 'Test JavaScript regular expressions against text, inspect match counts, flags, and replacement behavior locally.',
+      chips: ['Match count', 'Flags', 'Replace mode', 'Pattern audit'], samples: [{ label: 'Pattern demo', value: '/\\b\\w+@\\w+\\.com\\b/g\nhello@example.com nope' }]
+    }, regexHandler],
+    ['validohub.text-diff', {
+      slug: 'text-diff', title: 'Text Diff', defaultAction: 'diff', theme: 'text', mark: 'DIFF', kicker: 'Change review',
+      summary: 'Compare two text blocks, count changed lines, and produce copyable local diff diagnostics for docs and payloads.',
+      chips: ['Line diff', 'Change count', 'Whitespace visible', 'No upload'], samples: [{ label: 'Diff', value: 'Hello\nWorld\n---\nHello\nValidoHub' }]
+    }, textDiffHandler],
+    ['validohub.md5', {
+      slug: 'md5-generator', title: 'MD5 Generator', defaultAction: 'hash', theme: 'hash', mark: 'MD5', kicker: 'Legacy checksum',
+      summary: 'Generate MD5 digests for compatibility checks and clearly label that MD5 is not suitable for password security.',
+      chips: ['Hex digest', 'Byte count', 'Legacy warning', 'Offline'], samples: commonSamples.text
+    }, hashHandler('MD5')],
+    ['validohub.sha1', {
+      slug: 'sha1-generator', title: 'SHA-1 Generator', defaultAction: 'hash', theme: 'hash', mark: 'SHA1', kicker: 'Legacy digest',
+      summary: 'Generate SHA-1 digests for legacy integrations while keeping collision-risk guidance visible in the analysis panel.',
+      chips: ['Hex digest', 'Compatibility', 'Risk note', 'Local only'], samples: commonSamples.text
+    }, hashHandler('SHA-1')],
+    ['validohub.sha256', {
+      slug: 'sha256-generator', title: 'SHA-256 Generator', defaultAction: 'hash', theme: 'hash', mark: 'SHA256', kicker: 'Modern digest',
+      summary: 'Generate SHA-256 hashes for payload fingerprints, fixture verification, cache keys, and copy-safe developer output.',
+      chips: ['Modern digest', 'Payload fingerprint', 'Hex output', 'Offline'], samples: commonSamples.text
+    }, hashHandler('SHA-256')]
   ];
 
   configs.forEach(([algorithmId, config, handler]) => framework.registerPlugin(algorithmId, plugin(config, handler)));

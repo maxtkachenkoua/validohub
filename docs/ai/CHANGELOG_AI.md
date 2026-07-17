@@ -1,5 +1,11 @@
 # AI Changelog
 
+## 2026-07-18 - Generic Tools Premium UI Pass
+
+- Added a shared premium identity shell for global generic tools, including tool marks, theme accents, domain summaries, capability chips, and browser-only privacy boundary.
+- Tightened generic tool card typography so result and analysis panels match the Poland/Brazil premium standard instead of oversized bold blocks.
+- Kept all changes in ValidoHub assets and documentation; Valido Engine remains untouched.
+
 ## 2026-07-17 - Brazil Premium Diagnostics Pass
 
 - Upgraded the shared Brazil suite workbench renderer with premium pipeline progress, local result cards, tailored field breakdowns, quality notes, and advanced analysis.

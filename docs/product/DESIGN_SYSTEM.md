@@ -65,5 +65,6 @@ Generic utility tools, Poland tools, Brazil tools, and future country tools must
 - Card labels: small, uppercase, muted, letter-spaced.
 - Card values: readable but not hero-sized; long values wrap and may use muted note styling.
 - Descriptive text: normal-weight muted body copy, never giant bold copy.
+- Generic tools need a premium identity shell: compact mark, domain-specific color accent, specific summary, privacy boundary, and useful chips.
 - Advanced analysis: visually rich, expanded by default after execution, and organized into small panels rather than raw walls of text.
 - One CSS-layer improvement should improve all equivalent tool cards across countries and global utilities.

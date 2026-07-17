@@ -60,6 +60,7 @@ Generic utility pages must include:
 - Tool-specific descriptions. Never repeat generic copy such as "open the production-grade workbench" across cards.
 - Real local actions for the domain whenever browser APIs make them possible.
 - Samples, copy, download, diagnostics, result cards, and advanced analysis.
+- A premium identity shell with tool-specific mark, color theme, domain summary, chips, and local-execution boundary.
 - Expanded advanced analysis by default after a result is produced.
 - Compact premium card typography: small uppercase labels, moderate-weight values, muted explanatory text, and wrapped long strings.
 - No oversized bold paragraph blocks inside result cards.

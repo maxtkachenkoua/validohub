@@ -426,6 +426,7 @@ This is a product platform section, not a browser workbench plugin.
   - Tool-specific validation, normalization, diagnostics, samples, copy, download, local result cards, preview, and expanded advanced analysis.
   - HTML encode/decode, slug generation, case conversion, UUID v4/v7 generation and validation, IBAN MOD-97 validation, regular-expression testing, text diffing, and MD5/SHA-1/SHA-256 hashing.
   - Shared premium card styling so global tools visually match country workbench standards.
+  - Premium generic tool header with identity mark, theme accent, domain-specific summary, capability chips, and privacy boundary.
 - Known future ideas:
   - Promote high-traffic generic tools into dedicated gold-standard plugins when their domain requires deeper product UX.
   - Add human-reviewed documentation packs for each generic utility after usage data confirms priority.
