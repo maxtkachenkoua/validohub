@@ -2388,6 +2388,29 @@ const COMMON_POLAND_SOURCE_STRINGS = {
   'National regulatory &amp; reference portals': 'officialSources'
 };
 
+function removeGenericPolandRichFallbacks(map, phrases) {
+  const genericTargets = new Set(phrases.filter(Boolean));
+  for (const [source, target] of Object.entries(map)) {
+    if (typeof source !== 'string' || typeof target !== 'string') continue;
+    const genericTarget = genericTargets.has(target) || target.includes(' — ');
+    if (genericTarget) {
+      delete map[source];
+    }
+  }
+}
+
+function removeUnsafeWordLevelPolandReplacements(map) {
+  [
+    'developer', 'reference', 'government', 'tax', 'identifiers', 'postal',
+    'addresses', 'banking', 'payments', 'business', 'invoices', 'xml',
+    'environment', 'vehicles', 'insurance', 'customs', 'currency',
+    'graph-node', 'payment', 'identifier', 'specification', 'standard',
+    'locale', 'date', 'time', 'phone', 'domain', 'display', 'money',
+    'address', 'numbers', 'country code', 'alpha-3'
+  ].forEach((key) => delete map[key]);
+}
+
+
 const POLAND_SPECIFIC_TERMS = {
   pl: { nrbDomesticAccount: 'Krajowy rachunek NRB', taxMicroaccount: 'Mikrorachunek podatkowy', paymentQrPayloads: 'Payloady QR płatności', plnAmountGrosz: 'Kwota PLN i grosze', plnPolishIban: 'PLN i polski IBAN', cardPayments: 'Płatności kartą', phoneConventions: 'Konwencje telefoniczne', telephoneLayouts: 'Układy telefoniczne i parsowanie', nbpExchange: 'Kontekst kursów NBP i bankowości' },
   de: { nrbDomesticAccount: 'Inländisches NRB-Konto', taxMicroaccount: 'Steuer-Mikrokonto', paymentQrPayloads: 'Zahlungs-QR-Payloads', plnAmountGrosz: 'PLN-Betrag und Grosz', plnPolishIban: 'PLN und polnische IBAN', cardPayments: 'Kartenzahlungen', phoneConventions: 'Telefonkonventionen', telephoneLayouts: 'Telefonlayouts und Parsing-Regeln', nbpExchange: 'NBP-Wechselkurs- und Bankkontext' },
@@ -2633,6 +2656,8 @@ function buildExpandedPolandDetailMap(locale, copy, phrases) {
     'Polish split payment workflows separate VAT amount, supplier NIP, invoice reference, and gross transfer amount.': bankingText,
     'Tax microaccount calculations depend on PESEL or NIP input and must be treated as payment-routing support, not a bank lookup.': bankingText
   };
+  removeGenericPolandRichFallbacks(map, phrases);
+  removeUnsafeWordLevelPolandReplacements(map);
   return map;
 }
 
@@ -2760,6 +2785,8 @@ function buildExpandedPolandMap(locale) {
   for (const [source, key] of Object.entries(COMMON_POLAND_SOURCE_STRINGS)) {
     map[source] = { summary, profile, actions, catalog, officialSources, validatorWorkbenches, checklist, ecosystem, localizationNotes }[key];
   }
+  removeGenericPolandRichFallbacks(map, phrases);
+  removeUnsafeWordLevelPolandReplacements(map);
   return map;
 }
 
@@ -2894,8 +2921,6 @@ function applyUniversalPolandLocalizationPacks() {
     COMMON_LABELS[locale] = { ...(COMMON_LABELS[locale] || {}), ...baseMap };
     COUNTRY_PAGE_LABELS[locale] = { ...(COUNTRY_PAGE_LABELS[locale] || {}), ...baseMap, ...textOnlyMap };
     COUNTRY_PAGE_RICH_LABELS[locale] = { ...(COUNTRY_PAGE_RICH_LABELS[locale] || {}), ...baseMap, ...textOnlyMap };
-    COUNTRY_PAGE_COMPLETION_LABELS[locale] = { ...(COUNTRY_PAGE_COMPLETION_LABELS[locale] || {}), ...baseMap };
-    COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] = { ...(COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] || {}), ...baseMap };
   }
 }
 
@@ -2924,8 +2949,6 @@ function applyExpandedLocalePacks() {
     COMMON_LABELS[locale] = { ...(COMMON_LABELS[locale] || {}), ...baseMap };
     COUNTRY_PAGE_LABELS[locale] = { ...(COUNTRY_PAGE_LABELS[locale] || {}), ...baseMap, ...textOnlyMap };
     COUNTRY_PAGE_RICH_LABELS[locale] = { ...(COUNTRY_PAGE_RICH_LABELS[locale] || {}), ...baseMap, ...textOnlyMap };
-    COUNTRY_PAGE_COMPLETION_LABELS[locale] = { ...(COUNTRY_PAGE_COMPLETION_LABELS[locale] || {}), ...baseMap };
-    COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] = { ...(COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] || {}), ...baseMap };
   }
 }
 
@@ -3191,7 +3214,6 @@ function buildPolandVocabularyMap(locale) {
   const words = POLAND_VOCABULARY_WORDS[locale] || POLAND_VOCABULARY_WORDS['pt-BR'];
   const country = COUNTRY_NAMES[locale]?.Poland || EXPANDED_COUNTRY_NAMES[locale]?.Poland || 'Poland';
   return {
-    'Polish ': country + ': ',
     ' Validator &amp; Explainer': ' — ' + words.validator + ' + ' + words.explainer,
     ' Validator & Explainer': ' — ' + words.validator + ' + ' + words.explainer,
     ' Number Inspector': ' — ' + words.numberInspector,
@@ -3228,10 +3250,11 @@ function buildPolandVocabularyMap(locale) {
 function applyPolandVocabularyLocalizationPacks() {
   for (const locale of SUPPORTED_LOCALES) {
     if (locale === 'en') continue;
-    const map = { ...buildPolandToolTitleOverrides(locale), ...buildPolandVocabularyMap(locale) };
-    COUNTRY_PAGE_LABELS[locale] = { ...(COUNTRY_PAGE_LABELS[locale] || {}), ...map };
-    COUNTRY_PAGE_RICH_LABELS[locale] = { ...(COUNTRY_PAGE_RICH_LABELS[locale] || {}), ...map };
-    COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] = { ...(COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] || {}), ...map };
+    const titleMap = buildPolandToolTitleOverrides(locale);
+    const vocabularyMap = buildPolandVocabularyMap(locale);
+    COUNTRY_PAGE_LABELS[locale] = { ...(COUNTRY_PAGE_LABELS[locale] || {}), ...titleMap };
+    COUNTRY_PAGE_RICH_LABELS[locale] = { ...(COUNTRY_PAGE_RICH_LABELS[locale] || {}), ...titleMap };
+    COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] = { ...(COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] || {}), ...titleMap };
   }
 }
 
@@ -3743,9 +3766,184 @@ const COUNTRY_PAGE_FINAL_SWEEP_LABELS = {
   }
 };
 
+
+const POLAND_UK_RICH_CONTENT_LABELS = {
+  'Developer Actions': 'Дії розробника',
+  'Identifier registry specs &amp; workbenches': 'Специфікації реєстрів ідентифікаторів та воркбенчі',
+  'Identifier registry specs & workbenches': 'Специфікації реєстрів ідентифікаторів та воркбенчі',
+  'Official identifier specs plus related browser tools for personal, business, vehicle, address, and registry-shaped Polish data.': 'Офіційні специфікації ідентифікаторів та пов’язані браузерні інструменти для персональних, бізнесових, транспортних, адресних і реєстрових польських даних.',
+  'Structure breakdowns, weighted checksum math, and developer implementation guidelines.': 'Розбір структури, зважені контрольні суми та практичні нотатки для реалізації.',
+  'Interactive Sandboxes': 'Інтерактивні пісочниці',
+  'Developer Validator Workbenches': 'Валідаційні воркбенчі для розробників',
+  'Pre-rendered interactive validator tools to test identifiers in a real browser.': 'Попередньо згенеровані інтерактивні валідатори для перевірки ідентифікаторів у реальному браузері.',
+  'Run interactive client-side validations, format conversions, and integrity checks.': 'Запускайте клієнтські перевірки, перетворення форматів і контроль цілісності прямо в браузері.',
+  'Developer Checklist': 'Чеклист розробника',
+  'Integration checklist reminders': 'Нагадування інтеграційного чеклиста',
+  'Important checkmarks to verify when deploying localized pipelines.': 'Ключові пункти, які потрібно перевірити перед запуском локалізованих пайплайнів.',
+  'Locale pl-PL configured': 'Локаль pl-PL налаштована',
+  'UTF-8 encoding preserved': 'Кодування UTF-8 збережено',
+  'Złoty (PLN) formatting with comma decimals and space thousands separators': 'Форматування злотого (PLN) з комою для дробової частини та пробілами для тисяч',
+  'PESEL validation rules and checksum': 'Правила валідації PESEL і контрольна сума',
+  'NIP tax identifier checksum rules': 'Правила контрольної суми податкового ідентифікатора NIP',
+  'REGON business register length and checks': 'Довжина та перевірки бізнес-реєстру REGON',
+  'Polish postal code display mask (NN-NNN)': 'Маска відображення польського поштового індексу (NN-NNN)',
+  'Phone code +48 formatting': 'Форматування телефонного коду +48',
+  'NRB domestic format vs IBAN PL representation': 'Внутрішній формат NRB порівняно з поданням IBAN PL',
+  'BLIK payment system integration parameters': 'Параметри інтеграції платіжної системи BLIK',
+  'Developer Notes': 'Нотатки для розробників',
+  'Developer implementation instructions': 'Інструкції з реалізації для розробників',
+  'Important coding notes for storage, parameters, and validations.': 'Важливі нотатки щодо зберігання, параметрів і перевірок.',
+  'Ensure database tables support UTF-8 for Polish diacritics.': 'Переконайтеся, що таблиці бази даних підтримують UTF-8 для польських діакритичних знаків.',
+  'Validate local PESEL, NIP, and REGON formats separately.': 'Перевіряйте формати PESEL, NIP і REGON окремо.',
+  'Use PL country prefix for IBAN validation on Polish accounts.': 'Використовуйте префікс країни PL під час валідації IBAN польських рахунків.',
+  'Common Mistakes': 'Типові помилки',
+  'Integration pitfalls to avoid': 'Інтеграційні пастки, яких варто уникати',
+  'Locale formatting and validation traps developers frequently encounter.': 'Поширені пастки форматування локалі та валідації, з якими стикаються розробники.',
+  'Treating BLIK as a bank account identifier rather than a mobile payment token.': 'Сприймати BLIK як ідентифікатор банківського рахунку, а не як мобільний платіжний токен.',
+  'Conflating NIP (tax) and PESEL (personal) identifiers.': 'Плутати NIP (податковий) і PESEL (персональний) ідентифікатори.',
+  'Using comma instead of space for thousands formatting, which looks unnatural to Polish users.': 'Використовувати кому замість пробілу для тисяч, що виглядає неприродно для польських користувачів.',
+  'Forgetting the hyphen in the NN-NNN postal code display.': 'Забувати дефіс у форматі поштового індексу NN-NNN.',
+  'Hardcoding PLN symbol position before the amount (PLN should be formatted as 123,45 zł or 123,45 PLN).': 'Жорстко ставити символ PLN перед сумою, хоча коректний формат: 123,45 zł або 123,45 PLN.',
+  'Conflating 26-digit domestic NRB accounts with 28-character PL IBANs in databases.': 'Плутати 26-цифрові внутрішні рахунки NRB з 28-символьними IBAN PL у базах даних.',
+  'Code Examples': 'Приклади коду',
+  'Developer integration code snippets': 'Фрагменти коду для інтеграції',
+  'Ready-to-use programming snippets in JavaScript, Java, Python, and Go.': 'Готові фрагменти коду JavaScript, Java, Python і Go.',
+  'Java Locale': 'Локаль Java',
+  'Use BCP 47 locale tags for Java formatting APIs.': 'Використовуйте теги локалі BCP 47 для Java API форматування.',
+  'Java currency format': 'Формат валюти в Java',
+  'Formats values using Polish currency conventions.': 'Форматує значення за польськими валютними правилами.',
+  'JavaScript Intl Currency': 'Валюта JavaScript Intl',
+  'Formats PLN values with pl-PL separators and currency display.': 'Форматує значення PLN із розділювачами та відображенням валюти для pl-PL.',
+  'JavaScript Date': 'Дата JavaScript',
+  'Use Europe/Warsaw timezone for Poland local dates.': 'Використовуйте часовий пояс Europe/Warsaw для локальних дат Польщі.',
+  'Use Europe/Warsaw timezone for Польща local dates.': 'Використовуйте часовий пояс Europe/Warsaw для локальних дат Польщі.',
+  'Python locale': 'Локаль Python',
+  'Requires the pl_PL locale to be installed on the host operating system.': 'Потребує встановленої локалі pl_PL в операційній системі.',
+  'Go language tag': 'Мовний тег Go',
+  'Use golang.org/x/text/language package for locale representation.': 'Використовуйте пакет golang.org/x/text/language для подання локалі.',
+  'Knowledge Graph': 'Граф знань',
+  'Graph-powered developer metadata &amp; navigation': 'Метадані й навігація для розробників на основі графа',
+  'Graph-powered developer metadata & navigation': 'Метадані й навігація для розробників на основі графа',
+  'Pre-rendered relationship paths compiled directly from the ValidoHub central index.': 'Попередньо згенеровані зв’язки, скомпільовані безпосередньо з центрального індексу ValidoHub.',
+  'Regional Cross-Links': 'Регіональні перехресні посилання',
+  'Related regional standard conventions': 'Пов’язані регіональні стандартні правила',
+  'Countries sharing overlapping currency codes, payment gateways, or regulatory acts.': 'Країни зі спільними валютними кодами, платіжними шлюзами або регуляторними актами.',
+  'Key Highlights': 'Ключові акценти',
+  'Highlights and quick summaries': 'Акценти та короткі підсумки',
+  'Summary overview of national localization rules.': 'Короткий огляд національних правил локалізації.',
+  'Poland uses pl-PL locale for formatting.': 'Польща використовує локаль pl-PL для форматування.',
+  'Польща uses pl-PL locale for formatting.': 'Польща використовує локаль pl-PL для форматування.',
+  "PLN is displayed with space separators and 'zł' symbol at the end (e.g. 1 234,56 zł).": 'PLN відображається з пробілами як розділювачами тисяч і символом “zł” наприкінці, наприклад 1 234,56 zł.',
+  'Diacritics like ł and ż are common and must be preserved.': 'Діакритичні знаки на кшталт ł і ż поширені та мають зберігатися.',
+  'BLIK is the leading mobile payment method in Poland.': 'BLIK є провідним мобільним способом оплати в Польщі.',
+  'BLIK is the leading mobile payment method in Польща.': 'BLIK є провідним мобільним способом оплати в Польщі.',
+  'Date format is DD.MM.YYYY.': 'Формат дати: DD.MM.YYYY.',
+  'Country Ecosystem': 'Екосистема країни',
+  'National ecosystem directories': 'Каталоги національної екосистеми',
+  'Canonical national portals, APIs, and registries related to compliance formats.': 'Канонічні національні портали, API та реєстри, пов’язані з форматами відповідності.',
+  'Personal identity register for citizens and residents.': 'Реєстр персональної ідентичності громадян і резидентів.',
+  'Tax identification number register.': 'Реєстр податкових ідентифікаційних номерів.',
+  'National register of business entities.': 'Національний реєстр суб’єктів господарювання.',
+  'Mobile payment standard used by millions of bank customers.': 'Стандарт мобільних платежів, яким користуються мільйони клієнтів банків.',
+  'Static tools generated by Valido Engine.': 'Статичні інструменти, згенеровані Valido Engine.',
+  'Localization Notes': 'Нотатки локалізації',
+  'Local conventions and grammar exceptions': 'Локальні правила та граматичні винятки',
+  'Grammar peculiarities, diacritics, and calendar configurations.': 'Граматичні особливості, діакритика та налаштування календаря.',
+  'Plural rules': 'Правила множини',
+  'Polish has complex plural forms (1, 2-4, 5-21, etc.) depending on the noun case.': 'Польська має складні форми множини залежно від числа та відмінка.',
+  'Week starts': 'Початок тижня',
+  'Most Polish user interfaces expect Monday as the first day of week.': 'Більшість польських інтерфейсів очікує понеділок як перший день тижня.',
+  'Calendar': 'Календар',
+  'Gregorian calendar is the ordinary civil calendar.': 'Григоріанський календар є звичайним цивільним календарем.',
+  'Unicode': 'Unicode',
+  'Ensure support for Polish diacritics: ą, ć, ę, ł, ń, ó, ś, ź, ż.': 'Забезпечте підтримку польських діакритичних знаків: ą, ć, ę, ł, ń, ó, ś, ź, ż.',
+  'Timezone': 'Часовий пояс',
+  'Use Europe/Warsaw for global civil time in Poland.': 'Використовуйте Europe/Warsaw для цивільного часу Польщі.',
+  'Use Europe/Warsaw for global civil time in Польща.': 'Використовуйте Europe/Warsaw для цивільного часу Польщі.',
+  'Official Sources': 'Офіційні джерела',
+  'National regulatory &amp; reference portals': 'Національні регуляторні та довідкові портали',
+  'National regulatory & reference portals': 'Національні регуляторні та довідкові портали',
+  'Verified legislative resources to validate compliance formats.': 'Перевірені законодавчі ресурси для звірки форматів відповідності.',
+  'Central Statistical Office for official database, classification, and statistical context.': 'Центральне статистичне управління для офіційних баз даних, класифікацій і статистичного контексту.',
+  'Official tax administration portal for NIP, VAT, and business status references.': 'Офіційний податковий портал для довідок щодо NIP, VAT і бізнес-статусу.',
+  'Social Insurance Institution reference portal for social security context.': 'Довідковий портал ZUS для контексту соціального страхування.',
+  'Central bank of Poland providing monetary policy and banking institution indexes.': 'Центральний банк Польщі з даними про монетарну політику та індекси банківських установ.',
+  'Central bank of Польща providing monetary policy and banking institution indexes.': 'Центральний банк Польщі з даними про монетарну політику та індекси банківських установ.',
+  'Postal authority and official postcode database lookup.': 'Поштова служба та офіційний пошук бази поштових індексів.',
+  'National Court Register context for KRS-shaped business identifiers and company records.': 'Контекст Національного судового реєстру для ідентифікаторів KRS і записів компаній.',
+  'Central register context for sole-proprietor onboarding and business-data readiness checks.': 'Контекст центрального реєстру для онбордингу ФОП і перевірки готовності бізнес-даних.',
+  'National e-invoicing context for KSeF XML payloads, invoice identifiers, and offline readiness.': 'Контекст національного е-інвойсингу для XML-пейлоадів KSeF, ідентифікаторів рахунків і offline-перевірок.',
+  'Reference context for Polish tax control files, VAT reporting data, and XML submission readiness.': 'Довідковий контекст для польських JPK-файлів, VAT-звітності та готовності XML-відправлень.',
+  'Territorial and locality classification context for voivodeships, counties, municipalities, towns, and streets.': 'Контекст територіальної класифікації воєводств, повітів, громад, населених пунктів і вулиць.',
+  'Waste database and product-packaging register context for BDO-shaped business identifiers.': 'Контекст реєстру BDO для відходів, пакування та пов’язаних бізнес-ідентифікаторів.',
+  'Vehicle and driver registry context for plates, VIN workflows, registration certificates, and licence data.': 'Контекст транспортних і водійських реєстрів для номерних знаків, VIN, реєстраційних документів і посвідчень.',
+  'Insurance guarantee fund context for vehicle insurance and policy-number workflows.': 'Контекст страхового гарантійного фонду для автострахування та номерів полісів.',
+  'Customs and tax administration context for EORI, VAT, tax microaccounts, and compliance identifiers.': 'Контекст митної та податкової адміністрації для EORI, VAT, мікрорахунків і compliance-ідентифікаторів.',
+  'Central-bank context for PLN, bank metadata, exchange-rate references, and financial institution naming.': 'Контекст центрального банку для PLN, банківських метаданих, курсів валют і назв фінансових установ.',
+  'Banking Standards': 'Банківські стандарти',
+  'Polish account, transfer &amp; clearing standards': 'Польські стандарти рахунків, переказів і клірингу',
+  'Polish account, transfer & clearing standards': 'Польські стандарти рахунків, переказів і клірингу',
+  'IBAN, NRB, BIC, SEPA, Elixir-style routing context, and payment-ready developer workflows.': 'IBAN, NRB, BIC, SEPA, контекст маршрутизації Elixir і готові до платежів сценарії для розробників.',
+  'Bank code segment': 'Сегмент коду банку',
+  'Bank and branch hints can be extracted from a structurally valid NRB or PL IBAN without doing an official lookup.': 'Підказки щодо банку та відділення можна отримати зі структурно коректного NRB або PL IBAN без офіційного lookup.',
+  'Domestic account context': 'Контекст внутрішнього рахунку',
+  'Elixir is the domestic clearing system processing PLN transfers in three daily sessions.': 'Elixir — внутрішня клірингова система, що обробляє PLN-перекази у трьох денних сесіях.',
+  'PL-prefixed IBAN format is standard for international transfers.': 'IBAN із префіксом PL є стандартом для міжнародних переказів.',
+  'NRB domestic account': 'Внутрішній рахунок NRB',
+  'The 26-digit domestic account layout carries control digits, bank segment, branch context, and account sequence.': '26-цифровий внутрішній рахунок містить контрольні цифри, сегмент банку, контекст відділення та послідовність рахунку.',
+  'Payment QR and title fields': 'Платіжний QR і поля призначення',
+  'Payment QR and transfer title workflows standardize amount, account, recipient, reference, and invoice text before banking handoff.': 'Платіжний QR і призначення переказу стандартизують суму, рахунок, отримувача, посилання та текст рахунку перед передачею в банк.',
+  'PLN, grosz and VAT amounts': 'Суми PLN, гроші та VAT',
+  'Polish money workflows need comma decimals, integer grosz payloads, VAT rounding, and copyable audit output.': 'Польські грошові сценарії потребують коми як десяткового розділювача, цілих значень у грошах, округлення VAT і копійованого audit-виводу.',
+  'BIC/SWIFT details are required for international SWIFT transfers and cross-border bank account payments.': 'Дані BIC/SWIFT потрібні для міжнародних SWIFT-переказів і транскордонних банківських платежів.',
+  'BIC/SWIFT details are required for international SWIFT transfers and cross-border bank account Перевіряти платіжні дані.': 'Дані BIC/SWIFT потрібні для міжнародних SWIFT-переказів і транскордонних банківських платежів.',
+  'BLIK uses short-lived six-digit consumer codes. The workbench validates shape and safe fixture behavior without pretending to verify live codes.': 'BLIK використовує короткоживучі шестизначні коди. Воркбенч перевіряє форму та безпечні тестові дані, не імітуючи перевірку live-кодів.',
+  'Debit and credit card flows follow global card network schemas plus Polish locale amount formatting conventions.': 'Потоки дебетових і кредитних карток відповідають глобальним схемам карткових мереж і польським правилам форматування сум.',
+  'Domestic Polish account numbers use a 26-digit NRB structure that maps cleanly into a PL-prefixed IBAN.': 'Внутрішні польські рахунки використовують 26-цифрову структуру NRB, яка чисто перетворюється на IBAN із префіксом PL.',
+  'QR-like payment payloads are useful for transfer intent, amount, recipient account, and reference-field testing.': 'Платіжні QR-пейлоади корисні для тестування наміру переказу, суми, рахунку отримувача та референсних полів.',
+  'Polish money tools normalize comma decimals, grosz integer values, VAT rates, and copyable developer payloads.': 'Польські грошові інструменти нормалізують десяткову кому, цілі значення грошів, ставки VAT і копійовані developer-пейлоади.',
+  'SEPA credit transfers apply to Euro-denominated payments, but domestic flows mostly use PLN-native routing.': 'SEPA-перекази стосуються платежів у євро, тоді як внутрішні потоки переважно використовують PLN-маршрутизацію.',
+  'SEPA credit transfers apply to Euro-denominated Перевіряти платіжні дані, but domestic flows mostly use PLN-native routing.': 'SEPA-перекази стосуються платежів у євро, тоді як внутрішні потоки переважно використовують PLN-маршрутизацію.',
+  'Polish split payment workflows separate VAT amount, supplier NIP, invoice reference, and gross transfer amount.': 'Польські split-payment сценарії розділяють суму VAT, NIP постачальника, референс рахунку та брутто-суму переказу.',
+  'Tax microaccount calculations depend on PESEL or NIP input and must be treated as payment-routing support, not a bank lookup.': 'Розрахунки податкового мікрорахунку залежать від PESEL або NIP і є підтримкою маршрутизації платежу, а не банківським lookup.',
+  'Tax microaccount helpers derive payment-account context from PESEL or NIP input for offline pre-checks.': 'Помічники податкового мікрорахунку виводять контекст платіжного рахунку з PESEL або NIP для офлайн-попередніх перевірок.',
+  'Related banking workbenches': 'Пов’язані банківські воркбенчі',
+  'Related browser-only workbench': 'Пов’язаний браузерний воркбенч',
+  'Related payment workbenches': 'Пов’язані платіжні воркбенчі',
+  'National Identifiers': 'Ідентифікатори країни',
+  'Numer Identyfikacji Podatkowej. Polish tax identification number.': 'Numer Identyfikacji Podatkowej. Польський податковий ідентифікаційний номер.',
+  'Universal Electronic System for Registration of the Population. 11-digit Polish national ID.': 'Загальна електронна система реєстрації населення. 11-цифровий польський національний ідентифікатор.',
+  'National Official Register of Business Entities in Poland.': 'Національний офіційний реєстр суб’єктів господарювання в Польщі.',
+  'National Official Register of Business Entities in Польща.': 'Національний офіційний реєстр суб’єктів господарювання в Польщі.',
+  'Polish mobile instant payment system.': 'Польська система миттєвих мобільних платежів.',
+  'Single Euro Payments Area bank transfer standard.': 'Стандарт банківських переказів Single Euro Payments Area.',
+  'Global financial messaging network for international bank wire transfers.': 'Глобальна мережа фінансових повідомлень для міжнародних банківських переказів.',
+  'International Bank Account Number standard.': 'Стандарт міжнародного номера банківського рахунку.',
+  'Shares standards: IBAN, SEPA, SWIFT': 'Спільні стандарти: IBAN, SEPA, SWIFT',
+  'Shares standards: SWIFT': 'Спільні стандарти: SWIFT',
+  'BLIK, SEPA, split payment, payment QR, PLN amounts, VAT amounts, and transfer-reference workflows.': 'BLIK, SEPA, розділений платіж, платіжний QR, суми PLN, суми VAT і сценарії призначення переказу.',
+  'Debit and credit card flows follow global card network schemas plus Polish locale amount formatting conventions.': 'Потоки дебетових і кредитних карток відповідають глобальним схемам карткових мереж і польським правилам форматування сум.',
+  'Bank and branch hints can be extracted from a structurally valid NRB or PL IBAN without doing an official lookup.': 'Підказки щодо банку та відділення можна отримати зі структурно коректного NRB або PL IBAN без офіційного lookup.',
+  'BIC/SWIFT details are required for international SWIFT transfers and cross-border bank account payments.': 'Дані BIC/SWIFT потрібні для міжнародних SWIFT-переказів і транскордонних банківських платежів.',
+  'BLIK uses short-lived six-digit consumer codes. The workbench validates shape and safe fixture behavior without pretending to verify live codes.': 'BLIK використовує короткоживучі шестизначні коди. Воркбенч перевіряє форму та безпечні тестові дані, не імітуючи перевірку live-кодів.',
+  'Domestic Polish account numbers use a 26-digit NRB structure that maps cleanly into a PL-prefixed IBAN.': 'Внутрішні польські рахунки використовують 26-цифрову структуру NRB, яка чисто перетворюється на IBAN із префіксом PL.',
+  'Payment QR and transfer title workflows standardize amount, account, recipient, reference, and invoice text before banking handoff.': 'Платіжний QR і призначення переказу стандартизують суму, рахунок, отримувача, посилання та текст рахунку перед передачею в банк.',
+  'Polish money tools normalize comma decimals, grosz integer values, VAT rates, and copyable developer payloads.': 'Польські грошові інструменти нормалізують десяткову кому, цілі значення грошів, ставки VAT і копійовані developer-пейлоади.',
+  'SEPA credit transfers apply to Euro-denominated payments, but domestic flows mostly use PLN-native routing.': 'SEPA-перекази стосуються платежів у євро, тоді як внутрішні потоки переважно використовують PLN-маршрутизацію.',
+  'Polish split payment workflows separate VAT amount, supplier NIP, invoice reference, and gross transfer amount.': 'Польські split-payment сценарії розділяють суму VAT, NIP постачальника, референс рахунку та брутто-суму переказу.'
+};
+
+function applyPolandRichContentLocalizationPacks() {
+  COUNTRY_PAGE_LABELS.uk = { ...(COUNTRY_PAGE_LABELS.uk || {}), ...POLAND_UK_RICH_CONTENT_LABELS };
+  COUNTRY_PAGE_RICH_LABELS.uk = { ...(COUNTRY_PAGE_RICH_LABELS.uk || {}), ...POLAND_UK_RICH_CONTENT_LABELS };
+  COUNTRY_PAGE_COMPLETION_LABELS.uk = { ...(COUNTRY_PAGE_COMPLETION_LABELS.uk || {}), ...POLAND_UK_RICH_CONTENT_LABELS };
+  COUNTRY_PAGE_FINAL_SWEEP_LABELS.uk = { ...(COUNTRY_PAGE_FINAL_SWEEP_LABELS.uk || {}), ...POLAND_UK_RICH_CONTENT_LABELS };
+}
+
 applyExpandedLocalePacks();
 applyUniversalPolandLocalizationPacks();
 applyPolandVocabularyLocalizationPacks();
+applyPolandRichContentLocalizationPacks();
 
 const COUNTRY_PAGE_FINAL_SWEEP_TEXT_ONLY_LABELS = new Set([
   'payments', 'validator', 'workbench', 'identifier', 'specification', 'payment', 'graph-node', 'standard', 'locale', 'date', 'time'

@@ -80,6 +80,9 @@ If a new section is added to the Poland-style Country Hub, add its localization 
 
 Specific card and row descriptions are mandatory localization strings. Any visible description for a tool, identifier, registry, standard, source, payment rail, catalog item, or related-workbench row must be localized for every supported locale. Reused generic fallback copy is not acceptable unless the card is genuinely a generic empty state.
 
+Never replace item-level country content with a section label, section summary, or "section title — generic sentence" fallback. A localized page must either show the exact localized item text or keep the original source string visible until a real translation is added; duplicated generic prose across checklist items, source cards, ecosystem cards, banking cards, or developer-note lists is a release blocker.
+Never use word-level country adjective replacement such as `Polish ` -> `Poland:` inside rich content. Translate complete phrases instead; partial adjective replacement creates broken mixed-language copy like `Poland: postal code display mask`.
+
 When replacing generic text with item-specific copy, register every new source string in the localization pass during the same change. If the English page says what BLIK, KSeF, NRB, NIP, PESEL, REGON, or another concrete standard does, every localized page must express the same concrete intent rather than falling back to a broad sentence such as "run validations" or "structure breakdowns."
 
 If a new country becomes Poland-grade, add localized country names, local values, official-source explanations, address examples, search labels, and all section copy for every supported locale before calling the country done.
