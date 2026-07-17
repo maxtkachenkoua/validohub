@@ -326,15 +326,21 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       groups.forEach(group => {
-        const visibleRows = group.querySelectorAll('.vh-country-catalog-row:not([hidden])').length;
+        const groupIntent = group.dataset.countryRouteGroup || group.querySelector('.vh-country-catalog-row')?.dataset.intentGroup || 'other';
+        const matchesActiveIntent = activeIntent === 'all' || activeIntent === groupIntent;
+        const visibleRows = matchesActiveIntent ? group.querySelectorAll('.vh-country-catalog-row:not([hidden])').length : 0;
         const countEl = group.querySelector('.vh-country-group-count');
         if (countEl) {
           const totalRows = group.querySelectorAll('.vh-country-catalog-row').length;
           countEl.textContent = query || activeIntent !== 'all' ? `${visibleRows}/${totalRows}` : String(totalRows);
         }
         const isEmpty = visibleRows === 0;
+        const shouldHideGroup = !matchesActiveIntent || isEmpty;
+        group.hidden = shouldHideGroup;
         group.classList.toggle('is-tool-search-empty', Boolean(query && isEmpty));
-        if ((query || activeIntent !== 'all') && !isEmpty) {
+        if (activeIntent !== 'all') {
+          group.open = !shouldHideGroup;
+        } else if (query && !isEmpty) {
           group.open = true;
         }
       });

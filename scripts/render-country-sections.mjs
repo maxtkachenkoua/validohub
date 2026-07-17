@@ -369,7 +369,7 @@ function renderExpandableRouteGroup(group, open = false) {
   `).join('\n');
 
   return `
-    <details class="vh-country-route-group" ${open ? 'open' : ''}>
+    <details class="vh-country-route-group" data-country-route-group="${escapeHtml(group.key)}" ${open ? 'open' : ''}>
       <summary>
         <span>
           <strong>${escapeHtml(group.title)}</strong>
