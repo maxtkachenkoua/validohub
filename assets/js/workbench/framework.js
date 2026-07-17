@@ -264,8 +264,16 @@
       if (!advanced || !target) {
         return;
       }
+      var hasContent = Boolean(html);
       target.innerHTML = html || "";
-      advanced.classList.toggle("has-content", Boolean(html));
+      advanced.classList.toggle("has-content", hasContent);
+      if (hasContent) {
+        advanced.open = true;
+        advanced.setAttribute("open", "");
+      } else {
+        advanced.open = false;
+        advanced.removeAttribute("open");
+      }
     };
 
     Workbench.prototype.clearPanels = function () {

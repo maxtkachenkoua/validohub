@@ -315,7 +315,7 @@
     function renderDev(workbench, result) {
       const target = workbench.form.querySelector('[data-plb-dev]');
       if (!target) return;
-      target.innerHTML = '<section class="plb-card"><h4><span>⌘</span> Advanced analysis</h4><details class="plb-dev-accordion" open><summary>Validation pipeline logs</summary><div class="plb-dev-content"><button type="button" class="plb-dev-copy" data-plb-copy="json">Copy</button><pre class="plb-code">' + syntaxJson(result.audit) + '</pre></div></details><details class="plb-dev-accordion"><summary>Offline boundary</summary><div class="plb-dev-content"><p>' + util.escapeHtml(result.boundary) + '</p></div></details></section>';
+      target.innerHTML = '<section class="plb-card"><h4><span>⌘</span> Advanced analysis</h4><details class="plb-dev-accordion" open><summary>Validation pipeline logs</summary><div class="plb-dev-content"><button type="button" class="plb-dev-copy" data-plb-copy="json">Copy</button><pre class="plb-code">' + syntaxJson(result.audit) + '</pre></div></details><details class="plb-dev-accordion" open><summary>Offline boundary</summary><div class="plb-dev-content"><p>' + util.escapeHtml(result.boundary) + '</p></div></details></section>';
     }
 
     function analyze(config, raw) {

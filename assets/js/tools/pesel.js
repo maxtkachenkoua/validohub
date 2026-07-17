@@ -1369,7 +1369,7 @@
                 <pre>✓ Input Present\n✗ Digits Only Check (Failed: non-numeric character found)\n○ Length Check (Skipped)\n○ Month Offset (Skipped)\n○ Date Verification (Skipped)\n○ Checksum Matching (Skipped)</pre>
               </div>
             </details>
-            <details class="pesel-dev-accordion">
+            <details class="pesel-dev-accordion" open>
               <summary>Regex Details</summary>
               <div class="pesel-dev-accordion-content">
                 <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
@@ -1444,7 +1444,7 @@
                 <pre>✓ Input Present\n✓ Digits Only Check\n✗ Length Check (Failed: got ${inputVal.length})\n○ Month Offset (Skipped)\n○ Date Verification (Skipped)\n○ Checksum Matching (Skipped)</pre>
               </div>
             </details>
-            <details class="pesel-dev-accordion">
+            <details class="pesel-dev-accordion" open>
               <summary>Regex Details</summary>
               <div class="pesel-dev-accordion-content">
                 <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
@@ -1778,7 +1778,7 @@
                 <pre>✓ Input Present\n✓ Digits Only Check\n✓ Exactly 11 Digits Check\n✓ Century/Month Offset Valid\n✓ Calendar Date Valid\n✗ Checksum Valid (Failed: expected ${expectedChecksum}, calculated ${calculatedChecksum})</pre>
               </div>
             </details>
-            <details class="pesel-dev-accordion">
+            <details class="pesel-dev-accordion" open>
               <summary>Raw JSON Output</summary>
               <div class="pesel-dev-accordion-content">
                 <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
@@ -2143,21 +2143,21 @@
               <pre>✓ Input Present\\n✓ Digits Only Check\\n✓ Exactly 11 Digits Check\\n✓ Century/Month Offset Valid\\n✓ Calendar Date Valid\\n✓ Checksum Valid</pre>
             </div>
           </details>
-          <details class="pesel-dev-accordion">
+          <details class="pesel-dev-accordion" open>
             <summary>Regex & Structure Details</summary>
             <div class="pesel-dev-accordion-content">
               <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
               <pre>Pattern: /^\\\\d{11}$/\\nMatched: true</pre>
             </div>
           </details>
-          <details class="pesel-dev-accordion">
+          <details class="pesel-dev-accordion" open>
             <summary>Decoded Date Internals</summary>
             <div class="pesel-dev-accordion-content">
               <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
               <pre>Raw Year Digits: ${year}\nRaw Month Digits: ${month}\nRaw Day Digits: ${day}\nCentury Group Offset: ${monthOffset}\nParsed Month: ${parsedMonth}\nDecoded Year: ${fullYear}</pre>
             </div>
           </details>
-          <details class="pesel-dev-accordion">
+          <details class="pesel-dev-accordion" open>
             <summary>Raw JSON Output</summary>
             <div class="pesel-dev-accordion-content" style="background: var(--code-bg); padding: 12px; border-radius: 6px;">
               <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
