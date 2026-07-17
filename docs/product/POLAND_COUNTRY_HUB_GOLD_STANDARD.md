@@ -238,6 +238,20 @@ Use domain-specific language:
 - What developers usually get wrong.
 - What systems it connects to.
 
+## Card Description Standard
+
+Every visible card or row that represents a specific tool, identifier, registry, standard, payment rail, source, or workbench must have item-specific descriptive copy.
+
+Do not reuse one generic sentence across multiple cards. In particular, these are forbidden as visible production copy:
+
+- "Open the production-grade browser workbench for this country data standard."
+- "Run interactive client-side validations, format conversions, and integrity checks."
+- "Structure breakdowns, weighted checksum math, and developer implementation guidelines."
+
+The description must explain the specific object on that card: for example NIP tax context, PESEL birth-date and checksum behavior, REGON business registry structure, BLIK short-lived payment codes, KSeF invoice XML readiness, or NRB bank-routing segments.
+
+When a card description is changed or added, the same source string must be registered in the localization flow so every supported locale receives a localized version. A Poland-grade page fails review if only section titles are localized while card descriptions remain generic or English.
+
 ## Done Criteria For A Poland-Grade Country
 
 A country can be considered Poland-grade only when:

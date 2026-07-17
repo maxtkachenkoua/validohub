@@ -160,6 +160,18 @@ function getPolandRouteDescription(route) {
   return POLAND_ROUTE_DESCRIPTIONS[routeSlug(route)] || 'Run a browser-only country validation, formatting, or data-quality workflow tailored to this Polish standard.';
 }
 
+const POLAND_IDENTIFIER_DESCRIPTIONS = {
+  nip: 'Tax identifier spec for Polish VAT, invoices, company onboarding, and compliance workflows.',
+  pesel: 'Personal identity registry spec for PESEL birth-date encoding, gender digit, and checksum behavior.',
+  regon: 'Business registry spec for REGON 9- and 14-digit structures, GUS context, and checksum math.'
+};
+
+function getPolandIdentifierDescription(route) {
+  const slug = routeSlug(route);
+  const key = slug || String(route.metadata?.displayName || '').toLowerCase();
+  return POLAND_IDENTIFIER_DESCRIPTIONS[key] || route.metadata?.summary || 'Official identifier specification with structure, checksum, and implementation notes.';
+}
+
 function createRouteCard(route, description, tags = [], status = 'available') {
   return createInfoCard(
     route.title || 'Interactive Workbench',
@@ -541,7 +553,7 @@ export function renderCountryBankingSystem(model, routeRegistry = null) {
       <div class="vh-country-route-list vh-country-route-list-compact">
         ${toolRoutes.map(route => `
           <a class="vh-country-catalog-row" href="${route.path}">
-            <span><strong>${escapeHtml(route.title)}</strong><small>Related browser-only workbench</small></span>
+            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(getPolandRouteDescription(route))}</small></span>
             <span class="vh-country-row-arrow" aria-hidden="true">→</span>
           </a>
         `).join('\n')}
@@ -581,7 +593,7 @@ export function renderCountryPaymentSystems(model, routeRegistry = null) {
       <div class="vh-country-route-list vh-country-route-list-compact">
         ${toolRoutes.map(route => `
           <a class="vh-country-catalog-row" href="${route.path}">
-            <span><strong>${escapeHtml(route.title)}</strong><small>Related browser-only workbench</small></span>
+            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(getPolandRouteDescription(route))}</small></span>
             <span class="vh-country-row-arrow" aria-hidden="true">→</span>
           </a>
         `).join('\n')}
@@ -616,7 +628,7 @@ export function renderCountryIdentifiers(model, routeRegistry) {
   const cardsHtml = idRoutes.map(r => {
     return createInfoCard(
       r.metadata.displayName,
-      r.metadata.summary || 'Structure breakdowns, weighted checksum math, and developer implementation guidelines.',
+      getPolandIdentifierDescription(r),
       '🆔',
       'available',
       ['identifier', 'specification'],
@@ -630,7 +642,7 @@ export function renderCountryIdentifiers(model, routeRegistry) {
       <div class="vh-country-route-list vh-country-route-list-compact">
         ${identifierRoutes.map(route => `
           <a class="vh-country-catalog-row" href="${route.path}">
-            <span><strong>${escapeHtml(route.title)}</strong><small>Related browser-only workbench</small></span>
+            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(getPolandRouteDescription(route))}</small></span>
             <span class="vh-country-row-arrow" aria-hidden="true">→</span>
           </a>
         `).join('\n')}
@@ -655,7 +667,7 @@ export function renderCountryValidators(model, routeRegistry) {
   const cardsHtml = valRoutes.map(r => {
     return createInfoCard(
       r.title || 'Interactive Validator',
-      'Run interactive client-side validations, format conversions, and integrity checks.',
+      getPolandRouteDescription(r),
       '🧪',
       'available',
       ['validator', 'workbench'],

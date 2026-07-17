@@ -2204,6 +2204,172 @@ function resolveCountryCopy(locale, countryName) {
   return resolved;
 }
 
+
+const POLAND_ROUTE_DESCRIPTION_SOURCES = {
+  'pesel-validator': 'Validate PESEL numbers, decode birth date and gender, replay checksum math, and inspect privacy-safe diagnostics offline.',
+  'poland-nip-validator': 'Validate Polish tax identifiers, inspect checksum math, mask values for logs, and build safe NIP test cases locally.',
+  'poland-regon-validator': 'Check REGON 9- and 14-digit structures, explain weighted checksums, and prepare safe business-register fixtures.',
+  'poland-iban-nrb-validator': 'Inspect Polish bank-account numbers, MOD-97 control digits, bank segments, branch hints, and masked account payloads.',
+  'poland-vat-validator': 'Validate PL VAT syntax through the local NIP checksum, normalize country prefixes, and prepare VIES-ready test payloads.',
+  'poland-krs-inspector': 'Inspect KRS registry numbers, normalize ten-digit records, and separate offline shape checks from official company status.',
+  'poland-postal-code-validator': 'Normalize NN-NNN postal codes, batch-check address data, and flag format mistakes before checkout or CRM import.',
+  'poland-phone-number-validator': 'Normalize +48 phone numbers, classify mobile, landline, service, and premium ranges, and prepare log-safe contact fixtures.',
+  'poland-blik-code-helper': 'Check six-digit BLIK code shape, mask short-lived payment codes, and document what browser-only checks cannot prove.',
+  'poland-ksef-invoice-xml-validator': 'Validate KSeF invoice XML readiness, spot required FA(2) fields, and prepare safer e-invoicing payloads before upload.',
+  'poland-bdo-number-inspector': 'Inspect BDO registry-shaped numbers for waste and packaging workflows, normalize input, and separate format checks from official status.',
+  'poland-driving-licence-inspector': 'Inspect Polish driving licence numbers, normalize document-shaped input, and prepare safe transport or identity fixtures.',
+  'poland-eori-inspector': 'Inspect PL EORI syntax, verify NIP-like roots where possible, and separate customs-registration status from offline checks.',
+  'poland-id-card-validator': 'Validate Polish ID-card number structure, explain the letter-to-number checksum, and create fictional identity-document fixtures.',
+  'poland-license-plate-inspector': 'Inspect Polish license plate structure, region prefixes, serial parts, and fleet-safe masked vehicle fixtures.',
+  'poland-mrz-passport-id-parser': 'Parse passport and ID-card MRZ lines, verify check digits, and extract travel-document fields without sending data anywhere.',
+  'poland-municipality-code-inspector': 'Inspect municipality and voivodeship code shapes, classify administrative segments, and prepare import-safe geography keys.',
+  'poland-passport-number-inspector': 'Normalize Polish passport-number input, check document-shaped syntax, and prepare masked travel-document test values.',
+  'poland-vehicle-registration-certificate-helper': 'Inspect Polish vehicle registration certificate fields, normalize serial-style input, and document offline verification boundaries.',
+  'poland-teryt-code-inspector': 'Classify Polish TERYT-like administrative codes, identify voivodeship prefixes, and prepare clean geography keys for data imports.',
+  'poland-teryt-hierarchy-explorer': 'Explore TERYT hierarchy levels, relate voivodeship, county, and municipality codes, and prepare consistent location keys.',
+  'poland-vin-validator': 'Validate VIN structure, split vehicle identity segments, and prepare masked vehicle-data diagnostics for Polish workflows.',
+  'poland-ceidg-readiness-checker': 'Check whether sole-proprietor onboarding data is CEIDG-ready, normalize identifiers, and list missing business fields.',
+  'poland-jpk-file-validator': 'Inspect JPK file naming and XML readiness, catch common VAT-reporting payload issues, and prepare upload-safe checks.',
+  'poland-pkd-code-inspector': 'Inspect PKD activity codes, normalize section and class notation, and prepare company-classification data for onboarding flows.',
+  'poland-pkwiu-code-inspector': 'Normalize PKWiU product and service classification codes, inspect dotted segments, and prepare invoice-friendly classification fields.',
+  'poland-company-onboarding-auditor': 'Audit Polish company onboarding inputs across NIP, REGON, KRS, VAT, address, and banking fields before CRM import.',
+  'poland-invoice-data-auditor': 'Audit Polish invoice fields for buyer, seller, VAT, dates, amounts, and identifier consistency before issuing documents.',
+  'poland-invoice-duplicate-risk-detector': 'Detect duplicate-risk patterns in invoice numbers, dates, amounts, and counterparties without exposing accounting data.',
+  'poland-invoice-number-helper': 'Normalize invoice-number display, extract year and sequence hints, and build search keys for billing workflows.',
+  'poland-ksef-fa2-field-mapper-assistant': 'Map local invoice fields to KSeF FA(2) concepts, highlight required data, and prepare implementation notes.',
+  'poland-receipt-paragon-helper': 'Inspect receipt and paragon-style fields, normalize fiscal references, and document what must remain cash-register sourced.',
+  'poland-tax-microaccount-calculator': 'Check whether a NIP or PESEL-shaped source value is ready for official Polish tax microaccount workflows.',
+  'poland-vat-calculator': 'Calculate Polish VAT net, gross, and tax amounts for common rates while keeping legal and tax-classification boundaries explicit.',
+  'poland-pln-amount-formatter': 'Parse Polish money input, normalize PLN display, convert to integer grosz, and produce storage-safe amount fields.',
+  'poland-grosz-converter': 'Convert between PLN display values and integer grosz storage values for payment, billing, and accounting payloads.',
+  'poland-bank-code-inspector': 'Decode Polish NRB and IBAN bank-routing segments, explain MOD-97 checks, and mask account identifiers for developer workflows.',
+  'poland-bank-statement-parser': 'Parse Polish bank-statement-like rows, normalize amounts and dates, and prepare reconciliation-friendly transaction data.',
+  'poland-bank-transfer-reconciliation-helper': 'Compare transfer title, amount, account, and reference fields to spot reconciliation mismatches before import.',
+  'poland-swift-bic-inspector': 'Inspect BIC/SWIFT syntax for Polish banking workflows, split bank, country, location, and branch segments, and flag non-PL routing.',
+  'poland-iban-owner-name-precheck': 'Precheck IBAN and owner-name fields for formatting consistency while separating offline checks from bank ownership verification.',
+  'poland-payment-qr-generator': 'Build payment QR payloads from recipient, account, amount, title, and reference fields for offline transfer testing.',
+  'poland-sepa-transfer-helper': 'Check whether Polish transfer text contains the core IBAN, BIC, amount, and reference parts needed before bank execution.',
+  'poland-split-payment-helper': 'Prepare split-payment MPP fields with VAT amount, gross amount, supplier NIP, and invoice reference consistency checks.',
+  'poland-transfer-title-builder': 'Build Polish transfer titles, normalize reference text, and generate copy-safe payment memo variants.',
+  'poland-address-formatter': 'Normalize Polish address snippets, detect postal-code and city hints, and mask address fragments before sharing logs.',
+  'poland-address-transliteration-normalizer': 'Normalize Polish address text, preserve diacritics where needed, and prepare ASCII-safe variants for legacy systems.',
+  'poland-date-locale-formatter': 'Parse ISO and Polish date input, render Europe/Warsaw display, and expose locale-safe date fields for interfaces.',
+  'poland-parcel-tracking-inspector': 'Inspect parcel and tracking-number-like input, normalize courier references, and prepare logistics-safe masked examples.',
+  'poland-postal-address-parser-pro': 'Parse Polish postal address blocks into recipient, street, building, flat, postal code, city, and country fields.',
+  'poland-data-quality-workbench': 'Audit Polish records across identifiers, address, phone, tax, banking, and locale fields for quality and completeness.',
+  'poland-pii-masker': 'Detect common Polish PII-like patterns in text, mask identifiers, accounts, phones, and emails, and prepare safer debug snippets.',
+  'poland-test-data-generator': 'Generate fictional Polish development fixtures for checkout, identity, address, banking, and contact test scenarios.',
+  'poland-compliance-checklist-generator': 'Generate implementation checklists for Polish identifiers, invoices, payments, privacy masking, and official lookup boundaries.',
+  'poland-energy-meter-ppe-inspector': 'Inspect Polish PPE energy-meter identifiers, normalize utility-style input, and document offline structure limits.',
+  'poland-insurance-policy-number-helper': 'Normalize Polish insurance policy references, prepare masked examples, and separate local formatting from insurer verification.',
+  'poland-ocr-postprocessing-fixer': 'Clean OCR output from Polish documents, restore common diacritics and separators, and flag risky recognition artifacts.',
+  'poland-payroll-net-gross-sanity-helper': 'Check Polish payroll net/gross sanity, locale decimal formatting, and copy-safe salary examples for HR workflows.',
+  'poland-upo-edeklaracje-payload-checker': 'Inspect UPO and e-Deklaracje payload-shaped data, normalize references, and flag missing submission fields.',
+  'poland-vies-readiness-helper': 'Prepare Polish VAT IDs for VIES-style checks, normalize PL prefixes, and document what browser-only validation cannot confirm.'
+};
+
+const POLAND_IDENTIFIER_DESCRIPTION_SOURCES = {
+  nip: 'Tax identifier spec for Polish VAT, invoices, company onboarding, and compliance workflows.',
+  pesel: 'Personal identity registry spec for PESEL birth-date encoding, gender digit, and checksum behavior.',
+  regon: 'Business registry spec for REGON 9- and 14-digit structures, GUS context, and checksum math.'
+};
+
+const POLAND_ROUTE_DESCRIPTION_SUBJECTS = {
+  'pesel-validator': 'PESEL',
+  'poland-nip-validator': 'NIP',
+  'poland-regon-validator': 'REGON',
+  'poland-iban-nrb-validator': 'IBAN / NRB',
+  'poland-vat-validator': 'PL VAT / EU VAT',
+  'poland-krs-inspector': 'KRS',
+  'poland-postal-code-validator': 'NN-NNN postal code',
+  'poland-phone-number-validator': '+48 phone number',
+  'poland-blik-code-helper': 'BLIK',
+  'poland-ksef-invoice-xml-validator': 'KSeF XML',
+  'poland-bdo-number-inspector': 'BDO',
+  'poland-driving-licence-inspector': 'driving licence',
+  'poland-eori-inspector': 'EORI',
+  'poland-id-card-validator': 'ID card',
+  'poland-license-plate-inspector': 'license plate',
+  'poland-mrz-passport-id-parser': 'MRZ',
+  'poland-municipality-code-inspector': 'municipality code',
+  'poland-passport-number-inspector': 'passport number',
+  'poland-vehicle-registration-certificate-helper': 'vehicle certificate',
+  'poland-teryt-code-inspector': 'TERYT',
+  'poland-teryt-hierarchy-explorer': 'TERYT hierarchy',
+  'poland-vin-validator': 'VIN',
+  'poland-ceidg-readiness-checker': 'CEIDG',
+  'poland-jpk-file-validator': 'JPK',
+  'poland-pkd-code-inspector': 'PKD',
+  'poland-pkwiu-code-inspector': 'PKWiU',
+  'poland-company-onboarding-auditor': 'company onboarding',
+  'poland-invoice-data-auditor': 'invoice data',
+  'poland-invoice-duplicate-risk-detector': 'invoice duplicate risk',
+  'poland-invoice-number-helper': 'invoice number',
+  'poland-ksef-fa2-field-mapper-assistant': 'KSeF FA(2)',
+  'poland-receipt-paragon-helper': 'paragon receipt',
+  'poland-tax-microaccount-calculator': 'tax microaccount',
+  'poland-vat-calculator': 'VAT amount',
+  'poland-pln-amount-formatter': 'PLN amount',
+  'poland-grosz-converter': 'grosz',
+  'poland-bank-code-inspector': 'bank code / NRB',
+  'poland-bank-statement-parser': 'bank statement',
+  'poland-bank-transfer-reconciliation-helper': 'bank transfer reconciliation',
+  'poland-swift-bic-inspector': 'BIC / SWIFT',
+  'poland-iban-owner-name-precheck': 'IBAN owner name',
+  'poland-payment-qr-generator': 'payment QR',
+  'poland-sepa-transfer-helper': 'SEPA transfer',
+  'poland-split-payment-helper': 'split payment / MPP',
+  'poland-transfer-title-builder': 'transfer title',
+  'poland-address-formatter': 'address',
+  'poland-address-transliteration-normalizer': 'address transliteration',
+  'poland-date-locale-formatter': 'date / locale',
+  'poland-parcel-tracking-inspector': 'parcel tracking',
+  'poland-postal-address-parser-pro': 'postal address',
+  'poland-data-quality-workbench': 'data quality',
+  'poland-pii-masker': 'PII masking',
+  'poland-test-data-generator': 'test data',
+  'poland-compliance-checklist-generator': 'compliance checklist',
+  'poland-energy-meter-ppe-inspector': 'PPE energy meter',
+  'poland-insurance-policy-number-helper': 'insurance policy',
+  'poland-ocr-postprocessing-fixer': 'OCR cleanup',
+  'poland-payroll-net-gross-sanity-helper': 'payroll net/gross',
+  'poland-upo-edeklaracje-payload-checker': 'UPO / e-Deklaracje',
+  'poland-vies-readiness-helper': 'VIES readiness'
+};
+
+function polandRouteDescriptionKind(slug) {
+  if (/(iban|nrb|bank|swift|bic|sepa|blik|split-payment|payment-qr|transfer-title|grosz|pln-amount|statement|tax-microaccount)/.test(slug)) return 'payment';
+  if (/(nip|regon|krs|bdo|eori|vat|ksef|jpk|invoice|receipt|paragon|pkd|pkwiu|ceidg|company|vies)/.test(slug)) return 'organization';
+  if (/(postal|address|phone|parcel|date-locale)/.test(slug)) return 'address';
+  if (/(pii-masker|test-data|data-quality|compliance|ocr|payroll|insurance|energy-meter)/.test(slug)) return 'developer';
+  return 'identity';
+}
+
+function localizedPolandRouteDescription(locale, slug, copy) {
+  const subject = POLAND_ROUTE_DESCRIPTION_SUBJECTS[slug] || slug.replace(/^poland-/, '').replace(/-/g, ' ');
+  const kind = polandRouteDescriptionKind(slug);
+  const body = kind === 'payment'
+    ? copy.paymentIntentBody
+    : kind === 'organization'
+      ? copy.organizationIntentBody
+      : kind === 'address'
+        ? copy.address
+        : kind === 'developer'
+          ? copy.quickActionsBody
+          : copy.identityIntentBody;
+  return subject + ': ' + body + '. ' + copy.offlineBoundaryTitle + '.';
+}
+
+function localizedPolandIdentifierDescription(locale, slug, copy) {
+  const subject = slug.toUpperCase();
+  const body = slug === 'nip'
+    ? copy.organizationIntentBody
+    : slug === 'regon'
+      ? copy.organizationIntentBody
+      : copy.identityIntentBody;
+  return subject + ': ' + body + '. ' + copy.offlineBoundaryTitle + '.';
+}
+
 const COMMON_POLAND_SOURCE_STRINGS = {
   'Developer intelligence for local identifiers, regional payment protocols, bank routing details, and locale conventions.': 'summary',
   'Developer intelligence for Polish identifiers, locale conventions, and EU-oriented validation workflows.': 'summary',
@@ -2585,6 +2751,12 @@ function buildExpandedPolandMap(locale) {
     'BDO Registry': 'BDO ' + registryLabel(locale)
   };
   Object.assign(map, buildExpandedPolandDetailMap(locale, copy, phrases));
+  for (const [slug, description] of Object.entries(POLAND_ROUTE_DESCRIPTION_SOURCES)) {
+    map[description] = localizedPolandRouteDescription(locale, slug, copy);
+  }
+  for (const [slug, description] of Object.entries(POLAND_IDENTIFIER_DESCRIPTION_SOURCES)) {
+    map[description] = localizedPolandIdentifierDescription(locale, slug, copy);
+  }
   for (const [source, key] of Object.entries(COMMON_POLAND_SOURCE_STRINGS)) {
     map[source] = { summary, profile, actions, catalog, officialSources, validatorWorkbenches, checklist, ecosystem, localizationNotes }[key];
   }
