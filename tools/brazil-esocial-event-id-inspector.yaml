@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-esocial-event-id-inspector
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: "eSocial Event ID Inspector"
+summary:
+  en: "Inspect eSocial event identifiers, normalize employer references, and separate offline syntax checks from government receipt status."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "eSocial Event ID Inspector | ValidoHub"
+  description:
+    en: "Inspect eSocial event identifiers, normalize employer references, and separate offline syntax checks from government receipt status."

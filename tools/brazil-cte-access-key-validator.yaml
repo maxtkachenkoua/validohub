@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-cte-access-key-validator
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: "CT-e Access Key Validator"
+summary:
+  en: "Inspect CT-e transport document keys, split access-key segments, replay check digits, and prepare logistics invoice fixtures."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "CT-e Access Key Validator | ValidoHub"
+  description:
+    en: "Inspect CT-e transport document keys, split access-key segments, replay check digits, and prepare logistics invoice fixtures."

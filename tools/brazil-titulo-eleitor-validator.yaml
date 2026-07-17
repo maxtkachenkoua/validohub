@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-titulo-eleitor-validator
+kind: tool
+module: validohub
+country: BR
+category: national-identifiers
+status: active
+name:
+  en: "Título de Eleitor Validator"
+summary:
+  en: "Check voter-title shaped numbers, normalize zones and sections, explain offline boundaries, and generate fictional electoral test values."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Título de Eleitor Validator | ValidoHub"
+  description:
+    en: "Check voter-title shaped numbers, normalize zones and sections, explain offline boundaries, and generate fictional electoral test values."

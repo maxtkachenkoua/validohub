@@ -185,9 +185,73 @@ function acronymFromText(value, fallback = 'ID') {
   return words.slice(0, 4).map(word => word[0]).join('').toUpperCase() || fallback;
 }
 
+const BRAZIL_ROUTE_IDENTITIES = {
+  "brazil-pix-validator": "PIX",
+  "brazil-cpf-validator": "CPF",
+  "brazil-cnpj-validator": "CNPJ",
+  "brazil-rg-inspector": "RG",
+  "brazil-cnh-validator": "CNH",
+  "brazil-renach-inspector": "RENACH",
+  "brazil-renavam-validator": "RENAVAM",
+  "brazil-license-plate-validator": "PLATE",
+  "brazil-titulo-eleitor-validator": "TSE",
+  "brazil-nis-pis-pasep-validator": "NIS",
+  "brazil-sus-card-validator": "SUS",
+  "brazil-passport-number-helper": "PASS",
+  "brazil-state-registration-ie-validator": "IE",
+  "brazil-municipal-registration-im-helper": "IM",
+  "brazil-cnae-code-inspector": "CNAE",
+  "brazil-natureza-juridica-code-inspector": "NJ",
+  "brazil-ibge-municipality-code-inspector": "IBGE",
+  "brazil-nfe-access-key-validator": "NF-e",
+  "brazil-nfce-access-key-validator": "NFC-e",
+  "brazil-cte-access-key-validator": "CT-e",
+  "brazil-mdfe-access-key-validator": "MDF-e",
+  "brazil-nfe-xml-readiness-checker": "XML",
+  "brazil-nfse-number-helper": "NFS-e",
+  "brazil-sped-efd-icms-ipi-checker": "SPED",
+  "brazil-sped-efd-contribuicoes-checker": "EFD",
+  "brazil-esocial-event-id-inspector": "eSocial",
+  "brazil-reinf-event-id-inspector": "Reinf",
+  "brazil-simples-nacional-das-helper": "DAS",
+  "brazil-darf-code-helper": "DARF",
+  "brazil-gnre-guide-helper": "GNRE",
+  "brazil-sat-cfe-key-inspector": "CF-e",
+  "brazil-pix-copy-paste-decoder": "PIX",
+  "brazil-pix-qr-payload-generator": "QR",
+  "brazil-boleto-barcode-validator": "BOLETO",
+  "brazil-linha-digitavel-validator": "LD",
+  "brazil-boleto-due-date-factor": "DUE",
+  "brazil-compe-bank-code-inspector": "COMPE",
+  "brazil-ispb-code-inspector": "ISPB",
+  "brazil-agencia-conta-masker": "AG",
+  "brazil-brl-centavos-converter": "BRL",
+  "brazil-ted-doc-transfer-helper": "TED",
+  "brazil-cnab240-file-inspector": "240",
+  "brazil-cnab400-file-inspector": "400",
+  "brazil-open-finance-consent-helper": "OF",
+  "brazil-cep-validator": "CEP",
+  "brazil-address-formatter": "ADDR",
+  "brazil-uf-state-code-inspector": "UF",
+  "brazil-ddd-phone-validator": "DDD",
+  "brazil-phone-e164-formatter": "+55",
+  "brazil-date-locale-formatter": "DATE",
+  "brazil-address-transliteration-normalizer": "ASCII",
+  "brazil-pii-masker": "PII",
+  "brazil-test-data-generator": "TEST",
+  "brazil-data-quality-workbench": "DQ",
+  "brazil-lgpd-redaction-helper": "LGPD",
+  "brazil-company-onboarding-auditor": "KYC",
+  "brazil-payment-reconciliation-helper": "RECON",
+  "brazil-bank-statement-parser": "STMT",
+  "brazil-ocr-postprocessing-fixer": "OCR",
+  "brazil-compliance-checklist-generator": "CHECK",
+  "brazil-form-fixture-generator": "FORM"
+};
+
 function getRouteIdentity(route) {
   const slug = routeSlug(route);
-  return POLAND_ROUTE_IDENTITIES[slug] || acronymFromText(route.title, 'TOOL');
+  return BRAZIL_ROUTE_IDENTITIES[slug] || POLAND_ROUTE_IDENTITIES[slug] || acronymFromText(route.title, 'TOOL');
 }
 
 function getIdentifierIdentity(route) {
@@ -279,8 +343,78 @@ const POLAND_ROUTE_DESCRIPTIONS = {
   'poland-vies-readiness-helper': 'Prepare Polish VAT IDs for VIES-style checks, normalize PL prefixes, and document what browser-only validation cannot confirm.'
 };
 
+const BRAZIL_ROUTE_DESCRIPTIONS = {
+  "brazil-pix-validator": "Validate Pix keys and BR Code payloads, inspect EMV fields, generate QR-friendly payment data, and explain offline payment boundaries.",
+  "brazil-cpf-validator": "Validate CPF numbers, replay modulus-11 check digits, mask personal identifiers, and generate safe fictional fixtures locally.",
+  "brazil-cnpj-validator": "Validate CNPJ company identifiers, inspect both check digits, normalize punctuation, and build safe business test cases.",
+  "brazil-rg-inspector": "Inspect RG-shaped identity numbers, normalize issuer notation, mask document values, and document state-level offline limits.",
+  "brazil-cnh-validator": "Inspect Brazilian CNH driver-license numbers, normalize eleven-digit records, and separate offline shape checks from official DETRAN status.",
+  "brazil-renach-inspector": "Normalize RENACH driver-record references, check common document shape, mask values, and prepare transport onboarding fixtures.",
+  "brazil-renavam-validator": "Validate RENAVAM-shaped vehicle registry numbers, inspect length and check-digit behavior where possible, and create safe vehicle fixtures.",
+  "brazil-license-plate-validator": "Inspect Mercosul and legacy Brazilian license plate patterns, classify format family, and prepare fleet-safe masked examples.",
+  "brazil-titulo-eleitor-validator": "Check voter-title shaped numbers, normalize zones and sections, explain offline boundaries, and generate fictional electoral test values.",
+  "brazil-nis-pis-pasep-validator": "Inspect NIS, PIS, and PASEP eleven-digit identifiers, normalize punctuation, mask values, and prepare payroll-safe fixtures.",
+  "brazil-sus-card-validator": "Inspect Brazilian CNS/SUS card numbers, normalize fifteen-digit health identifiers, and separate offline shape checks from health-system status.",
+  "brazil-passport-number-helper": "Normalize Brazilian passport-like document input, mask travel references, and prepare fictional identity document fixtures.",
+  "brazil-state-registration-ie-validator": "Inspect state-registration IE values, normalize UF context, and document state-specific rules that require dedicated official validation.",
+  "brazil-municipal-registration-im-helper": "Normalize municipal-registration references, identify city context fields, and prepare invoice-safe examples without claiming city status lookup.",
+  "brazil-cnae-code-inspector": "Inspect CNAE activity codes, normalize class and subclass notation, and prepare company-classification data for onboarding flows.",
+  "brazil-natureza-juridica-code-inspector": "Inspect Brazilian legal-nature codes, normalize numeric notation, and prepare business-register payload hints for company workflows.",
+  "brazil-ibge-municipality-code-inspector": "Inspect seven-digit IBGE municipality codes, split UF and locality hints, and prepare geography keys for data imports.",
+  "brazil-nfe-access-key-validator": "Validate 44-digit NF-e access keys, replay modulo-11 check digit math, split UF, date, CNPJ, model, series, and number fields.",
+  "brazil-nfce-access-key-validator": "Validate NFC-e access keys, explain consumer invoice key segments, and prepare upload-safe test keys for retail flows.",
+  "brazil-cte-access-key-validator": "Inspect CT-e transport document keys, split access-key segments, replay check digits, and prepare logistics invoice fixtures.",
+  "brazil-mdfe-access-key-validator": "Validate MDF-e manifest access keys, classify document model fields, and prepare cargo-document diagnostics offline.",
+  "brazil-nfe-xml-readiness-checker": "Check NF-e XML payload readiness, spot common issuer, recipient, amount, and access-key fields before fiscal upload.",
+  "brazil-nfse-number-helper": "Normalize NFS-e service invoice references, identify municipal context, and document what city portals must verify externally.",
+  "brazil-sped-efd-icms-ipi-checker": "Inspect SPED EFD ICMS/IPI file headers and record-shaped lines, flag common separators, dates, CNPJ values, and fiscal periods.",
+  "brazil-sped-efd-contribuicoes-checker": "Check EFD Contribuições payload shape, normalize period and establishment fields, and prepare safer tax-file diagnostics.",
+  "brazil-esocial-event-id-inspector": "Inspect eSocial event identifiers, normalize employer references, and separate offline syntax checks from government receipt status.",
+  "brazil-reinf-event-id-inspector": "Inspect EFD-Reinf event ID shape, normalize reporting-period hints, and document official submission boundaries.",
+  "brazil-simples-nacional-das-helper": "Prepare Simples Nacional DAS references, normalize period and CNPJ inputs, and explain what browser-only checks cannot confirm.",
+  "brazil-darf-code-helper": "Inspect DARF revenue-code shaped inputs, normalize dates and amounts, and prepare tax-payment payload notes for developers.",
+  "brazil-gnre-guide-helper": "Normalize GNRE guide fields, identify UF, amount, taxpayer, and reference data needed before external state portal submission.",
+  "brazil-sat-cfe-key-inspector": "Inspect SAT CF-e coupon keys, split fiscal document segments, and prepare retail diagnostics without contacting tax services.",
+  "brazil-pix-copy-paste-decoder": "Decode Pix copy-and-paste BR Code text, inspect EMV fields, merchant data, CRC, amount, city, and transaction references locally.",
+  "brazil-pix-qr-payload-generator": "Build Pix QR payload test strings from key, recipient, amount, city, and transaction ID fields while staying fully browser-only.",
+  "brazil-boleto-barcode-validator": "Validate boleto barcode shape, inspect bank code, currency, due-date factor, amount fields, and check digit boundaries.",
+  "brazil-linha-digitavel-validator": "Validate boleto linha digitável fields, normalize punctuation, replay field-level check digits, and mask payment references.",
+  "brazil-boleto-due-date-factor": "Convert boleto due-date factors to dates, inspect rollover-era assumptions, and prepare payment schedule test cases.",
+  "brazil-compe-bank-code-inspector": "Inspect three-digit COMPE bank codes, normalize routing references, and prepare Brazilian bank-selection payloads for forms.",
+  "brazil-ispb-code-inspector": "Inspect eight-digit ISPB participant codes, normalize payment-network references, and separate syntax from official participant status.",
+  "brazil-agencia-conta-masker": "Normalize and mask Brazilian agency and account fields, preserve check digits, and produce log-safe banking snippets.",
+  "brazil-brl-centavos-converter": "Parse Brazilian real amounts, normalize comma decimals, convert to integer centavos, and generate storage-safe payment fields.",
+  "brazil-ted-doc-transfer-helper": "Check Brazilian transfer payload fields for bank code, agency, account, CPF/CNPJ, amount, and recipient consistency before handoff.",
+  "brazil-cnab240-file-inspector": "Inspect CNAB 240 fixed-width records, count segments, flag line-length issues, and prepare bank-file diagnostics offline.",
+  "brazil-cnab400-file-inspector": "Inspect CNAB 400 fixed-width remittance or return files, validate row lengths, and summarize record-type distribution locally.",
+  "brazil-open-finance-consent-helper": "Prepare Brazilian Open Finance consent payload notes, validate CPF/CNPJ party fields, and document browser-only privacy boundaries.",
+  "brazil-cep-validator": "Normalize Brazilian CEP postal codes, validate NNNNN-NNN display, batch-check address lists, and prepare delivery-safe fixtures.",
+  "brazil-address-formatter": "Format Brazilian address blocks with street, number, complement, bairro, city, UF, CEP, and country fields for forms and labels.",
+  "brazil-uf-state-code-inspector": "Inspect Brazilian UF codes, normalize state abbreviations, and prepare state-aware payloads for tax, address, and logistics forms.",
+  "brazil-ddd-phone-validator": "Validate Brazilian DDD area-code patterns, classify mobile and landline shapes, and prepare contact-field diagnostics.",
+  "brazil-phone-e164-formatter": "Normalize Brazilian phone numbers to +55 E.164-style display, preserve DDD, mask contact data, and generate safe fixtures.",
+  "brazil-date-locale-formatter": "Parse ISO and Brazilian DD/MM/YYYY dates, render pt-BR locale display, and expose date fields for localized interfaces.",
+  "brazil-address-transliteration-normalizer": "Normalize Portuguese address text, preserve accents where needed, and prepare ASCII-safe variants for legacy systems.",
+  "brazil-pii-masker": "Detect Brazilian CPF, CNPJ, CEP, phone, boleto, Pix-like, and email patterns in text and produce privacy-safe masked output.",
+  "brazil-test-data-generator": "Generate fictional Brazilian identity, company, address, phone, payment, and invoice fixtures for local development and QA.",
+  "brazil-data-quality-workbench": "Audit Brazilian records across CPF, CNPJ, CEP, phone, Pix, boleto, tax, banking, and locale fields for completeness and safety.",
+  "brazil-lgpd-redaction-helper": "Redact Brazilian personal and financial data in logs, classify sensitive patterns, and document LGPD-safe debugging boundaries.",
+  "brazil-company-onboarding-auditor": "Audit onboarding fields for CNPJ, CNAE, IE, IM, address, fiscal document, banking, Pix, and contact readiness.",
+  "brazil-payment-reconciliation-helper": "Compare amount, payer, recipient, Pix, boleto, bank-account, and invoice references to flag reconciliation mismatches locally.",
+  "brazil-bank-statement-parser": "Parse Brazilian bank-statement-like rows, normalize BRL amounts and dates, and prepare reconciliation-friendly transaction data.",
+  "brazil-ocr-postprocessing-fixer": "Clean OCR output from Brazilian documents, restore common separators, detect CPF/CNPJ/CEP candidates, and flag risky artifacts.",
+  "brazil-compliance-checklist-generator": "Generate implementation checklists for Brazilian identifiers, fiscal documents, payments, privacy masking, and official lookup boundaries.",
+  "brazil-form-fixture-generator": "Generate fictional Brazilian form payloads for identity, company, address, payment, invoice, and locale UI testing."
+};
+
+function getCountryRouteDescription(route) {
+  const slug = routeSlug(route);
+  if (slug.startsWith('brazil-')) return BRAZIL_ROUTE_DESCRIPTIONS[slug] || 'Run a browser-only Brazilian validation, formatting, or data-quality workflow tailored to this local standard.';
+  return POLAND_ROUTE_DESCRIPTIONS[slug] || route.metadata?.summary || 'Run a browser-only country validation, formatting, or data-quality workflow.';
+}
+
 function getPolandRouteDescription(route) {
-  return POLAND_ROUTE_DESCRIPTIONS[routeSlug(route)] || 'Run a browser-only country validation, formatting, or data-quality workflow tailored to this Polish standard.';
+  return getCountryRouteDescription(route);
 }
 
 const POLAND_IDENTIFIER_DESCRIPTIONS = {
@@ -289,10 +423,21 @@ const POLAND_IDENTIFIER_DESCRIPTIONS = {
   regon: 'Business registry spec for REGON 9- and 14-digit structures, GUS context, and checksum math.'
 };
 
-function getPolandIdentifierDescription(route) {
+const BRAZIL_IDENTIFIER_DESCRIPTIONS = {
+  cpf: 'Personal tax identifier spec with eleven digits and two modulus-11 check digits.',
+  cnpj: 'Company tax identifier spec with branch/order digits and two check digits.',
+  rg: 'Identity document reference with state-level issuer differences and official-status boundaries.'
+};
+
+function getCountryIdentifierDescription(route) {
   const slug = routeSlug(route);
   const key = slug || String(route.metadata?.displayName || '').toLowerCase();
+  if (slug.startsWith('brazil-')) return BRAZIL_IDENTIFIER_DESCRIPTIONS[key] || route.metadata?.summary || 'Official Brazilian identifier specification with structure, checksum, and implementation notes.';
   return POLAND_IDENTIFIER_DESCRIPTIONS[key] || route.metadata?.summary || 'Official identifier specification with structure, checksum, and implementation notes.';
+}
+
+function getPolandIdentifierDescription(route) {
+  return getCountryIdentifierDescription(route);
 }
 
 function createRouteCard(route, description, tags = [], status = 'available') {
@@ -344,8 +489,17 @@ const POLAND_WORKBENCH_GROUPS = [
   }
 ];
 
-function groupCountryWorkbenchRoutes(routes) {
-  const buckets = POLAND_WORKBENCH_GROUPS.map(group => ({ ...group, routes: [] }));
+const BRAZIL_WORKBENCH_GROUPS = [
+  { key:'identity', title:'Identity, registry & official numbers', summary:'CPF, CNPJ, RG, CNH, voter, health, vehicle, and official registry-shaped data.', tags:['identity','registry'], match: /(cpf|cnpj|rg|cnh|renach|renavam|license-plate|titulo|nis|pis|pasep|sus|passport|estadual|municipal|cnae|natureza|ibge)/ },
+  { key:'tax', title:'Tax, invoices & business compliance', summary:'NF-e, NFC-e, CT-e, MDF-e, SPED, eSocial, Reinf, Simples, DARF, GNRE, and fiscal XML workflows.', tags:['tax','business'], match: /(nfe|nfce|cte|mdfe|xml|nfse|sped|esocial|reinf|simples|darf|gnre|sat-cfe)/ },
+  { key:'banking', title:'Banking, Pix, boleto & money movement', summary:'Pix, boleto, linha digitavel, COMPE, ISPB, CNAB, TED/DOC, BRL amounts, and Open Finance helpers.', tags:['banking','payments'], match: /(pix|boleto|linha|compe|ispb|agencia|brl|centavos|ted|doc|cnab|open-finance|payment|bank)/ },
+  { key:'address', title:'Address, phone, logistics & local format', summary:'CEP, Brazilian addresses, UF, DDD, phone, locale dates, and transliteration-ready text.', tags:['localization','operations'], match: /(cep|address|uf|ddd|phone|date-locale|transliteration)/ },
+  { key:'developer', title:'Developer data operations', summary:'LGPD masking, test fixtures, data-quality audits, reconciliation, OCR cleanup, and compliance checklists.', tags:['developer','data-quality'], match: /(pii|lgpd|test-data|data-quality|company-onboarding|reconciliation|statement|ocr|compliance|fixture)/ }
+];
+
+function groupCountryWorkbenchRoutes(routes, model = null) {
+  const sourceGroups = model?.iso2 === 'BR' ? BRAZIL_WORKBENCH_GROUPS : POLAND_WORKBENCH_GROUPS;
+  const buckets = sourceGroups.map(group => ({ ...group, routes: [] }));
   const other = { key: 'other', title: 'Other country developer workflows', summary: 'Additional country-specific tools and inspectors.', tags: ['country'], routes: [] };
 
   for (const route of routes) {
@@ -398,7 +552,17 @@ function findFirstRoute(routes, patterns) {
 
 function findCountryStandardRoute(routes, label) {
   const text = String(label || '').toLowerCase();
-  if (text.includes('bank code')) return findFirstRoute(routes, [/bank-code/]);
+  if (text.includes('pix')) return findFirstRoute(routes, [/pix-validator/, /pix-copy/, /pix-qr/]);
+  if (text.includes('boleto')) return findFirstRoute(routes, [/boleto/]);
+  if (text.includes('linha')) return findFirstRoute(routes, [/linha-digitavel/]);
+  if (text.includes('compe')) return findFirstRoute(routes, [/compe/]);
+  if (text.includes('ispb')) return findFirstRoute(routes, [/ispb/]);
+  if (text.includes('cnab 240')) return findFirstRoute(routes, [/cnab240/]);
+  if (text.includes('cnab 400')) return findFirstRoute(routes, [/cnab400/]);
+  if (text.includes('brl') || text.includes('centavos')) return findFirstRoute(routes, [/brl-centavos/]);
+  if (text.includes('ted') || text.includes('doc')) return findFirstRoute(routes, [/ted-doc/]);
+  if (text.includes('open finance')) return findFirstRoute(routes, [/open-finance/]);
+  if (text.includes('bank code')) return findFirstRoute(routes, [/bank-code/, /compe/]);
   if (text.includes('nrb domestic') || text.includes('iban') || text.includes('pln and polish iban')) return findFirstRoute(routes, [/iban-nrb/]);
   if (text.includes('swift') || text.includes('bic')) return findFirstRoute(routes, [/swift-bic/]);
   if (text.includes('sepa')) return findFirstRoute(routes, [/sepa-transfer/]);
@@ -416,15 +580,15 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
   const routes = getCountryValidatorRoutes(model, routeRegistry);
   if (routes.length === 0) return '';
 
-  const featuredPatterns = /(pesel-validator|poland-nip-validator|poland-regon-validator|poland-iban-nrb-validator|poland-vat-validator|poland-krs-inspector|poland-postal-code-validator|poland-phone-number-validator|poland-blik-code-helper|poland-ksef-invoice-xml-validator)/;
+  const featuredPatterns = model.iso2 === 'BR' ? /(brazil-cpf-validator|brazil-cnpj-validator|brazil-pix-validator|brazil-boleto-barcode-validator|brazil-linha-digitavel-validator|brazil-nfe-access-key-validator|brazil-cep-validator|brazil-phone-e164-formatter|brazil-renavam-validator|brazil-data-quality-workbench)/ : /(pesel-validator|poland-nip-validator|poland-regon-validator|poland-iban-nrb-validator|poland-vat-validator|poland-krs-inspector|poland-postal-code-validator|poland-phone-number-validator|poland-blik-code-helper|poland-ksef-invoice-xml-validator)/;
   const featured = routes.filter(route => featuredPatterns.test(routeSlug(route))).slice(0, 10);
-  const groups = groupCountryWorkbenchRoutes(routes);
+  const groups = groupCountryWorkbenchRoutes(routes, model);
   const intentChips = groups.map(group => `<button class="vh-country-intent-chip" type="button" data-country-intent="${escapeHtml(group.key)}">${escapeHtml(group.title)} <span>${group.routes.length}</span></button>`).join('');
 
   const routeBySlug = (patternList) => findFirstRoute(routes, patternList)?.path || routes[0].path;
-  const personPath = routeBySlug([/pesel-validator/, /id-card/, /passport/, /phone-number/, /postal-code/]);
-  const companyPath = routeBySlug([/poland-nip-validator/, /regon-validator/, /krs-inspector/, /company/]);
-  const paymentPath = routeBySlug([/poland-iban-nrb-validator/, /blik-code/, /swift-bic/, /sepa-transfer/, /payment-qr/]);
+  const personPath = model.iso2 === 'BR' ? routeBySlug([/cpf-validator/, /rg-inspector/, /cnh-validator/, /phone/, /cep-validator/]) : routeBySlug([/pesel-validator/, /id-card/, /passport/, /phone-number/, /postal-code/]);
+  const companyPath = model.iso2 === 'BR' ? routeBySlug([/cnpj-validator/, /cnae-code/, /state-registration/, /company/]) : routeBySlug([/poland-nip-validator/, /regon-validator/, /krs-inspector/, /company/]);
+  const paymentPath = model.iso2 === 'BR' ? routeBySlug([/pix-validator/, /boleto/, /linha-digitavel/, /brl-centavos/, /cnab/]) : routeBySlug([/poland-iban-nrb-validator/, /blik-code/, /swift-bic/, /sepa-transfer/, /payment-qr/]);
 
   const quickStarts = `
     <div class="vh-country-quick-starts" aria-label="Quick start scenarios">
@@ -460,7 +624,7 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
 
   const featuredHtml = featured.length > 0 ? `
     <div class="vh-country-featured-tools" aria-label="Featured country workbenches">
-      ${featured.map(route => createRouteCard(route, getPolandRouteDescription(route))).join('\n')}
+      ${featured.map(route => createRouteCard(route, getCountryRouteDescription(route))).join('\n')}
     </div>
   ` : '';
 
@@ -664,7 +828,7 @@ export function renderCountryBankingSystem(model, routeRegistry = null) {
   if (!model.bankingSystem || model.bankingSystem.length === 0) return '';
 
   const routes = getCountryValidatorRoutes(model, routeRegistry);
-  const toolRoutes = findRoutes(routes, /(iban|nrb|bank|swift|bic|sepa|blik|split-payment|payment-qr|transfer-title|grosz|pln-amount|statement|tax-microaccount)/).slice(0, 12);
+  const toolRoutes = findRoutes(routes, /(iban|nrb|bank|swift|bic|sepa|blik|pix|boleto|linha|compe|ispb|agencia|brl|centavos|ted|doc|cnab|open-finance|split-payment|payment-qr|transfer-title|grosz|pln-amount|statement|tax-microaccount)/).slice(0, 12);
 
   const cardsHtml = model.bankingSystem.map(bank => {
     const relatedRoute = findCountryStandardRoute(routes, bank.name);
@@ -676,7 +840,7 @@ export function renderCountryBankingSystem(model, routeRegistry = null) {
       <div class="vh-country-route-list vh-country-route-list-compact">
         ${toolRoutes.map(route => `
           <a class="vh-country-catalog-row" href="${route.path}">
-            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(getPolandRouteDescription(route))}</small></span>
+            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(getCountryRouteDescription(route))}</small></span>
             <span class="vh-country-row-arrow" aria-hidden="true">→</span>
           </a>
         `).join('\n')}
@@ -703,7 +867,7 @@ export function renderCountryPaymentSystems(model, routeRegistry = null) {
   if (!model.paymentSystems || model.paymentSystems.length === 0) return '';
 
   const routes = getCountryValidatorRoutes(model, routeRegistry);
-  const toolRoutes = findRoutes(routes, /(blik|split-payment|payment-qr|sepa|transfer-title|tax-microaccount|vat-calculator|grosz|pln-amount|iban|nrb)/).slice(0, 12);
+  const toolRoutes = findRoutes(routes, /(blik|pix|boleto|linha|split-payment|payment-qr|sepa|transfer-title|tax-microaccount|vat-calculator|grosz|pln-amount|brl|centavos|ted|doc|iban|nrb)/).slice(0, 12);
 
   const cardsHtml = model.paymentSystems.map(pay => {
     const title = pay.title || pay.name;
@@ -716,7 +880,7 @@ export function renderCountryPaymentSystems(model, routeRegistry = null) {
       <div class="vh-country-route-list vh-country-route-list-compact">
         ${toolRoutes.map(route => `
           <a class="vh-country-catalog-row" href="${route.path}">
-            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(getPolandRouteDescription(route))}</small></span>
+            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(getCountryRouteDescription(route))}</small></span>
             <span class="vh-country-row-arrow" aria-hidden="true">→</span>
           </a>
         `).join('\n')}
@@ -745,13 +909,13 @@ export function renderCountryIdentifiers(model, routeRegistry) {
 
   const idRoutes = routeRegistry.getAll().filter(r => r.type === 'identifier' && r.metadata.countryCode === model.iso2);
   const validatorRoutes = getCountryValidatorRoutes(model, routeRegistry);
-  const identifierRoutes = findRoutes(validatorRoutes, /(pesel|nip|regon|krs|id-card|passport|mrz|driving|license-plate|vehicle-registration|vin|eori|bdo|teryt|municipality|ppe|postal-code|phone-number)/);
+  const identifierRoutes = findRoutes(validatorRoutes, /(pesel|nip|regon|krs|cpf|cnpj|rg|cnh|renach|renavam|titulo|nis|pis|pasep|sus|estadual|municipal|cnae|natureza|ibge|id-card|passport|mrz|driving|license-plate|vehicle-registration|vin|eori|bdo|teryt|municipality|ppe|postal-code|phone-number|cep)/);
   if (idRoutes.length === 0 && identifierRoutes.length === 0) return '';
 
   const cardsHtml = idRoutes.map(r => {
     return createInfoCard(
       r.metadata.displayName,
-      getPolandIdentifierDescription(r),
+      getCountryIdentifierDescription(r),
       getIdentifierIdentity(r),
       'available',
       ['identifier', 'specification'],
@@ -765,7 +929,7 @@ export function renderCountryIdentifiers(model, routeRegistry) {
       <div class="vh-country-route-list vh-country-route-list-compact">
         ${identifierRoutes.map(route => `
           <a class="vh-country-catalog-row" href="${route.path}">
-            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(getPolandRouteDescription(route))}</small></span>
+            <span><strong>${escapeHtml(route.title)}</strong><small>${escapeHtml(getCountryRouteDescription(route))}</small></span>
             <span class="vh-country-row-arrow" aria-hidden="true">→</span>
           </a>
         `).join('\n')}
@@ -779,7 +943,7 @@ export function renderCountryIdentifiers(model, routeRegistry) {
     </div>` : ''}
     ${routeGroups}
   `;
-  return createSection('National Identifiers', 'Identifier registry specs & workbenches', 'country-identifiers-specs', 'Official identifier specs plus related browser tools for personal, business, vehicle, address, and registry-shaped Polish data.', content);
+  return createSection('National Identifiers', 'Identifier registry specs & workbenches', 'country-identifiers-specs', `Official identifier specs plus related browser tools for personal, business, vehicle, address, and registry-shaped ${model.displayName} data.`, content);
 }
 
 export function renderCountryValidators(model, routeRegistry) {
@@ -790,7 +954,7 @@ export function renderCountryValidators(model, routeRegistry) {
   const cardsHtml = valRoutes.map(r => {
     return createInfoCard(
       r.title || 'Interactive Validator',
-      getPolandRouteDescription(r),
+      getCountryRouteDescription(r),
       getRouteIdentity(r),
       'available',
       ['validator', 'workbench'],

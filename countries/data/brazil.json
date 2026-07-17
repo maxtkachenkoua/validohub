@@ -28,37 +28,113 @@
     "reference": true,
     "summary": "Developer intelligence for Brazilian identifiers, payments, banking formats, locale conventions, and official systems.",
     "identifiers": [
-      "CPF",
-      "CNPJ",
-      "CEP",
-      "RG",
+      "CNAE",
       "CNH",
-      "RENAVAM"
+      "CNPJ",
+      "CNS/SUS",
+      "CPF",
+      "IBGE",
+      "IE",
+      "IM",
+      "NIS/PIS/PASEP",
+      "RENACH",
+      "RENAVAM",
+      "RG",
+      "Título de Eleitor"
     ],
     "payments": [
-      "PIX",
-      "bank codes",
-      "boleto",
-      "SWIFT"
+      "Boleto",
+      "BRL",
+      "CNAB 240",
+      "CNAB 400",
+      "COMPE",
+      "ISPB",
+      "Linha digitável",
+      "Open Finance",
+      "Pix",
+      "TED/DOC"
     ],
     "features": [
-      "payments",
-      "identity",
+      "banking",
+      "business",
+      "commerce",
+      "data-quality",
+      "fiscal",
       "government",
-      "banking"
+      "identity",
+      "localization",
+      "payments",
+      "phone",
+      "postal",
+      "privacy",
+      "tax",
+      "vehicle"
     ],
     "availableWorkbenches": [
-      "Brazil Pix Validator"
+      "Agência / Conta Masker",
+      "Boleto Barcode Validator",
+      "Boleto Due-Date Factor Helper",
+      "Brazil Address Formatter",
+      "Brazil Address Transliteration Normalizer",
+      "Brazil Bank Statement Parser",
+      "Brazil Company Onboarding Auditor",
+      "Brazil Compliance Checklist Generator",
+      "Brazil Data Quality Workbench",
+      "Brazil Date / Locale Formatter",
+      "Brazil Form Fixture Generator",
+      "Brazil License Plate Inspector",
+      "Brazil OCR Post-Processing Fixer",
+      "Brazil Passport Number Helper",
+      "Brazil Payment Reconciliation Helper",
+      "Brazil Phone E.164 Formatter",
+      "Brazil PII Masker",
+      "Brazil Pix Validator",
+      "Brazil Test Data Generator",
+      "BRL Centavos Converter",
+      "CEP Postal Code Validator",
+      "CNAB 240 File Inspector",
+      "CNAB 400 File Inspector",
+      "CNAE Code Inspector",
+      "CNH Driver License Inspector",
+      "CNPJ Validator & Explainer",
+      "CNS / SUS Card Validator",
+      "COMPE Bank Code Inspector",
+      "CPF Validator & Explainer",
+      "CT-e Access Key Validator",
+      "DARF Code Helper",
+      "DDD Phone Validator",
+      "EFD-Reinf Event ID Inspector",
+      "eSocial Event ID Inspector",
+      "GNRE Guide Helper",
+      "IBGE Municipality Code Inspector",
+      "Inscrição Estadual Helper",
+      "Inscrição Municipal Helper",
+      "ISPB Code Inspector",
+      "LGPD Redaction Helper",
+      "Linha Digitável Validator",
+      "MDF-e Access Key Validator",
+      "Natureza Jurídica Code Inspector",
+      "NF-e Access Key Validator",
+      "NF-e XML Readiness Checker",
+      "NFC-e Access Key Validator",
+      "NFS-e Number Helper",
+      "NIS / PIS / PASEP Inspector",
+      "Open Finance Consent Helper",
+      "Pix Copy-and-Paste Decoder",
+      "Pix QR Payload Generator",
+      "RENACH Number Inspector",
+      "RENAVAM Vehicle Registry Validator",
+      "RG Number Inspector",
+      "SAT CF-e Key Inspector",
+      "Simples Nacional DAS Helper",
+      "SPED EFD Contribuições Checker",
+      "SPED EFD ICMS/IPI Checker",
+      "TED / DOC Transfer Helper",
+      "Título de Eleitor Validator",
+      "UF State Code Inspector"
     ],
-    "plannedWorkbenches": [
-      "PIX Workbench",
-      "CPF Validator",
-      "CNPJ Validator",
-      "CEP Lookup",
-      "Brazil Phone Validator",
-      "Brazil Banking Tools"
-    ],
-    "completion": 100,
+    "plannedWorkbenches": [],
+    "completion": 95,
     "coordinates": {
       "x": 39,
       "y": 67
@@ -68,7 +144,7 @@
     "flag": "🇧🇷",
     "name": "Brazil",
     "badge": "Reference country hub",
-    "description": "Developer intelligence for Brazilian identifiers, payments, banking formats, locale conventions, and official systems.",
+    "description": "Developer intelligence for Brazilian identifiers, Pix and boleto payments, fiscal documents, banking formats, locale conventions, privacy-safe fixtures, and official-system boundaries.",
     "metadata": {
       "population": "203M+",
       "area": "8,515,767 km²",
@@ -105,7 +181,10 @@
       "rtlSupport": "No",
       "unicodeLocale": "pt-BR",
       "cldrLocale": "pt_BR",
-      "metricVsImperial": "Metric-first"
+      "metricVsImperial": "Metric-first",
+      "nativeName": "Brasil",
+      "region": "South America / Mercosur",
+      "timeZone": "America/Sao_Paulo and regional zones"
     },
     "visualIdentity": {
       "countryId": "brazil",
@@ -710,114 +789,130 @@
     ],
     "payments": [
       {
-        "brandKey": "pix",
-        "title": "PIX",
-        "status": "comingSoon",
+        "title": "Boleto",
+        "text": "Barcode and linha digitavel payment slips with amount, due-date factor, bank code, and check digit behavior.",
+        "status": "available",
         "tags": [
           "payments",
           "banking"
-        ],
-        "text": "PIX is the central instant-payment system developers encounter in Brazilian payment flows. It can use keys or QR payloads."
+        ]
       },
       {
-        "icon": "🏦",
-        "title": "Bank codes",
-        "status": "planned",
-        "tags": [
-          "banking"
-        ],
-        "text": "Brazilian banking integrations often require bank code, agency/branch, account number, account type, and check digit handling."
-      },
-      {
-        "icon": "💳",
-        "title": "Currency",
-        "status": "ready",
-        "tags": [
-          "currency",
-          "payments"
-        ],
-        "text": "Use BRL and display values with comma decimals and dot thousands separators for pt-BR user interfaces."
-      },
-      {
-        "icon": "🔑",
-        "title": "Payment identifiers",
-        "status": "planned",
+        "title": "BRL amount and centavos",
+        "text": "Brazilian real workflows normalize comma decimals, integer centavos, and copyable payment payloads.",
+        "status": "available",
         "tags": [
           "payments",
-          "identifiers"
-        ],
-        "text": "CPF, CNPJ, email, phone numbers, random keys, and QR payloads can all appear in payment-related workflows."
+          "currency"
+        ]
       },
       {
-        "icon": "▦",
-        "title": "QR payments",
-        "status": "planned",
-        "tags": [
-          "payments"
-        ],
-        "text": "PIX QR flows may contain static or dynamic payloads. Treat parsing and validation as separate future workbench tasks."
-      },
-      {
-        "brandKey": "swift",
-        "title": "SWIFT/BIC notes",
+        "title": "Card payments",
+        "text": "Debit and credit card flows follow global card-network rules plus Brazilian amount and document-field conventions.",
         "status": "ready",
         "tags": [
+          "payments"
+        ]
+      },
+      {
+        "title": "CNAB remittance and return files",
+        "text": "Bank file workflows need row-length inspection, record-type summaries, and reconciliation-ready diagnostics.",
+        "status": "available",
+        "tags": [
+          "payments",
           "banking"
-        ],
-        "text": "International transfers may involve SWIFT/BIC details, but domestic Brazilian payment UX is usually not IBAN-first."
+        ]
+      },
+      {
+        "title": "Payment QR and title fields",
+        "text": "QR-like payment payloads, descriptions, transaction IDs, and recipient fields need deterministic local checks before banking handoff.",
+        "status": "available",
+        "tags": [
+          "payments"
+        ]
+      },
+      {
+        "title": "Pix",
+        "text": "Instant payment rail using keys, QR codes, copy-and-paste BR Code payloads, and EMV-style fields.",
+        "status": "available",
+        "tags": [
+          "payments",
+          "pix"
+        ]
+      },
+      {
+        "title": "TED / DOC transfers",
+        "text": "Traditional transfer records require bank, agency, account, owner document, and amount field consistency.",
+        "status": "available",
+        "tags": [
+          "payments",
+          "banking"
+        ]
       }
     ],
     "officialResources": [
       {
-        "brandKey": "bancoCentralBrasil",
-        "label": "Banco Central do Brasil",
+        "title": "Banco Central do Brasil",
+        "description": "Central bank and official reference context for Pix, ISPB, Open Finance, and financial-system data.",
         "status": "available",
         "tags": [
           "government",
-          "payments"
-        ],
-        "note": "Central bank and PIX ecosystem authority. Confirm the exact documentation URL before linking deep references."
+          "banking"
+        ]
       },
       {
-        "brandKey": "receitaFederal",
-        "label": "Receita Federal",
+        "title": "Correios",
+        "description": "Postal authority context for CEP and Brazilian address-format conventions.",
         "status": "available",
         "tags": [
-          "government",
-          "tax",
-          "identifiers"
-        ],
-        "note": "Federal tax authority for CPF and CNPJ context. Confirm exact service URLs before linking."
-      },
-      {
-        "brandKey": "correios",
-        "label": "Correios",
-        "status": "available",
-        "tags": [
-          "government",
           "postal",
           "addresses"
-        ],
-        "note": "Postal authority for CEP-related address information. Confirm official lookup URL before linking."
+        ]
       },
       {
-        "brandKey": "govbr",
-        "label": "Gov.br",
+        "title": "Denatran / SENATRAN",
+        "description": "National traffic authority context for CNH, RENAVAM, and vehicle-document workflows.",
         "status": "available",
         "tags": [
-          "government"
-        ],
-        "note": "Brazilian government services portal. Use as a starting point for official references."
+          "government",
+          "vehicle"
+        ]
       },
       {
-        "brandKey": "pix",
-        "label": "PIX documentation",
-        "status": "planned",
+        "title": "IBGE",
+        "description": "Official geography and statistics context for UF, municipality codes, and regional identifiers.",
+        "status": "available",
         "tags": [
-          "payments",
-          "banking"
-        ],
-        "note": "Use official Banco Central documentation when a future PIX Workbench spec is approved."
+          "government",
+          "geo"
+        ]
+      },
+      {
+        "title": "Receita Federal",
+        "description": "Tax administration context for CPF, CNPJ, fiscal documents, DARF, and compliance workflows.",
+        "status": "available",
+        "tags": [
+          "government",
+          "tax"
+        ]
+      },
+      {
+        "title": "Serpro",
+        "description": "Government technology context for official APIs, fiscal integrations, and identity-related services.",
+        "status": "available",
+        "tags": [
+          "government",
+          "api"
+        ]
+      },
+      {
+        "title": "TSE",
+        "description": "Electoral authority context for voter title, zone, and section data.",
+        "status": "available",
+        "tags": [
+          "government",
+          "identity"
+        ]
       }
     ],
     "plannedWorkbenches": [
@@ -1108,171 +1203,112 @@
     ],
     "addressExample": {
       "formatted": [
-        "Ana Silva",
-        "Av. Paulista, 1000",
-        "Bela Vista",
-        "Sao Paulo - SP",
-        "01310-100",
+        "Maria Silva",
+        "Av. Paulista, 1000 - Bela Vista",
+        "01310-100 Sao Paulo - SP",
         "Brazil"
       ],
       "fields": [
         {
           "label": "Recipient",
-          "value": "Ana Silva",
+          "value": "Maria Silva",
           "description": "Person or organization receiving mail."
         },
         {
           "label": "Street and number",
           "value": "Av. Paulista, 1000",
-          "description": "Street, avenue, or road plus building number."
+          "description": "Brazilian addresses usually include street type, name, and building number."
         },
         {
           "label": "District",
           "value": "Bela Vista",
-          "description": "Neighborhood or district, often useful for disambiguation."
+          "description": "Bairro or local district is commonly used for delivery context."
         },
         {
-          "label": "City and state",
-          "value": "Sao Paulo - SP",
-          "description": "Municipality plus two-letter state abbreviation."
-        },
-        {
-          "label": "CEP",
-          "value": "01310-100",
-          "description": "Brazilian postal code."
+          "label": "CEP and city",
+          "value": "01310-100 Sao Paulo - SP",
+          "description": "Eight-digit CEP plus city and UF state code."
         },
         {
           "label": "Country",
           "value": "Brazil",
-          "description": "Country label for international contexts."
+          "description": "Country label for international mail and cross-border records."
         }
       ]
     },
     "phoneExamples": [
       {
         "label": "Mobile",
-        "value": "(11) 91234-5678",
-        "description": "Mobile examples commonly include a 9 after the area code.",
-        "tags": [
-          "phone"
-        ]
+        "value": "+55 11 91234-5678",
+        "description": "Country code +55, DDD 11, and nine-digit mobile number."
       },
       {
         "label": "Landline",
-        "value": "(11) 3123-4567",
-        "description": "Landlines use area code plus local subscriber number.",
-        "tags": [
-          "phone"
-        ]
+        "value": "+55 21 3456-7890",
+        "description": "DDD plus eight-digit landline number."
       },
       {
-        "label": "International",
-        "value": "+55 11 91234-5678",
-        "description": "Use +55 for international display.",
-        "tags": [
-          "phone"
-        ]
-      },
-      {
-        "label": "Formatted",
-        "value": "+55 (11) 91234-5678",
-        "description": "Friendly display format for UI.",
-        "tags": [
-          "phone"
-        ]
-      },
-      {
-        "label": "Normalized",
-        "value": "5511912345678",
-        "description": "Digits-only normalization is useful for storage and comparison.",
-        "tags": [
-          "phone",
-          "developer"
-        ]
+        "label": "Toll-free",
+        "value": "0800 123 4567",
+        "description": "Service numbers use national service prefixes, not E.164 contact format."
       }
     ],
     "integrationChecklist": [
-      "Locale configured",
-      "UTF-8",
-      "Currency formatting",
-      "Date formatting",
-      "CPF handling",
-      "CNPJ handling",
-      "CEP formatting",
-      "Phone formatting",
-      "PIX",
-      "Timezone",
-      "Address normalization"
+      "Locale pt-BR configured for dates, amounts, and interface copy.",
+      "UTF-8 encoding preserved for Portuguese names, addresses, and accents.",
+      "CPF, CNPJ, CEP, Pix, boleto, and fiscal access-key fields validated separately.",
+      "BRL amounts stored in integer centavos and displayed with comma decimals.",
+      "Pix and boleto payloads treated as payment instructions, not proof of settlement.",
+      "Official status checks separated from browser-only format and checksum validation.",
+      "LGPD masking applied before logs, support tickets, screenshots, or analytics.",
+      "UF, DDD, municipality, and address fields normalized before imports.",
+      "Fiscal XML and SPED-like files checked locally before official portal submission.",
+      "Fictional fixtures clearly separated from real personal, tax, and banking data."
     ],
     "validationRules": [
       {
         "name": "CPF",
+        "description": "Eleven-digit personal tax identifier with two modulus-11 check digits.",
+        "status": "available",
         "tags": [
-          "identifiers",
+          "identifier",
           "tax"
-        ],
-        "points": [
-          "11 digits",
-          "Checksum digits",
-          "Formatted and normalized forms",
-          "Leading zeros must be preserved"
         ]
       },
       {
         "name": "CNPJ",
+        "description": "Fourteen-digit company tax identifier with branch/order digits and two check digits.",
+        "status": "available",
         "tags": [
-          "identifiers",
-          "tax"
-        ],
-        "points": [
-          "14 digits",
-          "Checksum digits",
-          "Formatted and normalized forms",
-          "Business identifier, not CPF"
+          "identifier",
+          "business"
         ]
       },
       {
-        "name": "CEP",
+        "name": "Pix",
+        "description": "Instant-payment key and BR Code payload ecosystem for Brazilian bank transfers.",
+        "status": "available",
         "tags": [
-          "postal",
-          "addresses"
-        ],
-        "points": [
-          "8 digits",
-          "Common display NNNNN-NNN",
-          "Postal code, not a ZIP code"
-        ]
-      },
-      {
-        "name": "Phone",
-        "tags": [
-          "phone"
-        ],
-        "points": [
-          "Country code +55",
-          "Area code required",
-          "Mobile and landline patterns differ"
-        ]
-      },
-      {
-        "name": "PIX",
-        "tags": [
-          "payments",
+          "payment",
           "banking"
-        ],
-        "points": [
-          "Keys may be CPF, CNPJ, email, phone, random key, or QR payload",
-          "Key type matters before validation"
         ]
       },
       {
-        "name": "Bank code",
+        "name": "Boleto",
+        "description": "Barcode and linha digitavel payment-slip conventions with local check-digit behavior.",
+        "status": "available",
         "tags": [
+          "payment",
           "banking"
-        ],
-        "points": [
-          "Bank code, branch, account, account type, and check digit may all appear",
-          "Domestic flows are not IBAN-first"
+        ]
+      },
+      {
+        "name": "NF-e",
+        "description": "Fiscal document access-key convention for Brazilian electronic invoices.",
+        "status": "available",
+        "tags": [
+          "tax",
+          "invoice"
         ]
       }
     ],
@@ -1287,70 +1323,93 @@
     ],
     "bankingOverview": [
       {
-        "brandKey": "pix",
-        "name": "PIX",
-        "status": "comingSoon",
+        "name": "Agencia and account",
+        "description": "Brazilian bank transfers usually require bank code, agency, account number, account type, and CPF/CNPJ owner fields.",
+        "status": "available",
+        "tags": [
+          "banking"
+        ]
+      },
+      {
+        "name": "Boleto barcode",
+        "description": "Boletos use barcode and linha digitavel representations with bank, currency, due-date factor, amount, and check digits.",
+        "status": "available",
         "tags": [
           "payments",
           "banking"
-        ],
-        "description": "Instant payment ecosystem using keys and QR payloads."
+        ]
       },
       {
-        "icon": "🏦",
-        "name": "TED",
-        "status": "planned",
+        "name": "BRL and centavos",
+        "description": "Brazilian money workflows use comma decimals and integer centavos for storage, APIs, invoices, and reconciliation.",
+        "status": "available",
         "tags": [
-          "payments",
-          "banking"
-        ],
-        "description": "Bank transfer method historically used for same-day transfers."
-      },
-      {
-        "icon": "🏦",
-        "name": "DOC",
-        "status": "planned",
-        "tags": [
-          "payments",
-          "banking"
-        ],
-        "description": "Legacy bank transfer method still useful in historical data."
-      },
-      {
-        "icon": "📄",
-        "name": "Boleto",
-        "status": "planned",
-        "tags": [
+          "currency",
           "payments"
-        ],
-        "description": "Invoice-like payment slip used in Brazilian billing flows."
+        ]
       },
       {
-        "brandKey": "swift",
-        "name": "SWIFT",
+        "name": "CNAB 240",
+        "description": "Fixed-width bank files commonly use 240-character rows for remittance and return workflows.",
         "status": "available",
         "tags": [
-          "banking"
-        ],
-        "description": "Relevant for international transfers and bank identification."
+          "banking",
+          "file"
+        ]
       },
       {
-        "icon": "🏷",
-        "name": "Bank Codes",
-        "status": "planned",
-        "tags": [
-          "banking"
-        ],
-        "description": "Domestic bank identifiers often appear with branch and account data."
-      },
-      {
-        "brandKey": "iban",
-        "name": "IBAN",
+        "name": "CNAB 400",
+        "description": "Legacy fixed-width bank files use 400-character rows and need strict line-length validation before bank handoff.",
         "status": "available",
         "tags": [
+          "banking",
+          "file"
+        ]
+      },
+      {
+        "name": "COMPE bank code",
+        "description": "Three-digit COMPE bank codes identify Brazilian financial institutions in many payment and account forms.",
+        "status": "available",
+        "tags": [
+          "banking",
+          "routing"
+        ]
+      },
+      {
+        "name": "ISPB participant code",
+        "description": "Eight-digit ISPB codes identify payment-system participants, especially in Pix and banking integrations.",
+        "status": "available",
+        "tags": [
+          "banking",
+          "routing"
+        ]
+      },
+      {
+        "name": "Open Finance",
+        "description": "Brazilian Open Finance flows require consent-oriented party identifiers, scopes, and privacy boundaries.",
+        "status": "available",
+        "tags": [
+          "banking",
+          "api"
+        ]
+      },
+      {
+        "name": "Pix",
+        "description": "Pix keys and EMV BR Code payloads support instant-payment workflows, QR payloads, amount fields, and transaction references.",
+        "status": "available",
+        "tags": [
+          "payments",
+          "pix"
+        ]
+      },
+      {
+        "name": "TED / DOC",
+        "description": "Traditional transfer flows require bank, agency, account, owner identity, amount, and recipient consistency checks.",
+        "status": "available",
+        "tags": [
+          "payments",
           "banking"
-        ],
-        "description": "Useful globally, but Brazil is not an IBAN-first domestic transfer market."
+        ]
       }
     ],
     "localizationNotes": [
@@ -1617,5 +1676,617 @@
         "description": "Discovery page only. The PIX validator workbench is not implemented in this phase."
       }
     }
-  }
+  },
+  "availableWorkbenches": [
+    {
+      "name": "Agência / Conta Masker",
+      "id": "brazil-agencia-conta-masker",
+      "description": "Normalize and mask Brazilian agency and account fields, preserve check digits, and produce log-safe banking snippets.",
+      "status": "available",
+      "tags": [
+        "banking",
+        "privacy"
+      ]
+    },
+    {
+      "name": "Boleto Barcode Validator",
+      "id": "brazil-boleto-barcode-validator",
+      "description": "Validate boleto barcode shape, inspect bank code, currency, due-date factor, amount fields, and check digit boundaries.",
+      "status": "available",
+      "tags": [
+        "payments",
+        "banking"
+      ]
+    },
+    {
+      "name": "Boleto Due-Date Factor Helper",
+      "id": "brazil-boleto-due-date-factor",
+      "description": "Convert boleto due-date factors to dates, inspect rollover-era assumptions, and prepare payment schedule test cases.",
+      "status": "available",
+      "tags": [
+        "payments",
+        "date"
+      ]
+    },
+    {
+      "name": "Brazil Address Formatter",
+      "id": "brazil-address-formatter",
+      "description": "Format Brazilian address blocks with street, number, complement, bairro, city, UF, CEP, and country fields for forms and labels.",
+      "status": "available",
+      "tags": [
+        "address",
+        "locale"
+      ]
+    },
+    {
+      "name": "Brazil Address Transliteration Normalizer",
+      "id": "brazil-address-transliteration-normalizer",
+      "description": "Normalize Portuguese address text, preserve accents where needed, and prepare ASCII-safe variants for legacy systems.",
+      "status": "available",
+      "tags": [
+        "address",
+        "localization"
+      ]
+    },
+    {
+      "name": "Brazil Bank Statement Parser",
+      "id": "brazil-bank-statement-parser",
+      "description": "Parse Brazilian bank-statement-like rows, normalize BRL amounts and dates, and prepare reconciliation-friendly transaction data.",
+      "status": "available",
+      "tags": [
+        "banking",
+        "data"
+      ]
+    },
+    {
+      "name": "Brazil Company Onboarding Auditor",
+      "id": "brazil-company-onboarding-auditor",
+      "description": "Audit onboarding fields for CNPJ, CNAE, IE, IM, address, fiscal document, banking, Pix, and contact readiness.",
+      "status": "available",
+      "tags": [
+        "business",
+        "onboarding"
+      ]
+    },
+    {
+      "name": "Brazil Compliance Checklist Generator",
+      "id": "brazil-compliance-checklist-generator",
+      "description": "Generate implementation checklists for Brazilian identifiers, fiscal documents, payments, privacy masking, and official lookup boundaries.",
+      "status": "available",
+      "tags": [
+        "compliance",
+        "developer"
+      ]
+    },
+    {
+      "name": "Brazil Data Quality Workbench",
+      "id": "brazil-data-quality-workbench",
+      "description": "Audit Brazilian records across CPF, CNPJ, CEP, phone, Pix, boleto, tax, banking, and locale fields for completeness and safety.",
+      "status": "available",
+      "tags": [
+        "data-quality",
+        "developer"
+      ]
+    },
+    {
+      "name": "Brazil Date / Locale Formatter",
+      "id": "brazil-date-locale-formatter",
+      "description": "Parse ISO and Brazilian DD/MM/YYYY dates, render pt-BR locale display, and expose date fields for localized interfaces.",
+      "status": "available",
+      "tags": [
+        "locale",
+        "date"
+      ]
+    },
+    {
+      "name": "Brazil Form Fixture Generator",
+      "id": "brazil-form-fixture-generator",
+      "description": "Generate fictional Brazilian form payloads for identity, company, address, payment, invoice, and locale UI testing.",
+      "status": "available",
+      "tags": [
+        "fixtures",
+        "forms"
+      ]
+    },
+    {
+      "name": "Brazil License Plate Inspector",
+      "id": "brazil-license-plate-validator",
+      "description": "Inspect Mercosul and legacy Brazilian license plate patterns, classify format family, and prepare fleet-safe masked examples.",
+      "status": "available",
+      "tags": [
+        "vehicle",
+        "identifier"
+      ]
+    },
+    {
+      "name": "Brazil OCR Post-Processing Fixer",
+      "id": "brazil-ocr-postprocessing-fixer",
+      "description": "Clean OCR output from Brazilian documents, restore common separators, detect CPF/CNPJ/CEP candidates, and flag risky artifacts.",
+      "status": "available",
+      "tags": [
+        "ocr",
+        "developer"
+      ]
+    },
+    {
+      "name": "Brazil Passport Number Helper",
+      "id": "brazil-passport-number-helper",
+      "description": "Normalize Brazilian passport-like document input, mask travel references, and prepare fictional identity document fixtures.",
+      "status": "available",
+      "tags": [
+        "document",
+        "identity"
+      ]
+    },
+    {
+      "name": "Brazil Payment Reconciliation Helper",
+      "id": "brazil-payment-reconciliation-helper",
+      "description": "Compare amount, payer, recipient, Pix, boleto, bank-account, and invoice references to flag reconciliation mismatches locally.",
+      "status": "available",
+      "tags": [
+        "payments",
+        "reconciliation"
+      ]
+    },
+    {
+      "name": "Brazil Phone E.164 Formatter",
+      "id": "brazil-phone-e164-formatter",
+      "description": "Normalize Brazilian phone numbers to +55 E.164-style display, preserve DDD, mask contact data, and generate safe fixtures.",
+      "status": "available",
+      "tags": [
+        "phone",
+        "contact"
+      ]
+    },
+    {
+      "name": "Brazil PII Masker",
+      "id": "brazil-pii-masker",
+      "description": "Detect Brazilian CPF, CNPJ, CEP, phone, boleto, Pix-like, and email patterns in text and produce privacy-safe masked output.",
+      "status": "available",
+      "tags": [
+        "privacy",
+        "data-quality"
+      ]
+    },
+    {
+      "name": "Brazil Pix Validator",
+      "id": "brazil-pix-validator",
+      "description": "Validate Pix keys and BR Code payloads, inspect EMV fields, generate QR-friendly payment data, and explain offline payment boundaries.",
+      "status": "available",
+      "tags": []
+    },
+    {
+      "name": "Brazil Test Data Generator",
+      "id": "brazil-test-data-generator",
+      "description": "Generate fictional Brazilian identity, company, address, phone, payment, and invoice fixtures for local development and QA.",
+      "status": "available",
+      "tags": [
+        "fixtures",
+        "developer"
+      ]
+    },
+    {
+      "name": "BRL Centavos Converter",
+      "id": "brazil-brl-centavos-converter",
+      "description": "Parse Brazilian real amounts, normalize comma decimals, convert to integer centavos, and generate storage-safe payment fields.",
+      "status": "available",
+      "tags": [
+        "currency",
+        "payments"
+      ]
+    },
+    {
+      "name": "CEP Postal Code Validator",
+      "id": "brazil-cep-validator",
+      "description": "Normalize Brazilian CEP postal codes, validate NNNNN-NNN display, batch-check address lists, and prepare delivery-safe fixtures.",
+      "status": "available",
+      "tags": [
+        "postal",
+        "address"
+      ]
+    },
+    {
+      "name": "CNAB 240 File Inspector",
+      "id": "brazil-cnab240-file-inspector",
+      "description": "Inspect CNAB 240 fixed-width records, count segments, flag line-length issues, and prepare bank-file diagnostics offline.",
+      "status": "available",
+      "tags": [
+        "banking",
+        "file"
+      ]
+    },
+    {
+      "name": "CNAB 400 File Inspector",
+      "id": "brazil-cnab400-file-inspector",
+      "description": "Inspect CNAB 400 fixed-width remittance or return files, validate row lengths, and summarize record-type distribution locally.",
+      "status": "available",
+      "tags": [
+        "banking",
+        "file"
+      ]
+    },
+    {
+      "name": "CNAE Code Inspector",
+      "id": "brazil-cnae-code-inspector",
+      "description": "Inspect CNAE activity codes, normalize class and subclass notation, and prepare company-classification data for onboarding flows.",
+      "status": "available",
+      "tags": [
+        "business",
+        "classification"
+      ]
+    },
+    {
+      "name": "CNH Driver License Inspector",
+      "id": "brazil-cnh-validator",
+      "description": "Inspect Brazilian CNH driver-license numbers, normalize eleven-digit records, and separate offline shape checks from official DETRAN status.",
+      "status": "available",
+      "tags": [
+        "identifier",
+        "vehicle"
+      ]
+    },
+    {
+      "name": "CNPJ Validator & Explainer",
+      "id": "brazil-cnpj-validator",
+      "description": "Validate CNPJ company identifiers, inspect both check digits, normalize punctuation, and build safe business test cases.",
+      "status": "available",
+      "tags": [
+        "identifier",
+        "business",
+        "tax"
+      ]
+    },
+    {
+      "name": "CNS / SUS Card Validator",
+      "id": "brazil-sus-card-validator",
+      "description": "Inspect Brazilian CNS/SUS card numbers, normalize fifteen-digit health identifiers, and separate offline shape checks from health-system status.",
+      "status": "available",
+      "tags": [
+        "health",
+        "identifier"
+      ]
+    },
+    {
+      "name": "COMPE Bank Code Inspector",
+      "id": "brazil-compe-bank-code-inspector",
+      "description": "Inspect three-digit COMPE bank codes, normalize routing references, and prepare Brazilian bank-selection payloads for forms.",
+      "status": "available",
+      "tags": [
+        "banking",
+        "routing"
+      ]
+    },
+    {
+      "name": "CPF Validator & Explainer",
+      "id": "brazil-cpf-validator",
+      "description": "Validate CPF numbers, replay modulus-11 check digits, mask personal identifiers, and generate safe fictional fixtures locally.",
+      "status": "available",
+      "tags": [
+        "identifier",
+        "tax",
+        "person"
+      ]
+    },
+    {
+      "name": "CT-e Access Key Validator",
+      "id": "brazil-cte-access-key-validator",
+      "description": "Inspect CT-e transport document keys, split access-key segments, replay check digits, and prepare logistics invoice fixtures.",
+      "status": "available",
+      "tags": [
+        "invoice",
+        "logistics"
+      ]
+    },
+    {
+      "name": "DARF Code Helper",
+      "id": "brazil-darf-code-helper",
+      "description": "Inspect DARF revenue-code shaped inputs, normalize dates and amounts, and prepare tax-payment payload notes for developers.",
+      "status": "available",
+      "tags": [
+        "tax",
+        "payment"
+      ]
+    },
+    {
+      "name": "DDD Phone Validator",
+      "id": "brazil-ddd-phone-validator",
+      "description": "Validate Brazilian DDD area-code patterns, classify mobile and landline shapes, and prepare contact-field diagnostics.",
+      "status": "available",
+      "tags": [
+        "phone",
+        "address"
+      ]
+    },
+    {
+      "name": "EFD-Reinf Event ID Inspector",
+      "id": "brazil-reinf-event-id-inspector",
+      "description": "Inspect EFD-Reinf event ID shape, normalize reporting-period hints, and document official submission boundaries.",
+      "status": "available",
+      "tags": [
+        "tax",
+        "government"
+      ]
+    },
+    {
+      "name": "eSocial Event ID Inspector",
+      "id": "brazil-esocial-event-id-inspector",
+      "description": "Inspect eSocial event identifiers, normalize employer references, and separate offline syntax checks from government receipt status.",
+      "status": "available",
+      "tags": [
+        "payroll",
+        "government"
+      ]
+    },
+    {
+      "name": "GNRE Guide Helper",
+      "id": "brazil-gnre-guide-helper",
+      "description": "Normalize GNRE guide fields, identify UF, amount, taxpayer, and reference data needed before external state portal submission.",
+      "status": "available",
+      "tags": [
+        "tax",
+        "state"
+      ]
+    },
+    {
+      "name": "IBGE Municipality Code Inspector",
+      "id": "brazil-ibge-municipality-code-inspector",
+      "description": "Inspect seven-digit IBGE municipality codes, split UF and locality hints, and prepare geography keys for data imports.",
+      "status": "available",
+      "tags": [
+        "government",
+        "geo"
+      ]
+    },
+    {
+      "name": "Inscrição Estadual Helper",
+      "id": "brazil-state-registration-ie-validator",
+      "description": "Inspect state-registration IE values, normalize UF context, and document state-specific rules that require dedicated official validation.",
+      "status": "available",
+      "tags": [
+        "tax",
+        "state"
+      ]
+    },
+    {
+      "name": "Inscrição Municipal Helper",
+      "id": "brazil-municipal-registration-im-helper",
+      "description": "Normalize municipal-registration references, identify city context fields, and prepare invoice-safe examples without claiming city status lookup.",
+      "status": "available",
+      "tags": [
+        "tax",
+        "municipal"
+      ]
+    },
+    {
+      "name": "ISPB Code Inspector",
+      "id": "brazil-ispb-code-inspector",
+      "description": "Inspect eight-digit ISPB participant codes, normalize payment-network references, and separate syntax from official participant status.",
+      "status": "available",
+      "tags": [
+        "banking",
+        "routing"
+      ]
+    },
+    {
+      "name": "LGPD Redaction Helper",
+      "id": "brazil-lgpd-redaction-helper",
+      "description": "Redact Brazilian personal and financial data in logs, classify sensitive patterns, and document LGPD-safe debugging boundaries.",
+      "status": "available",
+      "tags": [
+        "privacy",
+        "lgpd"
+      ]
+    },
+    {
+      "name": "Linha Digitável Validator",
+      "id": "brazil-linha-digitavel-validator",
+      "description": "Validate boleto linha digitável fields, normalize punctuation, replay field-level check digits, and mask payment references.",
+      "status": "available",
+      "tags": [
+        "payments",
+        "banking"
+      ]
+    },
+    {
+      "name": "MDF-e Access Key Validator",
+      "id": "brazil-mdfe-access-key-validator",
+      "description": "Validate MDF-e manifest access keys, classify document model fields, and prepare cargo-document diagnostics offline.",
+      "status": "available",
+      "tags": [
+        "invoice",
+        "logistics"
+      ]
+    },
+    {
+      "name": "Natureza Jurídica Code Inspector",
+      "id": "brazil-natureza-juridica-code-inspector",
+      "description": "Inspect Brazilian legal-nature codes, normalize numeric notation, and prepare business-register payload hints for company workflows.",
+      "status": "available",
+      "tags": [
+        "business",
+        "classification"
+      ]
+    },
+    {
+      "name": "NF-e Access Key Validator",
+      "id": "brazil-nfe-access-key-validator",
+      "description": "Validate 44-digit NF-e access keys, replay modulo-11 check digit math, split UF, date, CNPJ, model, series, and number fields.",
+      "status": "available",
+      "tags": [
+        "invoice",
+        "tax"
+      ]
+    },
+    {
+      "name": "NF-e XML Readiness Checker",
+      "id": "brazil-nfe-xml-readiness-checker",
+      "description": "Check NF-e XML payload readiness, spot common issuer, recipient, amount, and access-key fields before fiscal upload.",
+      "status": "available",
+      "tags": [
+        "invoice",
+        "xml"
+      ]
+    },
+    {
+      "name": "NFC-e Access Key Validator",
+      "id": "brazil-nfce-access-key-validator",
+      "description": "Validate NFC-e access keys, explain consumer invoice key segments, and prepare upload-safe test keys for retail flows.",
+      "status": "available",
+      "tags": [
+        "invoice",
+        "retail"
+      ]
+    },
+    {
+      "name": "NFS-e Number Helper",
+      "id": "brazil-nfse-number-helper",
+      "description": "Normalize NFS-e service invoice references, identify municipal context, and document what city portals must verify externally.",
+      "status": "available",
+      "tags": [
+        "invoice",
+        "municipal"
+      ]
+    },
+    {
+      "name": "NIS / PIS / PASEP Inspector",
+      "id": "brazil-nis-pis-pasep-validator",
+      "description": "Inspect NIS, PIS, and PASEP eleven-digit identifiers, normalize punctuation, mask values, and prepare payroll-safe fixtures.",
+      "status": "available",
+      "tags": [
+        "identifier",
+        "payroll"
+      ]
+    },
+    {
+      "name": "Open Finance Consent Helper",
+      "id": "brazil-open-finance-consent-helper",
+      "description": "Prepare Brazilian Open Finance consent payload notes, validate CPF/CNPJ party fields, and document browser-only privacy boundaries.",
+      "status": "available",
+      "tags": [
+        "banking",
+        "api"
+      ]
+    },
+    {
+      "name": "Pix Copy-and-Paste Decoder",
+      "id": "brazil-pix-copy-paste-decoder",
+      "description": "Decode Pix copy-and-paste BR Code text, inspect EMV fields, merchant data, CRC, amount, city, and transaction references locally.",
+      "status": "available",
+      "tags": [
+        "payments",
+        "pix"
+      ]
+    },
+    {
+      "name": "Pix QR Payload Generator",
+      "id": "brazil-pix-qr-payload-generator",
+      "description": "Build Pix QR payload test strings from key, recipient, amount, city, and transaction ID fields while staying fully browser-only.",
+      "status": "available",
+      "tags": [
+        "payments",
+        "pix",
+        "qr"
+      ]
+    },
+    {
+      "name": "RENACH Number Inspector",
+      "id": "brazil-renach-inspector",
+      "description": "Normalize RENACH driver-record references, check common document shape, mask values, and prepare transport onboarding fixtures.",
+      "status": "available",
+      "tags": [
+        "identifier",
+        "vehicle"
+      ]
+    },
+    {
+      "name": "RENAVAM Vehicle Registry Validator",
+      "id": "brazil-renavam-validator",
+      "description": "Validate RENAVAM-shaped vehicle registry numbers, inspect length and check-digit behavior where possible, and create safe vehicle fixtures.",
+      "status": "available",
+      "tags": [
+        "vehicle",
+        "identifier"
+      ]
+    },
+    {
+      "name": "RG Number Inspector",
+      "id": "brazil-rg-inspector",
+      "description": "Inspect RG-shaped identity numbers, normalize issuer notation, mask document values, and document state-level offline limits.",
+      "status": "available",
+      "tags": [
+        "identifier",
+        "document"
+      ]
+    },
+    {
+      "name": "SAT CF-e Key Inspector",
+      "id": "brazil-sat-cfe-key-inspector",
+      "description": "Inspect SAT CF-e coupon keys, split fiscal document segments, and prepare retail diagnostics without contacting tax services.",
+      "status": "available",
+      "tags": [
+        "invoice",
+        "retail"
+      ]
+    },
+    {
+      "name": "Simples Nacional DAS Helper",
+      "id": "brazil-simples-nacional-das-helper",
+      "description": "Prepare Simples Nacional DAS references, normalize period and CNPJ inputs, and explain what browser-only checks cannot confirm.",
+      "status": "available",
+      "tags": [
+        "tax",
+        "business"
+      ]
+    },
+    {
+      "name": "SPED EFD Contribuições Checker",
+      "id": "brazil-sped-efd-contribuicoes-checker",
+      "description": "Check EFD Contribuições payload shape, normalize period and establishment fields, and prepare safer tax-file diagnostics.",
+      "status": "available",
+      "tags": [
+        "tax",
+        "file"
+      ]
+    },
+    {
+      "name": "SPED EFD ICMS/IPI Checker",
+      "id": "brazil-sped-efd-icms-ipi-checker",
+      "description": "Inspect SPED EFD ICMS/IPI file headers and record-shaped lines, flag common separators, dates, CNPJ values, and fiscal periods.",
+      "status": "available",
+      "tags": [
+        "tax",
+        "file"
+      ]
+    },
+    {
+      "name": "TED / DOC Transfer Helper",
+      "id": "brazil-ted-doc-transfer-helper",
+      "description": "Check Brazilian transfer payload fields for bank code, agency, account, CPF/CNPJ, amount, and recipient consistency before handoff.",
+      "status": "available",
+      "tags": [
+        "banking",
+        "payments"
+      ]
+    },
+    {
+      "name": "Título de Eleitor Validator",
+      "id": "brazil-titulo-eleitor-validator",
+      "description": "Check voter-title shaped numbers, normalize zones and sections, explain offline boundaries, and generate fictional electoral test values.",
+      "status": "available",
+      "tags": [
+        "identifier",
+        "government"
+      ]
+    },
+    {
+      "name": "UF State Code Inspector",
+      "id": "brazil-uf-state-code-inspector",
+      "description": "Inspect Brazilian UF codes, normalize state abbreviations, and prepare state-aware payloads for tax, address, and logistics forms.",
+      "status": "available",
+      "tags": [
+        "geo",
+        "address"
+      ]
+    }
+  ]
 }

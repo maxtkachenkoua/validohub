@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-natureza-juridica-code-inspector
+kind: tool
+module: validohub
+country: BR
+category: national-identifiers
+status: active
+name:
+  en: "Natureza Jurídica Code Inspector"
+summary:
+  en: "Inspect Brazilian legal-nature codes, normalize numeric notation, and prepare business-register payload hints for company workflows."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Natureza Jurídica Code Inspector | ValidoHub"
+  description:
+    en: "Inspect Brazilian legal-nature codes, normalize numeric notation, and prepare business-register payload hints for company workflows."

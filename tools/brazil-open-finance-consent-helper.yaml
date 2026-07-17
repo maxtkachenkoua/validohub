@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-open-finance-consent-helper
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: "Open Finance Consent Helper"
+summary:
+  en: "Prepare Brazilian Open Finance consent payload notes, validate CPF/CNPJ party fields, and document browser-only privacy boundaries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Open Finance Consent Helper | ValidoHub"
+  description:
+    en: "Prepare Brazilian Open Finance consent payload notes, validate CPF/CNPJ party fields, and document browser-only privacy boundaries."

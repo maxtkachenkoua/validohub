@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-state-registration-ie-validator
+kind: tool
+module: validohub
+country: BR
+category: national-identifiers
+status: active
+name:
+  en: "Inscrição Estadual Helper"
+summary:
+  en: "Inspect state-registration IE values, normalize UF context, and document state-specific rules that require dedicated official validation."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Inscrição Estadual Helper | ValidoHub"
+  description:
+    en: "Inspect state-registration IE values, normalize UF context, and document state-specific rules that require dedicated official validation."

@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-agencia-conta-masker
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: "Agência / Conta Masker"
+summary:
+  en: "Normalize and mask Brazilian agency and account fields, preserve check digits, and produce log-safe banking snippets."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Agência / Conta Masker | ValidoHub"
+  description:
+    en: "Normalize and mask Brazilian agency and account fields, preserve check digits, and produce log-safe banking snippets."

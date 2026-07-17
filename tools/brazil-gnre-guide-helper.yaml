@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-gnre-guide-helper
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: "GNRE Guide Helper"
+summary:
+  en: "Normalize GNRE guide fields, identify UF, amount, taxpayer, and reference data needed before external state portal submission."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "GNRE Guide Helper | ValidoHub"
+  description:
+    en: "Normalize GNRE guide fields, identify UF, amount, taxpayer, and reference data needed before external state portal submission."

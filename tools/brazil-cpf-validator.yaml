@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-cpf-validator
+kind: tool
+module: validohub
+country: BR
+category: national-identifiers
+status: active
+name:
+  en: "CPF Validator & Explainer"
+summary:
+  en: "Validate CPF numbers, replay modulus-11 check digits, mask personal identifiers, and generate safe fictional fixtures locally."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cnpj-validator, brazil-cep-validator, brazil-boleto-barcode-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "CPF Validator & Explainer | ValidoHub"
+  description:
+    en: "Validate CPF numbers, replay modulus-11 check digits, mask personal identifiers, and generate safe fictional fixtures locally."

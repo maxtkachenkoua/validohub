@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-nfe-xml-readiness-checker
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: "NF-e XML Readiness Checker"
+summary:
+  en: "Check NF-e XML payload readiness, spot common issuer, recipient, amount, and access-key fields before fiscal upload."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "NF-e XML Readiness Checker | ValidoHub"
+  description:
+    en: "Check NF-e XML payload readiness, spot common issuer, recipient, amount, and access-key fields before fiscal upload."

@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-cnpj-validator
+kind: tool
+module: validohub
+country: BR
+category: national-identifiers
+status: active
+name:
+  en: "CNPJ Validator & Explainer"
+summary:
+  en: "Validate CNPJ company identifiers, inspect both check digits, normalize punctuation, and build safe business test cases."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cep-validator, brazil-boleto-barcode-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "CNPJ Validator & Explainer | ValidoHub"
+  description:
+    en: "Validate CNPJ company identifiers, inspect both check digits, normalize punctuation, and build safe business test cases."

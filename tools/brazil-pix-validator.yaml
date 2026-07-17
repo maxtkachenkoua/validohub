@@ -6,26 +6,29 @@ country: BR
 category: finance
 status: active
 name:
-  en: Brazil PIX Workbench
+  en: "Brazil Pix Validator"
 summary:
-  en: Validate PIX keys, parse BR Code payloads, generate static PIX QR codes, and debug CRC locally.
+  en: "Validate Pix keys and BR Code payloads, inspect EMV fields, generate QR-friendly payment data, and explain offline payment boundaries."
 capabilities:
   - validate
   - parse
+  - generate
   - explain
 algorithm:
   algorithmId: validohub.brazil-pix
 forms:
   validate:
     inputs:
-      - type: text
-        name: pixKey
-        label:
-          en: Pix key
+      - name: input
+        type: text
         required: true
-    actions: [validate, parse, explain]
+    actions:
+      - validate
+      - parse
+      - generate
+      - explain
 related:
-  explicit: []
+  explicit: [brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator, brazil-boleto-barcode-validator]
   auto:
     sameCountry: true
     sameCategory: true
@@ -33,6 +36,6 @@ related:
     sameModule: true
 seo:
   title:
-    en: Brazil PIX Workbench
+    en: "Brazil Pix Validator | ValidoHub"
   description:
-    en: Validate PIX keys, inspect BR Code payloads, generate static PIX QR codes, and debug PIX CRC in your browser.
+    en: "Validate Pix keys and BR Code payloads, inspect EMV fields, generate QR-friendly payment data, and explain offline payment boundaries."

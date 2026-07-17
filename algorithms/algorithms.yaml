@@ -32,6 +32,14 @@ algorithms:
       en: Brazil Pix Algorithm
     summary:
       en: Metadata entry for Brazilian Pix key validation, parsing, and explanation.
+  - algorithmId: validohub.brazil-suite
+    javaClass: com.validohub.algorithms.brazil.BrazilSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, generate, format, calculate, explain]
+    name:
+      en: Brazil Premium Suite Algorithm
+    summary:
+      en: Metadata entry for Brazilian CPF, CNPJ, CEP, documents, fiscal keys, boleto, banking, payments, locale, privacy, and developer-data workbenches.
   - algorithmId: validohub.poland-suite
     javaClass: com.validohub.algorithms.poland.PolandSuiteAlgorithm
     version: 1

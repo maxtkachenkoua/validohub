@@ -118,6 +118,26 @@ async function compileAssets() {
 
 
 
+const TOOL_SCRIPT_BY_ALGORITHM = {
+  'validohub.pesel': 'pesel.js',
+  'validohub.brazil-pix': 'pix.js',
+  'validohub.brazil-suite': 'brazil-suite.js',
+  'validohub.spain-id': 'spain-id.js',
+  'validohub.poland-suite': 'poland-suite.js',
+  'validohub.poland-expansion': 'poland-expansion.js',
+  'validohub.poland-baseline': 'poland-baseline.js'
+};
+
+function ensureToolScript(content) {
+  const match = content.match(/data-algorithm-id="([^"]+)"/);
+  if (!match) return content;
+  const mapped = TOOL_SCRIPT_BY_ALGORITHM[match[1]];
+  if (!mapped) return content;
+  const tag = '<script src="/assets/js/tools/' + mapped + '"></script>';
+  if (content.includes(tag)) return content;
+  return content.replace('</body>', tag + '\n</body>');
+}
+
 function escapeHtml(value) {
   return String(value || '')
     .replace(/&/g, '&amp;')
@@ -720,6 +740,7 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
       });
 
       content = humanizeDocumentationSections(content, route);
+      content = ensureToolScript(content);
 
       // Force current hashed bundles on Java-owned pages to avoid stale hash drift across publish stages.
       content = content.replace(/<link rel="stylesheet" href="\/assets\/css\/bundle\.[a-f0-9]{6}\.css">/gi, `<link rel="stylesheet" href="${assetsManifest.css}">`);
@@ -813,6 +834,7 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
   const ALGORITHM_TO_SCRIPT = {
     'validohub.pesel': 'pesel.js',
     'validohub.brazil-pix': 'pix.js',
+    'validohub.brazil-suite': 'brazil-suite.js',
     'validohub.spain-id': 'spain-id.js',
     'validohub.poland-suite': 'poland-suite.js',
     'validohub.poland-expansion': 'poland-expansion.js',

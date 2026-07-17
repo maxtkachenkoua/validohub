@@ -395,3 +395,12 @@ This is a product platform section, not a browser workbench plugin.
   - Tags, display order, and icons through approved generic metadata.
   - Country-specific validator specs before any implementation.
 - Current quality status: Brazil is the reference Country Intelligence Portal V3; Spain is the first reuse-proof Country Hub V1; the Countries Portal is production-quality V1 for global discovery; country-specific validators remain future work.
+
+
+## Brazil Premium Suite Workbench
+
+- Source JS file: `assets/js/tools/brazil-suite.js`
+- Algorithm metadata: `validohub.brazil-suite`
+- Related pages: Brazil country-specific tool YAML files under `tools/brazil-*.yaml` except `brazil-pix-validator`, which uses the dedicated Pix plugin.
+- Capabilities: browser-only validation, normalization, masking, fictional fixture generation, diagnostics, batch-ready text input, advanced JSON analysis, and offline/official-lookup boundaries for Brazilian identifiers, fiscal documents, banking, payment, address, and developer-data workflows.
+- Quality status: Premium baseline, modeled after the Poland country-hub gold standard.

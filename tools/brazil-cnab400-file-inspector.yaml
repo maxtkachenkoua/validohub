@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-cnab400-file-inspector
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: "CNAB 400 File Inspector"
+summary:
+  en: "Inspect CNAB 400 fixed-width remittance or return files, validate row lengths, and summarize record-type distribution locally."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "CNAB 400 File Inspector | ValidoHub"
+  description:
+    en: "Inspect CNAB 400 fixed-width remittance or return files, validate row lengths, and summarize record-type distribution locally."

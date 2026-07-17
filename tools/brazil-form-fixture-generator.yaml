@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-form-fixture-generator
+kind: tool
+module: validohub
+country: BR
+category: developer-tools
+status: active
+name:
+  en: "Brazil Form Fixture Generator"
+summary:
+  en: "Generate fictional Brazilian form payloads for identity, company, address, payment, invoice, and locale UI testing."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Brazil Form Fixture Generator | ValidoHub"
+  description:
+    en: "Generate fictional Brazilian form payloads for identity, company, address, payment, invoice, and locale UI testing."

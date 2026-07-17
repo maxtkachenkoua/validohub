@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-boleto-due-date-factor
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: "Boleto Due-Date Factor Helper"
+summary:
+  en: "Convert boleto due-date factors to dates, inspect rollover-era assumptions, and prepare payment schedule test cases."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "Boleto Due-Date Factor Helper | ValidoHub"
+  description:
+    en: "Convert boleto due-date factors to dates, inspect rollover-era assumptions, and prepare payment schedule test cases."

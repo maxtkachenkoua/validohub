@@ -559,3 +559,9 @@ Impact:
 - The change remains in ValidoHub scripts, assets, and documentation.
 - Valido Engine remains untouched.
 - Deep human editorial translations remain future content-pack work.
+
+## Brazil Premium Suite baseline
+
+- Added Brazil country-hub portfolio with 60 available local workbenches.
+- Added `validohub.brazil-suite` metadata and browser-side suite plugin.
+- Updated country renderer to support Brazil-specific identities, descriptions, workbench grouping, and quick-start routing without Valido Engine changes.

@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-reinf-event-id-inspector
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: "EFD-Reinf Event ID Inspector"
+summary:
+  en: "Inspect EFD-Reinf event ID shape, normalize reporting-period hints, and document official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "EFD-Reinf Event ID Inspector | ValidoHub"
+  description:
+    en: "Inspect EFD-Reinf event ID shape, normalize reporting-period hints, and document official submission boundaries."

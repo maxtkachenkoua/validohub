@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-cnae-code-inspector
+kind: tool
+module: validohub
+country: BR
+category: national-identifiers
+status: active
+name:
+  en: "CNAE Code Inspector"
+summary:
+  en: "Inspect CNAE activity codes, normalize class and subclass notation, and prepare company-classification data for onboarding flows."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "CNAE Code Inspector | ValidoHub"
+  description:
+    en: "Inspect CNAE activity codes, normalize class and subclass notation, and prepare company-classification data for onboarding flows."

@@ -220,3 +220,8 @@ Do not treat this workaround as a product architecture change.
 ## Hard Rule
 
 Never serve from the ValidoHub project root. Always serve from `generated/validohub` after publishing.
+
+
+## Brazil Premium Suite
+
+Brazil now follows the Poland country-hub gold-standard layout with its own local tool portfolio. Brazil owns 60 available country workbenches through ValidoHub content/config and browser assets. Engine remains generic. Pix keeps its dedicated workbench; the broader Brazil portfolio uses `assets/js/tools/brazil-suite.js`.

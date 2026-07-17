@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: brazil-sped-efd-contribuicoes-checker
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: "SPED EFD Contribuições Checker"
+summary:
+  en: "Check EFD Contribuições payload shape, normalize period and establishment fields, and prepare safer tax-file diagnostics."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - calculate
+  - explain
+algorithm:
+  algorithmId: validohub.brazil-suite
+forms:
+  validate:
+    inputs:
+      - name: input
+        type: text
+        required: true
+    actions:
+      - validate
+      - parse
+      - generate
+      - format
+      - calculate
+      - explain
+related:
+  explicit: [brazil-pix-validator, brazil-cpf-validator, brazil-cnpj-validator, brazil-cep-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: "SPED EFD Contribuições Checker | ValidoHub"
+  description:
+    en: "Check EFD Contribuições payload shape, normalize period and establishment fields, and prepare safer tax-file diagnostics."
