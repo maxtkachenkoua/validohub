@@ -3749,6 +3749,35 @@ a {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78);
 }
 
+.vh-country-card-icon,
+.vh-country-card-icon-text {
+  display: inline-grid;
+  min-width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid rgba(15, 118, 110, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.10), rgba(37, 99, 235, 0.06)),
+    #ffffff;
+  color: var(--accent-strong);
+  font-size: 0.96rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.vh-country-card-icon-text {
+  width: auto;
+  max-width: 74px;
+  padding: 0 8px;
+  color: #174f49;
+  font-size: 0.66rem;
+  font-weight: 880;
+  letter-spacing: 0.045em;
+  white-space: nowrap;
+}
+
 .brand-asset {
   display: inline-flex;
   max-width: 100%;

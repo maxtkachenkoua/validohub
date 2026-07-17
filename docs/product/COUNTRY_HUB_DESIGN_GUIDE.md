@@ -167,6 +167,21 @@ Use semantic icons for concepts that do not have official visual identities, suc
 - Calendar.
 - ICU.
 
+### Country And Instrument Identity
+
+Every country-level instrument card and every instrument page must carry a stable identity mark.
+
+Priority:
+
+1. Approved official logo or SVG through the Brand Asset System.
+2. Registered ValidoHub glyph when official usage is not safe.
+3. Short text mark/acronym such as `BLIK`, `KSeF`, `NIP`, `REGON`, `IBAN`, `SEPA`, `VAT`, or `PESEL`.
+4. Deliberate semantic fallback only when no recognizable identity exists.
+
+Related country cards must use country flags instead of globe or planet icons.
+
+Do not ship random emoji as permanent identity for official standards, payment systems, registries, or developer tools.
+
 ## Global Brand Asset Policy
 
 This policy applies to UI, Markdown, documentation, navigation, cards, Country Hubs, workbenches, future pages, and generated pages.

@@ -149,6 +149,25 @@ If a brand cannot use official assets:
 
 Do not silently swap to an unrelated icon.
 
+## Country And Tool Identity Rules
+
+Country-level instrument cards, tool cards, workbench cards, payment-standard cards, banking-standard cards, official-standard cards, and instrument pages must show a stable visual identity.
+
+Use identity in this order:
+
+1. Approved official logo or SVG from the Brand Asset System when usage rights are clear.
+2. Registered project-owned glyph when the official logo is not safe to bundle.
+3. Stable text mark or acronym such as `BLIK`, `KSeF`, `NIP`, `REGON`, `IBAN`, `SEPA`, or `VAT`.
+4. Generic semantic mark only when the concept has no recognizable acronym, standard, or brand.
+
+Rules:
+
+- Do not use random emoji as final product identity for instruments or official standards.
+- Do not invent unofficial brand-like artwork.
+- Do not use a globe or planet icon for related countries; use the country flag.
+- Instrument pages should reuse the same identity mark as their country-level cards.
+- When a new country tool is added, add or derive its identity at the same time as the tool metadata.
+
 ## Design Consistency
 
 All Brand Assets should share:

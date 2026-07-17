@@ -59,7 +59,9 @@ function createInfoCard(title, text, icon = null, status = null, related = [], h
     ? `<span class="vh-country-status-badge vh-country-status-${status.toLowerCase() === 'ready' ? 'ready' : (status.toLowerCase() === 'available' ? 'ready' : 'in-progress')}">${escapeHtml(status)}</span>`
     : '';
 
-  const iconBlock = icon ? `<span class="vh-country-card-icon" aria-hidden="true">${icon}</span>` : '';
+  const iconText = icon ? String(icon) : '';
+  const iconClass = iconText && /^[A-Za-z0-9+./-]{2,8}$/.test(iconText) ? ' vh-country-card-icon-text' : '';
+  const iconBlock = icon ? `<span class="vh-country-card-icon${iconClass}" aria-hidden="true">${escapeHtml(icon)}</span>` : '';
   
   const relatedChips = related.length > 0
     ? `<div class="vh-country-badge-row">${related.map(r => `<span class="vh-country-status-badge vh-custom-badge">${escapeHtml(r)}</span>`).join('')}</div>`
@@ -92,6 +94,127 @@ function routeSlug(route) {
   return route.path.split('/').filter(Boolean).at(-1) || '';
 }
 
+const COUNTRY_FLAGS = {
+  brazil: '🇧🇷',
+  br: '🇧🇷',
+  germany: '🇩🇪',
+  de: '🇩🇪',
+  poland: '🇵🇱',
+  pl: '🇵🇱',
+  spain: '🇪🇸',
+  es: '🇪🇸'
+};
+
+function getCountryFlag(value) {
+  const key = String(value || '').toLowerCase().trim();
+  return COUNTRY_FLAGS[key] || COUNTRY_FLAGS[key.replace(/\s+/g, '-')] || '🏳';
+}
+
+const POLAND_ROUTE_IDENTITIES = {
+  'pesel-validator': 'PESEL',
+  'poland-nip-validator': 'NIP',
+  'poland-regon-validator': 'REGON',
+  'poland-iban-nrb-validator': 'IBAN',
+  'poland-vat-validator': 'VAT',
+  'poland-krs-inspector': 'KRS',
+  'poland-postal-code-validator': 'POST',
+  'poland-phone-number-validator': '+48',
+  'poland-blik-code-helper': 'BLIK',
+  'poland-ksef-invoice-xml-validator': 'KSeF',
+  'poland-bdo-number-inspector': 'BDO',
+  'poland-driving-licence-inspector': 'DL',
+  'poland-eori-inspector': 'EORI',
+  'poland-id-card-validator': 'ID',
+  'poland-license-plate-inspector': 'PLATE',
+  'poland-mrz-passport-id-parser': 'MRZ',
+  'poland-municipality-code-inspector': 'TERYT',
+  'poland-passport-number-inspector': 'PASS',
+  'poland-vehicle-registration-certificate-helper': 'VRC',
+  'poland-teryt-code-inspector': 'TERYT',
+  'poland-teryt-hierarchy-explorer': 'TERYT',
+  'poland-vin-validator': 'VIN',
+  'poland-ceidg-readiness-checker': 'CEIDG',
+  'poland-jpk-file-validator': 'JPK',
+  'poland-pkd-code-inspector': 'PKD',
+  'poland-pkwiu-code-inspector': 'PKWiU',
+  'poland-company-onboarding-auditor': 'KYC',
+  'poland-invoice-data-auditor': 'INV',
+  'poland-invoice-duplicate-risk-detector': 'DUP',
+  'poland-invoice-number-helper': 'INV',
+  'poland-ksef-fa2-field-mapper-assistant': 'FA(2)',
+  'poland-receipt-paragon-helper': 'PAR',
+  'poland-tax-microaccount-calculator': 'TAX',
+  'poland-vat-calculator': 'VAT',
+  'poland-pln-amount-formatter': 'PLN',
+  'poland-grosz-converter': 'gr',
+  'poland-bank-code-inspector': 'BANK',
+  'poland-bank-statement-parser': 'STMT',
+  'poland-bank-transfer-reconciliation-helper': 'RECON',
+  'poland-swift-bic-inspector': 'BIC',
+  'poland-iban-owner-name-precheck': 'IBAN',
+  'poland-payment-qr-generator': 'QR',
+  'poland-sepa-transfer-helper': 'SEPA',
+  'poland-split-payment-helper': 'MPP',
+  'poland-transfer-title-builder': 'TITLE',
+  'poland-address-formatter': 'ADDR',
+  'poland-address-transliteration-normalizer': 'ASCII',
+  'poland-date-locale-formatter': 'DATE',
+  'poland-parcel-tracking-inspector': 'PKG',
+  'poland-postal-address-parser-pro': 'ADDR',
+  'poland-data-quality-workbench': 'DQ',
+  'poland-pii-masker': 'PII',
+  'poland-test-data-generator': 'TEST',
+  'poland-compliance-checklist-generator': 'CHECK',
+  'poland-energy-meter-ppe-inspector': 'PPE',
+  'poland-insurance-policy-number-helper': 'POLICY',
+  'poland-ocr-postprocessing-fixer': 'OCR',
+  'poland-payroll-net-gross-sanity-helper': 'PAY',
+  'poland-upo-edeklaracje-payload-checker': 'UPO',
+  'poland-vies-readiness-helper': 'VIES'
+};
+
+function acronymFromText(value, fallback = 'ID') {
+  const words = String(value || '')
+    .replace(/[^A-Za-z0-9+ ]/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  if (words.length === 0) return fallback;
+  const joined = words.join('');
+  if (joined.length <= 6) return joined;
+  return words.slice(0, 4).map(word => word[0]).join('').toUpperCase() || fallback;
+}
+
+function getRouteIdentity(route) {
+  const slug = routeSlug(route);
+  return POLAND_ROUTE_IDENTITIES[slug] || acronymFromText(route.title, 'TOOL');
+}
+
+function getIdentifierIdentity(route) {
+  return acronymFromText(route.metadata?.displayName || route.title, 'ID');
+}
+
+function getStandardIdentity(name, fallback = 'STD') {
+  const value = String(name || '').toLowerCase();
+  if (value.includes('blik')) return 'BLIK';
+  if (value.includes('ksef')) return 'KSeF';
+  if (value.includes('ceidg')) return 'CEIDG';
+  if (value.includes('gus')) return 'GUS';
+  if (value.includes('zus')) return 'ZUS';
+  if (value.includes('krs')) return 'KRS';
+  if (value.includes('poczta')) return 'POST';
+  if (value.includes('narodowy bank') || value.includes('nbp')) return 'NBP';
+  if (value.includes('iban')) return 'IBAN';
+  if (value.includes('nrb')) return 'NRB';
+  if (value.includes('swift') || value.includes('bic')) return 'BIC';
+  if (value.includes('sepa')) return 'SEPA';
+  if (value.includes('split') || value.includes('mpp')) return 'MPP';
+  if (value.includes('payment qr') || value.includes('qr')) return 'QR';
+  if (value.includes('pln') || value.includes('grosz')) return 'PLN';
+  if (value.includes('card')) return 'CARD';
+  if (value.includes('bank')) return 'BANK';
+  return acronymFromText(name, fallback);
+}
 
 const POLAND_ROUTE_DESCRIPTIONS = {
   'pesel-validator': 'Validate PESEL numbers, decode birth date and gender, replay checksum math, and inspect privacy-safe diagnostics offline.',
@@ -176,7 +299,7 @@ function createRouteCard(route, description, tags = [], status = 'available') {
   return createInfoCard(
     route.title || 'Interactive Workbench',
     description || 'Run a browser-only country validation, formatting, or data-quality workflow.',
-    null,
+    getRouteIdentity(route),
     status,
     tags,
     route.path
@@ -545,7 +668,7 @@ export function renderCountryBankingSystem(model, routeRegistry = null) {
 
   const cardsHtml = model.bankingSystem.map(bank => {
     const relatedRoute = findCountryStandardRoute(routes, bank.name);
-    return createInfoCard(bank.name, bank.description, '🏦', bank.status || 'available', bank.tags || [], relatedRoute?.path || null);
+    return createInfoCard(bank.name, bank.description, getStandardIdentity(bank.name, 'BANK'), bank.status || 'available', bank.tags || [], relatedRoute?.path || null);
   }).join('\n');
   const toolsHtml = toolRoutes.length > 0 ? `
     <div class="vh-country-subsection">
@@ -585,7 +708,7 @@ export function renderCountryPaymentSystems(model, routeRegistry = null) {
   const cardsHtml = model.paymentSystems.map(pay => {
     const title = pay.title || pay.name;
     const relatedRoute = findCountryStandardRoute(routes, title);
-    return createInfoCard(title, pay.text || pay.description, '💳', pay.status || 'available', pay.tags || [], relatedRoute?.path || null);
+    return createInfoCard(title, pay.text || pay.description, getStandardIdentity(title, 'PAY'), pay.status || 'available', pay.tags || [], relatedRoute?.path || null);
   }).join('\n');
   const toolsHtml = toolRoutes.length > 0 ? `
     <div class="vh-country-subsection">
@@ -629,7 +752,7 @@ export function renderCountryIdentifiers(model, routeRegistry) {
     return createInfoCard(
       r.metadata.displayName,
       getPolandIdentifierDescription(r),
-      '🆔',
+      getIdentifierIdentity(r),
       'available',
       ['identifier', 'specification'],
       r.path
@@ -668,7 +791,7 @@ export function renderCountryValidators(model, routeRegistry) {
     return createInfoCard(
       r.title || 'Interactive Validator',
       getPolandRouteDescription(r),
-      '🧪',
+      getRouteIdentity(r),
       'available',
       ['validator', 'workbench'],
       r.path
@@ -733,7 +856,7 @@ export function renderCountryOfficialResources(model) {
     const card = createInfoCard(
       res.label || res.title,
       res.note || res.description || 'Official country authority resource and portal guides.',
-      '🏛',
+      getStandardIdentity(res.label || res.title, 'SRC'),
       res.status || 'available',
       res.tags || []
     );
@@ -764,7 +887,7 @@ export function renderCountryKnowledgeGraph(model, countryDiscovery, routeRegist
       cards.push(createInfoCard(
         item.name,
         item.description || 'National identifier metadata.',
-        '🆔',
+        getStandardIdentity(item.name, 'ID'),
         isRegistered ? 'available' : 'planned',
         ['graph-node', 'identifier'],
         isRegistered ? activePath : null,
@@ -781,7 +904,7 @@ export function renderCountryKnowledgeGraph(model, countryDiscovery, routeRegist
       cards.push(createInfoCard(
         item.name,
         item.description || 'Payment system standard.',
-        '💳',
+        getStandardIdentity(item.name, 'PAY'),
         isRegistered ? 'available' : 'planned',
         ['graph-node', 'payment'],
         isRegistered ? activePath : null,
@@ -798,7 +921,7 @@ export function renderCountryKnowledgeGraph(model, countryDiscovery, routeRegist
       cards.push(createInfoCard(
         item.name,
         item.description || 'National banking standard format.',
-        '📜',
+        getStandardIdentity(item.name, 'STD'),
         isRegistered ? 'available' : 'planned',
         ['graph-node', 'standard'],
         isRegistered ? activePath : null,
@@ -815,7 +938,7 @@ export function renderCountryKnowledgeGraph(model, countryDiscovery, routeRegist
       cards.push(createInfoCard(
         item.name,
         item.description || 'Interactive validation tool.',
-        '🛠',
+        getStandardIdentity(item.name, 'TOOL'),
         isRegistered ? 'available' : 'planned',
         ['graph-node', 'validator'],
         isRegistered ? activePath : null,
@@ -843,7 +966,7 @@ export function renderCountryRelatedCountries(model, countryDiscovery, routeRegi
     return createInfoCard(
       item.name,
       `Shares standards: ${item.via.join(', ')}`,
-      '🌍',
+      getCountryFlag(item.iso2 || item.slug || item.name),
       isRegistered ? 'available' : 'planned',
       item.via,
       isRegistered ? activePath : null,
