@@ -973,7 +973,7 @@ const POLAND_LOCALE_COPY = {
     "staticCompiled": "Compilado estático V2",
     "europe": "Europa",
     "findTool": "Encontrar ferramenta do país",
-    "searchHint": "Busque workbenches disponíveis de {country}.",
+    "searchHint": "Pesquisar workbenches disponíveis de {country}.",
     "searchPlaceholder": "Buscar PESEL, NIP, REGON, KRS, BLIK...",
     "clear": "Limpar",
     "quickActionsTitle": "Copiar constantes de {country} instantaneamente",
@@ -1306,21 +1306,21 @@ const POLAND_LOCALE_COPY = {
     "searchPlaceholder": "Пошук PESEL, NIP, REGON, KRS, BLIK...",
     "clear": "Очистити",
     "quickActionsTitle": "Скопіювати константи {country}",
-    "quickActionsBody": "Значення в один клік для форм, payload-ів, тестів і локалізованого форматування.",
+    "quickActionsBody": "Значення в один клік для форм, корисних навантажень, тестів і локалізованого форматування.",
     "catalogTitle": "Набір воркбенчів {country}",
-    "catalogBody": "Усі інструменти країни згруповані за наміром користувача, щоб швидко переглянути повний baseline без стіни карток.",
+    "catalogBody": "Усі інструменти країни згруповані за наміром користувача, щоб швидко переглянути повну базову структуру без стіни карток.",
     "identityIntentTitle": "Перевіряти особисті ідентифікатори",
     "identityIntentBody": "Особисті ID, документи, контактні й адресні формати",
     "organizationIntentTitle": "Перевіряти ідентифікатори організацій",
-    "organizationIntentBody": "Податки, реєстри, компанії та compliance-довідники",
+    "organizationIntentBody": "Податки, реєстри, компанії та довідники відповідності",
     "paymentIntentTitle": "Перевіряти платіжні дані",
     "paymentIntentBody": "Рахунки, перекази, платіжні референси та формати сум",
-    "offlineBoundaryTitle": "Надійна offline-межа",
+    "offlineBoundaryTitle": "Надійна офлайн-межа",
     "offlineBoundaryBody": "Формат, контрольна сума, структура й нормалізація виконуються локально в браузері. Статус реєстру, власність рахунку, офіційне підтвердження та юридична ідентичність потребують зовнішніх офіційних систем.",
     "availableWorkbenches": "доступні воркбенчі",
     "organizedDomains": "організовані домени",
     "serverCallsRequired": "потрібні серверні виклики",
-    "toolCardDescription": "Відкрити production-grade браузерний воркбенч для цього стандарту даних країни.",
+    "toolCardDescription": "Відкрити готовий до реального використання браузерний воркбенч для цього стандарту даних країни.",
     "officialAdministrativeOutline": "Офіційний адміністративний контур",
     "geographicPositionEurope": "Географічне розташування в Європі",
     "shapeCaption": "Контур країни {country}",
@@ -2222,12 +2222,278 @@ const COMMON_POLAND_SOURCE_STRINGS = {
   'National regulatory &amp; reference portals': 'officialSources'
 };
 
-function buildExpandedPolandMap(locale) {
-  const phrases = POLAND_CORE_TRANSLATIONS[locale];
-  if (!phrases) return {};
+const POLAND_SPECIFIC_TERMS = {
+  pl: { nrbDomesticAccount: 'Krajowy rachunek NRB', taxMicroaccount: 'Mikrorachunek podatkowy', paymentQrPayloads: 'Payloady QR płatności', plnAmountGrosz: 'Kwota PLN i grosze', plnPolishIban: 'PLN i polski IBAN', cardPayments: 'Płatności kartą', phoneConventions: 'Konwencje telefoniczne', telephoneLayouts: 'Układy telefoniczne i parsowanie', nbpExchange: 'Kontekst kursów NBP i bankowości' },
+  de: { nrbDomesticAccount: 'Inländisches NRB-Konto', taxMicroaccount: 'Steuer-Mikrokonto', paymentQrPayloads: 'Zahlungs-QR-Payloads', plnAmountGrosz: 'PLN-Betrag und Grosz', plnPolishIban: 'PLN und polnische IBAN', cardPayments: 'Kartenzahlungen', phoneConventions: 'Telefonkonventionen', telephoneLayouts: 'Telefonlayouts und Parsing-Regeln', nbpExchange: 'NBP-Wechselkurs- und Bankkontext' },
+  es: { nrbDomesticAccount: 'Cuenta nacional NRB', taxMicroaccount: 'Microcuenta fiscal', paymentQrPayloads: 'Payloads QR de pago', plnAmountGrosz: 'Importe PLN y grosz', plnPolishIban: 'PLN e IBAN polaco', cardPayments: 'Pagos con tarjeta', phoneConventions: 'Convenciones telefónicas', telephoneLayouts: 'Formatos telefónicos y reglas de análisis', nbpExchange: 'Contexto cambiario y bancario del NBP' },
+  'pt-BR': { nrbDomesticAccount: 'Conta doméstica NRB', taxMicroaccount: 'Microconta fiscal', paymentQrPayloads: 'Payloads QR de pagamento', plnAmountGrosz: 'Valor em PLN e grosz', plnPolishIban: 'PLN e IBAN polonês', cardPayments: 'Pagamentos com cartão', phoneConventions: 'Convenções telefônicas', telephoneLayouts: 'Layouts telefônicos e regras de parsing', nbpExchange: 'Contexto de câmbio e bancos do NBP' },
+  'pt-PT': { nrbDomesticAccount: 'Conta doméstica NRB', taxMicroaccount: 'Microconta fiscal', paymentQrPayloads: 'Payloads QR de pagamento', plnAmountGrosz: 'Montante em PLN e grosz', plnPolishIban: 'PLN e IBAN polaco', cardPayments: 'Pagamentos com cartão', phoneConventions: 'Convenções telefónicas', telephoneLayouts: 'Formatos telefónicos e regras de análise', nbpExchange: 'Contexto cambial e bancário do NBP' },
+  fr: { nrbDomesticAccount: 'Compte national NRB', taxMicroaccount: 'Microcompte fiscal', paymentQrPayloads: 'Charges utiles QR de paiement', plnAmountGrosz: 'Montant PLN et grosz', plnPolishIban: 'PLN et IBAN polonais', cardPayments: 'Paiements par carte', phoneConventions: 'Conventions téléphoniques', telephoneLayouts: 'Formats téléphoniques et règles d’analyse', nbpExchange: 'Contexte change et banque NBP' },
+  it: { nrbDomesticAccount: 'Conto nazionale NRB', taxMicroaccount: 'Microconto fiscale', paymentQrPayloads: 'Payload QR di pagamento', plnAmountGrosz: 'Importo PLN e grosz', plnPolishIban: 'PLN e IBAN polacco', cardPayments: 'Pagamenti con carta', phoneConventions: 'Convenzioni telefoniche', telephoneLayouts: 'Layout telefonici e regole di parsing', nbpExchange: 'Contesto cambi e banche NBP' },
+  nl: { nrbDomesticAccount: 'Binnenlandse NRB-rekening', taxMicroaccount: 'Fiscaal microaccount', paymentQrPayloads: 'Betalings-QR-payloads', plnAmountGrosz: 'PLN-bedrag en grosz', plnPolishIban: 'PLN en Poolse IBAN', cardPayments: 'Kaartbetalingen', phoneConventions: 'Telefoonconventies', telephoneLayouts: 'Telefoonindelingen en parseerregels', nbpExchange: 'NBP-wisselkoers- en bankcontext' },
+  cs: { nrbDomesticAccount: 'Domácí účet NRB', taxMicroaccount: 'Daňový mikroúčet', paymentQrPayloads: 'Platební QR payloady', plnAmountGrosz: 'Částka PLN a groše', plnPolishIban: 'PLN a polský IBAN', cardPayments: 'Platby kartou', phoneConventions: 'Telefonní konvence', telephoneLayouts: 'Telefonní formáty a pravidla parsování', nbpExchange: 'Kurzový a bankovní kontext NBP' },
+  sk: { nrbDomesticAccount: 'Domáci účet NRB', taxMicroaccount: 'Daňový mikroúčet', paymentQrPayloads: 'Platobné QR payloady', plnAmountGrosz: 'Suma PLN a groše', plnPolishIban: 'PLN a poľský IBAN', cardPayments: 'Platby kartou', phoneConventions: 'Telefónne konvencie', telephoneLayouts: 'Telefónne formáty a pravidlá parsovania', nbpExchange: 'Kurzový a bankový kontext NBP' },
+  uk: { nrbDomesticAccount: 'Внутрішній рахунок NRB', taxMicroaccount: 'Податковий мікрорахунок', paymentQrPayloads: 'Платіжні QR-пейлоади', plnAmountGrosz: 'Сума PLN і гроші', plnPolishIban: 'PLN і польський IBAN', cardPayments: 'Карткові платежі', phoneConventions: 'Телефонні правила', telephoneLayouts: 'Телефонні формати й правила розбору', nbpExchange: 'Контекст курсів NBP і банків' },
+  tr: { nrbDomesticAccount: 'Yerel NRB hesabı', taxMicroaccount: 'Vergi mikro hesabı', paymentQrPayloads: 'Ödeme QR payloadları', plnAmountGrosz: 'PLN tutarı ve grosz', plnPolishIban: 'PLN ve Polonya IBAN', cardPayments: 'Kart ödemeleri', phoneConventions: 'Telefon kuralları', telephoneLayouts: 'Telefon düzenleri ve ayrıştırma kuralları', nbpExchange: 'NBP kur ve bankacılık bağlamı' },
+  ro: { nrbDomesticAccount: 'Cont intern NRB', taxMicroaccount: 'Microcont fiscal', paymentQrPayloads: 'Payloaduri QR de plată', plnAmountGrosz: 'Sumă PLN și grosz', plnPolishIban: 'PLN și IBAN polonez', cardPayments: 'Plăți cu cardul', phoneConventions: 'Convenții telefonice', telephoneLayouts: 'Formate telefonice și reguli de parsare', nbpExchange: 'Context de schimb și bancar NBP' },
+  hu: { nrbDomesticAccount: 'Belföldi NRB-számla', taxMicroaccount: 'Adó mikro-számla', paymentQrPayloads: 'Fizetési QR-payloadok', plnAmountGrosz: 'PLN-összeg és grosz', plnPolishIban: 'PLN és lengyel IBAN', cardPayments: 'Kártyás fizetések', phoneConventions: 'Telefonos konvenciók', telephoneLayouts: 'Telefonformátumok és elemzési szabályok', nbpExchange: 'NBP árfolyam- és banki kontextus' },
+  sv: { nrbDomesticAccount: 'Inhemskt NRB-konto', taxMicroaccount: 'Skattemikrokonto', paymentQrPayloads: 'Betalnings-QR-payloads', plnAmountGrosz: 'PLN-belopp och grosz', plnPolishIban: 'PLN och polskt IBAN', cardPayments: 'Kortbetalningar', phoneConventions: 'Telefonkonventioner', telephoneLayouts: 'Telefonformat och tolkningsregler', nbpExchange: 'NBP-växel- och bankkontext' },
+  no: { nrbDomesticAccount: 'Innenlandsk NRB-konto', taxMicroaccount: 'Skattemikrokonto', paymentQrPayloads: 'Betalings-QR-payloads', plnAmountGrosz: 'PLN-beløp og grosz', plnPolishIban: 'PLN og polsk IBAN', cardPayments: 'Kortbetalinger', phoneConventions: 'Telefonkonvensjoner', telephoneLayouts: 'Telefonformater og tolkningsregler', nbpExchange: 'NBP-vekslings- og bankkontekst' },
+  fi: { nrbDomesticAccount: 'Kotimainen NRB-tili', taxMicroaccount: 'Veromikrotili', paymentQrPayloads: 'Maksu-QR-payloadit', plnAmountGrosz: 'PLN-summa ja grosz', plnPolishIban: 'PLN ja puolalainen IBAN', cardPayments: 'Korttimaksut', phoneConventions: 'Puhelinsäännöt', telephoneLayouts: 'Puhelinmuodot ja jäsennyssäännöt', nbpExchange: 'NBP-valuutta- ja pankkikonteksti' },
+  da: { nrbDomesticAccount: 'Indenlandsk NRB-konto', taxMicroaccount: 'Skattemikrokonto', paymentQrPayloads: 'Betalings-QR-payloads', plnAmountGrosz: 'PLN-beløb og grosz', plnPolishIban: 'PLN og polsk IBAN', cardPayments: 'Kortbetalinger', phoneConventions: 'Telefonkonventioner', telephoneLayouts: 'Telefonformater og parserregler', nbpExchange: 'NBP-valuta- og bankkontekst' },
+  ja: { nrbDomesticAccount: '国内NRB口座', taxMicroaccount: '税務マイクロ口座', paymentQrPayloads: '支払いQRペイロード', plnAmountGrosz: 'PLN金額とグロシュ', plnPolishIban: 'PLNとポーランドIBAN', cardPayments: 'カード決済', phoneConventions: '電話番号ルール', telephoneLayouts: '電話番号形式と解析ルール', nbpExchange: 'NBP為替・銀行コンテキスト' },
+  ko: { nrbDomesticAccount: '국내 NRB 계좌', taxMicroaccount: '세금 마이크로계좌', paymentQrPayloads: '결제 QR 페이로드', plnAmountGrosz: 'PLN 금액과 그로시', plnPolishIban: 'PLN 및 폴란드 IBAN', cardPayments: '카드 결제', phoneConventions: '전화번호 규칙', telephoneLayouts: '전화번호 형식 및 파싱 규칙', nbpExchange: 'NBP 환율 및 은행 컨텍스트' },
+  'zh-CN': { nrbDomesticAccount: '国内 NRB 账户', taxMicroaccount: '税务微账户', paymentQrPayloads: '支付 QR 载荷', plnAmountGrosz: 'PLN 金额和格罗什', plnPolishIban: 'PLN 和波兰 IBAN', cardPayments: '银行卡支付', phoneConventions: '电话规则', telephoneLayouts: '电话格式和解析规则', nbpExchange: 'NBP 汇率与银行上下文' },
+  'zh-TW': { nrbDomesticAccount: '國內 NRB 帳戶', taxMicroaccount: '稅務微帳戶', paymentQrPayloads: '付款 QR 載荷', plnAmountGrosz: 'PLN 金額與格羅什', plnPolishIban: 'PLN 與波蘭 IBAN', cardPayments: '卡片付款', phoneConventions: '電話規則', telephoneLayouts: '電話格式與解析規則', nbpExchange: 'NBP 匯率與銀行情境' },
+  ar: { nrbDomesticAccount: 'حساب NRB المحلي', taxMicroaccount: 'الحساب الضريبي المصغر', paymentQrPayloads: 'حمولات QR للدفع', plnAmountGrosz: 'مبلغ PLN والغروش', plnPolishIban: 'PLN وIBAN البولندي', cardPayments: 'مدفوعات البطاقات', phoneConventions: 'قواعد الهاتف', telephoneLayouts: 'تنسيقات الهاتف وقواعد التحليل', nbpExchange: 'سياق أسعار NBP والبنوك' },
+  he: { nrbDomesticAccount: 'חשבון NRB מקומי', taxMicroaccount: 'מיקרו-חשבון מס', paymentQrPayloads: 'מטעני QR לתשלום', plnAmountGrosz: 'סכום PLN וגרוש', plnPolishIban: 'PLN ו-IBAN פולני', cardPayments: 'תשלומי כרטיס', phoneConventions: 'כללי טלפון', telephoneLayouts: 'תבניות טלפון וכללי פענוח', nbpExchange: 'הקשר שערי NBP ובנקאות' },
+  hi: { nrbDomesticAccount: 'घरेलू NRB खाता', taxMicroaccount: 'कर माइक्रोखाता', paymentQrPayloads: 'भुगतान QR payloads', plnAmountGrosz: 'PLN राशि और grosz', plnPolishIban: 'PLN और पोलिश IBAN', cardPayments: 'कार्ड भुगतान', phoneConventions: 'फ़ोन नियम', telephoneLayouts: 'फ़ोन प्रारूप और पार्सिंग नियम', nbpExchange: 'NBP विनिमय और बैंकिंग संदर्भ' },
+  id: { nrbDomesticAccount: 'Akun domestik NRB', taxMicroaccount: 'Akun mikro pajak', paymentQrPayloads: 'Payload QR pembayaran', plnAmountGrosz: 'Jumlah PLN dan grosz', plnPolishIban: 'PLN dan IBAN Polandia', cardPayments: 'Pembayaran kartu', phoneConventions: 'Konvensi telepon', telephoneLayouts: 'Format telepon dan aturan parsing', nbpExchange: 'Konteks kurs NBP dan perbankan' },
+  vi: { nrbDomesticAccount: 'Tài khoản NRB nội địa', taxMicroaccount: 'Tài khoản thuế vi mô', paymentQrPayloads: 'Payload QR thanh toán', plnAmountGrosz: 'Số tiền PLN và grosz', plnPolishIban: 'PLN và IBAN Ba Lan', cardPayments: 'Thanh toán thẻ', phoneConventions: 'Quy ước điện thoại', telephoneLayouts: 'Định dạng điện thoại và quy tắc phân tích', nbpExchange: 'Ngữ cảnh tỷ giá NBP và ngân hàng' },
+  th: { nrbDomesticAccount: 'บัญชี NRB ในประเทศ', taxMicroaccount: 'บัญชีภาษีขนาดเล็ก', paymentQrPayloads: 'เพย์โหลด QR การชำระเงิน', plnAmountGrosz: 'จำนวน PLN และ grosz', plnPolishIban: 'PLN และ IBAN โปแลนด์', cardPayments: 'การชำระเงินด้วยบัตร', phoneConventions: 'กฎหมายเลขโทรศัพท์', telephoneLayouts: 'รูปแบบโทรศัพท์และกฎการแยกวิเคราะห์', nbpExchange: 'บริบทอัตราแลกเปลี่ยน NBP และธนาคาร' },
+  ms: { nrbDomesticAccount: 'Akaun domestik NRB', taxMicroaccount: 'Akaun mikro cukai', paymentQrPayloads: 'Payload QR pembayaran', plnAmountGrosz: 'Amaun PLN dan grosz', plnPolishIban: 'PLN dan IBAN Poland', cardPayments: 'Pembayaran kad', phoneConventions: 'Konvensyen telefon', telephoneLayouts: 'Format telefon dan peraturan parsing', nbpExchange: 'Konteks pertukaran NBP dan perbankan' }
+};
+
+const POLAND_SHORT_BANKING_TERMS = {
+  pl: { split: 'Split payment / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  de: { split: 'Split Payment / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  es: { split: 'Pago dividido / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  'pt-BR': { split: 'Pagamento dividido / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  'pt-PT': { split: 'Pagamento dividido / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  fr: { split: 'Paiement fractionné / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  it: { split: 'Pagamento frazionato / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  nl: { split: 'Gesplitste betaling / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  cs: { split: 'Rozdělená platba / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  sk: { split: 'Rozdelená platba / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  uk: { split: 'Розділений платіж / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  tr: { split: 'Bölünmüş ödeme / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  ro: { split: 'Plată divizată / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  hu: { split: 'Osztott fizetés / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  sv: { split: 'Delad betalning / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  no: { split: 'Delt betaling / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  fi: { split: 'Jaettu maksu / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  da: { split: 'Opdelt betaling / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  ja: { split: '分割支払い / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  ko: { split: '분할 결제 / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  'zh-CN': { split: '拆分付款 / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  'zh-TW': { split: '拆分付款 / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  ar: { split: 'دفع مقسم / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  he: { split: 'תשלום מפוצל / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  hi: { split: 'विभाजित भुगतान / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  id: { split: 'Pembayaran terpisah / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  vi: { split: 'Thanh toán tách / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  th: { split: 'การชำระเงินแบบแยก / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' },
+  ms: { split: 'Bayaran berpecah / MPP', bicSwift: 'BIC / SWIFT', swiftBic: 'SWIFT / BIC' }
+};
+
+function shortBankingTerm(locale, key, fallback) {
+  return (POLAND_SHORT_BANKING_TERMS[locale] && POLAND_SHORT_BANKING_TERMS[locale][key]) || fallback;
+}
+
+function polandTerm(locale, key, fallback) {
+  return (POLAND_SPECIFIC_TERMS[locale] && POLAND_SPECIFIC_TERMS[locale][key]) || fallback;
+}
+
+function buildExpandedPolandDetailMap(locale, copy, phrases) {
   const [portal, summary, profile, actions, catalog, officialSources, validatorWorkbenches, checklist, ecosystem, localizationNotes] = phrases;
+  const officialSourceText = officialSources + ' — ' + summary;
+  const bankingText = catalog + ' — ' + copy.paymentIntentBody;
+  const identifierText = profile + ' — ' + copy.identityIntentBody;
+  const workbenchText = validatorWorkbenches + ' — ' + copy.toolCardDescription;
+  const addressText = localizationNotes + ' — ' + copy.address;
+  const checklistText = checklist + ' — ' + summary;
+  const ecosystemText = ecosystem + ' — ' + summary;
+  const actionText = actions + ' — ' + copy.quickActionsBody;
+  const toolCatalogText = catalog + ' — ' + copy.catalogBody;
+  const map = {
+    'National Identifiers': profile,
+    'Interactive Sandboxes': validatorWorkbenches,
+    'Banking Standards': copy.paymentIntentTitle,
+    'Payment Networks': copy.paymentIntentTitle,
+    'Phone Conventions': localizationNotes,
+    'Telephone layouts & parsing guidelines': localizationNotes,
+    'Telephone layouts &amp; parsing guidelines': localizationNotes,
+    'NRB domestic account': copy.paymentIntentTitle,
+    'NBP exchange and banking context': ecosystem,
+    'Web-optimized real-geography location map focused and highlighted.': copy.geographicPositionEurope,
+    'Web-optimized real-geography world map based on Natural Earth data.': copy.geographicPositionEurope,
+    'Polish złoty': 'złoty (PLN)',
+    'Comma (,)': copy.decimal + ' (,)',
+    'Space ( ) or Dot (.)': copy.thousands + ' ( / .)',
+    'All intents': catalog,
+    'Other country developer workflows': actions,
+    '20 workbenches de identificadores relacionados': copy.availableWorkbenches,
+    'Related browser-only workbench': workbenchText,
+    'Related banking workbenches': bankingText,
+    'Related payment workbenches': bankingText,
+    'Official identifier specs plus related browser tools for personal, business, vehicle, address, and registry-shaped Polish data.': identifierText,
+    'Pre-rendered interactive validator tools to test identifiers in a real browser.': workbenchText,
+    'IBAN, NRB, BIC, SEPA, Elixir-style routing context, and payment-ready developer workflows.': bankingText,
+    'BLIK, SEPA, split payment, payment QR, PLN amounts, VAT amounts, and transfer-reference workflows.': bankingText,
+    'Verified legislative resources to validate compliance formats.': officialSourceText,
+    'Central Statistical Office for official database, classification, and statistical context.': officialSourceText,
+    'Official tax administration portal for NIP, VAT, and business status references.': officialSourceText,
+    'Social Insurance Institution reference portal for social security context.': officialSourceText,
+    'Central bank of Poland providing monetary policy and banking institution indexes.': officialSourceText,
+    'Central bank of Polska providing monetary policy and banking institution indexes.': officialSourceText,
+    'Central bank of Польща providing monetary policy and banking institution indexes.': officialSourceText,
+    'Postal authority and official postcode database lookup.': officialSourceText,
+    'National Court Register context for KRS-shaped business identifiers and company records.': officialSourceText,
+    'Central register context for sole-proprietor onboarding and business-data readiness checks.': officialSourceText,
+    'National e-invoicing context for KSeF XML payloads, invoice identifiers, and offline readiness.': officialSourceText,
+    'Reference context for Polish tax control files, VAT reporting data, and XML submission readiness.': officialSourceText,
+    'Territorial and locality classification context for voivodeships, counties, municipalities, towns, and streets.': officialSourceText,
+    'Waste database and product-packaging register context for BDO-shaped business identifiers.': officialSourceText,
+    'Vehicle and driver registry context for plates, VIN workflows, registration certificates, and licence data.': officialSourceText,
+    'Insurance guarantee fund context for vehicle insurance and policy-number workflows.': officialSourceText,
+    'Customs and tax administration context for EORI, VAT, tax microaccounts, and compliance identifiers.': officialSourceText,
+    'Central-bank context for PLN, bank metadata, exchange-rate references, and financial institution naming.': officialSourceText,
+    'Locale preferences, separator characters, and display configurations.': localizationNotes,
+    'Utility metrics, emergency networks, and infrastructure constants.': profile,
+    'Display order, postal mask, street notation, and delivery-ready field sequence.': addressText,
+    'Jan Kowalski — Fictional person or organization receiving mail.': addressText,
+    'ul. Marszałkowska — Polish addresses usually include the street type and name.': addressText,
+    '100 m. 10 — Building number and apartment unit details.': addressText,
+    '00-001 — Five-digit postal code with hyphen (NN-NNN).': addressText,
+    'Warszawa — City or municipality for display and delivery.': addressText,
+    'Country label for international mail and cross-border records.': addressText,
+    'Polska — Country label for international mail and cross-border records.': addressText,
+    'Poland — Country label for international mail and cross-border records.': addressText,
+    'Польща — Country label for international mail and cross-border records.': addressText,
+    'Telephone layouts & parsing guidelines': localizationNotes,
+    'Mobile, regional landline, and international dialing representations.': localizationNotes,
+    'Polish mobile layout display example.': localizationNotes,
+    'Warsaw-style landline display example.': localizationNotes,
+    'Use +48 for international representation.': localizationNotes,
+    'International layout for Warsaw landline.': localizationNotes,
+    'Digits-only normalization for databases.': localizationNotes,
+    'Important checkmarks to verify when deploying localized pipelines.': checklistText,
+    'Locale pl-PL configured': checklistText,
+    'UTF-8 encoding preserved': checklistText,
+    'Złoty (PLN) formatting with comma decimals and space thousands separators': checklistText,
+    'PESEL validation rules and checksum': checklistText,
+    'NIP tax identifier checksum rules': checklistText,
+    'REGON business register length and checks': checklistText,
+    'Polish postal code display mask (NN-NNN)': checklistText,
+    'Phone code +48 formatting': checklistText,
+    'NRB domestic format vs IBAN PL representation': checklistText,
+    'BLIK payment system integration parameters': checklistText,
+    'Numer Identyfikacji Podatkowej. Polish tax identification number.': identifierText,
+    'Universal Electronic System for Registration of the Population. 11-digit Polish national ID.': identifierText,
+    'National Official Register of Business Entities in Poland.': identifierText,
+    'National Official Register of Business Entities in Польща.': identifierText,
+    'Polish mobile instant payment system.': bankingText,
+    'Single Euro Payments Area bank transfer standard.': bankingText,
+    'Global financial messaging network for international bank wire transfers.': bankingText,
+    'International Bank Account Number standard.': bankingText,
+    'Shares standards: IBAN, SEPA, SWIFT': ecosystemText,
+    'Shares standards: SWIFT': ecosystemText,
+    'Poland uses pl-PL locale for formatting.': localizationNotes,
+    'Polska uses pl-PL locale for formatting.': localizationNotes,
+    'Польща uses pl-PL locale for formatting.': localizationNotes,
+    "PLN is displayed with space separators and 'zł' symbol at the end (e.g. 1 234,56 zł).": localizationNotes,
+    'Diacritics like ł and ż are common and must be preserved.': localizationNotes,
+    'BLIK is the leading mobile payment method in Poland.': localizationNotes,
+    'BLIK is the leading mobile payment method in Польща.': localizationNotes,
+    'Date format is DD.MM.YYYY.': localizationNotes,
+    'Ensure database tables support UTF-8 for Polish diacritics.': actionText,
+    'Validate local PESEL, NIP, and REGON formats separately.': actionText,
+    'Use PL country prefix for IBAN validation on Polish accounts.': actionText,
+    'Treating BLIK as a bank account identifier rather than a mobile payment token.': checklistText,
+    'Conflating NIP (tax) and PESEL (personal) identifiers.': checklistText,
+    'Using comma instead of space for thousands formatting, which looks unnatural to Polish users.': checklistText,
+    'Forgetting the hyphen in the NN-NNN postal code display.': checklistText,
+    'Hardcoding PLN symbol position before the amount (PLN should be formatted as 123,45 zł or 123,45 PLN).': checklistText,
+    'Conflating 26-digit domestic NRB accounts with 28-character PL IBANs in databases.': checklistText,
+    'Ready-to-use programming snippets in JavaScript, Java, Python, and Go.': actionText,
+    'Java Locale': copy.localeLabel + ' Java',
+    'Use BCP 47 locale tags for Java formatting APIs.': actionText,
+    'Copy Code': (UI[locale]?.copy || 'Copy'),
+    'Java currency format': copy.currency + ' Java',
+    'Formats values using Polish currency conventions.': actionText,
+    'JavaScript Intl Currency': copy.currency + ' JavaScript Intl',
+    'Formats PLN values with pl-PL separators and currency display.': actionText,
+    'JavaScript Date': copy.dateFormat + ' JavaScript',
+    'Use Europe/Warsaw timezone for Poland local dates.': actionText,
+    'Use Europe/Warsaw timezone for Polska local dates.': actionText,
+    'Use Europe/Warsaw timezone for Польща local dates.': actionText,
+    'Python locale': copy.localeLabel + ' Python',
+    'Requires the pl_PL locale to be installed on the host operating system.': actionText,
+    'Go language tag': copy.localeLabel + ' Go',
+    'Use golang.org/x/text/language package for locale representation.': actionText,
+    'Personal identity register for citizens and residents.': identifierText,
+    'Tax identification number register.': identifierText,
+    'National register of business entities.': identifierText,
+    'Mobile payment standard used by millions of bank customers.': bankingText,
+    'Plural rules': localizationNotes,
+    'Polish has complex plural forms (1, 2-4, 5-21, etc.) depending on the noun case.': localizationNotes,
+    'Week starts': localizationNotes,
+    'Most Polish user interfaces expect Monday as the first day of week.': localizationNotes,
+    'Calendar': localizationNotes,
+    'Gregorian calendar is the ordinary civil calendar.': localizationNotes,
+    'Unicode': localizationNotes,
+    'Ensure support for Polish diacritics: ą, ć, ę, ł, ń, ó, ś, ź, ż.': localizationNotes,
+    'Timezone': localizationNotes,
+    'Use Europe/Warsaw for global civil time in Poland.': localizationNotes,
+    'Use Europe/Warsaw for global civil time in Polska.': localizationNotes,
+    'Use Europe/Warsaw for global civil time in Польща.': localizationNotes,
+    'Static tools generated by Valido Engine.': ecosystemText,
+    'Bank code segment': copy.paymentIntentTitle,
+    'Bank and branch hints can be extracted from a structurally valid NRB or PL IBAN without doing an official lookup.': bankingText,
+    'Widely popular domestic instant mobile payment solution using six-digit short-lived codes.': bankingText,
+    'Domestic account context': copy.paymentIntentTitle,
+    'Elixir is the domestic clearing system processing PLN transfers in three daily sessions.': bankingText,
+    'PL-prefixed IBAN format is standard for international transfers.': bankingText,
+    'The 26-digit domestic account layout carries control digits, bank segment, branch context, and account sequence.': bankingText,
+    'Payment QR and title fields': copy.paymentIntentTitle,
+    'Payment QR and transfer title workflows standardize amount, account, recipient, reference, and invoice text before banking handoff.': bankingText,
+    'PLN, grosz and VAT amounts': copy.paymentIntentTitle,
+    'Polish money workflows need comma decimals, integer grosz payloads, VAT rounding, and copyable audit output.': bankingText,
+    'Euro accounts in Poland support SEPA, but domestic transfers use PLN clearing (Elixir).': bankingText,
+    'Euro accounts in Polska support SEPA, but domestic transfers use PLN clearing (Elixir).': bankingText,
+    'Euro accounts in Польща support SEPA, but domestic transfers use PLN clearing (Elixir).': bankingText,
+    'Split-payment transfers combine gross amount, VAT amount, invoice reference, and supplier NIP into one banking workflow.': bankingText,
+    'Required for international non-SEPA transfers.': bankingText,
+    'Tax microaccount helpers derive payment-account context from PESEL or NIP input for offline pre-checks.': bankingText,
+    'BIC/SWIFT details are required for international SWIFT transfers and cross-border bank account payments.': bankingText,
+    'BLIK uses short-lived six-digit consumer codes. The workbench validates shape and safe fixture behavior without pretending to verify live codes.': bankingText,
+    'Debit and credit card flows follow global card network schemas plus Polish locale amount formatting conventions.': bankingText,
+    'Domestic Polish account numbers use a 26-digit NRB structure that maps cleanly into a PL-prefixed IBAN.': bankingText,
+    'QR-like payment payloads are useful for transfer intent, amount, recipient account, and reference-field testing.': bankingText,
+    'Polish money tools normalize comma decimals, grosz integer values, VAT rates, and copyable developer payloads.': bankingText,
+    'Poland uses PLN and participates in IBAN-based European banking flows. Domestic transfers use local clearing systems (Elixir).': bankingText,
+    'Польща uses PLN and participates in IBAN-based European banking flows. Domestic transfers use local clearing systems (Elixir).': bankingText,
+    'SEPA credit transfers apply to Euro-denominated payments, but domestic flows mostly use PLN-native routing.': bankingText,
+    'Polish split payment workflows separate VAT amount, supplier NIP, invoice reference, and gross transfer amount.': bankingText,
+    'Tax microaccount calculations depend on PESEL or NIP input and must be treated as payment-routing support, not a bank lookup.': bankingText
+  };
+  return map;
+}
+
+function getPolandPhrasePack(locale, copy) {
+  const expanded = POLAND_CORE_TRANSLATIONS[locale];
+  if (expanded) return expanded;
+  const section = SECTION_LABELS[locale] || {};
+  const common = COMMON_LABELS[locale] || {};
+  return [
+    copy.catalogTitle,
+    copy.catalogBody,
+    section['Identity & Standards Profile'] || copy.identityIntentTitle,
+    common['Developer Actions'] || copy.quickActionsTitle,
+    common['Tool Catalog'] || copy.catalogTitle,
+    common['Official Sources'] || copy.staticCompiled,
+    common['Interactive Validator Workbenches'] || copy.toolCardDescription,
+    common['Developer Checklist'] || copy.offlineBoundaryTitle,
+    common['Country Ecosystem'] || copy.catalogTitle,
+    common['Localization Notes'] || copy.offlineBoundaryBody
+  ];
+}
+
+function buildExpandedPolandMap(locale) {
   const country = COUNTRY_NAMES[locale]?.Poland || EXPANDED_COUNTRY_NAMES[locale]?.Poland || 'Poland';
   const copy = resolveCountryCopy(locale, country);
+  const phrases = getPolandPhrasePack(locale, copy);
+  const [portal, summary, profile, actions, catalog, officialSources, validatorWorkbenches, checklist, ecosystem, localizationNotes] = phrases;
   const map = {
     'Poland Developer Portal': portal,
     'Poland Developer Tools & Identifiers | ValidoHub': country + ' | ValidoHub',
@@ -2256,6 +2522,14 @@ function buildExpandedPolandMap(locale) {
     'server calls required': copy.serverCallsRequired,
     'Open the production-grade browser workbench for this country data standard.': copy.toolCardDescription,
     'Open the production-grade browser workbench for this country data standard. Quality 40%: Validate · Docs.': copy.toolCardDescription,
+    'Browser-only local workbench': copy.toolCardDescription,
+    'PESEL, NIP, REGON, KRS, documents, vehicle identifiers, and official registry-shaped data.': profile + ' — ' + copy.identityIntentBody,
+    'VAT, KSeF, JPK, invoices, company onboarding, classifications, and fiscal record helpers.': profile + ' — ' + copy.organizationIntentBody,
+    'IBAN, NRB, BIC, SEPA, BLIK, split payment, transfer titles, amounts, and payment QR payloads.': catalog + ' — ' + copy.paymentIntentBody,
+    'Postal codes, addresses, phones, parcel numbers, date/locale formatting, and delivery-ready data.': localizationNotes + ' — ' + copy.address,
+    'Masking, test fixtures, privacy-safe demos, and whole-record Polish data-quality audits.': actions + ' — ' + copy.quickActionsBody,
+    'Additional country-specific tools and inspectors.': catalog + ' — ' + copy.catalogBody,
+    'No matching workbenches found for this country. Try local identifiers, payments, address, phone, or tax terms.': copy.searchHint,
     'Identity, registry & official numbers': profile,
     'Identity, registry &amp; official numbers': profile,
     'Tax, invoices & business compliance': profile,
@@ -2307,8 +2581,10 @@ function buildExpandedPolandMap(locale) {
     'Canonical national portals, APIs, and registries related to compliance formats.': summary,
     'Local conventions and grammar exceptions': localizationNotes,
     'Grammar peculiarities, diacritics, and calendar configurations.': summary,
-    'Reference note, not a link': (UI[locale]?.reference || UI[locale]?.references || EN_UI_BASE.reference)
+    'Reference note, not a link': (UI[locale]?.references || UI[locale]?.reference || EN_UI_BASE.references || EN_UI_BASE.reference),
+    'BDO Registry': 'BDO ' + registryLabel(locale)
   };
+  Object.assign(map, buildExpandedPolandDetailMap(locale, copy, phrases));
   for (const [source, key] of Object.entries(COMMON_POLAND_SOURCE_STRINGS)) {
     map[source] = { summary, profile, actions, catalog, officialSources, validatorWorkbenches, checklist, ecosystem, localizationNotes }[key];
   }
@@ -2318,7 +2594,45 @@ function buildExpandedPolandMap(locale) {
 function buildExpandedPolandTextOnlyMap(locale) {
   const country = COUNTRY_NAMES[locale]?.Poland || EXPANDED_COUNTRY_NAMES[locale]?.Poland || 'Poland';
   const copy = resolveCountryCopy(locale, country);
+  const ui = UI[locale] || EN_UI_BASE;
+  const tag = {
+    government: ui.official || copy.staticCompiled,
+    tax: copy.organizationIntentTitle,
+    identifiers: ui.identifiers || copy.identityIntentTitle,
+    postal: copy.postalPattern,
+    addresses: copy.address,
+    banking: copy.paymentIntentTitle,
+    payments: copy.paymentIntentTitle,
+    business: copy.organizationIntentTitle,
+    invoices: copy.organizationIntentTitle,
+    xml: 'XML',
+    environment: copy.officialAdministrativeOutline,
+    vehicles: copy.identityIntentBody,
+    insurance: copy.organizationIntentTitle,
+    customs: copy.organizationIntentTitle,
+    currency: copy.currency,
+    'graph-node': ui.identifiers || copy.identityIntentTitle,
+    payment: copy.paymentIntentTitle,
+    identifier: ui.identifiers || copy.identityIntentTitle,
+    specification: ui.documentation || copy.staticCompiled,
+    validator: ui.tool || copy.toolCardDescription,
+    workbench: ui.workbench || copy.toolCardDescription,
+    standard: copy.staticCompiled
+  };
   return {
+    'NRB domestic account': polandTerm(locale, 'nrbDomesticAccount', copy.paymentIntentTitle),
+    'Tax microaccount': polandTerm(locale, 'taxMicroaccount', copy.paymentIntentTitle),
+    'Payment QR payloads': polandTerm(locale, 'paymentQrPayloads', copy.paymentIntentTitle),
+    'PLN amount and grosz': polandTerm(locale, 'plnAmountGrosz', copy.paymentIntentTitle),
+    'PLN and Polish IBAN': polandTerm(locale, 'plnPolishIban', copy.paymentIntentTitle),
+    'Card payments': polandTerm(locale, 'cardPayments', copy.paymentIntentTitle),
+    'Phone Conventions': polandTerm(locale, 'phoneConventions', copy.phone),
+    'Telephone layouts & parsing guidelines': polandTerm(locale, 'telephoneLayouts', copy.phone),
+    'Telephone layouts &amp; parsing guidelines': polandTerm(locale, 'telephoneLayouts', copy.phone),
+    'NBP exchange and banking context': polandTerm(locale, 'nbpExchange', copy.paymentIntentTitle),
+    'Split payment / MPP': shortBankingTerm(locale, 'split', 'Split payment / MPP'),
+    'BIC / SWIFT': shortBankingTerm(locale, 'bicSwift', 'BIC / SWIFT'),
+    'SWIFT / BIC': shortBankingTerm(locale, 'swiftBic', 'SWIFT / BIC'),
     'Country Shape': copy.countryShape,
     'Location': copy.location,
     'Locale': copy.localeLabel,
@@ -2330,6 +2644,38 @@ function buildExpandedPolandTextOnlyMap(locale) {
     'Postal pattern': copy.postalPattern,
     'Decimal': copy.decimal,
     'Thousands': copy.thousands,
+    'Capital City': copy.localeLabel,
+    'Native Name': copy.localeLabel,
+    'Calling Prefix': copy.callingCode,
+    'Internet TLD': copy.domain,
+    'Driving Side': copy.display,
+    'ISO Alpha-2': copy.iso2,
+    'ISO Alpha-3': copy.iso3,
+    'Right': rightSideLabel(locale),
+    'Time Zones': copy.localeLabel,
+    'Active Locale': copy.localeLabel,
+    'Date Format': copy.dateFormat,
+    'Currency Name': copy.currency,
+    'Decimal Separator': copy.decimal,
+    'Thousands Separator': copy.thousands,
+    'Postal Pattern': copy.postalPattern,
+    'Plug Types': copy.display,
+    'Electrical Voltage': copy.display,
+    'Grid Frequency': copy.display,
+    'Emergency Number': copy.phone,
+    'Recipient': copy.address,
+    'Street type and name': copy.address,
+    'Building and flat number': copy.address,
+    'Postal code': copy.postalPattern,
+    'City': copy.address,
+    'Country': copy.countryCode,
+    'Copy Address': copy.clear,
+    'Mobile': copy.phone,
+    'Example layout': copy.display,
+    'Landline': copy.phone,
+    'International mobile': copy.phone,
+    'International landline': copy.phone,
+    'Normalized': copy.display,
     'country code': copy.countryCode,
     'alpha-3': copy.alpha3,
     'phone': copy.phone,
@@ -2337,8 +2683,48 @@ function buildExpandedPolandTextOnlyMap(locale) {
     'display': copy.display,
     'money': copy.money,
     'address': copy.address,
-    'numbers': copy.numbers
+    'numbers': copy.numbers,
+    'developer': (UI[locale]?.developerTools || 'Developer'),
+    'reference': (UI[locale]?.references || UI[locale]?.reference || EN_UI_BASE.references || EN_UI_BASE.reference),
+    'government': tag.government,
+    'tax': tag.tax,
+    'identifiers': tag.identifiers,
+    'postal': tag.postal,
+    'addresses': tag.addresses,
+    'banking': tag.banking,
+    'payments': tag.payments,
+    'business': tag.business,
+    'invoices': tag.invoices,
+    'xml': tag.xml,
+    'environment': tag.environment,
+    'vehicles': tag.vehicles,
+    'insurance': tag.insurance,
+    'customs': tag.customs,
+    'currency': tag.currency,
+    'graph-node': tag['graph-node'],
+    'payment': tag.payment,
+    'identifier': tag.identifier,
+    'specification': tag.specification,
+    'validator': tag.validator,
+    'workbench': tag.workbench,
+    'standard': tag.standard
   };
+}
+
+function applyUniversalPolandLocalizationPacks() {
+  for (const locale of SUPPORTED_LOCALES) {
+    if (locale === 'en') continue;
+    const country = COUNTRY_NAMES[locale]?.Poland || EXPANDED_COUNTRY_NAMES[locale]?.Poland || 'Poland';
+    const copy = resolveCountryCopy(locale, country);
+    const baseMap = buildExpandedPolandMap(locale);
+    const textOnlyMap = buildExpandedPolandTextOnlyMap(locale);
+    SECTION_LABELS[locale] = { ...(SECTION_LABELS[locale] || {}), ...baseMap };
+    COMMON_LABELS[locale] = { ...(COMMON_LABELS[locale] || {}), ...baseMap };
+    COUNTRY_PAGE_LABELS[locale] = { ...(COUNTRY_PAGE_LABELS[locale] || {}), ...baseMap, ...textOnlyMap };
+    COUNTRY_PAGE_RICH_LABELS[locale] = { ...(COUNTRY_PAGE_RICH_LABELS[locale] || {}), ...baseMap, ...textOnlyMap };
+    COUNTRY_PAGE_COMPLETION_LABELS[locale] = { ...(COUNTRY_PAGE_COMPLETION_LABELS[locale] || {}), ...baseMap };
+    COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] = { ...(COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] || {}), ...baseMap };
+  }
 }
 
 function applyExpandedLocalePacks() {
@@ -2400,6 +2786,282 @@ const TITLE_PHRASES = {
     [' Validator &amp; Explainer', ' - validador e explicação'], [' Number Inspector', ' - inspetor de número'], [' Validator', ' - validador'], [' Inspector', ' - inspetor'], [' Workbench', ' - workbench'], [' Helper', ' - auxiliar'], [' Formatter', ' - formatador'], [' Converter', ' - conversor'], [' Generator', ' - gerador'], [' Builder', ' - construtor'], [' Parser', ' - parser'], [' Auditor', ' - auditor'], [' Assistant', ' - assistente'], [' Calculator', ' - calculadora'], [' Checker', ' - verificador'], [' Detector', ' - detector'], [' Normalizer', ' - normalizador']
   ]
 };
+
+const POLAND_VOCABULARY_WORDS = {
+  pl: { validator:'walidator', explainer:'objaśnienie', numberInspector:'inspektor numeru', inspector:'inspektor', workbench:'narzędzie', helper:'pomocnik', formatter:'formater', converter:'konwerter', generator:'generator', builder:'kreator', parser:'parser', auditor:'audytor', assistant:'asystent', calculator:'kalkulator', checker:'sprawdzacz', detector:'detektor', masker:'masker', fixer:'naprawiacz', explorer:'eksplorator', precheck:'wstępna kontrola' },
+  de: { validator:'Validator', explainer:'Erklärung', numberInspector:'Nummerninspektor', inspector:'Inspektor', workbench:'Workbench', helper:'Helfer', formatter:'Formatierer', converter:'Konverter', generator:'Generator', builder:'Builder', parser:'Parser', auditor:'Auditor', assistant:'Assistent', calculator:'Rechner', checker:'Prüfer', detector:'Detektor', masker:'Maskierer', fixer:'Korrektur', explorer:'Explorer', precheck:'Vorprüfung' },
+  es: { validator:'validador', explainer:'explicación', numberInspector:'inspector de número', inspector:'inspector', workbench:'workbench', helper:'asistente', formatter:'formateador', converter:'conversor', generator:'generador', builder:'constructor', parser:'analizador', auditor:'auditor', assistant:'asistente', calculator:'calculadora', checker:'verificador', detector:'detector', masker:'enmascarador', fixer:'corrector', explorer:'explorador', precheck:'prevalidación' },
+  'pt-BR': { validator:'validador', explainer:'explicação', numberInspector:'inspetor de número', inspector:'inspetor', workbench:'workbench', helper:'auxiliar', formatter:'formatador', converter:'conversor', generator:'gerador', builder:'construtor', parser:'parser', auditor:'auditor', assistant:'assistente', calculator:'calculadora', checker:'verificador', detector:'detector', masker:'mascarador', fixer:'corretor', explorer:'explorador', precheck:'pré-checagem' },
+  'pt-PT': { validator:'validador', explainer:'explicação', numberInspector:'inspetor de número', inspector:'inspetor', workbench:'workbench', helper:'auxiliar', formatter:'formatador', converter:'conversor', generator:'gerador', builder:'construtor', parser:'analisador', auditor:'auditor', assistant:'assistente', calculator:'calculadora', checker:'verificador', detector:'detetor', masker:'mascarador', fixer:'corretor', explorer:'explorador', precheck:'pré-verificação' },
+  fr: { validator:'validateur', explainer:'explication', numberInspector:'inspecteur de numéro', inspector:'inspecteur', workbench:'atelier', helper:'assistant', formatter:'formateur', converter:'convertisseur', generator:'générateur', builder:'constructeur', parser:'parseur', auditor:'auditeur', assistant:'assistant', calculator:'calculateur', checker:'vérificateur', detector:'détecteur', masker:'masqueur', fixer:'correcteur', explorer:'explorateur', precheck:'pré-vérification' },
+  it: { validator:'validatore', explainer:'spiegazione', numberInspector:'ispettore numero', inspector:'ispettore', workbench:'workbench', helper:'assistente', formatter:'formattatore', converter:'convertitore', generator:'generatore', builder:'builder', parser:'parser', auditor:'auditor', assistant:'assistente', calculator:'calcolatore', checker:'verificatore', detector:'rilevatore', masker:'mascheratore', fixer:'correttore', explorer:'esploratore', precheck:'precontrollo' },
+  nl: { validator:'validator', explainer:'uitleg', numberInspector:'nummerinspecteur', inspector:'inspecteur', workbench:'werkbank', helper:'helper', formatter:'formatter', converter:'converter', generator:'generator', builder:'builder', parser:'parser', auditor:'auditor', assistant:'assistent', calculator:'calculator', checker:'controleur', detector:'detector', masker:'maskeerder', fixer:'corrector', explorer:'verkenner', precheck:'voorcontrole' },
+  cs: { validator:'validátor', explainer:'vysvětlení', numberInspector:'inspektor čísla', inspector:'inspektor', workbench:'nástroj', helper:'pomocník', formatter:'formátovač', converter:'konvertor', generator:'generátor', builder:'builder', parser:'parser', auditor:'auditor', assistant:'asistent', calculator:'kalkulačka', checker:'kontrolor', detector:'detektor', masker:'maskovač', fixer:'opravář', explorer:'průzkumník', precheck:'předkontrola' },
+  sk: { validator:'validátor', explainer:'vysvetlenie', numberInspector:'inšpektor čísla', inspector:'inšpektor', workbench:'nástroj', helper:'pomocník', formatter:'formátovač', converter:'konvertor', generator:'generátor', builder:'builder', parser:'parser', auditor:'audítor', assistant:'asistent', calculator:'kalkulačka', checker:'kontrolór', detector:'detektor', masker:'maskovač', fixer:'opravár', explorer:'prieskumník', precheck:'predkontrola' },
+  uk: { validator:'валідатор', explainer:'пояснення', numberInspector:'інспектор номера', inspector:'інспектор', workbench:'воркбенч', helper:'помічник', formatter:'форматер', converter:'конвертер', generator:'генератор', builder:'конструктор', parser:'парсер', auditor:'аудитор', assistant:'асистент', calculator:'калькулятор', checker:'перевірка', detector:'детектор', masker:'маскувальник', fixer:'коректор', explorer:'провідник', precheck:'попередня перевірка' },
+  tr: { validator:'doğrulayıcı', explainer:'açıklama', numberInspector:'numara denetleyici', inspector:'denetleyici', workbench:'çalışma alanı', helper:'yardımcı', formatter:'biçimleyici', converter:'dönüştürücü', generator:'üreteç', builder:'oluşturucu', parser:'ayrıştırıcı', auditor:'denetçi', assistant:'asistan', calculator:'hesaplayıcı', checker:'kontrolcü', detector:'algılayıcı', masker:'maskeleyici', fixer:'düzeltici', explorer:'gezgin', precheck:'ön kontrol' },
+  ro: { validator:'validator', explainer:'explicație', numberInspector:'inspector de număr', inspector:'inspector', workbench:'banc de lucru', helper:'asistent', formatter:'formator', converter:'convertor', generator:'generator', builder:'constructor', parser:'parser', auditor:'auditor', assistant:'asistent', calculator:'calculator', checker:'verificator', detector:'detector', masker:'mascator', fixer:'corector', explorer:'explorator', precheck:'preverificare' },
+  hu: { validator:'validátor', explainer:'magyarázat', numberInspector:'számellenőr', inspector:'ellenőr', workbench:'munkapad', helper:'segéd', formatter:'formázó', converter:'konverter', generator:'generátor', builder:'építő', parser:'parser', auditor:'auditor', assistant:'asszisztens', calculator:'kalkulátor', checker:'ellenőrző', detector:'detektor', masker:'maszkoló', fixer:'javító', explorer:'felfedező', precheck:'előellenőrzés' },
+  sv: { validator:'validator', explainer:'förklaring', numberInspector:'nummerinspektör', inspector:'inspektör', workbench:'arbetsbänk', helper:'hjälpare', formatter:'formaterare', converter:'konverterare', generator:'generator', builder:'byggare', parser:'parser', auditor:'auditor', assistant:'assistent', calculator:'kalkylator', checker:'kontroll', detector:'detektor', masker:'maskerare', fixer:'korrigerare', explorer:'utforskare', precheck:'förkontroll' },
+  no: { validator:'validator', explainer:'forklaring', numberInspector:'nummerinspektør', inspector:'inspektør', workbench:'arbeidsbenk', helper:'hjelper', formatter:'formaterer', converter:'konverterer', generator:'generator', builder:'bygger', parser:'parser', auditor:'auditor', assistant:'assistent', calculator:'kalkulator', checker:'kontrollør', detector:'detektor', masker:'maskerer', fixer:'korrigerer', explorer:'utforsker', precheck:'forhåndssjekk' },
+  fi: { validator:'validaattori', explainer:'selitys', numberInspector:'numerotarkastin', inspector:'tarkastin', workbench:'työpöytä', helper:'avustaja', formatter:'muotoilija', converter:'muunnin', generator:'generaattori', builder:'rakentaja', parser:'jäsentäjä', auditor:'auditoija', assistant:'avustaja', calculator:'laskuri', checker:'tarkistin', detector:'tunnistin', masker:'maskeri', fixer:'korjaaja', explorer:'selain', precheck:'esitarkistus' },
+  da: { validator:'validator', explainer:'forklaring', numberInspector:'nummerinspektør', inspector:'inspektør', workbench:'arbejdsbord', helper:'hjælper', formatter:'formaterer', converter:'konverter', generator:'generator', builder:'bygger', parser:'parser', auditor:'auditor', assistant:'assistent', calculator:'beregner', checker:'kontrol', detector:'detektor', masker:'maskerer', fixer:'korrektør', explorer:'udforsker', precheck:'forhåndskontrol' },
+  ja: { validator:'バリデーター', explainer:'解説', numberInspector:'番号インスペクター', inspector:'インスペクター', workbench:'ワークベンチ', helper:'ヘルパー', formatter:'フォーマッター', converter:'コンバーター', generator:'ジェネレーター', builder:'ビルダー', parser:'パーサー', auditor:'監査ツール', assistant:'アシスタント', calculator:'計算ツール', checker:'チェッカー', detector:'検出ツール', masker:'マスカー', fixer:'修正ツール', explorer:'エクスプローラー', precheck:'事前チェック' },
+  ko: { validator:'검증기', explainer:'설명', numberInspector:'번호 검사기', inspector:'검사기', workbench:'워크벤치', helper:'도우미', formatter:'포매터', converter:'변환기', generator:'생성기', builder:'빌더', parser:'파서', auditor:'감사기', assistant:'도우미', calculator:'계산기', checker:'검사기', detector:'탐지기', masker:'마스커', fixer:'수정기', explorer:'탐색기', precheck:'사전 검사' },
+  'zh-CN': { validator:'验证器', explainer:'说明', numberInspector:'号码检查器', inspector:'检查器', workbench:'工作台', helper:'助手', formatter:'格式化器', converter:'转换器', generator:'生成器', builder:'构建器', parser:'解析器', auditor:'审计器', assistant:'助手', calculator:'计算器', checker:'检查器', detector:'检测器', masker:'脱敏器', fixer:'修复器', explorer:'浏览器', precheck:'预检查' },
+  'zh-TW': { validator:'驗證器', explainer:'說明', numberInspector:'號碼檢查器', inspector:'檢查器', workbench:'工作台', helper:'助手', formatter:'格式化器', converter:'轉換器', generator:'產生器', builder:'建構器', parser:'解析器', auditor:'稽核器', assistant:'助手', calculator:'計算器', checker:'檢查器', detector:'偵測器', masker:'遮罩器', fixer:'修復器', explorer:'瀏覽器', precheck:'預檢查' },
+  ar: { validator:'مدقق', explainer:'شرح', numberInspector:'فاحص الرقم', inspector:'فاحص', workbench:'منضدة عمل', helper:'مساعد', formatter:'منسق', converter:'محول', generator:'مولد', builder:'منشئ', parser:'محلل', auditor:'مدقق', assistant:'مساعد', calculator:'حاسبة', checker:'فاحص', detector:'كاشف', masker:'مخفي', fixer:'مصلح', explorer:'مستكشف', precheck:'فحص أولي' },
+  he: { validator:'מאמת', explainer:'הסבר', numberInspector:'בודק מספר', inspector:'בודק', workbench:'סביבת עבודה', helper:'עוזר', formatter:'מעצב', converter:'ממיר', generator:'מחולל', builder:'בונה', parser:'מנתח', auditor:'מבקר', assistant:'עוזר', calculator:'מחשבון', checker:'בודק', detector:'מזהה', masker:'ממסך', fixer:'מתקן', explorer:'סייר', precheck:'בדיקה מקדימה' },
+  hi: { validator:'सत्यापक', explainer:'व्याख्या', numberInspector:'नंबर निरीक्षक', inspector:'निरीक्षक', workbench:'वर्कबेंच', helper:'सहायक', formatter:'फ़ॉर्मैटर', converter:'कन्वर्टर', generator:'जनरेटर', builder:'बिल्डर', parser:'पार्सर', auditor:'ऑडिटर', assistant:'सहायक', calculator:'कैलकुलेटर', checker:'जांचकर्ता', detector:'डिटेक्टर', masker:'मास्कर', fixer:'सुधारक', explorer:'एक्सप्लोरर', precheck:'पूर्व-जांच' },
+  id: { validator:'validator', explainer:'penjelasan', numberInspector:'pemeriksa nomor', inspector:'pemeriksa', workbench:'workbench', helper:'pembantu', formatter:'pemformat', converter:'konverter', generator:'generator', builder:'builder', parser:'parser', auditor:'auditor', assistant:'asisten', calculator:'kalkulator', checker:'pemeriksa', detector:'pendeteksi', masker:'pemasker', fixer:'perbaikan', explorer:'penjelajah', precheck:'pra-periksa' },
+  vi: { validator:'trình xác thực', explainer:'giải thích', numberInspector:'trình kiểm tra số', inspector:'trình kiểm tra', workbench:'workbench', helper:'trợ lý', formatter:'trình định dạng', converter:'trình chuyển đổi', generator:'trình tạo', builder:'trình dựng', parser:'trình phân tích', auditor:'trình kiểm toán', assistant:'trợ lý', calculator:'máy tính', checker:'trình kiểm tra', detector:'trình phát hiện', masker:'trình che dữ liệu', fixer:'trình sửa lỗi', explorer:'trình khám phá', precheck:'kiểm tra trước' },
+  th: { validator:'ตัวตรวจสอบ', explainer:'คำอธิบาย', numberInspector:'ตัวตรวจเลข', inspector:'ตัวตรวจสอบ', workbench:'เวิร์กเบนช์', helper:'ตัวช่วย', formatter:'ตัวจัดรูปแบบ', converter:'ตัวแปลง', generator:'ตัวสร้าง', builder:'ตัวประกอบ', parser:'ตัวแยกวิเคราะห์', auditor:'ตัวตรวจสอบบัญชี', assistant:'ผู้ช่วย', calculator:'เครื่องคำนวณ', checker:'ตัวตรวจ', detector:'ตัวตรวจจับ', masker:'ตัวปิดบัง', fixer:'ตัวแก้ไข', explorer:'ตัวสำรวจ', precheck:'ตรวจล่วงหน้า' },
+  ms: { validator:'pengesah', explainer:'penjelasan', numberInspector:'pemeriksa nombor', inspector:'pemeriksa', workbench:'workbench', helper:'pembantu', formatter:'pemformat', converter:'penukar', generator:'penjana', builder:'pembina', parser:'parser', auditor:'juruaudit', assistant:'pembantu', calculator:'kalkulator', checker:'pemeriksa', detector:'pengesan', masker:'pemasker', fixer:'pembaik', explorer:'penjelajah', precheck:'semakan awal' }
+};
+
+const POLAND_REGISTRY_LABELS = {
+  pl: 'rejestr',
+  de: 'Register',
+  es: 'registro',
+  'pt-BR': 'registro',
+  'pt-PT': 'registo',
+  fr: 'registre',
+  it: 'registro',
+  nl: 'register',
+  cs: 'registr',
+  sk: 'register',
+  uk: 'реєстр',
+  tr: 'sicil',
+  ro: 'registru',
+  hu: 'nyilvántartás',
+  sv: 'register',
+  no: 'register',
+  fi: 'rekisteri',
+  da: 'register',
+  ja: 'レジストリ',
+  ko: '레지스트리',
+  'zh-CN': '登记库',
+  'zh-TW': '登記庫',
+  ar: 'السجل',
+  he: 'מרשם',
+  hi: 'रजिस्ट्री',
+  id: 'registri',
+  vi: 'sổ đăng ký',
+  th: 'ทะเบียน',
+  ms: 'daftar'
+};
+
+function registryLabel(locale) {
+  return POLAND_REGISTRY_LABELS[locale] || POLAND_REGISTRY_LABELS['pt-BR'];
+}
+
+const POLAND_TOOL_TITLE_OVERRIDES = {
+  uk: {
+    'BLIK Code Helper': 'BLIK — помічник коду',
+    'KRS Number Inspector': 'KRS — інспектор номера',
+    'KSeF Invoice XML Validator': 'KSeF XML-фактури — валідатор',
+    'NIP Validator &amp; Explainer': 'NIP — валідатор і пояснення',
+    'NIP Validator & Explainer': 'NIP — валідатор і пояснення',
+    'PESEL Validator &amp; Explainer': 'PESEL — валідатор і пояснення',
+    'PESEL Validator & Explainer': 'PESEL — валідатор і пояснення',
+    'Polish IBAN / NRB Workbench': 'Польща: IBAN / NRB — воркбенч',
+    'Polish Phone Number Workbench': 'Польща: телефонний номер — воркбенч',
+    'Polish Postal Code Validator': 'Польща: поштовий індекс — валідатор',
+    'Polish VAT / EU VAT Syntax Workbench': 'Польща: VAT / EU VAT — синтаксичний воркбенч',
+    'REGON Validator &amp; Explainer': 'REGON — валідатор і пояснення',
+    'REGON Validator & Explainer': 'REGON — валідатор і пояснення',
+    'BDO Number Inspector': 'BDO — інспектор номера',
+    'Polish Driving Licence Inspector': 'Польща: водійське посвідчення — інспектор',
+    'Polish EORI Inspector': 'Польща: EORI — інспектор',
+    'Polish ID Card Validator': 'Польща: ID-картка — валідатор',
+    'Polish License Plate Inspector': 'Польща: номерний знак — інспектор',
+    'Polish MRZ Passport / ID Parser': 'Польща: MRZ паспорта / ID — парсер',
+    'Polish Municipality / Voivodeship Code Inspector': 'Польща: код гміни / воєводства — інспектор',
+    'Polish Passport Number Inspector': 'Польща: номер паспорта — інспектор',
+    'Polish Vehicle Registration Certificate Helper': 'Польща: свідоцтво реєстрації авто — помічник',
+    'TERYT Code Inspector': 'TERYT — інспектор коду',
+    'TERYT Hierarchy Explorer': 'TERYT — провідник ієрархії',
+    'VIN Validator for Poland Workflows': 'VIN — валідатор для польських сценаріїв',
+    'VIN Validator for Польща Workflows': 'VIN — валідатор для польських сценаріїв',
+    'CEIDG Data Readiness Checker': 'CEIDG — перевірка готовності даних',
+    'JPK File Validator': 'JPK-файл — валідатор',
+    'PKD Code Inspector': 'PKD — інспектор коду',
+    'PKWiU Code Inspector': 'PKWiU — інспектор коду',
+    'Polish Company Onboarding Auditor': 'Польща: підготовка компанії — аудитор',
+    'Polish Invoice Data Auditor': 'Польща: дані фактури — аудитор',
+    'Polish Invoice Duplicate-Risk Detector': 'Польща: ризик дубля фактури — детектор',
+    'Polish Invoice Number Helper': 'Польща: номер фактури — помічник',
+    'Polish KSeF FA(2) Field Mapper Assistant': 'Польща: поля KSeF FA(2) — асистент мапінгу',
+    'Polish Receipt / Paragon Helper': 'Польща: фіскальний чек — помічник',
+    'Polish Tax Microaccount Calculator': 'Польща: податковий мікрорахунок — калькулятор',
+    'Polish VAT Calculator': 'Польща: VAT — калькулятор',
+    'PLN Amount Formatter': 'PLN — форматер суми',
+    'PLN Grosz Converter': 'PLN / grosz — конвертер',
+    'Polish Bank Code / NRB Inspector': 'Польща: код банку / NRB — інспектор',
+    'Polish Bank Statement Parser': 'Польща: банківська виписка — парсер',
+    'Polish Bank Transfer Reconciliation Helper': 'Польща: звірка банківського переказу — помічник',
+    'Polish BIC / SWIFT Inspector': 'Польща: BIC / SWIFT — інспектор',
+    'Polish IBAN Owner-Name Precheck': 'Польща: IBAN і імʼя власника — попередня перевірка',
+    'Polish Payment QR Generator': 'Польща: платіжний QR — генератор',
+    'Polish SEPA Transfer Helper': 'Польща: SEPA-переказ — помічник',
+    'Polish Split Payment / MPP Helper': 'Польща: розділений платіж / MPP — помічник',
+    'Polish Transfer Title Builder': 'Польща: призначення переказу — конструктор',
+    'Polish Address Formatter': 'Польща: адреса — форматер',
+    'Polish Address Transliteration &amp; Normalization': 'Польща: транслітерація та нормалізація адреси',
+    'Polish Address Transliteration & Normalization': 'Польща: транслітерація та нормалізація адреси',
+    'Polish Date / Locale Formatter': 'Польща: дата / локаль — форматер',
+    'Polish Parcel / Tracking Number Inspector': 'Польща: посилка / номер відстеження — інспектор',
+    'Polish Postal Address Parser Pro': 'Польща: поштова адреса — парсер Pro',
+    'Polish Data Quality Workbench': 'Польща: якість даних — воркбенч',
+    'Polish PII Masker': 'Польща: маскування PII',
+    'Polish Test Data Generator': 'Польща: тестові дані — генератор',
+    'Polish Compliance Checklist Generator': 'Польща: контрольний список відповідності — генератор',
+    'Polish Energy Meter / PPE Number Inspector': 'Польща: лічильник енергії / PPE — інспектор номера',
+    'Polish Insurance / Policy Number Helper': 'Польща: страхування / номер поліса — помічник',
+    'Polish OCR Post-Processing Fixer': 'Польща: постобробка OCR — коректор',
+    'Polish Payroll Net/Gross Sanity Helper': 'Польща: зарплата нетто/брутто — помічник перевірки',
+    'Polish UPO / e-Deklaracje Payload Checker': 'Польща: UPO / e-Deklaracje — перевірка корисного навантаження',
+    'Polish VIES Readiness Helper': 'Польща: VIES-готовність — помічник'
+  }
+};
+
+const POLAND_TOOL_TITLE_BASE_LOCALE = {
+  pl: { country:'Polska', code:'kod', invoiceXml:'XML faktury', phone:'numer telefonu', postal:'kod pocztowy', syntax:'składnia', driving:'prawo jazdy', idCard:'dowód osobisty', plate:'tablica rejestracyjna', passport:'paszport', vehicle:'dowód rejestracyjny pojazdu', hierarchy:'hierarchia', file:'plik', dataReadiness:'gotowość danych', company:'onboarding firmy', invoiceData:'dane faktury', invoiceDuplicate:'ryzyko duplikatu faktury', invoiceNumber:'numer faktury', fields:'pola', receipt:'paragon', taxMicro:'mikrorachunek podatkowy', amount:'kwota', bankStatement:'wyciąg bankowy', transferReconciliation:'uzgadnianie przelewu', ownerName:'nazwa właściciela', paymentQr:'QR płatności', sepa:'przelew SEPA', split:'split payment / MPP', transferTitle:'tytuł przelewu', address:'adres', addressNorm:'transliteracja i normalizacja adresu', dateLocale:'data / locale', parcel:'paczka / numer śledzenia', postalAddress:'adres pocztowy', dataQuality:'jakość danych', pii:'maskowanie PII', testData:'dane testowe', compliance:'checklista zgodności', energy:'licznik energii / PPE', insurance:'ubezpieczenie / numer polisy', ocr:'postprocessing OCR', payroll:'płace netto/brutto', readiness:'gotowość' },
+  de: { country:'Polen', code:'Code', invoiceXml:'Rechnungs-XML', phone:'Telefonnummer', postal:'Postleitzahl', syntax:'Syntax', driving:'Führerschein', idCard:'Personalausweis', plate:'Kennzeichen', passport:'Reisepass', vehicle:'Fahrzeugschein', hierarchy:'Hierarchie', file:'Datei', dataReadiness:'Datenbereitschaft', company:'Unternehmens-Onboarding', invoiceData:'Rechnungsdaten', invoiceDuplicate:'Rechnungsduplikat-Risiko', invoiceNumber:'Rechnungsnummer', fields:'Felder', receipt:'Beleg / Paragon', taxMicro:'Steuer-Mikrokonto', amount:'Betrag', bankStatement:'Kontoauszug', transferReconciliation:'Überweisungsabgleich', ownerName:'Inhabername', paymentQr:'Zahlungs-QR', sepa:'SEPA-Überweisung', split:'Split Payment / MPP', transferTitle:'Überweisungstitel', address:'Adresse', addressNorm:'Adress-Transliteration und Normalisierung', dateLocale:'Datum / Locale', parcel:'Paket / Trackingnummer', postalAddress:'Postanschrift', dataQuality:'Datenqualität', pii:'PII-Maskierung', testData:'Testdaten', compliance:'Compliance-Checkliste', energy:'Stromzähler / PPE', insurance:'Versicherung / Policennummer', ocr:'OCR-Nachbearbeitung', payroll:'Payroll Netto/Brutto', readiness:'Bereitschaft' },
+  es: { country:'Polonia', code:'código', invoiceXml:'XML de factura', phone:'número de teléfono', postal:'código postal', syntax:'sintaxis', driving:'permiso de conducir', idCard:'documento de identidad', plate:'matrícula', passport:'pasaporte', vehicle:'certificado de registro del vehículo', hierarchy:'jerarquía', file:'archivo', dataReadiness:'preparación de datos', company:'onboarding de empresa', invoiceData:'datos de factura', invoiceDuplicate:'riesgo de duplicado de factura', invoiceNumber:'número de factura', fields:'campos', receipt:'recibo / paragon', taxMicro:'microcuenta fiscal', amount:'importe', bankStatement:'extracto bancario', transferReconciliation:'conciliación de transferencia', ownerName:'nombre del titular', paymentQr:'QR de pago', sepa:'transferencia SEPA', split:'pago dividido / MPP', transferTitle:'concepto de transferencia', address:'dirección', addressNorm:'transliteración y normalización de dirección', dateLocale:'fecha / locale', parcel:'paquete / número de seguimiento', postalAddress:'dirección postal', dataQuality:'calidad de datos', pii:'enmascaramiento PII', testData:'datos de prueba', compliance:'checklist de cumplimiento', energy:'medidor de energía / PPE', insurance:'seguro / número de póliza', ocr:'posprocesamiento OCR', payroll:'nómina neto/bruto', readiness:'preparación' },
+  'pt-BR': { country:'Polônia', code:'código', invoiceXml:'XML de nota fiscal', phone:'número de telefone', postal:'código postal', syntax:'sintaxe', driving:'carteira de motorista', idCard:'documento de identidade', plate:'placa', passport:'passaporte', vehicle:'certificado de registro do veículo', hierarchy:'hierarquia', file:'arquivo', dataReadiness:'prontidão dos dados', company:'onboarding de empresa', invoiceData:'dados de nota fiscal', invoiceDuplicate:'risco de duplicidade de nota', invoiceNumber:'número de nota', fields:'campos', receipt:'recibo / paragon', taxMicro:'microconta fiscal', amount:'valor', bankStatement:'extrato bancário', transferReconciliation:'conciliação de transferência', ownerName:'nome do titular', paymentQr:'QR de pagamento', sepa:'transferência SEPA', split:'pagamento dividido / MPP', transferTitle:'título da transferência', address:'endereço', addressNorm:'transliteração e normalização de endereço', dateLocale:'data / localidade', parcel:'pacote / número de rastreio', postalAddress:'endereço postal', dataQuality:'qualidade dos dados', pii:'mascaramento PII', testData:'dados de teste', compliance:'checklist de conformidade', energy:'medidor de energia / PPE', insurance:'seguro / número da apólice', ocr:'pós-processamento OCR', payroll:'folha líquido/bruto', readiness:'prontidão' }
+};
+
+function buildPolandToolTitleOverrides(locale) {
+  if (POLAND_TOOL_TITLE_OVERRIDES[locale]) return POLAND_TOOL_TITLE_OVERRIDES[locale];
+  const country = COUNTRY_NAMES[locale]?.Poland || EXPANDED_COUNTRY_NAMES[locale]?.Poland || 'Poland';
+  const copy = resolveCountryCopy(locale, country);
+  const fallbackBase = { country, code: copy.countryCode, invoiceXml: 'KSeF XML', phone: copy.phone, postal: copy.postalPattern, syntax: copy.staticCompiled, driving: copy.identityIntentTitle, idCard: copy.identityIntentTitle, plate: copy.identityIntentBody, passport: copy.identityIntentTitle, vehicle: copy.identityIntentBody, hierarchy: copy.catalogTitle, file: copy.staticCompiled, dataReadiness: copy.staticCompiled, company: copy.organizationIntentTitle, invoiceData: copy.organizationIntentTitle, invoiceDuplicate: copy.organizationIntentTitle, invoiceNumber: copy.organizationIntentTitle, fields: copy.staticCompiled, receipt: copy.paymentIntentTitle, taxMicro: polandTerm(locale, 'taxMicroaccount', copy.paymentIntentTitle), amount: copy.money, bankStatement: copy.paymentIntentTitle, transferReconciliation: copy.paymentIntentTitle, ownerName: copy.identityIntentTitle, paymentQr: polandTerm(locale, 'paymentQrPayloads', copy.paymentIntentTitle), sepa: 'SEPA', split: shortBankingTerm(locale, 'split', 'Split payment / MPP'), transferTitle: copy.paymentIntentTitle, address: copy.address, addressNorm: copy.address, dateLocale: copy.dateFormat, parcel: copy.address, postalAddress: copy.address, dataQuality: copy.staticCompiled, pii: copy.identityIntentTitle, testData: copy.staticCompiled, compliance: copy.organizationIntentTitle, energy: copy.display, insurance: copy.organizationIntentTitle, ocr: copy.staticCompiled, payroll: copy.money, readiness: copy.staticCompiled };
+  const b = POLAND_TOOL_TITLE_BASE_LOCALE[locale] || fallbackBase;
+  const w = POLAND_VOCABULARY_WORDS[locale] || POLAND_VOCABULARY_WORDS['pt-BR'];
+  const c = b.country;
+  return {
+    'BLIK Code Helper': 'BLIK — ' + b.code + ' — ' + w.helper,
+    'KRS Number Inspector': 'KRS — ' + w.numberInspector,
+    'KSeF Invoice XML Validator': 'KSeF — ' + b.invoiceXml + ' — ' + w.validator,
+    'NIP Validator &amp; Explainer': 'NIP — ' + w.validator + ' + ' + w.explainer,
+    'NIP Validator & Explainer': 'NIP — ' + w.validator + ' + ' + w.explainer,
+    'PESEL Validator &amp; Explainer': 'PESEL — ' + w.validator + ' + ' + w.explainer,
+    'PESEL Validator & Explainer': 'PESEL — ' + w.validator + ' + ' + w.explainer,
+    'Polish IBAN / NRB Workbench': c + ': IBAN / NRB — ' + w.workbench,
+    'Polish Phone Number Workbench': c + ': ' + b.phone + ' — ' + w.workbench,
+    'Polish Postal Code Validator': c + ': ' + b.postal + ' — ' + w.validator,
+    'Polish VAT / EU VAT Syntax Workbench': c + ': VAT / EU VAT — ' + b.syntax + ' — ' + w.workbench,
+    'REGON Validator &amp; Explainer': 'REGON — ' + w.validator + ' + ' + w.explainer,
+    'REGON Validator & Explainer': 'REGON — ' + w.validator + ' + ' + w.explainer,
+    'BDO Number Inspector': 'BDO — ' + w.numberInspector,
+    'Polish Driving Licence Inspector': c + ': ' + b.driving + ' — ' + w.inspector,
+    'Polish EORI Inspector': c + ': EORI — ' + w.inspector,
+    'Polish ID Card Validator': c + ': ' + b.idCard + ' — ' + w.validator,
+    'Polish License Plate Inspector': c + ': ' + b.plate + ' — ' + w.inspector,
+    'Polish MRZ Passport / ID Parser': c + ': MRZ ' + b.passport + ' / ID — ' + w.parser,
+    'Polish Municipality / Voivodeship Code Inspector': c + ': TERYT / voivodeship — ' + w.inspector,
+    'Polish Passport Number Inspector': c + ': ' + b.passport + ' — ' + w.numberInspector,
+    'Polish Vehicle Registration Certificate Helper': c + ': ' + b.vehicle + ' — ' + w.helper,
+    'TERYT Code Inspector': 'TERYT — ' + b.code + ' — ' + w.inspector,
+    'TERYT Hierarchy Explorer': 'TERYT — ' + b.hierarchy + ' — ' + w.explorer,
+    'VIN Validator for Poland Workflows': 'VIN — ' + w.validator + ' — ' + c,
+    ['VIN Validator for ' + c + ' Workflows']: 'VIN — ' + w.validator + ' — ' + c,
+    'CEIDG Data Readiness Checker': 'CEIDG — ' + b.dataReadiness + ' — ' + w.checker,
+    'JPK File Validator': 'JPK — ' + b.file + ' — ' + w.validator,
+    'PKD Code Inspector': 'PKD — ' + b.code + ' — ' + w.inspector,
+    'PKWiU Code Inspector': 'PKWiU — ' + b.code + ' — ' + w.inspector,
+    'Polish Company Onboarding Auditor': c + ': ' + b.company + ' — ' + w.auditor,
+    'Polish Invoice Data Auditor': c + ': ' + b.invoiceData + ' — ' + w.auditor,
+    'Polish Invoice Duplicate-Risk Detector': c + ': ' + b.invoiceDuplicate + ' — ' + w.detector,
+    'Polish Invoice Number Helper': c + ': ' + b.invoiceNumber + ' — ' + w.helper,
+    'Polish KSeF FA(2) Field Mapper Assistant': c + ': KSeF FA(2) — ' + b.fields + ' — ' + w.assistant,
+    'Polish Receipt / Paragon Helper': c + ': ' + b.receipt + ' — ' + w.helper,
+    'Polish Tax Microaccount Calculator': c + ': ' + b.taxMicro + ' — ' + w.calculator,
+    'Polish VAT Calculator': c + ': VAT — ' + w.calculator,
+    'PLN Amount Formatter': 'PLN — ' + b.amount + ' — ' + w.formatter,
+    'PLN Grosz Converter': 'PLN / grosz — ' + w.converter,
+    'Polish Bank Code / NRB Inspector': c + ': ' + b.code + ' / NRB — ' + w.inspector,
+    'Polish Bank Statement Parser': c + ': ' + b.bankStatement + ' — ' + w.parser,
+    'Polish Bank Transfer Reconciliation Helper': c + ': ' + b.transferReconciliation + ' — ' + w.helper,
+    'Polish BIC / SWIFT Inspector': c + ': BIC / SWIFT — ' + w.inspector,
+    'Polish IBAN Owner-Name Precheck': c + ': IBAN — ' + b.ownerName + ' — ' + w.precheck,
+    'Polish Payment QR Generator': c + ': ' + b.paymentQr + ' — ' + w.generator,
+    'Polish SEPA Transfer Helper': c + ': ' + b.sepa + ' — ' + w.helper,
+    'Polish Split Payment / MPP Helper': c + ': ' + b.split + ' — ' + w.helper,
+    'Polish Transfer Title Builder': c + ': ' + b.transferTitle + ' — ' + w.builder,
+    'Polish Address Formatter': c + ': ' + b.address + ' — ' + w.formatter,
+    'Polish Address Transliteration &amp; Normalization': c + ': ' + b.addressNorm,
+    'Polish Address Transliteration & Normalization': c + ': ' + b.addressNorm,
+    'Polish Date / Locale Formatter': c + ': ' + b.dateLocale + ' — ' + w.formatter,
+    'Polish Parcel / Tracking Number Inspector': c + ': ' + b.parcel + ' — ' + w.numberInspector,
+    'Polish Postal Address Parser Pro': c + ': ' + b.postalAddress + ' — ' + w.parser + ' Pro',
+    'Polish Data Quality Workbench': c + ': ' + b.dataQuality + ' — ' + w.workbench,
+    'Polish PII Masker': c + ': ' + b.pii,
+    'Polish Test Data Generator': c + ': ' + b.testData + ' — ' + w.generator,
+    'Polish Compliance Checklist Generator': c + ': ' + b.compliance + ' — ' + w.generator,
+    'Polish Energy Meter / PPE Number Inspector': c + ': ' + b.energy + ' — ' + w.numberInspector,
+    'Polish Insurance / Policy Number Helper': c + ': ' + b.insurance + ' — ' + w.helper,
+    'Polish OCR Post-Processing Fixer': c + ': ' + b.ocr + ' — ' + w.fixer,
+    'Polish Payroll Net/Gross Sanity Helper': c + ': ' + b.payroll + ' — ' + w.helper,
+    'Polish UPO / e-Deklaracje Payload Checker': c + ': UPO / e-Deklaracje — ' + w.checker,
+    'Polish VIES Readiness Helper': c + ': VIES — ' + b.readiness + ' — ' + w.helper
+  };
+}
+
+const RIGHT_SIDE_LABELS = { pl:'Prawa strona', de:'Rechts', es:'Derecha', 'pt-BR':'Direita', 'pt-PT':'Direita', fr:'Droite', it:'Destra', nl:'Rechts', cs:'Vpravo', sk:'Vpravo', uk:'Праворуч', tr:'Sağ', ro:'Dreapta', hu:'Jobb oldal', sv:'Höger', no:'Høyre', fi:'Oikea', da:'Højre', ja:'右側', ko:'오른쪽', 'zh-CN':'右侧', 'zh-TW':'右側', ar:'يمين', he:'ימין', hi:'दाएँ', id:'Kanan', vi:'Bên phải', th:'ขวา', ms:'Kanan' };
+
+function rightSideLabel(locale) {
+  return RIGHT_SIDE_LABELS[locale] || 'Right';
+}
+
+function buildPolandVocabularyMap(locale) {
+  const words = POLAND_VOCABULARY_WORDS[locale] || POLAND_VOCABULARY_WORDS['pt-BR'];
+  const country = COUNTRY_NAMES[locale]?.Poland || EXPANDED_COUNTRY_NAMES[locale]?.Poland || 'Poland';
+  return {
+    'Polish ': country + ': ',
+    ' Validator &amp; Explainer': ' — ' + words.validator + ' + ' + words.explainer,
+    ' Validator & Explainer': ' — ' + words.validator + ' + ' + words.explainer,
+    ' Number Inspector': ' — ' + words.numberInspector,
+    ' Data Readiness Checker': ' — ' + words.checker,
+    ' Field Mapper Assistant': ' — ' + words.assistant,
+    ' Duplicate-Risk Detector': ' — ' + words.detector,
+    ' Owner-Name Precheck': ' — ' + words.precheck,
+    ' Post-Processing Fixer': ' — ' + words.fixer,
+    ' Net/Gross Sanity Helper': ' — ' + words.helper,
+    ' Payload Checker': ' — ' + words.checker,
+    ' Parser Pro': ' — ' + words.parser + ' Pro',
+    ' Validator': ' — ' + words.validator,
+    ' Inspector': ' — ' + words.inspector,
+    ' Workbench': ' — ' + words.workbench,
+    ' Helper': ' — ' + words.helper,
+    ' Formatter': ' — ' + words.formatter,
+    ' Converter': ' — ' + words.converter,
+    ' Generator': ' — ' + words.generator,
+    ' Builder': ' — ' + words.builder,
+    ' Parser': ' — ' + words.parser,
+    ' Auditor': ' — ' + words.auditor,
+    ' Assistant': ' — ' + words.assistant,
+    ' Calculator': ' — ' + words.calculator,
+    ' Checker': ' — ' + words.checker,
+    ' Detector': ' — ' + words.detector,
+    ' Masker': ' — ' + words.masker,
+    ' Fixer': ' — ' + words.fixer,
+    ' Explorer': ' — ' + words.explorer,
+    ' Country data standard': country + ' — ' + (UI[locale]?.tool || 'tool'),
+    'country data standard': country + ' — ' + (UI[locale]?.tool || 'tool')
+  };
+}
+
+function applyPolandVocabularyLocalizationPacks() {
+  for (const locale of SUPPORTED_LOCALES) {
+    if (locale === 'en') continue;
+    const map = { ...buildPolandToolTitleOverrides(locale), ...buildPolandVocabularyMap(locale) };
+    COUNTRY_PAGE_LABELS[locale] = { ...(COUNTRY_PAGE_LABELS[locale] || {}), ...map };
+    COUNTRY_PAGE_RICH_LABELS[locale] = { ...(COUNTRY_PAGE_RICH_LABELS[locale] || {}), ...map };
+    COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] = { ...(COUNTRY_PAGE_FINAL_SWEEP_LABELS[locale] || {}), ...map };
+  }
+}
 
 
 const COUNTRY_PAGE_COMPLETION_LABELS = {
@@ -2558,7 +3220,7 @@ const COUNTRY_PAGE_COMPLETION_LABELS = {
     'SEPA credit transfers apply to Euro-denominated payments, but domestic flows mostly use PLN-native routing.': 'SEPA-Überweisungen gelten für Euro-Zahlungen; Inlandsflüsse nutzen meist PLN-natives Routing.',
     'Polish split payment workflows separate VAT amount, supplier NIP, invoice reference, and gross transfer amount.': 'Polnische Split-Payment-Flüsse trennen MwSt.-Betrag, Lieferanten-NIP, Rechnungsreferenz und Bruttobetrag.',
     'Tax microaccount calculations depend on PESEL or NIP input and must be treated as payment-routing support, not a bank lookup.': 'Steuer-Mikrokonto-Berechnungen hängen von PESEL oder NIP ab und sind Zahlungshilfe, kein Bank-Lookup.',
-    'payments': 'Zahlungen', 'validator': 'Validator', 'workbench': 'Workbench', 'identifier': 'Kennung', 'specification': 'Spezifikation', 'payment': 'Zahlung', 'graph-node': 'Graph-Knoten', 'standard': 'Standard', 'developer': 'Entwickler', 'locale': 'Locale', 'date': 'Datum', 'time': 'Zeit'
+    'payments': 'Zahlungen', 'validator': 'Validator', 'workbench': 'Workbench', 'identifier': 'Kennung', 'specification': 'Spezifikation', 'payment': 'Zahlung', 'graph-node': 'Graph-Knoten', 'standard': 'Standard', 'locale': 'Locale', 'date': 'Datum', 'time': 'Zeit'
   },
   es: {
     'Identity, registry &amp; official numbers': 'Identidad, registros y números oficiales',
@@ -2580,7 +3242,7 @@ const COUNTRY_PAGE_COMPLETION_LABELS = {
     'SEPA credit transfers apply to Euro-denominated payments, but domestic flows mostly use PLN-native routing.': 'Las transferencias SEPA aplican a pagos en euros; los flujos nacionales usan principalmente routing nativo de PLN.',
     'Polish split payment workflows separate VAT amount, supplier NIP, invoice reference, and gross transfer amount.': 'Los flujos polacos de pago dividido separan IVA, NIP del proveedor, referencia de factura e importe bruto.',
     'Tax microaccount calculations depend on PESEL or NIP input and must be treated as payment-routing support, not a bank lookup.': 'Los cálculos de microcuenta fiscal dependen de PESEL o NIP y son ayuda de enrutamiento, no lookup bancario.',
-    'payments': 'pagos', 'validator': 'validador', 'workbench': 'workbench', 'identifier': 'identificador', 'specification': 'especificación', 'payment': 'pago', 'graph-node': 'nodo de grafo', 'standard': 'estándar', 'developer': 'desarrollador', 'locale': 'locale', 'date': 'fecha', 'time': 'hora'
+    'payments': 'pagos', 'validator': 'validador', 'workbench': 'workbench', 'identifier': 'identificador', 'specification': 'especificación', 'payment': 'pago', 'graph-node': 'nodo de grafo', 'standard': 'estándar', 'locale': 'locale', 'date': 'fecha', 'time': 'hora'
   },
   'pt-BR': {
     'Identity, registry &amp; official numbers': 'Identidade, registros e números oficiais',
@@ -2602,13 +3264,13 @@ const COUNTRY_PAGE_COMPLETION_LABELS = {
     'SEPA credit transfers apply to Euro-denominated payments, but domestic flows mostly use PLN-native routing.': 'Transferências SEPA aplicam-se a pagamentos em euro; fluxos nacionais usam principalmente roteamento nativo de PLN.',
     'Polish split payment workflows separate VAT amount, supplier NIP, invoice reference, and gross transfer amount.': 'Fluxos poloneses de split payment separam IVA, NIP do fornecedor, referência da fatura e valor bruto.',
     'Tax microaccount calculations depend on PESEL or NIP input and must be treated as payment-routing support, not a bank lookup.': 'Cálculos de microconta fiscal dependem de PESEL ou NIP e são suporte de roteamento de pagamento, não lookup bancário.',
-    'payments': 'pagamentos', 'validator': 'validador', 'workbench': 'workbench', 'identifier': 'identificador', 'specification': 'especificação', 'payment': 'pagamento', 'graph-node': 'nó de grafo', 'standard': 'padrão', 'developer': 'desenvolvedor', 'locale': 'localidade', 'date': 'data', 'time': 'hora'
+    'payments': 'pagamentos', 'validator': 'validador', 'workbench': 'workbench', 'identifier': 'identificador', 'specification': 'especificação', 'payment': 'pagamento', 'graph-node': 'nó de grafo', 'standard': 'padrão', 'locale': 'localidade', 'date': 'data', 'time': 'hora'
   }
 };
 
 const COUNTRY_PAGE_COMPLETION_TEXT_ONLY_LABELS = new Set([
   'Mobile', 'Landline', 'International mobile', 'International landline', 'Normalized',
-  'payments', 'validator', 'workbench', 'identifier', 'specification', 'payment', 'graph-node', 'standard', 'developer', 'locale', 'date', 'time'
+  'payments', 'validator', 'workbench', 'identifier', 'specification', 'payment', 'graph-node', 'standard', 'locale', 'date', 'time'
 ]);
 
 function applyCountryPageCompletionTranslations(content, locale) {
@@ -2628,12 +3290,14 @@ function applyCountryPageCompletionTranslations(content, locale) {
 const COUNTRY_PAGE_TEXT_ONLY_LABELS = new Set([
   'Locale', 'ISO-2', 'ISO-3', 'Calling code', 'TLD', 'Date format', 'Currency', 'Currency Name',
   'Postal pattern', 'Decimal', 'Thousands', 'country code', 'alpha-3', 'phone',
-  'domain', 'display', 'money', 'address', 'numbers', 'Quality',
+  'domain', 'display', 'money', 'address', 'numbers', 'Quality', 'developer', 'reference',
   'Capital City', 'Native Name', 'ISO Alpha-2', 'ISO Alpha-3', 'Calling Prefix', 'Internet TLD', 'Driving Side', 'Time Zones',
   'Active Locale', 'Date Format', 'Decimal Separator', 'Thousands Separator', 'Postal Pattern',
   'Plug Types', 'Electrical Voltage', 'Grid Frequency', 'Emergency Number', 'Address Example',
   'Recipient', 'Street type and name', 'Building and flat number', 'Postal code', 'City', 'Country', 'Right', 'Warsaw',
-  'government', 'tax', 'identifiers', 'postal', 'addresses', 'banking', 'business', 'invoices', 'xml', 'environment', 'vehicles', 'insurance', 'customs', 'currency'
+  'government', 'tax', 'identifiers', 'identifier', 'specification', 'validator', 'workbench', 'graph-node', 'standard', 'payment', 'postal', 'addresses', 'banking', 'business', 'invoices', 'xml', 'environment', 'vehicles', 'insurance', 'customs', 'currency',
+  'NRB domestic account', 'Tax microaccount', 'Payment QR payloads', 'PLN amount and grosz', 'PLN and Polish IBAN', 'Card payments', 'Phone Conventions', 'Telephone layouts & parsing guidelines', 'Telephone layouts &amp; parsing guidelines', 'NBP exchange and banking context',
+  'Split payment / MPP', 'BIC / SWIFT', 'SWIFT / BIC'
 ]);
 
 const COUNTRY_PAGE_FINAL_SWEEP_LABELS = {
@@ -2718,7 +3382,6 @@ const COUNTRY_PAGE_FINAL_SWEEP_LABELS = {
     'payment': 'płatność',
     'graph-node': 'węzeł grafu',
     'standard': 'standard',
-    'developer': 'deweloper',
     'locale': 'lokalizacja',
     'date': 'data',
     'time': 'czas'
@@ -2909,9 +3572,11 @@ const COUNTRY_PAGE_FINAL_SWEEP_LABELS = {
 };
 
 applyExpandedLocalePacks();
+applyUniversalPolandLocalizationPacks();
+applyPolandVocabularyLocalizationPacks();
 
 const COUNTRY_PAGE_FINAL_SWEEP_TEXT_ONLY_LABELS = new Set([
-  'payments', 'validator', 'workbench', 'identifier', 'specification', 'payment', 'graph-node', 'standard', 'developer', 'locale', 'date', 'time'
+  'payments', 'validator', 'workbench', 'identifier', 'specification', 'payment', 'graph-node', 'standard', 'locale', 'date', 'time'
 ]);
 
 function applyCountryPageFinalSweepTranslations(content, locale) {
