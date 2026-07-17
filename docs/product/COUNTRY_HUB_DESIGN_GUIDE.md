@@ -113,6 +113,12 @@ Typography should feel like a premium documentation portal:
 
 Do not scale typography with viewport width.
 
+### Card Typography Scale
+
+All country-level cards, portal cards, instrument cards, reference cards, resource cards, and ecosystem cards must use compact card typography. Card headings are not page headings: keep them around `0.92rem` to `1rem`, use tight line-height, and avoid hero-sized text inside cards. Card body copy should read as supporting metadata around `0.84rem` to `0.9rem`; badges, labels, and identity marks should stay smaller and single-line where possible.
+
+When adding or localizing cards, never let translated text force oversized card typography. Prefer concise card descriptions, safe wrapping, and a stable grid over increasing font size. The Poland Country Hub is the visual reference for this compact card scale.
+
 ## Badge System
 
 Use one global badge system.
