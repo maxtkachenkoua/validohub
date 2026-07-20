@@ -1,14 +1,14 @@
 schemaVersion: 1
-id: germany-iban-validator
+id: german-girocard-routing-helper
 kind: tool
 module: validohub
 country: DE
 category: finance
 status: active
 name:
-  en: "German IBAN Validator"
+  en: "German Girocard Routing Helper"
 summary:
-  en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+  en: "Inspect Girocard/girocard payment references, BLZ hints, terminal snippets, and card-network boundary notes."
 capabilities:
   - validate
   - parse
@@ -23,19 +23,19 @@ forms:
       - type: textarea
         name: input
         label:
-          en: "IBAN input"
+          en: "GC input"
         required: true
         placeholder:
-          en: "DE89370400440532013000"
+          en: "girocard terminal 123456 BLZ 37040044 amount EUR 19.90"
     actions: [validate, parse, format, explain]
 related:
-  explicit: [german-blz-bank-code-inspector]
+  explicit: [german-remittance-text-builder]
   auto:
     sameCountry: true
     sameCategory: true
     sameCapability: true
 seo:
   title:
-    en: "German IBAN Validator | ValidoHub"
+    en: "German Girocard Routing Helper | ValidoHub"
   description:
-    en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+    en: "Inspect Girocard/girocard payment references, BLZ hints, terminal snippets, and card-network boundary notes."

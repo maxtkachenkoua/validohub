@@ -1,14 +1,14 @@
 schemaVersion: 1
-id: germany-iban-validator
+id: german-regex-pack-helper
 kind: tool
 module: validohub
 country: DE
-category: finance
+category: developer-tools
 status: active
 name:
-  en: "German IBAN Validator"
+  en: "German Regex Pack Helper"
 summary:
-  en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+  en: "Prepare regex snippets for German IdNr, USt-IdNr, IBAN, PLZ, phone, amount, and date fields."
 capabilities:
   - validate
   - parse
@@ -23,19 +23,19 @@ forms:
       - type: textarea
         name: input
         label:
-          en: "IBAN input"
+          en: "REGEX input"
         required: true
         placeholder:
-          en: "DE89370400440532013000"
+          en: "IdNr: ^\\d{11}$\nUSt: ^DE\\d{9}$\nPLZ: ^\\d{5}$"
     actions: [validate, parse, format, explain]
 related:
-  explicit: [german-blz-bank-code-inspector]
+  explicit: [german-api-payload-auditor]
   auto:
     sameCountry: true
     sameCategory: true
     sameCapability: true
 seo:
   title:
-    en: "German IBAN Validator | ValidoHub"
+    en: "German Regex Pack Helper | ValidoHub"
   description:
-    en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+    en: "Prepare regex snippets for German IdNr, USt-IdNr, IBAN, PLZ, phone, amount, and date fields."

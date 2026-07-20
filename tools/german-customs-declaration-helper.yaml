@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-customs-declaration-helper
+kind: tool
+module: validohub
+country: DE
+category: developer-tools
+status: active
+name:
+  en: "German Customs Declaration Helper"
+summary:
+  en: "Inspect customs snippets for EORI, invoice, amount, goods, and official Zoll boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ZOLL input"
+        required: true
+        placeholder:
+          en: "EORI DE123456789012345\nInvoice RE-2026-0042\nGoods test devices\nValue EUR 1250,75"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect customs snippets for EORI, invoice, amount, goods, and official Zoll boundary notes."

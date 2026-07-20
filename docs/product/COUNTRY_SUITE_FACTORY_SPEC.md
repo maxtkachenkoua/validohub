@@ -2,7 +2,7 @@
 
 Country Suite Factory V1 is the additive-only template for future complete country tool suites. It exists so a future prompt such as "make Switzerland fully premium" can start from a reusable Brazil-scale workbench shell instead of inventing another one-off runtime.
 
-Switzerland Premium Country Suite V1 is the first full factory consumer. It proves the additive path for future countries while leaving accepted Brazil, Poland, France, and Netherlands runtimes unmigrated.
+Switzerland Premium Country Suite V1 is the first full factory consumer. Germany Premium Country Suite V1 is the second full factory consumer and the benchmark for upgrading an existing generic country utility route into a factory-based suite route. It proves the additive path for future countries while leaving accepted Brazil, Poland, France, and Netherlands runtimes unmigrated.
 
 ## Additive-only
 
@@ -179,4 +179,4 @@ Before calling a future factory-based country complete:
 9. Confirm generated output under `generated/validohub` is not committed.
 10. Confirm Valido Engine remains untouched unless a truly generic platform capability was required.
 
-The factory audit also asserts that existing accepted country suites do not import or call the factory, that generated Swiss factory pages keep dependency-first script order, that generated Swiss factory pages do not ship the generic workbench header, and that the Swiss hub does not ship empty info cards.
+The factory audit also asserts that existing accepted country suites do not import or call the factory, that generated factory country pages keep dependency-first script order, that generated factory country pages do not ship the generic workbench header, and that factory country hubs do not ship empty info cards.

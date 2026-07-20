@@ -239,6 +239,32 @@ Future global tools must be born premium: deterministic neutral theme, tool-spec
   - Deeper all-locale editorial translation pass for dense Netherlands-specific workbench copy.
 - Current quality status: Production-quality V2 country suite, Brazil-style field-breakdown benchmark, and first post-guardrails generation benchmark.
 
+## Germany Premium Workbench Suite
+
+- Source JS: `assets/js/tools/germany-suite.js`
+- Shared shell JS: `assets/js/tools/country-suite-factory.js`
+- Related YAML tool pages:
+  - `tools/german-*.yaml`
+  - `tools/germany-iban-validator.yaml`
+- Algorithm ID:
+  - `validohub.germany-suite`
+- Product spec:
+  - `docs/product/GERMANY_PREMIUM_SUITE_SPEC.md`
+- Current capabilities:
+  - 60 Germany-specific country workbenches.
+  - IdNr, Steuernummer, USt-IdNr, EORI, Handelsregister, LEI, company onboarding, ELSTER, Finanzamt, and customs diagnostics.
+  - German IBAN, BLZ, BIC/SWIFT, SEPA transfer, direct debit mandates, Girocard, remittance, masked IBAN, statement parsing, and payment reconciliation helpers.
+  - VAT, invoice, XRechnung, ZUGFeRD, e-invoicing, DATEV, GoBD, SKR03/SKR04, payroll, wage tax, and health-insurance boundary helpers.
+  - Postal code, address, transliteration, Bundesland, municipality, phone, E.164, date, EUR, CSV, slug, OCR, JSON, regex, API, form, and data-quality helpers.
+  - DSGVO/GDPR redaction, German PII masking, personal fixtures, passport/ID/residence-permit/driving-licence helpers, vehicle plates, VIN, vehicle redaction, customs declaration, and postal tracking helpers.
+  - Country Suite Factory V1 shell with compact Brazil-scale header, short samples, immediate result card, validation pipeline, dedicated field breakdown, quality notes, copy/download controls, and advanced developer payload.
+  - Runtime localization for every supported ValidoHub locale across workbench labels, states, sample labels, tool titles/summaries, diagnostics, quality notes, and advanced labels.
+  - Browser-only/offline analysis with explicit boundaries for BZSt, ELSTER, VIES, Handelsregister, bank directories, Zoll/EORI, identity proof, vehicle registry status, carrier delivery state, and legal decisions.
+- Known future ideas:
+  - Live registry/tax/bank/postal integrations only after privacy and network product specs.
+  - Larger German dictionaries for BLZ, Bundesland, tax-office, postal-region, and accounting-code enrichment.
+- Current quality status: Production-quality V1 country suite, second Country Suite Factory consumer, and first generic-country IBAN route graduation benchmark.
+
 ## Switzerland Premium Workbench Suite
 
 - Source JS: `assets/js/tools/switzerland-suite.js`

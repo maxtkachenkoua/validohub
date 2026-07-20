@@ -32,6 +32,14 @@ const suiteChecks = [
     tokens: ['addBreakdown', 'breakdownTitle', 'breakdownSummary', 'nls-breakdown', 'nls-segments', 'Field breakdown']
   },
   {
+    country: 'Germany',
+    files: ['assets/js/tools/country-suite-factory.js', 'assets/js/tools/germany-suite.js'],
+    fileTokens: {
+      'assets/js/tools/country-suite-factory.js': ['csf-breakdown', 'csf-segments', 'breakdownTitle', 'breakdownSummary', 'fieldBreakdown'],
+      'assets/js/tools/germany-suite.js': ['result.breakdown', 'breakdownTitle', 'breakdownSummary', 'fieldBreakdown', 'German local structure']
+    }
+  },
+  {
     country: 'Switzerland',
     files: ['assets/js/tools/country-suite-factory.js', 'assets/js/tools/switzerland-suite.js'],
     fileTokens: {

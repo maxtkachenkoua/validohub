@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-gobd-audit-trail-checklist-generator
+kind: tool
+module: validohub
+country: DE
+category: finance
+status: active
+name:
+  en: "German GoBD Audit Trail Checklist Generator"
+summary:
+  en: "Check German audit-trail snippets for immutability, timestamps, document ids, tax periods, and GoBD boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GoBD input"
+        required: true
+        placeholder:
+          en: "Beleg RE-2026-0042\nTimestamp 2026-07-14T10:30:00+02:00\nHash abc123\nUser audit"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-skr03-skr04-account-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German GoBD Audit Trail Checklist Generator | ValidoHub"
+  description:
+    en: "Check German audit-trail snippets for immutability, timestamps, document ids, tax periods, and GoBD boundary notes."

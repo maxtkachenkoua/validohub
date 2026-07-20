@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-blz-bank-code-inspector
+kind: tool
+module: validohub
+country: DE
+category: finance
+status: active
+name:
+  en: "German BLZ Bank Code Inspector"
+summary:
+  en: "Inspect German eight-digit Bankleitzahl evidence, normalize bank-routing snippets, and separate directory lookup from local format checks."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BLZ input"
+        required: true
+        placeholder:
+          en: "BLZ 37040044 account 0532013000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German BLZ Bank Code Inspector | ValidoHub"
+  description:
+    en: "Inspect German eight-digit Bankleitzahl evidence, normalize bank-routing snippets, and separate directory lookup from local format checks."

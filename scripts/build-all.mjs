@@ -129,6 +129,7 @@ const TOOL_SCRIPT_BY_ALGORITHM = {
   'validohub.france-suite': 'france-suite.js',
   'validohub.netherlands-suite': 'netherlands-suite.js',
   'validohub.switzerland-suite': ['country-suite-factory.js', 'switzerland-suite.js'],
+  'validohub.germany-suite': ['country-suite-factory.js', 'germany-suite.js'],
   'validohub.case-converter': 'generic-suite.js',
   'validohub.html-decoder': 'generic-suite.js',
   'validohub.html-encoder': 'generic-suite.js',
@@ -143,7 +144,8 @@ const TOOL_SCRIPT_BY_ALGORITHM = {
 };
 
 const FACTORY_TOOL_ALGORITHMS = new Set([
-  'validohub.switzerland-suite'
+  'validohub.switzerland-suite',
+  'validohub.germany-suite'
 ]);
 
 const WORKBENCH_SCRIPT_VERSION = 'country-premium-20260719';
@@ -483,6 +485,8 @@ function ensureGenericUtilityWorkbench(content, route) {
   const path = String(route.path || '');
   const slug = path.match(/^\/en\/tools\/([^/]+)\//)?.[1] || path.match(/^\/en\/[^/]+\/([^/]+)\//)?.[1];
   const config = slug ? GENERIC_UTILITY_WORKBENCHES[slug] : null;
+  const algorithmMatch = content.match(/data-algorithm-id="([^"]+)"/);
+  if (algorithmMatch && FACTORY_TOOL_ALGORITHMS.has(algorithmMatch[1])) return content;
   if (!config) return content;
   const workbench = renderGenericUtilityWorkbench(config);
   let next = content;
@@ -1266,6 +1270,7 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
     'validohub.france-suite': 'france-suite.js',
     'validohub.netherlands-suite': 'netherlands-suite.js',
     'validohub.switzerland-suite': ['country-suite-factory.js', 'switzerland-suite.js'],
+    'validohub.germany-suite': ['country-suite-factory.js', 'germany-suite.js'],
     'validohub.base64-decoder': 'base64.js',
     'validohub.base64': 'base64.js',
     'validohub.json-formatter': 'json.js',

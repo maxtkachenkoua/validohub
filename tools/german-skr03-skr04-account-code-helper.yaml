@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-skr03-skr04-account-code-helper
+kind: tool
+module: validohub
+country: DE
+category: finance
+status: active
+name:
+  en: "German SKR03 / SKR04 Account Code Helper"
+summary:
+  en: "Inspect German chart-of-accounts snippets, detect SKR03/SKR04-like codes, and prepare accounting integration notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SKR input"
+        required: true
+        placeholder:
+          en: "SKR03 Konto 8400 Erlöse 19% USt Gegenkonto 1200"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-payroll-social-security-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German SKR03 / SKR04 Account Code Helper | ValidoHub"
+  description:
+    en: "Inspect German chart-of-accounts snippets, detect SKR03/SKR04-like codes, and prepare accounting integration notes."

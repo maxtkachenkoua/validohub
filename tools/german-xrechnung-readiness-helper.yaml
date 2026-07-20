@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-xrechnung-readiness-helper
+kind: tool
+module: validohub
+country: DE
+category: finance
+status: active
+name:
+  en: "German XRechnung Readiness Helper"
+summary:
+  en: "Audit German XRechnung snippets for Leitweg-ID, supplier, buyer, amount, tax, and XML handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "XR input"
+        required: true
+        placeholder:
+          en: "Leitweg-ID 991-12345-67\nSeller Example GmbH\nBuyer Stadt Berlin\nAmount 1250,75 EUR\nVAT 19%"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-zugferd-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German XRechnung Readiness Helper | ValidoHub"
+  description:
+    en: "Audit German XRechnung snippets for Leitweg-ID, supplier, buyer, amount, tax, and XML handoff evidence."

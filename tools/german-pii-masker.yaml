@@ -1,14 +1,14 @@
 schemaVersion: 1
-id: germany-iban-validator
+id: german-pii-masker
 kind: tool
 module: validohub
 country: DE
-category: finance
+category: developer-tools
 status: active
 name:
-  en: "German IBAN Validator"
+  en: "German PII Masker"
 summary:
-  en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+  en: "Mask German IdNr, phone, IBAN, postal address, email, and document-like evidence for logs."
 capabilities:
   - validate
   - parse
@@ -23,19 +23,19 @@ forms:
       - type: textarea
         name: input
         label:
-          en: "IBAN input"
+          en: "PII input"
         required: true
         placeholder:
-          en: "DE89370400440532013000"
+          en: "Max Test, IdNr 04452397687, IBAN DE89370400440532013000, 10117 Berlin"
     actions: [validate, parse, format, explain]
 related:
-  explicit: [german-blz-bank-code-inspector]
+  explicit: [german-gdpr-dsgvo-redaction-helper]
   auto:
     sameCountry: true
     sameCategory: true
     sameCapability: true
 seo:
   title:
-    en: "German IBAN Validator | ValidoHub"
+    en: "German PII Masker | ValidoHub"
   description:
-    en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+    en: "Mask German IdNr, phone, IBAN, postal address, email, and document-like evidence for logs."

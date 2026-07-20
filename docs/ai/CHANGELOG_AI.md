@@ -1,3 +1,10 @@
+## Germany Premium Country Suite V1
+
+- Added Germany as the second Country Suite Factory V1 consumer with 60 active Germany-specific workbenches.
+- Upgraded the existing German IBAN country route from the generic IBAN runtime into the full Germany suite while preserving the route.
+- Added Germany hub metadata, available workbench catalog, official-boundary notes, ecosystem sections, field-breakdown coverage, runtime localization, docs, build mappings, and audits.
+- Hardened the build pipeline so factory-based country algorithms skip generic utility workbench injection.
+
 # AI Changelog
 
 ## 2026-07-20 - All-Country Field Breakdown Requirement

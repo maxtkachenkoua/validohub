@@ -220,6 +220,15 @@ algorithms:
     summary:
       en: Metadata entry for ValidoHub browser-side Dutch identifiers, banking, payments, tax, address, privacy, vehicle, and developer workbenches.
 
+  - algorithmId: validohub.germany-suite
+    javaClass: com.validohub.algorithms.germany.GermanySuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, calculate, explain]
+    name:
+      en: Germany Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side German IdNr, Steuernummer, USt-IdNr, IBAN, BLZ, XRechnung, DATEV, locale, privacy, vehicle, and developer workbenches.
+
   - algorithmId: validohub.switzerland-suite
     javaClass: com.validohub.algorithms.switzerland.SwitzerlandSuiteAlgorithm
     version: 1

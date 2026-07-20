@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-form-field-auditor
+kind: tool
+module: validohub
+country: DE
+category: developer-tools
+status: active
+name:
+  en: "German Form Field Auditor"
+summary:
+  en: "Review German form-field labels, placeholders, masks, validation hints, and accessibility-safe data-entry flows."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "field=ustId label=\"USt-IdNr\" placeholder=\"DE123456789\" mask=\"DE#########\" required=true"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German Form Field Auditor | ValidoHub"
+  description:
+    en: "Review German form-field labels, placeholders, masks, validation hints, and accessibility-safe data-entry flows."

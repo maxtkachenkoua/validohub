@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-municipality-code-inspector
+kind: tool
+module: validohub
+country: DE
+category: developer-tools
+status: active
+name:
+  en: "German Municipality Code Inspector"
+summary:
+  en: "Inspect German municipality-code snippets, normalize AGS-like digits, and mark official-statistics lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "AGS input"
+        required: true
+        placeholder:
+          en: "AGS 11000000 Berlin"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect German municipality-code snippets, normalize AGS-like digits, and mark official-statistics lookup boundaries."

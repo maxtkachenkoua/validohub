@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-data-quality-workbench
+kind: tool
+module: validohub
+country: DE
+category: developer-tools
+status: active
+name:
+  en: "German Data Quality Workbench"
+summary:
+  en: "Audit German mixed datasets for IdNr, USt-IdNr, IBAN, PLZ, phone, amount, date, and address evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "DE123456789; DE89370400440532013000; 10117 Berlin; 14.07.2026; 1.250,75 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit German mixed datasets for IdNr, USt-IdNr, IBAN, PLZ, phone, amount, date, and address evidence."

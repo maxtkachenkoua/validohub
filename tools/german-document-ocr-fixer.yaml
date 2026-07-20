@@ -1,14 +1,14 @@
 schemaVersion: 1
-id: germany-iban-validator
+id: german-document-ocr-fixer
 kind: tool
 module: validohub
 country: DE
-category: finance
+category: developer-tools
 status: active
 name:
-  en: "German IBAN Validator"
+  en: "German Document OCR Fixer"
 summary:
-  en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+  en: "Repair common OCR spacing in German IdNr, USt-IdNr, IBAN, postal code, amount, and invoice snippets."
 capabilities:
   - validate
   - parse
@@ -23,19 +23,19 @@ forms:
       - type: textarea
         name: input
         label:
-          en: "IBAN input"
+          en: "OCR input"
         required: true
         placeholder:
-          en: "DE89370400440532013000"
+          en: "USt - IdNr D E 123 456 789\nIBAN D E89 3704 0044 0532 0130 00"
     actions: [validate, parse, format, explain]
 related:
-  explicit: [german-blz-bank-code-inspector]
+  explicit: [german-pii-masker]
   auto:
     sameCountry: true
     sameCategory: true
     sameCapability: true
 seo:
   title:
-    en: "German IBAN Validator | ValidoHub"
+    en: "German Document OCR Fixer | ValidoHub"
   description:
-    en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+    en: "Repair common OCR spacing in German IdNr, USt-IdNr, IBAN, postal code, amount, and invoice snippets."

@@ -1,14 +1,14 @@
 schemaVersion: 1
-id: germany-iban-validator
+id: german-vat-ust-idnr-validator
 kind: tool
 module: validohub
 country: DE
-category: finance
+category: developer-tools
 status: active
 name:
-  en: "German IBAN Validator"
+  en: "German USt-IdNr / VAT Validator"
 summary:
-  en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+  en: "Validate German VAT display syntax, normalize DE prefixes, inspect numeric body length, and prepare VIES handoff notes."
 capabilities:
   - validate
   - parse
@@ -23,19 +23,19 @@ forms:
       - type: textarea
         name: input
         label:
-          en: "IBAN input"
+          en: "USt input"
         required: true
         placeholder:
-          en: "DE89370400440532013000"
+          en: "DE123456789"
     actions: [validate, parse, format, explain]
 related:
-  explicit: [german-blz-bank-code-inspector]
+  explicit: [german-eori-validator]
   auto:
     sameCountry: true
     sameCategory: true
     sameCapability: true
 seo:
   title:
-    en: "German IBAN Validator | ValidoHub"
+    en: "German USt-IdNr / VAT Validator | ValidoHub"
   description:
-    en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+    en: "Validate German VAT display syntax, normalize DE prefixes, inspect numeric body length, and prepare VIES handoff notes."

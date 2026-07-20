@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-tax-id-validator
+kind: tool
+module: validohub
+country: DE
+category: national-identifiers
+status: active
+name:
+  en: "German Tax ID / IdNr Validator"
+summary:
+  en: "Validate German Steueridentifikationsnummer shape, replay ISO 7064 MOD 11,10 check digit evidence, and separate offline syntax from identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IdNr input"
+        required: true
+        placeholder:
+          en: "04452397687"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-steuernummer-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German Tax ID / IdNr Validator | ValidoHub"
+  description:
+    en: "Validate German Steueridentifikationsnummer shape, replay ISO 7064 MOD 11,10 check digit evidence, and separate offline syntax from identity proof."

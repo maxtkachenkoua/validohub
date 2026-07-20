@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-lei-helper
+kind: tool
+module: validohub
+country: DE
+category: developer-tools
+status: active
+name:
+  en: "German LEI Context Helper"
+summary:
+  en: "Inspect Legal Entity Identifier shape, German company context, and official GLEIF lookup boundaries for onboarding payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "LEI input"
+        required: true
+        placeholder:
+          en: "529900T8BM49AURSDO55 Example GmbH"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German LEI Context Helper | ValidoHub"
+  description:
+    en: "Inspect Legal Entity Identifier shape, German company context, and official GLEIF lookup boundaries for onboarding payloads."

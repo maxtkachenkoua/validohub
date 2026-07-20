@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-api-payload-auditor
+kind: tool
+module: validohub
+country: DE
+category: developer-tools
+status: active
+name:
+  en: "German API Payload Auditor"
+summary:
+  en: "Audit German API payloads for locale, identifiers, banking, address, privacy, and official-boundary evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"DE\",\"locale\":\"de-DE\",\"vat\":\"DE123456789\",\"iban\":\"DE89370400440532013000\",\"postalCode\":\"10117\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit German API payloads for locale, identifiers, banking, address, privacy, and official-boundary evidence."

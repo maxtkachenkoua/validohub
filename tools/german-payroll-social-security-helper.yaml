@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-payroll-social-security-helper
+kind: tool
+module: validohub
+country: DE
+category: finance
+status: active
+name:
+  en: "German Payroll Social Security Helper"
+summary:
+  en: "Audit German payroll snippets for employee, Sozialversicherung context, amount, month, and health-insurance boundary evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SV input"
+        required: true
+        placeholder:
+          en: "Mitarbeiter Max Test\nMonat 07/2026\nBrutto 4200,00 EUR\nSV beitragspflichtig"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-wage-tax-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German Payroll Social Security Helper | ValidoHub"
+  description:
+    en: "Audit German payroll snippets for employee, Sozialversicherung context, amount, month, and health-insurance boundary evidence."

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: DE
+category: national-identifiers
+status: active
+name:
+  en: "German Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VINs, plates, owner snippets, and address evidence for German vehicle workflows."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "AUTO input"
+        required: true
+        placeholder:
+          en: "B AB 1234\nVIN WVWZZZ1JZXW000001\nOwner Max Test 10117 Berlin"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-customs-declaration-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VINs, plates, owner snippets, and address evidence for German vehicle workflows."

@@ -1,14 +1,14 @@
 schemaVersion: 1
-id: germany-iban-validator
+id: german-phone-e164-formatter
 kind: tool
 module: validohub
 country: DE
-category: finance
+category: developer-tools
 status: active
 name:
-  en: "German IBAN Validator"
+  en: "German Phone E.164 Formatter"
 summary:
-  en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+  en: "Normalize German national numbers to +49 where possible, inspect subscriber length, and flag telecom lookup boundaries."
 capabilities:
   - validate
   - parse
@@ -23,19 +23,19 @@ forms:
       - type: textarea
         name: input
         label:
-          en: "IBAN input"
+          en: "E164 input"
         required: true
         placeholder:
-          en: "DE89370400440532013000"
+          en: "030 1234567"
     actions: [validate, parse, format, explain]
 related:
-  explicit: [german-blz-bank-code-inspector]
+  explicit: [german-date-locale-formatter]
   auto:
     sameCountry: true
     sameCategory: true
     sameCapability: true
 seo:
   title:
-    en: "German IBAN Validator | ValidoHub"
+    en: "German Phone E.164 Formatter | ValidoHub"
   description:
-    en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+    en: "Normalize German national numbers to +49 where possible, inspect subscriber length, and flag telecom lookup boundaries."

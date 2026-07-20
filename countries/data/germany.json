@@ -20,24 +20,105 @@
     "iso3": "DEU",
     "continent": "Europe",
     "region": "Europe",
-    "language": "Placeholder",
+    "language": "German",
     "currency": "EUR",
     "currencyName": "Euro",
-    "status": "inProgress",
-    "summary": "Future hub for Germany validation rules and locale formats.",
-    "identifiers": [],
-    "payments": [],
+    "status": "available",
+    "summary": "Premium Germany developer hub for tax identifiers, banking, accounting, locale formats, privacy, vehicles, and browser-only data-quality workflows.",
+    "identifiers": [
+      "IdNr",
+      "Steuernummer",
+      "USt-IdNr",
+      "EORI",
+      "Handelsregister",
+      "BLZ",
+      "IBAN",
+      "PLZ"
+    ],
+    "payments": [
+      "SEPA",
+      "German IBAN",
+      "BLZ",
+      "BIC/SWIFT",
+      "Girocard",
+      "XRechnung",
+      "ZUGFeRD"
+    ],
     "features": [
       "payments",
       "identity",
       "government",
       "banking"
     ],
-    "availableWorkbenches": [],
-    "plannedWorkbenches": [
-      "Placeholder Workbench"
+    "availableWorkbenches": [
+      "German Tax ID / IdNr Validator",
+      "German Steuernummer Format Helper",
+      "German USt-IdNr / VAT Validator",
+      "German EORI / Customs Identifier Helper",
+      "German Handelsregister Readiness Helper",
+      "German LEI Context Helper",
+      "German Company Onboarding Auditor",
+      "German ELSTER Readiness Helper",
+      "German Finanzamt Field Helper",
+      "German IBAN Validator",
+      "German BLZ Bank Code Inspector",
+      "German BIC / SWIFT Inspector",
+      "German SEPA Transfer Helper",
+      "German SEPA Direct Debit Mandate Helper",
+      "German Girocard Routing Helper",
+      "German Remittance Text Builder",
+      "German Payment Reconciliation Helper",
+      "German Bank Statement Parser",
+      "German Masked IBAN Formatter",
+      "German EUR Decimal Currency Formatter",
+      "German VAT Rate Sanity Helper",
+      "German VAT Return Field Helper",
+      "German Invoice Number Helper",
+      "German XRechnung Readiness Helper",
+      "German ZUGFeRD Readiness Helper",
+      "German E-Invoicing Readiness Helper",
+      "German DATEV Export Readiness Checker",
+      "German GoBD Audit Trail Checklist Generator",
+      "German SKR03 / SKR04 Account Code Helper",
+      "German Payroll Social Security Helper",
+      "German Wage Tax Readiness Helper",
+      "German Health Insurance Boundary Helper",
+      "German Address Normalizer",
+      "German Address Transliteration Normalizer",
+      "German Postal Code Validator",
+      "German Federal State Code Mapper",
+      "German Municipality Code Inspector",
+      "German Phone Number Validator",
+      "German Phone E.164 Formatter",
+      "German Date Locale Formatter",
+      "German CSV Locale Normalizer",
+      "German Slug Normalizer",
+      "German Document OCR Fixer",
+      "German PII Masker",
+      "German GDPR / DSGVO Redaction Helper",
+      "German Personal Data Fixture Generator",
+      "German ID Card Format Helper",
+      "German Passport Number Helper",
+      "German Driving Licence Format Helper",
+      "German Residence Permit Format Helper",
+      "German Vehicle Plate Inspector",
+      "German VIN Validator",
+      "German Vehicle Data Redaction Helper",
+      "German Customs Declaration Helper",
+      "German Postal Tracking Helper",
+      "German Data Quality Workbench",
+      "German JSON Fixture Generator",
+      "German Regex Pack Helper",
+      "German API Payload Auditor",
+      "German Form Field Auditor"
     ],
-    "completion": 20,
+    "plannedWorkbenches": [
+      "Live Handelsregister lookup",
+      "Live VIES status lookup",
+      "Live bank directory lookup",
+      "Live postal delivery verification"
+    ],
+    "completion": 100,
     "coordinates": {
       "x": 50,
       "y": 35
@@ -46,8 +127,8 @@
   "hub": {
     "flag": "🇩🇪",
     "name": "Germany",
-    "badge": "Central Europe country hub",
-    "description": "Developer intelligence for German tax identifiers, locale conventions, postal layouts, phone parsing, and banking integration.",
+    "badge": "Premium Germany developer suite",
+    "description": "Developer intelligence and browser-only workbenches for German tax identifiers, banking, accounting, locale conventions, privacy, documents, vehicles, and integration QA.",
     "metadata": {
       "nativeName": "Deutschland",
       "population": "approximately 84.4M",
@@ -704,163 +785,128 @@
     "payments": [
       {
         "brandKey": "iban",
-        "title": "EUR and German IBAN",
+        "title": "German IBAN",
         "status": "available",
         "tags": [
           "payments",
           "banking"
         ],
-        "text": "Germany uses EUR and participates in IBAN-based European banking flows. Use the global IBAN Validator for checksum-level checks."
+        "text": "DE IBANs expose country, MOD-97 check digits, BLZ, and account-number slices in the Germany workbench."
       },
       {
         "brandKey": "sepa",
         "title": "SEPA",
-        "status": "ready",
+        "status": "available",
         "tags": [
           "payments",
           "banking"
         ],
-        "text": "Germany is a founding member of SEPA, supporting SEPA direct debits and credit transfers."
+        "text": "German credit transfers and direct debits use SEPA-ready account, mandate, remittance, and creditor evidence."
       },
       {
         "brandKey": "swift",
         "title": "BIC / SWIFT",
-        "status": "ready",
+        "status": "available",
         "tags": [
           "banking"
         ],
-        "text": "International bank transfers require BIC/SWIFT bank details along with account numbers."
+        "text": "BIC/SWIFT fields can be shape-checked locally; bank participation and ownership remain official/provider checks."
       },
       {
-        "icon": "💳",
-        "title": "Card payments",
-        "status": "ready",
+        "title": "Girocard",
+        "status": "available",
         "tags": [
           "payments"
         ],
-        "text": "Standard international Visa/Mastercard schemes along with local Girocard (formerly EC-Karte) routing conventions."
+        "text": "Girocard routing and terminal snippets are inspected as local payment evidence without network authorization."
       }
     ],
     "officialResources": [
       {
-        "label": "Bundeszentralamt für Steuern (BZSt)",
+        "title": "Bundeszentralamt fuer Steuern",
+        "note": "IdNr, USt-IdNr, and tax identifier context; official status remains outside offline checks.",
         "status": "available",
         "tags": [
-          "government",
-          "identifiers",
           "tax"
-        ],
-        "note": "Federal Central Tax Office website providing official Tax ID and VAT validation specifications."
+        ]
       },
       {
-        "label": "Deutsche Bundesbank",
-        "status": "available",
-        "tags": [
-          "government",
-          "banking"
-        ],
-        "note": "Central bank of Germany, providing currency indices, clearing rails, and bank code directory context."
-      },
-      {
-        "label": "Bundesnetzagentur",
-        "status": "available",
-        "tags": [
-          "government",
-          "phone"
-        ],
-        "note": "Federal Network Agency supervising telecommunication numbering plans and area prefixes."
-      },
-      {
-        "label": "Deutsche Post",
-        "status": "available",
-        "tags": [
-          "postal",
-          "addresses"
-        ],
-        "note": "Postal authority administering five-digit postal codes and official directory standards."
-      },
-      {
-        "brandKey": "vies",
-        "label": "European Commission VIES",
+        "title": "ELSTER",
+        "note": "Official electronic tax filing context for tax returns and pre-submission handoffs.",
         "status": "available",
         "tags": [
           "tax",
-          "government"
-        ],
-        "note": "EU official system for validating VAT registry records and registration validity."
+          "filing"
+        ]
       },
       {
-        "brandKey": "sepa",
-        "label": "European Payments Council / SEPA",
+        "title": "Handelsregister",
+        "note": "Commercial register existence, court, and legal status require official registry lookup.",
         "status": "available",
         "tags": [
-          "payments",
+          "registry"
+        ]
+      },
+      {
+        "title": "Deutsche Bundesbank",
+        "note": "Banking, BLZ, payments, and regulatory context for German financial integrations.",
+        "status": "available",
+        "tags": [
           "banking"
-        ],
-        "note": "SEPA schemes regulator detailing credit transfer and direct debit specifications."
+        ]
+      },
+      {
+        "title": "KoSIT / XRechnung",
+        "note": "German public-sector e-invoicing specification context and Leitweg-ID workflow references.",
+        "status": "available",
+        "tags": [
+          "einvoice"
+        ]
+      },
+      {
+        "title": "Zoll",
+        "note": "Customs and EORI status are official customs-system matters, not browser proofs.",
+        "status": "available",
+        "tags": [
+          "customs"
+        ]
       }
     ],
     "plannedWorkbenches": [
       {
-        "name": "German Tax ID Inspector",
+        "name": "Live Handelsregister Lookup",
         "status": "planned",
         "tags": [
-          "identifiers",
-          "government"
+          "government",
+          "registry"
         ],
-        "description": "Inspect and explain German Tax ID (IdNr) structure and validation rules."
+        "description": "Future official commercial-registry integration after a privacy and network product spec."
       },
       {
-        "name": "USt-IdNr / VAT Format Inspector",
+        "name": "Live VIES VAT Status Lookup",
         "status": "planned",
         "tags": [
-          "identifiers",
-          "tax"
+          "tax",
+          "vat"
         ],
-        "description": "Validate the structural format of DE VAT numbers."
+        "description": "Future EU VAT status check; current tools validate only browser-side syntax and handoff readiness."
       },
       {
-        "name": "Steuernummer Reference Tool",
+        "name": "Live Bank Directory Enrichment",
         "status": "planned",
         "tags": [
-          "identifiers",
-          "tax"
+          "banking"
         ],
-        "description": "Understand state-specific local tax number formats and schemas."
+        "description": "Future BLZ/BIC institution-name enrichment; current tools do not prove bank account ownership."
       },
       {
-        "name": "Germany Phone Validator",
-        "status": "planned",
-        "tags": [
-          "phone"
-        ],
-        "description": "Explain prefix layouts and digit counts for landline and mobile ranges."
-      },
-      {
-        "name": "Germany Postal Code Validator",
+        "name": "Postal Delivery Verification",
         "status": "planned",
         "tags": [
           "postal",
           "addresses"
         ],
-        "description": "Identify five-digit postal zones and city mappings without full verification."
-      },
-      {
-        "name": "German IBAN Tools",
-        "status": "planned",
-        "tags": [
-          "banking",
-          "payments"
-        ],
-        "description": "Explain country-specific bank code (BLZ) and account number offsets."
-      },
-      {
-        "name": "German Address Formatter",
-        "status": "planned",
-        "tags": [
-          "addresses"
-        ],
-        "description": "Format and normalize street, building, and town names using German postal layout standards."
+        "description": "Future delivery-point verification; current tools only inspect PLZ and address structure."
       }
     ],
     "relatedGlobalTools": [
@@ -913,7 +959,608 @@
         ]
       }
     ],
-    "availableWorkbenches": {},
+    "availableWorkbenches": [
+      {
+        "name": "German Tax ID / IdNr Validator",
+        "slug": "german-tax-id-validator",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "taxid"
+        ],
+        "description": "Validate German Steueridentifikationsnummer shape, replay ISO 7064 MOD 11,10 check digit evidence, and separate offline syntax from identity proof."
+      },
+      {
+        "name": "German Steuernummer Format Helper",
+        "slug": "german-steuernummer-format-helper",
+        "status": "available",
+        "tags": [
+          "tax",
+          "steuernummer"
+        ],
+        "description": "Inspect German tax-number snippets, normalize separators, detect Bundesland-style segments, and prepare ELSTER-safe diagnostics."
+      },
+      {
+        "name": "German USt-IdNr / VAT Validator",
+        "slug": "german-vat-ust-idnr-validator",
+        "status": "available",
+        "tags": [
+          "tax",
+          "vat"
+        ],
+        "description": "Validate German VAT display syntax, normalize DE prefixes, inspect numeric body length, and prepare VIES handoff notes."
+      },
+      {
+        "name": "German EORI / Customs Identifier Helper",
+        "slug": "german-eori-validator",
+        "status": "available",
+        "tags": [
+          "tax",
+          "eori"
+        ],
+        "description": "Inspect German EORI/customs identifier payloads, country prefixes, digit evidence, and customs-boundary notes."
+      },
+      {
+        "name": "German Handelsregister Readiness Helper",
+        "slug": "german-handelsregister-readiness-helper",
+        "status": "available",
+        "tags": [
+          "tax",
+          "register"
+        ],
+        "description": "Audit HRB/HRA register references, court snippets, company names, and offline commercial-registry handoff evidence."
+      },
+      {
+        "name": "German LEI Context Helper",
+        "slug": "german-lei-helper",
+        "status": "available",
+        "tags": [
+          "tax",
+          "lei"
+        ],
+        "description": "Inspect Legal Entity Identifier shape, German company context, and official GLEIF lookup boundaries for onboarding payloads."
+      },
+      {
+        "name": "German Company Onboarding Auditor",
+        "slug": "german-company-onboarding-auditor",
+        "status": "available",
+        "tags": [
+          "tax",
+          "company"
+        ],
+        "description": "Check company intake snippets for USt-IdNr, Handelsregister, IBAN, address, and official registry boundaries."
+      },
+      {
+        "name": "German ELSTER Readiness Helper",
+        "slug": "german-elster-readiness-helper",
+        "status": "available",
+        "tags": [
+          "tax",
+          "taxdoc"
+        ],
+        "description": "Audit German tax-submission snippets for IdNr, Steuernummer, USt-IdNr, year, period, and official ELSTER boundary evidence."
+      },
+      {
+        "name": "German Finanzamt Field Helper",
+        "slug": "german-tax-office-field-helper",
+        "status": "available",
+        "tags": [
+          "tax",
+          "taxdoc"
+        ],
+        "description": "Inspect tax-office and assessment snippets for Steuernummer, Bundesland, city, year, and filing context without official lookup."
+      },
+      {
+        "name": "German IBAN Validator",
+        "slug": "germany-iban-validator",
+        "status": "available",
+        "tags": [
+          "finance",
+          "iban"
+        ],
+        "description": "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+      },
+      {
+        "name": "German BLZ Bank Code Inspector",
+        "slug": "german-blz-bank-code-inspector",
+        "status": "available",
+        "tags": [
+          "finance",
+          "blz"
+        ],
+        "description": "Inspect German eight-digit Bankleitzahl evidence, normalize bank-routing snippets, and separate directory lookup from local format checks."
+      },
+      {
+        "name": "German BIC / SWIFT Inspector",
+        "slug": "german-bic-swift-inspector",
+        "status": "available",
+        "tags": [
+          "finance",
+          "bic"
+        ],
+        "description": "Inspect BIC/SWIFT shape, verify DE country-code evidence, and prepare payment-routing diagnostics."
+      },
+      {
+        "name": "German SEPA Transfer Helper",
+        "slug": "german-sepa-transfer-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "sepa"
+        ],
+        "description": "Check German SEPA-ready bundles for IBAN, BIC, amount, creditor, remittance, and bank-boundary notes."
+      },
+      {
+        "name": "German SEPA Direct Debit Mandate Helper",
+        "slug": "german-sepa-direct-debit-mandate-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "mandate"
+        ],
+        "description": "Audit mandate references, creditor identifiers, German IBAN evidence, debtor fields, and direct-debit readiness notes."
+      },
+      {
+        "name": "German Girocard Routing Helper",
+        "slug": "german-girocard-routing-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "payment"
+        ],
+        "description": "Inspect Girocard/girocard payment references, BLZ hints, terminal snippets, and card-network boundary notes."
+      },
+      {
+        "name": "German Remittance Text Builder",
+        "slug": "german-remittance-text-builder",
+        "status": "available",
+        "tags": [
+          "finance",
+          "payment"
+        ],
+        "description": "Normalize German Verwendungszweck text, detect invoice, customer, amount, and SEPA-safe length evidence."
+      },
+      {
+        "name": "German Payment Reconciliation Helper",
+        "slug": "german-payment-reconciliation-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "payment"
+        ],
+        "description": "Extract German IBANs, invoice ids, EUR amounts, dates, and counterparty evidence from reconciliation text."
+      },
+      {
+        "name": "German Bank Statement Parser",
+        "slug": "german-bank-statement-parser",
+        "status": "available",
+        "tags": [
+          "finance",
+          "payment"
+        ],
+        "description": "Parse German bank-statement snippets for booking dates, IBANs, BLZ/BIC evidence, amounts, and reconciliation hints."
+      },
+      {
+        "name": "German Masked IBAN Formatter",
+        "slug": "german-masked-iban-formatter",
+        "status": "available",
+        "tags": [
+          "finance",
+          "iban"
+        ],
+        "description": "Mask German IBANs for logs, keep country/check/BLZ hints, and prepare privacy-safe banking previews."
+      },
+      {
+        "name": "German EUR Decimal Currency Formatter",
+        "slug": "german-eur-decimal-currency-formatter",
+        "status": "available",
+        "tags": [
+          "localization",
+          "amount"
+        ],
+        "description": "Parse German Euro amounts, normalize comma decimals, produce display strings, and expose integer cent values."
+      },
+      {
+        "name": "German VAT Rate Sanity Helper",
+        "slug": "german-vat-rate-sanity-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "amount"
+        ],
+        "description": "Check German VAT rate snippets, net/gross consistency, and invoice-friendly EUR amount evidence."
+      },
+      {
+        "name": "German VAT Return Field Helper",
+        "slug": "german-vat-return-field-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "taxdoc"
+        ],
+        "description": "Inspect Umsatzsteuer-Voranmeldung snippets for period, tax base, VAT rate, amount, and official filing boundaries."
+      },
+      {
+        "name": "German Invoice Number Helper",
+        "slug": "german-invoice-number-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "invoice"
+        ],
+        "description": "Normalize German invoice-number snippets, detect year/sequence evidence, and flag accounting-system boundary notes."
+      },
+      {
+        "name": "German XRechnung Readiness Helper",
+        "slug": "german-xrechnung-readiness-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "einvoice"
+        ],
+        "description": "Audit German XRechnung snippets for Leitweg-ID, supplier, buyer, amount, tax, and XML handoff evidence."
+      },
+      {
+        "name": "German ZUGFeRD Readiness Helper",
+        "slug": "german-zugferd-readiness-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "einvoice"
+        ],
+        "description": "Inspect ZUGFeRD/Factur-X readiness snippets for invoice, PDF/XML, amount, tax, and recipient evidence."
+      },
+      {
+        "name": "German E-Invoicing Readiness Helper",
+        "slug": "german-e-invoicing-readiness-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "einvoice"
+        ],
+        "description": "Check German e-invoicing payloads for XRechnung, ZUGFeRD, Leitweg-ID, VAT, amount, and recipient readiness."
+      },
+      {
+        "name": "German DATEV Export Readiness Checker",
+        "slug": "german-datev-export-readiness-checker",
+        "status": "available",
+        "tags": [
+          "finance",
+          "accounting"
+        ],
+        "description": "Audit DATEV export snippets for account codes, booking date, amount, tax key, BU-Schluessel, and CSV handoff evidence."
+      },
+      {
+        "name": "German GoBD Audit Trail Checklist Generator",
+        "slug": "german-gobd-audit-trail-checklist-generator",
+        "status": "available",
+        "tags": [
+          "finance",
+          "accounting"
+        ],
+        "description": "Check German audit-trail snippets for immutability, timestamps, document ids, tax periods, and GoBD boundary notes."
+      },
+      {
+        "name": "German SKR03 / SKR04 Account Code Helper",
+        "slug": "german-skr03-skr04-account-code-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "accounting"
+        ],
+        "description": "Inspect German chart-of-accounts snippets, detect SKR03/SKR04-like codes, and prepare accounting integration notes."
+      },
+      {
+        "name": "German Payroll Social Security Helper",
+        "slug": "german-payroll-social-security-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "payroll"
+        ],
+        "description": "Audit German payroll snippets for employee, Sozialversicherung context, amount, month, and health-insurance boundary evidence."
+      },
+      {
+        "name": "German Wage Tax Readiness Helper",
+        "slug": "german-wage-tax-readiness-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "payroll"
+        ],
+        "description": "Inspect Lohnsteuer snippets for IdNr, employer, period, wage tax, church tax hints, and ELSTER boundary evidence."
+      },
+      {
+        "name": "German Health Insurance Boundary Helper",
+        "slug": "german-health-insurance-boundary-helper",
+        "status": "available",
+        "tags": [
+          "privacy",
+          "privacy"
+        ],
+        "description": "Inspect German health-insurance snippets, member numbers, employer evidence, and privacy/official boundary notes."
+      },
+      {
+        "name": "German Address Normalizer",
+        "slug": "german-address-normalizer",
+        "status": "available",
+        "tags": [
+          "localization",
+          "address"
+        ],
+        "description": "Normalize German street, house number, postal code, city, and country lines for local forms."
+      },
+      {
+        "name": "German Address Transliteration Normalizer",
+        "slug": "german-address-transliteration-normalizer",
+        "status": "available",
+        "tags": [
+          "localization",
+          "address"
+        ],
+        "description": "Normalize German umlaut and ß variants, preserve postal fields, and prepare ASCII-safe address keys."
+      },
+      {
+        "name": "German Postal Code Validator",
+        "slug": "german-postal-code-validator",
+        "status": "available",
+        "tags": [
+          "localization",
+          "postal"
+        ],
+        "description": "Validate German five-digit postal code shape, detect address context, and separate delivery proof from local checks."
+      },
+      {
+        "name": "German Federal State Code Mapper",
+        "slug": "german-federal-state-code-mapper",
+        "status": "available",
+        "tags": [
+          "localization",
+          "state"
+        ],
+        "description": "Map German Bundesland abbreviations/names, detect regional context, and expose integration-safe state evidence."
+      },
+      {
+        "name": "German Municipality Code Inspector",
+        "slug": "german-municipality-code-inspector",
+        "status": "available",
+        "tags": [
+          "localization",
+          "municipality"
+        ],
+        "description": "Inspect German municipality-code snippets, normalize AGS-like digits, and mark official-statistics lookup boundaries."
+      },
+      {
+        "name": "German Phone Number Validator",
+        "slug": "german-phone-number-validator",
+        "status": "available",
+        "tags": [
+          "localization",
+          "phone"
+        ],
+        "description": "Validate German phone-number shape, normalize trunk prefixes, and prepare E.164 handoff notes."
+      },
+      {
+        "name": "German Phone E.164 Formatter",
+        "slug": "german-phone-e164-formatter",
+        "status": "available",
+        "tags": [
+          "localization",
+          "phone"
+        ],
+        "description": "Normalize German national numbers to +49 where possible, inspect subscriber length, and flag telecom lookup boundaries."
+      },
+      {
+        "name": "German Date Locale Formatter",
+        "slug": "german-date-locale-formatter",
+        "status": "available",
+        "tags": [
+          "localization",
+          "date"
+        ],
+        "description": "Parse German DD.MM.YYYY snippets, normalize ISO dates, and expose locale parsing evidence."
+      },
+      {
+        "name": "German CSV Locale Normalizer",
+        "slug": "german-csv-locale-normalizer",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "developer"
+        ],
+        "description": "Normalize CSV snippets containing German semicolons, comma decimals, dates, VAT ids, and postal-code fields."
+      },
+      {
+        "name": "German Slug Normalizer",
+        "slug": "german-slug-normalizer",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "developer"
+        ],
+        "description": "Normalize German umlauts, ß, punctuation, and whitespace into stable ASCII slug keys."
+      },
+      {
+        "name": "German Document OCR Fixer",
+        "slug": "german-document-ocr-fixer",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "developer"
+        ],
+        "description": "Repair common OCR spacing in German IdNr, USt-IdNr, IBAN, postal code, amount, and invoice snippets."
+      },
+      {
+        "name": "German PII Masker",
+        "slug": "german-pii-masker",
+        "status": "available",
+        "tags": [
+          "privacy",
+          "privacy"
+        ],
+        "description": "Mask German IdNr, phone, IBAN, postal address, email, and document-like evidence for logs."
+      },
+      {
+        "name": "German GDPR / DSGVO Redaction Helper",
+        "slug": "german-gdpr-dsgvo-redaction-helper",
+        "status": "available",
+        "tags": [
+          "privacy",
+          "privacy"
+        ],
+        "description": "Detect German personal, banking, tax, and address evidence, then prepare privacy-safe redaction notes."
+      },
+      {
+        "name": "German Personal Data Fixture Generator",
+        "slug": "german-personal-data-fixture-generator",
+        "status": "available",
+        "tags": [
+          "privacy",
+          "privacy"
+        ],
+        "description": "Generate and inspect safe German-looking personal-data fixtures for tests without implying real identity."
+      },
+      {
+        "name": "German ID Card Format Helper",
+        "slug": "german-id-card-format-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "document"
+        ],
+        "description": "Inspect Personalausweis-style alphanumeric document snippets, MRZ-like evidence, and identity-proof boundaries."
+      },
+      {
+        "name": "German Passport Number Helper",
+        "slug": "german-passport-number-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "document"
+        ],
+        "description": "Inspect German passport-number snippets, MRZ-like evidence, and official identity-document boundaries."
+      },
+      {
+        "name": "German Driving Licence Format Helper",
+        "slug": "german-driving-licence-format-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "document"
+        ],
+        "description": "Inspect German driving-licence snippets, authority/date evidence, and official mobility boundary notes."
+      },
+      {
+        "name": "German Residence Permit Format Helper",
+        "slug": "german-residence-permit-format-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "document"
+        ],
+        "description": "Inspect Aufenthaltstitel snippets, card/document evidence, and official immigration-status boundaries."
+      },
+      {
+        "name": "German Vehicle Plate Inspector",
+        "slug": "german-vehicle-plate-inspector",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "plate"
+        ],
+        "description": "Inspect German vehicle plate region prefixes, serial letters/digits, and fleet-safe redaction evidence."
+      },
+      {
+        "name": "German VIN Validator",
+        "slug": "german-vin-validator",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "vin"
+        ],
+        "description": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare German vehicle-intake diagnostics."
+      },
+      {
+        "name": "German Vehicle Data Redaction Helper",
+        "slug": "german-vehicle-data-redaction-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "privacy"
+        ],
+        "description": "Mask VINs, plates, owner snippets, and address evidence for German vehicle workflows."
+      },
+      {
+        "name": "German Customs Declaration Helper",
+        "slug": "german-customs-declaration-helper",
+        "status": "available",
+        "tags": [
+          "tax",
+          "customs"
+        ],
+        "description": "Inspect customs snippets for EORI, invoice, amount, goods, and official Zoll boundary notes."
+      },
+      {
+        "name": "German Postal Tracking Helper",
+        "slug": "german-postal-tracking-helper",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "developer"
+        ],
+        "description": "Inspect German parcel tracking snippets, postal-code evidence, carrier boundary notes, and log-safe previews."
+      },
+      {
+        "name": "German Data Quality Workbench",
+        "slug": "german-data-quality-workbench",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "developer"
+        ],
+        "description": "Audit German mixed datasets for IdNr, USt-IdNr, IBAN, PLZ, phone, amount, date, and address evidence."
+      },
+      {
+        "name": "German JSON Fixture Generator",
+        "slug": "german-json-fixture-generator",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "developer"
+        ],
+        "description": "Generate and inspect German-localized JSON snippets with locale, VAT, IBAN, address, and amount fields."
+      },
+      {
+        "name": "German Regex Pack Helper",
+        "slug": "german-regex-pack-helper",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "developer"
+        ],
+        "description": "Prepare regex snippets for German IdNr, USt-IdNr, IBAN, PLZ, phone, amount, and date fields."
+      },
+      {
+        "name": "German API Payload Auditor",
+        "slug": "german-api-payload-auditor",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "developer"
+        ],
+        "description": "Audit German API payloads for locale, identifiers, banking, address, privacy, and official-boundary evidence."
+      },
+      {
+        "name": "German Form Field Auditor",
+        "slug": "german-form-field-auditor",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "developer"
+        ],
+        "description": "Review German form-field labels, placeholders, masks, validation hints, and accessibility-safe data-entry flows."
+      }
+    ],
     "futureCountryPages": [
       {
         "label": "Brazil",
@@ -1129,79 +1776,47 @@
     ],
     "validationRules": [
       {
-        "name": "Steuer-ID (IdNr)",
-        "tags": [
-          "identifiers",
-          "government"
-        ],
-        "points": [
-          "11 digits total",
-          "Checksum uses modulo 11 algorithm",
-          "Assigned by Bundeszentralamt für Steuern (BZSt)"
-        ]
-      },
-      {
-        "name": "USt-IdNr",
-        "tags": [
-          "identifiers",
-          "tax"
-        ],
-        "points": [
-          "Starts with DE followed by 9 digits",
-          "Checksum uses ISO 7064 Mod 97,10 or similar validation"
-        ]
+        "name": "IdNr",
+        "description": "Eleven digits using ISO 7064 MOD 11,10 check digit evidence; identity proof remains official."
       },
       {
         "name": "Steuernummer",
-        "tags": [
-          "identifiers",
-          "tax"
-        ],
-        "points": [
-          "Can be 10, 11, or 13 digits depending on federal state schema",
-          "Used primarily for regional tax offices"
-        ]
+        "description": "State/tax-office specific digit blocks commonly displayed with slash separators."
       },
       {
-        "name": "Postal code",
-        "tags": [
-          "postal",
-          "addresses"
-        ],
-        "points": [
-          "Exactly five numeric digits",
-          "No hyphens or alphabetical characters allowed"
-        ]
+        "name": "USt-IdNr",
+        "description": "DE plus nine digits; active VAT status requires VIES or official tax systems."
+      },
+      {
+        "name": "German IBAN",
+        "description": "DE plus 20 digits; MOD-97 validates the IBAN and BLZ/account slices are exposed locally."
+      },
+      {
+        "name": "PLZ",
+        "description": "Five-digit German postal code shape; delivery proof requires postal reference data."
       },
       {
         "name": "Phone",
-        "tags": [
-          "phone"
-        ],
-        "points": [
-          "Variable-length area codes between 2 and 5 digits",
-          "Zero prefix must be omitted in international formats"
-        ]
-      },
-      {
-        "name": "IBAN",
-        "tags": [
-          "banking",
-          "payments"
-        ],
-        "points": [
-          "German IBAN starts with DE followed by 2 control digits and 18-digit account details",
-          "Standard Mod 97,10 checksum check"
-        ]
+        "description": "+49 or trunk-zero German number evidence; allocation and subscriber status require telecom sources."
       }
     ],
     "commonMistakes": [
-      "Conflating Steuer-ID (personal) with Steuernummer (local tax office file number).",
-      "Expecting phone number area codes to have a fixed length (German area codes vary from 2 to 5 digits).",
-      "Omitting the space before the percent sign in formatting (e.g. using 35,7% instead of 35,7 %).",
-      "Formatting currency as €1.234,56 instead of the natural German 1.234,56 €.",
-      "Assuming postal codes starting with 0 do not exist (eastern Germany codes use leading zeros, e.g. Dresden is 01067).",
-      "Confusing Handelsregister numbers with personal tax or national identification numbers."
+      {
+        "title": "Treating IdNr as identity proof",
+        "text": "The browser can inspect shape and check digit evidence, but it cannot prove that a person or identity exists."
+      },
+      {
+        "title": "Confusing Steuernummer and USt-IdNr",
+        "text": "Steuernummer is local tax-office context; USt-IdNr is the DE VAT identifier used for EU VAT workflows."
+      },
+      {
+        "title": "Assuming BLZ means ownership",
+        "text": "IBAN and BLZ slicing does not prove the account belongs to a company or person."
+      },
+      {
+        "title": "Using dot decimals in German imports",
+        "text": "Many German CSV/accounting flows expect comma decimal values and semicolon separators."
+      }
     ],
     "bankingOverview": [
       {
@@ -1212,106 +1827,99 @@
           "banking",
           "payments"
         ],
-        "description": "DE-prefixed IBAN format is standard for international transfers."
+        "description": "DE IBAN format with BLZ and ten-digit account segment breakdown."
+      },
+      {
+        "name": "BLZ",
+        "status": "available",
+        "tags": [
+          "banking"
+        ],
+        "description": "Eight-digit Bankleitzahl routing evidence; bank name enrichment requires reference data."
       },
       {
         "brandKey": "sepa",
         "name": "SEPA",
-        "status": "ready",
+        "status": "available",
         "tags": [
           "banking",
           "payments"
         ],
-        "description": "Euro accounts in Germany support SEPA credit transfers and direct debits."
+        "description": "Credit transfer and direct debit readiness fields for German EUR accounts."
       },
       {
         "brandKey": "swift",
         "name": "SWIFT / BIC",
-        "status": "ready",
+        "status": "available",
         "tags": [
           "banking"
         ],
-        "description": "Required for international non-SEPA transfers."
+        "description": "International routing identifier shape with DE country-code evidence."
       }
     ],
     "localizationNotes": [
       {
-        "name": "Plural rules",
-        "description": "German uses standard Germanic plural forms (one, other).",
-        "tags": [
-          "locale"
-        ]
+        "title": "Comma decimals",
+        "text": "German business CSV and accounting workflows commonly use comma decimals and semicolon separators."
       },
       {
-        "name": "Week starts",
-        "description": "Most German user interfaces expect Monday as the first day of week.",
-        "tags": [
-          "locale",
-          "date"
-        ]
+        "title": "DD.MM.YYYY dates",
+        "text": "Human-facing German dates are usually day-month-year with dots; store ISO dates for APIs."
       },
       {
-        "name": "Calendar",
-        "description": "Gregorian calendar is the ordinary civil calendar.",
-        "tags": [
-          "locale",
-          "date"
-        ]
-      },
-      {
-        "name": "Unicode",
-        "description": "Ensure support for German diacritics and special characters: ä, ö, ü, ß.",
-        "tags": [
-          "locale",
-          "developer"
-        ]
-      },
-      {
-        "name": "Timezone",
-        "description": "Use Europe/Berlin for global civil time in Germany.",
-        "tags": [
-          "time",
-          "developer"
-        ]
+        "title": "Umlauts and ss",
+        "text": "Search keys often need ASCII-safe normalization for ae/oe/ue and ss while display names preserve German spelling."
       }
     ],
     "ecosystem": [
       {
-        "name": "Steuer-ID",
-        "description": "Personal tax identification number database.",
-        "tags": [
-          "identifiers",
-          "government"
-        ]
+        "title": "Tax identity",
+        "text": "IdNr, Steuernummer, USt-IdNr, Finanzamt, ELSTER, and VAT return workflows form the tax identity cluster."
       },
       {
-        "name": "USt-IdNr",
-        "description": "Commercial VAT identification registry.",
-        "tags": [
-          "identifiers",
-          "tax"
-        ]
+        "title": "Business registry",
+        "text": "Handelsregister, HRB/HRA, company onboarding, LEI, EORI, and official lookup boundaries form the company evidence cluster."
       },
       {
-        "name": "Handelsregister",
-        "description": "Commercial company registry.",
-        "tags": [
-          "identifiers",
-          "government"
-        ]
+        "title": "Payments",
+        "text": "German IBAN, BLZ, BIC, SEPA, direct debit, remittance, bank statements, and reconciliation form the payment cluster."
+      },
+      {
+        "title": "Accounting",
+        "text": "XRechnung, ZUGFeRD, DATEV, GoBD, SKR03/SKR04, VAT rates, and invoice evidence form the accounting cluster."
+      },
+      {
+        "title": "Locale and privacy",
+        "text": "PLZ, addresses, phone numbers, comma decimals, dates, DSGVO redaction, and PII masking form the data-quality cluster."
       }
     ],
     "highlights": [
-      "Germany uses de-DE locale for formatting.",
-      "EUR is formatted as 1.234,56 € with a space and trailing symbol.",
-      "Umlauts (ä, ö, ü) and ß must be supported.",
-      "Date format is DD.MM.YYYY.",
-      "Week starts on Monday."
+      {
+        "title": "Premium Germany suite",
+        "text": "Sixty browser-only Germany workbenches cover tax, banking, accounting, locale, privacy, vehicles, and developer-data workflows."
+      },
+      {
+        "title": "Field breakdown everywhere",
+        "text": "Each tool exposes named German evidence slices for debugging instead of only generic result cards."
+      },
+      {
+        "title": "Official boundaries preserved",
+        "text": "Registry, tax, bank, vehicle, carrier, and identity status checks remain outside browser-only validation."
+      }
     ],
     "developerNotes": [
-      "Validate German postal codes strictly as 5 digits.",
-      "Support variable-length area codes in phone validation.",
-      "Preserve case-sensitivity for character-coded Steuernummer configurations."
+      {
+        "title": "Normalize for storage",
+        "text": "Store compact identifiers such as DE VAT, IdNr, and IBAN separately from display punctuation."
+      },
+      {
+        "title": "Mask before logging",
+        "text": "IdNr, IBAN, phone, address, and document evidence should be masked in logs and screenshots."
+      },
+      {
+        "title": "Use official systems for status",
+        "text": "ValidoHub provides offline shape evidence and handoff payloads, not regulated official decisions."
+      }
     ],
     "developerExamples": [
       {

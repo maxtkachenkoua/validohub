@@ -25,6 +25,7 @@ This document records the current ValidoHub and Valido Engine boundary so future
 - France Premium Workbench Suite: `assets/js/tools/france-suite.js`
 - Netherlands Premium Workbench Suite: `assets/js/tools/netherlands-suite.js`
 - Switzerland Premium Workbench Suite: `assets/js/tools/switzerland-suite.js`
+- Germany Premium Workbench Suite: `assets/js/tools/germany-suite.js`
 - Future Country Suite Factory: `assets/js/tools/country-suite-factory.js`
 
 
@@ -51,7 +52,13 @@ Current country workbench routes:
 - French IBAN Validator: `/en/france/france-iban-validator/`
 - French VAT / TVA Validator: `/en/france/france-vat-tva-validator/`
 - NIR Key Validator: `/en/france/france-nir-key-validator/`
+- German Tax ID / IdNr Validator: `/en/germany/german-tax-id-validator/`
+- German USt-IdNr / VAT Validator: `/en/germany/german-vat-ust-idnr-validator/`
 - German IBAN Validator: `/en/germany/germany-iban-validator/`
+- German BLZ Bank Code Inspector: `/en/germany/german-blz-bank-code-inspector/`
+- German XRechnung Readiness Helper: `/en/germany/german-xrechnung-readiness-helper/`
+- German DATEV Export Readiness Checker: `/en/germany/german-datev-export-readiness-checker/`
+- German Postal Code Validator: `/en/germany/german-postal-code-validator/`
 - Dutch BSN Validator & Explainer: `/en/netherlands/netherlands-bsn-validator/`
 - Dutch KVK Number Validator: `/en/netherlands/netherlands-kvk-number-validator/`
 - Dutch BTW / VAT Validator: `/en/netherlands/netherlands-btw-vat-validator/`
@@ -125,6 +132,8 @@ France Premium Country Suite V1 is complete as the first no-phase country expans
 Netherlands Premium Country Suite V2 is complete as the first full country generated after the country-suite anti-regression guardrails were documented and then upgraded to the Brazil-style field-breakdown bar. It adds a Netherlands country hub plus sixty-three active country-specific workbenches for BSN, RSIN, KVK, BTW/VAT, EORI, DigiD boundaries, UBO/RVO helpers, Dutch IBAN/BIC/SEPA/iDEAL, postcode/BAG/address/phone/locale workflows, BTW rates, invoice/e-invoicing/Peppol/VAT return/audit-file/payroll helpers, AVG/GDPR/PII masking, document OCR, CSV/JSON/regex/API/form audits, vehicle/RDW/VIN/plates, PostNL tracking, and EAN fixtures. These tools share `assets/js/tools/netherlands-suite.js`, use metadata-only `validohub.netherlands-suite`, run offline in the browser, place result cards immediately after input controls, use short sample selector labels, include dedicated field breakdown panels for every major Dutch tool family, and keep KVK, BAG, VIES, bank ownership, DigiD, RDW, tax filing, and carrier status lookups out of scope.
 
 Switzerland Premium Country Suite V1 is complete as the first full future-country suite built on Country Suite Factory V1 from the start. It adds a Switzerland country hub plus fifty-eight active country-specific workbenches for UID, MWST/VAT, AHV/AVS, EORI/customs, Swiss IBAN, SIC/BC clearing, BIC/SWIFT, SEPA, QR-bill, ESR, CHF amounts, VAT rates and returns, invoices, e-invoicing, salary certificates, payroll, withholding-tax readiness, company onboarding, Zefix readiness, FADP/GDPR redaction, PII masking, data quality, OCR repair, JSON/regex/API/form helpers, postal codes, addresses, phone numbers, cantons, multilingual locale workflows, personal-document helpers, health-insurance boundaries, vehicle plates, VIN, and customs/postal workflows. These tools share `assets/js/tools/switzerland-suite.js`, call the additive-only `assets/js/tools/country-suite-factory.js`, use metadata-only `validohub.switzerland-suite`, run offline in the browser, include dedicated field breakdowns, and localize the interactive runtime for every supported ValidoHub locale.
+
+Germany Premium Country Suite V1 is complete as the second full future-country suite built on Country Suite Factory V1 and the first country to upgrade an existing generic IBAN route into a full suite route. It adds a Germany country hub plus 60 active country-specific workbenches for IdNr, Steuernummer, USt-IdNr, EORI, Handelsregister, LEI, German IBAN, BLZ, BIC, SEPA, direct debit, Girocard, remittance, reconciliation, bank statements, EUR amounts, VAT rates and returns, invoices, XRechnung, ZUGFeRD, e-invoicing, DATEV, GoBD, SKR03/SKR04, payroll, wage tax, health-insurance boundaries, addresses, postal codes, phone numbers, dates, CSV, slugs, OCR, DSGVO redaction, PII masking, personal fixtures, documents, vehicle plates, VIN, customs, postal tracking, JSON/regex/API/form helpers, and data-quality workflows. These tools share `assets/js/tools/germany-suite.js`, call the additive-only `assets/js/tools/country-suite-factory.js`, use metadata-only `validohub.germany-suite`, run offline in the browser, include dedicated field breakdowns, and localize the interactive runtime for every supported ValidoHub locale.
 
 Country Suite Generation Guardrails are now permanent current-state rules. Future full-country generation must read `docs/product/COUNTRY_SUITE_GENERATION_GUARDRAILS.md`, avoid foreign-country fallback copy, keep related links same-country by default, keep sample selector labels short, place results before advanced analysis, make long values layout-safe, cover all supported localized routes structurally, keep generated output out of commits, and leave Valido Engine untouched unless a truly generic platform capability is required.
 

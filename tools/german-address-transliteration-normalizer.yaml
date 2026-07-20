@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: DE
+category: developer-tools
+status: active
+name:
+  en: "German Address Transliteration Normalizer"
+summary:
+  en: "Normalize German umlaut and ß variants, preserve postal fields, and prepare ASCII-safe address keys."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TR input"
+        required: true
+        placeholder:
+          en: "Müllerstraße 10\n80331 München"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Normalize German umlaut and ß variants, preserve postal fields, and prepare ASCII-safe address keys."

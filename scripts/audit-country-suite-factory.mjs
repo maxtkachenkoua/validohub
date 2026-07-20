@@ -72,33 +72,41 @@ if (fs.existsSync('docs/product/COUNTRY_SUITE_FACTORY_SPEC.md')) {
   }
 }
 
-const generatedSwissDir = 'generated/validohub/en/switzerland';
-const generatedSwissHub = 'generated/validohub/en/switzerland/index.html';
-if (fs.existsSync(generatedSwissHub)) {
-  const hubHtml = fs.readFileSync(generatedSwissHub, 'utf8');
-  if (/class="[^"]*vh-country-info-card[^"]*"[\s\S]*?<h3>\s*<\/h3>/.test(hubHtml)) {
-    failures.push('Swiss hub must not render empty country info-card titles');
-  }
-  if (/class="[^"]*vh-country-info-card[^"]*"[\s\S]*?<p class="vh-(?:mt-xs vh-mb-xs|mb-xs vh-mt-xs)">\s*<\/p>/.test(hubHtml)) {
-    failures.push('Swiss hub must not render empty country info-card summaries');
-  }
-}
+const factoryGeneratedSuites = [
+  { slug: 'switzerland', runtime: 'switzerland-suite.js', label: 'Swiss' },
+  { slug: 'germany', runtime: 'germany-suite.js', label: 'German' }
+];
 
-if (fs.existsSync(generatedSwissDir)) {
-  const entries = fs.readdirSync(generatedSwissDir)
-    .filter((entry) => entry.startsWith('switzerland-'))
-    .filter((entry) => fs.existsSync(`${generatedSwissDir}/${entry}/index.html`));
-  for (const entry of entries) {
-    const html = fs.readFileSync(`${generatedSwissDir}/${entry}/index.html`, 'utf8');
-    const factoryIndex = html.search(/<script src="\/assets\/js\/tools\/country-suite-factory\.js(?:\?[^"]*)?"><\/script>/);
-    const suiteIndex = html.search(/<script src="\/assets\/js\/tools\/switzerland-suite\.js(?:\?[^"]*)?"><\/script>/);
-    if (factoryIndex === -1) failures.push(`${entry}: missing country-suite-factory.js in generated Swiss page`);
-    if (suiteIndex === -1) failures.push(`${entry}: missing switzerland-suite.js in generated Swiss page`);
-    if (factoryIndex !== -1 && suiteIndex !== -1 && factoryIndex > suiteIndex) {
-      failures.push(`${entry}: switzerland-suite.js loads before country-suite-factory.js`);
+for (const suite of factoryGeneratedSuites) {
+  const generatedDir = 'generated/validohub/en/' + suite.slug;
+  const generatedHub = generatedDir + '/index.html';
+  if (fs.existsSync(generatedHub)) {
+    const hubHtml = fs.readFileSync(generatedHub, 'utf8');
+    if (/class="[^"]*vh-country-info-card[^"]*"[\s\S]*?<h3>\s*<\/h3>/.test(hubHtml)) {
+      failures.push(suite.label + ' hub must not render empty country info-card titles');
     }
-    if (html.includes('class="workbench-heading"') || html.includes('>Run the tool<')) {
-      failures.push(`${entry}: generated Swiss factory page must not ship the generic Run the tool shell`);
+    if (/class="[^"]*vh-country-info-card[^"]*"[\s\S]*?<p class="vh-(?:mt-xs vh-mb-xs|mb-xs vh-mt-xs)">\s*<\/p>/.test(hubHtml)) {
+      failures.push(suite.label + ' hub must not render empty country info-card summaries');
+    }
+  }
+  if (fs.existsSync(generatedDir)) {
+    const entries = fs.readdirSync(generatedDir)
+      .filter((entry) => entry.startsWith(suite.slug + '-'))
+      .filter((entry) => fs.existsSync(generatedDir + '/' + entry + '/index.html'));
+    for (const entry of entries) {
+      const html = fs.readFileSync(generatedDir + '/' + entry + '/index.html', 'utf8');
+      const factoryIndex = html.search(/<script src="\/assets\/js\/tools\/country-suite-factory\.js(?:\?[^"]*)?"><\/script>/);
+      const runtimeEsc = suite.runtime.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const suitePattern = new RegExp('<script src="/assets/js/tools/' + runtimeEsc + '(?:\\?[^"]*)?"></script>');
+      const suiteIndex = html.search(suitePattern);
+      if (factoryIndex === -1) failures.push(entry + ': missing country-suite-factory.js in generated factory page');
+      if (suiteIndex === -1) failures.push(entry + ': missing ' + suite.runtime + ' in generated factory page');
+      if (factoryIndex !== -1 && suiteIndex !== -1 && factoryIndex > suiteIndex) {
+        failures.push(entry + ': ' + suite.runtime + ' loads before country-suite-factory.js');
+      }
+      if (html.includes('class="workbench-heading"') || html.includes('>Run the tool<')) {
+        failures.push(entry + ': generated factory page must not ship the generic Run the tool shell');
+      }
     }
   }
 }

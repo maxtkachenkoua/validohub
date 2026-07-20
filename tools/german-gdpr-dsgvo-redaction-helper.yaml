@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-gdpr-dsgvo-redaction-helper
+kind: tool
+module: validohub
+country: DE
+category: developer-tools
+status: active
+name:
+  en: "German GDPR / DSGVO Redaction Helper"
+summary:
+  en: "Detect German personal, banking, tax, and address evidence, then prepare privacy-safe redaction notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DSGVO input"
+        required: true
+        placeholder:
+          en: "Kunde Max Test\nIdNr 04452397687\nTelefon 030 1234567\nIBAN DE89370400440532013000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German GDPR / DSGVO Redaction Helper | ValidoHub"
+  description:
+    en: "Detect German personal, banking, tax, and address evidence, then prepare privacy-safe redaction notes."

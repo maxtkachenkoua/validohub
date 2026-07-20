@@ -8,5 +8,6 @@ languages:
   - de
 currency: EUR
 relatedCountries:
-  - ES
-  - BR
+  - CH
+  - NL
+  - FR

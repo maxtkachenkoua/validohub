@@ -1,14 +1,14 @@
 schemaVersion: 1
-id: germany-iban-validator
+id: german-remittance-text-builder
 kind: tool
 module: validohub
 country: DE
 category: finance
 status: active
 name:
-  en: "German IBAN Validator"
+  en: "German Remittance Text Builder"
 summary:
-  en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+  en: "Normalize German Verwendungszweck text, detect invoice, customer, amount, and SEPA-safe length evidence."
 capabilities:
   - validate
   - parse
@@ -23,19 +23,19 @@ forms:
       - type: textarea
         name: input
         label:
-          en: "IBAN input"
+          en: "REM input"
         required: true
         placeholder:
-          en: "DE89370400440532013000"
+          en: "Rechnung 2026-0042 Kunde 4711 Betrag EUR 1250,75"
     actions: [validate, parse, format, explain]
 related:
-  explicit: [german-blz-bank-code-inspector]
+  explicit: [german-payment-reconciliation-helper]
   auto:
     sameCountry: true
     sameCategory: true
     sameCapability: true
 seo:
   title:
-    en: "German IBAN Validator | ValidoHub"
+    en: "German Remittance Text Builder | ValidoHub"
   description:
-    en: "Validate German IBAN numbers, extract BLZ and account segments, and explain where official bank-directory checks begin."
+    en: "Normalize German Verwendungszweck text, detect invoice, customer, amount, and SEPA-safe length evidence."

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-sepa-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: DE
+category: finance
+status: active
+name:
+  en: "German SEPA Direct Debit Mandate Helper"
+summary:
+  en: "Audit mandate references, creditor identifiers, German IBAN evidence, debtor fields, and direct-debit readiness notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SDD input"
+        required: true
+        placeholder:
+          en: "Mandate M-2026-001\nCreditor DE98ZZZ09999999999\nIBAN DE89370400440532013000\nDebtor Max Test"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-girocard-routing-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German SEPA Direct Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Audit mandate references, creditor identifiers, German IBAN evidence, debtor fields, and direct-debit readiness notes."

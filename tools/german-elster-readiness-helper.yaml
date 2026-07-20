@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: german-elster-readiness-helper
+kind: tool
+module: validohub
+country: DE
+category: developer-tools
+status: active
+name:
+  en: "German ELSTER Readiness Helper"
+summary:
+  en: "Audit German tax-submission snippets for IdNr, Steuernummer, USt-IdNr, year, period, and official ELSTER boundary evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.germany-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ELST input"
+        required: true
+        placeholder:
+          en: "IdNr 04452397687\nSteuernummer 12/345/67890\nUSt DE123456789\nZeitraum 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [german-tax-office-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "German ELSTER Readiness Helper | ValidoHub"
+  description:
+    en: "Audit German tax-submission snippets for IdNr, Steuernummer, USt-IdNr, year, period, and official ELSTER boundary evidence."
