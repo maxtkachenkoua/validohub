@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss Payment Reconciliation Helper"
+summary:
+  en: "Extract Swiss IBANs, QR references, CHF amounts, invoice ids, and date evidence from reconciliation text."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "Invoice INV-2026-0042 paid CHF 1250.75 via CH9300762011623852957 ref 210000000003139471430009017 on 14.07.2026"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-qr-bill-reference-validator, switzerland-esr-reference-checker, switzerland-qr-bill-payload-auditor]
+seo:
+  title:
+    en: "Swiss Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Extract Swiss IBANs, QR references, CHF amounts, invoice ids, and date evidence from reconciliation text."

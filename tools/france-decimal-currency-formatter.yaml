@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-decimal-currency-formatter
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "EUR Decimal / Currency Formatter"
+summary:
+  en: "Format French EUR amounts, parse comma decimals, and produce API-safe numeric values."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "EUR"
+        required: true
+        placeholder:
+          en: "1 250,75 €"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-address-transliteration-normalizer, france-date-locale-formatter, france-csv-locale-normalizer, france-accent-normalizer]
+seo:
+  title:
+    en: "EUR Decimal / Currency Formatter | ValidoHub"
+  description:
+    en: "Format French EUR amounts, parse comma decimals, and produce API-safe numeric values."

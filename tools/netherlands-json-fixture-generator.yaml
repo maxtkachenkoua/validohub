@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-json-fixture-generator
+kind: tool
+module: validohub
+country: NL
+category: developer-tools
+status: active
+name:
+  en: "Dutch JSON Fixture Generator"
+summary:
+  en: "Generate Dutch JSON fixture payloads with masked identifiers, local address, phone, IBAN, VAT, and locale fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "JSON"
+        required: true
+        placeholder:
+          en: "customer checkout fixture for Amsterdam BV with KVK, BTW, IBAN, postcode and phone"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-personal-data-fixture-generator, netherlands-api-payload-auditor, netherlands-form-field-auditor, netherlands-regex-pack-helper]
+seo:
+  title:
+    en: "Dutch JSON Fixture Generator | ValidoHub"
+  description:
+    en: "Generate Dutch JSON fixture payloads with masked identifiers, local address, phone, IBAN, VAT, and locale fields."

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-pii-masker
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "French PII Masker"
+summary:
+  en: "Mask French identifiers, phone numbers, emails, IBANs, postal addresses, and person names in pasted text."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "PII"
+        required: true
+        placeholder:
+          en: "Jean Dupont - 06 12 34 56 78 - FR7630006000011234567890189"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-masked-iban-formatter, france-gdpr-redaction-helper, france-nir-masker, france-health-insurance-boundary-helper]
+seo:
+  title:
+    en: "French PII Masker | ValidoHub"
+  description:
+    en: "Mask French identifiers, phone numbers, emails, IBANs, postal addresses, and person names in pasted text."

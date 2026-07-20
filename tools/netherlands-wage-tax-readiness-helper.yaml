@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-wage-tax-readiness-helper
+kind: tool
+module: validohub
+country: NL
+category: developer-tools
+status: active
+name:
+  en: "Wage Tax Readiness Helper"
+summary:
+  en: "Audit Dutch wage-tax snippets for employer references, period fields, employee privacy boundaries, and amount formatting."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "WAGE"
+        required: true
+        placeholder:
+          en: "Employer 90006485"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-payroll-tax-number-helper, netherlands-eur-decimal-currency-formatter, netherlands-pii-masker, netherlands-compliance-checklist-generator]
+seo:
+  title:
+    en: "Wage Tax Readiness Helper | ValidoHub"
+  description:
+    en: "Audit Dutch wage-tax snippets for employer references, period fields, employee privacy boundaries, and amount formatting."

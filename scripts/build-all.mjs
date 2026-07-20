@@ -126,6 +126,9 @@ const TOOL_SCRIPT_BY_ALGORITHM = {
   'validohub.poland-suite': 'poland-suite.js',
   'validohub.poland-expansion': 'poland-expansion.js',
   'validohub.poland-baseline': 'poland-baseline.js',
+  'validohub.france-suite': 'france-suite.js',
+  'validohub.netherlands-suite': 'netherlands-suite.js',
+  'validohub.switzerland-suite': ['country-suite-factory.js', 'switzerland-suite.js'],
   'validohub.case-converter': 'generic-suite.js',
   'validohub.html-decoder': 'generic-suite.js',
   'validohub.html-encoder': 'generic-suite.js',
@@ -139,14 +142,68 @@ const TOOL_SCRIPT_BY_ALGORITHM = {
   'validohub.uuid': 'generic-suite.js'
 };
 
+const FACTORY_TOOL_ALGORITHMS = new Set([
+  'validohub.switzerland-suite'
+]);
+
+const WORKBENCH_SCRIPT_VERSION = 'country-premium-20260719';
+
 function ensureToolScript(content) {
   const match = content.match(/data-algorithm-id="([^"]+)"/);
   if (!match) return content;
   const mapped = TOOL_SCRIPT_BY_ALGORITHM[match[1]];
   if (!mapped) return content;
-  const tag = '<script src="/assets/js/tools/' + mapped + '"></script>';
-  if (content.includes(tag)) return content;
-  return content.replace('</body>', tag + '\n</body>');
+  if (Array.isArray(mapped)) {
+    return ensureOrderedWorkbenchScripts(content, mapped);
+  }
+  return ensureWorkbenchScripts(content, mapped);
+}
+
+function ensureOrderedWorkbenchScripts(content, mappedScripts) {
+  let next = mappedScripts.reduce((current, script) => ensureWorkbenchScripts(current, script), content);
+  const tags = [];
+  for (const script of mappedScripts) {
+    const src = '/assets/js/tools/' + script;
+    const oldTag = new RegExp('<script src="' + src.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?:\\?[^"]*)?"></script>', 'g');
+    next = next.replace(oldTag, '');
+    tags.push('<script src="' + src + '?v=' + WORKBENCH_SCRIPT_VERSION + '"></script>');
+  }
+  return next.replace('</body>', tags.join('') + '\n</body>');
+}
+
+function ensureWorkbenchScripts(content, mapped) {
+  const scriptTag = (src) => '<script src="' + src + '?v=' + WORKBENCH_SCRIPT_VERSION + '"></script>';
+  const helperSrcs = [
+    '/assets/js/workbench/clipboard.js',
+    '/assets/js/workbench/download.js',
+    '/assets/js/workbench/file.js',
+    '/assets/js/workbench/keyboard.js',
+    '/assets/js/workbench/preview.js',
+    '/assets/js/workbench/stats.js',
+    '/assets/js/workbench/utf8.js',
+    '/assets/js/workbench/hex.js'
+  ];
+  const frameworkSrc = '/assets/js/workbench/framework.js';
+  const toolSrc = '/assets/js/tools/' + mapped;
+  let next = content;
+  for (const src of helperSrcs) {
+    const oldTag = new RegExp('<script src="' + src.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?:\\?[^"]*)?"></script>', 'g');
+    next = next.replace(oldTag, scriptTag(src));
+    if (!next.includes(scriptTag(src))) {
+      next = next.replace('</body>', scriptTag(src) + '\n</body>');
+    }
+  }
+  const frameworkOldTag = /<script src="\/assets\/js\/workbench\/framework\.js(?:\?[^"]*)?"><\/script>/g;
+  next = next.replace(frameworkOldTag, scriptTag(frameworkSrc));
+  if (!next.includes(scriptTag(frameworkSrc))) {
+    next = next.replace('</body>', scriptTag(frameworkSrc) + '\n</body>');
+  }
+  const toolOldTag = new RegExp('<script src="' + toolSrc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?:\\?[^"]*)?"></script>', 'g');
+  next = next.replace(toolOldTag, scriptTag(toolSrc));
+  if (!next.includes(scriptTag(toolSrc))) {
+    next = next.replace('</body>', scriptTag(toolSrc) + '\n</body>');
+  }
+  return next;
 }
 
 function escapeHtml(value) {
@@ -159,6 +216,296 @@ function escapeHtml(value) {
 
 function stripHtml(value) {
   return String(value || '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+}
+
+const GENERIC_UTILITY_WORKBENCHES = {
+  'html-encoder': {
+    id: 'html-encoder',
+    algorithmId: 'validohub.html-encoder',
+    capability: 'encode',
+    forms: [{
+      capability: 'encode',
+      title: 'Encode',
+      fields: [{ type: 'textarea', name: 'input', label: 'Text', required: true }],
+      actions: ['encode', 'decode', 'validate', 'explain']
+    }]
+  },
+  'html-decoder': {
+    id: 'html-decoder',
+    algorithmId: 'validohub.html-decoder',
+    capability: 'decode',
+    forms: [{
+      capability: 'decode',
+      title: 'Decode',
+      fields: [{ type: 'textarea', name: 'input', label: 'HTML entity text', required: true }],
+      actions: ['decode', 'encode', 'validate', 'explain']
+    }]
+  },
+  'slug-generator': {
+    id: 'slug-generator',
+    algorithmId: 'validohub.slug-generator',
+    capability: 'generate',
+    forms: [{
+      capability: 'generate',
+      title: 'Generate',
+      fields: [
+        { type: 'text', name: 'title', label: 'Title', required: true },
+        { type: 'checkbox', name: 'lowercase', label: 'Lowercase', checked: true }
+      ],
+      actions: ['generate', 'format', 'explain']
+    }]
+  },
+  'case-converter': {
+    id: 'case-converter',
+    algorithmId: 'validohub.case-converter',
+    capability: 'convert',
+    forms: [{
+      capability: 'convert',
+      title: 'Convert',
+      fields: [
+        { type: 'textarea', name: 'input', label: 'Text', required: true },
+        { type: 'select', name: 'style', label: 'Case style', options: ['lowercase', 'uppercase', 'title', 'sentence', 'camel', 'snake', 'kebab'], value: 'sentence' }
+      ],
+      actions: ['convert', 'format', 'explain']
+    }]
+  },
+  'uuid-generator': {
+    id: 'uuid-generator',
+    algorithmId: 'validohub.uuid',
+    capability: 'generate',
+    forms: [{
+      capability: 'generate',
+      title: 'Generate or validate',
+      fields: [
+        { type: 'select', name: 'version', label: 'UUID version', options: ['v4', 'v7'], value: 'v4' },
+        { type: 'number', name: 'count', label: 'Count', value: '1', min: '1', max: '100' },
+        { type: 'text', name: 'uuid', label: 'UUID to validate' }
+      ],
+      actions: ['generate', 'validate', 'parse', 'explain']
+    }]
+  },
+  'iban-validator': {
+    id: 'iban-validator',
+    algorithmId: 'validohub.iban',
+    capability: 'validate',
+    forms: [{
+      capability: 'validate',
+      title: 'Validate',
+      fields: [{ type: 'text', name: 'iban', label: 'IBAN', required: true }],
+      actions: ['validate', 'parse', 'explain']
+    }]
+  },
+  'brazil-iban-validator': {
+    id: 'brazil-iban-validator',
+    algorithmId: 'validohub.iban',
+    capability: 'validate',
+    forms: [{
+      capability: 'validate',
+      title: 'Validate Brazilian IBAN',
+      fields: [{ type: 'text', name: 'iban', label: 'Brazilian IBAN', required: true }],
+      actions: ['validate', 'parse', 'explain']
+    }]
+  },
+  'germany-iban-validator': {
+    id: 'germany-iban-validator',
+    algorithmId: 'validohub.iban',
+    capability: 'validate',
+    forms: [{
+      capability: 'validate',
+      title: 'Validate German IBAN',
+      fields: [{ type: 'text', name: 'iban', label: 'German IBAN', required: true }],
+      actions: ['validate', 'parse', 'explain']
+    }]
+  },
+  'spain-iban-validator': {
+    id: 'spain-iban-validator',
+    algorithmId: 'validohub.iban',
+    capability: 'validate',
+    forms: [{
+      capability: 'validate',
+      title: 'Validate Spanish IBAN',
+      fields: [{ type: 'text', name: 'iban', label: 'Spanish IBAN', required: true }],
+      actions: ['validate', 'parse', 'explain']
+    }]
+  },
+  'regex-tester': {
+    id: 'regex-tester',
+    algorithmId: 'validohub.regex-tester',
+    capability: 'validate',
+    forms: [{
+      capability: 'validate',
+      title: 'Test pattern',
+      fields: [
+        { type: 'text', name: 'pattern', label: 'Pattern', required: true },
+        { type: 'textarea', name: 'input', label: 'Test text', required: true }
+      ],
+      actions: ['validate', 'explain']
+    }]
+  },
+  'text-diff': {
+    id: 'text-diff',
+    algorithmId: 'validohub.text-diff',
+    capability: 'calculate',
+    forms: [{
+      capability: 'calculate',
+      title: 'Compare',
+      fields: [
+        { type: 'textarea', name: 'original', label: 'Original text', required: true },
+        { type: 'textarea', name: 'changed', label: 'Changed text', required: true }
+      ],
+      actions: ['calculate', 'explain']
+    }]
+  },
+  'md5-generator': {
+    id: 'md5-generator',
+    algorithmId: 'validohub.md5',
+    capability: 'generate',
+    forms: [{
+      capability: 'generate',
+      title: 'Generate or validate',
+      fields: [
+        { type: 'textarea', name: 'input', label: 'Input text' },
+        { type: 'text', name: 'hash', label: 'MD5 hash to validate' }
+      ],
+      actions: ['generate', 'validate', 'explain']
+    }]
+  },
+  'sha1-generator': {
+    id: 'sha1-generator',
+    algorithmId: 'validohub.sha1',
+    capability: 'generate',
+    forms: [{
+      capability: 'generate',
+      title: 'Generate or validate',
+      fields: [
+        { type: 'textarea', name: 'input', label: 'Input text' },
+        { type: 'text', name: 'hash', label: 'SHA-1 hash to validate' }
+      ],
+      actions: ['generate', 'validate', 'explain']
+    }]
+  },
+  'sha256-generator': {
+    id: 'sha256-generator',
+    algorithmId: 'validohub.sha256',
+    capability: 'generate',
+    forms: [{
+      capability: 'generate',
+      title: 'Generate or validate',
+      fields: [
+        { type: 'textarea', name: 'input', label: 'Input text' },
+        { type: 'text', name: 'hash', label: 'SHA-256 hash to validate' }
+      ],
+      actions: ['generate', 'validate', 'explain']
+    }]
+  }
+};
+
+function renderGenericField(field) {
+  const required = field.required ? ' required="required"' : '';
+  if (field.type === 'textarea') {
+    return [
+      '<label class="field">',
+      '<span>' + escapeHtml(field.label) + '</span>',
+      '<textarea name="' + escapeHtml(field.name) + '"' + required + '></textarea>',
+      '</label>'
+    ].join('');
+  }
+  if (field.type === 'select') {
+    return [
+      '<label class="field">',
+      '<span>' + escapeHtml(field.label) + '</span>',
+      '<select name="' + escapeHtml(field.name) + '">',
+      field.options.map(option => '<option value="' + escapeHtml(option) + '"' + (option === field.value ? ' selected' : '') + '>' + escapeHtml(option) + '</option>').join(''),
+      '</select>',
+      '</label>'
+    ].join('');
+  }
+  if (field.type === 'checkbox') {
+    return [
+      '<label class="field field-checkbox">',
+      '<input type="checkbox" name="' + escapeHtml(field.name) + '"' + (field.checked ? ' checked' : '') + '>',
+      '<span>' + escapeHtml(field.label) + '</span>',
+      '</label>'
+    ].join('');
+  }
+  return [
+    '<label class="field">',
+    '<span>' + escapeHtml(field.label) + '</span>',
+    '<input type="' + escapeHtml(field.type || 'text') + '" name="' + escapeHtml(field.name) + '" value="' + escapeHtml(field.value || '') + '"' + (field.min ? ' min="' + escapeHtml(field.min) + '"' : '') + (field.max ? ' max="' + escapeHtml(field.max) + '"' : '') + required + '>',
+    '</label>'
+  ].join('');
+}
+
+function renderGenericUtilityWorkbench(config) {
+  const forms = config.forms.map(form => [
+    '<form class="tool-workbench" id="tool-' + escapeHtml(config.id) + '-' + escapeHtml(form.capability) + '" data-algorithm-id="' + escapeHtml(config.algorithmId) + '" data-capability="' + escapeHtml(form.capability) + '">',
+    '<div class="workbench-form-heading">',
+    '<h3>' + escapeHtml(form.title) + '</h3>',
+    '<span class="input-mode-badge" data-input-mode-badge>Waiting for input</span>',
+    '</div>',
+    '<div class="field-grid">',
+    form.fields.map(renderGenericField).join(''),
+    '</div>',
+    '<div class="button-row">',
+    form.actions.map((action, index) => '<button type="button" class="button ' + (index === 0 ? 'button-primary' : 'button-secondary') + '" data-action="' + escapeHtml(action) + '">' + escapeHtml(action.charAt(0).toUpperCase() + action.slice(1)) + '</button>').join(''),
+    '<button type="button" class="button button-secondary" data-tool-copy>Copy result</button>',
+    '<button type="button" class="button button-secondary" data-tool-download>Download result</button>',
+    '<button type="button" class="button button-ghost" data-tool-clear>Clear</button>',
+    '</div>',
+    '<label class="field output-field">',
+    '<span>Output</span>',
+    '<textarea class="tool-output" readonly data-tool-output></textarea>',
+    '</label>',
+    '<p class="tool-message" aria-live="polite" data-tool-message></p>',
+    '<div class="tool-feedback" data-tool-feedback></div>',
+    '<div class="preview-panel" data-tool-preview></div>',
+    '<details class="advanced-panel" data-advanced-panel>',
+    '<summary>Advanced analysis</summary>',
+    '<div data-tool-advanced></div>',
+    '</details>',
+    '</form>'
+  ].join('')).join('');
+  return [
+    '<section class="workbench-card" aria-label="Tool input and output">',
+    '<div class="workbench-heading">',
+    '<span class="eyebrow">Workbench</span>',
+    '<h2>Run the tool</h2>',
+    '<p>Paste input, choose an action, and copy the result directly in your browser.</p>',
+    '</div>',
+    '<div class="workbench-list">',
+    forms,
+    '</div>',
+    '</section>'
+  ].join('');
+}
+
+function ensureGenericUtilityWorkbench(content, route) {
+  const path = String(route.path || '');
+  const slug = path.match(/^\/en\/tools\/([^/]+)\//)?.[1] || path.match(/^\/en\/[^/]+\/([^/]+)\//)?.[1];
+  const config = slug ? GENERIC_UTILITY_WORKBENCHES[slug] : null;
+  if (!config) return content;
+  const workbench = renderGenericUtilityWorkbench(config);
+  let next = content;
+  if (/<section class="workbench-card"[\s\S]*?<\/section>\s*<article class="content-card">/.test(next)) {
+    next = next.replace(/<section class="workbench-card"[\s\S]*?<\/section>\s*<article class="content-card">/, workbench + '\n\n        <article class="content-card">');
+  } else {
+    next = next.replace(/<\/header>\s*<article class="content-card">/, '</header>\n\n        ' + workbench + '\n\n        <article class="content-card">');
+  }
+  return ensureWorkbenchScripts(next, 'generic-suite.js');
+}
+
+function collapseFactoryWorkbenchShell(content) {
+  const match = content.match(/data-algorithm-id="([^"]+)"/);
+  const algorithmId = match && match[1];
+  if (!algorithmId || !FACTORY_TOOL_ALGORITHMS.has(algorithmId)) return content;
+  const staticHost = [
+    '<section class="workbench-card csf-static-host" aria-label="Premium country workbench" data-algorithm-id="' + escapeHtml(algorithmId) + '">',
+    '</section>'
+  ].join('');
+  return content.replace(
+    /<section class="workbench-card" aria-label="Tool input and output">[\s\S]*?<\/section>\s*(?=<(?:article|section) class="(?:content-card|related-section)")/,
+    staticHost + '\n\n        '
+  );
 }
 
 async function getConfiguredLocales() {
@@ -715,6 +1062,22 @@ function humanizeDocumentationSections(content, route) {
   return next;
 }
 
+function keepCountrySuiteRelatedLinksLocal(content, route) {
+  const path = String(route.path || '');
+  const match = path.match(/^\/en\/(france|netherlands|switzerland)\/\1-[^/]+\/?$/);
+  if (!match) return content;
+  if (!content.includes('class="related-section"')) return content;
+  const normalizedPath = path.endsWith('/') ? path : `${path}/`;
+  const allowedPrefix = `/en/${match[1]}/`;
+
+  return content.replace(/<section class="related-section">([\s\S]*?)<\/section>/g, (section) => {
+    return section.replace(/<a href="([^"]+)" class="link-card">[\s\S]*?<\/a>/g, (card, href) => {
+      const normalizedHref = href.endsWith('/') ? href : `${href}/`;
+      return normalizedHref.startsWith(allowedPrefix) && normalizedHref !== normalizedPath ? card : '';
+    });
+  });
+}
+
 // 2. Post-process Java-owned pages to use hashed assets, strip inline styles, and inject schema JSON-LD
 async function postProcessJavaPages(routeRegistry, assetsManifest) {
   const javaRoutes = routeRegistry.getAll().filter(r => r.sourceOwner === 'java');
@@ -751,7 +1114,10 @@ async function postProcessJavaPages(routeRegistry, assetsManifest) {
       });
 
       content = humanizeDocumentationSections(content, route);
+      content = ensureGenericUtilityWorkbench(content, route);
+      content = collapseFactoryWorkbenchShell(content);
       content = ensureToolScript(content);
+      content = keepCountrySuiteRelatedLinksLocal(content, route);
 
       // Force current hashed bundles on Java-owned pages to avoid stale hash drift across publish stages.
       content = content.replace(/<link rel="stylesheet" href="\/assets\/css\/bundle\.[a-f0-9]{6}\.css">/gi, `<link rel="stylesheet" href="${assetsManifest.css}">`);
@@ -833,6 +1199,53 @@ async function scanFolderHtmlFiles(dir) {
   return results;
 }
 
+async function normalizeWorkbenchScriptVersions() {
+  const htmlFiles = await scanFolderHtmlFiles(siteRoot);
+  const scriptRegex = /<script src="(\/assets\/js\/(?:workbench|tools)\/[^"?]+)(?:\?[^"]*)?"><\/script>/g;
+  for (const filePath of htmlFiles) {
+    const content = await readFile(filePath, 'utf8');
+    const next = content.replace(scriptRegex, (match, src) => {
+      return `<script src="${src}?v=${WORKBENCH_SCRIPT_VERSION}"></script>`;
+    });
+    if (next !== content) {
+      await writeFile(filePath, next, 'utf8');
+    }
+  }
+}
+
+async function pruneCountrySuiteRelatedLinksToCountry() {
+  const htmlFiles = await scanFolderHtmlFiles(siteRoot);
+  let updated = 0;
+  for (const filePath of htmlFiles) {
+    const normalizedFilePath = filePath.replace(/\\/g, '/');
+    const match = normalizedFilePath.match(/\/generated\/validohub\/([^/]+)\/(france|netherlands|switzerland)\/\2-[^/]+\/index\.html$/);
+    if (!match) continue;
+
+    const localeCode = match[1];
+    const countrySlug = match[2];
+    const relativePagePath = '/' + normalizedFilePath
+      .slice(normalizedFilePath.indexOf('/generated/validohub/') + '/generated/validohub/'.length)
+      .replace(/index\.html$/, '');
+    const allowedPrefix = `/${localeCode}/${countrySlug}/`;
+    const pagePath = relativePagePath.endsWith('/') ? relativePagePath : `${relativePagePath}/`;
+    const content = await readFile(filePath, 'utf8');
+    if (!content.includes('class="related-section"')) continue;
+
+    const next = content.replace(/<section class="related-section">[\s\S]*?<\/section>/g, (section) => {
+      return section.replace(/<a href="([^"]+)" class="link-card">[\s\S]*?<\/a>/g, (card, href) => {
+        const normalizedHref = href.endsWith('/') ? href : `${href}/`;
+        return normalizedHref.startsWith(allowedPrefix) && normalizedHref !== pagePath ? card : '';
+      });
+    });
+
+    if (next !== content) {
+      await writeFile(filePath, next, 'utf8');
+      updated++;
+    }
+  }
+  console.log(`✓ Pruned country suite related links to same-country routes on ${updated} pages`);
+}
+
 // 5. Build Validations Checks
 async function validateSiteOutput(routeRegistry, assetsManifest) {
   console.log('--- Pass 3: Running Site Integrity Validations ---');
@@ -849,7 +1262,10 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
     'validohub.spain-id': 'spain-id.js',
     'validohub.poland-suite': 'poland-suite.js',
     'validohub.poland-expansion': 'poland-expansion.js',
-  'validohub.poland-baseline': 'poland-baseline.js',
+    'validohub.poland-baseline': 'poland-baseline.js',
+    'validohub.france-suite': 'france-suite.js',
+    'validohub.netherlands-suite': 'netherlands-suite.js',
+    'validohub.switzerland-suite': ['country-suite-factory.js', 'switzerland-suite.js'],
     'validohub.base64-decoder': 'base64.js',
     'validohub.base64': 'base64.js',
     'validohub.json-formatter': 'json.js',
@@ -898,6 +1314,20 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
       }
     }
 
+    if (content.includes('[object Object]')) {
+      throw new Error(`FATAL: JavaScript object serialization artifact "[object Object]" detected in route: ${relativePath}`);
+    }
+
+    const isCountryHubOutput = /^\/[a-z]{2}(?:-[A-Z]{2})?\/[a-z-]+\/$/.test(relativePath) && !relativePath.includes('/categories/') && !relativePath.includes('/identifiers/');
+    if (isCountryHubOutput) {
+      if (/class="[^"]*vh-country-info-card[^"]*"[\s\S]*?<h3>\s*<\/h3>/.test(content)) {
+        throw new Error(`FATAL: Empty country info-card title detected in route: ${relativePath}`);
+      }
+      if (/class="[^"]*vh-country-info-card[^"]*"[\s\S]*?<p class="vh-(?:mt-xs vh-mb-xs|mb-xs vh-mt-xs)">\s*<\/p>/.test(content)) {
+        throw new Error(`FATAL: Empty country info-card summary detected in route: ${relativePath}`);
+      }
+    }
+
     // 2. CSS Delivery Guard (Constraint 3)
     const cssLinks = content.match(/<link[^>]*rel="stylesheet"[^>]*>/gi) || [];
     if (cssLinks.length !== 1) {
@@ -923,19 +1353,36 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
         throw new Error(`FATAL: Missing active script mapping or handler for algorithm ID: ${algoId} on route ${relativePath}`);
       }
 
-      // Only check for dedicated tool script if the file actually exists in source assets
-      const scriptPath = resolve(projectRoot, 'assets', 'js', 'tools', mappedScript);
-      const scriptFileExists = await pathExists(scriptPath);
-      if (scriptFileExists) {
-        const expectedScriptTag = `<script src="/assets/js/tools/${mappedScript}"></script>`;
-        if (!content.includes(expectedScriptTag)) {
-          throw new Error(`FATAL: Validator page ${relativePath} is missing script tag: ${expectedScriptTag}`);
+      const mappedScripts = Array.isArray(mappedScript) ? mappedScript : [mappedScript];
+      const expectedScripts = [];
+      for (const scriptName of mappedScripts) {
+        const scriptPath = resolve(projectRoot, 'assets', 'js', 'tools', scriptName);
+        if (await pathExists(scriptPath)) expectedScripts.push(scriptName);
+      }
+      if (expectedScripts.length > 0) {
+        for (const scriptName of expectedScripts) {
+          const expectedScriptRegex = new RegExp(`<script src="/assets/js/tools/${scriptName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:\\?[^"]*)?"></script>`);
+          if (!expectedScriptRegex.test(content)) {
+            throw new Error(`FATAL: Validator page ${relativePath} is missing script tag for /assets/js/tools/${scriptName}`);
+          }
+        }
+        for (let i = 1; i < expectedScripts.length; i++) {
+          const previousScript = expectedScripts[i - 1];
+          const currentScript = expectedScripts[i];
+          const previousScriptRegex = new RegExp(`<script src="/assets/js/tools/${previousScript.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:\\?[^"]*)?"></script>`);
+          const currentScriptRegex = new RegExp(`<script src="/assets/js/tools/${currentScript.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:\\?[^"]*)?"></script>`);
+          const previousIndex = content.search(previousScriptRegex);
+          const currentIndex = content.search(currentScriptRegex);
+          if (previousIndex === -1 || currentIndex === -1 || previousIndex > currentIndex) {
+            throw new Error(`FATAL: Validator page ${relativePath} loads ${currentScript} before required dependency ${previousScript}`);
+          }
         }
 
-        const otherScriptRegex = /<script[^>]*src="\/assets\/js\/tools\/([^"]+)"[^>]*>/gi;
+        const allowedScripts = new Set(expectedScripts);
+        const otherScriptRegex = /<script[^>]*src="\/assets\/js\/tools\/([^"?]+)(?:\?[^"]*)?"[^>]*>/gi;
         let otherMatch;
         while ((otherMatch = otherScriptRegex.exec(content)) !== null) {
-          if (otherMatch[1] !== mappedScript) {
+          if (!allowedScripts.has(otherMatch[1])) {
             throw new Error(`FATAL: Validator page ${relativePath} loaded duplicate/unrelated script: ${otherMatch[1]}`);
           }
         }
@@ -1099,6 +1546,8 @@ async function main() {
     await ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest);
     await postProcessJavaPages(routeRegistry, assetsManifest);
     await applyFinalLocalizationPass(routeRegistry, siteRoot, configuredLocales);
+    await pruneCountrySuiteRelatedLinksToCountry();
+    await normalizeWorkbenchScriptVersions();
     await writeSitemap(routeRegistry);
 
     // 6. Site Integrity Verification & Metrics

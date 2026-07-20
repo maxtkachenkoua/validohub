@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-license-plate-inspector
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "French License Plate Inspector"
+summary:
+  en: "Validate French SIV plate syntax, normalize separators, and identify legacy plate boundaries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "PLATE"
+        required: true
+        placeholder:
+          en: "AB-123-CD"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-vin-validator, france-critair-readiness-helper, france-carte-grise-field-helper, france-driving-licence-format-helper]
+seo:
+  title:
+    en: "French License Plate Inspector | ValidoHub"
+  description:
+    en: "Validate French SIV plate syntax, normalize separators, and identify legacy plate boundaries."

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-btw-rate-sanity-helper
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "Dutch BTW Rate Sanity Helper"
+summary:
+  en: "Check Dutch VAT/BTW rate values, net/gross/tax consistency, and invoice-safe amount formatting."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "BTW%"
+        required: true
+        placeholder:
+          en: "Net 100,00"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-btw-vat-validator, netherlands-eur-decimal-currency-formatter, netherlands-invoice-number-helper, netherlands-vat-return-field-helper]
+seo:
+  title:
+    en: "Dutch BTW Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Check Dutch VAT/BTW rate values, net/gross/tax consistency, and invoice-safe amount formatting."

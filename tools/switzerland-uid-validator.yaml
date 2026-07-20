@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-uid-validator
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Swiss UID Validator & Explainer"
+summary:
+  en: "Validate Swiss company UID syntax, normalize CHE prefixes, inspect numeric blocks, and prepare registry-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "UID input"
+        required: true
+        placeholder:
+          en: "CHE-123.456.789"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [switzerland-ahv-avs-number-validator]
+seo:
+  title:
+    en: "Swiss UID Validator & Explainer | ValidoHub"
+  description:
+    en: "Validate Swiss company UID syntax, normalize CHE prefixes, inspect numeric blocks, and prepare registry-safe diagnostics."

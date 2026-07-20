@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: france-critair-readiness-helper
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "Crit'Air Readiness Helper"
+summary:
+  en: "Audit vehicle data snippets for Crit'Air certificate workflow readiness and offline boundary notes."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "CRITAIR"
+        required: true
+        placeholder:
+          en: "AB-123-CD
+VIN VF1RFB00368123456
+Diesel Euro 6
+First registration 2019"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-license-plate-inspector, france-vin-validator, france-carte-grise-field-helper, france-driving-licence-format-helper]
+seo:
+  title:
+    en: "Crit'Air Readiness Helper | ValidoHub"
+  description:
+    en: "Audit vehicle data snippets for Crit'Air certificate workflow readiness and offline boundary notes."

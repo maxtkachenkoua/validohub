@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-eori-validator
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss EORI / Customs Identifier Helper"
+summary:
+  en: "Inspect CH customs identifier payloads, UID roots, and declaration-ready fields before official customs checks."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EORI input"
+        required: true
+        placeholder:
+          en: "CHCHE123456789"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [switzerland-vat-mwst-validator, switzerland-mwst-rate-sanity-helper, switzerland-vat-return-field-helper, switzerland-withholding-tax-readiness-helper]
+seo:
+  title:
+    en: "Swiss EORI / Customs Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect CH customs identifier payloads, UID roots, and declaration-ready fields before official customs checks."

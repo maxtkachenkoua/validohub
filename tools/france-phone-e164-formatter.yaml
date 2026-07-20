@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-phone-e164-formatter
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "French Phone E.164 Formatter"
+summary:
+  en: "Convert French phone numbers to E.164, national display spacing, and masked support-safe output."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "E164"
+        required: true
+        placeholder:
+          en: "01 42 68 53 00"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-phone-number-validator]
+seo:
+  title:
+    en: "French Phone E.164 Formatter | ValidoHub"
+  description:
+    en: "Convert French phone numbers to E.164, national display spacing, and masked support-safe output."

@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-csv-locale-normalizer
+kind: tool
+module: validohub
+country: CH
+category: developer-tools
+status: active
+name:
+  en: "Swiss CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets containing Swiss dates, CHF amounts, UID, canton, phone, and postal-code fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "uid;amount;date;canton"
+    actions: [format, validate, parse, generate, explain]
+related:
+  explicit: [switzerland-json-fixture-generator, switzerland-regex-pack-helper, switzerland-api-payload-auditor, switzerland-form-field-auditor]
+seo:
+  title:
+    en: "Swiss CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets containing Swiss dates, CHF amounts, UID, canton, phone, and postal-code fields."

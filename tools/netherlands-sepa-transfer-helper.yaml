@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-sepa-transfer-helper
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "SEPA Transfer Helper"
+summary:
+  en: "Build SEPA-transfer-ready field bundles from Dutch IBAN, BIC, EUR amount, creditor, and remittance input."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "SEPA"
+        required: true
+        placeholder:
+          en: "NL91ABNA0417164300"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-iban-validator, netherlands-bic-swift-inspector, netherlands-remittance-text-builder, netherlands-payment-reconciliation-helper]
+seo:
+  title:
+    en: "SEPA Transfer Helper | ValidoHub"
+  description:
+    en: "Build SEPA-transfer-ready field bundles from Dutch IBAN, BIC, EUR amount, creditor, and remittance input."

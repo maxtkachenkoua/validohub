@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-iban-validator
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "Dutch IBAN Validator"
+summary:
+  en: "Validate Dutch IBANs, split country and check digits, bank code, account number, MOD-97 evidence, and masked payment fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "IBAN"
+        required: true
+        placeholder:
+          en: "NL91ABNA0417164300"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-bic-swift-inspector, netherlands-bank-code-inspector, netherlands-sepa-transfer-helper, netherlands-masked-iban-formatter]
+seo:
+  title:
+    en: "Dutch IBAN Validator | ValidoHub"
+  description:
+    en: "Validate Dutch IBANs, split country and check digits, bank code, account number, MOD-97 evidence, and masked payment fields."

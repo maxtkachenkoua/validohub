@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-municipality-code-inspector
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "Municipality Code Inspector"
+summary:
+  en: "Inspect Dutch municipality-code-shaped values, normalize numeric keys, and prepare geography fields for imports."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "MUNI"
+        required: true
+        placeholder:
+          en: "0363 Amsterdam"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-province-code-mapper, netherlands-bag-address-readiness-helper, netherlands-address-normalizer, netherlands-data-quality-workbench]
+seo:
+  title:
+    en: "Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect Dutch municipality-code-shaped values, normalize numeric keys, and prepare geography fields for imports."

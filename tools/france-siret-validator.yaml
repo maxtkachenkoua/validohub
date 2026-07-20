@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-siret-validator
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "SIRET Validator & Explainer"
+summary:
+  en: "Validate French SIRET establishment identifiers, split SIREN and NIC, and verify local checksum evidence."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "SIRET"
+        required: true
+        placeholder:
+          en: "73282932000074"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-siren-validator, france-nic-inspector, france-ape-naf-code-inspector, france-rcs-number-helper]
+seo:
+  title:
+    en: "SIRET Validator & Explainer | ValidoHub"
+  description:
+    en: "Validate French SIRET establishment identifiers, split SIREN and NIC, and verify local checksum evidence."

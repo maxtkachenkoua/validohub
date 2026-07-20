@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brazil-iban-validator
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: Brazil IBAN Validator
+summary:
+  en: Validate Brazilian IBAN numbers, inspect the BR BBAN structure, and separate offline syntax from bank-account existence.
+capabilities:
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.iban
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: iban
+        label:
+          en: Brazilian IBAN
+        required: true
+        placeholder:
+          en: BR1500000000000010932840814P2
+    actions: [validate, parse, explain]
+related:
+  explicit: [iban-validator, brazil-pix-validator, brazil-boleto-barcode-validator, brazil-compe-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Brazil IBAN Validator
+  description:
+    en: Validate Brazilian IBAN structure, MOD-97 check digits, bank and branch segments, and account-type fields locally.

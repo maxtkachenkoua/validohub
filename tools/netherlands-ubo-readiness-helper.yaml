@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-ubo-readiness-helper
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "UBO Readiness Helper"
+summary:
+  en: "Prepare Dutch UBO onboarding checklists with company identifiers, representative fields, privacy notes, and official-register boundaries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "UBO"
+        required: true
+        placeholder:
+          en: "KVK 90006485"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-company-onboarding-auditor, netherlands-kvk-number-validator, netherlands-gdpr-avg-redaction-helper, netherlands-compliance-checklist-generator]
+seo:
+  title:
+    en: "UBO Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare Dutch UBO onboarding checklists with company identifiers, representative fields, privacy notes, and official-register boundaries."

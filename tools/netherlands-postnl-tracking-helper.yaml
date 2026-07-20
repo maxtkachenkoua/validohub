@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-postnl-tracking-helper
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "PostNL Tracking Helper"
+summary:
+  en: "Inspect PostNL-like tracking references, normalize shipment text, and separate carrier status lookup from offline parsing."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "POSTNL"
+        required: true
+        placeholder:
+          en: "3SABCD123456789"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-address-normalizer, netherlands-postcode-validator, netherlands-data-quality-workbench, netherlands-form-field-auditor]
+seo:
+  title:
+    en: "PostNL Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect PostNL-like tracking references, normalize shipment text, and separate carrier status lookup from offline parsing."

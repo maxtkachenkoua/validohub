@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-driving-licence-format-helper
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "Driving Licence Format Helper"
+summary:
+  en: "Inspect Dutch driving-licence-shaped values, normalize document text, and separate offline syntax from authority checks."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "DL"
+        required: true
+        placeholder:
+          en: "Rijbewijs 1234567890"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-license-plate-inspector, netherlands-rdw-vehicle-data-redaction-helper, netherlands-vin-validator, netherlands-id-card-format-helper]
+seo:
+  title:
+    en: "Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect Dutch driving-licence-shaped values, normalize document text, and separate offline syntax from authority checks."

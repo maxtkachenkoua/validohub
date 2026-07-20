@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-canton-code-mapper
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Canton Code Mapper"
+summary:
+  en: "Map Swiss canton abbreviations, names, language hints, and address-ready region evidence."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CT input"
+        required: true
+        placeholder:
+          en: "ZH Zurich, GE Geneva, TI Ticino"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-postal-code-validator, switzerland-address-normalizer, switzerland-address-transliteration-normalizer, switzerland-multilingual-address-helper]
+seo:
+  title:
+    en: "Canton Code Mapper | ValidoHub"
+  description:
+    en: "Map Swiss canton abbreviations, names, language hints, and address-ready region evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: france-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "Payment Reconciliation Helper"
+summary:
+  en: "Audit French payment records for IBAN, amount, invoice reference, date, and duplicate-risk evidence."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "RECON"
+        required: true
+        placeholder:
+          en: "IBAN FR7630006000011234567890189
+Montant 1250,75 EUR
+Facture FA-2026-0042
+Date 12/07/2026"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-sepa-transfer-helper, france-sepa-direct-debit-rum-helper, france-remittance-text-builder, france-bank-statement-parser]
+seo:
+  title:
+    en: "Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Audit French payment records for IBAN, amount, invoice reference, date, and duplicate-risk evidence."

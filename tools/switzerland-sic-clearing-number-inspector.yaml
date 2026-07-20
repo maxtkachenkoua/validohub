@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-sic-clearing-number-inspector
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "SIC / BC Number Inspector"
+summary:
+  en: "Inspect Swiss bank clearing numbers, normalize BC/SIC references, and prepare bank-routing evidence without ownership lookup."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SIC input"
+        required: true
+        placeholder:
+          en: "BC 00762 UBS Switzerland account handoff"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-iban-validator, switzerland-bic-swift-inspector, switzerland-sepa-transfer-helper, switzerland-bank-statement-parser]
+seo:
+  title:
+    en: "SIC / BC Number Inspector | ValidoHub"
+  description:
+    en: "Inspect Swiss bank clearing numbers, normalize BC/SIC references, and prepare bank-routing evidence without ownership lookup."

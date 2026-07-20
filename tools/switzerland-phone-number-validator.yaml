@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-phone-number-validator
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Swiss Phone Number Validator"
+summary:
+  en: "Validate Swiss phone number shape, normalize trunk prefixes, classify mobile/geographic hints, and prepare contact fixtures."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "+41 input"
+        required: true
+        placeholder:
+          en: "+41 79 123 45 67"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [switzerland-phone-e164-formatter]
+seo:
+  title:
+    en: "Swiss Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate Swiss phone number shape, normalize trunk prefixes, classify mobile/geographic hints, and prepare contact fixtures."

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-ape-naf-code-inspector
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "APE / NAF Code Inspector"
+summary:
+  en: "Inspect French APE/NAF activity codes, normalize punctuation, and prepare Sirene enrichment fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "APE"
+        required: true
+        placeholder:
+          en: "6201Z"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-siren-validator, france-siret-validator, france-nic-inspector, france-rcs-number-helper]
+seo:
+  title:
+    en: "APE / NAF Code Inspector | ValidoHub"
+  description:
+    en: "Inspect French APE/NAF activity codes, normalize punctuation, and prepare Sirene enrichment fields."

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-rm-number-helper
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "Répertoire des Métiers Helper"
+summary:
+  en: "Normalize RM craft registration references and extract SIREN-ready identifier evidence."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "RM"
+        required: true
+        placeholder:
+          en: "RM 732 829 320 PARIS"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-siren-validator, france-siret-validator, france-nic-inspector, france-ape-naf-code-inspector]
+seo:
+  title:
+    en: "Répertoire des Métiers Helper | ValidoHub"
+  description:
+    en: "Normalize RM craft registration references and extract SIREN-ready identifier evidence."

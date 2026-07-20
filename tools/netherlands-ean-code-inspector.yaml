@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-ean-code-inspector
+kind: tool
+module: validohub
+country: NL
+category: developer-tools
+status: active
+name:
+  en: "Dutch EAN / GS1 Code Inspector"
+summary:
+  en: "Inspect EAN/GTIN-style product codes for Dutch retail fixtures, replay check digits, and prepare catalog-safe examples."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "EAN"
+        required: true
+        placeholder:
+          en: "8712345678906"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-data-quality-workbench, netherlands-json-fixture-generator, netherlands-compliance-checklist-generator, netherlands-regex-pack-helper]
+seo:
+  title:
+    en: "Dutch EAN / GS1 Code Inspector | ValidoHub"
+  description:
+    en: "Inspect EAN/GTIN-style product codes for Dutch retail fixtures, replay check digits, and prepare catalog-safe examples."

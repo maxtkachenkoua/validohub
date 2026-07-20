@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: france-sepa-transfer-helper
+kind: tool
+module: validohub
+country: FR
+category: finance
+status: active
+name:
+  en: "SEPA Transfer Helper"
+summary:
+  en: "Build SEPA transfer-ready field bundles from French IBAN, BIC, amount, creditor, and remittance input."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "SEPA"
+        required: true
+        placeholder:
+          en: "FR7630006000011234567890189
+AGRIFRPP
+EUR 1250,75
+Facture FA-2026-0042"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-sepa-direct-debit-rum-helper, france-remittance-text-builder, france-payment-reconciliation-helper]
+seo:
+  title:
+    en: "SEPA Transfer Helper | ValidoHub"
+  description:
+    en: "Build SEPA transfer-ready field bundles from French IBAN, BIC, amount, creditor, and remittance input."

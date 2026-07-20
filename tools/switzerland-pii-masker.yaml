@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-pii-masker
+kind: tool
+module: validohub
+country: CH
+category: developer-tools
+status: active
+name:
+  en: "Swiss PII Masker"
+summary:
+  en: "Detect and mask Swiss AHV/AVS, UID, IBAN, phone, email, postal, and free-text personal data hints."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "Max Meier +41 79 123 45 67 AHV 756.1234.5678.97 CHE-123.456.789"
+    actions: [format, validate, parse, generate, explain]
+related:
+  explicit: [switzerland-compliance-checklist-generator, switzerland-audit-trail-checklist-generator, switzerland-fadp-gdpr-redaction-helper, switzerland-data-quality-workbench]
+seo:
+  title:
+    en: "Swiss PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask Swiss AHV/AVS, UID, IBAN, phone, email, postal, and free-text personal data hints."

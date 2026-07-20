@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-insurance-policy-number-helper
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Insurance Policy Number Helper"
+summary:
+  en: "Normalize Swiss policy-number snippets, detect CHF amounts and holder data, and prepare masked evidence."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POLICY input"
+        required: true
+        placeholder:
+          en: "Policy CH-2026-00042 holder Max Meier premium CHF 350.00"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-health-insurance-boundary-helper]
+seo:
+  title:
+    en: "Insurance Policy Number Helper | ValidoHub"
+  description:
+    en: "Normalize Swiss policy-number snippets, detect CHF amounts and holder data, and prepare masked evidence."

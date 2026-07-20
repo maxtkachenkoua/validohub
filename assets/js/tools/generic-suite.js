@@ -18,12 +18,24 @@
   }
 
   function firstValue(values) {
-    return values.input || values.text || values.value || values.hash || values.pattern || values.uuid || values.iban || "";
+    return values.input || values.title || values.text || values.value || values.hash || values.pattern || values.uuid || values.iban || "";
   }
 
   function setField(workbench, name, value) {
     const field = workbench.form.querySelector(`[name="${name}"]`);
     if (field) field.value = value;
+  }
+
+  function formValues(workbench) {
+    if (workbench && typeof workbench.values === 'function') {
+      return workbench.values();
+    }
+    const values = {};
+    if (!workbench || !workbench.form) return values;
+    workbench.form.querySelectorAll('textarea[name], input[name], select[name]').forEach((field) => {
+      values[field.name] = field.type === 'checkbox' ? field.checked : field.value;
+    });
+    return values;
   }
 
   function sampleRow(samples) {
@@ -50,12 +62,47 @@
     ).join('') + '</div>';
   }
 
+  function resultCards(rows) {
+    return '<div class="generic-result-card-grid">' + rows.map((row) =>
+      '<article class="generic-result-card"><span>' + escape(row.label) + '</span><strong>' + escape(row.value) + '</strong>' + (row.note ? '<small>' + escape(row.note) + '</small>' : '') + '</article>'
+    ).join('') + '</div>';
+  }
+
   function list(items, className) {
     return '<ul class="' + (className || 'generic-check-list') + '">' + items.map((item) => '<li>' + escape(item) + '</li>').join('') + '</ul>';
   }
 
+  function qualityGrid(items) {
+    const labels = ['Privacy boundary', 'Correctness boundary', 'Developer handling', 'Fixture safety'];
+    const padded = (items || []).slice();
+    const fallback = [
+      'Input is processed locally in this browser and is not uploaded by ValidoHub.',
+      'The tool proves local syntax, formatting, or transformation rules only.',
+      'Copy normalized values for tests and keep sensitive raw data out of logs.',
+      'Samples and generated outputs are fixtures unless your application records them as live data.'
+    ];
+    while (padded.length < 4) {
+      padded.push(fallback[padded.length]);
+    }
+    return '<div class="generic-quality-grid">' + padded.map((item, index) =>
+      '<article class="generic-quality-card"><strong>' + escape(labels[index] || 'Quality note') + '</strong><p>' + escape(item) + '</p></article>'
+    ).join('') + '</div>';
+  }
+
   function codeBlock(value, language) {
     return '<pre class="generic-code" data-language="' + escape(language || 'text') + '"><code>' + escape(value) + '</code></pre>';
+  }
+
+  function charProfile(value) {
+    const text = String(value || '');
+    return {
+      characters: Array.from(text).length,
+      bytes: byteCount(text),
+      lines: text ? text.split(/\r?\n/).length : 0,
+      words: (text.trim().match(/\S+/g) || []).length,
+      ascii: /^[\x00-\x7F]*$/.test(text),
+      whitespace: (text.match(/\s/g) || []).length
+    };
   }
 
   function statusHtml(status, title, body) {
@@ -101,17 +148,17 @@
   function premiumPreviewHtml(config, result) {
     const output = String(result.output || '');
     const clipped = output.length > 420 ? output.slice(0, 420) + '...' : output;
-    const rows = [
+    const profile = charProfile(output);
+    const rows = result.resultCards || [
       { label: 'Mode', value: result.mode || config.title },
-      { label: 'Characters', value: String(output.length) },
-      { label: 'UTF-8 bytes', value: byteCount(output) + ' bytes' },
+      { label: 'Characters', value: String(profile.characters), note: profile.ascii ? 'ASCII-safe' : 'Unicode present' },
+      { label: 'UTF-8 bytes', value: profile.bytes + ' bytes', note: profile.lines + ' lines' },
       { label: 'Execution', value: 'Local browser only' }
     ];
     return [
       '<div class="generic-result-preview">',
-      '  <div class="generic-result-preview__grid">',
-      rows.map((row) => '<div><span>' + escape(row.label) + '</span><strong>' + escape(row.value) + '</strong></div>').join(''),
-      '  </div>',
+      result.ok === false ? '  <div class="generic-status generic-status-error"><strong>Needs review</strong><span>The result below explains what failed without sending input to a server.</span></div>' : '  <div class="generic-status generic-status-success"><strong>Completed locally</strong><span>The result is available immediately below the input area.</span></div>',
+      resultCards(rows),
       '  <pre class="generic-result-preview__code">' + escape(clipped) + '</pre>',
       '</div>'
     ].join('');
@@ -145,7 +192,7 @@
       sections.push(advancedSection(result.breakdownTitle || 'Field breakdown', keyValueGrid(result.breakdown)));
     }
     if (result.qualityNotes) {
-      sections.push(advancedSection('Quality notes', list(result.qualityNotes)));
+      sections.push(advancedSection('Quality notes', qualityGrid(result.qualityNotes)));
     }
     if (result.developerJson) {
       sections.push(advancedSection('Developer snapshot JSON', codeBlock(JSON.stringify(result.developerJson, null, 2), 'json')));
@@ -184,28 +231,42 @@
   }
 
   function plugin(config, handler) {
+    function activeConfig(workbench) {
+      if (config && typeof config.resolve === 'function') {
+        return config.resolve(workbench) || config;
+      }
+      return config;
+    }
     return {
       filePrefix: config.slug,
       detectInputMode(value) {
         return value && String(value).trim() ? { label: config.detectLabel || 'Input ready', state: 'valid' } : { label: 'Waiting for input', state: '' };
       },
       onMount(workbench) {
+        const currentConfig = activeConfig(workbench);
         workbench.form.classList.add('generic-suite-workbench');
-        workbench.form.dataset.genericSuite = config.slug;
-        workbench.form.dataset.genericTheme = config.theme || 'utility';
-        ensurePremiumChrome(workbench, config);
-        ensureSamples(workbench, config);
+        workbench.form.dataset.genericSuite = currentConfig.slug;
+        workbench.form.dataset.genericTheme = currentConfig.theme || 'utility';
+        ensurePremiumChrome(workbench, currentConfig);
+        ensureSamples(workbench, currentConfig);
       },
       applySample(workbench, id) {
-        const sample = (config.samples || []).find((item) => item.id === id);
+        const currentConfig = activeConfig(workbench);
+        const sample = (currentConfig.samples || []).find((item) => item.id === id);
         if (!sample) return;
-        Object.keys(sample.values || {}).forEach((name) => setField(workbench, name, sample.values[name]));
-        const action = sample.action || config.defaultAction || workbench.form.dataset.capability || 'validate';
+        if (sample.values) {
+          Object.keys(sample.values).forEach((name) => setField(workbench, name, sample.values[name]));
+        } else if (sample.value != null) {
+          const primary = workbench.primaryInput && workbench.primaryInput();
+          if (primary) primary.value = sample.value;
+        }
+        const action = sample.action || currentConfig.defaultAction || workbench.form.dataset.capability || 'validate';
         workbench.markActiveAction(action);
         workbench.run(action);
       },
       run(workbench, action) {
-        runSafely(workbench, config, action || config.defaultAction, handler);
+        const currentConfig = activeConfig(workbench);
+        runSafely(workbench, currentConfig, action || currentConfig.defaultAction, handler);
       }
     };
   }
@@ -224,24 +285,32 @@
 
   function htmlHandler(kind) {
     return function (workbench, action) {
-      const values = workbench.values();
+      const values = formValues(workbench);
       const input = firstValue(values);
       if (!input) throw new Error('Enter text or HTML entities first.');
       const decode = action === 'decode' || kind === 'decoder';
       const output = decode ? decodeEntities(input) : htmlEntities(input);
       const entityCount = (output.match(/&(?:[a-z]+|#\d+|#x[0-9a-f]+);/gi) || []).length;
+      const inputEntityCount = (input.match(/&(?:[a-z]+|#\d+|#x[0-9a-f]+);/gi) || []).length;
+      const delta = output.length - input.length;
       return {
         output,
         message: decode ? 'HTML entities decoded locally.' : 'Text encoded as HTML entities locally.',
         badge: decode ? 'Decoded entities' : 'Encoded entities',
-        stats: [['Input characters', input.length], ['Input UTF-8 bytes', util.formatBytes(byteCount(input))], ['Output characters', output.length], ['Entities', entityCount], ['Boundary', 'Display escaping only']],
+        stats: [['Input characters', input.length], ['Input UTF-8 bytes', util.formatBytes(byteCount(input))], ['Output characters', output.length], ['Length delta', String(delta)], ['Entities', decode ? inputEntityCount : entityCount], ['Boundary', 'Display escaping only']],
         notes: ['Escaping helps render text safely, but context-specific sanitization still belongs in your app.'],
         pipeline: [
           { name: 'Input', detail: input ? 'Received' : 'Missing' },
           { name: decode ? 'Decode' : 'Encode', detail: decode ? 'Entities resolved' : 'Special characters escaped' },
           { name: 'Boundary', detail: 'No HTML sanitizer or policy engine is run' }
         ],
-        breakdown: [['Ampersand', (input.match(/&/g) || []).length], ['Angle brackets', (input.match(/[<>]/g) || []).length], ['Quotes', (input.match(/["']/g) || []).length], ['Unicode bytes', util.formatBytes(byteCount(input))]],
+        resultCards: [
+          { label: decode ? 'Decoded text' : 'Escaped output', value: output.slice(0, 96) || 'empty', note: output.length > 96 ? 'truncated preview' : 'copy-ready' },
+          { label: 'Entities', value: String(decode ? inputEntityCount : entityCount), note: decode ? 'read from input' : 'created in output' },
+          { label: 'Danger characters', value: String((input.match(/[<>"'&]/g) || []).length), note: 'escaped or decoded locally' },
+          { label: 'Boundary', value: 'Not sanitizer', note: 'escaping helper only' }
+        ],
+        breakdown: [['Ampersand', (input.match(/&/g) || []).length], ['Angle brackets', (input.match(/[<>]/g) || []).length], ['Quotes', (input.match(/["']/g) || []).length], ['Entity-like tokens', inputEntityCount], ['Unicode bytes', util.formatBytes(byteCount(input))]],
         qualityNotes: ['Use contextual escaping for HTML text nodes, attributes, URLs, and JavaScript separately.', 'This tool never executes markup and never uploads input.'],
         developerJson: { tool: kind === 'decoder' ? 'html-decoder' : 'html-encoder', action: decode ? 'decode' : 'encode', inputCharacters: input.length, outputCharacters: output.length, entities: entityCount }
       };
@@ -256,17 +325,30 @@
   }
 
   function slugHandler(workbench) {
-    const input = firstValue(workbench.values());
+    const values = formValues(workbench);
+    const input = firstValue(values);
     if (!input) throw new Error('Enter text to slugify.');
-    const slug = slugify(input);
+    let slug = slugify(input);
+    if (values.lowercase === false || values.lowercase === 'false') {
+      slug = String(input || '')
+        .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^A-Za-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '').replace(/-{2,}/g, '-');
+    }
     return {
       output: slug,
       message: 'Slug generated locally.',
       badge: 'Slug ready',
       stats: [['Input characters', input.length], ['Slug characters', slug.length], ['Words detected', (input.trim().match(/\S+/g) || []).length], ['Separator', 'hyphen'], ['ASCII safe', /^[a-z0-9-]*$/.test(slug) ? 'Yes' : 'No']],
       notes: ['Preview routing collisions in your app before publishing duplicate titles.'],
-      pipeline: [{ name: 'Normalize', detail: 'Diacritics removed' }, { name: 'Case', detail: 'Lowercase' }, { name: 'Separator', detail: 'Hyphen compacted' }],
-      breakdown: [['Original', input], ['Slug', slug], ['URL segment', '/' + slug + '/']],
+      pipeline: [{ name: 'Normalize', detail: 'Diacritics removed' }, { name: 'Case', detail: values.lowercase === false || values.lowercase === 'false' ? 'Original case preserved' : 'Lowercase' }, { name: 'Separator', detail: 'Hyphen compacted' }, { name: 'Route safety', detail: /^[A-Za-z0-9-]+$/.test(slug) ? 'Path-segment safe' : 'Review' }],
+      resultCards: [
+        { label: 'Slug', value: slug || 'empty', note: 'copy-ready segment' },
+        { label: 'URL segment', value: '/' + slug + '/', note: 'routing preview' },
+        { label: 'Words', value: String((input.trim().match(/\S+/g) || []).length), note: 'detected tokens' },
+        { label: 'Collision risk', value: 'App-specific', note: 'check your route table' }
+      ],
+      breakdown: [['Original', input], ['Slug', slug], ['URL segment', '/' + slug + '/'], ['Removed punctuation', String((input.match(/[^\p{L}\p{N}\s-]/gu) || []).length)]],
       qualityNotes: ['Generated slugs are deterministic and privacy-safe.', 'Locale-specific transliteration may need product rules for non-Latin scripts.'],
       developerJson: { input, slug, characters: slug.length }
     };
@@ -284,11 +366,15 @@
   }
 
   function caseHandler(workbench) {
-    const input = firstValue(workbench.values());
+    const values = formValues(workbench);
+    const input = firstValue(values);
     if (!input) throw new Error('Enter text to convert.');
     const parts = words(input);
+    if (!parts.length) throw new Error('Enter text with letters or numbers to convert.');
     const lower = parts.map((p) => p.toLowerCase());
-    const output = [
+    const variants = [
+      ['lowercase', lower.join(' ')],
+      ['UPPERCASE', lower.join(' ').toUpperCase()],
       ['camelCase', lower[0] + lower.slice(1).map(titleWord).join('')],
       ['PascalCase', lower.map(titleWord).join('')],
       ['snake_case', lower.join('_')],
@@ -296,16 +382,25 @@
       ['CONSTANT_CASE', lower.join('_').toUpperCase()],
       ['Title Case', lower.map(titleWord).join(' ')],
       ['Sentence case', titleWord(lower.join(' '))]
-    ].map((row) => row[0] + ': ' + row[1]).join('\n');
+    ];
+    const selected = String(values.style || '').toLowerCase();
+    const primary = variants.find((row) => row[0].toLowerCase().replace(/[^a-z]/g, '') === selected) || variants.find((row) => row[0] === 'Sentence case') || variants[0];
+    const output = variants.map((row) => row[0] + ': ' + row[1]).join('\n');
     return {
       output,
       message: 'Case variants generated locally.',
       badge: 'Converted',
-      stats: [['Input characters', input.length], ['Words', parts.length], ['Output variants', 7], ['Unicode input', /[^\x00-\x7F]/.test(input) ? 'Yes' : 'No']],
+      stats: [['Input characters', input.length], ['Words', parts.length], ['Output variants', variants.length], ['Selected style', primary[0]], ['Unicode input', /[^\x00-\x7F]/.test(input) ? 'Yes' : 'No']],
       pipeline: [{ name: 'Tokenize', detail: parts.length + ' words' }, { name: 'Normalize case', detail: 'Generated common naming conventions' }, { name: 'Boundary', detail: 'No server call' }],
-      breakdown: [['camelCase', lower[0] + lower.slice(1).map(titleWord).join('')], ['snake_case', lower.join('_')], ['kebab-case', lower.join('-')]],
+      resultCards: [
+        { label: 'Selected style', value: primary[0], note: 'from control' },
+        { label: 'Primary output', value: primary[1], note: 'copy from result' },
+        { label: 'Variants', value: String(variants.length), note: 'API, DB, CSS, docs' },
+        { label: 'Words', value: String(parts.length), note: 'tokenized locally' }
+      ],
+      breakdown: variants.map((row) => [row[0], row[1]]),
       qualityNotes: ['Useful for API fields, filenames, CSS classes, constants, and database columns.', 'Review acronyms manually when exact casing matters.'],
-      developerJson: { words: parts, variants: output.split('\n') }
+      developerJson: { words: parts, selected: primary[0], variants: Object.fromEntries(variants) }
     };
   }
 
@@ -325,9 +420,23 @@
   }
 
   function uuidHandler(workbench, action) {
-    const values = workbench.values();
+    const values = formValues(workbench);
     const input = firstValue(values).trim();
     const generate = action === 'generate' || !input;
+    const count = Math.max(1, Math.min(100, Number(values.count || 1) || 1));
+    if (generate && count > 1) {
+      const generated = Array.from({ length: count }, () => values.version === 'v7' ? uuidv7() : uuidv4());
+      return {
+        output: generated.join('\n'),
+        message: count + ' UUIDs generated locally with browser crypto.',
+        badge: count + ' UUIDs ready',
+        stats: [['Version', values.version === 'v7' ? 'v7' : 'v4'], ['Count', count], ['Variant', 'RFC 4122 compatible'], ['Randomness', 'Browser crypto'], ['Upload', 'None']],
+        pipeline: [{ name: 'Count guard', detail: count + '/100 generated' }, { name: 'Version bits', detail: values.version === 'v7' ? 'Timestamp-ordered v7' : 'Random v4' }, { name: 'Boundary', detail: 'No server call' }],
+        breakdown: generated.slice(0, 6).map((value, index) => ['UUID ' + (index + 1), value, 'fixture-safe local value']),
+        qualityNotes: ['Generated UUID values are fixtures unless your product records them as real IDs.', 'Batch generation is capped at 100 to keep browser output manageable.'],
+        developerJson: { generated, count, version: values.version === 'v7' ? 'v7' : 'v4' }
+      };
+    }
     const uuid = generate ? (values.version === 'v7' ? uuidv7() : uuidv4()) : input;
     const match = uuid.match(/^([0-9a-f]{8})-?([0-9a-f]{4})-?([1-8][0-9a-f]{3})-?([89ab][0-9a-f]{3})-?([0-9a-f]{12})$/i);
     const normalized = match ? match.slice(1).join('-').toLowerCase() : uuid;
@@ -345,12 +454,145 @@
     };
   }
 
+  const ibanCountryProfiles = {
+    BR: {
+      slug: 'brazil-iban-validator',
+      title: 'Brazil IBAN Validator',
+      countryName: 'Brazil',
+      sample: 'BR1500000000000010932840814P2',
+      length: 29,
+      theme: 'finance',
+      mark: 'BR',
+      kicker: 'Brazil banking',
+      summary: 'Validate Brazilian IBANs, inspect bank and branch segments, and keep account-existence checks outside the browser.',
+      chips: ['BR length 29', 'MOD-97', 'Bank/branch split', 'Offline boundary'],
+      slices: [
+        ['Bank code', 4, 12, '8 digits'],
+        ['Branch code', 12, 17, '5 digits'],
+        ['Account number', 17, 27, '10 digits'],
+        ['Account type', 27, 28, '1 character'],
+        ['Owner/account holder type', 28, 29, '1 character']
+      ],
+      quality: [
+        'Brazilian IBAN validation proves syntax, length, BBAN slicing, and MOD-97 only.',
+        'Domestic bank-directory, COMPE/ISPB, Pix, and live account acceptance checks require authoritative banking rails.',
+        'Use masked output in logs and copy grouped IBAN values only into payment fixtures.',
+        'Brazilian IBAN is structurally supported, but many domestic workflows still use local payment identifiers such as Pix, boleto, COMPE, or ISPB.'
+      ]
+    },
+    DE: {
+      slug: 'germany-iban-validator',
+      title: 'German IBAN Validator',
+      countryName: 'Germany',
+      sample: 'DE89370400440532013000',
+      length: 22,
+      theme: 'finance',
+      mark: 'DE',
+      kicker: 'German banking',
+      summary: 'Validate German IBANs, extract the BLZ bank code and account segment, and explain the Bundesbank lookup boundary.',
+      chips: ['DE length 22', 'BLZ extract', 'MOD-97', 'SEPA-ready'],
+      slices: [
+        ['BLZ bank code', 4, 12, '8 digits'],
+        ['Account number', 12, 22, '10 digits']
+      ],
+      quality: [
+        'German IBAN validation proves DE length, BLZ/account slicing, and ISO MOD-97 checksum only.',
+        'Bank name, BIC, city, branch status, and account-number method validation require a current official bank directory.',
+        'The BLZ segment can be copied for downstream German bank-code inspection but is not proof that an account exists.',
+        'Keep raw customer IBANs out of logs; use masked values for support screenshots and fixtures.'
+      ]
+    },
+    ES: {
+      slug: 'spain-iban-validator',
+      title: 'Spain IBAN Validator',
+      countryName: 'Spain',
+      sample: 'ES9121000418450200051332',
+      length: 24,
+      theme: 'finance',
+      mark: 'ES',
+      kicker: 'Spanish CCC',
+      summary: 'Validate Spanish IBANs, inspect CCC bank and branch fields, and replay national CCC check digits locally.',
+      chips: ['ES length 24', 'CCC check', 'Bank/branch split', 'MOD-97'],
+      slices: [
+        ['Bank code', 4, 8, '4 digits'],
+        ['Branch office', 8, 12, '4 digits'],
+        ['CCC check digits', 12, 14, '2 digits'],
+        ['Account number', 14, 24, '10 digits']
+      ],
+      nationalCheck(normalized) {
+        const bban = normalized.slice(4);
+        if (!/^\d{20}$/.test(bban)) return { label: 'CCC check digits', ok: false, detail: 'Expected 20 numeric BBAN digits' };
+        const bankBranch = bban.slice(0, 8);
+        const provided = bban.slice(8, 10);
+        const account = bban.slice(10);
+        const weights = [1, 2, 4, 8, 5, 10, 9, 7, 3, 6];
+        function digit(value) {
+          const padded = String(value || '').padStart(10, '0');
+          const sum = padded.split('').reduce((total, char, index) => total + Number(char) * weights[index], 0);
+          const mod = 11 - (sum % 11);
+          if (mod === 11) return '0';
+          if (mod === 10) return '1';
+          return String(mod);
+        }
+        const expected = digit(bankBranch) + digit(account);
+        return { label: 'CCC check digits', ok: provided === expected, detail: provided + ' / expected ' + expected, expected, provided };
+      },
+      quality: [
+        'Spanish IBAN validation proves ES length, ISO MOD-97, and the domestic CCC check digits locally.',
+        'Bank name, office status, BIC, and account ownership still require Spanish banking or official directory data.',
+        'The CCC breakdown is useful for payment forms, migrations, and fixture debugging.',
+        'Samples are safe test fixtures; never treat a passing CCC result as live account confirmation.'
+      ]
+    },
+    PL: {
+      slug: 'poland-iban-nrb-validator',
+      title: 'Polish IBAN / NRB Workbench',
+      countryName: 'Poland',
+      sample: 'PL61109010140000071219812874',
+      length: 28,
+      theme: 'finance',
+      mark: 'PL',
+      kicker: 'Polish NRB',
+      summary: 'Validate Polish IBAN and NRB values with bank-code breakdown; the dedicated Polish workbench adds deeper NRB handling.',
+      chips: ['PL length 28', 'NRB mapping', 'MOD-97', 'Bank code'],
+      slices: [
+        ['Bank + branch code', 4, 12, '8 digits'],
+        ['Account number', 12, 28, '16 digits']
+      ],
+      quality: [
+        'Polish IBAN validation proves PL length, NRB segmentation, and MOD-97 only.',
+        'Use the dedicated Polish IBAN / NRB Workbench for Polish domestic NRB workflows and related bank-code inspection.',
+        'Bank account ownership, acceptance, and beneficiary identity require payment rails or official institution checks.',
+        'Use masked output for logs and screenshots; grouped output is copy-ready for forms.'
+      ]
+    }
+  };
+
+  function countryProfileForPath() {
+    const slug = (location.pathname.match(/\/tools\/([^/]+)\//) || location.pathname.match(/^\/[^/]+\/[^/]+\/([^/]+)\//) || [])[1] || '';
+    return Object.values(ibanCountryProfiles).find((profile) => profile.slug === slug) || null;
+  }
+
+  function ibanCountryLink(country) {
+    const profile = ibanCountryProfiles[country];
+    return profile ? '/en/tools/' + profile.slug + '/' : '';
+  }
+
+  function ibanSlices(normalized, profile) {
+    if (!profile || !profile.slices) return [];
+    return profile.slices.map((row) => [row[0], normalized.slice(row[1], row[2]) || 'n/a', row[3]]);
+  }
+
   function ibanHandler(workbench) {
-    const input = firstValue(workbench.values());
+    const input = firstValue(formValues(workbench));
     const normalized = input.replace(/\s+/g, '').toUpperCase();
     if (!normalized) throw new Error('Enter an IBAN to validate.');
     const expectedLengths = { AD: 24, AE: 23, AL: 28, AT: 20, AZ: 28, BA: 20, BE: 16, BG: 22, BH: 22, BR: 29, CH: 21, CR: 22, CY: 28, CZ: 24, DE: 22, DK: 18, EE: 20, ES: 24, FI: 18, FO: 18, FR: 27, GB: 22, GE: 22, GI: 23, GL: 18, GR: 27, GT: 28, HR: 21, HU: 28, IE: 22, IL: 23, IS: 26, IT: 27, JO: 30, KW: 30, KZ: 20, LB: 28, LC: 32, LI: 21, LT: 20, LU: 20, LV: 21, MC: 27, MD: 24, ME: 22, MK: 19, MR: 27, MT: 31, MU: 30, NL: 18, NO: 15, PK: 24, PL: 28, PS: 29, PT: 25, QA: 29, RO: 24, RS: 22, SA: 24, SC: 31, SE: 24, SI: 19, SK: 24, SM: 27, ST: 25, SV: 28, TL: 23, TN: 24, TR: 26, UA: 29, VG: 24, XK: 20 };
     const country = normalized.slice(0, 2);
+    const forcedProfile = countryProfileForPath();
+    const detectedProfile = ibanCountryProfiles[country];
+    const profile = forcedProfile || detectedProfile || null;
+    const countryOk = forcedProfile ? country === Object.keys(ibanCountryProfiles).find((code) => ibanCountryProfiles[code] === forcedProfile) : /^[A-Z]{2}$/.test(country);
     const expected = expectedLengths[country];
     const shape = /^[A-Z]{2}\d{2}[A-Z0-9]+$/.test(normalized);
     const lengthOk = expected ? normalized.length === expected : normalized.length >= 15 && normalized.length <= 34;
@@ -360,25 +602,66 @@
     if (/^\d+$/.test(numeric)) {
       for (const char of numeric) mod = (mod * 10 + Number(char)) % 97;
     }
-    const valid = shape && lengthOk && mod === 1;
+    const nationalCheck = profile && typeof profile.nationalCheck === 'function' ? profile.nationalCheck(normalized) : null;
+    const nationalOk = !nationalCheck || nationalCheck.ok !== false;
+    const valid = shape && countryOk && lengthOk && mod === 1 && nationalOk;
     const grouped = normalized.replace(/(.{4})/g, '$1 ').trim();
+    const masked = normalized.length > 8 ? normalized.slice(0, 4) + ' ' + '•••• '.repeat(Math.max(1, Math.ceil((normalized.length - 8) / 4))).trim() + ' ' + normalized.slice(-4) : normalized;
+    const bankHint = normalized.slice(4, 12) || 'n/a';
+    const localLink = ibanCountryLink(country);
+    const localLabel = detectedProfile ? detectedProfile.title : 'No deep country workbench yet';
+    const boundary = forcedProfile ? (profile.countryName + ' specific offline checks') : (detectedProfile ? 'Deep local page available' : 'Generic ISO checks');
+    const pipeline = [
+      { name: 'Country prefix', ok: countryOk, detail: forcedProfile ? country + ' / expected ' + Object.keys(ibanCountryProfiles).find((code) => ibanCountryProfiles[code] === forcedProfile) : country },
+      { name: 'Length', ok: lengthOk, detail: normalized.length + (expected ? '/' + expected : '') },
+      { name: 'MOD-97', ok: mod === 1, detail: String(mod) }
+    ];
+    if (nationalCheck) pipeline.push({ name: nationalCheck.label, ok: nationalCheck.ok, detail: nationalCheck.detail });
+    pipeline.push({ name: 'Boundary', detail: forcedProfile ? 'Country-local syntax only' : 'No ownership lookup' });
+    const breakdown = [
+      ['Country', country, detectedProfile ? detectedProfile.countryName : 'ISO prefix'],
+      ['Check digits', normalized.slice(2,4), 'IBAN control digits'],
+      ['BBAN', normalized.slice(4), 'country-specific account body'],
+      ['Grouped', grouped],
+      ['Masked display', masked]
+    ].concat(ibanSlices(normalized, profile || detectedProfile));
+    const advancedSections = [
+      advancedSection('Validation pipeline', '<div class="generic-pipeline">' + pipeline.map((step) =>
+        '<div class="generic-pipeline-step is-' + (step.ok === false ? 'warn' : 'pass') + '"><em>' + escape(step.ok === false ? 'Review' : 'Pass') + '</em><b>' + escape(step.name) + '</b><span>' + escape(step.detail || (step.ok === false ? 'Review' : 'Pass')) + '</span></div>'
+      ).join('') + '</div>'),
+      advancedSection((profile || detectedProfile) ? ((profile || detectedProfile).countryName + ' IBAN field breakdown') : 'Field breakdown', keyValueGrid(breakdown)),
+      advancedSection('Country-specific route', resultCards([
+        { label: 'Detected country', value: detectedProfile ? detectedProfile.countryName : country || 'unknown', note: expected ? expected + ' characters' : 'generic length range' },
+        { label: 'Deep validator', value: detectedProfile ? detectedProfile.slug : 'not configured', note: localLink || 'generic ISO page only' },
+        { label: 'Current mode', value: forcedProfile ? 'Country-specific' : 'Global detector', note: forcedProfile ? 'prefix locked' : 'routes to local workbench' },
+        { label: 'Bank lookup', value: 'Not performed', note: 'offline browser boundary' }
+      ])),
+      advancedSection('Quality notes', qualityGrid((profile || detectedProfile) ? (profile || detectedProfile).quality : ['IBAN validation proves syntax and checksum only.', 'Account ownership, status, and bank acceptance require official rails.'])),
+      advancedSection('Developer snapshot JSON', codeBlock(JSON.stringify({ iban: normalized, masked, country, expectedLength: expected, mod97: mod, valid, countryWorkbench: localLink || null, nationalCheck }, null, 2), 'json'))
+    ];
     return {
       ok: valid,
       output: grouped,
-      message: valid ? 'IBAN passed MOD-97 checks locally.' : 'IBAN needs review.',
+      message: valid ? ((profile || detectedProfile) ? (profile || detectedProfile).countryName + ' IBAN passed local checks.' : 'IBAN passed MOD-97 checks locally.') : 'IBAN needs review.',
       badge: valid ? 'IBAN valid' : 'Invalid IBAN',
-      stats: [['Country', country || 'unknown'], ['Expected length', expected || '15-34'], ['Provided length', normalized.length], ['MOD-97', mod], ['Bank lookup', 'Not performed']],
-      pipeline: [{ name: 'Country prefix', ok: /^[A-Z]{2}$/.test(country), detail: country }, { name: 'Length', ok: lengthOk, detail: normalized.length + (expected ? '/' + expected : '') }, { name: 'MOD-97', ok: mod === 1, detail: String(mod) }, { name: 'Boundary', detail: 'No ownership lookup' }],
-      breakdown: [['Country', country], ['Check digits', normalized.slice(2,4)], ['BBAN', normalized.slice(4)], ['Grouped', grouped]],
-      qualityNotes: ['IBAN validation proves syntax and checksum only.', 'Account ownership, status, and bank acceptance require official rails.'],
-      developerJson: { iban: normalized, country, expectedLength: expected, mod97: mod, valid }
+      stats: [['Country', detectedProfile ? detectedProfile.countryName : (country || 'unknown')], ['Expected length', expected || '15-34'], ['Provided length', normalized.length], ['MOD-97', mod], ['Masked IBAN', masked], ['Mode', boundary]],
+      resultCards: [
+        { label: 'Normalized IBAN', value: grouped || 'n/a', note: valid ? 'checksum passed' : 'review before use' },
+        { label: 'Masked display', value: masked, note: 'logs and screenshots' },
+        { label: nationalCheck ? nationalCheck.label : 'MOD-97 remainder', value: nationalCheck ? (nationalCheck.ok ? 'Pass' : 'Fail') : String(mod), note: nationalCheck ? nationalCheck.detail : 'valid value is 1' },
+        { label: forcedProfile ? 'Country workbench' : 'Deep route', value: forcedProfile ? (profile ? profile.countryName : country) : localLabel, note: forcedProfile ? 'local BBAN rules' : (localLink || 'global only') }
+      ],
+      breakdown: breakdown.concat([['Bank/BBAN prefix', bankHint]]),
+      qualityNotes: (profile || detectedProfile) ? (profile || detectedProfile).quality : ['IBAN validation proves syntax and checksum only.', 'Account ownership, status, and bank acceptance require official rails.'],
+      developerJson: { iban: normalized, masked, country, expectedLength: expected, mod97: mod, valid, countryWorkbench: localLink || null, nationalCheck },
+      advancedHtml: advancedSections.join('')
     };
   }
 
   function regexHandler(workbench) {
-    const values = workbench.values();
+    const values = formValues(workbench);
     const pattern = values.pattern || values.input || '';
-    const test = values.test || values.text || values.value || '';
+    const test = values.test || values.text || values.value || values.input || '';
     if (!pattern) throw new Error('Enter a regular expression pattern.');
     let source = pattern;
     let flags = values.flags || 'g';
@@ -389,26 +672,37 @@
     const matches = [];
     let match;
     while ((match = regex.exec(test)) && matches.length < 100) {
-      matches.push({ value: match[0], index: match.index });
+      matches.push({ value: match[0], index: match.index, groups: match.slice(1) });
       if (match[0] === '') regex.lastIndex += 1;
     }
-    const output = matches.length ? matches.map((m, i) => `${i + 1}. [${m.index}] ${m.value}`).join('\n') : 'No matches';
+    const output = matches.length ? matches.map((m, i) => `${i + 1}. [${m.index}] ${m.value}` + (m.groups && m.groups.length ? ` | groups: ${m.groups.map((g) => g == null ? '(empty)' : g).join(', ')}` : '')).join('\n') : 'No matches';
     return {
       output,
       message: 'Regex evaluated locally.',
       badge: matches.length ? matches.length + ' matches' : 'No matches',
-      stats: [['Pattern length', pattern.length], ['Flags', flags], ['Input characters', test.length], ['Matches', matches.length], ['Capped', matches.length >= 100 ? 'Yes' : 'No']],
+      stats: [['Pattern length', pattern.length], ['Flags', flags], ['Input characters', test.length], ['Matches', matches.length], ['Capture groups', matches[0] && matches[0].groups ? matches[0].groups.length : 0], ['Capped', matches.length >= 100 ? 'Yes' : 'No']],
       pipeline: [{ name: 'Compile', detail: 'Pattern compiled' }, { name: 'Execute', detail: matches.length + ' matches' }, { name: 'Boundary', detail: 'Browser RegExp engine only' }],
-      breakdown: matches.slice(0, 6).map((m, i) => ['Match ' + (i + 1), m.value, 'index ' + m.index]),
+      resultCards: [
+        { label: 'Matches', value: String(matches.length), note: matches.length >= 100 ? 'capped at 100' : 'full local scan' },
+        { label: 'Flags', value: flags || 'none', note: 'JavaScript RegExp' },
+        { label: 'Capture groups', value: String(matches[0] && matches[0].groups ? matches[0].groups.length : 0), note: 'from first match' },
+        { label: 'Engine', value: 'Browser JS', note: 'not PCRE/Java' }
+      ],
+      breakdown: matches.slice(0, 6).map((m, i) => ['Match ' + (i + 1), m.value, 'index ' + m.index + (m.groups && m.groups.length ? '; groups: ' + m.groups.map((g) => g == null ? '(empty)' : g).join(', ') : '')]),
       qualityNotes: ['Performance depends on your pattern; avoid catastrophic backtracking in production.', 'JavaScript RegExp behavior may differ from PCRE, Java, or PostgreSQL.'],
-      developerJson: { pattern: source, flags, matches: matches.slice(0, 20) }
+      developerJson: { pattern: source, flags, matchCount: matches.length, matches: matches.slice(0, 20) }
     };
   }
 
   function textDiffHandler(workbench) {
-    const values = workbench.values();
-    const left = values.original || values.left || values.before || values.input || '';
-    const right = values.changed || values.right || values.after || values.output || values.compare || '';
+    const values = formValues(workbench);
+    let left = values.original || values.left || values.before || '';
+    let right = values.changed || values.right || values.after || values.output || values.compare || '';
+    if (!left && !right && values.input && String(values.input).includes('\n---\n')) {
+      const parts = String(values.input).split(/\n---\n/);
+      left = parts[0] || '';
+      right = parts.slice(1).join('\n---\n') || '';
+    }
     if (!left && !right) throw new Error('Enter two text values to compare.');
     const a = left.split(/\r?\n/);
     const b = right.split(/\r?\n/);
@@ -428,7 +722,12 @@
       badge: added || removed ? 'Changes found' : 'No changes',
       stats: [['Original lines', a.length], ['Changed lines', b.length], ['Added lines', added], ['Removed lines', removed], ['Unchanged positions', same]],
       previewTitle: 'Diff preview',
-      previewHtml: '<pre class="generic-diff-preview">' + escape(rows.slice(0, 80).join('\n')) + '</pre>',
+      previewHtml: '<div class="generic-result-preview">' + resultCards([
+        { label: 'Added lines', value: String(added), note: 'green in patch output' },
+        { label: 'Removed lines', value: String(removed), note: 'red in patch output' },
+        { label: 'Unchanged positions', value: String(same), note: 'line-by-line comparison' },
+        { label: 'Character delta', value: String(right.length - left.length), note: 'changed minus original' }
+      ]) + '<pre class="generic-diff-preview">' + escape(rows.slice(0, 80).join('\n')) + '</pre></div>',
       pipeline: [{ name: 'Split', detail: 'Line-based comparison' }, { name: 'Compare', detail: (added + removed) + ' changed lines' }, { name: 'Boundary', detail: 'No upload' }],
       breakdown: [['Original chars', left.length], ['Changed chars', right.length], ['Delta', right.length - left.length]],
       qualityNotes: ['This is a lightweight browser line diff for quick review.', 'Use a semantic parser for language-aware diffs.'],
@@ -438,21 +737,32 @@
 
   function hashHandler(kind) {
     return function (workbench, action) {
-      const values = workbench.values();
+      const values = formValues(workbench);
       const input = values.input || values.text || values.value || '';
       const hashValue = values.hash || '';
       if (action === 'validate' && hashValue) {
         const expected = kind === 'md5' ? 32 : kind === 'sha1' ? 40 : 64;
         const valid = new RegExp('^[a-f0-9]{' + expected + '}$', 'i').test(hashValue.trim());
-        return Promise.resolve({
-          ok: valid,
-          output: hashValue.trim().toLowerCase(),
-          message: valid ? kind.toUpperCase() + ' digest shape is valid.' : 'Digest shape is invalid.',
-          badge: valid ? 'Digest valid' : 'Invalid digest',
-          stats: [['Algorithm', kind.toUpperCase()], ['Expected hex chars', expected], ['Provided chars', hashValue.trim().length], ['Security', kind === 'md5' || kind === 'sha1' ? 'Legacy' : 'Modern baseline']],
-          pipeline: [{ name: 'Hex shape', ok: valid, detail: hashValue.trim().length + '/' + expected }, { name: 'Cryptographic claim', detail: 'Shape only unless recomputed from known input' }],
-          qualityNotes: hashNotes(kind),
-          developerJson: { algorithm: kind, digest: hashValue.trim().toLowerCase(), valid }
+        const normalizedHash = hashValue.trim().toLowerCase();
+        const compare = input ? (kind === 'md5' ? Promise.resolve(md5(input)) : digest(kind === 'sha1' ? 'SHA-1' : 'SHA-256', input)) : Promise.resolve(null);
+        return compare.then((computed) => {
+          const matches = computed ? computed === normalizedHash : null;
+          return {
+            ok: valid && matches !== false,
+            output: normalizedHash,
+            message: matches === true ? kind.toUpperCase() + ' digest matches the provided input.' : valid ? kind.toUpperCase() + ' digest shape is valid.' : 'Digest shape is invalid.',
+            badge: matches === true ? 'Digest match' : valid ? 'Digest valid' : 'Invalid digest',
+            stats: [['Algorithm', kind.toUpperCase()], ['Expected hex chars', expected], ['Provided chars', normalizedHash.length], ['Compared to input', computed ? 'Yes' : 'No'], ['Security', kind === 'md5' || kind === 'sha1' ? 'Legacy' : 'Modern baseline']],
+            resultCards: [
+              { label: 'Digest', value: normalizedHash.slice(0, 18) + (normalizedHash.length > 18 ? '...' : ''), note: normalizedHash.length + ' hex chars' },
+              { label: 'Shape', value: valid ? 'Pass' : 'Fail', note: expected + ' hex chars expected' },
+              { label: 'Input comparison', value: matches === null ? 'Not run' : matches ? 'Match' : 'Mismatch', note: computed ? 'recomputed locally' : 'provide input to compare' },
+              { label: 'Use', value: kind === 'sha256' ? 'Integrity' : 'Legacy only', note: 'not password storage' }
+            ],
+            pipeline: [{ name: 'Hex shape', ok: valid, detail: normalizedHash.length + '/' + expected }, { name: 'Recompute', ok: matches !== false, detail: computed ? (matches ? 'Matched input bytes' : 'Digest differs') : 'Shape only' }, { name: 'Security boundary', detail: 'Digest is not identity proof' }],
+            qualityNotes: hashNotes(kind),
+            developerJson: { algorithm: kind, digest: normalizedHash, valid, compared: Boolean(computed), matches }
+          };
         });
       }
       if (!input) throw new Error('Enter text to hash.');
@@ -462,6 +772,12 @@
         message: kind.toUpperCase() + ' digest generated locally.',
         badge: kind.toUpperCase() + ' ready',
         stats: [['Algorithm', kind.toUpperCase()], ['Input characters', input.length], ['Input bytes', util.formatBytes(byteCount(input))], ['Digest chars', digestValue.length], ['Upload', 'None']],
+        resultCards: [
+          { label: 'Digest', value: digestValue.slice(0, 18) + '...', note: digestValue.length + ' hex chars' },
+          { label: 'Input bytes', value: util.formatBytes(byteCount(input)), note: 'UTF-8 encoded' },
+          { label: 'Algorithm', value: kind.toUpperCase(), note: kind === 'sha256' ? 'modern baseline' : 'legacy compatibility' },
+          { label: 'Boundary', value: 'Local only', note: 'no upload' }
+        ],
         pipeline: [{ name: 'UTF-8 encode', detail: util.formatBytes(byteCount(input)) }, { name: 'Digest', detail: kind.toUpperCase() }, { name: 'Boundary', detail: 'Browser-only' }],
         breakdown: [['Prefix', digestValue.slice(0, 12)], ['Suffix', digestValue.slice(-12)], ['Length', digestValue.length]],
         qualityNotes: hashNotes(kind),
@@ -533,65 +849,120 @@
   }
 
   const commonSamples = {
-    text: [{ id: 'hello', label: 'Hello', values: { input: 'Hello, ValidoHub!' } }, { id: 'unicode', label: 'Unicode', values: { input: 'Zażółć gęślą jaźń — こんにちは' } }]
+    text: [
+      { id: 'hello', label: 'Hello', values: { input: 'Hello, ValidoHub!' } },
+      { id: 'unicode', label: 'Unicode', values: { input: 'Zażółć gęślą jaźń — こんにちは' } },
+      { id: 'json-fragment', label: 'Snippet', values: { input: '{"safe": true, "name": "ValidoHub"}' } }
+    ]
   };
 
   const configs = [
     ['validohub.html-encoder', {
       slug: 'html-encoder', title: 'HTML Encoder', defaultAction: 'encode', theme: 'markup', mark: 'HTML', kicker: 'Markup safety',
       summary: 'Escape unsafe characters for HTML text nodes, attributes, examples, and copy-safe documentation snippets.',
-      chips: ['Entity escaping', 'Unicode-safe', 'Copy-ready', 'XSS hygiene'], samples: commonSamples.text
+      chips: ['Entity escaping', 'Unicode-safe', 'Copy-ready', 'XSS hygiene'],
+      samples: [
+        { id: 'html-danger', label: 'Unsafe markup', values: { input: '<script>alert("x")</script> & "quoted"' }, action: 'encode' },
+        { id: 'unicode', label: 'Unicode', values: { input: 'Zażółć & こんにちは <tag>' }, action: 'encode' },
+        { id: 'attribute', label: 'Attribute text', values: { input: 'Tom & "Jerry" <friends>' }, action: 'encode' }
+      ]
     }, htmlHandler('encoder')],
     ['validohub.html-decoder', {
       slug: 'html-decoder', title: 'HTML Decoder', defaultAction: 'decode', theme: 'markup', mark: 'ENT', kicker: 'Entity inspection',
       summary: 'Decode HTML entities, inspect normalized text, and verify that copied markup examples resolve as expected.',
-      chips: ['Named entities', 'Numeric entities', 'Text preview', 'Offline'], samples: [{ label: 'Entities', value: '&lt;strong&gt;Hello&lt;/strong&gt;' }]
+      chips: ['Named entities', 'Numeric entities', 'Text preview', 'Offline'], samples: [
+        { id: 'entities', label: 'Entities', values: { input: '&lt;strong&gt;Hello&lt;/strong&gt;' }, action: 'decode' },
+        { id: 'numeric', label: 'Numeric', values: { input: '&#x1F44B; &#8212; &#169; ValidoHub' }, action: 'decode' },
+        { id: 'mixed', label: 'Mixed text', values: { input: 'Tom &amp; Jerry &quot;escaped&quot;' }, action: 'decode' }
+      ]
     }, htmlHandler('decoder')],
     ['validohub.slug-generator', {
-      slug: 'slug-generator', title: 'Slug Generator', defaultAction: 'slug', theme: 'publishing', mark: 'SLUG', kicker: 'URL publishing',
+      slug: 'slug-generator', title: 'Slug Generator', defaultAction: 'generate', theme: 'publishing', mark: 'SLUG', kicker: 'URL publishing',
       summary: 'Turn titles into clean URL slugs, remove unsafe punctuation, normalize spacing, and audit SEO-friendly output.',
-      chips: ['URL-safe', 'SEO-ready', 'Whitespace cleanup', 'Copy slug'], samples: [{ label: 'Title', value: 'ValidoHub: Premium Developer Tools!' }]
-    }, caseHandler('slug')],
+      chips: ['URL-safe', 'SEO-ready', 'Whitespace cleanup', 'Copy slug'], samples: [
+        { id: 'title', label: 'Title', values: { title: 'ValidoHub: Premium Developer Tools!', lowercase: true }, action: 'generate' },
+        { id: 'unicode-title', label: 'Unicode title', values: { title: 'Zażółć gęślą jaźń: Café launch 2026', lowercase: true }, action: 'generate' },
+        { id: 'punctuation', label: 'Messy title', values: { title: '  API!!!   payload---normalizer???  ', lowercase: true }, action: 'generate' }
+      ]
+    }, slugHandler],
     ['validohub.case-converter', {
-      slug: 'case-converter', title: 'Case Converter', defaultAction: 'sentence', theme: 'text', mark: 'Aa', kicker: 'Text normalization',
+      slug: 'case-converter', title: 'Case Converter', defaultAction: 'convert', theme: 'text', mark: 'Aa', kicker: 'Text normalization',
       summary: 'Convert text between sentence, title, upper, lower, camel, snake, kebab, and constant case without leaving the browser.',
-      chips: ['8 case modes', 'Unicode input', 'Naming helpers', 'Local only'], samples: [{ label: 'Phrase', value: 'hello world from ValidoHub' }]
-    }, caseHandler('case')],
+      chips: ['9 case modes', 'Unicode input', 'Naming helpers', 'Local only'], samples: [
+        { id: 'phrase', label: 'Phrase', values: { input: 'hello world from ValidoHub', style: 'camel' }, action: 'convert' },
+        { id: 'api-name', label: 'API field', values: { input: 'customer VAT identifier', style: 'snake' }, action: 'convert' },
+        { id: 'css-token', label: 'CSS token', values: { input: 'Premium Result Card', style: 'kebab' }, action: 'convert' }
+      ]
+    }, caseHandler],
     ['validohub.uuid', {
       slug: 'uuid-generator', title: 'UUID Workbench', defaultAction: 'generate', theme: 'identity', mark: 'UUID', kicker: 'Identifier fixtures',
       summary: 'Generate UUIDs, validate version and variant bits, normalize casing, and copy safe identifier fixtures for tests.',
-      chips: ['Generate v4', 'Validate', 'Version bits', 'Fixture-safe'], samples: [{ label: 'UUID v4', value: '550e8400-e29b-41d4-a716-446655440000' }]
+      chips: ['Generate v4', 'Validate', 'Version bits', 'Fixture-safe'], samples: [{ id: 'uuid-v4', label: 'UUID v4', values: { uuid: '550e8400-e29b-41d4-a716-446655440000' }, action: 'validate' }, { id: 'batch-v7', label: 'Batch v7', values: { version: 'v7', count: 5 }, action: 'generate' }]
     }, uuidHandler],
     ['validohub.iban', {
       slug: 'iban-validator', title: 'IBAN Validator', defaultAction: 'validate', theme: 'finance', mark: 'IBAN', kicker: 'Banking syntax',
       summary: 'Validate IBAN shape and MOD-97 control digits, normalize spacing, and separate offline syntax from bank ownership checks.',
-      chips: ['MOD-97', 'Country prefix', 'Masked output', 'No lookup'], samples: [{ label: 'Poland', value: 'PL61109010140000071219812874' }]
+      chips: ['MOD-97', 'Country prefix', 'Masked output', 'No lookup'], samples: [
+        { id: 'poland', label: 'Poland', values: { iban: 'PL61109010140000071219812874' }, action: 'validate' },
+        { id: 'germany', label: 'Germany', values: { iban: 'DE89370400440532013000' }, action: 'validate' },
+        { id: 'spain', label: 'Spain', values: { iban: 'ES9121000418450200051332' }, action: 'validate' },
+        { id: 'brazil', label: 'Brazil', values: { iban: 'BR1500000000000010932840814P2' }, action: 'validate' },
+        { id: 'invalid-checksum', label: 'Invalid checksum', values: { iban: 'DE89370400440532013001' }, action: 'validate' }
+      ],
+      resolve() {
+        const profile = countryProfileForPath();
+        if (!profile) return null;
+        return {
+          slug: profile.slug,
+          title: profile.title,
+          defaultAction: 'validate',
+          theme: profile.theme || 'finance',
+          mark: profile.mark || 'IBAN',
+          kicker: profile.kicker || 'Country IBAN',
+          summary: profile.summary,
+          chips: profile.chips || ['Country-specific', 'MOD-97', 'BBAN map', 'Offline'],
+          samples: [
+            { id: 'valid-local', label: profile.countryName, values: { iban: profile.sample }, action: 'validate' },
+            { id: 'spaced-local', label: 'Grouped paste', values: { iban: profile.sample.replace(/(.{4})/g, '$1 ').trim() }, action: 'validate' },
+            { id: 'wrong-country', label: 'Wrong country', values: { iban: profile.mark === 'DE' ? 'PL61109010140000071219812874' : 'DE89370400440532013000' }, action: 'validate' },
+            { id: 'invalid-local', label: 'Invalid checksum', values: { iban: profile.sample.slice(0, -1) + (profile.sample.slice(-1) === '0' ? '1' : '0') }, action: 'validate' }
+          ]
+        };
+      }
     }, ibanHandler],
     ['validohub.regex-tester', {
-      slug: 'regex-tester', title: 'Regex Tester', defaultAction: 'test', theme: 'developer', mark: '.*', kicker: 'Pattern debugger',
+      slug: 'regex-tester', title: 'Regex Tester', defaultAction: 'validate', theme: 'developer', mark: '.*', kicker: 'Pattern debugger',
       summary: 'Test JavaScript regular expressions against text, inspect match counts, flags, and replacement behavior locally.',
-      chips: ['Match count', 'Flags', 'Replace mode', 'Pattern audit'], samples: [{ label: 'Pattern demo', value: '/\\b\\w+@\\w+\\.com\\b/g\nhello@example.com nope' }]
+      chips: ['Match count', 'Flags', 'Capture groups', 'Pattern audit'], samples: [
+        { id: 'email', label: 'Email match', values: { pattern: '/\\b[\\w.%+-]+@[\\w.-]+\\.[A-Za-z]{2,}\\b/g', input: 'hello@example.com\nnot-an-email\nbilling@validohub.com' }, action: 'validate' },
+        { id: 'capture', label: 'Capture groups', values: { pattern: '/(invoice)-(\\d{4})/g', input: 'invoice-2026\ninvoice-1842\nreceipt-2026' }, action: 'validate' },
+        { id: 'no-match', label: 'No match', values: { pattern: '/^PL\\d{10}$/gm', input: 'DE123456789\nPL123' }, action: 'validate' }
+      ]
     }, regexHandler],
     ['validohub.text-diff', {
-      slug: 'text-diff', title: 'Text Diff', defaultAction: 'diff', theme: 'text', mark: 'DIFF', kicker: 'Change review',
+      slug: 'text-diff', title: 'Text Diff', defaultAction: 'calculate', theme: 'text', mark: 'DIFF', kicker: 'Change review',
       summary: 'Compare two text blocks, count changed lines, and produce copyable local diff diagnostics for docs and payloads.',
-      chips: ['Line diff', 'Change count', 'Whitespace visible', 'No upload'], samples: [{ label: 'Diff', value: 'Hello\nWorld\n---\nHello\nValidoHub' }]
+      chips: ['Line diff', 'Change count', 'Whitespace visible', 'No upload'], samples: [
+        { id: 'diff', label: 'Diff', values: { original: 'Hello\nWorld', changed: 'Hello\nValidoHub' }, action: 'calculate' },
+        { id: 'json-change', label: 'JSON change', values: { original: '{\n  "status": "draft"\n}', changed: '{\n  "status": "published"\n}' }, action: 'calculate' },
+        { id: 'same', label: 'No changes', values: { original: 'stable\npayload', changed: 'stable\npayload' }, action: 'calculate' }
+      ]
     }, textDiffHandler],
     ['validohub.md5', {
-      slug: 'md5-generator', title: 'MD5 Generator', defaultAction: 'hash', theme: 'hash', mark: 'MD5', kicker: 'Legacy checksum',
+      slug: 'md5-generator', title: 'MD5 Generator', defaultAction: 'generate', theme: 'hash', mark: 'MD5', kicker: 'Legacy checksum',
       summary: 'Generate MD5 digests for compatibility checks and clearly label that MD5 is not suitable for password security.',
-      chips: ['Hex digest', 'Byte count', 'Legacy warning', 'Offline'], samples: commonSamples.text
-    }, hashHandler('MD5')],
+      chips: ['Hex digest', 'Byte count', 'Legacy warning', 'Offline'], samples: commonSamples.text.concat([{ id: 'validate-md5', label: 'Validate digest', values: { input: 'Hello, ValidoHub!', hash: '31b84c4ec18ae67ee408f6eadebc0101' }, action: 'validate' }])
+    }, hashHandler('md5')],
     ['validohub.sha1', {
-      slug: 'sha1-generator', title: 'SHA-1 Generator', defaultAction: 'hash', theme: 'hash', mark: 'SHA1', kicker: 'Legacy digest',
+      slug: 'sha1-generator', title: 'SHA-1 Generator', defaultAction: 'generate', theme: 'hash', mark: 'SHA1', kicker: 'Legacy digest',
       summary: 'Generate SHA-1 digests for legacy integrations while keeping collision-risk guidance visible in the analysis panel.',
-      chips: ['Hex digest', 'Compatibility', 'Risk note', 'Local only'], samples: commonSamples.text
-    }, hashHandler('SHA-1')],
+      chips: ['Hex digest', 'Compatibility', 'Risk note', 'Local only'], samples: commonSamples.text.concat([{ id: 'validate-sha1', label: 'Validate digest', values: { input: 'Hello, ValidoHub!', hash: '65404b5f5837f95a895654a6b7f086c3da77323e' }, action: 'validate' }])
+    }, hashHandler('sha1')],
     ['validohub.sha256', {
-      slug: 'sha256-generator', title: 'SHA-256 Generator', defaultAction: 'hash', theme: 'hash', mark: 'SHA256', kicker: 'Modern digest',
+      slug: 'sha256-generator', title: 'SHA-256 Generator', defaultAction: 'generate', theme: 'hash', mark: 'SHA256', kicker: 'Modern digest',
       summary: 'Generate SHA-256 hashes for payload fingerprints, fixture verification, cache keys, and copy-safe developer output.',
-      chips: ['Modern digest', 'Payload fingerprint', 'Hex output', 'Offline'], samples: commonSamples.text
-    }, hashHandler('SHA-256')]
+      chips: ['Modern digest', 'Payload fingerprint', 'Hex output', 'Offline'], samples: commonSamples.text.concat([{ id: 'validate-sha256', label: 'Validate digest', values: { input: 'Hello, ValidoHub!', hash: '1f54daf3cfa728c3e4cc4d86732c94ec9b42ed112579ee625e4cfe9294f0ad58' }, action: 'validate' }])
+    }, hashHandler('sha256')]
   ];
 
   configs.forEach(([algorithmId, config, handler]) => framework.registerPlugin(algorithmId, plugin(config, handler)));

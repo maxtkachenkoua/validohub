@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-rsin-validator
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "RSIN Validator & Explainer"
+summary:
+  en: "Validate Dutch RSIN-style legal entity identifiers, run local eleven-test evidence, and separate structure from official registry status."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "RSIN"
+        required: true
+        placeholder:
+          en: "818152011"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-kvk-number-validator, netherlands-btw-vat-validator, netherlands-eori-validator, netherlands-company-onboarding-auditor]
+seo:
+  title:
+    en: "RSIN Validator & Explainer | ValidoHub"
+  description:
+    en: "Validate Dutch RSIN-style legal entity identifiers, run local eleven-test evidence, and separate structure from official registry status."

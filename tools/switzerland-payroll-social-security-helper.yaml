@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-payroll-social-security-helper
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Payroll Social Security Helper"
+summary:
+  en: "Audit AHV/AVS, canton, salary period, CHF amounts, and employer UID evidence for payroll intake."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "AHV 756.1234.5678.97"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-invoice-number-helper, switzerland-e-invoicing-readiness-helper, switzerland-salary-certificate-field-helper]
+seo:
+  title:
+    en: "Payroll Social Security Helper | ValidoHub"
+  description:
+    en: "Audit AHV/AVS, canton, salary period, CHF amounts, and employer UID evidence for payroll intake."

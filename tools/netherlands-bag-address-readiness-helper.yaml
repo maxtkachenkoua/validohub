@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-bag-address-readiness-helper
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "BAG Address Readiness Helper"
+summary:
+  en: "Prepare Dutch BAG lookup payloads with postcode, house number, addition, and city hints while staying offline."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "BAG"
+        required: true
+        placeholder:
+          en: "1012 LG"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-postcode-validator, netherlands-address-normalizer, netherlands-house-number-addition-helper, netherlands-municipality-code-inspector]
+seo:
+  title:
+    en: "BAG Address Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare Dutch BAG lookup payloads with postcode, house number, addition, and city hints while staying offline."

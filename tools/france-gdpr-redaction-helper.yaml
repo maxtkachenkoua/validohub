@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "GDPR Redaction Helper"
+summary:
+  en: "Find and mask French personal data candidates before logs, screenshots, exports, or support handoffs."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "GDPR"
+        required: true
+        placeholder:
+          en: "Élodie Martin, 06 12 34 56 78, elodie@example.fr, NIR 269054958815780"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-masked-iban-formatter, france-pii-masker, france-nir-masker, france-health-insurance-boundary-helper]
+seo:
+  title:
+    en: "GDPR Redaction Helper | ValidoHub"
+  description:
+    en: "Find and mask French personal data candidates before logs, screenshots, exports, or support handoffs."

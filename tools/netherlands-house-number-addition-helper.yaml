@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-house-number-addition-helper
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "House Number Addition Helper"
+summary:
+  en: "Inspect Dutch house-number additions, split numeric and suffix parts, and prepare form-safe address components."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "HNO"
+        required: true
+        placeholder:
+          en: "Damrak 1-A bis"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-address-normalizer, netherlands-postcode-validator, netherlands-bag-address-readiness-helper, netherlands-form-field-auditor]
+seo:
+  title:
+    en: "House Number Addition Helper | ValidoHub"
+  description:
+    en: "Inspect Dutch house-number additions, split numeric and suffix parts, and prepare form-safe address components."

@@ -9,6 +9,11 @@
   const JsonPlugin = (function (framework) {
     const util = framework.utilities;
 
+    function inputField(workbench) {
+      return workbench.primaryInput()
+        || workbench.form.querySelector('textarea[name="json"], input[name="json"], textarea[name="input"], input[name="input"]');
+    }
+
     function parseJson(input) {
       try {
         const value = JSON.parse(input);
@@ -78,7 +83,7 @@
     };
 
     function applySample(workbench, sampleId) {
-      const input = workbench.primaryInput();
+      const input = inputField(workbench);
       if (!input) return;
 
       if (sampleId === "json-api") {
@@ -132,7 +137,7 @@
 
       // Setup Presets and History dropdowns prepended inside .field-grid
       const fieldGrid = workbench.form.querySelector('.field-grid');
-      const inputField = workbench.primaryInput();
+      const mainInput = inputField(workbench);
       if (fieldGrid && !workbench.form.querySelector('#pesel-presets')) {
         const mainField = fieldGrid.querySelector('label.field');
         if (mainField) {
@@ -280,8 +285,8 @@
 
       // Live-mode debounced validation logic trigger
       let debounceTimeout = null;
-      if (inputField) {
-        inputField.addEventListener('input', () => {
+        if (mainInput) {
+          mainInput.addEventListener('input', () => {
           if (debounceTimeout) clearTimeout(debounceTimeout);
           debounceTimeout = setTimeout(() => {
             const activeAction = workbench.form.dataset.activeAction || (workbench.form.dataset.capability === "validate" ? "validate" : "format");
@@ -366,7 +371,7 @@
 
     function run(workbench, action, options) {
       const values = workbench.values();
-      const rawInput = values.input || '';
+      const rawInput = values.input || values.json || '';
       const inputVal = rawInput;
 
       const premiumPanel = workbench.form.querySelector('.pesel-premium-panel');
@@ -595,6 +600,15 @@
       // Setup API Developer Snippets Panel
       workbench.setAdvanced(`
         <div class="pesel-dev-section">
+          <section class="generic-analysis-section">
+            <h4>JSON quality notes</h4>
+            <div class="generic-quality-grid">
+              <article class="generic-quality-card"><strong>Privacy boundary</strong><p>JSON is parsed, formatted, searched, and explored locally in this browser.</p></article>
+              <article class="generic-quality-card"><strong>Correctness boundary</strong><p>Valid JSON syntax does not prove schema compatibility, business rules, or API acceptance.</p></article>
+              <article class="generic-quality-card"><strong>Developer handling</strong><p>Copy normalized output for fixtures, but avoid pasting secrets or production tokens into shared logs.</p></article>
+              <article class="generic-quality-card"><strong>Fixture safety</strong><p>Samples are safe developer fixtures; live payloads should still be reviewed for private data.</p></article>
+            </div>
+          </section>
           <div class="pesel-api-card">
             <div class="pesel-section-title">
               <span>🔌</span> Developer API Preview
@@ -665,7 +679,7 @@
           + `<label class="json-search-label"><span>Search</span><input type="search" data-json-search placeholder="Keys or values..." autocomplete="off"></label>`
           + `<button type="button" class="json-tool-button" data-json-tree-action="previous-match">Previous</button>`
           + `<button type="button" class="json-tool-button" data-json-tree-action="next-match">Next</button>`
-          + `<div class="json-tree-meta"><span>${stats.counts.nodes} nodes</span><span data-json-search-count>No search</span></div>`
+          + `<div class="json-tree-meta"><span>${stats.nodes} nodes</span><span data-json-search-count>No search</span></div>`
           + `</div>`
           + `<div class="json-tree-shell"><div class="json-tree" data-json-tree>`
           + treeNode(value, "root", "", "$", 0, state)

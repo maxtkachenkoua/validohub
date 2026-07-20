@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-province-code-mapper
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "Province Code Mapper"
+summary:
+  en: "Map Dutch province names and common abbreviations to stable developer labels and fixture values."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "PROV"
+        required: true
+        placeholder:
+          en: "Noord-Holland / NH"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-municipality-code-inspector, netherlands-address-normalizer, netherlands-postcode-validator, netherlands-json-fixture-generator]
+seo:
+  title:
+    en: "Province Code Mapper | ValidoHub"
+  description:
+    en: "Map Dutch province names and common abbreviations to stable developer labels and fixture values."

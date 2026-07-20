@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "Payment Reconciliation Helper"
+summary:
+  en: "Audit Dutch payment records for IBAN, amount, invoice reference, date, and duplicate-risk evidence locally."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "RECON"
+        required: true
+        placeholder:
+          en: "IBAN NL91ABNA0417164300"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-iban-validator, netherlands-bank-statement-parser, netherlands-ideal-payment-reference-helper, netherlands-invoice-number-helper]
+seo:
+  title:
+    en: "Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Audit Dutch payment records for IBAN, amount, invoice reference, date, and duplicate-risk evidence locally."

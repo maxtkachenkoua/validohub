@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: france-carte-grise-field-helper
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "Carte Grise Field Helper"
+summary:
+  en: "Inspect French registration certificate field snippets and map labels to developer-friendly keys."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "REGDOC"
+        required: true
+        placeholder:
+          en: "A AB-123-CD
+E VF1RFB00368123456
+B 14/07/2019
+P.3 ES"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-license-plate-inspector, france-vin-validator, france-critair-readiness-helper, france-driving-licence-format-helper]
+seo:
+  title:
+    en: "Carte Grise Field Helper | ValidoHub"
+  description:
+    en: "Inspect French registration certificate field snippets and map labels to developer-friendly keys."

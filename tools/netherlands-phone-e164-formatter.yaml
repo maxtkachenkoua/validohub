@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-phone-e164-formatter
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "Dutch Phone E.164 Formatter"
+summary:
+  en: "Normalize Dutch phone numbers to +31-style E.164 display, preserve local hints, and mask contact data for logs."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "+31"
+        required: true
+        placeholder:
+          en: "020 123 4567"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-phone-number-validator, netherlands-pii-masker, netherlands-form-field-auditor, netherlands-data-quality-workbench]
+seo:
+  title:
+    en: "Dutch Phone E.164 Formatter | ValidoHub"
+  description:
+    en: "Normalize Dutch phone numbers to +31-style E.164 display, preserve local hints, and mask contact data for logs."

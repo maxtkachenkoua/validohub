@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-eur-decimal-currency-formatter
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "EUR Decimal / Currency Formatter"
+summary:
+  en: "Parse Dutch money input, normalize EUR display, convert to integer cents, and generate storage-safe amount fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "EUR"
+        required: true
+        placeholder:
+          en: "EUR 1.250,75"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-date-locale-formatter, netherlands-payment-reconciliation-helper, netherlands-btw-rate-sanity-helper, netherlands-bank-statement-parser]
+seo:
+  title:
+    en: "EUR Decimal / Currency Formatter | ValidoHub"
+  description:
+    en: "Parse Dutch money input, normalize EUR display, convert to integer cents, and generate storage-safe amount fields."

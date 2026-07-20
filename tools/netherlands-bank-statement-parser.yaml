@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-bank-statement-parser
+kind: tool
+module: validohub
+country: NL
+category: developer-tools
+status: active
+name:
+  en: "Bank Statement Parser"
+summary:
+  en: "Extract dates, EUR amounts, references, IBAN-like strings, and reconciliation hints from Dutch bank-statement text."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "STMT"
+        required: true
+        placeholder:
+          en: "14-07-2026 SEPA OVERBOEKING CLIENT JANSEN +1.250,75 EUR REF INV-2026-0042"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-payment-reconciliation-helper, netherlands-iban-validator, netherlands-eur-decimal-currency-formatter, netherlands-data-quality-workbench]
+seo:
+  title:
+    en: "Bank Statement Parser | ValidoHub"
+  description:
+    en: "Extract dates, EUR amounts, references, IBAN-like strings, and reconciliation hints from Dutch bank-statement text."

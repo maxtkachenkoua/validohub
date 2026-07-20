@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-date-locale-formatter
+kind: tool
+module: validohub
+country: NL
+category: developer-tools
+status: active
+name:
+  en: "Dutch Date / Locale Formatter"
+summary:
+  en: "Parse ISO and Dutch date input, render nl-NL display, and expose locale-safe date fields for interfaces."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "DATE"
+        required: true
+        placeholder:
+          en: "14-07-2026"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-eur-decimal-currency-formatter, netherlands-csv-locale-normalizer, netherlands-json-fixture-generator, netherlands-form-field-auditor]
+seo:
+  title:
+    en: "Dutch Date / Locale Formatter | ValidoHub"
+  description:
+    en: "Parse ISO and Dutch date input, render nl-NL display, and expose locale-safe date fields for interfaces."

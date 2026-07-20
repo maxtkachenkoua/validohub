@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-passport-number-helper
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "Dutch Passport Number Helper"
+summary:
+  en: "Normalize Dutch passport-number-like values, create masked travel-document fixtures, and flag OCR/document-status limits."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "PASS"
+        required: true
+        placeholder:
+          en: "NLD123456"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-id-card-format-helper, netherlands-document-ocr-fixer, netherlands-pii-masker, netherlands-personal-data-fixture-generator]
+seo:
+  title:
+    en: "Dutch Passport Number Helper | ValidoHub"
+  description:
+    en: "Normalize Dutch passport-number-like values, create masked travel-document fixtures, and flag OCR/document-status limits."

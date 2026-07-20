@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-esr-reference-checker
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "ESR Reference Checker"
+summary:
+  en: "Inspect legacy ESR-style references, normalize 27-digit payloads, and explain the same offline MOD-10 boundary."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ESR input"
+        required: true
+        placeholder:
+          en: "000000000000000000000000011"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [switzerland-qr-bill-reference-validator, switzerland-qr-bill-payload-auditor, switzerland-payment-reconciliation-helper]
+seo:
+  title:
+    en: "ESR Reference Checker | ValidoHub"
+  description:
+    en: "Inspect legacy ESR-style references, normalize 27-digit payloads, and explain the same offline MOD-10 boundary."

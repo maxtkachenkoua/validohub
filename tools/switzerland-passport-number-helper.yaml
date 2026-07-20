@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-passport-number-helper
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Swiss Passport Number Helper"
+summary:
+  en: "Inspect Swiss passport-number-shaped input, normalize document fields, and separate syntax from identity proof."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PASS input"
+        required: true
+        placeholder:
+          en: "X1234567"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [switzerland-id-card-format-helper, switzerland-residence-permit-format-helper, switzerland-driving-licence-format-helper]
+seo:
+  title:
+    en: "Swiss Passport Number Helper | ValidoHub"
+  description:
+    en: "Inspect Swiss passport-number-shaped input, normalize document fields, and separate syntax from identity proof."

@@ -218,8 +218,9 @@
     repeating-linear-gradient(104deg, transparent 0 23px, rgb(var(--vh-country-flag-color-1) / var(--vh-country-hero-stripe-alpha)) 23px 24px);
   border: 1px solid rgb(var(--vh-country-accent-primary) / 0.15);
   margin-bottom: var(--vh-space-lg);
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+  z-index: 3;
 }
 
 .vh-country-hero::before {
@@ -354,7 +355,7 @@
 
 .vh-country-hero > .vh-country-tool-search {
   position: relative;
-  z-index: 1;
+  z-index: 25;
 }
 
 .vh-country-tool-search label {
@@ -395,15 +396,14 @@
   left: 0;
   right: 0;
   top: calc(100% + 0.38rem);
-  z-index: 14;
+  z-index: 80;
   display: grid;
-  max-height: min(340px, 52vh);
+  max-height: min(420px, 62vh);
   overflow: auto;
   border: 1px solid rgb(var(--vh-country-accent-primary) / 0.18);
-  border-top: none;
   border-radius: calc(var(--vh-radius-md) + 2px);
   background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 18px 32px rgb(var(--vh-country-accent-primary) / 0.12);
+  box-shadow: 0 26px 58px rgb(var(--vh-country-accent-primary) / 0.18), 0 14px 34px rgba(15, 23, 42, 0.12);
   backdrop-filter: blur(12px);
 }
 
@@ -1241,6 +1241,22 @@
   align-items: flex-start;
   gap: var(--vh-space-sm);
   line-height: 1.5;
+}
+
+.vh-country-checklist li > span:last-child {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.vh-country-checklist strong {
+  color: var(--vh-color-text);
+  font-weight: 780;
+}
+
+.vh-country-checklist small {
+  color: var(--vh-color-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
 .vh-country-check-box {

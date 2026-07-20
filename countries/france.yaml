@@ -1,0 +1,14 @@
+schemaVersion: 1
+code: FR
+slug: france
+name:
+  en: France
+region: Europe
+languages:
+  - fr
+  - en
+currency: EUR
+relatedCountries:
+  - DE
+  - ES
+  - PL

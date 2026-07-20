@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-bank-code-inspector
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "Dutch Bank Code Inspector"
+summary:
+  en: "Inspect the four-letter bank code embedded in Dutch IBANs and prepare bank-selection payloads without claiming account ownership."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "BANK"
+        required: true
+        placeholder:
+          en: "ABNA"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-iban-validator, netherlands-bic-swift-inspector, netherlands-masked-iban-formatter, netherlands-sepa-transfer-helper]
+seo:
+  title:
+    en: "Dutch Bank Code Inspector | ValidoHub"
+  description:
+    en: "Inspect the four-letter bank code embedded in Dutch IBANs and prepare bank-selection payloads without claiming account ownership."

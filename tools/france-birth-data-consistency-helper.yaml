@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: france-birth-data-consistency-helper
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "Birth Data Consistency Helper"
+summary:
+  en: "Check whether French date, department, commune, and NIR-like fields agree at syntax level."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "BIRTH"
+        required: true
+        placeholder:
+          en: "NIR 269054958815780
+Birth date 05/1969
+Department 49"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-nir-syntax-inspector, france-nir-key-validator, france-nir-masker, france-passport-number-helper]
+seo:
+  title:
+    en: "Birth Data Consistency Helper | ValidoHub"
+  description:
+    en: "Check whether French date, department, commune, and NIR-like fields agree at syntax level."

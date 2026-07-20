@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-bic-swift-inspector
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "Dutch BIC / SWIFT Inspector"
+summary:
+  en: "Validate Dutch BIC/SWIFT syntax, split institution, country, location, and branch segments, and flag non-NL routing."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "BIC"
+        required: true
+        placeholder:
+          en: "ABNANL2A"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-iban-validator, netherlands-bank-code-inspector, netherlands-sepa-transfer-helper, netherlands-payment-reconciliation-helper]
+seo:
+  title:
+    en: "Dutch BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Validate Dutch BIC/SWIFT syntax, split institution, country, location, and branch segments, and flag non-NL routing."

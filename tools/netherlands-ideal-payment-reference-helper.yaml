@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-ideal-payment-reference-helper
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "iDEAL Payment Reference Helper"
+summary:
+  en: "Normalize iDEAL payment references, extract PSP and order hints, and create reconciliation-safe checkout snippets."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "iDEAL"
+        required: true
+        placeholder:
+          en: "iDEAL PSPREF-2026-ORDER-0042 amount 49,95 EUR"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-payment-reconciliation-helper, netherlands-remittance-text-builder, netherlands-eur-decimal-currency-formatter, netherlands-api-payload-auditor]
+seo:
+  title:
+    en: "iDEAL Payment Reference Helper | ValidoHub"
+  description:
+    en: "Normalize iDEAL payment references, extract PSP and order hints, and create reconciliation-safe checkout snippets."

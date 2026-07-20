@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: france-csv-locale-normalizer
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "French CSV Locale Normalizer"
+summary:
+  en: "Normalize French CSV snippets with semicolons, comma decimals, dates, and UTF-8 accents for imports."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "CSV"
+        required: true
+        placeholder:
+          en: "date;montant;libellé
+14/07/2026;1 250,75;Facture été"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-address-transliteration-normalizer, france-date-locale-formatter, france-decimal-currency-formatter, france-accent-normalizer]
+seo:
+  title:
+    en: "French CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize French CSV snippets with semicolons, comma decimals, dates, and UTF-8 accents for imports."

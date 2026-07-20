@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-nic-inspector
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "NIC Establishment Code Inspector"
+summary:
+  en: "Inspect the five-digit NIC establishment suffix used inside French SIRET numbers."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "NIC"
+        required: true
+        placeholder:
+          en: "00074"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-siren-validator, france-siret-validator, france-ape-naf-code-inspector, france-rcs-number-helper]
+seo:
+  title:
+    en: "NIC Establishment Code Inspector | ValidoHub"
+  description:
+    en: "Inspect the five-digit NIC establishment suffix used inside French SIRET numbers."

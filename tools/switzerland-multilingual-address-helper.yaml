@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-multilingual-address-helper
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Multilingual Address Helper"
+summary:
+  en: "Inspect Swiss multilingual address labels, canton language context, and locale-safe display variants."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "LANG input"
+        required: true
+        placeholder:
+          en: "DE: Bahnhofstrasse 1, 8001 Zürich"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-postal-code-validator, switzerland-address-normalizer, switzerland-address-transliteration-normalizer, switzerland-canton-code-mapper]
+seo:
+  title:
+    en: "Multilingual Address Helper | ValidoHub"
+  description:
+    en: "Inspect Swiss multilingual address labels, canton language context, and locale-safe display variants."

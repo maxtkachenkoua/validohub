@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-kvk-number-validator
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "KVK Number Validator"
+summary:
+  en: "Validate Dutch Chamber of Commerce number shape, normalize eight-digit references, and prepare registry-safe onboarding payloads."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "KVK"
+        required: true
+        placeholder:
+          en: "90006485"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-rsin-validator, netherlands-kvk-branch-number-helper, netherlands-company-onboarding-auditor, netherlands-ubo-readiness-helper]
+seo:
+  title:
+    en: "KVK Number Validator | ValidoHub"
+  description:
+    en: "Validate Dutch Chamber of Commerce number shape, normalize eight-digit references, and prepare registry-safe onboarding payloads."

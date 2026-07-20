@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: france-cedex-address-formatter
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "CEDEX Address Formatter"
+summary:
+  en: "Format French business and CEDEX address blocks with postcode, locality, country, and line-order checks."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "CEDEX"
+        required: true
+        placeholder:
+          en: "Valido SAS
+10 rue de Rivoli
+75001 PARIS CEDEX 01"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-postal-code-validator, france-insee-commune-code-inspector, france-department-code-inspector, france-region-code-mapper]
+seo:
+  title:
+    en: "CEDEX Address Formatter | ValidoHub"
+  description:
+    en: "Format French business and CEDEX address blocks with postcode, locality, country, and line-order checks."

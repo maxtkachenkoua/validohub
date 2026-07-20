@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-withholding-tax-readiness-helper
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Withholding Tax Readiness Helper"
+summary:
+  en: "Check canton, tax-at-source hints, gross pay, AHV/AVS evidence, and official calculation boundaries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "WHT input"
+        required: true
+        placeholder:
+          en: "Canton GE withholding tax 2026 gross CHF 9500.00 AHV 756.1234.5678.97"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-vat-mwst-validator, switzerland-eori-validator, switzerland-mwst-rate-sanity-helper, switzerland-vat-return-field-helper]
+seo:
+  title:
+    en: "Withholding Tax Readiness Helper | ValidoHub"
+  description:
+    en: "Check canton, tax-at-source hints, gross pay, AHV/AVS evidence, and official calculation boundaries."

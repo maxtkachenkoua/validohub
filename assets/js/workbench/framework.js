@@ -43,6 +43,7 @@
       if (this.plugin.onMount) {
         this.plugin.onMount(this);
       }
+      this.ensureGenericToolHero();
       this.bindLiveMode(initialAction);
       this.bindFileInput();
       this.form.addEventListener("click", function (event) {
@@ -162,6 +163,37 @@
 
     Workbench.prototype.run = function (action, options) {
       this.plugin.run(this, action, options || {});
+    };
+
+    Workbench.prototype.ensureGenericToolHero = function () {
+      if (!/\/tools\//.test(window.location.pathname) || this.form.querySelector(".generic-premium-hero")) {
+        return;
+      }
+      var algorithmId = this.form.dataset.algorithmId || "";
+      var title = (document.querySelector(".page-intro h1") || document.querySelector("h1") || {}).textContent || "Developer Tool";
+      var summary = (document.querySelector(".page-intro p") || {}).textContent || "Run a private, offline developer workflow directly in this browser.";
+      var meta = genericHeroMeta(algorithmId, title);
+      this.form.dataset.genericTheme = this.form.dataset.genericTheme || meta.theme;
+      var chips = meta.chips.map(function (chip) {
+        return "<span>" + escapeHtml(chip) + "</span>";
+      }).join("");
+      var hero = [
+        "<section class=\"generic-premium-hero\" aria-label=\"" + escapeHtml(title.trim()) + " workbench overview\">",
+        "  <div class=\"generic-premium-mark\" aria-hidden=\"true\">" + escapeHtml(meta.mark) + "</div>",
+        "  <div class=\"generic-premium-copy\">",
+        "    <p class=\"generic-premium-kicker\">" + escapeHtml(meta.kicker) + "</p>",
+        "    <h3>" + escapeHtml(title.trim()) + "</h3>",
+        "    <p>" + escapeHtml(summary.trim()) + "</p>",
+        "    <div class=\"generic-premium-chips\">" + chips + "</div>",
+        "  </div>",
+        "  <div class=\"generic-premium-boundary\">",
+        "    <span>Privacy boundary</span>",
+        "    <strong>Runs locally</strong>",
+        "    <small>No upload, database, runtime API, or server-side execution.</small>",
+        "  </div>",
+        "</section>"
+      ].join("");
+      this.form.insertAdjacentHTML("afterbegin", hero);
     };
 
     Workbench.prototype.values = function () {
@@ -396,6 +428,28 @@
 
     function debounce(callback, delay) {
       return helper("debounce")(callback, delay);
+    }
+
+    function genericHeroMeta(algorithmId, title) {
+      var map = {
+        "validohub.base64": { theme: "encoding", mark: "B64", kicker: "Encoding workbench", chips: ["Base64", "Bytes", "URL-safe", "Offline"] },
+        "validohub.base64-decoder": { theme: "encoding", mark: "B64", kicker: "Decoder workbench", chips: ["Decode", "Validate", "Hex view", "Offline"] },
+        "validohub.url-encoder": { theme: "url", mark: "%", kicker: "URL encoding", chips: ["Percent bytes", "UTF-8", "Copy-safe", "Offline"] },
+        "validohub.url-decoder": { theme: "url", mark: "%", kicker: "URL decoding", chips: ["Decode", "Repair hints", "UTF-8", "Offline"] },
+        "validohub.json-formatter": { theme: "data", mark: "{ }", kicker: "Data workbench", chips: ["Format", "Tree view", "JSONPath", "Offline"] },
+        "validohub.json-validator": { theme: "data", mark: "{ }", kicker: "JSON validation", chips: ["Syntax", "Repair hints", "Tree view", "Offline"] },
+        "validohub.jwt-decoder": { theme: "security", mark: "JWT", kicker: "Token inspector", chips: ["Header", "Payload", "Claims", "Offline"] }
+      };
+      if (map[algorithmId]) {
+        return map[algorithmId];
+      }
+      var clean = String(title || "Tool").replace(/[^A-Za-z0-9]+/g, " ").trim();
+      return {
+        theme: "utility",
+        mark: clean ? clean.split(/\s+/).slice(0, 2).map(function (part) { return part.charAt(0); }).join("").toUpperCase() : "VH",
+        kicker: "Browser workbench",
+        chips: ["Browser-only", "Offline", "Copy / download", "Advanced diagnostics"]
+      };
     }
 
     var mountScheduled = false;

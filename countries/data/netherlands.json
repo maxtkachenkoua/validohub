@@ -1,6 +1,17 @@
 {
   "id": "netherlands",
-  "visualAssets": null,
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/netherlands-outline.svg",
+    "outlineAlt": "Netherlands country outline",
+    "mapSrc": "/assets/images/countries/netherlands-location.svg",
+    "mapAlt": "World map with Netherlands location marker",
+    "mapMarker": {
+      "x": 49,
+      "y": 35,
+      "label": "Netherlands"
+    },
+    "source": "Simplified public-domain geographic reference"
+  },
   "catalog": {
     "id": "netherlands",
     "flag": "🇳🇱",
@@ -12,34 +23,1070 @@
     "language": "Dutch",
     "currency": "EUR",
     "currencyName": "Euro",
-    "status": "planned",
-    "summary": "Future hub for Dutch identifiers, addresses, VAT, and banking notes.",
+    "status": "available",
+    "featured": true,
+    "reference": true,
+    "summary": "Premium developer intelligence for Dutch BSN, RSIN, KVK, BTW, EORI, IBAN, iDEAL, SEPA, postcode, BAG address, phone, locale, AVG privacy, audit-file, and offline validation workflows.",
     "identifiers": [
+      "BAG",
       "BSN",
-      "KvK",
-      "VAT"
+      "BTW",
+      "DigiD",
+      "EORI",
+      "KVK",
+      "RDW",
+      "RSIN",
+      "UBO"
     ],
     "payments": [
+      "BIC",
+      "EUR",
       "IBAN",
+      "Mandate",
+      "Remittance",
       "SEPA",
       "iDEAL"
     ],
     "features": [
-      "payments",
-      "identity",
+      "address",
+      "banking",
+      "business",
+      "data-quality",
+      "developer",
+      "fiscal",
       "government",
-      "banking"
+      "identity",
+      "localization",
+      "payments",
+      "phone",
+      "postal",
+      "privacy",
+      "tax",
+      "vehicle"
     ],
-    "availableWorkbenches": [],
-    "plannedWorkbenches": [
-      "BSN Validator",
-      "Dutch VAT Notes"
+    "availableWorkbenches": [
+      "Audit File Readiness Checker",
+      "Audit Trail Checklist Generator",
+      "AVG / GDPR Redaction Helper",
+      "BAG Address Readiness Helper",
+      "Bank Statement Parser",
+      "BSN Masker",
+      "BSN Validator & Explainer",
+      "Company Onboarding Auditor",
+      "Compliance Checklist Generator",
+      "DigiD Boundary Helper",
+      "Driving Licence Format Helper",
+      "Dutch Address Normalizer",
+      "Dutch Address Transliteration Normalizer",
+      "Dutch API Payload Auditor",
+      "Dutch Bank Code Inspector",
+      "Dutch BIC / SWIFT Inspector",
+      "Dutch BTW / VAT Validator",
+      "Dutch BTW Rate Sanity Helper",
+      "Dutch CSV Locale Normalizer",
+      "Dutch Date / Locale Formatter",
+      "Dutch Document OCR Fixer",
+      "Dutch EAN / GS1 Code Inspector",
+      "Dutch Email Domain Fixture Helper",
+      "Dutch EORI Validator",
+      "Dutch Form Field Auditor",
+      "Dutch IBAN Validator",
+      "Dutch ID Card Format Helper",
+      "Dutch Invoice Number Helper",
+      "Dutch JSON Fixture Generator",
+      "Dutch License Plate Inspector",
+      "Dutch Passport Number Helper",
+      "Dutch Phone E.164 Formatter",
+      "Dutch Phone Number Validator",
+      "Dutch PII Masker",
+      "Dutch Postcode Validator",
+      "Dutch Regex Pack Helper",
+      "Dutch Remittance Text Builder",
+      "Dutch Slug Normalizer",
+      "E-Invoicing Readiness Helper",
+      "EUR Decimal / Currency Formatter",
+      "Health Insurance Boundary Helper",
+      "House Number Addition Helper",
+      "iDEAL Payment Reference Helper",
+      "KVK Branch Number Helper",
+      "KVK Number Validator",
+      "Masked IBAN Formatter",
+      "Municipality Code Inspector",
+      "Netherlands Data Quality Workbench",
+      "Payment Reconciliation Helper",
+      "Payroll Tax Number Helper",
+      "Peppol Readiness Helper",
+      "Personal Data Fixture Generator",
+      "PostNL Tracking Helper",
+      "Province Code Mapper",
+      "RDW Vehicle Data Redaction Helper",
+      "RSIN Validator & Explainer",
+      "RVO Relation Number Helper",
+      "SEPA Direct Debit Mandate Helper",
+      "SEPA Transfer Helper",
+      "UBO Readiness Helper",
+      "VAT Return Field Helper",
+      "VIN Validator for Netherlands Workflows",
+      "Wage Tax Readiness Helper"
     ],
-    "completion": 20,
+    "plannedWorkbenches": [],
+    "completion": 95,
     "coordinates": {
-      "x": 50,
-      "y": 34
+      "x": 49,
+      "y": 35
     }
   },
-  "hub": null
+  "hub": {
+    "flag": "🇳🇱",
+    "name": "Netherlands",
+    "badge": "Western Europe premium country hub",
+    "description": "Developer intelligence for Dutch identity, business registry, tax, banking, address, payment, privacy, vehicle, audit-file, and localization workflows with browser-only validation where possible.",
+    "metadata": {
+      "nativeName": "Nederland",
+      "population": "approximately 18M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "area": "41,543 km²",
+      "capital": "Amsterdam",
+      "largestCity": "Amsterdam",
+      "continent": "Europe",
+      "region": "Western Europe / European Union",
+      "languages": "Dutch",
+      "currency": "Euro",
+      "currencyCode": "EUR",
+      "currencySymbol": "€",
+      "callingCode": "+31",
+      "internetTld": ".nl",
+      "drivingSide": "Right",
+      "iso2": "NL",
+      "iso3": "NLD",
+      "isoNumeric": "528",
+      "locale": "nl-NL",
+      "icuLocale": "nl_NL",
+      "dateFormat": "DD-MM-YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Period (.)",
+      "addressFormat": "Recipient, street name house number addition, postcode locality, Netherlands",
+      "postalCodeFormat": "NNNN AA",
+      "primaryTimeZone": "Europe/Amsterdam (CET/CEST)",
+      "utcRange": "UTC+01/+02",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "nl-NL",
+      "cldrLocale": "nl_NL",
+      "metricVsImperial": "Metric-first",
+      "administrativeDivisions": [
+        "Provinces",
+        "Municipalities",
+        "Water boards"
+      ],
+      "taxSystem": {
+        "name": "Belastingdienst / BTW",
+        "description": "Dutch tax workflows revolve around BTW/VAT identifiers, payroll-tax references, VAT return fields, invoice evidence, and official filing boundaries."
+      },
+      "licensePlateFormat": "Dutch plates use several series such as 12-AB-34, AB-12-CD, 1-ABC-23, and current vehicle-specific patterns."
+    },
+    "visualIdentity": {
+      "countryId": "netherlands",
+      "outlineLabel": "Netherlands outline",
+      "mapLabel": "Netherlands in the world",
+      "continentBadge": "Europe",
+      "flagLabel": "Netherlands flag",
+      "heroAccentPrimary": "174 28 40",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "33 70 139"
+    },
+    "localizationExamples": [
+      {
+        "label": "Date",
+        "value": "14-07-2026"
+      },
+      {
+        "label": "Time",
+        "value": "14:35"
+      },
+      {
+        "label": "Currency",
+        "value": "€ 1.250,75"
+      },
+      {
+        "label": "Phone",
+        "value": "+31 6 12345678"
+      },
+      {
+        "label": "Postal code",
+        "value": "1012 AB"
+      },
+      {
+        "label": "Address",
+        "value": "Damrak 1-A, 1012 LG Amsterdam"
+      }
+    ],
+    "addressExample": {
+      "formatted": [
+        "Jansen BV",
+        "Damrak 1-A",
+        "1012 LG Amsterdam",
+        "Nederland"
+      ],
+      "fields": [
+        {
+          "label": "Street",
+          "value": "Damrak",
+          "description": "Street name precedes house number in common address entry."
+        },
+        {
+          "label": "House number",
+          "value": "1-A",
+          "description": "House-number additions must be stored separately when possible."
+        },
+        {
+          "label": "Postcode",
+          "value": "1012 LG",
+          "description": "Four digits plus two letters with a space for display."
+        },
+        {
+          "label": "Locality",
+          "value": "Amsterdam",
+          "description": "City/locality is paired with postcode for lookup handoff."
+        }
+      ]
+    },
+    "phoneExamples": [
+      {
+        "label": "Mobile",
+        "value": "06 12345678",
+        "description": "Dutch mobile numbers commonly start with 06 locally or +31 6 internationally.",
+        "tags": [
+          "phone",
+          "mobile"
+        ]
+      },
+      {
+        "label": "Amsterdam landline",
+        "value": "020 123 4567",
+        "description": "Geographic numbers preserve area-code context when normalized.",
+        "tags": [
+          "phone",
+          "landline"
+        ]
+      }
+    ],
+    "localFormats": [
+      {
+        "name": "Postcode",
+        "description": "NNNN AA display with a space between digits and letters.",
+        "status": "available",
+        "tags": [
+          "postal"
+        ]
+      },
+      {
+        "name": "Dutch IBAN",
+        "description": "NLkk BANK 0000 0000 00 after MOD-97, with a four-letter bank code.",
+        "status": "available",
+        "tags": [
+          "banking"
+        ]
+      },
+      {
+        "name": "BTW identifier",
+        "description": "NL prefix, nine digits, B separator, and two trailing digits for VAT syntax.",
+        "status": "available",
+        "tags": [
+          "tax"
+        ]
+      }
+    ],
+    "integrationChecklist": [
+      "Normalize BSN, KVK, RSIN, BTW, IBAN, postcode, and phone values before storage.",
+      "Keep raw personal identifiers out of logs; use masked values in support and analytics payloads.",
+      "Treat KVK, VIES, BAG, bank ownership, DigiD, and RDW status as official external lookups.",
+      "Place country-specific IBAN validation under the Netherlands hub even when the global IBAN tool exists."
+    ],
+    "validationRules": [
+      {
+        "name": "BSN eleven-test",
+        "description": "A nine-digit BSN can be checked locally with weighted eleven-test math, but this does not prove identity.",
+        "status": "available",
+        "tags": [
+          "identity",
+          "checksum"
+        ]
+      },
+      {
+        "name": "Dutch IBAN MOD-97",
+        "description": "NL IBANs validate through ISO 13616 MOD-97 and expose bank-code/account fields.",
+        "status": "available",
+        "tags": [
+          "banking"
+        ]
+      },
+      {
+        "name": "Postcode shape",
+        "description": "Dutch postcodes use four digits and two letters; delivery existence requires BAG or postal data.",
+        "status": "available",
+        "tags": [
+          "address"
+        ]
+      }
+    ],
+    "commonMistakes": [
+      "Using a BSN checksum as proof that a person exists.",
+      "Displaying raw long samples in dropdown labels instead of short human labels.",
+      "Treating global IBAN validation as enough for Dutch bank-code and account slicing.",
+      "Forgetting house-number additions when preparing BAG lookup payloads."
+    ],
+    "payments": [
+      {
+        "name": "Dutch IBAN / SEPA",
+        "description": "EUR transfers use IBAN, BIC where needed, SEPA references, and clear ownership-boundary notes.",
+        "status": "available",
+        "tags": [
+          "banking",
+          "payments"
+        ]
+      },
+      {
+        "name": "SEPA Direct Debit",
+        "description": "Mandate references, creditor data, IBAN, amount, and remittance need consistent formatting.",
+        "status": "available",
+        "tags": [
+          "payments"
+        ]
+      },
+      {
+        "name": "iDEAL",
+        "description": "Dominant Dutch online payment method; browser tools can prepare and reconcile references, not provider settlement status.",
+        "status": "available",
+        "tags": [
+          "payments"
+        ]
+      }
+    ],
+    "bankingOverview": [
+      {
+        "name": "BIC / SWIFT",
+        "description": "BIC syntax separates institution, country, location, and optional branch while live routing remains external.",
+        "status": "available",
+        "tags": [
+          "bic"
+        ]
+      },
+      {
+        "name": "Bank statement imports",
+        "description": "Dutch statement snippets combine comma decimals, local dates, SEPA references, and masked account data.",
+        "status": "available",
+        "tags": [
+          "data-quality"
+        ]
+      },
+      {
+        "name": "Dutch IBAN",
+        "description": "NL IBAN structure contains country code, two check digits, four-letter bank code, and ten-digit account number.",
+        "status": "available",
+        "tags": [
+          "iban"
+        ]
+      }
+    ],
+    "officialResources": [
+      {
+        "title": "BAG / Kadaster",
+        "note": "Official address and building registry context for postcode and locality confirmation.",
+        "status": "available",
+        "tags": [
+          "address"
+        ]
+      },
+      {
+        "title": "Belastingdienst",
+        "note": "Official Dutch tax administration reference for BTW, payroll tax, returns, and filing boundaries.",
+        "status": "available",
+        "tags": [
+          "tax"
+        ]
+      },
+      {
+        "title": "De Nederlandsche Bank",
+        "note": "Central bank and payment-system context for banking and financial-sector boundaries.",
+        "status": "available",
+        "tags": [
+          "banking"
+        ]
+      },
+      {
+        "title": "Kamer van Koophandel",
+        "note": "Official business registry context for KVK numbers, branches, and company status lookup.",
+        "status": "available",
+        "tags": [
+          "business"
+        ]
+      },
+      {
+        "title": "Logius / DigiD",
+        "note": "Official digital identity ecosystem reference; browser tools must never claim live DigiD verification.",
+        "status": "available",
+        "tags": [
+          "identity"
+        ]
+      },
+      {
+        "title": "RDW",
+        "note": "Official vehicle registry context for license plate and vehicle status checks.",
+        "status": "available",
+        "tags": [
+          "vehicle"
+        ]
+      }
+    ],
+    "availableWorkbenches": [
+      {
+        "name": "Audit File Readiness Checker",
+        "description": "Browser-only Netherlands workbench for audit file readiness checker with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Audit Trail Checklist Generator",
+        "description": "Browser-only Netherlands workbench for audit trail checklist generator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "AVG / GDPR Redaction Helper",
+        "description": "Browser-only Netherlands workbench for avg / gdpr redaction helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "BAG Address Readiness Helper",
+        "description": "Browser-only Netherlands workbench for bag address readiness helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Bank Statement Parser",
+        "description": "Browser-only Netherlands workbench for bank statement parser with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "BSN Masker",
+        "description": "Browser-only Netherlands workbench for bsn masker with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "BSN Validator & Explainer",
+        "description": "Browser-only Netherlands workbench for bsn validator & explainer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Company Onboarding Auditor",
+        "description": "Browser-only Netherlands workbench for company onboarding auditor with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Compliance Checklist Generator",
+        "description": "Browser-only Netherlands workbench for compliance checklist generator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "DigiD Boundary Helper",
+        "description": "Browser-only Netherlands workbench for digid boundary helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Driving Licence Format Helper",
+        "description": "Browser-only Netherlands workbench for driving licence format helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Address Normalizer",
+        "description": "Browser-only Netherlands workbench for dutch address normalizer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Address Transliteration Normalizer",
+        "description": "Browser-only Netherlands workbench for dutch address transliteration normalizer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch API Payload Auditor",
+        "description": "Browser-only Netherlands workbench for dutch api payload auditor with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Bank Code Inspector",
+        "description": "Browser-only Netherlands workbench for dutch bank code inspector with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch BIC / SWIFT Inspector",
+        "description": "Browser-only Netherlands workbench for dutch bic / swift inspector with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch BTW / VAT Validator",
+        "description": "Browser-only Netherlands workbench for dutch btw / vat validator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch BTW Rate Sanity Helper",
+        "description": "Browser-only Netherlands workbench for dutch btw rate sanity helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch CSV Locale Normalizer",
+        "description": "Browser-only Netherlands workbench for dutch csv locale normalizer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Date / Locale Formatter",
+        "description": "Browser-only Netherlands workbench for dutch date / locale formatter with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Document OCR Fixer",
+        "description": "Browser-only Netherlands workbench for dutch document ocr fixer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch EAN / GS1 Code Inspector",
+        "description": "Browser-only Netherlands workbench for dutch ean / gs1 code inspector with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Email Domain Fixture Helper",
+        "description": "Browser-only Netherlands workbench for dutch email domain fixture helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch EORI Validator",
+        "description": "Browser-only Netherlands workbench for dutch eori validator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Form Field Auditor",
+        "description": "Browser-only Netherlands workbench for dutch form field auditor with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch IBAN Validator",
+        "description": "Browser-only Netherlands workbench for dutch iban validator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch ID Card Format Helper",
+        "description": "Browser-only Netherlands workbench for dutch id card format helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Invoice Number Helper",
+        "description": "Browser-only Netherlands workbench for dutch invoice number helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch JSON Fixture Generator",
+        "description": "Browser-only Netherlands workbench for dutch json fixture generator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch License Plate Inspector",
+        "description": "Browser-only Netherlands workbench for dutch license plate inspector with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Passport Number Helper",
+        "description": "Browser-only Netherlands workbench for dutch passport number helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Phone E.164 Formatter",
+        "description": "Browser-only Netherlands workbench for dutch phone e.164 formatter with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Phone Number Validator",
+        "description": "Browser-only Netherlands workbench for dutch phone number validator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch PII Masker",
+        "description": "Browser-only Netherlands workbench for dutch pii masker with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Postcode Validator",
+        "description": "Browser-only Netherlands workbench for dutch postcode validator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Regex Pack Helper",
+        "description": "Browser-only Netherlands workbench for dutch regex pack helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Remittance Text Builder",
+        "description": "Browser-only Netherlands workbench for dutch remittance text builder with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Dutch Slug Normalizer",
+        "description": "Browser-only Netherlands workbench for dutch slug normalizer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "E-Invoicing Readiness Helper",
+        "description": "Browser-only Netherlands workbench for e-invoicing readiness helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "EUR Decimal / Currency Formatter",
+        "description": "Browser-only Netherlands workbench for eur decimal / currency formatter with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Health Insurance Boundary Helper",
+        "description": "Browser-only Netherlands workbench for health insurance boundary helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "House Number Addition Helper",
+        "description": "Browser-only Netherlands workbench for house number addition helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "iDEAL Payment Reference Helper",
+        "description": "Browser-only Netherlands workbench for ideal payment reference helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "KVK Branch Number Helper",
+        "description": "Browser-only Netherlands workbench for kvk branch number helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "KVK Number Validator",
+        "description": "Browser-only Netherlands workbench for kvk number validator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Masked IBAN Formatter",
+        "description": "Browser-only Netherlands workbench for masked iban formatter with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Municipality Code Inspector",
+        "description": "Browser-only Netherlands workbench for municipality code inspector with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Netherlands Data Quality Workbench",
+        "description": "Browser-only Netherlands workbench for netherlands data quality workbench with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Payment Reconciliation Helper",
+        "description": "Browser-only Netherlands workbench for payment reconciliation helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Payroll Tax Number Helper",
+        "description": "Browser-only Netherlands workbench for payroll tax number helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Peppol Readiness Helper",
+        "description": "Browser-only Netherlands workbench for peppol readiness helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Personal Data Fixture Generator",
+        "description": "Browser-only Netherlands workbench for personal data fixture generator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "PostNL Tracking Helper",
+        "description": "Browser-only Netherlands workbench for postnl tracking helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Province Code Mapper",
+        "description": "Browser-only Netherlands workbench for province code mapper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "RDW Vehicle Data Redaction Helper",
+        "description": "Browser-only Netherlands workbench for rdw vehicle data redaction helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "RSIN Validator & Explainer",
+        "description": "Browser-only Netherlands workbench for rsin validator & explainer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "RVO Relation Number Helper",
+        "description": "Browser-only Netherlands workbench for rvo relation number helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "SEPA Direct Debit Mandate Helper",
+        "description": "Browser-only Netherlands workbench for sepa direct debit mandate helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "SEPA Transfer Helper",
+        "description": "Browser-only Netherlands workbench for sepa transfer helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "UBO Readiness Helper",
+        "description": "Browser-only Netherlands workbench for ubo readiness helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "VAT Return Field Helper",
+        "description": "Browser-only Netherlands workbench for vat return field helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "VIN Validator for Netherlands Workflows",
+        "description": "Browser-only Netherlands workbench for vin validator for netherlands workflows with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      },
+      {
+        "name": "Wage Tax Readiness Helper",
+        "description": "Browser-only Netherlands workbench for wage tax readiness helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+        "status": "available",
+        "tags": [
+          "workbench",
+          "country"
+        ]
+      }
+    ],
+    "plannedWorkbenches": [],
+    "relatedGlobalTools": [
+      {
+        "name": "Global IBAN Validator",
+        "description": "Use global IBAN validation for cross-country detection, then switch to the Netherlands IBAN workbench for Dutch BBAN slicing.",
+        "status": "available",
+        "tags": [
+          "global",
+          "iban"
+        ]
+      }
+    ],
+    "highlights": [
+      "Netherlands now ships as a full premium country suite rather than a metadata-only hub.",
+      "Every workbench runs locally in browser and exposes official lookup boundaries.",
+      "BSN, KVK, BTW, IBAN, postcode, iDEAL, SEPA, BAG, RDW, AVG, and audit-file workflows are linked from the country hub."
+    ],
+    "developerNotes": [
+      "Use nl-NL display only at the UI boundary; keep normalized canonical values in storage.",
+      "Mask BSN, IBAN, phones, and document-like values before logs, screenshots, or telemetry."
+    ],
+    "developerExamples": [
+      {
+        "language": "javascript",
+        "title": "Normalize Dutch postcode",
+        "note": "Keep display formatting separate from storage.",
+        "code": "const normalized = input.toUpperCase().replace(/\\s+/g, '').replace(/^(\\d{4})([A-Z]{2})$/, '$1 $2');"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "name": "Comma decimals",
+        "description": "Dutch decimal display uses comma while thousands grouping commonly uses a period.",
+        "tags": [
+          "locale",
+          "money"
+        ]
+      },
+      {
+        "name": "Postcode spacing",
+        "description": "Normalize compact input but display Dutch postcodes with a space between digits and letters.",
+        "tags": [
+          "address",
+          "postal"
+        ]
+      }
+    ],
+    "ecosystem": [
+      {
+        "name": "BSN to privacy boundary",
+        "description": "BSN is sensitive personal data; local checksum is not identity proof.",
+        "tags": [
+          "identity",
+          "privacy"
+        ]
+      },
+      {
+        "name": "KVK to company onboarding",
+        "description": "KVK, RSIN, BTW, address, and IBAN often travel together in B2B onboarding.",
+        "tags": [
+          "business",
+          "tax"
+        ]
+      },
+      {
+        "name": "IBAN to payments",
+        "description": "Dutch IBAN, BIC, SEPA references, and iDEAL order references are core payment fixtures.",
+        "tags": [
+          "banking",
+          "payments"
+        ]
+      }
+    ]
+  }
 }

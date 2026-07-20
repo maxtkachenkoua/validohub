@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-bsn-masker
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "BSN Masker"
+summary:
+  en: "Mask Dutch BSN-like values for logs, support tickets, screenshots, and test reports."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "BSN"
+        required: true
+        placeholder:
+          en: "BSN 123456782 for test user"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-bsn-validator, netherlands-pii-masker, netherlands-gdpr-avg-redaction-helper, netherlands-personal-data-fixture-generator]
+seo:
+  title:
+    en: "BSN Masker | ValidoHub"
+  description:
+    en: "Mask Dutch BSN-like values for logs, support tickets, screenshots, and test reports."

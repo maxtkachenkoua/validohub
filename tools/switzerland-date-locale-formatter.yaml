@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-date-locale-formatter
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss Date / Locale Formatter"
+summary:
+  en: "Format Swiss dates for de-CH, fr-CH, it-CH, and API-safe ISO payloads."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "14.07.2026 16:30 Europe/Zurich"
+    actions: [format, validate, parse, generate, explain]
+related:
+  explicit: [switzerland-chf-amount-formatter, switzerland-decimal-currency-formatter]
+seo:
+  title:
+    en: "Swiss Date / Locale Formatter | ValidoHub"
+  description:
+    en: "Format Swiss dates for de-CH, fr-CH, it-CH, and API-safe ISO payloads."

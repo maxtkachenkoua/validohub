@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-slug-normalizer
+kind: tool
+module: validohub
+country: CH
+category: developer-tools
+status: active
+name:
+  en: "Swiss Slug Normalizer"
+summary:
+  en: "Create URL-safe slugs from Swiss multilingual names while preserving canton, UID, and locale-safe context."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Zürich Genève Lugano — Alpine Test AG"
+    actions: [format, validate, parse, generate, explain]
+related:
+  explicit: [switzerland-json-fixture-generator, switzerland-regex-pack-helper, switzerland-api-payload-auditor, switzerland-form-field-auditor]
+seo:
+  title:
+    en: "Swiss Slug Normalizer | ValidoHub"
+  description:
+    en: "Create URL-safe slugs from Swiss multilingual names while preserving canton, UID, and locale-safe context."

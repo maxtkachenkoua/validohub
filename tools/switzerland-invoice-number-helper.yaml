@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-invoice-number-helper
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss Invoice Number Helper"
+summary:
+  en: "Normalize Swiss invoice ids, QR reference links, date evidence, and accounting-safe display fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-CH-2026-0042 / QR ref 210000000003139471430009017"
+    actions: [format, validate, parse, generate, explain]
+related:
+  explicit: [switzerland-e-invoicing-readiness-helper, switzerland-salary-certificate-field-helper, switzerland-payroll-social-security-helper]
+seo:
+  title:
+    en: "Swiss Invoice Number Helper | ValidoHub"
+  description:
+    en: "Normalize Swiss invoice ids, QR reference links, date evidence, and accounting-safe display fields."

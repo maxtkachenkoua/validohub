@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-vehicle-plate-inspector
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Swiss Vehicle Plate Inspector"
+summary:
+  en: "Inspect Swiss vehicle plate canton prefixes, serial digits, and fleet-safe redaction evidence."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PLATE input"
+        required: true
+        placeholder:
+          en: "ZH 123456"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [switzerland-vin-validator, switzerland-vehicle-data-redaction-helper]
+seo:
+  title:
+    en: "Swiss Vehicle Plate Inspector | ValidoHub"
+  description:
+    en: "Inspect Swiss vehicle plate canton prefixes, serial digits, and fleet-safe redaction evidence."

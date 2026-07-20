@@ -42,6 +42,27 @@
       input.dispatchEvent(new Event('input', { bubbles: true }));
     }
 
+    function apiEndpoint(mode) {
+      return "https://api.validohub.com/v1/url/" + (mode === "decode" ? "decode" : "encode");
+    }
+
+    function escapedJsonString(value) {
+      return String(value || "").replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+    }
+
+    function apiSnippetsFor(mode, input) {
+      const endpoint = apiEndpoint(mode);
+      const safeInput = escapedJsonString(input);
+      return {
+        curl: `curl -X POST ${endpoint} \\\n  -H "Content-Type: application/json" \\\n  -d '{"input": "${safeInput}"}'`,
+        javascript: `fetch("${endpoint}", {\n  method: "POST",\n  headers: { "Content-Type": "application/json" },\n  body: JSON.stringify({ input: "${safeInput}" })\n})\n.then(res => res.json())\n.then(data => console.log(data));`,
+        python: `import requests\n\nres = requests.post(\n    "${endpoint}",\n    json={"input": "${safeInput}"}\n)\nprint(res.json())`,
+        java: `import java.net.http.*;\nimport java.net.URI;\n\nvar client = HttpClient.newHttpClient();\nvar request = HttpRequest.newBuilder()\n    .uri(URI.create("${endpoint}"))\n    .header("Content-Type", "application/json")\n    .POST(HttpRequest.BodyPublishers.ofString("{\\"input\\": \\"${safeInput}\\"}"))\n    .build();\nvar response = client.send(request, HttpResponse.BodyHandlers.ofString());\nSystem.out.println(response.body());`,
+        csharp: `using System.Net.Http;\n\nvar client = new HttpClient();\nvar content = new StringContent("{\\"input\\":\\"${safeInput}\\"}", System.Text.Encoding.UTF8, "application/json");\nvar response = await client.PostAsync("${endpoint}", content);\nvar result = await response.Content.ReadAsStringAsync();\nConsole.WriteLine(result);`,
+        go: `package main\n\nimport (\n\t"bytes"\n\t"fmt"\n\t"io/ioutil"\n\t"net/http"\n)\n\nfunc main() {\n\tpayload := []byte(\`{"input": "${safeInput}"}\`)\n\tres, _ := http.Post("${endpoint}", "application/json", bytes.NewBuffer(payload))\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\tfmt.Println(string(body))\n}`
+      };
+    }
+
     function validatePercentEncoding(input) {
       const diagnostics = [];
       const invalidSequences = collectInvalidSequences(input);
@@ -281,9 +302,7 @@
           </div>
           <select class="pesel-select" id="pesel-presets" style="width: 100%; height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer;">
             <option value="">-- Select Preset --</option>
-            <option value="url-hello">Plain Text</option>
-            <option value="url-unicode">Unicode String</option>
-            <option value="url-encoded">Encoded URL Query</option>
+            ${workbench.form.dataset.algorithmId === URL_DECODER_ALGORITHM ? '<option value="url-encoded">Encoded URL Query</option><option value="url-hello">Plain Text</option><option value="url-unicode">Unicode String</option>' : '<option value="url-hello">Plain Text</option><option value="url-unicode">Unicode String</option><option value="url-encoded">Encoded URL Query</option>'}
             <option value="url-malformed">Malformed percent escapes</option>
           </select>
         `;
@@ -631,8 +650,18 @@
         }
 
         // Setup API Developer Snippets Panel
+        const snippets = apiSnippetsFor("decode", inputVal);
         workbench.setAdvanced(`
           <div class="pesel-dev-section">
+            <section class="generic-analysis-section">
+              <h4>URL decode quality notes</h4>
+              <div class="generic-quality-grid">
+                <article class="generic-quality-card"><strong>Privacy boundary</strong><p>Input is decoded locally in this browser and is not uploaded by ValidoHub.</p></article>
+                <article class="generic-quality-card"><strong>UTF-8 boundary</strong><p>Percent escapes can be structurally valid while still not representing valid UTF-8 text.</p></article>
+                <article class="generic-quality-card"><strong>Plus signs</strong><p>This decoder preserves + literally; form-urlencoded plus-to-space behavior is a separate convention.</p></article>
+                <article class="generic-quality-card"><strong>Developer handling</strong><p>Decode only at trusted boundaries and avoid double-decoding route or query values.</p></article>
+              </div>
+            </section>
             <div class="pesel-api-card">
               <div class="pesel-section-title">
                 <span>🔌</span> Developer API Preview
@@ -647,7 +676,7 @@
               </div>
               <div class="pesel-dev-accordion-content" style="background: var(--code-bg); padding: 12px; border-radius: 6px;">
                 <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
-                <pre id="pesel-api-code-block" style="margin: 0; font-family: monospace; font-size: 0.8rem; line-height: 1.4; color: var(--code-text);">${apiSnippets.curl.replace('$INPUT$', inputVal)}</pre>
+                <pre id="pesel-api-code-block" style="margin: 0; font-family: monospace; font-size: 0.8rem; line-height: 1.4; color: var(--code-text);">${snippets.curl}</pre>
               </div>
             </div>
           </div>
@@ -662,8 +691,8 @@
               tabs.forEach(btn => btn.classList.remove('active'));
               t.classList.add('active');
               const lang = t.dataset.lang;
-              if (apiBlock && apiSnippets[lang]) {
-                apiBlock.textContent = apiSnippets[lang].replace('$INPUT$', inputVal);
+              if (apiBlock && snippets[lang]) {
+                apiBlock.textContent = snippets[lang];
               }
             });
           });
@@ -749,8 +778,18 @@
         }
 
         // Setup API Developer Snippets Panel
+        const snippets = apiSnippetsFor("encode", inputVal);
         workbench.setAdvanced(`
           <div class="pesel-dev-section">
+            <section class="generic-analysis-section">
+              <h4>URL encode quality notes</h4>
+              <div class="generic-quality-grid">
+                <article class="generic-quality-card"><strong>Privacy boundary</strong><p>Input is encoded locally in this browser and is not uploaded by ValidoHub.</p></article>
+                <article class="generic-quality-card"><strong>RFC boundary</strong><p>Percent encoding makes bytes safe for URL components; full URL validation is a separate parser concern.</p></article>
+                <article class="generic-quality-card"><strong>Double encoding</strong><p>Existing percent escapes are intentionally escaped again, so review already-encoded input before shipping.</p></article>
+                <article class="generic-quality-card"><strong>Developer handling</strong><p>Encode each URL component independently instead of encoding a complete URL as one opaque string.</p></article>
+              </div>
+            </section>
             <div class="pesel-api-card">
               <div class="pesel-section-title">
                 <span>🔌</span> Developer API Preview
@@ -765,7 +804,7 @@
               </div>
               <div class="pesel-dev-accordion-content" style="background: var(--code-bg); padding: 12px; border-radius: 6px;">
                 <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
-                <pre id="pesel-api-code-block" style="margin: 0; font-family: monospace; font-size: 0.8rem; line-height: 1.4; color: var(--code-text);">${apiSnippets.curl.replace('$INPUT$', inputVal)}</pre>
+                <pre id="pesel-api-code-block" style="margin: 0; font-family: monospace; font-size: 0.8rem; line-height: 1.4; color: var(--code-text);">${snippets.curl}</pre>
               </div>
             </div>
           </div>
@@ -780,8 +819,8 @@
               tabs.forEach(btn => btn.classList.remove('active'));
               t.classList.add('active');
               const lang = t.dataset.lang;
-              if (apiBlock && apiSnippets[lang]) {
-                apiBlock.textContent = apiSnippets[lang].replace('$INPUT$', inputVal);
+              if (apiBlock && snippets[lang]) {
+                apiBlock.textContent = snippets[lang];
               }
             });
           });

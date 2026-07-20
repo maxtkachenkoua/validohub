@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-bank-statement-parser
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss Bank Statement Parser"
+summary:
+  en: "Parse Swiss bank statement snippets for dates, CHF amounts, IBAN-like strings, QR references, and reconciliation hints."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "14.07.2026 CREDIT CHF 1 250.75 REF 210000000003139471430009017 IBAN CH9300762011623852957"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-iban-validator, switzerland-sic-clearing-number-inspector, switzerland-bic-swift-inspector, switzerland-sepa-transfer-helper]
+seo:
+  title:
+    en: "Swiss Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse Swiss bank statement snippets for dates, CHF amounts, IBAN-like strings, QR references, and reconciliation hints."

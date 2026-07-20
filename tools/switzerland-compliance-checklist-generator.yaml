@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-compliance-checklist-generator
+kind: tool
+module: validohub
+country: CH
+category: developer-tools
+status: active
+name:
+  en: "Swiss Compliance Checklist Generator"
+summary:
+  en: "Generate a browser-only checklist for Swiss UID, VAT, QR-bill, privacy, address, banking, and audit evidence."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CHECK input"
+        required: true
+        placeholder:
+          en: "Company onboarding + QR-bill + FADP privacy review for Swiss checkout"
+    actions: [generate, validate, parse, format, explain]
+related:
+  explicit: [switzerland-audit-trail-checklist-generator, switzerland-fadp-gdpr-redaction-helper, switzerland-pii-masker, switzerland-data-quality-workbench]
+seo:
+  title:
+    en: "Swiss Compliance Checklist Generator | ValidoHub"
+  description:
+    en: "Generate a browser-only checklist for Swiss UID, VAT, QR-bill, privacy, address, banking, and audit evidence."

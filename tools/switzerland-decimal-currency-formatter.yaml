@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-decimal-currency-formatter
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss Decimal / Currency Formatter"
+summary:
+  en: "Normalize Swiss decimal separators, apostrophe grouping, CHF display, and API numeric fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1'250.75 CHF"
+    actions: [format, validate, parse, generate, explain]
+related:
+  explicit: [switzerland-chf-amount-formatter, switzerland-date-locale-formatter]
+seo:
+  title:
+    en: "Swiss Decimal / Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize Swiss decimal separators, apostrophe grouping, CHF display, and API numeric fields."

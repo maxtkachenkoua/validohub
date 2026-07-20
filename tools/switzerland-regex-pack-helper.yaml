@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-regex-pack-helper
+kind: tool
+module: validohub
+country: CH
+category: developer-tools
+status: active
+name:
+  en: "Swiss Regex Pack Helper"
+summary:
+  en: "Prepare Swiss-oriented regex snippets for UID, AHV/AVS, IBAN, postal codes, phones, and QR references."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "Need regex for UID, AHV, Swiss IBAN, postal code, phone, QR reference"
+    actions: [generate, validate, parse, format, explain]
+related:
+  explicit: [switzerland-json-fixture-generator, switzerland-api-payload-auditor, switzerland-form-field-auditor, switzerland-csv-locale-normalizer]
+seo:
+  title:
+    en: "Swiss Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare Swiss-oriented regex snippets for UID, AHV/AVS, IBAN, postal codes, phones, and QR references."

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-compliance-checklist-generator
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "Compliance Checklist Generator"
+summary:
+  en: "Generate implementation checklists for French identifier, payment, tax, privacy, and localization workflows."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "CHECK"
+        required: true
+        placeholder:
+          en: "Build onboarding flow with SIRET, TVA, IBAN, phone, invoice number, GDPR logging"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-audit-trail-checklist-generator]
+seo:
+  title:
+    en: "Compliance Checklist Generator | ValidoHub"
+  description:
+    en: "Generate implementation checklists for French identifier, payment, tax, privacy, and localization workflows."

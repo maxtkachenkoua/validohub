@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-sirene-lookup-readiness-helper
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "Sirene Lookup Readiness Helper"
+summary:
+  en: "Prepare SIRENE API lookup payloads with normalized SIREN/SIRET values and offline validation notes."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "SIRENE"
+        required: true
+        placeholder:
+          en: "73282932000074"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-siren-validator, france-siret-validator, france-nic-inspector, france-ape-naf-code-inspector]
+seo:
+  title:
+    en: "Sirene Lookup Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare SIRENE API lookup payloads with normalized SIREN/SIRET values and offline validation notes."

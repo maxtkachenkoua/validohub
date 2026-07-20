@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-ahv-avs-number-validator
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "AHV / AVS Number Validator"
+summary:
+  en: "Validate Swiss social insurance numbers, replay the EAN-style check digit, normalize punctuation, and separate offline syntax from identity proof."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "AHV input"
+        required: true
+        placeholder:
+          en: "756.1234.5678.97"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [switzerland-uid-validator]
+seo:
+  title:
+    en: "AHV / AVS Number Validator | ValidoHub"
+  description:
+    en: "Validate Swiss social insurance numbers, replay the EAN-style check digit, normalize punctuation, and separate offline syntax from identity proof."

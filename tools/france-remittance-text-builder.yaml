@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-remittance-text-builder
+kind: tool
+module: validohub
+country: FR
+category: finance
+status: active
+name:
+  en: "French Remittance Text Builder"
+summary:
+  en: "Clean French remittance text for bank transfers, invoices, and reconciliation-safe references."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "REMIT"
+        required: true
+        placeholder:
+          en: "Facture n° FA-2026-0042 / Client Élodie Martin"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-sepa-transfer-helper, france-sepa-direct-debit-rum-helper, france-payment-reconciliation-helper]
+seo:
+  title:
+    en: "French Remittance Text Builder | ValidoHub"
+  description:
+    en: "Clean French remittance text for bank transfers, invoices, and reconciliation-safe references."

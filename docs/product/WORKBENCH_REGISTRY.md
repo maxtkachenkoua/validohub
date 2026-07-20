@@ -2,6 +2,32 @@
 
 This registry records production browser workbenches currently owned by ValidoHub.
 
+## Generic Workbench Product Bar
+
+All generic, non-country workbenches are governed by `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md`.
+
+Generic tools must not be treated as lightweight utilities. They must match the Poland and Brazil premium country workbench baseline for visual polish, interaction density, advanced analysis, result cards, mode-specific presets, developer snippets, local/offline behavior, and exploratory functionality. The first preset, primary success path, invalid/error path, advanced tab, and mobile layout must all be audited before a generic tool can be called premium.
+
+Future global tools must be born premium: deterministic neutral theme, tool-specific header, success-first preset, intentional invalid/edge preset, result block immediately after input, advanced analysis below results, premium cards, quality notes, copy/download, and browser verification. Do not ship a new global tool as a basic form with a plan to clean it up later.
+
+## Future Country Suite Factory
+
+- Source JS: `assets/js/tools/country-suite-factory.js`
+- Product spec: `docs/product/COUNTRY_SUITE_FACTORY_SPEC.md`
+- Audits:
+  - `node scripts/audit-country-suite-factory.mjs`
+  - `npm run audit:country-suite`
+- Current capabilities:
+  - Additive-only reusable shell for future complete country suites; first proven by Switzerland Premium Country Suite V1.
+  - Compact Brazil-scale country tool header, input, result card, validation pipeline, field breakdown, quality notes, advanced analysis, copy, and download controls.
+  - Config validation for suite identity, country metadata, theme colors, tool names, codes, summaries, samples, quality notes, official-boundary copy, duplicate ids, and raw-payload sample labels.
+  - Local overflow and wrapping rules for long primary values, field cards, JSON payloads, and advanced analysis.
+  - Explicit non-migration guard: Brazil, Poland, France, and Netherlands must not import or call the factory without a separate user-approved migration task.
+- Known future ideas:
+  - Per-country generator that emits factory configs from a researched country tool matrix.
+  - Optional screenshot comparison against Brazil CPF/CNPJ once a browser visual-diff workflow is approved.
+- Current quality status: Additive V1 template for future countries; not connected to existing accepted country suites.
+
 ## Base64 Workbench
 
 - Source JS: `assets/js/tools/base64.js`
@@ -55,6 +81,9 @@ This registry records production browser workbenches currently owned by ValidoHu
   - Advanced analysis
   - Samples
   - Copy and download through the shared framework
+  - Mode-aware URL encode/decode API preview
+  - URL encode/decode quality note cards
+  - Decoder-first encoded success preset on decoder pages
 - Known future ideas:
   - URL Parser
   - URL Analyzer
@@ -62,7 +91,7 @@ This registry records production browser workbenches currently owned by ValidoHu
   - Query Builder
   - Component-level copy helpers
   - Normalize and sort query parameters
-- Current quality status: Production workbench, below Base64 and JSON in depth.
+- Current quality status: Production-quality premium workbench with mode-correct presets and advanced analysis.
 
 ## JSON Workbench
 
@@ -164,6 +193,76 @@ This registry records production browser workbenches currently owned by ValidoHu
   - Batch QR generation.
   - Browser-only QR image import if a decoder is approved.
 - Current quality status: Production-quality V1 workbench modeled after the PESEL gold standard.
+
+## France Premium Workbench Suite
+
+- Source JS: `assets/js/tools/france-suite.js`
+- Related YAML tool pages:
+  - `tools/france-*.yaml`
+- Algorithm ID:
+  - `validohub.france-suite`
+- Current capabilities:
+  - 64 France-specific country workbenches.
+  - SIREN, SIRET, NIC, TVA, EORI, APE/NAF, RCS, RM, Sirene-readiness, and onboarding diagnostics.
+  - French IBAN, RIB, bank code, BIC, SEPA transfer, RUM, remittance, bank statement, masking, and reconciliation helpers.
+  - Postal code, INSEE commune, department, region, CEDEX, address, transliteration, phone, E.164, date, EUR, CSV, accent, and slug localization helpers.
+  - NIR syntax/key/masking, personal-data fixtures, GDPR/PII redaction, document OCR repair, vehicle plate, VIN, Crit'Air, carte grise, and vehicle redaction helpers.
+  - Tax and compliance helpers for VAT rates, invoice numbers, e-invoicing/PDP/PPF readiness, FEC snippets, audit trails, API payloads, regex packs, JSON fixtures, and form fields.
+  - Branded France workbench header, samples, immediate result card after inputs, validation pipeline, field breakdown, quality notes, local checks, copyable output, and developer JSON payload.
+  - Browser-only/offline analysis with explicit boundaries for Sirene, VIES, bank ownership, identity proof, customs status, and official registry existence.
+- Known future ideas:
+  - Larger official dictionaries for APE/NAF, departments, regions, bank codes, and commune names.
+  - Optional live lookup integrations only after a privacy/network product spec.
+  - Deeper all-locale editorial translation pass for the dense France-specific workbench copy.
+- Current quality status: Production-quality V1 country suite and France expansion benchmark.
+
+## Netherlands Premium Workbench Suite
+
+- Source JS: `assets/js/tools/netherlands-suite.js`
+- Related YAML tool pages:
+  - `tools/netherlands-*.yaml`
+- Algorithm ID:
+  - `validohub.netherlands-suite`
+- Current capabilities:
+  - 63 Netherlands-specific country workbenches.
+  - BSN, RSIN, KVK, BTW/VAT, EORI, DigiD-boundary, UBO, RVO, document, driving-licence, vehicle plate, RDW redaction, and VIN diagnostics.
+  - Dutch IBAN, BIC/SWIFT, bank code, SEPA transfer, SEPA mandate, iDEAL references, remittance, masked IBAN, statement parsing, and payment reconciliation helpers.
+  - Postcode, address, house-number addition, BAG readiness, municipality/province, phone, E.164, date, EUR, transliteration, and slug helpers.
+  - Tax and compliance helpers for BTW rates, invoice numbers, e-invoicing, Peppol readiness, VAT returns, Dutch audit-file snippets, payroll tax, wage tax, audit trails, and compliance checklists.
+  - AVG/GDPR redaction, Dutch PII masking, personal fixtures, data-quality audits, OCR cleanup, CSV normalization, JSON fixtures, regex packs, API payload audits, form-field audits, email fixtures, health-insurance boundaries, PostNL tracking, and EAN/GS1 fixtures.
+  - Branded Netherlands workbench header, short sample selector labels, immediate result card after inputs, validation pipeline, dedicated field breakdown panels, quality notes, local checks, copyable output, and developer JSON payload.
+  - Brazil-style field breakdown coverage for BSN/RSIN eleven-test digits, KVK, BTW/VAT, EORI, Dutch IBAN/BBAN, BIC, postcode, phone, EUR values, vehicle/RDW/VIN/plate evidence, audit-file snippets, and developer/data payloads.
+  - Browser-only/offline analysis with explicit boundaries for KVK, BAG, VIES, bank ownership, DigiD, RDW, tax filing, identity proof, and carrier status.
+- Known future ideas:
+  - Larger Dutch dictionaries for bank codes, municipality/province names, vehicle plate families, VAT return box labels, and Peppol participant formats.
+  - Optional live lookup integrations only after a privacy/network product spec.
+  - Deeper all-locale editorial translation pass for dense Netherlands-specific workbench copy.
+- Current quality status: Production-quality V2 country suite, Brazil-style field-breakdown benchmark, and first post-guardrails generation benchmark.
+
+## Switzerland Premium Workbench Suite
+
+- Source JS: `assets/js/tools/switzerland-suite.js`
+- Shared shell JS: `assets/js/tools/country-suite-factory.js`
+- Related YAML tool pages:
+  - `tools/switzerland-*.yaml`
+- Algorithm ID:
+  - `validohub.switzerland-suite`
+- Product spec:
+  - `docs/product/SWITZERLAND_PREMIUM_SUITE_SPEC.md`
+- Current capabilities:
+  - 58 Switzerland-specific country workbenches.
+  - UID, MWST/VAT, AHV/AVS, EORI/customs, company onboarding, Zefix-readiness, salary certificate, payroll, withholding-tax, VAT-return, and tax-boundary diagnostics.
+  - Swiss IBAN, SIC/BC clearing, BIC/SWIFT, SEPA transfer, QR-bill payloads, QR/ESR references, CHF amount formatting, payment reconciliation, and bank-statement parsing helpers.
+  - Postal code, address, transliteration, multilingual address, canton-code, municipality, phone, E.164, date, decimal/currency, CSV, slug, JSON, regex, API, and form-field helpers.
+  - FADP/GDPR redaction, Swiss PII masking, data-quality audits, OCR cleanup, personal-data fixtures, passport/ID/residence-permit/driving-licence helpers, health-insurance boundaries, insurance-policy snippets, vehicle plates, VIN, vehicle redaction, customs declaration, and Swiss Post tracking helpers.
+  - Country Suite Factory V1 shell with compact Brazil-scale header, short samples, immediate result card, validation pipeline, dedicated field breakdown, quality notes, copy/download controls, and advanced developer payload.
+  - Runtime localization for every supported ValidoHub locale across workbench labels, states, sample labels, tool titles/summaries, diagnostics, quality notes, and advanced labels.
+  - Browser-only/offline analysis with explicit boundaries for Zefix, UID register status, tax filing, identity proof, AHV/AVS identity, bank ownership, QR-bill settlement, customs status, carrier delivery state, vehicle registry status, and official legal decisions.
+- Known future ideas:
+  - Deeper official dictionaries for canton/municipality codes, Swiss bank clearing numbers, VAT fields, and QR-bill payload validation after source audit.
+  - Human-reviewed static editorial translations for the full Switzerland country hub body.
+  - Optional live lookup integrations only after a privacy/network product spec.
+- Current quality status: Production-quality V1 country suite and first full Country Suite Factory V1 consumer.
 
 ## Spain ID Workbench
 
@@ -408,26 +507,38 @@ This is a product platform section, not a browser workbench plugin.
 ## Generic Utility Workbench Suite
 
 - Source JS file: `assets/js/tools/generic-suite.js`
-- Build wiring: `scripts/build-all.mjs`
+- Build wiring: `scripts/build-all.mjs` materializes full generic utility workbench markup after Engine publish and injects the shared workbench helpers, framework, and `generic-suite.js`.
 - Related pages:
   - `tools/case-converter.yaml`
   - `tools/html-decoder.yaml`
   - `tools/html-encoder.yaml`
+  - `tools/brazil-iban-validator.yaml`
+  - `tools/germany-iban-validator.yaml`
   - `tools/iban-validator.yaml`
   - `tools/md5-generator.yaml`
   - `tools/regex-tester.yaml`
   - `tools/sha1-generator.yaml`
   - `tools/sha256-generator.yaml`
+  - `tools/spain-iban-validator.yaml`
   - `tools/slug-generator.yaml`
   - `tools/text-diff.yaml`
   - `tools/uuid-generator.yaml`
 - Current capabilities:
   - Browser-only execution with no backend, REST API, database, or Java execution.
   - Tool-specific validation, normalization, diagnostics, samples, copy, download, local result cards, preview, and expanded advanced analysis.
-  - HTML encode/decode, slug generation, case conversion, UUID v4/v7 generation and validation, IBAN MOD-97 validation, regular-expression testing, text diffing, and MD5/SHA-1/SHA-256 hashing.
+  - HTML encode/decode, slug generation, case conversion, UUID v4/v7 generation and validation, global IBAN MOD-97 validation, country-specific Brazil/Germany/Spain IBAN workbenches, regular-expression testing, text diffing, and MD5/SHA-1/SHA-256 hashing.
+  - Working success-first sample chips and intentional edge/error samples for every generic-suite page.
+  - UUID batch generation capped at 100 local values.
+  - IBAN masked display alongside grouped output, country detection, country page routing, BBAN field maps, and MOD-97 diagnostics.
+  - Spain IBAN replays domestic CCC check digits locally; Germany extracts BLZ/account segments; Brazil extracts bank, branch, account, and account-type fields. Poland remains on the dedicated Polish IBAN / NRB Workbench.
+  - Regex capture-group reporting in output, field breakdown, and developer JSON.
+  - Text diff premium result cards for added, removed, unchanged, and character delta metrics.
+  - Hash digest shape validation and optional recompute/compare against provided input for MD5, SHA-1, and SHA-256.
+  - Correct dedicated slug generation and hash algorithm execution for MD5, SHA-1, and SHA-256.
   - Shared premium card styling so global tools visually match country workbench standards.
   - Premium generic tool header with identity mark, theme accent, domain-specific summary, capability chips, and privacy boundary.
 - Known future ideas:
   - Promote high-traffic generic tools into dedicated gold-standard plugins when their domain requires deeper product UX.
   - Add human-reviewed documentation packs for each generic utility after usage data confirms priority.
-- Current quality status: Production-quality V1 shared baseline for global non-country tools.
+  - Expand country-specific IBAN workbenches only when the page can add country-local structure, national checks, or real user demand beyond generic ISO validation.
+- Current quality status: Production-quality V3 shared premium suite for global non-country tools, aligned with the Poland/Brazil premium workbench structure where practical.

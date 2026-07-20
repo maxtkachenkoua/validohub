@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-customs-declaration-helper
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Customs Declaration Helper"
+summary:
+  en: "Inspect Swiss customs snippets for EORI-like ids, UID roots, HS-code hints, CHF values, and official customs handoff."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "Export CHCHE123456789 HS 9102.21 value CHF 1250.75 Zurich"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-vat-mwst-validator, switzerland-eori-validator, switzerland-mwst-rate-sanity-helper, switzerland-vat-return-field-helper]
+seo:
+  title:
+    en: "Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect Swiss customs snippets for EORI-like ids, UID roots, HS-code hints, CHF values, and official customs handoff."

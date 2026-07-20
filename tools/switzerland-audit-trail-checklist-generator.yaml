@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-audit-trail-checklist-generator
+kind: tool
+module: validohub
+country: CH
+category: developer-tools
+status: active
+name:
+  en: "Audit Trail Checklist Generator"
+summary:
+  en: "Create Swiss audit-trail checklists for invoices, payments, UID evidence, VAT notes, and browser-only review steps."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "AUDIT input"
+        required: true
+        placeholder:
+          en: "Audit Swiss invoice INV-2026-0042 with QR reference and UID evidence"
+    actions: [generate, validate, parse, format, explain]
+related:
+  explicit: [switzerland-compliance-checklist-generator, switzerland-fadp-gdpr-redaction-helper, switzerland-pii-masker, switzerland-data-quality-workbench]
+seo:
+  title:
+    en: "Audit Trail Checklist Generator | ValidoHub"
+  description:
+    en: "Create Swiss audit-trail checklists for invoices, payments, UID evidence, VAT notes, and browser-only review steps."

@@ -15,8 +15,9 @@ Read in this order before implementation:
 3. `docs/product/CURRENT_STATE.md`
 4. `docs/product/DEVELOPMENT_RULES.md`
 5. `docs/product/WORKBENCH_REGISTRY.md`
-6. `docs/ai/AI_DEVELOPMENT_PROTOCOL.md`
-7. The corresponding `docs/product/*_SPEC.md` for the workbench or area being changed
+6. `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md`
+7. `docs/ai/AI_DEVELOPMENT_PROTOCOL.md`
+8. The corresponding `docs/product/*_SPEC.md` for the workbench or area being changed
 
 For visual identity, logo, icon, or brand work, also read:
 
@@ -30,12 +31,19 @@ For Country Hub work, also read:
 - `docs/product/COUNTRIES_ARCHITECTURE.md`
 - `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`
 - `docs/product/POLAND_COUNTRY_HUB_GOLD_STANDARD.md`
+- `docs/product/COUNTRY_SUITE_GENERATION_GUARDRAILS.md`
+- `docs/product/COUNTRY_SUITE_FACTORY_SPEC.md`
+- `docs/product/FRANCE_PREMIUM_SUITE_SPEC.md`, `docs/product/NETHERLANDS_PREMIUM_SUITE_SPEC.md`, and `docs/product/SWITZERLAND_PREMIUM_SUITE_SPEC.md` when generating or expanding a full country suite from scratch
+
+For future full-country suites and standalone country-scoped tools, treat the fixed-regression bar in `docs/product/DEVELOPMENT_RULES.md` and `docs/product/COUNTRY_SUITE_GENERATION_GUARDRAILS.md` as mandatory acceptance criteria. Do not call a country complete if it repeats any previously fixed issue: generic "Run the tool" shell, hybrid shell, oversized tool UI, red success states, missing field breakdown, `[object Object]`, empty cards, icon-only/status-only lower cards, raw sample labels, foreign fallback copy, cross-country related links, or horizontal overflow. Field breakdown is required in every country because it is one of the main debugging surfaces.
+
+For generic, non-country tools, the gold standard is not a simple utility page. Read `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md` and treat Poland/Brazil premium workbenches as the visual and functional baseline.
 
 If the task may affect architecture, also read:
 
-8. `docs/ai/ARCHITECTURE_GUARDRAILS.md`
-9. `docs/ai/DECISIONS.md`
-10. `docs/product/FUTURE_ARCHITECTURE_REFACTOR.md`
+9. `docs/ai/ARCHITECTURE_GUARDRAILS.md`
+10. `docs/ai/DECISIONS.md`
+11. `docs/product/FUTURE_ARCHITECTURE_REFACTOR.md`
 
 ## Continuing Unfinished Work
 

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-slug-normalizer
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "French Slug Normalizer"
+summary:
+  en: "Create URL-safe French slugs while preserving accents in display text and explaining normalization choices."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "SLUG"
+        required: true
+        placeholder:
+          en: "Été à Saint-Germain-en-Laye"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-csv-locale-normalizer, france-decimal-currency-formatter, france-accent-normalizer, france-json-fixture-generator]
+seo:
+  title:
+    en: "French Slug Normalizer | ValidoHub"
+  description:
+    en: "Create URL-safe French slugs while preserving accents in display text and explaining normalization choices."

@@ -22,6 +22,10 @@ This document records the current ValidoHub and Valido Engine boundary so future
 - Poland Premium Workbench Suite: `assets/js/tools/poland-suite.js`
 - Poland Expansion Workbench Suite: `assets/js/tools/poland-expansion.js`
 - Poland Baseline Workbench Suite: `assets/js/tools/poland-baseline.js`
+- France Premium Workbench Suite: `assets/js/tools/france-suite.js`
+- Netherlands Premium Workbench Suite: `assets/js/tools/netherlands-suite.js`
+- Switzerland Premium Workbench Suite: `assets/js/tools/switzerland-suite.js`
+- Future Country Suite Factory: `assets/js/tools/country-suite-factory.js`
 
 
 ## Countries Platform
@@ -31,12 +35,28 @@ Countries are now treated as a first-class ValidoHub product section.
 Current country hubs:
 
 - Brazil: `/en/brazil/`
+- France: `/en/france/`
+- Germany: `/en/germany/`
+- Netherlands: `/en/netherlands/`
 - Poland: `/en/poland/`
 - Spain: `/en/spain/`
+- Switzerland: `/en/switzerland/`
 
 Current country workbench routes:
 
 - Brazil PIX Workbench: `/en/brazil/brazil-pix-validator/`
+- Brazil IBAN Validator: `/en/brazil/brazil-iban-validator/`
+- France SIREN Validator & Explainer: `/en/france/france-siren-validator/`
+- France SIRET Validator & Explainer: `/en/france/france-siret-validator/`
+- French IBAN Validator: `/en/france/france-iban-validator/`
+- French VAT / TVA Validator: `/en/france/france-vat-tva-validator/`
+- NIR Key Validator: `/en/france/france-nir-key-validator/`
+- German IBAN Validator: `/en/germany/germany-iban-validator/`
+- Dutch BSN Validator & Explainer: `/en/netherlands/netherlands-bsn-validator/`
+- Dutch KVK Number Validator: `/en/netherlands/netherlands-kvk-number-validator/`
+- Dutch BTW / VAT Validator: `/en/netherlands/netherlands-btw-vat-validator/`
+- Dutch IBAN Validator: `/en/netherlands/netherlands-iban-validator/`
+- Dutch Postcode Validator: `/en/netherlands/netherlands-postcode-validator/`
 - PESEL Validator: `/en/poland/pesel-validator/`
 - Poland NIP Validator & Explainer: `/en/poland/poland-nip-validator/`
 - Poland REGON Validator & Explainer: `/en/poland/poland-regon-validator/`
@@ -49,6 +69,13 @@ Current country workbench routes:
 - Polish VAT / EU VAT Syntax Workbench: `/en/poland/poland-vat-validator/`
 - Polish Bank Code / NRB Inspector: `/en/poland/poland-bank-code-inspector/`
 - Spain DNI/NIE/NIF/CIF Workbench: `/en/spain/spain-id-validator/`
+- Spain IBAN Validator: `/en/spain/spain-iban-validator/`
+- Swiss UID Validator & Explainer: `/en/switzerland/switzerland-uid-validator/`
+- Swiss VAT / MWST Validator: `/en/switzerland/switzerland-vat-mwst-validator/`
+- AHV / AVS Number Validator: `/en/switzerland/switzerland-ahv-avs-number-validator/`
+- Swiss IBAN Validator: `/en/switzerland/switzerland-iban-validator/`
+- Swiss QR-Bill Reference Validator: `/en/switzerland/switzerland-qr-bill-reference-validator/`
+- Swiss Postal Code Validator: `/en/switzerland/switzerland-postal-code-validator/`
 
 Route rules:
 
@@ -87,9 +114,21 @@ Poland Premium Workbench Suite V2 is complete as a PESEL-inspired expansion of t
 
 Poland Expansion Workbench Suite V1 is complete as a second browser-only Poland pack. It adds fifteen additional premium workbenches for Polish ID cards, BIC/SWIFT, TERYT-like administrative codes, BLIK, PLN amounts, VAT calculations, pl-PL dates, addresses, VIN, EORI, PII masking, test-data generation, invoice numbering, grosz conversion, and SEPA transfer readiness. These tools share `assets/js/tools/poland-expansion.js`, use metadata-only `validohub.poland-expansion`, run offline in the browser, and avoid official registry, payment, customs, vehicle, tax-status, and banking lookups.
 
-Country tool headers are now standardized for mature country workbenches. Poland Premium, Expansion, and Baseline suite tools use PL-aware premium headers with identity marks, tool-specific summaries, presets, local history, and sample chips. Brazil suite tools use the brighter flag-color header treatment with sample chips as the visual reference for vivid country identity. Future country suites should reuse this pattern before inventing new page headers.
+Country tool headers are now standardized for mature country workbenches. Poland Premium, Expansion, and Baseline suite tools use PL-aware premium headers with identity marks, tool-specific summaries, presets, local history, and sample chips. Brazil suite tools use the brighter flag-color header treatment with sample chips as the visual reference for vivid country identity. Future country suites should reuse this pattern before inventing new page headers. Individual country tools must stay at compact Brazil workbench scale across the full shell: header, mark, title, summary, chips, sample selector, textarea, buttons, result cards, validation pipeline, field breakdown, quality notes, and advanced panels. Country hub heroes can be large; tool pages should feel dense, premium, and immediately usable. `node scripts/audit-country-tool-shell.mjs` is the static compact-shell guard for France, Netherlands, generic premium hero sizing, and the related AI rules.
+
+IBAN has a permanent two-layer product strategy. The global IBAN Validator remains the universal detector under `/en/tools/iban-validator/`; it validates ISO shape, length, MOD-97, grouping, masking, and links to deeper country workbenches when available. Country-specific IBAN validators are product pages only when they add local value beyond SEO: BBAN maps, bank/branch/account slicing, domestic check digits where available, local samples, common mistakes, and official lookup boundaries. Current country-specific coverage is Poland via the Polish IBAN / NRB Workbench, France and Netherlands through their premium country suites, plus Brazil, Germany, and Spain IBAN validators through the country-aware generic finance runtime.
 
 Poland Baseline Workbench Suite V1 is complete as the broad Poland baseline layer. It adds twenty-four additional premium browser-only tools for KSeF XML, JPK XML, split payment, PKD, PKWiU, BDO, CEIDG readiness, company onboarding, invoice data, receipts, transfer titles, payment QR, bank statements, postal addresses, TERYT hierarchy, municipality codes, MRZ/passport parsing, passport numbers, driving licence snippets, vehicle registration documents, insurance policies, parcel tracking, PPE energy codes, and Polish data quality. These tools share `assets/js/tools/poland-baseline.js`, use metadata-only `validohub.poland-baseline`, run offline in the browser, include a real local SVG QR generator for payment QR payloads, and keep official registry, bank, tax, gateway, utility, carrier, vehicle, insurance, and legal-status lookups out of scope.
+
+France Premium Country Suite V1 is complete as the first no-phase country expansion from scratch. It adds a full France country hub plus sixty-four active country-specific workbenches for SIREN, SIRET, NIC, TVA, EORI, APE/NAF, RCS/RM helpers, company onboarding, Sirene readiness, French IBAN, RIB, BIC, SEPA, RUM, remittance, masking, statement parsing, reconciliation, postal codes, INSEE commune codes, departments, regions, CEDEX, addresses, phone numbers, dates, VAT rates, invoices, e-invoicing/PDP/PPF readiness, FEC, audit trails, GDPR/PII masking, data quality, NIR syntax/key/masking, personal-document helpers, personal fixtures, vehicle plates, VIN, Crit'Air, carte grise, OCR repair, CSV, EUR amounts, accents, slugs, JSON fixtures, regex packs, API payloads, and form-field audits. These tools share `assets/js/tools/france-suite.js`, use metadata-only `validohub.france-suite`, run offline in the browser where possible, place result cards immediately after input controls, and keep Sirene, VIES, bank ownership, customs status, identity proof, and live official-state lookups out of scope.
+
+Netherlands Premium Country Suite V2 is complete as the first full country generated after the country-suite anti-regression guardrails were documented and then upgraded to the Brazil-style field-breakdown bar. It adds a Netherlands country hub plus sixty-three active country-specific workbenches for BSN, RSIN, KVK, BTW/VAT, EORI, DigiD boundaries, UBO/RVO helpers, Dutch IBAN/BIC/SEPA/iDEAL, postcode/BAG/address/phone/locale workflows, BTW rates, invoice/e-invoicing/Peppol/VAT return/audit-file/payroll helpers, AVG/GDPR/PII masking, document OCR, CSV/JSON/regex/API/form audits, vehicle/RDW/VIN/plates, PostNL tracking, and EAN fixtures. These tools share `assets/js/tools/netherlands-suite.js`, use metadata-only `validohub.netherlands-suite`, run offline in the browser, place result cards immediately after input controls, use short sample selector labels, include dedicated field breakdown panels for every major Dutch tool family, and keep KVK, BAG, VIES, bank ownership, DigiD, RDW, tax filing, and carrier status lookups out of scope.
+
+Switzerland Premium Country Suite V1 is complete as the first full future-country suite built on Country Suite Factory V1 from the start. It adds a Switzerland country hub plus fifty-eight active country-specific workbenches for UID, MWST/VAT, AHV/AVS, EORI/customs, Swiss IBAN, SIC/BC clearing, BIC/SWIFT, SEPA, QR-bill, ESR, CHF amounts, VAT rates and returns, invoices, e-invoicing, salary certificates, payroll, withholding-tax readiness, company onboarding, Zefix readiness, FADP/GDPR redaction, PII masking, data quality, OCR repair, JSON/regex/API/form helpers, postal codes, addresses, phone numbers, cantons, multilingual locale workflows, personal-document helpers, health-insurance boundaries, vehicle plates, VIN, and customs/postal workflows. These tools share `assets/js/tools/switzerland-suite.js`, call the additive-only `assets/js/tools/country-suite-factory.js`, use metadata-only `validohub.switzerland-suite`, run offline in the browser, include dedicated field breakdowns, and localize the interactive runtime for every supported ValidoHub locale.
+
+Country Suite Generation Guardrails are now permanent current-state rules. Future full-country generation must read `docs/product/COUNTRY_SUITE_GENERATION_GUARDRAILS.md`, avoid foreign-country fallback copy, keep related links same-country by default, keep sample selector labels short, place results before advanced analysis, make long values layout-safe, cover all supported localized routes structurally, keep generated output out of commits, and leave Valido Engine untouched unless a truly generic platform capability is required.
+
+Country Suite Factory V1 is available for future countries and is now proven by Switzerland V1. It lives in `assets/js/tools/country-suite-factory.js`, is specified in `docs/product/COUNTRY_SUITE_FACTORY_SPEC.md`, and is audited by `node scripts/audit-country-suite-factory.mjs` or `npm run audit:country-suite`. The factory is additive-only: it must not remap, import into, or migrate Brazil, Poland, France, or Netherlands without a separate explicit migration task. Future countries should use it to get the compact Brazil-scale shell, immediate results, validation pipeline, dedicated field breakdown, quality notes, advanced analysis, copy/download controls, local overflow safety, config validation, and suite-level runtime localization from the start.
 
 Brazil is also the canonical Country Hub design reference. Future country hubs must read `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md` and `docs/ai/COUNTRY_HUB_AI_GUIDE.md` before implementation. Spain, Poland, Germany, France, Japan, and all future countries inherit the Brazil structure and design language; only metadata and local content should change.
 
@@ -230,4 +269,8 @@ Brazil now follows the Poland country-hub gold-standard layout with its own loca
 
 ## Generic Utility Workbench Suite
 
-Global non-country tools now use the ValidoHub-owned Generic Utility Workbench Suite when they do not yet justify a dedicated gold-standard plugin. The suite lives in `assets/js/tools/generic-suite.js` and covers HTML encode/decode, slug generation, case conversion, UUID, IBAN, regex, text diff, and hash tools with real browser-only behavior.
+Global non-country tools now use the ValidoHub-owned Generic Utility Workbench Suite when they do not yet justify a dedicated gold-standard plugin. The suite lives in `assets/js/tools/generic-suite.js` and covers HTML encode/decode, slug generation, case conversion, UUID, IBAN, regex, text diff, and hash tools with real browser-only behavior. The ValidoHub build post-processes those generated tool pages in `scripts/build-all.mjs`, materializes full premium workbench markup where Engine output is too generic, and injects the shared workbench helper scripts plus `generic-suite.js` without changing Valido Engine. The generic suite now includes the premium country-tool interaction baseline where the domain supports it: branded tool headers, working success-first samples, intentional edge/error samples, local result cards, validation pipelines, field breakdowns, quality notes, expanded advanced analysis, UUID batch generation, IBAN masked display, regex capture-group reporting, text diff result cards, hash digest comparison, and corrected hash/slug execution.
+
+Generic tools are now governed by `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md`. That standard is mandatory product memory: generic tools must look and behave like first-class premium workbenches, not secondary utilities. Poland and Brazil country workbenches are the visual and functional baseline. Future generic tools must be tool-first, mode-correct, richly interactive, competitor-aware, advanced-analysis-heavy, and deeper than the strongest public tools in their category wherever the domain supports it.
+
+Future generic instruments must start from the premium contract, not from a temporary generic form. New tools need deterministic neutral theming, success-first presets, polished invalid/error states, result cards immediately after input, advanced analysis below results, copy/download affordances, and browser verification before being called complete.

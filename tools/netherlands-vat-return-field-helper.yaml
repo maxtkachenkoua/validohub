@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-vat-return-field-helper
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "VAT Return Field Helper"
+summary:
+  en: "Organize Dutch VAT-return-style amounts, rates, periods, and evidence notes before official filing."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "RETURN"
+        required: true
+        placeholder:
+          en: "Period Q2 2026"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-btw-rate-sanity-helper, netherlands-btw-vat-validator, netherlands-compliance-checklist-generator, netherlands-audit-file-readiness-checker]
+seo:
+  title:
+    en: "VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Organize Dutch VAT-return-style amounts, rates, periods, and evidence notes before official filing."

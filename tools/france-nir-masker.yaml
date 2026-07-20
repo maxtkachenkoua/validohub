@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-nir-masker
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "NIR Masker"
+summary:
+  en: "Mask French NIR strings while preserving low-risk field evidence for debugging and QA."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "NIR MASK"
+        required: true
+        placeholder:
+          en: "269054958815780"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-masked-iban-formatter, france-gdpr-redaction-helper, france-pii-masker, france-nir-syntax-inspector]
+seo:
+  title:
+    en: "NIR Masker | ValidoHub"
+  description:
+    en: "Mask French NIR strings while preserving low-risk field evidence for debugging and QA."

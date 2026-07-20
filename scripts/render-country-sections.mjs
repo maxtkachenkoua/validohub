@@ -99,6 +99,8 @@ const COUNTRY_FLAGS = {
   br: '🇧🇷',
   germany: '🇩🇪',
   de: '🇩🇪',
+  netherlands: '🇳🇱',
+  nl: '🇳🇱',
   poland: '🇵🇱',
   pl: '🇵🇱',
   spain: '🇪🇸',
@@ -272,6 +274,20 @@ function getStandardIdentity(name, fallback = 'STD') {
   if (value.includes('nrb')) return 'NRB';
   if (value.includes('swift') || value.includes('bic')) return 'BIC';
   if (value.includes('sepa')) return 'SEPA';
+  if (value.includes('ideal') || value.includes('ideal')) return 'iDEAL';
+  if (value.includes('kvk')) return 'KVK';
+  if (value.includes('bsn')) return 'BSN';
+  if (value.includes('rsin')) return 'RSIN';
+  if (value.includes('digid')) return 'DigiD';
+  if (value.includes('ahv') || value.includes('avs')) return 'AHV';
+  if (value.includes('mwst')) return 'MWST';
+  if (value.includes('uid')) return 'UID';
+  if (value.includes('qr-bill') || value.includes('qr reference')) return 'QR';
+  if (value.includes('sic') || value.includes('clearing')) return 'SIC';
+  if (value.includes('canton')) return 'CT';
+  if (value.includes('belastingdienst')) return 'TAX';
+  if (value.includes('rdw')) return 'RDW';
+  if (value.includes('bag')) return 'BAG';
   if (value.includes('split') || value.includes('mpp')) return 'MPP';
   if (value.includes('payment qr') || value.includes('qr')) return 'QR';
   if (value.includes('pln') || value.includes('grosz')) return 'PLN';
@@ -407,9 +423,24 @@ const BRAZIL_ROUTE_DESCRIPTIONS = {
   "brazil-form-fixture-generator": "Generate fictional Brazilian form payloads for identity, company, address, payment, invoice, and locale UI testing."
 };
 
+function getSwitzerlandRouteDescription(slug) {
+  if (/ahv|avs/.test(slug)) return 'Validate Swiss social-insurance number structure, replay the check digit, mask sensitive values, and keep identity proof outside the browser.';
+  if (/uid/.test(slug)) return 'Normalize Swiss UID values, inspect CHE numeric blocks, and prepare company-registry handoff data without claiming official status.';
+  if (/vat|mwst/.test(slug)) return 'Inspect Swiss MWST/VAT display syntax, UID roots, suffixes, rates, and tax-return evidence for browser-only readiness checks.';
+  if (/iban/.test(slug)) return 'Validate Swiss IBAN structure, run MOD-97 locally, split clearing/account evidence, and document bank-ownership boundaries.';
+  if (/qr-bill|esr/.test(slug)) return 'Check Swiss QR-bill or ESR payment references, payload evidence, recursive control digits, and invoice-payment readiness.';
+  if (/sic|clearing|bic|swift|sepa|bank|payment|reconciliation|statement/.test(slug)) return 'Inspect Swiss banking and payment data across SIC/BC, BIC, SEPA, CHF, references, statements, and reconciliation evidence.';
+  if (/postal|address|phone|canton|municipality|date|decimal|currency|csv|slug|multilingual/.test(slug)) return 'Normalize Swiss locale, address, canton, phone, postal, date, CHF, and multilingual formatting evidence for developer workflows.';
+  if (/fadp|gdpr|pii|data-quality|ocr|json|regex|api|form|fixture|redaction/.test(slug)) return 'Audit Swiss developer payloads, privacy-sensitive text, fixtures, OCR, API fields, regex packs, and data-quality evidence locally.';
+  if (/passport|id-card|permit|licence|license|health|insurance|vehicle|plate|vin/.test(slug)) return 'Inspect Swiss document, insurance, vehicle, plate, and VIN-shaped data while separating offline structure from official status.';
+  if (/customs|eori|zefix|company|payroll|salary|withholding|tax/.test(slug)) return 'Prepare Swiss tax, customs, payroll, company, Zefix, and regulated handoff evidence without live registry or filing claims.';
+  return 'Run a Swiss browser-only validation, formatting, payment, privacy, or developer-data workflow with local field breakdowns.';
+}
+
 function getCountryRouteDescription(route) {
   const slug = routeSlug(route);
   if (slug.startsWith('brazil-')) return BRAZIL_ROUTE_DESCRIPTIONS[slug] || 'Run a browser-only Brazilian validation, formatting, or data-quality workflow tailored to this local standard.';
+  if (slug.startsWith('switzerland-')) return getSwitzerlandRouteDescription(slug);
   return POLAND_ROUTE_DESCRIPTIONS[slug] || route.metadata?.summary || 'Run a browser-only country validation, formatting, or data-quality workflow.';
 }
 
@@ -497,8 +528,130 @@ const BRAZIL_WORKBENCH_GROUPS = [
   { key:'developer', title:'Developer data operations', summary:'LGPD masking, test fixtures, data-quality audits, reconciliation, OCR cleanup, and compliance checklists.', tags:['developer','data-quality'], match: /(pii|lgpd|test-data|data-quality|company-onboarding|reconciliation|statement|ocr|compliance|fixture)/ }
 ];
 
+const FRANCE_WORKBENCH_GROUPS = [
+  {
+    key: 'identity',
+    title: 'Identity, registry & official numbers',
+    summary: 'SIREN, SIRET, NIC, NIR, EORI, APE/NAF, RCS, RM, documents, vehicle identifiers, and French registry-shaped data.',
+    tags: ['identity', 'registry'],
+    match: /(siren|siret|nic|nir|eori|ape|naf|rcs|rm-number|sirene|id-card|passport|driving|licence|license|plate|vin|carte-grise|critair|municipality|commune)/
+  },
+  {
+    key: 'tax',
+    title: 'Tax, invoices & business compliance',
+    summary: 'TVA, VAT rates, French invoices, e-invoicing, PDP/PPF readiness, FEC snippets, audit trails, and compliance helpers.',
+    tags: ['tax', 'business'],
+    match: /(vat|tva|invoice|e-invoicing|pdp|ppf|fec|audit|compliance|company-onboarding)/
+  },
+  {
+    key: 'banking',
+    title: 'Banking, SEPA, RIB & money movement',
+    summary: 'French IBAN, RIB, BIC, bank codes, SEPA transfers, RUM, remittance, masking, statements, and reconciliation.',
+    tags: ['banking', 'payments'],
+    match: /(iban|rib|bank|bic|swift|sepa|rum|remittance|payment|statement|reconciliation|masked-iban)/
+  },
+  {
+    key: 'address',
+    title: 'Address, phone, postal & local format',
+    summary: 'Postal codes, INSEE commune codes, departments, regions, CEDEX, French addresses, phone numbers, dates, EUR amounts, accents, and slugs.',
+    tags: ['localization', 'operations'],
+    match: /(postal|insee|commune|department|region|cedex|address|phone|date|decimal|currency|accent|slug|transliteration|csv)/
+  },
+  {
+    key: 'developer',
+    title: 'Developer data operations',
+    summary: 'GDPR/PII masking, data-quality audits, OCR cleanup, JSON fixtures, regex packs, API payload audits, and form-field reviews.',
+    tags: ['developer', 'data-quality'],
+    match: /(gdpr|pii|data-quality|ocr|json|regex|api|form-field|fixture|redaction|masker)/
+  }
+];
+
+const NETHERLANDS_WORKBENCH_GROUPS = [
+  {
+    key: 'identity',
+    title: 'Identity, registry & official numbers',
+    summary: 'BSN, RSIN, KVK, BTW, EORI, DigiD boundaries, documents, vehicle identifiers, and Dutch registry-shaped data.',
+    tags: ['identity', 'registry'],
+    match: /(bsn|rsin|kvk|btw|vat|eori|digid|ubo|rvo|id-card|passport|driving|licence|license|plate|rdw|vin|company-onboarding)/
+  },
+  {
+    key: 'tax',
+    title: 'Tax, invoices & business compliance',
+    summary: 'BTW rates, Dutch invoices, Peppol/e-invoicing readiness, audit files, payroll tax, compliance, and reporting helpers.',
+    tags: ['tax', 'business'],
+    match: /(btw|vat|invoice|e-invoicing|peppol|audit|xaf|payroll|wage-tax|compliance|ubo|company-onboarding)/
+  },
+  {
+    key: 'banking',
+    title: 'Banking, SEPA, iDEAL & money movement',
+    summary: 'Dutch IBAN, BIC, bank codes, SEPA transfers and mandates, iDEAL references, remittance, statements, and reconciliation.',
+    tags: ['banking', 'payments'],
+    match: /(iban|bic|swift|bank|sepa|ideal|payment|mandate|remittance|statement|reconciliation|masked-iban)/
+  },
+  {
+    key: 'address',
+    title: 'Address, phone, postal & local format',
+    summary: 'Dutch postcodes, house-number additions, BAG readiness, municipality/province codes, phones, dates, EUR amounts, and slugs.',
+    tags: ['localization', 'operations'],
+    match: /(postcode|postal|address|house-number|bag|municipality|province|phone|date|decimal|currency|slug|transliteration|csv)/
+  },
+  {
+    key: 'developer',
+    title: 'Developer data operations',
+    summary: 'AVG/GDPR redaction, PII masking, data-quality audits, OCR cleanup, JSON fixtures, regex packs, API payload audits, and form reviews.',
+    tags: ['developer', 'data-quality'],
+    match: /(avg|gdpr|pii|data-quality|ocr|json|regex|api|form-field|fixture|redaction|masker|csv)/
+  }
+];
+
+const SWITZERLAND_WORKBENCH_GROUPS = [
+  {
+    key: 'identity',
+    title: 'Identity, company & regulated numbers',
+    summary: 'AHV/AVS, UID, MWST/VAT, EORI, Zefix readiness, personal documents, health insurance, vehicles, and Swiss registry-shaped evidence.',
+    tags: ['identity', 'registry'],
+    match: /(ahv|avs|uid|mwst|vat|eori|zefix|passport|id-card|permit|driving|licence|license|health|insurance|vehicle|plate|vin|company|customs)/
+  },
+  {
+    key: 'tax',
+    title: 'Tax, payroll, invoices & compliance',
+    summary: 'Swiss VAT rates and returns, invoices, e-invoicing, salary certificates, payroll, withholding tax, compliance, and audit-trail helpers.',
+    tags: ['tax', 'business'],
+    match: /(vat|mwst|invoice|e-invoicing|salary|payroll|withholding|tax|compliance|audit|company-onboarding)/
+  },
+  {
+    key: 'banking',
+    title: 'Banking, QR-bill & money movement',
+    summary: 'Swiss IBAN, SIC/BC clearing, BIC/SWIFT, SEPA, QR-bill, ESR, CHF amounts, bank statements, and reconciliation workflows.',
+    tags: ['banking', 'payments'],
+    match: /(iban|sic|clearing|bic|swift|sepa|qr-bill|esr|payment|bank|statement|reconciliation|chf|amount)/
+  },
+  {
+    key: 'address',
+    title: 'Address, canton, phone & local format',
+    summary: 'Swiss postal codes, addresses, cantons, municipality hints, phone numbers, E.164, multilingual address text, dates, decimals, and CSV normalization.',
+    tags: ['localization', 'operations'],
+    match: /(postal|address|canton|municipality|phone|date|decimal|currency|csv|slug|multilingual|transliteration)/
+  },
+  {
+    key: 'developer',
+    title: 'Developer data, privacy & fixtures',
+    summary: 'FADP/GDPR redaction, PII masking, data-quality audits, OCR cleanup, JSON fixtures, regex packs, API payload audits, and form-field reviews.',
+    tags: ['developer', 'data-quality'],
+    match: /(fadp|gdpr|pii|data-quality|ocr|json|regex|api|form-field|fixture|redaction|masker|personal-data)/
+  }
+];
+
 function groupCountryWorkbenchRoutes(routes, model = null) {
-  const sourceGroups = model?.iso2 === 'BR' ? BRAZIL_WORKBENCH_GROUPS : POLAND_WORKBENCH_GROUPS;
+  const sourceGroups = model?.iso2 === 'BR'
+    ? BRAZIL_WORKBENCH_GROUPS
+    : model?.iso2 === 'FR'
+      ? FRANCE_WORKBENCH_GROUPS
+      : model?.iso2 === 'NL'
+        ? NETHERLANDS_WORKBENCH_GROUPS
+        : model?.iso2 === 'CH'
+          ? SWITZERLAND_WORKBENCH_GROUPS
+        : POLAND_WORKBENCH_GROUPS;
   const buckets = sourceGroups.map(group => ({ ...group, routes: [] }));
   const other = { key: 'other', title: 'Other country developer workflows', summary: 'Additional country-specific tools and inspectors.', tags: ['country'], routes: [] };
 
@@ -580,15 +733,45 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
   const routes = getCountryValidatorRoutes(model, routeRegistry);
   if (routes.length === 0) return '';
 
-  const featuredPatterns = model.iso2 === 'BR' ? /(brazil-cpf-validator|brazil-cnpj-validator|brazil-pix-validator|brazil-boleto-barcode-validator|brazil-linha-digitavel-validator|brazil-nfe-access-key-validator|brazil-cep-validator|brazil-phone-e164-formatter|brazil-renavam-validator|brazil-data-quality-workbench)/ : /(pesel-validator|poland-nip-validator|poland-regon-validator|poland-iban-nrb-validator|poland-vat-validator|poland-krs-inspector|poland-postal-code-validator|poland-phone-number-validator|poland-blik-code-helper|poland-ksef-invoice-xml-validator)/;
+  const featuredPatterns = model.iso2 === 'BR'
+    ? /(brazil-cpf-validator|brazil-cnpj-validator|brazil-pix-validator|brazil-boleto-barcode-validator|brazil-linha-digitavel-validator|brazil-nfe-access-key-validator|brazil-cep-validator|brazil-phone-e164-formatter|brazil-renavam-validator|brazil-data-quality-workbench)/
+    : model.iso2 === 'FR'
+      ? /(france-siren-validator|france-siret-validator|france-vat-tva-validator|france-iban-validator|france-rib-validator|france-postal-code-validator|france-phone-number-validator|france-fec-file-readiness-checker|france-nir-syntax-inspector|france-data-quality-workbench)/
+      : model.iso2 === 'NL'
+        ? /(netherlands-bsn-validator|netherlands-rsin-validator|netherlands-kvk-number-validator|netherlands-btw-vat-validator|netherlands-iban-validator|netherlands-postcode-validator|netherlands-phone-number-validator|netherlands-audit-file-readiness-checker|netherlands-pii-masker|netherlands-data-quality-workbench)/
+        : /(pesel-validator|poland-nip-validator|poland-regon-validator|poland-iban-nrb-validator|poland-vat-validator|poland-krs-inspector|poland-postal-code-validator|poland-phone-number-validator|poland-blik-code-helper|poland-ksef-invoice-xml-validator)/;
   const featured = routes.filter(route => featuredPatterns.test(routeSlug(route))).slice(0, 10);
   const groups = groupCountryWorkbenchRoutes(routes, model);
   const intentChips = groups.map(group => `<button class="vh-country-intent-chip" type="button" data-country-intent="${escapeHtml(group.key)}">${escapeHtml(group.title)} <span>${group.routes.length}</span></button>`).join('');
 
   const routeBySlug = (patternList) => findFirstRoute(routes, patternList)?.path || routes[0].path;
-  const personPath = model.iso2 === 'BR' ? routeBySlug([/cpf-validator/, /rg-inspector/, /cnh-validator/, /phone/, /cep-validator/]) : routeBySlug([/pesel-validator/, /id-card/, /passport/, /phone-number/, /postal-code/]);
-  const companyPath = model.iso2 === 'BR' ? routeBySlug([/cnpj-validator/, /cnae-code/, /state-registration/, /company/]) : routeBySlug([/poland-nip-validator/, /regon-validator/, /krs-inspector/, /company/]);
-  const paymentPath = model.iso2 === 'BR' ? routeBySlug([/pix-validator/, /boleto/, /linha-digitavel/, /brl-centavos/, /cnab/]) : routeBySlug([/poland-iban-nrb-validator/, /blik-code/, /swift-bic/, /sepa-transfer/, /payment-qr/]);
+  const personPath = model.iso2 === 'BR'
+    ? routeBySlug([/cpf-validator/, /rg-inspector/, /cnh-validator/, /phone/, /cep-validator/])
+    : model.iso2 === 'FR'
+      ? routeBySlug([/nir-syntax/, /id-card/, /passport/, /phone/, /postal-code/])
+      : model.iso2 === 'NL'
+        ? routeBySlug([/bsn-validator/, /id-card/, /passport/, /phone/, /postcode/])
+        : model.iso2 === 'CH'
+          ? routeBySlug([/ahv-avs/, /id-card/, /passport/, /residence-permit/, /phone/, /postal-code/])
+          : routeBySlug([/pesel-validator/, /id-card/, /passport/, /phone-number/, /postal-code/]);
+  const companyPath = model.iso2 === 'BR'
+    ? routeBySlug([/cnpj-validator/, /cnae-code/, /state-registration/, /company/])
+    : model.iso2 === 'FR'
+      ? routeBySlug([/siren-validator/, /siret-validator/, /vat-tva/, /company/])
+      : model.iso2 === 'NL'
+        ? routeBySlug([/kvk-number/, /rsin/, /btw-vat/, /company/])
+        : model.iso2 === 'CH'
+          ? routeBySlug([/uid-validator/, /vat-mwst/, /company/, /zefix/])
+          : routeBySlug([/poland-nip-validator/, /regon-validator/, /krs-inspector/, /company/]);
+  const paymentPath = model.iso2 === 'BR'
+    ? routeBySlug([/pix-validator/, /boleto/, /linha-digitavel/, /brl-centavos/, /cnab/])
+    : model.iso2 === 'FR'
+      ? routeBySlug([/iban-validator/, /rib-validator/, /bic-swift/, /sepa-transfer/, /remittance/])
+      : model.iso2 === 'NL'
+        ? routeBySlug([/iban-validator/, /bic-swift/, /ideal/, /sepa-transfer/, /remittance/])
+        : model.iso2 === 'CH'
+          ? routeBySlug([/iban-validator/, /qr-bill/, /sic-clearing/, /bic-swift/, /sepa-transfer/])
+          : routeBySlug([/poland-iban-nrb-validator/, /blik-code/, /swift-bic/, /sepa-transfer/, /payment-qr/]);
 
   const quickStarts = `
     <div class="vh-country-quick-starts" aria-label="Quick start scenarios">
@@ -1017,12 +1200,13 @@ export function renderCountryOfficialResources(model) {
   if (!model.officialResources || model.officialResources.length === 0) return '';
 
   const cardsHtml = model.officialResources.map(res => {
+    const normalized = normalizeInfoEntry(res);
     const card = createInfoCard(
-      res.label || res.title,
-      res.note || res.description || 'Official country authority resource and portal guides.',
-      getStandardIdentity(res.label || res.title, 'SRC'),
-      res.status || 'available',
-      res.tags || []
+      normalized.title,
+      normalized.text || 'Official country authority resource and portal guides.',
+      getStandardIdentity(normalized.title, 'SRC'),
+      normalized.status,
+      normalized.tags
     );
     const badge = `<span class="vh-country-visual-caption">Reference note, not a link</span>`;
     return `<div class="vh-country-resource-card-wrapper">${card}${badge}</div>`;
@@ -1147,6 +1331,44 @@ export function renderCountryRelatedCountries(model, countryDiscovery, routeRegi
 }
 
 // 11. Extra Rich Text blocks
+function normalizeListEntry(entry) {
+  if (entry && typeof entry === 'object') {
+    return {
+      title: entry.title || entry.name || entry.label || '',
+      text: entry.text || entry.description || entry.note || ''
+    };
+  }
+  return {
+    title: '',
+    text: String(entry || '')
+  };
+}
+
+function renderChecklistEntry(entry) {
+  const normalized = normalizeListEntry(entry);
+  if (normalized.title && normalized.text) {
+    return `<span><strong>${escapeHtml(normalized.title)}</strong><small>${escapeHtml(normalized.text)}</small></span>`;
+  }
+  return `<span>${escapeHtml(normalized.title || normalized.text)}</span>`;
+}
+
+function normalizeInfoEntry(entry) {
+  if (entry && typeof entry === 'object') {
+    return {
+      title: entry.title || entry.name || entry.label || '',
+      text: entry.text || entry.description || entry.note || entry.value || '',
+      status: entry.status || 'available',
+      tags: entry.tags || []
+    };
+  }
+  return {
+    title: String(entry || ''),
+    text: '',
+    status: 'available',
+    tags: []
+  };
+}
+
 export function renderCountryCommonMistakes(model, rawHubData) {
   const mistakes = rawHubData.commonMistakes || [];
   if (mistakes.length === 0) return '';
@@ -1156,7 +1378,7 @@ export function renderCountryCommonMistakes(model, rawHubData) {
       ${mistakes.map(m => `
         <li>
           <span class="vh-country-check-box vh-color-danger">⚠</span>
-          <span>${escapeHtml(m)}</span>
+          ${renderChecklistEntry(m)}
         </li>
       `).join('')}
     </ul>
@@ -1173,7 +1395,7 @@ export function renderCountryHighlights(model, rawHubData) {
       ${highlights.map(h => `
         <li>
           <span class="vh-country-check-box">✦</span>
-          <span>${escapeHtml(h)}</span>
+          ${renderChecklistEntry(h)}
         </li>
       `).join('')}
     </ul>
@@ -1190,7 +1412,7 @@ export function renderCountryDeveloperNotes(model, rawHubData) {
       ${notes.map(n => `
         <li>
           <span class="vh-country-check-box">▪</span>
-          <span>${escapeHtml(n)}</span>
+          ${renderChecklistEntry(n)}
         </li>
       `).join('')}
     </ul>
@@ -1203,11 +1425,14 @@ export function renderCountryDeveloperExamples(model, rawHubData) {
   if (examples.length === 0) return '';
 
   const cardsHtml = examples.map(ex => {
-    const card = createInfoCard(ex.title, ex.note, '💻', 'available', [ex.language]);
+    const language = ex.language || 'code';
+    const title = ex.title || ex.name || ex.label || `${language} fixture`;
+    const note = ex.note || ex.description || ex.text || `Copy-ready ${language} example for local country workflow testing.`;
+    const card = createInfoCard(title, note, '💻', 'available', [language]);
     const codeBlock = `
       <div class="vh-country-address-card vh-mt-xs">
-        <pre><code class="language-${ex.language}">${escapeHtml(ex.code)}</code></pre>
-        <button class="vh-country-copy-button" type="button" data-copy-value="${escapeHtml(ex.code)}" data-copy-label="${escapeHtml(ex.title)}">Copy Code</button>
+        <pre><code class="language-${language}">${escapeHtml(ex.code)}</code></pre>
+        <button class="vh-country-copy-button" type="button" data-copy-value="${escapeHtml(ex.code)}" data-copy-label="${escapeHtml(title)}">Copy Code</button>
       </div>
     `;
     return `<div class="vh-country-code-example-wrapper">${card}${codeBlock}</div>`;
@@ -1225,7 +1450,10 @@ export function renderCountryLocalizationNotes(model, rawHubData) {
   const notes = rawHubData.localizationNotes || [];
   if (notes.length === 0) return '';
 
-  const cardsHtml = notes.map(n => createInfoCard(n.name, n.description, '📝', 'available', n.tags || [])).join('\n');
+  const cardsHtml = notes.map(n => {
+    const normalized = normalizeInfoEntry(n);
+    return createInfoCard(normalized.title, normalized.text, '📝', normalized.status, normalized.tags);
+  }).join('\n');
 
   const content = `
     <div class="vh-country-card-grid-compact">
@@ -1239,7 +1467,10 @@ export function renderCountryEcosystem(model, rawHubData) {
   const eco = rawHubData.ecosystem || [];
   if (eco.length === 0) return '';
 
-  const cardsHtml = eco.map(item => createInfoCard(item.name, item.description, '🔗', 'available', item.tags || [])).join('\n');
+  const cardsHtml = eco.map(item => {
+    const normalized = normalizeInfoEntry(item);
+    return createInfoCard(normalized.title, normalized.text, '🔗', normalized.status, normalized.tags);
+  }).join('\n');
 
   const content = `
     <div class="vh-country-card-grid-compact">

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-peppol-readiness-helper
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "Peppol Readiness Helper"
+summary:
+  en: "Prepare Dutch Peppol participant and invoice fields, flag missing routing data, and explain network lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "PEPPOL"
+        required: true
+        placeholder:
+          en: "KVK 90006485"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-e-invoicing-readiness-helper, netherlands-kvk-number-validator, netherlands-btw-vat-validator, netherlands-api-payload-auditor]
+seo:
+  title:
+    en: "Peppol Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare Dutch Peppol participant and invoice fields, flag missing routing data, and explain network lookup boundaries."

@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-data-quality-workbench
+kind: tool
+module: validohub
+country: CH
+category: developer-tools
+status: active
+name:
+  en: "Swiss Data Quality Workbench"
+summary:
+  en: "Lint Swiss customer and business records for locale, canton, UID, IBAN, phone, postal, and payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "CHE-123.456.789 MWST, Zurich ZH 8001, +41 44 123 45 67, CH9300762011623852957"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-compliance-checklist-generator, switzerland-audit-trail-checklist-generator, switzerland-fadp-gdpr-redaction-helper, switzerland-pii-masker]
+seo:
+  title:
+    en: "Swiss Data Quality Workbench | ValidoHub"
+  description:
+    en: "Lint Swiss customer and business records for locale, canton, UID, IBAN, phone, postal, and payment-reference evidence."

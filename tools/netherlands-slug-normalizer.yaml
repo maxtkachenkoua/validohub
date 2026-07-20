@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-slug-normalizer
+kind: tool
+module: validohub
+country: NL
+category: text
+status: active
+name:
+  en: "Dutch Slug Normalizer"
+summary:
+  en: "Normalize Dutch labels for URL slugs, strip punctuation safely, and keep searchable ASCII variants."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "SLUG"
+        required: true
+        placeholder:
+          en: "Factuur voor s-Hertogenbosch BV"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-address-transliteration-normalizer, netherlands-json-fixture-generator, netherlands-regex-pack-helper, netherlands-api-payload-auditor]
+seo:
+  title:
+    en: "Dutch Slug Normalizer | ValidoHub"
+  description:
+    en: "Normalize Dutch labels for URL slugs, strip punctuation safely, and keep searchable ASCII variants."

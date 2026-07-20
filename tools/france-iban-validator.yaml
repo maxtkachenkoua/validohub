@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-iban-validator
+kind: tool
+module: validohub
+country: FR
+category: finance
+status: active
+name:
+  en: "French IBAN Validator"
+summary:
+  en: "Validate French IBANs, split RIB segments, run MOD-97, and expose bank, branch, account, and key fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "IBAN"
+        required: true
+        placeholder:
+          en: "FR7630006000011234567890189"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-rib-validator, france-bank-code-inspector, france-bic-swift-inspector, france-masked-iban-formatter]
+seo:
+  title:
+    en: "French IBAN Validator | ValidoHub"
+  description:
+    en: "Validate French IBANs, split RIB segments, run MOD-97, and expose bank, branch, account, and key fields."

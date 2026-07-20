@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "Vehicle Data Redaction Helper"
+summary:
+  en: "Mask French vehicle identifiers, VINs, registration plates, owner names, and support-ticket snippets."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "VEH MASK"
+        required: true
+        placeholder:
+          en: "Propriétaire Jean Dupont, plaque AB-123-CD, VIN VF1RFB00368123456"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-masked-iban-formatter, france-gdpr-redaction-helper, france-pii-masker, france-nir-masker]
+seo:
+  title:
+    en: "Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask French vehicle identifiers, VINs, registration plates, owner names, and support-ticket snippets."

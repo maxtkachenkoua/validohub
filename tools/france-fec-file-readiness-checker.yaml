@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: france-fec-file-readiness-checker
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "FEC File Readiness Checker"
+summary:
+  en: "Inspect French FEC accounting export snippets for separators, dates, account codes, debit/credit, and encoding risks."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "FEC"
+        required: true
+        placeholder:
+          en: "JournalCode	EcritureNum	EcritureDate	CompteNum	Debit	Credit
+VE	FA2026001	20260714	707000	0,00	1250,75"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-vat-tva-validator, france-bank-statement-parser, france-payment-reconciliation-helper, france-vat-rate-sanity-helper]
+seo:
+  title:
+    en: "FEC File Readiness Checker | ValidoHub"
+  description:
+    en: "Inspect French FEC accounting export snippets for separators, dates, account codes, debit/credit, and encoding risks."

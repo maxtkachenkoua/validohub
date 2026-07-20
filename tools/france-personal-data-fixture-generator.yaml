@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "Personal Data Fixture Generator"
+summary:
+  en: "Generate privacy-safe French person fixtures with fake names, addresses, phones, and masked identifiers."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "FIXTURE"
+        required: true
+        placeholder:
+          en: "generate paris customer fixture"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-masked-iban-formatter, france-gdpr-redaction-helper, france-pii-masker, france-nir-syntax-inspector]
+seo:
+  title:
+    en: "Personal Data Fixture Generator | ValidoHub"
+  description:
+    en: "Generate privacy-safe French person fixtures with fake names, addresses, phones, and masked identifiers."

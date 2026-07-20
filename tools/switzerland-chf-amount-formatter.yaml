@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-chf-amount-formatter
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "CHF Amount Formatter"
+summary:
+  en: "Parse Swiss franc amounts, normalize decimal separators, produce display strings, and expose integer rappen values."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CHF input"
+        required: true
+        placeholder:
+          en: "CHF 1'250.75"
+    actions: [format, validate, parse, generate, explain]
+related:
+  explicit: [switzerland-date-locale-formatter, switzerland-decimal-currency-formatter]
+seo:
+  title:
+    en: "CHF Amount Formatter | ValidoHub"
+  description:
+    en: "Parse Swiss franc amounts, normalize decimal separators, produce display strings, and expose integer rappen values."

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-rvo-relation-number-helper
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "RVO Relation Number Helper"
+summary:
+  en: "Normalize RVO relation-number-shaped references, separate account fields from official portal status, and prepare safe support snippets."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "RVO"
+        required: true
+        placeholder:
+          en: "RVO relatie 203456789"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-company-onboarding-auditor, netherlands-rsin-validator, netherlands-compliance-checklist-generator, netherlands-api-payload-auditor]
+seo:
+  title:
+    en: "RVO Relation Number Helper | ValidoHub"
+  description:
+    en: "Normalize RVO relation-number-shaped references, separate account fields from official portal status, and prepare safe support snippets."

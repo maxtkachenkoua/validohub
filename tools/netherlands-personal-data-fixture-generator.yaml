@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: NL
+category: developer-tools
+status: active
+name:
+  en: "Personal Data Fixture Generator"
+summary:
+  en: "Generate fictional Dutch development fixtures for identity, address, contact, banking, and invoice test scenarios."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "TEST"
+        required: true
+        placeholder:
+          en: "Create safe NL checkout fixture with BSN-like, postcode, phone and IBAN-like fields"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-bsn-validator, netherlands-postcode-validator, netherlands-phone-number-validator, netherlands-json-fixture-generator]
+seo:
+  title:
+    en: "Personal Data Fixture Generator | ValidoHub"
+  description:
+    en: "Generate fictional Dutch development fixtures for identity, address, contact, banking, and invoice test scenarios."

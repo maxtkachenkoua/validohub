@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-json-fixture-generator
+kind: tool
+module: validohub
+country: CH
+category: developer-tools
+status: active
+name:
+  en: "Swiss JSON Fixture Generator"
+summary:
+  en: "Generate safe fictional Swiss JSON fixtures with UID, AHV/AVS, IBAN, phone, address, canton, and locale fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CH\",\"uid\":\"CHE-123.456.789\",\"locale\":\"de-CH\"}"
+    actions: [generate, validate, parse, format, explain]
+related:
+  explicit: [switzerland-regex-pack-helper, switzerland-api-payload-auditor, switzerland-form-field-auditor, switzerland-csv-locale-normalizer]
+seo:
+  title:
+    en: "Swiss JSON Fixture Generator | ValidoHub"
+  description:
+    en: "Generate safe fictional Swiss JSON fixtures with UID, AHV/AVS, IBAN, phone, address, canton, and locale fields."

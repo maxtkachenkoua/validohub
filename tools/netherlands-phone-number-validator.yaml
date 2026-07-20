@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-phone-number-validator
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "Dutch Phone Number Validator"
+summary:
+  en: "Validate Dutch phone-number shapes, classify mobile, landline, service-like numbers, and prepare contact fixtures."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "PHONE"
+        required: true
+        placeholder:
+          en: "06 12345678"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-phone-e164-formatter, netherlands-address-normalizer, netherlands-pii-masker, netherlands-data-quality-workbench]
+seo:
+  title:
+    en: "Dutch Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate Dutch phone-number shapes, classify mobile, landline, service-like numbers, and prepare contact fixtures."

@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-tax-id-boundary-helper
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Tax ID Boundary Helper"
+summary:
+  en: "Explain Swiss tax-id boundaries across UID, VAT suffix, AHV/AVS, canton tax references, and official lookup needs."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "UID CHE-123.456.789 MWST with AHV 756.1234.5678.97 and canton ZH tax form"
+    actions: [explain, validate, parse, generate, format]
+related:
+  explicit: [switzerland-vat-mwst-validator, switzerland-eori-validator, switzerland-mwst-rate-sanity-helper, switzerland-vat-return-field-helper]
+seo:
+  title:
+    en: "Tax ID Boundary Helper | ValidoHub"
+  description:
+    en: "Explain Swiss tax-id boundaries across UID, VAT suffix, AHV/AVS, canton tax references, and official lookup needs."

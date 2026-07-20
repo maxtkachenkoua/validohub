@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-id-card-format-helper
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Swiss ID Card Format Helper"
+summary:
+  en: "Inspect Swiss identity-card-style values, document labels, and privacy boundaries for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "ID CH A1234567 issued sample"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [switzerland-passport-number-helper, switzerland-residence-permit-format-helper, switzerland-driving-licence-format-helper]
+seo:
+  title:
+    en: "Swiss ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect Swiss identity-card-style values, document labels, and privacy boundaries for onboarding forms."

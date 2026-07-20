@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-audit-trail-checklist-generator
+kind: tool
+module: validohub
+country: NL
+category: developer-tools
+status: active
+name:
+  en: "Audit Trail Checklist Generator"
+summary:
+  en: "Generate Dutch audit-trail checklist items for invoices, payments, tax evidence, payload exports, and privacy-safe logging."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "AUDIT"
+        required: true
+        placeholder:
+          en: "Payments invoices BTW return bank statement import"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-audit-file-readiness-checker, netherlands-compliance-checklist-generator, netherlands-api-payload-auditor, netherlands-data-quality-workbench]
+seo:
+  title:
+    en: "Audit Trail Checklist Generator | ValidoHub"
+  description:
+    en: "Generate Dutch audit-trail checklist items for invoices, payments, tax evidence, payload exports, and privacy-safe logging."

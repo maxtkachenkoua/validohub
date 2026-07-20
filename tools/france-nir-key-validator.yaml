@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-nir-key-validator
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "NIR Key Validator"
+summary:
+  en: "Validate the two-digit NIR control key for numeric French social security identifiers."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "NIR KEY"
+        required: true
+        placeholder:
+          en: "269054958815780"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-nir-syntax-inspector, france-nir-masker, france-passport-number-helper, france-id-card-format-helper]
+seo:
+  title:
+    en: "NIR Key Validator | ValidoHub"
+  description:
+    en: "Validate the two-digit NIR control key for numeric French social security identifiers."

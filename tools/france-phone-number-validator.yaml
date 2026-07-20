@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-phone-number-validator
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "French Phone Number Validator"
+summary:
+  en: "Validate French national and +33 phone numbers, classify ranges, and normalize spacing."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "PHONE"
+        required: true
+        placeholder:
+          en: "06 12 34 56 78"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-phone-e164-formatter]
+seo:
+  title:
+    en: "French Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate French national and +33 phone numbers, classify ranges, and normalize spacing."

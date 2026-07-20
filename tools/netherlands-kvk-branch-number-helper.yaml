@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-kvk-branch-number-helper
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "KVK Branch Number Helper"
+summary:
+  en: "Normalize Dutch KVK branch-number references, inspect twelve-digit establishment-shaped values, and prepare CRM import fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "BRANCH"
+        required: true
+        placeholder:
+          en: "000012345678"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-kvk-number-validator, netherlands-company-onboarding-auditor, netherlands-address-normalizer, netherlands-bag-address-readiness-helper]
+seo:
+  title:
+    en: "KVK Branch Number Helper | ValidoHub"
+  description:
+    en: "Normalize Dutch KVK branch-number references, inspect twelve-digit establishment-shaped values, and prepare CRM import fields."

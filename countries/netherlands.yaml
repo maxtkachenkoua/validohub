@@ -1,0 +1,14 @@
+schemaVersion: 1
+code: NL
+slug: netherlands
+name:
+  en: Netherlands
+region: Europe
+languages:
+  - nl
+  - en
+currency: EUR
+relatedCountries:
+  - DE
+  - FR
+  - PL

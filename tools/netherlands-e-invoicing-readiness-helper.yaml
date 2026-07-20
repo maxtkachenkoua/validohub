@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-e-invoicing-readiness-helper
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "E-Invoicing Readiness Helper"
+summary:
+  en: "Check Dutch e-invoicing field readiness for supplier, buyer, VAT, IBAN, amount, reference, and Peppol handoff."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "EINV"
+        required: true
+        placeholder:
+          en: "Supplier KVK 90006485"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-peppol-readiness-helper, netherlands-invoice-number-helper, netherlands-btw-vat-validator, netherlands-iban-validator]
+seo:
+  title:
+    en: "E-Invoicing Readiness Helper | ValidoHub"
+  description:
+    en: "Check Dutch e-invoicing field readiness for supplier, buyer, VAT, IBAN, amount, reference, and Peppol handoff."

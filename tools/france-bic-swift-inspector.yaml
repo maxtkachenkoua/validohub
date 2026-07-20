@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-bic-swift-inspector
+kind: tool
+module: validohub
+country: FR
+category: finance
+status: active
+name:
+  en: "French BIC / SWIFT Inspector"
+summary:
+  en: "Validate French BIC/SWIFT syntax and distinguish 8-character institution codes from 11-character branch codes."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "BIC"
+        required: true
+        placeholder:
+          en: "AGRIFRPP"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-iban-validator, france-rib-validator, france-bank-code-inspector, france-masked-iban-formatter]
+seo:
+  title:
+    en: "French BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Validate French BIC/SWIFT syntax and distinguish 8-character institution codes from 11-character branch codes."

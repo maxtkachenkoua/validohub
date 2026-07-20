@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-form-field-auditor
+kind: tool
+module: validohub
+country: CH
+category: developer-tools
+status: active
+name:
+  en: "Swiss Form Field Auditor"
+summary:
+  en: "Check form-field labels, placeholders, masks, required fields, and examples for Swiss checkout and onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "Fields: UID, MWST suffix, AHV optional, IBAN CH, postal code 8001, canton ZH, phone +41"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-json-fixture-generator, switzerland-regex-pack-helper, switzerland-api-payload-auditor, switzerland-csv-locale-normalizer]
+seo:
+  title:
+    en: "Swiss Form Field Auditor | ValidoHub"
+  description:
+    en: "Check form-field labels, placeholders, masks, required fields, and examples for Swiss checkout and onboarding forms."

@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: france-company-onboarding-auditor
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "Company Onboarding Auditor"
+summary:
+  en: "Audit French company onboarding snippets for SIREN, SIRET, TVA, address, and payment readiness."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "ONBOARD"
+        required: true
+        placeholder:
+          en: "SIRET 73282932000074
+TVA FR40303265045
+IBAN FR7630006000011234567890189"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-siren-validator, france-siret-validator, france-nic-inspector, france-ape-naf-code-inspector]
+seo:
+  title:
+    en: "Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit French company onboarding snippets for SIREN, SIRET, TVA, address, and payment readiness."

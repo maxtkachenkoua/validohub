@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-health-insurance-boundary-helper
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Health Insurance Boundary Helper"
+summary:
+  en: "Audit Swiss health-insurance snippets for AHV/AVS, insurer notes, policy ids, and sensitive-data handling."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KVG input"
+        required: true
+        placeholder:
+          en: "KVG policy sample AHV 756.1234.5678.97 insurer TestKasse CHF 350.00"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-insurance-policy-number-helper]
+seo:
+  title:
+    en: "Health Insurance Boundary Helper | ValidoHub"
+  description:
+    en: "Audit Swiss health-insurance snippets for AHV/AVS, insurer notes, policy ids, and sensitive-data handling."

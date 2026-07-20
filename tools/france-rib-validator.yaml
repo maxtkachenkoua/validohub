@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-rib-validator
+kind: tool
+module: validohub
+country: FR
+category: finance
+status: active
+name:
+  en: "RIB Validator & Explainer"
+summary:
+  en: "Validate French RIB components, inspect bank code, branch code, account number, and RIB key evidence."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "RIB"
+        required: true
+        placeholder:
+          en: "30006 00001 12345678901 89"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-iban-validator, france-bank-code-inspector, france-bic-swift-inspector, france-masked-iban-formatter]
+seo:
+  title:
+    en: "RIB Validator & Explainer | ValidoHub"
+  description:
+    en: "Validate French RIB components, inspect bank code, branch code, account number, and RIB key evidence."

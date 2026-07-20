@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: france-document-ocr-fixer
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "French Document OCR Fixer"
+summary:
+  en: "Repair common OCR artifacts in French identifiers, invoices, addresses, and official document snippets."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "OCR"
+        required: true
+        placeholder:
+          en: "S1RET 732 829 32O OOO74
+TVA FR4O3O3265O45"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-bank-statement-parser, france-payment-reconciliation-helper, france-fec-file-readiness-checker, france-data-quality-workbench]
+seo:
+  title:
+    en: "French Document OCR Fixer | ValidoHub"
+  description:
+    en: "Repair common OCR artifacts in French identifiers, invoices, addresses, and official document snippets."

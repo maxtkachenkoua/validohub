@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-masked-iban-formatter
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "Masked IBAN Formatter"
+summary:
+  en: "Mask French IBANs and RIB strings for logs, screenshots, support tickets, and audit evidence."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "MASK"
+        required: true
+        placeholder:
+          en: "FR7630006000011234567890189"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-iban-validator, france-rib-validator, france-bank-code-inspector, france-bic-swift-inspector]
+seo:
+  title:
+    en: "Masked IBAN Formatter | ValidoHub"
+  description:
+    en: "Mask French IBANs and RIB strings for logs, screenshots, support tickets, and audit evidence."

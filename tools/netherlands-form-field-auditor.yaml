@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-form-field-auditor
+kind: tool
+module: validohub
+country: NL
+category: developer-tools
+status: active
+name:
+  en: "Dutch Form Field Auditor"
+summary:
+  en: "Review Dutch form fields for labels, examples, validation hints, privacy risk, postcode layout, and payment fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "FORM"
+        required: true
+        placeholder:
+          en: "Fields postcode, huisnummer, toevoeging, BSN, KVK, BTW, IBAN, telefoon"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-postcode-validator, netherlands-house-number-addition-helper, netherlands-api-payload-auditor, netherlands-gdpr-avg-redaction-helper]
+seo:
+  title:
+    en: "Dutch Form Field Auditor | ValidoHub"
+  description:
+    en: "Review Dutch form fields for labels, examples, validation hints, privacy risk, postcode layout, and payment fields."

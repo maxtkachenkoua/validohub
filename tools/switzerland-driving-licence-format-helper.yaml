@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-driving-licence-format-helper
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Driving Licence Format Helper"
+summary:
+  en: "Inspect Swiss driving-licence field snippets, categories, dates, and identity-proof boundaries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "Swiss driving licence categories B, BE issued 14.07.2026 canton VD"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-passport-number-helper, switzerland-id-card-format-helper, switzerland-residence-permit-format-helper]
+seo:
+  title:
+    en: "Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect Swiss driving-licence field snippets, categories, dates, and identity-proof boundaries."

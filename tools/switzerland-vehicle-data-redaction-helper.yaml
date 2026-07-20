@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Vehicle Data Redaction Helper"
+summary:
+  en: "Mask Swiss plates, VINs, owner names, postal codes, and policy fields in vehicle support text."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VRED input"
+        required: true
+        placeholder:
+          en: "ZH 123456 VIN WVWZZZ1JZXW000001 owner Max Meier 8001 Zurich"
+    actions: [format, validate, parse, generate, explain]
+related:
+  explicit: [switzerland-vehicle-plate-inspector, switzerland-vin-validator]
+seo:
+  title:
+    en: "Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask Swiss plates, VINs, owner names, postal codes, and policy fields in vehicle support text."

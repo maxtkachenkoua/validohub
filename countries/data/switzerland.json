@@ -1,0 +1,513 @@
+{
+  "id": "switzerland",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/switzerland-outline.svg",
+    "outlineAlt": "Switzerland country outline",
+    "mapSrc": "/assets/images/countries/switzerland-location.svg",
+    "mapAlt": "World map with Switzerland location marker",
+    "mapMarker": {
+      "x": 50,
+      "y": 36,
+      "label": "Switzerland"
+    },
+    "source": "Simplified public-domain geographic reference"
+  },
+  "catalog": {
+    "id": "switzerland",
+    "flag": "🇨🇭",
+    "name": "Switzerland",
+    "iso2": "CH",
+    "iso3": "CHE",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "German, French, Italian, Romansh",
+    "currency": "CHF",
+    "currencyName": "Swiss franc",
+    "status": "available",
+    "featured": true,
+    "reference": true,
+    "summary": "Premium developer intelligence for Swiss UID, MWST/VAT, AHV/AVS, IBAN, QR-bill, ESR, SIC clearing, BIC, postal, canton, phone, FADP privacy, vehicle, payroll, tax, and locale workflows.",
+    "identifiers": [
+      "AHV/AVS",
+      "BIC",
+      "Canton",
+      "EORI",
+      "ESR",
+      "IBAN",
+      "MWST",
+      "QR reference",
+      "SIC/BC",
+      "UID",
+      "VIN"
+    ],
+    "payments": [
+      "BIC",
+      "CHF",
+      "ESR",
+      "IBAN",
+      "QR-bill",
+      "SEPA",
+      "SIC"
+    ],
+    "features": [
+      "address",
+      "banking",
+      "business",
+      "data-quality",
+      "developer",
+      "fiscal",
+      "government",
+      "identity",
+      "localization",
+      "payments",
+      "phone",
+      "postal",
+      "privacy",
+      "tax",
+      "vehicle"
+    ],
+    "availableWorkbenches": [
+      "AHV / AVS Number Validator",
+      "Audit Trail Checklist Generator",
+      "CHF Amount Formatter",
+      "Canton Code Mapper",
+      "Customs Declaration Helper",
+      "Driving Licence Format Helper",
+      "ESR Reference Checker",
+      "FADP / GDPR Redaction Helper",
+      "Health Insurance Boundary Helper",
+      "Insurance Policy Number Helper",
+      "MWST Rate Sanity Helper",
+      "Multilingual Address Helper",
+      "Municipality Code Inspector",
+      "Payroll Social Security Helper",
+      "Personal Data Fixture Generator",
+      "Residence Permit Format Helper",
+      "SIC / BC Number Inspector",
+      "Salary Certificate Field Helper",
+      "Swiss API Payload Auditor",
+      "Swiss Address Normalizer",
+      "Swiss Address Transliteration Normalizer",
+      "Swiss BIC / SWIFT Inspector",
+      "Swiss Bank Statement Parser",
+      "Swiss CSV Locale Normalizer",
+      "Swiss Company Onboarding Auditor",
+      "Swiss Compliance Checklist Generator",
+      "Swiss Data Quality Workbench",
+      "Swiss Date / Locale Formatter",
+      "Swiss Decimal / Currency Formatter",
+      "Swiss Document OCR Fixer",
+      "Swiss E-Invoicing Readiness Helper",
+      "Swiss EORI / Customs Identifier Helper",
+      "Swiss Form Field Auditor",
+      "Swiss IBAN Validator",
+      "Swiss ID Card Format Helper",
+      "Swiss Invoice Number Helper",
+      "Swiss JSON Fixture Generator",
+      "Swiss PII Masker",
+      "Swiss Passport Number Helper",
+      "Swiss Payment Reconciliation Helper",
+      "Swiss Phone E.164 Formatter",
+      "Swiss Phone Number Validator",
+      "Swiss Post Tracking Helper",
+      "Swiss Postal Code Validator",
+      "Swiss QR-Bill Payload Auditor",
+      "Swiss QR-Bill Reference Validator",
+      "Swiss Regex Pack Helper",
+      "Swiss SEPA Transfer Helper",
+      "Swiss Slug Normalizer",
+      "Swiss UID Validator & Explainer",
+      "Swiss VAT / MWST Validator",
+      "Swiss VAT Return Field Helper",
+      "Swiss Vehicle Plate Inspector",
+      "Tax ID Boundary Helper",
+      "VIN Validator for Swiss Workflows",
+      "Vehicle Data Redaction Helper",
+      "Withholding Tax Readiness Helper",
+      "Zefix Readiness Helper"
+    ],
+    "plannedWorkbenches": [],
+    "completion": 96,
+    "coordinates": {
+      "x": 50,
+      "y": 36
+    }
+  },
+  "hub": {
+    "flag": "🇨🇭",
+    "name": "Switzerland",
+    "badge": "Central Europe premium country hub",
+    "description": "Developer intelligence for Swiss identity, company registry, tax, banking, QR-bill payment, canton, address, phone, privacy, payroll, vehicle, and localization workflows with browser-only validation where possible.",
+    "metadata": {
+      "nativeName": "Schweiz / Suisse / Svizzera / Svizra",
+      "population": "approximately 9M",
+      "populationNote": "Approximate 2026 population context; do not treat as a timeless constant.",
+      "area": "41,285 km²",
+      "capital": "Bern",
+      "largestCity": "Zurich",
+      "continent": "Europe",
+      "region": "Central Europe / EFTA / Schengen",
+      "languages": "German, French, Italian, Romansh",
+      "currency": "Swiss franc",
+      "currencyCode": "CHF",
+      "currencySymbol": "CHF",
+      "callingCode": "+41",
+      "internetTld": ".ch",
+      "drivingSide": "Right",
+      "iso2": "CH",
+      "iso3": "CHE",
+      "isoNumeric": "756",
+      "locale": "de-CH",
+      "icuLocale": "de_CH",
+      "dateFormat": "DD.MM.YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Period (.) or comma by language context",
+      "thousandsSeparator": "Apostrophe (') or space",
+      "addressFormat": "Recipient, street house number, postal code locality, Switzerland",
+      "postalCodeFormat": "NNNN",
+      "primaryTimeZone": "Europe/Zurich (CET/CEST)",
+      "utcRange": "UTC+01/+02",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "powerPlugTypes": "Type C / Type J",
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "emergencyNumber": "112 / 117 / 118 / 144",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "de-CH / fr-CH / it-CH",
+      "cldrLocale": "de_CH",
+      "metricVsImperial": "Metric-first",
+      "administrativeDivisions": [
+        "Cantons",
+        "Municipalities",
+        "Districts in selected cantons"
+      ],
+      "taxSystem": {
+        "name": "Federal Tax Administration / MWST",
+        "description": "Swiss tax workflows use UID and MWST/VAT suffixes, canton context, QR-bill payment evidence, salary certificates, and official filing boundaries."
+      },
+      "licensePlateFormat": "Canton prefix plus serial digits, such as ZH 123456."
+    },
+    "visualIdentity": {
+      "countryId": "switzerland",
+      "outlineLabel": "Switzerland outline",
+      "mapLabel": "Switzerland in the world",
+      "continentBadge": "Europe",
+      "flagLabel": "Switzerland flag",
+      "heroAccentPrimary": "220 38 38",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "17 24 39"
+    },
+    "localizationExamples": [
+      {
+        "label": "Date",
+        "value": "14.07.2026"
+      },
+      {
+        "label": "Time",
+        "value": "14:35"
+      },
+      {
+        "label": "Currency",
+        "value": "CHF 1'250.75"
+      },
+      {
+        "label": "Phone",
+        "value": "+41 79 123 45 67"
+      },
+      {
+        "label": "Postal code",
+        "value": "8001"
+      },
+      {
+        "label": "Address",
+        "value": "Bahnhofstrasse 1, 8001 Zurich"
+      }
+    ],
+    "addressExample": {
+      "formatted": [
+        "Alpine Test AG",
+        "Bahnhofstrasse 1",
+        "8001 Zurich",
+        "Switzerland"
+      ],
+      "fields": [
+        {
+          "label": "Street",
+          "value": "Bahnhofstrasse",
+          "description": "Street name precedes house number in common Swiss address entry."
+        },
+        {
+          "label": "House number",
+          "value": "1",
+          "description": "House number should remain a separate field where possible."
+        },
+        {
+          "label": "Postal code",
+          "value": "8001",
+          "description": "Four-digit Swiss postal code."
+        },
+        {
+          "label": "Locality",
+          "value": "Zurich",
+          "description": "Locality pairs with postal code and canton context."
+        }
+      ]
+    },
+    "phoneExamples": [
+      {
+        "label": "Mobile",
+        "value": "+41 79 123 45 67",
+        "description": "Swiss mobile-style display with +41 country prefix.",
+        "tags": [
+          "mobile",
+          "E.164"
+        ]
+      },
+      {
+        "label": "Zurich landline",
+        "value": "+41 44 123 45 67",
+        "description": "Geographic number display with area-code evidence.",
+        "tags": [
+          "landline",
+          "Zurich"
+        ]
+      },
+      {
+        "label": "Domestic display",
+        "value": "079 123 45 67",
+        "description": "Domestic trunk 0 should be removed when formatting to E.164.",
+        "tags": [
+          "domestic"
+        ]
+      }
+    ],
+    "payments": [
+      {
+        "name": "CHF",
+        "description": "Swiss franc amounts use local grouping and decimal conventions; store API values as decimal or integer rappen.",
+        "status": "available",
+        "tags": [
+          "currency"
+        ]
+      },
+      {
+        "name": "QR-bill",
+        "description": "Swiss QR-bill payloads combine creditor, account, amount, currency, and structured QR references.",
+        "status": "available",
+        "tags": [
+          "payments",
+          "invoice"
+        ]
+      },
+      {
+        "name": "SEPA",
+        "description": "Switzerland participates in SEPA contexts, but local bank and compliance checks remain provider-specific.",
+        "status": "available",
+        "tags": [
+          "banking"
+        ]
+      },
+      {
+        "name": "SIC",
+        "description": "SIC and BC clearing references support Swiss interbank routing context without proving account ownership.",
+        "status": "available",
+        "tags": [
+          "clearing"
+        ]
+      }
+    ],
+    "bankingOverview": [
+      {
+        "name": "Swiss IBAN",
+        "description": "CH IBANs are 21 characters and expose country, check digits, clearing/account evidence, and MOD-97 proof.",
+        "status": "available",
+        "tags": [
+          "IBAN"
+        ]
+      },
+      {
+        "name": "BIC / SWIFT",
+        "description": "BIC values provide routing syntax and CH/LI country-code evidence, not live bank status.",
+        "status": "available",
+        "tags": [
+          "BIC"
+        ]
+      },
+      {
+        "name": "BC / SIC clearing",
+        "description": "Swiss bank clearing numbers are useful for payment routing and account-intake diagnostics.",
+        "status": "available",
+        "tags": [
+          "clearing"
+        ]
+      }
+    ],
+    "officialResources": [
+      {
+        "title": "Federal Statistical Office",
+        "note": "Country, canton, municipality, and statistical reference context.",
+        "status": "available",
+        "tags": [
+          "statistics"
+        ]
+      },
+      {
+        "title": "Federal Tax Administration",
+        "note": "MWST/VAT, tax forms, and regulated tax status remain official-system matters.",
+        "status": "available",
+        "tags": [
+          "tax"
+        ]
+      },
+      {
+        "title": "Fedpol / identity context",
+        "note": "Identity documents and passport status require official processes; ValidoHub only inspects structure.",
+        "status": "available",
+        "tags": [
+          "identity"
+        ]
+      },
+      {
+        "title": "SIX / QR-bill references",
+        "note": "QR-bill and Swiss payment standards should be checked against official payment specifications for production.",
+        "status": "available",
+        "tags": [
+          "payments"
+        ]
+      },
+      {
+        "title": "Zefix",
+        "note": "Company existence, names, legal forms, and registry status require official Zefix or cantonal registry lookup.",
+        "status": "available",
+        "tags": [
+          "company"
+        ]
+      }
+    ],
+    "integrationChecklist": [
+      "Normalize UID and VAT suffixes before storing company identifiers.",
+      "Treat AHV/AVS as sensitive personal data and mask it in logs.",
+      "Run Swiss IBAN MOD-97 locally, then use official bank or payment systems for ownership/status.",
+      "Keep QR-bill references and QR payloads layout-safe in forms and PDFs.",
+      "Store canton as a structured two-letter code when address, tax, payroll, or vehicle workflows need it.",
+      "Support de-CH, fr-CH, it-CH, and neutral API formats without localizing route slugs."
+    ],
+    "validationRules": [
+      {
+        "name": "UID",
+        "description": "CHE plus nine digits, optionally displayed with MWST, TVA, or IVA for VAT contexts."
+      },
+      {
+        "name": "AHV/AVS",
+        "description": "Thirteen digits beginning with 756 and using an EAN-style check digit."
+      },
+      {
+        "name": "Swiss IBAN",
+        "description": "CH or LI plus 19 alphanumeric characters with ISO MOD-97 validation."
+      },
+      {
+        "name": "QR reference",
+        "description": "Twenty-seven digits with recursive MOD-10 control digit."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating UID syntax as registry proof",
+        "text": "A valid-looking UID does not prove active company status."
+      },
+      {
+        "title": "Logging AHV/AVS raw values",
+        "text": "Swiss social insurance numbers are sensitive and should be masked in diagnostics."
+      },
+      {
+        "title": "Mixing locale separators",
+        "text": "Swiss German, French, Italian, and API numeric formats need explicit handling."
+      },
+      {
+        "title": "Using raw QR payloads as select labels",
+        "text": "Long QR-bill payloads must stay inside inputs or local scroll containers."
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Premium browser-only suite",
+        "text": "58 Swiss workbenches run locally with no server calls."
+      },
+      {
+        "title": "Payment-grade diagnostics",
+        "text": "IBAN, QR-bill, ESR, SIC, BIC, CHF, and reconciliation helpers expose field breakdowns."
+      },
+      {
+        "title": "Privacy-first Swiss workflows",
+        "text": "FADP/GDPR redaction, AHV masking, PII masking, and fixture generation are included."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "Official-system boundary",
+        "text": "Use ValidoHub for local evidence and official Swiss systems for legal status, identity proof, registry state, and tax filing."
+      },
+      {
+        "title": "Locale scope",
+        "text": "Swiss production systems often need de-CH, fr-CH, it-CH, and neutral ISO/API formatting in the same product."
+      },
+      {
+        "title": "Payment data handling",
+        "text": "QR-bill payloads, IBANs, references, and amount strings can become long; wrap and scroll locally."
+      }
+    ],
+    "developerExamples": [
+      {
+        "language": "JavaScript",
+        "code": "const swissPayload = { locale: 'de-CH', uid: 'CHE-123.456.789 MWST', iban: 'CH9300762011623852957' };"
+      },
+      {
+        "language": "JSON",
+        "code": "{ \"country\": \"CH\", \"currency\": \"CHF\", \"postalCode\": \"8001\", \"canton\": \"ZH\" }"
+      }
+    ],
+    "jsonExamples": [
+      {
+        "title": "Swiss company fixture",
+        "value": {
+          "country": "CH",
+          "uid": "CHE-123.456.789 MWST",
+          "iban": "CH9300762011623852957",
+          "canton": "ZH",
+          "locale": "de-CH"
+        }
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Language variants",
+        "text": "Use de-CH, fr-CH, and it-CH examples where customer-facing copy or address display depends on language."
+      },
+      {
+        "title": "Currency",
+        "text": "CHF values can use apostrophe grouping in Swiss German contexts and should be normalized for APIs."
+      },
+      {
+        "title": "Dates",
+        "text": "DD.MM.YYYY is common, while APIs should use ISO 8601."
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Company identity",
+        "text": "UID, Zefix, MWST suffix, address, and canton evidence form the company onboarding cluster."
+      },
+      {
+        "title": "Payments",
+        "text": "Swiss IBAN, SIC/BC, BIC, QR-bill, ESR references, CHF amounts, and reconciliation evidence form the payment cluster."
+      },
+      {
+        "title": "Personal data",
+        "text": "AHV/AVS, phone, health insurance, address, and document references require privacy-aware handling."
+      }
+    ],
+    "plannedWorkbenches": []
+  }
+}

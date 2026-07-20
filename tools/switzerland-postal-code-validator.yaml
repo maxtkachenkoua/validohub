@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-postal-code-validator
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Swiss Postal Code Validator"
+summary:
+  en: "Validate Swiss four-digit postal code shape, normalize spacing, and prepare address-import diagnostics."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "8001 Zurich"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [switzerland-address-normalizer, switzerland-address-transliteration-normalizer, switzerland-multilingual-address-helper, switzerland-canton-code-mapper]
+seo:
+  title:
+    en: "Swiss Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate Swiss four-digit postal code shape, normalize spacing, and prepare address-import diagnostics."

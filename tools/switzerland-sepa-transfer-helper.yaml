@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-sepa-transfer-helper
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss SEPA Transfer Helper"
+summary:
+  en: "Check Swiss SEPA-ready bundles for IBAN, BIC, amount, creditor, remittance, and official bank-boundary notes."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SEPA input"
+        required: true
+        placeholder:
+          en: "IBAN CH9300762011623852957"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-iban-validator, switzerland-sic-clearing-number-inspector, switzerland-bic-swift-inspector, switzerland-bank-statement-parser]
+seo:
+  title:
+    en: "Swiss SEPA Transfer Helper | ValidoHub"
+  description:
+    en: "Check Swiss SEPA-ready bundles for IBAN, BIC, amount, creditor, remittance, and official bank-boundary notes."

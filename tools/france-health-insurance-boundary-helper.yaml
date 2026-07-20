@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: france-health-insurance-boundary-helper
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "Health Insurance Boundary Helper"
+summary:
+  en: "Explain offline boundaries for French health insurance identifiers and build safe test-data notes."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "HEALTH"
+        required: true
+        placeholder:
+          en: "NIR 269054958815780
+Attestation assurance maladie"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-masked-iban-formatter, france-gdpr-redaction-helper, france-pii-masker, france-nir-syntax-inspector]
+seo:
+  title:
+    en: "Health Insurance Boundary Helper | ValidoHub"
+  description:
+    en: "Explain offline boundaries for French health insurance identifiers and build safe test-data notes."

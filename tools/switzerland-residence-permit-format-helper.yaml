@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-residence-permit-format-helper
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Residence Permit Format Helper"
+summary:
+  en: "Classify Swiss residence-permit references, canton hints, permit letters, and official-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "Permit B ZH sample holder 756.1234.5678.97"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-passport-number-helper, switzerland-id-card-format-helper, switzerland-driving-licence-format-helper]
+seo:
+  title:
+    en: "Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Classify Swiss residence-permit references, canton hints, permit letters, and official-status boundaries."

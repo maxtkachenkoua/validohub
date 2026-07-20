@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-email-domain-fixture-helper
+kind: tool
+module: validohub
+country: NL
+category: developer-tools
+status: active
+name:
+  en: "Dutch Email Domain Fixture Helper"
+summary:
+  en: "Create privacy-safe Dutch email/domain fixtures, avoid real personal addresses, and generate deterministic testing aliases."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "EMAIL"
+        required: true
+        placeholder:
+          en: "Need company fixture email for Jansen BV Amsterdam invoice flow"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-json-fixture-generator, netherlands-personal-data-fixture-generator, netherlands-form-field-auditor, netherlands-pii-masker]
+seo:
+  title:
+    en: "Dutch Email Domain Fixture Helper | ValidoHub"
+  description:
+    en: "Create privacy-safe Dutch email/domain fixtures, avoid real personal addresses, and generate deterministic testing aliases."

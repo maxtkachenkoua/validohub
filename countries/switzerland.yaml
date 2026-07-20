@@ -1,0 +1,16 @@
+schemaVersion: 1
+code: CH
+slug: switzerland
+name:
+  en: Switzerland
+region: Europe
+languages:
+  - de
+  - fr
+  - it
+  - rm
+  - en
+currency: CHF
+relatedCountries:
+  - DE
+  - FR

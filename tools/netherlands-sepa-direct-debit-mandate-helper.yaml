@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-sepa-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "SEPA Direct Debit Mandate Helper"
+summary:
+  en: "Normalize Dutch SEPA mandate references, inspect character set and length, and produce logging-safe masked mandate values."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "MANDATE"
+        required: true
+        placeholder:
+          en: "MND-NL-2026-CUSTOMER-0042"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-sepa-transfer-helper, netherlands-iban-validator, netherlands-remittance-text-builder, netherlands-payment-reconciliation-helper]
+seo:
+  title:
+    en: "SEPA Direct Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Normalize Dutch SEPA mandate references, inspect character set and length, and produce logging-safe masked mandate values."

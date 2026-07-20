@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-salary-certificate-field-helper
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Salary Certificate Field Helper"
+summary:
+  en: "Check Swiss salary-certificate snippets for employee, employer UID, canton, year, amount, and privacy boundary evidence."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "Lohnausweis input"
+        required: true
+        placeholder:
+          en: "Lohnausweis 2026"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-invoice-number-helper, switzerland-e-invoicing-readiness-helper, switzerland-payroll-social-security-helper]
+seo:
+  title:
+    en: "Salary Certificate Field Helper | ValidoHub"
+  description:
+    en: "Check Swiss salary-certificate snippets for employee, employer UID, canton, year, amount, and privacy boundary evidence."

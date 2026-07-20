@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-fadp-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: CH
+category: developer-tools
+status: active
+name:
+  en: "FADP / GDPR Redaction Helper"
+summary:
+  en: "Mask Swiss personal, company, banking, phone, email, and address evidence for privacy-safe logs."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FADP input"
+        required: true
+        placeholder:
+          en: "Anna Muster AHV 756.1234.5678.97 email anna@example.ch IBAN CH9300762011623852957"
+    actions: [format, validate, parse, generate, explain]
+related:
+  explicit: [switzerland-compliance-checklist-generator, switzerland-audit-trail-checklist-generator, switzerland-pii-masker, switzerland-data-quality-workbench]
+seo:
+  title:
+    en: "FADP / GDPR Redaction Helper | ValidoHub"
+  description:
+    en: "Mask Swiss personal, company, banking, phone, email, and address evidence for privacy-safe logs."

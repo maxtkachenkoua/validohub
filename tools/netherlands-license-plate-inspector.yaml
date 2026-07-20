@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-license-plate-inspector
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "Dutch License Plate Inspector"
+summary:
+  en: "Inspect Dutch license-plate patterns, normalize punctuation, classify common plate groups, and build fleet-safe examples."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "PLATE"
+        required: true
+        placeholder:
+          en: "12-AB-34"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-rdw-vehicle-data-redaction-helper, netherlands-vin-validator, netherlands-driving-licence-format-helper, netherlands-data-quality-workbench]
+seo:
+  title:
+    en: "Dutch License Plate Inspector | ValidoHub"
+  description:
+    en: "Inspect Dutch license-plate patterns, normalize punctuation, classify common plate groups, and build fleet-safe examples."

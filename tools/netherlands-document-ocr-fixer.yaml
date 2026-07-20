@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-document-ocr-fixer
+kind: tool
+module: validohub
+country: NL
+category: developer-tools
+status: active
+name:
+  en: "Dutch Document OCR Fixer"
+summary:
+  en: "Clean OCR output from Dutch documents, restore common separators, detect identifiers, and flag risky recognition artifacts."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "OCR"
+        required: true
+        placeholder:
+          en: "KVK 9O006485"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-data-quality-workbench, netherlands-address-transliteration-normalizer, netherlands-pii-masker, netherlands-api-payload-auditor]
+seo:
+  title:
+    en: "Dutch Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR output from Dutch documents, restore common separators, detect identifiers, and flag risky recognition artifacts."

@@ -1920,7 +1920,8 @@ select:focus {
   display: none;
 }
 
-.json-node-row {
+.json-node-row,
+.json-tree-row {
   display: grid;
   grid-template-columns: auto auto auto minmax(0, auto) minmax(120px, 1fr);
   align-items: center;
@@ -1938,26 +1939,38 @@ select:focus {
   cursor: pointer;
 }
 
+.json-tree-row {
+  grid-template-columns: auto minmax(72px, 0.55fr) auto minmax(0, 1.2fr);
+  margin-left: calc(var(--json-depth, 0) * 12px);
+}
+
 .json-tree-leaf .json-node-row {
   margin-left: calc(var(--json-depth, 0) * 12px);
 }
 
 .json-node-row:hover,
-.json-node-row:focus-visible {
+.json-node-row:focus-visible,
+.json-tree-row:hover,
+.json-tree-row:focus-visible {
   background: #eef2ff;
   outline: none;
 }
 
-.json-node-row.is-selected {
+.json-node-row.is-selected,
+.json-tree-row.is-selected {
   background: #e0e7ff;
   box-shadow: inset 3px 0 0 #6366f1;
 }
 
-.json-node-row.is-match {
+.json-node-row.is-match,
+.json-tree-row.is-match,
+.json-tree-row.is-search-match {
   background: #fef9c3;
 }
 
-.json-node-row.is-current-match {
+.json-node-row.is-current-match,
+.json-tree-row.is-current-match,
+.json-tree-row.is-active-search-match {
   background: #fde68a;
   box-shadow: inset 3px 0 0 #d97706;
 }
@@ -1975,16 +1988,26 @@ select:focus {
 }
 
 .json-tree-label {
+  min-width: 0;
   color: var(--text);
   font-weight: 780;
+  overflow-wrap: anywhere;
 }
 
 .json-tree-type {
-  color: var(--muted);
-  font-size: 0.82rem;
+  width: max-content;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4f46e5;
+  padding: 2px 7px;
+  font-size: 0.72rem;
+  font-weight: 820;
+  line-height: 1.35;
+  text-transform: uppercase;
 }
 
-.json-node-value {
+.json-node-value,
+.json-tree-value {
   overflow: hidden;
   max-width: 24ch;
   border-radius: 4px;
@@ -1993,6 +2016,10 @@ select:focus {
   padding: 1px 4px;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.json-tree-value {
+  max-width: 100%;
 }
 
 .json-node-path {
@@ -2047,6 +2074,43 @@ select:focus {
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
+}
+
+.json-node-inspector > span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.inspector-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+}
+
+.inspector-details-grid > div {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fbfcfe;
+  padding: 8px 9px;
+}
+
+.inspector-details-grid dt {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 820;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.inspector-details-grid dd {
+  margin: 2px 0 0;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 760;
+  overflow-wrap: anywhere;
 }
 
 .json-node-inspector code {
@@ -3744,5 +3808,408 @@ tr:last-child td {
     align-items: flex-start;
     flex-direction: column;
     gap: 6px;
+  }
+}
+
+/* ============================================================
+   Legacy premium generic workbench polish
+   Base64, URL, JSON, and JWT still emit pesel-* result/advanced
+   fragments. Keep them visually aligned with the newer generic
+   suite instead of leaking native buttons or cramped inline rows.
+   ============================================================ */
+
+.browser-workbench .pesel-premium-panel {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.browser-workbench .pesel-empty-state {
+  order: 5;
+}
+
+.browser-workbench .pesel-results-container {
+  order: 10;
+}
+
+.browser-workbench .pesel-custom-actions {
+  order: 20;
+}
+
+.browser-workbench .pesel-breakdown {
+  order: 30;
+}
+
+.browser-workbench .pesel-timeline-tracker {
+  order: 40;
+}
+
+.browser-workbench .pesel-timeline-tracker {
+  position: relative;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  margin: 16px 0 4px;
+  padding: 14px;
+  border: 1px solid rgba(207, 215, 227, 0.78);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.browser-workbench .pesel-timeline-line,
+.browser-workbench .pesel-timeline-progress {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  top: 28px;
+  height: 2px;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.browser-workbench .pesel-timeline-line {
+  background: var(--line);
+}
+
+.browser-workbench .pesel-timeline-progress {
+  width: auto !important;
+  max-width: calc(100% - 56px);
+  background: linear-gradient(90deg, var(--accent), #2563eb);
+}
+
+.browser-workbench .pesel-timeline-node {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.browser-workbench .pesel-timeline-dot {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--line-strong);
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px #ffffff;
+}
+
+.browser-workbench .pesel-timeline-node.active .pesel-timeline-dot,
+.browser-workbench .pesel-timeline-node.success .pesel-timeline-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.browser-workbench .pesel-timeline-node.error .pesel-timeline-dot {
+  border-color: var(--danger);
+  background: var(--danger);
+}
+
+.browser-workbench .pesel-timeline-node-text {
+  display: block;
+  max-width: 100%;
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 860;
+  line-height: 1.15;
+  letter-spacing: 0.075em;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.browser-workbench .pesel-timeline-node.active .pesel-timeline-node-text,
+.browser-workbench .pesel-timeline-node.success .pesel-timeline-node-text {
+  color: var(--accent-strong);
+}
+
+.browser-workbench .pesel-timeline-node.error .pesel-timeline-node-text {
+  color: var(--danger);
+}
+
+.browser-workbench .pesel-results-container {
+  width: 100%;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid rgba(207, 215, 227, 0.78);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.browser-workbench .pesel-results-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between !important;
+  gap: 8px 14px;
+  color: var(--text) !important;
+  font-size: 0.95rem;
+  font-weight: 820;
+  line-height: 1.3;
+}
+
+.browser-workbench .pesel-results-header > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+}
+
+.browser-workbench .pesel-results-header > span:last-child {
+  color: var(--muted) !important;
+  font-size: 0.76rem !important;
+  font-weight: 760 !important;
+  white-space: nowrap;
+}
+
+.browser-workbench .pesel-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+
+.browser-workbench .pesel-result-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 12px;
+  align-items: start;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(207, 215, 227, 0.76);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.browser-workbench .pesel-result-row .row-label {
+  grid-column: 1 / -1;
+  display: block;
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--vh-tool-metric-label-size, 0.68rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.browser-workbench .pesel-result-row .row-value {
+  display: block;
+  min-width: 0;
+  color: var(--text);
+  font-size: var(--vh-tool-metric-value-size, 0.92rem);
+  font-weight: 760;
+  line-height: var(--vh-tool-metric-value-line, 1.38);
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.browser-workbench .pesel-row-copy-btn,
+.browser-workbench .pesel-dev-accordion-copy-btn,
+.browser-workbench .pesel-api-tab,
+.browser-workbench .pesel-playground-btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 780;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.browser-workbench .pesel-row-copy-btn {
+  grid-column: 2;
+  grid-row: 2;
+  min-height: 30px;
+  padding: 6px 9px;
+}
+
+.browser-workbench .pesel-row-copy-btn:hover,
+.browser-workbench .pesel-dev-accordion-copy-btn:hover,
+.browser-workbench .pesel-api-tab:hover,
+.browser-workbench .pesel-playground-btn:hover,
+.browser-workbench .pesel-api-tab.active {
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.browser-workbench .pesel-breakdown {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  margin-top: 16px;
+}
+
+.browser-workbench .pesel-breakdown h3,
+.browser-workbench .pesel-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: 0.98rem;
+  font-weight: 820;
+  letter-spacing: 0;
+}
+
+.browser-workbench .pesel-breakdown p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.browser-workbench .pesel-dev-section {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.browser-workbench .pesel-dev-accordion,
+.browser-workbench .pesel-api-card {
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(20, 26, 36, 0.05);
+}
+
+.browser-workbench .pesel-dev-accordion summary {
+  min-height: 52px;
+  padding: 14px 16px;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 820;
+}
+
+.browser-workbench .pesel-api-card {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.browser-workbench .pesel-api-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.browser-workbench .pesel-api-tab {
+  min-height: 32px;
+  padding: 7px 10px;
+}
+
+.browser-workbench .pesel-dev-accordion-content {
+  position: relative;
+  min-width: 0;
+  padding: 14px !important;
+  border-top: 1px solid var(--line);
+  background: #111827 !important;
+  color: var(--code-text);
+}
+
+.browser-workbench .pesel-dev-accordion-content .pesel-dev-accordion-copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  min-height: 30px;
+  padding: 6px 9px;
+}
+
+.browser-workbench .pesel-dev-accordion-content pre,
+.browser-workbench .pesel-dev-accordion-content .hex-preview {
+  overflow: auto;
+  max-width: 100%;
+  max-height: 420px;
+  margin: 0;
+  padding: 44px 14px 14px;
+  border-radius: 8px;
+  background: #151923 !important;
+  color: var(--code-text) !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-size: 0.82rem !important;
+  line-height: 1.55 !important;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.browser-workbench .pesel-dev-accordion-content .hex-preview {
+  display: block;
+}
+
+.browser-workbench .pesel-dev-accordion-content .hex-preview strong,
+.browser-workbench .pesel-dev-accordion-content .hex-preview b {
+  color: #bfdbfe;
+}
+
+.browser-workbench .pesel-dev-table,
+.browser-workbench .pesel-breakdown table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.browser-workbench .pesel-dev-table th,
+.browser-workbench .pesel-dev-table td,
+.browser-workbench .pesel-breakdown th,
+.browser-workbench .pesel-breakdown td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.browser-workbench .pesel-dev-table th,
+.browser-workbench .pesel-breakdown th {
+  background: var(--surface-soft);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 840;
+}
+
+.browser-workbench .pesel-custom-actions {
+  margin-top: 14px !important;
+}
+
+.browser-workbench .pesel-custom-actions .button {
+  min-height: 40px;
+}
+
+@media (max-width: 720px) {
+  .browser-workbench .pesel-results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .browser-workbench .pesel-result-row {
+    grid-template-columns: 1fr;
+  }
+
+  .browser-workbench .pesel-row-copy-btn {
+    grid-column: 1;
+    grid-row: auto;
+    width: max-content;
+  }
+
+  .browser-workbench .pesel-dev-accordion-content pre,
+  .browser-workbench .pesel-dev-accordion-content .hex-preview {
+    font-size: 0.76rem !important;
   }
 }

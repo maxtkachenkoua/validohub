@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Swiss Address Transliteration Normalizer"
+summary:
+  en: "Produce ASCII-safe variants for Swiss German, French, Italian, and Romansh address text."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Rue de l’Église 5, 1204 Genève"
+    actions: [format, validate, parse, generate, explain]
+related:
+  explicit: [switzerland-postal-code-validator, switzerland-address-normalizer, switzerland-multilingual-address-helper, switzerland-canton-code-mapper]
+seo:
+  title:
+    en: "Swiss Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Produce ASCII-safe variants for Swiss German, French, Italian, and Romansh address text."

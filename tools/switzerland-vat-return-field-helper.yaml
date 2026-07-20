@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-vat-return-field-helper
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss VAT Return Field Helper"
+summary:
+  en: "Organize Swiss VAT return period, turnover, tax rate, UID, and evidence fields before official submission."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "Period Q2 2026"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-vat-mwst-validator, switzerland-eori-validator, switzerland-mwst-rate-sanity-helper, switzerland-withholding-tax-readiness-helper]
+seo:
+  title:
+    en: "Swiss VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Organize Swiss VAT return period, turnover, tax rate, UID, and evidence fields before official submission."

@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-postal-tracking-helper
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Swiss Post Tracking Helper"
+summary:
+  en: "Inspect Swiss Post-like tracking snippets, postal codes, dates, and carrier-status boundary notes."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "Swiss Post 99.00.123456.12345678 delivered to 8001 Zurich on 14.07.2026"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-postal-code-validator, switzerland-address-normalizer, switzerland-address-transliteration-normalizer, switzerland-multilingual-address-helper]
+seo:
+  title:
+    en: "Swiss Post Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect Swiss Post-like tracking snippets, postal codes, dates, and carrier-status boundary notes."

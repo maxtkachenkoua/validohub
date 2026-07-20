@@ -28,6 +28,18 @@
       },
       "source": "Natural Earth geometry"
     },
+    "france": {
+      "outlineSrc": "/assets/images/countries/france-outline.svg",
+      "outlineAlt": "France country outline",
+      "mapSrc": "/assets/images/countries/france-location.svg",
+      "mapAlt": "World map with France location marker",
+      "mapMarker": {
+        "x": 48,
+        "y": 38,
+        "label": "France"
+      },
+      "source": "Simplified public-domain geographic reference"
+    },
     "germany": {
       "outlineSrc": "/assets/images/countries/germany-outline.svg",
       "outlineAlt": "Germany country outline",
@@ -39,6 +51,18 @@
         "label": "Germany"
       },
       "source": "Natural Earth geometry"
+    },
+    "netherlands": {
+      "outlineSrc": "/assets/images/countries/netherlands-outline.svg",
+      "outlineAlt": "Netherlands country outline",
+      "mapSrc": "/assets/images/countries/netherlands-location.svg",
+      "mapAlt": "World map with Netherlands location marker",
+      "mapMarker": {
+        "x": 49,
+        "y": 35,
+        "label": "Netherlands"
+      },
+      "source": "Simplified public-domain geographic reference"
     },
     "poland": {
       "outlineSrc": "/assets/images/countries/poland-outline.svg",
@@ -61,6 +85,18 @@
         "x": 41,
         "y": 63,
         "label": "Spain"
+      },
+      "source": "Simplified public-domain geographic reference"
+    },
+    "switzerland": {
+      "outlineSrc": "/assets/images/countries/switzerland-outline.svg",
+      "outlineAlt": "Switzerland country outline",
+      "mapSrc": "/assets/images/countries/switzerland-location.svg",
+      "mapAlt": "World map with Switzerland location marker",
+      "mapMarker": {
+        "x": 50,
+        "y": 36,
+        "label": "Switzerland"
       },
       "source": "Simplified public-domain geographic reference"
     }
@@ -1699,6 +1735,1576 @@
         ]
       }
     },
+    "france": {
+      "flag": "🇫🇷",
+      "name": "France",
+      "badge": "Western Europe premium country hub",
+      "description": "Developer intelligence for French company, tax, banking, address, identity-boundary, payment, vehicle, privacy, and localization workflows with browser-only validation where possible.",
+      "metadata": {
+        "nativeName": "France",
+        "population": "approximately 68M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "area": "643,801 km²",
+        "capital": "Paris",
+        "largestCity": "Paris",
+        "continent": "Europe",
+        "region": "Western Europe / European Union",
+        "languages": "French",
+        "currency": "Euro",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "callingCode": "+33",
+        "internetTld": ".fr",
+        "drivingSide": "Right",
+        "iso2": "FR",
+        "iso3": "FRA",
+        "isoNumeric": "250",
+        "locale": "fr-FR",
+        "icuLocale": "fr_FR",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Space ( ) or narrow no-break space",
+        "addressFormat": "Recipient, street number and name, postcode locality, France",
+        "postalCodeFormat": "NNNNN",
+        "primaryTimeZone": "Europe/Paris (CET/CEST)",
+        "utcRange": "UTC+01/+02",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "powerPlugTypes": "Type C / Type E",
+        "voltage": "230V",
+        "frequency": "50Hz",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "fr-FR",
+        "cldrLocale": "fr_FR",
+        "metricVsImperial": "Metric-first"
+      },
+      "visualIdentity": {
+        "countryId": "france",
+        "outlineLabel": "France outline",
+        "mapLabel": "France in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "France flag",
+        "heroAccentPrimary": "0 85 164",
+        "heroAccentSecondary": "255 255 255",
+        "heroAccentTertiary": "239 65 53"
+      },
+      "stats": [
+        {
+          "icon": "👥",
+          "label": "Population",
+          "valueKey": "population",
+          "tags": [
+            "people"
+          ]
+        },
+        {
+          "icon": "🏛",
+          "label": "Capital",
+          "valueKey": "capital",
+          "tags": [
+            "government"
+          ]
+        },
+        {
+          "icon": "🏙",
+          "label": "Largest city",
+          "valueKey": "largestCity",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "brandKey": "europeanUnion",
+          "label": "Region",
+          "valueKey": "region",
+          "tags": [
+            "government",
+            "locale"
+          ]
+        },
+        {
+          "brandKey": "iban",
+          "label": "Currency",
+          "valueKey": "currencyCode",
+          "tags": [
+            "payments"
+          ]
+        },
+        {
+          "icon": "☎️",
+          "label": "Calling code",
+          "valueKey": "callingCode",
+          "tags": [
+            "phone"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "title": "Identifier stack",
+          "description": "France combines SIREN company identifiers, SIRET establishment identifiers, TVA tax identifiers, INSEE commune codes, and privacy-sensitive NIR values.",
+          "cards": [
+            {
+              "icon": "🏢",
+              "name": "SIREN",
+              "status": "available",
+              "tags": [
+                "business",
+                "checksum"
+              ],
+              "description": "Nine-digit company identifier with local Luhn check evidence."
+            },
+            {
+              "icon": "🏬",
+              "name": "SIRET",
+              "status": "available",
+              "tags": [
+                "establishment",
+                "checksum"
+              ],
+              "description": "Fourteen-digit establishment identifier: SIREN plus NIC."
+            },
+            {
+              "icon": "🧾",
+              "name": "TVA intracommunautaire",
+              "status": "available",
+              "tags": [
+                "tax",
+                "eu"
+              ],
+              "description": "FR plus a two-character key and SIREN; local key derivation can be checked before VIES."
+            },
+            {
+              "icon": "🪪",
+              "name": "NIR",
+              "status": "available",
+              "tags": [
+                "identity",
+                "privacy"
+              ],
+              "description": "Sensitive personal identifier; ValidoHub provides syntax/key and masking helpers, not identity proof."
+            }
+          ]
+        },
+        {
+          "title": "Banking and payment stack",
+          "description": "French banking data is built around RIB fields, IBAN conversion, BIC routing, and SEPA remittance conventions.",
+          "cards": [
+            {
+              "brandKey": "iban",
+              "name": "French IBAN",
+              "status": "available",
+              "tags": [
+                "banking",
+                "mod97"
+              ],
+              "description": "27-character IBAN beginning with FR, with embedded RIB structure."
+            },
+            {
+              "icon": "🏦",
+              "name": "RIB",
+              "status": "available",
+              "tags": [
+                "banking"
+              ],
+              "description": "Bank code, branch code, 11-character account number, and two-digit RIB key."
+            },
+            {
+              "brandKey": "sepa",
+              "name": "SEPA",
+              "status": "available",
+              "tags": [
+                "payments",
+                "eu"
+              ],
+              "description": "Transfer, direct debit mandate, RUM, and remittance helpers for French payments."
+            },
+            {
+              "icon": "🔎",
+              "name": "Reconciliation",
+              "status": "available",
+              "tags": [
+                "payments",
+                "data-quality"
+              ],
+              "description": "Local parsers for amounts, dates, references, masked IBANs, and duplicate-risk notes."
+            }
+          ]
+        },
+        {
+          "title": "Localization and data quality",
+          "description": "French forms need careful treatment of accents, comma decimals, DD/MM/YYYY dates, CEDEX addresses, phone ranges, and privacy-safe logs.",
+          "cards": [
+            {
+              "icon": "📍",
+              "name": "Address and postal",
+              "status": "available",
+              "tags": [
+                "postal",
+                "address"
+              ],
+              "description": "Postal code, department, commune, region, CEDEX, and address normalization tools."
+            },
+            {
+              "icon": "☎️",
+              "name": "Phone numbers",
+              "status": "available",
+              "tags": [
+                "phone"
+              ],
+              "description": "National 0X spacing, +33 E.164 conversion, range classification, and masking."
+            },
+            {
+              "icon": "€",
+              "name": "EUR formatting",
+              "status": "available",
+              "tags": [
+                "localization",
+                "currency"
+              ],
+              "description": "Comma decimals, space thousands, API-safe numeric parsing, and display formatting."
+            },
+            {
+              "icon": "🛡️",
+              "name": "Privacy boundary",
+              "status": "available",
+              "tags": [
+                "privacy"
+              ],
+              "description": "GDPR, PII masking, NIR masking, vehicle redaction, and fixture generation."
+            }
+          ]
+        }
+      ],
+      "toolGroups": [
+        {
+          "icon": "🏢",
+          "title": "Business identity",
+          "description": "Company, establishment, registry, customs, and onboarding identifiers.",
+          "items": [
+            {
+              "label": "SIREN Validator & Explainer",
+              "status": "available",
+              "tags": [
+                "national-identifiers",
+                "business"
+              ],
+              "description": "Validate French SIREN company identifiers, replay the Luhn check digit, and produce registry-safe diagnostics."
+            },
+            {
+              "label": "SIRET Validator & Explainer",
+              "status": "available",
+              "tags": [
+                "national-identifiers",
+                "business"
+              ],
+              "description": "Validate French SIRET establishment identifiers, split SIREN and NIC, and verify local checksum evidence."
+            },
+            {
+              "label": "NIC Establishment Code Inspector",
+              "status": "available",
+              "tags": [
+                "national-identifiers",
+                "business"
+              ],
+              "description": "Inspect the five-digit NIC establishment suffix used inside French SIRET numbers."
+            },
+            {
+              "label": "APE / NAF Code Inspector",
+              "status": "available",
+              "tags": [
+                "business",
+                "business"
+              ],
+              "description": "Inspect French APE/NAF activity codes, normalize punctuation, and prepare Sirene enrichment fields."
+            },
+            {
+              "label": "RCS Number Helper",
+              "status": "available",
+              "tags": [
+                "business",
+                "business"
+              ],
+              "description": "Normalize RCS registration text, extract registry city and SIREN evidence, and prepare onboarding notes."
+            },
+            {
+              "label": "Répertoire des Métiers Helper",
+              "status": "available",
+              "tags": [
+                "business",
+                "business"
+              ],
+              "description": "Normalize RM craft registration references and extract SIREN-ready identifier evidence."
+            },
+            {
+              "label": "Company Onboarding Auditor",
+              "status": "available",
+              "tags": [
+                "business",
+                "business"
+              ],
+              "description": "Audit French company onboarding snippets for SIREN, SIRET, TVA, address, and payment readiness."
+            },
+            {
+              "label": "Sirene Lookup Readiness Helper",
+              "status": "available",
+              "tags": [
+                "government",
+                "business"
+              ],
+              "description": "Prepare SIRENE API lookup payloads with normalized SIREN/SIRET values and offline validation notes."
+            }
+          ]
+        },
+        {
+          "icon": "🏦",
+          "title": "Banking and RIB",
+          "description": "IBAN, RIB, BIC, bank-code, and statement parsing workflows.",
+          "items": [
+            {
+              "label": "French IBAN Validator",
+              "status": "available",
+              "tags": [
+                "banking",
+                "banking"
+              ],
+              "description": "Validate French IBANs, split RIB segments, run MOD-97, and expose bank, branch, account, and key fields."
+            },
+            {
+              "label": "RIB Validator & Explainer",
+              "status": "available",
+              "tags": [
+                "banking",
+                "banking"
+              ],
+              "description": "Validate French RIB components, inspect bank code, branch code, account number, and RIB key evidence."
+            },
+            {
+              "label": "French Bank Code Inspector",
+              "status": "available",
+              "tags": [
+                "banking",
+                "banking"
+              ],
+              "description": "Inspect five-digit French bank and branch code pairs used in RIB and IBAN payloads."
+            },
+            {
+              "label": "French BIC / SWIFT Inspector",
+              "status": "available",
+              "tags": [
+                "banking",
+                "banking"
+              ],
+              "description": "Validate French BIC/SWIFT syntax and distinguish 8-character institution codes from 11-character branch codes."
+            },
+            {
+              "label": "Masked IBAN Formatter",
+              "status": "available",
+              "tags": [
+                "privacy",
+                "banking"
+              ],
+              "description": "Mask French IBANs and RIB strings for logs, screenshots, support tickets, and audit evidence."
+            },
+            {
+              "label": "Bank Statement Parser",
+              "status": "available",
+              "tags": [
+                "data-quality",
+                "banking"
+              ],
+              "description": "Extract dates, amounts, references, IBAN-like strings, and reconciliation hints from French bank statement text."
+            }
+          ]
+        },
+        {
+          "icon": "💶",
+          "title": "SEPA payments",
+          "description": "Transfer, mandate, remittance, and reconciliation helpers.",
+          "items": [
+            {
+              "label": "SEPA Transfer Helper",
+              "status": "available",
+              "tags": [
+                "payments",
+                "payments"
+              ],
+              "description": "Build SEPA transfer-ready field bundles from French IBAN, BIC, amount, creditor, and remittance input."
+            },
+            {
+              "label": "SEPA Direct Debit RUM Helper",
+              "status": "available",
+              "tags": [
+                "payments",
+                "payments"
+              ],
+              "description": "Normalize French SEPA mandate references and inspect length, character set, and logging-safe masked values."
+            },
+            {
+              "label": "French Remittance Text Builder",
+              "status": "available",
+              "tags": [
+                "payments",
+                "payments"
+              ],
+              "description": "Clean French remittance text for bank transfers, invoices, and reconciliation-safe references."
+            },
+            {
+              "label": "Payment Reconciliation Helper",
+              "status": "available",
+              "tags": [
+                "data-quality",
+                "payments"
+              ],
+              "description": "Audit French payment records for IBAN, amount, invoice reference, date, and duplicate-risk evidence."
+            }
+          ]
+        },
+        {
+          "icon": "📍",
+          "title": "Address and locale",
+          "description": "Postal, commune, department, region, CEDEX, address, and date conventions.",
+          "items": [
+            {
+              "label": "French Postal Code Validator",
+              "status": "available",
+              "tags": [
+                "postal",
+                "address"
+              ],
+              "description": "Validate French postal codes, infer department prefixes, and flag overseas postal ranges."
+            },
+            {
+              "label": "INSEE Commune Code Inspector",
+              "status": "available",
+              "tags": [
+                "government",
+                "address"
+              ],
+              "description": "Inspect five-character INSEE commune codes, department prefixes, Corsica notation, and overseas boundaries."
+            },
+            {
+              "label": "Department Code Inspector",
+              "status": "available",
+              "tags": [
+                "government",
+                "address"
+              ],
+              "description": "Validate French department codes including Corsica and overseas department prefixes."
+            },
+            {
+              "label": "Region Code Mapper",
+              "status": "available",
+              "tags": [
+                "government",
+                "address"
+              ],
+              "description": "Map French department evidence to practical region labels for forms, analytics, and QA notes."
+            },
+            {
+              "label": "CEDEX Address Formatter",
+              "status": "available",
+              "tags": [
+                "postal",
+                "address"
+              ],
+              "description": "Format French business and CEDEX address blocks with postcode, locality, country, and line-order checks."
+            },
+            {
+              "label": "French Address Normalizer",
+              "status": "available",
+              "tags": [
+                "postal",
+                "address"
+              ],
+              "description": "Normalize French address casing, spacing, postal code placement, and country-line output."
+            },
+            {
+              "label": "Address Transliteration Normalizer",
+              "status": "available",
+              "tags": [
+                "localization",
+                "address"
+              ],
+              "description": "Produce ASCII-safe address variants while preserving the original French address for display."
+            }
+          ]
+        },
+        {
+          "icon": "☎️",
+          "title": "Phone numbers",
+          "description": "French national and E.164 phone validation and formatting.",
+          "items": [
+            {
+              "label": "French Phone Number Validator",
+              "status": "available",
+              "tags": [
+                "phone",
+                "phone"
+              ],
+              "description": "Validate French national and +33 phone numbers, classify ranges, and normalize spacing."
+            },
+            {
+              "label": "French Phone E.164 Formatter",
+              "status": "available",
+              "tags": [
+                "phone",
+                "phone"
+              ],
+              "description": "Convert French phone numbers to E.164, national display spacing, and masked support-safe output."
+            }
+          ]
+        },
+        {
+          "icon": "🧾",
+          "title": "Tax and invoicing",
+          "description": "TVA, invoices, e-invoicing, PDP/PPF, FEC, and audit evidence.",
+          "items": [
+            {
+              "label": "French VAT / TVA Validator",
+              "status": "available",
+              "tags": [
+                "tax",
+                "tax"
+              ],
+              "description": "Validate French VAT syntax, derive the TVA key from SIREN, and prepare VIES-ready payloads."
+            },
+            {
+              "label": "VAT Rate Sanity Helper",
+              "status": "available",
+              "tags": [
+                "tax",
+                "tax"
+              ],
+              "description": "Check French VAT rate values for common standard, reduced, super-reduced, and zero-rate scenarios."
+            },
+            {
+              "label": "French Invoice Number Helper",
+              "status": "available",
+              "tags": [
+                "commerce",
+                "tax"
+              ],
+              "description": "Inspect French invoice numbering strings for chronology hints, uniqueness fields, and export-safe normalized values."
+            },
+            {
+              "label": "E-Invoicing Readiness Helper",
+              "status": "available",
+              "tags": [
+                "commerce",
+                "tax"
+              ],
+              "description": "Audit French e-invoicing readiness fields: SIRET, TVA, buyer references, totals, and PDF/data boundaries."
+            },
+            {
+              "label": "PDP / PPF Readiness Helper",
+              "status": "available",
+              "tags": [
+                "commerce",
+                "tax"
+              ],
+              "description": "Prepare French e-invoicing exchange payload readiness notes for PDP/PPF style integrations."
+            },
+            {
+              "label": "FEC File Readiness Checker",
+              "status": "available",
+              "tags": [
+                "data-quality",
+                "tax"
+              ],
+              "description": "Inspect French FEC accounting export snippets for separators, dates, account codes, debit/credit, and encoding risks."
+            },
+            {
+              "label": "Audit Trail Checklist Generator",
+              "status": "available",
+              "tags": [
+                "compliance",
+                "tax"
+              ],
+              "description": "Generate a French audit-trail checklist from invoice, payment, accounting, and customer evidence snippets."
+            }
+          ]
+        },
+        {
+          "icon": "🛡️",
+          "title": "Privacy and redaction",
+          "description": "GDPR and PII masking for French data.",
+          "items": [
+            {
+              "label": "GDPR Redaction Helper",
+              "status": "available",
+              "tags": [
+                "privacy",
+                "privacy"
+              ],
+              "description": "Find and mask French personal data candidates before logs, screenshots, exports, or support handoffs."
+            },
+            {
+              "label": "French PII Masker",
+              "status": "available",
+              "tags": [
+                "privacy",
+                "privacy"
+              ],
+              "description": "Mask French identifiers, phone numbers, emails, IBANs, postal addresses, and person names in pasted text."
+            }
+          ]
+        },
+        {
+          "icon": "🧹",
+          "title": "Data quality",
+          "description": "OCR, statement, and record-quality repair workbenches.",
+          "items": [
+            {
+              "label": "France Data Quality Workbench",
+              "status": "available",
+              "tags": [
+                "data-quality",
+                "data"
+              ],
+              "description": "Audit French records for identifiers, payments, addresses, phone numbers, dates, and localization consistency."
+            },
+            {
+              "label": "French Document OCR Fixer",
+              "status": "available",
+              "tags": [
+                "data-quality",
+                "data"
+              ],
+              "description": "Repair common OCR artifacts in French identifiers, invoices, addresses, and official document snippets."
+            }
+          ]
+        },
+        {
+          "icon": "✅",
+          "title": "Compliance",
+          "description": "Implementation checklists and audit readiness.",
+          "items": [
+            {
+              "label": "Compliance Checklist Generator",
+              "status": "available",
+              "tags": [
+                "compliance",
+                "compliance"
+              ],
+              "description": "Generate implementation checklists for French identifier, payment, tax, privacy, and localization workflows."
+            }
+          ]
+        },
+        {
+          "icon": "🪪",
+          "title": "Identity boundaries",
+          "description": "NIR, personal documents, birth consistency, and fixture safety.",
+          "items": [
+            {
+              "label": "NIR Syntax Inspector",
+              "status": "available",
+              "tags": [
+                "identity",
+                "identity"
+              ],
+              "description": "Inspect French NIR social security number structure, field groups, and offline boundary notes."
+            },
+            {
+              "label": "NIR Key Validator",
+              "status": "available",
+              "tags": [
+                "identity",
+                "identity"
+              ],
+              "description": "Validate the two-digit NIR control key for numeric French social security identifiers."
+            },
+            {
+              "label": "NIR Masker",
+              "status": "available",
+              "tags": [
+                "privacy",
+                "identity"
+              ],
+              "description": "Mask French NIR strings while preserving low-risk field evidence for debugging and QA."
+            },
+            {
+              "label": "French Passport Number Helper",
+              "status": "available",
+              "tags": [
+                "identity",
+                "identity"
+              ],
+              "description": "Inspect French passport-like strings for safe fixture shape, length, and logging boundaries."
+            },
+            {
+              "label": "French ID Card Format Helper",
+              "status": "available",
+              "tags": [
+                "identity",
+                "identity"
+              ],
+              "description": "Inspect French ID card-like values for shape, casing, and privacy-safe fixture handling."
+            },
+            {
+              "label": "Birth Data Consistency Helper",
+              "status": "available",
+              "tags": [
+                "identity",
+                "identity"
+              ],
+              "description": "Check whether French date, department, commune, and NIR-like fields agree at syntax level."
+            },
+            {
+              "label": "Health Insurance Boundary Helper",
+              "status": "available",
+              "tags": [
+                "privacy",
+                "identity"
+              ],
+              "description": "Explain offline boundaries for French health insurance identifiers and build safe test-data notes."
+            },
+            {
+              "label": "Personal Data Fixture Generator",
+              "status": "available",
+              "tags": [
+                "privacy",
+                "identity"
+              ],
+              "description": "Generate privacy-safe French person fixtures with fake names, addresses, phones, and masked identifiers."
+            }
+          ]
+        },
+        {
+          "icon": "🚗",
+          "title": "Vehicle workflows",
+          "description": "Plates, VIN, Crit’Air, carte grise, and vehicle data masking.",
+          "items": [
+            {
+              "label": "French License Plate Inspector",
+              "status": "available",
+              "tags": [
+                "vehicle",
+                "vehicle"
+              ],
+              "description": "Validate French SIV plate syntax, normalize separators, and identify legacy plate boundaries."
+            },
+            {
+              "label": "VIN Validator for France Workflows",
+              "status": "available",
+              "tags": [
+                "vehicle",
+                "vehicle"
+              ],
+              "description": "Validate VIN syntax and checksum for French registration and fleet data workflows."
+            },
+            {
+              "label": "Crit'Air Readiness Helper",
+              "status": "available",
+              "tags": [
+                "vehicle",
+                "vehicle"
+              ],
+              "description": "Audit vehicle data snippets for Crit'Air certificate workflow readiness and offline boundary notes."
+            },
+            {
+              "label": "Carte Grise Field Helper",
+              "status": "available",
+              "tags": [
+                "vehicle",
+                "vehicle"
+              ],
+              "description": "Inspect French registration certificate field snippets and map labels to developer-friendly keys."
+            },
+            {
+              "label": "Driving Licence Format Helper",
+              "status": "available",
+              "tags": [
+                "identity",
+                "vehicle"
+              ],
+              "description": "Inspect French driving licence-like numbers for shape, masking, and data-entry QA boundaries."
+            },
+            {
+              "label": "Vehicle Data Redaction Helper",
+              "status": "available",
+              "tags": [
+                "privacy",
+                "vehicle"
+              ],
+              "description": "Mask French vehicle identifiers, VINs, registration plates, owner names, and support-ticket snippets."
+            },
+            {
+              "label": "Municipality / Department Plate Helper",
+              "status": "available",
+              "tags": [
+                "government",
+                "vehicle"
+              ],
+              "description": "Connect department, commune, postal, and plate snippets for QA without implying official lookup."
+            }
+          ]
+        },
+        {
+          "icon": "⌘",
+          "title": "Developer utilities",
+          "description": "CSV, JSON, regex, API payload, form, slug, and accent normalization.",
+          "items": [
+            {
+              "label": "French CSV Locale Normalizer",
+              "status": "available",
+              "tags": [
+                "localization",
+                "developer"
+              ],
+              "description": "Normalize French CSV snippets with semicolons, comma decimals, dates, and UTF-8 accents for imports."
+            },
+            {
+              "label": "EUR Decimal / Currency Formatter",
+              "status": "available",
+              "tags": [
+                "localization",
+                "developer"
+              ],
+              "description": "Format French EUR amounts, parse comma decimals, and produce API-safe numeric values."
+            },
+            {
+              "label": "French Accent Normalizer",
+              "status": "available",
+              "tags": [
+                "localization",
+                "developer"
+              ],
+              "description": "Normalize French accented text for search keys, ASCII fallbacks, slugs, and original-display preservation."
+            },
+            {
+              "label": "French Slug Normalizer",
+              "status": "available",
+              "tags": [
+                "developer",
+                "developer"
+              ],
+              "description": "Create URL-safe French slugs while preserving accents in display text and explaining normalization choices."
+            },
+            {
+              "label": "French JSON Fixture Generator",
+              "status": "available",
+              "tags": [
+                "developer",
+                "developer"
+              ],
+              "description": "Generate France-ready JSON fixtures containing identifiers, address, phone, payment, and privacy-safe sample values."
+            },
+            {
+              "label": "French Regex Pack Helper",
+              "status": "available",
+              "tags": [
+                "developer",
+                "developer"
+              ],
+              "description": "Generate and explain regex snippets for French identifiers, phones, postal codes, plates, and locale fields."
+            },
+            {
+              "label": "French API Payload Auditor",
+              "status": "available",
+              "tags": [
+                "data-quality",
+                "developer"
+              ],
+              "description": "Audit JSON or form payloads for French field names, identifiers, payments, locale, and privacy-safe logging."
+            },
+            {
+              "label": "French Form Field Auditor",
+              "status": "available",
+              "tags": [
+                "data-quality",
+                "developer"
+              ],
+              "description": "Review French form-field labels, placeholders, masks, validation hints, and accessibility-safe data-entry flows."
+            }
+          ]
+        },
+        {
+          "icon": "🛃",
+          "title": "Customs",
+          "description": "EORI and cross-border identifier readiness.",
+          "items": [
+            {
+              "label": "French EORI Validator",
+              "status": "available",
+              "tags": [
+                "customs",
+                "customs"
+              ],
+              "description": "Validate French EORI identifiers, extract embedded SIRET data, and mark customs lookup boundaries."
+            }
+          ]
+        }
+      ],
+      "officialResources": [
+        {
+          "icon": "🏛",
+          "name": "INSEE Sirene / SIREN / SIRET",
+          "status": "reference",
+          "tags": [
+            "business",
+            "government"
+          ],
+          "description": "Authoritative reference for French business and establishment identifiers."
+        },
+        {
+          "icon": "💶",
+          "name": "impots.gouv.fr VAT and tax identifiers",
+          "status": "reference",
+          "tags": [
+            "tax",
+            "business"
+          ],
+          "description": "Official tax identifier context for SIREN, SIRET, TVA, APE, and EORI usage."
+        },
+        {
+          "brandKey": "iban",
+          "name": "Banque de France RIB / IBAN / BIC",
+          "status": "reference",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Official French banking reference for RIB, IBAN, and BIC fields."
+        },
+        {
+          "brandKey": "europeanUnion",
+          "name": "European Commission VIES",
+          "status": "reference",
+          "tags": [
+            "vat",
+            "eu"
+          ],
+          "description": "EU VAT lookup boundary for French TVA numbers after local syntax checks."
+        },
+        {
+          "icon": "🪪",
+          "name": "Service-Public NIR guidance",
+          "status": "reference",
+          "tags": [
+            "identity",
+            "privacy"
+          ],
+          "description": "Public guidance for French social security number structure and usage boundaries."
+        },
+        {
+          "icon": "✉️",
+          "name": "La Poste address and postal conventions",
+          "status": "reference",
+          "tags": [
+            "postal",
+            "address"
+          ],
+          "description": "Postal addressing, CEDEX, delivery, and normalization conventions."
+        }
+      ],
+      "relatedGlobalTools": [
+        {
+          "brandKey": "iban",
+          "label": "Global IBAN Validator",
+          "path": "/tools/iban-validator/",
+          "tags": [
+            "banking",
+            "global"
+          ]
+        },
+        {
+          "icon": "{}",
+          "label": "JSON Validator",
+          "path": "/tools/json-validator/",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "🔐",
+          "label": "JWT Decoder",
+          "path": "/tools/jwt-decoder/",
+          "tags": [
+            "developer"
+          ]
+        },
+        {
+          "icon": "Aa",
+          "label": "Case Converter",
+          "path": "/tools/case-converter/",
+          "tags": [
+            "developer"
+          ]
+        }
+      ],
+      "relatedCategories": [
+        {
+          "label": "Banking tools",
+          "path": "/categories/banking/",
+          "tags": [
+            "payments"
+          ]
+        },
+        {
+          "label": "Tax tools",
+          "path": "/categories/tax/",
+          "tags": [
+            "tax"
+          ]
+        },
+        {
+          "label": "National identifiers",
+          "path": "/categories/national-identifiers/",
+          "tags": [
+            "identity"
+          ]
+        }
+      ],
+      "futureCountryPages": [
+        {
+          "label": "Germany",
+          "status": "available",
+          "tags": [
+            "country"
+          ]
+        },
+        {
+          "label": "Spain",
+          "status": "available",
+          "tags": [
+            "country"
+          ]
+        },
+        {
+          "label": "Poland",
+          "status": "available",
+          "tags": [
+            "country"
+          ]
+        },
+        {
+          "label": "Italy",
+          "status": "planned",
+          "tags": [
+            "country"
+          ]
+        }
+      ],
+      "plannedWorkbenches": [],
+      "availableWorkbenches": {
+        "SIREN Validator & Explainer": {
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "business"
+          ],
+          "description": "Validate French SIREN company identifiers, replay the Luhn check digit, and produce registry-safe diagnostics."
+        },
+        "SIRET Validator & Explainer": {
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "business"
+          ],
+          "description": "Validate French SIRET establishment identifiers, split SIREN and NIC, and verify local checksum evidence."
+        },
+        "NIC Establishment Code Inspector": {
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "business"
+          ],
+          "description": "Inspect the five-digit NIC establishment suffix used inside French SIRET numbers."
+        },
+        "French VAT / TVA Validator": {
+          "status": "available",
+          "tags": [
+            "tax",
+            "tax"
+          ],
+          "description": "Validate French VAT syntax, derive the TVA key from SIREN, and prepare VIES-ready payloads."
+        },
+        "French EORI Validator": {
+          "status": "available",
+          "tags": [
+            "customs",
+            "customs"
+          ],
+          "description": "Validate French EORI identifiers, extract embedded SIRET data, and mark customs lookup boundaries."
+        },
+        "APE / NAF Code Inspector": {
+          "status": "available",
+          "tags": [
+            "business",
+            "business"
+          ],
+          "description": "Inspect French APE/NAF activity codes, normalize punctuation, and prepare Sirene enrichment fields."
+        },
+        "RCS Number Helper": {
+          "status": "available",
+          "tags": [
+            "business",
+            "business"
+          ],
+          "description": "Normalize RCS registration text, extract registry city and SIREN evidence, and prepare onboarding notes."
+        },
+        "Répertoire des Métiers Helper": {
+          "status": "available",
+          "tags": [
+            "business",
+            "business"
+          ],
+          "description": "Normalize RM craft registration references and extract SIREN-ready identifier evidence."
+        },
+        "Company Onboarding Auditor": {
+          "status": "available",
+          "tags": [
+            "business",
+            "business"
+          ],
+          "description": "Audit French company onboarding snippets for SIREN, SIRET, TVA, address, and payment readiness."
+        },
+        "Sirene Lookup Readiness Helper": {
+          "status": "available",
+          "tags": [
+            "government",
+            "business"
+          ],
+          "description": "Prepare SIRENE API lookup payloads with normalized SIREN/SIRET values and offline validation notes."
+        },
+        "French IBAN Validator": {
+          "status": "available",
+          "tags": [
+            "banking",
+            "banking"
+          ],
+          "description": "Validate French IBANs, split RIB segments, run MOD-97, and expose bank, branch, account, and key fields."
+        },
+        "RIB Validator & Explainer": {
+          "status": "available",
+          "tags": [
+            "banking",
+            "banking"
+          ],
+          "description": "Validate French RIB components, inspect bank code, branch code, account number, and RIB key evidence."
+        },
+        "French Bank Code Inspector": {
+          "status": "available",
+          "tags": [
+            "banking",
+            "banking"
+          ],
+          "description": "Inspect five-digit French bank and branch code pairs used in RIB and IBAN payloads."
+        },
+        "French BIC / SWIFT Inspector": {
+          "status": "available",
+          "tags": [
+            "banking",
+            "banking"
+          ],
+          "description": "Validate French BIC/SWIFT syntax and distinguish 8-character institution codes from 11-character branch codes."
+        },
+        "SEPA Transfer Helper": {
+          "status": "available",
+          "tags": [
+            "payments",
+            "payments"
+          ],
+          "description": "Build SEPA transfer-ready field bundles from French IBAN, BIC, amount, creditor, and remittance input."
+        },
+        "SEPA Direct Debit RUM Helper": {
+          "status": "available",
+          "tags": [
+            "payments",
+            "payments"
+          ],
+          "description": "Normalize French SEPA mandate references and inspect length, character set, and logging-safe masked values."
+        },
+        "French Remittance Text Builder": {
+          "status": "available",
+          "tags": [
+            "payments",
+            "payments"
+          ],
+          "description": "Clean French remittance text for bank transfers, invoices, and reconciliation-safe references."
+        },
+        "Masked IBAN Formatter": {
+          "status": "available",
+          "tags": [
+            "privacy",
+            "banking"
+          ],
+          "description": "Mask French IBANs and RIB strings for logs, screenshots, support tickets, and audit evidence."
+        },
+        "Bank Statement Parser": {
+          "status": "available",
+          "tags": [
+            "data-quality",
+            "banking"
+          ],
+          "description": "Extract dates, amounts, references, IBAN-like strings, and reconciliation hints from French bank statement text."
+        },
+        "Payment Reconciliation Helper": {
+          "status": "available",
+          "tags": [
+            "data-quality",
+            "payments"
+          ],
+          "description": "Audit French payment records for IBAN, amount, invoice reference, date, and duplicate-risk evidence."
+        },
+        "French Postal Code Validator": {
+          "status": "available",
+          "tags": [
+            "postal",
+            "address"
+          ],
+          "description": "Validate French postal codes, infer department prefixes, and flag overseas postal ranges."
+        },
+        "INSEE Commune Code Inspector": {
+          "status": "available",
+          "tags": [
+            "government",
+            "address"
+          ],
+          "description": "Inspect five-character INSEE commune codes, department prefixes, Corsica notation, and overseas boundaries."
+        },
+        "Department Code Inspector": {
+          "status": "available",
+          "tags": [
+            "government",
+            "address"
+          ],
+          "description": "Validate French department codes including Corsica and overseas department prefixes."
+        },
+        "Region Code Mapper": {
+          "status": "available",
+          "tags": [
+            "government",
+            "address"
+          ],
+          "description": "Map French department evidence to practical region labels for forms, analytics, and QA notes."
+        },
+        "CEDEX Address Formatter": {
+          "status": "available",
+          "tags": [
+            "postal",
+            "address"
+          ],
+          "description": "Format French business and CEDEX address blocks with postcode, locality, country, and line-order checks."
+        },
+        "French Address Normalizer": {
+          "status": "available",
+          "tags": [
+            "postal",
+            "address"
+          ],
+          "description": "Normalize French address casing, spacing, postal code placement, and country-line output."
+        },
+        "Address Transliteration Normalizer": {
+          "status": "available",
+          "tags": [
+            "localization",
+            "address"
+          ],
+          "description": "Produce ASCII-safe address variants while preserving the original French address for display."
+        },
+        "French Phone Number Validator": {
+          "status": "available",
+          "tags": [
+            "phone",
+            "phone"
+          ],
+          "description": "Validate French national and +33 phone numbers, classify ranges, and normalize spacing."
+        },
+        "French Phone E.164 Formatter": {
+          "status": "available",
+          "tags": [
+            "phone",
+            "phone"
+          ],
+          "description": "Convert French phone numbers to E.164, national display spacing, and masked support-safe output."
+        },
+        "French Date / Locale Formatter": {
+          "status": "available",
+          "tags": [
+            "localization",
+            "localization"
+          ],
+          "description": "Parse French date strings, produce ISO dates, and show locale display variants for forms and APIs."
+        },
+        "VAT Rate Sanity Helper": {
+          "status": "available",
+          "tags": [
+            "tax",
+            "tax"
+          ],
+          "description": "Check French VAT rate values for common standard, reduced, super-reduced, and zero-rate scenarios."
+        },
+        "French Invoice Number Helper": {
+          "status": "available",
+          "tags": [
+            "commerce",
+            "tax"
+          ],
+          "description": "Inspect French invoice numbering strings for chronology hints, uniqueness fields, and export-safe normalized values."
+        },
+        "E-Invoicing Readiness Helper": {
+          "status": "available",
+          "tags": [
+            "commerce",
+            "tax"
+          ],
+          "description": "Audit French e-invoicing readiness fields: SIRET, TVA, buyer references, totals, and PDF/data boundaries."
+        },
+        "PDP / PPF Readiness Helper": {
+          "status": "available",
+          "tags": [
+            "commerce",
+            "tax"
+          ],
+          "description": "Prepare French e-invoicing exchange payload readiness notes for PDP/PPF style integrations."
+        },
+        "FEC File Readiness Checker": {
+          "status": "available",
+          "tags": [
+            "data-quality",
+            "tax"
+          ],
+          "description": "Inspect French FEC accounting export snippets for separators, dates, account codes, debit/credit, and encoding risks."
+        },
+        "Audit Trail Checklist Generator": {
+          "status": "available",
+          "tags": [
+            "compliance",
+            "tax"
+          ],
+          "description": "Generate a French audit-trail checklist from invoice, payment, accounting, and customer evidence snippets."
+        },
+        "GDPR Redaction Helper": {
+          "status": "available",
+          "tags": [
+            "privacy",
+            "privacy"
+          ],
+          "description": "Find and mask French personal data candidates before logs, screenshots, exports, or support handoffs."
+        },
+        "French PII Masker": {
+          "status": "available",
+          "tags": [
+            "privacy",
+            "privacy"
+          ],
+          "description": "Mask French identifiers, phone numbers, emails, IBANs, postal addresses, and person names in pasted text."
+        },
+        "France Data Quality Workbench": {
+          "status": "available",
+          "tags": [
+            "data-quality",
+            "data"
+          ],
+          "description": "Audit French records for identifiers, payments, addresses, phone numbers, dates, and localization consistency."
+        },
+        "Compliance Checklist Generator": {
+          "status": "available",
+          "tags": [
+            "compliance",
+            "compliance"
+          ],
+          "description": "Generate implementation checklists for French identifier, payment, tax, privacy, and localization workflows."
+        },
+        "NIR Syntax Inspector": {
+          "status": "available",
+          "tags": [
+            "identity",
+            "identity"
+          ],
+          "description": "Inspect French NIR social security number structure, field groups, and offline boundary notes."
+        },
+        "NIR Key Validator": {
+          "status": "available",
+          "tags": [
+            "identity",
+            "identity"
+          ],
+          "description": "Validate the two-digit NIR control key for numeric French social security identifiers."
+        },
+        "NIR Masker": {
+          "status": "available",
+          "tags": [
+            "privacy",
+            "identity"
+          ],
+          "description": "Mask French NIR strings while preserving low-risk field evidence for debugging and QA."
+        },
+        "French Passport Number Helper": {
+          "status": "available",
+          "tags": [
+            "identity",
+            "identity"
+          ],
+          "description": "Inspect French passport-like strings for safe fixture shape, length, and logging boundaries."
+        },
+        "French ID Card Format Helper": {
+          "status": "available",
+          "tags": [
+            "identity",
+            "identity"
+          ],
+          "description": "Inspect French ID card-like values for shape, casing, and privacy-safe fixture handling."
+        },
+        "Birth Data Consistency Helper": {
+          "status": "available",
+          "tags": [
+            "identity",
+            "identity"
+          ],
+          "description": "Check whether French date, department, commune, and NIR-like fields agree at syntax level."
+        },
+        "Health Insurance Boundary Helper": {
+          "status": "available",
+          "tags": [
+            "privacy",
+            "identity"
+          ],
+          "description": "Explain offline boundaries for French health insurance identifiers and build safe test-data notes."
+        },
+        "Personal Data Fixture Generator": {
+          "status": "available",
+          "tags": [
+            "privacy",
+            "identity"
+          ],
+          "description": "Generate privacy-safe French person fixtures with fake names, addresses, phones, and masked identifiers."
+        },
+        "French License Plate Inspector": {
+          "status": "available",
+          "tags": [
+            "vehicle",
+            "vehicle"
+          ],
+          "description": "Validate French SIV plate syntax, normalize separators, and identify legacy plate boundaries."
+        },
+        "VIN Validator for France Workflows": {
+          "status": "available",
+          "tags": [
+            "vehicle",
+            "vehicle"
+          ],
+          "description": "Validate VIN syntax and checksum for French registration and fleet data workflows."
+        },
+        "Crit'Air Readiness Helper": {
+          "status": "available",
+          "tags": [
+            "vehicle",
+            "vehicle"
+          ],
+          "description": "Audit vehicle data snippets for Crit'Air certificate workflow readiness and offline boundary notes."
+        },
+        "Carte Grise Field Helper": {
+          "status": "available",
+          "tags": [
+            "vehicle",
+            "vehicle"
+          ],
+          "description": "Inspect French registration certificate field snippets and map labels to developer-friendly keys."
+        },
+        "Driving Licence Format Helper": {
+          "status": "available",
+          "tags": [
+            "identity",
+            "vehicle"
+          ],
+          "description": "Inspect French driving licence-like numbers for shape, masking, and data-entry QA boundaries."
+        },
+        "Vehicle Data Redaction Helper": {
+          "status": "available",
+          "tags": [
+            "privacy",
+            "vehicle"
+          ],
+          "description": "Mask French vehicle identifiers, VINs, registration plates, owner names, and support-ticket snippets."
+        },
+        "Municipality / Department Plate Helper": {
+          "status": "available",
+          "tags": [
+            "government",
+            "vehicle"
+          ],
+          "description": "Connect department, commune, postal, and plate snippets for QA without implying official lookup."
+        },
+        "French Document OCR Fixer": {
+          "status": "available",
+          "tags": [
+            "data-quality",
+            "data"
+          ],
+          "description": "Repair common OCR artifacts in French identifiers, invoices, addresses, and official document snippets."
+        },
+        "French CSV Locale Normalizer": {
+          "status": "available",
+          "tags": [
+            "localization",
+            "developer"
+          ],
+          "description": "Normalize French CSV snippets with semicolons, comma decimals, dates, and UTF-8 accents for imports."
+        },
+        "EUR Decimal / Currency Formatter": {
+          "status": "available",
+          "tags": [
+            "localization",
+            "developer"
+          ],
+          "description": "Format French EUR amounts, parse comma decimals, and produce API-safe numeric values."
+        },
+        "French Accent Normalizer": {
+          "status": "available",
+          "tags": [
+            "localization",
+            "developer"
+          ],
+          "description": "Normalize French accented text for search keys, ASCII fallbacks, slugs, and original-display preservation."
+        },
+        "French Slug Normalizer": {
+          "status": "available",
+          "tags": [
+            "developer",
+            "developer"
+          ],
+          "description": "Create URL-safe French slugs while preserving accents in display text and explaining normalization choices."
+        },
+        "French JSON Fixture Generator": {
+          "status": "available",
+          "tags": [
+            "developer",
+            "developer"
+          ],
+          "description": "Generate France-ready JSON fixtures containing identifiers, address, phone, payment, and privacy-safe sample values."
+        },
+        "French Regex Pack Helper": {
+          "status": "available",
+          "tags": [
+            "developer",
+            "developer"
+          ],
+          "description": "Generate and explain regex snippets for French identifiers, phones, postal codes, plates, and locale fields."
+        },
+        "French API Payload Auditor": {
+          "status": "available",
+          "tags": [
+            "data-quality",
+            "developer"
+          ],
+          "description": "Audit JSON or form payloads for French field names, identifiers, payments, locale, and privacy-safe logging."
+        },
+        "French Form Field Auditor": {
+          "status": "available",
+          "tags": [
+            "data-quality",
+            "developer"
+          ],
+          "description": "Review French form-field labels, placeholders, masks, validation hints, and accessibility-safe data-entry flows."
+        }
+      }
+    },
     "germany": {
       "flag": "🇩🇪",
       "name": "Germany",
@@ -3082,6 +4688,959 @@
           }
         ]
       }
+    },
+    "netherlands": {
+      "flag": "🇳🇱",
+      "name": "Netherlands",
+      "badge": "Western Europe premium country hub",
+      "description": "Developer intelligence for Dutch identity, business registry, tax, banking, address, payment, privacy, vehicle, audit-file, and localization workflows with browser-only validation where possible.",
+      "metadata": {
+        "nativeName": "Nederland",
+        "population": "approximately 18M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "area": "41,543 km²",
+        "capital": "Amsterdam",
+        "largestCity": "Amsterdam",
+        "continent": "Europe",
+        "region": "Western Europe / European Union",
+        "languages": "Dutch",
+        "currency": "Euro",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "callingCode": "+31",
+        "internetTld": ".nl",
+        "drivingSide": "Right",
+        "iso2": "NL",
+        "iso3": "NLD",
+        "isoNumeric": "528",
+        "locale": "nl-NL",
+        "icuLocale": "nl_NL",
+        "dateFormat": "DD-MM-YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Period (.)",
+        "addressFormat": "Recipient, street name house number addition, postcode locality, Netherlands",
+        "postalCodeFormat": "NNNN AA",
+        "primaryTimeZone": "Europe/Amsterdam (CET/CEST)",
+        "utcRange": "UTC+01/+02",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "powerPlugTypes": "Type C / Type F",
+        "voltage": "230V",
+        "frequency": "50Hz",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "nl-NL",
+        "cldrLocale": "nl_NL",
+        "metricVsImperial": "Metric-first",
+        "administrativeDivisions": [
+          "Provinces",
+          "Municipalities",
+          "Water boards"
+        ],
+        "taxSystem": {
+          "name": "Belastingdienst / BTW",
+          "description": "Dutch tax workflows revolve around BTW/VAT identifiers, payroll-tax references, VAT return fields, invoice evidence, and official filing boundaries."
+        },
+        "licensePlateFormat": "Dutch plates use several series such as 12-AB-34, AB-12-CD, 1-ABC-23, and current vehicle-specific patterns."
+      },
+      "visualIdentity": {
+        "countryId": "netherlands",
+        "outlineLabel": "Netherlands outline",
+        "mapLabel": "Netherlands in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Netherlands flag",
+        "heroAccentPrimary": "174 28 40",
+        "heroAccentSecondary": "255 255 255",
+        "heroAccentTertiary": "33 70 139"
+      },
+      "localizationExamples": [
+        {
+          "label": "Date",
+          "value": "14-07-2026"
+        },
+        {
+          "label": "Time",
+          "value": "14:35"
+        },
+        {
+          "label": "Currency",
+          "value": "€ 1.250,75"
+        },
+        {
+          "label": "Phone",
+          "value": "+31 6 12345678"
+        },
+        {
+          "label": "Postal code",
+          "value": "1012 AB"
+        },
+        {
+          "label": "Address",
+          "value": "Damrak 1-A, 1012 LG Amsterdam"
+        }
+      ],
+      "addressExample": {
+        "formatted": [
+          "Jansen BV",
+          "Damrak 1-A",
+          "1012 LG Amsterdam",
+          "Nederland"
+        ],
+        "fields": [
+          {
+            "label": "Street",
+            "value": "Damrak",
+            "description": "Street name precedes house number in common address entry."
+          },
+          {
+            "label": "House number",
+            "value": "1-A",
+            "description": "House-number additions must be stored separately when possible."
+          },
+          {
+            "label": "Postcode",
+            "value": "1012 LG",
+            "description": "Four digits plus two letters with a space for display."
+          },
+          {
+            "label": "Locality",
+            "value": "Amsterdam",
+            "description": "City/locality is paired with postcode for lookup handoff."
+          }
+        ]
+      },
+      "phoneExamples": [
+        {
+          "label": "Mobile",
+          "value": "06 12345678",
+          "description": "Dutch mobile numbers commonly start with 06 locally or +31 6 internationally.",
+          "tags": [
+            "phone",
+            "mobile"
+          ]
+        },
+        {
+          "label": "Amsterdam landline",
+          "value": "020 123 4567",
+          "description": "Geographic numbers preserve area-code context when normalized.",
+          "tags": [
+            "phone",
+            "landline"
+          ]
+        }
+      ],
+      "localFormats": [
+        {
+          "name": "Postcode",
+          "description": "NNNN AA display with a space between digits and letters.",
+          "status": "available",
+          "tags": [
+            "postal"
+          ]
+        },
+        {
+          "name": "Dutch IBAN",
+          "description": "NLkk BANK 0000 0000 00 after MOD-97, with a four-letter bank code.",
+          "status": "available",
+          "tags": [
+            "banking"
+          ]
+        },
+        {
+          "name": "BTW identifier",
+          "description": "NL prefix, nine digits, B separator, and two trailing digits for VAT syntax.",
+          "status": "available",
+          "tags": [
+            "tax"
+          ]
+        }
+      ],
+      "integrationChecklist": [
+        "Normalize BSN, KVK, RSIN, BTW, IBAN, postcode, and phone values before storage.",
+        "Keep raw personal identifiers out of logs; use masked values in support and analytics payloads.",
+        "Treat KVK, VIES, BAG, bank ownership, DigiD, and RDW status as official external lookups.",
+        "Place country-specific IBAN validation under the Netherlands hub even when the global IBAN tool exists."
+      ],
+      "validationRules": [
+        {
+          "name": "BSN eleven-test",
+          "description": "A nine-digit BSN can be checked locally with weighted eleven-test math, but this does not prove identity.",
+          "status": "available",
+          "tags": [
+            "identity",
+            "checksum"
+          ]
+        },
+        {
+          "name": "Dutch IBAN MOD-97",
+          "description": "NL IBANs validate through ISO 13616 MOD-97 and expose bank-code/account fields.",
+          "status": "available",
+          "tags": [
+            "banking"
+          ]
+        },
+        {
+          "name": "Postcode shape",
+          "description": "Dutch postcodes use four digits and two letters; delivery existence requires BAG or postal data.",
+          "status": "available",
+          "tags": [
+            "address"
+          ]
+        }
+      ],
+      "commonMistakes": [
+        "Using a BSN checksum as proof that a person exists.",
+        "Displaying raw long samples in dropdown labels instead of short human labels.",
+        "Treating global IBAN validation as enough for Dutch bank-code and account slicing.",
+        "Forgetting house-number additions when preparing BAG lookup payloads."
+      ],
+      "payments": [
+        {
+          "name": "Dutch IBAN / SEPA",
+          "description": "EUR transfers use IBAN, BIC where needed, SEPA references, and clear ownership-boundary notes.",
+          "status": "available",
+          "tags": [
+            "banking",
+            "payments"
+          ]
+        },
+        {
+          "name": "SEPA Direct Debit",
+          "description": "Mandate references, creditor data, IBAN, amount, and remittance need consistent formatting.",
+          "status": "available",
+          "tags": [
+            "payments"
+          ]
+        },
+        {
+          "name": "iDEAL",
+          "description": "Dominant Dutch online payment method; browser tools can prepare and reconcile references, not provider settlement status.",
+          "status": "available",
+          "tags": [
+            "payments"
+          ]
+        }
+      ],
+      "bankingOverview": [
+        {
+          "name": "BIC / SWIFT",
+          "description": "BIC syntax separates institution, country, location, and optional branch while live routing remains external.",
+          "status": "available",
+          "tags": [
+            "bic"
+          ]
+        },
+        {
+          "name": "Bank statement imports",
+          "description": "Dutch statement snippets combine comma decimals, local dates, SEPA references, and masked account data.",
+          "status": "available",
+          "tags": [
+            "data-quality"
+          ]
+        },
+        {
+          "name": "Dutch IBAN",
+          "description": "NL IBAN structure contains country code, two check digits, four-letter bank code, and ten-digit account number.",
+          "status": "available",
+          "tags": [
+            "iban"
+          ]
+        }
+      ],
+      "officialResources": [
+        {
+          "title": "BAG / Kadaster",
+          "note": "Official address and building registry context for postcode and locality confirmation.",
+          "status": "available",
+          "tags": [
+            "address"
+          ]
+        },
+        {
+          "title": "Belastingdienst",
+          "note": "Official Dutch tax administration reference for BTW, payroll tax, returns, and filing boundaries.",
+          "status": "available",
+          "tags": [
+            "tax"
+          ]
+        },
+        {
+          "title": "De Nederlandsche Bank",
+          "note": "Central bank and payment-system context for banking and financial-sector boundaries.",
+          "status": "available",
+          "tags": [
+            "banking"
+          ]
+        },
+        {
+          "title": "Kamer van Koophandel",
+          "note": "Official business registry context for KVK numbers, branches, and company status lookup.",
+          "status": "available",
+          "tags": [
+            "business"
+          ]
+        },
+        {
+          "title": "Logius / DigiD",
+          "note": "Official digital identity ecosystem reference; browser tools must never claim live DigiD verification.",
+          "status": "available",
+          "tags": [
+            "identity"
+          ]
+        },
+        {
+          "title": "RDW",
+          "note": "Official vehicle registry context for license plate and vehicle status checks.",
+          "status": "available",
+          "tags": [
+            "vehicle"
+          ]
+        }
+      ],
+      "availableWorkbenches": [
+        {
+          "name": "Audit File Readiness Checker",
+          "description": "Browser-only Netherlands workbench for audit file readiness checker with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Audit Trail Checklist Generator",
+          "description": "Browser-only Netherlands workbench for audit trail checklist generator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "AVG / GDPR Redaction Helper",
+          "description": "Browser-only Netherlands workbench for avg / gdpr redaction helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "BAG Address Readiness Helper",
+          "description": "Browser-only Netherlands workbench for bag address readiness helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Bank Statement Parser",
+          "description": "Browser-only Netherlands workbench for bank statement parser with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "BSN Masker",
+          "description": "Browser-only Netherlands workbench for bsn masker with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "BSN Validator & Explainer",
+          "description": "Browser-only Netherlands workbench for bsn validator & explainer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Company Onboarding Auditor",
+          "description": "Browser-only Netherlands workbench for company onboarding auditor with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Compliance Checklist Generator",
+          "description": "Browser-only Netherlands workbench for compliance checklist generator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "DigiD Boundary Helper",
+          "description": "Browser-only Netherlands workbench for digid boundary helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Driving Licence Format Helper",
+          "description": "Browser-only Netherlands workbench for driving licence format helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Address Normalizer",
+          "description": "Browser-only Netherlands workbench for dutch address normalizer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Address Transliteration Normalizer",
+          "description": "Browser-only Netherlands workbench for dutch address transliteration normalizer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch API Payload Auditor",
+          "description": "Browser-only Netherlands workbench for dutch api payload auditor with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Bank Code Inspector",
+          "description": "Browser-only Netherlands workbench for dutch bank code inspector with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch BIC / SWIFT Inspector",
+          "description": "Browser-only Netherlands workbench for dutch bic / swift inspector with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch BTW / VAT Validator",
+          "description": "Browser-only Netherlands workbench for dutch btw / vat validator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch BTW Rate Sanity Helper",
+          "description": "Browser-only Netherlands workbench for dutch btw rate sanity helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch CSV Locale Normalizer",
+          "description": "Browser-only Netherlands workbench for dutch csv locale normalizer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Date / Locale Formatter",
+          "description": "Browser-only Netherlands workbench for dutch date / locale formatter with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Document OCR Fixer",
+          "description": "Browser-only Netherlands workbench for dutch document ocr fixer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch EAN / GS1 Code Inspector",
+          "description": "Browser-only Netherlands workbench for dutch ean / gs1 code inspector with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Email Domain Fixture Helper",
+          "description": "Browser-only Netherlands workbench for dutch email domain fixture helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch EORI Validator",
+          "description": "Browser-only Netherlands workbench for dutch eori validator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Form Field Auditor",
+          "description": "Browser-only Netherlands workbench for dutch form field auditor with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch IBAN Validator",
+          "description": "Browser-only Netherlands workbench for dutch iban validator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch ID Card Format Helper",
+          "description": "Browser-only Netherlands workbench for dutch id card format helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Invoice Number Helper",
+          "description": "Browser-only Netherlands workbench for dutch invoice number helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch JSON Fixture Generator",
+          "description": "Browser-only Netherlands workbench for dutch json fixture generator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch License Plate Inspector",
+          "description": "Browser-only Netherlands workbench for dutch license plate inspector with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Passport Number Helper",
+          "description": "Browser-only Netherlands workbench for dutch passport number helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Phone E.164 Formatter",
+          "description": "Browser-only Netherlands workbench for dutch phone e.164 formatter with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Phone Number Validator",
+          "description": "Browser-only Netherlands workbench for dutch phone number validator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch PII Masker",
+          "description": "Browser-only Netherlands workbench for dutch pii masker with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Postcode Validator",
+          "description": "Browser-only Netherlands workbench for dutch postcode validator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Regex Pack Helper",
+          "description": "Browser-only Netherlands workbench for dutch regex pack helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Remittance Text Builder",
+          "description": "Browser-only Netherlands workbench for dutch remittance text builder with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Dutch Slug Normalizer",
+          "description": "Browser-only Netherlands workbench for dutch slug normalizer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "E-Invoicing Readiness Helper",
+          "description": "Browser-only Netherlands workbench for e-invoicing readiness helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "EUR Decimal / Currency Formatter",
+          "description": "Browser-only Netherlands workbench for eur decimal / currency formatter with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Health Insurance Boundary Helper",
+          "description": "Browser-only Netherlands workbench for health insurance boundary helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "House Number Addition Helper",
+          "description": "Browser-only Netherlands workbench for house number addition helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "iDEAL Payment Reference Helper",
+          "description": "Browser-only Netherlands workbench for ideal payment reference helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "KVK Branch Number Helper",
+          "description": "Browser-only Netherlands workbench for kvk branch number helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "KVK Number Validator",
+          "description": "Browser-only Netherlands workbench for kvk number validator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Masked IBAN Formatter",
+          "description": "Browser-only Netherlands workbench for masked iban formatter with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Municipality Code Inspector",
+          "description": "Browser-only Netherlands workbench for municipality code inspector with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Netherlands Data Quality Workbench",
+          "description": "Browser-only Netherlands workbench for netherlands data quality workbench with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Payment Reconciliation Helper",
+          "description": "Browser-only Netherlands workbench for payment reconciliation helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Payroll Tax Number Helper",
+          "description": "Browser-only Netherlands workbench for payroll tax number helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Peppol Readiness Helper",
+          "description": "Browser-only Netherlands workbench for peppol readiness helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Personal Data Fixture Generator",
+          "description": "Browser-only Netherlands workbench for personal data fixture generator with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "PostNL Tracking Helper",
+          "description": "Browser-only Netherlands workbench for postnl tracking helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Province Code Mapper",
+          "description": "Browser-only Netherlands workbench for province code mapper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "RDW Vehicle Data Redaction Helper",
+          "description": "Browser-only Netherlands workbench for rdw vehicle data redaction helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "RSIN Validator & Explainer",
+          "description": "Browser-only Netherlands workbench for rsin validator & explainer with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "RVO Relation Number Helper",
+          "description": "Browser-only Netherlands workbench for rvo relation number helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "SEPA Direct Debit Mandate Helper",
+          "description": "Browser-only Netherlands workbench for sepa direct debit mandate helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "SEPA Transfer Helper",
+          "description": "Browser-only Netherlands workbench for sepa transfer helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "UBO Readiness Helper",
+          "description": "Browser-only Netherlands workbench for ubo readiness helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "VAT Return Field Helper",
+          "description": "Browser-only Netherlands workbench for vat return field helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "VIN Validator for Netherlands Workflows",
+          "description": "Browser-only Netherlands workbench for vin validator for netherlands workflows with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        },
+        {
+          "name": "Wage Tax Readiness Helper",
+          "description": "Browser-only Netherlands workbench for wage tax readiness helper with local diagnostics, copyable results, quality notes, and official lookup boundaries.",
+          "status": "available",
+          "tags": [
+            "workbench",
+            "country"
+          ]
+        }
+      ],
+      "plannedWorkbenches": [],
+      "relatedGlobalTools": [
+        {
+          "name": "Global IBAN Validator",
+          "description": "Use global IBAN validation for cross-country detection, then switch to the Netherlands IBAN workbench for Dutch BBAN slicing.",
+          "status": "available",
+          "tags": [
+            "global",
+            "iban"
+          ]
+        }
+      ],
+      "highlights": [
+        "Netherlands now ships as a full premium country suite rather than a metadata-only hub.",
+        "Every workbench runs locally in browser and exposes official lookup boundaries.",
+        "BSN, KVK, BTW, IBAN, postcode, iDEAL, SEPA, BAG, RDW, AVG, and audit-file workflows are linked from the country hub."
+      ],
+      "developerNotes": [
+        "Use nl-NL display only at the UI boundary; keep normalized canonical values in storage.",
+        "Mask BSN, IBAN, phones, and document-like values before logs, screenshots, or telemetry."
+      ],
+      "developerExamples": [
+        {
+          "language": "javascript",
+          "title": "Normalize Dutch postcode",
+          "note": "Keep display formatting separate from storage.",
+          "code": "const normalized = input.toUpperCase().replace(/\\s+/g, '').replace(/^(\\d{4})([A-Z]{2})$/, '$1 $2');"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "name": "Comma decimals",
+          "description": "Dutch decimal display uses comma while thousands grouping commonly uses a period.",
+          "tags": [
+            "locale",
+            "money"
+          ]
+        },
+        {
+          "name": "Postcode spacing",
+          "description": "Normalize compact input but display Dutch postcodes with a space between digits and letters.",
+          "tags": [
+            "address",
+            "postal"
+          ]
+        }
+      ],
+      "ecosystem": [
+        {
+          "name": "BSN to privacy boundary",
+          "description": "BSN is sensitive personal data; local checksum is not identity proof.",
+          "tags": [
+            "identity",
+            "privacy"
+          ]
+        },
+        {
+          "name": "KVK to company onboarding",
+          "description": "KVK, RSIN, BTW, address, and IBAN often travel together in B2B onboarding.",
+          "tags": [
+            "business",
+            "tax"
+          ]
+        },
+        {
+          "name": "IBAN to payments",
+          "description": "Dutch IBAN, BIC, SEPA references, and iDEAL order references are core payment fixtures.",
+          "tags": [
+            "banking",
+            "payments"
+          ]
+        }
+      ]
     },
     "poland": {
       "flag": "🇵🇱",
@@ -6782,6 +9341,383 @@
           }
         ]
       }
+    },
+    "switzerland": {
+      "flag": "🇨🇭",
+      "name": "Switzerland",
+      "badge": "Central Europe premium country hub",
+      "description": "Developer intelligence for Swiss identity, company registry, tax, banking, QR-bill payment, canton, address, phone, privacy, payroll, vehicle, and localization workflows with browser-only validation where possible.",
+      "metadata": {
+        "nativeName": "Schweiz / Suisse / Svizzera / Svizra",
+        "population": "approximately 9M",
+        "populationNote": "Approximate 2026 population context; do not treat as a timeless constant.",
+        "area": "41,285 km²",
+        "capital": "Bern",
+        "largestCity": "Zurich",
+        "continent": "Europe",
+        "region": "Central Europe / EFTA / Schengen",
+        "languages": "German, French, Italian, Romansh",
+        "currency": "Swiss franc",
+        "currencyCode": "CHF",
+        "currencySymbol": "CHF",
+        "callingCode": "+41",
+        "internetTld": ".ch",
+        "drivingSide": "Right",
+        "iso2": "CH",
+        "iso3": "CHE",
+        "isoNumeric": "756",
+        "locale": "de-CH",
+        "icuLocale": "de_CH",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Period (.) or comma by language context",
+        "thousandsSeparator": "Apostrophe (') or space",
+        "addressFormat": "Recipient, street house number, postal code locality, Switzerland",
+        "postalCodeFormat": "NNNN",
+        "primaryTimeZone": "Europe/Zurich (CET/CEST)",
+        "utcRange": "UTC+01/+02",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "powerPlugTypes": "Type C / Type J",
+        "voltage": "230V",
+        "frequency": "50Hz",
+        "emergencyNumber": "112 / 117 / 118 / 144",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "de-CH / fr-CH / it-CH",
+        "cldrLocale": "de_CH",
+        "metricVsImperial": "Metric-first",
+        "administrativeDivisions": [
+          "Cantons",
+          "Municipalities",
+          "Districts in selected cantons"
+        ],
+        "taxSystem": {
+          "name": "Federal Tax Administration / MWST",
+          "description": "Swiss tax workflows use UID and MWST/VAT suffixes, canton context, QR-bill payment evidence, salary certificates, and official filing boundaries."
+        },
+        "licensePlateFormat": "Canton prefix plus serial digits, such as ZH 123456."
+      },
+      "visualIdentity": {
+        "countryId": "switzerland",
+        "outlineLabel": "Switzerland outline",
+        "mapLabel": "Switzerland in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Switzerland flag",
+        "heroAccentPrimary": "220 38 38",
+        "heroAccentSecondary": "255 255 255",
+        "heroAccentTertiary": "17 24 39"
+      },
+      "localizationExamples": [
+        {
+          "label": "Date",
+          "value": "14.07.2026"
+        },
+        {
+          "label": "Time",
+          "value": "14:35"
+        },
+        {
+          "label": "Currency",
+          "value": "CHF 1'250.75"
+        },
+        {
+          "label": "Phone",
+          "value": "+41 79 123 45 67"
+        },
+        {
+          "label": "Postal code",
+          "value": "8001"
+        },
+        {
+          "label": "Address",
+          "value": "Bahnhofstrasse 1, 8001 Zurich"
+        }
+      ],
+      "addressExample": {
+        "formatted": [
+          "Alpine Test AG",
+          "Bahnhofstrasse 1",
+          "8001 Zurich",
+          "Switzerland"
+        ],
+        "fields": [
+          {
+            "label": "Street",
+            "value": "Bahnhofstrasse",
+            "description": "Street name precedes house number in common Swiss address entry."
+          },
+          {
+            "label": "House number",
+            "value": "1",
+            "description": "House number should remain a separate field where possible."
+          },
+          {
+            "label": "Postal code",
+            "value": "8001",
+            "description": "Four-digit Swiss postal code."
+          },
+          {
+            "label": "Locality",
+            "value": "Zurich",
+            "description": "Locality pairs with postal code and canton context."
+          }
+        ]
+      },
+      "phoneExamples": [
+        {
+          "label": "Mobile",
+          "value": "+41 79 123 45 67",
+          "description": "Swiss mobile-style display with +41 country prefix.",
+          "tags": [
+            "mobile",
+            "E.164"
+          ]
+        },
+        {
+          "label": "Zurich landline",
+          "value": "+41 44 123 45 67",
+          "description": "Geographic number display with area-code evidence.",
+          "tags": [
+            "landline",
+            "Zurich"
+          ]
+        },
+        {
+          "label": "Domestic display",
+          "value": "079 123 45 67",
+          "description": "Domestic trunk 0 should be removed when formatting to E.164.",
+          "tags": [
+            "domestic"
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "name": "CHF",
+          "description": "Swiss franc amounts use local grouping and decimal conventions; store API values as decimal or integer rappen.",
+          "status": "available",
+          "tags": [
+            "currency"
+          ]
+        },
+        {
+          "name": "QR-bill",
+          "description": "Swiss QR-bill payloads combine creditor, account, amount, currency, and structured QR references.",
+          "status": "available",
+          "tags": [
+            "payments",
+            "invoice"
+          ]
+        },
+        {
+          "name": "SEPA",
+          "description": "Switzerland participates in SEPA contexts, but local bank and compliance checks remain provider-specific.",
+          "status": "available",
+          "tags": [
+            "banking"
+          ]
+        },
+        {
+          "name": "SIC",
+          "description": "SIC and BC clearing references support Swiss interbank routing context without proving account ownership.",
+          "status": "available",
+          "tags": [
+            "clearing"
+          ]
+        }
+      ],
+      "bankingOverview": [
+        {
+          "name": "Swiss IBAN",
+          "description": "CH IBANs are 21 characters and expose country, check digits, clearing/account evidence, and MOD-97 proof.",
+          "status": "available",
+          "tags": [
+            "IBAN"
+          ]
+        },
+        {
+          "name": "BIC / SWIFT",
+          "description": "BIC values provide routing syntax and CH/LI country-code evidence, not live bank status.",
+          "status": "available",
+          "tags": [
+            "BIC"
+          ]
+        },
+        {
+          "name": "BC / SIC clearing",
+          "description": "Swiss bank clearing numbers are useful for payment routing and account-intake diagnostics.",
+          "status": "available",
+          "tags": [
+            "clearing"
+          ]
+        }
+      ],
+      "officialResources": [
+        {
+          "title": "Federal Statistical Office",
+          "note": "Country, canton, municipality, and statistical reference context.",
+          "status": "available",
+          "tags": [
+            "statistics"
+          ]
+        },
+        {
+          "title": "Federal Tax Administration",
+          "note": "MWST/VAT, tax forms, and regulated tax status remain official-system matters.",
+          "status": "available",
+          "tags": [
+            "tax"
+          ]
+        },
+        {
+          "title": "Fedpol / identity context",
+          "note": "Identity documents and passport status require official processes; ValidoHub only inspects structure.",
+          "status": "available",
+          "tags": [
+            "identity"
+          ]
+        },
+        {
+          "title": "SIX / QR-bill references",
+          "note": "QR-bill and Swiss payment standards should be checked against official payment specifications for production.",
+          "status": "available",
+          "tags": [
+            "payments"
+          ]
+        },
+        {
+          "title": "Zefix",
+          "note": "Company existence, names, legal forms, and registry status require official Zefix or cantonal registry lookup.",
+          "status": "available",
+          "tags": [
+            "company"
+          ]
+        }
+      ],
+      "integrationChecklist": [
+        "Normalize UID and VAT suffixes before storing company identifiers.",
+        "Treat AHV/AVS as sensitive personal data and mask it in logs.",
+        "Run Swiss IBAN MOD-97 locally, then use official bank or payment systems for ownership/status.",
+        "Keep QR-bill references and QR payloads layout-safe in forms and PDFs.",
+        "Store canton as a structured two-letter code when address, tax, payroll, or vehicle workflows need it.",
+        "Support de-CH, fr-CH, it-CH, and neutral API formats without localizing route slugs."
+      ],
+      "validationRules": [
+        {
+          "name": "UID",
+          "description": "CHE plus nine digits, optionally displayed with MWST, TVA, or IVA for VAT contexts."
+        },
+        {
+          "name": "AHV/AVS",
+          "description": "Thirteen digits beginning with 756 and using an EAN-style check digit."
+        },
+        {
+          "name": "Swiss IBAN",
+          "description": "CH or LI plus 19 alphanumeric characters with ISO MOD-97 validation."
+        },
+        {
+          "name": "QR reference",
+          "description": "Twenty-seven digits with recursive MOD-10 control digit."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating UID syntax as registry proof",
+          "text": "A valid-looking UID does not prove active company status."
+        },
+        {
+          "title": "Logging AHV/AVS raw values",
+          "text": "Swiss social insurance numbers are sensitive and should be masked in diagnostics."
+        },
+        {
+          "title": "Mixing locale separators",
+          "text": "Swiss German, French, Italian, and API numeric formats need explicit handling."
+        },
+        {
+          "title": "Using raw QR payloads as select labels",
+          "text": "Long QR-bill payloads must stay inside inputs or local scroll containers."
+        }
+      ],
+      "highlights": [
+        {
+          "title": "Premium browser-only suite",
+          "text": "58 Swiss workbenches run locally with no server calls."
+        },
+        {
+          "title": "Payment-grade diagnostics",
+          "text": "IBAN, QR-bill, ESR, SIC, BIC, CHF, and reconciliation helpers expose field breakdowns."
+        },
+        {
+          "title": "Privacy-first Swiss workflows",
+          "text": "FADP/GDPR redaction, AHV masking, PII masking, and fixture generation are included."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "Official-system boundary",
+          "text": "Use ValidoHub for local evidence and official Swiss systems for legal status, identity proof, registry state, and tax filing."
+        },
+        {
+          "title": "Locale scope",
+          "text": "Swiss production systems often need de-CH, fr-CH, it-CH, and neutral ISO/API formatting in the same product."
+        },
+        {
+          "title": "Payment data handling",
+          "text": "QR-bill payloads, IBANs, references, and amount strings can become long; wrap and scroll locally."
+        }
+      ],
+      "developerExamples": [
+        {
+          "language": "JavaScript",
+          "code": "const swissPayload = { locale: 'de-CH', uid: 'CHE-123.456.789 MWST', iban: 'CH9300762011623852957' };"
+        },
+        {
+          "language": "JSON",
+          "code": "{ \"country\": \"CH\", \"currency\": \"CHF\", \"postalCode\": \"8001\", \"canton\": \"ZH\" }"
+        }
+      ],
+      "jsonExamples": [
+        {
+          "title": "Swiss company fixture",
+          "value": {
+            "country": "CH",
+            "uid": "CHE-123.456.789 MWST",
+            "iban": "CH9300762011623852957",
+            "canton": "ZH",
+            "locale": "de-CH"
+          }
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Language variants",
+          "text": "Use de-CH, fr-CH, and it-CH examples where customer-facing copy or address display depends on language."
+        },
+        {
+          "title": "Currency",
+          "text": "CHF values can use apostrophe grouping in Swiss German contexts and should be normalized for APIs."
+        },
+        {
+          "title": "Dates",
+          "text": "DD.MM.YYYY is common, while APIs should use ISO 8601."
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Company identity",
+          "text": "UID, Zefix, MWST suffix, address, and canton evidence form the company onboarding cluster."
+        },
+        {
+          "title": "Payments",
+          "text": "Swiss IBAN, SIC/BC, BIC, QR-bill, ESR references, CHF amounts, and reconciliation evidence form the payment cluster."
+        },
+        {
+          "title": "Personal data",
+          "text": "AHV/AVS, phone, health insurance, address, and document references require privacy-aware handling."
+        }
+      ],
+      "plannedWorkbenches": []
     }
   }
 
@@ -7110,31 +10046,120 @@
       "language": "French",
       "currency": "EUR",
       "currencyName": "Euro",
-      "status": "planned",
-      "summary": "Future hub for French identifiers, localization, postal formats, and EU payment notes.",
+      "status": "available",
+      "featured": true,
+      "reference": true,
+      "summary": "Premium developer intelligence for French identifiers, SIREN/SIRET, TVA, RIB/IBAN, NIR boundaries, postal formats, payments, locale conventions, privacy-safe fixtures, and offline validation workflows.",
       "identifiers": [
-        "NIR",
         "SIREN",
-        "SIRET"
+        "SIRET",
+        "NIC",
+        "TVA",
+        "NIR",
+        "APE/NAF",
+        "EORI",
+        "RCS",
+        "RM",
+        "INSEE commune"
       ],
       "payments": [
         "IBAN",
-        "SEPA"
+        "RIB",
+        "BIC",
+        "SEPA",
+        "RUM",
+        "EUR",
+        "Remittance"
       ],
       "features": [
-        "identity",
+        "banking",
+        "business",
+        "commerce",
+        "customs",
+        "data-quality",
+        "developer",
+        "fiscal",
         "government",
-        "banking"
+        "identity",
+        "localization",
+        "payments",
+        "phone",
+        "postal",
+        "privacy",
+        "tax",
+        "vehicle"
       ],
-      "availableWorkbenches": [],
-      "plannedWorkbenches": [
-        "SIREN Validator",
-        "SIRET Validator"
+      "availableWorkbenches": [
+        "SIREN Validator & Explainer",
+        "SIRET Validator & Explainer",
+        "NIC Establishment Code Inspector",
+        "French VAT / TVA Validator",
+        "French EORI Validator",
+        "APE / NAF Code Inspector",
+        "RCS Number Helper",
+        "Répertoire des Métiers Helper",
+        "Company Onboarding Auditor",
+        "Sirene Lookup Readiness Helper",
+        "French IBAN Validator",
+        "RIB Validator & Explainer",
+        "French Bank Code Inspector",
+        "French BIC / SWIFT Inspector",
+        "SEPA Transfer Helper",
+        "SEPA Direct Debit RUM Helper",
+        "French Remittance Text Builder",
+        "Masked IBAN Formatter",
+        "Bank Statement Parser",
+        "Payment Reconciliation Helper",
+        "French Postal Code Validator",
+        "INSEE Commune Code Inspector",
+        "Department Code Inspector",
+        "Region Code Mapper",
+        "CEDEX Address Formatter",
+        "French Address Normalizer",
+        "Address Transliteration Normalizer",
+        "French Phone Number Validator",
+        "French Phone E.164 Formatter",
+        "French Date / Locale Formatter",
+        "VAT Rate Sanity Helper",
+        "French Invoice Number Helper",
+        "E-Invoicing Readiness Helper",
+        "PDP / PPF Readiness Helper",
+        "FEC File Readiness Checker",
+        "Audit Trail Checklist Generator",
+        "GDPR Redaction Helper",
+        "French PII Masker",
+        "France Data Quality Workbench",
+        "Compliance Checklist Generator",
+        "NIR Syntax Inspector",
+        "NIR Key Validator",
+        "NIR Masker",
+        "French Passport Number Helper",
+        "French ID Card Format Helper",
+        "Birth Data Consistency Helper",
+        "Health Insurance Boundary Helper",
+        "Personal Data Fixture Generator",
+        "French License Plate Inspector",
+        "VIN Validator for France Workflows",
+        "Crit'Air Readiness Helper",
+        "Carte Grise Field Helper",
+        "Driving Licence Format Helper",
+        "Vehicle Data Redaction Helper",
+        "Municipality / Department Plate Helper",
+        "French Document OCR Fixer",
+        "French CSV Locale Normalizer",
+        "EUR Decimal / Currency Formatter",
+        "French Accent Normalizer",
+        "French Slug Normalizer",
+        "French JSON Fixture Generator",
+        "French Regex Pack Helper",
+        "French API Payload Auditor",
+        "French Form Field Auditor"
       ],
-      "completion": 20,
+      "plannedWorkbenches": [],
+      "completion": 95,
       "coordinates": {
         "x": 49,
-        "y": 38
+        "y": 36
       }
     },
     {
@@ -7292,33 +10317,117 @@
       "language": "Dutch",
       "currency": "EUR",
       "currencyName": "Euro",
-      "status": "planned",
-      "summary": "Future hub for Dutch identifiers, addresses, VAT, and banking notes.",
+      "status": "available",
+      "featured": true,
+      "reference": true,
+      "summary": "Premium developer intelligence for Dutch BSN, RSIN, KVK, BTW, EORI, IBAN, iDEAL, SEPA, postcode, BAG address, phone, locale, AVG privacy, audit-file, and offline validation workflows.",
       "identifiers": [
+        "BAG",
         "BSN",
-        "KvK",
-        "VAT"
+        "BTW",
+        "DigiD",
+        "EORI",
+        "KVK",
+        "RDW",
+        "RSIN",
+        "UBO"
       ],
       "payments": [
+        "BIC",
+        "EUR",
         "IBAN",
+        "Mandate",
+        "Remittance",
         "SEPA",
         "iDEAL"
       ],
       "features": [
-        "payments",
-        "identity",
+        "address",
+        "banking",
+        "business",
+        "data-quality",
+        "developer",
+        "fiscal",
         "government",
-        "banking"
+        "identity",
+        "localization",
+        "payments",
+        "phone",
+        "postal",
+        "privacy",
+        "tax",
+        "vehicle"
       ],
-      "availableWorkbenches": [],
-      "plannedWorkbenches": [
-        "BSN Validator",
-        "Dutch VAT Notes"
+      "availableWorkbenches": [
+        "Audit File Readiness Checker",
+        "Audit Trail Checklist Generator",
+        "AVG / GDPR Redaction Helper",
+        "BAG Address Readiness Helper",
+        "Bank Statement Parser",
+        "BSN Masker",
+        "BSN Validator & Explainer",
+        "Company Onboarding Auditor",
+        "Compliance Checklist Generator",
+        "DigiD Boundary Helper",
+        "Driving Licence Format Helper",
+        "Dutch Address Normalizer",
+        "Dutch Address Transliteration Normalizer",
+        "Dutch API Payload Auditor",
+        "Dutch Bank Code Inspector",
+        "Dutch BIC / SWIFT Inspector",
+        "Dutch BTW / VAT Validator",
+        "Dutch BTW Rate Sanity Helper",
+        "Dutch CSV Locale Normalizer",
+        "Dutch Date / Locale Formatter",
+        "Dutch Document OCR Fixer",
+        "Dutch EAN / GS1 Code Inspector",
+        "Dutch Email Domain Fixture Helper",
+        "Dutch EORI Validator",
+        "Dutch Form Field Auditor",
+        "Dutch IBAN Validator",
+        "Dutch ID Card Format Helper",
+        "Dutch Invoice Number Helper",
+        "Dutch JSON Fixture Generator",
+        "Dutch License Plate Inspector",
+        "Dutch Passport Number Helper",
+        "Dutch Phone E.164 Formatter",
+        "Dutch Phone Number Validator",
+        "Dutch PII Masker",
+        "Dutch Postcode Validator",
+        "Dutch Regex Pack Helper",
+        "Dutch Remittance Text Builder",
+        "Dutch Slug Normalizer",
+        "E-Invoicing Readiness Helper",
+        "EUR Decimal / Currency Formatter",
+        "Health Insurance Boundary Helper",
+        "House Number Addition Helper",
+        "iDEAL Payment Reference Helper",
+        "KVK Branch Number Helper",
+        "KVK Number Validator",
+        "Masked IBAN Formatter",
+        "Municipality Code Inspector",
+        "Netherlands Data Quality Workbench",
+        "Payment Reconciliation Helper",
+        "Payroll Tax Number Helper",
+        "Peppol Readiness Helper",
+        "Personal Data Fixture Generator",
+        "PostNL Tracking Helper",
+        "Province Code Mapper",
+        "RDW Vehicle Data Redaction Helper",
+        "RSIN Validator & Explainer",
+        "RVO Relation Number Helper",
+        "SEPA Direct Debit Mandate Helper",
+        "SEPA Transfer Helper",
+        "UBO Readiness Helper",
+        "VAT Return Field Helper",
+        "VIN Validator for Netherlands Workflows",
+        "Wage Tax Readiness Helper"
       ],
-      "completion": 20,
+      "plannedWorkbenches": [],
+      "completion": 95,
       "coordinates": {
-        "x": 50,
-        "y": 34
+        "x": 49,
+        "y": 35
       }
     },
     {
@@ -7505,6 +10614,127 @@
       "coordinates": {
         "x": 49,
         "y": 41
+      }
+    },
+    {
+      "id": "switzerland",
+      "flag": "🇨🇭",
+      "name": "Switzerland",
+      "iso2": "CH",
+      "iso3": "CHE",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "German, French, Italian, Romansh",
+      "currency": "CHF",
+      "currencyName": "Swiss franc",
+      "status": "available",
+      "featured": true,
+      "reference": true,
+      "summary": "Premium developer intelligence for Swiss UID, MWST/VAT, AHV/AVS, IBAN, QR-bill, ESR, SIC clearing, BIC, postal, canton, phone, FADP privacy, vehicle, payroll, tax, and locale workflows.",
+      "identifiers": [
+        "AHV/AVS",
+        "BIC",
+        "Canton",
+        "EORI",
+        "ESR",
+        "IBAN",
+        "MWST",
+        "QR reference",
+        "SIC/BC",
+        "UID",
+        "VIN"
+      ],
+      "payments": [
+        "BIC",
+        "CHF",
+        "ESR",
+        "IBAN",
+        "QR-bill",
+        "SEPA",
+        "SIC"
+      ],
+      "features": [
+        "address",
+        "banking",
+        "business",
+        "data-quality",
+        "developer",
+        "fiscal",
+        "government",
+        "identity",
+        "localization",
+        "payments",
+        "phone",
+        "postal",
+        "privacy",
+        "tax",
+        "vehicle"
+      ],
+      "availableWorkbenches": [
+        "AHV / AVS Number Validator",
+        "Audit Trail Checklist Generator",
+        "CHF Amount Formatter",
+        "Canton Code Mapper",
+        "Customs Declaration Helper",
+        "Driving Licence Format Helper",
+        "ESR Reference Checker",
+        "FADP / GDPR Redaction Helper",
+        "Health Insurance Boundary Helper",
+        "Insurance Policy Number Helper",
+        "MWST Rate Sanity Helper",
+        "Multilingual Address Helper",
+        "Municipality Code Inspector",
+        "Payroll Social Security Helper",
+        "Personal Data Fixture Generator",
+        "Residence Permit Format Helper",
+        "SIC / BC Number Inspector",
+        "Salary Certificate Field Helper",
+        "Swiss API Payload Auditor",
+        "Swiss Address Normalizer",
+        "Swiss Address Transliteration Normalizer",
+        "Swiss BIC / SWIFT Inspector",
+        "Swiss Bank Statement Parser",
+        "Swiss CSV Locale Normalizer",
+        "Swiss Company Onboarding Auditor",
+        "Swiss Compliance Checklist Generator",
+        "Swiss Data Quality Workbench",
+        "Swiss Date / Locale Formatter",
+        "Swiss Decimal / Currency Formatter",
+        "Swiss Document OCR Fixer",
+        "Swiss E-Invoicing Readiness Helper",
+        "Swiss EORI / Customs Identifier Helper",
+        "Swiss Form Field Auditor",
+        "Swiss IBAN Validator",
+        "Swiss ID Card Format Helper",
+        "Swiss Invoice Number Helper",
+        "Swiss JSON Fixture Generator",
+        "Swiss PII Masker",
+        "Swiss Passport Number Helper",
+        "Swiss Payment Reconciliation Helper",
+        "Swiss Phone E.164 Formatter",
+        "Swiss Phone Number Validator",
+        "Swiss Post Tracking Helper",
+        "Swiss Postal Code Validator",
+        "Swiss QR-Bill Payload Auditor",
+        "Swiss QR-Bill Reference Validator",
+        "Swiss Regex Pack Helper",
+        "Swiss SEPA Transfer Helper",
+        "Swiss Slug Normalizer",
+        "Swiss UID Validator & Explainer",
+        "Swiss VAT / MWST Validator",
+        "Swiss VAT Return Field Helper",
+        "Swiss Vehicle Plate Inspector",
+        "Tax ID Boundary Helper",
+        "VIN Validator for Swiss Workflows",
+        "Vehicle Data Redaction Helper",
+        "Withholding Tax Readiness Helper",
+        "Zefix Readiness Helper"
+      ],
+      "plannedWorkbenches": [],
+      "completion": 96,
+      "coordinates": {
+        "x": 50,
+        "y": 36
       }
     },
     {

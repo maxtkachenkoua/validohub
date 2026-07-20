@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-api-payload-auditor
+kind: tool
+module: validohub
+country: NL
+category: developer-tools
+status: active
+name:
+  en: "Dutch API Payload Auditor"
+summary:
+  en: "Audit Dutch API payloads for local identifiers, masking, locale formatting, field names, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "API"
+        required: true
+        placeholder:
+          en: "{\"kvk\":\"90006485\",\"btw\":\"NL123456789B01\",\"iban\":\"NL91ABNA0417164300\",\"postcode\":\"1012 AB\"}"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-json-fixture-generator, netherlands-form-field-auditor, netherlands-pii-masker, netherlands-data-quality-workbench]
+seo:
+  title:
+    en: "Dutch API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit Dutch API payloads for local identifiers, masking, locale formatting, field names, and official lookup boundaries."

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-masked-iban-formatter
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "Masked IBAN Formatter"
+summary:
+  en: "Mask Dutch IBANs for logs, screenshots, support tickets, and audit evidence while preserving useful hints."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "MASK"
+        required: true
+        placeholder:
+          en: "NL91ABNA0417164300"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-iban-validator, netherlands-bsn-masker, netherlands-pii-masker, netherlands-gdpr-avg-redaction-helper]
+seo:
+  title:
+    en: "Masked IBAN Formatter | ValidoHub"
+  description:
+    en: "Mask Dutch IBANs for logs, screenshots, support tickets, and audit evidence while preserving useful hints."

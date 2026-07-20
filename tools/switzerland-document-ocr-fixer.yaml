@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-document-ocr-fixer
+kind: tool
+module: validohub
+country: CH
+category: developer-tools
+status: active
+name:
+  en: "Swiss Document OCR Fixer"
+summary:
+  en: "Repair common OCR spacing in Swiss UID, AHV/AVS, IBAN, QR reference, CHF amount, and postal-code snippets."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "CHE 123 456 789 MWST"
+    actions: [format, validate, parse, generate, explain]
+related:
+  explicit: [switzerland-compliance-checklist-generator, switzerland-audit-trail-checklist-generator, switzerland-fadp-gdpr-redaction-helper, switzerland-pii-masker]
+seo:
+  title:
+    en: "Swiss Document OCR Fixer | ValidoHub"
+  description:
+    en: "Repair common OCR spacing in Swiss UID, AHV/AVS, IBAN, QR reference, CHF amount, and postal-code snippets."

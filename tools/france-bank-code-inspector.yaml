@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-bank-code-inspector
+kind: tool
+module: validohub
+country: FR
+category: finance
+status: active
+name:
+  en: "French Bank Code Inspector"
+summary:
+  en: "Inspect five-digit French bank and branch code pairs used in RIB and IBAN payloads."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "BANK"
+        required: true
+        placeholder:
+          en: "30006 00001"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-iban-validator, france-rib-validator, france-bic-swift-inspector, france-masked-iban-formatter]
+seo:
+  title:
+    en: "French Bank Code Inspector | ValidoHub"
+  description:
+    en: "Inspect five-digit French bank and branch code pairs used in RIB and IBAN payloads."

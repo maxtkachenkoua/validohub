@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "Dutch Address Transliteration Normalizer"
+summary:
+  en: "Normalize Dutch address text, preserve diacritics where needed, and prepare ASCII-safe variants for legacy systems."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "ASCII"
+        required: true
+        placeholder:
+          en: "Dhr. Van der Meer"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-address-normalizer, netherlands-slug-normalizer, netherlands-document-ocr-fixer, netherlands-csv-locale-normalizer]
+seo:
+  title:
+    en: "Dutch Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Normalize Dutch address text, preserve diacritics where needed, and prepare ASCII-safe variants for legacy systems."

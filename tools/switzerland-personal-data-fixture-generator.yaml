@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: CH
+category: developer-tools
+status: active
+name:
+  en: "Personal Data Fixture Generator"
+summary:
+  en: "Generate safe fictional Swiss person fixtures with AHV-like numbers, phone, address, canton, locale, and privacy notes."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TEST input"
+        required: true
+        placeholder:
+          en: "Generate Swiss person fixture for de-CH Zurich checkout"
+    actions: [generate, validate, parse, format, explain]
+related:
+  explicit: [switzerland-compliance-checklist-generator, switzerland-audit-trail-checklist-generator, switzerland-fadp-gdpr-redaction-helper, switzerland-pii-masker]
+seo:
+  title:
+    en: "Personal Data Fixture Generator | ValidoHub"
+  description:
+    en: "Generate safe fictional Swiss person fixtures with AHV-like numbers, phone, address, canton, locale, and privacy notes."

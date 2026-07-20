@@ -1,5 +1,120 @@
 # AI Changelog
 
+## 2026-07-20 - All-Country Field Breakdown Requirement
+
+- Expanded the field-breakdown requirement from full premium suites to every country-scoped tool in every country.
+- Extended `scripts/audit-country-field-breakdown.mjs` to cover standalone Germany/Spain country tools in addition to Brazil, Poland, France, Netherlands, and Switzerland suites.
+- Confirmed Germany and Spain IBAN tools use the country-aware generic IBAN breakdown, and Spain ID has its own identifier breakdown/debugger.
+- Updated `docs/product/DEVELOPMENT_RULES.md`, `docs/product/COUNTRY_SUITE_GENERATION_GUARDRAILS.md`, and `docs/ai/START_HERE_AI.md` to say field breakdown is a primary debugging surface and mandatory for all country tools.
+- Valido Engine remains untouched.
+
+## 2026-07-20 - Future Country Fixed-Regression Rule
+
+- Promoted all recently fixed country-suite regressions into `docs/product/DEVELOPMENT_RULES.md` as a mandatory future-country acceptance bar.
+- Updated `docs/ai/START_HERE_AI.md` so future country work reads the rule before implementation.
+- The rule now explicitly blocks generic or hybrid tool shells, oversized tool UI, red success states, missing field breakdowns, raw sample dropdown payloads, foreign fallback copy, cross-country related links, `[object Object]`, empty or icon-only lower hub cards, and page-level horizontal overflow.
+- Valido Engine remains untouched.
+
+## 2026-07-20 - Country Field Breakdown Audit
+
+- Added `scripts/audit-country-field-breakdown.mjs` and wired it into `npm run audit:country-suite` so accepted country suites cannot lose a named field-breakdown panel.
+- Upgraded `assets/js/tools/france-suite.js` to render a dedicated field breakdown from extracted French local fields, matching the premium country-suite contract.
+- Strengthened country-suite guardrails and Factory V1 spec: every premium country tool, including broad text/data helpers, must expose field slices or detected-evidence groups instead of only generic result cards.
+- Kept the change in ValidoHub runtime assets, scripts, and docs. Valido Engine remains untouched.
+
+## 2026-07-20 - Switzerland Premium Country Suite V1
+
+- Added Switzerland as a full premium available country hub with 58 active country-specific browser workbenches.
+- Added `countries/switzerland.yaml`, `countries/data/switzerland.json`, Switzerland visual SVG assets, `tools/switzerland-*.yaml`, `assets/js/tools/switzerland-suite.js`, and `docs/product/SWITZERLAND_PREMIUM_SUITE_SPEC.md`.
+- Used Country Suite Factory V1 from the start, making Switzerland the first full future-country factory consumer without migrating Brazil, Poland, France, or Netherlands.
+- Added runtime localization for every supported ValidoHub locale across Switzerland workbench shell labels, states, sample labels, tool titles/summaries, diagnostics, quality notes, and advanced labels.
+- Added ValidoHub build mappings so Switzerland pages load `country-suite-factory.js` before `switzerland-suite.js`, and extended same-country related-link pruning to Switzerland.
+- Covered Swiss UID, MWST/VAT, AHV/AVS, EORI/customs, IBAN, SIC/BC, BIC/SWIFT, QR-bill, ESR, CHF, tax, payroll, company onboarding, Zefix readiness, FADP/GDPR privacy, address, canton, phone, vehicle, OCR, data-quality, API, JSON, regex, and form-audit workflows.
+- Kept the implementation in ValidoHub assets, content, scripts, and docs. Valido Engine remains untouched.
+
+## 2026-07-20 - Country Suite Factory V1
+
+- Added `assets/js/tools/country-suite-factory.js` as an additive-only future-country runtime with compact Brazil-scale header, input, result, validation pipeline, dedicated field breakdown, quality notes, advanced analysis, copy, and download controls.
+- Added config validation for suite identity, country metadata, theme colors, tool ids, names, codes, summaries, short-label samples, quality notes, official boundaries, duplicate ids, and raw payload sample labels.
+- Added `docs/product/COUNTRY_SUITE_FACTORY_SPEC.md` and linked it from the Country Hub mandatory reading flow.
+- Added `scripts/audit-country-suite-factory.mjs` and `npm run audit:country-suite` to protect the factory contract and assert that accepted Brazil, Poland, France, and Netherlands suites do not import or call the factory without an explicit migration task.
+- Promoted all-locale runtime localization to the factory contract: future premium country suites must localize workbench controls, statuses, errors, result labels, field breakdowns, quality notes, samples, and advanced/developer labels across every supported ValidoHub locale.
+- Kept the factory additive and unconnected to existing country suites. Valido Engine remains untouched.
+
+## 2026-07-20 - Country Tool Shell Hardening Pass
+
+- Tightened France suite runtime sizing to the compact Brazil workbench scale: smaller hero padding, mark, title, summary, chips, selector, input typography, result cards, pipeline, field cards, quality notes, and advanced payload panels.
+- Tightened generic premium hero sizing in `assets/css/workbench.css` so global utility workbenches follow the same compact tool-shell rhythm instead of drifting toward landing-page hero proportions.
+- Added `scripts/audit-country-tool-shell.mjs` to catch compact-shell regressions in France, Netherlands, generic premium hero sizing, and the country-suite guardrails before future countries are called complete.
+- Updated current-state and country-suite guardrails so future country generation runs the shell audit and compares representative tools against Brazil CPF/CNPJ typography, spacing, textarea height, button sizing, result card density, and field-breakdown proportions.
+- Kept the hardening pass inside ValidoHub assets, scripts, and docs. Valido Engine remains untouched.
+
+## 2026-07-20 - Netherlands Premium Suite V2 Field Breakdown Pass
+
+- Upgraded `assets/js/tools/netherlands-suite.js` from a broad premium V1 into a Brazil-style V2 workbench runtime with dedicated field breakdown panels on every Netherlands tool family.
+- Reduced the Netherlands tool header from oversized landing-hero scale to compact Brazil workbench proportions so inputs and results remain close to the first viewport.
+- Tightened Netherlands tool typography and spacing across header, sample selector, chips, input textarea, buttons, result cards, pipeline cards, field breakdown tiles, and advanced panels so the full workbench reads closer to the Brazil visual rhythm.
+- Added domain-specific breakdown slices for BSN/RSIN eleven-test numbers, KVK, BTW/VAT, EORI, Dutch IBAN/BBAN, BIC, postcode, phone, EUR values, vehicle/RDW/VIN/plate evidence, audit-file snippets, and developer/data payloads.
+- Kept the premium ordering contract intact: branded header, short sample selector labels, input controls, immediate result card, validation pipeline, dedicated field breakdown, quality notes, then expanded advanced analysis/developer payload.
+- Updated Netherlands product memory so future country suites are not accepted as "premium" unless every offline-capable tool has a real breakdown strategy, not just generic result cards.
+- Rebuilt ValidoHub and kept the implementation inside ValidoHub browser assets and docs. Valido Engine remains untouched.
+
+## 2026-07-19 - Netherlands Premium Country Suite V1
+
+- Added Netherlands as a full available country hub and first complete country generated after the country-suite anti-regression guardrails.
+- Added 63 Netherlands-specific workbenches covering BSN, RSIN, KVK, BTW/VAT, EORI, DigiD boundaries, Dutch IBAN/BIC/SEPA/iDEAL, postcode/BAG/address/phone/locale, tax and e-invoicing readiness, audit-file snippets, AVG/GDPR/PII masking, data quality, vehicle/RDW/VIN/plates, PostNL tracking, EAN fixtures, and developer workflow audits.
+- Added the shared `assets/js/tools/netherlands-suite.js` premium runtime with Netherlands-branded headers, short sample labels, immediate result cards after input controls, validation pipelines, field breakdowns, quality notes, local checks, copyable output, and developer payloads.
+- Added Netherlands country registration, country visual SVG assets, and `docs/product/NETHERLANDS_PREMIUM_SUITE_SPEC.md` as future-memory for complete country generation.
+- Updated country-suite docs and current-state memory so future full-country prompts read both France and Netherlands suite specs plus the anti-regression guardrails.
+- Kept implementation in ValidoHub country data, tool YAML, assets, build post-processing, and docs. Valido Engine remains untouched.
+
+## 2026-07-19 - Country Suite Anti-Regression Guardrails
+
+- Added `docs/product/COUNTRY_SUITE_GENERATION_GUARDRAILS.md` as mandatory future memory for complete country generation.
+- Recorded the France regressions that must not repeat: Poland fallback copy on France route groups, cross-country related-link spillover, long raw sample payloads inside native selectors, and long result/developer payload values stretching layouts.
+- Added the guardrails doc to the Country Hub mandatory reading list in `docs/ai/START_HERE_AI.md`.
+- Future country work must now audit same-country related links, foreign-term leakage, long-value layout safety, short sample labels, immediate result placement, all-locale coverage, generated-output exclusion, and Valido Engine cleanliness before calling a country complete.
+
+## 2026-07-19 - France Premium Country Suite V1
+
+- Added France as a full available country hub instead of a planned shell.
+- Added 64 France-specific workbenches covering SIREN, SIRET, TVA, EORI, APE/NAF, French IBAN/RIB/BIC/SEPA, postal/address/phone/locale, tax and e-invoicing readiness, GDPR/PII masking, NIR boundaries, vehicle workflows, OCR repair, CSV/EUR/accent/slug utilities, JSON fixtures, regex packs, API payload audits, and form-field audits.
+- Added the shared `assets/js/tools/france-suite.js` premium runtime with France-branded headers, samples, immediate result cards after input controls, validation pipelines, field breakdowns, quality notes, local checks, copyable output, and developer payloads.
+- Added France country registration, country visual SVG assets, and `docs/product/FRANCE_PREMIUM_SUITE_SPEC.md` as future-memory for complete country generation.
+- Kept the implementation in ValidoHub country data, tool YAML, assets, and docs. Valido Engine remains untouched.
+
+## 2026-07-19 - Country-Specific IBAN Strategy And Workbenches
+
+- Documented the permanent IBAN strategy: one global detector plus country-specific IBAN workbenches only when they add real local banking structure beyond SEO.
+- Added Brazil, Germany, and Spain IBAN tool definitions using the country-aware generic finance runtime.
+- Expanded the shared IBAN runtime with country detection, country-locked validation, BBAN field maps, local quality notes, wrong-country diagnostics, and deep country route guidance.
+- Added Spain CCC check-digit replay, Germany BLZ/account slicing, and Brazil bank/branch/account/account-type slicing.
+- Kept implementation in ValidoHub assets, tool YAML, and product docs. Valido Engine remains untouched.
+
+## 2026-07-19 - Generic Tools Final Premium Contract And Completion Pass
+
+- Strengthened `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md` with the new generic instrument contract: future global tools must be born premium, not shipped as basic forms for later cleanup.
+- Added success-first presets, intentional edge/error samples, richer premium result cards, domain-specific result previews, and quality-note cards across the shared Generic Utility Workbench Suite.
+- Added hash digest recompute/compare flows for MD5, SHA-1, and SHA-256 when users provide both input and an expected digest.
+- Upgraded URL Encoder/Decoder mode integrity so decoder pages offer encoded success presets first and Developer API previews use the active encode/decode endpoint.
+- Kept all work in ValidoHub product assets and docs. Valido Engine remains untouched.
+
+## 2026-07-18 - Generic Workbench Gold Standard Doctrine
+
+- Added `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md` as mandatory product memory for all current and future generic, non-country tools.
+- Promoted Poland and Brazil premium country workbenches to the explicit visual and functional baseline for generic tools.
+- Documented that generic tools must be competitor-aware, richly interactive, advanced-analysis-heavy, mode-correct, and deeper than the strongest public tools where the domain supports it.
+- Added first-preset, success, invalid/error, advanced-analysis, copy/download/history, mobile, developer-snippet, documentation, and related-tool audits as the expected acceptance sweep before calling a generic tool premium.
+- Linked the new standard from `docs/ai/START_HERE_AI.md`, `docs/product/CURRENT_STATE.md`, and `docs/product/WORKBENCH_REGISTRY.md`.
+
+## 2026-07-18 - Generic Tools Premium Functionality Audit
+
+- Audited the shared Generic Utility Workbench Suite against the Poland and Brazil premium workbench bar.
+- Fixed generic-suite execution gaps: Slug Generator now uses its own slug workflow, hash tools call the intended MD5/SHA-1/SHA-256 algorithms, and sample chips populate the correct fields.
+- Added UUID batch generation, IBAN masked display, regex capture-group reporting, and safer case-converter empty-token handling.
+- Added ValidoHub build-time materialization for shared generic utility pages so Engine-generated documentation/form pages receive full premium workbench markup and helper script wiring without changing Valido Engine.
+- Kept implementation in ValidoHub browser assets and documentation; Valido Engine remains untouched.
+
 ## 2026-07-18 - Generic Tools Premium UI Pass
 
 - Added a shared premium identity shell for global generic tools, including tool marks, theme accents, domain summaries, capability chips, and browser-only privacy boundary.

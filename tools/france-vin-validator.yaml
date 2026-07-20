@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-vin-validator
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "VIN Validator for France Workflows"
+summary:
+  en: "Validate VIN syntax and checksum for French registration and fleet data workflows."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "VIN"
+        required: true
+        placeholder:
+          en: "VF1RFB00368123456"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-license-plate-inspector, france-critair-readiness-helper, france-carte-grise-field-helper, france-driving-licence-format-helper]
+seo:
+  title:
+    en: "VIN Validator for France Workflows | ValidoHub"
+  description:
+    en: "Validate VIN syntax and checksum for French registration and fleet data workflows."

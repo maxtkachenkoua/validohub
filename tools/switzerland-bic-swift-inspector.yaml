@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-bic-swift-inspector
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC/SWIFT shape, verify CH/LI country-code evidence, and prepare payment routing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "UBSWCHZH80A"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [switzerland-iban-validator, switzerland-sic-clearing-number-inspector, switzerland-sepa-transfer-helper, switzerland-bank-statement-parser]
+seo:
+  title:
+    en: "Swiss BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC/SWIFT shape, verify CH/LI country-code evidence, and prepare payment routing diagnostics."

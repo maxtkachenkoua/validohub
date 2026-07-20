@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-company-onboarding-auditor
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss Company Onboarding Auditor"
+summary:
+  en: "Audit Swiss company onboarding payloads for UID, VAT suffix, address, canton, IBAN, and official registry handoff."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "Alpine Test AG"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-vat-mwst-validator, switzerland-eori-validator, switzerland-mwst-rate-sanity-helper, switzerland-vat-return-field-helper]
+seo:
+  title:
+    en: "Swiss Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit Swiss company onboarding payloads for UID, VAT suffix, address, canton, IBAN, and official registry handoff."

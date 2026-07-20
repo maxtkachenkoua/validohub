@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-qr-bill-reference-validator
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss QR-Bill Reference Validator"
+summary:
+  en: "Validate Swiss QR reference shape, replay recursive MOD-10 checks, and prepare invoice-safe payment references."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "QR input"
+        required: true
+        placeholder:
+          en: "210000000003139471430009017"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [switzerland-esr-reference-checker, switzerland-qr-bill-payload-auditor, switzerland-payment-reconciliation-helper]
+seo:
+  title:
+    en: "Swiss QR-Bill Reference Validator | ValidoHub"
+  description:
+    en: "Validate Swiss QR reference shape, replay recursive MOD-10 checks, and prepare invoice-safe payment references."

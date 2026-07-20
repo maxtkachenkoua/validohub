@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-qr-bill-payload-auditor
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss QR-Bill Payload Auditor"
+summary:
+  en: "Audit Swiss QR-bill text payloads for account, creditor, amount, currency, reference, and payable field readiness."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "QRB input"
+        required: true
+        placeholder:
+          en: "SPC"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-qr-bill-reference-validator, switzerland-esr-reference-checker, switzerland-payment-reconciliation-helper]
+seo:
+  title:
+    en: "Swiss QR-Bill Payload Auditor | ValidoHub"
+  description:
+    en: "Audit Swiss QR-bill text payloads for account, creditor, amount, currency, reference, and payable field readiness."

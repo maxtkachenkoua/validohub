@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "Address Transliteration Normalizer"
+summary:
+  en: "Produce ASCII-safe address variants while preserving the original French address for display."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "ASCII"
+        required: true
+        placeholder:
+          en: "8 avenue des Champs-Élysées, 75008 Paris"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-postal-code-validator, france-insee-commune-code-inspector, france-department-code-inspector, france-region-code-mapper]
+seo:
+  title:
+    en: "Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Produce ASCII-safe address variants while preserving the original French address for display."

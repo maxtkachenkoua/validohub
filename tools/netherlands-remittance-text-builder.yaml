@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-remittance-text-builder
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: "Dutch Remittance Text Builder"
+summary:
+  en: "Clean Dutch payment descriptions for bank transfers, invoices, and reconciliation-safe references."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "REMIT"
+        required: true
+        placeholder:
+          en: "Factuur nr. INV-2026-0042 / klant Jansen BV"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-sepa-transfer-helper, netherlands-payment-reconciliation-helper, netherlands-invoice-number-helper, netherlands-slug-normalizer]
+seo:
+  title:
+    en: "Dutch Remittance Text Builder | ValidoHub"
+  description:
+    en: "Clean Dutch payment descriptions for bank transfers, invoices, and reconciliation-safe references."

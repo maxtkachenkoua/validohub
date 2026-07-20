@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-bank-statement-parser
+kind: tool
+module: validohub
+country: FR
+category: developer-tools
+status: active
+name:
+  en: "Bank Statement Parser"
+summary:
+  en: "Extract dates, amounts, references, IBAN-like strings, and reconciliation hints from French bank statement text."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "STATEMENT"
+        required: true
+        placeholder:
+          en: "12/07/2026 VIR SEPA CLIENT MARTIN +1 250,75 EUR REF FA-2026-0042"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-iban-validator, france-rib-validator, france-bank-code-inspector, france-bic-swift-inspector]
+seo:
+  title:
+    en: "Bank Statement Parser | ValidoHub"
+  description:
+    en: "Extract dates, amounts, references, IBAN-like strings, and reconciliation hints from French bank statement text."

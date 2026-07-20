@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-e-invoicing-readiness-helper
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss E-Invoicing Readiness Helper"
+summary:
+  en: "Audit supplier, buyer, UID, IBAN, amount, QR reference, and structured remittance fields for Swiss e-invoicing handoff."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "Supplier CHE-123.456.789 MWST"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-invoice-number-helper, switzerland-salary-certificate-field-helper, switzerland-payroll-social-security-helper]
+seo:
+  title:
+    en: "Swiss E-Invoicing Readiness Helper | ValidoHub"
+  description:
+    en: "Audit supplier, buyer, UID, IBAN, amount, QR reference, and structured remittance fields for Swiss e-invoicing handoff."

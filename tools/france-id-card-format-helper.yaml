@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-id-card-format-helper
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "French ID Card Format Helper"
+summary:
+  en: "Inspect French ID card-like values for shape, casing, and privacy-safe fixture handling."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "CNI"
+        required: true
+        placeholder:
+          en: "123456789012"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-nir-syntax-inspector, france-nir-key-validator, france-nir-masker, france-passport-number-helper]
+seo:
+  title:
+    en: "French ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect French ID card-like values for shape, casing, and privacy-safe fixture handling."

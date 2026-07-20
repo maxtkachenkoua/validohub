@@ -1,5 +1,6 @@
 (function () {
   const BASE64_ALGORITHM = "validohub.base64";
+  const BASE64_DECODER_ALGORITHM = "validohub.base64-decoder";
   const BASE64_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=_-";
 
   const Base64Plugin = (function (framework) {
@@ -330,14 +331,17 @@
       return html;
     };
 
-    const apiSnippets = {
-      curl: `curl -X POST https://api.validohub.com/v1/encoding/base64/encode \\\n  -H "Content-Type: application/json" \\\n  -d '{"input": "$INPUT$"}'`,
-      javascript: `fetch("https://api.validohub.com/v1/encoding/base64/encode", {\n  method: "POST",\n  headers: { "Content-Type": "application/json" },\n  body: JSON.stringify({ input: "$INPUT$" })\n})\n.then(res => res.json())\n.then(data => console.log(data));`,
-      python: `import requests\n\nres = requests.post(\n    "https://api.validohub.com/v1/encoding/base64/encode",\n    json={"input": "$INPUT$"}\n)\nprint(res.json())`,
-      java: `import java.net.http.*;\nimport java.net.URI;\n\nvar client = HttpClient.newHttpClient();\nvar request = HttpRequest.newBuilder()\n    .uri(URI.create("https://api.validohub.com/v1/encoding/base64/encode"))\n    .header("Content-Type", "application/json")\n    .POST(HttpRequest.BodyPublishers.ofString("{\\"input\\": \\"$INPUT$\\"}"))\n    .build();\nvar response = client.send(request, HttpResponse.BodyHandlers.ofString());\nSystem.out.println(response.body());`,
-      csharp: `using System.Net.Http;\nusing System.Text.Json;\n\nvar client = new HttpClient();\nvar content = new StringContent("{\\"input\\":\\"$INPUT$\\"}", System.Text.Encoding.UTF8, "application/json");\nvar response = await client.PostAsync("https://api.validohub.com/v1/encoding/base64/encode", content);\nvar result = await response.Content.ReadAsStringAsync();\nConsole.WriteLine(result);`,
-      go: `package main\n\nimport (\n\t"bytes"\n\t"io/ioutil"\n\t"net/http"\n\t"fmt"\n)\n\nfunc main() {\n\tpayload := []byte(\`{"input": "$INPUT$"}\`)\n\tres, _ := http.Post("https://api.validohub.com/v1/encoding/base64/encode", "application/json", bytes.NewBuffer(payload))\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\tfmt.Println(string(body))\n}`
-    };
+    function apiSnippetsFor(operation) {
+      const endpoint = `https://api.validohub.com/v1/encoding/base64/${operation}`;
+      return {
+        curl: `curl -X POST ${endpoint} \\\n  -H "Content-Type: application/json" \\\n  -d '{"input": "$INPUT$"}'`,
+        javascript: `fetch("${endpoint}", {\n  method: "POST",\n  headers: { "Content-Type": "application/json" },\n  body: JSON.stringify({ input: "$INPUT$" })\n})\n.then(res => res.json())\n.then(data => console.log(data));`,
+        python: `import requests\n\nres = requests.post(\n    "${endpoint}",\n    json={"input": "$INPUT$"}\n)\nprint(res.json())`,
+        java: `import java.net.http.*;\nimport java.net.URI;\n\nvar client = HttpClient.newHttpClient();\nvar request = HttpRequest.newBuilder()\n    .uri(URI.create("${endpoint}"))\n    .header("Content-Type", "application/json")\n    .POST(HttpRequest.BodyPublishers.ofString("{\\"input\\": \\"$INPUT$\\"}"))\n    .build();\nvar response = client.send(request, HttpResponse.BodyHandlers.ofString());\nSystem.out.println(response.body());`,
+        csharp: `using System.Net.Http;\nusing System.Text.Json;\n\nvar client = new HttpClient();\nvar content = new StringContent("{\\"input\\":\\"$INPUT$\\"}", System.Text.Encoding.UTF8, "application/json");\nvar response = await client.PostAsync("${endpoint}", content);\nvar result = await response.Content.ReadAsStringAsync();\nConsole.WriteLine(result);`,
+        go: `package main\n\nimport (\n\t"bytes"\n\t"io/ioutil"\n\t"net/http"\n\t"fmt"\n)\n\nfunc main() {\n\tpayload := []byte(\`{"input": "$INPUT$"}\`)\n\tres, _ := http.Post("${endpoint}", "application/json", bytes.NewBuffer(payload))\n\tdefer res.Body.Close()\n\tbody, _ := ioutil.ReadAll(res.Body)\n\tfmt.Println(string(body))\n}`
+      };
+    }
 
     function applySample(workbench, sampleId) {
       const input = workbench.primaryInput();
@@ -360,15 +364,20 @@
 
     function onMount(workbench) {
       workbench.form._workbench = workbench;
+      const capability = workbench.form.dataset.capability || "encode";
+      const isDecodeWorkbench = capability === "decode" || capability === "validate";
+      const historyPlaceholder = isDecodeWorkbench ? "-- Recent Decodes --" : "-- Recent Encodes --";
 
       // Refine header description to Stripe quality
       const pageIntro = document.querySelector('.page-intro');
       if (pageIntro) {
         const introTitle = pageIntro.querySelector('h1');
-        if (introTitle) introTitle.textContent = "Base64 Encoder & Explainer";
+        if (introTitle) introTitle.textContent = isDecodeWorkbench ? "Base64 Decoder & Inspector" : "Base64 Encoder & Explainer";
         const introDesc = pageIntro.querySelector('p');
         if (introDesc) {
-          introDesc.textContent = "Encode, decode, validate, and inspect Base64 and Base64URL string encodings locally inside your secure browser sandbox.";
+          introDesc.textContent = isDecodeWorkbench
+            ? "Decode, validate, and inspect Base64 and Base64URL strings locally inside your secure browser sandbox."
+            : "Encode, validate, and inspect Base64 and Base64URL string encodings locally inside your secure browser sandbox.";
         }
 
         if (!pageIntro.querySelector('.pesel-badge-row')) {
@@ -410,11 +419,15 @@
             <span style="font-size: 0.92rem; font-weight: 720; color: var(--text);">Presets</span>
           </div>
           <select class="pesel-select" id="pesel-presets" style="width: 100%; height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer;">
-            <option value="">-- Select Preset --</option>
-            <option value="encode-hello">Encode Hello</option>
-            <option value="encode-unicode">Encode Unicode</option>
-            <option value="decode">Decode Sample</option>
-            <option value="validate">Validate JSON Sample</option>
+            ${isDecodeWorkbench
+              ? `<option value="">-- Select Preset --</option>
+                 <option value="decode">Decode Hello</option>
+                 <option value="validate">Decode JSON payload</option>
+                 <option value="encode-unicode">Invalid Unicode text</option>`
+              : `<option value="">-- Select Preset --</option>
+                 <option value="encode-hello">Encode Hello</option>
+                 <option value="encode-unicode">Encode Unicode</option>
+                 <option value="validate">Encode JSON payload</option>`}
           </select>
         `;
 
@@ -426,7 +439,7 @@
             <button type="button" class="button button-ghost compact" id="pesel-clear-history-btn" style="font-size: 0.72rem; padding: 0; border: none; background: none; margin: 0; cursor: pointer; height: auto; line-height: 1; color: var(--muted); font-weight: 600;">Clear</button>
           </div>
           <select class="pesel-select" id="pesel-history" style="width: 100%; height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer;">
-            <option value="">-- Recent Encodes --</option>
+            <option value="">${historyPlaceholder}</option>
           </select>
         `;
 
@@ -453,8 +466,8 @@
         fieldGrid.querySelector('#pesel-clear-history-btn').addEventListener('click', () => {
           localStorage.removeItem('validohub.base64.history');
           const select = fieldGrid.querySelector('#pesel-history');
-          select.innerHTML = '<option value="">-- Recent Encodes --</option>';
-          workbench.setMessage('Validation history cleared.', 'success');
+          select.innerHTML = `<option value="">${historyPlaceholder}</option>`;
+          workbench.setMessage('History cleared.', 'success');
         });
       }
 
@@ -462,7 +475,7 @@
         const historySelect = workbench.form.querySelector('#pesel-history');
         if (historySelect) {
           const items = JSON.parse(localStorage.getItem('validohub.base64.history') || '[]');
-          historySelect.innerHTML = '<option value="">-- Recent Encodes --</option>';
+          historySelect.innerHTML = `<option value="">${historyPlaceholder}</option>`;
           items.forEach(it => {
             const opt = document.createElement('option');
             opt.value = it.value;
@@ -619,6 +632,7 @@
       const timelineTracker = workbench.form.querySelector('.pesel-timeline-tracker');
       const emptyStateCard = workbench.form.querySelector('#pesel-empty-state-card');
       const isValidateMode = workbench.form.dataset.capability === "validate" || action === "decode";
+      const historyPlaceholder = isValidateMode ? "-- Recent Decodes --" : "-- Recent Encodes --";
 
       const startTime = performance.now();
 
@@ -626,7 +640,7 @@
         const historySelect = workbench.form.querySelector('#pesel-history');
         if (historySelect) {
           const items = JSON.parse(localStorage.getItem('validohub.base64.history') || '[]');
-          historySelect.innerHTML = '<option value="">-- Recent Encodes --</option>';
+          historySelect.innerHTML = `<option value="">${historyPlaceholder}</option>`;
           items.forEach(it => {
             const opt = document.createElement('option');
             opt.value = it.value;
@@ -786,6 +800,7 @@
         }
 
         // Setup Advanced Code Snippets Panel
+        const apiSnippets = apiSnippetsFor("decode");
         workbench.setAdvanced(`
           <div class="pesel-dev-section">
             <details class="pesel-dev-accordion" open>
@@ -924,6 +939,7 @@
         }
 
         // Setup API Preview Tabs
+        const apiSnippets = apiSnippetsFor("encode");
         workbench.setAdvanced(`
           <div class="pesel-dev-section">
             <details class="pesel-dev-accordion" open>
@@ -1061,4 +1077,5 @@
   })(window.ValidoWorkbench);
 
   window.ValidoWorkbench.registerPlugin(BASE64_ALGORITHM, Base64Plugin);
+  window.ValidoWorkbench.registerPlugin(BASE64_DECODER_ALGORITHM, Base64Plugin);
 })();

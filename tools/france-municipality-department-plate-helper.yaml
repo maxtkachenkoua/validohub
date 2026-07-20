@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-municipality-department-plate-helper
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "Municipality / Department Plate Helper"
+summary:
+  en: "Connect department, commune, postal, and plate snippets for QA without implying official lookup."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "LOCAL"
+        required: true
+        placeholder:
+          en: "75056 Paris AB-123-CD 75008"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-sirene-lookup-readiness-helper, france-insee-commune-code-inspector, france-department-code-inspector, france-region-code-mapper]
+seo:
+  title:
+    en: "Municipality / Department Plate Helper | ValidoHub"
+  description:
+    en: "Connect department, commune, postal, and plate snippets for QA without implying official lookup."

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-id-card-format-helper
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "Dutch ID Card Format Helper"
+summary:
+  en: "Inspect Dutch identity-card-like document references, normalize display, and keep official document verification out of browser scope."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "ID"
+        required: true
+        placeholder:
+          en: "ID NL1234567"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-bsn-validator, netherlands-passport-number-helper, netherlands-pii-masker, netherlands-personal-data-fixture-generator]
+seo:
+  title:
+    en: "Dutch ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect Dutch identity-card-like document references, normalize display, and keep official document verification out of browser scope."

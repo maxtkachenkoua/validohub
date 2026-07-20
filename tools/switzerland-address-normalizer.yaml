@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-address-normalizer
+kind: tool
+module: validohub
+country: CH
+category: national-identifiers
+status: active
+name:
+  en: "Swiss Address Normalizer"
+summary:
+  en: "Normalize Swiss street, house number, postal code, locality, canton, and country-line evidence for forms."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Bahnhofstrasse 1, 8001 Zurich ZH, Switzerland"
+    actions: [format, validate, parse, generate, explain]
+related:
+  explicit: [switzerland-postal-code-validator, switzerland-address-transliteration-normalizer, switzerland-multilingual-address-helper, switzerland-canton-code-mapper]
+seo:
+  title:
+    en: "Swiss Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize Swiss street, house number, postal code, locality, canton, and country-line evidence for forms."

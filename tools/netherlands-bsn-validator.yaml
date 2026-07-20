@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-bsn-validator
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "BSN Validator & Explainer"
+summary:
+  en: "Validate Dutch BSN numbers, replay the eleven-test checksum, normalize punctuation, and produce privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "BSN"
+        required: true
+        placeholder:
+          en: "123456782"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-bsn-masker, netherlands-personal-data-fixture-generator, netherlands-pii-masker, netherlands-digid-boundary-helper]
+seo:
+  title:
+    en: "BSN Validator & Explainer | ValidoHub"
+  description:
+    en: "Validate Dutch BSN numbers, replay the eleven-test checksum, normalize punctuation, and produce privacy-safe diagnostics."

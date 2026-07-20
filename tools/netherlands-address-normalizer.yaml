@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-address-normalizer
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "Dutch Address Normalizer"
+summary:
+  en: "Normalize Dutch address blocks with street, house number, addition, postcode, city, and country fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "ADDR"
+        required: true
+        placeholder:
+          en: "Damrak 1-A"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-postcode-validator, netherlands-house-number-addition-helper, netherlands-bag-address-readiness-helper, netherlands-address-transliteration-normalizer]
+seo:
+  title:
+    en: "Dutch Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize Dutch address blocks with street, house number, addition, postcode, city, and country fields."

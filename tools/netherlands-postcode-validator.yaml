@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-postcode-validator
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "Dutch Postcode Validator"
+summary:
+  en: "Validate Dutch postcode shape, normalize 1234 AB display, and prepare address-ready postal fields."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "POSTCODE"
+        required: true
+        placeholder:
+          en: "1012 AB"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-address-normalizer, netherlands-house-number-addition-helper, netherlands-bag-address-readiness-helper, netherlands-phone-number-validator]
+seo:
+  title:
+    en: "Dutch Postcode Validator | ValidoHub"
+  description:
+    en: "Validate Dutch postcode shape, normalize 1234 AB display, and prepare address-ready postal fields."

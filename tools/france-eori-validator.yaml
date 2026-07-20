@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-eori-validator
+kind: tool
+module: validohub
+country: FR
+category: national-identifiers
+status: active
+name:
+  en: "French EORI Validator"
+summary:
+  en: "Validate French EORI identifiers, extract embedded SIRET data, and mark customs lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "EORI"
+        required: true
+        placeholder:
+          en: "FR73282932000074"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: []
+seo:
+  title:
+    en: "French EORI Validator | ValidoHub"
+  description:
+    en: "Validate French EORI identifiers, extract embedded SIRET data, and mark customs lookup boundaries."

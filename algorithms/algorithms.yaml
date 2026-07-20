@@ -201,3 +201,30 @@ algorithms:
       en: Polish Baseline Premium Workbench Algorithms
     summary:
       en: Metadata entry for ValidoHub browser-side Polish baseline workbenches.
+
+  - algorithmId: validohub.france-suite
+    javaClass: com.validohub.algorithms.france.FranceSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, generate, format, explain]
+    name:
+      en: France Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side French identifiers, banking, payments, tax, address, privacy, vehicle, and developer workbenches.
+
+  - algorithmId: validohub.netherlands-suite
+    javaClass: com.validohub.algorithms.netherlands.NetherlandsSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, generate, format, explain]
+    name:
+      en: Netherlands Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side Dutch identifiers, banking, payments, tax, address, privacy, vehicle, and developer workbenches.
+
+  - algorithmId: validohub.switzerland-suite
+    javaClass: com.validohub.algorithms.switzerland.SwitzerlandSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, generate, format, calculate, explain]
+    name:
+      en: Switzerland Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side Swiss UID, MWST/VAT, AHV/AVS, IBAN, QR-bill, SIC, canton, address, privacy, vehicle, and developer workbenches.

@@ -11,8 +11,13 @@
   const JwtPlugin = (function (framework) {
     const util = framework.utilities;
 
+    function jwtInputField(workbench) {
+      return workbench.primaryInput()
+        || workbench.form.querySelector('textarea[name="token"], input[name="token"], textarea[name="input"], input[name="input"]');
+    }
+
     function applySample(workbench, sampleId) {
-      const input = workbench.primaryInput();
+      const input = jwtInputField(workbench);
       if (!input) return;
 
       if (sampleId === "jwt-valid") {
@@ -226,7 +231,7 @@
 
       // Setup Presets and History
       const fieldGrid = workbench.form.querySelector('.field-grid');
-      const inputField = workbench.primaryInput();
+      const inputField = jwtInputField(workbench);
       if (fieldGrid && !workbench.form.querySelector('#pesel-presets')) {
         const mainField = fieldGrid.querySelector('label.field');
         if (mainField) {
@@ -464,7 +469,7 @@
 
     function run(workbench, action, options) {
       const values = workbench.values();
-      const rawInput = values.input || '';
+      const rawInput = values.input || values.token || '';
       const inputVal = rawInput.trim();
 
       const premiumPanel = workbench.form.querySelector('.pesel-premium-panel');

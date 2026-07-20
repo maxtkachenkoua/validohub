@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: france-invoice-number-helper
+kind: tool
+module: validohub
+country: FR
+category: finance
+status: active
+name:
+  en: "French Invoice Number Helper"
+summary:
+  en: "Inspect French invoice numbering strings for chronology hints, uniqueness fields, and export-safe normalized values."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.france-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "INVOICE"
+        required: true
+        placeholder:
+          en: "FA-2026-000142"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [france-vat-tva-validator, france-vat-rate-sanity-helper, france-e-invoicing-readiness-helper, france-pdp-ppf-readiness-helper]
+seo:
+  title:
+    en: "French Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect French invoice numbering strings for chronology hints, uniqueness fields, and export-safe normalized values."

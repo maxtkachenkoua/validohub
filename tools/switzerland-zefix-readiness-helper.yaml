@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-zefix-readiness-helper
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Zefix Readiness Helper"
+summary:
+  en: "Prepare Swiss company-name, UID, canton, legal form, and address fields before official Zefix registry search."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ZEFIX input"
+        required: true
+        placeholder:
+          en: "Alpine Test AG CHE-123.456.789 Zurich ZH"
+    actions: [parse, validate, generate, format, explain]
+related:
+  explicit: [switzerland-vat-mwst-validator, switzerland-eori-validator, switzerland-mwst-rate-sanity-helper, switzerland-vat-return-field-helper]
+seo:
+  title:
+    en: "Zefix Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare Swiss company-name, UID, canton, legal form, and address fields before official Zefix registry search."

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-digid-boundary-helper
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "DigiD Boundary Helper"
+summary:
+  en: "Create integration notes for DigiD-related forms without storing credentials or pretending browser-side identity verification."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "DigiD"
+        required: true
+        placeholder:
+          en: "DigiD login required"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-bsn-validator, netherlands-gdpr-avg-redaction-helper, netherlands-form-field-auditor, netherlands-pii-masker]
+seo:
+  title:
+    en: "DigiD Boundary Helper | ValidoHub"
+  description:
+    en: "Create integration notes for DigiD-related forms without storing credentials or pretending browser-side identity verification."

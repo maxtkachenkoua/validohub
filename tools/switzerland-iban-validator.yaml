@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: switzerland-iban-validator
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: "Swiss IBAN Validator"
+summary:
+  en: "Validate Swiss and Liechtenstein-style IBAN structure, run MOD-97 locally, and split clearing/account segments."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "CH93 0076 2011 6238 5295 7"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [switzerland-sic-clearing-number-inspector, switzerland-bic-swift-inspector, switzerland-sepa-transfer-helper, switzerland-bank-statement-parser]
+seo:
+  title:
+    en: "Swiss IBAN Validator | ValidoHub"
+  description:
+    en: "Validate Swiss and Liechtenstein-style IBAN structure, run MOD-97 locally, and split clearing/account segments."

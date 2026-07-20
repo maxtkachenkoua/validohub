@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: netherlands-btw-vat-validator
+kind: tool
+module: validohub
+country: NL
+category: national-identifiers
+status: active
+name:
+  en: "Dutch BTW / VAT Validator"
+summary:
+  en: "Validate Dutch VAT identifier syntax, inspect NL prefix and B-suffix structure, and prepare VIES-ready payloads."
+capabilities:
+  - validate
+  - parse
+  - generate
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.netherlands-suite
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: "BTW"
+        required: true
+        placeholder:
+          en: "NL123456789B01"
+    actions: [validate, parse, generate, format, explain]
+related:
+  explicit: [netherlands-rsin-validator, netherlands-kvk-number-validator, netherlands-btw-rate-sanity-helper, netherlands-invoice-number-helper]
+seo:
+  title:
+    en: "Dutch BTW / VAT Validator | ValidoHub"
+  description:
+    en: "Validate Dutch VAT identifier syntax, inspect NL prefix and B-suffix structure, and prepare VIES-ready payloads."
