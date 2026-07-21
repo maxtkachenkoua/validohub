@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-iban-generator
+kind: tool
+module: validohub
+country: NO
+category: finance
+status: active
+name:
+  en: "Norway IBAN Generator"
+summary:
+  en: "Generate NO IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "86011117947"
+    actions: [generate, validate, explain]
+related:
+  explicit: [norway-bank-account-inspector, norway-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norway IBAN Generator | ValidoHub"
+  description:
+    en: "Generate NO IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

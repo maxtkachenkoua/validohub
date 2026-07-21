@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-regex-pack-helper
+kind: tool
+module: validohub
+country: RO
+category: developer-tools
+status: active
+name:
+  en: "Romanian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "CNP CUI / CIF cod postal  RO49AAAA1B31007593840000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-api-payload-auditor, romania-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

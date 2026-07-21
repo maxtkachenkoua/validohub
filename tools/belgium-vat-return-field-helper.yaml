@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-vat-return-field-helper
+kind: tool
+module: validohub
+country: BE
+category: tax
+status: active
+name:
+  en: "Belgian VAT Return Field Helper"
+summary:
+  en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "BTW / TVA; BE0123456749; period 2026-07; 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-invoice-number-helper, belgium-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."

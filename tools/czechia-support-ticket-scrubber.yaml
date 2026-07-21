@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: CZ
+category: privacy
+status: active
+name:
+  en: "Czech Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 800101/0006, CZ6508000000192000145399, Vaclavske namesti 1, 110 00 Praha 1"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-integration-smoke-test-builder, czechia-rodne-cislo-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-vat-return-field-helper
+kind: tool
+module: validohub
+country: RO
+category: tax
+status: active
+name:
+  en: "Romanian VAT Return Field Helper"
+summary:
+  en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "TVA; RO12345674; period 2026-07; 1.234,56 RON"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-invoice-number-helper, romania-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."

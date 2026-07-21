@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-data-quality-workbench
+kind: tool
+module: validohub
+country: RO
+category: developer-tools
+status: active
+name:
+  en: "Romanian Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-json-fixture-generator, romania-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

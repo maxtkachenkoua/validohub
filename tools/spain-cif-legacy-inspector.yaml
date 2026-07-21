@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-cif-legacy-inspector
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: "Spanish CIF Legacy Inspector"
+summary:
+  en: "Inspect legacy legal-entity CIF/NIF prefixes, weighted control digits, and company-identifier boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CIF input"
+        required: true
+        placeholder:
+          en: "B12345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-id-validator, spain-nif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish CIF Legacy Inspector | ValidoHub"
+  description:
+    en: "Inspect legacy legal-entity CIF/NIF prefixes, weighted control digits, and company-identifier boundaries."

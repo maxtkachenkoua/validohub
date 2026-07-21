@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-abi-cab-bank-code-inspector
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian ABI / CAB Bank Code Inspector"
+summary:
+  en: "Inspect Italian bank and branch code snippets, normalize ABI/CAB slices, and separate directory lookup from local checks."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ABI input"
+        required: true
+        placeholder:
+          en: "ABI 05428 CAB 11101"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian ABI / CAB Bank Code Inspector | ValidoHub"
+  description:
+    en: "Inspect Italian bank and branch code snippets, normalize ABI/CAB slices, and separate directory lookup from local checks."

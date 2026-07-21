@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-locale-number-parser
+kind: tool
+module: validohub
+country: CZ
+category: localization
+status: active
+name:
+  en: "Czech Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Czechia."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1 234,56 CZK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-calendar-week-helper, czechia-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Czechia."

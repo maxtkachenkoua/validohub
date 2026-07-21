@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-partita-iva-validator
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian Partita IVA Validator"
+summary:
+  en: "Validate Italian VAT number shape, replay the 11-digit checksum, and separate offline syntax from Agenzia Entrate status."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PIVA input"
+        required: true
+        placeholder:
+          en: "12345678903"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Partita IVA Validator | ValidoHub"
+  description:
+    en: "Validate Italian VAT number shape, replay the 11-digit checksum, and separate offline syntax from Agenzia Entrate status."

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian Address Transliteration Normalizer"
+summary:
+  en: "Create ASCII-safe Italian address/search keys while preserving display text and diacritics where needed."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Piazza Unita d Italia 5, 34121 Trieste TS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-postal-code-validator, italy-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Create ASCII-safe Italian address/search keys while preserving display text and diacritics where needed."

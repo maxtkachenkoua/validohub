@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish Payment Reconciliation Helper"
+summary:
+  en: "Audit Spanish payment reconciliation rows for IBAN, NIF, invoice, amount, and date evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REC input"
+        required: true
+        placeholder:
+          en: "2026-07-12;ES9121000418450200051332;B12345674;1.234,56;Factura A-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Audit Spanish payment reconciliation rows for IBAN, NIF, invoice, amount, and date evidence."

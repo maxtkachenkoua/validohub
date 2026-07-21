@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-postal-code-validator
+kind: tool
+module: validohub
+country: AT
+category: address
+status: active
+name:
+  en: "Austrian Postal Code Validator"
+summary:
+  en: "Validate Postleitzahl shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "1010 Wien"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-address-normalizer, austria-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate Postleitzahl shape, split area/delivery hints, and preserve official postal lookup boundaries."

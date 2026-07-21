@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-bizum-reference-helper
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish Bizum Reference Helper"
+summary:
+  en: "Inspect Bizum-ready phone/payment snippets, E.164 normalization, amount evidence, and PSP boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIZ input"
+        required: true
+        placeholder:
+          en: "+34 612 345 678 25,00 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Bizum Reference Helper | ValidoHub"
+  description:
+    en: "Inspect Bizum-ready phone/payment snippets, E.164 normalization, amount evidence, and PSP boundary notes."

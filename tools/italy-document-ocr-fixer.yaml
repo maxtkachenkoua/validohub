@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-document-ocr-fixer
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian Document OCR Fixer"
+summary:
+  en: "Repair OCR-like Italian document snippets, recover CF/VAT/IBAN/date evidence, and keep identity-proof boundaries explicit."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "P.1VA 12345678903 C.F. RSSMRA85M01H501Q 12/O7/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-postal-code-validator, italy-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Repair OCR-like Italian document snippets, recover CF/VAT/IBAN/date evidence, and keep identity-proof boundaries explicit."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-csv-locale-normalizer
+kind: tool
+module: validohub
+country: PT
+category: developer-tools
+status: active
+name:
+  en: "Portuguese CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Portugal decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1 234,56 EUR;21/07/2026;PT123456749"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-slug-normalizer, portugal-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Portugal decimal, date, postal, phone, tax, and banking fields."

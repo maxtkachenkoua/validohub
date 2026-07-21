@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: SE
+category: transport
+status: active
+name:
+  en: "Swedish Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "ABC123 WVWZZZ1JZXW000001 850101-1236"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-customs-declaration-helper, sweden-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-csv-locale-normalizer
+kind: tool
+module: validohub
+country: IE
+category: developer-tools
+status: active
+name:
+  en: "Irish CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Ireland decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 EUR;21/07/2026;IE6388047V"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-slug-normalizer, ireland-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Ireland decimal, date, postal, phone, tax, and banking fields."

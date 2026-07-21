@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-sepa-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian SEPA Direct Debit Mandate Helper"
+summary:
+  en: "Inspect SEPA direct-debit mandate snippets for creditor, IBAN, mandate reference, dates, and official authorization boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SDD input"
+        required: true
+        placeholder:
+          en: "Mandato MND-2026-0001 debitore Rossi IBAN IT60X0542811101000000123456 data 12/07/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian SEPA Direct Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Inspect SEPA direct-debit mandate snippets for creditor, IBAN, mandate reference, dates, and official authorization boundaries."

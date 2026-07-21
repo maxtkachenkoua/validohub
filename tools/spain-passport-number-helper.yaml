@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-passport-number-helper
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: "Spanish Passport Number Helper"
+summary:
+  en: "Inspect Spanish passport-like document numbers, MRZ hints, nationality/date slices, and official document-validation boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PASS input"
+        required: true
+        placeholder:
+          en: "PAS ESP A1234567 fecha 12/07/2030"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-id-validator, spain-nif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Passport Number Helper | ValidoHub"
+  description:
+    en: "Inspect Spanish passport-like document numbers, MRZ hints, nationality/date slices, and official document-validation boundaries."

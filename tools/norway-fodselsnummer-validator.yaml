@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-fodselsnummer-validator
+kind: tool
+module: validohub
+country: NO
+category: national-identifiers
+status: active
+name:
+  en: "Norwegian Fodselsnummer Validator"
+summary:
+  en: "Validate Fodselsnummer shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "01018500120"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-organisasjonsnummer-validator, norway-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian Fodselsnummer Validator | ValidoHub"
+  description:
+    en: "Validate Fodselsnummer shape, split date/control/body evidence, and prepare privacy-safe debugging output."

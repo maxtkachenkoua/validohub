@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-invoice-number-helper
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian Invoice Number Helper"
+summary:
+  en: "Inspect Italian invoice references, year/series/number patterns, dates, VAT evidence, and duplicate-risk notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "Fattura 2026/00015 del 12/07/2026 PIVA 12345678903"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect Italian invoice references, year/series/number patterns, dates, VAT evidence, and duplicate-risk notes."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-bank-statement-parser
+kind: tool
+module: validohub
+country: SE
+category: finance
+status: active
+name:
+  en: "Swedish Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "2026-07-21; 1 234,56 SEK; SE4550000000058398257466; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-masked-iban-formatter, sweden-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."

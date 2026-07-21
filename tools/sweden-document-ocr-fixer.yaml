@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-document-ocr-fixer
+kind: tool
+module: validohub
+country: SE
+category: documents
+status: active
+name:
+  en: "Swedish Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "850101-1236 SE556016068001 SE4550000000058398257466 111 20 Stockholm"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-gdpr-redaction-helper, sweden-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

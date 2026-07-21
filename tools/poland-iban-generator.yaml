@@ -1,0 +1,43 @@
+schemaVersion: 1
+id: poland-iban-generator
+kind: tool
+module: validohub
+country: PL
+category: finance
+status: active
+name:
+  en: Poland IBAN Generator
+summary:
+  en: Generate Polish IBAN check digits from an NRB/BBAN body, then replay MOD-97 validation locally.
+capabilities: [generate, validate, parse, explain]
+algorithm:
+  algorithmId: validohub.iban-generator
+forms:
+  generate:
+    inputs:
+      - type: text
+        name: country
+        label:
+          en: Country code
+        required: true
+      - type: text
+        name: bban
+        label:
+          en: Poland NRB / BBAN body
+        required: true
+      - type: text
+        name: iban
+        label:
+          en: Existing IBAN to repair or inspect
+    actions: [generate, validate, explain]
+related:
+  explicit: [poland-iban-nrb-validator, iban-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: Poland IBAN Generator | ValidoHub
+  description:
+    en: Generate Polish IBAN check digits and inspect generated Polish IBAN/NRB structure locally.

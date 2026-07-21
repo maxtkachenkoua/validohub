@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-iban-generator
+kind: tool
+module: validohub
+country: IE
+category: finance
+status: active
+name:
+  en: "Ireland IBAN Generator"
+summary:
+  en: "Generate IE IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "AIBK93115212345674"
+    actions: [generate, validate, explain]
+related:
+  explicit: [ireland-bank-account-inspector, ireland-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ireland IBAN Generator | ValidoHub"
+  description:
+    en: "Generate IE IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

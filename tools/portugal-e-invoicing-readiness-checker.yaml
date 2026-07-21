@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: PT
+category: tax
+status: active
+name:
+  en: "Portuguese SAF-T / e-Fatura Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-tax-authority-handoff-helper, portugal-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese SAF-T / e-Fatura Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

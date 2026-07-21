@@ -1,0 +1,43 @@
+schemaVersion: 1
+id: italy-iban-generator
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: Italy IBAN Generator
+summary:
+  en: Generate Italian IBAN check digits from CIN/ABI/CAB/account BBAN body, then replay MOD-97 validation locally.
+capabilities: [generate, validate, parse, explain]
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  generate:
+    inputs:
+      - type: text
+        name: country
+        label:
+          en: Country code
+        required: true
+      - type: text
+        name: bban
+        label:
+          en: Italy BBAN / CIN ABI CAB account body
+        required: true
+      - type: text
+        name: iban
+        label:
+          en: Existing IBAN to repair or inspect
+    actions: [generate, validate, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: Italy IBAN Generator | ValidoHub
+  description:
+    en: Generate Italian IBAN check digits and inspect generated Italian IBAN structure locally.

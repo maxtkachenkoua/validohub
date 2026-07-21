@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-invoice-number-helper
+kind: tool
+module: validohub
+country: AT
+category: tax
+status: active
+name:
+  en: "Austrian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 ATU12345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-e-invoicing-readiness-checker, austria-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-bank-statement-parser
+kind: tool
+module: validohub
+country: IE
+category: finance
+status: active
+name:
+  en: "Irish Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1,234.56 EUR; IE29AIBK93115212345674; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-masked-iban-formatter, ireland-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."

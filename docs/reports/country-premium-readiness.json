@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-07-21T13:44:57.936Z",
+  "results": [
+    {
+      "slug": "czechia",
+      "name": "czechia",
+      "iso2": null,
+      "catalogStatus": "available",
+      "completion": 100,
+      "yamlExists": true,
+      "toolCount": 61,
+      "availableWorkbenchCount": 61,
+      "plannedWorkbenchCount": 4,
+      "generatedEnglishToolPages": 61,
+      "checkedGeneratedPages": 427,
+      "algorithms": [
+        "validohub.czechia-suite"
+      ],
+      "runtimes": [
+        "czechia-suite.js"
+      ],
+      "state": "full-premium-ready",
+      "blockers": [],
+      "warnings": [],
+      "factoryRuntime": true
+    }
+  ]
+}

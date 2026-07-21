@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-form-field-auditor
+kind: tool
+module: validohub
+country: DK
+category: developer-tools
+status: active
+name:
+  en: "Danish Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=DK12345674&postal=1050 Copenhagen K&phone=+45 12 34 56 78"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-locale-number-parser, denmark-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-hetu-validator
+kind: tool
+module: validohub
+country: FI
+category: national-identifiers
+status: active
+name:
+  en: "Finnish HETU Validator"
+summary:
+  en: "Validate HETU shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "010185-123B"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-y-tunnus-validator, finland-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish HETU Validator | ValidoHub"
+  description:
+    en: "Validate HETU shape, split date/control/body evidence, and prepare privacy-safe debugging output."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-support-ticket-scrubber
+kind: tool
+module: validohub
+country: BE
+category: privacy
+status: active
+name:
+  en: "Belgian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 85.07.30-033.28, BE68539007547034, Rue de la Loi 16, 1000 Brussels"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-integration-smoke-test-builder, belgium-rrn-niss-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

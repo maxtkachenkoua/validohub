@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-bic-swift-inspector
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish BIC / SWIFT Inspector"
+summary:
+  en: "Validate BIC/SWIFT shape for Spanish institutions, country code, location, and branch evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "CAIXESBBXXX"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Validate BIC/SWIFT shape for Spanish institutions, country code, location, and branch evidence."

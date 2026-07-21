@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-sepa-transfer-helper
+kind: tool
+module: validohub
+country: FI
+category: finance
+status: active
+name:
+  en: "Finnish SEPA Transfer Helper"
+summary:
+  en: "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SEPA input"
+        required: true
+        placeholder:
+          en: "FI2112345600000785\\n1 234,56 EUR\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-sepa-direct-debit-mandate-helper, finland-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish SEPA Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."

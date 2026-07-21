@@ -33,9 +33,18 @@ For Country Hub work, also read:
 - `docs/product/POLAND_COUNTRY_HUB_GOLD_STANDARD.md`
 - `docs/product/COUNTRY_SUITE_GENERATION_GUARDRAILS.md`
 - `docs/product/COUNTRY_SUITE_FACTORY_SPEC.md`
-- `docs/product/FRANCE_PREMIUM_SUITE_SPEC.md`, `docs/product/NETHERLANDS_PREMIUM_SUITE_SPEC.md`, `docs/product/SWITZERLAND_PREMIUM_SUITE_SPEC.md`, and `docs/product/GERMANY_PREMIUM_SUITE_SPEC.md` when generating or expanding a full country suite from scratch
+- `docs/product/PREMIUM_COUNTRY_CONTRACT.md`
+- `docs/product/FRANCE_PREMIUM_SUITE_SPEC.md`
+- `docs/product/NETHERLANDS_PREMIUM_SUITE_SPEC.md`
+- `docs/product/SWITZERLAND_PREMIUM_SUITE_SPEC.md`
+- `docs/product/GERMANY_PREMIUM_SUITE_SPEC.md`
+- `docs/product/ITALY_PREMIUM_SUITE_SPEC.md`
 
-For future full-country suites and standalone country-scoped tools, treat the fixed-regression bar in `docs/product/DEVELOPMENT_RULES.md` and `docs/product/COUNTRY_SUITE_GENERATION_GUARDRAILS.md` as mandatory acceptance criteria. Do not call a country complete if it repeats any previously fixed issue: generic "Run the tool" shell, hybrid shell, oversized tool UI, red success states, missing field breakdown, `[object Object]`, empty cards, icon-only/status-only lower cards, raw sample labels, foreign fallback copy, cross-country related links, or horizontal overflow. Field breakdown is required in every country because it is one of the main debugging surfaces.
+Read the current full-country suite specs when generating or expanding a full country suite from scratch.
+
+For future full-country suites and standalone country-scoped tools, treat `docs/product/PREMIUM_COUNTRY_CONTRACT.md`, the fixed-regression bar in `docs/product/DEVELOPMENT_RULES.md`, and `docs/product/COUNTRY_SUITE_GENERATION_GUARDRAILS.md` as mandatory acceptance criteria. Do not call a country complete if it repeats any previously fixed issue: generic "Run the tool" shell, hybrid shell, oversized tool UI, red success states, missing field breakdown, `[object Object]`, empty cards, icon-only/status-only lower cards, raw sample labels, foreign fallback copy, cross-country related links, mostly white/non-flag country hero, broken/overlapping civic snapshot, or horizontal overflow. Field breakdown is required in every country because it is one of the main debugging surfaces.
+
+Before calling a country full premium, run `npm run audit:country-premium -- --country <slug>` and fix blockers. Tool count for full-country suites is quality-driven: use 60 as a reference density, not a quota. Add more tools when the country has more strong local developer workflows; ship fewer when fewer high-quality offline/browser-only cases exist. Never pad a suite with weak tools just to hit a number.
 
 For generic, non-country tools, the gold standard is not a simple utility page. Read `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md` and treat Poland/Brazil premium workbenches as the visual and functional baseline.
 

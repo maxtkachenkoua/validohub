@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-driving-licence-format-helper
+kind: tool
+module: validohub
+country: FI
+category: documents
+status: active
+name:
+  en: "Finnish Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "010185-123B DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-residence-permit-format-helper, finland-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

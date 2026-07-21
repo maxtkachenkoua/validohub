@@ -1,0 +1,43 @@
+schemaVersion: 1
+id: brazil-iban-generator
+kind: tool
+module: validohub
+country: BR
+category: finance
+status: active
+name:
+  en: Brazil IBAN Generator
+summary:
+  en: Generate Brazilian IBAN check digits from a BBAN/account body, then replay MOD-97 validation locally.
+capabilities: [generate, validate, parse, explain]
+algorithm:
+  algorithmId: validohub.iban-generator
+forms:
+  generate:
+    inputs:
+      - type: text
+        name: country
+        label:
+          en: Country code
+        required: true
+      - type: text
+        name: bban
+        label:
+          en: Brazil BBAN / account body
+        required: true
+      - type: text
+        name: iban
+        label:
+          en: Existing IBAN to repair or inspect
+    actions: [generate, validate, explain]
+related:
+  explicit: [brazil-iban-validator, brazil-pix-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: Brazil IBAN Generator | ValidoHub
+  description:
+    en: Generate Brazilian IBAN check digits and inspect generated Brazilian IBAN structure locally.

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-iban-generator
+kind: tool
+module: validohub
+country: SE
+category: finance
+status: active
+name:
+  en: "Sweden IBAN Generator"
+summary:
+  en: "Generate SE IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "50000000058398257466"
+    actions: [generate, validate, explain]
+related:
+  explicit: [sweden-bank-account-inspector, sweden-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sweden IBAN Generator | ValidoHub"
+  description:
+    en: "Generate SE IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

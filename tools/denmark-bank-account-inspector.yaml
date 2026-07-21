@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-bank-account-inspector
+kind: tool
+module: validohub
+country: DK
+category: finance
+status: active
+name:
+  en: "Danish Domestic Bank Account Inspector"
+summary:
+  en: "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "0040 0440116243"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-bic-swift-inspector, denmark-sepa-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish Domestic Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."

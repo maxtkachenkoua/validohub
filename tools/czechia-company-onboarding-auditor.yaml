@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-company-onboarding-auditor
+kind: tool
+module: validohub
+country: CZ
+category: developer-tools
+status: active
+name:
+  en: "Czech Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for ICO, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ27074358\",\"iban\":\"CZ6508000000192000145399\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-business-register-readiness-helper, czechia-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for ICO, VAT, address, banking, and official registry handoff readiness."

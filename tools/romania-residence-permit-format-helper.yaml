@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-residence-permit-format-helper
+kind: tool
+module: validohub
+country: RO
+category: documents
+status: active
+name:
+  en: "Romanian Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "RO PERMIT 2026 1850101123451"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-health-card-format-helper, romania-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

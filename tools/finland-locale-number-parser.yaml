@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-locale-number-parser
+kind: tool
+module: validohub
+country: FI
+category: localization
+status: active
+name:
+  en: "Finnish Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Finland."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1 234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-calendar-week-helper, finland-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Finland."

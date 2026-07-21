@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: CZ
+category: government
+status: active
+name:
+  en: "Czech Ares / business register Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Ares / business register lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "27074358 CZ27074358 Vaclavske namesti 1, 110 00 Praha 1"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-id-card-format-helper, czechia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech Ares / business register Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Ares / business register lookup or company registry workflow."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-eori-validator
+kind: tool
+module: validohub
+country: NO
+category: national-identifiers
+status: active
+name:
+  en: "Norwegian EORI / Customs Identifier Helper"
+summary:
+  en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EORI input"
+        required: true
+        placeholder:
+          en: "NO915545943"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-d-number-social-insurance-helper, norway-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian EORI / Customs Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."

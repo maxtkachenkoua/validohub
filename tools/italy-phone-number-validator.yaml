@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-phone-number-validator
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian Phone Number Validator"
+summary:
+  en: "Validate Italian phone snippets, detect +39/trunk evidence, and separate numbering-plan shape from subscriber status."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TEL input"
+        required: true
+        placeholder:
+          en: "+39 347 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-postal-code-validator, italy-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate Italian phone snippets, detect +39/trunk evidence, and separate numbering-plan shape from subscriber status."

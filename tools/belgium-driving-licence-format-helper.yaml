@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-driving-licence-format-helper
+kind: tool
+module: validohub
+country: BE
+category: documents
+status: active
+name:
+  en: "Belgian Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "85.07.30-033.28 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-residence-permit-format-helper, belgium-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

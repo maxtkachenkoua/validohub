@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-api-payload-auditor
+kind: tool
+module: validohub
+country: AT
+category: developer-tools
+status: active
+name:
+  en: "Austrian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-form-field-auditor, austria-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

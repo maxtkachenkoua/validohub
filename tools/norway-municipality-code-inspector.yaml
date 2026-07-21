@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-municipality-code-inspector
+kind: tool
+module: validohub
+country: NO
+category: address
+status: active
+name:
+  en: "Norwegian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Karl Johans gate 1, 0154 Oslo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-phone-number-validator, norway-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

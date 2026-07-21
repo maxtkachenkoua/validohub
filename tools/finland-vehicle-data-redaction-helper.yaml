@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: FI
+category: transport
+status: active
+name:
+  en: "Finnish Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "ABC-123 WVWZZZ1JZXW000001 010185-123B"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-customs-declaration-helper, finland-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

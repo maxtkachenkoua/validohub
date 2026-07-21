@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: tax
+slug: tax
+name:
+  en: Tax
+summary:
+  en: Tools for VAT, invoicing, tax authority handoff, returns, and compliance fixtures.
+order: 100
+seo:
+  title:
+    en: Tax Tools
+  description:
+    en: Validate and inspect VAT, invoicing, tax return, and authority handoff formats.

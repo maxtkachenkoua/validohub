@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-pago-pa-payment-notice-helper
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian pagoPA Notice Helper"
+summary:
+  en: "Inspect pagoPA notice snippets for IUV/codice avviso digits, amount, due date, and payment-boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PA input"
+        required: true
+        placeholder:
+          en: "codice avviso 302000100000019421 importo 64,00 EUR scadenza 12/07/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian pagoPA Notice Helper | ValidoHub"
+  description:
+    en: "Inspect pagoPA notice snippets for IUV/codice avviso digits, amount, due date, and payment-boundary notes."

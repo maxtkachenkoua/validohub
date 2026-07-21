@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-mrz-passport-parser
+kind: tool
+module: validohub
+country: PT
+category: national-identifiers
+status: active
+name:
+  en: "Portuguese MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<PRTSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567PRT8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-iban-validator, portugal-iban-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

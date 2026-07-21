@@ -1,1 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" role="img"><title>Switzerland outline</title><path fill="#f8fafc" stroke="#dc2626" stroke-width="8" d="M58 122l28-38 40 10 28-42 38 24 44-8 18 36 38 22-30 32 10 44-54 10-34 30-38-24-50 6-14-42-42-18z"/><path fill="#dc2626" d="M126 78h68v68h-68z"/><path fill="#fff" d="M151 91h18v42h-18z"/><path fill="#fff" d="M139 103h42v18h-42z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" role="img" aria-labelledby="title desc">
+  <title id="title">Switzerland country outline</title>
+  <desc id="desc">Switzerland country outline centered on canvas, derived from Natural Earth public-domain admin-0 geometry.</desc>
+  <rect width="360" height="260" rx="24" fill="#f8fafc"/>
+  <defs>
+    <linearGradient id="switzerland-land" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fae1e1"/>
+      <stop offset="0.55" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#bcbec3"/>
+    </linearGradient>
+    <filter id="switzerland-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#9e1b1b" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g transform="translate(88.954, 43.364) scale(0.433534)" fill="url(#switzerland-land)" stroke="#dc2626" stroke-width="3.921" stroke-linejoin="round" filter="url(#switzerland-shadow)">
+    <path id="ch" d="M423.787,402.82l-3.771,4.011l0.078,0.405l1.547-0.483l1.393,1.937l2.352-0.83l1.625,1.263l0.667-0.38l2.005-3.146l-0.511-0.484l-1.979-0.051l-0.959-1.963L423.787,402.82L423.787,402.82z"/>
+  </g>
+  <g fill="none" stroke="#111827" stroke-width="1.1" opacity="0.18">
+    <path d="M94 112 C130 98 172 104 214 94 C238 89 260 98 279 116"/>
+    <path d="M112 145 C148 132 188 136 224 126 C242 121 260 126 274 139"/>
+  </g>
+  <circle cx="180" cy="132" r="4" fill="#9e1b1b"/>
+  <text x="181" y="238" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="760" fill="#475569">Switzerland</text>
+</svg>

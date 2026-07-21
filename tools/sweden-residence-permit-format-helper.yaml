@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-residence-permit-format-helper
+kind: tool
+module: validohub
+country: SE
+category: documents
+status: active
+name:
+  en: "Swedish Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "SE PERMIT 2026 850101-1236"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-health-card-format-helper, sweden-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

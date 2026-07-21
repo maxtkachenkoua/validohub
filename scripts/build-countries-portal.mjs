@@ -8,6 +8,7 @@ import {
   renderCountryIdentityFacts,
   renderCountryLocaleFacts,
   renderCountryTechnicalFacts,
+  renderCountryCivicSnapshot,
   renderCountryQuickCopyBar,
   renderCountryWorkbenchCatalog,
   renderCountryFormattingExamples,
@@ -121,101 +122,99 @@ function renderHero(countryName, flag, summary) {
   `;
 }
 
+export async function renderCountryPage(route, routeRegistry, assetsManifest, options = {}) {
+  const layoutTemplate = options.layoutTemplate || await readFile(resolve(projectRoot, 'templates', 'layout.html'), 'utf8');
+  const countryTemplate = options.countryTemplate || await readFile(resolve(projectRoot, 'templates', 'country.html'), 'utf8');
+  const discoveryData = options.discoveryData || JSON.parse(await readFile(resolve(projectRoot, 'knowledge', 'compiled-discovery.json'), 'utf8'));
+
+  const data = route.metadata;
+  const slug = data.id;
+  const model = normalizeCountryData(data);
+  const countryDiscovery = discoveryData.countries[slug] || { relatedCountries: [], relatedResources: { authorities: [], identifiers: [], payments: [], standards: [], workbenches: [] } };
+
+  const sections = [];
+  sections.push(renderCountryCivicSnapshot(model));
+  sections.push(renderCountryQuickCopyBar(model));
+  sections.push(renderCountryWorkbenchCatalog(model, routeRegistry));
+  sections.push(renderCountryIdentifiers(model, routeRegistry));
+  sections.push(renderCountryValidators(model, routeRegistry));
+  sections.push(renderCountryTaxSystem(model, data.hub));
+  sections.push(renderCountryBankingSystem(model, routeRegistry));
+  sections.push(renderCountryPaymentSystems(model, routeRegistry));
+  sections.push(renderCountryOfficialResources(model));
+  sections.push(renderCountryIdentityFacts(model));
+  sections.push(renderCountryLocaleFacts(model));
+  sections.push(renderCountryTechnicalFacts(model));
+  sections.push(await renderCountryAddressFormat(model));
+  sections.push(renderCountryPhoneFormats(model));
+  sections.push(renderCountryVehicleRegistration(model, data.hub));
+  sections.push(renderCountryAdministrativeDivisions(model, data.hub));
+  sections.push(renderCountryIntegrationChecklist(model));
+  sections.push(renderCountryRoadmap(model));
+  sections.push(renderCountryKnowledgeGraph(model, countryDiscovery, routeRegistry));
+  sections.push(renderCountryRelatedCountries(model, countryDiscovery, routeRegistry));
+  sections.push(renderCountryHighlights(model, data.hub));
+  sections.push(renderCountryDeveloperNotes(model, data.hub));
+  sections.push(renderCountryCommonMistakes(model, data.hub));
+  sections.push(renderCountryDeveloperExamples(model, data.hub));
+  sections.push(renderCountryEcosystem(model, data.hub));
+  sections.push(renderCountryLocalizationNotes(model, data.hub));
+
+  const bodyHtml = sections.filter(Boolean).join('\n');
+  const countryContent = countryTemplate.replaceAll('{{ COUNTRY_BODY }}', () => bodyHtml);
+
+  const headHtml = `
+    <title>${escapeHtml(data.catalog.name)} Developer Tools & Identifiers | ValidoHub</title>
+    <meta name="description" content="${escapeHtml(data.catalog.summary)}">
+    <link rel="canonical" href="https://validohub.com/en/${slug}/">
+    <link rel="alternate" hreflang="en" href="https://validohub.com/en/${slug}/">
+    <link rel="stylesheet" href="${assetsManifest.css}">
+  `;
+
+  const breadcrumbsHtml = renderBreadcrumbs(data.catalog.name);
+  const heroHtml = await renderCountryVisualHero(model, routeRegistry);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `${escapeHtml(data.catalog.name)} Developer Tools & Identifiers | ValidoHub`,
+    "description": data.catalog.summary,
+    "url": `https://validohub.com/en/${slug}/`,
+    "inLanguage": "en"
+  };
+  const jsonLdScript = `<script type="application/ld+json">${escapeHtmlJson(JSON.stringify(jsonLd))}</script>`;
+
+  const assembledHtml = layoutTemplate
+    .replaceAll('{{ HEAD }}', () => headHtml)
+    .replaceAll('{{ HEADER }}', () => renderHeader())
+    .replaceAll('{{ BREADCRUMBS }}', () => breadcrumbsHtml)
+    .replaceAll('{{ HERO }}', () => heroHtml)
+    .replaceAll('{{ CONTENT }}', () => countryContent)
+    .replaceAll('{{ FOOTER }}', () => renderFooter())
+    .replaceAll('{{ JSON_LD }}', () => jsonLdScript)
+    .replaceAll('{{ SCRIPTS }}', () => `<script src="${assetsManifest.js}" defer></script>`);
+
+  if (assembledHtml.includes('{{')) {
+    throw new Error(`FATAL: Unresolved template slot marker found in generated country page: ${slug}`);
+  }
+
+  const outputFilePath = resolve(siteRoot, locale, slug, 'index.html');
+  await mkdir(dirname(outputFilePath), { recursive: true });
+  await writeFile(outputFilePath, assembledHtml, 'utf8');
+  return outputFilePath;
+}
+
 export async function compileCountriesPortal(routeRegistry, assetsManifest) {
   console.log('--- Pass 2: Rendering Country Pages & Portal ---');
 
   const layoutTemplate = await readFile(resolve(projectRoot, 'templates', 'layout.html'), 'utf8');
   const countryTemplate = await readFile(resolve(projectRoot, 'templates', 'country.html'), 'utf8');
-
-  // Discover all registered country routes
   const countryRoutes = routeRegistry.getAll().filter(r => r.type === 'country');
   countryRoutes.sort((a, b) => a.path.localeCompare(b.path));
-
   const discoveryData = JSON.parse(await readFile(resolve(projectRoot, 'knowledge', 'compiled-discovery.json'), 'utf8'));
 
-  // 1. Compile Country Hub pages
   for (const route of countryRoutes) {
-    const data = route.metadata;
-    const slug = data.id;
-    const model = normalizeCountryData(data);
-    const countryDiscovery = discoveryData.countries[slug] || { relatedCountries: [], relatedResources: { authorities: [], identifiers: [], payments: [], standards: [], workbenches: [] } };
-
-    // Pre-render country portal sections in a product-first order: actions, tools, then reference material.
-    const sections = [];
-    sections.push(renderCountryQuickCopyBar(model));
-    sections.push(renderCountryWorkbenchCatalog(model, routeRegistry));
-    sections.push(renderCountryIdentifiers(model, routeRegistry));
-    sections.push(renderCountryValidators(model, routeRegistry));
-    sections.push(renderCountryTaxSystem(model, data.hub));
-    sections.push(renderCountryBankingSystem(model, routeRegistry));
-    sections.push(renderCountryPaymentSystems(model, routeRegistry));
-    sections.push(renderCountryOfficialResources(model));
-    sections.push(renderCountryIdentityFacts(model));
-    sections.push(renderCountryLocaleFacts(model));
-    sections.push(renderCountryTechnicalFacts(model));
-    sections.push(await renderCountryAddressFormat(model));
-    sections.push(renderCountryPhoneFormats(model));
-    sections.push(renderCountryVehicleRegistration(model, data.hub));
-    sections.push(renderCountryAdministrativeDivisions(model, data.hub));
-    sections.push(renderCountryIntegrationChecklist(model));
-    sections.push(renderCountryRoadmap(model));
-    sections.push(renderCountryKnowledgeGraph(model, countryDiscovery, routeRegistry));
-    sections.push(renderCountryRelatedCountries(model, countryDiscovery, routeRegistry));
-    sections.push(renderCountryHighlights(model, data.hub));
-    sections.push(renderCountryDeveloperNotes(model, data.hub));
-    sections.push(renderCountryCommonMistakes(model, data.hub));
-    sections.push(renderCountryDeveloperExamples(model, data.hub));
-    sections.push(renderCountryEcosystem(model, data.hub));
-    sections.push(renderCountryLocalizationNotes(model, data.hub));
-
-    const bodyHtml = sections.filter(Boolean).join('\n');
-
-    // Populate Country Content template
-    let countryContent = countryTemplate.replaceAll('{{ COUNTRY_BODY }}', () => bodyHtml);
-
-    // Build head HTML
-    const headHtml = `
-      <title>${escapeHtml(data.catalog.name)} Developer Tools & Identifiers | ValidoHub</title>
-      <meta name="description" content="${escapeHtml(data.catalog.summary)}">
-      <link rel="canonical" href="https://validohub.com/en/${slug}/">
-      <link rel="alternate" hreflang="en" href="https://validohub.com/en/${slug}/">
-      <link rel="stylesheet" href="${assetsManifest.css}">
-    `;
-
-    const breadcrumbsHtml = renderBreadcrumbs(data.catalog.name);
-    const heroHtml = await renderCountryVisualHero(model, routeRegistry);
-
-    // Generate JSON-LD payload (CollectionPage)
-    const jsonLd = {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": `${escapeHtml(data.catalog.name)} Developer Tools & Identifiers | ValidoHub`,
-      "description": data.catalog.summary,
-      "url": `https://validohub.com/en/${slug}/`,
-      "inLanguage": "en"
-    };
-    const jsonLdScript = `<script type="application/ld+json">${escapeHtmlJson(JSON.stringify(jsonLd))}</script>`;
-
-    // Assemble layout shell
-    let assembledHtml = layoutTemplate
-      .replaceAll('{{ HEAD }}', () => headHtml)
-      .replaceAll('{{ HEADER }}', () => renderHeader())
-      .replaceAll('{{ BREADCRUMBS }}', () => breadcrumbsHtml)
-      .replaceAll('{{ HERO }}', () => heroHtml)
-      .replaceAll('{{ CONTENT }}', () => countryContent)
-      .replaceAll('{{ FOOTER }}', () => renderFooter())
-      .replaceAll('{{ JSON_LD }}', () => jsonLdScript)
-      .replaceAll('{{ SCRIPTS }}', () => `<script src="${assetsManifest.js}" defer></script>`);
-
-    // Assert that every template slot marker is fully resolved
-    if (assembledHtml.includes('{{')) {
-      throw new Error(`FATAL: Unresolved template slot marker found in generated country page: ${slug}`);
-    }
-
-    const outputFilePath = resolve(siteRoot, locale, slug, 'index.html');
-    await mkdir(dirname(outputFilePath), { recursive: true });
-    await writeFile(outputFilePath, assembledHtml, 'utf8');
-    console.log(`✓ Generated: /en/${slug}/`);
+    await renderCountryPage(route, routeRegistry, assetsManifest, { layoutTemplate, countryTemplate, discoveryData });
+    console.log(`✓ Generated: /en/${route.metadata.id}/`);
   }
 
   // 2. Compile Countries Portal Page

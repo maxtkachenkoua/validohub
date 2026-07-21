@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-municipality-code-inspector
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Municipality Code Inspector"
+summary:
+  en: "Inspect INE-style municipality snippets, province prefixes, and local geography handoff boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUN input"
+        required: true
+        placeholder:
+          en: "28079 Madrid"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect INE-style municipality snippets, province prefixes, and local geography handoff boundaries."

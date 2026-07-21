@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-csv-locale-normalizer
+kind: tool
+module: validohub
+country: CZ
+category: developer-tools
+status: active
+name:
+  en: "Czech CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Czechia decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1 234,56 CZK;21.07.2026;CZ27074358"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-slug-normalizer, czechia-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Czechia decimal, date, postal, phone, tax, and banking fields."

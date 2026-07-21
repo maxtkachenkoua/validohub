@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-riba-payment-helper
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian Ri.Ba Payment Helper"
+summary:
+  en: "Audit Ri.Ba payment snippets for debtor, due date, bank coordinates, amount, and reconciliation evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RIBA input"
+        required: true
+        placeholder:
+          en: "Ri.Ba scadenza 31/08/2026 debitore Example Srl ABI 05428 CAB 11101 importo 950,00 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Ri.Ba Payment Helper | ValidoHub"
+  description:
+    en: "Audit Ri.Ba payment snippets for debtor, due date, bank coordinates, amount, and reconciliation evidence."

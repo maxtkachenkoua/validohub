@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: DK
+category: tax
+status: active
+name:
+  en: "Danish VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "Moms / VAT 20% base 1.234,56 DKK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-vat-return-field-helper, denmark-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

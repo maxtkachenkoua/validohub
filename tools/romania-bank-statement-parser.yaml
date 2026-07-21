@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-bank-statement-parser
+kind: tool
+module: validohub
+country: RO
+category: finance
+status: active
+name:
+  en: "Romanian Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "21.07.2026; 1.234,56 RON; RO49AAAA1B31007593840000; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-masked-iban-formatter, romania-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."

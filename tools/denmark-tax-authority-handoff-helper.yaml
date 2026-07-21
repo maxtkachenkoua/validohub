@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: DK
+category: tax
+status: active
+name:
+  en: "Danish Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "DK12345674 21.07.2026 1.234,56 DKK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-accounting-audit-trail-checklist-generator, denmark-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

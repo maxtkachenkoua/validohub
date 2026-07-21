@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-bank-account-inspector
+kind: tool
+module: validohub
+country: AT
+category: finance
+status: active
+name:
+  en: "Austrian Domestic Bank Account Inspector"
+summary:
+  en: "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "19043 00234573201"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-bic-swift-inspector, austria-sepa-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Domestic Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."

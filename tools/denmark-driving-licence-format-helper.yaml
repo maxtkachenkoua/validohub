@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-driving-licence-format-helper
+kind: tool
+module: validohub
+country: DK
+category: documents
+status: active
+name:
+  en: "Danish Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "010185-1234 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-residence-permit-format-helper, denmark-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

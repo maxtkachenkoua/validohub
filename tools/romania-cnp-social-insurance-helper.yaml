@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-cnp-social-insurance-helper
+kind: tool
+module: validohub
+country: RO
+category: national-identifiers
+status: active
+name:
+  en: "Romanian CNP Helper"
+summary:
+  en: "Split CNP evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1850101123451"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-company-onboarding-auditor, romania-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian CNP Helper | ValidoHub"
+  description:
+    en: "Split CNP evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

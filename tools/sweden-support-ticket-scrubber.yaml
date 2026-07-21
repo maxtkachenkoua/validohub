@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-support-ticket-scrubber
+kind: tool
+module: validohub
+country: SE
+category: privacy
+status: active
+name:
+  en: "Swedish Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 850101-1236, SE4550000000058398257466, Drottninggatan 1, 111 20 Stockholm"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-integration-smoke-test-builder, sweden-personnummer-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

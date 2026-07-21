@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-address-normalizer
+kind: tool
+module: validohub
+country: BE
+category: address
+status: active
+name:
+  en: "Belgian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Rue de la Loi 16, 1000 Brussels"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-address-transliteration-normalizer, belgium-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

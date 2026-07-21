@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-invoice-number-helper
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish Invoice Number Helper"
+summary:
+  en: "Check Spanish invoice-number snippets, series/year patterns, NIF/VAT evidence, and duplicate-risk notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "Factura A-2026-000123 B12345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Invoice Number Helper | ValidoHub"
+  description:
+    en: "Check Spanish invoice-number snippets, series/year patterns, NIF/VAT evidence, and duplicate-risk notes."

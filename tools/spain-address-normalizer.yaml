@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-address-normalizer
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Address Normalizer"
+summary:
+  en: "Normalize Spanish address snippets, street types, postal codes, municipality, province, and local delivery evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Calle Mayor 1, 3B, 28013 Madrid"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize Spanish address snippets, street types, postal codes, municipality, province, and local delivery evidence."

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-eur-decimal-currency-formatter
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish EUR Decimal Currency Formatter"
+summary:
+  en: "Normalize Spanish EUR amounts, comma decimals, dot thousands, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EUR input"
+        required: true
+        placeholder:
+          en: "1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish EUR Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize Spanish EUR amounts, comma decimals, dot thousands, and API-safe numeric previews."

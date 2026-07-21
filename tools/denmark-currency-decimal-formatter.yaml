@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-currency-decimal-formatter
+kind: tool
+module: validohub
+country: DK
+category: finance
+status: active
+name:
+  en: "Danish DKK Decimal Currency Formatter"
+summary:
+  en: "Normalize DKK amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1.234,56 DKK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-vat-rate-sanity-helper, denmark-vat-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish DKK Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize DKK amount strings, decimal separators, grouping, and API-safe numeric previews."

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Personal Data Fixture Helper"
+summary:
+  en: "Generate and inspect clearly fake Spanish-style personal fixtures with ID, address, phone, and privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "Madrid 00000000T +34 612345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect clearly fake Spanish-style personal fixtures with ID, address, phone, and privacy notes."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-vat-id-validator
+kind: tool
+module: validohub
+country: RO
+category: national-identifiers
+status: active
+name:
+  en: "Romanian VAT ID / RO Prefix Validator"
+summary:
+  en: "Normalize RO VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "RO12345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-eori-validator, romania-cnp-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian VAT ID / RO Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize RO VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

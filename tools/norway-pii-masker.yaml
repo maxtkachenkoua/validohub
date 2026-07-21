@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-pii-masker
+kind: tool
+module: validohub
+country: NO
+category: privacy
+status: active
+name:
+  en: "Norwegian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "01018500120 +47 912 34 567 NO9386011117947"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-personal-data-fixture-generator, norway-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

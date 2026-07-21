@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: DK
+category: localization
+status: active
+name:
+  en: "Danish Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "CPR input, postnummer input, amount 1.234,56 DKK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-support-ticket-scrubber, denmark-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

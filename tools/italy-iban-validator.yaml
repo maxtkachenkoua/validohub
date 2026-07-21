@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-iban-validator
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian IBAN Validator"
+summary:
+  en: "Validate Italian IBAN numbers, expose CIN, ABI, CAB, account slices, and explain official bank-directory boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "IT60X0542811101000000123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-abi-cab-bank-code-inspector, italy-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian IBAN Validator | ValidoHub"
+  description:
+    en: "Validate Italian IBAN numbers, expose CIN, ABI, CAB, account slices, and explain official bank-directory boundaries."

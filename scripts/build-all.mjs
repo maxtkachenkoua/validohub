@@ -121,19 +121,32 @@ async function compileAssets() {
 const TOOL_SCRIPT_BY_ALGORITHM = {
   'validohub.pesel': 'pesel.js',
   'validohub.brazil-pix': 'pix.js',
-  'validohub.brazil-suite': 'brazil-suite.js',
+  'validohub.brazil-suite': ['country-legacy-rich-layer.js', 'brazil-suite.js'],
   'validohub.spain-id': 'spain-id.js',
-  'validohub.poland-suite': 'poland-suite.js',
+  'validohub.spain-suite': ['country-suite-factory.js', 'spain-suite.js'],
+  'validohub.poland-suite': ['country-legacy-rich-layer.js', 'poland-suite.js'],
   'validohub.poland-expansion': 'poland-expansion.js',
   'validohub.poland-baseline': 'poland-baseline.js',
-  'validohub.france-suite': 'france-suite.js',
-  'validohub.netherlands-suite': 'netherlands-suite.js',
+  'validohub.france-suite': ['country-legacy-rich-layer.js', 'france-suite.js'],
+  'validohub.netherlands-suite': ['country-legacy-rich-layer.js', 'netherlands-suite.js'],
   'validohub.switzerland-suite': ['country-suite-factory.js', 'switzerland-suite.js'],
   'validohub.germany-suite': ['country-suite-factory.js', 'germany-suite.js'],
+  'validohub.italy-suite': ['country-suite-factory.js', 'italy-suite.js'],
+  'validohub.portugal-suite': ['country-suite-factory.js', 'portugal-suite.js'],
+  'validohub.austria-suite': ['country-suite-factory.js', 'austria-suite.js'],
+  'validohub.belgium-suite': ['country-suite-factory.js', 'belgium-suite.js'],
+  'validohub.ireland-suite': ['country-suite-factory.js', 'ireland-suite.js'],
+  'validohub.czechia-suite': ['country-suite-factory.js', 'czechia-suite.js'],
+  'validohub.sweden-suite': ['country-suite-factory.js', 'sweden-suite.js'],
+  'validohub.norway-suite': ['country-suite-factory.js', 'norway-suite.js'],
+  'validohub.denmark-suite': ['country-suite-factory.js', 'denmark-suite.js'],
+  'validohub.finland-suite': ['country-suite-factory.js', 'finland-suite.js'],
+  'validohub.romania-suite': ['country-suite-factory.js', 'romania-suite.js'],
   'validohub.case-converter': 'generic-suite.js',
   'validohub.html-decoder': 'generic-suite.js',
   'validohub.html-encoder': 'generic-suite.js',
   'validohub.iban': 'generic-suite.js',
+  'validohub.iban-generator': 'generic-suite.js',
   'validohub.md5': 'generic-suite.js',
   'validohub.regex-tester': 'generic-suite.js',
   'validohub.sha1': 'generic-suite.js',
@@ -145,7 +158,20 @@ const TOOL_SCRIPT_BY_ALGORITHM = {
 
 const FACTORY_TOOL_ALGORITHMS = new Set([
   'validohub.switzerland-suite',
-  'validohub.germany-suite'
+  'validohub.spain-suite',
+  'validohub.germany-suite',
+  'validohub.italy-suite',
+  'validohub.romania-suite',
+  'validohub.portugal-suite',
+  'validohub.austria-suite',
+  'validohub.belgium-suite',
+  'validohub.ireland-suite',
+  'validohub.czechia-suite',
+  'validohub.sweden-suite',
+  'validohub.norway-suite',
+  'validohub.denmark-suite',
+  'validohub.finland-suite',
+  'validohub.romania-suite'
 ]);
 
 const WORKBENCH_SCRIPT_VERSION = 'country-premium-20260719';
@@ -297,6 +323,21 @@ const GENERIC_UTILITY_WORKBENCHES = {
       actions: ['validate', 'parse', 'explain']
     }]
   },
+  'iban-generator': {
+    id: 'iban-generator',
+    algorithmId: 'validohub.iban-generator',
+    capability: 'generate',
+    forms: [{
+      capability: 'generate',
+      title: 'Generate IBAN',
+      fields: [
+        { type: 'text', name: 'country', label: 'Country code', value: 'DE', required: true },
+        { type: 'text', name: 'bban', label: 'BBAN / account body', value: '370400440532013000', required: true },
+        { type: 'text', name: 'iban', label: 'Existing IBAN to repair or inspect' }
+      ],
+      actions: ['generate', 'validate', 'explain']
+    }]
+  },
   'brazil-iban-validator': {
     id: 'brazil-iban-validator',
     algorithmId: 'validohub.iban',
@@ -402,6 +443,38 @@ const GENERIC_UTILITY_WORKBENCHES = {
   }
 };
 
+const COUNTRY_IBAN_GENERATOR_PROFILES = {
+  brazil: { code: 'BR', name: 'Brazil', bban: '00000000000010932840814P2' },
+  france: { code: 'FR', name: 'France', bban: '1420041010050500013M02606' },
+  germany: { code: 'DE', name: 'Germany', bban: '370400440532013000' },
+  italy: { code: 'IT', name: 'Italy', bban: 'X0542811101000000123456' },
+  netherlands: { code: 'NL', name: 'Netherlands', bban: 'ABNA0417164300' },
+  poland: { code: 'PL', name: 'Poland', bban: '61109010140000071219812874'.slice(2) },
+  spain: { code: 'ES', name: 'Spain', bban: '21000418450200051332' },
+  switzerland: { code: 'CH', name: 'Switzerland', bban: '9300762011623852957' }
+};
+
+function countryIbanGeneratorWorkbench(slug, countrySlug) {
+  if (!/-iban-generator$/.test(slug || '')) return null;
+  const profile = COUNTRY_IBAN_GENERATOR_PROFILES[countrySlug || ''];
+  if (!profile) return null;
+  return {
+    id: slug,
+    algorithmId: 'validohub.iban-generator',
+    capability: 'generate',
+    forms: [{
+      capability: 'generate',
+      title: 'Generate ' + profile.name + ' IBAN',
+      fields: [
+        { type: 'text', name: 'country', label: 'Country code', value: profile.code, required: true },
+        { type: 'text', name: 'bban', label: profile.name + ' BBAN / account body', value: profile.bban, required: true },
+        { type: 'text', name: 'iban', label: 'Existing IBAN to repair or inspect' }
+      ],
+      actions: ['generate', 'validate', 'explain']
+    }]
+  };
+}
+
 function renderGenericField(field) {
   const required = field.required ? ' required="required"' : '';
   if (field.type === 'textarea') {
@@ -484,8 +557,11 @@ function renderGenericUtilityWorkbench(config) {
 function ensureGenericUtilityWorkbench(content, route) {
   const path = String(route.path || '');
   const slug = path.match(/^\/en\/tools\/([^/]+)\//)?.[1] || path.match(/^\/en\/[^/]+\/([^/]+)\//)?.[1];
-  const config = slug ? GENERIC_UTILITY_WORKBENCHES[slug] : null;
+  const countrySlug = path.match(/^\/en\/([^/]+)\/[^/]+\//)?.[1] || '';
   const algorithmMatch = content.match(/data-algorithm-id="([^"]+)"/);
+  const config = slug
+    ? GENERIC_UTILITY_WORKBENCHES[slug] || (algorithmMatch && algorithmMatch[1] === 'validohub.iban-generator' ? countryIbanGeneratorWorkbench(slug, countrySlug) || GENERIC_UTILITY_WORKBENCHES['iban-generator'] : null)
+    : null;
   if (algorithmMatch && FACTORY_TOOL_ALGORITHMS.has(algorithmMatch[1])) return content;
   if (!config) return content;
   const workbench = renderGenericUtilityWorkbench(config);
@@ -521,6 +597,42 @@ async function getConfiguredLocales() {
     .map(item => item.trim())
     .filter(Boolean);
   return values.length > 0 ? values : ['en'];
+}
+
+async function pruneGeneratedLocaleDirectories(configuredLocales) {
+  if (!(await pathExists(siteRoot))) return;
+  const keep = new Set(configuredLocales);
+  const localeDirPattern = /^[a-z]{2}(?:-[A-Z]{2})?$/;
+  const entries = await readdir(siteRoot, { withFileTypes: true });
+  const pruned = [];
+
+  for (const entry of entries) {
+    if (!entry.isDirectory() || !localeDirPattern.test(entry.name) || keep.has(entry.name)) continue;
+    await rm(resolve(siteRoot, entry.name), { recursive: true, force: true });
+    pruned.push(entry.name);
+  }
+
+  if (pruned.length) {
+    console.log('✓ Pruned stale generated locale directories: ' + pruned.join(', '));
+  } else {
+    console.log('✓ No stale generated locale directories found');
+  }
+}
+
+async function validateConfiguredLocaleSwitcher(configuredLocales) {
+  const bundleSource = await readFile(resolve(projectRoot, 'assets', 'js', 'bundle.js'), 'utf8');
+  const blockMatch = bundleSource.match(/const supportedLocales = \[([\s\S]*?)\];/);
+  if (!blockMatch) {
+    throw new Error('FATAL: Global language switcher supportedLocales block not found in assets/js/bundle.js');
+  }
+
+  const switcherLocales = Array.from(blockMatch[1].matchAll(/code:\s*['"]([^'"]+)['"]/g)).map(match => match[1]);
+  const configured = [...configuredLocales];
+  const extra = switcherLocales.filter(localeCode => !configured.includes(localeCode));
+  const missing = configured.filter(localeCode => !switcherLocales.includes(localeCode));
+  if (extra.length || missing.length) {
+    throw new Error('FATAL: Language switcher locales must match site.yaml. Extra: ' + (extra.join(', ') || 'none') + '; missing: ' + (missing.join(', ') || 'none'));
+  }
 }
 
 function splitRouteLocale(pathname) {
@@ -1067,12 +1179,16 @@ function humanizeDocumentationSections(content, route) {
 }
 
 function keepCountrySuiteRelatedLinksLocal(content, route) {
-  const path = String(route.path || '');
-  const match = path.match(/^\/en\/(france|netherlands|switzerland)\/\1-[^/]+\/?$/);
+  const routePath = String(route.path || '');
+  const match = routePath.match(/^\/en\/([^/]+)\/([^/]+)\/?$/);
   if (!match) return content;
+  const countrySlug = match[1];
+  const toolSlug = match[2];
+  const isCountryTool = toolSlug.startsWith(`${countrySlug}-`) || (countrySlug === 'germany' && toolSlug.startsWith('german-'));
+  if (!isCountryTool) return content;
   if (!content.includes('class="related-section"')) return content;
-  const normalizedPath = path.endsWith('/') ? path : `${path}/`;
-  const allowedPrefix = `/en/${match[1]}/`;
+  const normalizedPath = routePath.endsWith('/') ? routePath : `${routePath}/`;
+  const allowedPrefix = `/en/${countrySlug}/`;
 
   return content.replace(/<section class="related-section">([\s\S]*?)<\/section>/g, (section) => {
     return section.replace(/<a href="([^"]+)" class="link-card">[\s\S]*?<\/a>/g, (card, href) => {
@@ -1222,11 +1338,14 @@ async function pruneCountrySuiteRelatedLinksToCountry() {
   let updated = 0;
   for (const filePath of htmlFiles) {
     const normalizedFilePath = filePath.replace(/\\/g, '/');
-    const match = normalizedFilePath.match(/\/generated\/validohub\/([^/]+)\/(france|netherlands|switzerland)\/\2-[^/]+\/index\.html$/);
+    const match = normalizedFilePath.match(/\/generated\/validohub\/([^/]+)\/([^/]+)\/([^/]+)\/index\.html$/);
     if (!match) continue;
 
     const localeCode = match[1];
     const countrySlug = match[2];
+    const toolSlug = match[3];
+    const isCountryTool = toolSlug.startsWith(`${countrySlug}-`) || (countrySlug === 'germany' && toolSlug.startsWith('german-'));
+    if (!isCountryTool) continue;
     const relativePagePath = '/' + normalizedFilePath
       .slice(normalizedFilePath.indexOf('/generated/validohub/') + '/generated/validohub/'.length)
       .replace(/index\.html$/, '');
@@ -1262,15 +1381,27 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
   const ALGORITHM_TO_SCRIPT = {
     'validohub.pesel': 'pesel.js',
     'validohub.brazil-pix': 'pix.js',
-    'validohub.brazil-suite': 'brazil-suite.js',
+    'validohub.brazil-suite': ['country-legacy-rich-layer.js', 'brazil-suite.js'],
     'validohub.spain-id': 'spain-id.js',
-    'validohub.poland-suite': 'poland-suite.js',
+    'validohub.spain-suite': ['country-suite-factory.js', 'spain-suite.js'],
+    'validohub.poland-suite': ['country-legacy-rich-layer.js', 'poland-suite.js'],
     'validohub.poland-expansion': 'poland-expansion.js',
     'validohub.poland-baseline': 'poland-baseline.js',
-    'validohub.france-suite': 'france-suite.js',
-    'validohub.netherlands-suite': 'netherlands-suite.js',
+    'validohub.france-suite': ['country-legacy-rich-layer.js', 'france-suite.js'],
+    'validohub.netherlands-suite': ['country-legacy-rich-layer.js', 'netherlands-suite.js'],
     'validohub.switzerland-suite': ['country-suite-factory.js', 'switzerland-suite.js'],
     'validohub.germany-suite': ['country-suite-factory.js', 'germany-suite.js'],
+    'validohub.italy-suite': ['country-suite-factory.js', 'italy-suite.js'],
+    'validohub.portugal-suite': ['country-suite-factory.js', 'portugal-suite.js'],
+    'validohub.austria-suite': ['country-suite-factory.js', 'austria-suite.js'],
+    'validohub.belgium-suite': ['country-suite-factory.js', 'belgium-suite.js'],
+    'validohub.ireland-suite': ['country-suite-factory.js', 'ireland-suite.js'],
+    'validohub.czechia-suite': ['country-suite-factory.js', 'czechia-suite.js'],
+    'validohub.sweden-suite': ['country-suite-factory.js', 'sweden-suite.js'],
+    'validohub.norway-suite': ['country-suite-factory.js', 'norway-suite.js'],
+    'validohub.denmark-suite': ['country-suite-factory.js', 'denmark-suite.js'],
+    'validohub.finland-suite': ['country-suite-factory.js', 'finland-suite.js'],
+    'validohub.romania-suite': ['country-suite-factory.js', 'romania-suite.js'],
     'validohub.base64-decoder': 'base64.js',
     'validohub.base64': 'base64.js',
     'validohub.json-formatter': 'json.js',
@@ -1282,6 +1413,7 @@ async function validateSiteOutput(routeRegistry, assetsManifest) {
     'validohub.html-decoder': 'generic-suite.js',
     'validohub.html-encoder': 'generic-suite.js',
     'validohub.iban': 'generic-suite.js',
+    'validohub.iban-generator': 'generic-suite.js',
     'validohub.md5': 'generic-suite.js',
     'validohub.regex-tester': 'generic-suite.js',
     'validohub.sha1': 'generic-suite.js',
@@ -1532,6 +1664,9 @@ async function main() {
     // 2. Asset Concatenation, Fingerprinting and Manifest writing
     console.log('\n[Step 2/5] Compiling Design-System Hashed Assets...');
     const assetsManifest = await compileAssets();
+    const configuredLocales = await getConfiguredLocales();
+    await validateConfiguredLocaleSwitcher(configuredLocales);
+    await pruneGeneratedLocaleDirectories(configuredLocales);
 
     // 3. Publish/Materialize Static Site via Maven
     console.log('\n[Step 3/5] Executing Maven Site Publisher...');
@@ -1547,7 +1682,6 @@ async function main() {
     console.log('\n[Step 5/5] Re-compiling Template Archetypes...');
     await compileCountriesPortal(routeRegistry, assetsManifest);
     await compileIdentifiers(routeRegistry, assetsManifest);
-    const configuredLocales = await getConfiguredLocales();
     await ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest);
     await postProcessJavaPages(routeRegistry, assetsManifest);
     await applyFinalLocalizationPass(routeRegistry, siteRoot, configuredLocales);

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-phone-number-validator
+kind: tool
+module: validohub
+country: IE
+category: address
+status: active
+name:
+  en: "Irish Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+353 1 234 5678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-phone-e164-formatter, ireland-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

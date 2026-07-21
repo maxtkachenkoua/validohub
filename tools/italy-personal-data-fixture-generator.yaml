@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian Personal Data Fixture Helper"
+summary:
+  en: "Generate and audit clearly fake Italian-style personal fixtures with CF-like, address, phone, and privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "Mario Rossi nato a Roma 01/08/1985 CF RSSMRA85M01H501Q"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-postal-code-validator, italy-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and audit clearly fake Italian-style personal fixtures with CF-like, address, phone, and privacy notes."

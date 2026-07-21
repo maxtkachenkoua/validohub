@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian Payment Reconciliation Helper"
+summary:
+  en: "Compare Italian payment snippets for IBAN, amount, invoice, date, and reconciliation hints without bank lookup."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REC input"
+        required: true
+        placeholder:
+          en: "Fattura 2026/15 importo 1.234,56 EUR pagamento 12/07/2026 IBAN IT60X0542811101000000123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Compare Italian payment snippets for IBAN, amount, invoice, date, and reconciliation hints without bank lookup."

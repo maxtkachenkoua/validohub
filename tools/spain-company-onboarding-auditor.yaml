@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-company-onboarding-auditor
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: "Spanish Company Onboarding Auditor"
+summary:
+  en: "Audit Spanish company onboarding payloads for NIF/CIF, VAT, IBAN, address, phone, and official-system boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ONB input"
+        required: true
+        placeholder:
+          en: "B12345674 ES9121000418450200051332 Calle Mayor 1, 28013 Madrid"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-id-validator, spain-nif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit Spanish company onboarding payloads for NIF/CIF, VAT, IBAN, address, phone, and official-system boundaries."

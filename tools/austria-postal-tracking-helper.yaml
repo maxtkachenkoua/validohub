@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-postal-tracking-helper
+kind: tool
+module: validohub
+country: AT
+category: logistics
+status: active
+name:
+  en: "Austrian Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1010 Wien"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-data-quality-workbench, austria-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

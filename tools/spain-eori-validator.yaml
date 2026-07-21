@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-eori-validator
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: "Spanish EORI / Customs Identifier Helper"
+summary:
+  en: "Inspect Spanish EORI/customs identifiers, ES country prefixes, tax-body evidence, and customs lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EORI input"
+        required: true
+        placeholder:
+          en: "ESB12345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-id-validator, spain-nif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish EORI / Customs Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect Spanish EORI/customs identifiers, ES country prefixes, tax-body evidence, and customs lookup boundaries."

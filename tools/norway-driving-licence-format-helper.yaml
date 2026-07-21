@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-driving-licence-format-helper
+kind: tool
+module: validohub
+country: NO
+category: documents
+status: active
+name:
+  en: "Norwegian Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "01018500120 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-residence-permit-format-helper, norway-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

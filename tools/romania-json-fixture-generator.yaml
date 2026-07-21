@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-json-fixture-generator
+kind: tool
+module: validohub
+country: RO
+category: developer-tools
+status: active
+name:
+  en: "Romanian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-regex-pack-helper, romania-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

@@ -2858,6 +2858,28 @@
     }
     return i18n;
   }
+  RAW_TOOLS.push({
+    id: 'switzerland-iban-generator',
+    name: 'Swiss IBAN Generator',
+    code: 'IBG',
+    summary: 'Generate CH IBAN check digits from a Swiss BBAN body, replay MOD-97 evidence, and prepare payment fixtures.',
+    category: 'finance',
+    actionLabel: 'Generate',
+    kind: 'ibangenerator',
+    samples: [
+      { label: 'Valid BBAN', value: '9300762011623852957' },
+      { label: 'Short BBAN', value: '9300762011' }
+    ],
+    boundaries: [
+      'Official Swiss bank ownership, account existence, payment delivery, and regulated status require the responsible bank or payment network.'
+    ],
+    qualityNotes: [
+      { title: 'Browser-only', text: 'IBAN check digits are generated locally in this browser.' },
+      { title: 'Official boundary', text: 'Generated fixture structure does not prove a live account.' },
+      { title: 'Fixture safety', text: 'Use generated IBANs for test payloads, not production payment instructions.' },
+      { title: 'Developer handling', text: 'Copy normalized values for forms and masked values for logs.' }
+    ]
+  });
   const TOOLS = RAW_TOOLS.map(tool => Object.assign({}, tool, { i18n: makeI18n(tool) }));
   function suiteI18n() {
     const out = {};

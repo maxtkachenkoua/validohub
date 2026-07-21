@@ -1,0 +1,43 @@
+schemaVersion: 1
+id: netherlands-iban-generator
+kind: tool
+module: validohub
+country: NL
+category: finance
+status: active
+name:
+  en: Netherlands IBAN Generator
+summary:
+  en: Generate Dutch IBAN check digits from bank-code/account BBAN body, then replay MOD-97 validation locally.
+capabilities: [generate, validate, parse, explain]
+algorithm:
+  algorithmId: validohub.iban-generator
+forms:
+  generate:
+    inputs:
+      - type: text
+        name: country
+        label:
+          en: Country code
+        required: true
+      - type: text
+        name: bban
+        label:
+          en: Netherlands BBAN / bank account body
+        required: true
+      - type: text
+        name: iban
+        label:
+          en: Existing IBAN to repair or inspect
+    actions: [generate, validate, explain]
+related:
+  explicit: [netherlands-iban-validator, netherlands-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: Netherlands IBAN Generator | ValidoHub
+  description:
+    en: Generate Dutch IBAN check digits and inspect generated Netherlands IBAN structure locally.

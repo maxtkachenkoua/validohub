@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-business-register-readiness-helper
+kind: tool
+module: validohub
+country: PT
+category: government
+status: active
+name:
+  en: "Portuguese Registo Comercial Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Registo Comercial lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "PT123456749 PT123456749 Rua Augusta 100, 1100-053 Lisboa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-id-card-format-helper, portugal-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Registo Comercial Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Registo Comercial lookup or company registry workflow."

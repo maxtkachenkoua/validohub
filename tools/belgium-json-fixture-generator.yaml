@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-json-fixture-generator
+kind: tool
+module: validohub
+country: BE
+category: developer-tools
+status: active
+name:
+  en: "Belgian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-regex-pack-helper, belgium-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

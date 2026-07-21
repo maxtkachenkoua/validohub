@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: logistics
+slug: logistics
+name:
+  en: Logistics
+summary:
+  en: Tools for postal tracking, shipping references, and operational handoff data.
+order: 80
+seo:
+  title:
+    en: Logistics Tools
+  description:
+    en: Inspect postal tracking, shipping references, and logistics-friendly fixture data.

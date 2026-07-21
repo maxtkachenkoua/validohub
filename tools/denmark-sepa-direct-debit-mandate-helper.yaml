@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-sepa-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: DK
+category: finance
+status: active
+name:
+  en: "Danish SEPA Direct Debit Mandate Helper"
+summary:
+  en: "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SDD input"
+        required: true
+        placeholder:
+          en: "MANDATE-2026-001 DK5000400440116243"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-payment-reference-helper, denmark-remittance-text-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish SEPA Direct Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."

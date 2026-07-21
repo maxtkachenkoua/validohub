@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: documents
+slug: documents
+name:
+  en: Documents
+summary:
+  en: Tools for document identifiers, OCR cleanup, passports, licences, and permits.
+order: 50
+seo:
+  title:
+    en: Document Tools
+  description:
+    en: Inspect document formats, OCR output, passport data, licence fields, and permit fixtures.

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: SE
+category: developer-tools
+status: active
+name:
+  en: "Swedish Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SE\",\"personnummer\":\"850101-1236\",\"orgnr\":\"556016-0680\",\"iban\":\"SE4550000000058398257466\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-personnummer-validator, sweden-organisationsnummer-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

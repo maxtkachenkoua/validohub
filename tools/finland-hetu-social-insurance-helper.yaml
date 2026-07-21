@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-hetu-social-insurance-helper
+kind: tool
+module: validohub
+country: FI
+category: national-identifiers
+status: active
+name:
+  en: "Finnish HETU Helper"
+summary:
+  en: "Split HETU evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "010185-123B"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-company-onboarding-auditor, finland-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish HETU Helper | ValidoHub"
+  description:
+    en: "Split HETU evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-region-code-mapper
+kind: tool
+module: validohub
+country: CZ
+category: address
+status: active
+name:
+  en: "Czech Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "110 00 Praha 1"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-municipality-code-inspector, czechia-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

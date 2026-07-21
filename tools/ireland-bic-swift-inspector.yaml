@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-bic-swift-inspector
+kind: tool
+module: validohub
+country: IE
+category: finance
+status: active
+name:
+  en: "Irish BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Ireland banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDIE2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-sepa-transfer-helper, ireland-sepa-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Ireland banking integrations."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-vat-id-validator
+kind: tool
+module: validohub
+country: NO
+category: national-identifiers
+status: active
+name:
+  en: "Norwegian VAT ID / NO Prefix Validator"
+summary:
+  en: "Normalize NO VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "NO915545943MVA"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-eori-validator, norway-d-number-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian VAT ID / NO Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize NO VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

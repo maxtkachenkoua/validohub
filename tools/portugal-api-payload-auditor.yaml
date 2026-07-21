@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-api-payload-auditor
+kind: tool
+module: validohub
+country: PT
+category: developer-tools
+status: active
+name:
+  en: "Portuguese API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-form-field-auditor, portugal-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

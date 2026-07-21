@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: CZ
+category: tax
+status: active
+name:
+  en: "Czech ISDOC / e-invoicing Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ27074358\",\"iban\":\"CZ6508000000192000145399\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-tax-authority-handoff-helper, czechia-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech ISDOC / e-invoicing Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

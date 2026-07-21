@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-bis-number-social-insurance-helper
+kind: tool
+module: validohub
+country: BE
+category: national-identifiers
+status: active
+name:
+  en: "Belgian BIS number Helper"
+summary:
+  en: "Split BIS number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "85.07.30-033.28"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-company-onboarding-auditor, belgium-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian BIS number Helper | ValidoHub"
+  description:
+    en: "Split BIS number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

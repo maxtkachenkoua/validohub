@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-procurement-identifier-helper
+kind: tool
+module: validohub
+country: PT
+category: government
+status: active
+name:
+  en: "Portuguese Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "PT123456749 PO-2026-001 PT123456749"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-accessibility-locale-copy-checker, portugal-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

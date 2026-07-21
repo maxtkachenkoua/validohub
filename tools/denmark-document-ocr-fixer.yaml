@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-document-ocr-fixer
+kind: tool
+module: validohub
+country: DK
+category: documents
+status: active
+name:
+  en: "Danish Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "010185-1234 DK12345674 DK5000400440116243 1050 Copenhagen K"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-gdpr-redaction-helper, denmark-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

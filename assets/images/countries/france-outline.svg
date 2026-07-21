@@ -1,1 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title desc"><title id="title">France outline</title><desc id="desc">Stylized outline of metropolitan France for ValidoHub country visuals.</desc><defs><linearGradient id="fr-a" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0055a4"/><stop offset="0.55" stop-color="#f8fafc"/><stop offset="1" stop-color="#ef4135"/></linearGradient><filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0f172a" flood-opacity=".16"/></filter></defs><rect width="640" height="520" rx="28" fill="#f8fafc"/><path d="M292 52 384 78 440 128 506 134 538 206 500 282 524 352 454 394 394 456 304 432 222 468 164 404 94 370 122 296 84 236 134 164 202 134Z" fill="url(#fr-a)" stroke="#cbd5e1" stroke-width="8" filter="url(#s)"/><path d="M294 62 296 424" stroke="#fff" stroke-width="22" opacity=".78"/><path d="M188 122 146 170 112 232 148 292 126 356 180 386 230 444" fill="none" stroke="#0055a4" stroke-width="20" opacity=".26"/><path d="M418 102 488 150 518 212 482 282 506 342 442 382 386 444" fill="none" stroke="#ef4135" stroke-width="20" opacity=".22"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" role="img" aria-labelledby="title desc">
+  <title id="title">France country outline</title>
+  <desc id="desc">France country outline centered on canvas, derived from Natural Earth public-domain admin-0 geometry.</desc>
+  <rect width="360" height="260" rx="24" fill="#f8fafc"/>
+  <defs>
+    <linearGradient id="france-land" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#dbe7f2"/>
+      <stop offset="0.55" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fbcac6"/>
+    </linearGradient>
+    <filter id="france-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#003d76" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g transform="translate(97.273, 43.682) scale(0.297000)" fill="url(#france-land)" stroke="#0055a4" stroke-width="5.724" stroke-linejoin="round" filter="url(#france-shadow)">
+    <g id="fr">
+        <path  d="M412.973,393.588l-1.91,0.467l-3.82,4.158l-1.149,0.078l-1.53-1.081l-0.993,0.233l-0.762,2.386l-5.584,0.155l0.156,1.236l3.82,2.543l4.435,3.543l-0.077,4.236l-2.368,4.157l5.126,2.464l5.204,0.154l1.606-1.85l3.286,0.078l0.916,0.848l3.285-0.233l1.686-2.162l-2.145-2.541l-0.155-1.616l0.458-1.771l-1.071-1.539l-1.833,0.535l-0.232-1.383l4.054-4.469v-2.697l-2.348-0.767l-1.432-0.987L412.973,393.588L412.973,393.588z"/>
+        <path d="M276.163,517.285l5.058,3.154l-2.646,5.255l-0.959,1.21l-2.809-1.615l0.079-5.663L276.163,517.285L276.163,517.285z"/>
+        <path d="M540.023,586.93l-1.972,0.129l-0.129,1.722l1.313,0.269l1.972-0.925L540.023,586.93L540.023,586.93z"/>
+        <path d="M516.857,562.666l0.656,1.461h1.055l0.526-1.857L516.857,562.666L516.857,562.666z"/>
+        <path d="M258.823,489.822l-0.917,0.847l0.683,1.383l1.296-0.38L258.823,489.822L258.823,489.822z"/>
+        <path d="M428.039,418.016l-1.687,1.695l-0.154,1.538l1.374,0.847l0.536-0.076l0.303-2.24L428.039,418.016L428.039,418.016z"/>
+        <path d="M254.095,484.065l-1.296,0.535l0.458,1.149l1.521-0.994l-0.303-0.311L254.095,484.065L254.095,484.065z"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#ef4135" stroke-width="1.1" opacity="0.18">
+    <path d="M94 112 C130 98 172 104 214 94 C238 89 260 98 279 116"/>
+    <path d="M112 145 C148 132 188 136 224 126 C242 121 260 126 274 139"/>
+  </g>
+  <circle cx="180" cy="132" r="4" fill="#003d76"/>
+  <text x="181" y="238" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="760" fill="#475569">France</text>
+</svg>

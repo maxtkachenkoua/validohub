@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-vehicle-plate-inspector
+kind: tool
+module: validohub
+country: AT
+category: transport
+status: active
+name:
+  en: "Austrian Vehicle Plate Inspector"
+summary:
+  en: "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PLATE input"
+        required: true
+        placeholder:
+          en: "W 12345 A"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-vin-validator, austria-vehicle-data-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Vehicle Plate Inspector | ValidoHub"
+  description:
+    en: "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."

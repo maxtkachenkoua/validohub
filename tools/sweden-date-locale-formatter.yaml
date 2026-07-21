@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-date-locale-formatter
+kind: tool
+module: validohub
+country: SE
+category: localization
+status: active
+name:
+  en: "Swedish Date Locale Formatter"
+summary:
+  en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "2026-07-21"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-csv-locale-normalizer, sweden-slug-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Date Locale Formatter | ValidoHub"
+  description:
+    en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."

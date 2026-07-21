@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-vat-id-validator
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: "Spanish VAT ID / ES Prefix Validator"
+summary:
+  en: "Normalize ES VAT identifiers, inspect NIF/CIF body evidence, and separate VIES status from offline syntax."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "ESX1234567L"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-id-validator, spain-nif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish VAT ID / ES Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize ES VAT identifiers, inspect NIF/CIF body evidence, and separate VIES status from offline syntax."

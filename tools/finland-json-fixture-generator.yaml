@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-json-fixture-generator
+kind: tool
+module: validohub
+country: FI
+category: developer-tools
+status: active
+name:
+  en: "Finnish JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-regex-pack-helper, finland-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

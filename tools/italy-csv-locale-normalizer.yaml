@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-csv-locale-normalizer
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian CSV Locale Normalizer"
+summary:
+  en: "Audit Italian CSV snippets for semicolon separators, comma decimals, dates, VAT fields, and import-safe previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "data;cliente;importo;iva\n12/07/2026;Example Srl;1.234,56;22%"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-postal-code-validator, italy-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Audit Italian CSV snippets for semicolon separators, comma decimals, dates, VAT fields, and import-safe previews."

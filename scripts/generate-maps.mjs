@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -54,7 +54,226 @@ async function main() {
   await writeFile(resolve(projectRoot, 'assets/images/countries/poland-outline.svg'), polandOutlineSvg, 'utf8');
   console.log('Generated: poland-outline.svg');
 
+  await generatePremiumCountryVisuals();
+
   console.log('Map generation completed successfully.');
+}
+
+async function generatePremiumCountryVisuals() {
+  console.log(`Loading master geographic source from: ${sourcePath}`);
+  const sourceSvg = await readFile(sourcePath, 'utf8');
+  const countriesDir = resolve(projectRoot, 'countries', 'data');
+  const files = (await readdir(countriesDir)).filter(file => file.endsWith('.json') && file !== 'schema.json').sort();
+  let generated = 0;
+  const skipped = [];
+
+  for (const file of files) {
+    const data = JSON.parse(await readFile(resolve(countriesDir, file), 'utf8'));
+    if (!data?.catalog || !data?.hub) continue;
+    const slug = data.id;
+    const iso2 = String(data.catalog.iso2 || data.hub?.metadata?.iso2 || '').toLowerCase();
+    const countryId = WORLD_MAP_ID_BY_SLUG[slug] || iso2;
+    const element = extractElement(sourceSvg, countryId);
+    if (!element) {
+      skipped.push(`${slug}:${countryId}`);
+      continue;
+    }
+
+    const colors = countryVisualColors(data);
+    const name = data.catalog.name || data.hub.name || slug;
+    const outlineSvg = buildPremiumOutline({ element, name, id: countryId, colors });
+    const locationSvg = buildPremiumLocation({ sourceSvg, name, id: countryId, colors });
+    await writeFile(resolve(projectRoot, 'assets', 'images', 'countries', `${slug}-outline.svg`), outlineSvg, 'utf8');
+    await writeFile(resolve(projectRoot, 'assets', 'images', 'countries', `${slug}-location.svg`), locationSvg, 'utf8');
+    generated += 1;
+  }
+
+  console.log(`Generated premium country visuals: ${generated}`);
+  if (skipped.length) {
+    console.warn(`Skipped missing geometries: ${skipped.join(', ')}`);
+  }
+}
+
+const WORLD_MAP_ID_BY_SLUG = {
+  czechia: 'cz',
+  'united-kingdom': 'gb'
+};
+
+function countryVisualColors(data) {
+  const identity = data.hub?.visualIdentity || {};
+  const primary = rgbTripletToHex(identity.heroAccentPrimary) || '#15803d';
+  const secondary = rgbTripletToHex(identity.heroAccentSecondary) || lightenHex(primary, 0.86);
+  const tertiary = rgbTripletToHex(identity.heroAccentTertiary) || darkenHex(primary, 0.16);
+  return {
+    primary,
+    secondary,
+    tertiary,
+    landStart: mixHex(primary, '#ffffff', 0.86),
+    landMid: mixHex(secondary, '#ffffff', 0.78),
+    landEnd: mixHex(tertiary, '#ffffff', 0.72),
+    shadow: darkenHex(primary, 0.28)
+  };
+}
+
+function rgbTripletToHex(value) {
+  const parts = String(value || '').trim().split(/\s+/).map(Number);
+  if (parts.length !== 3 || parts.some(part => !Number.isFinite(part))) return '';
+  return '#' + parts.map(part => Math.max(0, Math.min(255, Math.round(part))).toString(16).padStart(2, '0')).join('');
+}
+
+function mixHex(a, b, amount) {
+  const ca = parseHex(a);
+  const cb = parseHex(b);
+  const t = Math.max(0, Math.min(1, amount));
+  return toHex([
+    ca[0] * (1 - t) + cb[0] * t,
+    ca[1] * (1 - t) + cb[1] * t,
+    ca[2] * (1 - t) + cb[2] * t
+  ]);
+}
+
+function lightenHex(hex, amount) {
+  return mixHex(hex, '#ffffff', amount);
+}
+
+function darkenHex(hex, amount) {
+  return mixHex(hex, '#000000', amount);
+}
+
+function parseHex(hex) {
+  const clean = String(hex || '#000000').replace('#', '');
+  return [0, 2, 4].map(index => parseInt(clean.slice(index, index + 2), 16) || 0);
+}
+
+function toHex(parts) {
+  return '#' + parts.map(part => Math.max(0, Math.min(255, Math.round(part))).toString(16).padStart(2, '0')).join('');
+}
+
+function cleanGeometryElement(element) {
+  return element
+    .replace(/class="[^"]*"/g, '')
+    .replace(/fill="[^"]*"/g, '')
+    .replace(/stroke="[^"]*"/g, '')
+    .replace(/style="[^"]*"/g, '');
+}
+
+function geometryBBox(element) {
+  const values = [];
+  for (const match of element.matchAll(/\sd="([^"]+)"/g)) {
+    const nums = [...match[1].matchAll(/-?\d+(?:\.\d+)?/g)].map(item => Number(item[0]));
+    for (let i = 0; i < nums.length - 1; i += 2) {
+      values.push([nums[i], nums[i + 1]]);
+    }
+  }
+  if (!values.length) {
+    return { minX: 0, minY: 0, maxX: 1, maxY: 1, width: 1, height: 1 };
+  }
+  const xs = values.map(pair => pair[0]);
+  const ys = values.map(pair => pair[1]);
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const minY = Math.min(...ys);
+  const maxY = Math.max(...ys);
+  return { minX, minY, maxX, maxY, width: Math.max(1, maxX - minX), height: Math.max(1, maxY - minY) };
+}
+
+function outlineTransform(element) {
+  const box = geometryBBox(element);
+  const width = 360;
+  const height = 260;
+  const padding = 42;
+  const scale = Math.min((width - padding * 2) / box.width, (height - padding * 2) / box.height);
+  const tx = (width - box.width * scale) / 2 - box.minX * scale;
+  const ty = (height - box.height * scale) / 2 - box.minY * scale;
+  return { tx, ty, scale, stroke: Math.max(0.32, 1.7 / scale) };
+}
+
+function locationViewBox(element) {
+  const box = geometryBBox(element);
+  const marginX = Math.max(90, box.width * 1.4);
+  const marginY = Math.max(70, box.height * 1.5);
+  const width = Math.max(150, box.width + marginX * 2);
+  const height = Math.max(120, box.height + marginY * 2);
+  return [
+    (box.minX + box.maxX) / 2 - width / 2,
+    (box.minY + box.maxY) / 2 - height / 2,
+    width,
+    height
+  ].map(value => Number(value.toFixed(3))).join(' ');
+}
+
+function gradientId(name, suffix) {
+  return `${String(name).toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${suffix}`;
+}
+
+function buildPremiumOutline({ element, name, colors }) {
+  const cleanElement = cleanGeometryElement(element);
+  const transform = outlineTransform(element);
+  const landId = gradientId(name, 'land');
+  const shadowId = gradientId(name, 'shadow');
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" role="img" aria-labelledby="title desc">
+  <title id="title">${name} country outline</title>
+  <desc id="desc">${name} country outline centered on canvas, derived from Natural Earth public-domain admin-0 geometry.</desc>
+  <rect width="360" height="260" rx="24" fill="#f8fafc"/>
+  <defs>
+    <linearGradient id="${landId}" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="${colors.landStart}"/>
+      <stop offset="0.55" stop-color="${colors.landMid}"/>
+      <stop offset="1" stop-color="${colors.landEnd}"/>
+    </linearGradient>
+    <filter id="${shadowId}" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="${colors.shadow}" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g transform="translate(${transform.tx.toFixed(3)}, ${transform.ty.toFixed(3)}) scale(${transform.scale.toFixed(6)})" fill="url(#${landId})" stroke="${colors.primary}" stroke-width="${transform.stroke.toFixed(3)}" stroke-linejoin="round" filter="url(#${shadowId})">
+    ${cleanElement}
+  </g>
+  <g fill="none" stroke="${colors.tertiary}" stroke-width="1.1" opacity="0.18">
+    <path d="M94 112 C130 98 172 104 214 94 C238 89 260 98 279 116"/>
+    <path d="M112 145 C148 132 188 136 224 126 C242 121 260 126 274 139"/>
+  </g>
+  <circle cx="180" cy="132" r="4" fill="${colors.shadow}"/>
+  <text x="181" y="238" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="760" fill="#475569">${name}</text>
+</svg>`;
+}
+
+function buildPremiumLocation({ sourceSvg, name, id, colors }) {
+  const activeElement = extractElement(sourceSvg, id);
+  const bodyStart = sourceSvg.indexOf('<g>');
+  const bodyEnd = sourceSvg.lastIndexOf('</svg>');
+  const body = paintActiveMapElement(stripSvgPaintAttributes(sourceSvg.slice(bodyStart, bodyEnd)), id, {
+    fill: colors.primary,
+    stroke: colors.tertiary,
+    strokeWidth: '0.9',
+  });
+  const viewBox = locationViewBox(activeElement);
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" role="img" aria-labelledby="title desc">
+  <title id="title">${name} location map</title>
+  <desc id="desc">Web-optimized real-geography location map focused on ${name}.</desc>
+  <g fill="#cbd5e1" stroke="#ffffff" stroke-width="0.6" stroke-linejoin="round">
+    ${body}
+  </g>
+</svg>`;
+}
+
+function stripSvgPaintAttributes(svg) {
+  return svg
+    .replace(/\sclass="mainland"/g, '')
+    .replace(/\sfill="[^"]*"/g, '')
+    .replace(/\sstroke="[^"]*"/g, '')
+    .replace(/\sstroke-width="[^"]*"/g, '')
+    .replace(/\sstroke-linejoin="[^"]*"/g, '');
+}
+
+function paintActiveMapElement(svg, id, { fill, stroke, strokeWidth }) {
+  const paintAttrs = `fill="${fill}" stroke="${stroke}" stroke-width="${strokeWidth}" stroke-linejoin="round"`;
+  return svg
+    .replace(new RegExp(`<path\\s+id="${id}"\\s+`, 'g'), `<path id="${id}" ${paintAttrs} `)
+    .replace(new RegExp(`<path\\s+d="([^"]+)"\\s+id="${id}"\\s*/>`, 'g'), `<path d="$1" id="${id}" ${paintAttrs}/>`)
+    .replace(new RegExp(`<path\\s+d="([^"]+)"\\s+id="${id}"\\s*>`, 'g'), `<path d="$1" id="${id}" ${paintAttrs}>`)
+    .replace(new RegExp(`<g\\s+id="${id}"\\s*>`, 'g'), `<g id="${id}" ${paintAttrs}>`);
 }
 
 function extractElement(svg, id) {
@@ -73,49 +292,32 @@ function buildWorldMap(source) {
   // Extract inner contents of master map (between first <g> and </svg>)
   const bodyStart = source.indexOf('<g>');
   const bodyEnd = source.lastIndexOf('</svg>');
-  const body = source.slice(bodyStart, bodyEnd);
+  const body = stripSvgPaintAttributes(source.slice(bodyStart, bodyEnd));
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="30.767 241.591 784.077 458.627" role="img" aria-labelledby="title desc">
   <title id="title">World map</title>
   <desc id="desc">Web-optimized real-geography world map based on Natural Earth data.</desc>
-  <style>
-    path {
-      fill: #cbd5e1;
-      stroke: #ffffff;
-      stroke-width: 0.6;
-      stroke-linejoin: round;
-      transition: fill 150ms ease;
-    }
-    path:hover {
-      fill: #94a3b8;
-    }
-  </style>
-  ${body}
+  <g fill="#cbd5e1" stroke="#ffffff" stroke-width="0.6" stroke-linejoin="round">
+    ${body}
+  </g>
 </svg>`;
 }
 
 function buildLocationMap(source, activeId, viewBox, fillColor, strokeColor) {
   const bodyStart = source.indexOf('<g>');
   const bodyEnd = source.lastIndexOf('</svg>');
-  const body = source.slice(bodyStart, bodyEnd);
+  const body = paintActiveMapElement(stripSvgPaintAttributes(source.slice(bodyStart, bodyEnd)), activeId, {
+    fill: fillColor,
+    stroke: strokeColor,
+    strokeWidth: '0.8',
+  });
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" role="img" aria-labelledby="title desc">
   <title id="title">Location Map</title>
   <desc id="desc">Web-optimized real-geography location map focused and highlighted.</desc>
-  <style>
-    path {
-      fill: #cbd5e1;
-      stroke: #ffffff;
-      stroke-width: 0.6;
-      stroke-linejoin: round;
-    }
-    #${activeId} path, path#${activeId} {
-      fill: ${fillColor};
-      stroke: ${strokeColor};
-      stroke-width: 0.8;
-    }
-  </style>
-  ${body}
+  <g fill="#cbd5e1" stroke="#ffffff" stroke-width="0.6" stroke-linejoin="round">
+    ${body}
+  </g>
 </svg>`;
 }
 
@@ -218,7 +420,7 @@ function buildPolandOutline(plElement) {
 </svg>`;
 }
 
-export { extractElement, buildLocationMap, buildWorldMap };
+export { extractElement, buildLocationMap, buildWorldMap, generatePremiumCountryVisuals };
 
 const isMain = process.argv[1] && (resolve(process.argv[1]) === resolve(fileURLToPath(import.meta.url)));
 if (isMain) {
@@ -227,4 +429,3 @@ if (isMain) {
     process.exit(1);
   });
 }
-

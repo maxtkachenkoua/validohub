@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-codice-fiscale-validator
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian Codice Fiscale Validator"
+summary:
+  en: "Validate Italian codice fiscale shape, replay control-character evidence, and split surname/name/date/place-code blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CF input"
+        required: true
+        placeholder:
+          en: "RSSMRA85M01H501Q"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-partita-iva-validator, italy-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Codice Fiscale Validator | ValidoHub"
+  description:
+    en: "Validate Italian codice fiscale shape, replay control-character evidence, and split surname/name/date/place-code blocks for debugging."

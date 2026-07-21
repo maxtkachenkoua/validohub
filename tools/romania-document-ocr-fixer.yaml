@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-document-ocr-fixer
+kind: tool
+module: validohub
+country: RO
+category: documents
+status: active
+name:
+  en: "Romanian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "1850101123451 RO12345674 RO49AAAA1B31007593840000 010011 Bucuresti"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-gdpr-redaction-helper, romania-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

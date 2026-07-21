@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: FI
+slug: finland
+name:
+  en: Finland
+region: Europe
+languages:
+  - fi
+currency: EUR
+relatedCountries:
+  - SE
+  - NO
+  - EE

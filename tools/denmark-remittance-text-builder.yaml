@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-remittance-text-builder
+kind: tool
+module: validohub
+country: DK
+category: finance
+status: active
+name:
+  en: "Danish Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 DK12345674 1.234,56 DKK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-payment-reconciliation-helper, denmark-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: PT
+category: localization
+status: active
+name:
+  en: "Portuguese Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "NIF input, codigo postal input, amount 1 234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-support-ticket-scrubber, portugal-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

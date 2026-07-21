@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-phone-e164-formatter
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian Phone E.164 Formatter"
+summary:
+  en: "Normalize Italian phone numbers toward +39 display, preserve significant trunk digits, and prepare API payload previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "E164 input"
+        required: true
+        placeholder:
+          en: "347 1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-postal-code-validator, italy-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Phone E.164 Formatter | ValidoHub"
+  description:
+    en: "Normalize Italian phone numbers toward +39 display, preserve significant trunk digits, and prepare API payload previews."

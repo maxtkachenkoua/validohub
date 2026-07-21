@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-health-card-format-helper
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian Tessera Sanitaria Format Helper"
+summary:
+  en: "Inspect Tessera Sanitaria/codice fiscale snippets, expiry dates, and health-card proof boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TS input"
+        required: true
+        placeholder:
+          en: "Tessera sanitaria CF RSSMRA85M01H501Q scadenza 12/07/2028"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Tessera Sanitaria Format Helper | ValidoHub"
+  description:
+    en: "Inspect Tessera Sanitaria/codice fiscale snippets, expiry dates, and health-card proof boundaries."

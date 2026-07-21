@@ -583,6 +583,90 @@
     return profile.slices.map((row) => [row[0], normalized.slice(row[1], row[2]) || 'n/a', row[3]]);
   }
 
+  function ibanNumeric(value) {
+    return String(value || '').toUpperCase().replace(/[^A-Z0-9]/g, '').split('').map((char) => /[A-Z]/.test(char) ? String(char.charCodeAt(0) - 55) : char).join('');
+  }
+
+  function mod97Digits(value) {
+    let remainder = 0;
+    for (const char of String(value || '')) {
+      if (!/\d/.test(char)) continue;
+      remainder = (remainder * 10 + Number(char)) % 97;
+    }
+    return remainder;
+  }
+
+  function ibanMod97(value) {
+    const normalized = String(value || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    return mod97Digits(ibanNumeric(normalized.slice(4) + normalized.slice(0, 4)));
+  }
+
+  function generateIbanValue(countryCode, bbanBody) {
+    const country = String(countryCode || '').toUpperCase().replace(/[^A-Z]/g, '').slice(0, 2);
+    const bban = String(bbanBody || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    const checkDigits = String(98 - mod97Digits(ibanNumeric(bban + country + '00'))).padStart(2, '0');
+    const iban = country + checkDigits + bban;
+    return { country, bban, checkDigits, iban, remainder: ibanMod97(iban) };
+  }
+
+  function parseIbanGeneratorInput(values) {
+    const existing = String(values.iban || values.input || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    let country = String(values.country || '').toUpperCase().replace(/[^A-Z]/g, '').slice(0, 2);
+    let bban = String(values.bban || values.account || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    if (existing && !bban) {
+      country = country || existing.slice(0, 2);
+      bban = existing.slice(4);
+    }
+    if (!country && /^[A-Z]{2}/.test(bban)) {
+      country = bban.slice(0, 2);
+      bban = /^\d{2}/.test(bban.slice(2, 4)) ? bban.slice(4) : bban.slice(2);
+    }
+    return { country, bban, existing };
+  }
+
+  function ibanGeneratorHandler(workbench) {
+    const values = formValues(workbench);
+    const parsed = parseIbanGeneratorInput(values);
+    if (!parsed.country || !parsed.bban) throw new Error('Enter a two-letter country code and BBAN/account body.');
+    const generated = generateIbanValue(parsed.country, parsed.bban);
+    const grouped = generated.iban.replace(/(.{4})/g, '$1 ').trim();
+    const masked = generated.iban.length > 8 ? generated.iban.slice(0, 4) + ' ' + '•••• '.repeat(Math.max(1, Math.ceil((generated.iban.length - 8) / 4))).trim() + ' ' + generated.iban.slice(-4) : generated.iban;
+    const valid = /^[A-Z]{2}$/.test(generated.country) && generated.bban.length >= 4 && generated.remainder === 1;
+    return {
+      ok: valid,
+      output: grouped,
+      message: valid ? 'IBAN check digits generated locally.' : 'IBAN generator input needs review.',
+      badge: valid ? 'IBAN generated' : 'Review input',
+      stats: [['Country', generated.country], ['BBAN characters', generated.bban.length], ['Check digits', generated.checkDigits], ['MOD-97', generated.remainder], ['Masked IBAN', masked]],
+      resultCards: [
+        { label: 'Generated IBAN', value: grouped, note: 'copy-ready grouped display' },
+        { label: 'Check digits', value: generated.checkDigits, note: 'ISO 13616 MOD-97' },
+        { label: 'BBAN body', value: generated.bban, note: generated.bban.length + ' characters' },
+        { label: 'Masked display', value: masked, note: 'logs and support screenshots' }
+      ],
+      pipeline: [
+        { name: 'Country code', ok: /^[A-Z]{2}$/.test(generated.country), detail: generated.country || 'missing' },
+        { name: 'BBAN present', ok: generated.bban.length >= 4, detail: generated.bban.length + ' characters' },
+        { name: 'Check digits', ok: true, detail: generated.checkDigits },
+        { name: 'MOD-97 verify', ok: generated.remainder === 1, detail: String(generated.remainder) }
+      ],
+      breakdown: [
+        ['Country prefix', generated.country, 'two-letter ISO code'],
+        ['Generated check digits', generated.checkDigits, '98 - MOD-97(BBAN + country + 00)'],
+        ['BBAN/account body', generated.bban, 'local account body supplied by user'],
+        ['MOD-97 remainder', String(generated.remainder), 'valid generated value is 1'],
+        ['Masked display', masked, 'safe preview']
+      ],
+      qualityNotes: [
+        'Generated IBANs are structural fixtures unless your application binds them to real account data.',
+        'Bank existence, account ownership, and payment acceptance require official banking rails.',
+        'Use the generator for parser tests, fixtures, and MOD-97 debugging.',
+        'Prefer masked generated values in logs and screenshots.'
+      ],
+      developerJson: { country: generated.country, bban: generated.bban, checkDigits: generated.checkDigits, iban: generated.iban, grouped, masked, mod97: generated.remainder, generatedLocally: true }
+    };
+  }
+
   function ibanHandler(workbench) {
     const input = firstValue(formValues(workbench));
     const normalized = input.replace(/\s+/g, '').toUpperCase();
@@ -930,6 +1014,17 @@
         };
       }
     }, ibanHandler],
+    ['validohub.iban-generator', {
+      slug: 'iban-generator', title: 'IBAN Generator', defaultAction: 'generate', theme: 'finance', mark: 'IBG', kicker: 'Banking fixtures',
+      summary: 'Generate IBAN check digits from a country code and BBAN/account body, then replay MOD-97 validation locally.',
+      chips: ['Generate check digits', 'MOD-97 replay', 'BBAN body', 'Fixture-safe'],
+      samples: [
+        { id: 'germany-bban', label: 'Germany BBAN', values: { country: 'DE', bban: '370400440532013000' }, action: 'generate' },
+        { id: 'czechia-bban', label: 'Czechia BBAN', values: { country: 'CZ', bban: '08000000192000145399' }, action: 'generate' },
+        { id: 'spain-bban', label: 'Spain BBAN', values: { country: 'ES', bban: '21000418450200051332' }, action: 'generate' },
+        { id: 'repair-existing', label: 'Repair existing', values: { country: '', bban: '', iban: 'DE00370400440532013000' }, action: 'generate' }
+      ]
+    }, ibanGeneratorHandler],
     ['validohub.regex-tester', {
       slug: 'regex-tester', title: 'Regex Tester', defaultAction: 'validate', theme: 'developer', mark: '.*', kicker: 'Pattern debugger',
       summary: 'Test JavaScript regular expressions against text, inspect match counts, flags, and replacement behavior locally.',

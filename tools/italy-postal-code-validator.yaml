@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-postal-code-validator
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian CAP Postal Code Validator"
+summary:
+  en: "Validate Italian five-digit CAP shape, expose postal-zone evidence, and separate delivery proof from offline checks."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAP input"
+        required: true
+        placeholder:
+          en: "00118"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-address-normalizer, italy-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian CAP Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate Italian five-digit CAP shape, expose postal-zone evidence, and separate delivery proof from offline checks."

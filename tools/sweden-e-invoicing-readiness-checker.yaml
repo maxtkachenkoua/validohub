@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: SE
+category: tax
+status: active
+name:
+  en: "Swedish Peppol / Svefaktura Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SE\",\"personnummer\":\"850101-1236\",\"orgnr\":\"556016-0680\",\"iban\":\"SE4550000000058398257466\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-tax-authority-handoff-helper, sweden-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Peppol / Svefaktura Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

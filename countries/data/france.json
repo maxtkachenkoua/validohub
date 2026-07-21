@@ -48,6 +48,14 @@
       "EUR",
       "Remittance"
     ],
+    "searchHints": [
+      "SIREN",
+      "SIRET",
+      "TVA",
+      "RIB",
+      "RUM",
+      "NIR"
+    ],
     "features": [
       "banking",
       "business",
@@ -144,6 +152,14 @@
     "name": "France",
     "badge": "Western Europe premium country hub",
     "description": "Developer intelligence for French company, tax, banking, address, identity-boundary, payment, vehicle, privacy, and localization workflows with browser-only validation where possible.",
+    "searchHints": [
+      "SIREN",
+      "SIRET",
+      "TVA",
+      "RIB",
+      "RUM",
+      "NIR"
+    ],
     "metadata": {
       "nativeName": "France",
       "population": "approximately 68M",

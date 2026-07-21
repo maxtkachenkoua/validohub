@@ -44,6 +44,14 @@
       "XRechnung",
       "ZUGFeRD"
     ],
+    "searchHints": [
+      "STEUER-ID",
+      "UST-ID",
+      "BLZ",
+      "IBAN",
+      "ELSTER",
+      "XRECHNUNG"
+    ],
     "features": [
       "payments",
       "identity",
@@ -129,6 +137,14 @@
     "name": "Germany",
     "badge": "Premium Germany developer suite",
     "description": "Developer intelligence and browser-only workbenches for German tax identifiers, banking, accounting, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "searchHints": [
+      "STEUER-ID",
+      "UST-ID",
+      "BLZ",
+      "IBAN",
+      "ELSTER",
+      "XRECHNUNG"
+    ],
     "metadata": {
       "nativeName": "Deutschland",
       "population": "approximately 84.4M",

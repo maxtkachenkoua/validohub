@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-vehicle-plate-inspector
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian Vehicle Plate Inspector"
+summary:
+  en: "Inspect Italian vehicle plate families, province-era hints, serial blocks, and PRA/Motorizzazione boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PLATE input"
+        required: true
+        placeholder:
+          en: "AB123CD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-postal-code-validator, italy-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Vehicle Plate Inspector | ValidoHub"
+  description:
+    en: "Inspect Italian vehicle plate families, province-era hints, serial blocks, and PRA/Motorizzazione boundaries."

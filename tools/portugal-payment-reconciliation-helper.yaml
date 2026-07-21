@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: PT
+category: finance
+status: active
+name:
+  en: "Portuguese Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1 234,56 EUR; PT50000201231234567490154; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-bank-statement-parser, portugal-masked-iban-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

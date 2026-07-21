@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-pii-masker
+kind: tool
+module: validohub
+country: IE
+category: privacy
+status: active
+name:
+  en: "Irish PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1234567T +353 1 234 5678 IE29AIBK93115212345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-personal-data-fixture-generator, ireland-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

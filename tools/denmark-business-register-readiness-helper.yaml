@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-business-register-readiness-helper
+kind: tool
+module: validohub
+country: DK
+category: government
+status: active
+name:
+  en: "Danish CVR register Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated CVR register lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "12345674 DK12345674 Nyhavn 1, 1051 Copenhagen K"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-id-card-format-helper, denmark-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish CVR register Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated CVR register lookup or company registry workflow."

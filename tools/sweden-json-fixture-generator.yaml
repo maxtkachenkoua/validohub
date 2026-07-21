@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-json-fixture-generator
+kind: tool
+module: validohub
+country: SE
+category: developer-tools
+status: active
+name:
+  en: "Swedish JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SE\",\"personnummer\":\"850101-1236\",\"orgnr\":\"556016-0680\",\"iban\":\"SE4550000000058398257466\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-regex-pack-helper, sweden-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

@@ -47,6 +47,7 @@ export class CountryPageModel {
     this.taxSystem = data.taxSystem;
     this.bankingSystem = data.bankingSystem || [];
     this.paymentSystems = data.paymentSystems || [];
+    this.searchHints = data.searchHints || [];
     this.identifiers = data.identifiers || [];
     this.validators = data.validators || [];
     this.generators = data.generators || [];
@@ -97,6 +98,7 @@ export function normalizeCountryData(countryData) {
     taxSystem: meta.taxSystem || hub.taxSystem,
     bankingSystem: (hub.bankingOverview || []).slice().sort((a, b) => (a.name || a.title || '').localeCompare(b.name || b.title || '')),
     paymentSystems: (hub.payments || []).slice().sort((a, b) => (a.name || a.title || '').localeCompare(b.name || b.title || '')),
+    searchHints: (hub.searchHints || cat.searchHints || []).slice(),
     identifiers: (cat.identifiers || []).slice().sort((a, b) => a.localeCompare(b)),
     validators: (cat.availableWorkbenches || []).slice().sort((a, b) => a.localeCompare(b)),
     generators: (cat.generators || []).slice().sort((a, b) => a.localeCompare(b)),

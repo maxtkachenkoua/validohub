@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-verifactu-readiness-helper
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish VeriFactu Readiness Helper"
+summary:
+  en: "Inspect VeriFactu-style invoice reporting snippets for NIF, invoice series, hash boundary, QR hints, and AEAT handoff notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VF input"
+        required: true
+        placeholder:
+          en: "VeriFactu B12345674 Factura A-2026-001 fecha 12/07/2026 importe 1.234,56"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish VeriFactu Readiness Helper | ValidoHub"
+  description:
+    en: "Inspect VeriFactu-style invoice reporting snippets for NIF, invoice series, hash boundary, QR hints, and AEAT handoff notes."

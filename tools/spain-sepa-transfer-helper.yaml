@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-sepa-transfer-helper
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish SEPA Transfer Helper"
+summary:
+  en: "Audit Spanish SEPA transfer snippets for IBAN, BIC, EUR amount, remittance text, and payment-boundary evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SEPA input"
+        required: true
+        placeholder:
+          en: "ES9121000418450200051332 EUR 1.234,56 Factura A-2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish SEPA Transfer Helper | ValidoHub"
+  description:
+    en: "Audit Spanish SEPA transfer snippets for IBAN, BIC, EUR amount, remittance text, and payment-boundary evidence."

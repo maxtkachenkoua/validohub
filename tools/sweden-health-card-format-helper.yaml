@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-health-card-format-helper
+kind: tool
+module: validohub
+country: SE
+category: documents
+status: active
+name:
+  en: "Swedish Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "850101-1236 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-vehicle-plate-inspector, sweden-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

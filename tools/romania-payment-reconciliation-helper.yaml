@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: RO
+category: finance
+status: active
+name:
+  en: "Romanian Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "21.07.2026; 1.234,56 RON; RO49AAAA1B31007593840000; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-bank-statement-parser, romania-masked-iban-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-mrz-passport-parser
+kind: tool
+module: validohub
+country: BE
+category: national-identifiers
+status: active
+name:
+  en: "Belgian MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<BELSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567BEL8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-iban-validator, belgium-iban-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

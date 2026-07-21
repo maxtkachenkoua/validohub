@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-ico-validator
+kind: tool
+module: validohub
+country: CZ
+category: national-identifiers
+status: active
+name:
+  en: "Czech ICO Validator"
+summary:
+  en: "Inspect ICO structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "27074358"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-vat-id-validator, czechia-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech ICO Validator | ValidoHub"
+  description:
+    en: "Inspect ICO structure, registry-style prefixes, control digits, and official lookup boundaries."

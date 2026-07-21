@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: NO
+category: tax
+status: active
+name:
+  en: "Norwegian EHF / Peppol Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-tax-authority-handoff-helper, norway-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian EHF / Peppol Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

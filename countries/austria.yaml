@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: AT
+slug: austria
+name:
+  en: Austria
+region: Europe
+languages:
+  - de
+currency: EUR
+relatedCountries:
+  - DE
+  - CH
+  - IT

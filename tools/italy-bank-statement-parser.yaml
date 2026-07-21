@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-bank-statement-parser
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian Bank Statement Parser"
+summary:
+  en: "Parse Italian statement-like rows for valuta date, amount, causale, IBAN hints, and local CSV conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BNK input"
+        required: true
+        placeholder:
+          en: "12/07/2026;Valuta 13/07/2026;Bonifico Example Srl;1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse Italian statement-like rows for valuta date, amount, causale, IBAN hints, and local CSV conventions."

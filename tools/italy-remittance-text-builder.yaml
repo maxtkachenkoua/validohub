@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-remittance-text-builder
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian Remittance Text Builder"
+summary:
+  en: "Normalize Italian payment causale/remittance text, detect invoice references, and produce log-safe previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REM input"
+        required: true
+        placeholder:
+          en: "Saldo fattura 2026/0015 del 12/07/2026 - Example Srl"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Remittance Text Builder | ValidoHub"
+  description:
+    en: "Normalize Italian payment causale/remittance text, detect invoice references, and produce log-safe previews."

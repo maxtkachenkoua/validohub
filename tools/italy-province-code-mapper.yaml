@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-province-code-mapper
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian Province Code Mapper"
+summary:
+  en: "Inspect Italian province abbreviations, expose known code evidence, and keep official geography lookup boundaries explicit."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROV input"
+        required: true
+        placeholder:
+          en: "RM Roma, MI Milano, NA Napoli"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-postal-code-validator, italy-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect Italian province abbreviations, expose known code evidence, and keep official geography lookup boundaries explicit."

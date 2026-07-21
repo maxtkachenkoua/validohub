@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-regex-pack-helper
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for Spanish DNI/NIE/NIF, IBAN, postal codes, phones, dates, and local evidence labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "Necesito regex para DNI NIE IBAN CP telefono fecha"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for Spanish DNI/NIE/NIF, IBAN, postal codes, phones, dates, and local evidence labels."

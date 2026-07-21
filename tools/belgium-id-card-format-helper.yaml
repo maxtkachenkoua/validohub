@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-id-card-format-helper
+kind: tool
+module: validohub
+country: BE
+category: national-identifiers
+status: active
+name:
+  en: "Belgian ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "85.07.30-033.28"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-passport-number-helper, belgium-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

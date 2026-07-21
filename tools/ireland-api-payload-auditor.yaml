@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-api-payload-auditor
+kind: tool
+module: validohub
+country: IE
+category: developer-tools
+status: active
+name:
+  en: "Irish API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-form-field-auditor, ireland-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

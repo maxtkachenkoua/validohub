@@ -1,16 +1,16 @@
 # Localization Phase 2 Plan
 
-Status: Completed foundation pass
+Status: Completed foundation pass; production locale matrix narrowed to seven core locales
 
 ## Goals
 
-- Prepare ValidoHub for scalable multi-locale expansion (30-50 locales) without changing URL structure.
+- Prepare ValidoHub for scalable multi-locale expansion without changing URL structure, while keeping production builds focused on the core locale set.
 - Keep locale as the first path segment.
 - Keep route slugs stable and non-translated.
 
 ## Phase 2 scope (this kickoff)
 
-- Enable initial locale set in site config: `en`, `pl`, `de`, `es`, `pt-BR`.
+- Enable production core locale set in site config: `en`, `es`, `pt-BR`, `de`, `fr`, `pl`, `uk`.
 - Keep fallback behavior safe when translated pages are not yet generated.
 - Add global language controls in header with country-official quick language buttons.
 
@@ -32,7 +32,7 @@ Priority order for language selection:
 
 ## Completed foundation
 
-- Initial locale set is enabled: `en`, `pl`, `de`, `es`, `pt-BR`.
+- Production core locale set is enabled: `en`, `es`, `pt-BR`, `de`, `fr`, `pl`, `uk`.
 - Locale-first route variants are generated for every discovered route.
 - Route slugs stay stable and are not translated.
 - Hreflang alternates are emitted for generated locale siblings.
@@ -44,4 +44,5 @@ Priority order for language selection:
 
 1. Add human-reviewed content packs for deep editorial copy per language.
 2. Add translation completeness checks into build validation.
-3. Expand the locale matrix in waves based on traffic and country coverage.
+3. Expand the locale matrix in waves based on traffic and country coverage; do not return to all-locale production generation without a deliberate scale decision.
+4. Keep `npm run build:country -- --country <slug>` as the fast development path for country runtime/copy/sample iteration after a full publish has produced the English source tree.

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-health-card-format-helper
+kind: tool
+module: validohub
+country: IE
+category: documents
+status: active
+name:
+  en: "Irish Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "1234567T HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-vehicle-plate-inspector, ireland-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-regex-pack-helper
+kind: tool
+module: validohub
+country: FI
+category: developer-tools
+status: active
+name:
+  en: "Finnish Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "HETU Y-tunnus postinumero  FI2112345600000785"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-api-payload-auditor, finland-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

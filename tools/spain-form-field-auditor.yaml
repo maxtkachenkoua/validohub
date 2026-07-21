@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-form-field-auditor
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Form Field Auditor"
+summary:
+  en: "Check Spanish form-field labels and values for NIF, IBAN, postal code, province, phone, address, and privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "NIF=B12345674 IBAN=ES9121000418450200051332 CP=28013 Telefono=612345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Form Field Auditor | ValidoHub"
+  description:
+    en: "Check Spanish form-field labels and values for NIF, IBAN, postal code, province, phone, address, and privacy handling."

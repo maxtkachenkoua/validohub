@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-currency-decimal-formatter
+kind: tool
+module: validohub
+country: RO
+category: finance
+status: active
+name:
+  en: "Romanian RON Decimal Currency Formatter"
+summary:
+  en: "Normalize RON amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1.234,56 RON"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-vat-rate-sanity-helper, romania-vat-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian RON Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize RON amount strings, decimal separators, grouping, and API-safe numeric previews."

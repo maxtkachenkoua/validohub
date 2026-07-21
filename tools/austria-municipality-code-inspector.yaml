@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-municipality-code-inspector
+kind: tool
+module: validohub
+country: AT
+category: address
+status: active
+name:
+  en: "Austrian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Kaerntner Strasse 10, 1010 Wien"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-phone-number-validator, austria-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

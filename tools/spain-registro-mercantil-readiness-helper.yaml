@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-registro-mercantil-readiness-helper
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: "Spanish Registro Mercantil Readiness Helper"
+summary:
+  en: "Check company-registration handoff payloads for NIF, province, legal-name, and registry-boundary evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RM input"
+        required: true
+        placeholder:
+          en: "Sociedad Demo SL B12345674 Madrid Tomo 1234 Folio 56"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-id-validator, spain-nif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Registro Mercantil Readiness Helper | ValidoHub"
+  description:
+    en: "Check company-registration handoff payloads for NIF, province, legal-name, and registry-boundary evidence."

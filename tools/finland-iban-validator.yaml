@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-iban-validator
+kind: tool
+module: validohub
+country: FI
+category: finance
+status: active
+name:
+  en: "Finland IBAN Validator"
+summary:
+  en: "Validate FI IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "FI2112345600000785"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-iban-generator, finland-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finland IBAN Validator | ValidoHub"
+  description:
+    en: "Validate FI IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

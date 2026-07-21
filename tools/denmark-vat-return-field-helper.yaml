@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-vat-return-field-helper
+kind: tool
+module: validohub
+country: DK
+category: tax
+status: active
+name:
+  en: "Danish VAT Return Field Helper"
+summary:
+  en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "Moms / VAT; DK12345674; period 2026-07; 1.234,56 DKK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-invoice-number-helper, denmark-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."

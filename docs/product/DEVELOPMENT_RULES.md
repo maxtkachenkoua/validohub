@@ -37,9 +37,19 @@ These rules are mandatory for future ValidoHub work.
 - Do not invent a different Country Hub layout for each country.
 - Complete country suites must not inherit another country's visible terms, group summaries, samples, or related-tool links. Long sample labels, result values, code blocks, and developer payloads must wrap or scroll locally and never create page-level horizontal overflow.
 - Complete country suites must meet the fixed-regression bar from France, Netherlands, and Switzerland. A future country is not complete if any tool shows the plain generated "Run the tool" shell, a hybrid generic-plus-premium shell, oversized landing-hero typography on tool pages, a large empty textarea with generic buttons, red/error styling for passed validation, missing field breakdowns, missing quality notes, empty output/result placeholders, raw payloads inside sample dropdown labels, cross-country related-link leakage, foreign-country fallback copy, `[object Object]` text, empty lower-page info cards, icon-only/status-only country hub cards, or page-level horizontal overflow.
-- Every country-scoped tool in every existing and future country must have a named field breakdown or equivalent detected-evidence breakdown. Field breakdown is a primary debugging surface, not decorative content. Generic result cards alone are not enough, including for broad CSV, JSON, API, data-quality, form-field, OCR, checklist, localization, privacy, IBAN, and identifier tools.
+- Every country-scoped tool in every existing and future country must have a named field breakdown or equivalent detected-evidence breakdown.
+- For country structured tools, the analyzer must be as local as the UI. National ID, social ID, company-register, VAT, EORI, and similar formats must expose field-level local meaning, checksum/control evidence when the format has it, pass/review pipeline checks, and useful debugger/developer output. Generic factory labels such as `identifier evidence`, `tax evidence`, `payment evidence`, or `workflow` are acceptable only for unfinished broad text-tool fallbacks, never for a finished premium ID/company/social/tax tool.
+- Country tool samples must be clear example actions, not confusing review-only dropdowns. Use short buttons/chips such as `Valid sample`, `Grouped valid sample`, `Invalid sample`, `Short sample`, or a named edge case; never expose raw payloads or `Review sample` as the visible sample label for finished tools.
+- Country tool related controls must navigate or clearly perform an action. Do not ship inert native select menus labelled "Samples and related tools"; related tools should be same-country links or explicit buttons with observable behavior.
+- History, batch validation, API preview, raw JSON, and related workflow diagnostics are premium requirements, but they must not dominate the main input area. Keep them compact or collapsible while preserving PESEL-depth access.
+- Success-first primary actions must not use red country accents. Red is reserved for review/error states; validation/generation buttons on valid workflows should use success/neutral styling even for red-flag countries.
+- IBAN coverage requires both validation and generation. Maintain the global `iban-generator` and country-scoped `*-iban-generator` tools so developers can generate structural IBAN fixtures, replay MOD-97, inspect BBAN/check digits, and stay inside the browser-only official-boundary contract.
+- Accepted bespoke country suites must keep the shared legacy rich layer enabled. Do not remove `country-legacy-rich-layer.js` from Brazil, Poland, France, or Netherlands mappings unless an explicit migration replaces it with equivalent PESEL-rich controls on every local tool page.
+ Factory-based country suites must keep the native `csf-rich-lab` debug layer enabled in `country-suite-factory.js`. Do not add rich history/batch/API/raw-JSON controls as one-off per-country patches for Austria, Czechia, Norway, Sweden, Denmark, Finland, or future factory suites; improve the shared factory so every current and future factory country receives the same depth.
+ Field breakdown is a primary debugging surface, not decorative content. Generic result cards alone are not enough, including for broad CSV, JSON, API, data-quality, form-field, OCR, checklist, localization, privacy, IBAN, and identifier tools.
 - Every country hub lower-page card/list renderer must normalize structured entries before display. Support `title`, `name`, `label`, `language`, `code`, `text`, `description`, and `note` shapes; never stringify objects into visible UI.
-- Every future full-country suite and every new country-scoped standalone tool must run `npm run audit:country-suite` and build successfully before being called complete. The audit must guard factory shell mounting, compact tool-shell proportions, field breakdown presence across all countries, and country hub empty-card regressions.
+- Every future full-country suite and every new country-scoped standalone tool must run `npm run audit:country-suite` and build successfully before being called complete. The audit must guard factory shell mounting, compact tool-shell proportions, field breakdown presence across all countries, and country hub empty-card regressions. `npm run build:country -- --country <slug>` is allowed for fast development loops after a prior full publish, but it must refresh the selected country hub and every local tool page under that country with current CSS/JS bundle links. A full `npm run build` remains the release gate.
+- Country shape/location visuals must remain Brazil-quality. Use the shared Natural Earth world-map source for real outlines and focused location maps whenever available; do not ship or regenerate generic polygon placeholders for full-premium countries.
 
 ## Brand And Icon Rules
 
@@ -70,8 +80,11 @@ These rules are mandatory for future ValidoHub work.
 - Do not edit files under `generated/validohub` by hand.
 - Do not serve ValidoHub from the project root.
 - Publish from Engine, then preview from `generated/validohub`.
+- When `site.yaml` locale matrix changes, the build must prune stale generated locale directories before validation/deploy. Do not leave obsolete `generated/validohub/<locale>/` trees in place; they can ship dead languages, broken links, and stale UI. The global language switcher must list exactly the configured production locales and no removed/experimental locales.
 
 ## Validation Expectations
+
+For any country described as full premium, `docs/product/PREMIUM_COUNTRY_CONTRACT.md` is mandatory and `npm run audit:country-premium -- --country <slug>` must pass before sign-off.
 
 - Run Engine doctor against ValidoHub after content/config changes.
 - Run publish after workbench asset changes.

@@ -24,8 +24,8 @@
     "language": "Spanish / regional co-official languages",
     "currency": "EUR",
     "currencyName": "Euro",
-    "status": "inProgress",
-    "summary": "Developer intelligence for Spanish identifiers, locale conventions, EU payments, banking context, government systems, and implementation pitfalls.",
+    "status": "available",
+    "summary": "Premium Spain developer hub for DNI, NIE, NIF, CIF, IVA/VAT, IBAN/CCC, SEPA, Bizum, AEAT, Facturae, locale, privacy, vehicles, and browser-only data-quality workflows.",
     "identifiers": [
       "DNI",
       "NIE",
@@ -48,19 +48,75 @@
       "government",
       "banking"
     ],
-    "availableWorkbenches": [],
-    "plannedWorkbenches": [
-      "DNI Validator",
-      "NIE Validator",
-      "NIF Inspector",
-      "Legacy CIF Inspector",
-      "Spain Phone Validator",
-      "Spain Postal Code Validator",
-      "Spain VAT / VIES Workbench",
-      "Spanish IBAN Tools",
-      "Bizum Reference / Inspector"
+    "availableWorkbenches": [
+      "Spain DNI/NIE/NIF/CIF Workbench",
+      "Spanish NIF Validator",
+      "Spanish DNI Validator",
+      "Spanish NIE Validator",
+      "Spanish CIF Legacy Inspector",
+      "Spanish VAT ID / ES Prefix Validator",
+      "Spanish EORI / Customs Identifier Helper",
+      "Spanish NAF Social Security Helper",
+      "Spanish Company Onboarding Auditor",
+      "Spanish Registro Mercantil Readiness Helper",
+      "Spain IBAN Validator",
+      "Spanish CCC Bank Account Inspector",
+      "Spanish Bank / Branch Code Inspector",
+      "Spanish BIC / SWIFT Inspector",
+      "Spanish SEPA Transfer Helper",
+      "Spanish SEPA Direct Debit Mandate Helper",
+      "Spanish Bizum Reference Helper",
+      "Spanish Remittance Text Builder",
+      "Spanish Payment Reconciliation Helper",
+      "Spanish Bank Statement Parser",
+      "Spanish Masked IBAN Formatter",
+      "Spanish EUR Decimal Currency Formatter",
+      "Spanish VAT Rate Sanity Helper",
+      "Spanish VAT Return Field Helper",
+      "Spanish Invoice Number Helper",
+      "Spanish Facturae XML Readiness Checker",
+      "Spanish VeriFactu Readiness Helper",
+      "Spanish SII VAT Ledger Helper",
+      "Spanish AEAT Modelo Readiness Helper",
+      "Spanish Accounting Audit Trail Checklist Helper",
+      "Spanish Postal Code Validator",
+      "Spanish Address Normalizer",
+      "Spanish Address Transliteration Normalizer",
+      "Spanish Province Code Mapper",
+      "Spanish Municipality Code Inspector",
+      "Spanish Phone Number Validator",
+      "Spanish Phone E.164 Formatter",
+      "Spanish Date Locale Formatter",
+      "Spanish CSV Locale Normalizer",
+      "Spanish Slug Normalizer",
+      "Spanish Document OCR Fixer",
+      "Spanish GDPR / LOPDGDD Redaction Helper",
+      "Spanish PII Masker",
+      "Spanish Personal Data Fixture Helper",
+      "Spanish ID Card Format Helper",
+      "Spanish Passport Number Helper",
+      "Spanish Driving Licence Format Helper",
+      "Spanish Residence Permit Format Helper",
+      "Spanish Health Card Format Helper",
+      "Spanish Vehicle Plate Inspector",
+      "Spanish VIN Validator",
+      "Spanish Vehicle Data Redaction Helper",
+      "Spanish Customs Declaration Helper",
+      "Spanish Postal Tracking Helper",
+      "Spanish Data Quality Workbench",
+      "Spanish JSON Fixture Helper",
+      "Spanish Regex Pack Helper",
+      "Spanish API Payload Auditor",
+      "Spanish Form Field Auditor",
+      "Spanish MRZ / Passport Parser"
     ],
-    "completion": 68,
+    "plannedWorkbenches": [
+      "Live AEAT tax status lookup",
+      "Live VIES VAT confirmation",
+      "Live bank ownership lookup",
+      "Live DGT vehicle registry lookup"
+    ],
+    "completion": 100,
     "coordinates": {
       "x": 49,
       "y": 41
@@ -69,8 +125,8 @@
   "hub": {
     "flag": "🇪🇸",
     "name": "Spain",
-    "badge": "Architecture reuse country hub",
-    "description": "Developer intelligence for Spanish identifiers, locale conventions, EU payments, banking context, government systems, and implementation pitfalls.",
+    "badge": "Premium Spain developer suite",
+    "description": "Developer intelligence and browser-only workbenches for Spanish identifiers, tax, e-invoicing, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
     "metadata": {
       "nativeName": "España",
       "population": "approximately 49.6M",
@@ -1448,15 +1504,22 @@
       }
     ],
     "commonMistakes": [
-      "DNI, NIE, NIF, and legacy CIF are not interchangeable terms.",
-      "Formatting validation is not identity verification.",
-      "VIES status lookup is different from local syntax validation.",
-      "Mainland Spain and the Canary Islands do not always share the same local time.",
-      "Spain has multiple co-official languages in relevant autonomous communities.",
-      "Preserve accents and use locale-aware collation for names and addresses.",
-      "Postal code is not the same as province or administrative validation.",
-      "IBAN checksum validation does not prove account ownership.",
-      "Do not imply Bizum payment initiation or bank access from an informational page."
+      {
+        "title": "Treating NIF syntax as identity proof",
+        "text": "A valid checksum does not prove the person, company, or tax status exists."
+      },
+      {
+        "title": "Losing CCC slices inside IBAN",
+        "text": "Spanish IBANs still contain bank, branch, check digits, and account slices useful for debugging."
+      },
+      {
+        "title": "Using raw samples as labels",
+        "text": "Long CSV, JSON, IBAN, and invoice payloads belong inside inputs, not selector labels."
+      },
+      {
+        "title": "Mixing decimal conventions",
+        "text": "Spanish business files often use comma decimals and dot grouping; API payloads may require normalized numeric values."
+      }
     ],
     "bankingOverview": [
       {
@@ -1529,66 +1592,16 @@
     ],
     "localizationNotes": [
       {
-        "name": "Plural rules",
-        "description": "Spanish pluralization should use locale-aware message formatting.",
-        "tags": [
-          "locale"
-        ]
+        "title": "Dates",
+        "text": "Use DD/MM/YYYY for display and ISO dates for API/storage handoff."
       },
       {
-        "name": "Week starts",
-        "description": "Most Spanish user interfaces expect Monday as the first day of week.",
-        "tags": [
-          "locale",
-          "date"
-        ]
+        "title": "Numbers",
+        "text": "Use comma decimals and dot thousands for Spanish display, but normalize for APIs when required."
       },
       {
-        "name": "Calendar",
-        "description": "Gregorian calendar is the ordinary civil calendar.",
-        "tags": [
-          "locale",
-          "date"
-        ]
-      },
-      {
-        "name": "Sorting",
-        "description": "Use locale-aware collation and preserve accents such as á, é, í, ó, ú, ü, and ñ.",
-        "tags": [
-          "locale",
-          "developer"
-        ]
-      },
-      {
-        "name": "Regional languages",
-        "description": "Catalan/Valencian, Galician, Basque, and Aranese may be co-official in relevant regions.",
-        "tags": [
-          "locale"
-        ]
-      },
-      {
-        "name": "Unicode",
-        "description": "Use UTF-8 and preserve accents and ordinal markers in names and addresses.",
-        "tags": [
-          "locale",
-          "developer"
-        ]
-      },
-      {
-        "name": "ICU",
-        "description": "ICU locale commonly appears as es_ES.",
-        "tags": [
-          "locale",
-          "developer"
-        ]
-      },
-      {
-        "name": "Timezone",
-        "description": "Use Europe/Madrid for mainland and Balearic contexts; Canary Islands need a separate timezone choice.",
-        "tags": [
-          "time",
-          "developer"
-        ]
+        "title": "Languages",
+        "text": "Spanish is primary; Catalan/Valencian, Galician, Basque, and Aranese can appear in regional forms."
       }
     ],
     "ecosystem": [
@@ -1657,22 +1670,32 @@
       }
     ],
     "highlights": [
-      "Spain commonly uses the es-ES locale for Spanish display conventions.",
-      "Dates are commonly written as DD/MM/YYYY and times use a 24-hour clock.",
-      "EUR uses comma decimals and dot thousands separators in Spanish display.",
-      "DNI, NIE, NIF, and legacy CIF have different meanings and should not be conflated.",
-      "Spanish postal codes use five digits, but postal syntax is not address verification.",
-      "Spain participates in SEPA and uses IBAN for modern bank account exchange.",
-      "Bizum is important in consumer payment UX but no Bizum tool is implemented yet.",
-      "Mainland Spain and the Canary Islands differ in local time.",
-      "Regional co-official languages can affect labels, names, sorting, and user expectations."
+      {
+        "title": "Spanish identity and tax IDs",
+        "text": "DNI, NIE, NIF, legacy CIF, ES VAT, EORI, and social-security snippets are normalized with local evidence slices."
+      },
+      {
+        "title": "Payments and banking",
+        "text": "Spanish IBAN, CCC, BIC, SEPA, Bizum, remittance, reconciliation, and statement snippets stay browser-only."
+      },
+      {
+        "title": "Developer QA surfaces",
+        "text": "CSV, JSON, API payload, form, OCR, privacy, vehicle, and postal workflows expose field breakdowns for debugging."
+      }
     ],
     "developerNotes": [
-      "Use es-ES formatting for user-facing currency, date, time, and number display unless a regional locale is explicitly selected.",
-      "Store normalized identifiers separately from display masks when future validator specs exist.",
-      "Treat DNI, NIE, NIF, VAT, phone, postal code, and IBAN as separate workflows.",
-      "Keep VIES business-status lookup separate from local syntax checks.",
-      "Confirm official references before deep-linking regulatory, tax, identity, postal, or banking documentation."
+      {
+        "title": "Offline boundary",
+        "text": "The suite validates structure and local evidence only; official status stays with AEAT, VIES, TGSS, DGT, Correos, banks, or payment providers."
+      },
+      {
+        "title": "Locale shape",
+        "text": "Spanish UI data commonly combines DD/MM/YYYY dates, comma decimals, dot thousands, EUR, five-digit postal codes, and +34 phone numbers."
+      },
+      {
+        "title": "Debug-first output",
+        "text": "Every workbench includes a dedicated field breakdown so implementers can see the exact detected Spanish slices."
+      }
     ],
     "developerExamples": [
       {
@@ -1796,7 +1819,25 @@
         "code": "{\n  \"country\": \"ES\",\n  \"vatId\": \"ESX0000000T\",\n  \"syntaxChecked\": false,\n  \"viesStatusChecked\": false,\n  \"fixture\": true\n}"
       }
     ],
-    "availableWorkbenches": {}
+    "availableWorkbenches": {},
+    "countryEcosystem": [
+      {
+        "title": "AEAT",
+        "text": "Tax agency boundary for VAT, Modelo filings, and tax status."
+      },
+      {
+        "title": "VIES",
+        "text": "EU VAT confirmation boundary for ES VAT identifiers."
+      },
+      {
+        "title": "Banco de Espana / SEPA",
+        "text": "Banking and payment context for IBAN, BIC, CCC, and transfer payloads."
+      },
+      {
+        "title": "DGT",
+        "text": "Official vehicle and driving-licence status remains outside offline validation."
+      }
+    ]
   },
   "availableWorkbenches": [
     {

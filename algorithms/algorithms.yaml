@@ -64,6 +64,14 @@ algorithms:
       en: Spain ID Algorithm
     summary:
       en: Metadata entry for Spanish DNI, NIE, NIF, CIF, and VAT-style identifier validation, parsing, generation, and explanation.
+  - algorithmId: validohub.spain-suite
+    javaClass: com.validohub.algorithms.spain.SpainSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, generate, format, calculate, explain]
+    name:
+      en: Spain Premium Suite Algorithm
+    summary:
+      en: Metadata entry for Spanish DNI, NIE, NIF, CIF, VAT, EORI, IBAN, CCC, SEPA, Bizum, AEAT, Facturae, locale, privacy, vehicle, and developer-data workbenches.
   - algorithmId: validohub.base64-decoder
     javaClass: com.validohub.algorithms.encoding.Base64DecoderAlgorithm
     version: 1
@@ -192,6 +200,14 @@ algorithms:
       en: IBAN Algorithm
     summary:
       en: Metadata entry for IBAN validation, parsing, and explanation.
+  - algorithmId: validohub.iban-generator
+    javaClass: com.validohub.algorithms.finance.IbanGeneratorAlgorithm
+    version: 1
+    capabilities: [generate, validate, parse, explain]
+    name:
+      en: IBAN Generator Algorithm
+    summary:
+      en: Metadata entry for browser-side IBAN fixture generation, check-digit replay, BBAN parsing, and explanation.
 
   - algorithmId: validohub.poland-baseline
     javaClass: com.validohub.algorithms.poland.PolandBaselineAlgorithm
@@ -237,3 +253,113 @@ algorithms:
       en: Switzerland Premium Suite Algorithm
     summary:
       en: Metadata entry for ValidoHub browser-side Swiss UID, MWST/VAT, AHV/AVS, IBAN, QR-bill, SIC, canton, address, privacy, vehicle, and developer workbenches.
+
+
+  - algorithmId: validohub.italy-suite
+    javaClass: com.validohub.algorithms.italy.ItalySuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, calculate, explain]
+    name:
+      en: Italy Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side Italian codice fiscale, Partita IVA, IBAN, ABI/CAB, FatturaPA, SDI, locale, privacy, vehicle, and developer workbenches.
+
+
+  - algorithmId: validohub.portugal-suite
+    javaClass: com.validohub.algorithms.portugal.PortugalSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Portugal Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side portuguese identifiers, banking, payments, tax, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.austria-suite
+    javaClass: com.validohub.algorithms.austria.AustriaSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Austria Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side austrian identifiers, banking, payments, tax, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.belgium-suite
+    javaClass: com.validohub.algorithms.belgium.BelgiumSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Belgium Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side belgian identifiers, banking, payments, tax, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.ireland-suite
+    javaClass: com.validohub.algorithms.ireland.IrelandSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Ireland Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side irish identifiers, banking, payments, tax, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.czechia-suite
+    javaClass: com.validohub.algorithms.czechia.CzechiaSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Czechia Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side czech identifiers, banking, payments, tax, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.sweden-suite
+    javaClass: com.validohub.algorithms.sweden.SwedenSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Sweden Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side swedish identifiers, banking, payments, tax, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.norway-suite
+    javaClass: com.validohub.algorithms.norway.NorwaySuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Norway Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side norwegian identifiers, banking, payments, tax, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.denmark-suite
+    javaClass: com.validohub.algorithms.denmark.DenmarkSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Denmark Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side danish identifiers, banking, payments, tax, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.finland-suite
+    javaClass: com.validohub.algorithms.finland.FinlandSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Finland Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side finnish identifiers, banking, payments, tax, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.romania-suite
+    javaClass: com.validohub.algorithms.romania.RomaniaSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Romania Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side romanian identifiers, banking, payments, tax, locale, privacy, vehicle, document, and developer workbenches.

@@ -239,6 +239,25 @@ Future global tools must be born premium: deterministic neutral theme, tool-spec
   - Deeper all-locale editorial translation pass for dense Netherlands-specific workbench copy.
 - Current quality status: Production-quality V2 country suite, Brazil-style field-breakdown benchmark, and first post-guardrails generation benchmark.
 
+## Italy Premium Workbench Suite
+
+- Source JS: `assets/js/tools/italy-suite.js`
+- Shared shell JS: `assets/js/tools/country-suite-factory.js`
+- Related YAML tool pages:
+  - `tools/italy-*.yaml`
+- Algorithm ID: `validohub.italy-suite`
+- Product spec:
+  - `docs/product/ITALY_PREMIUM_SUITE_SPEC.md`
+- Current capabilities:
+  - 60 Italy-specific country workbenches.
+  - Codice fiscale, Partita IVA, VAT ID, EORI, SDI, PEC, REA, Registro Imprese, ATECO, SPID/CIE boundary, company onboarding, and tax/company diagnostics.
+  - Italian IBAN, ABI/CAB, BIC/SWIFT, SEPA transfer, direct debit mandates, Ri.Ba, pagoPA, remittance, masked IBAN, statement parsing, and payment reconciliation helpers.
+  - FatturaPA XML, SDI routing, VAT rates, VAT returns, invoice numbers, e-invoicing readiness, accounting audit trails, and EUR amount helpers.
+  - CAP, address, transliteration, province, comune/Belfiore, phone, E.164, date, CSV, slug, OCR, JSON, regex, API, form, and data-quality helpers.
+  - GDPR/privacy redaction, Italian PII masking, personal fixtures, passport/ID/residence-permit/driving-licence/tessera sanitaria helpers, vehicle plates, VIN, customs, and postal tracking helpers.
+  - Country Suite Factory V1 shell with compact Brazil-scale header, short samples, immediate result card, validation pipeline, dedicated field breakdown, quality notes, copy/download controls, and advanced developer payload.
+- Current quality status: Production-quality V1 factory country suite.
+
 ## Germany Premium Workbench Suite
 
 - Source JS: `assets/js/tools/germany-suite.js`
@@ -289,6 +308,15 @@ Future global tools must be born premium: deterministic neutral theme, tool-spec
   - Human-reviewed static editorial translations for the full Switzerland country hub body.
   - Optional live lookup integrations only after a privacy/network product spec.
 - Current quality status: Production-quality V1 country suite and first full Country Suite Factory V1 consumer.
+
+## Spain Premium Country Suite V1
+
+- Status: active
+- Source JS: `assets/js/tools/spain-suite.js`
+- Factory dependency: `assets/js/tools/country-suite-factory.js`
+- Algorithm ID: `validohub.spain-suite`
+- Routes: `tools/spain-*.yaml`
+- Notes: Full Spain country suite covering identity, tax, banking, payments, e-invoicing, locale, privacy, document, vehicle, postal, and developer-data workflows. Existing `spain-id-validator` and `spain-iban-validator` routes are preserved inside the suite.
 
 ## Spain ID Workbench
 
@@ -568,3 +596,17 @@ This is a product platform section, not a browser workbench plugin.
   - Add human-reviewed documentation packs for each generic utility after usage data confirms priority.
   - Expand country-specific IBAN workbenches only when the page can add country-local structure, national checks, or real user demand beyond generic ISO validation.
 - Current quality status: Production-quality V3 shared premium suite for global non-country tools, aligned with the Poland/Brazil premium workbench structure where practical.
+
+
+## Premium Country Readiness Gate
+
+Future full-premium countries must pass `npm run audit:country-premium -- --country <slug>` in addition to `npm run audit:country-suite`. The readiness report lives in `docs/reports/country-premium-readiness.*` and records premium/partial/planned state, tool counts, generated pages, blockers, and warnings.
+
+
+## Europe Premium Batch V1
+
+Runtime source: `assets/js/tools/<country>-suite.js` using `country-suite-factory.js`.
+
+Countries: Portugal (portugal), Austria (austria), Belgium (belgium), Ireland (ireland), Czechia (czechia), Sweden (sweden), Norway (norway), Denmark (denmark), Finland (finland), Romania (romania).
+
+Each country registers 60 active browser-only workbenches covering identifiers, VAT/tax, payments, banking, address, phone, locale formatting, privacy/redaction, documents, vehicles, logistics, and developer QA. Field breakdown is mandatory for every route.

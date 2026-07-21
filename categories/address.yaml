@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: address
+slug: address
+name:
+  en: Address
+summary:
+  en: Tools for postal codes, addresses, phone formats, municipalities, and regional data.
+order: 40
+seo:
+  title:
+    en: Address Tools
+  description:
+    en: Normalize, validate, and inspect address, postal, phone, and regional formats.

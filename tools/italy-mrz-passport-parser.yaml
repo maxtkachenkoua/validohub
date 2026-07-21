@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-mrz-passport-parser
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian MRZ / Passport Parser"
+summary:
+  en: "Parse Italian passport MRZ snippets, split document, nationality, birth-date, expiry, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<ITAROSSI<<MARIO<<<<<<<<<<<<<<<<<<<<\nYA1234567ITA8508019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-passport-number-helper, italy-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse Italian passport MRZ snippets, split document, nationality, birth-date, expiry, and checksum evidence without identity proof."

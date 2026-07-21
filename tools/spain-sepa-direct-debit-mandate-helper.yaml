@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-sepa-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish SEPA Direct Debit Mandate Helper"
+summary:
+  en: "Inspect Spanish SEPA direct-debit mandate fields, creditor references, IBAN evidence, and signed-mandate boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SDD input"
+        required: true
+        placeholder:
+          en: "Mandato ES9121000418450200051332 referencia M-2026-0001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish SEPA Direct Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Inspect Spanish SEPA direct-debit mandate fields, creditor references, IBAN evidence, and signed-mandate boundaries."

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-eur-decimal-currency-formatter
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian EUR Decimal Currency Formatter"
+summary:
+  en: "Normalize Italian EUR amounts, comma decimals, thousands separators, and accounting import previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EUR input"
+        required: true
+        placeholder:
+          en: "1.234,56 €"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian EUR Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize Italian EUR amounts, comma decimals, thousands separators, and accounting import previews."

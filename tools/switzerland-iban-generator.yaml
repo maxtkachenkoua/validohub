@@ -1,0 +1,43 @@
+schemaVersion: 1
+id: switzerland-iban-generator
+kind: tool
+module: validohub
+country: CH
+category: finance
+status: active
+name:
+  en: Switzerland IBAN Generator
+summary:
+  en: Generate Swiss IBAN check digits from QR-bill/account BBAN body, then replay MOD-97 validation locally.
+capabilities: [generate, validate, parse, explain]
+algorithm:
+  algorithmId: validohub.switzerland-suite
+forms:
+  generate:
+    inputs:
+      - type: text
+        name: country
+        label:
+          en: Country code
+        required: true
+      - type: text
+        name: bban
+        label:
+          en: Switzerland BBAN / account body
+        required: true
+      - type: text
+        name: iban
+        label:
+          en: Existing IBAN to repair or inspect
+    actions: [generate, validate, explain]
+related:
+  explicit: [switzerland-iban-validator, switzerland-qr-bill-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: Switzerland IBAN Generator | ValidoHub
+  description:
+    en: Generate Swiss IBAN check digits and inspect generated Swiss IBAN structure locally.

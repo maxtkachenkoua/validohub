@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-business-register-readiness-helper
+kind: tool
+module: validohub
+country: RO
+category: government
+status: active
+name:
+  en: "Romanian ONRC Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated ONRC lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "RO12345674 RO12345674 Calea Victoriei 1, 010061 Bucuresti"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-id-card-format-helper, romania-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian ONRC Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated ONRC lookup or company registry workflow."

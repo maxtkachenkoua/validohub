@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-aeat-modelo-readiness-helper
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish AEAT Modelo Readiness Helper"
+summary:
+  en: "Inspect Spanish AEAT model snippets for NIF, period, tax amount, and official filing handoff requirements."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "AEAT input"
+        required: true
+        placeholder:
+          en: "Modelo 303 periodo 2T 2026 NIF B12345674 importe 1.234,56"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish AEAT Modelo Readiness Helper | ValidoHub"
+  description:
+    en: "Inspect Spanish AEAT model snippets for NIF, period, tax amount, and official filing handoff requirements."

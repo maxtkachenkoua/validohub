@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: RO
+category: developer-tools
+status: active
+name:
+  en: "Romanian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-cnp-validator, romania-cui-cif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

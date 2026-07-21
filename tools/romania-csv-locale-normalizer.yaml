@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-csv-locale-normalizer
+kind: tool
+module: validohub
+country: RO
+category: developer-tools
+status: active
+name:
+  en: "Romanian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Romania decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1.234,56 RON;21.07.2026;RO12345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-slug-normalizer, romania-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Romania decimal, date, postal, phone, tax, and banking fields."

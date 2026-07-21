@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-form-field-auditor
+kind: tool
+module: validohub
+country: BE
+category: developer-tools
+status: active
+name:
+  en: "Belgian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=BE0123456749&postal=1000 Brussels&phone=+32 2 123 45 67"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-locale-number-parser, belgium-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

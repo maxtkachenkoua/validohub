@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-gdpr-lopdgdd-redaction-helper
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish GDPR / LOPDGDD Redaction Helper"
+summary:
+  en: "Redact Spanish identity, tax, banking, phone, address, and vehicle evidence for privacy-safe support payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "B12345674 ES9121000418450200051332 +34 612345678 Calle Mayor 1"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish GDPR / LOPDGDD Redaction Helper | ValidoHub"
+  description:
+    en: "Redact Spanish identity, tax, banking, phone, address, and vehicle evidence for privacy-safe support payloads."

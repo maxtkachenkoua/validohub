@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-slug-normalizer
+kind: tool
+module: validohub
+country: SE
+category: developer-tools
+status: active
+name:
+  en: "Swedish Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Sweden sample company Drottninggatan 1, 111 20 Stockholm"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-document-ocr-fixer, sweden-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-support-ticket-scrubber
+kind: tool
+module: validohub
+country: PT
+category: privacy
+status: active
+name:
+  en: "Portuguese Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 123456749, PT50000201231234567490154, Rua Augusta 100, 1100-053 Lisboa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-integration-smoke-test-builder, portugal-nif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

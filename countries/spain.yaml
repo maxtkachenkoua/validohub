@@ -6,8 +6,11 @@ name:
 region: Europe
 languages:
   - es
-  - en
+  - ca
+  - gl
+  - eu
 currency: EUR
 relatedCountries:
-  - BR
-  - PL
+  - FR
+  - IT
+  - DE

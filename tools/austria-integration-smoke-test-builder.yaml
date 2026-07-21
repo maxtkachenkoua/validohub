@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: AT
+category: developer-tools
+status: active
+name:
+  en: "Austrian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-svnr-validator, austria-firmenbuchnummer-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

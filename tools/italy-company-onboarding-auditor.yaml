@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-company-onboarding-auditor
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian Company Onboarding Auditor"
+summary:
+  en: "Audit Italian company intake payloads for VAT, CF, REA, PEC, IBAN, address, and official-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CO input"
+        required: true
+        placeholder:
+          en: "Example Srl P.IVA 12345678903 CF 12345678903 REA MI-1234567 IBAN IT60X0542811101000000123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit Italian company intake payloads for VAT, CF, REA, PEC, IBAN, address, and official-status boundaries."

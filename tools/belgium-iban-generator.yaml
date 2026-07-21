@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-iban-generator
+kind: tool
+module: validohub
+country: BE
+category: finance
+status: active
+name:
+  en: "Belgium IBAN Generator"
+summary:
+  en: "Generate BE IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "539007547034"
+    actions: [generate, validate, explain]
+related:
+  explicit: [belgium-bank-account-inspector, belgium-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgium IBAN Generator | ValidoHub"
+  description:
+    en: "Generate BE IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-bank-account-inspector
+kind: tool
+module: validohub
+country: IE
+category: finance
+status: active
+name:
+  en: "Irish Domestic Bank Account Inspector"
+summary:
+  en: "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "AIBK 931152 12345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-bic-swift-inspector, ireland-sepa-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish Domestic Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-iban-validator
+kind: tool
+module: validohub
+country: RO
+category: finance
+status: active
+name:
+  en: "Romania IBAN Validator"
+summary:
+  en: "Validate RO IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "RO49AAAA1B31007593840000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-iban-generator, romania-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romania IBAN Validator | ValidoHub"
+  description:
+    en: "Validate RO IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

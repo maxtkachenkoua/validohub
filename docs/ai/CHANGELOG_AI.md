@@ -1,3 +1,105 @@
+## 2026-07-21 - Factory sample UX and IBAN generator hardening
+
+- Replaced confusing factory sample dropdown behavior with clear valid/invalid/edge sample buttons and same-country related links that actually navigate.
+- Collapsed history, batch diagnostics, API preview, raw JSON, and related local workflows into compact advanced tooling so PESEL-rich depth stays available without taking over the main input area.
+- Changed factory primary action styling to success-first instead of inheriting red country accents for normal Validate/Generate actions.
+- Added a global `iban-generator` plus country-scoped IBAN generator coverage for generated factory countries and existing bespoke/premium countries, with local check-digit generation, MOD-97 replay, BBAN/check-digit breakdown, masked output, and official bank-ownership boundary notes.
+- Added audit and Product Bible rules so future country generation cannot regress to `Review sample`, inert related-tool selects, red success actions, oversized history/batch panels, or validator-only IBAN coverage.
+- Kept Valido Engine untouched.
+
+## 2026-07-21 - Factory analyzer intelligence hardening
+
+- Fixed the Country Suite Factory rich-layer gap where some national ID/company/social tools rendered PESEL-rich UI but still used generic analyzer semantics.
+- Added shared country-aware analyzer profiles for Switzerland, Spain, Germany, Italy, Austria, Belgium, Czechia, Denmark, Finland, Ireland, Norway, Portugal, Romania, and Sweden.
+- Czech Rodne cislo, Czech ICO, Swiss AHV/UID, Spanish DNI/NIE/CIF, German IdNr/Handelsregister, Italian Codice Fiscale/Partita IVA, and the Europe batch core ID/company samples now decode local fields and checksum/control evidence instead of generic `identifier evidence` cards.
+- Updated valid fixtures whose previous sample values failed their own local checksum/formula, and added factory audit/doc rules blocking generic analyzer output for finished local ID/company/social/tax tools.
+- Kept Valido Engine untouched.
+
+## 2026-07-21 - Native factory rich layer for all factory countries
+
+- Raised Country Suite Factory V1 to native PESEL-rich parity for all factory-based countries.
+- Added `csf-rich-lab` to `assets/js/tools/country-suite-factory.js` so Austria, Czechia, Norway, Sweden, Denmark, Finland, Spain, Italy, Germany, Switzerland, and future factory suites get browser history, multi-row diagnostics, API preview, raw JSON/audit output, and same-country related-tool UX from the shared factory.
+- Added audit and product-rule coverage so future country work must improve the shared factory instead of adding one-off rich-debug patches.
+- Browser-verified the Norway factory tool route from generated output with the rich layer, result card, pipeline, field breakdown, quality notes, advanced panels, no generic `Run the tool` fallback, no raw blue links, and no console errors.
+- Kept Valido Engine untouched.
+
+## 2026-07-21 - Legacy country PESEL-rich parity bridge
+
+- Added `assets/js/tools/country-legacy-rich-layer.js` for accepted bespoke country suites: Brazil, Poland, France, and Netherlands.
+- The bridge preserves existing bespoke analyzers while adding shared PESEL-depth surfaces: recent validations, batch diagnostics, API preview, raw JSON capture, and country-local related-tool UX.
+- Updated full and one-country build mappings so legacy suites load the bridge before their runtime and `npm run build:country -- --country <slug>` keeps selected country tool pages current.
+- Added audit/doc guardrails so future work cannot remove the bridge or ship bespoke country tools below the PESEL-rich standard without an explicit equivalent migration.
+- Kept Valido Engine untouched.
+
+## 2026-07-21 - PESEL-rich factory and SVG integrity hardening
+
+- Upgraded Country Suite Factory tools toward the Poland PESEL debug-depth bar: presets, recent validations, batch validation, result-first output, field/evidence token strips, calculation/parser debugger, repair suggestions, developer API preview, and raw JSON output.
+- Removed inline `<style>` generation from country map/location SVG assets after full build integrity rejected inlined country SVG styles. Future country visuals must paint paths with SVG attributes or external bundle CSS, never embedded SVG style blocks.
+- Added permanent rules to the premium country docs requiring every future country tool to target PESEL-level debug depth without faking checksum math for non-checksum domains.
+- Full build and country-suite/premium audits passed after the fix.
+
+## 2026-07-21 - Country snapshot and one-country build hardening
+
+- Reworked `npm run build:country -- --country <slug>` so it recompiles shared assets and renders the English country hub from source before localizing that single country tree.
+- Fixed the civic snapshot overlap regression by separating the outer snapshot section from the inner layout wrapper and tightening responsive card wrapping.
+- Added generated flag-gradient variables to country heroes and civic snapshots so new countries inherit Brazil-strength flag color backgrounds instead of mostly white/default themes.
+- Added premium audit blockers and project rules for missing flag-gradient variables, duplicated civic snapshot layout classes, and missing civic layout wrappers.
+- Kept Valido Engine untouched.
+
+## 2026-07-21 - Europe batch hub regression hardening
+
+- Fixed the first 10-country Europe batch hub regressions: empty Technical Standards cards now have plug type, voltage, and frequency values; country search placeholders and chips now use local identifiers/payment rails instead of the generic IBAN/SWIFT/SEPA/VAT/INVOICE fallback; country outline/location visuals now use flag-color identity.
+- Removed country breadcrumb official-language quick actions where government-language switching is not real, added a required civic snapshot before Developer Actions, fixed duplicate breadcrumb separator risk, and strengthened all country hero backgrounds toward the Brazil flag-gradient baseline.
+- Added premium audit blockers for empty technical standards, generic country search placeholders, and object/string rendering leaks so future countries cannot pass with these regressions.
+- Promoted the fixes into the Premium Country Contract, country-suite guardrails, and Europe batch spec as mandatory future-country rules.
+- Kept Valido Engine untouched.
+
+## 2026-07-21 - Europe premium 10-country stress batch
+
+- Added a documented 10-country premium generation batch for Portugal (portugal), Austria (austria), Belgium (belgium), Ireland (ireland), Czechia (czechia), Sweden (sweden), Norway (norway), Denmark (denmark), Finland (finland), Romania (romania).
+- Each country uses Country Suite Factory V1, 60 local workbenches, runtime localization for en/es/pt-BR/de/fr/pl/uk, mandatory field breakdown, same-country related links, and explicit official boundaries.
+- Added `docs/product/EUROPE_BATCH_PREMIUM_SUITE_SPEC.md` so future AI sessions treat batch generation quality as a contract, not a one-off.
+
+# 2026-07-21 - Premium country suite tool-count rule
+
+- Documented that full-country suite tool count is quality-driven, not quota-driven.
+- Treat 60 tools as reference density only: add more when local workflows justify it, ship fewer when fewer strong offline/browser-only tools exist, and never pad with weak tools.
+- Added the rule to AI entrypoint, country-suite guardrails, and Country Suite Factory spec so future country prompts inherit it.
+
+# 2026-07-21 - Spain Premium Country Suite V1
+
+- Upgraded Spain from two standalone country tools into a full premium Country Suite Factory V1 suite.
+- Preserved existing Spain ID and Spain IBAN routes while switching them to `validohub.spain-suite`.
+- Added `assets/js/tools/spain-suite.js`, expanded Spain country metadata, 60 Spain-specific tool YAML pages, factory/build mappings, and audit coverage.
+- Kept Valido Engine untouched.
+
+# 2026-07-21 - Core Locale Matrix and Country Dev Build
+
+Changed:
+
+- Narrowed the production locale matrix to seven core locales: `en`, `es`, `pt-BR`, `de`, `fr`, `pl`, and `uk`.
+- Added `npm run build:country -- --country <slug>` as a fast ValidoHub-only development refresh for a single generated country tree after a prior full publish.
+- Added full-build pruning for stale generated locale directories when the locale matrix changes.
+- Restricted the global language switcher to the configured seven production locales and added a build guard so it cannot drift from `site.yaml`.
+- Documented that partial country builds are dev accelerators and full `npm run build` remains the release gate.
+
+Reason:
+
+The 24+ locale full-site generation path was too expensive for scaling toward 100-200 countries. Seven core production locales preserve global coverage while keeping generated size, build time, sitemap volume, and link validation manageable.
+
+Impact:
+
+- ValidoHub owns the locale matrix and partial country build tooling.
+- Valido Engine remains untouched.
+- Future locale expansion is demand-driven instead of default all-locale generation.
+
+## 2026-07-20 - Italy Premium Country Suite V1
+
+- Added Italy as a full premium country hub with 60 browser-only workbenches on Country Suite Factory V1.
+- Added `assets/js/tools/italy-suite.js`, `countries/italy.yaml`, Italy visual assets, and `tools/italy-*.yaml` pages.
+- Registered `validohub.italy-suite` in build/runtime mappings and country-suite audits, including mandatory field-breakdown coverage.
+- Added `docs/product/ITALY_PREMIUM_SUITE_SPEC.md` and updated current-state/factory guardrails so future countries keep the Poland/Brazil/Germany quality bar.
+
 ## Germany Premium Country Suite V1
 
 - Added Germany as the second Country Suite Factory V1 consumer with 60 active Germany-specific workbenches.
@@ -6,6 +108,13 @@
 - Hardened the build pipeline so factory-based country algorithms skip generic utility workbench injection.
 
 # AI Changelog
+
+## 2026-07-21 - Premium Country Contract hardening gate
+
+- Added `docs/product/PREMIUM_COUNTRY_CONTRACT.md` as the mandatory full-premium country contract.
+- Added `npm run audit:country-premium` / `scripts/audit-country-premium.mjs` to generate readiness reports and block known country regressions before future country batches.
+- Wired the contract into AI start docs, country-suite guardrails, and factory audit expectations.
+
 
 ## 2026-07-20 - All-Country Field Breakdown Requirement
 
@@ -735,3 +844,7 @@ Impact:
 - ValidoHub owns the browser behavior and styling.
 - Valido Engine remains generic and untouched.
 - No backend, REST API, database, Java execution, or server-side runtime was added.
+# 2026-07-21
+
+- Upgraded Country Suite Factory V1 toward Poland PESEL-level tool richness for factory-based country suites: presets/history, batch validation, result-first analysis, visual field/evidence strips, calculation/parser debugger, repair suggestions, developer API preview, and raw JSON/audit output.
+- Added permanent product rules requiring PESEL-like debug depth for every country-scoped tool, with domain-appropriate parser/evidence diagnostics for non-checksum tools.

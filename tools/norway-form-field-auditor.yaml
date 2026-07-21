@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-form-field-auditor
+kind: tool
+module: validohub
+country: NO
+category: developer-tools
+status: active
+name:
+  en: "Norwegian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=NO915545943MVA&postal=0150 Oslo&phone=+47 912 34 567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-locale-number-parser, norway-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

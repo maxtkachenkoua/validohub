@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-organisationsnummer-validator
+kind: tool
+module: validohub
+country: SE
+category: national-identifiers
+status: active
+name:
+  en: "Swedish Organisationsnummer Validator"
+summary:
+  en: "Inspect Organisationsnummer structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "556016-0680"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-vat-id-validator, sweden-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Organisationsnummer Validator | ValidoHub"
+  description:
+    en: "Inspect Organisationsnummer structure, registry-style prefixes, control digits, and official lookup boundaries."

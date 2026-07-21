@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-niss-social-insurance-helper
+kind: tool
+module: validohub
+country: PT
+category: national-identifiers
+status: active
+name:
+  en: "Portuguese NISS Helper"
+summary:
+  en: "Split NISS evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "12345674901"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-company-onboarding-auditor, portugal-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese NISS Helper | ValidoHub"
+  description:
+    en: "Split NISS evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

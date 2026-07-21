@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-fatturapa-xml-readiness-checker
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian FatturaPA XML Readiness Checker"
+summary:
+  en: "Audit FatturaPA XML snippets for cedente, cessionario, totals, VAT, and SDI delivery handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FPA input"
+        required: true
+        placeholder:
+          en: "<FatturaElettronica><CedentePrestatore><DatiAnagrafici><IdFiscaleIVA><IdPaese>IT</IdPaese><IdCodice>12345678903</IdCodice></IdFiscaleIVA></DatiAnagrafici></CedentePrestatore></FatturaElettronica>"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian FatturaPA XML Readiness Checker | ValidoHub"
+  description:
+    en: "Audit FatturaPA XML snippets for cedente, cessionario, totals, VAT, and SDI delivery handoff evidence."

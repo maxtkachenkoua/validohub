@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: AT
+category: tax
+status: active
+name:
+  en: "Austrian E-Rechnung / ebInterface Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-tax-authority-handoff-helper, austria-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian E-Rechnung / ebInterface Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

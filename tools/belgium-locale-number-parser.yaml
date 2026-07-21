@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-locale-number-parser
+kind: tool
+module: validohub
+country: BE
+category: localization
+status: active
+name:
+  en: "Belgian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Belgium."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-calendar-week-helper, belgium-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Belgium."

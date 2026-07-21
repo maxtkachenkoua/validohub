@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-calendar-week-helper
+kind: tool
+module: validohub
+country: PT
+category: localization
+status: active
+name:
+  en: "Portuguese Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "21/07/2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-company-suffix-normalizer, portugal-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

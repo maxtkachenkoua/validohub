@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-masked-iban-formatter
+kind: tool
+module: validohub
+country: PT
+category: finance
+status: active
+name:
+  en: "Portuguese Masked IBAN Formatter"
+summary:
+  en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "PT50000201231234567490154"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-currency-decimal-formatter, portugal-vat-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Masked IBAN Formatter | ValidoHub"
+  description:
+    en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."

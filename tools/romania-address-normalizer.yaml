@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-address-normalizer
+kind: tool
+module: validohub
+country: RO
+category: address
+status: active
+name:
+  en: "Romanian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Calea Victoriei 1, 010061 Bucuresti"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-address-transliteration-normalizer, romania-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

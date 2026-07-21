@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-cui-cif-validator
+kind: tool
+module: validohub
+country: RO
+category: national-identifiers
+status: active
+name:
+  en: "Romanian CUI / CIF Validator"
+summary:
+  en: "Inspect CUI / CIF structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "RO12345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-vat-id-validator, romania-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian CUI / CIF Validator | ValidoHub"
+  description:
+    en: "Inspect CUI / CIF structure, registry-style prefixes, control digits, and official lookup boundaries."

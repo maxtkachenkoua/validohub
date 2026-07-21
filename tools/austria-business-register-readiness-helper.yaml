@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-business-register-readiness-helper
+kind: tool
+module: validohub
+country: AT
+category: government
+status: active
+name:
+  en: "Austrian Firmenbuch Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Firmenbuch lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "FN 123456a ATU12345674 Kaerntner Strasse 10, 1010 Wien"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-id-card-format-helper, austria-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Firmenbuch Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Firmenbuch lookup or company registry workflow."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-regex-pack-helper
+kind: tool
+module: validohub
+country: PT
+category: developer-tools
+status: active
+name:
+  en: "Portuguese Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "NIF NIPC codigo postal  PT50000201231234567490154"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-api-payload-auditor, portugal-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

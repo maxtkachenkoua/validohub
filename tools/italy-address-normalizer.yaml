@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-address-normalizer
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian Address Normalizer"
+summary:
+  en: "Normalize Italian address snippets with via/piazza, CAP, comune, provincia, and country evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Via Roma 10, 00118 Roma RM, Italia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-postal-code-validator, italy-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize Italian address snippets with via/piazza, CAP, comune, provincia, and country evidence."

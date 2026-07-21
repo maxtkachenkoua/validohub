@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-postal-tracking-helper
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Postal Tracking Helper"
+summary:
+  en: "Inspect Spanish postal/carrier tracking snippets, postal code, phone, and delivery-status boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "Correos PQ123456789ES 28013 +34 612345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect Spanish postal/carrier tracking snippets, postal code, phone, and delivery-status boundary notes."

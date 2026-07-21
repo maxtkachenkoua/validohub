@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-api-payload-auditor
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for Italy locale, VAT, CF, IBAN, dates, amounts, and official-system boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IT\",\"locale\":\"it-IT\",\"vat\":\"IT12345678903\",\"amount\":\"1.234,56\",\"date\":\"12/07/2026\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-postal-code-validator, italy-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for Italy locale, VAT, CF, IBAN, dates, amounts, and official-system boundaries."

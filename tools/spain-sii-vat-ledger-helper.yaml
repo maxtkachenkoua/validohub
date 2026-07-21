@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-sii-vat-ledger-helper
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish SII VAT Ledger Helper"
+summary:
+  en: "Audit SII VAT ledger rows for issuer NIF, invoice date, tax base, IVA rate, and official filing boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SII input"
+        required: true
+        placeholder:
+          en: "SII;B12345674;A-2026-001;12/07/2026;base 100,00;IVA 21%"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish SII VAT Ledger Helper | ValidoHub"
+  description:
+    en: "Audit SII VAT ledger rows for issuer NIF, invoice date, tax base, IVA rate, and official filing boundaries."

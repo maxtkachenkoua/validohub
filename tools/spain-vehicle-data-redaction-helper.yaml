@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Vehicle Data Redaction Helper"
+summary:
+  en: "Mask Spanish plate, VIN, owner, tax ID, and address evidence in vehicle support payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "1234BCD VSSZZZ1JZXW000001 00000000T Madrid"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask Spanish plate, VIN, owner, tax ID, and address evidence in vehicle support payloads."

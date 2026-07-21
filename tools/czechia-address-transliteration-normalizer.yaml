@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: CZ
+category: address
+status: active
+name:
+  en: "Czech Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Vaclavske namesti 1, 110 00 Praha 1"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-region-code-mapper, czechia-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

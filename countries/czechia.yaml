@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CZ
+slug: czechia
+name:
+  en: Czechia
+region: Europe
+languages:
+  - cs
+currency: CZK
+relatedCountries:
+  - SK
+  - DE
+  - AT

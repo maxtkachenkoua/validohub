@@ -2,6 +2,10 @@
 
 This document records the current ValidoHub and Valido Engine boundary so future sessions do not accidentally undo it.
 
+## Premium Country Contract
+
+Full-premium country work is now gated by `docs/product/PREMIUM_COUNTRY_CONTRACT.md` and `npm run audit:country-premium -- --country <slug>`. The gate checks generated country pages, runtime field-breakdown coverage, related-link locality, foreign fallback copy, empty hub cards, `[object Object]`, generic tool shells, and readiness reporting before future country batches start.
+
 ## Repository Boundary
 
 - Valido Engine is now a generic static site generator.
@@ -38,6 +42,7 @@ Current country hubs:
 - Brazil: `/en/brazil/`
 - France: `/en/france/`
 - Germany: `/en/germany/`
+- Italy: `/en/italy/`
 - Netherlands: `/en/netherlands/`
 - Poland: `/en/poland/`
 - Spain: `/en/spain/`
@@ -115,7 +120,7 @@ Current Engine does not generate arbitrary product pages such as `/en/countries/
 
 Brazil now uses Country Hub Template V3 as the reference Developer Country Intelligence Portal. It also uses Country Hub Visual Identity V2 for real SVG geography. The rich hub is rendered by `assets/js/countries.js` from a generic country metadata structure and keeps the Engine-generated country page as fallback HTML.
 
-Spain Country Hub V1 is complete as the first architecture-reuse proof for the Brazil reference system. Spain is implemented through the same shared country metadata model, renderer, Brand Asset System, Country Visual System, copy controls, status chips, snippets, cards, and Countries Portal discovery behavior. Spain ID Workbench V1 now implements browser-only DNI, NIE, NIF, legacy CIF-style, and ES VAT-prefix syntax validation. Spain still does not implement phone, postal-code, Bizum, payment, banking, live VIES lookup, tax-status lookup, or identity verification.
+Spain Premium Country Suite V1 is complete as the fourth full future-country suite built on Country Suite Factory V1 and the final upgrade of an existing non-premium country hub. It preserves the existing Spain ID and Spain IBAN routes while adding 60 active Spain-specific workbenches for DNI, NIE, NIF, legacy CIF, ES VAT, EORI, NAF, Registro Mercantil readiness, Spanish IBAN, CCC, BIC, SEPA, Bizum, remittance, reconciliation, bank statements, EUR amounts, IVA rates and returns, Facturae, VeriFactu, SII, AEAT models, accounting audit trails, postal codes, addresses, provinces, municipalities, phone numbers, dates, CSV, slugs, OCR, GDPR/LOPDGDD redaction, PII masking, personal fixtures, documents, vehicle plates, VIN, customs, postal tracking, JSON/regex/API/form helpers, and data-quality workflows. These tools share `assets/js/tools/spain-suite.js`, call the additive-only `assets/js/tools/country-suite-factory.js`, use metadata-only `validohub.spain-suite`, run offline in the browser, include dedicated field breakdowns, and localize the interactive runtime for every configured production locale.
 
 Poland Premium Workbench Suite V2 is complete as a PESEL-inspired expansion of the Poland country hub. It adds ten browser-only premium workbenches for NIP, REGON, Polish IBAN/NRB, tax microaccount input checks, postal codes, phone numbers, license plates, KRS numbers, Polish VAT syntax, and bank-code inspection. These tools share `assets/js/tools/poland-suite.js`, use metadata-only `validohub.poland-suite`, run offline in the browser, and clearly separate syntax/checksum/format diagnostics from official registry, VIES, bank, tax, phone, or vehicle-status lookups. V2 adds batch validation, masking, copyable test cases, versioned audit JSON, richer dictionaries, quality notes, and per-tool repair suggestions across all ten Poland tools.
 
@@ -135,9 +140,13 @@ Switzerland Premium Country Suite V1 is complete as the first full future-countr
 
 Germany Premium Country Suite V1 is complete as the second full future-country suite built on Country Suite Factory V1 and the first country to upgrade an existing generic IBAN route into a full suite route. It adds a Germany country hub plus 60 active country-specific workbenches for IdNr, Steuernummer, USt-IdNr, EORI, Handelsregister, LEI, German IBAN, BLZ, BIC, SEPA, direct debit, Girocard, remittance, reconciliation, bank statements, EUR amounts, VAT rates and returns, invoices, XRechnung, ZUGFeRD, e-invoicing, DATEV, GoBD, SKR03/SKR04, payroll, wage tax, health-insurance boundaries, addresses, postal codes, phone numbers, dates, CSV, slugs, OCR, DSGVO redaction, PII masking, personal fixtures, documents, vehicle plates, VIN, customs, postal tracking, JSON/regex/API/form helpers, and data-quality workflows. These tools share `assets/js/tools/germany-suite.js`, call the additive-only `assets/js/tools/country-suite-factory.js`, use metadata-only `validohub.germany-suite`, run offline in the browser, include dedicated field breakdowns, and localize the interactive runtime for every supported ValidoHub locale.
 
+Italy Premium Country Suite V1 is complete as the third full future-country suite built on Country Suite Factory V1. It adds an Italy country hub plus 60 active country-specific workbenches for codice fiscale, Partita IVA, VAT, EORI, SDI, PEC, REA, ATECO, SPID/CIE boundaries, Italian IBAN, ABI/CAB, BIC, SEPA, Ri.Ba, pagoPA, FatturaPA, VAT/accounting workflows, CAP, addresses, provinces, comune/Belfiore codes, phone numbers, dates, CSV, slugs, OCR, GDPR redaction, PII masking, personal fixtures, documents, vehicle plates, VIN, customs, postal tracking, JSON/regex/API/form helpers, and data-quality workflows. These tools share `assets/js/tools/italy-suite.js`, call the additive-only `assets/js/tools/country-suite-factory.js`, use metadata-only `validohub.italy-suite`, run offline in the browser, include dedicated field breakdowns, and localize the interactive runtime for every supported ValidoHub locale.
+
 Country Suite Generation Guardrails are now permanent current-state rules. Future full-country generation must read `docs/product/COUNTRY_SUITE_GENERATION_GUARDRAILS.md`, avoid foreign-country fallback copy, keep related links same-country by default, keep sample selector labels short, place results before advanced analysis, make long values layout-safe, cover all supported localized routes structurally, keep generated output out of commits, and leave Valido Engine untouched unless a truly generic platform capability is required.
 
 Country Suite Factory V1 is available for future countries and is now proven by Switzerland V1. It lives in `assets/js/tools/country-suite-factory.js`, is specified in `docs/product/COUNTRY_SUITE_FACTORY_SPEC.md`, and is audited by `node scripts/audit-country-suite-factory.mjs` or `npm run audit:country-suite`. The factory is additive-only: it must not remap, import into, or migrate Brazil, Poland, France, or Netherlands without a separate explicit migration task. Future countries should use it to get the compact Brazil-scale shell, immediate results, validation pipeline, dedicated field breakdown, quality notes, advanced analysis, copy/download controls, local overflow safety, config validation, and suite-level runtime localization from the start.
+
+Country Suite Factory V1 now also carries the PESEL-rich debug layer for factory-based country tools. Factory-rendered suites get success-first presets, recent local history, batch validation, result-first analysis, visual field/evidence token strips, calculation/parser debugger panels, repair suggestions, developer API preview, raw JSON/audit output, and richer advanced analysis. Poland PESEL remains the benchmark for identifier-like tools; non-checksum domains must expose equivalent parser or evidence diagnostics instead of thin generic output.
 
 Brazil is also the canonical Country Hub design reference. Future country hubs must read `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md` and `docs/ai/COUNTRY_HUB_AI_GUIDE.md` before implementation. Spain, Poland, Germany, France, Japan, and all future countries inherit the Brazil structure and design language; only metadata and local content should change.
 
@@ -205,11 +214,11 @@ Current registered brands include PIX, Java, Python, Go, Kotlin, C#, .NET, Node.
 
 ## Localization
 
-ValidoHub now has a localization foundation for `en`, `pl`, `de`, `es`, and `pt-BR`. Locale remains the first path segment and route slugs are not translated. The language switcher is available globally, country pages expose official-language quick choices, and the build produces localized route variants for all discovered pages.
+ValidoHub now has a seven-locale production localization core: `en`, `es`, `pt-BR`, `de`, `fr`, `pl`, and `uk`. Locale remains the first path segment and route slugs are not translated. The language switcher is available globally and must expose exactly those configured production locales. Country pages expose official-language quick choices, and the release build produces localized route variants for all discovered pages in the configured locale set. Larger locale waves remain demand-driven expansion work, not the default production matrix.
 
 The final ValidoHub post-publish pass in `scripts/localization-pass.mjs` localizes common UI shell text, country names, canonical URLs, hreflang alternates, same-locale links, rich Node-owned country pages, the Countries Portal, and identifier reference pages. This is a build-time localization layer; Valido Engine remains generic and unchanged.
 
-Deep editorial body content is still treated as a future human-reviewed content-pack layer. Do not change the Poland page structure while adding translations. Keep technical identifiers such as `Europe/Warsaw`, locale codes, route slugs, and code snippets stable.
+Deep editorial body content is still treated as a future human-reviewed content-pack layer. Do not change the Poland page structure while adding translations. Keep technical identifiers such as `Europe/Warsaw`, locale codes, route slugs, and code snippets stable. For development, `npm run build:country -- --country <slug>` can refresh a single generated country tree across the configured core locales after a prior full publish; it is a dev accelerator, not a release substitute. Full builds prune stale generated locale directories before publish validation so removed locales cannot remain deployable as dead output.
 
 ## Generated Site Root
 
@@ -243,6 +252,15 @@ ValidoHub post-publish route materialization:
 cd /Users/maxtkachenko/work/validohub
 node scripts/build-countries-portal.mjs
 ```
+
+Fast country-only development refresh after a prior full build/publish:
+
+```bash
+cd /Users/maxtkachenko/work/validohub
+npm run build:country -- --country italy
+```
+
+This syncs the country runtime assets, materializes only `/{locale}/{country}/` for the configured core locales, and runs targeted country HTML guards. Run `npm run build` before release.
 
 Local preview:
 
@@ -283,3 +301,8 @@ Global non-country tools now use the ValidoHub-owned Generic Utility Workbench S
 Generic tools are now governed by `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md`. That standard is mandatory product memory: generic tools must look and behave like first-class premium workbenches, not secondary utilities. Poland and Brazil country workbenches are the visual and functional baseline. Future generic tools must be tool-first, mode-correct, richly interactive, competitor-aware, advanced-analysis-heavy, and deeper than the strongest public tools in their category wherever the domain supports it.
 
 Future generic instruments must start from the premium contract, not from a temporary generic form. New tools need deterministic neutral theming, success-first presets, polished invalid/error states, result cards immediately after input, advanced analysis below results, copy/download affordances, and browser verification before being called complete.
+
+
+## European Premium Batch V1
+
+Portugal, Austria, Belgium, Ireland, Czechia, Sweden, Norway, Denmark, Finland, and Romania are generated as the first 10-country premium stress batch. Each country uses Country Suite Factory V1 with 60 local developer workbenches, field breakdown on every tool, seven production runtime locales, same-country related links, rich country hub sections, and explicit official/live lookup boundaries.

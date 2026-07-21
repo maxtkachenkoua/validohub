@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-rea-number-helper
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian REA Number Helper"
+summary:
+  en: "Audit REA chamber-registration references, province prefixes, serial digits, and registry lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REA input"
+        required: true
+        placeholder:
+          en: "MI-1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian REA Number Helper | ValidoHub"
+  description:
+    en: "Audit REA chamber-registration references, province prefixes, serial digits, and registry lookup boundaries."

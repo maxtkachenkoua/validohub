@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-currency-decimal-formatter
+kind: tool
+module: validohub
+country: CZ
+category: finance
+status: active
+name:
+  en: "Czech CZK Decimal Currency Formatter"
+summary:
+  en: "Normalize CZK amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1 234,56 CZK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-vat-rate-sanity-helper, czechia-vat-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech CZK Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize CZK amount strings, decimal separators, grouping, and API-safe numeric previews."

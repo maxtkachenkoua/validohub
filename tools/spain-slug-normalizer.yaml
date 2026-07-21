@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-slug-normalizer
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Slug Normalizer"
+summary:
+  en: "Normalize Spanish names, accents, legal suffixes, and URL-safe slugs for developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Niño y Compañía Sociedad Limitada"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Slug Normalizer | ValidoHub"
+  description:
+    en: "Normalize Spanish names, accents, legal suffixes, and URL-safe slugs for developer payloads."

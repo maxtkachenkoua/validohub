@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-naf-social-security-helper
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: "Spanish NAF Social Security Helper"
+summary:
+  en: "Inspect Spanish social-security affiliation number snippets, province prefixes, serial body, and official TGSS boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NAF input"
+        required: true
+        placeholder:
+          en: "28 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-id-validator, spain-nif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish NAF Social Security Helper | ValidoHub"
+  description:
+    en: "Inspect Spanish social-security affiliation number snippets, province prefixes, serial body, and official TGSS boundary notes."

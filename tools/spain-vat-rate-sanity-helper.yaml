@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish VAT Rate Sanity Helper"
+summary:
+  en: "Check Spanish IVA rate snippets, standard/reduced/super-reduced evidence, and tax-filing boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IVA input"
+        required: true
+        placeholder:
+          en: "IVA 21% base 100,00 total 121,00"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Check Spanish IVA rate snippets, standard/reduced/super-reduced evidence, and tax-filing boundary notes."

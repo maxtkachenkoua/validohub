@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-company-onboarding-auditor
+kind: tool
+module: validohub
+country: NO
+category: developer-tools
+status: active
+name:
+  en: "Norwegian Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for Organisasjonsnummer, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-business-register-readiness-helper, norway-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for Organisasjonsnummer, VAT, address, banking, and official registry handoff readiness."

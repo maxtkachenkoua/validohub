@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-slug-normalizer
+kind: tool
+module: validohub
+country: AT
+category: developer-tools
+status: active
+name:
+  en: "Austrian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Austria sample company Kaerntner Strasse 10, 1010 Wien"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-document-ocr-fixer, austria-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

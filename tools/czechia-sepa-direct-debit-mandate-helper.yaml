@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-sepa-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: CZ
+category: finance
+status: active
+name:
+  en: "Czech SEPA Direct Debit Mandate Helper"
+summary:
+  en: "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SDD input"
+        required: true
+        placeholder:
+          en: "MANDATE-2026-001 CZ6508000000192000145399"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-payment-reference-helper, czechia-remittance-text-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech SEPA Direct Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."

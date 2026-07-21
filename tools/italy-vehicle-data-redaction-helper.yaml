@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask Italian plate, VIN, owner, fiscal-code, and address evidence in vehicle support payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAR input"
+        required: true
+        placeholder:
+          en: "Targa AB123CD VIN ZFA3120000J123456 proprietario Mario Rossi CF RSSMRA85M01H501Q"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-postal-code-validator, italy-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask Italian plate, VIN, owner, fiscal-code, and address evidence in vehicle support payloads."

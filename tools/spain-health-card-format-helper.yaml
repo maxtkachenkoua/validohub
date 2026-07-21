@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-health-card-format-helper
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: "Spanish Health Card Format Helper"
+summary:
+  en: "Inspect Spanish health-card/social-health snippets, regional evidence, identity slices, and official health-system boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TSI input"
+        required: true
+        placeholder:
+          en: "TSI Madrid 00000000T 28013"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-id-validator, spain-nif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect Spanish health-card/social-health snippets, regional evidence, identity slices, and official health-system boundaries."

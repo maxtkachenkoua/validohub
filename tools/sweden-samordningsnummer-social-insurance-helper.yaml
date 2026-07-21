@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-samordningsnummer-social-insurance-helper
+kind: tool
+module: validohub
+country: SE
+category: national-identifiers
+status: active
+name:
+  en: "Swedish Samordningsnummer Helper"
+summary:
+  en: "Split Samordningsnummer evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "850101-1236"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-company-onboarding-auditor, sweden-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Samordningsnummer Helper | ValidoHub"
+  description:
+    en: "Split Samordningsnummer evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

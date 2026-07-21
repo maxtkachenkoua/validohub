@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: FI
+category: privacy
+status: active
+name:
+  en: "Finnish Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "010185-123B\\nMannerheimintie 1, 00100 Helsinki\\n+358 40 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-driving-licence-format-helper, finland-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

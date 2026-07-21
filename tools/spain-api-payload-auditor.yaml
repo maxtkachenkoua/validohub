@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-api-payload-auditor
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for Spain locale, NIF/VAT, IBAN, dates, amounts, addresses, and official-system boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"ES\",\"locale\":\"es-ES\",\"vat\":\"ESB12345674\",\"iban\":\"ES9121000418450200051332\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for Spain locale, NIF/VAT, IBAN, dates, amounts, addresses, and official-system boundaries."

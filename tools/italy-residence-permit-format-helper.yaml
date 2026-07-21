@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-residence-permit-format-helper
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, number/date evidence, and official immigration-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERM input"
+        required: true
+        placeholder:
+          en: "Permesso soggiorno I12345678 scadenza 12/07/2027"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, number/date evidence, and official immigration-status boundaries."

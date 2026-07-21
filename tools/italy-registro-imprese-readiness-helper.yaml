@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-registro-imprese-readiness-helper
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian Registro Imprese Readiness Helper"
+summary:
+  en: "Check company intake snippets for Partita IVA, REA, PEC, address, and official registry handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RI input"
+        required: true
+        placeholder:
+          en: "Example Srl P.IVA 12345678903 REA MI-1234567 PEC contabilita@example.pec.it"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Registro Imprese Readiness Helper | ValidoHub"
+  description:
+    en: "Check company intake snippets for Partita IVA, REA, PEC, address, and official registry handoff evidence."

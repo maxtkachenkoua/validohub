@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-vat-id-validator
+kind: tool
+module: validohub
+country: PT
+category: national-identifiers
+status: active
+name:
+  en: "Portuguese VAT ID / PT Prefix Validator"
+summary:
+  en: "Normalize PT VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "PT123456749"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-eori-validator, portugal-niss-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese VAT ID / PT Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize PT VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

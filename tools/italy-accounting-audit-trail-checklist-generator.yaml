@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-accounting-audit-trail-checklist-generator
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian Accounting Audit Trail Checklist Helper"
+summary:
+  en: "Build an Italian accounting evidence checklist from VAT, invoice, payment, date, and document snippets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "AUD input"
+        required: true
+        placeholder:
+          en: "fattura 2026/15 PIVA 12345678903 IBAN IT60X0542811101000000123456 pagamento 12/07/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Accounting Audit Trail Checklist Helper | ValidoHub"
+  description:
+    en: "Build an Italian accounting evidence checklist from VAT, invoice, payment, date, and document snippets."

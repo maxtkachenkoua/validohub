@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-vehicle-plate-inspector
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Vehicle Plate Inspector"
+summary:
+  en: "Inspect Spanish vehicle plates, serial blocks, province-era hints, and DGT/registry boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PLATE input"
+        required: true
+        placeholder:
+          en: "1234 BCD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Vehicle Plate Inspector | ValidoHub"
+  description:
+    en: "Inspect Spanish vehicle plates, serial blocks, province-era hints, and DGT/registry boundary notes."

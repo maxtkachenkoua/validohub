@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: RO
+category: privacy
+status: active
+name:
+  en: "Romanian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "1850101123451\\nCalea Victoriei 1, 010061 Bucuresti\\n+40 721 234 567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-driving-licence-format-helper, romania-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

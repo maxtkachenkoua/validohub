@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: AT
+category: tax
+status: active
+name:
+  en: "Austrian VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "UID / USt 20% base 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-vat-return-field-helper, austria-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

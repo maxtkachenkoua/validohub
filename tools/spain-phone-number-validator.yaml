@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-phone-number-validator
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Phone Number Validator"
+summary:
+  en: "Validate Spanish phone snippets, mobile/fixed-line evidence, and +34 normalization boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+34 612 345 678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate Spanish phone snippets, mobile/fixed-line evidence, and +34 normalization boundaries."

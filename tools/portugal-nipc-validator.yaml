@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-nipc-validator
+kind: tool
+module: validohub
+country: PT
+category: national-identifiers
+status: active
+name:
+  en: "Portuguese NIPC Validator"
+summary:
+  en: "Inspect NIPC structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "PT123456749"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-vat-id-validator, portugal-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese NIPC Validator | ValidoHub"
+  description:
+    en: "Inspect NIPC structure, registry-style prefixes, control digits, and official lookup boundaries."

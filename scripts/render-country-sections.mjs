@@ -1,4 +1,5 @@
 import { escape } from 'node:querystring';
+import { countryThemeStyleAttr } from './country-theme-style.mjs';
 
 function cleanHtml(html) {
   // Sort classes alphabetically on all HTML elements for byte-identical determinism
@@ -47,6 +48,179 @@ function createMetricCard(label, value, icon = null, copyValue = null, brandKey 
     </article>
   `;
   return html;
+}
+
+const CIVIC_CITY_PROFILES = {
+  austria: [
+    ['Vienna', 'approx. 2.0M', 'WI'],
+    ['Graz', 'approx. 0.3M', 'GZ'],
+    ['Linz', 'approx. 0.2M', 'LZ'],
+    ['Salzburg', 'approx. 0.2M', 'SZ']
+  ],
+  belgium: [
+    ['Brussels', 'approx. 0.2M city / 1.2M region', 'BR'],
+    ['Antwerp', 'approx. 0.5M', 'AN'],
+    ['Ghent', 'approx. 0.3M', 'GE'],
+    ['Charleroi', 'approx. 0.2M', 'CH']
+  ],
+  brazil: [
+    ['Sao Paulo', 'approx. 11.5M', 'SP'],
+    ['Rio de Janeiro', 'approx. 6.2M', 'RJ'],
+    ['Brasilia', 'approx. 2.8M', 'DF'],
+    ['Salvador', 'approx. 2.4M', 'SA']
+  ],
+  czechia: [
+    ['Prague', 'approx. 1.4M', 'PR'],
+    ['Brno', 'approx. 0.4M', 'BR'],
+    ['Ostrava', 'approx. 0.3M', 'OS'],
+    ['Plzen', 'approx. 0.2M', 'PL']
+  ],
+  denmark: [
+    ['Copenhagen', 'approx. 0.7M city / 1.4M urban', 'CP'],
+    ['Aarhus', 'approx. 0.3M', 'AA'],
+    ['Odense', 'approx. 0.2M', 'OD'],
+    ['Aalborg', 'approx. 0.1M', 'AL']
+  ],
+  finland: [
+    ['Helsinki', 'approx. 0.7M', 'HE'],
+    ['Espoo', 'approx. 0.3M', 'ES'],
+    ['Tampere', 'approx. 0.3M', 'TA'],
+    ['Vantaa', 'approx. 0.2M', 'VA']
+  ],
+  france: [
+    ['Paris', 'approx. 2.1M', 'PA'],
+    ['Marseille', 'approx. 0.9M', 'MA'],
+    ['Lyon', 'approx. 0.5M', 'LY'],
+    ['Toulouse', 'approx. 0.5M', 'TO']
+  ],
+  germany: [
+    ['Berlin', 'approx. 3.8M', 'BE'],
+    ['Hamburg', 'approx. 1.9M', 'HH'],
+    ['Munich', 'approx. 1.5M', 'MU'],
+    ['Cologne', 'approx. 1.1M', 'CO']
+  ],
+  ireland: [
+    ['Dublin', 'approx. 0.6M city / 1.3M county', 'DU'],
+    ['Cork', 'approx. 0.2M', 'CK'],
+    ['Limerick', 'approx. 0.1M', 'LI'],
+    ['Galway', 'approx. 0.1M', 'GA']
+  ],
+  italy: [
+    ['Rome', 'approx. 2.8M', 'RM'],
+    ['Milan', 'approx. 1.4M', 'MI'],
+    ['Naples', 'approx. 0.9M', 'NA'],
+    ['Turin', 'approx. 0.8M', 'TO']
+  ],
+  netherlands: [
+    ['Amsterdam', 'approx. 0.9M', 'AM'],
+    ['Rotterdam', 'approx. 0.7M', 'RT'],
+    ['The Hague', 'approx. 0.6M', 'DH'],
+    ['Utrecht', 'approx. 0.4M', 'UT']
+  ],
+  norway: [
+    ['Oslo', 'approx. 0.7M', 'OS'],
+    ['Bergen', 'approx. 0.3M', 'BE'],
+    ['Trondheim', 'approx. 0.2M', 'TR'],
+    ['Stavanger', 'approx. 0.1M', 'ST']
+  ],
+  poland: [
+    ['Warsaw', 'approx. 1.9M', 'WA'],
+    ['Krakow', 'approx. 0.8M', 'KR'],
+    ['Wroclaw', 'approx. 0.7M', 'WR'],
+    ['Lodz', 'approx. 0.7M', 'LD']
+  ],
+  portugal: [
+    ['Lisbon', 'approx. 0.5M city / 2.9M metro', 'LX'],
+    ['Porto', 'approx. 0.2M city / 1.7M metro', 'PT'],
+    ['Vila Nova de Gaia', 'approx. 0.3M', 'VG'],
+    ['Amadora', 'approx. 0.2M', 'AM']
+  ],
+  romania: [
+    ['Bucharest', 'approx. 1.7M', 'BU'],
+    ['Cluj-Napoca', 'approx. 0.3M', 'CJ'],
+    ['Timisoara', 'approx. 0.3M', 'TM'],
+    ['Iasi', 'approx. 0.3M', 'IS']
+  ],
+  spain: [
+    ['Madrid', 'approx. 3.3M', 'MD'],
+    ['Barcelona', 'approx. 1.7M', 'BC'],
+    ['Valencia', 'approx. 0.8M', 'VA'],
+    ['Seville', 'approx. 0.7M', 'SV']
+  ],
+  sweden: [
+    ['Stockholm', 'approx. 1.0M municipality / 1.7M urban', 'ST'],
+    ['Gothenburg', 'approx. 0.6M', 'GB'],
+    ['Malmo', 'approx. 0.4M', 'MA'],
+    ['Uppsala', 'approx. 0.2M', 'UP']
+  ],
+  switzerland: [
+    ['Zurich', 'approx. 0.4M', 'ZH'],
+    ['Geneva', 'approx. 0.2M', 'GE'],
+    ['Basel', 'approx. 0.2M', 'BS'],
+    ['Bern', 'approx. 0.1M', 'BE']
+  ]
+};
+
+function renderCityShield(initials) {
+  return `<span class="vh-country-city-shield" aria-hidden="true">${escapeHtml(initials)}</span>`;
+}
+
+function renderCityChip(city) {
+  const [name, population, initials] = city;
+  return `
+    <li>
+      ${renderCityShield(initials)}
+      <span>${escapeHtml(name)} <small>(${escapeHtml(population)})</small></span>
+    </li>
+  `;
+}
+
+export function renderCountryCivicSnapshot(model) {
+  const cities = CIVIC_CITY_PROFILES[model.slug] || [[model.capital, 'population varies by source', model.iso2 || 'CT']];
+  const civicItems = [
+    { label: 'Flag', value: `${model.flag} ${model.displayName}`, hint: 'country marker' },
+    { label: 'Official languages', value: model.languages, hint: 'state language profile' },
+    { label: 'Capital', value: model.capital, hint: 'seat of government' }
+  ].filter(item => item.value);
+
+  const factsHtml = civicItems.map(item => `
+    <article class="vh-country-civic-fact">
+      <span>${escapeHtml(item.label)}</span>
+      <strong>${escapeHtml(item.value)}</strong>
+      <small>${escapeHtml(item.hint)}</small>
+    </article>
+  `).join('\n');
+
+  const content = `
+    <div class="vh-country-civic-layout vh-country-civic-layout--full-cities">
+      <div class="vh-country-civic-facts">
+        ${factsHtml}
+      </div>
+      <div class="vh-country-city-panel">
+        <div class="vh-flex vh-align-center vh-justify-between vh-gap-sm">
+          <h3>Main cities</h3>
+          <span class="vh-country-status-badge vh-custom-badge">approx.</span>
+        </div>
+        <ul>
+          ${cities.map(renderCityChip).join('\n')}
+        </ul>
+      </div>
+    </div>
+  `;
+
+  const html = `
+    <section class="vh-country-section vh-country-civic-snapshot vh-country-${model.slug} vh-country-theme--${model.slug}" ${countryThemeStyleAttr(model)}>
+      <div class="section-heading">
+        <span class="vh-eyebrow">Country Snapshot</span>
+        <h2>${escapeHtml(model.displayName)} civic profile</h2>
+        <p>Quick national context for forms, onboarding flows, locale defaults, and developer fixtures.</p>
+      </div>
+      <div class="vh-section-content">
+        ${content}
+      </div>
+    </section>
+  `;
+  return cleanHtml(html);
 }
 
 function createInfoCard(title, text, icon = null, status = null, related = [], href = null, disabled = false) {
@@ -642,6 +816,91 @@ const SWITZERLAND_WORKBENCH_GROUPS = [
   }
 ];
 
+const SPAIN_WORKBENCH_GROUPS = [
+  {
+    key: 'identity',
+    title: 'Identity, registry & official numbers',
+    summary: 'DNI, NIE, NIF, CIF, EORI, NAF, documents, vehicle identifiers, and Spanish registry-shaped evidence.',
+    tags: ['identity', 'registry'],
+    match: /(dni|nie|nif|cif|id-validator|vat-id|eori|naf|registro|mercantil|id-card|passport|driving|licence|license|residence|health|plate|vin|vehicle|mrz|province|municipality)/
+  },
+  {
+    key: 'tax',
+    title: 'Tax, invoices & business compliance',
+    summary: 'IVA, AEAT models, Facturae, VeriFactu, SII, invoices, company onboarding, and accounting audit helpers.',
+    tags: ['tax', 'business'],
+    match: /(vat|iva|aeat|facturae|verifactu|sii|invoice|company|registro|mercantil|accounting|audit|tax|modelo)/
+  },
+  {
+    key: 'banking',
+    title: 'Banking, SEPA, Bizum & money movement',
+    summary: 'Spanish IBAN, CCC, bank and branch codes, BIC, SEPA transfers, Bizum, remittance, statements, and reconciliation.',
+    tags: ['banking', 'payments'],
+    match: /(iban|ccc|bank|bic|swift|sepa|bizum|remittance|payment|statement|reconciliation|masked-iban|eur|decimal|currency)/
+  },
+  {
+    key: 'address',
+    title: 'Address, phone, postal & local format',
+    summary: 'Spanish postal codes, addresses, provinces, municipalities, phones, E.164, dates, EUR amounts, CSV, and slugs.',
+    tags: ['localization', 'operations'],
+    match: /(postal|address|province|municipality|phone|date|decimal|currency|csv|slug|transliteration)/
+  },
+  {
+    key: 'developer',
+    title: 'Developer data, privacy & fixtures',
+    summary: 'GDPR/LOPDGDD redaction, PII masking, data-quality audits, OCR cleanup, JSON fixtures, regex packs, API payload audits, and form reviews.',
+    tags: ['developer', 'data-quality'],
+    match: /(gdpr|lopdgdd|pii|data-quality|ocr|json|regex|api|form-field|fixture|redaction|masker|personal-data|customs|tracking)/
+  }
+];
+
+
+const ITALY_WORKBENCH_GROUPS = [
+  {
+    key: 'identity',
+    title: 'Identity, registry & official numbers',
+    summary: 'Codice fiscale, Partita IVA, REA, EORI, ATECO, documents, vehicle identifiers, and Italian registry-shaped evidence.',
+    tags: ['identity', 'registry'],
+    match: /(codice|fiscale|partita|iva|vat-id|rea|eori|ateco|registro|imprese|id-card|passport|residence|driving|licence|license|health|vehicle|plate|vin|mrz|province|municipality)/
+  },
+  {
+    key: 'tax',
+    title: 'Tax, invoices & business compliance',
+    summary: 'FatturaPA, SDI, PEC, VAT rates and returns, e-invoicing, company onboarding, and accounting audit helpers.',
+    tags: ['tax', 'business'],
+    match: /(vat|iva|fatturapa|sdi|pec|invoice|e-invoicing|company|registro|imprese|accounting|audit|tax|return|codice-destinatario)/
+  },
+  {
+    key: 'banking',
+    title: 'Banking, SEPA, pagoPA & money movement',
+    summary: 'Italian IBAN, ABI/CAB, BIC, SEPA transfers, Ri.Ba, pagoPA, remittance, statements, and reconciliation.',
+    tags: ['banking', 'payments'],
+    match: /(iban|abi|cab|bank|bic|swift|sepa|riba|pago|remittance|payment|statement|reconciliation|masked-iban|eur|decimal|currency)/
+  },
+  {
+    key: 'address',
+    title: 'Address, phone, postal & local format',
+    summary: 'CAP, Italian addresses, provinces, comuni, phone numbers, E.164, dates, EUR amounts, CSV, and slugs.',
+    tags: ['localization', 'operations'],
+    match: /(postal|address|province|municipality|phone|date|decimal|currency|csv|slug|transliteration|comune)/
+  },
+  {
+    key: 'developer',
+    title: 'Developer data, privacy & fixtures',
+    summary: 'GDPR redaction, PII masking, data-quality audits, OCR cleanup, JSON fixtures, regex packs, API payload audits, and form reviews.',
+    tags: ['developer', 'data-quality'],
+    match: /(gdpr|pii|data-quality|ocr|json|regex|api|form-field|fixture|redaction|masker|personal-data|customs|tracking)/
+  }
+];
+
+const GENERIC_COUNTRY_WORKBENCH_GROUPS = [
+  { key: 'identity', title: 'Identity, registry & official numbers', summary: 'Local identifiers, registry-shaped numbers, personal documents, vehicle identifiers, and official-format evidence.', tags: ['identity', 'registry'], match: /(id|identity|tax|vat|eori|registry|register|company|passport|document|driving|licence|license|plate|vehicle|vin|mrz)/ },
+  { key: 'tax', title: 'Tax, invoices & business compliance', summary: 'Local tax, invoice, reporting, onboarding, audit, and business-compliance workflows.', tags: ['tax', 'business'], match: /(tax|vat|invoice|fiscal|e-invoicing|company|audit|compliance|return|payroll)/ },
+  { key: 'banking', title: 'Banking, payments & money movement', summary: 'Local banking identifiers, payment references, bank statements, transfers, remittance, and reconciliation helpers.', tags: ['banking', 'payments'], match: /(iban|bank|bic|swift|sepa|payment|transfer|remittance|statement|reconciliation|currency|amount)/ },
+  { key: 'address', title: 'Address, phone, postal & local format', summary: 'Postal codes, addresses, phones, dates, amounts, CSV, transliteration, and local formatting helpers.', tags: ['localization', 'operations'], match: /(postal|address|phone|date|currency|decimal|csv|slug|locale|transliteration)/ },
+  { key: 'developer', title: 'Developer data, privacy & fixtures', summary: 'Privacy redaction, PII masking, test fixtures, OCR cleanup, API payload, regex, form-field, and data-quality tools.', tags: ['developer', 'data-quality'], match: /(privacy|gdpr|pii|mask|fixture|ocr|json|regex|api|form|data-quality|redaction)/ }
+];
+
 function groupCountryWorkbenchRoutes(routes, model = null) {
   const sourceGroups = model?.iso2 === 'BR'
     ? BRAZIL_WORKBENCH_GROUPS
@@ -651,7 +910,13 @@ function groupCountryWorkbenchRoutes(routes, model = null) {
         ? NETHERLANDS_WORKBENCH_GROUPS
         : model?.iso2 === 'CH'
           ? SWITZERLAND_WORKBENCH_GROUPS
-        : POLAND_WORKBENCH_GROUPS;
+          : model?.iso2 === 'ES'
+            ? SPAIN_WORKBENCH_GROUPS
+            : model?.iso2 === 'IT'
+              ? ITALY_WORKBENCH_GROUPS
+              : model?.iso2 === 'PL'
+                ? POLAND_WORKBENCH_GROUPS
+                : GENERIC_COUNTRY_WORKBENCH_GROUPS;
   const buckets = sourceGroups.map(group => ({ ...group, routes: [] }));
   const other = { key: 'other', title: 'Other country developer workflows', summary: 'Additional country-specific tools and inspectors.', tags: ['country'], routes: [] };
 
@@ -739,7 +1004,9 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
       ? /(france-siren-validator|france-siret-validator|france-vat-tva-validator|france-iban-validator|france-rib-validator|france-postal-code-validator|france-phone-number-validator|france-fec-file-readiness-checker|france-nir-syntax-inspector|france-data-quality-workbench)/
       : model.iso2 === 'NL'
         ? /(netherlands-bsn-validator|netherlands-rsin-validator|netherlands-kvk-number-validator|netherlands-btw-vat-validator|netherlands-iban-validator|netherlands-postcode-validator|netherlands-phone-number-validator|netherlands-audit-file-readiness-checker|netherlands-pii-masker|netherlands-data-quality-workbench)/
-        : /(pesel-validator|poland-nip-validator|poland-regon-validator|poland-iban-nrb-validator|poland-vat-validator|poland-krs-inspector|poland-postal-code-validator|poland-phone-number-validator|poland-blik-code-helper|poland-ksef-invoice-xml-validator)/;
+        : model.iso2 === 'ES'
+          ? /(spain-id-validator|spain-dni-validator|spain-nie-validator|spain-vat-id-validator|spain-iban-validator|spain-ccc-bank-account-inspector|spain-bizum-reference-helper|spain-postal-code-validator|spain-phone-number-validator|spain-data-quality-workbench)/
+          : /(pesel-validator|poland-nip-validator|poland-regon-validator|poland-iban-nrb-validator|poland-vat-validator|poland-krs-inspector|poland-postal-code-validator|poland-phone-number-validator|poland-blik-code-helper|poland-ksef-invoice-xml-validator)/;
   const featured = routes.filter(route => featuredPatterns.test(routeSlug(route))).slice(0, 10);
   const groups = groupCountryWorkbenchRoutes(routes, model);
   const intentChips = groups.map(group => `<button class="vh-country-intent-chip" type="button" data-country-intent="${escapeHtml(group.key)}">${escapeHtml(group.title)} <span>${group.routes.length}</span></button>`).join('');
@@ -753,7 +1020,9 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
         ? routeBySlug([/bsn-validator/, /id-card/, /passport/, /phone/, /postcode/])
         : model.iso2 === 'CH'
           ? routeBySlug([/ahv-avs/, /id-card/, /passport/, /residence-permit/, /phone/, /postal-code/])
-          : routeBySlug([/pesel-validator/, /id-card/, /passport/, /phone-number/, /postal-code/]);
+          : model.iso2 === 'ES'
+            ? routeBySlug([/dni-validator/, /nie-validator/, /id-validator/, /id-card/, /passport/, /phone/, /postal-code/])
+            : routeBySlug([/pesel-validator/, /id-card/, /passport/, /phone-number/, /postal-code/]);
   const companyPath = model.iso2 === 'BR'
     ? routeBySlug([/cnpj-validator/, /cnae-code/, /state-registration/, /company/])
     : model.iso2 === 'FR'
@@ -762,7 +1031,9 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
         ? routeBySlug([/kvk-number/, /rsin/, /btw-vat/, /company/])
         : model.iso2 === 'CH'
           ? routeBySlug([/uid-validator/, /vat-mwst/, /company/, /zefix/])
-          : routeBySlug([/poland-nip-validator/, /regon-validator/, /krs-inspector/, /company/]);
+          : model.iso2 === 'ES'
+            ? routeBySlug([/vat-id-validator/, /cif/, /nif-validator/, /company/, /registro/, /aeat/, /invoice/])
+            : routeBySlug([/poland-nip-validator/, /regon-validator/, /krs-inspector/, /company/]);
   const paymentPath = model.iso2 === 'BR'
     ? routeBySlug([/pix-validator/, /boleto/, /linha-digitavel/, /brl-centavos/, /cnab/])
     : model.iso2 === 'FR'
@@ -771,7 +1042,9 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
         ? routeBySlug([/iban-validator/, /bic-swift/, /ideal/, /sepa-transfer/, /remittance/])
         : model.iso2 === 'CH'
           ? routeBySlug([/iban-validator/, /qr-bill/, /sic-clearing/, /bic-swift/, /sepa-transfer/])
-          : routeBySlug([/poland-iban-nrb-validator/, /blik-code/, /swift-bic/, /sepa-transfer/, /payment-qr/]);
+          : model.iso2 === 'ES'
+            ? routeBySlug([/iban-validator/, /ccc-bank-account/, /bizum/, /sepa-transfer/, /bank-code/, /payment/])
+            : routeBySlug([/poland-iban-nrb-validator/, /blik-code/, /swift-bic/, /sepa-transfer/, /payment-qr/]);
 
   const quickStarts = `
     <div class="vh-country-quick-starts" aria-label="Quick start scenarios">

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-company-suffix-normalizer
+kind: tool
+module: validohub
+country: AT
+category: developer-tools
+status: active
+name:
+  en: "Austrian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Austria Sample Holding Ltd FN 123456a"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-procurement-identifier-helper, austria-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

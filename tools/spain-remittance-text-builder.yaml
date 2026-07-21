@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-remittance-text-builder
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish Remittance Text Builder"
+summary:
+  en: "Normalize Spanish remittance snippets, invoice references, NIF evidence, and log-safe payment descriptions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REM input"
+        required: true
+        placeholder:
+          en: "Factura A-2026-001 B12345674 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Remittance Text Builder | ValidoHub"
+  description:
+    en: "Normalize Spanish remittance snippets, invoice references, NIF evidence, and log-safe payment descriptions."

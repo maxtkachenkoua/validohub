@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SE
+slug: sweden
+name:
+  en: Sweden
+region: Europe
+languages:
+  - sv
+currency: SEK
+relatedCountries:
+  - NO
+  - DK
+  - FI

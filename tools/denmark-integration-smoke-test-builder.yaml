@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: DK
+category: developer-tools
+status: active
+name:
+  en: "Danish Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-cpr-validator, denmark-cvr-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

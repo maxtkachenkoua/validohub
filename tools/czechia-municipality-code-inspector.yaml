@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-municipality-code-inspector
+kind: tool
+module: validohub
+country: CZ
+category: address
+status: active
+name:
+  en: "Czech Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Vaclavske namesti 1, 110 00 Praha 1"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-phone-number-validator, czechia-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

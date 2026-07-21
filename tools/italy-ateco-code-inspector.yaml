@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-ateco-code-inspector
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian ATECO Code Inspector"
+summary:
+  en: "Inspect ATECO activity-code snippets, dotted digit groups, and data-quality notes for company onboarding."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ATECO input"
+        required: true
+        placeholder:
+          en: "62.01.00 sviluppo software"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian ATECO Code Inspector | ValidoHub"
+  description:
+    en: "Inspect ATECO activity-code snippets, dotted digit groups, and data-quality notes for company onboarding."

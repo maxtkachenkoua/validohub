@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-pii-masker
+kind: tool
+module: validohub
+country: PT
+category: privacy
+status: active
+name:
+  en: "Portuguese PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "123456749 +351 912 345 678 PT50000201231234567490154"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-personal-data-fixture-generator, portugal-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

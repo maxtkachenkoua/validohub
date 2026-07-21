@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-customs-declaration-helper
+kind: tool
+module: validohub
+country: PT
+category: government
+status: active
+name:
+  en: "Portuguese Customs Declaration Helper"
+summary:
+  en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "PT123456749 HS 8471 1 234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-postal-tracking-helper, portugal-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."

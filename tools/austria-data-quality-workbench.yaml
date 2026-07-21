@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-data-quality-workbench
+kind: tool
+module: validohub
+country: AT
+category: developer-tools
+status: active
+name:
+  en: "Austrian Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-json-fixture-generator, austria-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

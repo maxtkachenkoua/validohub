@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-address-normalizer
+kind: tool
+module: validohub
+country: DK
+category: address
+status: active
+name:
+  en: "Danish Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Nyhavn 1, 1051 Copenhagen K"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-address-transliteration-normalizer, denmark-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

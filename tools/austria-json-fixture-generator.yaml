@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-json-fixture-generator
+kind: tool
+module: validohub
+country: AT
+category: developer-tools
+status: active
+name:
+  en: "Austrian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-regex-pack-helper, austria-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-vat-return-field-helper
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian VAT Return Field Helper"
+summary:
+  en: "Audit VAT return snippets for period, VAT ID, taxable amount, tax amount, and official filing boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "Periodo 2026 Q2 PIVA 12345678903 imponibile 1000,00 IVA 220,00"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Audit VAT return snippets for period, VAT ID, taxable amount, tax amount, and official filing boundaries."

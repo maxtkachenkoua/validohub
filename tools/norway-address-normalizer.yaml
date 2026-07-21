@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-address-normalizer
+kind: tool
+module: validohub
+country: NO
+category: address
+status: active
+name:
+  en: "Norwegian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Karl Johans gate 1, 0154 Oslo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-address-transliteration-normalizer, norway-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

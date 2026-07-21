@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-api-payload-auditor
+kind: tool
+module: validohub
+country: NO
+category: developer-tools
+status: active
+name:
+  en: "Norwegian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-form-field-auditor, norway-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

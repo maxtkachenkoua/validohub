@@ -1,0 +1,14 @@
+schemaVersion: 1
+code: IT
+slug: italy
+name:
+  en: Italy
+region: Europe
+languages:
+  - it
+currency: EUR
+relatedCountries:
+  - CH
+  - FR
+  - DE
+  - ES

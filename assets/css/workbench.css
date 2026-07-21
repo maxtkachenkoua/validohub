@@ -66,6 +66,11 @@
   content: "/";
 }
 
+.vh-breadcrumbs.breadcrumbs li::before,
+.vh-breadcrumbs.breadcrumbs li:not(:last-child)::after {
+  content: none;
+}
+
 .breadcrumbs a {
   color: var(--muted);
   text-decoration: none;
@@ -153,6 +158,10 @@
   margin: 0;
   color: var(--muted);
   font-size: 0.875rem;
+}
+
+.workbench-card:has([data-algorithm-id="validohub.brazil-suite"]) .workbench-heading {
+  display: none;
 }
 
 .workbench-list {

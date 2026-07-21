@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-locale-number-parser
+kind: tool
+module: validohub
+country: AT
+category: localization
+status: active
+name:
+  en: "Austrian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Austria."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-calendar-week-helper, austria-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Austria."

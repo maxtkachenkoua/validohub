@@ -1,6 +1,17 @@
 {
   "id": "italy",
-  "visualAssets": null,
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/italy-outline.svg",
+    "outlineAlt": "Italy country outline",
+    "mapSrc": "/assets/images/countries/italy-location.svg",
+    "mapAlt": "World map with Italy location marker",
+    "mapMarker": {
+      "x": 50,
+      "y": 44,
+      "label": "Italy"
+    },
+    "source": "Natural Earth geometry via ValidoHub world-map source"
+  },
   "catalog": {
     "id": "italy",
     "flag": "🇮🇹",
@@ -12,30 +23,1839 @@
     "language": "Italian",
     "currency": "EUR",
     "currencyName": "Euro",
-    "status": "planned",
-    "summary": "Future hub for Italian tax identifiers, VAT, fiscal code, and EU banking notes.",
+    "status": "available",
+    "summary": "Premium Italy developer hub for codice fiscale, Partita IVA, e-invoicing, banking, locale, privacy, vehicles, and browser-only data-quality workflows.",
     "identifiers": [
       "Codice fiscale",
-      "Partita IVA"
+      "Partita IVA",
+      "Codice destinatario",
+      "PEC",
+      "REA",
+      "IBAN",
+      "CAP"
     ],
     "payments": [
       "IBAN",
-      "SEPA"
+      "SEPA",
+      "FatturaPA",
+      "pagoPA",
+      "Ri.Ba"
+    ],
+    "searchHints": [
+      "CODICE FISCALE",
+      "PARTITA IVA",
+      "PAGOPA",
+      "SDI",
+      "PEC",
+      "ABI/CAB"
     ],
     "features": [
+      "payments",
       "identity",
       "government",
       "banking"
     ],
-    "availableWorkbenches": [],
-    "plannedWorkbenches": [
-      "Codice Fiscale Validator"
+    "availableWorkbenches": [
+      "Italian Codice Fiscale Validator",
+      "Italian Partita IVA Validator",
+      "Italian VAT ID / IT Prefix Validator",
+      "Italian EORI / Customs Identifier Helper",
+      "Italian Codice Destinatario Helper",
+      "Italian PEC Address Helper",
+      "Italian REA Number Helper",
+      "Italian Registro Imprese Readiness Helper",
+      "Italian ATECO Code Inspector",
+      "Italian SPID / CIE Boundary Helper",
+      "Italian Company Onboarding Auditor",
+      "Italian IBAN Validator",
+      "Italian ABI / CAB Bank Code Inspector",
+      "Italian BIC / SWIFT Inspector",
+      "Italian SEPA Transfer Helper",
+      "Italian SEPA Direct Debit Mandate Helper",
+      "Italian Ri.Ba Payment Helper",
+      "Italian pagoPA Notice Helper",
+      "Italian Remittance Text Builder",
+      "Italian Payment Reconciliation Helper",
+      "Italian Bank Statement Parser",
+      "Italian Masked IBAN Formatter",
+      "Italian FatturaPA XML Readiness Checker",
+      "Italian SDI Invoice Routing Helper",
+      "Italian VAT Rate Sanity Helper",
+      "Italian VAT Return Field Helper",
+      "Italian Invoice Number Helper",
+      "Italian E-Invoicing Readiness Helper",
+      "Italian Accounting Audit Trail Checklist Helper",
+      "Italian EUR Decimal Currency Formatter",
+      "Italian CAP Postal Code Validator",
+      "Italian Address Normalizer",
+      "Italian Address Transliteration Normalizer",
+      "Italian Province Code Mapper",
+      "Italian Municipality / Belfiore Code Inspector",
+      "Italian Phone Number Validator",
+      "Italian Phone E.164 Formatter",
+      "Italian Date Locale Formatter",
+      "Italian CSV Locale Normalizer",
+      "Italian Slug Normalizer",
+      "Italian Document OCR Fixer",
+      "Italian GDPR / Privacy Redaction Helper",
+      "Italian PII Masker",
+      "Italian Personal Data Fixture Helper",
+      "Italian ID Card Format Helper",
+      "Italian Passport Number Helper",
+      "Italian Driving Licence Format Helper",
+      "Italian Residence Permit Format Helper",
+      "Italian Tessera Sanitaria Format Helper",
+      "Italian Vehicle Plate Inspector",
+      "Italian VIN Validator",
+      "Italian Vehicle Data Redaction Helper",
+      "Italian Customs Declaration Helper",
+      "Italian Postal Tracking Helper",
+      "Italian Data Quality Workbench",
+      "Italian JSON Fixture Helper",
+      "Italian Regex Pack Helper",
+      "Italian API Payload Auditor",
+      "Italian Form Field Auditor",
+      "Italian MRZ / Passport Parser"
     ],
-    "completion": 20,
+    "plannedWorkbenches": [
+      "Live Agenzia Entrate status lookup",
+      "Live Registro Imprese lookup",
+      "Live SDI delivery status lookup",
+      "Live bank directory lookup"
+    ],
+    "completion": 100,
     "coordinates": {
       "x": 51,
       "y": 40
     }
   },
-  "hub": null
+  "hub": {
+    "flag": "🇮🇹",
+    "name": "Italy",
+    "badge": "Premium Italy developer suite",
+    "description": "Developer intelligence and browser-only workbenches for Italian tax identifiers, e-invoicing, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "searchHints": [
+      "CODICE FISCALE",
+      "PARTITA IVA",
+      "PAGOPA",
+      "SDI",
+      "PEC",
+      "ABI/CAB"
+    ],
+    "metadata": {
+      "nativeName": "Italia",
+      "population": "approximately 58.8M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "area": "301,340 km²",
+      "capital": "Rome",
+      "largestCity": "Rome",
+      "continent": "Europe",
+      "region": "Southern Europe / European Union",
+      "languages": "Italian",
+      "currency": "Euro",
+      "currencyCode": "EUR",
+      "currencySymbol": "€",
+      "callingCode": "+39",
+      "internetTld": ".it",
+      "drivingSide": "Right",
+      "iso2": "IT",
+      "iso3": "ITA",
+      "isoNumeric": "380",
+      "locale": "it-IT",
+      "icuLocale": "it_IT",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Dot (.)",
+      "addressFormat": "Street type/name number, postal code Comune Province",
+      "postalCodeFormat": "NNNNN",
+      "primaryTimeZone": "Europe/Rome (CET/CEST)",
+      "utcRange": "UTC+01/+02",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "powerPlugTypes": "Type C / Type F / Type L",
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "it-IT",
+      "cldrLocale": "it_IT",
+      "metricVsImperial": "Metric-first"
+    },
+    "stats": [
+      {
+        "icon": "👥",
+        "label": "Population",
+        "valueKey": "population",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🏛",
+        "label": "Capital",
+        "valueKey": "capital",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🏙",
+        "label": "Largest city",
+        "valueKey": "largestCity",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🌍",
+        "label": "Continent",
+        "valueKey": "continent",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🗣",
+        "label": "Languages",
+        "valueKey": "languages",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "☎",
+        "label": "Calling code",
+        "valueKey": "callingCode",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🌐",
+        "label": "Internet TLD",
+        "valueKey": "internetTld",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "icon": "🕒",
+        "label": "UTC range",
+        "valueKey": "utcRange",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "brandKey": "europeanUnion",
+        "label": "Region",
+        "valueKey": "region",
+        "tags": [
+          "government",
+          "locale"
+        ]
+      },
+      {
+        "brandKey": "iban",
+        "label": "Currency",
+        "valueKey": "currencyCode",
+        "detailKey": "currency",
+        "tags": [
+          "currency",
+          "payments"
+        ]
+      }
+    ],
+    "countryProfile": [
+      {
+        "icon": "🏷",
+        "label": "iso2",
+        "valueKey": "iso2"
+      },
+      {
+        "icon": "🏷",
+        "label": "iso3",
+        "valueKey": "iso3"
+      },
+      {
+        "icon": "🏷",
+        "label": "isoNumeric",
+        "valueKey": "isoNumeric"
+      },
+      {
+        "icon": "🏷",
+        "label": "locale",
+        "valueKey": "locale"
+      },
+      {
+        "icon": "🏷",
+        "label": "icuLocale",
+        "valueKey": "icuLocale"
+      },
+      {
+        "icon": "🏷",
+        "label": "currencyCode",
+        "valueKey": "currencyCode"
+      },
+      {
+        "icon": "🏷",
+        "label": "currencySymbol",
+        "valueKey": "currencySymbol"
+      },
+      {
+        "icon": "🏷",
+        "label": "dateFormat",
+        "valueKey": "dateFormat"
+      },
+      {
+        "icon": "🏷",
+        "label": "decimalSeparator",
+        "valueKey": "decimalSeparator"
+      },
+      {
+        "icon": "🏷",
+        "label": "thousandsSeparator",
+        "valueKey": "thousandsSeparator"
+      },
+      {
+        "icon": "🏷",
+        "label": "postalCodeFormat",
+        "valueKey": "postalCodeFormat"
+      },
+      {
+        "icon": "🏷",
+        "label": "callingCode",
+        "valueKey": "callingCode"
+      },
+      {
+        "icon": "🏷",
+        "label": "internetTld",
+        "valueKey": "internetTld"
+      },
+      {
+        "icon": "🏷",
+        "label": "primaryTimeZone",
+        "valueKey": "primaryTimeZone"
+      },
+      {
+        "icon": "🏷",
+        "label": "paperSize",
+        "valueKey": "paperSize"
+      },
+      {
+        "icon": "🏷",
+        "label": "voltage",
+        "valueKey": "voltage"
+      },
+      {
+        "icon": "🏷",
+        "label": "drivingSide",
+        "valueKey": "drivingSide"
+      },
+      {
+        "icon": "🏷",
+        "label": "emergencyNumber",
+        "valueKey": "emergencyNumber"
+      },
+      {
+        "icon": "🏷",
+        "label": "measurementSystem",
+        "valueKey": "measurementSystem"
+      },
+      {
+        "icon": "🏷",
+        "label": "weekStarts",
+        "valueKey": "weekStarts"
+      },
+      {
+        "icon": "🏷",
+        "label": "powerPlugTypes",
+        "valueKey": "powerPlugTypes"
+      },
+      {
+        "icon": "🏷",
+        "label": "region",
+        "valueKey": "region"
+      },
+      {
+        "icon": "🏷",
+        "label": "addressFormat",
+        "valueKey": "addressFormat"
+      }
+    ],
+    "visualIdentity": {
+      "flag": "🇮🇹",
+      "accent": "#008C45",
+      "accent2": "#CD212A",
+      "accent3": "#F4F5F0",
+      "outline": "/assets/images/countries/italy-outline.svg",
+      "map": "/assets/images/countries/italy-location.svg",
+      "note": "Italy hub uses ValidoHub country visual assets and Italy flag colors for local identity.",
+      "tags": [
+        "identity",
+        "visual"
+      ]
+    },
+    "quickActions": [
+      {
+        "label": "Copy locale",
+        "valueKey": "locale"
+      },
+      {
+        "label": "Copy currencyCode",
+        "valueKey": "currencyCode"
+      },
+      {
+        "label": "Copy currencySymbol",
+        "valueKey": "currencySymbol"
+      },
+      {
+        "label": "Copy callingCode",
+        "valueKey": "callingCode"
+      },
+      {
+        "label": "Copy iso2",
+        "valueKey": "iso2"
+      },
+      {
+        "label": "Copy iso3",
+        "valueKey": "iso3"
+      },
+      {
+        "label": "Copy isoNumeric",
+        "valueKey": "isoNumeric"
+      },
+      {
+        "label": "Copy internetTld",
+        "valueKey": "internetTld"
+      },
+      {
+        "label": "Copy dateFormat",
+        "valueKey": "dateFormat"
+      },
+      {
+        "label": "Copy postalCodeFormat",
+        "valueKey": "postalCodeFormat"
+      },
+      {
+        "label": "Copy primaryTimeZone",
+        "valueKey": "primaryTimeZone"
+      }
+    ],
+    "cheatSheet": [
+      {
+        "label": "ISO2",
+        "valueKey": "iso2",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "ISO3",
+        "valueKey": "iso3",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Numeric ISO",
+        "valueKey": "isoNumeric",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Locale",
+        "valueKey": "locale",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "ICU locale",
+        "valueKey": "icuLocale",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Language",
+        "valueKey": "languages",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Currency code",
+        "valueKey": "currencyCode",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Currency symbol",
+        "valueKey": "currencySymbol",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Phone country code",
+        "valueKey": "callingCode",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Internet TLD",
+        "valueKey": "internetTld",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Date format",
+        "valueKey": "dateFormat",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Time format",
+        "valueKey": "timeFormat",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Decimal separator",
+        "valueKey": "decimalSeparator",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Thousands separator",
+        "valueKey": "thousandsSeparator",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Address format",
+        "valueKey": "addressFormat",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Postal code format",
+        "valueKey": "postalCodeFormat",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Primary time zone",
+        "valueKey": "primaryTimeZone",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      },
+      {
+        "label": "Time zones",
+        "valueKey": "utcRange",
+        "icon": "🏷",
+        "tags": [
+          "developer",
+          "locale"
+        ]
+      }
+    ],
+    "localFormats": [
+      {
+        "title": "Codice fiscale",
+        "text": "Sixteen-character fiscal code with surname/name/date/gender/place-code blocks and a control character.",
+        "icon": "🪪",
+        "name": "Codice fiscale",
+        "status": "available",
+        "category": "National identifier",
+        "tags": [
+          "identifiers",
+          "tax"
+        ]
+      },
+      {
+        "title": "Partita IVA",
+        "text": "Eleven-digit Italian VAT identifier with local checksum evidence and VIES/status boundary.",
+        "icon": "🪪",
+        "name": "Partita IVA",
+        "status": "available",
+        "category": "Tax identifier",
+        "tags": [
+          "identifiers",
+          "tax"
+        ]
+      },
+      {
+        "title": "Italian IBAN",
+        "text": "IT IBANs expose CIN, ABI, CAB, and account-number slices after MOD-97 validation.",
+        "brandKey": "iban",
+        "name": "Italian IBAN",
+        "status": "available",
+        "category": "Banking",
+        "tags": [
+          "banking",
+          "payments"
+        ]
+      },
+      {
+        "title": "CAP postal code",
+        "text": "Five-digit postal code used with comune and province context; delivery proof requires official/provider data.",
+        "icon": "✉",
+        "name": "CAP postal code",
+        "status": "available",
+        "category": "Postal",
+        "tags": [
+          "postal",
+          "addresses"
+        ]
+      },
+      {
+        "title": "REA and Registro Imprese",
+        "text": "REA chamber references, VAT, PEC, and company intake evidence are inspected locally; existence remains official.",
+        "icon": "🏢",
+        "name": "REA and Registro Imprese",
+        "status": "available",
+        "category": "Business registry",
+        "tags": [
+          "government",
+          "registry"
+        ]
+      },
+      {
+        "title": "FatturaPA / SDI",
+        "text": "Italian e-invoicing payloads use FatturaPA XML, SDI recipient codes, and PEC fallbacks.",
+        "icon": "📨",
+        "name": "FatturaPA / SDI",
+        "status": "available",
+        "category": "E-invoicing",
+        "tags": [
+          "einvoice",
+          "tax"
+        ]
+      },
+      {
+        "title": "Italian phone numbers",
+        "text": "Italian numbers use +39 and preserve trunk-zero semantics for many fixed-line contexts.",
+        "icon": "☎",
+        "name": "Italian phone numbers",
+        "status": "available",
+        "category": "Phone",
+        "tags": [
+          "phone"
+        ]
+      },
+      {
+        "title": "Italian vehicle plates",
+        "text": "Modern plates typically use two letters, three digits, two letters; registry status remains official.",
+        "icon": "🚗",
+        "name": "Italian vehicle plates",
+        "status": "available",
+        "category": "Vehicles",
+        "tags": [
+          "vehicles"
+        ]
+      },
+      {
+        "title": "EU VAT / VIES",
+        "text": "VIES or Italian tax systems are required to prove active VAT status.",
+        "brandKey": "vies",
+        "name": "EU VAT / VIES",
+        "status": "planned",
+        "category": "Tax and business",
+        "tags": [
+          "tax",
+          "government"
+        ]
+      }
+    ],
+    "payments": [
+      {
+        "title": "Italian IBAN",
+        "text": "IT IBANs expose MOD-97, CIN, ABI, CAB, and account slices in the Italy workbench.",
+        "brandKey": "iban",
+        "status": "available",
+        "tags": [
+          "payments",
+          "banking"
+        ]
+      },
+      {
+        "title": "SEPA",
+        "text": "Italian credit transfers and direct debits use SEPA-ready account, mandate, remittance, and creditor evidence.",
+        "brandKey": "sepa",
+        "status": "available",
+        "tags": [
+          "payments",
+          "banking"
+        ]
+      },
+      {
+        "title": "BIC / SWIFT",
+        "text": "BIC/SWIFT fields can be shape-checked locally; bank participation and ownership remain official/provider checks.",
+        "brandKey": "swift",
+        "status": "available",
+        "tags": [
+          "banking"
+        ]
+      },
+      {
+        "title": "pagoPA / Ri.Ba",
+        "text": "pagoPA notice and Ri.Ba snippets are inspected as local evidence without payment authorization.",
+        "status": "available",
+        "tags": [
+          "payments"
+        ]
+      }
+    ],
+    "officialResources": [
+      {
+        "title": "Agenzia delle Entrate",
+        "text": "Codice fiscale, Partita IVA, tax filing, and FatturaPA fiscal context; official status remains outside offline checks.",
+        "note": "Codice fiscale, Partita IVA, tax filing, and FatturaPA fiscal context; official status remains outside offline checks.",
+        "status": "available",
+        "tags": [
+          "tax"
+        ]
+      },
+      {
+        "title": "Sistema di Interscambio (SDI)",
+        "text": "E-invoice delivery, recipient codes, PEC fallback, and transmission status require official SDI workflows.",
+        "note": "E-invoice delivery, recipient codes, PEC fallback, and transmission status require official SDI workflows.",
+        "status": "available",
+        "tags": [
+          "einvoice"
+        ]
+      },
+      {
+        "title": "Registro Imprese",
+        "text": "Company existence, REA references, legal status, and registry extracts require official lookup.",
+        "note": "Company existence, REA references, legal status, and registry extracts require official lookup.",
+        "status": "available",
+        "tags": [
+          "registry"
+        ]
+      },
+      {
+        "title": "Banca d Italia / banking directories",
+        "text": "Banking, ABI/CAB, payments, and institutional reference data are provider or official checks.",
+        "note": "Banking, ABI/CAB, payments, and institutional reference data are provider or official checks.",
+        "status": "available",
+        "tags": [
+          "banking"
+        ]
+      },
+      {
+        "title": "Agenzia delle Dogane e dei Monopoli",
+        "text": "EORI, customs, and MRN status are official customs-system matters, not browser proofs.",
+        "note": "EORI, customs, and MRN status are official customs-system matters, not browser proofs.",
+        "status": "available",
+        "tags": [
+          "customs"
+        ]
+      },
+      {
+        "title": "Motorizzazione / PRA",
+        "text": "Vehicle registration, plate status, and ownership require official vehicle systems.",
+        "note": "Vehicle registration, plate status, and ownership require official vehicle systems.",
+        "status": "available",
+        "tags": [
+          "vehicles"
+        ]
+      }
+    ],
+    "plannedWorkbenches": [
+      {
+        "name": "Live Agenzia Entrate VAT status lookup",
+        "status": "planned",
+        "description": "Future network-enabled workflow requiring privacy, source, and official-boundary product specs."
+      },
+      {
+        "name": "Live Registro Imprese lookup",
+        "status": "planned",
+        "description": "Future network-enabled workflow requiring privacy, source, and official-boundary product specs."
+      },
+      {
+        "name": "Live SDI delivery status lookup",
+        "status": "planned",
+        "description": "Future network-enabled workflow requiring privacy, source, and official-boundary product specs."
+      },
+      {
+        "name": "Live bank directory lookup",
+        "status": "planned",
+        "description": "Future network-enabled workflow requiring privacy, source, and official-boundary product specs."
+      }
+    ],
+    "relatedGlobalTools": [
+      {
+        "name": "IBAN Validator",
+        "slug": "iban-validator",
+        "category": "finance"
+      },
+      {
+        "name": "JSON Formatter",
+        "slug": "json-formatter",
+        "category": "developer-tools"
+      },
+      {
+        "name": "Regex Tester",
+        "slug": "regex-tester",
+        "category": "developer-tools"
+      }
+    ],
+    "relatedCategories": [
+      {
+        "title": "National Identifiers",
+        "text": "Country-specific identifier validators and explainers.",
+        "name": "National Identifiers",
+        "slug": "national-identifiers"
+      },
+      {
+        "title": "Finance",
+        "text": "Banking, IBAN, payment, and accounting workflows.",
+        "name": "Finance",
+        "slug": "finance"
+      },
+      {
+        "title": "Developer Tools",
+        "text": "Locale, data-quality, JSON, regex, and API helpers.",
+        "name": "Developer Tools",
+        "slug": "developer-tools"
+      }
+    ],
+    "availableWorkbenches": [
+      {
+        "name": "Italian Codice Fiscale Validator",
+        "slug": "italy-codice-fiscale-validator",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "codicefiscale"
+        ],
+        "description": "Validate Italian codice fiscale shape, replay control-character evidence, and split surname/name/date/place-code blocks for debugging."
+      },
+      {
+        "name": "Italian Partita IVA Validator",
+        "slug": "italy-partita-iva-validator",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "piva"
+        ],
+        "description": "Validate Italian VAT number shape, replay the 11-digit checksum, and separate offline syntax from Agenzia Entrate status."
+      },
+      {
+        "name": "Italian VAT ID / IT Prefix Validator",
+        "slug": "italy-vat-id-validator",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "vat"
+        ],
+        "description": "Normalize IT VAT identifiers, inspect numeric body evidence, and prepare VIES handoff diagnostics."
+      },
+      {
+        "name": "Italian EORI / Customs Identifier Helper",
+        "slug": "italy-eori-validator",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "eori"
+        ],
+        "description": "Inspect Italian EORI/customs identifiers, country prefixes, VAT-style bodies, and customs-boundary notes."
+      },
+      {
+        "name": "Italian Codice Destinatario Helper",
+        "slug": "italy-codice-destinatario-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "sdi"
+        ],
+        "description": "Inspect seven-character SDI recipient codes, PEC fallback hints, and e-invoicing routing boundaries."
+      },
+      {
+        "name": "Italian PEC Address Helper",
+        "slug": "italy-pec-address-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "pec"
+        ],
+        "description": "Check certified-email snippets for PEC-style address evidence, domain shape, and official mailbox-boundary notes."
+      },
+      {
+        "name": "Italian REA Number Helper",
+        "slug": "italy-rea-number-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "rea"
+        ],
+        "description": "Audit REA chamber-registration references, province prefixes, serial digits, and registry lookup boundaries."
+      },
+      {
+        "name": "Italian Registro Imprese Readiness Helper",
+        "slug": "italy-registro-imprese-readiness-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "company"
+        ],
+        "description": "Check company intake snippets for Partita IVA, REA, PEC, address, and official registry handoff evidence."
+      },
+      {
+        "name": "Italian ATECO Code Inspector",
+        "slug": "italy-ateco-code-inspector",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "ateco"
+        ],
+        "description": "Inspect ATECO activity-code snippets, dotted digit groups, and data-quality notes for company onboarding."
+      },
+      {
+        "name": "Italian SPID / CIE Boundary Helper",
+        "slug": "italy-spid-cie-boundary-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "identity"
+        ],
+        "description": "Separate SPID, CIE, CNS, and identity-provider evidence from authentication proof and regulated access decisions."
+      },
+      {
+        "name": "Italian Company Onboarding Auditor",
+        "slug": "italy-company-onboarding-auditor",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "company"
+        ],
+        "description": "Audit Italian company intake payloads for VAT, CF, REA, PEC, IBAN, address, and official-status boundaries."
+      },
+      {
+        "name": "Italian IBAN Validator",
+        "slug": "italy-iban-validator",
+        "status": "available",
+        "tags": [
+          "finance",
+          "iban"
+        ],
+        "description": "Validate Italian IBAN numbers, expose CIN, ABI, CAB, account slices, and explain official bank-directory boundaries."
+      },
+      {
+        "name": "Italian ABI / CAB Bank Code Inspector",
+        "slug": "italy-abi-cab-bank-code-inspector",
+        "status": "available",
+        "tags": [
+          "finance",
+          "bankcode"
+        ],
+        "description": "Inspect Italian bank and branch code snippets, normalize ABI/CAB slices, and separate directory lookup from local checks."
+      },
+      {
+        "name": "Italian BIC / SWIFT Inspector",
+        "slug": "italy-bic-swift-inspector",
+        "status": "available",
+        "tags": [
+          "finance",
+          "bic"
+        ],
+        "description": "Inspect BIC/SWIFT shape, verify IT country-code evidence, and prepare payment-routing diagnostics."
+      },
+      {
+        "name": "Italian SEPA Transfer Helper",
+        "slug": "italy-sepa-transfer-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "sepa"
+        ],
+        "description": "Audit SEPA credit-transfer snippets for Italian IBAN, EUR amount, remittance, beneficiary, and browser-only boundaries."
+      },
+      {
+        "name": "Italian SEPA Direct Debit Mandate Helper",
+        "slug": "italy-sepa-direct-debit-mandate-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "mandate"
+        ],
+        "description": "Inspect SEPA direct-debit mandate snippets for creditor, IBAN, mandate reference, dates, and official authorization boundaries."
+      },
+      {
+        "name": "Italian Ri.Ba Payment Helper",
+        "slug": "italy-riba-payment-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "payment"
+        ],
+        "description": "Audit Ri.Ba payment snippets for debtor, due date, bank coordinates, amount, and reconciliation evidence."
+      },
+      {
+        "name": "Italian pagoPA Notice Helper",
+        "slug": "italy-pago-pa-payment-notice-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "payment"
+        ],
+        "description": "Inspect pagoPA notice snippets for IUV/codice avviso digits, amount, due date, and payment-boundary notes."
+      },
+      {
+        "name": "Italian Remittance Text Builder",
+        "slug": "italy-remittance-text-builder",
+        "status": "available",
+        "tags": [
+          "finance",
+          "payment"
+        ],
+        "description": "Normalize Italian payment causale/remittance text, detect invoice references, and produce log-safe previews."
+      },
+      {
+        "name": "Italian Payment Reconciliation Helper",
+        "slug": "italy-payment-reconciliation-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "payment"
+        ],
+        "description": "Compare Italian payment snippets for IBAN, amount, invoice, date, and reconciliation hints without bank lookup."
+      },
+      {
+        "name": "Italian Bank Statement Parser",
+        "slug": "italy-bank-statement-parser",
+        "status": "available",
+        "tags": [
+          "finance",
+          "statement"
+        ],
+        "description": "Parse Italian statement-like rows for valuta date, amount, causale, IBAN hints, and local CSV conventions."
+      },
+      {
+        "name": "Italian Masked IBAN Formatter",
+        "slug": "italy-masked-iban-formatter",
+        "status": "available",
+        "tags": [
+          "finance",
+          "ibanmask"
+        ],
+        "description": "Format and mask Italian IBANs for logs, support previews, and show which account slices remain sensitive."
+      },
+      {
+        "name": "Italian FatturaPA XML Readiness Checker",
+        "slug": "italy-fatturapa-xml-readiness-checker",
+        "status": "available",
+        "tags": [
+          "finance",
+          "einvoice"
+        ],
+        "description": "Audit FatturaPA XML snippets for cedente, cessionario, totals, VAT, and SDI delivery handoff evidence."
+      },
+      {
+        "name": "Italian SDI Invoice Routing Helper",
+        "slug": "italy-sdi-invoice-routing-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "einvoice"
+        ],
+        "description": "Inspect e-invoice routing payloads for codice destinatario, PEC, VAT, and Sistema di Interscambio boundaries."
+      },
+      {
+        "name": "Italian VAT Rate Sanity Helper",
+        "slug": "italy-vat-rate-sanity-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "taxdoc"
+        ],
+        "description": "Check Italian VAT-rate snippets, totals, comma decimals, and reverse-charge handoff notes."
+      },
+      {
+        "name": "Italian VAT Return Field Helper",
+        "slug": "italy-vat-return-field-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "taxdoc"
+        ],
+        "description": "Audit VAT return snippets for period, VAT ID, taxable amount, tax amount, and official filing boundaries."
+      },
+      {
+        "name": "Italian Invoice Number Helper",
+        "slug": "italy-invoice-number-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "invoice"
+        ],
+        "description": "Inspect Italian invoice references, year/series/number patterns, dates, VAT evidence, and duplicate-risk notes."
+      },
+      {
+        "name": "Italian E-Invoicing Readiness Helper",
+        "slug": "italy-e-invoicing-readiness-helper",
+        "status": "available",
+        "tags": [
+          "finance",
+          "einvoice"
+        ],
+        "description": "Audit Italian e-invoicing payloads for XML, SDI, PEC, VAT, totals, dates, and delivery-boundary evidence."
+      },
+      {
+        "name": "Italian Accounting Audit Trail Checklist Helper",
+        "slug": "italy-accounting-audit-trail-checklist-generator",
+        "status": "available",
+        "tags": [
+          "finance",
+          "accounting"
+        ],
+        "description": "Build an Italian accounting evidence checklist from VAT, invoice, payment, date, and document snippets."
+      },
+      {
+        "name": "Italian EUR Decimal Currency Formatter",
+        "slug": "italy-eur-decimal-currency-formatter",
+        "status": "available",
+        "tags": [
+          "finance",
+          "amount"
+        ],
+        "description": "Normalize Italian EUR amounts, comma decimals, thousands separators, and accounting import previews."
+      },
+      {
+        "name": "Italian CAP Postal Code Validator",
+        "slug": "italy-postal-code-validator",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "postal"
+        ],
+        "description": "Validate Italian five-digit CAP shape, expose postal-zone evidence, and separate delivery proof from offline checks."
+      },
+      {
+        "name": "Italian Address Normalizer",
+        "slug": "italy-address-normalizer",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "address"
+        ],
+        "description": "Normalize Italian address snippets with via/piazza, CAP, comune, provincia, and country evidence."
+      },
+      {
+        "name": "Italian Address Transliteration Normalizer",
+        "slug": "italy-address-transliteration-normalizer",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "address"
+        ],
+        "description": "Create ASCII-safe Italian address/search keys while preserving display text and diacritics where needed."
+      },
+      {
+        "name": "Italian Province Code Mapper",
+        "slug": "italy-province-code-mapper",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "province"
+        ],
+        "description": "Inspect Italian province abbreviations, expose known code evidence, and keep official geography lookup boundaries explicit."
+      },
+      {
+        "name": "Italian Municipality / Belfiore Code Inspector",
+        "slug": "italy-municipality-code-inspector",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "municipality"
+        ],
+        "description": "Inspect comune and Belfiore-style cadastral code snippets for place-code evidence and official lookup boundaries."
+      },
+      {
+        "name": "Italian Phone Number Validator",
+        "slug": "italy-phone-number-validator",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "phone"
+        ],
+        "description": "Validate Italian phone snippets, detect +39/trunk evidence, and separate numbering-plan shape from subscriber status."
+      },
+      {
+        "name": "Italian Phone E.164 Formatter",
+        "slug": "italy-phone-e164-formatter",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "phone"
+        ],
+        "description": "Normalize Italian phone numbers toward +39 display, preserve significant trunk digits, and prepare API payload previews."
+      },
+      {
+        "name": "Italian Date Locale Formatter",
+        "slug": "italy-date-locale-formatter",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "date"
+        ],
+        "description": "Parse Italian date snippets, emit ISO/date-display variants, and expose day/month/year field slices."
+      },
+      {
+        "name": "Italian CSV Locale Normalizer",
+        "slug": "italy-csv-locale-normalizer",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "csv"
+        ],
+        "description": "Audit Italian CSV snippets for semicolon separators, comma decimals, dates, VAT fields, and import-safe previews."
+      },
+      {
+        "name": "Italian Slug Normalizer",
+        "slug": "italy-slug-normalizer",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "slug"
+        ],
+        "description": "Create URL-safe slugs from Italian names, punctuation, accents, legal suffixes, and locale-specific text."
+      },
+      {
+        "name": "Italian Document OCR Fixer",
+        "slug": "italy-document-ocr-fixer",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "ocr"
+        ],
+        "description": "Repair OCR-like Italian document snippets, recover CF/VAT/IBAN/date evidence, and keep identity-proof boundaries explicit."
+      },
+      {
+        "name": "Italian GDPR / Privacy Redaction Helper",
+        "slug": "italy-gdpr-redaction-helper",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "privacy"
+        ],
+        "description": "Redact Italian personal, tax, banking, phone, and address evidence for privacy-safe support payloads."
+      },
+      {
+        "name": "Italian PII Masker",
+        "slug": "italy-pii-masker",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "privacy"
+        ],
+        "description": "Mask Italian CF, VAT, IBAN, phone, PEC, and address evidence while preserving debugging structure."
+      },
+      {
+        "name": "Italian Personal Data Fixture Helper",
+        "slug": "italy-personal-data-fixture-generator",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "fixture"
+        ],
+        "description": "Generate and audit clearly fake Italian-style personal fixtures with CF-like, address, phone, and privacy notes."
+      },
+      {
+        "name": "Italian ID Card Format Helper",
+        "slug": "italy-id-card-format-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "document"
+        ],
+        "description": "Inspect Italian identity-card snippets, document numbers, dates, and official identity-proof boundaries."
+      },
+      {
+        "name": "Italian Passport Number Helper",
+        "slug": "italy-passport-number-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "document"
+        ],
+        "description": "Inspect Italian passport-like document numbers, MRZ hints, dates, and official document-validation boundaries."
+      },
+      {
+        "name": "Italian Driving Licence Format Helper",
+        "slug": "italy-driving-licence-format-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "document"
+        ],
+        "description": "Inspect Italian driving-licence snippets, document codes, dates, and Motorizzazione boundary notes."
+      },
+      {
+        "name": "Italian Residence Permit Format Helper",
+        "slug": "italy-residence-permit-format-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "document"
+        ],
+        "description": "Inspect residence-permit snippets, number/date evidence, and official immigration-status boundaries."
+      },
+      {
+        "name": "Italian Tessera Sanitaria Format Helper",
+        "slug": "italy-health-card-format-helper",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "document"
+        ],
+        "description": "Inspect Tessera Sanitaria/codice fiscale snippets, expiry dates, and health-card proof boundaries."
+      },
+      {
+        "name": "Italian Vehicle Plate Inspector",
+        "slug": "italy-vehicle-plate-inspector",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "vehicle"
+        ],
+        "description": "Inspect Italian vehicle plate families, province-era hints, serial blocks, and PRA/Motorizzazione boundaries."
+      },
+      {
+        "name": "Italian VIN Validator",
+        "slug": "italy-vin-validator",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "vin"
+        ],
+        "description": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare Italian vehicle-intake diagnostics."
+      },
+      {
+        "name": "Italian Vehicle Data Redaction Helper",
+        "slug": "italy-vehicle-data-redaction-helper",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "vehicle"
+        ],
+        "description": "Mask Italian plate, VIN, owner, fiscal-code, and address evidence in vehicle support payloads."
+      },
+      {
+        "name": "Italian Customs Declaration Helper",
+        "slug": "italy-customs-declaration-helper",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "customs"
+        ],
+        "description": "Audit customs snippets for EORI, MRN-like references, country codes, dates, and Agenzia Dogane boundaries."
+      },
+      {
+        "name": "Italian Postal Tracking Helper",
+        "slug": "italy-postal-tracking-helper",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "postaltrack"
+        ],
+        "description": "Inspect Poste/courier tracking-like snippets, country suffixes, dates, and carrier-status boundaries."
+      },
+      {
+        "name": "Italian Data Quality Workbench",
+        "slug": "italy-data-quality-workbench",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "dataquality"
+        ],
+        "description": "Audit mixed Italian payloads for identifiers, dates, amounts, addresses, phone, and locale consistency."
+      },
+      {
+        "name": "Italian JSON Fixture Helper",
+        "slug": "italy-json-fixture-generator",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "json"
+        ],
+        "description": "Inspect Italian JSON fixtures for locale, VAT, CF, IBAN, phone, date, and privacy-safe payload shape."
+      },
+      {
+        "name": "Italian Regex Pack Helper",
+        "slug": "italy-regex-pack-helper",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "regex"
+        ],
+        "description": "Prepare regex snippets for Italian CF, Partita IVA, IBAN, CAP, phone, dates, and local evidence labels."
+      },
+      {
+        "name": "Italian API Payload Auditor",
+        "slug": "italy-api-payload-auditor",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "api"
+        ],
+        "description": "Audit API payload snippets for Italy locale, VAT, CF, IBAN, dates, amounts, and official-system boundaries."
+      },
+      {
+        "name": "Italian Form Field Auditor",
+        "slug": "italy-form-field-auditor",
+        "status": "available",
+        "tags": [
+          "developer-tools",
+          "form"
+        ],
+        "description": "Check Italian form-field labels and values for VAT, CF, CAP, province, phone, address, and privacy handling."
+      },
+      {
+        "name": "Italian MRZ / Passport Parser",
+        "slug": "italy-mrz-passport-parser",
+        "status": "available",
+        "tags": [
+          "national-identifiers",
+          "document"
+        ],
+        "description": "Parse Italian passport MRZ snippets, split document, nationality, birth-date, expiry, and checksum evidence without identity proof."
+      }
+    ],
+    "futureCountryPages": [
+      {
+        "name": "Italian payroll integrations",
+        "status": "planned",
+        "description": "Reserved future country page; not a fake tool action."
+      },
+      {
+        "name": "Italian municipal code directory",
+        "status": "planned",
+        "description": "Reserved future country page; not a fake tool action."
+      },
+      {
+        "name": "Italian health-card handoff guide",
+        "status": "planned",
+        "description": "Reserved future country page; not a fake tool action."
+      },
+      {
+        "name": "Italian public procurement IDs",
+        "status": "planned",
+        "description": "Reserved future country page; not a fake tool action."
+      },
+      {
+        "name": "Italian tax-declaration checklist",
+        "status": "planned",
+        "description": "Reserved future country page; not a fake tool action."
+      },
+      {
+        "name": "Italian address datasets",
+        "status": "planned",
+        "description": "Reserved future country page; not a fake tool action."
+      },
+      {
+        "name": "Italian phone allocation reference",
+        "status": "planned",
+        "description": "Reserved future country page; not a fake tool action."
+      },
+      {
+        "name": "Italian vehicle registry guide",
+        "status": "planned",
+        "description": "Reserved future country page; not a fake tool action."
+      },
+      {
+        "name": "Italian customs flows",
+        "status": "planned",
+        "description": "Reserved future country page; not a fake tool action."
+      },
+      {
+        "name": "Italian e-invoicing deep dive",
+        "status": "planned",
+        "description": "Reserved future country page; not a fake tool action."
+      }
+    ],
+    "localizationExamples": [
+      {
+        "label": "Date",
+        "value": "12/07/2026",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Time",
+        "value": "14:25",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Currency",
+        "value": "1.234,56 €",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Decimal",
+        "value": "1.234,56",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Percentage",
+        "value": "35,7%",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Mobile phone",
+        "value": "+39 347 123 4567",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Landline",
+        "value": "+39 06 69821234",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Postal code",
+        "value": "00118",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Address example",
+        "value": "Via Roma 10, 00118 Roma RM",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Example person name",
+        "value": "Mario Rossi",
+        "tags": [
+          "locale"
+        ]
+      },
+      {
+        "label": "Mainland time zone",
+        "value": "Europe/Rome",
+        "tags": [
+          "locale"
+        ]
+      }
+    ],
+    "addressExample": {
+      "label": "Italian address",
+      "value": "Via Roma 10\n00118 Roma RM\nItalia"
+    },
+    "phoneExamples": [
+      {
+        "label": "Mobile",
+        "value": "+39 347 123 4567",
+        "description": "Italian mobile example with +39 country code and 3xx mobile prefix evidence."
+      },
+      {
+        "label": "Rome landline",
+        "value": "+39 06 69821234",
+        "description": "Rome fixed-line example preserving the leading 06 area code after +39."
+      },
+      {
+        "label": "Milan landline",
+        "value": "+39 02 12345678",
+        "description": "Milan fixed-line example preserving the leading 02 area code after +39."
+      },
+      {
+        "label": "Service-style",
+        "value": "+39 800 123456",
+        "description": "Toll-free/service-style number example for form and parser QA."
+      },
+      {
+        "label": "Compact E.164",
+        "value": "+393471234567",
+        "description": "Compact E.164-style API storage preview without spaces."
+      }
+    ],
+    "integrationChecklist": [
+      "Locale it-IT configured",
+      "UTF-8 encoding preserved",
+      "Euro (EUR) formatting with comma decimals and dot separators",
+      "Codice fiscale control-character checks",
+      "Partita IVA checksum checks",
+      "Italian IBAN MOD-97 plus CIN/ABI/CAB slicing",
+      "CAP five-digit postal-code validation",
+      "Phone code +39 parsing with trunk-zero care",
+      "FatturaPA/SDI/PEC routing fields captured",
+      "Privacy masking before logs and support tickets"
+    ],
+    "validationRules": [
+      {
+        "title": "Codice fiscale",
+        "text": "Sixteen-character structure with surname/name/date/gender/place-code blocks and control-character evidence; identity proof remains official.",
+        "name": "Codice fiscale",
+        "description": "Sixteen-character structure with surname/name/date/gender/place-code blocks and control-character evidence; identity proof remains official."
+      },
+      {
+        "title": "Partita IVA",
+        "text": "Eleven digits with checksum evidence; active VAT status requires official tax/VIES systems.",
+        "name": "Partita IVA",
+        "description": "Eleven digits with checksum evidence; active VAT status requires official tax/VIES systems."
+      },
+      {
+        "title": "Italian IBAN",
+        "text": "IT plus 25 additional characters; MOD-97 validates the IBAN and CIN/ABI/CAB/account slices are exposed locally.",
+        "name": "Italian IBAN",
+        "description": "IT plus 25 additional characters; MOD-97 validates the IBAN and CIN/ABI/CAB/account slices are exposed locally."
+      },
+      {
+        "title": "CAP",
+        "text": "Five-digit Italian postal-code shape; delivery proof requires postal/reference data.",
+        "name": "CAP",
+        "description": "Five-digit Italian postal-code shape; delivery proof requires postal/reference data."
+      },
+      {
+        "title": "SDI / PEC",
+        "text": "Seven-character SDI recipient code or certified-email fallback evidence; delivery status requires SDI/PEC systems.",
+        "name": "SDI / PEC",
+        "description": "Seven-character SDI recipient code or certified-email fallback evidence; delivery status requires SDI/PEC systems."
+      },
+      {
+        "title": "Phone",
+        "text": "+39 or national Italian number evidence; allocation and subscriber status require telecom/provider sources.",
+        "name": "Phone",
+        "description": "+39 or national Italian number evidence; allocation and subscriber status require telecom/provider sources."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating codice fiscale as identity proof",
+        "text": "The browser can inspect structure and control-character evidence, but it cannot prove that a person or identity exists."
+      },
+      {
+        "title": "Confusing Partita IVA and codice fiscale",
+        "text": "Companies may expose VAT, fiscal code, REA, and PEC fields; store each normalized field separately."
+      },
+      {
+        "title": "Assuming ABI/CAB means account ownership",
+        "text": "IBAN, ABI, and CAB slicing does not prove the account belongs to a person or company."
+      },
+      {
+        "title": "Using dot decimals in Italian imports",
+        "text": "Italian CSV/accounting flows commonly expect comma decimals and semicolon separators."
+      }
+    ],
+    "bankingOverview": [
+      {
+        "title": "IBAN",
+        "text": "IT IBAN format with CIN, ABI, CAB, and account segment breakdown.",
+        "brandKey": "iban",
+        "name": "IBAN",
+        "status": "available",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "IT IBAN format with CIN, ABI, CAB, and account segment breakdown."
+      },
+      {
+        "title": "ABI / CAB",
+        "text": "Five-digit bank and branch routing evidence; bank name enrichment requires reference data.",
+        "name": "ABI / CAB",
+        "status": "available",
+        "tags": [
+          "banking"
+        ],
+        "description": "Five-digit bank and branch routing evidence; bank name enrichment requires reference data."
+      },
+      {
+        "title": "SEPA",
+        "text": "Credit transfer and direct debit readiness fields for Italian EUR accounts.",
+        "brandKey": "sepa",
+        "name": "SEPA",
+        "status": "available",
+        "tags": [
+          "banking",
+          "payments"
+        ],
+        "description": "Credit transfer and direct debit readiness fields for Italian EUR accounts."
+      },
+      {
+        "title": "SWIFT / BIC",
+        "text": "International routing identifier shape with IT country-code evidence.",
+        "brandKey": "swift",
+        "name": "SWIFT / BIC",
+        "status": "available",
+        "tags": [
+          "banking"
+        ],
+        "description": "International routing identifier shape with IT country-code evidence."
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Comma decimals",
+        "text": "Italian business CSV and accounting workflows commonly use comma decimals and semicolon separators."
+      },
+      {
+        "title": "DD/MM/YYYY dates",
+        "text": "Human-facing Italian dates usually use day/month/year slashes; store ISO dates for APIs."
+      },
+      {
+        "title": "Accents and apostrophes",
+        "text": "Search keys often need ASCII-safe normalization while display names preserve Italian spelling."
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Tax identity",
+        "text": "Codice fiscale, Partita IVA, Agenzia Entrate, VAT returns, and FatturaPA workflows form the tax identity cluster."
+      },
+      {
+        "title": "Business registry",
+        "text": "Registro Imprese, REA, PEC, company onboarding, ATECO, EORI, and official lookup boundaries form the company evidence cluster."
+      },
+      {
+        "title": "Payments",
+        "text": "Italian IBAN, ABI, CAB, BIC, SEPA, Ri.Ba, pagoPA, remittance, statements, and reconciliation form the payment cluster."
+      },
+      {
+        "title": "E-invoicing",
+        "text": "FatturaPA XML, SDI recipient code, PEC fallback, VAT totals, and delivery handoffs form the e-invoicing cluster."
+      },
+      {
+        "title": "Locale and privacy",
+        "text": "CAP, addresses, phone numbers, comma decimals, dates, GDPR redaction, and PII masking form the data-quality cluster."
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Premium Italy suite",
+        "text": "Sixty browser-only Italy workbenches cover tax, banking, e-invoicing, locale, privacy, vehicles, and developer-data workflows."
+      },
+      {
+        "title": "Field breakdown everywhere",
+        "text": "Each tool exposes named Italian evidence slices for debugging instead of only generic result cards."
+      },
+      {
+        "title": "Official boundaries preserved",
+        "text": "Registry, tax, bank, vehicle, carrier, SDI, and identity status checks remain outside browser-only validation."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "Normalize for storage",
+        "text": "Store compact identifiers such as IT VAT, codice fiscale, and IBAN separately from display punctuation."
+      },
+      {
+        "title": "Mask before logging",
+        "text": "Codice fiscale, IBAN, phone, address, PEC, and document evidence should be masked in logs and screenshots."
+      },
+      {
+        "title": "Use official systems for status",
+        "text": "ValidoHub provides offline shape evidence and handoff payloads, not regulated official decisions."
+      }
+    ],
+    "developerExamples": [
+      {
+        "title": "Java Locale",
+        "language": "java",
+        "brandKey": "java",
+        "code": "Locale.forLanguageTag(\"it-IT\")",
+        "note": "Use BCP 47 locale tags for Java formatting APIs."
+      },
+      {
+        "title": "Java currency format",
+        "language": "java",
+        "brandKey": "java",
+        "code": "NumberFormat.getCurrencyInstance(Locale.forLanguageTag(\"it-IT\")).format(value)",
+        "note": "Formats values using Italian currency conventions."
+      },
+      {
+        "title": "JavaScript Intl Currency",
+        "language": "javascript",
+        "brandKey": "javascript",
+        "code": "new Intl.NumberFormat(\"it-IT\", { style: \"currency\", currency: \"EUR\" })",
+        "note": "Formats EUR values with it-IT separators and currency display."
+      },
+      {
+        "title": "JavaScript Date",
+        "language": "javascript",
+        "brandKey": "javascript",
+        "code": "new Intl.DateTimeFormat(\"it-IT\", { timeZone: \"Europe/Rome\" })",
+        "note": "Use Europe/Rome timezone for Italy local dates."
+      },
+      {
+        "title": "Python locale",
+        "language": "python",
+        "brandKey": "python",
+        "code": "locale.setlocale(locale.LC_ALL, \"it_IT.UTF-8\")",
+        "note": "Requires the it_IT locale to be installed on the host operating system."
+      },
+      {
+        "title": "Go language tag",
+        "language": "go",
+        "brandKey": "go",
+        "code": "language.MustParse(\"it-IT\")",
+        "note": "Use golang.org/x/text/language package for locale representation."
+      }
+    ]
+  }
 }

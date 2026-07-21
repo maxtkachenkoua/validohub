@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-company-suffix-normalizer
+kind: tool
+module: validohub
+country: NO
+category: developer-tools
+status: active
+name:
+  en: "Norwegian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Norway Sample Holding Ltd 915545943"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-procurement-identifier-helper, norway-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

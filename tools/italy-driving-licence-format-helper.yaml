@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-driving-licence-format-helper
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian Driving Licence Format Helper"
+summary:
+  en: "Inspect Italian driving-licence snippets, document codes, dates, and Motorizzazione boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "Patente U1A123456B categoria B scadenza 12/07/2030"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect Italian driving-licence snippets, document codes, dates, and Motorizzazione boundary notes."

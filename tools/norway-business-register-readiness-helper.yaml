@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-business-register-readiness-helper
+kind: tool
+module: validohub
+country: NO
+category: government
+status: active
+name:
+  en: "Norwegian Brreg Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Brreg lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "915545943 NO915545943MVA Karl Johans gate 1, 0154 Oslo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-id-card-format-helper, norway-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian Brreg Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Brreg lookup or company registry workflow."

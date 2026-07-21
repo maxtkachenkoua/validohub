@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: RO
+slug: romania
+name:
+  en: Romania
+region: Europe
+languages:
+  - ro
+currency: RON
+relatedCountries:
+  - BG
+  - HU
+  - MD

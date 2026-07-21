@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-data-quality-workbench
+kind: tool
+module: validohub
+country: FI
+category: developer-tools
+status: active
+name:
+  en: "Finnish Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-json-fixture-generator, finland-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: DK
+slug: denmark
+name:
+  en: Denmark
+region: Europe
+languages:
+  - da
+currency: DKK
+relatedCountries:
+  - SE
+  - NO
+  - DE

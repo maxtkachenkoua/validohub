@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-postal-tracking-helper
+kind: tool
+module: validohub
+country: FI
+category: logistics
+status: active
+name:
+  en: "Finnish Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 00100 Helsinki"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-data-quality-workbench, finland-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

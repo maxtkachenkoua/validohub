@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: AT
+category: privacy
+status: active
+name:
+  en: "Austrian GDPR / DSG Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-pii-masker, austria-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian GDPR / DSG Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-residence-permit-format-helper
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: "Spanish Residence Permit Format Helper"
+summary:
+  en: "Inspect Spanish TIE/residence-permit snippets, NIE evidence, dates, and official immigration boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TIE input"
+        required: true
+        placeholder:
+          en: "TIE X1234567L expira 12/07/2030"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-id-validator, spain-nif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect Spanish TIE/residence-permit snippets, NIE evidence, dates, and official immigration boundary notes."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-municipality-code-inspector
+kind: tool
+module: validohub
+country: BE
+category: address
+status: active
+name:
+  en: "Belgian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Rue de la Loi 16, 1000 Brussels"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-phone-number-validator, belgium-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

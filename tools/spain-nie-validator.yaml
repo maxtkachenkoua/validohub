@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-nie-validator
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: "Spanish NIE Validator"
+summary:
+  en: "Validate NIE X/Y/Z prefix mapping, modulo-23 control letters, and foreigner-ID syntax boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NIE input"
+        required: true
+        placeholder:
+          en: "X1234567L"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-id-validator, spain-nif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish NIE Validator | ValidoHub"
+  description:
+    en: "Validate NIE X/Y/Z prefix mapping, modulo-23 control letters, and foreigner-ID syntax boundaries."

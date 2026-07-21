@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-data-quality-workbench
+kind: tool
+module: validohub
+country: PT
+category: developer-tools
+status: active
+name:
+  en: "Portuguese Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-json-fixture-generator, portugal-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

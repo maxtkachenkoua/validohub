@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-cnp-validator
+kind: tool
+module: validohub
+country: RO
+category: national-identifiers
+status: active
+name:
+  en: "Romanian CNP Validator"
+summary:
+  en: "Validate CNP shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "1850101123451"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-cui-cif-validator, romania-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian CNP Validator | ValidoHub"
+  description:
+    en: "Validate CNP shape, split date/control/body evidence, and prepare privacy-safe debugging output."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: FI
+category: localization
+status: active
+name:
+  en: "Finnish Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "HETU input, postinumero input, amount 1 234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-support-ticket-scrubber, finland-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

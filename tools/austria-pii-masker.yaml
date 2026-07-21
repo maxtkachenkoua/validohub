@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-pii-masker
+kind: tool
+module: validohub
+country: AT
+category: privacy
+status: active
+name:
+  en: "Austrian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1234010180 +43 664 1234567 AT611904300234573201"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-personal-data-fixture-generator, austria-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Address Transliteration Normalizer"
+summary:
+  en: "Normalize Spanish accents and address text for ASCII-safe forms, search keys, and integration payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Calle de Alcalá, 48, 28014 Madrid"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Normalize Spanish accents and address text for ASCII-safe forms, search keys, and integration payloads."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: FI
+category: tax
+status: active
+name:
+  en: "Finnish VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "ALV / VAT 20% base 1 234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-vat-return-field-helper, finland-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

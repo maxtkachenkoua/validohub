@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-support-ticket-scrubber
+kind: tool
+module: validohub
+country: IE
+category: privacy
+status: active
+name:
+  en: "Irish Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1234567T, IE29AIBK93115212345674, 1 Grafton Street, Dublin, D02 X285"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-integration-smoke-test-builder, ireland-ppsn-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

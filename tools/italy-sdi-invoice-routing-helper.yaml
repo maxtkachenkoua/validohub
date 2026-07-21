@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-sdi-invoice-routing-helper
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian SDI Invoice Routing Helper"
+summary:
+  en: "Inspect e-invoice routing payloads for codice destinatario, PEC, VAT, and Sistema di Interscambio boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SDI input"
+        required: true
+        placeholder:
+          en: "Codice destinatario ABC1234 PEC contabilita@example.pec.it PIVA 12345678903"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian SDI Invoice Routing Helper | ValidoHub"
+  description:
+    en: "Inspect e-invoice routing payloads for codice destinatario, PEC, VAT, and Sistema di Interscambio boundaries."

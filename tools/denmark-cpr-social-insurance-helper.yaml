@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-cpr-social-insurance-helper
+kind: tool
+module: validohub
+country: DK
+category: national-identifiers
+status: active
+name:
+  en: "Danish CPR Helper"
+summary:
+  en: "Split CPR evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "010185-1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-company-onboarding-auditor, denmark-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish CPR Helper | ValidoHub"
+  description:
+    en: "Split CPR evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

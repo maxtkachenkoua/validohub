@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: NO
+slug: norway
+name:
+  en: Norway
+region: Europe
+languages:
+  - nb
+currency: NOK
+relatedCountries:
+  - SE
+  - DK
+  - FI

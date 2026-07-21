@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: CZ
+category: localization
+status: active
+name:
+  en: "Czech Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "Rodne cislo input, PSC input, amount 1 234,56 CZK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-support-ticket-scrubber, czechia-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

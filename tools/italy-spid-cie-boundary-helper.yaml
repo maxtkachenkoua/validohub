@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-spid-cie-boundary-helper
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian SPID / CIE Boundary Helper"
+summary:
+  en: "Separate SPID, CIE, CNS, and identity-provider evidence from authentication proof and regulated access decisions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SPID input"
+        required: true
+        placeholder:
+          en: "SPID livello 2, CIE, codice fiscale RSSMRA85M01H501Q"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian SPID / CIE Boundary Helper | ValidoHub"
+  description:
+    en: "Separate SPID, CIE, CNS, and identity-provider evidence from authentication proof and regulated access decisions."

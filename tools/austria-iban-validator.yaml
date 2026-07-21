@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-iban-validator
+kind: tool
+module: validohub
+country: AT
+category: finance
+status: active
+name:
+  en: "Austria IBAN Validator"
+summary:
+  en: "Validate AT IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "AT611904300234573201"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-iban-generator, austria-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austria IBAN Validator | ValidoHub"
+  description:
+    en: "Validate AT IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

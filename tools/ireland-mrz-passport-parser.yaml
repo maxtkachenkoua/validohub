@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-mrz-passport-parser
+kind: tool
+module: validohub
+country: IE
+category: national-identifiers
+status: active
+name:
+  en: "Irish MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<IRLSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567IRL8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-iban-validator, ireland-iban-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-pii-masker
+kind: tool
+module: validohub
+country: CZ
+category: privacy
+status: active
+name:
+  en: "Czech PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "800101/0006 +420 777 123 456 CZ6508000000192000145399"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-personal-data-fixture-generator, czechia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-calendar-week-helper
+kind: tool
+module: validohub
+country: SE
+category: localization
+status: active
+name:
+  en: "Swedish Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "2026-07-21 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-company-suffix-normalizer, sweden-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

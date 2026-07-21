@@ -16,6 +16,30 @@
   const SHARED_WORLD_MAP_SRC = '/assets/images/countries/world-map.svg';
 
   const COUNTRY_VISUAL_ASSETS = {
+    "austria": {
+      "outlineSrc": "/assets/images/countries/austria-outline.svg",
+      "outlineAlt": "Austria country outline",
+      "mapSrc": "/assets/images/countries/austria-location.svg",
+      "mapAlt": "World map with Austria location marker",
+      "mapMarker": {
+        "x": 50,
+        "y": 58,
+        "label": "Austria"
+      },
+      "source": "Simplified generated geographic reference for ValidoHub country navigation"
+    },
+    "belgium": {
+      "outlineSrc": "/assets/images/countries/belgium-outline.svg",
+      "outlineAlt": "Belgium country outline",
+      "mapSrc": "/assets/images/countries/belgium-location.svg",
+      "mapAlt": "World map with Belgium location marker",
+      "mapMarker": {
+        "x": 47,
+        "y": 52,
+        "label": "Belgium"
+      },
+      "source": "Simplified generated geographic reference for ValidoHub country navigation"
+    },
     "brazil": {
       "outlineSrc": "/assets/images/countries/brazil-outline.svg",
       "outlineAlt": "Brazil country outline",
@@ -27,6 +51,42 @@
         "label": "Brazil"
       },
       "source": "Natural Earth geometry"
+    },
+    "czechia": {
+      "outlineSrc": "/assets/images/countries/czechia-outline.svg",
+      "outlineAlt": "Czechia country outline",
+      "mapSrc": "/assets/images/countries/czechia-location.svg",
+      "mapAlt": "World map with Czechia location marker",
+      "mapMarker": {
+        "x": 51,
+        "y": 55,
+        "label": "Czechia"
+      },
+      "source": "Simplified generated geographic reference for ValidoHub country navigation"
+    },
+    "denmark": {
+      "outlineSrc": "/assets/images/countries/denmark-outline.svg",
+      "outlineAlt": "Denmark country outline",
+      "mapSrc": "/assets/images/countries/denmark-location.svg",
+      "mapAlt": "World map with Denmark location marker",
+      "mapMarker": {
+        "x": 51,
+        "y": 45,
+        "label": "Denmark"
+      },
+      "source": "Simplified generated geographic reference for ValidoHub country navigation"
+    },
+    "finland": {
+      "outlineSrc": "/assets/images/countries/finland-outline.svg",
+      "outlineAlt": "Finland country outline",
+      "mapSrc": "/assets/images/countries/finland-location.svg",
+      "mapAlt": "World map with Finland location marker",
+      "mapMarker": {
+        "x": 58,
+        "y": 32,
+        "label": "Finland"
+      },
+      "source": "Simplified generated geographic reference for ValidoHub country navigation"
     },
     "france": {
       "outlineSrc": "/assets/images/countries/france-outline.svg",
@@ -52,6 +112,30 @@
       },
       "source": "Natural Earth geometry"
     },
+    "ireland": {
+      "outlineSrc": "/assets/images/countries/ireland-outline.svg",
+      "outlineAlt": "Ireland country outline",
+      "mapSrc": "/assets/images/countries/ireland-location.svg",
+      "mapAlt": "World map with Ireland location marker",
+      "mapMarker": {
+        "x": 42,
+        "y": 49,
+        "label": "Ireland"
+      },
+      "source": "Simplified generated geographic reference for ValidoHub country navigation"
+    },
+    "italy": {
+      "outlineSrc": "/assets/images/countries/italy-outline.svg",
+      "outlineAlt": "Italy country outline",
+      "mapSrc": "/assets/images/countries/italy-location.svg",
+      "mapAlt": "World map with Italy location marker",
+      "mapMarker": {
+        "x": 50,
+        "y": 44,
+        "label": "Italy"
+      },
+      "source": "Natural Earth geometry via ValidoHub world-map source"
+    },
     "netherlands": {
       "outlineSrc": "/assets/images/countries/netherlands-outline.svg",
       "outlineAlt": "Netherlands country outline",
@@ -63,6 +147,18 @@
         "label": "Netherlands"
       },
       "source": "Simplified public-domain geographic reference"
+    },
+    "norway": {
+      "outlineSrc": "/assets/images/countries/norway-outline.svg",
+      "outlineAlt": "Norway country outline",
+      "mapSrc": "/assets/images/countries/norway-location.svg",
+      "mapAlt": "World map with Norway location marker",
+      "mapMarker": {
+        "x": 52,
+        "y": 34,
+        "label": "Norway"
+      },
+      "source": "Simplified generated geographic reference for ValidoHub country navigation"
     },
     "poland": {
       "outlineSrc": "/assets/images/countries/poland-outline.svg",
@@ -76,6 +172,30 @@
       },
       "source": "Natural Earth geometry"
     },
+    "portugal": {
+      "outlineSrc": "/assets/images/countries/portugal-outline.svg",
+      "outlineAlt": "Portugal country outline",
+      "mapSrc": "/assets/images/countries/portugal-location.svg",
+      "mapAlt": "World map with Portugal location marker",
+      "mapMarker": {
+        "x": 38,
+        "y": 62,
+        "label": "Portugal"
+      },
+      "source": "Simplified generated geographic reference for ValidoHub country navigation"
+    },
+    "romania": {
+      "outlineSrc": "/assets/images/countries/romania-outline.svg",
+      "outlineAlt": "Romania country outline",
+      "mapSrc": "/assets/images/countries/romania-location.svg",
+      "mapAlt": "World map with Romania location marker",
+      "mapMarker": {
+        "x": 58,
+        "y": 62,
+        "label": "Romania"
+      },
+      "source": "Simplified generated geographic reference for ValidoHub country navigation"
+    },
     "spain": {
       "outlineSrc": "/assets/images/countries/spain-outline.svg",
       "outlineAlt": "Spain country outline",
@@ -87,6 +207,18 @@
         "label": "Spain"
       },
       "source": "Simplified public-domain geographic reference"
+    },
+    "sweden": {
+      "outlineSrc": "/assets/images/countries/sweden-outline.svg",
+      "outlineAlt": "Sweden country outline",
+      "mapSrc": "/assets/images/countries/sweden-location.svg",
+      "mapAlt": "World map with Sweden location marker",
+      "mapMarker": {
+        "x": 55,
+        "y": 38,
+        "label": "Sweden"
+      },
+      "source": "Simplified generated geographic reference for ValidoHub country navigation"
     },
     "switzerland": {
       "outlineSrc": "/assets/images/countries/switzerland-outline.svg",
@@ -103,6 +235,958 @@
   }
 
   const COUNTRY_HUBS = {
+    "austria": {
+      "flag": "🇦🇹",
+      "name": "Austria",
+      "badge": "Premium Austria developer suite",
+      "description": "Developer intelligence and browser-only workbenches for austrian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Osterreich",
+        "population": "approximately 9.2M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Vienna",
+        "continent": "Europe",
+        "region": "Central Europe / European Union",
+        "languages": "German",
+        "currency": "Euro",
+        "currencyCode": "EUR",
+        "callingCode": "+43",
+        "internetTld": ".at",
+        "drivingSide": "Right",
+        "iso2": "AT",
+        "iso3": "AUT",
+        "isoNumeric": "040",
+        "locale": "de-AT",
+        "icuLocale": "de_AT",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street, number, postal code, locality, Austria",
+        "postalCodeFormat": "Postleitzahl",
+        "primaryTimeZone": "Europe local time zone",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "de-AT",
+        "cldrLocale": "de_AT",
+        "metricVsImperial": "Metric-first"
+      },
+      "visualIdentity": {
+        "countryId": "austria",
+        "outlineLabel": "Austria outline",
+        "mapLabel": "Austria in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Austria flag",
+        "heroAccentPrimary": "15 118 110",
+        "heroAccentSecondary": "37 99 235",
+        "heroAccentTertiary": "245 158 11"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "SVNR and Firmenbuchnummer",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "UID / USt and payments",
+          "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Austria registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /austria/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Dot (.) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Austrian examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "Firmenbuch",
+          "text": "Official business registry or company lookup remains the source of truth for Austria.",
+          "status": "official boundary"
+        },
+        {
+          "title": "UID / USt",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "GDPR / DSG",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "Steuernummer, UID, SVNR, Firmenbuchnummer, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "IBAN, SEPA, SWIFT, EPS handoff, VIES",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "de-AT / de_AT; date DD.MM.YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "EUR amounts use Comma (,) and Dot (.).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "SVNR, Firmenbuchnummer, Postleitzahl, phone, address, and IBAN need local labels.",
+          "status": "available"
+        }
+      ],
+      "routes": [
+        {
+          "title": "Austrian SVNR Validator",
+          "href": "/en/austria/austria-svnr-validator/",
+          "text": "Validate SVNR shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Austrian Firmenbuchnummer Validator",
+          "href": "/en/austria/austria-firmenbuchnummer-validator/",
+          "text": "Inspect Firmenbuchnummer structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Austrian VAT ID / AT Prefix Validator",
+          "href": "/en/austria/austria-vat-id-validator/",
+          "text": "Normalize AT VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+        },
+        {
+          "title": "Austrian EORI / Customs Identifier Helper",
+          "href": "/en/austria/austria-eori-validator/",
+          "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+        },
+        {
+          "title": "Austrian Sozialversicherungsnummer Helper",
+          "href": "/en/austria/austria-sozialversicherungsnummer-social-insurance-helper/",
+          "text": "Split Sozialversicherungsnummer evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Austrian Company Onboarding Auditor",
+          "href": "/en/austria/austria-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for Firmenbuchnummer, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Austrian Firmenbuch Readiness Helper",
+          "href": "/en/austria/austria-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated Firmenbuch lookup or company registry workflow."
+        },
+        {
+          "title": "Austrian ID Card Format Helper",
+          "href": "/en/austria/austria-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Austrian Passport Number Helper",
+          "href": "/en/austria/austria-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Austrian MRZ / Passport Parser",
+          "href": "/en/austria/austria-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Austria IBAN Validator",
+          "href": "/en/austria/austria-iban-validator/",
+          "text": "Validate AT IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+        },
+        {
+          "title": "Austria IBAN Generator",
+          "href": "/en/austria/austria-iban-generator/",
+          "text": "Generate AT IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+        },
+        {
+          "title": "Austrian Domestic Bank Account Inspector",
+          "href": "/en/austria/austria-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+        },
+        {
+          "title": "Austrian BIC / SWIFT Inspector",
+          "href": "/en/austria/austria-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Austria banking integrations."
+        },
+        {
+          "title": "Austrian SEPA Transfer Helper",
+          "href": "/en/austria/austria-sepa-transfer-helper/",
+          "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+        },
+        {
+          "title": "Austrian SEPA Direct Debit Mandate Helper",
+          "href": "/en/austria/austria-sepa-direct-debit-mandate-helper/",
+          "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+        },
+        {
+          "title": "Austrian EPS / SEPA Reference Helper",
+          "href": "/en/austria/austria-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Austrian Remittance Text Builder",
+          "href": "/en/austria/austria-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Austrian Payment Reconciliation Helper",
+          "href": "/en/austria/austria-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Austrian Bank Statement Parser",
+          "href": "/en/austria/austria-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Austrian Masked IBAN Formatter",
+          "href": "/en/austria/austria-masked-iban-formatter/",
+          "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+        },
+        {
+          "title": "Austrian EUR Decimal Currency Formatter",
+          "href": "/en/austria/austria-currency-decimal-formatter/",
+          "text": "Normalize EUR amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Austrian VAT Rate Sanity Helper",
+          "href": "/en/austria/austria-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Austrian VAT Return Field Helper",
+          "href": "/en/austria/austria-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Austrian Invoice Number Helper",
+          "href": "/en/austria/austria-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Austrian E-Rechnung / ebInterface Readiness Checker",
+          "href": "/en/austria/austria-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Austrian Tax Authority Handoff Helper",
+          "href": "/en/austria/austria-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Austrian Accounting Audit Trail Checklist Helper",
+          "href": "/en/austria/austria-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Austrian Postal Code Validator",
+          "href": "/en/austria/austria-postal-code-validator/",
+          "text": "Validate Postleitzahl shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Austrian Address Normalizer",
+          "href": "/en/austria/austria-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Austrian Address Transliteration Normalizer",
+          "href": "/en/austria/austria-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Austrian Region / Province Code Mapper",
+          "href": "/en/austria/austria-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Austrian Municipality Code Inspector",
+          "href": "/en/austria/austria-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Austrian Phone Number Validator",
+          "href": "/en/austria/austria-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Austrian Phone E.164 Formatter",
+          "href": "/en/austria/austria-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Austrian Date Locale Formatter",
+          "href": "/en/austria/austria-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Austrian CSV Locale Normalizer",
+          "href": "/en/austria/austria-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Austria decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Austrian Slug Normalizer",
+          "href": "/en/austria/austria-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Austrian Document OCR Fixer",
+          "href": "/en/austria/austria-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Austrian GDPR / DSG Redaction Helper",
+          "href": "/en/austria/austria-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Austrian PII Masker",
+          "href": "/en/austria/austria-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Austrian Personal Data Fixture Helper",
+          "href": "/en/austria/austria-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Austrian Driving Licence Format Helper",
+          "href": "/en/austria/austria-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Austrian Residence Permit Format Helper",
+          "href": "/en/austria/austria-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Austrian Health Card Format Helper",
+          "href": "/en/austria/austria-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Austrian Vehicle Plate Inspector",
+          "href": "/en/austria/austria-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Austrian VIN Validator",
+          "href": "/en/austria/austria-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Austrian Vehicle Data Redaction Helper",
+          "href": "/en/austria/austria-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Austrian Customs Declaration Helper",
+          "href": "/en/austria/austria-customs-declaration-helper/",
+          "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Austrian Postal Tracking Helper",
+          "href": "/en/austria/austria-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Austrian Data Quality Workbench",
+          "href": "/en/austria/austria-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Austrian JSON Fixture Helper",
+          "href": "/en/austria/austria-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Austrian Regex Pack Helper",
+          "href": "/en/austria/austria-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Austrian API Payload Auditor",
+          "href": "/en/austria/austria-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Austrian Form Field Auditor",
+          "href": "/en/austria/austria-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Austrian Locale Number Parser",
+          "href": "/en/austria/austria-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Austria."
+        },
+        {
+          "title": "Austrian Calendar Week Helper",
+          "href": "/en/austria/austria-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Austrian Company Suffix Normalizer",
+          "href": "/en/austria/austria-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Austrian Procurement Identifier Helper",
+          "href": "/en/austria/austria-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Austrian Locale Copy Checker",
+          "href": "/en/austria/austria-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Austrian Support Ticket Scrubber",
+          "href": "/en/austria/austria-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Austrian Integration Smoke Test Builder",
+          "href": "/en/austria/austria-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
+    "belgium": {
+      "flag": "🇧🇪",
+      "name": "Belgium",
+      "badge": "Premium Belgium developer suite",
+      "description": "Developer intelligence and browser-only workbenches for belgian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Belgique / Belgie",
+        "population": "approximately 11.8M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Brussels",
+        "continent": "Europe",
+        "region": "Western Europe / European Union",
+        "languages": "Dutch, French, and German",
+        "currency": "Euro",
+        "currencyCode": "EUR",
+        "callingCode": "+32",
+        "internetTld": ".be",
+        "drivingSide": "Right",
+        "iso2": "BE",
+        "iso3": "BEL",
+        "isoNumeric": "056",
+        "locale": "nl-BE",
+        "icuLocale": "nl_BE",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot or space grouping",
+        "addressFormat": "Street, number, postal code, locality, Belgium",
+        "postalCodeFormat": "postcode / code postal",
+        "primaryTimeZone": "Europe local time zone",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "nl-BE",
+        "cldrLocale": "nl_BE",
+        "metricVsImperial": "Metric-first"
+      },
+      "visualIdentity": {
+        "countryId": "belgium",
+        "outlineLabel": "Belgium outline",
+        "mapLabel": "Belgium in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Belgium flag",
+        "heroAccentPrimary": "15 118 110",
+        "heroAccentSecondary": "37 99 235",
+        "heroAccentTertiary": "245 158 11"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "RRN / NISS and KBO / BCE",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "BTW / TVA and payments",
+          "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Belgium registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /belgium/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Dot or space grouping rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Belgian examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "KBO / BCE register",
+          "text": "Official business registry or company lookup remains the source of truth for Belgium.",
+          "status": "official boundary"
+        },
+        {
+          "title": "BTW / TVA",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "GDPR / APD-GBA",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "National Register Number, BIS, KBO/BCE, VAT, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "IBAN, SEPA, SWIFT, structured communication, VIES",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "nl-BE / nl_BE; date DD/MM/YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "EUR amounts use Comma (,) and Dot or space grouping.",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "RRN / NISS, KBO / BCE, postcode / code postal, phone, address, and IBAN need local labels.",
+          "status": "available"
+        }
+      ],
+      "routes": [
+        {
+          "title": "Belgian RRN / NISS Validator",
+          "href": "/en/belgium/belgium-rrn-niss-validator/",
+          "text": "Validate RRN / NISS shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Belgian KBO / BCE Validator",
+          "href": "/en/belgium/belgium-kbo-bce-validator/",
+          "text": "Inspect KBO / BCE structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Belgian VAT ID / BE Prefix Validator",
+          "href": "/en/belgium/belgium-vat-id-validator/",
+          "text": "Normalize BE VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+        },
+        {
+          "title": "Belgian EORI / Customs Identifier Helper",
+          "href": "/en/belgium/belgium-eori-validator/",
+          "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+        },
+        {
+          "title": "Belgian BIS number Helper",
+          "href": "/en/belgium/belgium-bis-number-social-insurance-helper/",
+          "text": "Split BIS number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Belgian Company Onboarding Auditor",
+          "href": "/en/belgium/belgium-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for KBO / BCE, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Belgian KBO / BCE register Readiness Helper",
+          "href": "/en/belgium/belgium-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated KBO / BCE register lookup or company registry workflow."
+        },
+        {
+          "title": "Belgian ID Card Format Helper",
+          "href": "/en/belgium/belgium-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Belgian Passport Number Helper",
+          "href": "/en/belgium/belgium-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Belgian MRZ / Passport Parser",
+          "href": "/en/belgium/belgium-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Belgium IBAN Validator",
+          "href": "/en/belgium/belgium-iban-validator/",
+          "text": "Validate BE IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+        },
+        {
+          "title": "Belgium IBAN Generator",
+          "href": "/en/belgium/belgium-iban-generator/",
+          "text": "Generate BE IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+        },
+        {
+          "title": "Belgian Domestic Bank Account Inspector",
+          "href": "/en/belgium/belgium-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+        },
+        {
+          "title": "Belgian BIC / SWIFT Inspector",
+          "href": "/en/belgium/belgium-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Belgium banking integrations."
+        },
+        {
+          "title": "Belgian SEPA Transfer Helper",
+          "href": "/en/belgium/belgium-sepa-transfer-helper/",
+          "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+        },
+        {
+          "title": "Belgian SEPA Direct Debit Mandate Helper",
+          "href": "/en/belgium/belgium-sepa-direct-debit-mandate-helper/",
+          "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+        },
+        {
+          "title": "Belgian OGM structured communication Reference Helper",
+          "href": "/en/belgium/belgium-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Belgian Remittance Text Builder",
+          "href": "/en/belgium/belgium-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Belgian Payment Reconciliation Helper",
+          "href": "/en/belgium/belgium-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Belgian Bank Statement Parser",
+          "href": "/en/belgium/belgium-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Belgian Masked IBAN Formatter",
+          "href": "/en/belgium/belgium-masked-iban-formatter/",
+          "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+        },
+        {
+          "title": "Belgian EUR Decimal Currency Formatter",
+          "href": "/en/belgium/belgium-currency-decimal-formatter/",
+          "text": "Normalize EUR amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Belgian VAT Rate Sanity Helper",
+          "href": "/en/belgium/belgium-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Belgian VAT Return Field Helper",
+          "href": "/en/belgium/belgium-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Belgian Invoice Number Helper",
+          "href": "/en/belgium/belgium-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Belgian Peppol / e-invoicing Readiness Checker",
+          "href": "/en/belgium/belgium-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Belgian Tax Authority Handoff Helper",
+          "href": "/en/belgium/belgium-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Belgian Accounting Audit Trail Checklist Helper",
+          "href": "/en/belgium/belgium-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Belgian Postal Code Validator",
+          "href": "/en/belgium/belgium-postal-code-validator/",
+          "text": "Validate postcode / code postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Belgian Address Normalizer",
+          "href": "/en/belgium/belgium-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Belgian Address Transliteration Normalizer",
+          "href": "/en/belgium/belgium-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Belgian Region / Province Code Mapper",
+          "href": "/en/belgium/belgium-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Belgian Municipality Code Inspector",
+          "href": "/en/belgium/belgium-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Belgian Phone Number Validator",
+          "href": "/en/belgium/belgium-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Belgian Phone E.164 Formatter",
+          "href": "/en/belgium/belgium-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Belgian Date Locale Formatter",
+          "href": "/en/belgium/belgium-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Belgian CSV Locale Normalizer",
+          "href": "/en/belgium/belgium-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Belgium decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Belgian Slug Normalizer",
+          "href": "/en/belgium/belgium-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Belgian Document OCR Fixer",
+          "href": "/en/belgium/belgium-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Belgian GDPR / APD-GBA Redaction Helper",
+          "href": "/en/belgium/belgium-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Belgian PII Masker",
+          "href": "/en/belgium/belgium-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Belgian Personal Data Fixture Helper",
+          "href": "/en/belgium/belgium-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Belgian Driving Licence Format Helper",
+          "href": "/en/belgium/belgium-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Belgian Residence Permit Format Helper",
+          "href": "/en/belgium/belgium-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Belgian Health Card Format Helper",
+          "href": "/en/belgium/belgium-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Belgian Vehicle Plate Inspector",
+          "href": "/en/belgium/belgium-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Belgian VIN Validator",
+          "href": "/en/belgium/belgium-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Belgian Vehicle Data Redaction Helper",
+          "href": "/en/belgium/belgium-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Belgian Customs Declaration Helper",
+          "href": "/en/belgium/belgium-customs-declaration-helper/",
+          "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Belgian Postal Tracking Helper",
+          "href": "/en/belgium/belgium-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Belgian Data Quality Workbench",
+          "href": "/en/belgium/belgium-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Belgian JSON Fixture Helper",
+          "href": "/en/belgium/belgium-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Belgian Regex Pack Helper",
+          "href": "/en/belgium/belgium-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Belgian API Payload Auditor",
+          "href": "/en/belgium/belgium-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Belgian Form Field Auditor",
+          "href": "/en/belgium/belgium-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Belgian Locale Number Parser",
+          "href": "/en/belgium/belgium-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Belgium."
+        },
+        {
+          "title": "Belgian Calendar Week Helper",
+          "href": "/en/belgium/belgium-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Belgian Company Suffix Normalizer",
+          "href": "/en/belgium/belgium-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Belgian Procurement Identifier Helper",
+          "href": "/en/belgium/belgium-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Belgian Locale Copy Checker",
+          "href": "/en/belgium/belgium-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Belgian Support Ticket Scrubber",
+          "href": "/en/belgium/belgium-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Belgian Integration Smoke Test Builder",
+          "href": "/en/belgium/belgium-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
     "brazil": {
       "flag": "🇧🇷",
       "name": "Brazil",
@@ -1735,11 +2819,1447 @@
         ]
       }
     },
+    "czechia": {
+      "flag": "🇨🇿",
+      "name": "Czechia",
+      "badge": "Premium Czechia developer suite",
+      "description": "Developer intelligence and browser-only workbenches for czech identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Cesko",
+        "population": "approximately 10.9M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Prague",
+        "continent": "Europe",
+        "region": "Central Europe / European Union",
+        "languages": "Czech",
+        "currency": "Czech koruna",
+        "currencyCode": "CZK",
+        "callingCode": "+420",
+        "internetTld": ".cz",
+        "drivingSide": "Right",
+        "iso2": "CZ",
+        "iso3": "CZE",
+        "isoNumeric": "203",
+        "locale": "cs-CZ",
+        "icuLocale": "cs_CZ",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Space grouping",
+        "addressFormat": "Street, number, postal code, locality, Czechia",
+        "postalCodeFormat": "PSC",
+        "primaryTimeZone": "Europe local time zone",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "cs-CZ",
+        "cldrLocale": "cs_CZ",
+        "metricVsImperial": "Metric-first"
+      },
+      "visualIdentity": {
+        "countryId": "czechia",
+        "outlineLabel": "Czechia outline",
+        "mapLabel": "Czechia in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Czechia flag",
+        "heroAccentPrimary": "15 118 110",
+        "heroAccentSecondary": "37 99 235",
+        "heroAccentTertiary": "245 158 11"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "Rodne cislo and ICO",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "DIC / DPH and payments",
+          "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Czechia registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /czechia/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Space grouping rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Czech examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "Ares / business register",
+          "text": "Official business registry or company lookup remains the source of truth for Czechia.",
+          "status": "official boundary"
+        },
+        {
+          "title": "DIC / DPH",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "GDPR / UOOU",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "Rodne cislo, ICO, DIC, Datova schranka, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "IBAN, domestic account, SWIFT, variable symbol, VIES",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "cs-CZ / cs_CZ; date DD.MM.YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "CZK amounts use Comma (,) and Space grouping.",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "Rodne cislo, ICO, PSC, phone, address, and IBAN need local labels.",
+          "status": "available"
+        }
+      ],
+      "routes": [
+        {
+          "title": "Czech Rodne cislo Validator",
+          "href": "/en/czechia/czechia-rodne-cislo-validator/",
+          "text": "Validate Rodne cislo shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Czech ICO Validator",
+          "href": "/en/czechia/czechia-ico-validator/",
+          "text": "Inspect ICO structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Czech VAT ID / CZ Prefix Validator",
+          "href": "/en/czechia/czechia-vat-id-validator/",
+          "text": "Normalize CZ VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+        },
+        {
+          "title": "Czech EORI / Customs Identifier Helper",
+          "href": "/en/czechia/czechia-eori-validator/",
+          "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+        },
+        {
+          "title": "Czech social insurance evidence Helper",
+          "href": "/en/czechia/czechia-social-insurance-evidence-social-insurance-helper/",
+          "text": "Split social insurance evidence evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Czech Company Onboarding Auditor",
+          "href": "/en/czechia/czechia-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for ICO, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Czech Ares / business register Readiness Helper",
+          "href": "/en/czechia/czechia-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated Ares / business register lookup or company registry workflow."
+        },
+        {
+          "title": "Czech ID Card Format Helper",
+          "href": "/en/czechia/czechia-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Czech Passport Number Helper",
+          "href": "/en/czechia/czechia-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Czech MRZ / Passport Parser",
+          "href": "/en/czechia/czechia-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Czechia IBAN Validator",
+          "href": "/en/czechia/czechia-iban-validator/",
+          "text": "Validate CZ IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+        },
+        {
+          "title": "Czechia IBAN Generator",
+          "href": "/en/czechia/czechia-iban-generator/",
+          "text": "Generate CZ IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+        },
+        {
+          "title": "Czech Domestic Bank Account Inspector",
+          "href": "/en/czechia/czechia-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+        },
+        {
+          "title": "Czech BIC / SWIFT Inspector",
+          "href": "/en/czechia/czechia-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Czechia banking integrations."
+        },
+        {
+          "title": "Czech SEPA Transfer Helper",
+          "href": "/en/czechia/czechia-sepa-transfer-helper/",
+          "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+        },
+        {
+          "title": "Czech SEPA Direct Debit Mandate Helper",
+          "href": "/en/czechia/czechia-sepa-direct-debit-mandate-helper/",
+          "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+        },
+        {
+          "title": "Czech variable symbol Reference Helper",
+          "href": "/en/czechia/czechia-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Czech Remittance Text Builder",
+          "href": "/en/czechia/czechia-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Czech Payment Reconciliation Helper",
+          "href": "/en/czechia/czechia-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Czech Bank Statement Parser",
+          "href": "/en/czechia/czechia-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Czech Masked IBAN Formatter",
+          "href": "/en/czechia/czechia-masked-iban-formatter/",
+          "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+        },
+        {
+          "title": "Czech CZK Decimal Currency Formatter",
+          "href": "/en/czechia/czechia-currency-decimal-formatter/",
+          "text": "Normalize CZK amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Czech VAT Rate Sanity Helper",
+          "href": "/en/czechia/czechia-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Czech VAT Return Field Helper",
+          "href": "/en/czechia/czechia-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Czech Invoice Number Helper",
+          "href": "/en/czechia/czechia-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Czech ISDOC / e-invoicing Readiness Checker",
+          "href": "/en/czechia/czechia-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Czech Tax Authority Handoff Helper",
+          "href": "/en/czechia/czechia-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Czech Accounting Audit Trail Checklist Helper",
+          "href": "/en/czechia/czechia-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Czech Postal Code Validator",
+          "href": "/en/czechia/czechia-postal-code-validator/",
+          "text": "Validate PSC shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Czech Address Normalizer",
+          "href": "/en/czechia/czechia-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Czech Address Transliteration Normalizer",
+          "href": "/en/czechia/czechia-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Czech Region / Province Code Mapper",
+          "href": "/en/czechia/czechia-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Czech Municipality Code Inspector",
+          "href": "/en/czechia/czechia-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Czech Phone Number Validator",
+          "href": "/en/czechia/czechia-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Czech Phone E.164 Formatter",
+          "href": "/en/czechia/czechia-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Czech Date Locale Formatter",
+          "href": "/en/czechia/czechia-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Czech CSV Locale Normalizer",
+          "href": "/en/czechia/czechia-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Czechia decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Czech Slug Normalizer",
+          "href": "/en/czechia/czechia-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Czech Document OCR Fixer",
+          "href": "/en/czechia/czechia-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Czech GDPR / UOOU Redaction Helper",
+          "href": "/en/czechia/czechia-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Czech PII Masker",
+          "href": "/en/czechia/czechia-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Czech Personal Data Fixture Helper",
+          "href": "/en/czechia/czechia-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Czech Driving Licence Format Helper",
+          "href": "/en/czechia/czechia-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Czech Residence Permit Format Helper",
+          "href": "/en/czechia/czechia-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Czech Health Card Format Helper",
+          "href": "/en/czechia/czechia-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Czech Vehicle Plate Inspector",
+          "href": "/en/czechia/czechia-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Czech VIN Validator",
+          "href": "/en/czechia/czechia-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Czech Vehicle Data Redaction Helper",
+          "href": "/en/czechia/czechia-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Czech Customs Declaration Helper",
+          "href": "/en/czechia/czechia-customs-declaration-helper/",
+          "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Czech Postal Tracking Helper",
+          "href": "/en/czechia/czechia-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Czech Data Quality Workbench",
+          "href": "/en/czechia/czechia-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Czech JSON Fixture Helper",
+          "href": "/en/czechia/czechia-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Czech Regex Pack Helper",
+          "href": "/en/czechia/czechia-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Czech API Payload Auditor",
+          "href": "/en/czechia/czechia-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Czech Form Field Auditor",
+          "href": "/en/czechia/czechia-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Czech Locale Number Parser",
+          "href": "/en/czechia/czechia-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Czechia."
+        },
+        {
+          "title": "Czech Calendar Week Helper",
+          "href": "/en/czechia/czechia-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Czech Company Suffix Normalizer",
+          "href": "/en/czechia/czechia-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Czech Procurement Identifier Helper",
+          "href": "/en/czechia/czechia-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Czech Locale Copy Checker",
+          "href": "/en/czechia/czechia-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Czech Support Ticket Scrubber",
+          "href": "/en/czechia/czechia-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Czech Integration Smoke Test Builder",
+          "href": "/en/czechia/czechia-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
+    "denmark": {
+      "flag": "🇩🇰",
+      "name": "Denmark",
+      "badge": "Premium Denmark developer suite",
+      "description": "Developer intelligence and browser-only workbenches for danish identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Danmark",
+        "population": "approximately 6.0M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Copenhagen",
+        "continent": "Europe",
+        "region": "Northern Europe / European Union",
+        "languages": "Danish",
+        "currency": "Danish krone",
+        "currencyCode": "DKK",
+        "callingCode": "+45",
+        "internetTld": ".dk",
+        "drivingSide": "Right",
+        "iso2": "DK",
+        "iso3": "DNK",
+        "isoNumeric": "208",
+        "locale": "da-DK",
+        "icuLocale": "da_DK",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street, number, postal code, locality, Denmark",
+        "postalCodeFormat": "postnummer",
+        "primaryTimeZone": "Europe local time zone",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "da-DK",
+        "cldrLocale": "da_DK",
+        "metricVsImperial": "Metric-first"
+      },
+      "visualIdentity": {
+        "countryId": "denmark",
+        "outlineLabel": "Denmark outline",
+        "mapLabel": "Denmark in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Denmark flag",
+        "heroAccentPrimary": "15 118 110",
+        "heroAccentSecondary": "37 99 235",
+        "heroAccentTertiary": "245 158 11"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "CPR and CVR",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "Moms / VAT and payments",
+          "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Denmark registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /denmark/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Dot (.) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Danish examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "CVR register",
+          "text": "Official business registry or company lookup remains the source of truth for Denmark.",
+          "status": "official boundary"
+        },
+        {
+          "title": "Moms / VAT",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "GDPR / Datatilsynet",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "CPR, CVR, SE number, VAT, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "IBAN, FI creditor reference, SWIFT, Betalingsservice handoff, VIES",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "da-DK / da_DK; date DD.MM.YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "DKK amounts use Comma (,) and Dot (.).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "CPR, CVR, postnummer, phone, address, and IBAN need local labels.",
+          "status": "available"
+        }
+      ],
+      "routes": [
+        {
+          "title": "Danish CPR Validator",
+          "href": "/en/denmark/denmark-cpr-validator/",
+          "text": "Validate CPR shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Danish CVR Validator",
+          "href": "/en/denmark/denmark-cvr-validator/",
+          "text": "Inspect CVR structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Danish VAT ID / DK Prefix Validator",
+          "href": "/en/denmark/denmark-vat-id-validator/",
+          "text": "Normalize DK VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+        },
+        {
+          "title": "Danish EORI / Customs Identifier Helper",
+          "href": "/en/denmark/denmark-eori-validator/",
+          "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+        },
+        {
+          "title": "Danish CPR Helper",
+          "href": "/en/denmark/denmark-cpr-social-insurance-helper/",
+          "text": "Split CPR evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Danish Company Onboarding Auditor",
+          "href": "/en/denmark/denmark-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for CVR, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Danish CVR register Readiness Helper",
+          "href": "/en/denmark/denmark-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated CVR register lookup or company registry workflow."
+        },
+        {
+          "title": "Danish ID Card Format Helper",
+          "href": "/en/denmark/denmark-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Danish Passport Number Helper",
+          "href": "/en/denmark/denmark-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Danish MRZ / Passport Parser",
+          "href": "/en/denmark/denmark-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Denmark IBAN Validator",
+          "href": "/en/denmark/denmark-iban-validator/",
+          "text": "Validate DK IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+        },
+        {
+          "title": "Denmark IBAN Generator",
+          "href": "/en/denmark/denmark-iban-generator/",
+          "text": "Generate DK IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+        },
+        {
+          "title": "Danish Domestic Bank Account Inspector",
+          "href": "/en/denmark/denmark-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+        },
+        {
+          "title": "Danish BIC / SWIFT Inspector",
+          "href": "/en/denmark/denmark-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Denmark banking integrations."
+        },
+        {
+          "title": "Danish SEPA Transfer Helper",
+          "href": "/en/denmark/denmark-sepa-transfer-helper/",
+          "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+        },
+        {
+          "title": "Danish SEPA Direct Debit Mandate Helper",
+          "href": "/en/denmark/denmark-sepa-direct-debit-mandate-helper/",
+          "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+        },
+        {
+          "title": "Danish FI / Betalingsservice Reference Helper",
+          "href": "/en/denmark/denmark-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Danish Remittance Text Builder",
+          "href": "/en/denmark/denmark-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Danish Payment Reconciliation Helper",
+          "href": "/en/denmark/denmark-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Danish Bank Statement Parser",
+          "href": "/en/denmark/denmark-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Danish Masked IBAN Formatter",
+          "href": "/en/denmark/denmark-masked-iban-formatter/",
+          "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+        },
+        {
+          "title": "Danish DKK Decimal Currency Formatter",
+          "href": "/en/denmark/denmark-currency-decimal-formatter/",
+          "text": "Normalize DKK amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Danish VAT Rate Sanity Helper",
+          "href": "/en/denmark/denmark-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Danish VAT Return Field Helper",
+          "href": "/en/denmark/denmark-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Danish Invoice Number Helper",
+          "href": "/en/denmark/denmark-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Danish NemHandel / Peppol Readiness Checker",
+          "href": "/en/denmark/denmark-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Danish Tax Authority Handoff Helper",
+          "href": "/en/denmark/denmark-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Danish Accounting Audit Trail Checklist Helper",
+          "href": "/en/denmark/denmark-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Danish Postal Code Validator",
+          "href": "/en/denmark/denmark-postal-code-validator/",
+          "text": "Validate postnummer shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Danish Address Normalizer",
+          "href": "/en/denmark/denmark-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Danish Address Transliteration Normalizer",
+          "href": "/en/denmark/denmark-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Danish Region / Province Code Mapper",
+          "href": "/en/denmark/denmark-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Danish Municipality Code Inspector",
+          "href": "/en/denmark/denmark-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Danish Phone Number Validator",
+          "href": "/en/denmark/denmark-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Danish Phone E.164 Formatter",
+          "href": "/en/denmark/denmark-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Danish Date Locale Formatter",
+          "href": "/en/denmark/denmark-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Danish CSV Locale Normalizer",
+          "href": "/en/denmark/denmark-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Denmark decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Danish Slug Normalizer",
+          "href": "/en/denmark/denmark-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Danish Document OCR Fixer",
+          "href": "/en/denmark/denmark-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Danish GDPR / Datatilsynet Redaction Helper",
+          "href": "/en/denmark/denmark-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Danish PII Masker",
+          "href": "/en/denmark/denmark-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Danish Personal Data Fixture Helper",
+          "href": "/en/denmark/denmark-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Danish Driving Licence Format Helper",
+          "href": "/en/denmark/denmark-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Danish Residence Permit Format Helper",
+          "href": "/en/denmark/denmark-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Danish Health Card Format Helper",
+          "href": "/en/denmark/denmark-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Danish Vehicle Plate Inspector",
+          "href": "/en/denmark/denmark-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Danish VIN Validator",
+          "href": "/en/denmark/denmark-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Danish Vehicle Data Redaction Helper",
+          "href": "/en/denmark/denmark-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Danish Customs Declaration Helper",
+          "href": "/en/denmark/denmark-customs-declaration-helper/",
+          "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Danish Postal Tracking Helper",
+          "href": "/en/denmark/denmark-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Danish Data Quality Workbench",
+          "href": "/en/denmark/denmark-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Danish JSON Fixture Helper",
+          "href": "/en/denmark/denmark-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Danish Regex Pack Helper",
+          "href": "/en/denmark/denmark-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Danish API Payload Auditor",
+          "href": "/en/denmark/denmark-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Danish Form Field Auditor",
+          "href": "/en/denmark/denmark-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Danish Locale Number Parser",
+          "href": "/en/denmark/denmark-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Denmark."
+        },
+        {
+          "title": "Danish Calendar Week Helper",
+          "href": "/en/denmark/denmark-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Danish Company Suffix Normalizer",
+          "href": "/en/denmark/denmark-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Danish Procurement Identifier Helper",
+          "href": "/en/denmark/denmark-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Danish Locale Copy Checker",
+          "href": "/en/denmark/denmark-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Danish Support Ticket Scrubber",
+          "href": "/en/denmark/denmark-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Danish Integration Smoke Test Builder",
+          "href": "/en/denmark/denmark-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
+    "finland": {
+      "flag": "🇫🇮",
+      "name": "Finland",
+      "badge": "Premium Finland developer suite",
+      "description": "Developer intelligence and browser-only workbenches for finnish identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Suomi",
+        "population": "approximately 5.6M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Helsinki",
+        "continent": "Europe",
+        "region": "Northern Europe / European Union",
+        "languages": "Finnish and Swedish",
+        "currency": "Euro",
+        "currencyCode": "EUR",
+        "callingCode": "+358",
+        "internetTld": ".fi",
+        "drivingSide": "Right",
+        "iso2": "FI",
+        "iso3": "FIN",
+        "isoNumeric": "246",
+        "locale": "fi-FI",
+        "icuLocale": "fi_FI",
+        "dateFormat": "D.M.YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Space grouping",
+        "addressFormat": "Street, number, postal code, locality, Finland",
+        "postalCodeFormat": "postinumero",
+        "primaryTimeZone": "Europe local time zone",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "fi-FI",
+        "cldrLocale": "fi_FI",
+        "metricVsImperial": "Metric-first"
+      },
+      "visualIdentity": {
+        "countryId": "finland",
+        "outlineLabel": "Finland outline",
+        "mapLabel": "Finland in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Finland flag",
+        "heroAccentPrimary": "15 118 110",
+        "heroAccentSecondary": "37 99 235",
+        "heroAccentTertiary": "245 158 11"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "HETU and Y-tunnus",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "ALV / VAT and payments",
+          "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Finland registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /finland/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Space grouping rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Finnish examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "YTJ / Trade Register",
+          "text": "Official business registry or company lookup remains the source of truth for Finland.",
+          "status": "official boundary"
+        },
+        {
+          "title": "ALV / VAT",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "GDPR / Tietosuojavaltuutettu",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "HETU, Y-tunnus, VAT, OVT, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "IBAN, Finnish reference number, SWIFT, SEPA, VIES",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "fi-FI / fi_FI; date D.M.YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "EUR amounts use Comma (,) and Space grouping.",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "HETU, Y-tunnus, postinumero, phone, address, and IBAN need local labels.",
+          "status": "available"
+        }
+      ],
+      "routes": [
+        {
+          "title": "Finnish HETU Validator",
+          "href": "/en/finland/finland-hetu-validator/",
+          "text": "Validate HETU shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Finnish Y-tunnus Validator",
+          "href": "/en/finland/finland-y-tunnus-validator/",
+          "text": "Inspect Y-tunnus structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Finnish VAT ID / FI Prefix Validator",
+          "href": "/en/finland/finland-vat-id-validator/",
+          "text": "Normalize FI VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+        },
+        {
+          "title": "Finnish EORI / Customs Identifier Helper",
+          "href": "/en/finland/finland-eori-validator/",
+          "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+        },
+        {
+          "title": "Finnish HETU Helper",
+          "href": "/en/finland/finland-hetu-social-insurance-helper/",
+          "text": "Split HETU evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Finnish Company Onboarding Auditor",
+          "href": "/en/finland/finland-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for Y-tunnus, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Finnish YTJ / Trade Register Readiness Helper",
+          "href": "/en/finland/finland-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated YTJ / Trade Register lookup or company registry workflow."
+        },
+        {
+          "title": "Finnish ID Card Format Helper",
+          "href": "/en/finland/finland-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Finnish Passport Number Helper",
+          "href": "/en/finland/finland-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Finnish MRZ / Passport Parser",
+          "href": "/en/finland/finland-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Finland IBAN Validator",
+          "href": "/en/finland/finland-iban-validator/",
+          "text": "Validate FI IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+        },
+        {
+          "title": "Finland IBAN Generator",
+          "href": "/en/finland/finland-iban-generator/",
+          "text": "Generate FI IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+        },
+        {
+          "title": "Finnish Domestic Bank Account Inspector",
+          "href": "/en/finland/finland-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+        },
+        {
+          "title": "Finnish BIC / SWIFT Inspector",
+          "href": "/en/finland/finland-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Finland banking integrations."
+        },
+        {
+          "title": "Finnish SEPA Transfer Helper",
+          "href": "/en/finland/finland-sepa-transfer-helper/",
+          "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+        },
+        {
+          "title": "Finnish SEPA Direct Debit Mandate Helper",
+          "href": "/en/finland/finland-sepa-direct-debit-mandate-helper/",
+          "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+        },
+        {
+          "title": "Finnish viitenumero Reference Helper",
+          "href": "/en/finland/finland-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Finnish Remittance Text Builder",
+          "href": "/en/finland/finland-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Finnish Payment Reconciliation Helper",
+          "href": "/en/finland/finland-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Finnish Bank Statement Parser",
+          "href": "/en/finland/finland-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Finnish Masked IBAN Formatter",
+          "href": "/en/finland/finland-masked-iban-formatter/",
+          "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+        },
+        {
+          "title": "Finnish EUR Decimal Currency Formatter",
+          "href": "/en/finland/finland-currency-decimal-formatter/",
+          "text": "Normalize EUR amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Finnish VAT Rate Sanity Helper",
+          "href": "/en/finland/finland-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Finnish VAT Return Field Helper",
+          "href": "/en/finland/finland-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Finnish Invoice Number Helper",
+          "href": "/en/finland/finland-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Finnish Finvoice / Peppol Readiness Checker",
+          "href": "/en/finland/finland-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Finnish Tax Authority Handoff Helper",
+          "href": "/en/finland/finland-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Finnish Accounting Audit Trail Checklist Helper",
+          "href": "/en/finland/finland-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Finnish Postal Code Validator",
+          "href": "/en/finland/finland-postal-code-validator/",
+          "text": "Validate postinumero shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Finnish Address Normalizer",
+          "href": "/en/finland/finland-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Finnish Address Transliteration Normalizer",
+          "href": "/en/finland/finland-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Finnish Region / Province Code Mapper",
+          "href": "/en/finland/finland-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Finnish Municipality Code Inspector",
+          "href": "/en/finland/finland-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Finnish Phone Number Validator",
+          "href": "/en/finland/finland-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Finnish Phone E.164 Formatter",
+          "href": "/en/finland/finland-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Finnish Date Locale Formatter",
+          "href": "/en/finland/finland-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Finnish CSV Locale Normalizer",
+          "href": "/en/finland/finland-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Finland decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Finnish Slug Normalizer",
+          "href": "/en/finland/finland-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Finnish Document OCR Fixer",
+          "href": "/en/finland/finland-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Finnish GDPR / Tietosuojavaltuutettu Redaction Helper",
+          "href": "/en/finland/finland-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Finnish PII Masker",
+          "href": "/en/finland/finland-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Finnish Personal Data Fixture Helper",
+          "href": "/en/finland/finland-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Finnish Driving Licence Format Helper",
+          "href": "/en/finland/finland-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Finnish Residence Permit Format Helper",
+          "href": "/en/finland/finland-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Finnish Health Card Format Helper",
+          "href": "/en/finland/finland-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Finnish Vehicle Plate Inspector",
+          "href": "/en/finland/finland-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Finnish VIN Validator",
+          "href": "/en/finland/finland-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Finnish Vehicle Data Redaction Helper",
+          "href": "/en/finland/finland-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Finnish Customs Declaration Helper",
+          "href": "/en/finland/finland-customs-declaration-helper/",
+          "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Finnish Postal Tracking Helper",
+          "href": "/en/finland/finland-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Finnish Data Quality Workbench",
+          "href": "/en/finland/finland-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Finnish JSON Fixture Helper",
+          "href": "/en/finland/finland-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Finnish Regex Pack Helper",
+          "href": "/en/finland/finland-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Finnish API Payload Auditor",
+          "href": "/en/finland/finland-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Finnish Form Field Auditor",
+          "href": "/en/finland/finland-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Finnish Locale Number Parser",
+          "href": "/en/finland/finland-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Finland."
+        },
+        {
+          "title": "Finnish Calendar Week Helper",
+          "href": "/en/finland/finland-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Finnish Company Suffix Normalizer",
+          "href": "/en/finland/finland-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Finnish Procurement Identifier Helper",
+          "href": "/en/finland/finland-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Finnish Locale Copy Checker",
+          "href": "/en/finland/finland-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Finnish Support Ticket Scrubber",
+          "href": "/en/finland/finland-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Finnish Integration Smoke Test Builder",
+          "href": "/en/finland/finland-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
     "france": {
       "flag": "🇫🇷",
       "name": "France",
       "badge": "Western Europe premium country hub",
       "description": "Developer intelligence for French company, tax, banking, address, identity-boundary, payment, vehicle, privacy, and localization workflows with browser-only validation where possible.",
+      "searchHints": [
+        "SIREN",
+        "SIRET",
+        "TVA",
+        "RIB",
+        "RUM",
+        "NIR"
+      ],
       "metadata": {
         "nativeName": "France",
         "population": "approximately 68M",
@@ -3310,6 +5830,14 @@
       "name": "Germany",
       "badge": "Premium Germany developer suite",
       "description": "Developer intelligence and browser-only workbenches for German tax identifiers, banking, accounting, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "searchHints": [
+        "STEUER-ID",
+        "UST-ID",
+        "BLZ",
+        "IBAN",
+        "ELSTER",
+        "XRECHNUNG"
+      ],
       "metadata": {
         "nativeName": "Deutschland",
         "population": "approximately 84.4M",
@@ -5216,11 +7744,2224 @@
         ]
       }
     },
+    "ireland": {
+      "flag": "🇮🇪",
+      "name": "Ireland",
+      "badge": "Premium Ireland developer suite",
+      "description": "Developer intelligence and browser-only workbenches for irish identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Ireland / Eire",
+        "population": "approximately 5.4M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Dublin",
+        "continent": "Europe",
+        "region": "Northern Europe / European Union",
+        "languages": "English and Irish",
+        "currency": "Euro",
+        "currencyCode": "EUR",
+        "callingCode": "+353",
+        "internetTld": ".ie",
+        "drivingSide": "Right",
+        "iso2": "IE",
+        "iso3": "IRL",
+        "isoNumeric": "372",
+        "locale": "en-IE",
+        "icuLocale": "en_IE",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Dot (.)",
+        "thousandsSeparator": "Comma (,)",
+        "addressFormat": "Street, number, postal code, locality, Ireland",
+        "postalCodeFormat": "Eircode",
+        "primaryTimeZone": "Europe local time zone",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "en-IE",
+        "cldrLocale": "en_IE",
+        "metricVsImperial": "Metric-first"
+      },
+      "visualIdentity": {
+        "countryId": "ireland",
+        "outlineLabel": "Ireland outline",
+        "mapLabel": "Ireland in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Ireland flag",
+        "heroAccentPrimary": "15 118 110",
+        "heroAccentSecondary": "37 99 235",
+        "heroAccentTertiary": "245 158 11"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "PPSN and CRO number",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "VAT / Revenue and payments",
+          "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Ireland registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /ireland/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Dot (.) and Comma (,) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Irish examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "Companies Registration Office",
+          "text": "Official business registry or company lookup remains the source of truth for Ireland.",
+          "status": "official boundary"
+        },
+        {
+          "title": "VAT / Revenue",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "GDPR / Data Protection Commission",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "PPSN, CRO number, VAT, Eircode, postal address, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "IBAN, SEPA, SWIFT, ROS handoff, VIES",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "en-IE / en_IE; date DD/MM/YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "EUR amounts use Dot (.) and Comma (,).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "PPSN, CRO number, Eircode, phone, address, and IBAN need local labels.",
+          "status": "available"
+        }
+      ],
+      "routes": [
+        {
+          "title": "Irish PPSN Validator",
+          "href": "/en/ireland/ireland-ppsn-validator/",
+          "text": "Validate PPSN shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Irish CRO number Validator",
+          "href": "/en/ireland/ireland-cro-number-validator/",
+          "text": "Inspect CRO number structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Irish VAT ID / IE Prefix Validator",
+          "href": "/en/ireland/ireland-vat-id-validator/",
+          "text": "Normalize IE VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+        },
+        {
+          "title": "Irish EORI / Customs Identifier Helper",
+          "href": "/en/ireland/ireland-eori-validator/",
+          "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+        },
+        {
+          "title": "Irish PPSN Helper",
+          "href": "/en/ireland/ireland-ppsn-social-insurance-helper/",
+          "text": "Split PPSN evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Irish Company Onboarding Auditor",
+          "href": "/en/ireland/ireland-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for CRO number, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Irish Companies Registration Office Readiness Helper",
+          "href": "/en/ireland/ireland-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated Companies Registration Office lookup or company registry workflow."
+        },
+        {
+          "title": "Irish ID Card Format Helper",
+          "href": "/en/ireland/ireland-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Irish Passport Number Helper",
+          "href": "/en/ireland/ireland-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Irish MRZ / Passport Parser",
+          "href": "/en/ireland/ireland-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Ireland IBAN Validator",
+          "href": "/en/ireland/ireland-iban-validator/",
+          "text": "Validate IE IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+        },
+        {
+          "title": "Ireland IBAN Generator",
+          "href": "/en/ireland/ireland-iban-generator/",
+          "text": "Generate IE IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+        },
+        {
+          "title": "Irish Domestic Bank Account Inspector",
+          "href": "/en/ireland/ireland-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+        },
+        {
+          "title": "Irish BIC / SWIFT Inspector",
+          "href": "/en/ireland/ireland-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Ireland banking integrations."
+        },
+        {
+          "title": "Irish SEPA Transfer Helper",
+          "href": "/en/ireland/ireland-sepa-transfer-helper/",
+          "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+        },
+        {
+          "title": "Irish SEPA Direct Debit Mandate Helper",
+          "href": "/en/ireland/ireland-sepa-direct-debit-mandate-helper/",
+          "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+        },
+        {
+          "title": "Irish SEPA / Direct Debit Reference Helper",
+          "href": "/en/ireland/ireland-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Irish Remittance Text Builder",
+          "href": "/en/ireland/ireland-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Irish Payment Reconciliation Helper",
+          "href": "/en/ireland/ireland-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Irish Bank Statement Parser",
+          "href": "/en/ireland/ireland-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Irish Masked IBAN Formatter",
+          "href": "/en/ireland/ireland-masked-iban-formatter/",
+          "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+        },
+        {
+          "title": "Irish EUR Decimal Currency Formatter",
+          "href": "/en/ireland/ireland-currency-decimal-formatter/",
+          "text": "Normalize EUR amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Irish VAT Rate Sanity Helper",
+          "href": "/en/ireland/ireland-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Irish VAT Return Field Helper",
+          "href": "/en/ireland/ireland-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Irish Invoice Number Helper",
+          "href": "/en/ireland/ireland-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Irish Revenue e-invoicing readiness Readiness Checker",
+          "href": "/en/ireland/ireland-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Irish Tax Authority Handoff Helper",
+          "href": "/en/ireland/ireland-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Irish Accounting Audit Trail Checklist Helper",
+          "href": "/en/ireland/ireland-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Irish Postal Code Validator",
+          "href": "/en/ireland/ireland-postal-code-validator/",
+          "text": "Validate Eircode shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Irish Address Normalizer",
+          "href": "/en/ireland/ireland-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Irish Address Transliteration Normalizer",
+          "href": "/en/ireland/ireland-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Irish Region / Province Code Mapper",
+          "href": "/en/ireland/ireland-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Irish Municipality Code Inspector",
+          "href": "/en/ireland/ireland-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Irish Phone Number Validator",
+          "href": "/en/ireland/ireland-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Irish Phone E.164 Formatter",
+          "href": "/en/ireland/ireland-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Irish Date Locale Formatter",
+          "href": "/en/ireland/ireland-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Irish CSV Locale Normalizer",
+          "href": "/en/ireland/ireland-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Ireland decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Irish Slug Normalizer",
+          "href": "/en/ireland/ireland-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Irish Document OCR Fixer",
+          "href": "/en/ireland/ireland-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Irish GDPR / Data Protection Commission Redaction Helper",
+          "href": "/en/ireland/ireland-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Irish PII Masker",
+          "href": "/en/ireland/ireland-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Irish Personal Data Fixture Helper",
+          "href": "/en/ireland/ireland-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Irish Driving Licence Format Helper",
+          "href": "/en/ireland/ireland-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Irish Residence Permit Format Helper",
+          "href": "/en/ireland/ireland-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Irish Health Card Format Helper",
+          "href": "/en/ireland/ireland-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Irish Vehicle Plate Inspector",
+          "href": "/en/ireland/ireland-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Irish VIN Validator",
+          "href": "/en/ireland/ireland-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Irish Vehicle Data Redaction Helper",
+          "href": "/en/ireland/ireland-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Irish Customs Declaration Helper",
+          "href": "/en/ireland/ireland-customs-declaration-helper/",
+          "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Irish Postal Tracking Helper",
+          "href": "/en/ireland/ireland-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Irish Data Quality Workbench",
+          "href": "/en/ireland/ireland-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Irish JSON Fixture Helper",
+          "href": "/en/ireland/ireland-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Irish Regex Pack Helper",
+          "href": "/en/ireland/ireland-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Irish API Payload Auditor",
+          "href": "/en/ireland/ireland-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Irish Form Field Auditor",
+          "href": "/en/ireland/ireland-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Irish Locale Number Parser",
+          "href": "/en/ireland/ireland-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Ireland."
+        },
+        {
+          "title": "Irish Calendar Week Helper",
+          "href": "/en/ireland/ireland-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Irish Company Suffix Normalizer",
+          "href": "/en/ireland/ireland-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Irish Procurement Identifier Helper",
+          "href": "/en/ireland/ireland-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Irish Locale Copy Checker",
+          "href": "/en/ireland/ireland-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Irish Support Ticket Scrubber",
+          "href": "/en/ireland/ireland-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Irish Integration Smoke Test Builder",
+          "href": "/en/ireland/ireland-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
+    "italy": {
+      "flag": "🇮🇹",
+      "name": "Italy",
+      "badge": "Premium Italy developer suite",
+      "description": "Developer intelligence and browser-only workbenches for Italian tax identifiers, e-invoicing, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "searchHints": [
+        "CODICE FISCALE",
+        "PARTITA IVA",
+        "PAGOPA",
+        "SDI",
+        "PEC",
+        "ABI/CAB"
+      ],
+      "metadata": {
+        "nativeName": "Italia",
+        "population": "approximately 58.8M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "area": "301,340 km²",
+        "capital": "Rome",
+        "largestCity": "Rome",
+        "continent": "Europe",
+        "region": "Southern Europe / European Union",
+        "languages": "Italian",
+        "currency": "Euro",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "callingCode": "+39",
+        "internetTld": ".it",
+        "drivingSide": "Right",
+        "iso2": "IT",
+        "iso3": "ITA",
+        "isoNumeric": "380",
+        "locale": "it-IT",
+        "icuLocale": "it_IT",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street type/name number, postal code Comune Province",
+        "postalCodeFormat": "NNNNN",
+        "primaryTimeZone": "Europe/Rome (CET/CEST)",
+        "utcRange": "UTC+01/+02",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "powerPlugTypes": "Type C / Type F / Type L",
+        "voltage": "230V",
+        "frequency": "50Hz",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "it-IT",
+        "cldrLocale": "it_IT",
+        "metricVsImperial": "Metric-first"
+      },
+      "stats": [
+        {
+          "icon": "👥",
+          "label": "Population",
+          "valueKey": "population",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🏛",
+          "label": "Capital",
+          "valueKey": "capital",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🏙",
+          "label": "Largest city",
+          "valueKey": "largestCity",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🌍",
+          "label": "Continent",
+          "valueKey": "continent",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🗣",
+          "label": "Languages",
+          "valueKey": "languages",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "☎",
+          "label": "Calling code",
+          "valueKey": "callingCode",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🌐",
+          "label": "Internet TLD",
+          "valueKey": "internetTld",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "icon": "🕒",
+          "label": "UTC range",
+          "valueKey": "utcRange",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "brandKey": "europeanUnion",
+          "label": "Region",
+          "valueKey": "region",
+          "tags": [
+            "government",
+            "locale"
+          ]
+        },
+        {
+          "brandKey": "iban",
+          "label": "Currency",
+          "valueKey": "currencyCode",
+          "detailKey": "currency",
+          "tags": [
+            "currency",
+            "payments"
+          ]
+        }
+      ],
+      "countryProfile": [
+        {
+          "icon": "🏷",
+          "label": "iso2",
+          "valueKey": "iso2"
+        },
+        {
+          "icon": "🏷",
+          "label": "iso3",
+          "valueKey": "iso3"
+        },
+        {
+          "icon": "🏷",
+          "label": "isoNumeric",
+          "valueKey": "isoNumeric"
+        },
+        {
+          "icon": "🏷",
+          "label": "locale",
+          "valueKey": "locale"
+        },
+        {
+          "icon": "🏷",
+          "label": "icuLocale",
+          "valueKey": "icuLocale"
+        },
+        {
+          "icon": "🏷",
+          "label": "currencyCode",
+          "valueKey": "currencyCode"
+        },
+        {
+          "icon": "🏷",
+          "label": "currencySymbol",
+          "valueKey": "currencySymbol"
+        },
+        {
+          "icon": "🏷",
+          "label": "dateFormat",
+          "valueKey": "dateFormat"
+        },
+        {
+          "icon": "🏷",
+          "label": "decimalSeparator",
+          "valueKey": "decimalSeparator"
+        },
+        {
+          "icon": "🏷",
+          "label": "thousandsSeparator",
+          "valueKey": "thousandsSeparator"
+        },
+        {
+          "icon": "🏷",
+          "label": "postalCodeFormat",
+          "valueKey": "postalCodeFormat"
+        },
+        {
+          "icon": "🏷",
+          "label": "callingCode",
+          "valueKey": "callingCode"
+        },
+        {
+          "icon": "🏷",
+          "label": "internetTld",
+          "valueKey": "internetTld"
+        },
+        {
+          "icon": "🏷",
+          "label": "primaryTimeZone",
+          "valueKey": "primaryTimeZone"
+        },
+        {
+          "icon": "🏷",
+          "label": "paperSize",
+          "valueKey": "paperSize"
+        },
+        {
+          "icon": "🏷",
+          "label": "voltage",
+          "valueKey": "voltage"
+        },
+        {
+          "icon": "🏷",
+          "label": "drivingSide",
+          "valueKey": "drivingSide"
+        },
+        {
+          "icon": "🏷",
+          "label": "emergencyNumber",
+          "valueKey": "emergencyNumber"
+        },
+        {
+          "icon": "🏷",
+          "label": "measurementSystem",
+          "valueKey": "measurementSystem"
+        },
+        {
+          "icon": "🏷",
+          "label": "weekStarts",
+          "valueKey": "weekStarts"
+        },
+        {
+          "icon": "🏷",
+          "label": "powerPlugTypes",
+          "valueKey": "powerPlugTypes"
+        },
+        {
+          "icon": "🏷",
+          "label": "region",
+          "valueKey": "region"
+        },
+        {
+          "icon": "🏷",
+          "label": "addressFormat",
+          "valueKey": "addressFormat"
+        }
+      ],
+      "visualIdentity": {
+        "flag": "🇮🇹",
+        "accent": "#008C45",
+        "accent2": "#CD212A",
+        "accent3": "#F4F5F0",
+        "outline": "/assets/images/countries/italy-outline.svg",
+        "map": "/assets/images/countries/italy-location.svg",
+        "note": "Italy hub uses ValidoHub country visual assets and Italy flag colors for local identity.",
+        "tags": [
+          "identity",
+          "visual"
+        ]
+      },
+      "quickActions": [
+        {
+          "label": "Copy locale",
+          "valueKey": "locale"
+        },
+        {
+          "label": "Copy currencyCode",
+          "valueKey": "currencyCode"
+        },
+        {
+          "label": "Copy currencySymbol",
+          "valueKey": "currencySymbol"
+        },
+        {
+          "label": "Copy callingCode",
+          "valueKey": "callingCode"
+        },
+        {
+          "label": "Copy iso2",
+          "valueKey": "iso2"
+        },
+        {
+          "label": "Copy iso3",
+          "valueKey": "iso3"
+        },
+        {
+          "label": "Copy isoNumeric",
+          "valueKey": "isoNumeric"
+        },
+        {
+          "label": "Copy internetTld",
+          "valueKey": "internetTld"
+        },
+        {
+          "label": "Copy dateFormat",
+          "valueKey": "dateFormat"
+        },
+        {
+          "label": "Copy postalCodeFormat",
+          "valueKey": "postalCodeFormat"
+        },
+        {
+          "label": "Copy primaryTimeZone",
+          "valueKey": "primaryTimeZone"
+        }
+      ],
+      "cheatSheet": [
+        {
+          "label": "ISO2",
+          "valueKey": "iso2",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "ISO3",
+          "valueKey": "iso3",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Numeric ISO",
+          "valueKey": "isoNumeric",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Locale",
+          "valueKey": "locale",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "ICU locale",
+          "valueKey": "icuLocale",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Language",
+          "valueKey": "languages",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Currency code",
+          "valueKey": "currencyCode",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Currency symbol",
+          "valueKey": "currencySymbol",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Phone country code",
+          "valueKey": "callingCode",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Internet TLD",
+          "valueKey": "internetTld",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Date format",
+          "valueKey": "dateFormat",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Time format",
+          "valueKey": "timeFormat",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Decimal separator",
+          "valueKey": "decimalSeparator",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Thousands separator",
+          "valueKey": "thousandsSeparator",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Address format",
+          "valueKey": "addressFormat",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Postal code format",
+          "valueKey": "postalCodeFormat",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Primary time zone",
+          "valueKey": "primaryTimeZone",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        },
+        {
+          "label": "Time zones",
+          "valueKey": "utcRange",
+          "icon": "🏷",
+          "tags": [
+            "developer",
+            "locale"
+          ]
+        }
+      ],
+      "localFormats": [
+        {
+          "title": "Codice fiscale",
+          "text": "Sixteen-character fiscal code with surname/name/date/gender/place-code blocks and a control character.",
+          "icon": "🪪",
+          "name": "Codice fiscale",
+          "status": "available",
+          "category": "National identifier",
+          "tags": [
+            "identifiers",
+            "tax"
+          ]
+        },
+        {
+          "title": "Partita IVA",
+          "text": "Eleven-digit Italian VAT identifier with local checksum evidence and VIES/status boundary.",
+          "icon": "🪪",
+          "name": "Partita IVA",
+          "status": "available",
+          "category": "Tax identifier",
+          "tags": [
+            "identifiers",
+            "tax"
+          ]
+        },
+        {
+          "title": "Italian IBAN",
+          "text": "IT IBANs expose CIN, ABI, CAB, and account-number slices after MOD-97 validation.",
+          "brandKey": "iban",
+          "name": "Italian IBAN",
+          "status": "available",
+          "category": "Banking",
+          "tags": [
+            "banking",
+            "payments"
+          ]
+        },
+        {
+          "title": "CAP postal code",
+          "text": "Five-digit postal code used with comune and province context; delivery proof requires official/provider data.",
+          "icon": "✉",
+          "name": "CAP postal code",
+          "status": "available",
+          "category": "Postal",
+          "tags": [
+            "postal",
+            "addresses"
+          ]
+        },
+        {
+          "title": "REA and Registro Imprese",
+          "text": "REA chamber references, VAT, PEC, and company intake evidence are inspected locally; existence remains official.",
+          "icon": "🏢",
+          "name": "REA and Registro Imprese",
+          "status": "available",
+          "category": "Business registry",
+          "tags": [
+            "government",
+            "registry"
+          ]
+        },
+        {
+          "title": "FatturaPA / SDI",
+          "text": "Italian e-invoicing payloads use FatturaPA XML, SDI recipient codes, and PEC fallbacks.",
+          "icon": "📨",
+          "name": "FatturaPA / SDI",
+          "status": "available",
+          "category": "E-invoicing",
+          "tags": [
+            "einvoice",
+            "tax"
+          ]
+        },
+        {
+          "title": "Italian phone numbers",
+          "text": "Italian numbers use +39 and preserve trunk-zero semantics for many fixed-line contexts.",
+          "icon": "☎",
+          "name": "Italian phone numbers",
+          "status": "available",
+          "category": "Phone",
+          "tags": [
+            "phone"
+          ]
+        },
+        {
+          "title": "Italian vehicle plates",
+          "text": "Modern plates typically use two letters, three digits, two letters; registry status remains official.",
+          "icon": "🚗",
+          "name": "Italian vehicle plates",
+          "status": "available",
+          "category": "Vehicles",
+          "tags": [
+            "vehicles"
+          ]
+        },
+        {
+          "title": "EU VAT / VIES",
+          "text": "VIES or Italian tax systems are required to prove active VAT status.",
+          "brandKey": "vies",
+          "name": "EU VAT / VIES",
+          "status": "planned",
+          "category": "Tax and business",
+          "tags": [
+            "tax",
+            "government"
+          ]
+        }
+      ],
+      "payments": [
+        {
+          "title": "Italian IBAN",
+          "text": "IT IBANs expose MOD-97, CIN, ABI, CAB, and account slices in the Italy workbench.",
+          "brandKey": "iban",
+          "status": "available",
+          "tags": [
+            "payments",
+            "banking"
+          ]
+        },
+        {
+          "title": "SEPA",
+          "text": "Italian credit transfers and direct debits use SEPA-ready account, mandate, remittance, and creditor evidence.",
+          "brandKey": "sepa",
+          "status": "available",
+          "tags": [
+            "payments",
+            "banking"
+          ]
+        },
+        {
+          "title": "BIC / SWIFT",
+          "text": "BIC/SWIFT fields can be shape-checked locally; bank participation and ownership remain official/provider checks.",
+          "brandKey": "swift",
+          "status": "available",
+          "tags": [
+            "banking"
+          ]
+        },
+        {
+          "title": "pagoPA / Ri.Ba",
+          "text": "pagoPA notice and Ri.Ba snippets are inspected as local evidence without payment authorization.",
+          "status": "available",
+          "tags": [
+            "payments"
+          ]
+        }
+      ],
+      "officialResources": [
+        {
+          "title": "Agenzia delle Entrate",
+          "text": "Codice fiscale, Partita IVA, tax filing, and FatturaPA fiscal context; official status remains outside offline checks.",
+          "note": "Codice fiscale, Partita IVA, tax filing, and FatturaPA fiscal context; official status remains outside offline checks.",
+          "status": "available",
+          "tags": [
+            "tax"
+          ]
+        },
+        {
+          "title": "Sistema di Interscambio (SDI)",
+          "text": "E-invoice delivery, recipient codes, PEC fallback, and transmission status require official SDI workflows.",
+          "note": "E-invoice delivery, recipient codes, PEC fallback, and transmission status require official SDI workflows.",
+          "status": "available",
+          "tags": [
+            "einvoice"
+          ]
+        },
+        {
+          "title": "Registro Imprese",
+          "text": "Company existence, REA references, legal status, and registry extracts require official lookup.",
+          "note": "Company existence, REA references, legal status, and registry extracts require official lookup.",
+          "status": "available",
+          "tags": [
+            "registry"
+          ]
+        },
+        {
+          "title": "Banca d Italia / banking directories",
+          "text": "Banking, ABI/CAB, payments, and institutional reference data are provider or official checks.",
+          "note": "Banking, ABI/CAB, payments, and institutional reference data are provider or official checks.",
+          "status": "available",
+          "tags": [
+            "banking"
+          ]
+        },
+        {
+          "title": "Agenzia delle Dogane e dei Monopoli",
+          "text": "EORI, customs, and MRN status are official customs-system matters, not browser proofs.",
+          "note": "EORI, customs, and MRN status are official customs-system matters, not browser proofs.",
+          "status": "available",
+          "tags": [
+            "customs"
+          ]
+        },
+        {
+          "title": "Motorizzazione / PRA",
+          "text": "Vehicle registration, plate status, and ownership require official vehicle systems.",
+          "note": "Vehicle registration, plate status, and ownership require official vehicle systems.",
+          "status": "available",
+          "tags": [
+            "vehicles"
+          ]
+        }
+      ],
+      "plannedWorkbenches": [
+        {
+          "name": "Live Agenzia Entrate VAT status lookup",
+          "status": "planned",
+          "description": "Future network-enabled workflow requiring privacy, source, and official-boundary product specs."
+        },
+        {
+          "name": "Live Registro Imprese lookup",
+          "status": "planned",
+          "description": "Future network-enabled workflow requiring privacy, source, and official-boundary product specs."
+        },
+        {
+          "name": "Live SDI delivery status lookup",
+          "status": "planned",
+          "description": "Future network-enabled workflow requiring privacy, source, and official-boundary product specs."
+        },
+        {
+          "name": "Live bank directory lookup",
+          "status": "planned",
+          "description": "Future network-enabled workflow requiring privacy, source, and official-boundary product specs."
+        }
+      ],
+      "relatedGlobalTools": [
+        {
+          "name": "IBAN Validator",
+          "slug": "iban-validator",
+          "category": "finance"
+        },
+        {
+          "name": "JSON Formatter",
+          "slug": "json-formatter",
+          "category": "developer-tools"
+        },
+        {
+          "name": "Regex Tester",
+          "slug": "regex-tester",
+          "category": "developer-tools"
+        }
+      ],
+      "relatedCategories": [
+        {
+          "title": "National Identifiers",
+          "text": "Country-specific identifier validators and explainers.",
+          "name": "National Identifiers",
+          "slug": "national-identifiers"
+        },
+        {
+          "title": "Finance",
+          "text": "Banking, IBAN, payment, and accounting workflows.",
+          "name": "Finance",
+          "slug": "finance"
+        },
+        {
+          "title": "Developer Tools",
+          "text": "Locale, data-quality, JSON, regex, and API helpers.",
+          "name": "Developer Tools",
+          "slug": "developer-tools"
+        }
+      ],
+      "availableWorkbenches": [
+        {
+          "name": "Italian Codice Fiscale Validator",
+          "slug": "italy-codice-fiscale-validator",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "codicefiscale"
+          ],
+          "description": "Validate Italian codice fiscale shape, replay control-character evidence, and split surname/name/date/place-code blocks for debugging."
+        },
+        {
+          "name": "Italian Partita IVA Validator",
+          "slug": "italy-partita-iva-validator",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "piva"
+          ],
+          "description": "Validate Italian VAT number shape, replay the 11-digit checksum, and separate offline syntax from Agenzia Entrate status."
+        },
+        {
+          "name": "Italian VAT ID / IT Prefix Validator",
+          "slug": "italy-vat-id-validator",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "vat"
+          ],
+          "description": "Normalize IT VAT identifiers, inspect numeric body evidence, and prepare VIES handoff diagnostics."
+        },
+        {
+          "name": "Italian EORI / Customs Identifier Helper",
+          "slug": "italy-eori-validator",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "eori"
+          ],
+          "description": "Inspect Italian EORI/customs identifiers, country prefixes, VAT-style bodies, and customs-boundary notes."
+        },
+        {
+          "name": "Italian Codice Destinatario Helper",
+          "slug": "italy-codice-destinatario-helper",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "sdi"
+          ],
+          "description": "Inspect seven-character SDI recipient codes, PEC fallback hints, and e-invoicing routing boundaries."
+        },
+        {
+          "name": "Italian PEC Address Helper",
+          "slug": "italy-pec-address-helper",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "pec"
+          ],
+          "description": "Check certified-email snippets for PEC-style address evidence, domain shape, and official mailbox-boundary notes."
+        },
+        {
+          "name": "Italian REA Number Helper",
+          "slug": "italy-rea-number-helper",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "rea"
+          ],
+          "description": "Audit REA chamber-registration references, province prefixes, serial digits, and registry lookup boundaries."
+        },
+        {
+          "name": "Italian Registro Imprese Readiness Helper",
+          "slug": "italy-registro-imprese-readiness-helper",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "company"
+          ],
+          "description": "Check company intake snippets for Partita IVA, REA, PEC, address, and official registry handoff evidence."
+        },
+        {
+          "name": "Italian ATECO Code Inspector",
+          "slug": "italy-ateco-code-inspector",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "ateco"
+          ],
+          "description": "Inspect ATECO activity-code snippets, dotted digit groups, and data-quality notes for company onboarding."
+        },
+        {
+          "name": "Italian SPID / CIE Boundary Helper",
+          "slug": "italy-spid-cie-boundary-helper",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "identity"
+          ],
+          "description": "Separate SPID, CIE, CNS, and identity-provider evidence from authentication proof and regulated access decisions."
+        },
+        {
+          "name": "Italian Company Onboarding Auditor",
+          "slug": "italy-company-onboarding-auditor",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "company"
+          ],
+          "description": "Audit Italian company intake payloads for VAT, CF, REA, PEC, IBAN, address, and official-status boundaries."
+        },
+        {
+          "name": "Italian IBAN Validator",
+          "slug": "italy-iban-validator",
+          "status": "available",
+          "tags": [
+            "finance",
+            "iban"
+          ],
+          "description": "Validate Italian IBAN numbers, expose CIN, ABI, CAB, account slices, and explain official bank-directory boundaries."
+        },
+        {
+          "name": "Italian ABI / CAB Bank Code Inspector",
+          "slug": "italy-abi-cab-bank-code-inspector",
+          "status": "available",
+          "tags": [
+            "finance",
+            "bankcode"
+          ],
+          "description": "Inspect Italian bank and branch code snippets, normalize ABI/CAB slices, and separate directory lookup from local checks."
+        },
+        {
+          "name": "Italian BIC / SWIFT Inspector",
+          "slug": "italy-bic-swift-inspector",
+          "status": "available",
+          "tags": [
+            "finance",
+            "bic"
+          ],
+          "description": "Inspect BIC/SWIFT shape, verify IT country-code evidence, and prepare payment-routing diagnostics."
+        },
+        {
+          "name": "Italian SEPA Transfer Helper",
+          "slug": "italy-sepa-transfer-helper",
+          "status": "available",
+          "tags": [
+            "finance",
+            "sepa"
+          ],
+          "description": "Audit SEPA credit-transfer snippets for Italian IBAN, EUR amount, remittance, beneficiary, and browser-only boundaries."
+        },
+        {
+          "name": "Italian SEPA Direct Debit Mandate Helper",
+          "slug": "italy-sepa-direct-debit-mandate-helper",
+          "status": "available",
+          "tags": [
+            "finance",
+            "mandate"
+          ],
+          "description": "Inspect SEPA direct-debit mandate snippets for creditor, IBAN, mandate reference, dates, and official authorization boundaries."
+        },
+        {
+          "name": "Italian Ri.Ba Payment Helper",
+          "slug": "italy-riba-payment-helper",
+          "status": "available",
+          "tags": [
+            "finance",
+            "payment"
+          ],
+          "description": "Audit Ri.Ba payment snippets for debtor, due date, bank coordinates, amount, and reconciliation evidence."
+        },
+        {
+          "name": "Italian pagoPA Notice Helper",
+          "slug": "italy-pago-pa-payment-notice-helper",
+          "status": "available",
+          "tags": [
+            "finance",
+            "payment"
+          ],
+          "description": "Inspect pagoPA notice snippets for IUV/codice avviso digits, amount, due date, and payment-boundary notes."
+        },
+        {
+          "name": "Italian Remittance Text Builder",
+          "slug": "italy-remittance-text-builder",
+          "status": "available",
+          "tags": [
+            "finance",
+            "payment"
+          ],
+          "description": "Normalize Italian payment causale/remittance text, detect invoice references, and produce log-safe previews."
+        },
+        {
+          "name": "Italian Payment Reconciliation Helper",
+          "slug": "italy-payment-reconciliation-helper",
+          "status": "available",
+          "tags": [
+            "finance",
+            "payment"
+          ],
+          "description": "Compare Italian payment snippets for IBAN, amount, invoice, date, and reconciliation hints without bank lookup."
+        },
+        {
+          "name": "Italian Bank Statement Parser",
+          "slug": "italy-bank-statement-parser",
+          "status": "available",
+          "tags": [
+            "finance",
+            "statement"
+          ],
+          "description": "Parse Italian statement-like rows for valuta date, amount, causale, IBAN hints, and local CSV conventions."
+        },
+        {
+          "name": "Italian Masked IBAN Formatter",
+          "slug": "italy-masked-iban-formatter",
+          "status": "available",
+          "tags": [
+            "finance",
+            "ibanmask"
+          ],
+          "description": "Format and mask Italian IBANs for logs, support previews, and show which account slices remain sensitive."
+        },
+        {
+          "name": "Italian FatturaPA XML Readiness Checker",
+          "slug": "italy-fatturapa-xml-readiness-checker",
+          "status": "available",
+          "tags": [
+            "finance",
+            "einvoice"
+          ],
+          "description": "Audit FatturaPA XML snippets for cedente, cessionario, totals, VAT, and SDI delivery handoff evidence."
+        },
+        {
+          "name": "Italian SDI Invoice Routing Helper",
+          "slug": "italy-sdi-invoice-routing-helper",
+          "status": "available",
+          "tags": [
+            "finance",
+            "einvoice"
+          ],
+          "description": "Inspect e-invoice routing payloads for codice destinatario, PEC, VAT, and Sistema di Interscambio boundaries."
+        },
+        {
+          "name": "Italian VAT Rate Sanity Helper",
+          "slug": "italy-vat-rate-sanity-helper",
+          "status": "available",
+          "tags": [
+            "finance",
+            "taxdoc"
+          ],
+          "description": "Check Italian VAT-rate snippets, totals, comma decimals, and reverse-charge handoff notes."
+        },
+        {
+          "name": "Italian VAT Return Field Helper",
+          "slug": "italy-vat-return-field-helper",
+          "status": "available",
+          "tags": [
+            "finance",
+            "taxdoc"
+          ],
+          "description": "Audit VAT return snippets for period, VAT ID, taxable amount, tax amount, and official filing boundaries."
+        },
+        {
+          "name": "Italian Invoice Number Helper",
+          "slug": "italy-invoice-number-helper",
+          "status": "available",
+          "tags": [
+            "finance",
+            "invoice"
+          ],
+          "description": "Inspect Italian invoice references, year/series/number patterns, dates, VAT evidence, and duplicate-risk notes."
+        },
+        {
+          "name": "Italian E-Invoicing Readiness Helper",
+          "slug": "italy-e-invoicing-readiness-helper",
+          "status": "available",
+          "tags": [
+            "finance",
+            "einvoice"
+          ],
+          "description": "Audit Italian e-invoicing payloads for XML, SDI, PEC, VAT, totals, dates, and delivery-boundary evidence."
+        },
+        {
+          "name": "Italian Accounting Audit Trail Checklist Helper",
+          "slug": "italy-accounting-audit-trail-checklist-generator",
+          "status": "available",
+          "tags": [
+            "finance",
+            "accounting"
+          ],
+          "description": "Build an Italian accounting evidence checklist from VAT, invoice, payment, date, and document snippets."
+        },
+        {
+          "name": "Italian EUR Decimal Currency Formatter",
+          "slug": "italy-eur-decimal-currency-formatter",
+          "status": "available",
+          "tags": [
+            "finance",
+            "amount"
+          ],
+          "description": "Normalize Italian EUR amounts, comma decimals, thousands separators, and accounting import previews."
+        },
+        {
+          "name": "Italian CAP Postal Code Validator",
+          "slug": "italy-postal-code-validator",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "postal"
+          ],
+          "description": "Validate Italian five-digit CAP shape, expose postal-zone evidence, and separate delivery proof from offline checks."
+        },
+        {
+          "name": "Italian Address Normalizer",
+          "slug": "italy-address-normalizer",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "address"
+          ],
+          "description": "Normalize Italian address snippets with via/piazza, CAP, comune, provincia, and country evidence."
+        },
+        {
+          "name": "Italian Address Transliteration Normalizer",
+          "slug": "italy-address-transliteration-normalizer",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "address"
+          ],
+          "description": "Create ASCII-safe Italian address/search keys while preserving display text and diacritics where needed."
+        },
+        {
+          "name": "Italian Province Code Mapper",
+          "slug": "italy-province-code-mapper",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "province"
+          ],
+          "description": "Inspect Italian province abbreviations, expose known code evidence, and keep official geography lookup boundaries explicit."
+        },
+        {
+          "name": "Italian Municipality / Belfiore Code Inspector",
+          "slug": "italy-municipality-code-inspector",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "municipality"
+          ],
+          "description": "Inspect comune and Belfiore-style cadastral code snippets for place-code evidence and official lookup boundaries."
+        },
+        {
+          "name": "Italian Phone Number Validator",
+          "slug": "italy-phone-number-validator",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "phone"
+          ],
+          "description": "Validate Italian phone snippets, detect +39/trunk evidence, and separate numbering-plan shape from subscriber status."
+        },
+        {
+          "name": "Italian Phone E.164 Formatter",
+          "slug": "italy-phone-e164-formatter",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "phone"
+          ],
+          "description": "Normalize Italian phone numbers toward +39 display, preserve significant trunk digits, and prepare API payload previews."
+        },
+        {
+          "name": "Italian Date Locale Formatter",
+          "slug": "italy-date-locale-formatter",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "date"
+          ],
+          "description": "Parse Italian date snippets, emit ISO/date-display variants, and expose day/month/year field slices."
+        },
+        {
+          "name": "Italian CSV Locale Normalizer",
+          "slug": "italy-csv-locale-normalizer",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "csv"
+          ],
+          "description": "Audit Italian CSV snippets for semicolon separators, comma decimals, dates, VAT fields, and import-safe previews."
+        },
+        {
+          "name": "Italian Slug Normalizer",
+          "slug": "italy-slug-normalizer",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "slug"
+          ],
+          "description": "Create URL-safe slugs from Italian names, punctuation, accents, legal suffixes, and locale-specific text."
+        },
+        {
+          "name": "Italian Document OCR Fixer",
+          "slug": "italy-document-ocr-fixer",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "ocr"
+          ],
+          "description": "Repair OCR-like Italian document snippets, recover CF/VAT/IBAN/date evidence, and keep identity-proof boundaries explicit."
+        },
+        {
+          "name": "Italian GDPR / Privacy Redaction Helper",
+          "slug": "italy-gdpr-redaction-helper",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "privacy"
+          ],
+          "description": "Redact Italian personal, tax, banking, phone, and address evidence for privacy-safe support payloads."
+        },
+        {
+          "name": "Italian PII Masker",
+          "slug": "italy-pii-masker",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "privacy"
+          ],
+          "description": "Mask Italian CF, VAT, IBAN, phone, PEC, and address evidence while preserving debugging structure."
+        },
+        {
+          "name": "Italian Personal Data Fixture Helper",
+          "slug": "italy-personal-data-fixture-generator",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "fixture"
+          ],
+          "description": "Generate and audit clearly fake Italian-style personal fixtures with CF-like, address, phone, and privacy notes."
+        },
+        {
+          "name": "Italian ID Card Format Helper",
+          "slug": "italy-id-card-format-helper",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "document"
+          ],
+          "description": "Inspect Italian identity-card snippets, document numbers, dates, and official identity-proof boundaries."
+        },
+        {
+          "name": "Italian Passport Number Helper",
+          "slug": "italy-passport-number-helper",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "document"
+          ],
+          "description": "Inspect Italian passport-like document numbers, MRZ hints, dates, and official document-validation boundaries."
+        },
+        {
+          "name": "Italian Driving Licence Format Helper",
+          "slug": "italy-driving-licence-format-helper",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "document"
+          ],
+          "description": "Inspect Italian driving-licence snippets, document codes, dates, and Motorizzazione boundary notes."
+        },
+        {
+          "name": "Italian Residence Permit Format Helper",
+          "slug": "italy-residence-permit-format-helper",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "document"
+          ],
+          "description": "Inspect residence-permit snippets, number/date evidence, and official immigration-status boundaries."
+        },
+        {
+          "name": "Italian Tessera Sanitaria Format Helper",
+          "slug": "italy-health-card-format-helper",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "document"
+          ],
+          "description": "Inspect Tessera Sanitaria/codice fiscale snippets, expiry dates, and health-card proof boundaries."
+        },
+        {
+          "name": "Italian Vehicle Plate Inspector",
+          "slug": "italy-vehicle-plate-inspector",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "vehicle"
+          ],
+          "description": "Inspect Italian vehicle plate families, province-era hints, serial blocks, and PRA/Motorizzazione boundaries."
+        },
+        {
+          "name": "Italian VIN Validator",
+          "slug": "italy-vin-validator",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "vin"
+          ],
+          "description": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare Italian vehicle-intake diagnostics."
+        },
+        {
+          "name": "Italian Vehicle Data Redaction Helper",
+          "slug": "italy-vehicle-data-redaction-helper",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "vehicle"
+          ],
+          "description": "Mask Italian plate, VIN, owner, fiscal-code, and address evidence in vehicle support payloads."
+        },
+        {
+          "name": "Italian Customs Declaration Helper",
+          "slug": "italy-customs-declaration-helper",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "customs"
+          ],
+          "description": "Audit customs snippets for EORI, MRN-like references, country codes, dates, and Agenzia Dogane boundaries."
+        },
+        {
+          "name": "Italian Postal Tracking Helper",
+          "slug": "italy-postal-tracking-helper",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "postaltrack"
+          ],
+          "description": "Inspect Poste/courier tracking-like snippets, country suffixes, dates, and carrier-status boundaries."
+        },
+        {
+          "name": "Italian Data Quality Workbench",
+          "slug": "italy-data-quality-workbench",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "dataquality"
+          ],
+          "description": "Audit mixed Italian payloads for identifiers, dates, amounts, addresses, phone, and locale consistency."
+        },
+        {
+          "name": "Italian JSON Fixture Helper",
+          "slug": "italy-json-fixture-generator",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "json"
+          ],
+          "description": "Inspect Italian JSON fixtures for locale, VAT, CF, IBAN, phone, date, and privacy-safe payload shape."
+        },
+        {
+          "name": "Italian Regex Pack Helper",
+          "slug": "italy-regex-pack-helper",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "regex"
+          ],
+          "description": "Prepare regex snippets for Italian CF, Partita IVA, IBAN, CAP, phone, dates, and local evidence labels."
+        },
+        {
+          "name": "Italian API Payload Auditor",
+          "slug": "italy-api-payload-auditor",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "api"
+          ],
+          "description": "Audit API payload snippets for Italy locale, VAT, CF, IBAN, dates, amounts, and official-system boundaries."
+        },
+        {
+          "name": "Italian Form Field Auditor",
+          "slug": "italy-form-field-auditor",
+          "status": "available",
+          "tags": [
+            "developer-tools",
+            "form"
+          ],
+          "description": "Check Italian form-field labels and values for VAT, CF, CAP, province, phone, address, and privacy handling."
+        },
+        {
+          "name": "Italian MRZ / Passport Parser",
+          "slug": "italy-mrz-passport-parser",
+          "status": "available",
+          "tags": [
+            "national-identifiers",
+            "document"
+          ],
+          "description": "Parse Italian passport MRZ snippets, split document, nationality, birth-date, expiry, and checksum evidence without identity proof."
+        }
+      ],
+      "futureCountryPages": [
+        {
+          "name": "Italian payroll integrations",
+          "status": "planned",
+          "description": "Reserved future country page; not a fake tool action."
+        },
+        {
+          "name": "Italian municipal code directory",
+          "status": "planned",
+          "description": "Reserved future country page; not a fake tool action."
+        },
+        {
+          "name": "Italian health-card handoff guide",
+          "status": "planned",
+          "description": "Reserved future country page; not a fake tool action."
+        },
+        {
+          "name": "Italian public procurement IDs",
+          "status": "planned",
+          "description": "Reserved future country page; not a fake tool action."
+        },
+        {
+          "name": "Italian tax-declaration checklist",
+          "status": "planned",
+          "description": "Reserved future country page; not a fake tool action."
+        },
+        {
+          "name": "Italian address datasets",
+          "status": "planned",
+          "description": "Reserved future country page; not a fake tool action."
+        },
+        {
+          "name": "Italian phone allocation reference",
+          "status": "planned",
+          "description": "Reserved future country page; not a fake tool action."
+        },
+        {
+          "name": "Italian vehicle registry guide",
+          "status": "planned",
+          "description": "Reserved future country page; not a fake tool action."
+        },
+        {
+          "name": "Italian customs flows",
+          "status": "planned",
+          "description": "Reserved future country page; not a fake tool action."
+        },
+        {
+          "name": "Italian e-invoicing deep dive",
+          "status": "planned",
+          "description": "Reserved future country page; not a fake tool action."
+        }
+      ],
+      "localizationExamples": [
+        {
+          "label": "Date",
+          "value": "12/07/2026",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Time",
+          "value": "14:25",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Currency",
+          "value": "1.234,56 €",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Decimal",
+          "value": "1.234,56",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Percentage",
+          "value": "35,7%",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Mobile phone",
+          "value": "+39 347 123 4567",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Landline",
+          "value": "+39 06 69821234",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Postal code",
+          "value": "00118",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Address example",
+          "value": "Via Roma 10, 00118 Roma RM",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Example person name",
+          "value": "Mario Rossi",
+          "tags": [
+            "locale"
+          ]
+        },
+        {
+          "label": "Mainland time zone",
+          "value": "Europe/Rome",
+          "tags": [
+            "locale"
+          ]
+        }
+      ],
+      "addressExample": {
+        "label": "Italian address",
+        "value": "Via Roma 10\n00118 Roma RM\nItalia"
+      },
+      "phoneExamples": [
+        {
+          "label": "Mobile",
+          "value": "+39 347 123 4567",
+          "description": "Italian mobile example with +39 country code and 3xx mobile prefix evidence."
+        },
+        {
+          "label": "Rome landline",
+          "value": "+39 06 69821234",
+          "description": "Rome fixed-line example preserving the leading 06 area code after +39."
+        },
+        {
+          "label": "Milan landline",
+          "value": "+39 02 12345678",
+          "description": "Milan fixed-line example preserving the leading 02 area code after +39."
+        },
+        {
+          "label": "Service-style",
+          "value": "+39 800 123456",
+          "description": "Toll-free/service-style number example for form and parser QA."
+        },
+        {
+          "label": "Compact E.164",
+          "value": "+393471234567",
+          "description": "Compact E.164-style API storage preview without spaces."
+        }
+      ],
+      "integrationChecklist": [
+        "Locale it-IT configured",
+        "UTF-8 encoding preserved",
+        "Euro (EUR) formatting with comma decimals and dot separators",
+        "Codice fiscale control-character checks",
+        "Partita IVA checksum checks",
+        "Italian IBAN MOD-97 plus CIN/ABI/CAB slicing",
+        "CAP five-digit postal-code validation",
+        "Phone code +39 parsing with trunk-zero care",
+        "FatturaPA/SDI/PEC routing fields captured",
+        "Privacy masking before logs and support tickets"
+      ],
+      "validationRules": [
+        {
+          "title": "Codice fiscale",
+          "text": "Sixteen-character structure with surname/name/date/gender/place-code blocks and control-character evidence; identity proof remains official.",
+          "name": "Codice fiscale",
+          "description": "Sixteen-character structure with surname/name/date/gender/place-code blocks and control-character evidence; identity proof remains official."
+        },
+        {
+          "title": "Partita IVA",
+          "text": "Eleven digits with checksum evidence; active VAT status requires official tax/VIES systems.",
+          "name": "Partita IVA",
+          "description": "Eleven digits with checksum evidence; active VAT status requires official tax/VIES systems."
+        },
+        {
+          "title": "Italian IBAN",
+          "text": "IT plus 25 additional characters; MOD-97 validates the IBAN and CIN/ABI/CAB/account slices are exposed locally.",
+          "name": "Italian IBAN",
+          "description": "IT plus 25 additional characters; MOD-97 validates the IBAN and CIN/ABI/CAB/account slices are exposed locally."
+        },
+        {
+          "title": "CAP",
+          "text": "Five-digit Italian postal-code shape; delivery proof requires postal/reference data.",
+          "name": "CAP",
+          "description": "Five-digit Italian postal-code shape; delivery proof requires postal/reference data."
+        },
+        {
+          "title": "SDI / PEC",
+          "text": "Seven-character SDI recipient code or certified-email fallback evidence; delivery status requires SDI/PEC systems.",
+          "name": "SDI / PEC",
+          "description": "Seven-character SDI recipient code or certified-email fallback evidence; delivery status requires SDI/PEC systems."
+        },
+        {
+          "title": "Phone",
+          "text": "+39 or national Italian number evidence; allocation and subscriber status require telecom/provider sources.",
+          "name": "Phone",
+          "description": "+39 or national Italian number evidence; allocation and subscriber status require telecom/provider sources."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating codice fiscale as identity proof",
+          "text": "The browser can inspect structure and control-character evidence, but it cannot prove that a person or identity exists."
+        },
+        {
+          "title": "Confusing Partita IVA and codice fiscale",
+          "text": "Companies may expose VAT, fiscal code, REA, and PEC fields; store each normalized field separately."
+        },
+        {
+          "title": "Assuming ABI/CAB means account ownership",
+          "text": "IBAN, ABI, and CAB slicing does not prove the account belongs to a person or company."
+        },
+        {
+          "title": "Using dot decimals in Italian imports",
+          "text": "Italian CSV/accounting flows commonly expect comma decimals and semicolon separators."
+        }
+      ],
+      "bankingOverview": [
+        {
+          "title": "IBAN",
+          "text": "IT IBAN format with CIN, ABI, CAB, and account segment breakdown.",
+          "brandKey": "iban",
+          "name": "IBAN",
+          "status": "available",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "IT IBAN format with CIN, ABI, CAB, and account segment breakdown."
+        },
+        {
+          "title": "ABI / CAB",
+          "text": "Five-digit bank and branch routing evidence; bank name enrichment requires reference data.",
+          "name": "ABI / CAB",
+          "status": "available",
+          "tags": [
+            "banking"
+          ],
+          "description": "Five-digit bank and branch routing evidence; bank name enrichment requires reference data."
+        },
+        {
+          "title": "SEPA",
+          "text": "Credit transfer and direct debit readiness fields for Italian EUR accounts.",
+          "brandKey": "sepa",
+          "name": "SEPA",
+          "status": "available",
+          "tags": [
+            "banking",
+            "payments"
+          ],
+          "description": "Credit transfer and direct debit readiness fields for Italian EUR accounts."
+        },
+        {
+          "title": "SWIFT / BIC",
+          "text": "International routing identifier shape with IT country-code evidence.",
+          "brandKey": "swift",
+          "name": "SWIFT / BIC",
+          "status": "available",
+          "tags": [
+            "banking"
+          ],
+          "description": "International routing identifier shape with IT country-code evidence."
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Comma decimals",
+          "text": "Italian business CSV and accounting workflows commonly use comma decimals and semicolon separators."
+        },
+        {
+          "title": "DD/MM/YYYY dates",
+          "text": "Human-facing Italian dates usually use day/month/year slashes; store ISO dates for APIs."
+        },
+        {
+          "title": "Accents and apostrophes",
+          "text": "Search keys often need ASCII-safe normalization while display names preserve Italian spelling."
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Tax identity",
+          "text": "Codice fiscale, Partita IVA, Agenzia Entrate, VAT returns, and FatturaPA workflows form the tax identity cluster."
+        },
+        {
+          "title": "Business registry",
+          "text": "Registro Imprese, REA, PEC, company onboarding, ATECO, EORI, and official lookup boundaries form the company evidence cluster."
+        },
+        {
+          "title": "Payments",
+          "text": "Italian IBAN, ABI, CAB, BIC, SEPA, Ri.Ba, pagoPA, remittance, statements, and reconciliation form the payment cluster."
+        },
+        {
+          "title": "E-invoicing",
+          "text": "FatturaPA XML, SDI recipient code, PEC fallback, VAT totals, and delivery handoffs form the e-invoicing cluster."
+        },
+        {
+          "title": "Locale and privacy",
+          "text": "CAP, addresses, phone numbers, comma decimals, dates, GDPR redaction, and PII masking form the data-quality cluster."
+        }
+      ],
+      "highlights": [
+        {
+          "title": "Premium Italy suite",
+          "text": "Sixty browser-only Italy workbenches cover tax, banking, e-invoicing, locale, privacy, vehicles, and developer-data workflows."
+        },
+        {
+          "title": "Field breakdown everywhere",
+          "text": "Each tool exposes named Italian evidence slices for debugging instead of only generic result cards."
+        },
+        {
+          "title": "Official boundaries preserved",
+          "text": "Registry, tax, bank, vehicle, carrier, SDI, and identity status checks remain outside browser-only validation."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "Normalize for storage",
+          "text": "Store compact identifiers such as IT VAT, codice fiscale, and IBAN separately from display punctuation."
+        },
+        {
+          "title": "Mask before logging",
+          "text": "Codice fiscale, IBAN, phone, address, PEC, and document evidence should be masked in logs and screenshots."
+        },
+        {
+          "title": "Use official systems for status",
+          "text": "ValidoHub provides offline shape evidence and handoff payloads, not regulated official decisions."
+        }
+      ],
+      "developerExamples": [
+        {
+          "title": "Java Locale",
+          "language": "java",
+          "brandKey": "java",
+          "code": "Locale.forLanguageTag(\"it-IT\")",
+          "note": "Use BCP 47 locale tags for Java formatting APIs."
+        },
+        {
+          "title": "Java currency format",
+          "language": "java",
+          "brandKey": "java",
+          "code": "NumberFormat.getCurrencyInstance(Locale.forLanguageTag(\"it-IT\")).format(value)",
+          "note": "Formats values using Italian currency conventions."
+        },
+        {
+          "title": "JavaScript Intl Currency",
+          "language": "javascript",
+          "brandKey": "javascript",
+          "code": "new Intl.NumberFormat(\"it-IT\", { style: \"currency\", currency: \"EUR\" })",
+          "note": "Formats EUR values with it-IT separators and currency display."
+        },
+        {
+          "title": "JavaScript Date",
+          "language": "javascript",
+          "brandKey": "javascript",
+          "code": "new Intl.DateTimeFormat(\"it-IT\", { timeZone: \"Europe/Rome\" })",
+          "note": "Use Europe/Rome timezone for Italy local dates."
+        },
+        {
+          "title": "Python locale",
+          "language": "python",
+          "brandKey": "python",
+          "code": "locale.setlocale(locale.LC_ALL, \"it_IT.UTF-8\")",
+          "note": "Requires the it_IT locale to be installed on the host operating system."
+        },
+        {
+          "title": "Go language tag",
+          "language": "go",
+          "brandKey": "go",
+          "code": "language.MustParse(\"it-IT\")",
+          "note": "Use golang.org/x/text/language package for locale representation."
+        }
+      ]
+    },
     "netherlands": {
       "flag": "🇳🇱",
       "name": "Netherlands",
       "badge": "Western Europe premium country hub",
       "description": "Developer intelligence for Dutch identity, business registry, tax, banking, address, payment, privacy, vehicle, audit-file, and localization workflows with browser-only validation where possible.",
+      "searchHints": [
+        "BSN",
+        "RSIN",
+        "KVK",
+        "BTW",
+        "iDEAL",
+        "BAG"
+      ],
       "metadata": {
         "nativeName": "Nederland",
         "population": "approximately 18M",
@@ -6166,6 +10907,482 @@
             "banking",
             "payments"
           ]
+        }
+      ]
+    },
+    "norway": {
+      "flag": "🇳🇴",
+      "name": "Norway",
+      "badge": "Premium Norway developer suite",
+      "description": "Developer intelligence and browser-only workbenches for norwegian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Norge",
+        "population": "approximately 5.6M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Oslo",
+        "continent": "Europe",
+        "region": "Northern Europe / EEA",
+        "languages": "Norwegian",
+        "currency": "Norwegian krone",
+        "currencyCode": "NOK",
+        "callingCode": "+47",
+        "internetTld": ".no",
+        "drivingSide": "Right",
+        "iso2": "NO",
+        "iso3": "NOR",
+        "isoNumeric": "578",
+        "locale": "nb-NO",
+        "icuLocale": "nb_NO",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Space grouping",
+        "addressFormat": "Street, number, postal code, locality, Norway",
+        "postalCodeFormat": "postnummer",
+        "primaryTimeZone": "Europe local time zone",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "nb-NO",
+        "cldrLocale": "nb_NO",
+        "metricVsImperial": "Metric-first"
+      },
+      "visualIdentity": {
+        "countryId": "norway",
+        "outlineLabel": "Norway outline",
+        "mapLabel": "Norway in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Norway flag",
+        "heroAccentPrimary": "15 118 110",
+        "heroAccentSecondary": "37 99 235",
+        "heroAccentTertiary": "245 158 11"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "Fodselsnummer and Organisasjonsnummer",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "MVA and payments",
+          "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Norway registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /norway/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Space grouping rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Norwegian examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "Brreg",
+          "text": "Official business registry or company lookup remains the source of truth for Norway.",
+          "status": "official boundary"
+        },
+        {
+          "title": "MVA",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "GDPR / Datatilsynet",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "Fodselsnummer, D-number, Organisasjonsnummer, MVA, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "IBAN, KID, SWIFT, AvtaleGiro handoff, VAT handoff",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "nb-NO / nb_NO; date DD.MM.YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "NOK amounts use Comma (,) and Space grouping.",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "Fodselsnummer, Organisasjonsnummer, postnummer, phone, address, and IBAN need local labels.",
+          "status": "available"
+        }
+      ],
+      "routes": [
+        {
+          "title": "Norwegian Fodselsnummer Validator",
+          "href": "/en/norway/norway-fodselsnummer-validator/",
+          "text": "Validate Fodselsnummer shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Norwegian Organisasjonsnummer Validator",
+          "href": "/en/norway/norway-organisasjonsnummer-validator/",
+          "text": "Inspect Organisasjonsnummer structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Norwegian VAT ID / NO Prefix Validator",
+          "href": "/en/norway/norway-vat-id-validator/",
+          "text": "Normalize NO VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+        },
+        {
+          "title": "Norwegian EORI / Customs Identifier Helper",
+          "href": "/en/norway/norway-eori-validator/",
+          "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+        },
+        {
+          "title": "Norwegian D-number Helper",
+          "href": "/en/norway/norway-d-number-social-insurance-helper/",
+          "text": "Split D-number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Norwegian Company Onboarding Auditor",
+          "href": "/en/norway/norway-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for Organisasjonsnummer, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Norwegian Brreg Readiness Helper",
+          "href": "/en/norway/norway-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated Brreg lookup or company registry workflow."
+        },
+        {
+          "title": "Norwegian ID Card Format Helper",
+          "href": "/en/norway/norway-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Norwegian Passport Number Helper",
+          "href": "/en/norway/norway-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Norwegian MRZ / Passport Parser",
+          "href": "/en/norway/norway-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Norway IBAN Validator",
+          "href": "/en/norway/norway-iban-validator/",
+          "text": "Validate NO IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+        },
+        {
+          "title": "Norway IBAN Generator",
+          "href": "/en/norway/norway-iban-generator/",
+          "text": "Generate NO IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+        },
+        {
+          "title": "Norwegian Domestic Bank Account Inspector",
+          "href": "/en/norway/norway-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+        },
+        {
+          "title": "Norwegian BIC / SWIFT Inspector",
+          "href": "/en/norway/norway-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Norway banking integrations."
+        },
+        {
+          "title": "Norwegian SEPA Transfer Helper",
+          "href": "/en/norway/norway-sepa-transfer-helper/",
+          "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+        },
+        {
+          "title": "Norwegian SEPA Direct Debit Mandate Helper",
+          "href": "/en/norway/norway-sepa-direct-debit-mandate-helper/",
+          "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+        },
+        {
+          "title": "Norwegian KID reference Reference Helper",
+          "href": "/en/norway/norway-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Norwegian Remittance Text Builder",
+          "href": "/en/norway/norway-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Norwegian Payment Reconciliation Helper",
+          "href": "/en/norway/norway-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Norwegian Bank Statement Parser",
+          "href": "/en/norway/norway-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Norwegian Masked IBAN Formatter",
+          "href": "/en/norway/norway-masked-iban-formatter/",
+          "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+        },
+        {
+          "title": "Norwegian NOK Decimal Currency Formatter",
+          "href": "/en/norway/norway-currency-decimal-formatter/",
+          "text": "Normalize NOK amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Norwegian VAT Rate Sanity Helper",
+          "href": "/en/norway/norway-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Norwegian VAT Return Field Helper",
+          "href": "/en/norway/norway-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Norwegian Invoice Number Helper",
+          "href": "/en/norway/norway-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Norwegian EHF / Peppol Readiness Checker",
+          "href": "/en/norway/norway-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Norwegian Tax Authority Handoff Helper",
+          "href": "/en/norway/norway-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Norwegian Accounting Audit Trail Checklist Helper",
+          "href": "/en/norway/norway-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Norwegian Postal Code Validator",
+          "href": "/en/norway/norway-postal-code-validator/",
+          "text": "Validate postnummer shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Norwegian Address Normalizer",
+          "href": "/en/norway/norway-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Norwegian Address Transliteration Normalizer",
+          "href": "/en/norway/norway-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Norwegian Region / Province Code Mapper",
+          "href": "/en/norway/norway-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Norwegian Municipality Code Inspector",
+          "href": "/en/norway/norway-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Norwegian Phone Number Validator",
+          "href": "/en/norway/norway-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Norwegian Phone E.164 Formatter",
+          "href": "/en/norway/norway-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Norwegian Date Locale Formatter",
+          "href": "/en/norway/norway-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Norwegian CSV Locale Normalizer",
+          "href": "/en/norway/norway-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Norway decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Norwegian Slug Normalizer",
+          "href": "/en/norway/norway-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Norwegian Document OCR Fixer",
+          "href": "/en/norway/norway-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Norwegian GDPR / Datatilsynet Redaction Helper",
+          "href": "/en/norway/norway-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Norwegian PII Masker",
+          "href": "/en/norway/norway-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Norwegian Personal Data Fixture Helper",
+          "href": "/en/norway/norway-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Norwegian Driving Licence Format Helper",
+          "href": "/en/norway/norway-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Norwegian Residence Permit Format Helper",
+          "href": "/en/norway/norway-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Norwegian Health Card Format Helper",
+          "href": "/en/norway/norway-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Norwegian Vehicle Plate Inspector",
+          "href": "/en/norway/norway-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Norwegian VIN Validator",
+          "href": "/en/norway/norway-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Norwegian Vehicle Data Redaction Helper",
+          "href": "/en/norway/norway-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Norwegian Customs Declaration Helper",
+          "href": "/en/norway/norway-customs-declaration-helper/",
+          "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Norwegian Postal Tracking Helper",
+          "href": "/en/norway/norway-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Norwegian Data Quality Workbench",
+          "href": "/en/norway/norway-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Norwegian JSON Fixture Helper",
+          "href": "/en/norway/norway-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Norwegian Regex Pack Helper",
+          "href": "/en/norway/norway-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Norwegian API Payload Auditor",
+          "href": "/en/norway/norway-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Norwegian Form Field Auditor",
+          "href": "/en/norway/norway-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Norwegian Locale Number Parser",
+          "href": "/en/norway/norway-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Norway."
+        },
+        {
+          "title": "Norwegian Calendar Week Helper",
+          "href": "/en/norway/norway-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Norwegian Company Suffix Normalizer",
+          "href": "/en/norway/norway-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Norwegian Procurement Identifier Helper",
+          "href": "/en/norway/norway-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Norwegian Locale Copy Checker",
+          "href": "/en/norway/norway-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Norwegian Support Ticket Scrubber",
+          "href": "/en/norway/norway-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Norwegian Integration Smoke Test Builder",
+          "href": "/en/norway/norway-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
         }
       ]
     },
@@ -8050,11 +13267,963 @@
         ]
       }
     },
+    "portugal": {
+      "flag": "🇵🇹",
+      "name": "Portugal",
+      "badge": "Premium Portugal developer suite",
+      "description": "Developer intelligence and browser-only workbenches for portuguese identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Portugal",
+        "population": "approximately 10.4M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Lisbon",
+        "continent": "Europe",
+        "region": "Southern Europe / European Union",
+        "languages": "Portuguese",
+        "currency": "Euro",
+        "currencyCode": "EUR",
+        "callingCode": "+351",
+        "internetTld": ".pt",
+        "drivingSide": "Right",
+        "iso2": "PT",
+        "iso3": "PRT",
+        "isoNumeric": "620",
+        "locale": "pt-PT",
+        "icuLocale": "pt_PT",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Space or dot grouping",
+        "addressFormat": "Street, number, postal code, locality, Portugal",
+        "postalCodeFormat": "codigo postal",
+        "primaryTimeZone": "Europe local time zone",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "pt-PT",
+        "cldrLocale": "pt_PT",
+        "metricVsImperial": "Metric-first"
+      },
+      "visualIdentity": {
+        "countryId": "portugal",
+        "outlineLabel": "Portugal outline",
+        "mapLabel": "Portugal in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Portugal flag",
+        "heroAccentPrimary": "15 118 110",
+        "heroAccentSecondary": "37 99 235",
+        "heroAccentTertiary": "245 158 11"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "NIF and NIPC",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "IVA and payments",
+          "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Portugal registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /portugal/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Space or dot grouping rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Portuguese examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "Registo Comercial",
+          "text": "Official business registry or company lookup remains the source of truth for Portugal.",
+          "status": "official boundary"
+        },
+        {
+          "title": "IVA",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "GDPR / CNPD",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "NIF, NISS, Cartao de Cidadao, NIPC, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "IBAN, SEPA, SWIFT, Multibanco reference, VIES",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "pt-PT / pt_PT; date DD/MM/YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "EUR amounts use Comma (,) and Space or dot grouping.",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "NIF, NIPC, codigo postal, phone, address, and IBAN need local labels.",
+          "status": "available"
+        }
+      ],
+      "routes": [
+        {
+          "title": "Portuguese NIF Validator",
+          "href": "/en/portugal/portugal-nif-validator/",
+          "text": "Validate NIF shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Portuguese NIPC Validator",
+          "href": "/en/portugal/portugal-nipc-validator/",
+          "text": "Inspect NIPC structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Portuguese VAT ID / PT Prefix Validator",
+          "href": "/en/portugal/portugal-vat-id-validator/",
+          "text": "Normalize PT VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+        },
+        {
+          "title": "Portuguese EORI / Customs Identifier Helper",
+          "href": "/en/portugal/portugal-eori-validator/",
+          "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+        },
+        {
+          "title": "Portuguese NISS Helper",
+          "href": "/en/portugal/portugal-niss-social-insurance-helper/",
+          "text": "Split NISS evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Portuguese Company Onboarding Auditor",
+          "href": "/en/portugal/portugal-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for NIPC, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Portuguese Registo Comercial Readiness Helper",
+          "href": "/en/portugal/portugal-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated Registo Comercial lookup or company registry workflow."
+        },
+        {
+          "title": "Portuguese ID Card Format Helper",
+          "href": "/en/portugal/portugal-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Portuguese Passport Number Helper",
+          "href": "/en/portugal/portugal-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Portuguese MRZ / Passport Parser",
+          "href": "/en/portugal/portugal-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Portugal IBAN Validator",
+          "href": "/en/portugal/portugal-iban-validator/",
+          "text": "Validate PT IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+        },
+        {
+          "title": "Portugal IBAN Generator",
+          "href": "/en/portugal/portugal-iban-generator/",
+          "text": "Generate PT IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+        },
+        {
+          "title": "Portuguese Domestic Bank Account Inspector",
+          "href": "/en/portugal/portugal-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+        },
+        {
+          "title": "Portuguese BIC / SWIFT Inspector",
+          "href": "/en/portugal/portugal-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Portugal banking integrations."
+        },
+        {
+          "title": "Portuguese SEPA Transfer Helper",
+          "href": "/en/portugal/portugal-sepa-transfer-helper/",
+          "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+        },
+        {
+          "title": "Portuguese SEPA Direct Debit Mandate Helper",
+          "href": "/en/portugal/portugal-sepa-direct-debit-mandate-helper/",
+          "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+        },
+        {
+          "title": "Portuguese Multibanco Reference Helper",
+          "href": "/en/portugal/portugal-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Portuguese Remittance Text Builder",
+          "href": "/en/portugal/portugal-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Portuguese Payment Reconciliation Helper",
+          "href": "/en/portugal/portugal-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Portuguese Bank Statement Parser",
+          "href": "/en/portugal/portugal-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Portuguese Masked IBAN Formatter",
+          "href": "/en/portugal/portugal-masked-iban-formatter/",
+          "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+        },
+        {
+          "title": "Portuguese EUR Decimal Currency Formatter",
+          "href": "/en/portugal/portugal-currency-decimal-formatter/",
+          "text": "Normalize EUR amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Portuguese VAT Rate Sanity Helper",
+          "href": "/en/portugal/portugal-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Portuguese VAT Return Field Helper",
+          "href": "/en/portugal/portugal-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Portuguese Invoice Number Helper",
+          "href": "/en/portugal/portugal-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Portuguese SAF-T / e-Fatura Readiness Checker",
+          "href": "/en/portugal/portugal-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Portuguese Tax Authority Handoff Helper",
+          "href": "/en/portugal/portugal-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Portuguese Accounting Audit Trail Checklist Helper",
+          "href": "/en/portugal/portugal-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Portuguese Postal Code Validator",
+          "href": "/en/portugal/portugal-postal-code-validator/",
+          "text": "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Portuguese Address Normalizer",
+          "href": "/en/portugal/portugal-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Portuguese Address Transliteration Normalizer",
+          "href": "/en/portugal/portugal-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Portuguese Region / Province Code Mapper",
+          "href": "/en/portugal/portugal-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Portuguese Municipality Code Inspector",
+          "href": "/en/portugal/portugal-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Portuguese Phone Number Validator",
+          "href": "/en/portugal/portugal-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Portuguese Phone E.164 Formatter",
+          "href": "/en/portugal/portugal-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Portuguese Date Locale Formatter",
+          "href": "/en/portugal/portugal-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Portuguese CSV Locale Normalizer",
+          "href": "/en/portugal/portugal-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Portugal decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Portuguese Slug Normalizer",
+          "href": "/en/portugal/portugal-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Portuguese Document OCR Fixer",
+          "href": "/en/portugal/portugal-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Portuguese GDPR / CNPD Redaction Helper",
+          "href": "/en/portugal/portugal-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Portuguese PII Masker",
+          "href": "/en/portugal/portugal-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Portuguese Personal Data Fixture Helper",
+          "href": "/en/portugal/portugal-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Portuguese Driving Licence Format Helper",
+          "href": "/en/portugal/portugal-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Portuguese Residence Permit Format Helper",
+          "href": "/en/portugal/portugal-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Portuguese Health Card Format Helper",
+          "href": "/en/portugal/portugal-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Portuguese Vehicle Plate Inspector",
+          "href": "/en/portugal/portugal-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Portuguese VIN Validator",
+          "href": "/en/portugal/portugal-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Portuguese Vehicle Data Redaction Helper",
+          "href": "/en/portugal/portugal-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Portuguese Customs Declaration Helper",
+          "href": "/en/portugal/portugal-customs-declaration-helper/",
+          "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Portuguese Postal Tracking Helper",
+          "href": "/en/portugal/portugal-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Portuguese Data Quality Workbench",
+          "href": "/en/portugal/portugal-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Portuguese JSON Fixture Helper",
+          "href": "/en/portugal/portugal-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Portuguese Regex Pack Helper",
+          "href": "/en/portugal/portugal-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Portuguese API Payload Auditor",
+          "href": "/en/portugal/portugal-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Portuguese Form Field Auditor",
+          "href": "/en/portugal/portugal-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Portuguese Locale Number Parser",
+          "href": "/en/portugal/portugal-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Portugal."
+        },
+        {
+          "title": "Portuguese Calendar Week Helper",
+          "href": "/en/portugal/portugal-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Portuguese Company Suffix Normalizer",
+          "href": "/en/portugal/portugal-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Portuguese Procurement Identifier Helper",
+          "href": "/en/portugal/portugal-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Portuguese Locale Copy Checker",
+          "href": "/en/portugal/portugal-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Portuguese Support Ticket Scrubber",
+          "href": "/en/portugal/portugal-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Portuguese Integration Smoke Test Builder",
+          "href": "/en/portugal/portugal-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
+    "romania": {
+      "flag": "🇷🇴",
+      "name": "Romania",
+      "badge": "Premium Romania developer suite",
+      "description": "Developer intelligence and browser-only workbenches for romanian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Romania",
+        "population": "approximately 19.0M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Bucharest",
+        "continent": "Europe",
+        "region": "Southeastern Europe / European Union",
+        "languages": "Romanian",
+        "currency": "Romanian leu",
+        "currencyCode": "RON",
+        "callingCode": "+40",
+        "internetTld": ".ro",
+        "drivingSide": "Right",
+        "iso2": "RO",
+        "iso3": "ROU",
+        "isoNumeric": "642",
+        "locale": "ro-RO",
+        "icuLocale": "ro_RO",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot or space grouping",
+        "addressFormat": "Street, number, postal code, locality, Romania",
+        "postalCodeFormat": "cod postal",
+        "primaryTimeZone": "Europe local time zone",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "ro-RO",
+        "cldrLocale": "ro_RO",
+        "metricVsImperial": "Metric-first"
+      },
+      "visualIdentity": {
+        "countryId": "romania",
+        "outlineLabel": "Romania outline",
+        "mapLabel": "Romania in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Romania flag",
+        "heroAccentPrimary": "15 118 110",
+        "heroAccentSecondary": "37 99 235",
+        "heroAccentTertiary": "245 158 11"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "CNP and CUI / CIF",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "TVA and payments",
+          "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Romania registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /romania/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Dot or space grouping rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Romanian examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "ONRC",
+          "text": "Official business registry or company lookup remains the source of truth for Romania.",
+          "status": "official boundary"
+        },
+        {
+          "title": "TVA",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "GDPR / ANSPDCP",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "CNP, CUI, CIF, ONRC, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "IBAN, SWIFT, ANAF handoff, e-Factura handoff, VIES",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "ro-RO / ro_RO; date DD.MM.YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "RON amounts use Comma (,) and Dot or space grouping.",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "CNP, CUI / CIF, cod postal, phone, address, and IBAN need local labels.",
+          "status": "available"
+        }
+      ],
+      "routes": [
+        {
+          "title": "Romanian CNP Validator",
+          "href": "/en/romania/romania-cnp-validator/",
+          "text": "Validate CNP shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Romanian CUI / CIF Validator",
+          "href": "/en/romania/romania-cui-cif-validator/",
+          "text": "Inspect CUI / CIF structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Romanian VAT ID / RO Prefix Validator",
+          "href": "/en/romania/romania-vat-id-validator/",
+          "text": "Normalize RO VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+        },
+        {
+          "title": "Romanian EORI / Customs Identifier Helper",
+          "href": "/en/romania/romania-eori-validator/",
+          "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+        },
+        {
+          "title": "Romanian CNP Helper",
+          "href": "/en/romania/romania-cnp-social-insurance-helper/",
+          "text": "Split CNP evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Romanian Company Onboarding Auditor",
+          "href": "/en/romania/romania-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for CUI / CIF, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Romanian ONRC Readiness Helper",
+          "href": "/en/romania/romania-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated ONRC lookup or company registry workflow."
+        },
+        {
+          "title": "Romanian ID Card Format Helper",
+          "href": "/en/romania/romania-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Romanian Passport Number Helper",
+          "href": "/en/romania/romania-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Romanian MRZ / Passport Parser",
+          "href": "/en/romania/romania-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Romania IBAN Validator",
+          "href": "/en/romania/romania-iban-validator/",
+          "text": "Validate RO IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+        },
+        {
+          "title": "Romania IBAN Generator",
+          "href": "/en/romania/romania-iban-generator/",
+          "text": "Generate RO IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+        },
+        {
+          "title": "Romanian Domestic Bank Account Inspector",
+          "href": "/en/romania/romania-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+        },
+        {
+          "title": "Romanian BIC / SWIFT Inspector",
+          "href": "/en/romania/romania-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Romania banking integrations."
+        },
+        {
+          "title": "Romanian SEPA Transfer Helper",
+          "href": "/en/romania/romania-sepa-transfer-helper/",
+          "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+        },
+        {
+          "title": "Romanian SEPA Direct Debit Mandate Helper",
+          "href": "/en/romania/romania-sepa-direct-debit-mandate-helper/",
+          "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+        },
+        {
+          "title": "Romanian treasury / SEPA handoff Reference Helper",
+          "href": "/en/romania/romania-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Romanian Remittance Text Builder",
+          "href": "/en/romania/romania-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Romanian Payment Reconciliation Helper",
+          "href": "/en/romania/romania-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Romanian Bank Statement Parser",
+          "href": "/en/romania/romania-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Romanian Masked IBAN Formatter",
+          "href": "/en/romania/romania-masked-iban-formatter/",
+          "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+        },
+        {
+          "title": "Romanian RON Decimal Currency Formatter",
+          "href": "/en/romania/romania-currency-decimal-formatter/",
+          "text": "Normalize RON amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Romanian VAT Rate Sanity Helper",
+          "href": "/en/romania/romania-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Romanian VAT Return Field Helper",
+          "href": "/en/romania/romania-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Romanian Invoice Number Helper",
+          "href": "/en/romania/romania-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Romanian RO e-Factura / ANAF Readiness Checker",
+          "href": "/en/romania/romania-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Romanian Tax Authority Handoff Helper",
+          "href": "/en/romania/romania-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Romanian Accounting Audit Trail Checklist Helper",
+          "href": "/en/romania/romania-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Romanian Postal Code Validator",
+          "href": "/en/romania/romania-postal-code-validator/",
+          "text": "Validate cod postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Romanian Address Normalizer",
+          "href": "/en/romania/romania-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Romanian Address Transliteration Normalizer",
+          "href": "/en/romania/romania-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Romanian Region / Province Code Mapper",
+          "href": "/en/romania/romania-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Romanian Municipality Code Inspector",
+          "href": "/en/romania/romania-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Romanian Phone Number Validator",
+          "href": "/en/romania/romania-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Romanian Phone E.164 Formatter",
+          "href": "/en/romania/romania-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Romanian Date Locale Formatter",
+          "href": "/en/romania/romania-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Romanian CSV Locale Normalizer",
+          "href": "/en/romania/romania-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Romania decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Romanian Slug Normalizer",
+          "href": "/en/romania/romania-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Romanian Document OCR Fixer",
+          "href": "/en/romania/romania-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Romanian GDPR / ANSPDCP Redaction Helper",
+          "href": "/en/romania/romania-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Romanian PII Masker",
+          "href": "/en/romania/romania-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Romanian Personal Data Fixture Helper",
+          "href": "/en/romania/romania-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Romanian Driving Licence Format Helper",
+          "href": "/en/romania/romania-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Romanian Residence Permit Format Helper",
+          "href": "/en/romania/romania-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Romanian Health Card Format Helper",
+          "href": "/en/romania/romania-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Romanian Vehicle Plate Inspector",
+          "href": "/en/romania/romania-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Romanian VIN Validator",
+          "href": "/en/romania/romania-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Romanian Vehicle Data Redaction Helper",
+          "href": "/en/romania/romania-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Romanian Customs Declaration Helper",
+          "href": "/en/romania/romania-customs-declaration-helper/",
+          "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Romanian Postal Tracking Helper",
+          "href": "/en/romania/romania-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Romanian Data Quality Workbench",
+          "href": "/en/romania/romania-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Romanian JSON Fixture Helper",
+          "href": "/en/romania/romania-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Romanian Regex Pack Helper",
+          "href": "/en/romania/romania-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Romanian API Payload Auditor",
+          "href": "/en/romania/romania-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Romanian Form Field Auditor",
+          "href": "/en/romania/romania-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Romanian Locale Number Parser",
+          "href": "/en/romania/romania-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Romania."
+        },
+        {
+          "title": "Romanian Calendar Week Helper",
+          "href": "/en/romania/romania-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Romanian Company Suffix Normalizer",
+          "href": "/en/romania/romania-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Romanian Procurement Identifier Helper",
+          "href": "/en/romania/romania-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Romanian Locale Copy Checker",
+          "href": "/en/romania/romania-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Romanian Support Ticket Scrubber",
+          "href": "/en/romania/romania-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Romanian Integration Smoke Test Builder",
+          "href": "/en/romania/romania-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
     "spain": {
       "flag": "🇪🇸",
       "name": "Spain",
-      "badge": "Architecture reuse country hub",
-      "description": "Developer intelligence for Spanish identifiers, locale conventions, EU payments, banking context, government systems, and implementation pitfalls.",
+      "badge": "Premium Spain developer suite",
+      "description": "Developer intelligence and browser-only workbenches for Spanish identifiers, tax, e-invoicing, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
       "metadata": {
         "nativeName": "España",
         "population": "approximately 49.6M",
@@ -9432,15 +15601,22 @@
         }
       ],
       "commonMistakes": [
-        "DNI, NIE, NIF, and legacy CIF are not interchangeable terms.",
-        "Formatting validation is not identity verification.",
-        "VIES status lookup is different from local syntax validation.",
-        "Mainland Spain and the Canary Islands do not always share the same local time.",
-        "Spain has multiple co-official languages in relevant autonomous communities.",
-        "Preserve accents and use locale-aware collation for names and addresses.",
-        "Postal code is not the same as province or administrative validation.",
-        "IBAN checksum validation does not prove account ownership.",
-        "Do not imply Bizum payment initiation or bank access from an informational page."
+        {
+          "title": "Treating NIF syntax as identity proof",
+          "text": "A valid checksum does not prove the person, company, or tax status exists."
+        },
+        {
+          "title": "Losing CCC slices inside IBAN",
+          "text": "Spanish IBANs still contain bank, branch, check digits, and account slices useful for debugging."
+        },
+        {
+          "title": "Using raw samples as labels",
+          "text": "Long CSV, JSON, IBAN, and invoice payloads belong inside inputs, not selector labels."
+        },
+        {
+          "title": "Mixing decimal conventions",
+          "text": "Spanish business files often use comma decimals and dot grouping; API payloads may require normalized numeric values."
+        }
       ],
       "bankingOverview": [
         {
@@ -9513,66 +15689,16 @@
       ],
       "localizationNotes": [
         {
-          "name": "Plural rules",
-          "description": "Spanish pluralization should use locale-aware message formatting.",
-          "tags": [
-            "locale"
-          ]
+          "title": "Dates",
+          "text": "Use DD/MM/YYYY for display and ISO dates for API/storage handoff."
         },
         {
-          "name": "Week starts",
-          "description": "Most Spanish user interfaces expect Monday as the first day of week.",
-          "tags": [
-            "locale",
-            "date"
-          ]
+          "title": "Numbers",
+          "text": "Use comma decimals and dot thousands for Spanish display, but normalize for APIs when required."
         },
         {
-          "name": "Calendar",
-          "description": "Gregorian calendar is the ordinary civil calendar.",
-          "tags": [
-            "locale",
-            "date"
-          ]
-        },
-        {
-          "name": "Sorting",
-          "description": "Use locale-aware collation and preserve accents such as á, é, í, ó, ú, ü, and ñ.",
-          "tags": [
-            "locale",
-            "developer"
-          ]
-        },
-        {
-          "name": "Regional languages",
-          "description": "Catalan/Valencian, Galician, Basque, and Aranese may be co-official in relevant regions.",
-          "tags": [
-            "locale"
-          ]
-        },
-        {
-          "name": "Unicode",
-          "description": "Use UTF-8 and preserve accents and ordinal markers in names and addresses.",
-          "tags": [
-            "locale",
-            "developer"
-          ]
-        },
-        {
-          "name": "ICU",
-          "description": "ICU locale commonly appears as es_ES.",
-          "tags": [
-            "locale",
-            "developer"
-          ]
-        },
-        {
-          "name": "Timezone",
-          "description": "Use Europe/Madrid for mainland and Balearic contexts; Canary Islands need a separate timezone choice.",
-          "tags": [
-            "time",
-            "developer"
-          ]
+          "title": "Languages",
+          "text": "Spanish is primary; Catalan/Valencian, Galician, Basque, and Aranese can appear in regional forms."
         }
       ],
       "ecosystem": [
@@ -9641,22 +15767,32 @@
         }
       ],
       "highlights": [
-        "Spain commonly uses the es-ES locale for Spanish display conventions.",
-        "Dates are commonly written as DD/MM/YYYY and times use a 24-hour clock.",
-        "EUR uses comma decimals and dot thousands separators in Spanish display.",
-        "DNI, NIE, NIF, and legacy CIF have different meanings and should not be conflated.",
-        "Spanish postal codes use five digits, but postal syntax is not address verification.",
-        "Spain participates in SEPA and uses IBAN for modern bank account exchange.",
-        "Bizum is important in consumer payment UX but no Bizum tool is implemented yet.",
-        "Mainland Spain and the Canary Islands differ in local time.",
-        "Regional co-official languages can affect labels, names, sorting, and user expectations."
+        {
+          "title": "Spanish identity and tax IDs",
+          "text": "DNI, NIE, NIF, legacy CIF, ES VAT, EORI, and social-security snippets are normalized with local evidence slices."
+        },
+        {
+          "title": "Payments and banking",
+          "text": "Spanish IBAN, CCC, BIC, SEPA, Bizum, remittance, reconciliation, and statement snippets stay browser-only."
+        },
+        {
+          "title": "Developer QA surfaces",
+          "text": "CSV, JSON, API payload, form, OCR, privacy, vehicle, and postal workflows expose field breakdowns for debugging."
+        }
       ],
       "developerNotes": [
-        "Use es-ES formatting for user-facing currency, date, time, and number display unless a regional locale is explicitly selected.",
-        "Store normalized identifiers separately from display masks when future validator specs exist.",
-        "Treat DNI, NIE, NIF, VAT, phone, postal code, and IBAN as separate workflows.",
-        "Keep VIES business-status lookup separate from local syntax checks.",
-        "Confirm official references before deep-linking regulatory, tax, identity, postal, or banking documentation."
+        {
+          "title": "Offline boundary",
+          "text": "The suite validates structure and local evidence only; official status stays with AEAT, VIES, TGSS, DGT, Correos, banks, or payment providers."
+        },
+        {
+          "title": "Locale shape",
+          "text": "Spanish UI data commonly combines DD/MM/YYYY dates, comma decimals, dot thousands, EUR, five-digit postal codes, and +34 phone numbers."
+        },
+        {
+          "title": "Debug-first output",
+          "text": "Every workbench includes a dedicated field breakdown so implementers can see the exact detected Spanish slices."
+        }
       ],
       "developerExamples": [
         {
@@ -9781,6 +15917,24 @@
         }
       ],
       "availableWorkbenches": {},
+      "countryEcosystem": [
+        {
+          "title": "AEAT",
+          "text": "Tax agency boundary for VAT, Modelo filings, and tax status."
+        },
+        {
+          "title": "VIES",
+          "text": "EU VAT confirmation boundary for ES VAT identifiers."
+        },
+        {
+          "title": "Banco de Espana / SEPA",
+          "text": "Banking and payment context for IBAN, BIC, CCC, and transfer payloads."
+        },
+        {
+          "title": "DGT",
+          "text": "Official vehicle and driving-licence status remains outside offline validation."
+        }
+      ],
       "discovery": {
         "relatedResources": {
           "identifiers": [
@@ -9868,6 +16022,482 @@
           }
         ]
       }
+    },
+    "sweden": {
+      "flag": "🇸🇪",
+      "name": "Sweden",
+      "badge": "Premium Sweden developer suite",
+      "description": "Developer intelligence and browser-only workbenches for swedish identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Sverige",
+        "population": "approximately 10.7M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Stockholm",
+        "continent": "Europe",
+        "region": "Northern Europe / European Union",
+        "languages": "Swedish",
+        "currency": "Swedish krona",
+        "currencyCode": "SEK",
+        "callingCode": "+46",
+        "internetTld": ".se",
+        "drivingSide": "Right",
+        "iso2": "SE",
+        "iso3": "SWE",
+        "isoNumeric": "752",
+        "locale": "sv-SE",
+        "icuLocale": "sv_SE",
+        "dateFormat": "YYYY-MM-DD",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Space grouping",
+        "addressFormat": "Street, number, postal code, locality, Sweden",
+        "postalCodeFormat": "postnummer",
+        "primaryTimeZone": "Europe local time zone",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "112",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "sv-SE",
+        "cldrLocale": "sv_SE",
+        "metricVsImperial": "Metric-first"
+      },
+      "visualIdentity": {
+        "countryId": "sweden",
+        "outlineLabel": "Sweden outline",
+        "mapLabel": "Sweden in the world",
+        "continentBadge": "Europe",
+        "flagLabel": "Sweden flag",
+        "heroAccentPrimary": "15 118 110",
+        "heroAccentSecondary": "37 99 235",
+        "heroAccentTertiary": "245 158 11"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "Personnummer and Organisationsnummer",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "Moms and payments",
+          "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Sweden registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /sweden/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Space grouping rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Swedish examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "Bolagsverket",
+          "text": "Official business registry or company lookup remains the source of truth for Sweden.",
+          "status": "official boundary"
+        },
+        {
+          "title": "Moms",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "GDPR / IMY",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "Personnummer, Samordningsnummer, Organisationsnummer, Momsregistreringsnummer, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "IBAN, Bankgiro, PlusGiro, SWIFT, VIES",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "sv-SE / sv_SE; date YYYY-MM-DD.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "SEK amounts use Comma (,) and Space grouping.",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "Personnummer, Organisationsnummer, postnummer, phone, address, and IBAN need local labels.",
+          "status": "available"
+        }
+      ],
+      "routes": [
+        {
+          "title": "Swedish Personnummer Validator",
+          "href": "/en/sweden/sweden-personnummer-validator/",
+          "text": "Validate Personnummer shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Swedish Organisationsnummer Validator",
+          "href": "/en/sweden/sweden-organisationsnummer-validator/",
+          "text": "Inspect Organisationsnummer structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Swedish VAT ID / SE Prefix Validator",
+          "href": "/en/sweden/sweden-vat-id-validator/",
+          "text": "Normalize SE VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+        },
+        {
+          "title": "Swedish EORI / Customs Identifier Helper",
+          "href": "/en/sweden/sweden-eori-validator/",
+          "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+        },
+        {
+          "title": "Swedish Samordningsnummer Helper",
+          "href": "/en/sweden/sweden-samordningsnummer-social-insurance-helper/",
+          "text": "Split Samordningsnummer evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Swedish Company Onboarding Auditor",
+          "href": "/en/sweden/sweden-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for Organisationsnummer, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Swedish Bolagsverket Readiness Helper",
+          "href": "/en/sweden/sweden-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated Bolagsverket lookup or company registry workflow."
+        },
+        {
+          "title": "Swedish ID Card Format Helper",
+          "href": "/en/sweden/sweden-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Swedish Passport Number Helper",
+          "href": "/en/sweden/sweden-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Swedish MRZ / Passport Parser",
+          "href": "/en/sweden/sweden-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Sweden IBAN Validator",
+          "href": "/en/sweden/sweden-iban-validator/",
+          "text": "Validate SE IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+        },
+        {
+          "title": "Sweden IBAN Generator",
+          "href": "/en/sweden/sweden-iban-generator/",
+          "text": "Generate SE IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+        },
+        {
+          "title": "Swedish Domestic Bank Account Inspector",
+          "href": "/en/sweden/sweden-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+        },
+        {
+          "title": "Swedish BIC / SWIFT Inspector",
+          "href": "/en/sweden/sweden-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Sweden banking integrations."
+        },
+        {
+          "title": "Swedish SEPA Transfer Helper",
+          "href": "/en/sweden/sweden-sepa-transfer-helper/",
+          "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+        },
+        {
+          "title": "Swedish SEPA Direct Debit Mandate Helper",
+          "href": "/en/sweden/sweden-sepa-direct-debit-mandate-helper/",
+          "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+        },
+        {
+          "title": "Swedish Bankgiro / OCR Reference Helper",
+          "href": "/en/sweden/sweden-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Swedish Remittance Text Builder",
+          "href": "/en/sweden/sweden-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Swedish Payment Reconciliation Helper",
+          "href": "/en/sweden/sweden-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Swedish Bank Statement Parser",
+          "href": "/en/sweden/sweden-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Swedish Masked IBAN Formatter",
+          "href": "/en/sweden/sweden-masked-iban-formatter/",
+          "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+        },
+        {
+          "title": "Swedish SEK Decimal Currency Formatter",
+          "href": "/en/sweden/sweden-currency-decimal-formatter/",
+          "text": "Normalize SEK amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Swedish VAT Rate Sanity Helper",
+          "href": "/en/sweden/sweden-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Swedish VAT Return Field Helper",
+          "href": "/en/sweden/sweden-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Swedish Invoice Number Helper",
+          "href": "/en/sweden/sweden-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Swedish Peppol / Svefaktura Readiness Checker",
+          "href": "/en/sweden/sweden-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Swedish Tax Authority Handoff Helper",
+          "href": "/en/sweden/sweden-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Swedish Accounting Audit Trail Checklist Helper",
+          "href": "/en/sweden/sweden-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Swedish Postal Code Validator",
+          "href": "/en/sweden/sweden-postal-code-validator/",
+          "text": "Validate postnummer shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Swedish Address Normalizer",
+          "href": "/en/sweden/sweden-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Swedish Address Transliteration Normalizer",
+          "href": "/en/sweden/sweden-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Swedish Region / Province Code Mapper",
+          "href": "/en/sweden/sweden-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Swedish Municipality Code Inspector",
+          "href": "/en/sweden/sweden-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Swedish Phone Number Validator",
+          "href": "/en/sweden/sweden-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Swedish Phone E.164 Formatter",
+          "href": "/en/sweden/sweden-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Swedish Date Locale Formatter",
+          "href": "/en/sweden/sweden-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Swedish CSV Locale Normalizer",
+          "href": "/en/sweden/sweden-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Sweden decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Swedish Slug Normalizer",
+          "href": "/en/sweden/sweden-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Swedish Document OCR Fixer",
+          "href": "/en/sweden/sweden-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Swedish GDPR / IMY Redaction Helper",
+          "href": "/en/sweden/sweden-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Swedish PII Masker",
+          "href": "/en/sweden/sweden-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Swedish Personal Data Fixture Helper",
+          "href": "/en/sweden/sweden-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Swedish Driving Licence Format Helper",
+          "href": "/en/sweden/sweden-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Swedish Residence Permit Format Helper",
+          "href": "/en/sweden/sweden-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Swedish Health Card Format Helper",
+          "href": "/en/sweden/sweden-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Swedish Vehicle Plate Inspector",
+          "href": "/en/sweden/sweden-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Swedish VIN Validator",
+          "href": "/en/sweden/sweden-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Swedish Vehicle Data Redaction Helper",
+          "href": "/en/sweden/sweden-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Swedish Customs Declaration Helper",
+          "href": "/en/sweden/sweden-customs-declaration-helper/",
+          "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Swedish Postal Tracking Helper",
+          "href": "/en/sweden/sweden-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Swedish Data Quality Workbench",
+          "href": "/en/sweden/sweden-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Swedish JSON Fixture Helper",
+          "href": "/en/sweden/sweden-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Swedish Regex Pack Helper",
+          "href": "/en/sweden/sweden-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Swedish API Payload Auditor",
+          "href": "/en/sweden/sweden-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Swedish Form Field Auditor",
+          "href": "/en/sweden/sweden-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Swedish Locale Number Parser",
+          "href": "/en/sweden/sweden-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Sweden."
+        },
+        {
+          "title": "Swedish Calendar Week Helper",
+          "href": "/en/sweden/sweden-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Swedish Company Suffix Normalizer",
+          "href": "/en/sweden/sweden-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Swedish Procurement Identifier Helper",
+          "href": "/en/sweden/sweden-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Swedish Locale Copy Checker",
+          "href": "/en/sweden/sweden-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Swedish Support Ticket Scrubber",
+          "href": "/en/sweden/sweden-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Swedish Integration Smoke Test Builder",
+          "href": "/en/sweden/sweden-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
     },
     "switzerland": {
       "flag": "🇨🇭",
@@ -10293,6 +16923,7 @@
       "id": "austria",
       "flag": "🇦🇹",
       "name": "Austria",
+      "nativeName": "Osterreich",
       "iso2": "AT",
       "iso3": "AUT",
       "continent": "Europe",
@@ -10300,65 +16931,214 @@
       "language": "German",
       "currency": "EUR",
       "currencyName": "Euro",
-      "status": "planned",
-      "summary": "Future hub for Austrian localization, identity, tax, and EU banking conventions.",
+      "status": "available",
+      "summary": "Premium Austria developer hub for Steuernummer, UID, SVNR, Firmenbuchnummer, postal code, phone, IBAN, SEPA, SWIFT, EPS handoff, VIES, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
       "identifiers": [
+        "Steuernummer",
         "UID",
-        "SVNR"
+        "SVNR",
+        "Firmenbuchnummer",
+        "postal code",
+        "phone"
       ],
       "payments": [
         "IBAN",
-        "SEPA"
+        "SEPA",
+        "SWIFT",
+        "EPS handoff",
+        "VIES"
       ],
       "features": [
+        "payments",
         "identity",
         "government",
         "banking"
       ],
-      "availableWorkbenches": [],
-      "plannedWorkbenches": [
-        "Austrian VAT ID Notes"
+      "availableWorkbenches": [
+        "Austrian SVNR Validator",
+        "Austrian Firmenbuchnummer Validator",
+        "Austrian VAT ID / AT Prefix Validator",
+        "Austrian EORI / Customs Identifier Helper",
+        "Austrian Sozialversicherungsnummer Helper",
+        "Austrian Company Onboarding Auditor",
+        "Austrian Firmenbuch Readiness Helper",
+        "Austrian ID Card Format Helper",
+        "Austrian Passport Number Helper",
+        "Austrian MRZ / Passport Parser",
+        "Austria IBAN Validator",
+        "Austria IBAN Generator",
+        "Austrian Domestic Bank Account Inspector",
+        "Austrian BIC / SWIFT Inspector",
+        "Austrian SEPA Transfer Helper",
+        "Austrian SEPA Direct Debit Mandate Helper",
+        "Austrian EPS / SEPA Reference Helper",
+        "Austrian Remittance Text Builder",
+        "Austrian Payment Reconciliation Helper",
+        "Austrian Bank Statement Parser",
+        "Austrian Masked IBAN Formatter",
+        "Austrian EUR Decimal Currency Formatter",
+        "Austrian VAT Rate Sanity Helper",
+        "Austrian VAT Return Field Helper",
+        "Austrian Invoice Number Helper",
+        "Austrian E-Rechnung / ebInterface Readiness Checker",
+        "Austrian Tax Authority Handoff Helper",
+        "Austrian Accounting Audit Trail Checklist Helper",
+        "Austrian Postal Code Validator",
+        "Austrian Address Normalizer",
+        "Austrian Address Transliteration Normalizer",
+        "Austrian Region / Province Code Mapper",
+        "Austrian Municipality Code Inspector",
+        "Austrian Phone Number Validator",
+        "Austrian Phone E.164 Formatter",
+        "Austrian Date Locale Formatter",
+        "Austrian CSV Locale Normalizer",
+        "Austrian Slug Normalizer",
+        "Austrian Document OCR Fixer",
+        "Austrian GDPR / DSG Redaction Helper",
+        "Austrian PII Masker",
+        "Austrian Personal Data Fixture Helper",
+        "Austrian Driving Licence Format Helper",
+        "Austrian Residence Permit Format Helper",
+        "Austrian Health Card Format Helper",
+        "Austrian Vehicle Plate Inspector",
+        "Austrian VIN Validator",
+        "Austrian Vehicle Data Redaction Helper",
+        "Austrian Customs Declaration Helper",
+        "Austrian Postal Tracking Helper",
+        "Austrian Data Quality Workbench",
+        "Austrian JSON Fixture Helper",
+        "Austrian Regex Pack Helper",
+        "Austrian API Payload Auditor",
+        "Austrian Form Field Auditor",
+        "Austrian Locale Number Parser",
+        "Austrian Calendar Week Helper",
+        "Austrian Company Suffix Normalizer",
+        "Austrian Procurement Identifier Helper",
+        "Austrian Locale Copy Checker",
+        "Austrian Support Ticket Scrubber",
+        "Austrian Integration Smoke Test Builder"
       ],
-      "completion": 20,
+      "plannedWorkbenches": [
+        "Live Firmenbuch lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
       "coordinates": {
-        "x": 51,
-        "y": 37
+        "x": 50,
+        "y": 58
       }
     },
     {
       "id": "belgium",
       "flag": "🇧🇪",
       "name": "Belgium",
+      "nativeName": "Belgique / Belgie",
       "iso2": "BE",
       "iso3": "BEL",
       "continent": "Europe",
       "region": "Europe",
-      "language": "Dutch / French / German",
+      "language": "Dutch, French, and German",
       "currency": "EUR",
       "currencyName": "Euro",
-      "status": "planned",
-      "summary": "Future hub for Belgian multilingual locale, identifiers, VAT, and EU payment context.",
+      "status": "available",
+      "summary": "Premium Belgium developer hub for National Register Number, BIS, KBO/BCE, VAT, postal code, phone, IBAN, SEPA, SWIFT, structured communication, VIES, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
       "identifiers": [
-        "national number",
-        "VAT"
+        "National Register Number",
+        "BIS",
+        "KBO/BCE",
+        "VAT",
+        "postal code",
+        "phone"
       ],
       "payments": [
         "IBAN",
-        "SEPA"
+        "SEPA",
+        "SWIFT",
+        "structured communication",
+        "VIES"
       ],
       "features": [
+        "payments",
         "identity",
         "government",
         "banking"
       ],
-      "availableWorkbenches": [],
-      "plannedWorkbenches": [
-        "Belgian National Number Notes"
+      "availableWorkbenches": [
+        "Belgian RRN / NISS Validator",
+        "Belgian KBO / BCE Validator",
+        "Belgian VAT ID / BE Prefix Validator",
+        "Belgian EORI / Customs Identifier Helper",
+        "Belgian BIS number Helper",
+        "Belgian Company Onboarding Auditor",
+        "Belgian KBO / BCE register Readiness Helper",
+        "Belgian ID Card Format Helper",
+        "Belgian Passport Number Helper",
+        "Belgian MRZ / Passport Parser",
+        "Belgium IBAN Validator",
+        "Belgium IBAN Generator",
+        "Belgian Domestic Bank Account Inspector",
+        "Belgian BIC / SWIFT Inspector",
+        "Belgian SEPA Transfer Helper",
+        "Belgian SEPA Direct Debit Mandate Helper",
+        "Belgian OGM structured communication Reference Helper",
+        "Belgian Remittance Text Builder",
+        "Belgian Payment Reconciliation Helper",
+        "Belgian Bank Statement Parser",
+        "Belgian Masked IBAN Formatter",
+        "Belgian EUR Decimal Currency Formatter",
+        "Belgian VAT Rate Sanity Helper",
+        "Belgian VAT Return Field Helper",
+        "Belgian Invoice Number Helper",
+        "Belgian Peppol / e-invoicing Readiness Checker",
+        "Belgian Tax Authority Handoff Helper",
+        "Belgian Accounting Audit Trail Checklist Helper",
+        "Belgian Postal Code Validator",
+        "Belgian Address Normalizer",
+        "Belgian Address Transliteration Normalizer",
+        "Belgian Region / Province Code Mapper",
+        "Belgian Municipality Code Inspector",
+        "Belgian Phone Number Validator",
+        "Belgian Phone E.164 Formatter",
+        "Belgian Date Locale Formatter",
+        "Belgian CSV Locale Normalizer",
+        "Belgian Slug Normalizer",
+        "Belgian Document OCR Fixer",
+        "Belgian GDPR / APD-GBA Redaction Helper",
+        "Belgian PII Masker",
+        "Belgian Personal Data Fixture Helper",
+        "Belgian Driving Licence Format Helper",
+        "Belgian Residence Permit Format Helper",
+        "Belgian Health Card Format Helper",
+        "Belgian Vehicle Plate Inspector",
+        "Belgian VIN Validator",
+        "Belgian Vehicle Data Redaction Helper",
+        "Belgian Customs Declaration Helper",
+        "Belgian Postal Tracking Helper",
+        "Belgian Data Quality Workbench",
+        "Belgian JSON Fixture Helper",
+        "Belgian Regex Pack Helper",
+        "Belgian API Payload Auditor",
+        "Belgian Form Field Auditor",
+        "Belgian Locale Number Parser",
+        "Belgian Calendar Week Helper",
+        "Belgian Company Suffix Normalizer",
+        "Belgian Procurement Identifier Helper",
+        "Belgian Locale Copy Checker",
+        "Belgian Support Ticket Scrubber",
+        "Belgian Integration Smoke Test Builder"
       ],
-      "completion": 20,
+      "plannedWorkbenches": [
+        "Live KBO / BCE register lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
       "coordinates": {
-        "x": 50,
-        "y": 35
+        "x": 47,
+        "y": 52
       }
     },
     {
@@ -10563,6 +17343,339 @@
       }
     },
     {
+      "id": "czechia",
+      "flag": "🇨🇿",
+      "name": "Czechia",
+      "nativeName": "Cesko",
+      "iso2": "CZ",
+      "iso3": "CZE",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Czech",
+      "currency": "CZK",
+      "currencyName": "Czech koruna",
+      "status": "available",
+      "summary": "Premium Czechia developer hub for Rodne cislo, ICO, DIC, Datova schranka, postal code, phone, IBAN, domestic account, SWIFT, variable symbol, VIES, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "Rodne cislo",
+        "ICO",
+        "DIC",
+        "Datova schranka",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "IBAN",
+        "domestic account",
+        "SWIFT",
+        "variable symbol",
+        "VIES"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Czech Rodne cislo Validator",
+        "Czech ICO Validator",
+        "Czech VAT ID / CZ Prefix Validator",
+        "Czech EORI / Customs Identifier Helper",
+        "Czech social insurance evidence Helper",
+        "Czech Company Onboarding Auditor",
+        "Czech Ares / business register Readiness Helper",
+        "Czech ID Card Format Helper",
+        "Czech Passport Number Helper",
+        "Czech MRZ / Passport Parser",
+        "Czechia IBAN Validator",
+        "Czechia IBAN Generator",
+        "Czech Domestic Bank Account Inspector",
+        "Czech BIC / SWIFT Inspector",
+        "Czech SEPA Transfer Helper",
+        "Czech SEPA Direct Debit Mandate Helper",
+        "Czech variable symbol Reference Helper",
+        "Czech Remittance Text Builder",
+        "Czech Payment Reconciliation Helper",
+        "Czech Bank Statement Parser",
+        "Czech Masked IBAN Formatter",
+        "Czech CZK Decimal Currency Formatter",
+        "Czech VAT Rate Sanity Helper",
+        "Czech VAT Return Field Helper",
+        "Czech Invoice Number Helper",
+        "Czech ISDOC / e-invoicing Readiness Checker",
+        "Czech Tax Authority Handoff Helper",
+        "Czech Accounting Audit Trail Checklist Helper",
+        "Czech Postal Code Validator",
+        "Czech Address Normalizer",
+        "Czech Address Transliteration Normalizer",
+        "Czech Region / Province Code Mapper",
+        "Czech Municipality Code Inspector",
+        "Czech Phone Number Validator",
+        "Czech Phone E.164 Formatter",
+        "Czech Date Locale Formatter",
+        "Czech CSV Locale Normalizer",
+        "Czech Slug Normalizer",
+        "Czech Document OCR Fixer",
+        "Czech GDPR / UOOU Redaction Helper",
+        "Czech PII Masker",
+        "Czech Personal Data Fixture Helper",
+        "Czech Driving Licence Format Helper",
+        "Czech Residence Permit Format Helper",
+        "Czech Health Card Format Helper",
+        "Czech Vehicle Plate Inspector",
+        "Czech VIN Validator",
+        "Czech Vehicle Data Redaction Helper",
+        "Czech Customs Declaration Helper",
+        "Czech Postal Tracking Helper",
+        "Czech Data Quality Workbench",
+        "Czech JSON Fixture Helper",
+        "Czech Regex Pack Helper",
+        "Czech API Payload Auditor",
+        "Czech Form Field Auditor",
+        "Czech Locale Number Parser",
+        "Czech Calendar Week Helper",
+        "Czech Company Suffix Normalizer",
+        "Czech Procurement Identifier Helper",
+        "Czech Locale Copy Checker",
+        "Czech Support Ticket Scrubber",
+        "Czech Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live Ares / business register lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 51,
+        "y": 55
+      }
+    },
+    {
+      "id": "denmark",
+      "flag": "🇩🇰",
+      "name": "Denmark",
+      "nativeName": "Danmark",
+      "iso2": "DK",
+      "iso3": "DNK",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Danish",
+      "currency": "DKK",
+      "currencyName": "Danish krone",
+      "status": "available",
+      "summary": "Premium Denmark developer hub for CPR, CVR, SE number, VAT, postal code, phone, IBAN, FI creditor reference, SWIFT, Betalingsservice handoff, VIES, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "CPR",
+        "CVR",
+        "SE number",
+        "VAT",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "IBAN",
+        "FI creditor reference",
+        "SWIFT",
+        "Betalingsservice handoff",
+        "VIES"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Danish CPR Validator",
+        "Danish CVR Validator",
+        "Danish VAT ID / DK Prefix Validator",
+        "Danish EORI / Customs Identifier Helper",
+        "Danish CPR Helper",
+        "Danish Company Onboarding Auditor",
+        "Danish CVR register Readiness Helper",
+        "Danish ID Card Format Helper",
+        "Danish Passport Number Helper",
+        "Danish MRZ / Passport Parser",
+        "Denmark IBAN Validator",
+        "Denmark IBAN Generator",
+        "Danish Domestic Bank Account Inspector",
+        "Danish BIC / SWIFT Inspector",
+        "Danish SEPA Transfer Helper",
+        "Danish SEPA Direct Debit Mandate Helper",
+        "Danish FI / Betalingsservice Reference Helper",
+        "Danish Remittance Text Builder",
+        "Danish Payment Reconciliation Helper",
+        "Danish Bank Statement Parser",
+        "Danish Masked IBAN Formatter",
+        "Danish DKK Decimal Currency Formatter",
+        "Danish VAT Rate Sanity Helper",
+        "Danish VAT Return Field Helper",
+        "Danish Invoice Number Helper",
+        "Danish NemHandel / Peppol Readiness Checker",
+        "Danish Tax Authority Handoff Helper",
+        "Danish Accounting Audit Trail Checklist Helper",
+        "Danish Postal Code Validator",
+        "Danish Address Normalizer",
+        "Danish Address Transliteration Normalizer",
+        "Danish Region / Province Code Mapper",
+        "Danish Municipality Code Inspector",
+        "Danish Phone Number Validator",
+        "Danish Phone E.164 Formatter",
+        "Danish Date Locale Formatter",
+        "Danish CSV Locale Normalizer",
+        "Danish Slug Normalizer",
+        "Danish Document OCR Fixer",
+        "Danish GDPR / Datatilsynet Redaction Helper",
+        "Danish PII Masker",
+        "Danish Personal Data Fixture Helper",
+        "Danish Driving Licence Format Helper",
+        "Danish Residence Permit Format Helper",
+        "Danish Health Card Format Helper",
+        "Danish Vehicle Plate Inspector",
+        "Danish VIN Validator",
+        "Danish Vehicle Data Redaction Helper",
+        "Danish Customs Declaration Helper",
+        "Danish Postal Tracking Helper",
+        "Danish Data Quality Workbench",
+        "Danish JSON Fixture Helper",
+        "Danish Regex Pack Helper",
+        "Danish API Payload Auditor",
+        "Danish Form Field Auditor",
+        "Danish Locale Number Parser",
+        "Danish Calendar Week Helper",
+        "Danish Company Suffix Normalizer",
+        "Danish Procurement Identifier Helper",
+        "Danish Locale Copy Checker",
+        "Danish Support Ticket Scrubber",
+        "Danish Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live CVR register lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 51,
+        "y": 45
+      }
+    },
+    {
+      "id": "finland",
+      "flag": "🇫🇮",
+      "name": "Finland",
+      "nativeName": "Suomi",
+      "iso2": "FI",
+      "iso3": "FIN",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Finnish and Swedish",
+      "currency": "EUR",
+      "currencyName": "Euro",
+      "status": "available",
+      "summary": "Premium Finland developer hub for HETU, Y-tunnus, VAT, OVT, postal code, phone, IBAN, Finnish reference number, SWIFT, SEPA, VIES, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "HETU",
+        "Y-tunnus",
+        "VAT",
+        "OVT",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "IBAN",
+        "Finnish reference number",
+        "SWIFT",
+        "SEPA",
+        "VIES"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Finnish HETU Validator",
+        "Finnish Y-tunnus Validator",
+        "Finnish VAT ID / FI Prefix Validator",
+        "Finnish EORI / Customs Identifier Helper",
+        "Finnish HETU Helper",
+        "Finnish Company Onboarding Auditor",
+        "Finnish YTJ / Trade Register Readiness Helper",
+        "Finnish ID Card Format Helper",
+        "Finnish Passport Number Helper",
+        "Finnish MRZ / Passport Parser",
+        "Finland IBAN Validator",
+        "Finland IBAN Generator",
+        "Finnish Domestic Bank Account Inspector",
+        "Finnish BIC / SWIFT Inspector",
+        "Finnish SEPA Transfer Helper",
+        "Finnish SEPA Direct Debit Mandate Helper",
+        "Finnish viitenumero Reference Helper",
+        "Finnish Remittance Text Builder",
+        "Finnish Payment Reconciliation Helper",
+        "Finnish Bank Statement Parser",
+        "Finnish Masked IBAN Formatter",
+        "Finnish EUR Decimal Currency Formatter",
+        "Finnish VAT Rate Sanity Helper",
+        "Finnish VAT Return Field Helper",
+        "Finnish Invoice Number Helper",
+        "Finnish Finvoice / Peppol Readiness Checker",
+        "Finnish Tax Authority Handoff Helper",
+        "Finnish Accounting Audit Trail Checklist Helper",
+        "Finnish Postal Code Validator",
+        "Finnish Address Normalizer",
+        "Finnish Address Transliteration Normalizer",
+        "Finnish Region / Province Code Mapper",
+        "Finnish Municipality Code Inspector",
+        "Finnish Phone Number Validator",
+        "Finnish Phone E.164 Formatter",
+        "Finnish Date Locale Formatter",
+        "Finnish CSV Locale Normalizer",
+        "Finnish Slug Normalizer",
+        "Finnish Document OCR Fixer",
+        "Finnish GDPR / Tietosuojavaltuutettu Redaction Helper",
+        "Finnish PII Masker",
+        "Finnish Personal Data Fixture Helper",
+        "Finnish Driving Licence Format Helper",
+        "Finnish Residence Permit Format Helper",
+        "Finnish Health Card Format Helper",
+        "Finnish Vehicle Plate Inspector",
+        "Finnish VIN Validator",
+        "Finnish Vehicle Data Redaction Helper",
+        "Finnish Customs Declaration Helper",
+        "Finnish Postal Tracking Helper",
+        "Finnish Data Quality Workbench",
+        "Finnish JSON Fixture Helper",
+        "Finnish Regex Pack Helper",
+        "Finnish API Payload Auditor",
+        "Finnish Form Field Auditor",
+        "Finnish Locale Number Parser",
+        "Finnish Calendar Week Helper",
+        "Finnish Company Suffix Normalizer",
+        "Finnish Procurement Identifier Helper",
+        "Finnish Locale Copy Checker",
+        "Finnish Support Ticket Scrubber",
+        "Finnish Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live YTJ / Trade Register lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 58,
+        "y": 32
+      }
+    },
+    {
       "id": "france",
       "flag": "🇫🇷",
       "name": "France",
@@ -10597,6 +17710,14 @@
         "RUM",
         "EUR",
         "Remittance"
+      ],
+      "searchHints": [
+        "SIREN",
+        "SIRET",
+        "TVA",
+        "RIB",
+        "RUM",
+        "NIR"
       ],
       "features": [
         "banking",
@@ -10721,6 +17842,14 @@
         "XRechnung",
         "ZUGFeRD"
       ],
+      "searchHints": [
+        "STEUER-ID",
+        "UST-ID",
+        "BLZ",
+        "IBAN",
+        "ELSTER",
+        "XRECHNUNG"
+      ],
       "features": [
         "payments",
         "identity",
@@ -10802,6 +17931,117 @@
       }
     },
     {
+      "id": "ireland",
+      "flag": "🇮🇪",
+      "name": "Ireland",
+      "nativeName": "Ireland / Eire",
+      "iso2": "IE",
+      "iso3": "IRL",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "English and Irish",
+      "currency": "EUR",
+      "currencyName": "Euro",
+      "status": "available",
+      "summary": "Premium Ireland developer hub for PPSN, CRO number, VAT, Eircode, postal address, phone, IBAN, SEPA, SWIFT, ROS handoff, VIES, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "PPSN",
+        "CRO number",
+        "VAT",
+        "Eircode",
+        "postal address",
+        "phone"
+      ],
+      "payments": [
+        "IBAN",
+        "SEPA",
+        "SWIFT",
+        "ROS handoff",
+        "VIES"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Irish PPSN Validator",
+        "Irish CRO number Validator",
+        "Irish VAT ID / IE Prefix Validator",
+        "Irish EORI / Customs Identifier Helper",
+        "Irish PPSN Helper",
+        "Irish Company Onboarding Auditor",
+        "Irish Companies Registration Office Readiness Helper",
+        "Irish ID Card Format Helper",
+        "Irish Passport Number Helper",
+        "Irish MRZ / Passport Parser",
+        "Ireland IBAN Validator",
+        "Ireland IBAN Generator",
+        "Irish Domestic Bank Account Inspector",
+        "Irish BIC / SWIFT Inspector",
+        "Irish SEPA Transfer Helper",
+        "Irish SEPA Direct Debit Mandate Helper",
+        "Irish SEPA / Direct Debit Reference Helper",
+        "Irish Remittance Text Builder",
+        "Irish Payment Reconciliation Helper",
+        "Irish Bank Statement Parser",
+        "Irish Masked IBAN Formatter",
+        "Irish EUR Decimal Currency Formatter",
+        "Irish VAT Rate Sanity Helper",
+        "Irish VAT Return Field Helper",
+        "Irish Invoice Number Helper",
+        "Irish Revenue e-invoicing readiness Readiness Checker",
+        "Irish Tax Authority Handoff Helper",
+        "Irish Accounting Audit Trail Checklist Helper",
+        "Irish Postal Code Validator",
+        "Irish Address Normalizer",
+        "Irish Address Transliteration Normalizer",
+        "Irish Region / Province Code Mapper",
+        "Irish Municipality Code Inspector",
+        "Irish Phone Number Validator",
+        "Irish Phone E.164 Formatter",
+        "Irish Date Locale Formatter",
+        "Irish CSV Locale Normalizer",
+        "Irish Slug Normalizer",
+        "Irish Document OCR Fixer",
+        "Irish GDPR / Data Protection Commission Redaction Helper",
+        "Irish PII Masker",
+        "Irish Personal Data Fixture Helper",
+        "Irish Driving Licence Format Helper",
+        "Irish Residence Permit Format Helper",
+        "Irish Health Card Format Helper",
+        "Irish Vehicle Plate Inspector",
+        "Irish VIN Validator",
+        "Irish Vehicle Data Redaction Helper",
+        "Irish Customs Declaration Helper",
+        "Irish Postal Tracking Helper",
+        "Irish Data Quality Workbench",
+        "Irish JSON Fixture Helper",
+        "Irish Regex Pack Helper",
+        "Irish API Payload Auditor",
+        "Irish Form Field Auditor",
+        "Irish Locale Number Parser",
+        "Irish Calendar Week Helper",
+        "Irish Company Suffix Normalizer",
+        "Irish Procurement Identifier Helper",
+        "Irish Locale Copy Checker",
+        "Irish Support Ticket Scrubber",
+        "Irish Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live Companies Registration Office lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 42,
+        "y": 49
+      }
+    },
+    {
       "id": "italy",
       "flag": "🇮🇹",
       "name": "Italy",
@@ -10812,26 +18052,107 @@
       "language": "Italian",
       "currency": "EUR",
       "currencyName": "Euro",
-      "status": "planned",
-      "summary": "Future hub for Italian tax identifiers, VAT, fiscal code, and EU banking notes.",
+      "status": "available",
+      "summary": "Premium Italy developer hub for codice fiscale, Partita IVA, e-invoicing, banking, locale, privacy, vehicles, and browser-only data-quality workflows.",
       "identifiers": [
         "Codice fiscale",
-        "Partita IVA"
+        "Partita IVA",
+        "Codice destinatario",
+        "PEC",
+        "REA",
+        "IBAN",
+        "CAP"
       ],
       "payments": [
         "IBAN",
-        "SEPA"
+        "SEPA",
+        "FatturaPA",
+        "pagoPA",
+        "Ri.Ba"
+      ],
+      "searchHints": [
+        "CODICE FISCALE",
+        "PARTITA IVA",
+        "PAGOPA",
+        "SDI",
+        "PEC",
+        "ABI/CAB"
       ],
       "features": [
+        "payments",
         "identity",
         "government",
         "banking"
       ],
-      "availableWorkbenches": [],
-      "plannedWorkbenches": [
-        "Codice Fiscale Validator"
+      "availableWorkbenches": [
+        "Italian Codice Fiscale Validator",
+        "Italian Partita IVA Validator",
+        "Italian VAT ID / IT Prefix Validator",
+        "Italian EORI / Customs Identifier Helper",
+        "Italian Codice Destinatario Helper",
+        "Italian PEC Address Helper",
+        "Italian REA Number Helper",
+        "Italian Registro Imprese Readiness Helper",
+        "Italian ATECO Code Inspector",
+        "Italian SPID / CIE Boundary Helper",
+        "Italian Company Onboarding Auditor",
+        "Italian IBAN Validator",
+        "Italian ABI / CAB Bank Code Inspector",
+        "Italian BIC / SWIFT Inspector",
+        "Italian SEPA Transfer Helper",
+        "Italian SEPA Direct Debit Mandate Helper",
+        "Italian Ri.Ba Payment Helper",
+        "Italian pagoPA Notice Helper",
+        "Italian Remittance Text Builder",
+        "Italian Payment Reconciliation Helper",
+        "Italian Bank Statement Parser",
+        "Italian Masked IBAN Formatter",
+        "Italian FatturaPA XML Readiness Checker",
+        "Italian SDI Invoice Routing Helper",
+        "Italian VAT Rate Sanity Helper",
+        "Italian VAT Return Field Helper",
+        "Italian Invoice Number Helper",
+        "Italian E-Invoicing Readiness Helper",
+        "Italian Accounting Audit Trail Checklist Helper",
+        "Italian EUR Decimal Currency Formatter",
+        "Italian CAP Postal Code Validator",
+        "Italian Address Normalizer",
+        "Italian Address Transliteration Normalizer",
+        "Italian Province Code Mapper",
+        "Italian Municipality / Belfiore Code Inspector",
+        "Italian Phone Number Validator",
+        "Italian Phone E.164 Formatter",
+        "Italian Date Locale Formatter",
+        "Italian CSV Locale Normalizer",
+        "Italian Slug Normalizer",
+        "Italian Document OCR Fixer",
+        "Italian GDPR / Privacy Redaction Helper",
+        "Italian PII Masker",
+        "Italian Personal Data Fixture Helper",
+        "Italian ID Card Format Helper",
+        "Italian Passport Number Helper",
+        "Italian Driving Licence Format Helper",
+        "Italian Residence Permit Format Helper",
+        "Italian Tessera Sanitaria Format Helper",
+        "Italian Vehicle Plate Inspector",
+        "Italian VIN Validator",
+        "Italian Vehicle Data Redaction Helper",
+        "Italian Customs Declaration Helper",
+        "Italian Postal Tracking Helper",
+        "Italian Data Quality Workbench",
+        "Italian JSON Fixture Helper",
+        "Italian Regex Pack Helper",
+        "Italian API Payload Auditor",
+        "Italian Form Field Auditor",
+        "Italian MRZ / Passport Parser"
       ],
-      "completion": 20,
+      "plannedWorkbenches": [
+        "Live Agenzia Entrate status lookup",
+        "Live Registro Imprese lookup",
+        "Live SDI delivery status lookup",
+        "Live bank directory lookup"
+      ],
+      "completion": 100,
       "coordinates": {
         "x": 51,
         "y": 40
@@ -10949,6 +18270,14 @@
         "SEPA",
         "iDEAL"
       ],
+      "searchHints": [
+        "BSN",
+        "RSIN",
+        "KVK",
+        "BTW",
+        "iDEAL",
+        "BAG"
+      ],
       "features": [
         "address",
         "banking",
@@ -11036,6 +18365,117 @@
       "coordinates": {
         "x": 49,
         "y": 35
+      }
+    },
+    {
+      "id": "norway",
+      "flag": "🇳🇴",
+      "name": "Norway",
+      "nativeName": "Norge",
+      "iso2": "NO",
+      "iso3": "NOR",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Norwegian",
+      "currency": "NOK",
+      "currencyName": "Norwegian krone",
+      "status": "available",
+      "summary": "Premium Norway developer hub for Fodselsnummer, D-number, Organisasjonsnummer, MVA, postal code, phone, IBAN, KID, SWIFT, AvtaleGiro handoff, VAT handoff, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "Fodselsnummer",
+        "D-number",
+        "Organisasjonsnummer",
+        "MVA",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "IBAN",
+        "KID",
+        "SWIFT",
+        "AvtaleGiro handoff",
+        "VAT handoff"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Norwegian Fodselsnummer Validator",
+        "Norwegian Organisasjonsnummer Validator",
+        "Norwegian VAT ID / NO Prefix Validator",
+        "Norwegian EORI / Customs Identifier Helper",
+        "Norwegian D-number Helper",
+        "Norwegian Company Onboarding Auditor",
+        "Norwegian Brreg Readiness Helper",
+        "Norwegian ID Card Format Helper",
+        "Norwegian Passport Number Helper",
+        "Norwegian MRZ / Passport Parser",
+        "Norway IBAN Validator",
+        "Norway IBAN Generator",
+        "Norwegian Domestic Bank Account Inspector",
+        "Norwegian BIC / SWIFT Inspector",
+        "Norwegian SEPA Transfer Helper",
+        "Norwegian SEPA Direct Debit Mandate Helper",
+        "Norwegian KID reference Reference Helper",
+        "Norwegian Remittance Text Builder",
+        "Norwegian Payment Reconciliation Helper",
+        "Norwegian Bank Statement Parser",
+        "Norwegian Masked IBAN Formatter",
+        "Norwegian NOK Decimal Currency Formatter",
+        "Norwegian VAT Rate Sanity Helper",
+        "Norwegian VAT Return Field Helper",
+        "Norwegian Invoice Number Helper",
+        "Norwegian EHF / Peppol Readiness Checker",
+        "Norwegian Tax Authority Handoff Helper",
+        "Norwegian Accounting Audit Trail Checklist Helper",
+        "Norwegian Postal Code Validator",
+        "Norwegian Address Normalizer",
+        "Norwegian Address Transliteration Normalizer",
+        "Norwegian Region / Province Code Mapper",
+        "Norwegian Municipality Code Inspector",
+        "Norwegian Phone Number Validator",
+        "Norwegian Phone E.164 Formatter",
+        "Norwegian Date Locale Formatter",
+        "Norwegian CSV Locale Normalizer",
+        "Norwegian Slug Normalizer",
+        "Norwegian Document OCR Fixer",
+        "Norwegian GDPR / Datatilsynet Redaction Helper",
+        "Norwegian PII Masker",
+        "Norwegian Personal Data Fixture Helper",
+        "Norwegian Driving Licence Format Helper",
+        "Norwegian Residence Permit Format Helper",
+        "Norwegian Health Card Format Helper",
+        "Norwegian Vehicle Plate Inspector",
+        "Norwegian VIN Validator",
+        "Norwegian Vehicle Data Redaction Helper",
+        "Norwegian Customs Declaration Helper",
+        "Norwegian Postal Tracking Helper",
+        "Norwegian Data Quality Workbench",
+        "Norwegian JSON Fixture Helper",
+        "Norwegian Regex Pack Helper",
+        "Norwegian API Payload Auditor",
+        "Norwegian Form Field Auditor",
+        "Norwegian Locale Number Parser",
+        "Norwegian Calendar Week Helper",
+        "Norwegian Company Suffix Normalizer",
+        "Norwegian Procurement Identifier Helper",
+        "Norwegian Locale Copy Checker",
+        "Norwegian Support Ticket Scrubber",
+        "Norwegian Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live Brreg lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 52,
+        "y": 34
       }
     },
     {
@@ -11138,6 +18578,7 @@
       "id": "portugal",
       "flag": "🇵🇹",
       "name": "Portugal",
+      "nativeName": "Portugal",
       "iso2": "PT",
       "iso3": "PRT",
       "continent": "Europe",
@@ -11145,29 +18586,214 @@
       "language": "Portuguese",
       "currency": "EUR",
       "currencyName": "Euro",
-      "status": "planned",
-      "summary": "Future hub for Portuguese NIF, postal, locale, and EU banking conventions.",
+      "status": "available",
+      "summary": "Premium Portugal developer hub for NIF, NISS, Cartao de Cidadao, NIPC, postal code, phone, IBAN, SEPA, SWIFT, Multibanco reference, VIES, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
       "identifiers": [
         "NIF",
-        "postal code"
+        "NISS",
+        "Cartao de Cidadao",
+        "NIPC",
+        "postal code",
+        "phone"
       ],
       "payments": [
         "IBAN",
-        "SEPA"
+        "SEPA",
+        "SWIFT",
+        "Multibanco reference",
+        "VIES"
       ],
       "features": [
+        "payments",
         "identity",
         "government",
         "banking"
       ],
-      "availableWorkbenches": [],
-      "plannedWorkbenches": [
-        "NIF Validator"
+      "availableWorkbenches": [
+        "Portuguese NIF Validator",
+        "Portuguese NIPC Validator",
+        "Portuguese VAT ID / PT Prefix Validator",
+        "Portuguese EORI / Customs Identifier Helper",
+        "Portuguese NISS Helper",
+        "Portuguese Company Onboarding Auditor",
+        "Portuguese Registo Comercial Readiness Helper",
+        "Portuguese ID Card Format Helper",
+        "Portuguese Passport Number Helper",
+        "Portuguese MRZ / Passport Parser",
+        "Portugal IBAN Validator",
+        "Portugal IBAN Generator",
+        "Portuguese Domestic Bank Account Inspector",
+        "Portuguese BIC / SWIFT Inspector",
+        "Portuguese SEPA Transfer Helper",
+        "Portuguese SEPA Direct Debit Mandate Helper",
+        "Portuguese Multibanco Reference Helper",
+        "Portuguese Remittance Text Builder",
+        "Portuguese Payment Reconciliation Helper",
+        "Portuguese Bank Statement Parser",
+        "Portuguese Masked IBAN Formatter",
+        "Portuguese EUR Decimal Currency Formatter",
+        "Portuguese VAT Rate Sanity Helper",
+        "Portuguese VAT Return Field Helper",
+        "Portuguese Invoice Number Helper",
+        "Portuguese SAF-T / e-Fatura Readiness Checker",
+        "Portuguese Tax Authority Handoff Helper",
+        "Portuguese Accounting Audit Trail Checklist Helper",
+        "Portuguese Postal Code Validator",
+        "Portuguese Address Normalizer",
+        "Portuguese Address Transliteration Normalizer",
+        "Portuguese Region / Province Code Mapper",
+        "Portuguese Municipality Code Inspector",
+        "Portuguese Phone Number Validator",
+        "Portuguese Phone E.164 Formatter",
+        "Portuguese Date Locale Formatter",
+        "Portuguese CSV Locale Normalizer",
+        "Portuguese Slug Normalizer",
+        "Portuguese Document OCR Fixer",
+        "Portuguese GDPR / CNPD Redaction Helper",
+        "Portuguese PII Masker",
+        "Portuguese Personal Data Fixture Helper",
+        "Portuguese Driving Licence Format Helper",
+        "Portuguese Residence Permit Format Helper",
+        "Portuguese Health Card Format Helper",
+        "Portuguese Vehicle Plate Inspector",
+        "Portuguese VIN Validator",
+        "Portuguese Vehicle Data Redaction Helper",
+        "Portuguese Customs Declaration Helper",
+        "Portuguese Postal Tracking Helper",
+        "Portuguese Data Quality Workbench",
+        "Portuguese JSON Fixture Helper",
+        "Portuguese Regex Pack Helper",
+        "Portuguese API Payload Auditor",
+        "Portuguese Form Field Auditor",
+        "Portuguese Locale Number Parser",
+        "Portuguese Calendar Week Helper",
+        "Portuguese Company Suffix Normalizer",
+        "Portuguese Procurement Identifier Helper",
+        "Portuguese Locale Copy Checker",
+        "Portuguese Support Ticket Scrubber",
+        "Portuguese Integration Smoke Test Builder"
       ],
-      "completion": 20,
+      "plannedWorkbenches": [
+        "Live Registo Comercial lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
       "coordinates": {
-        "x": 47,
-        "y": 43
+        "x": 38,
+        "y": 62
+      }
+    },
+    {
+      "id": "romania",
+      "flag": "🇷🇴",
+      "name": "Romania",
+      "nativeName": "Romania",
+      "iso2": "RO",
+      "iso3": "ROU",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Romanian",
+      "currency": "RON",
+      "currencyName": "Romanian leu",
+      "status": "available",
+      "summary": "Premium Romania developer hub for CNP, CUI, CIF, ONRC, postal code, phone, IBAN, SWIFT, ANAF handoff, e-Factura handoff, VIES, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "CNP",
+        "CUI",
+        "CIF",
+        "ONRC",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "IBAN",
+        "SWIFT",
+        "ANAF handoff",
+        "e-Factura handoff",
+        "VIES"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Romanian CNP Validator",
+        "Romanian CUI / CIF Validator",
+        "Romanian VAT ID / RO Prefix Validator",
+        "Romanian EORI / Customs Identifier Helper",
+        "Romanian CNP Helper",
+        "Romanian Company Onboarding Auditor",
+        "Romanian ONRC Readiness Helper",
+        "Romanian ID Card Format Helper",
+        "Romanian Passport Number Helper",
+        "Romanian MRZ / Passport Parser",
+        "Romania IBAN Validator",
+        "Romania IBAN Generator",
+        "Romanian Domestic Bank Account Inspector",
+        "Romanian BIC / SWIFT Inspector",
+        "Romanian SEPA Transfer Helper",
+        "Romanian SEPA Direct Debit Mandate Helper",
+        "Romanian treasury / SEPA handoff Reference Helper",
+        "Romanian Remittance Text Builder",
+        "Romanian Payment Reconciliation Helper",
+        "Romanian Bank Statement Parser",
+        "Romanian Masked IBAN Formatter",
+        "Romanian RON Decimal Currency Formatter",
+        "Romanian VAT Rate Sanity Helper",
+        "Romanian VAT Return Field Helper",
+        "Romanian Invoice Number Helper",
+        "Romanian RO e-Factura / ANAF Readiness Checker",
+        "Romanian Tax Authority Handoff Helper",
+        "Romanian Accounting Audit Trail Checklist Helper",
+        "Romanian Postal Code Validator",
+        "Romanian Address Normalizer",
+        "Romanian Address Transliteration Normalizer",
+        "Romanian Region / Province Code Mapper",
+        "Romanian Municipality Code Inspector",
+        "Romanian Phone Number Validator",
+        "Romanian Phone E.164 Formatter",
+        "Romanian Date Locale Formatter",
+        "Romanian CSV Locale Normalizer",
+        "Romanian Slug Normalizer",
+        "Romanian Document OCR Fixer",
+        "Romanian GDPR / ANSPDCP Redaction Helper",
+        "Romanian PII Masker",
+        "Romanian Personal Data Fixture Helper",
+        "Romanian Driving Licence Format Helper",
+        "Romanian Residence Permit Format Helper",
+        "Romanian Health Card Format Helper",
+        "Romanian Vehicle Plate Inspector",
+        "Romanian VIN Validator",
+        "Romanian Vehicle Data Redaction Helper",
+        "Romanian Customs Declaration Helper",
+        "Romanian Postal Tracking Helper",
+        "Romanian Data Quality Workbench",
+        "Romanian JSON Fixture Helper",
+        "Romanian Regex Pack Helper",
+        "Romanian API Payload Auditor",
+        "Romanian Form Field Auditor",
+        "Romanian Locale Number Parser",
+        "Romanian Calendar Week Helper",
+        "Romanian Company Suffix Normalizer",
+        "Romanian Procurement Identifier Helper",
+        "Romanian Locale Copy Checker",
+        "Romanian Support Ticket Scrubber",
+        "Romanian Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live ONRC lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 58,
+        "y": 62
       }
     },
     {
@@ -11182,8 +18808,8 @@
       "language": "Spanish / regional co-official languages",
       "currency": "EUR",
       "currencyName": "Euro",
-      "status": "inProgress",
-      "summary": "Developer intelligence for Spanish identifiers, locale conventions, EU payments, banking context, government systems, and implementation pitfalls.",
+      "status": "available",
+      "summary": "Premium Spain developer hub for DNI, NIE, NIF, CIF, IVA/VAT, IBAN/CCC, SEPA, Bizum, AEAT, Facturae, locale, privacy, vehicles, and browser-only data-quality workflows.",
       "identifiers": [
         "DNI",
         "NIE",
@@ -11206,22 +18832,189 @@
         "government",
         "banking"
       ],
-      "availableWorkbenches": [],
-      "plannedWorkbenches": [
-        "DNI Validator",
-        "NIE Validator",
-        "NIF Inspector",
-        "Legacy CIF Inspector",
-        "Spain Phone Validator",
-        "Spain Postal Code Validator",
-        "Spain VAT / VIES Workbench",
-        "Spanish IBAN Tools",
-        "Bizum Reference / Inspector"
+      "availableWorkbenches": [
+        "Spain DNI/NIE/NIF/CIF Workbench",
+        "Spanish NIF Validator",
+        "Spanish DNI Validator",
+        "Spanish NIE Validator",
+        "Spanish CIF Legacy Inspector",
+        "Spanish VAT ID / ES Prefix Validator",
+        "Spanish EORI / Customs Identifier Helper",
+        "Spanish NAF Social Security Helper",
+        "Spanish Company Onboarding Auditor",
+        "Spanish Registro Mercantil Readiness Helper",
+        "Spain IBAN Validator",
+        "Spanish CCC Bank Account Inspector",
+        "Spanish Bank / Branch Code Inspector",
+        "Spanish BIC / SWIFT Inspector",
+        "Spanish SEPA Transfer Helper",
+        "Spanish SEPA Direct Debit Mandate Helper",
+        "Spanish Bizum Reference Helper",
+        "Spanish Remittance Text Builder",
+        "Spanish Payment Reconciliation Helper",
+        "Spanish Bank Statement Parser",
+        "Spanish Masked IBAN Formatter",
+        "Spanish EUR Decimal Currency Formatter",
+        "Spanish VAT Rate Sanity Helper",
+        "Spanish VAT Return Field Helper",
+        "Spanish Invoice Number Helper",
+        "Spanish Facturae XML Readiness Checker",
+        "Spanish VeriFactu Readiness Helper",
+        "Spanish SII VAT Ledger Helper",
+        "Spanish AEAT Modelo Readiness Helper",
+        "Spanish Accounting Audit Trail Checklist Helper",
+        "Spanish Postal Code Validator",
+        "Spanish Address Normalizer",
+        "Spanish Address Transliteration Normalizer",
+        "Spanish Province Code Mapper",
+        "Spanish Municipality Code Inspector",
+        "Spanish Phone Number Validator",
+        "Spanish Phone E.164 Formatter",
+        "Spanish Date Locale Formatter",
+        "Spanish CSV Locale Normalizer",
+        "Spanish Slug Normalizer",
+        "Spanish Document OCR Fixer",
+        "Spanish GDPR / LOPDGDD Redaction Helper",
+        "Spanish PII Masker",
+        "Spanish Personal Data Fixture Helper",
+        "Spanish ID Card Format Helper",
+        "Spanish Passport Number Helper",
+        "Spanish Driving Licence Format Helper",
+        "Spanish Residence Permit Format Helper",
+        "Spanish Health Card Format Helper",
+        "Spanish Vehicle Plate Inspector",
+        "Spanish VIN Validator",
+        "Spanish Vehicle Data Redaction Helper",
+        "Spanish Customs Declaration Helper",
+        "Spanish Postal Tracking Helper",
+        "Spanish Data Quality Workbench",
+        "Spanish JSON Fixture Helper",
+        "Spanish Regex Pack Helper",
+        "Spanish API Payload Auditor",
+        "Spanish Form Field Auditor",
+        "Spanish MRZ / Passport Parser"
       ],
-      "completion": 68,
+      "plannedWorkbenches": [
+        "Live AEAT tax status lookup",
+        "Live VIES VAT confirmation",
+        "Live bank ownership lookup",
+        "Live DGT vehicle registry lookup"
+      ],
+      "completion": 100,
       "coordinates": {
         "x": 49,
         "y": 41
+      }
+    },
+    {
+      "id": "sweden",
+      "flag": "🇸🇪",
+      "name": "Sweden",
+      "nativeName": "Sverige",
+      "iso2": "SE",
+      "iso3": "SWE",
+      "continent": "Europe",
+      "region": "Europe",
+      "language": "Swedish",
+      "currency": "SEK",
+      "currencyName": "Swedish krona",
+      "status": "available",
+      "summary": "Premium Sweden developer hub for Personnummer, Samordningsnummer, Organisationsnummer, Momsregistreringsnummer, postal code, phone, IBAN, Bankgiro, PlusGiro, SWIFT, VIES, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "Personnummer",
+        "Samordningsnummer",
+        "Organisationsnummer",
+        "Momsregistreringsnummer",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "IBAN",
+        "Bankgiro",
+        "PlusGiro",
+        "SWIFT",
+        "VIES"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Swedish Personnummer Validator",
+        "Swedish Organisationsnummer Validator",
+        "Swedish VAT ID / SE Prefix Validator",
+        "Swedish EORI / Customs Identifier Helper",
+        "Swedish Samordningsnummer Helper",
+        "Swedish Company Onboarding Auditor",
+        "Swedish Bolagsverket Readiness Helper",
+        "Swedish ID Card Format Helper",
+        "Swedish Passport Number Helper",
+        "Swedish MRZ / Passport Parser",
+        "Sweden IBAN Validator",
+        "Sweden IBAN Generator",
+        "Swedish Domestic Bank Account Inspector",
+        "Swedish BIC / SWIFT Inspector",
+        "Swedish SEPA Transfer Helper",
+        "Swedish SEPA Direct Debit Mandate Helper",
+        "Swedish Bankgiro / OCR Reference Helper",
+        "Swedish Remittance Text Builder",
+        "Swedish Payment Reconciliation Helper",
+        "Swedish Bank Statement Parser",
+        "Swedish Masked IBAN Formatter",
+        "Swedish SEK Decimal Currency Formatter",
+        "Swedish VAT Rate Sanity Helper",
+        "Swedish VAT Return Field Helper",
+        "Swedish Invoice Number Helper",
+        "Swedish Peppol / Svefaktura Readiness Checker",
+        "Swedish Tax Authority Handoff Helper",
+        "Swedish Accounting Audit Trail Checklist Helper",
+        "Swedish Postal Code Validator",
+        "Swedish Address Normalizer",
+        "Swedish Address Transliteration Normalizer",
+        "Swedish Region / Province Code Mapper",
+        "Swedish Municipality Code Inspector",
+        "Swedish Phone Number Validator",
+        "Swedish Phone E.164 Formatter",
+        "Swedish Date Locale Formatter",
+        "Swedish CSV Locale Normalizer",
+        "Swedish Slug Normalizer",
+        "Swedish Document OCR Fixer",
+        "Swedish GDPR / IMY Redaction Helper",
+        "Swedish PII Masker",
+        "Swedish Personal Data Fixture Helper",
+        "Swedish Driving Licence Format Helper",
+        "Swedish Residence Permit Format Helper",
+        "Swedish Health Card Format Helper",
+        "Swedish Vehicle Plate Inspector",
+        "Swedish VIN Validator",
+        "Swedish Vehicle Data Redaction Helper",
+        "Swedish Customs Declaration Helper",
+        "Swedish Postal Tracking Helper",
+        "Swedish Data Quality Workbench",
+        "Swedish JSON Fixture Helper",
+        "Swedish Regex Pack Helper",
+        "Swedish API Payload Auditor",
+        "Swedish Form Field Auditor",
+        "Swedish Locale Number Parser",
+        "Swedish Calendar Week Helper",
+        "Swedish Company Suffix Normalizer",
+        "Swedish Procurement Identifier Helper",
+        "Swedish Locale Copy Checker",
+        "Swedish Support Ticket Scrubber",
+        "Swedish Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live Bolagsverket lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 55,
+        "y": 38
       }
     },
     {

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: PT
+slug: portugal
+name:
+  en: Portugal
+region: Europe
+languages:
+  - pt
+currency: EUR
+relatedCountries:
+  - ES
+  - FR
+  - IT

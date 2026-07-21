@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-masked-iban-formatter
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish Masked IBAN Formatter"
+summary:
+  en: "Mask Spanish IBAN and CCC values for logs while preserving country, bank, branch, and account debugging slices."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "ES9121000418450200051332"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Masked IBAN Formatter | ValidoHub"
+  description:
+    en: "Mask Spanish IBAN and CCC values for logs while preserving country, bank, branch, and account debugging slices."

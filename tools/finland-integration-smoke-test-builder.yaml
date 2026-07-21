@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: FI
+category: developer-tools
+status: active
+name:
+  en: "Finnish Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-hetu-validator, finland-y-tunnus-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

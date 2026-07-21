@@ -6,35 +6,36 @@ country: ES
 category: finance
 status: active
 name:
-  en: Spain IBAN Validator
+  en: "Spain IBAN Validator"
 summary:
-  en: Validate Spanish IBAN numbers, inspect CCC bank and branch fields, and replay the national CCC check digits locally.
+  en: "Validate Spanish IBAN numbers, split bank/branch/account fields, and replay MOD-97 evidence locally."
 capabilities:
   - validate
   - parse
+  - format
   - explain
+  - calculate
 algorithm:
-  algorithmId: validohub.iban
+  algorithmId: validohub.spain-suite
 forms:
   validate:
     inputs:
-      - type: text
-        name: iban
+      - type: textarea
+        name: input
         label:
-          en: Spanish IBAN
+          en: "IBAN input"
         required: true
         placeholder:
-          en: ES9121000418450200051332
-    actions: [validate, parse, explain]
+          en: "ES9121000418450200051332"
+    actions: [validate, parse, format, explain]
 related:
-  explicit: [iban-validator, spain-id-validator]
+  explicit: [spain-ccc-bank-account-inspector, spain-bank-code-inspector]
   auto:
     sameCountry: true
     sameCategory: true
     sameCapability: true
-    sameModule: true
 seo:
   title:
-    en: Spain IBAN Validator
+    en: "Spain IBAN Validator | ValidoHub"
   description:
-    en: Validate Spanish IBAN structure, MOD-97 check digits, CCC bank and branch fields, and national CCC check digits locally.
+    en: "Validate Spanish IBAN numbers, split bank/branch/account fields, and replay MOD-97 evidence locally."

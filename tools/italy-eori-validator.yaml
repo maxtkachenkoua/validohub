@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-eori-validator
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian EORI / Customs Identifier Helper"
+summary:
+  en: "Inspect Italian EORI/customs identifiers, country prefixes, VAT-style bodies, and customs-boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EORI input"
+        required: true
+        placeholder:
+          en: "IT12345678903"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian EORI / Customs Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect Italian EORI/customs identifiers, country prefixes, VAT-style bodies, and customs-boundary notes."

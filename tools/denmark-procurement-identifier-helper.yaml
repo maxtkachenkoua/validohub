@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-procurement-identifier-helper
+kind: tool
+module: validohub
+country: DK
+category: government
+status: active
+name:
+  en: "Danish Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "12345674 PO-2026-001 DK12345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-accessibility-locale-copy-checker, denmark-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

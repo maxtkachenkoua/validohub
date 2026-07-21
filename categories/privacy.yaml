@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: privacy
+slug: privacy
+name:
+  en: Privacy
+summary:
+  en: Tools for PII masking, redaction, safe fixtures, and privacy-aware developer handoff.
+order: 90
+seo:
+  title:
+    en: Privacy Tools
+  description:
+    en: Mask, scrub, redact, and prepare privacy-safe data for tests and logs.

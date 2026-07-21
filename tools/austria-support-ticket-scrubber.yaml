@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-support-ticket-scrubber
+kind: tool
+module: validohub
+country: AT
+category: privacy
+status: active
+name:
+  en: "Austrian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1234010180, AT611904300234573201, Kaerntner Strasse 10, 1010 Wien"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-integration-smoke-test-builder, austria-svnr-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

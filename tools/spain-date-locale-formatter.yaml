@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-date-locale-formatter
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Date Locale Formatter"
+summary:
+  en: "Parse Spanish DD/MM/YYYY date snippets, normalize ISO previews, and expose timezone/date evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "12/07/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Date Locale Formatter | ValidoHub"
+  description:
+    en: "Parse Spanish DD/MM/YYYY date snippets, normalize ISO previews, and expose timezone/date evidence."

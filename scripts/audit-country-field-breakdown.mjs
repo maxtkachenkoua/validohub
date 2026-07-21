@@ -32,11 +32,27 @@ const suiteChecks = [
     tokens: ['addBreakdown', 'breakdownTitle', 'breakdownSummary', 'nls-breakdown', 'nls-segments', 'Field breakdown']
   },
   {
+    country: 'Spain',
+    files: ['assets/js/tools/country-suite-factory.js', 'assets/js/tools/spain-suite.js'],
+    fileTokens: {
+      'assets/js/tools/country-suite-factory.js': ['csf-breakdown', 'csf-segments', 'breakdownTitle', 'breakdownSummary', 'fieldBreakdown'],
+      'assets/js/tools/spain-suite.js': ['result.breakdown', 'breakdownTitle', 'breakdownSummary', 'fieldBreakdown', 'Spanish local structure']
+    }
+  },
+  {
     country: 'Germany',
     files: ['assets/js/tools/country-suite-factory.js', 'assets/js/tools/germany-suite.js'],
     fileTokens: {
       'assets/js/tools/country-suite-factory.js': ['csf-breakdown', 'csf-segments', 'breakdownTitle', 'breakdownSummary', 'fieldBreakdown'],
       'assets/js/tools/germany-suite.js': ['result.breakdown', 'breakdownTitle', 'breakdownSummary', 'fieldBreakdown', 'German local structure']
+    }
+  },
+  {
+    country: 'Italy',
+    files: ['assets/js/tools/country-suite-factory.js', 'assets/js/tools/italy-suite.js'],
+    fileTokens: {
+      'assets/js/tools/country-suite-factory.js': ['csf-breakdown', 'csf-segments', 'breakdownTitle', 'breakdownSummary', 'fieldBreakdown'],
+      'assets/js/tools/italy-suite.js': ['result.breakdown', 'breakdownTitle', 'breakdownSummary', 'fieldBreakdown', 'Italian local structure']
     }
   },
   {

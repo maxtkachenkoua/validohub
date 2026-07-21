@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-json-fixture-generator
+kind: tool
+module: validohub
+country: NO
+category: developer-tools
+status: active
+name:
+  en: "Norwegian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-regex-pack-helper, norway-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: PT
+category: privacy
+status: active
+name:
+  en: "Portuguese GDPR / CNPD Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-pii-masker, portugal-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese GDPR / CNPD Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

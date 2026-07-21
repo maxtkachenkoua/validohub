@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-postal-code-validator
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Postal Code Validator"
+summary:
+  en: "Validate five-digit Spanish postal codes, province prefix evidence, and offline Correos-boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CP input"
+        required: true
+        placeholder:
+          en: "28013"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-address-normalizer, spain-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate five-digit Spanish postal codes, province prefix evidence, and offline Correos-boundary notes."

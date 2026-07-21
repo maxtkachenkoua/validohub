@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-api-payload-auditor
+kind: tool
+module: validohub
+country: FI
+category: developer-tools
+status: active
+name:
+  en: "Finnish API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-form-field-auditor, finland-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

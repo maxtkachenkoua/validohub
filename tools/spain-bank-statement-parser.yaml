@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-bank-statement-parser
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish Bank Statement Parser"
+summary:
+  en: "Parse Spanish bank-statement snippets for dates, EUR amounts, IBAN/CCC evidence, and reconciliation hints."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "12/07/2026 TRANSFERENCIA ES9121000418450200051332 -1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse Spanish bank-statement snippets for dates, EUR amounts, IBAN/CCC evidence, and reconciliation hints."

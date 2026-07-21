@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-nif-validator
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: "Spanish NIF Validator"
+summary:
+  en: "Validate personal and legal Spanish NIF shapes, split body/control evidence, and prepare tax-form diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NIF input"
+        required: true
+        placeholder:
+          en: "12345678Z"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-id-validator, spain-dni-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish NIF Validator | ValidoHub"
+  description:
+    en: "Validate personal and legal Spanish NIF shapes, split body/control evidence, and prepare tax-form diagnostics."

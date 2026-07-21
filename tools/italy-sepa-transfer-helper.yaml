@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-sepa-transfer-helper
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian SEPA Transfer Helper"
+summary:
+  en: "Audit SEPA credit-transfer snippets for Italian IBAN, EUR amount, remittance, beneficiary, and browser-only boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SEPA input"
+        required: true
+        placeholder:
+          en: "Beneficiario Example Srl IBAN IT60X0542811101000000123456 importo 1.234,56 EUR causale fattura 2026/15"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian SEPA Transfer Helper | ValidoHub"
+  description:
+    en: "Audit SEPA credit-transfer snippets for Italian IBAN, EUR amount, remittance, beneficiary, and browser-only boundaries."

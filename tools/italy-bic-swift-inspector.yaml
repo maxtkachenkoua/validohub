@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-bic-swift-inspector
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC/SWIFT shape, verify IT country-code evidence, and prepare payment-routing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "BCITITMM"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC/SWIFT shape, verify IT country-code evidence, and prepare payment-routing diagnostics."

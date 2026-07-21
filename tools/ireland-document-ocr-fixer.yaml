@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-document-ocr-fixer
+kind: tool
+module: validohub
+country: IE
+category: documents
+status: active
+name:
+  en: "Irish Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "1234567T IE6388047V IE29AIBK93115212345674 D02 X285"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-gdpr-redaction-helper, ireland-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

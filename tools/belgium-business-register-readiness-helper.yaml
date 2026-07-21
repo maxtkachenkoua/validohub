@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-business-register-readiness-helper
+kind: tool
+module: validohub
+country: BE
+category: government
+status: active
+name:
+  en: "Belgian KBO / BCE register Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated KBO / BCE register lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "BE0123456749 BE0123456749 Rue de la Loi 16, 1000 Brussels"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-id-card-format-helper, belgium-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian KBO / BCE register Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated KBO / BCE register lookup or company registry workflow."

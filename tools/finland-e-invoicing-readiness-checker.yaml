@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: FI
+category: tax
+status: active
+name:
+  en: "Finnish Finvoice / Peppol Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-tax-authority-handoff-helper, finland-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish Finvoice / Peppol Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

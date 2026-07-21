@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-customs-declaration-helper
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Customs Declaration Helper"
+summary:
+  en: "Inspect Spanish customs payload snippets for EORI, TARIC-like codes, invoice, value, and official customs boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "EORI ESB12345674 TARIC 851712 valor 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect Spanish customs payload snippets for EORI, TARIC-like codes, invoice, value, and official customs boundaries."

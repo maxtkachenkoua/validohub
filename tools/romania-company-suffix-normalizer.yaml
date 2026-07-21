@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-company-suffix-normalizer
+kind: tool
+module: validohub
+country: RO
+category: developer-tools
+status: active
+name:
+  en: "Romanian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Romania Sample Holding Ltd RO12345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-procurement-identifier-helper, romania-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

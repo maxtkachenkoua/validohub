@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: transport
+slug: transport
+name:
+  en: Transport
+summary:
+  en: Tools for vehicle plates, VINs, transport identifiers, and vehicle data redaction.
+order: 110
+seo:
+  title:
+    en: Transport Tools
+  description:
+    en: Inspect vehicle plates, VINs, transport identifiers, and vehicle-safe redaction data.

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-vat-return-field-helper
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish VAT Return Field Helper"
+summary:
+  en: "Inspect Spanish VAT return snippets, NIF, period, amount, and Modelo 303 handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "303 input"
+        required: true
+        placeholder:
+          en: "Modelo 303 B12345674 2026T2 IVA 21% 1.234,56"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Inspect Spanish VAT return snippets, NIF, period, amount, and Modelo 303 handoff evidence."

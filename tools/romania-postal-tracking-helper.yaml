@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: romania-postal-tracking-helper
+kind: tool
+module: validohub
+country: RO
+category: logistics
+status: active
+name:
+  en: "Romanian Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.romania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 010011 Bucuresti"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [romania-data-quality-workbench, romania-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Romanian Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

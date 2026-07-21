@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-vat-id-validator
+kind: tool
+module: validohub
+country: AT
+category: national-identifiers
+status: active
+name:
+  en: "Austrian VAT ID / AT Prefix Validator"
+summary:
+  en: "Normalize AT VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "ATU12345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-eori-validator, austria-sozialversicherungsnummer-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian VAT ID / AT Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize AT VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

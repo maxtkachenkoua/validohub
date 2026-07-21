@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-customs-declaration-helper
+kind: tool
+module: validohub
+country: IT
+category: developer-tools
+status: active
+name:
+  en: "Italian Customs Declaration Helper"
+summary:
+  en: "Audit customs snippets for EORI, MRN-like references, country codes, dates, and Agenzia Dogane boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "EORI IT12345678903 MRN 26IT1234567890ABC data 12/07/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-postal-code-validator, italy-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Audit customs snippets for EORI, MRN-like references, country codes, dates, and Agenzia Dogane boundaries."

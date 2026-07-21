@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: AT
+category: transport
+status: active
+name:
+  en: "Austrian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "W 12345 A WVWZZZ1JZXW000001 1234010180"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-customs-declaration-helper, austria-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

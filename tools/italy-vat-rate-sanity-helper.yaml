@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian VAT Rate Sanity Helper"
+summary:
+  en: "Check Italian VAT-rate snippets, totals, comma decimals, and reverse-charge handoff notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IVA input"
+        required: true
+        placeholder:
+          en: "Imponibile 1.000,00 IVA 22% Totale 1.220,00"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Check Italian VAT-rate snippets, totals, comma decimals, and reverse-charge handoff notes."

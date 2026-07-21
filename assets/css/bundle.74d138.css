@@ -606,18 +606,20 @@ p {
   --vh-country-flag-color-1: var(--vh-country-accent-primary);
   --vh-country-flag-color-2: var(--vh-country-accent-secondary);
   --vh-country-flag-color-3: var(--vh-country-accent-tertiary);
-  --vh-country-hero-wash-alpha: 0.1;
-  --vh-country-hero-wash-strong-alpha: 0.15;
-  --vh-country-hero-stripe-alpha: 0.035;
-  --vh-country-hero-overlay-alpha: 0.06;
+  --vh-country-hero-wash-alpha: 0.16;
+  --vh-country-hero-wash-strong-alpha: 0.23;
+  --vh-country-hero-stripe-alpha: 0.055;
+  --vh-country-hero-overlay-alpha: 0.09;
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--vh-space-lg);
   padding: clamp(1.5rem, 4vw, 3rem);
   border-radius: var(--vh-radius-lg);
   background:
-    radial-gradient(circle at 14% 10%, rgb(255 255 255 / 0.96) 0, rgb(255 255 255 / 0.7) 30%, transparent 58%),
+    radial-gradient(circle at 14% 10%, rgb(255 255 255 / 0.94) 0, rgb(255 255 255 / 0.62) 30%, transparent 58%),
+    radial-gradient(circle at 6% 90%, rgb(var(--vh-country-flag-color-1) / 0.13) 0, transparent 42%),
     radial-gradient(circle at 86% 12%, rgb(var(--vh-country-flag-color-2) / var(--vh-country-hero-wash-strong-alpha)) 0, rgb(var(--vh-country-flag-color-2) / var(--vh-country-hero-wash-alpha)) 26%, transparent 54%),
+    radial-gradient(circle at 96% 86%, rgb(var(--vh-country-flag-color-3) / 0.16) 0, transparent 46%),
     linear-gradient(122deg,
       rgb(255 255 255 / 0.98) 0%,
       rgb(var(--vh-country-flag-color-1) / var(--vh-country-hero-wash-alpha)) 18%,
@@ -627,6 +629,7 @@ p {
       rgb(var(--vh-country-flag-color-3) / var(--vh-country-hero-wash-alpha)) 100%),
     repeating-linear-gradient(104deg, transparent 0 23px, rgb(var(--vh-country-flag-color-1) / var(--vh-country-hero-stripe-alpha)) 23px 24px);
   border: 1px solid rgb(var(--vh-country-accent-primary) / 0.15);
+  box-shadow: 0 28px 90px rgb(var(--vh-country-accent-primary) / 0.1);
   margin-bottom: var(--vh-space-lg);
   overflow: visible;
   position: relative;
@@ -663,6 +666,15 @@ p {
   min-height: 100%;
   position: relative;
   z-index: 1;
+}
+
+.vh-country-hero-kicker {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--vh-space-sm);
+  margin-bottom: var(--vh-space-xs);
+  width: min(100%, 56rem);
 }
 
 .vh-country-hero-copy h1 {
@@ -745,6 +757,338 @@ p {
   flex-wrap: wrap;
   gap: var(--vh-space-xs);
   margin-top: var(--vh-space-sm);
+}
+
+.vh-country-section.vh-country-civic-snapshot {
+  overflow: hidden;
+  border-color: rgb(214 221 232 / 0.9);
+  background: rgb(255 255 255 / 0.98);
+}
+
+.vh-country-civic-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.38fr);
+  gap: var(--vh-space-md);
+  align-items: stretch;
+  min-width: 0;
+}
+
+.vh-country-civic-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--vh-space-sm);
+  min-width: 0;
+}
+
+.vh-country-civic-layout--full-cities {
+  grid-template-columns: 1fr;
+}
+
+.vh-country-civic-layout--full-cities .vh-country-civic-facts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.vh-country-civic-layout--full-cities .vh-country-city-panel ul {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--vh-space-sm);
+}
+
+.vh-country-civic-fact {
+  min-width: 0;
+  min-height: 104px;
+  padding: var(--vh-space-sm);
+  border: 1px solid rgb(var(--vh-country-accent-primary) / 0.16);
+  border-radius: var(--vh-radius-md);
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 0.94), rgb(var(--vh-country-accent-primary) / 0.055)),
+    radial-gradient(circle at 100% 0%, rgb(var(--vh-country-accent-secondary) / 0.13), transparent 46%);
+}
+
+.vh-country-civic-clock {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--vh-space-sm);
+  align-items: center;
+  min-height: 132px;
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 0.98), rgb(var(--vh-country-accent-primary) / 0.045)),
+    radial-gradient(circle at 88% 12%, rgb(var(--vh-country-accent-secondary) / 0.16), transparent 44%);
+}
+
+.vh-country-hero-clock {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.58rem;
+  margin-left: auto;
+  max-width: 18rem;
+  padding: 0.42rem 0.64rem;
+  border: 1px solid rgb(var(--vh-country-accent-primary) / 0.16);
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 0.9), rgb(var(--vh-country-accent-secondary) / 0.13)),
+    rgb(255 255 255 / 0.76);
+  box-shadow:
+    0 14px 34px rgb(var(--vh-country-accent-primary) / 0.1),
+    inset 0 1px 0 rgb(255 255 255 / 0.78);
+  backdrop-filter: blur(10px);
+}
+
+.vh-country-clock-face {
+  position: relative;
+  width: 4.8rem;
+  height: 4.8rem;
+  border: 2px solid rgb(var(--vh-country-accent-primary) / 0.24);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 50%, rgb(255 255 255) 0 8%, transparent 9%),
+    linear-gradient(135deg, rgb(255 255 255), rgb(var(--vh-country-accent-primary) / 0.08));
+  box-shadow:
+    0 14px 26px rgb(var(--vh-country-accent-primary) / 0.12),
+    inset 0 0 0 0.45rem rgb(255 255 255 / 0.62);
+  flex: 0 0 auto;
+}
+
+.vh-country-clock-tick {
+  position: absolute;
+  display: block;
+  background: rgb(var(--vh-country-accent-primary) / 0.42);
+  border-radius: 999px;
+}
+
+.vh-country-clock-tick.is-12,
+.vh-country-clock-tick.is-6 {
+  left: calc(50% - 0.08rem);
+  width: 0.16rem;
+  height: 0.46rem;
+}
+
+.vh-country-clock-tick.is-12 { top: 0.44rem; }
+.vh-country-clock-tick.is-6 { bottom: 0.44rem; }
+
+.vh-country-clock-tick.is-3,
+.vh-country-clock-tick.is-9 {
+  top: calc(50% - 0.08rem);
+  width: 0.46rem;
+  height: 0.16rem;
+}
+
+.vh-country-clock-tick.is-3 { right: 0.44rem; }
+.vh-country-clock-tick.is-9 { left: 0.44rem; }
+
+.vh-country-clock-hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  display: block;
+  width: 0.18rem;
+  border-radius: 999px;
+  transform-origin: 50% 100%;
+  transform: translateX(-50%) rotate(var(--clock-turn, 0deg));
+}
+
+.vh-country-clock-hand.is-hour {
+  height: 1.28rem;
+  background: rgb(var(--vh-country-accent-primary));
+}
+
+.vh-country-clock-hand.is-minute {
+  height: 1.72rem;
+  background: rgb(17 24 39 / 0.86);
+}
+
+.vh-country-clock-hand.is-second {
+  width: 0.1rem;
+  height: 1.95rem;
+  background: rgb(var(--vh-country-accent-secondary));
+  box-shadow: 0 0 0 1px rgb(17 24 39 / 0.08);
+}
+
+.vh-country-clock-pin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 2px solid rgb(255 255 255);
+  border-radius: 999px;
+  background: rgb(var(--vh-country-accent-primary));
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 1px rgb(var(--vh-country-accent-primary) / 0.22);
+}
+
+.vh-country-clock-copy {
+  min-width: 0;
+}
+
+.vh-country-clock-copy strong {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+.vh-country-hero-clock .vh-country-clock-face {
+  width: 2.85rem;
+  height: 2.85rem;
+  border-width: 1px;
+  box-shadow:
+    0 8px 18px rgb(var(--vh-country-accent-primary) / 0.1),
+    inset 0 0 0 0.28rem rgb(255 255 255 / 0.64);
+}
+
+.vh-country-hero-clock .vh-country-clock-tick.is-12,
+.vh-country-hero-clock .vh-country-clock-tick.is-6 {
+  height: 0.3rem;
+}
+
+.vh-country-hero-clock .vh-country-clock-tick.is-12 { top: 0.28rem; }
+.vh-country-hero-clock .vh-country-clock-tick.is-6 { bottom: 0.28rem; }
+
+.vh-country-hero-clock .vh-country-clock-tick.is-3,
+.vh-country-hero-clock .vh-country-clock-tick.is-9 {
+  width: 0.3rem;
+}
+
+.vh-country-hero-clock .vh-country-clock-tick.is-3 { right: 0.28rem; }
+.vh-country-hero-clock .vh-country-clock-tick.is-9 { left: 0.28rem; }
+
+.vh-country-hero-clock .vh-country-clock-hand.is-hour { height: 0.78rem; }
+.vh-country-hero-clock .vh-country-clock-hand.is-minute { height: 1rem; }
+.vh-country-hero-clock .vh-country-clock-hand.is-second { height: 1.16rem; }
+
+.vh-country-hero-clock .vh-country-clock-pin {
+  width: 0.34rem;
+  height: 0.34rem;
+}
+
+.vh-country-hero-clock .vh-country-clock-copy > span {
+  display: block;
+  color: var(--vh-color-muted);
+  font-size: 0.64rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.vh-country-hero-clock .vh-country-clock-copy strong {
+  display: block;
+  margin-top: 0.12rem;
+  color: var(--vh-color-text);
+  font-size: 1.02rem;
+  line-height: 1;
+}
+
+.vh-country-hero-clock .vh-country-clock-copy small {
+  display: block;
+  margin-top: 0.12rem;
+  color: var(--vh-color-muted);
+  font-size: 0.62rem;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.vh-country-civic-fact span,
+.vh-country-city-panel h3 {
+  display: block;
+  color: var(--vh-color-muted);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.vh-country-civic-fact strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--vh-color-text);
+  font-size: clamp(1rem, 1.2vw, 1.28rem);
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+}
+
+.vh-country-civic-fact small,
+.vh-country-city-panel small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--vh-color-muted);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.vh-country-city-panel {
+  min-width: 0;
+  padding: var(--vh-space-sm);
+  border: 1px solid rgb(var(--vh-country-accent-primary) / 0.18);
+  border-radius: var(--vh-radius-md);
+  background:
+    radial-gradient(circle at 12% 10%, rgb(var(--vh-country-accent-secondary) / 0.11), transparent 42%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.96), rgb(var(--vh-country-accent-primary) / 0.045));
+}
+
+.vh-country-city-panel ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: var(--vh-space-sm) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vh-country-city-panel li {
+  display: grid;
+  grid-template-columns: 2.1rem minmax(0, 1fr);
+  gap: 0.62rem;
+  align-items: center;
+  min-height: 2.35rem;
+  color: var(--vh-color-text);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.vh-country-city-shield {
+  display: inline-grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  color: var(--vh-color-text);
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  background:
+    linear-gradient(135deg, rgb(var(--vh-country-accent-primary) / 0.18), rgb(var(--vh-country-accent-secondary) / 0.16)),
+    #fff;
+  border: 1px solid rgb(var(--vh-country-accent-primary) / 0.22);
+  border-radius: 0.65rem 0.65rem 0.85rem 0.85rem;
+  box-shadow: inset 0 -0.18rem 0 rgb(var(--vh-country-accent-primary) / 0.1);
+}
+
+@media (max-width: 900px) {
+  .vh-country-civic-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .vh-country-civic-facts,
+  .vh-country-civic-layout--full-cities .vh-country-civic-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vh-country-civic-layout--full-cities .vh-country-city-panel ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .vh-country-civic-facts,
+  .vh-country-civic-layout--full-cities .vh-country-civic-facts,
+  .vh-country-civic-layout--full-cities .vh-country-city-panel ul {
+    grid-template-columns: 1fr;
+  }
+
+  .vh-country-hero-clock {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--vh-radius-md);
+  }
 }
 
 .vh-country-tool-search {
@@ -2128,6 +2472,11 @@ p {
   content: "/";
 }
 
+.vh-breadcrumbs.breadcrumbs li::before,
+.vh-breadcrumbs.breadcrumbs li:not(:last-child)::after {
+  content: none;
+}
+
 .breadcrumbs a {
   color: var(--muted);
   text-decoration: none;
@@ -2215,6 +2564,10 @@ p {
   margin: 0;
   color: var(--muted);
   font-size: 0.875rem;
+}
+
+.workbench-card:has([data-algorithm-id="validohub.brazil-suite"]) .workbench-heading {
+  display: none;
 }
 
 .workbench-list {

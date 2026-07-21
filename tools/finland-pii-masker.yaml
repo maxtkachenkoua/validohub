@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-pii-masker
+kind: tool
+module: validohub
+country: FI
+category: privacy
+status: active
+name:
+  en: "Finnish PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "010185-123B +358 40 123 4567 FI2112345600000785"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-personal-data-fixture-generator, finland-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

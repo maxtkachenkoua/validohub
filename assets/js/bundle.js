@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   initGlobalLanguageSwitcher();
+  initCountryClocks();
 
   // 1. Component-Scoped Code Snippets Language Tabs
   const snippetBlock = document.getElementById('vh-code-block-content');
@@ -465,45 +466,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
     headerInner.appendChild(panel);
     const select = panel.querySelector('.vh-locale-switcher-select');
-    mountOfficialLanguageQuickActions(localeState, select);
     applyRuntimeUiLocalization(localeState.currentLocale);
     if (!nav) return;
 
     applyAutoLocale(localeState);
   }
 
+  function initCountryClocks() {
+    const clocks = document.querySelectorAll('[data-country-clock][data-time-zone]');
+    if (!clocks.length) return;
+
+    const formatters = new Map();
+    const getFormatter = (timeZone, options) => {
+      const key = `${timeZone}:${JSON.stringify(options)}`;
+      if (!formatters.has(key)) {
+        formatters.set(key, new Intl.DateTimeFormat('en-US', { timeZone, ...options }));
+      }
+      return formatters.get(key);
+    };
+
+    const readParts = (timeZone) => {
+      const parts = getFormatter(timeZone, {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      }).formatToParts(new Date());
+      const value = (type) => Number(parts.find(part => part.type === type)?.value || 0);
+      return { hour: value('hour') % 24, minute: value('minute'), second: value('second') };
+    };
+
+    const updateClock = (clock) => {
+      const timeZone = clock.dataset.timeZone;
+      const time = readParts(timeZone);
+      const hour12 = time.hour % 12;
+      const hourTurn = ((hour12 + time.minute / 60) / 12) * 360;
+      const minuteTurn = ((time.minute + time.second / 60) / 60) * 360;
+      const secondTurn = (time.second / 60) * 360;
+      const two = (value) => String(value).padStart(2, '0');
+
+      clock.querySelector('[data-country-clock-hour]')?.style.setProperty('--clock-turn', `${hourTurn}deg`);
+      clock.querySelector('[data-country-clock-minute]')?.style.setProperty('--clock-turn', `${minuteTurn}deg`);
+      clock.querySelector('[data-country-clock-second]')?.style.setProperty('--clock-turn', `${secondTurn}deg`);
+
+      const timeNode = clock.querySelector('[data-country-clock-time]');
+      if (timeNode) timeNode.textContent = `${two(time.hour)}:${two(time.minute)}:${two(time.second)}`;
+
+      const dateNode = clock.querySelector('[data-country-clock-date]');
+      if (dateNode) {
+        dateNode.textContent = getFormatter(timeZone, {
+          weekday: 'short',
+          month: 'short',
+          day: '2-digit',
+          timeZoneName: 'short'
+        }).format(new Date());
+      }
+    };
+
+    const tick = () => clocks.forEach(updateClock);
+    tick();
+    window.setInterval(tick, 1000);
+  }
+
   function resolveLocaleState() {
     const supportedLocales = [
       { code: 'en', label: 'English', icon: 'US' },
-      { code: 'pl', label: 'Polish', icon: 'PL' },
-      { code: 'de', label: 'German', icon: 'DE' },
       { code: 'es', label: 'Spanish', icon: 'ES' },
       { code: 'pt-BR', label: 'Portuguese (Brazil)', icon: 'BR' },
+      { code: 'de', label: 'German', icon: 'DE' },
       { code: 'fr', label: 'French', icon: 'FR' },
-      { code: 'it', label: 'Italian', icon: 'IT' },
-      { code: 'nl', label: 'Dutch', icon: 'NL' },
-      { code: 'pt-PT', label: 'Portuguese (Portugal)', icon: 'PT' },
-      { code: 'cs', label: 'Czech', icon: 'CZ' },
-      { code: 'sk', label: 'Slovak', icon: 'SK' },
-      { code: 'uk', label: 'Ukrainian', icon: 'UA' },
-      { code: 'tr', label: 'Turkish', icon: 'TR' },
-      { code: 'ro', label: 'Romanian', icon: 'RO' },
-      { code: 'hu', label: 'Hungarian', icon: 'HU' },
-      { code: 'sv', label: 'Swedish', icon: 'SE' },
-      { code: 'no', label: 'Norwegian', icon: 'NO' },
-      { code: 'fi', label: 'Finnish', icon: 'FI' },
-      { code: 'da', label: 'Danish', icon: 'DK' },
-      { code: 'ja', label: 'Japanese', icon: 'JP' },
-      { code: 'ko', label: 'Korean', icon: 'KR' },
-      { code: 'zh-CN', label: 'Chinese (Simplified)', icon: 'CN' },
-      { code: 'zh-TW', label: 'Chinese (Traditional)', icon: 'TW' },
-      { code: 'ar', label: 'Arabic', icon: 'SA' },
-      { code: 'he', label: 'Hebrew', icon: 'IL' },
-      { code: 'hi', label: 'Hindi', icon: 'IN' },
-      { code: 'id', label: 'Indonesian', icon: 'ID' },
-      { code: 'vi', label: 'Vietnamese', icon: 'VN' },
-      { code: 'th', label: 'Thai', icon: 'TH' },
-      { code: 'ms', label: 'Malay', icon: 'MY' }
+      { code: 'pl', label: 'Polish', icon: 'PL' },
+      { code: 'uk', label: 'Ukrainian', icon: 'UA' }
     ];
 
     const alternates = collectAlternateLocaleLinks();

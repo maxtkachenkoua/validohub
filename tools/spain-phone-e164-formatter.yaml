@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-phone-e164-formatter
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Phone E.164 Formatter"
+summary:
+  en: "Format Spanish phone numbers to E.164-like previews and split country/national subscriber evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "E164 input"
+        required: true
+        placeholder:
+          en: "612345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Phone E.164 Formatter | ValidoHub"
+  description:
+    en: "Format Spanish phone numbers to E.164-like previews and split country/national subscriber evidence."

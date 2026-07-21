@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-company-onboarding-auditor
+kind: tool
+module: validohub
+country: SE
+category: developer-tools
+status: active
+name:
+  en: "Swedish Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for Organisationsnummer, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SE\",\"personnummer\":\"850101-1236\",\"orgnr\":\"556016-0680\",\"iban\":\"SE4550000000058398257466\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-business-register-readiness-helper, sweden-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for Organisationsnummer, VAT, address, banking, and official registry handoff readiness."

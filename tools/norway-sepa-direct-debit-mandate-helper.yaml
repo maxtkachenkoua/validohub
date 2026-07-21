@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-sepa-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: NO
+category: finance
+status: active
+name:
+  en: "Norwegian SEPA Direct Debit Mandate Helper"
+summary:
+  en: "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SDD input"
+        required: true
+        placeholder:
+          en: "MANDATE-2026-001 NO9386011117947"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-payment-reference-helper, norway-remittance-text-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian SEPA Direct Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."

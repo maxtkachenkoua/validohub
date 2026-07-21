@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-masked-iban-formatter
+kind: tool
+module: validohub
+country: IE
+category: finance
+status: active
+name:
+  en: "Irish Masked IBAN Formatter"
+summary:
+  en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "IE29AIBK93115212345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-currency-decimal-formatter, ireland-vat-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish Masked IBAN Formatter | ValidoHub"
+  description:
+    en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: BE
+category: tax
+status: active
+name:
+  en: "Belgian Peppol / e-invoicing Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-tax-authority-handoff-helper, belgium-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian Peppol / e-invoicing Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

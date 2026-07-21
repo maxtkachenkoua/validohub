@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: CZ
+category: tax
+status: active
+name:
+  en: "Czech VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "DIC / DPH 20% base 1 234,56 CZK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-vat-return-field-helper, czechia-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

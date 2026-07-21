@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-iban-generator
+kind: tool
+module: validohub
+country: PT
+category: finance
+status: active
+name:
+  en: "Portugal IBAN Generator"
+summary:
+  en: "Generate PT IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "000201231234567490154"
+    actions: [generate, validate, explain]
+related:
+  explicit: [portugal-bank-account-inspector, portugal-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portugal IBAN Generator | ValidoHub"
+  description:
+    en: "Generate PT IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

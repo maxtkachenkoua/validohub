@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-codice-destinatario-helper
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian Codice Destinatario Helper"
+summary:
+  en: "Inspect seven-character SDI recipient codes, PEC fallback hints, and e-invoicing routing boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SDI input"
+        required: true
+        placeholder:
+          en: "ABC1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian Codice Destinatario Helper | ValidoHub"
+  description:
+    en: "Inspect seven-character SDI recipient codes, PEC fallback hints, and e-invoicing routing boundaries."

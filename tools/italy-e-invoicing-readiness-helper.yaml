@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-e-invoicing-readiness-helper
+kind: tool
+module: validohub
+country: IT
+category: finance
+status: active
+name:
+  en: "Italian E-Invoicing Readiness Helper"
+summary:
+  en: "Audit Italian e-invoicing payloads for XML, SDI, PEC, VAT, totals, dates, and delivery-boundary evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "FatturaPA 1.2.2 SDI ABC1234 PEC contabilita@example.pec.it Totale 1.220,00 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-iban-validator, italy-abi-cab-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian E-Invoicing Readiness Helper | ValidoHub"
+  description:
+    en: "Audit Italian e-invoicing payloads for XML, SDI, PEC, VAT, totals, dates, and delivery-boundary evidence."

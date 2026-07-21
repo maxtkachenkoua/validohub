@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-procurement-identifier-helper
+kind: tool
+module: validohub
+country: AT
+category: government
+status: active
+name:
+  en: "Austrian Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "FN 123456a PO-2026-001 ATU12345674"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-accessibility-locale-copy-checker, austria-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

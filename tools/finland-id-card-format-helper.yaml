@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-id-card-format-helper
+kind: tool
+module: validohub
+country: FI
+category: national-identifiers
+status: active
+name:
+  en: "Finnish ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "010185-123B"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-passport-number-helper, finland-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

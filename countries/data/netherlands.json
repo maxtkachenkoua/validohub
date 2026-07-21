@@ -47,6 +47,14 @@
       "SEPA",
       "iDEAL"
     ],
+    "searchHints": [
+      "BSN",
+      "RSIN",
+      "KVK",
+      "BTW",
+      "iDEAL",
+      "BAG"
+    ],
     "features": [
       "address",
       "banking",
@@ -141,6 +149,14 @@
     "name": "Netherlands",
     "badge": "Western Europe premium country hub",
     "description": "Developer intelligence for Dutch identity, business registry, tax, banking, address, payment, privacy, vehicle, audit-file, and localization workflows with browser-only validation where possible.",
+    "searchHints": [
+      "BSN",
+      "RSIN",
+      "KVK",
+      "BTW",
+      "iDEAL",
+      "BAG"
+    ],
     "metadata": {
       "nativeName": "Nederland",
       "population": "approximately 18M",

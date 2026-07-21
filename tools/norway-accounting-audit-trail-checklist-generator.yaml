@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-accounting-audit-trail-checklist-generator
+kind: tool
+module: validohub
+country: NO
+category: tax
+status: active
+name:
+  en: "Norwegian Accounting Audit Trail Checklist Helper"
+summary:
+  en: "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "AUDIT input"
+        required: true
+        placeholder:
+          en: "invoice 21.07.2026 1 234,56 NOK NO915545943MVA"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-postal-code-validator, norway-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian Accounting Audit Trail Checklist Helper | ValidoHub"
+  description:
+    en: "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."

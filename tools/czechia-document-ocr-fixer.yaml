@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-document-ocr-fixer
+kind: tool
+module: validohub
+country: CZ
+category: documents
+status: active
+name:
+  en: "Czech Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "800101/0006 CZ27074358 CZ6508000000192000145399 110 00 Praha 1"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-gdpr-redaction-helper, czechia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-mrz-passport-parser
+kind: tool
+module: validohub
+country: NO
+category: national-identifiers
+status: active
+name:
+  en: "Norwegian MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<NORSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567NOR8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-iban-validator, norway-iban-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

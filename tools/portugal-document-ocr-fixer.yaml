@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-document-ocr-fixer
+kind: tool
+module: validohub
+country: PT
+category: documents
+status: active
+name:
+  en: "Portuguese Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "123456749 PT123456749 PT50000201231234567490154 1000-001 Lisboa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-gdpr-redaction-helper, portugal-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

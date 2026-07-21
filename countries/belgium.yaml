@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BE
+slug: belgium
+name:
+  en: Belgium
+region: Europe
+languages:
+  - nl
+currency: EUR
+relatedCountries:
+  - NL
+  - FR
+  - DE

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-document-ocr-fixer
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Document OCR Fixer"
+summary:
+  en: "Repair Spanish OCR snippets for NIF, IBAN, dates, amounts, postal codes, and privacy-safe document review."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "N1F B12345674 IBAN ES91 2100 0418 45 0200051332 fecha 12/07/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Document OCR Fixer | ValidoHub"
+  description:
+    en: "Repair Spanish OCR snippets for NIF, IBAN, dates, amounts, postal codes, and privacy-safe document review."

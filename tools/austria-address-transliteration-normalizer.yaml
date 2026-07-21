@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: AT
+category: address
+status: active
+name:
+  en: "Austrian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Kaerntner Strasse 10, 1010 Wien"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-region-code-mapper, austria-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

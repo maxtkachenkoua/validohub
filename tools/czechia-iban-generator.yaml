@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-iban-generator
+kind: tool
+module: validohub
+country: CZ
+category: finance
+status: active
+name:
+  en: "Czechia IBAN Generator"
+summary:
+  en: "Generate CZ IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "08000000192000145399"
+    actions: [generate, validate, explain]
+related:
+  explicit: [czechia-bank-account-inspector, czechia-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czechia IBAN Generator | ValidoHub"
+  description:
+    en: "Generate CZ IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

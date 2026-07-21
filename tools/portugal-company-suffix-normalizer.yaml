@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-company-suffix-normalizer
+kind: tool
+module: validohub
+country: PT
+category: developer-tools
+status: active
+name:
+  en: "Portuguese Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Portugal Sample Holding Ltd PT123456749"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-procurement-identifier-helper, portugal-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

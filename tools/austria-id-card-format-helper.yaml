@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-id-card-format-helper
+kind: tool
+module: validohub
+country: AT
+category: national-identifiers
+status: active
+name:
+  en: "Austrian ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "1234010180"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-passport-number-helper, austria-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

@@ -1,10 +1,22 @@
 {
   "id": "austria",
-  "visualAssets": null,
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/austria-outline.svg",
+    "outlineAlt": "Austria country outline",
+    "mapSrc": "/assets/images/countries/austria-location.svg",
+    "mapAlt": "World map with Austria location marker",
+    "mapMarker": {
+      "x": 50,
+      "y": 58,
+      "label": "Austria"
+    },
+    "source": "Simplified generated geographic reference for ValidoHub country navigation"
+  },
   "catalog": {
     "id": "austria",
     "flag": "🇦🇹",
     "name": "Austria",
+    "nativeName": "Osterreich",
     "iso2": "AT",
     "iso3": "AUT",
     "continent": "Europe",
@@ -12,30 +24,579 @@
     "language": "German",
     "currency": "EUR",
     "currencyName": "Euro",
-    "status": "planned",
-    "summary": "Future hub for Austrian localization, identity, tax, and EU banking conventions.",
+    "status": "available",
+    "summary": "Premium Austria developer hub for Steuernummer, UID, SVNR, Firmenbuchnummer, postal code, phone, IBAN, SEPA, SWIFT, EPS handoff, VIES, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
     "identifiers": [
+      "Steuernummer",
       "UID",
-      "SVNR"
+      "SVNR",
+      "Firmenbuchnummer",
+      "postal code",
+      "phone"
     ],
     "payments": [
       "IBAN",
-      "SEPA"
+      "SEPA",
+      "SWIFT",
+      "EPS handoff",
+      "VIES"
     ],
     "features": [
+      "payments",
       "identity",
       "government",
       "banking"
     ],
-    "availableWorkbenches": [],
-    "plannedWorkbenches": [
-      "Austrian VAT ID Notes"
+    "availableWorkbenches": [
+      "Austrian SVNR Validator",
+      "Austrian Firmenbuchnummer Validator",
+      "Austrian VAT ID / AT Prefix Validator",
+      "Austrian EORI / Customs Identifier Helper",
+      "Austrian Sozialversicherungsnummer Helper",
+      "Austrian Company Onboarding Auditor",
+      "Austrian Firmenbuch Readiness Helper",
+      "Austrian ID Card Format Helper",
+      "Austrian Passport Number Helper",
+      "Austrian MRZ / Passport Parser",
+      "Austria IBAN Validator",
+      "Austria IBAN Generator",
+      "Austrian Domestic Bank Account Inspector",
+      "Austrian BIC / SWIFT Inspector",
+      "Austrian SEPA Transfer Helper",
+      "Austrian SEPA Direct Debit Mandate Helper",
+      "Austrian EPS / SEPA Reference Helper",
+      "Austrian Remittance Text Builder",
+      "Austrian Payment Reconciliation Helper",
+      "Austrian Bank Statement Parser",
+      "Austrian Masked IBAN Formatter",
+      "Austrian EUR Decimal Currency Formatter",
+      "Austrian VAT Rate Sanity Helper",
+      "Austrian VAT Return Field Helper",
+      "Austrian Invoice Number Helper",
+      "Austrian E-Rechnung / ebInterface Readiness Checker",
+      "Austrian Tax Authority Handoff Helper",
+      "Austrian Accounting Audit Trail Checklist Helper",
+      "Austrian Postal Code Validator",
+      "Austrian Address Normalizer",
+      "Austrian Address Transliteration Normalizer",
+      "Austrian Region / Province Code Mapper",
+      "Austrian Municipality Code Inspector",
+      "Austrian Phone Number Validator",
+      "Austrian Phone E.164 Formatter",
+      "Austrian Date Locale Formatter",
+      "Austrian CSV Locale Normalizer",
+      "Austrian Slug Normalizer",
+      "Austrian Document OCR Fixer",
+      "Austrian GDPR / DSG Redaction Helper",
+      "Austrian PII Masker",
+      "Austrian Personal Data Fixture Helper",
+      "Austrian Driving Licence Format Helper",
+      "Austrian Residence Permit Format Helper",
+      "Austrian Health Card Format Helper",
+      "Austrian Vehicle Plate Inspector",
+      "Austrian VIN Validator",
+      "Austrian Vehicle Data Redaction Helper",
+      "Austrian Customs Declaration Helper",
+      "Austrian Postal Tracking Helper",
+      "Austrian Data Quality Workbench",
+      "Austrian JSON Fixture Helper",
+      "Austrian Regex Pack Helper",
+      "Austrian API Payload Auditor",
+      "Austrian Form Field Auditor",
+      "Austrian Locale Number Parser",
+      "Austrian Calendar Week Helper",
+      "Austrian Company Suffix Normalizer",
+      "Austrian Procurement Identifier Helper",
+      "Austrian Locale Copy Checker",
+      "Austrian Support Ticket Scrubber",
+      "Austrian Integration Smoke Test Builder"
     ],
-    "completion": 20,
+    "plannedWorkbenches": [
+      "Live Firmenbuch lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
     "coordinates": {
-      "x": 51,
-      "y": 37
+      "x": 50,
+      "y": 58
     }
   },
-  "hub": null
+  "hub": {
+    "flag": "🇦🇹",
+    "name": "Austria",
+    "badge": "Premium Austria developer suite",
+    "description": "Developer intelligence and browser-only workbenches for austrian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Osterreich",
+      "population": "approximately 9.2M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Vienna",
+      "continent": "Europe",
+      "region": "Central Europe / European Union",
+      "languages": "German",
+      "currency": "Euro",
+      "currencyCode": "EUR",
+      "callingCode": "+43",
+      "internetTld": ".at",
+      "drivingSide": "Right",
+      "iso2": "AT",
+      "iso3": "AUT",
+      "isoNumeric": "040",
+      "locale": "de-AT",
+      "icuLocale": "de_AT",
+      "dateFormat": "DD.MM.YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Dot (.)",
+      "addressFormat": "Street, number, postal code, locality, Austria",
+      "postalCodeFormat": "Postleitzahl",
+      "primaryTimeZone": "Europe local time zone",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "de-AT",
+      "cldrLocale": "de_AT",
+      "metricVsImperial": "Metric-first"
+    },
+    "visualIdentity": {
+      "countryId": "austria",
+      "outlineLabel": "Austria outline",
+      "mapLabel": "Austria in the world",
+      "continentBadge": "Europe",
+      "flagLabel": "Austria flag",
+      "heroAccentPrimary": "15 118 110",
+      "heroAccentSecondary": "37 99 235",
+      "heroAccentTertiary": "245 158 11"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "SVNR and Firmenbuchnummer",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "UID / USt and payments",
+        "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Austria registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /austria/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Dot (.) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Austrian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "Firmenbuch",
+        "text": "Official business registry or company lookup remains the source of truth for Austria.",
+        "status": "official boundary"
+      },
+      {
+        "title": "UID / USt",
+        "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+        "status": "official boundary"
+      },
+      {
+        "title": "GDPR / DSG",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "Steuernummer, UID, SVNR, Firmenbuchnummer, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, SEPA, SWIFT, EPS handoff, VIES",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "de-AT / de_AT; date DD.MM.YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "EUR amounts use Comma (,) and Dot (.).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "SVNR, Firmenbuchnummer, Postleitzahl, phone, address, and IBAN need local labels.",
+        "status": "available"
+      }
+    ],
+    "routes": [
+      {
+        "title": "Austrian SVNR Validator",
+        "href": "/en/austria/austria-svnr-validator/",
+        "text": "Validate SVNR shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Austrian Firmenbuchnummer Validator",
+        "href": "/en/austria/austria-firmenbuchnummer-validator/",
+        "text": "Inspect Firmenbuchnummer structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Austrian VAT ID / AT Prefix Validator",
+        "href": "/en/austria/austria-vat-id-validator/",
+        "text": "Normalize AT VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+      },
+      {
+        "title": "Austrian EORI / Customs Identifier Helper",
+        "href": "/en/austria/austria-eori-validator/",
+        "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+      },
+      {
+        "title": "Austrian Sozialversicherungsnummer Helper",
+        "href": "/en/austria/austria-sozialversicherungsnummer-social-insurance-helper/",
+        "text": "Split Sozialversicherungsnummer evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Austrian Company Onboarding Auditor",
+        "href": "/en/austria/austria-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for Firmenbuchnummer, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Austrian Firmenbuch Readiness Helper",
+        "href": "/en/austria/austria-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated Firmenbuch lookup or company registry workflow."
+      },
+      {
+        "title": "Austrian ID Card Format Helper",
+        "href": "/en/austria/austria-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Austrian Passport Number Helper",
+        "href": "/en/austria/austria-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Austrian MRZ / Passport Parser",
+        "href": "/en/austria/austria-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Austria IBAN Validator",
+        "href": "/en/austria/austria-iban-validator/",
+        "text": "Validate AT IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+      },
+      {
+        "title": "Austria IBAN Generator",
+        "href": "/en/austria/austria-iban-generator/",
+        "text": "Generate AT IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+      },
+      {
+        "title": "Austrian Domestic Bank Account Inspector",
+        "href": "/en/austria/austria-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+      },
+      {
+        "title": "Austrian BIC / SWIFT Inspector",
+        "href": "/en/austria/austria-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Austria banking integrations."
+      },
+      {
+        "title": "Austrian SEPA Transfer Helper",
+        "href": "/en/austria/austria-sepa-transfer-helper/",
+        "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+      },
+      {
+        "title": "Austrian SEPA Direct Debit Mandate Helper",
+        "href": "/en/austria/austria-sepa-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+      },
+      {
+        "title": "Austrian EPS / SEPA Reference Helper",
+        "href": "/en/austria/austria-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Austrian Remittance Text Builder",
+        "href": "/en/austria/austria-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Austrian Payment Reconciliation Helper",
+        "href": "/en/austria/austria-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Austrian Bank Statement Parser",
+        "href": "/en/austria/austria-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Austrian Masked IBAN Formatter",
+        "href": "/en/austria/austria-masked-iban-formatter/",
+        "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+      },
+      {
+        "title": "Austrian EUR Decimal Currency Formatter",
+        "href": "/en/austria/austria-currency-decimal-formatter/",
+        "text": "Normalize EUR amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Austrian VAT Rate Sanity Helper",
+        "href": "/en/austria/austria-vat-rate-sanity-helper/",
+        "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Austrian VAT Return Field Helper",
+        "href": "/en/austria/austria-vat-return-field-helper/",
+        "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Austrian Invoice Number Helper",
+        "href": "/en/austria/austria-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Austrian E-Rechnung / ebInterface Readiness Checker",
+        "href": "/en/austria/austria-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Austrian Tax Authority Handoff Helper",
+        "href": "/en/austria/austria-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Austrian Accounting Audit Trail Checklist Helper",
+        "href": "/en/austria/austria-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+      },
+      {
+        "title": "Austrian Postal Code Validator",
+        "href": "/en/austria/austria-postal-code-validator/",
+        "text": "Validate Postleitzahl shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Austrian Address Normalizer",
+        "href": "/en/austria/austria-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Austrian Address Transliteration Normalizer",
+        "href": "/en/austria/austria-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Austrian Region / Province Code Mapper",
+        "href": "/en/austria/austria-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Austrian Municipality Code Inspector",
+        "href": "/en/austria/austria-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Austrian Phone Number Validator",
+        "href": "/en/austria/austria-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Austrian Phone E.164 Formatter",
+        "href": "/en/austria/austria-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Austrian Date Locale Formatter",
+        "href": "/en/austria/austria-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Austrian CSV Locale Normalizer",
+        "href": "/en/austria/austria-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Austria decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Austrian Slug Normalizer",
+        "href": "/en/austria/austria-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Austrian Document OCR Fixer",
+        "href": "/en/austria/austria-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Austrian GDPR / DSG Redaction Helper",
+        "href": "/en/austria/austria-gdpr-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Austrian PII Masker",
+        "href": "/en/austria/austria-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Austrian Personal Data Fixture Helper",
+        "href": "/en/austria/austria-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Austrian Driving Licence Format Helper",
+        "href": "/en/austria/austria-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Austrian Residence Permit Format Helper",
+        "href": "/en/austria/austria-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Austrian Health Card Format Helper",
+        "href": "/en/austria/austria-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Austrian Vehicle Plate Inspector",
+        "href": "/en/austria/austria-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Austrian VIN Validator",
+        "href": "/en/austria/austria-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Austrian Vehicle Data Redaction Helper",
+        "href": "/en/austria/austria-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Austrian Customs Declaration Helper",
+        "href": "/en/austria/austria-customs-declaration-helper/",
+        "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Austrian Postal Tracking Helper",
+        "href": "/en/austria/austria-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Austrian Data Quality Workbench",
+        "href": "/en/austria/austria-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Austrian JSON Fixture Helper",
+        "href": "/en/austria/austria-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Austrian Regex Pack Helper",
+        "href": "/en/austria/austria-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Austrian API Payload Auditor",
+        "href": "/en/austria/austria-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Austrian Form Field Auditor",
+        "href": "/en/austria/austria-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Austrian Locale Number Parser",
+        "href": "/en/austria/austria-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Austria."
+      },
+      {
+        "title": "Austrian Calendar Week Helper",
+        "href": "/en/austria/austria-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Austrian Company Suffix Normalizer",
+        "href": "/en/austria/austria-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Austrian Procurement Identifier Helper",
+        "href": "/en/austria/austria-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Austrian Locale Copy Checker",
+        "href": "/en/austria/austria-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Austrian Support Ticket Scrubber",
+        "href": "/en/austria/austria-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Austrian Integration Smoke Test Builder",
+        "href": "/en/austria/austria-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
 }

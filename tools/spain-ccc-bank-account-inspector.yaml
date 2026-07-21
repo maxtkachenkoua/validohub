@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-ccc-bank-account-inspector
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish CCC Bank Account Inspector"
+summary:
+  en: "Inspect Spanish domestic CCC account numbers, bank, branch, check digits, and account slices for payment debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CCC input"
+        required: true
+        placeholder:
+          en: "2100 0418 45 0200051332"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-bank-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish CCC Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect Spanish domestic CCC account numbers, bank, branch, check digits, and account slices for payment debugging."

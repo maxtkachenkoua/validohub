@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-pec-address-helper
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian PEC Address Helper"
+summary:
+  en: "Check certified-email snippets for PEC-style address evidence, domain shape, and official mailbox-boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PEC input"
+        required: true
+        placeholder:
+          en: "contabilita@example.pec.it"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian PEC Address Helper | ValidoHub"
+  description:
+    en: "Check certified-email snippets for PEC-style address evidence, domain shape, and official mailbox-boundary notes."

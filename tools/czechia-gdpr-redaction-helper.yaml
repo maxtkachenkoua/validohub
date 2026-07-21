@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: czechia-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: CZ
+category: privacy
+status: active
+name:
+  en: "Czech GDPR / UOOU Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.czechia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ27074358\",\"iban\":\"CZ6508000000192000145399\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [czechia-pii-masker, czechia-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Czech GDPR / UOOU Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

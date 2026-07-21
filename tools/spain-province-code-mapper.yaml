@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-province-code-mapper
+kind: tool
+module: validohub
+country: ES
+category: developer-tools
+status: active
+name:
+  en: "Spanish Province Code Mapper"
+summary:
+  en: "Map Spanish postal-code prefixes and province snippets into province evidence for forms and QA payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROV input"
+        required: true
+        placeholder:
+          en: "28 Madrid"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-postal-code-validator, spain-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Province Code Mapper | ValidoHub"
+  description:
+    en: "Map Spanish postal-code prefixes and province snippets into province evidence for forms and QA payloads."

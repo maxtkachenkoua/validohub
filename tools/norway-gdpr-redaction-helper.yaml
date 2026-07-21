@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: NO
+category: privacy
+status: active
+name:
+  en: "Norwegian GDPR / Datatilsynet Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-pii-masker, norway-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian GDPR / Datatilsynet Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

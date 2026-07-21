@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: denmark-customs-declaration-helper
+kind: tool
+module: validohub
+country: DK
+category: government
+status: active
+name:
+  en: "Danish Customs Declaration Helper"
+summary:
+  en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.denmark-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "DK12345674 HS 8471 1.234,56 DKK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [denmark-postal-tracking-helper, denmark-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Danish Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."

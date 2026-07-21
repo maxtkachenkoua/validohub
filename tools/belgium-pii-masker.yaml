@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-pii-masker
+kind: tool
+module: validohub
+country: BE
+category: privacy
+status: active
+name:
+  en: "Belgian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "85.07.30-033.28 +32 2 123 45 67 BE68539007547034"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-personal-data-fixture-generator, belgium-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

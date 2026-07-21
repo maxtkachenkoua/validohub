@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { countryThemeStyleAttr } from './country-theme-style.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(__dirname, '..');
@@ -9,7 +10,6 @@ function cleanSvg(svgContent) {
   let cleaned = svgContent
     .replace(/<\?xml[^>]*\?>/gi, '')
     .replace(/<!DOCTYPE[^>]*>/gi, '')
-    .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
     .trim();
 
   // Normalize duplicate spacing and newlines
@@ -59,12 +59,120 @@ function escapeHtml(value) {
     .replaceAll('"', '&quot;');
 }
 
+const HERO_CLOCK_PROFILES = {
+  argentina: {
+    label: 'Buenos Aires',
+    timeZone: 'America/Argentina/Buenos_Aires',
+    caption: 'business time'
+  },
+  brazil: {
+    label: 'Sao Paulo',
+    timeZone: 'America/Sao_Paulo',
+    caption: 'business time'
+  },
+  canada: {
+    label: 'Toronto',
+    timeZone: 'America/Toronto',
+    caption: 'eastern time'
+  },
+  chile: {
+    label: 'Santiago',
+    timeZone: 'America/Santiago',
+    caption: 'business time'
+  },
+  japan: {
+    label: 'Tokyo',
+    timeZone: 'Asia/Tokyo',
+    caption: 'business time'
+  },
+  mexico: {
+    label: 'Mexico City',
+    timeZone: 'America/Mexico_City',
+    caption: 'central time'
+  },
+  ukraine: {
+    label: 'Kyiv',
+    timeZone: 'Europe/Kyiv',
+    caption: 'business time'
+  },
+  'united-kingdom': {
+    label: 'London',
+    timeZone: 'Europe/London',
+    caption: 'business time'
+  },
+  'united-states': {
+    label: 'New York',
+    timeZone: 'America/New_York',
+    caption: 'eastern time'
+  }
+};
+
+function renderHeroClock(model) {
+  const normalizedZone = normalizeTimeZone(model.timeZones);
+  const profile = HERO_CLOCK_PROFILES[model.slug] || {
+    label: model.capital || model.displayName,
+    timeZone: normalizedZone,
+    caption: 'business time'
+  };
+  if (!profile?.timeZone) return '';
+  return `
+    <div class="vh-country-hero-clock" data-country-clock data-time-zone="${escapeHtml(profile.timeZone)}" aria-label="${escapeHtml(profile.label)} current time">
+      <div class="vh-country-clock-face" aria-hidden="true">
+        <span class="vh-country-clock-tick is-12"></span>
+        <span class="vh-country-clock-tick is-3"></span>
+        <span class="vh-country-clock-tick is-6"></span>
+        <span class="vh-country-clock-tick is-9"></span>
+        <span class="vh-country-clock-hand is-hour" data-country-clock-hour></span>
+        <span class="vh-country-clock-hand is-minute" data-country-clock-minute></span>
+        <span class="vh-country-clock-hand is-second" data-country-clock-second></span>
+        <span class="vh-country-clock-pin"></span>
+      </div>
+      <div class="vh-country-clock-copy">
+        <span>${escapeHtml(profile.label)}</span>
+        <strong data-country-clock-time>--:--:--</strong>
+        <small><span data-country-clock-date>${escapeHtml(profile.caption)}</span></small>
+      </div>
+    </div>
+  `;
+}
+
+function normalizeTimeZone(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return '';
+  const match = raw.match(/[A-Za-z]+\/[A-Za-z0-9_+-]+(?:\/[A-Za-z0-9_+-]+)?/);
+  return match ? match[0] : '';
+}
+
 function getCountryValidatorRoutes(model, routeRegistry) {
   if (!routeRegistry || typeof routeRegistry.getAll !== 'function') return [];
   return routeRegistry.getAll().filter(route => route.type === 'validator' && route.path.startsWith(`/en/${model.slug}/`));
 }
 
 const COUNTRY_SEARCH_HINTS = [
+  { label: 'MULTIBANCO', pattern: /multibanco/ },
+  { label: 'OGM', pattern: /\bogm\b|structured communication/ },
+  { label: 'KID', pattern: /\bkid\b/ },
+  { label: 'BANKGIRO', pattern: /bankgiro/ },
+  { label: 'PLUSGIRO', pattern: /plusgiro/ },
+  { label: 'VIITENUMERO', pattern: /viitenumero|reference number/ },
+  { label: 'VARIABLE SYMBOL', pattern: /variable symbol|variabil/ },
+  { label: 'FI REFERENCE', pattern: /\bfi\b.*reference|creditor reference/ },
+  { label: 'EIRCODE', pattern: /eircode/ },
+  { label: 'PPSN', pattern: /ppsn/ },
+  { label: 'HETU', pattern: /hetu/ },
+  { label: 'Y-TUNNUS', pattern: /y-tunnus|ytunnus/ },
+  { label: 'CPR', pattern: /\bcpr\b/ },
+  { label: 'CVR', pattern: /\bcvr\b/ },
+  { label: 'CNP', pattern: /\bcnp\b/ },
+  { label: 'CUI/CIF', pattern: /\bcui\b|\bcif\b/ },
+  { label: 'SVNR', pattern: /\bsvnr\b/ },
+  { label: 'UID', pattern: /\buid\b|atu/ },
+  { label: 'RRN/NISS', pattern: /\brrn\b|\bniss\b/ },
+  { label: 'KBO/BCE', pattern: /\bkbo\b|\bbce\b/ },
+  { label: 'ICO', pattern: /\bico\b|ičo/ },
+  { label: 'DIC', pattern: /\bdic\b|dič/ },
+  { label: 'PERSONNUMMER', pattern: /personnummer/ },
+  { label: 'ORGNR', pattern: /organisationsnummer|organisasjonsnummer|orgnr/ },
   { label: 'PESEL', pattern: /pesel/ },
   { label: 'NIP', pattern: /\bnip\b/ },
   { label: 'REGON', pattern: /regon/ },
@@ -91,6 +199,12 @@ const COUNTRY_SEARCH_HINTS = [
 ];
 
 function deriveCountrySearchHints(model, routeRegistry) {
+  if (Array.isArray(model.searchHints) && model.searchHints.length > 0) {
+    return model.searchHints
+      .map(hint => String(hint || '').trim())
+      .filter(Boolean)
+      .slice(0, 6);
+  }
   const routes = getCountryValidatorRoutes(model, routeRegistry);
   const routeText = routes
     .map(route => `${String(route.title || '').toLowerCase()} ${String(route.path || '').toLowerCase()}`)
@@ -203,13 +317,17 @@ export async function renderCountryVisualHero(model, routeRegistry = null) {
     const shortcut = hint.toLowerCase();
     return `<button class="vh-country-search-chip" type="button" data-country-search-shortcut="${escapeHtml(shortcut)}">${escapeHtml(hint)}</button>`;
   }).join('\n');
+  const heroClockHtml = renderHeroClock(model);
 
   const html = `
-    <header class="vh-country-hero vh-country-${model.slug} vh-country-theme--${model.slug}">
+    <header class="vh-country-hero vh-country-${model.slug} vh-country-theme--${model.slug}" ${countryThemeStyleAttr(model)}>
       <div class="vh-country-hero-copy">
-        <div class="vh-flex vh-align-center vh-gap-sm vh-mb-xs">
-          <span class="vh-flag">${model.flag}</span>
-          <span class="vh-eyebrow">Country Hub</span>
+        <div class="vh-country-hero-kicker">
+          <div class="vh-flex vh-align-center vh-gap-sm">
+            <span class="vh-flag">${model.flag}</span>
+            <span class="vh-eyebrow">Country Hub</span>
+          </div>
+          ${heroClockHtml}
         </div>
         <h1>${escapeHtml(model.displayName)} Developer Portal</h1>
         <p>Developer intelligence for local identifiers, regional payment protocols, bank routing details, and locale conventions.</p>

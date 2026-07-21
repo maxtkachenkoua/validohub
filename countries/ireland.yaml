@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: IE
+slug: ireland
+name:
+  en: Ireland
+region: Europe
+languages:
+  - en
+currency: EUR
+relatedCountries:
+  - GB
+  - FR
+  - NL

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-bank-account-inspector
+kind: tool
+module: validohub
+country: BE
+category: finance
+status: active
+name:
+  en: "Belgian Domestic Bank Account Inspector"
+summary:
+  en: "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "539 0075470 34"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-bic-swift-inspector, belgium-sepa-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgian Domestic Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."

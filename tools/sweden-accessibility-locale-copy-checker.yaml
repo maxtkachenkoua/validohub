@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: SE
+category: localization
+status: active
+name:
+  en: "Swedish Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "Personnummer input, postnummer input, amount 1 234,56 SEK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-support-ticket-scrubber, sweden-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swedish Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

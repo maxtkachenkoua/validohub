@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-bank-code-inspector
+kind: tool
+module: validohub
+country: ES
+category: finance
+status: active
+name:
+  en: "Spanish Bank / Branch Code Inspector"
+summary:
+  en: "Split Spanish bank and branch codes from CCC/IBAN snippets and prepare bank-directory handoff notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "2100 0418"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-iban-validator, spain-ccc-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Bank / Branch Code Inspector | ValidoHub"
+  description:
+    en: "Split Spanish bank and branch codes from CCC/IBAN snippets and prepare bank-directory handoff notes."

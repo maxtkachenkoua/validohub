@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sweden-iban-validator
+kind: tool
+module: validohub
+country: SE
+category: finance
+status: active
+name:
+  en: "Sweden IBAN Validator"
+summary:
+  en: "Validate SE IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sweden-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "SE4550000000058398257466"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sweden-iban-generator, sweden-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sweden IBAN Validator | ValidoHub"
+  description:
+    en: "Validate SE IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

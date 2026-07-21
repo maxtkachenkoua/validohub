@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ireland-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: IE
+category: finance
+status: active
+name:
+  en: "Irish Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ireland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1,234.56 EUR; IE29AIBK93115212345674; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ireland-bank-statement-parser, ireland-masked-iban-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Irish Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: localization
+slug: localization
+name:
+  en: Localization
+summary:
+  en: Tools for locale-aware dates, numbers, calendars, CSV formats, and accessibility copy.
+order: 70
+seo:
+  title:
+    en: Localization Tools
+  description:
+    en: Format and inspect locale-aware dates, numbers, calendars, CSV data, and copy conventions.

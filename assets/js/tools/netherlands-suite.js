@@ -1392,9 +1392,9 @@
         font-size: .98rem;
         font-weight: 900;
       }
-      .nls-samples select,
+      .nls-sample-button,
+      .nls-related-link,
       .nls-textarea {
-        width: 100%;
         min-width: 0;
         max-width: 100%;
         border: 1px solid #cbd8e8;
@@ -1408,7 +1408,24 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+      .nls-sample-button {
+        width: 100%;
+        cursor: pointer;
+        text-align: left;
+      }
+      .nls-related-list {
+        display: grid;
+        gap: .42rem;
+        margin-top: .55rem;
+      }
+      .nls-related-link {
+        display: block;
+        color: #0f172a;
+        text-decoration: none;
+        font-size: .84rem;
+      }
       .nls-textarea {
+        width: 100%;
         min-height: 8.25rem;
         resize: vertical;
       }
@@ -1675,11 +1692,10 @@
 
     const slug = location.pathname.split('/').filter(Boolean).pop();
     const tool = TOOLS.find((candidate) => candidate.id === slug) || TOOLS[0];
-    root.innerHTML = '<section class="nls-hero"><div class="nls-grid-hero"><div><span class="nls-eyebrow">Netherlands workbench</span><div class="nls-mark">' + esc(tool.code) + '</div><h2 class="nls-title">' + esc(tool.name) + '</h2><p class="nls-summary">' + esc(tool.summary) + '</p><div class="nls-chips"><span>Browser-only</span><span>Offline checks</span><span>Netherlands-specific</span><span>Field breakdown</span><span>Quality notes</span></div></div><label class="nls-samples"><span>Samples and related tools</span><select><option value="sample">Use sample fixture for ' + esc(tool.code) + '</option>' + TOOLS.filter((item) => item.id !== tool.id).slice(0, 8).map((item) => '<option value="' + esc(item.id) + '">' + esc(item.name) + '</option>').join('') + '</select></label></div></section><section class="nls-input"><div class="nls-input-head"><h2>Validate</h2><span class="nls-pill">Waiting for Dutch data</span></div><textarea class="nls-textarea" spellcheck="false">' + esc(tool.sample) + '</textarea><div class="nls-actions"><button class="nls-run" type="button">Validate</button><button class="nls-secondary" type="button" data-action="copy">Copy result</button><button class="nls-secondary" type="button" data-action="download">Download result</button><button class="nls-clear" type="button">Clear</button></div></section><div class="nls-output"></div>';
+    root.innerHTML = '<section class="nls-hero"><div class="nls-grid-hero"><div><span class="nls-eyebrow">Netherlands workbench</span><div class="nls-mark">' + esc(tool.code) + '</div><h2 class="nls-title">' + esc(tool.name) + '</h2><p class="nls-summary">' + esc(tool.summary) + '</p><div class="nls-chips"><span>Browser-only</span><span>Offline checks</span><span>Netherlands-specific</span><span>Field breakdown</span><span>Quality notes</span></div></div><div class="nls-samples"><span>Examples</span><button class="nls-sample-button" type="button" data-action="sample">Use valid sample for ' + esc(tool.code) + '</button><div class="nls-related-list">' + TOOLS.filter((item) => item.id !== tool.id).slice(0, 6).map((item) => '<a class="nls-related-link" href="/en/netherlands/' + esc(item.id) + '/">' + esc(item.name) + '</a>').join('') + '</div></div></div></section><section class="nls-input"><div class="nls-input-head"><h2>Validate</h2><span class="nls-pill">Waiting for Dutch data</span></div><textarea class="nls-textarea" spellcheck="false">' + esc(tool.sample) + '</textarea><div class="nls-actions"><button class="nls-run" type="button">Validate</button><button class="nls-secondary" type="button" data-action="copy">Copy result</button><button class="nls-secondary" type="button" data-action="download">Download result</button><button class="nls-clear" type="button">Clear</button></div></section><div class="nls-output"></div>';
 
     const textarea = $('.nls-textarea', root);
     const output = $('.nls-output', root);
-    const selector = $('select', root);
     let last = null;
 
     const run = () => {
@@ -1694,15 +1710,13 @@
       output.innerHTML = '';
       $('.nls-pill', root).textContent = 'Waiting for Dutch data';
     });
-    selector.addEventListener('change', () => {
-      const selected = TOOLS.find((item) => item.id === selector.value) || tool;
-      textarea.value = selected.sample;
-      run();
-      selector.value = 'sample';
-    });
     root.addEventListener('click', (event) => {
       const copy = event.target.closest('[data-nls-copy]');
       if (copy) navigator.clipboard?.writeText(copy.dataset.nlsCopy || '');
+      if (event.target.dataset.action === 'sample') {
+        textarea.value = tool.sample;
+        run();
+      }
       if (event.target.dataset.action === 'copy' && last) navigator.clipboard?.writeText(last.normalized || '');
       if (event.target.dataset.action === 'download' && last) {
         const blob = new Blob([JSON.stringify(last, null, 2)], { type: 'application/json' });

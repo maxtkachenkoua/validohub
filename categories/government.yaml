@@ -1,0 +1,13 @@
+schemaVersion: 1
+id: government
+slug: government
+name:
+  en: Government
+summary:
+  en: Tools for registry, customs, procurement, authority handoff, and public-sector formats.
+order: 60
+seo:
+  title:
+    en: Government Tools
+  description:
+    en: Prepare registry, customs, procurement, and public-sector data for local workflows.

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-company-onboarding-auditor
+kind: tool
+module: validohub
+country: FI
+category: developer-tools
+status: active
+name:
+  en: "Finnish Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for Y-tunnus, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-business-register-readiness-helper, finland-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for Y-tunnus, VAT, address, banking, and official registry handoff readiness."

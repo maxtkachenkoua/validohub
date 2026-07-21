@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-company-onboarding-auditor
+kind: tool
+module: validohub
+country: PT
+category: developer-tools
+status: active
+name:
+  en: "Portuguese Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for NIPC, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-business-register-readiness-helper, portugal-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for NIPC, VAT, address, banking, and official registry handoff readiness."

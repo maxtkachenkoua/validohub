@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-sozialversicherungsnummer-social-insurance-helper
+kind: tool
+module: validohub
+country: AT
+category: national-identifiers
+status: active
+name:
+  en: "Austrian Sozialversicherungsnummer Helper"
+summary:
+  en: "Split Sozialversicherungsnummer evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1234010180"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-company-onboarding-auditor, austria-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Sozialversicherungsnummer Helper | ValidoHub"
+  description:
+    en: "Split Sozialversicherungsnummer evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

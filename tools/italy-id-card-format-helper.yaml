@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-id-card-format-helper
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian ID Card Format Helper"
+summary:
+  en: "Inspect Italian identity-card snippets, document numbers, dates, and official identity-proof boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "Carta identita CA12345AB scadenza 12/07/2030 CF RSSMRA85M01H501Q"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect Italian identity-card snippets, document numbers, dates, and official identity-proof boundaries."

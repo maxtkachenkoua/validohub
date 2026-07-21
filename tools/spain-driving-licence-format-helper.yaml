@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: spain-driving-licence-format-helper
+kind: tool
+module: validohub
+country: ES
+category: national-identifiers
+status: active
+name:
+  en: "Spanish Driving Licence Format Helper"
+summary:
+  en: "Inspect Spanish driving-licence snippets, DNI evidence, categories, dates, and DGT boundary notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.spain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "DGT DNI 00000000T B permiso hasta 12/07/2030"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [spain-id-validator, spain-nif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Spanish Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect Spanish driving-licence snippets, DNI evidence, categories, dates, and DGT boundary notes."

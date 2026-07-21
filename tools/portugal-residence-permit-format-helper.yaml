@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: portugal-residence-permit-format-helper
+kind: tool
+module: validohub
+country: PT
+category: documents
+status: active
+name:
+  en: "Portuguese Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.portugal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "PT PERMIT 2026 123456749"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [portugal-health-card-format-helper, portugal-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Portuguese Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

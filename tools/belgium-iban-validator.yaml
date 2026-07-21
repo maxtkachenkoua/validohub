@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: belgium-iban-validator
+kind: tool
+module: validohub
+country: BE
+category: finance
+status: active
+name:
+  en: "Belgium IBAN Validator"
+summary:
+  en: "Validate BE IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.belgium-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "BE68539007547034"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [belgium-iban-generator, belgium-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Belgium IBAN Validator | ValidoHub"
+  description:
+    en: "Validate BE IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

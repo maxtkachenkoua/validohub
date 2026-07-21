@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: austria-firmenbuchnummer-validator
+kind: tool
+module: validohub
+country: AT
+category: national-identifiers
+status: active
+name:
+  en: "Austrian Firmenbuchnummer Validator"
+summary:
+  en: "Inspect Firmenbuchnummer structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.austria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "FN 123456a"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [austria-vat-id-validator, austria-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Austrian Firmenbuchnummer Validator | ValidoHub"
+  description:
+    en: "Inspect Firmenbuchnummer structure, registry-style prefixes, control digits, and official lookup boundaries."

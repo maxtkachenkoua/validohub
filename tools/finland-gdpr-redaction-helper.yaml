@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: finland-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: FI
+category: privacy
+status: active
+name:
+  en: "Finnish GDPR / Tietosuojavaltuutettu Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.finland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [finland-pii-masker, finland-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Finnish GDPR / Tietosuojavaltuutettu Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

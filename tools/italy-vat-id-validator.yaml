@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: italy-vat-id-validator
+kind: tool
+module: validohub
+country: IT
+category: national-identifiers
+status: active
+name:
+  en: "Italian VAT ID / IT Prefix Validator"
+summary:
+  en: "Normalize IT VAT identifiers, inspect numeric body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+  - calculate
+algorithm:
+  algorithmId: validohub.italy-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "IT12345678903"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [italy-codice-fiscale-validator, italy-partita-iva-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Italian VAT ID / IT Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize IT VAT identifiers, inspect numeric body evidence, and prepare VIES handoff diagnostics."

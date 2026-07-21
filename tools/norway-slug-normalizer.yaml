@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: norway-slug-normalizer
+kind: tool
+module: validohub
+country: NO
+category: developer-tools
+status: active
+name:
+  en: "Norwegian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.norway-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Norway sample company Karl Johans gate 1, 0154 Oslo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [norway-document-ocr-fixer, norway-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Norwegian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
