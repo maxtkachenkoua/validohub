@@ -139,7 +139,7 @@ function renderHeroClock(model) {
 function normalizeTimeZone(value) {
   const raw = String(value || '').trim();
   if (!raw) return '';
-  const match = raw.match(/[A-Za-z]+\/[A-Za-z0-9_+-]+(?:\/[A-Za-z0-9_+-]+)?/);
+  const match = raw.match(/[A-Za-z]+\/[A-Za-z0-9_+\-]+(?:\/[A-Za-z0-9_+\-]+)?/);
   return match ? match[0] : '';
 }
 

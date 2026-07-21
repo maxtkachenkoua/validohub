@@ -152,7 +152,7 @@
       "thousandsSeparator": "Dot (.)",
       "addressFormat": "Street, number, postal code, locality, Denmark",
       "postalCodeFormat": "postnummer",
-      "primaryTimeZone": "Europe local time zone",
+      "primaryTimeZone": "Europe/Copenhagen (CET/CEST)",
       "measurementSystem": "Metric",
       "paperSize": "A4",
       "emergencyNumber": "112",

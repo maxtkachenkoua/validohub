@@ -67,6 +67,19 @@ const COUNTRIES = {
   }
 };
 
+const COUNTRY_TIME_ZONES = {
+  portugal: 'Europe/Lisbon (WET/WEST)',
+  austria: 'Europe/Vienna (CET/CEST)',
+  belgium: 'Europe/Brussels (CET/CEST)',
+  ireland: 'Europe/Dublin (IST/GMT)',
+  czechia: 'Europe/Prague (CET/CEST)',
+  sweden: 'Europe/Stockholm (CET/CEST)',
+  norway: 'Europe/Oslo (CET/CEST)',
+  denmark: 'Europe/Copenhagen (CET/CEST)',
+  finland: 'Europe/Helsinki (EET/EEST)',
+  romania: 'Europe/Bucharest (EET/EEST)'
+};
+
 function writeJson(file, data) {
   fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n');
 }
@@ -128,9 +141,9 @@ for (const [slug, meta] of Object.entries(COUNTRIES)) {
   data.hub.metadata.powerPlugTypes = meta.plugTypes;
   data.hub.metadata.voltage = meta.voltage;
   data.hub.metadata.frequency = meta.frequency;
-  data.hub.metadata.primaryTimeZone = data.hub.metadata.primaryTimeZone === 'Europe local time zone'
-    ? `Europe/${data.hub.metadata.capital || meta.name}`
-    : data.hub.metadata.primaryTimeZone;
+  data.hub.metadata.primaryTimeZone = COUNTRY_TIME_ZONES[slug]
+    || data.hub.metadata.primaryTimeZone
+    || 'Europe/Brussels (CET/CEST)';
   data.hub.visualIdentity.heroAccentPrimary = rgb(meta.flag[0]);
   data.hub.visualIdentity.heroAccentSecondary = rgb(meta.flag[1]);
   data.hub.visualIdentity.heroAccentTertiary = rgb(meta.flag[2]);

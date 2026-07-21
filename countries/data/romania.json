@@ -152,7 +152,7 @@
       "thousandsSeparator": "Dot or space grouping",
       "addressFormat": "Street, number, postal code, locality, Romania",
       "postalCodeFormat": "cod postal",
-      "primaryTimeZone": "Europe local time zone",
+      "primaryTimeZone": "Europe/Bucharest (EET/EEST)",
       "measurementSystem": "Metric",
       "paperSize": "A4",
       "emergencyNumber": "112",

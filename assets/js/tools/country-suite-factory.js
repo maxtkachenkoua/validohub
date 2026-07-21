@@ -101,7 +101,50 @@
     generatedIban: 'Generated IBAN',
     bbanBody: 'BBAN body',
     mod97CheckDigits: 'MOD-97 check digits',
-    copied: 'Copied'
+    copied: 'Copied',
+    toolContextTitle: 'What this tool is for',
+    usedFor: 'Used for',
+    checksLocally: 'Checks locally',
+    officialBoundaryShort: 'Boundary'
+  };
+
+  const DEFAULT_LOCALE_LABELS = {
+    de: {
+      toolContextTitle: 'Wofuer dieses Tool ist',
+      usedFor: 'Einsatz',
+      checksLocally: 'Lokale Checks',
+      officialBoundaryShort: 'Grenze'
+    },
+    es: {
+      toolContextTitle: 'Para que sirve',
+      usedFor: 'Uso',
+      checksLocally: 'Comprueba localmente',
+      officialBoundaryShort: 'Limite'
+    },
+    fr: {
+      toolContextTitle: 'A quoi sert cet outil',
+      usedFor: 'Utilisation',
+      checksLocally: 'Verifie localement',
+      officialBoundaryShort: 'Limite'
+    },
+    pl: {
+      toolContextTitle: 'Do czego sluzy to narzedzie',
+      usedFor: 'Uzycie',
+      checksLocally: 'Sprawdza lokalnie',
+      officialBoundaryShort: 'Granica'
+    },
+    'pt-BR': {
+      toolContextTitle: 'Para que serve',
+      usedFor: 'Uso',
+      checksLocally: 'Verifica localmente',
+      officialBoundaryShort: 'Limite'
+    },
+    uk: {
+      toolContextTitle: 'Для чого цей інструмент',
+      usedFor: 'Використання',
+      checksLocally: 'Локальні перевірки',
+      officialBoundaryShort: 'Межа'
+    }
   };
 
   function formatLabel(template, suite) {
@@ -110,7 +153,7 @@
 
   function labelsFor(suite) {
     const locale = currentLocale();
-    return Object.assign({}, DEFAULT_LABELS, (suite.i18n && (suite.i18n[locale] || suite.i18n.en)) || {});
+    return Object.assign({}, DEFAULT_LABELS, DEFAULT_LOCALE_LABELS[locale] || {}, (suite.i18n && (suite.i18n[locale] || suite.i18n.en)) || {});
   }
 
   function localizeTool(suite, tool) {
@@ -1370,31 +1413,32 @@
       }
       .csf-copy-toast {
         position: fixed;
-        right: 1.25rem;
-        bottom: 1.25rem;
+        top: var(--csf-toast-top, 1rem);
+        left: var(--csf-toast-left, 50%);
         z-index: 9999;
-        border: 1px solid color-mix(in srgb, var(--csf-success) 36%, var(--csf-line));
+        border: 2px solid color-mix(in srgb, var(--csf-success) 42%, var(--csf-line));
         border-radius: 999px;
-        background: #fff;
-        color: var(--csf-success);
-        padding: .62rem .86rem;
-        font-size: .84rem;
+        background: linear-gradient(135deg, #fff, color-mix(in srgb, var(--csf-success) 10%, #fff));
+        color: #065f46;
+        padding: .78rem 1.2rem;
+        font-size: .92rem;
         font-weight: 950;
-        box-shadow: 0 18px 44px rgba(15, 23, 42, .18);
+        box-shadow: 0 22px 64px rgba(15, 23, 42, .24);
         opacity: 0;
         pointer-events: none;
-        transform: translateY(.45rem);
+        transform: translate(-50%, calc(-100% - .55rem)) scale(.98);
         transition: opacity .18s ease, transform .18s ease;
       }
       .csf-copy-toast.is-visible {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate(-50%, calc(-100% - .78rem)) scale(1);
       }
       .workbench-card.csf-shell {
         padding: clamp(1rem, 2vw, 1.35rem);
       }
       .csf-shell * { box-sizing: border-box; }
       .csf-hero,
+      .csf-context,
       .csf-panel,
       .csf-result-card,
       .csf-quality,
@@ -1487,6 +1531,52 @@
         border-color: #fecaca;
         background: var(--csf-review-soft);
         color: var(--csf-review);
+      }
+      .csf-context {
+        border: 1px solid color-mix(in srgb, var(--csf-accent-2) 22%, var(--csf-line));
+        border-radius: .95rem;
+        background:
+          linear-gradient(120deg, #fff, color-mix(in srgb, var(--csf-accent) 5%, #fff) 52%, color-mix(in srgb, var(--csf-accent-2) 6%, #fff));
+        padding: clamp(.95rem, 1.7vw, 1.25rem);
+        margin: 0 0 1.05rem;
+        box-shadow: 0 14px 34px rgba(15, 23, 42, .052);
+      }
+      .csf-context-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(18rem, .95fr);
+        gap: 1rem;
+        align-items: start;
+      }
+      .csf-context h3 {
+        margin: .14rem 0 .38rem;
+        font-size: clamp(1.02rem, 1.25vw, 1.2rem);
+        line-height: 1.18;
+        letter-spacing: 0;
+      }
+      .csf-context p {
+        margin: 0;
+        color: var(--csf-muted);
+        font-size: .86rem;
+        line-height: 1.5;
+      }
+      .csf-context-cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: .62rem;
+      }
+      .csf-context-card {
+        min-width: 0;
+        border: 1px solid var(--csf-line);
+        border-radius: .75rem;
+        background: rgba(255, 255, 255, .78);
+        padding: .72rem .78rem;
+      }
+      .csf-context-card strong {
+        display: block;
+        margin-top: .28rem;
+        color: var(--csf-ink);
+        font-size: .78rem;
+        line-height: 1.28;
       }
       .csf-samples span {
         display: block;
@@ -1977,6 +2067,9 @@
       .csf-panel.is-review .csf-bar {
         background: linear-gradient(90deg, var(--csf-review), var(--csf-accent-3), var(--csf-accent-2));
       }
+      .csf-panel.is-success .csf-bar {
+        background: linear-gradient(90deg, var(--csf-success), var(--csf-success-2), color-mix(in srgb, var(--csf-success) 55%, var(--csf-accent-2)));
+      }
       .csf-section-head {
         justify-content: flex-start;
         margin-bottom: .8rem;
@@ -2025,7 +2118,7 @@
         border: 1px solid color-mix(in srgb, var(--csf-accent-2) 15%, var(--csf-line));
         border-radius: .86rem;
         background: rgba(255, 255, 255, .72);
-        padding: .82rem;
+        padding: clamp(1rem, 1.7vw, 1.35rem);
         overflow: hidden;
       }
       .csf-strip-label {
@@ -2042,14 +2135,14 @@
         flex-wrap: wrap;
         gap: .6rem;
         justify-content: center;
-        margin: .8rem 0 1rem;
+        margin: .8rem .25rem 1rem;
       }
       .csf-segment {
         min-width: min(10.5rem, 100%);
         border: 1px solid color-mix(in srgb, var(--csf-accent-2) 25%, var(--csf-line));
         border-radius: .78rem;
         background: #fff;
-        padding: .9rem .82rem;
+        padding: 1rem 1.15rem;
         text-align: center;
         overflow: hidden;
       }
@@ -2062,22 +2155,23 @@
       .csf-strip {
         display: flex;
         flex-wrap: wrap;
-        gap: .42rem;
+        gap: .55rem;
         justify-content: center;
-        margin: .85rem 0;
+        margin: .85rem .25rem 1rem;
       }
       .csf-token {
         display: grid;
-        min-width: 3.3rem;
+        min-width: 4.15rem;
         min-height: 3.3rem;
         place-items: center;
         border: 1px solid color-mix(in srgb, var(--csf-accent-2) 28%, var(--csf-line));
         border-radius: .55rem;
         background: #fff;
-        color: var(--csf-accent-2);
+        color: var(--csf-ink);
         font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
         font-size: 1.05rem;
         font-weight: 950;
+        padding: .7rem .95rem;
         box-shadow: 0 8px 18px rgba(15, 23, 42, .045);
         overflow: hidden;
         overflow-wrap: anywhere;
@@ -2090,6 +2184,13 @@
         max-width: 100%;
         overflow-wrap: anywhere;
         word-break: break-word;
+      }
+      .csf-token,
+      .csf-token *,
+      .csf-segment strong,
+      .csf-segment strong * {
+        color: var(--csf-ink) !important;
+        -webkit-text-fill-color: var(--csf-ink);
       }
       .csf-quality {
         background: linear-gradient(120deg, #fff, color-mix(in srgb, var(--csf-accent-3) 8%, #fff));
@@ -2119,8 +2220,16 @@
       }
       .csf-debug-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+        grid-template-columns: minmax(0, min(100%, 54rem));
         gap: .85rem;
+        justify-content: center;
+      }
+      .csf-debug-grid > div {
+        min-width: 0;
+        width: 100%;
+      }
+      .csf-debug-grid .csf-section-head {
+        justify-content: center;
       }
       .csf-debug-table {
         width: 100%;
@@ -2203,7 +2312,9 @@
         color: var(--csf-accent);
       }
       @media (max-width: 760px) {
-        .csf-hero-grid { grid-template-columns: 1fr; }
+        .csf-hero-grid,
+        .csf-context-grid { grid-template-columns: 1fr; }
+        .csf-context-cards { grid-template-columns: 1fr; }
         .csf-presets-grid { grid-template-columns: 1fr; }
         .csf-rich-grid { grid-template-columns: 1fr; }
         .csf-rich-head { flex-direction: column; }
@@ -2235,11 +2346,25 @@
     return toast;
   }
 
-  function showCopyToast(suite, message) {
+  function positionCopyToast(toast, trigger) {
+    if (!toast || !trigger || !trigger.getBoundingClientRect) {
+      toast.style.setProperty('--csf-toast-left', '50%');
+      toast.style.setProperty('--csf-toast-top', '1rem');
+      return;
+    }
+    const rect = trigger.getBoundingClientRect();
+    const center = Math.max(72, Math.min(window.innerWidth - 72, rect.left + rect.width / 2));
+    const top = Math.max(58, rect.top);
+    toast.style.setProperty('--csf-toast-left', `${center}px`);
+    toast.style.setProperty('--csf-toast-top', `${top}px`);
+  }
+
+  function showCopyToast(suite, message, trigger) {
     const toast = toastRoot();
     if (!toast) return;
     const labels = labelsFor(suite);
     toast.textContent = message || labels.copied || 'Copied';
+    positionCopyToast(toast, trigger);
     toast.classList.add('is-visible');
     clearTimeout(showCopyToast.timer);
     showCopyToast.timer = setTimeout(() => {
@@ -2247,13 +2372,144 @@
     }, 1450);
   }
 
-  function copyText(suite, value, message) {
+  function copyText(suite, value, message, trigger) {
     const payload = text(value);
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(payload).then(() => showCopyToast(suite, message)).catch(() => showCopyToast(suite, message));
+      navigator.clipboard.writeText(payload).then(() => showCopyToast(suite, message, trigger)).catch(() => showCopyToast(suite, message, trigger));
       return;
     }
-    showCopyToast(suite, message);
+    showCopyToast(suite, message, trigger);
+  }
+
+  function toolContextProfile(tool) {
+    const haystack = `${tool.id || ''} ${tool.name || ''} ${tool.code || ''} ${tool.category || ''} ${tool.kind || ''}`.toLowerCase();
+    if (/iban/.test(haystack)) {
+      return {
+        subject: 'bank-account routing evidence',
+        usedFor: 'payments, bank forms, payout onboarding',
+        checks: 'country prefix, check digits, BBAN structure',
+        boundary: 'bank ownership and account status'
+      };
+    }
+    if (/vat|ust|iva|btw|moms|mva/.test(haystack)) {
+      return {
+        subject: 'tax-registration evidence',
+        usedFor: 'VAT onboarding, invoices, tax forms',
+        checks: 'prefix, length, checksum or format shape',
+        boundary: 'tax authority registration status'
+      };
+    }
+    if (/invoice|factur|rechnung|faktura|fatura|e-?invoic/.test(haystack)) {
+      return {
+        subject: 'invoice and accounting reference evidence',
+        usedFor: 'ERP imports, invoice matching, audit trails',
+        checks: 'year hints, sequence shape, separators',
+        boundary: 'source accounting-system truth'
+      };
+    }
+    if (/eori|customs|taric|excise|intrastat/.test(haystack)) {
+      return {
+        subject: 'customs and trade-registration evidence',
+        usedFor: 'imports, exports, customs onboarding',
+        checks: 'country prefix, identifier body, copied payload',
+        boundary: 'customs authority registration status'
+      };
+    }
+    if (/passport|id card|identity|national id|rodne|person|pesel|nif|nie|dni|ssn|social/.test(haystack)) {
+      return {
+        subject: 'personal-identifier structure evidence',
+        usedFor: 'KYC forms, test fixtures, data intake',
+        checks: 'length, date hints, control digits, masking',
+        boundary: 'identity ownership and legal status'
+      };
+    }
+    if (/company|registry|register|firma|siren|siret|cvr|kvk|handels|business/.test(haystack)) {
+      return {
+        subject: 'company-registry identifier evidence',
+        usedFor: 'vendor onboarding, compliance checks, CRM data',
+        checks: 'registry shape, prefixes, sequence blocks',
+        boundary: 'live company registration status'
+      };
+    }
+    if (/postal|post ?code|zip|address|cep/.test(haystack)) {
+      return {
+        subject: 'address and postal-format evidence',
+        usedFor: 'shipping forms, address cleanup, signup flows',
+        checks: 'postal pattern, spacing, local formatting',
+        boundary: 'deliverability and official address existence'
+      };
+    }
+    if (/phone|e\.?164|mobile|msisdn/.test(haystack)) {
+      return {
+        subject: 'phone-number formatting evidence',
+        usedFor: 'contact forms, SMS tests, CRM normalization',
+        checks: 'country code, local length, E.164 display',
+        boundary: 'line ownership and carrier status'
+      };
+    }
+    if (/vehicle|vin|plate|license|driving|renavam/.test(haystack)) {
+      return {
+        subject: 'vehicle-intake identifier evidence',
+        usedFor: 'fleet records, insurance intake, vehicle forms',
+        checks: 'prefixes, length, serial groups, masking',
+        boundary: 'registry ownership and live vehicle status'
+      };
+    }
+    if (/bank|routing|swift|bic|clearing|sort|branch|konto|account/.test(haystack)) {
+      return {
+        subject: 'bank-routing and account-format evidence',
+        usedFor: 'payments setup, reconciliation, bank uploads',
+        checks: 'routing blocks, branch codes, account body',
+        boundary: 'bank-side account existence'
+      };
+    }
+    if (/csv|locale|format|number|currency|date|normalizer|formatter/.test(haystack)) {
+      return {
+        subject: 'locale-format normalization evidence',
+        usedFor: 'CSV imports, exports, data cleanup',
+        checks: 'dates, decimals, separators, local display',
+        boundary: 'business meaning of the source data'
+      };
+    }
+    return {
+      subject: `${tool.code || 'local'} format evidence`,
+      usedFor: 'forms, fixtures, imports, handoff checks',
+      checks: 'local structure, normalized value, safe preview',
+      boundary: 'official registry or source-system status'
+    };
+  }
+
+  function renderToolContext(suite, tool) {
+    const labels = labelsFor(suite);
+    const profile = tool.contextProfile || toolContextProfile(tool);
+    const countryName = suite.country.name;
+    const firstSentence = `${tool.name} helps ${countryName} teams inspect ${profile.subject} before it moves into forms, imports, or compliance workflows.`;
+    const secondSentence = `${tool.summary} The browser-only result is useful for normalization and debugging, while ${profile.boundary} still belongs to the responsible official or source system.`;
+    return `
+      <section class="csf-context" aria-label="${esc(labels.toolContextTitle)}">
+        <div class="csf-context-grid">
+          <div>
+            <span class="csf-kicker">${esc(labels.toolContextTitle)}</span>
+            <h3>${esc(tool.name)}</h3>
+            <p>${esc(firstSentence)} ${esc(secondSentence)}</p>
+          </div>
+          <div class="csf-context-cards">
+            <article class="csf-context-card">
+              <span class="csf-label">${esc(labels.usedFor)}</span>
+              <strong>${esc(profile.usedFor)}</strong>
+            </article>
+            <article class="csf-context-card">
+              <span class="csf-label">${esc(labels.checksLocally)}</span>
+              <strong>${esc(profile.checks)}</strong>
+            </article>
+            <article class="csf-context-card">
+              <span class="csf-label">${esc(labels.officialBoundaryShort)}</span>
+              <strong>${esc(profile.boundary)}</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+    `;
   }
 
   function renderHero(suite, tool) {
@@ -2444,6 +2700,7 @@
 
   function renderPipeline(suite, result) {
     const labels = labelsFor(suite);
+    const resultPassed = result.status === 'success';
     return `
       <section class="csf-panel is-${result.status}">
         <div class="csf-section-head">
@@ -2452,8 +2709,8 @@
         </div>
         <div class="csf-bar"></div>
         <div class="csf-pipeline">${result.checks.map((check) => `
-          <article class="csf-step ${check.pass ? 'is-pass' : 'is-review'}">
-            <span>${esc(check.pass ? labels.pass : labels.review)}</span>
+          <article class="csf-step ${resultPassed || check.pass ? 'is-pass' : 'is-review'}">
+            <span>${esc(resultPassed || check.pass ? labels.pass : labels.review)}</span>
             <strong>${esc(check.label)}</strong>
             <small>${esc(check.text)}</small>
           </article>
@@ -2526,10 +2783,6 @@
     const labels = labelsFor(suite);
     const tool = suite.toolById && suite.toolById.get(result.developerJson && result.developerJson.tool) ? suite.toolById.get(result.developerJson.tool) : { id: result.developerJson && result.developerJson.tool || 'tool' };
     const rows = debuggerRows(result);
-    const suggestions = (asArray(result.suggestions).length ? result.suggestions : [
-      { action: result.status === 'success' ? 'copy-normalized' : 'load-valid', label: result.status === 'success' ? 'Copy normalized value' : 'Load valid fixture', detail: result.status === 'success' ? 'Use the normalized value in test fixtures and masked values in logs.' : 'Compare the field breakdown against your input.' },
-      { action: 'run-batch', label: 'Run sample batch', detail: 'Compare pass/review states without leaving this page.' }
-    ]).map((item) => typeof item === 'string' ? { action: '', label: item, detail: '' } : item);
     return `
       <section class="csf-results">
         <details class="csf-advanced" open>
@@ -2541,10 +2794,6 @@
                 <thead><tr><th>Step</th><th>Evidence</th><th>Detail</th></tr></thead>
                 <tbody>${rows.map((row) => `<tr><td>${esc(row.step)}</td><td>${esc(row.evidence)}</td><td>${esc(row.detail)}</td></tr>`).join('')}</tbody>
               </table>
-            </div>
-            <div>
-              <div class="csf-section-head"><span class="csf-icon">✦</span><div><h3>${esc(labels.repairSuggestions)}</h3><p>${esc(labels.regexDetails)}</p></div></div>
-              <div class="csf-suggestions">${suggestions.map((item) => `<button class="csf-suggestion" type="button" data-csf-repair-action="${esc(item.action || '')}">${esc(item.label || item.title || item.text || '')}${item.detail ? `<small>${esc(item.detail)}</small>` : ''}</button>`).join('')}</div>
             </div>
           </div>
         </details>
@@ -2603,7 +2852,7 @@
       rootElement.style.setProperty('--csf-accent', suite.theme.accent);
       rootElement.style.setProperty('--csf-accent-2', suite.theme.accent2);
       rootElement.style.setProperty('--csf-accent-3', suite.theme.accent3 || '#f59e0b');
-      rootElement.innerHTML = `${renderHero(suite, tool)}${renderRichLayer(suite, tool)}${renderInput(suite, tool)}<div data-csf-output></div>`;
+      rootElement.innerHTML = `${renderHero(suite, tool)}${renderToolContext(suite, tool)}${renderRichLayer(suite, tool)}${renderInput(suite, tool)}<div data-csf-output></div>`;
 
       const input = rootElement.querySelector('[data-csf-input]');
       const output = rootElement.querySelector('[data-csf-output]');
@@ -2730,9 +2979,9 @@
         state.textContent = labels.waiting;
         state.dataset.state = 'waiting';
       });
-      rootElement.querySelector('[data-csf-copy]').addEventListener('click', () => {
+      rootElement.querySelector('[data-csf-copy]').addEventListener('click', (event) => {
         const value = lastResult ? lastResult.normalized : input.value;
-        if (value != null) copyText(suite, value);
+        if (value != null) copyText(suite, value, null, event.currentTarget);
       });
       rootElement.querySelector('[data-csf-download]').addEventListener('click', () => {
         const value = lastResult ? JSON.stringify(lastResult.developerJson || lastResult, null, 2) : input.value;
@@ -2745,12 +2994,12 @@
       });
       rootElement.addEventListener('click', (event) => {
         const copy = event.target.closest('[data-csf-copy-value]');
-        if (copy) copyText(suite, copy.dataset.csfCopyValue || '');
+        if (copy) copyText(suite, copy.dataset.csfCopyValue || '', null, copy);
         const repair = event.target.closest('[data-csf-repair-action]');
         if (!repair) return;
         const action = repair.dataset.csfRepairAction;
         if (action === 'copy-normalized') {
-          copyText(suite, text(lastResult && lastResult.normalized || input.value));
+          copyText(suite, text(lastResult && lastResult.normalized || input.value), null, repair);
         }
         if (action === 'load-valid') {
           const sample = tool.samples.find((item) => item.tone === 'success') || tool.samples[0];
@@ -2828,8 +3077,8 @@
         });
       });
       const batchCopy = rootElement.querySelector('[data-csf-batch-copy]');
-      if (batchCopy) batchCopy.addEventListener('click', () => {
-        copyText(suite, JSON.stringify(lastBatch, null, 2));
+      if (batchCopy) batchCopy.addEventListener('click', (event) => {
+        copyText(suite, JSON.stringify(lastBatch, null, 2), null, event.currentTarget);
       });
       const batchClear = rootElement.querySelector('[data-csf-batch-clear]');
       if (batchClear) batchClear.addEventListener('click', () => {

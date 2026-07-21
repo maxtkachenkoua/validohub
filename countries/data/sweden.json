@@ -152,7 +152,7 @@
       "thousandsSeparator": "Space grouping",
       "addressFormat": "Street, number, postal code, locality, Sweden",
       "postalCodeFormat": "postnummer",
-      "primaryTimeZone": "Europe local time zone",
+      "primaryTimeZone": "Europe/Stockholm (CET/CEST)",
       "measurementSystem": "Metric",
       "paperSize": "A4",
       "emergencyNumber": "112",

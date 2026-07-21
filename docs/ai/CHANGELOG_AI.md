@@ -865,3 +865,7 @@ Impact:
 
 - Upgraded Country Suite Factory V1 toward Poland PESEL-level tool richness for factory-based country suites: presets/history, batch validation, result-first analysis, visual field/evidence strips, calculation/parser debugger, repair suggestions, developer API preview, and raw JSON/audit output.
 - Added permanent product rules requiring PESEL-like debug depth for every country-scoped tool, with domain-appropriate parser/evidence diagnostics for non-checksum tools.
+- Refined the shared country-tool debug layer after visual QA: copy feedback must appear as a prominent toast anchored above the triggering button, success pipelines must render green only, field/evidence token strips must keep dark padded text, and the advanced layer should use one centered replay calculation instead of a generic repair-suggestions column.
+- Replaced placeholder `Europe local time zone` values in new Europe country data with real IANA zones so every country hub can render the compact hero clock reliably.
+- Added a mandatory factory tool-context block after each country-tool hero and before advanced diagnostics/input. The block explains the real workflow use case, local browser checks, and official/source-system boundary with tool-specific copy.
+- Added `docs/ai/PREMIUM_COUNTRY_PLAYBOOK.md` as the AI handoff for future premium country work and switched copy feedback to an anchored popover above the clicked copy button.

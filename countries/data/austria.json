@@ -152,7 +152,7 @@
       "thousandsSeparator": "Dot (.)",
       "addressFormat": "Street, number, postal code, locality, Austria",
       "postalCodeFormat": "Postleitzahl",
-      "primaryTimeZone": "Europe local time zone",
+      "primaryTimeZone": "Europe/Vienna (CET/CEST)",
       "measurementSystem": "Metric",
       "paperSize": "A4",
       "emergencyNumber": "112",

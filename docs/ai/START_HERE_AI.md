@@ -27,6 +27,8 @@ For visual identity, logo, icon, or brand work, also read:
 For Country Hub work, also read:
 
 - `docs/ai/COUNTRY_HUB_AI_GUIDE.md`
+- `docs/ai/PREMIUM_COUNTRY_PLAYBOOK.md`
+- `docs/ai/COUNTRY_PREMIUM_READINESS_REPORT.md`
 - `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md`
 - `docs/product/COUNTRIES_ARCHITECTURE.md`
 - `docs/product/COUNTRY_HUB_TEMPLATE_SPEC.md`

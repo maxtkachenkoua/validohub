@@ -117,6 +117,19 @@ const COUNTRIES = [
   }
 ];
 
+const COUNTRY_TIME_ZONES = {
+  portugal: 'Europe/Lisbon (WET/WEST)',
+  austria: 'Europe/Vienna (CET/CEST)',
+  belgium: 'Europe/Brussels (CET/CEST)',
+  ireland: 'Europe/Dublin (IST/GMT)',
+  czechia: 'Europe/Prague (CET/CEST)',
+  sweden: 'Europe/Stockholm (CET/CEST)',
+  norway: 'Europe/Oslo (CET/CEST)',
+  denmark: 'Europe/Copenhagen (CET/CEST)',
+  finland: 'Europe/Helsinki (EET/EEST)',
+  romania: 'Europe/Bucharest (EET/EEST)'
+};
+
 const TOOL_TEMPLATES = [
   ['{personalSlug}-validator', '{adj} {personal} Validator', 'ID', 'Validate {personal} shape, split date/control/body evidence, and prepare privacy-safe debugging output.', 'national-identifiers', 'personal', 'Validate', '{personalSample}'],
   ['{companySlug}-validator', '{adj} {company} Validator', 'ORG', 'Inspect {company} structure, registry-style prefixes, control digits, and official lookup boundaries.', 'national-identifiers', 'company', 'Validate', '{companySample}'],
@@ -482,7 +495,7 @@ function countryData(country, tools) {
         iso2: country.iso2, iso3: country.iso3, isoNumeric: country.isoNumeric, locale: country.locale, icuLocale: country.icu,
         dateFormat: country.date, timeFormat: '24-hour, HH:mm', decimalSeparator: country.decimal, thousandsSeparator: country.thousands,
         addressFormat: `Street, number, postal code, locality, ${country.name}`, postalCodeFormat: country.localTerms.postal,
-        primaryTimeZone: 'Europe local time zone', measurementSystem: 'Metric', paperSize: 'A4', emergencyNumber: '112', weekStarts: 'Monday',
+        primaryTimeZone: COUNTRY_TIME_ZONES[country.slug] || 'Europe/Brussels (CET/CEST)', measurementSystem: 'Metric', paperSize: 'A4', emergencyNumber: '112', weekStarts: 'Monday',
         rtlSupport: 'No', unicodeLocale: country.locale, cldrLocale: country.icu, metricVsImperial: 'Metric-first'
       },
       visualIdentity: {

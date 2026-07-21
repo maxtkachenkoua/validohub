@@ -152,7 +152,7 @@
       "thousandsSeparator": "Comma (,)",
       "addressFormat": "Street, number, postal code, locality, Ireland",
       "postalCodeFormat": "Eircode",
-      "primaryTimeZone": "Europe local time zone",
+      "primaryTimeZone": "Europe/Dublin (IST/GMT)",
       "measurementSystem": "Metric",
       "paperSize": "A4",
       "emergencyNumber": "112",

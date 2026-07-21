@@ -58,6 +58,7 @@ Factory-based country tools must not stop at a basic result/pipeline/breakdown s
 
 Every factory-rendered country tool must include:
 
+- a compact tool-context block immediately after the hero and before advanced diagnostics/input flow; it must explain what the tool is for, where the identifier or payload appears in real workflows, what is checked locally, and which official/source-system boundary remains outside the browser
 - success-first presets and recent local validation history
 - batch validation for local fixture lists when line-based inputs make sense
 - a visible PESEL-depth premium debug layer near the top of the tool with browser history, multi-row diagnostics, API preview, raw JSON/audit output, and country-local related tools
@@ -65,7 +66,6 @@ Every factory-rendered country tool must include:
 - validation pipeline with meaningful pass/review states
 - field/evidence breakdown plus a visual token strip for quick scanning
 - calculation or parser debugger using the available checks and field slices
-- repair suggestions for invalid or edge-case input
 - raw JSON/audit output for developer workflows
 - developer API preview that reflects the active country/tool route
 - quality notes and official/live lookup boundaries
@@ -82,9 +82,9 @@ Field/evidence breakdown rendering must have one clear title hierarchy. Use a si
 
 Field/evidence breakdown rendering must also keep values high-contrast. Token strips, segment tiles, and detailed cards cannot use near-white text on white/review/success backgrounds, and all long values must wrap or scroll locally.
 
-Quality notes and repair suggestions must be specific and useful for the active country/tool. Repair suggestions should be interactive buttons where possible: load valid fixture, load invalid fixture, try short sample, run sample batch, or copy normalized output. Advanced debug panels should carry one local badge only.
+Quality notes must be specific and useful for the active country/tool. Advanced debug panels should carry one local badge only, avoid a generic repair-suggestions column, and center the replay calculation/debugger as the primary troubleshooting surface. Sample buttons must provide the interactive valid/invalid/short fixtures.
 
-Every factory copy action must show visible feedback through the shared copy toast/status announcer. A user should know immediately that `Copy result`, `Copy normalized`, batch JSON copy, and repair-copy actions succeeded.
+Every factory copy action must show visible feedback through the shared copy toast/status announcer anchored above the triggering button. A user should know immediately that `Copy result`, `Copy normalized`, batch JSON copy, and repair-copy actions succeeded and which control caused it.
 
 The exact internals must fit the domain. Identifier and banking tools should expose checksum, body, prefix, branch, account, or control-digit evidence. CSV, OCR, API, form-field, checklist, privacy, locale, and data-quality tools should expose detected evidence groups, parser stages, normalized fields, warning classes, and export payloads. A country tool is not premium if it has only a large input, generic buttons, and a short text output.
 

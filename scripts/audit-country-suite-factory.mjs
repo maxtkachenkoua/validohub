@@ -41,6 +41,11 @@ if (fs.existsSync('assets/js/tools/country-suite-factory.js')) {
     'validateSuiteConfig',
     'createSuite',
     'csf-hero',
+    'csf-context',
+    'renderToolContext',
+    'toolContextProfile',
+    'What this tool is for',
+    'Checks locally',
     'csf-result-card',
     'csf-breakdown',
     'csf-quality',
@@ -149,6 +154,15 @@ if (fs.existsSync('assets/js/tools/country-suite-factory.js')) {
   if (!factory.includes('Grouped valid sample') || !factory.includes('Invalid sample')) {
     failures.push('factory sample UX must expose clear valid/invalid examples');
   }
+  if (!factory.includes('positionCopyToast') || !factory.includes('--csf-toast-left') || !factory.includes('--csf-toast-top')) {
+    failures.push('factory copy toast must anchor above the clicked copy button and remain visually prominent');
+  }
+  if (!factory.includes('resultPassed || check.pass')) {
+    failures.push('factory success pipelines must render passed checks green end to end');
+  }
+  if (!factory.includes('renderHero(suite, tool)}${renderToolContext(suite, tool)}${renderRichLayer(suite, tool)}')) {
+    failures.push('factory must render the tool context block immediately after hero and before advanced tools');
+  }
 }
 
 const existingSuites = [
@@ -200,6 +214,15 @@ if (fs.existsSync('scripts/build-all.mjs')) {
   ];
   for (const token of forbiddenMappings) {
     if (build.includes(token)) failures.push(`existing country suite must not be remapped to factory: ${token}`);
+  }
+}
+
+for (const slug of ['portugal', 'austria', 'belgium', 'ireland', 'czechia', 'sweden', 'norway', 'denmark', 'finland', 'romania']) {
+  const file = `countries/data/${slug}.json`;
+  if (!fs.existsSync(file)) continue;
+  const text = fs.readFileSync(file, 'utf8');
+  if (text.includes('Europe local time zone')) {
+    failures.push(`${file} must use a real IANA timezone for the hero clock`);
   }
 }
 

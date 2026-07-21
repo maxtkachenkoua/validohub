@@ -152,7 +152,7 @@
       "thousandsSeparator": "Space or dot grouping",
       "addressFormat": "Street, number, postal code, locality, Portugal",
       "postalCodeFormat": "codigo postal",
-      "primaryTimeZone": "Europe local time zone",
+      "primaryTimeZone": "Europe/Lisbon (WET/WEST)",
       "measurementSystem": "Metric",
       "paperSize": "A4",
       "emergencyNumber": "112",

@@ -152,7 +152,7 @@
       "thousandsSeparator": "Space grouping",
       "addressFormat": "Street, number, postal code, locality, Czechia",
       "postalCodeFormat": "PSC",
-      "primaryTimeZone": "Europe local time zone",
+      "primaryTimeZone": "Europe/Prague (CET/CEST)",
       "measurementSystem": "Metric",
       "paperSize": "A4",
       "emergencyNumber": "112",

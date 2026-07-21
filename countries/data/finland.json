@@ -152,7 +152,7 @@
       "thousandsSeparator": "Space grouping",
       "addressFormat": "Street, number, postal code, locality, Finland",
       "postalCodeFormat": "postinumero",
-      "primaryTimeZone": "Europe local time zone",
+      "primaryTimeZone": "Europe/Helsinki (EET/EEST)",
       "measurementSystem": "Metric",
       "paperSize": "A4",
       "emergencyNumber": "112",

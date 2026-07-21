@@ -152,7 +152,7 @@
       "thousandsSeparator": "Dot or space grouping",
       "addressFormat": "Street, number, postal code, locality, Belgium",
       "postalCodeFormat": "postcode / code postal",
-      "primaryTimeZone": "Europe local time zone",
+      "primaryTimeZone": "Europe/Brussels (CET/CEST)",
       "measurementSystem": "Metric",
       "paperSize": "A4",
       "emergencyNumber": "112",
