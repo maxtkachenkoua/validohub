@@ -50,7 +50,7 @@
     pass: 'PASS',
     review: 'REVIEW',
     privacyBoundary: 'Privacy boundary',
-    officialLookupBoundary: 'Official lookup boundary',
+    officialLookupBoundary: 'Official boundary',
     fixtureSafety: 'Fixture safety',
     developerHandling: 'Developer handling',
     qualityNote: 'Quality note',
@@ -100,7 +100,8 @@
     ibanGeneratorSummary: 'Generate a structurally valid IBAN from a country code and BBAN/account body.',
     generatedIban: 'Generated IBAN',
     bbanBody: 'BBAN body',
-    mod97CheckDigits: 'MOD-97 check digits'
+    mod97CheckDigits: 'MOD-97 check digits',
+    copied: 'Copied'
   };
 
   function formatLabel(template, suite) {
@@ -199,6 +200,13 @@
     return /^(invalid|short|wrong|bad|review)\b/i.test(text(value).trim()) || /\b(BAD|INVALID|WRONG)[-_ ]?(CHECKSUM|PREFIX|COUNTRY|SAMPLE)\b/i.test(text(value));
   }
 
+  function sampleIntent(sample) {
+    const joined = `${sample && sample.label || ''} ${sample && sample.value || ''} ${sample && sample.intent || ''} ${sample && sample.tone || ''}`;
+    if (sample && sample.intent) return sample.intent === 'success' ? 'valid' : sample.intent;
+    if (isReviewSampleLabel(joined) || intentionalReviewFixture(sample && sample.value)) return 'review';
+    return 'valid';
+  }
+
   function makeWrongPrefixSample(suite, value) {
     const raw = text(value).trim();
     const iso = text(suite.country && (suite.country.iso2 || suite.country.slug)).slice(0, 2).toUpperCase();
@@ -210,7 +218,7 @@
   function makeInvalidFixture(suite, tool, value, label) {
     const raw = text(value).trim();
     if (/checksum|control|check/i.test(`${tool && tool.name || ''} ${tool && tool.kind || ''}`) && raw) {
-      return incrementLastDigit(raw);
+      return `Invalid ${incrementLastDigit(raw)}`;
     }
     if (/prefix|country|iban|vat|eori/i.test(`${label || ''} ${tool && tool.name || ''} ${tool && tool.kind || ''}`)) {
       return makeWrongPrefixSample(suite, raw);
@@ -233,28 +241,34 @@
       const placeholderReview = /^review\s+/i.test(text(sample.label)) || /^review\s+/i.test(text(sample.value));
       const originalLabel = text(sample.label);
       const reviewIntent = placeholderReview || isReviewSampleLabel(originalLabel) || intentionalReviewFixture(sample.value);
-      const value = placeholderReview ? makeInvalidFixture(suite, tool, firstValue || sample.value, originalLabel) : sample.value;
+      let value = placeholderReview ? makeInvalidFixture(suite, tool, firstValue || sample.value, originalLabel) : sample.value;
       let label = sample.label;
-      if (index === 0 || isValidSampleLabel(label)) label = labels.validSample;
+      if (/grouped/i.test(label)) label = labels.groupedValidSample;
+      else if (index === 0) label = labels.validSample;
+      else if (isValidSampleLabel(label)) label = text(label).trim() || labels.validSample;
       if (reviewIntent) label = /short/i.test(originalLabel) ? labels.shortSample : labels.invalidSample;
       if (labelLooksRaw(label, value)) label = index === 0 && !reviewIntent ? labels.validSample : labels.invalidSample;
-      return Object.assign({}, sample, { label, value, tone: index === 0 && !reviewIntent ? 'success' : 'review' });
+      if (reviewIntent && !intentionalReviewFixture(value)) {
+        value = makeInvalidFixture(suite, tool, firstValue || value, originalLabel || label);
+      }
+      const intent = index === 0 && !reviewIntent ? 'valid' : 'review';
+      return Object.assign({}, sample, { label, value, tone: intent === 'valid' ? 'success' : 'review', intent });
     });
     if (firstCompact && isIbanLikeTool(tool)) {
-      normalized.push({ label: labels.groupedValidSample, value: firstCompact.replace(/(.{4})/g, '$1 ').trim(), tone: 'success' });
+      normalized.push({ label: labels.groupedValidSample, value: firstCompact.replace(/(.{4})/g, '$1 ').trim(), tone: 'success', intent: 'valid' });
     }
     if (firstValue) {
-      normalized.push({ label: labels.invalidSample, value: makeInvalidFixture(suite, tool, firstValue, labels.invalidSample), tone: 'review' });
-      normalized.push({ label: labels.shortSample, value: makeShortSample(firstValue), tone: 'review' });
+      normalized.push({ label: labels.invalidSample, value: makeInvalidFixture(suite, tool, firstValue, labels.invalidSample), tone: 'review', intent: 'review' });
+      normalized.push({ label: labels.shortSample, value: `Short ${makeShortSample(firstValue)}`, tone: 'review', intent: 'review' });
     }
     if (firstValue && isIbanLikeTool(tool)) {
-      normalized.push({ label: labels.badCountrySample, value: makeBadCountrySample(suite, firstValue), tone: 'review' });
+      normalized.push({ label: labels.badCountrySample, value: `Wrong prefix ${makeBadCountrySample(suite, firstValue)}`, tone: 'review', intent: 'review' });
     } else if (firstValue) {
-      normalized.push({ label: labels.badCountrySample || 'Wrong prefix', value: makeWrongPrefixSample(suite, firstValue), tone: 'review' });
+      normalized.push({ label: labels.badCountrySample || 'Wrong prefix', value: makeWrongPrefixSample(suite, firstValue), tone: 'review', intent: 'review' });
     }
     const seen = new Set();
     return normalized.filter((sample) => {
-      const key = `${sample.label}::${sample.value}`;
+      const key = `${sample.label}::${sample.value}::${sample.intent || ''}`;
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
@@ -541,7 +555,7 @@
         text: `${tool.name} analyzes ${countryName}-specific structure in this browser and keeps raw input local.`
       },
       {
-        title: 'Official lookup boundary',
+        title: 'Official boundary',
         text: `${countryName} registry, tax, identity, banking, vehicle, postal, or filing status still requires the responsible official system.`
       },
       {
@@ -570,8 +584,8 @@
     });
   }
 
-  function forceIntentionalReview(suite, tool, input, result) {
-    if (!intentionalReviewFixture(input)) return result;
+  function forceIntentionalReview(suite, tool, input, result, intent) {
+    if (intent !== 'review' && !intentionalReviewFixture(input)) return result;
     const raw = text(input).trim();
     const normalized = raw.replace(/\s+/g, ' ');
     const forced = Object.assign({}, result, {
@@ -1221,9 +1235,12 @@
     return result;
   }
 
-  function buildIbanGeneratorResult(suite, tool, input) {
+  function buildIbanGeneratorResult(suite, tool, input, intent) {
     const labels = labelsFor(suite);
     const raw = text(input || (tool.samples && tool.samples[0] && tool.samples[0].value) || '').trim();
+    if (intent === 'review' || intentionalReviewFixture(raw)) {
+      return forceIntentionalReview(suite, tool, raw, defaultAnalyze(tool, raw), 'review');
+    }
     const compact = alnumOnly(raw);
     const country = countryCodeForSuite(suite, tool, compact);
     let bban = compact;
@@ -1293,13 +1310,14 @@
     return breakdownText.includes('identifier evidence') || breakdownText.includes('tax evidence') || breakdownText.includes('payment evidence') || breakdownText.includes('workflow');
   }
 
-  function enhanceAnalyzerResult(suite, tool, input, result) {
+  function enhanceAnalyzerResult(suite, tool, input, result, context) {
+    const intent = context && context.sampleIntent;
     if (tool.kind === 'ibangenerator' || /iban-generator/i.test(`${tool.id} ${tool.name}`)) {
-      return withToolSpecificContext(suite, tool, buildIbanGeneratorResult(suite, tool, input));
+      return withToolSpecificContext(suite, tool, buildIbanGeneratorResult(suite, tool, input, intent));
     }
     const profileResult = buildProfileResult(suite, tool, input, result);
-    if (profileResult) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, profileResult));
-    if (!isWeakFactoryResult(result)) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, result));
+    if (profileResult) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, profileResult), intent);
+    if (!isWeakFactoryResult(result)) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, result), intent);
     const raw = text(input).trim();
     const normalized = raw.replace(/\s+/g, ' ');
     const localTerms = [tool.code, tool.name, suite.country.name].filter(Boolean).join(' / ');
@@ -1313,7 +1331,7 @@
         fieldSlice('official boundary', 'offline only', 'Live status remains outside this browser workbench.', 'red')
       ]
     });
-    return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, enhanced));
+    return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, enhanced), intent);
   }
 
   function normalizeResult(tool, result) {
@@ -1349,6 +1367,28 @@
         --csf-ink: #0f172a;
         --csf-muted: #64748b;
         color: var(--csf-ink);
+      }
+      .csf-copy-toast {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        z-index: 9999;
+        border: 1px solid color-mix(in srgb, var(--csf-success) 36%, var(--csf-line));
+        border-radius: 999px;
+        background: #fff;
+        color: var(--csf-success);
+        padding: .62rem .86rem;
+        font-size: .84rem;
+        font-weight: 950;
+        box-shadow: 0 18px 44px rgba(15, 23, 42, .18);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(.45rem);
+        transition: opacity .18s ease, transform .18s ease;
+      }
+      .csf-copy-toast.is-visible {
+        opacity: 1;
+        transform: translateY(0);
       }
       .workbench-card.csf-shell {
         padding: clamp(1rem, 2vw, 1.35rem);
@@ -1898,6 +1938,8 @@
         border-radius: .78rem;
         padding: .82rem;
         background: #fff;
+        min-width: 0;
+        overflow: hidden;
       }
       .csf-step.is-pass {
         border-color: color-mix(in srgb, var(--csf-success) 28%, var(--csf-line));
@@ -1912,8 +1954,10 @@
       .csf-segment strong {
         display: block;
         margin: .28rem 0;
+        color: var(--csf-ink);
         font-size: .98rem;
         overflow-wrap: anywhere;
+        word-break: break-word;
       }
       .csf-mini small,
       .csf-note,
@@ -2009,6 +2053,12 @@
         text-align: center;
         overflow: hidden;
       }
+      .csf-segment span,
+      .csf-mini span,
+      .csf-label {
+        overflow-wrap: anywhere;
+        word-break: normal;
+      }
       .csf-strip {
         display: flex;
         flex-wrap: wrap;
@@ -2029,9 +2079,12 @@
         font-size: 1.05rem;
         font-weight: 950;
         box-shadow: 0 8px 18px rgba(15, 23, 42, .045);
+        overflow: hidden;
+        overflow-wrap: anywhere;
+        word-break: break-word;
       }
       .csf-segment strong {
-        color: var(--csf-accent-2);
+        color: var(--csf-ink);
         font-size: clamp(.9rem, 1vw, 1.03rem);
         line-height: 1.25;
         max-width: 100%;
@@ -2168,6 +2221,41 @@
     document.head.appendChild(style);
   }
 
+  function toastRoot() {
+    if (typeof document === 'undefined') return null;
+    let toast = document.querySelector('[data-csf-copy-toast]');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.className = 'csf-copy-toast';
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
+      toast.dataset.csfCopyToast = 'true';
+      document.body.appendChild(toast);
+    }
+    return toast;
+  }
+
+  function showCopyToast(suite, message) {
+    const toast = toastRoot();
+    if (!toast) return;
+    const labels = labelsFor(suite);
+    toast.textContent = message || labels.copied || 'Copied';
+    toast.classList.add('is-visible');
+    clearTimeout(showCopyToast.timer);
+    showCopyToast.timer = setTimeout(() => {
+      toast.classList.remove('is-visible');
+    }, 1450);
+  }
+
+  function copyText(suite, value, message) {
+    const payload = text(value);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(payload).then(() => showCopyToast(suite, message)).catch(() => showCopyToast(suite, message));
+      return;
+    }
+    showCopyToast(suite, message);
+  }
+
   function renderHero(suite, tool) {
     const labels = labelsFor(suite);
     const chips = asArray(tool.chips).length ? tool.chips : [labels.browserOnly, labels.offlineChecks, formatLabel(labels.countrySpecific, suite), labels.fieldBreakdown, labels.qualityNotes];
@@ -2208,7 +2296,7 @@
           <label>
             <span>${esc(labels.presets)}</span>
             <div class="csf-sample-buttons" data-csf-samples>
-              ${tool.samples.map((sample, index) => `<button class="csf-sample-button" type="button" data-csf-sample="${index}" data-tone="${esc(sample.tone || (index === 0 ? 'success' : 'review'))}">${esc(sample.label)}</button>`).join('')}
+              ${tool.samples.map((sample, index) => `<button class="csf-sample-button" type="button" data-csf-sample="${index}" data-csf-sample-intent="${esc(sample.intent || sampleIntent(sample))}" data-tone="${esc(sample.tone || (index === 0 ? 'success' : 'review'))}">${esc(sample.label)}</button>`).join('')}
             </div>
           </label>
         </div>
@@ -2416,6 +2504,7 @@
     const labels = labelsFor(suite);
     const notes = asArray(result.qualityNotes).slice(0, 4);
     const noteLabels = [labels.privacyBoundary, labels.officialLookupBoundary, labels.fixtureSafety, labels.developerHandling];
+    const compactTitle = (value) => /^official lookup boundary$/i.test(text(value)) ? labels.officialLookupBoundary : value;
     return `
       <section class="csf-quality">
         <div class="csf-section-head">
@@ -2425,7 +2514,7 @@
         <div class="csf-grid">${notes.map((note, index) => `
           <article class="csf-mini">
             <span class="csf-label">${esc(noteLabels[index] || labels.qualityNote)}</span>
-            <strong>${esc(note.title || noteLabels[index] || labels.qualityNote)}</strong>
+            <strong>${esc(compactTitle(note.title || noteLabels[index] || labels.qualityNote))}</strong>
             <small class="csf-note">${esc(note.text || note)}</small>
           </article>
         `).join('')}</div>
@@ -2486,10 +2575,10 @@
     suite.tools = config.tools.map((tool) => Object.assign({ suiteId: config.suiteId }, tool));
     suite.toolById = new Map(suite.tools.map((tool) => [tool.id, tool]));
 
-    function analyze(tool, input) {
+    function analyze(tool, input, context) {
       const handler = tool.analyze || config.analyze || defaultAnalyze;
       const rawResult = handler(tool, input, suite);
-      return normalizeResult(tool, enhanceAnalyzerResult(suite, tool, input, rawResult));
+      return normalizeResult(tool, enhanceAnalyzerResult(suite, tool, input, rawResult, context || {}));
     }
 
     function mount(target, options) {
@@ -2529,6 +2618,7 @@
       const richJson = rootElement.querySelector('[data-csf-rich-json]');
       let lastResult = null;
       let lastBatch = [];
+      let activeSampleIntent = sampleIntent(tool.samples[0]);
 
       function refreshHistory() {
         const history = readHistory(suite, tool);
@@ -2538,7 +2628,7 @@
       }
 
       function richSnapshot() {
-        const result = lastResult || analyze(rawTool, input.value);
+        const result = lastResult || analyze(rawTool, input.value, { sampleIntent: activeSampleIntent });
         return {
           country: suite.country.name,
           countrySlug: suite.country.slug,
@@ -2557,16 +2647,18 @@
       }
 
       function refreshRichPanels() {
-        const result = lastResult || analyze(rawTool, input.value);
+        const result = lastResult || analyze(rawTool, input.value, { sampleIntent: activeSampleIntent });
         if (richApi) richApi.textContent = apiPreview(suite, tool, result);
         if (richJson) richJson.textContent = JSON.stringify(richSnapshot(), null, 2);
       }
 
       function run(options) {
-        if (options && options.freshGenerate && isIbanGeneratorTool(tool)) {
+        const shouldFreshGenerate = options && options.freshGenerate && isIbanGeneratorTool(tool) && activeSampleIntent !== 'review' && !intentionalReviewFixture(input.value);
+        if (shouldFreshGenerate) {
           input.value = freshIbanGeneratorInput(suite, tool, input.value);
+          activeSampleIntent = 'valid';
         }
-        lastResult = analyze(rawTool, input.value);
+        lastResult = analyze(rawTool, input.value, { sampleIntent: activeSampleIntent });
         output.innerHTML = renderResultBlocks(suite, lastResult);
         state.textContent = lastResult.status === 'success' ? labels.offlinePassed : labels.reviewNeeded;
         state.dataset.state = lastResult.status;
@@ -2578,7 +2670,7 @@
       function runBatch() {
         const values = text(batchInput && batchInput.value).split(/\r?\n/).map((item) => item.trim()).filter(Boolean).slice(0, 100);
         lastBatch = values.map((value) => {
-          const result = analyze(rawTool, value);
+          const result = analyze(rawTool, value, { sampleIntent: intentionalReviewFixture(value) ? 'review' : '' });
           return {
             input: value,
             status: result.status,
@@ -2605,7 +2697,7 @@
         }
         const previous = input.value;
         const rows = values.map((value, index) => {
-          const result = analyze(rawTool, value);
+          const result = analyze(rawTool, value, { sampleIntent: intentionalReviewFixture(value) ? 'review' : '' });
           writeHistory(suite, tool, value);
           return {
             index: index + 1,
@@ -2633,13 +2725,14 @@
       rootElement.querySelector('[data-csf-run]').addEventListener('click', () => run({ freshGenerate: true }));
       rootElement.querySelector('[data-csf-clear]').addEventListener('click', () => {
         input.value = '';
+        activeSampleIntent = '';
         output.innerHTML = '';
         state.textContent = labels.waiting;
         state.dataset.state = 'waiting';
       });
       rootElement.querySelector('[data-csf-copy]').addEventListener('click', () => {
         const value = lastResult ? lastResult.normalized : input.value;
-        if (navigator.clipboard && value != null) navigator.clipboard.writeText(text(value));
+        if (value != null) copyText(suite, value);
       });
       rootElement.querySelector('[data-csf-download]').addEventListener('click', () => {
         const value = lastResult ? JSON.stringify(lastResult.developerJson || lastResult, null, 2) : input.value;
@@ -2652,17 +2745,18 @@
       });
       rootElement.addEventListener('click', (event) => {
         const copy = event.target.closest('[data-csf-copy-value]');
-        if (copy && navigator.clipboard) navigator.clipboard.writeText(copy.dataset.csfCopyValue || '');
+        if (copy) copyText(suite, copy.dataset.csfCopyValue || '');
         const repair = event.target.closest('[data-csf-repair-action]');
         if (!repair) return;
         const action = repair.dataset.csfRepairAction;
-        if (action === 'copy-normalized' && navigator.clipboard) {
-          navigator.clipboard.writeText(text(lastResult && lastResult.normalized || input.value));
+        if (action === 'copy-normalized') {
+          copyText(suite, text(lastResult && lastResult.normalized || input.value));
         }
         if (action === 'load-valid') {
           const sample = tool.samples.find((item) => item.tone === 'success') || tool.samples[0];
           if (sample) {
             input.value = sample.value;
+            activeSampleIntent = sampleIntent(sample);
             run();
           }
         }
@@ -2670,11 +2764,13 @@
           const sample = tool.samples.find((item) => item.tone === 'review' && /invalid/i.test(item.label)) || tool.samples.find((item) => item.tone === 'review');
           if (sample) {
             input.value = sample.value;
+            activeSampleIntent = sampleIntent(sample);
             run();
           }
         }
         if (action === 'use-short') {
           input.value = makeShortSample(input.value || (tool.samples[0] && tool.samples[0].value) || '');
+          activeSampleIntent = 'review';
           run();
         }
         if (action === 'run-batch') {
@@ -2694,20 +2790,26 @@
         button.addEventListener('click', () => {
           const sample = tool.samples[Number(button.dataset.csfSample)] || tool.samples[0];
           input.value = sample.value;
+          activeSampleIntent = button.dataset.csfSampleIntent || sampleIntent(sample);
           run();
         });
       });
       if (historySelect) historySelect.addEventListener('change', () => {
         if (historySelect.value) {
           input.value = historySelect.value;
+          activeSampleIntent = intentionalReviewFixture(input.value) ? 'review' : '';
           run();
         }
       });
       if (richHistorySelect) richHistorySelect.addEventListener('change', () => {
         if (richHistorySelect.value) {
           input.value = richHistorySelect.value;
+          activeSampleIntent = intentionalReviewFixture(input.value) ? 'review' : '';
           run();
         }
+      });
+      input.addEventListener('input', () => {
+        activeSampleIntent = intentionalReviewFixture(input.value) ? 'review' : '';
       });
       const batchRun = rootElement.querySelector('[data-csf-batch-run]');
       if (batchRun) batchRun.addEventListener('click', runBatch);
@@ -2727,7 +2829,7 @@
       });
       const batchCopy = rootElement.querySelector('[data-csf-batch-copy]');
       if (batchCopy) batchCopy.addEventListener('click', () => {
-        if (navigator.clipboard) navigator.clipboard.writeText(JSON.stringify(lastBatch, null, 2));
+        copyText(suite, JSON.stringify(lastBatch, null, 2));
       });
       const batchClear = rootElement.querySelector('[data-csf-batch-clear]');
       if (batchClear) batchClear.addEventListener('click', () => {

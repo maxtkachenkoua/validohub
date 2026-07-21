@@ -3,7 +3,8 @@ import fs from 'node:fs';
 const requiredFiles = [
   'assets/js/tools/country-suite-factory.js',
   'docs/product/COUNTRY_SUITE_FACTORY_SPEC.md',
-  'assets/js/tools/country-legacy-rich-layer.js'
+  'assets/js/tools/country-legacy-rich-layer.js',
+  'scripts/generate-europe-premium-batch.mjs'
 ];
 
 const failures = [];
@@ -32,6 +33,9 @@ if (fs.existsSync('assets/js/tools/country-legacy-rich-layer.js')) {
 
 if (fs.existsSync('assets/js/tools/country-suite-factory.js')) {
   const factory = fs.readFileSync('assets/js/tools/country-suite-factory.js', 'utf8');
+  const generator = fs.existsSync('scripts/generate-europe-premium-batch.mjs')
+    ? fs.readFileSync('scripts/generate-europe-premium-batch.mjs', 'utf8')
+    : '';
   const requiredTokens = [
     'ValidoHubCountrySuiteFactory',
     'validateSuiteConfig',
@@ -57,6 +61,12 @@ if (fs.existsSync('assets/js/tools/country-suite-factory.js')) {
     'isReviewSampleLabel',
     'withToolSpecificContext',
     'forceIntentionalReview',
+    'sampleIntent',
+    'data-csf-sample-intent',
+    'shouldFreshGenerate',
+    'copyText',
+    'showCopyToast',
+    'csf-copy-toast',
     'data-csf-repair-action',
     'Premium debug layer',
     'toolIntelligence',
@@ -114,6 +124,21 @@ if (fs.existsSync('assets/js/tools/country-suite-factory.js')) {
   }
   if (factory.includes('if (index === 0 || /valid/i.test')) {
     failures.push('factory must not classify Invalid sample as Valid sample via /valid/i');
+  }
+  if (!factory.includes("activeSampleIntent !== 'review'")) {
+    failures.push('factory IBAN generator must not fresh-generate over an active invalid/review sample');
+  }
+  if (!factory.includes('intentionalReviewFixture(value) ?')) {
+    failures.push('factory batch diagnostics must preserve invalid/review fixture semantics');
+  }
+  if (!/\.csf-segment strong\s*\{[\s\S]*color: var\(--csf-ink\)/.test(factory)) {
+    failures.push('factory breakdown segment values must keep dark readable text');
+  }
+  if (!factory.includes("officialLookupBoundary: 'Official boundary'")) {
+    failures.push('factory quality cards must use localization-safe official boundary labels');
+  }
+  if (generator.includes('Official lookup boundary')) {
+    failures.push('generator must not emit long Official lookup boundary card titles');
   }
   if ((factory.match(/class="csf-rich-badge"/g) || []).length > 1) {
     failures.push('factory rich layer must not duplicate the right-side local badge');

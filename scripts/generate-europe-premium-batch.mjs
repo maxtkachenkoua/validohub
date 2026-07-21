@@ -251,18 +251,18 @@ function toolObjects(country) {
     return {
       id, name, code, summary, category, actionLabel, kind,
       samples: [
-        { label: 'Valid sample', value: sample },
-        { label: 'Invalid sample', value: invalid },
-        { label: 'Short sample', value: short },
-        { label: kind === 'ibangenerator' ? 'Grouped valid sample' : 'Wrong prefix sample', value: kind === 'ibangenerator' ? String(sample).replace(/(.{4})/g, '$1 ').trim() : wrongPrefix },
-        { label: 'Edge sample', value: `Review ${country.iso2} ${code} edge ${index + 1}` }
+        { label: 'Valid sample', value: sample, intent: 'valid', tone: 'success' },
+        { label: 'Invalid sample', value: invalid, intent: 'review', tone: 'review' },
+        { label: 'Short sample', value: short, intent: 'review', tone: 'review' },
+        { label: kind === 'ibangenerator' ? 'Grouped valid sample' : 'Wrong prefix sample', value: kind === 'ibangenerator' ? String(sample).replace(/(.{4})/g, '$1 ').trim() : wrongPrefix, intent: kind === 'ibangenerator' ? 'valid' : 'review', tone: kind === 'ibangenerator' ? 'success' : 'review' },
+        { label: 'Edge sample', value: `Review ${country.iso2} ${code} edge ${index + 1}`, intent: 'review', tone: 'review' }
       ],
       boundaries: [
         `Official ${country.name} identity, registry, tax, banking, vehicle, postal, filing, carrier, and legal status require the responsible local authority or provider.`
       ],
       qualityNotes: [
         { title: `${code} local evidence`, text: `${name} analyzes ${country.name}-specific ${category} evidence locally in this browser.` },
-        { title: 'Official lookup boundary', text: `Offline ${country.adjective} parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status.` },
+        { title: 'Official boundary', text: `Offline ${country.adjective} parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status.` },
         { title: 'Fixture safety', text: `Valid and invalid ${code} examples are safe structural fixtures for tests and demos.` },
         { title: 'Developer handling', text: `Use normalized ${code} values for forms, masked previews for logs, and field slices for parser/debug handoff.` }
       ]
@@ -280,7 +280,7 @@ function bumpLastDigit(value) {
   for (let index = chars.length - 1; index >= 0; index -= 1) {
     if (/\d/.test(chars[index])) {
       chars[index] = String((Number(chars[index]) + 1) % 10);
-      return chars.join('');
+      return `Invalid ${chars.join('')}`;
     }
   }
   return `Invalid ${value}`;
@@ -288,7 +288,7 @@ function bumpLastDigit(value) {
 
 function makeWrongPrefixSample(country, value) {
   const raw = String(value || '').trim();
-  if (/^[A-Z]{2}/.test(raw)) return `ZZ${raw.slice(2)}`;
+  if (/^[A-Z]{2}/.test(raw)) return `Wrong prefix ZZ${raw.slice(2)}`;
   return `Wrong prefix ${country.iso2} ${raw}`;
 }
 

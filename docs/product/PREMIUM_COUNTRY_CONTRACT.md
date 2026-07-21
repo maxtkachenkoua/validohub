@@ -39,13 +39,16 @@ Every country-scoped tool must include:
 
 - Compact Brazil-scale premium shell, not a generic `Workbench / Run the tool` utility page.
 - Short mark/code badge, concise summary, short sample labels, country-local related tools, and no raw payloads in selectors.
+- Sample examples with executable semantics: visible invalid/short/bad-country/bad-checksum examples must carry review intent and must never validate as success because a generic analyzer accepted the raw shape.
 - Browser-only validation or analysis with explicit official/live lookup boundaries.
 - Success states that are green/teal/neutral, never red; red is reserved for actual errors or destructive warnings.
 - Validation pipeline with meaningful checks, not decorative placeholder steps.
 - Dedicated field breakdown panel for every tool. This is mandatory for debugging: split identifiers, bank accounts, taxes, address/phone components, document parts, detected CSV/data fields, evidence slices, or local parsing groups as appropriate.
 - Result cards with normalized/masked/copyable values where relevant.
+- Copyable values with visible copied feedback through a shared toast/status announcement.
 - Quality notes explaining privacy, fixture safety, official boundary, and developer handling.
 - Advanced analysis and developer payload that wrap locally and cannot create page-level horizontal overflow.
+- Field/evidence breakdown text that stays high-contrast and readable across success/review states and all production locales.
 - A PESEL-like debug layer: either checksum replay, parser stages, field extraction evidence, data-quality diagnostics, or another domain-specific debugger. Do not fake math for non-math tools; expose the real evidence the browser can prove.
 
 ## Mandatory Country Hub Standard

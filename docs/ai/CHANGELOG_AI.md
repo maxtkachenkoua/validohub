@@ -858,5 +858,10 @@ Impact:
 - No backend, REST API, database, Java execution, or server-side runtime was added.
 # 2026-07-21
 
+- Hardened Country Suite Factory sample semantics: invalid/short/bad-country/review sample buttons now carry executable review intent, invalid fixture values remain self-marking for batch/debug flows, and IBAN generators no longer fresh-generate over an active invalid fixture.
+- Added shared country-suite copy feedback via a toast/status announcer for Copy result, Copy normalized, batch JSON copy, and repair-copy actions.
+- Fixed factory field/evidence breakdown readability by keeping segment/card/token values high-contrast and wrapped inside their containers.
+- Added audit/documentation guardrails so future countries cannot ship silent copy actions, valid-looking invalid samples, low-contrast breakdown text, or localization-fragile official-boundary cards.
+
 - Upgraded Country Suite Factory V1 toward Poland PESEL-level tool richness for factory-based country suites: presets/history, batch validation, result-first analysis, visual field/evidence strips, calculation/parser debugger, repair suggestions, developer API preview, and raw JSON/audit output.
 - Added permanent product rules requiring PESEL-like debug depth for every country-scoped tool, with domain-appropriate parser/evidence diagnostics for non-checksum tools.

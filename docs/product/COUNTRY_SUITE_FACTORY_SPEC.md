@@ -76,9 +76,15 @@ Factory sample UX must present multiple purposeful examples: at least one valid 
 
 Sample UX is part of validation correctness. The first valid sample must pass; invalid, short, bad-country, wrong-prefix, bad-checksum, and review/edge examples must produce review/error states. The factory must never classify sample labels with a broad `/valid/` check because `Invalid` contains `valid`. Finished factory tools should expose several paste examples through clear chips/buttons with hover, focus, active, and selected affordances.
 
+Factory samples must carry executable intent. `Invalid sample`, `Short sample`, `Bad country prefix`, bad-checksum, and edge fixtures need `intent: 'review'` or equivalent runtime metadata, and their values must remain self-marking when copied into batch diagnostics. Generator tools, especially IBAN generators, must not fresh-generate over an active review fixture; they must preserve the selected invalid input and show the review/debug path.
+
 Field/evidence breakdown rendering must have one clear title hierarchy. Use a single main breakdown heading, optional token-strip subpanel, segment tiles, and detailed cards with enough padding and wrapping. Do not ship duplicate consecutive headings such as `Evidence breakdown` plus `Identifier breakdown` before the same fields.
 
+Field/evidence breakdown rendering must also keep values high-contrast. Token strips, segment tiles, and detailed cards cannot use near-white text on white/review/success backgrounds, and all long values must wrap or scroll locally.
+
 Quality notes and repair suggestions must be specific and useful for the active country/tool. Repair suggestions should be interactive buttons where possible: load valid fixture, load invalid fixture, try short sample, run sample batch, or copy normalized output. Advanced debug panels should carry one local badge only.
+
+Every factory copy action must show visible feedback through the shared copy toast/status announcer. A user should know immediately that `Copy result`, `Copy normalized`, batch JSON copy, and repair-copy actions succeeded.
 
 The exact internals must fit the domain. Identifier and banking tools should expose checksum, body, prefix, branch, account, or control-digit evidence. CSV, OCR, API, form-field, checklist, privacy, locale, and data-quality tools should expose detected evidence groups, parser stages, normalized fields, warning classes, and export payloads. A country tool is not premium if it has only a large input, generic buttons, and a short text output.
 
@@ -106,7 +112,8 @@ Every tool config passed to the factory must include:
 - `code`: compact mark, usually 2-5 characters
 - `summary`: tool-specific copy, not generic repeated copy
 - `samples`: at least one short-label sample; labels must not be raw payloads
-- `qualityNotes`: at least four notes covering privacy, official lookup boundary, fixture safety, and developer handling
+- `samples`: sample entries should include explicit valid/review intent whenever possible; invalid/review sample values should be self-marking for batch diagnostics
+- `qualityNotes`: at least four notes covering privacy, official boundary, fixture safety, and developer handling
 - `boundaries`: explicit official/live lookup boundaries
 - `i18n` coverage for every supported locale whenever the string is visible in the browser workbench
 - analyzer output with `fields`, `breakdownTitle`, `breakdownSummary`, and non-empty `breakdown` slices. A generic result grid without a named breakdown panel is not premium.
@@ -130,7 +137,7 @@ Recommended tool config:
   ],
   qualityNotes: [
     { title: 'Privacy boundary', text: 'Input is analyzed locally in this browser.' },
-    { title: 'Official lookup boundary', text: 'Official company existence is not proven offline.' },
+    { title: 'Official boundary', text: 'Official company existence is not proven offline.' },
     { title: 'Fixture safety', text: 'Samples are safe fixtures, not proof of live status.' },
     { title: 'Developer handling', text: 'Use normalized values for forms and masked values for logs.' }
   ],
