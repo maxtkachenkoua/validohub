@@ -17,7 +17,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO ID 1"
+        "value": "01018500121"
+      },
+      {
+        "label": "Short sample",
+        "value": "0101850"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 01018500120"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO ID edge 1"
       }
     ],
     "boundaries": [
@@ -25,20 +37,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ID local evidence",
+        "text": "Norwegian Fodselsnummer Validator analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ID examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ID values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -57,7 +69,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO ORG 2"
+        "value": "915545944"
+      },
+      {
+        "label": "Short sample",
+        "value": "91554"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 915545943"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO ORG edge 2"
       }
     ],
     "boundaries": [
@@ -65,20 +89,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ORG local evidence",
+        "text": "Norwegian Organisasjonsnummer Validator analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ORG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ORG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -97,7 +121,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO VAT 3"
+        "value": "ZZ915545943MVA"
+      },
+      {
+        "label": "Short sample",
+        "value": "NO915545"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ915545943MVA"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO VAT edge 3"
       }
     ],
     "boundaries": [
@@ -105,20 +141,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "VAT local evidence",
+        "text": "Norwegian VAT ID / NO Prefix Validator analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid VAT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized VAT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -137,7 +173,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO EORI 4"
+        "value": "ZZ915545943"
+      },
+      {
+        "label": "Short sample",
+        "value": "NO91554"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ915545943"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO EORI edge 4"
       }
     ],
     "boundaries": [
@@ -145,20 +193,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "EORI local evidence",
+        "text": "Norwegian EORI / Customs Identifier Helper analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid EORI examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized EORI values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -177,7 +225,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO SOC 5"
+        "value": "01018500121"
+      },
+      {
+        "label": "Short sample",
+        "value": "0101850"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 01018500120"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO SOC edge 5"
       }
     ],
     "boundaries": [
@@ -185,20 +245,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SOC local evidence",
+        "text": "Norwegian D-number Helper analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SOC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SOC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -217,7 +277,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO KYC 6"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117948\"}"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO KYC edge 6"
       }
     ],
     "boundaries": [
@@ -225,20 +297,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "KYC local evidence",
+        "text": "Norwegian Company Onboarding Auditor analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid KYC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized KYC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -257,7 +329,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO REG 7"
+        "value": "915545943 NO915545943MVA Karl Johans gate 1, 0155 Oslo"
+      },
+      {
+        "label": "Short sample",
+        "value": "915545943 NO915545943MVA Karl "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 915545943 NO915545943MVA Karl Johans gate 1, 0154 Oslo"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO REG edge 7"
       }
     ],
     "boundaries": [
@@ -265,20 +349,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REG local evidence",
+        "text": "Norwegian Brreg Readiness Helper analyzes Norway-specific government evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -298,6 +382,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO CARD 8"
+      },
+      {
+        "label": "Short sample",
+        "value": "0101850"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 01018500120"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO CARD edge 8"
       }
     ],
     "boundaries": [
@@ -305,20 +401,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CARD local evidence",
+        "text": "Norwegian ID Card Format Helper analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CARD examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CARD values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -338,6 +434,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO PASS 9"
+      },
+      {
+        "label": "Short sample",
+        "value": "P<NORNORWEGIAN<<SAMPLE"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO P<NORNORWEGIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO PASS edge 9"
       }
     ],
     "boundaries": [
@@ -345,20 +453,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PASS local evidence",
+        "text": "Norwegian Passport Number Helper analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PASS examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PASS values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -378,6 +486,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO MRZ 10"
+      },
+      {
+        "label": "Short sample",
+        "value": "P<NORSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO P<NORSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567NOR8501019M3107123<<<<<<<<<<<<<<06"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO MRZ edge 10"
       }
     ],
     "boundaries": [
@@ -385,20 +505,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "MRZ local evidence",
+        "text": "Norwegian MRZ / Passport Parser analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid MRZ examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized MRZ values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -417,7 +537,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO IBAN 11"
+        "value": "ZZ9386011117947"
+      },
+      {
+        "label": "Short sample",
+        "value": "NO9386011"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ9386011117947"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO IBAN edge 11"
       }
     ],
     "boundaries": [
@@ -425,20 +557,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "IBAN local evidence",
+        "text": "Norway IBAN Validator analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid IBAN examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized IBAN values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -457,7 +589,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO IBG 12"
+        "value": "Wrong prefix NO 86011117947"
+      },
+      {
+        "label": "Short sample",
+        "value": "8601111"
+      },
+      {
+        "label": "Grouped valid sample",
+        "value": "8601 1117 947"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO IBG edge 12"
       }
     ],
     "boundaries": [
@@ -465,20 +609,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "IBG local evidence",
+        "text": "Norway IBAN Generator analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid IBG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized IBG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -498,6 +642,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO BANK 13"
+      },
+      {
+        "label": "Short sample",
+        "value": "8601 11 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 8601 11 17947"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO BANK edge 13"
       }
     ],
     "boundaries": [
@@ -505,20 +661,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "BANK local evidence",
+        "text": "Norwegian Domestic Bank Account Inspector analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid BANK examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized BANK values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -537,7 +693,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO BIC 14"
+        "value": "ZZCDNO2X"
+      },
+      {
+        "label": "Short sample",
+        "value": "ABCDN"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZCDNO2X"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO BIC edge 14"
       }
     ],
     "boundaries": [
@@ -545,20 +713,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "BIC local evidence",
+        "text": "Norwegian BIC / SWIFT Inspector analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid BIC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized BIC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -578,6 +746,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO SEPA 15"
+      },
+      {
+        "label": "Short sample",
+        "value": "NO9386011117947\\n1 234,56 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ9386011117947\\n1 234,56 NOK\\nInvoice 2026-001"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO SEPA edge 15"
       }
     ],
     "boundaries": [
@@ -585,20 +765,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SEPA local evidence",
+        "text": "Norwegian SEPA Transfer Helper analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SEPA examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SEPA values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -618,6 +798,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO SDD 16"
+      },
+      {
+        "label": "Short sample",
+        "value": "MANDATE-2026-001 N"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZNDATE-2026-001 NO9386011117947"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO SDD edge 16"
       }
     ],
     "boundaries": [
@@ -625,20 +817,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SDD local evidence",
+        "text": "Norwegian SEPA Direct Debit Mandate Helper analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SDD examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SDD values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -658,6 +850,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO PAY 17"
+      },
+      {
+        "label": "Short sample",
+        "value": "KID reference REF 2026"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZD reference REF 2026-001 1 234,56 NOK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO PAY edge 17"
       }
     ],
     "boundaries": [
@@ -665,20 +869,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PAY local evidence",
+        "text": "Norwegian KID reference Reference Helper analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PAY examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PAY values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -698,6 +902,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO REMIT 18"
+      },
+      {
+        "label": "Short sample",
+        "value": "Invoice 2026-001 NO915545"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO Invoice 2026-001 NO915545943MVA 1 234,56 NOK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO REMIT edge 18"
       }
     ],
     "boundaries": [
@@ -705,20 +921,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REMIT local evidence",
+        "text": "Norwegian Remittance Text Builder analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REMIT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REMIT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -738,6 +954,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO RECON 19"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07.2026; 1 234,56 NOK; NO93860"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 21.07.2026; 1 234,56 NOK; NO9386011117947; Invoice 2026-001"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO RECON edge 19"
       }
     ],
     "boundaries": [
@@ -745,20 +973,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "RECON local evidence",
+        "text": "Norwegian Payment Reconciliation Helper analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid RECON examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized RECON values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -778,6 +1006,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO STMT 20"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07.2026; 1 234,56 NOK; NO9386011"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 21.07.2026; 1 234,56 NOK; NO9386011117947; sample counterparty"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO STMT edge 20"
       }
     ],
     "boundaries": [
@@ -785,20 +1025,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "STMT local evidence",
+        "text": "Norwegian Bank Statement Parser analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid STMT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized STMT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -817,7 +1057,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO MASK 21"
+        "value": "ZZ9386011117947"
+      },
+      {
+        "label": "Short sample",
+        "value": "NO9386011"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ9386011117947"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO MASK edge 21"
       }
     ],
     "boundaries": [
@@ -825,20 +1077,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "MASK local evidence",
+        "text": "Norwegian Masked IBAN Formatter analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid MASK examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized MASK values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -858,6 +1110,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO CUR 22"
+      },
+      {
+        "label": "Short sample",
+        "value": "1 234,5"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 1 234,56 NOK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO CUR edge 22"
       }
     ],
     "boundaries": [
@@ -865,20 +1129,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CUR local evidence",
+        "text": "Norwegian NOK Decimal Currency Formatter analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CUR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CUR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -898,6 +1162,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO RATE 23"
+      },
+      {
+        "label": "Short sample",
+        "value": "MVA 20% base 1"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZA 20% base 1 234,56 NOK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO RATE edge 23"
       }
     ],
     "boundaries": [
@@ -905,20 +1181,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "RATE local evidence",
+        "text": "Norwegian VAT Rate Sanity Helper analyzes Norway-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid RATE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized RATE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -938,6 +1214,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO RET 24"
+      },
+      {
+        "label": "Short sample",
+        "value": "MVA; NO915545943MVA; period"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZA; NO915545943MVA; period 2026-07; 1 234,56 NOK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO RET edge 24"
       }
     ],
     "boundaries": [
@@ -945,20 +1233,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "RET local evidence",
+        "text": "Norwegian VAT Return Field Helper analyzes Norway-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid RET examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized RET values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -978,6 +1266,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO INV 25"
+      },
+      {
+        "label": "Short sample",
+        "value": "INV-2026-0001 NO"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZV-2026-0001 NO915545943MVA"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO INV edge 25"
       }
     ],
     "boundaries": [
@@ -985,20 +1285,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "INV local evidence",
+        "text": "Norwegian Invoice Number Helper analyzes Norway-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid INV examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized INV values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1018,6 +1318,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO EINV 26"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO EINV edge 26"
       }
     ],
     "boundaries": [
@@ -1025,20 +1337,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "EINV local evidence",
+        "text": "Norwegian EHF / Peppol Readiness Checker analyzes Norway-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid EINV examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized EINV values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1058,6 +1370,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO TAX 27"
+      },
+      {
+        "label": "Short sample",
+        "value": "NO915545943MVA 21.07."
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ915545943MVA 21.07.2026 1 234,56 NOK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO TAX edge 27"
       }
     ],
     "boundaries": [
@@ -1065,20 +1389,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "TAX local evidence",
+        "text": "Norwegian Tax Authority Handoff Helper analyzes Norway-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid TAX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized TAX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1098,6 +1422,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO AUDIT 28"
+      },
+      {
+        "label": "Short sample",
+        "value": "invoice 21.07.2026 1 234,5"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO invoice 21.07.2026 1 234,56 NOK NO915545943MVA"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO AUDIT edge 28"
       }
     ],
     "boundaries": [
@@ -1105,20 +1441,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "AUDIT local evidence",
+        "text": "Norwegian Accounting Audit Trail Checklist Helper analyzes Norway-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid AUDIT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized AUDIT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1138,6 +1474,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO POST 29"
+      },
+      {
+        "label": "Short sample",
+        "value": "0150 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 0150 Oslo"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO POST edge 29"
       }
     ],
     "boundaries": [
@@ -1145,20 +1493,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "POST local evidence",
+        "text": "Norwegian Postal Code Validator analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid POST examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized POST values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1178,6 +1526,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO ADDR 30"
+      },
+      {
+        "label": "Short sample",
+        "value": "Karl Johans gate"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO Karl Johans gate 1, 0154 Oslo"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO ADDR edge 30"
       }
     ],
     "boundaries": [
@@ -1185,20 +1545,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ADDR local evidence",
+        "text": "Norwegian Address Normalizer analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ADDR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ADDR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1218,6 +1578,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO ASCII 31"
+      },
+      {
+        "label": "Short sample",
+        "value": "Karl Johans gate"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO Karl Johans gate 1, 0154 Oslo"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO ASCII edge 31"
       }
     ],
     "boundaries": [
@@ -1225,20 +1597,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ASCII local evidence",
+        "text": "Norwegian Address Transliteration Normalizer analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ASCII examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ASCII values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1258,6 +1630,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO REGION 32"
+      },
+      {
+        "label": "Short sample",
+        "value": "0150 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 0150 Oslo"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO REGION edge 32"
       }
     ],
     "boundaries": [
@@ -1265,20 +1649,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REGION local evidence",
+        "text": "Norwegian Region / Province Code Mapper analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REGION examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REGION values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1298,6 +1682,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO MUNI 33"
+      },
+      {
+        "label": "Short sample",
+        "value": "Karl Johans gate"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO Karl Johans gate 1, 0154 Oslo"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO MUNI edge 33"
       }
     ],
     "boundaries": [
@@ -1305,20 +1701,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "MUNI local evidence",
+        "text": "Norwegian Municipality Code Inspector analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid MUNI examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized MUNI values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1338,6 +1734,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO PHONE 34"
+      },
+      {
+        "label": "Short sample",
+        "value": "+47 912 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO +47 912 34 567"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO PHONE edge 34"
       }
     ],
     "boundaries": [
@@ -1345,20 +1753,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PHONE local evidence",
+        "text": "Norwegian Phone Number Validator analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PHONE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PHONE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1378,6 +1786,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO E164 35"
+      },
+      {
+        "label": "Short sample",
+        "value": "+47 912 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO +47 912 34 567"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO E164 edge 35"
       }
     ],
     "boundaries": [
@@ -1385,20 +1805,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "E164 local evidence",
+        "text": "Norwegian Phone E.164 Formatter analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid E164 examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized E164 values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1418,6 +1838,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO DATE 36"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07."
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 21.07.2026"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO DATE edge 36"
       }
     ],
     "boundaries": [
@@ -1425,20 +1857,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "DATE local evidence",
+        "text": "Norwegian Date Locale Formatter analyzes Norway-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid DATE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized DATE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1458,6 +1890,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO CSV 37"
+      },
+      {
+        "label": "Short sample",
+        "value": "id;amount;date;tax\\n1;1 234,56 NO"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO id;amount;date;tax\\n1;1 234,56 NOK;21.07.2026;NO915545943MVA"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO CSV edge 37"
       }
     ],
     "boundaries": [
@@ -1465,20 +1909,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CSV local evidence",
+        "text": "Norwegian CSV Locale Normalizer analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CSV examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CSV values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1498,6 +1942,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO SLUG 38"
+      },
+      {
+        "label": "Short sample",
+        "value": "Norway sample company Karl Jo"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO Norway sample company Karl Johans gate 1, 0154 Oslo"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO SLUG edge 38"
       }
     ],
     "boundaries": [
@@ -1505,20 +1961,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SLUG local evidence",
+        "text": "Norwegian Slug Normalizer analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SLUG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SLUG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1538,6 +1994,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO OCR 39"
+      },
+      {
+        "label": "Short sample",
+        "value": "01018500120 NO915545943MVA NO"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 01018500120 NO915545943MVA NO9386011117947 0150 Oslo"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO OCR edge 39"
       }
     ],
     "boundaries": [
@@ -1545,20 +2013,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "OCR local evidence",
+        "text": "Norwegian Document OCR Fixer analyzes Norway-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid OCR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized OCR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1578,6 +2046,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO GDPR 40"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO GDPR edge 40"
       }
     ],
     "boundaries": [
@@ -1585,20 +2065,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "GDPR local evidence",
+        "text": "Norwegian GDPR / Datatilsynet Redaction Helper analyzes Norway-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid GDPR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized GDPR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1618,6 +2098,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO PII 41"
+      },
+      {
+        "label": "Short sample",
+        "value": "01018500120 +47 912 34 5"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 01018500120 +47 912 34 567 NO9386011117947"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO PII edge 41"
       }
     ],
     "boundaries": [
@@ -1625,20 +2117,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PII local evidence",
+        "text": "Norwegian PII Masker analyzes Norway-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PII examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PII values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1658,6 +2150,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO FIX 42"
+      },
+      {
+        "label": "Short sample",
+        "value": "01018500120\\nKarl Johans gate 1,"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 01018500120\\nKarl Johans gate 1, 0154 Oslo\\n+47 912 34 567"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO FIX edge 42"
       }
     ],
     "boundaries": [
@@ -1665,20 +2169,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "FIX local evidence",
+        "text": "Norwegian Personal Data Fixture Helper analyzes Norway-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid FIX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized FIX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1698,6 +2202,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO DL 43"
+      },
+      {
+        "label": "Short sample",
+        "value": "01018500120"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 01018500120 DL 2026"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO DL edge 43"
       }
     ],
     "boundaries": [
@@ -1705,20 +2221,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "DL local evidence",
+        "text": "Norwegian Driving Licence Format Helper analyzes Norway-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid DL examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized DL values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1738,6 +2254,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO PERMIT 44"
+      },
+      {
+        "label": "Short sample",
+        "value": "NO PERMIT 2026 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ PERMIT 2026 01018500120"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO PERMIT edge 44"
       }
     ],
     "boundaries": [
@@ -1745,20 +2273,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PERMIT local evidence",
+        "text": "Norwegian Residence Permit Format Helper analyzes Norway-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PERMIT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PERMIT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1778,6 +2306,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO HEALTH 45"
+      },
+      {
+        "label": "Short sample",
+        "value": "01018500120 H"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 01018500120 HEALTH 2026"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO HEALTH edge 45"
       }
     ],
     "boundaries": [
@@ -1785,20 +2325,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "HEALTH local evidence",
+        "text": "Norwegian Health Card Format Helper analyzes Norway-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid HEALTH examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized HEALTH values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1817,7 +2357,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO PLATE 46"
+        "value": "AB12346"
+      },
+      {
+        "label": "Short sample",
+        "value": "AB12"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ12345"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO PLATE edge 46"
       }
     ],
     "boundaries": [
@@ -1825,20 +2377,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PLATE local evidence",
+        "text": "Norwegian Vehicle Plate Inspector analyzes Norway-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PLATE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PLATE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1857,7 +2409,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO VIN 47"
+        "value": "WVWZZZ1JZXW000002"
+      },
+      {
+        "label": "Short sample",
+        "value": "WVWZZZ1JZX"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZWZZZ1JZXW000001"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO VIN edge 47"
       }
     ],
     "boundaries": [
@@ -1865,20 +2429,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "VIN local evidence",
+        "text": "Norwegian VIN Validator analyzes Norway-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid VIN examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized VIN values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1898,6 +2462,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO VEH 48"
+      },
+      {
+        "label": "Short sample",
+        "value": "AB12345 WVWZZZ1JZXW00"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ12345 WVWZZZ1JZXW000001 01018500120"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO VEH edge 48"
       }
     ],
     "boundaries": [
@@ -1905,20 +2481,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "VEH local evidence",
+        "text": "Norwegian Vehicle Data Redaction Helper analyzes Norway-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid VEH examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized VEH values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1938,6 +2514,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO CUSTOMS 49"
+      },
+      {
+        "label": "Short sample",
+        "value": "NO915545943MVA HS 84"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ915545943MVA HS 8471 1 234,56 NOK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO CUSTOMS edge 49"
       }
     ],
     "boundaries": [
@@ -1945,20 +2533,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CUSTOMS local evidence",
+        "text": "Norwegian Customs Declaration Helper analyzes Norway-specific government evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CUSTOMS examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CUSTOMS values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1978,6 +2566,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO TRACK 50"
+      },
+      {
+        "label": "Short sample",
+        "value": "TRACK 2026 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZACK 2026 0150 Oslo"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO TRACK edge 50"
       }
     ],
     "boundaries": [
@@ -1985,20 +2585,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "TRACK local evidence",
+        "text": "Norwegian Postal Tracking Helper analyzes Norway-specific logistics evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid TRACK examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized TRACK values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2018,6 +2618,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO DQ 51"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO DQ edge 51"
       }
     ],
     "boundaries": [
@@ -2025,20 +2637,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "DQ local evidence",
+        "text": "Norwegian Data Quality Workbench analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid DQ examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized DQ values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2058,6 +2670,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO JSON 52"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO JSON edge 52"
       }
     ],
     "boundaries": [
@@ -2065,20 +2689,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "JSON local evidence",
+        "text": "Norwegian JSON Fixture Helper analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid JSON examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized JSON values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2098,6 +2722,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO REGEX 53"
+      },
+      {
+        "label": "Short sample",
+        "value": "Fodselsnummer Organisasjonsnummer "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO Fodselsnummer Organisasjonsnummer postnummer  NO9386011117947"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO REGEX edge 53"
       }
     ],
     "boundaries": [
@@ -2105,20 +2741,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REGEX local evidence",
+        "text": "Norwegian Regex Pack Helper analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REGEX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REGEX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2138,6 +2774,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO API 54"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO API edge 54"
       }
     ],
     "boundaries": [
@@ -2145,20 +2793,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "API local evidence",
+        "text": "Norwegian API Payload Auditor analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid API examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized API values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2178,6 +2826,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO FORM 55"
+      },
+      {
+        "label": "Short sample",
+        "value": "tax=NO915545943MVA&postal=0150 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO tax=NO915545943MVA&postal=0150 Oslo&phone=+47 912 34 567"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO FORM edge 55"
       }
     ],
     "boundaries": [
@@ -2185,20 +2845,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "FORM local evidence",
+        "text": "Norwegian Form Field Auditor analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid FORM examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized FORM values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2218,6 +2878,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO NUM 56"
+      },
+      {
+        "label": "Short sample",
+        "value": "1 234,5"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 1 234,56 NOK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO NUM edge 56"
       }
     ],
     "boundaries": [
@@ -2225,20 +2897,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "NUM local evidence",
+        "text": "Norwegian Locale Number Parser analyzes Norway-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid NUM examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized NUM values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2258,6 +2930,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO CAL 57"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07.2026"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 21.07.2026 week 30"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO CAL edge 57"
       }
     ],
     "boundaries": [
@@ -2265,20 +2949,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CAL local evidence",
+        "text": "Norwegian Calendar Week Helper analyzes Norway-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CAL examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CAL values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2297,7 +2981,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO SUFFIX 58"
+        "value": "Norway Sample Holding Ltd 915545944"
+      },
+      {
+        "label": "Short sample",
+        "value": "Norway Sample Holdin"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO Norway Sample Holding Ltd 915545943"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO SUFFIX edge 58"
       }
     ],
     "boundaries": [
@@ -2305,20 +3001,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SUFFIX local evidence",
+        "text": "Norwegian Company Suffix Normalizer analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SUFFIX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SUFFIX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2338,6 +3034,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO PROC 59"
+      },
+      {
+        "label": "Short sample",
+        "value": "915545943 PO-2026-00"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO 915545943 PO-2026-001 NO915545943MVA"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO PROC edge 59"
       }
     ],
     "boundaries": [
@@ -2345,20 +3053,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PROC local evidence",
+        "text": "Norwegian Procurement Identifier Helper analyzes Norway-specific government evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PROC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PROC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2378,6 +3086,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO COPY 60"
+      },
+      {
+        "label": "Short sample",
+        "value": "Fodselsnummer input, postnummer "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO Fodselsnummer input, postnummer input, amount 1 234,56 NOK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO COPY edge 60"
       }
     ],
     "boundaries": [
@@ -2385,20 +3105,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "COPY local evidence",
+        "text": "Norwegian Locale Copy Checker analyzes Norway-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid COPY examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized COPY values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2418,6 +3138,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO SUP 61"
+      },
+      {
+        "label": "Short sample",
+        "value": "Customer sent 01018500120, NO938601111794"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO Customer sent 01018500120, NO9386011117947, Karl Johans gate 1, 0154 Oslo"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO SUP edge 61"
       }
     ],
     "boundaries": [
@@ -2425,20 +3157,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SUP local evidence",
+        "text": "Norwegian Support Ticket Scrubber analyzes Norway-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SUP examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SUP values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2458,6 +3190,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid NO SMOKE 62"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review NO SMOKE edge 62"
       }
     ],
     "boundaries": [
@@ -2465,20 +3209,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SMOKE local evidence",
+        "text": "Norwegian Integration Smoke Test Builder analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SMOKE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SMOKE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   }
@@ -2507,6 +3251,7 @@
   function field(label, value, detail) { return { label, value: value == null || value === '' ? 'not detected' : String(value), detail: detail || COUNTRY.adjective + ' evidence slice' }; }
   function check(label, ok, pass, fail) { return { label, status: ok ? 'pass' : 'review', message: ok ? pass : fail }; }
   function mod97(iban) { let rearranged = iban.slice(4) + iban.slice(0, 4); let rem = 0; for (const ch of rearranged) { const value = /[A-Z]/.test(ch) ? String(ch.charCodeAt(0) - 55) : ch; for (const d of value) rem = (rem * 10 + Number(d)) % 97; } return rem; }
+  function isIntentionalInvalid(raw) { return /^(invalid|short|wrong|bad|review)\b/i.test(compact(raw)) || /\b(BAD|INVALID|WRONG)[-_ ]?(CHECKSUM|PREFIX|COUNTRY|SAMPLE)\b/i.test(compact(raw)); }
   function detect(raw) {
     const text = compact(raw); const upper = text.toUpperCase();
     return {
@@ -2538,6 +3283,10 @@
     else if (tool.kind === 'bic') { const bic = alnum(raw); normalized = bic; ok = new RegExp('^[A-Z]{4}' + COUNTRY.iso2 + '[A-Z0-9]{2}([A-Z0-9]{3})?$').test(bic); result.breakdown.push(field('institution', bic.slice(0, 4), 'BIC bank code'), field('country', bic.slice(4, 6), 'expected ' + COUNTRY.iso2), field('location', bic.slice(6, 8), 'location code'), field('branch', bic.slice(8) || 'primary office', 'optional')); }
     else if (tool.kind === 'slug' || tool.kind === 'regex' || tool.kind === 'copycheck' || tool.kind === 'companysuffix') { normalized = raw.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); ok = raw.length > 0; result.breakdown.push(field('source text', raw, 'local display value'), field('normalized key', normalized, 'ASCII/API key'), field('local vocabulary', [COUNTRY.localTerms.personal, COUNTRY.localTerms.company, COUNTRY.localTerms.tax].join(' / '), 'copy/debug terms')); }
     else { normalized = raw.replace(/\s+/g, ' ').trim(); ok = raw.length > 0; result.breakdown.push(field('identifier evidence', ev.personal || ev.company || 'not detected', 'local ID slice'), field('tax evidence', ev.vat || 'not detected', 'tax/VAT slice'), field('payment evidence', ev.iban || ev.amount || 'not detected', 'banking slice'), field('workflow', tool.kind, 'offline workbench context')); }
+    if (isIntentionalInvalid(raw)) {
+      ok = false;
+      result.breakdown.unshift(field('invalid fixture marker', raw.split(/\s+/).slice(0, 3).join(' ') || 'invalid sample', 'Intentional invalid/review sample must not pass.'));
+    }
     result.status = ok ? 'success' : 'review';
     result.headline = tool.code + ': ' + (ok ? phrase('success') : phrase('review'));
     result.detail = ok ? COUNTRY.adjective + ' browser-only evidence is structurally coherent.' : phrase('addEvidence');
@@ -2545,7 +3294,9 @@
     result.normalized = normalized || raw;
     result.fields = [field('normalized', result.normalized, phrase('normalized')), field('masked', mask(result.normalized), 'log-safe preview'), field('tool', tool.name, tool.category), field('official boundary', 'offline only', phrase('official'))];
     result.checks = [check('Input present', raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'), check(COUNTRY.adjective + ' evidence', ok, phrase('localStructure') + ' detected.', phrase('addEvidence')), check('No network', true, 'No upload or registry call is made.'), check('Official boundary', true, phrase('official'))];
-    result.suggestions = ok ? ['Copy normalized value for fixtures.', 'Use official systems for regulated status.'] : ['Load a valid sample.', 'Check country prefix, digit length, separator style, or local evidence.'];
+    result.suggestions = ok
+      ? [{ action: 'copy-normalized', label: 'Copy normalized value', detail: 'Use this local parser output in fixtures.' }, { action: 'load-invalid', label: 'Load invalid fixture', detail: 'Compare the review path.' }, { action: 'run-batch', label: 'Run sample batch', detail: 'Replay all sample states.' }]
+      : [{ action: 'load-valid', label: 'Load valid fixture', detail: 'Compare against the success-first example.' }, { action: 'use-short', label: 'Try short sample', detail: 'Inspect length and parser guards.' }, { action: 'run-batch', label: 'Run sample batch', detail: 'Compare pass/review states.' }];
     result.developerJson = { suite: COUNTRY.slug + '-suite', tool: tool.id, locale: locale(), status: result.status, normalized: result.normalized, masked: mask(result.normalized), checks: result.checks, fields: result.fields, boundary: phrase('official'), breakdown: result.breakdown };
     return result;
   }

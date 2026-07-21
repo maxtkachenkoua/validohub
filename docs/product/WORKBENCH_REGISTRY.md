@@ -22,6 +22,7 @@ Future global tools must be born premium: deterministic neutral theme, tool-spec
   - Compact Brazil-scale country tool header, input, result card, validation pipeline, field breakdown, quality notes, advanced analysis, copy, and download controls.
   - Config validation for suite identity, country metadata, theme colors, tool names, codes, summaries, samples, quality notes, official-boundary copy, duplicate ids, and raw-payload sample labels.
   - Local overflow and wrapping rules for long primary values, field cards, JSON payloads, and advanced analysis.
+  - Hardened sample/debug UX: multiple valid/invalid/short/wrong-prefix/edge examples, invalid fixtures forced to review, interactive repair actions, single-hierarchy evidence breakdown, visible hover/focus states, and fresh IBAN generation on every Generate click.
   - Explicit non-migration guard: Brazil, Poland, France, and Netherlands must not import or call the factory without a separate user-approved migration task.
 - Known future ideas:
   - Per-country generator that emits factory configs from a researched country tool matrix.

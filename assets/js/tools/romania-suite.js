@@ -17,7 +17,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO ID 1"
+        "value": "1850101123452"
+      },
+      {
+        "label": "Short sample",
+        "value": "18501011"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 1850101123451"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO ID edge 1"
       }
     ],
     "boundaries": [
@@ -25,20 +37,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ID local evidence",
+        "text": "Romanian CNP Validator analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ID examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ID values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -57,7 +69,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO ORG 2"
+        "value": "RO12345675"
+      },
+      {
+        "label": "Short sample",
+        "value": "RO1234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO ORG edge 2"
       }
     ],
     "boundaries": [
@@ -65,20 +89,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ORG local evidence",
+        "text": "Romanian CUI / CIF Validator analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ORG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ORG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -97,7 +121,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO VAT 3"
+        "value": "ZZ12345674"
+      },
+      {
+        "label": "Short sample",
+        "value": "RO1234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO VAT edge 3"
       }
     ],
     "boundaries": [
@@ -105,20 +141,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "VAT local evidence",
+        "text": "Romanian VAT ID / RO Prefix Validator analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid VAT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized VAT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -137,7 +173,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO EORI 4"
+        "value": "ZZRO12345674"
+      },
+      {
+        "label": "Short sample",
+        "value": "RORO123"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZRO12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO EORI edge 4"
       }
     ],
     "boundaries": [
@@ -145,20 +193,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "EORI local evidence",
+        "text": "Romanian EORI / Customs Identifier Helper analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid EORI examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized EORI values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -177,7 +225,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO SOC 5"
+        "value": "1850101123452"
+      },
+      {
+        "label": "Short sample",
+        "value": "18501011"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 1850101123451"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO SOC edge 5"
       }
     ],
     "boundaries": [
@@ -185,20 +245,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SOC local evidence",
+        "text": "Romanian CNP Helper analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SOC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SOC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -217,7 +277,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO KYC 6"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840001\"}"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO KYC edge 6"
       }
     ],
     "boundaries": [
@@ -225,20 +297,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "KYC local evidence",
+        "text": "Romanian Company Onboarding Auditor analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid KYC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized KYC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -257,7 +329,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO REG 7"
+        "value": "RO12345674 RO12345674 Calea Victoriei 1, 010062 Bucuresti"
+      },
+      {
+        "label": "Short sample",
+        "value": "RO12345674 RO12345674 Calea Vict"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ12345674 RO12345674 Calea Victoriei 1, 010061 Bucuresti"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO REG edge 7"
       }
     ],
     "boundaries": [
@@ -265,20 +349,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REG local evidence",
+        "text": "Romanian ONRC Readiness Helper analyzes Romania-specific government evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -298,6 +382,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO CARD 8"
+      },
+      {
+        "label": "Short sample",
+        "value": "18501011"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 1850101123451"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO CARD edge 8"
       }
     ],
     "boundaries": [
@@ -305,20 +401,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CARD local evidence",
+        "text": "Romanian ID Card Format Helper analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CARD examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CARD values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -338,6 +434,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO PASS 9"
+      },
+      {
+        "label": "Short sample",
+        "value": "P<ROUROMANIAN<<SAMPLE<"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO P<ROUROMANIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO PASS edge 9"
       }
     ],
     "boundaries": [
@@ -345,20 +453,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PASS local evidence",
+        "text": "Romanian Passport Number Helper analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PASS examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PASS values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -378,6 +486,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO MRZ 10"
+      },
+      {
+        "label": "Short sample",
+        "value": "P<ROUSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO P<ROUSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567ROU8501019M3107123<<<<<<<<<<<<<<06"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO MRZ edge 10"
       }
     ],
     "boundaries": [
@@ -385,20 +505,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "MRZ local evidence",
+        "text": "Romanian MRZ / Passport Parser analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid MRZ examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized MRZ values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -417,7 +537,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO IBAN 11"
+        "value": "ZZ49AAAA1B31007593840000"
+      },
+      {
+        "label": "Short sample",
+        "value": "RO49AAAA1B3100"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ49AAAA1B31007593840000"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO IBAN edge 11"
       }
     ],
     "boundaries": [
@@ -425,20 +557,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "IBAN local evidence",
+        "text": "Romania IBAN Validator analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid IBAN examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized IBAN values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -457,7 +589,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO IBG 12"
+        "value": "ZZAA1B31007593840000"
+      },
+      {
+        "label": "Short sample",
+        "value": "AAAA1B31007"
+      },
+      {
+        "label": "Grouped valid sample",
+        "value": "AAAA 1B31 0075 9384 0000"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO IBG edge 12"
       }
     ],
     "boundaries": [
@@ -465,20 +609,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "IBG local evidence",
+        "text": "Romania IBAN Generator analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid IBG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized IBG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -498,6 +642,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO BANK 13"
+      },
+      {
+        "label": "Short sample",
+        "value": "AAAA 1B31007"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZAA 1B31007593840000"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO BANK edge 13"
       }
     ],
     "boundaries": [
@@ -505,20 +661,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "BANK local evidence",
+        "text": "Romanian Domestic Bank Account Inspector analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid BANK examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized BANK values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -537,7 +693,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO BIC 14"
+        "value": "ZZCDRO2X"
+      },
+      {
+        "label": "Short sample",
+        "value": "ABCDR"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZCDRO2X"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO BIC edge 14"
       }
     ],
     "boundaries": [
@@ -545,20 +713,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "BIC local evidence",
+        "text": "Romanian BIC / SWIFT Inspector analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid BIC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized BIC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -578,6 +746,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO SEPA 15"
+      },
+      {
+        "label": "Short sample",
+        "value": "RO49AAAA1B31007593840000\\n1.234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ49AAAA1B31007593840000\\n1.234,56 RON\\nInvoice 2026-001"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO SEPA edge 15"
       }
     ],
     "boundaries": [
@@ -585,20 +765,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SEPA local evidence",
+        "text": "Romanian SEPA Transfer Helper analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SEPA examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SEPA values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -618,6 +798,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO SDD 16"
+      },
+      {
+        "label": "Short sample",
+        "value": "MANDATE-2026-001 RO49AA"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZNDATE-2026-001 RO49AAAA1B31007593840000"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO SDD edge 16"
       }
     ],
     "boundaries": [
@@ -625,20 +817,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SDD local evidence",
+        "text": "Romanian SEPA Direct Debit Mandate Helper analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SDD examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SDD values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -658,6 +850,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO PAY 17"
+      },
+      {
+        "label": "Short sample",
+        "value": "treasury / SEPA handoff REF"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO treasury / SEPA handoff REF 2026-001 1.234,56 RON"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO PAY edge 17"
       }
     ],
     "boundaries": [
@@ -665,20 +869,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PAY local evidence",
+        "text": "Romanian treasury / SEPA handoff Reference Helper analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PAY examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PAY values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -698,6 +902,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO REMIT 18"
+      },
+      {
+        "label": "Short sample",
+        "value": "Invoice 2026-001 RO123"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO Invoice 2026-001 RO12345674 1.234,56 RON"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO REMIT edge 18"
       }
     ],
     "boundaries": [
@@ -705,20 +921,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REMIT local evidence",
+        "text": "Romanian Remittance Text Builder analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REMIT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REMIT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -738,6 +954,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO RECON 19"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07.2026; 1.234,56 RON; RO49AAAA1B31"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 21.07.2026; 1.234,56 RON; RO49AAAA1B31007593840000; Invoice 2026-001"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO RECON edge 19"
       }
     ],
     "boundaries": [
@@ -745,20 +973,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "RECON local evidence",
+        "text": "Romanian Payment Reconciliation Helper analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid RECON examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized RECON values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -778,6 +1006,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO STMT 20"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07.2026; 1.234,56 RON; RO49AAAA1B3100"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 21.07.2026; 1.234,56 RON; RO49AAAA1B31007593840000; sample counterparty"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO STMT edge 20"
       }
     ],
     "boundaries": [
@@ -785,20 +1025,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "STMT local evidence",
+        "text": "Romanian Bank Statement Parser analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid STMT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized STMT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -817,7 +1057,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO MASK 21"
+        "value": "ZZ49AAAA1B31007593840000"
+      },
+      {
+        "label": "Short sample",
+        "value": "RO49AAAA1B3100"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ49AAAA1B31007593840000"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO MASK edge 21"
       }
     ],
     "boundaries": [
@@ -825,20 +1077,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "MASK local evidence",
+        "text": "Romanian Masked IBAN Formatter analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid MASK examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized MASK values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -858,6 +1110,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO CUR 22"
+      },
+      {
+        "label": "Short sample",
+        "value": "1.234,5"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 1.234,56 RON"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO CUR edge 22"
       }
     ],
     "boundaries": [
@@ -865,20 +1129,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CUR local evidence",
+        "text": "Romanian RON Decimal Currency Formatter analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CUR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CUR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -898,6 +1162,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO RATE 23"
+      },
+      {
+        "label": "Short sample",
+        "value": "TVA 20% base 1"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZA 20% base 1.234,56 RON"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO RATE edge 23"
       }
     ],
     "boundaries": [
@@ -905,20 +1181,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "RATE local evidence",
+        "text": "Romanian VAT Rate Sanity Helper analyzes Romania-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid RATE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized RATE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -938,6 +1214,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO RET 24"
+      },
+      {
+        "label": "Short sample",
+        "value": "TVA; RO12345674; period 2"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZA; RO12345674; period 2026-07; 1.234,56 RON"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO RET edge 24"
       }
     ],
     "boundaries": [
@@ -945,20 +1233,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "RET local evidence",
+        "text": "Romanian VAT Return Field Helper analyzes Romania-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid RET examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized RET values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -978,6 +1266,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO INV 25"
+      },
+      {
+        "label": "Short sample",
+        "value": "INV-2026-0001 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZV-2026-0001 RO12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO INV edge 25"
       }
     ],
     "boundaries": [
@@ -985,20 +1285,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "INV local evidence",
+        "text": "Romanian Invoice Number Helper analyzes Romania-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid INV examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized INV values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1018,6 +1318,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO EINV 26"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO EINV edge 26"
       }
     ],
     "boundaries": [
@@ -1025,20 +1337,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "EINV local evidence",
+        "text": "Romanian RO e-Factura / ANAF Readiness Checker analyzes Romania-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid EINV examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized EINV values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1058,6 +1370,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO TAX 27"
+      },
+      {
+        "label": "Short sample",
+        "value": "RO12345674 21.07.20"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ12345674 21.07.2026 1.234,56 RON"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO TAX edge 27"
       }
     ],
     "boundaries": [
@@ -1065,20 +1389,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "TAX local evidence",
+        "text": "Romanian Tax Authority Handoff Helper analyzes Romania-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid TAX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized TAX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1098,6 +1422,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO AUDIT 28"
+      },
+      {
+        "label": "Short sample",
+        "value": "invoice 21.07.2026 1.234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO invoice 21.07.2026 1.234,56 RON RO12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO AUDIT edge 28"
       }
     ],
     "boundaries": [
@@ -1105,20 +1441,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "AUDIT local evidence",
+        "text": "Romanian Accounting Audit Trail Checklist Helper analyzes Romania-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid AUDIT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized AUDIT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1138,6 +1474,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO POST 29"
+      },
+      {
+        "label": "Short sample",
+        "value": "010011 Bu"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 010011 Bucuresti"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO POST edge 29"
       }
     ],
     "boundaries": [
@@ -1145,20 +1493,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "POST local evidence",
+        "text": "Romanian Postal Code Validator analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid POST examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized POST values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1178,6 +1526,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO ADDR 30"
+      },
+      {
+        "label": "Short sample",
+        "value": "Calea Victoriei 1, 0"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO Calea Victoriei 1, 010061 Bucuresti"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO ADDR edge 30"
       }
     ],
     "boundaries": [
@@ -1185,20 +1545,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ADDR local evidence",
+        "text": "Romanian Address Normalizer analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ADDR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ADDR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1218,6 +1578,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO ASCII 31"
+      },
+      {
+        "label": "Short sample",
+        "value": "Calea Victoriei 1, 0"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO Calea Victoriei 1, 010061 Bucuresti"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO ASCII edge 31"
       }
     ],
     "boundaries": [
@@ -1225,20 +1597,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ASCII local evidence",
+        "text": "Romanian Address Transliteration Normalizer analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ASCII examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ASCII values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1258,6 +1630,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO REGION 32"
+      },
+      {
+        "label": "Short sample",
+        "value": "010011 Bu"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 010011 Bucuresti"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO REGION edge 32"
       }
     ],
     "boundaries": [
@@ -1265,20 +1649,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REGION local evidence",
+        "text": "Romanian Region / Province Code Mapper analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REGION examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REGION values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1298,6 +1682,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO MUNI 33"
+      },
+      {
+        "label": "Short sample",
+        "value": "Calea Victoriei 1, 0"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO Calea Victoriei 1, 010061 Bucuresti"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO MUNI edge 33"
       }
     ],
     "boundaries": [
@@ -1305,20 +1701,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "MUNI local evidence",
+        "text": "Romanian Municipality Code Inspector analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid MUNI examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized MUNI values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1338,6 +1734,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO PHONE 34"
+      },
+      {
+        "label": "Short sample",
+        "value": "+40 721 2"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO +40 721 234 567"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO PHONE edge 34"
       }
     ],
     "boundaries": [
@@ -1345,20 +1753,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PHONE local evidence",
+        "text": "Romanian Phone Number Validator analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PHONE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PHONE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1378,6 +1786,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO E164 35"
+      },
+      {
+        "label": "Short sample",
+        "value": "+40 721 2"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO +40 721 234 567"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO E164 edge 35"
       }
     ],
     "boundaries": [
@@ -1385,20 +1805,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "E164 local evidence",
+        "text": "Romanian Phone E.164 Formatter analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid E164 examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized E164 values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1418,6 +1838,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO DATE 36"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07."
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 21.07.2026"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO DATE edge 36"
       }
     ],
     "boundaries": [
@@ -1425,20 +1857,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "DATE local evidence",
+        "text": "Romanian Date Locale Formatter analyzes Romania-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid DATE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized DATE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1458,6 +1890,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO CSV 37"
+      },
+      {
+        "label": "Short sample",
+        "value": "id;amount;date;tax\\n1;1.234,56 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO id;amount;date;tax\\n1;1.234,56 RON;21.07.2026;RO12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO CSV edge 37"
       }
     ],
     "boundaries": [
@@ -1465,20 +1909,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CSV local evidence",
+        "text": "Romanian CSV Locale Normalizer analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CSV examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CSV values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1498,6 +1942,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO SLUG 38"
+      },
+      {
+        "label": "Short sample",
+        "value": "Romania sample company Calea Vic"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO Romania sample company Calea Victoriei 1, 010061 Bucuresti"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO SLUG edge 38"
       }
     ],
     "boundaries": [
@@ -1505,20 +1961,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SLUG local evidence",
+        "text": "Romanian Slug Normalizer analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SLUG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SLUG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1538,6 +1994,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO OCR 39"
+      },
+      {
+        "label": "Short sample",
+        "value": "1850101123451 RO12345674 RO49AAAA1B31"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 1850101123451 RO12345674 RO49AAAA1B31007593840000 010011 Bucuresti"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO OCR edge 39"
       }
     ],
     "boundaries": [
@@ -1545,20 +2013,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "OCR local evidence",
+        "text": "Romanian Document OCR Fixer analyzes Romania-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid OCR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized OCR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1578,6 +2046,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO GDPR 40"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO GDPR edge 40"
       }
     ],
     "boundaries": [
@@ -1585,20 +2065,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "GDPR local evidence",
+        "text": "Romanian GDPR / ANSPDCP Redaction Helper analyzes Romania-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid GDPR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized GDPR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1618,6 +2098,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO PII 41"
+      },
+      {
+        "label": "Short sample",
+        "value": "1850101123451 +40 721 234 567 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 1850101123451 +40 721 234 567 RO49AAAA1B31007593840000"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO PII edge 41"
       }
     ],
     "boundaries": [
@@ -1625,20 +2117,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PII local evidence",
+        "text": "Romanian PII Masker analyzes Romania-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PII examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PII values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1658,6 +2150,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO FIX 42"
+      },
+      {
+        "label": "Short sample",
+        "value": "1850101123451\\nCalea Victoriei 1, 010"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 1850101123451\\nCalea Victoriei 1, 010061 Bucuresti\\n+40 721 234 567"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO FIX edge 42"
       }
     ],
     "boundaries": [
@@ -1665,20 +2169,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "FIX local evidence",
+        "text": "Romanian Personal Data Fixture Helper analyzes Romania-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid FIX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized FIX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1698,6 +2202,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO DL 43"
+      },
+      {
+        "label": "Short sample",
+        "value": "185010112345"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 1850101123451 DL 2026"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO DL edge 43"
       }
     ],
     "boundaries": [
@@ -1705,20 +2221,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "DL local evidence",
+        "text": "Romanian Driving Licence Format Helper analyzes Romania-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid DL examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized DL values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1738,6 +2254,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO PERMIT 44"
+      },
+      {
+        "label": "Short sample",
+        "value": "RO PERMIT 2026 1"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ PERMIT 2026 1850101123451"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO PERMIT edge 44"
       }
     ],
     "boundaries": [
@@ -1745,20 +2273,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PERMIT local evidence",
+        "text": "Romanian Residence Permit Format Helper analyzes Romania-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PERMIT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PERMIT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1778,6 +2306,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO HEALTH 45"
+      },
+      {
+        "label": "Short sample",
+        "value": "1850101123451 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 1850101123451 HEALTH 2026"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO HEALTH edge 45"
       }
     ],
     "boundaries": [
@@ -1785,20 +2325,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "HEALTH local evidence",
+        "text": "Romanian Health Card Format Helper analyzes Romania-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid HEALTH examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized HEALTH values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1817,7 +2357,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO PLATE 46"
+        "value": "B 124 ABC"
+      },
+      {
+        "label": "Short sample",
+        "value": "B 123"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO B 123 ABC"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO PLATE edge 46"
       }
     ],
     "boundaries": [
@@ -1825,20 +2377,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PLATE local evidence",
+        "text": "Romanian Vehicle Plate Inspector analyzes Romania-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PLATE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PLATE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1857,7 +2409,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO VIN 47"
+        "value": "WVWZZZ1JZXW000002"
+      },
+      {
+        "label": "Short sample",
+        "value": "WVWZZZ1JZX"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZWZZZ1JZXW000001"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO VIN edge 47"
       }
     ],
     "boundaries": [
@@ -1865,20 +2429,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "VIN local evidence",
+        "text": "Romanian VIN Validator analyzes Romania-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid VIN examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized VIN values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1898,6 +2462,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO VEH 48"
+      },
+      {
+        "label": "Short sample",
+        "value": "B 123 ABC WVWZZZ1JZXW00"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO B 123 ABC WVWZZZ1JZXW000001 1850101123451"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO VEH edge 48"
       }
     ],
     "boundaries": [
@@ -1905,20 +2481,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "VEH local evidence",
+        "text": "Romanian Vehicle Data Redaction Helper analyzes Romania-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid VEH examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized VEH values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1938,6 +2514,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO CUSTOMS 49"
+      },
+      {
+        "label": "Short sample",
+        "value": "RO12345674 HS 8471"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ12345674 HS 8471 1.234,56 RON"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO CUSTOMS edge 49"
       }
     ],
     "boundaries": [
@@ -1945,20 +2533,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CUSTOMS local evidence",
+        "text": "Romanian Customs Declaration Helper analyzes Romania-specific government evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CUSTOMS examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CUSTOMS values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1978,6 +2566,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO TRACK 50"
+      },
+      {
+        "label": "Short sample",
+        "value": "TRACK 2026 0100"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZACK 2026 010011 Bucuresti"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO TRACK edge 50"
       }
     ],
     "boundaries": [
@@ -1985,20 +2585,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "TRACK local evidence",
+        "text": "Romanian Postal Tracking Helper analyzes Romania-specific logistics evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid TRACK examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized TRACK values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2018,6 +2618,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO DQ 51"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO DQ edge 51"
       }
     ],
     "boundaries": [
@@ -2025,20 +2637,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "DQ local evidence",
+        "text": "Romanian Data Quality Workbench analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid DQ examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized DQ values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2058,6 +2670,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO JSON 52"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO JSON edge 52"
       }
     ],
     "boundaries": [
@@ -2065,20 +2689,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "JSON local evidence",
+        "text": "Romanian JSON Fixture Helper analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid JSON examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized JSON values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2098,6 +2722,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO REGEX 53"
+      },
+      {
+        "label": "Short sample",
+        "value": "CNP CUI / CIF cod postal  RO"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZP CUI / CIF cod postal  RO49AAAA1B31007593840000"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO REGEX edge 53"
       }
     ],
     "boundaries": [
@@ -2105,20 +2741,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REGEX local evidence",
+        "text": "Romanian Regex Pack Helper analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REGEX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REGEX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2138,6 +2774,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO API 54"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO API edge 54"
       }
     ],
     "boundaries": [
@@ -2145,20 +2793,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "API local evidence",
+        "text": "Romanian API Payload Auditor analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid API examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized API values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2178,6 +2826,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO FORM 55"
+      },
+      {
+        "label": "Short sample",
+        "value": "tax=RO12345674&postal=010011 Bucu"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO tax=RO12345674&postal=010011 Bucuresti&phone=+40 721 234 567"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO FORM edge 55"
       }
     ],
     "boundaries": [
@@ -2185,20 +2845,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "FORM local evidence",
+        "text": "Romanian Form Field Auditor analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid FORM examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized FORM values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2218,6 +2878,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO NUM 56"
+      },
+      {
+        "label": "Short sample",
+        "value": "1.234,5"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 1.234,56 RON"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO NUM edge 56"
       }
     ],
     "boundaries": [
@@ -2225,20 +2897,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "NUM local evidence",
+        "text": "Romanian Locale Number Parser analyzes Romania-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid NUM examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized NUM values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2258,6 +2930,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO CAL 57"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07.2026"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO 21.07.2026 week 30"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO CAL edge 57"
       }
     ],
     "boundaries": [
@@ -2265,20 +2949,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CAL local evidence",
+        "text": "Romanian Calendar Week Helper analyzes Romania-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CAL examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CAL values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2297,7 +2981,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO SUFFIX 58"
+        "value": "Romania Sample Holding Ltd RO12345675"
+      },
+      {
+        "label": "Short sample",
+        "value": "Romania Sample Holdin"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO Romania Sample Holding Ltd RO12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO SUFFIX edge 58"
       }
     ],
     "boundaries": [
@@ -2305,20 +3001,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SUFFIX local evidence",
+        "text": "Romanian Company Suffix Normalizer analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SUFFIX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SUFFIX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2338,6 +3034,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO PROC 59"
+      },
+      {
+        "label": "Short sample",
+        "value": "RO12345674 PO-2026-"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ12345674 PO-2026-001 RO12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO PROC edge 59"
       }
     ],
     "boundaries": [
@@ -2345,20 +3053,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PROC local evidence",
+        "text": "Romanian Procurement Identifier Helper analyzes Romania-specific government evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PROC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PROC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2378,6 +3086,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO COPY 60"
+      },
+      {
+        "label": "Short sample",
+        "value": "CNP input, cod postal input"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZP input, cod postal input, amount 1.234,56 RON"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO COPY edge 60"
       }
     ],
     "boundaries": [
@@ -2385,20 +3105,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "COPY local evidence",
+        "text": "Romanian Locale Copy Checker analyzes Romania-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid COPY examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized COPY values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2418,6 +3138,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO SUP 61"
+      },
+      {
+        "label": "Short sample",
+        "value": "Customer sent 1850101123451, RO49AAAA1B31007593840"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO Customer sent 1850101123451, RO49AAAA1B31007593840000, Calea Victoriei 1, 010061 Bucuresti"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO SUP edge 61"
       }
     ],
     "boundaries": [
@@ -2425,20 +3157,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SUP local evidence",
+        "text": "Romanian Support Ticket Scrubber analyzes Romania-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SUP examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SUP values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2458,6 +3190,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid RO SMOKE 62"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review RO SMOKE edge 62"
       }
     ],
     "boundaries": [
@@ -2465,20 +3209,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SMOKE local evidence",
+        "text": "Romanian Integration Smoke Test Builder analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SMOKE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SMOKE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   }
@@ -2507,6 +3251,7 @@
   function field(label, value, detail) { return { label, value: value == null || value === '' ? 'not detected' : String(value), detail: detail || COUNTRY.adjective + ' evidence slice' }; }
   function check(label, ok, pass, fail) { return { label, status: ok ? 'pass' : 'review', message: ok ? pass : fail }; }
   function mod97(iban) { let rearranged = iban.slice(4) + iban.slice(0, 4); let rem = 0; for (const ch of rearranged) { const value = /[A-Z]/.test(ch) ? String(ch.charCodeAt(0) - 55) : ch; for (const d of value) rem = (rem * 10 + Number(d)) % 97; } return rem; }
+  function isIntentionalInvalid(raw) { return /^(invalid|short|wrong|bad|review)\b/i.test(compact(raw)) || /\b(BAD|INVALID|WRONG)[-_ ]?(CHECKSUM|PREFIX|COUNTRY|SAMPLE)\b/i.test(compact(raw)); }
   function detect(raw) {
     const text = compact(raw); const upper = text.toUpperCase();
     return {
@@ -2538,6 +3283,10 @@
     else if (tool.kind === 'bic') { const bic = alnum(raw); normalized = bic; ok = new RegExp('^[A-Z]{4}' + COUNTRY.iso2 + '[A-Z0-9]{2}([A-Z0-9]{3})?$').test(bic); result.breakdown.push(field('institution', bic.slice(0, 4), 'BIC bank code'), field('country', bic.slice(4, 6), 'expected ' + COUNTRY.iso2), field('location', bic.slice(6, 8), 'location code'), field('branch', bic.slice(8) || 'primary office', 'optional')); }
     else if (tool.kind === 'slug' || tool.kind === 'regex' || tool.kind === 'copycheck' || tool.kind === 'companysuffix') { normalized = raw.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); ok = raw.length > 0; result.breakdown.push(field('source text', raw, 'local display value'), field('normalized key', normalized, 'ASCII/API key'), field('local vocabulary', [COUNTRY.localTerms.personal, COUNTRY.localTerms.company, COUNTRY.localTerms.tax].join(' / '), 'copy/debug terms')); }
     else { normalized = raw.replace(/\s+/g, ' ').trim(); ok = raw.length > 0; result.breakdown.push(field('identifier evidence', ev.personal || ev.company || 'not detected', 'local ID slice'), field('tax evidence', ev.vat || 'not detected', 'tax/VAT slice'), field('payment evidence', ev.iban || ev.amount || 'not detected', 'banking slice'), field('workflow', tool.kind, 'offline workbench context')); }
+    if (isIntentionalInvalid(raw)) {
+      ok = false;
+      result.breakdown.unshift(field('invalid fixture marker', raw.split(/\s+/).slice(0, 3).join(' ') || 'invalid sample', 'Intentional invalid/review sample must not pass.'));
+    }
     result.status = ok ? 'success' : 'review';
     result.headline = tool.code + ': ' + (ok ? phrase('success') : phrase('review'));
     result.detail = ok ? COUNTRY.adjective + ' browser-only evidence is structurally coherent.' : phrase('addEvidence');
@@ -2545,7 +3294,9 @@
     result.normalized = normalized || raw;
     result.fields = [field('normalized', result.normalized, phrase('normalized')), field('masked', mask(result.normalized), 'log-safe preview'), field('tool', tool.name, tool.category), field('official boundary', 'offline only', phrase('official'))];
     result.checks = [check('Input present', raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'), check(COUNTRY.adjective + ' evidence', ok, phrase('localStructure') + ' detected.', phrase('addEvidence')), check('No network', true, 'No upload or registry call is made.'), check('Official boundary', true, phrase('official'))];
-    result.suggestions = ok ? ['Copy normalized value for fixtures.', 'Use official systems for regulated status.'] : ['Load a valid sample.', 'Check country prefix, digit length, separator style, or local evidence.'];
+    result.suggestions = ok
+      ? [{ action: 'copy-normalized', label: 'Copy normalized value', detail: 'Use this local parser output in fixtures.' }, { action: 'load-invalid', label: 'Load invalid fixture', detail: 'Compare the review path.' }, { action: 'run-batch', label: 'Run sample batch', detail: 'Replay all sample states.' }]
+      : [{ action: 'load-valid', label: 'Load valid fixture', detail: 'Compare against the success-first example.' }, { action: 'use-short', label: 'Try short sample', detail: 'Inspect length and parser guards.' }, { action: 'run-batch', label: 'Run sample batch', detail: 'Compare pass/review states.' }];
     result.developerJson = { suite: COUNTRY.slug + '-suite', tool: tool.id, locale: locale(), status: result.status, normalized: result.normalized, masked: mask(result.normalized), checks: result.checks, fields: result.fields, boundary: phrase('official'), breakdown: result.breakdown };
     return result;
   }

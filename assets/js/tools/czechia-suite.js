@@ -17,7 +17,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ ID 1"
+        "value": "800101/0007"
+      },
+      {
+        "label": "Short sample",
+        "value": "800101/"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 800101/0006"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ ID edge 1"
       }
     ],
     "boundaries": [
@@ -25,20 +37,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ID local evidence",
+        "text": "Czech Rodne cislo Validator analyzes Czechia-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ID examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ID values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -57,7 +69,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ ORG 2"
+        "value": "27074359"
+      },
+      {
+        "label": "Short sample",
+        "value": "27074"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 27074358"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ ORG edge 2"
       }
     ],
     "boundaries": [
@@ -65,20 +89,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ORG local evidence",
+        "text": "Czech ICO Validator analyzes Czechia-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ORG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ORG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -97,7 +121,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ VAT 3"
+        "value": "ZZ27074358"
+      },
+      {
+        "label": "Short sample",
+        "value": "CZ2707"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ27074358"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ VAT edge 3"
       }
     ],
     "boundaries": [
@@ -105,20 +141,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "VAT local evidence",
+        "text": "Czech VAT ID / CZ Prefix Validator analyzes Czechia-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid VAT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized VAT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -137,7 +173,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ EORI 4"
+        "value": "ZZ27074358"
+      },
+      {
+        "label": "Short sample",
+        "value": "CZ2707"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ27074358"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ EORI edge 4"
       }
     ],
     "boundaries": [
@@ -145,20 +193,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "EORI local evidence",
+        "text": "Czech EORI / Customs Identifier Helper analyzes Czechia-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid EORI examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized EORI values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -177,7 +225,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ SOC 5"
+        "value": "800101/0007"
+      },
+      {
+        "label": "Short sample",
+        "value": "800101/"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 800101/0006"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ SOC edge 5"
       }
     ],
     "boundaries": [
@@ -185,20 +245,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SOC local evidence",
+        "text": "Czech social insurance evidence Helper analyzes Czechia-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SOC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SOC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -217,7 +277,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ KYC 6"
+        "value": "{\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ27074358\",\"iban\":\"CZ6508000000192000145390\"}"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ270743"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ {\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ27074358\",\"iban\":\"CZ6508000000192000145399\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ KYC edge 6"
       }
     ],
     "boundaries": [
@@ -225,20 +297,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "KYC local evidence",
+        "text": "Czech Company Onboarding Auditor analyzes Czechia-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid KYC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized KYC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -257,7 +329,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ REG 7"
+        "value": "27074358 CZ27074358 Vaclavske namesti 1, 110 00 Praha 2"
+      },
+      {
+        "label": "Short sample",
+        "value": "27074358 CZ27074358 Vaclavske n"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 27074358 CZ27074358 Vaclavske namesti 1, 110 00 Praha 1"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ REG edge 7"
       }
     ],
     "boundaries": [
@@ -265,20 +349,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REG local evidence",
+        "text": "Czech Ares / business register Readiness Helper analyzes Czechia-specific government evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -298,6 +382,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ CARD 8"
+      },
+      {
+        "label": "Short sample",
+        "value": "800101/"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 800101/0006"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ CARD edge 8"
       }
     ],
     "boundaries": [
@@ -305,20 +401,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CARD local evidence",
+        "text": "Czech ID Card Format Helper analyzes Czechia-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CARD examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CARD values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -338,6 +434,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ PASS 9"
+      },
+      {
+        "label": "Short sample",
+        "value": "P<CZECZECH<<SAMPLE<<"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ P<CZECZECH<<SAMPLE<<<<<<<<<<<<<<<<<<"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ PASS edge 9"
       }
     ],
     "boundaries": [
@@ -345,20 +453,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PASS local evidence",
+        "text": "Czech Passport Number Helper analyzes Czechia-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PASS examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PASS values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -378,6 +486,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ MRZ 10"
+      },
+      {
+        "label": "Short sample",
+        "value": "P<CZESAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ P<CZESAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567CZE8501019M3107123<<<<<<<<<<<<<<06"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ MRZ edge 10"
       }
     ],
     "boundaries": [
@@ -385,20 +505,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "MRZ local evidence",
+        "text": "Czech MRZ / Passport Parser analyzes Czechia-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid MRZ examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized MRZ values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -417,7 +537,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ IBAN 11"
+        "value": "ZZ6508000000192000145399"
+      },
+      {
+        "label": "Short sample",
+        "value": "CZ650800000019"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ6508000000192000145399"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ IBAN edge 11"
       }
     ],
     "boundaries": [
@@ -425,20 +557,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "IBAN local evidence",
+        "text": "Czechia IBAN Validator analyzes Czechia-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid IBAN examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized IBAN values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -457,7 +589,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ IBG 12"
+        "value": "Wrong prefix CZ 08000000192000145399"
+      },
+      {
+        "label": "Short sample",
+        "value": "08000000192"
+      },
+      {
+        "label": "Grouped valid sample",
+        "value": "0800 0000 1920 0014 5399"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ IBG edge 12"
       }
     ],
     "boundaries": [
@@ -465,20 +609,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "IBG local evidence",
+        "text": "Czechia IBAN Generator analyzes Czechia-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid IBG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized IBG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -498,6 +642,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ BANK 13"
+      },
+      {
+        "label": "Short sample",
+        "value": "0800 19200"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 0800 192000145399"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ BANK edge 13"
       }
     ],
     "boundaries": [
@@ -505,20 +661,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "BANK local evidence",
+        "text": "Czech Domestic Bank Account Inspector analyzes Czechia-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid BANK examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized BANK values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -537,7 +693,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ BIC 14"
+        "value": "ZZCDCZ2X"
+      },
+      {
+        "label": "Short sample",
+        "value": "ABCDC"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZCDCZ2X"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ BIC edge 14"
       }
     ],
     "boundaries": [
@@ -545,20 +713,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "BIC local evidence",
+        "text": "Czech BIC / SWIFT Inspector analyzes Czechia-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid BIC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized BIC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -578,6 +746,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ SEPA 15"
+      },
+      {
+        "label": "Short sample",
+        "value": "CZ6508000000192000145399\\n1 234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ6508000000192000145399\\n1 234,56 CZK\\nInvoice 2026-001"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ SEPA edge 15"
       }
     ],
     "boundaries": [
@@ -585,20 +765,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SEPA local evidence",
+        "text": "Czech SEPA Transfer Helper analyzes Czechia-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SEPA examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SEPA values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -618,6 +798,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ SDD 16"
+      },
+      {
+        "label": "Short sample",
+        "value": "MANDATE-2026-001 CZ6508"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZNDATE-2026-001 CZ6508000000192000145399"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ SDD edge 16"
       }
     ],
     "boundaries": [
@@ -625,20 +817,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SDD local evidence",
+        "text": "Czech SEPA Direct Debit Mandate Helper analyzes Czechia-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SDD examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SDD values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -658,6 +850,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ PAY 17"
+      },
+      {
+        "label": "Short sample",
+        "value": "variable symbol REF 202"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ variable symbol REF 2026-001 1 234,56 CZK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ PAY edge 17"
       }
     ],
     "boundaries": [
@@ -665,20 +869,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PAY local evidence",
+        "text": "Czech variable symbol Reference Helper analyzes Czechia-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PAY examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PAY values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -698,6 +902,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ REMIT 18"
+      },
+      {
+        "label": "Short sample",
+        "value": "Invoice 2026-001 CZ270"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ Invoice 2026-001 CZ27074358 1 234,56 CZK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ REMIT edge 18"
       }
     ],
     "boundaries": [
@@ -705,20 +921,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REMIT local evidence",
+        "text": "Czech Remittance Text Builder analyzes Czechia-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REMIT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REMIT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -738,6 +954,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ RECON 19"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07.2026; 1 234,56 CZK; CZ6508000000"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 21.07.2026; 1 234,56 CZK; CZ6508000000192000145399; Invoice 2026-001"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ RECON edge 19"
       }
     ],
     "boundaries": [
@@ -745,20 +973,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "RECON local evidence",
+        "text": "Czech Payment Reconciliation Helper analyzes Czechia-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid RECON examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized RECON values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -778,6 +1006,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ STMT 20"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07.2026; 1 234,56 CZK; CZ650800000019"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 21.07.2026; 1 234,56 CZK; CZ6508000000192000145399; sample counterparty"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ STMT edge 20"
       }
     ],
     "boundaries": [
@@ -785,20 +1025,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "STMT local evidence",
+        "text": "Czech Bank Statement Parser analyzes Czechia-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid STMT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized STMT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -817,7 +1057,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ MASK 21"
+        "value": "ZZ6508000000192000145399"
+      },
+      {
+        "label": "Short sample",
+        "value": "CZ650800000019"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ6508000000192000145399"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ MASK edge 21"
       }
     ],
     "boundaries": [
@@ -825,20 +1077,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "MASK local evidence",
+        "text": "Czech Masked IBAN Formatter analyzes Czechia-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid MASK examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized MASK values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -858,6 +1110,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ CUR 22"
+      },
+      {
+        "label": "Short sample",
+        "value": "1 234,5"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 1 234,56 CZK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ CUR edge 22"
       }
     ],
     "boundaries": [
@@ -865,20 +1129,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CUR local evidence",
+        "text": "Czech CZK Decimal Currency Formatter analyzes Czechia-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CUR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CUR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -898,6 +1162,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ RATE 23"
+      },
+      {
+        "label": "Short sample",
+        "value": "DIC / DPH 20% base"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZC / DPH 20% base 1 234,56 CZK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ RATE edge 23"
       }
     ],
     "boundaries": [
@@ -905,20 +1181,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "RATE local evidence",
+        "text": "Czech VAT Rate Sanity Helper analyzes Czechia-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid RATE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized RATE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -938,6 +1214,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ RET 24"
+      },
+      {
+        "label": "Short sample",
+        "value": "DIC / DPH; CZ27074358; period"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZC / DPH; CZ27074358; period 2026-07; 1 234,56 CZK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ RET edge 24"
       }
     ],
     "boundaries": [
@@ -945,20 +1233,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "RET local evidence",
+        "text": "Czech VAT Return Field Helper analyzes Czechia-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid RET examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized RET values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -978,6 +1266,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ INV 25"
+      },
+      {
+        "label": "Short sample",
+        "value": "INV-2026-0001 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZV-2026-0001 CZ27074358"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ INV edge 25"
       }
     ],
     "boundaries": [
@@ -985,20 +1285,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "INV local evidence",
+        "text": "Czech Invoice Number Helper analyzes Czechia-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid INV examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized INV values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1018,6 +1318,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ EINV 26"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ270743"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ {\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ27074358\",\"iban\":\"CZ6508000000192000145399\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ EINV edge 26"
       }
     ],
     "boundaries": [
@@ -1025,20 +1337,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "EINV local evidence",
+        "text": "Czech ISDOC / e-invoicing Readiness Checker analyzes Czechia-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid EINV examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized EINV values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1058,6 +1370,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ TAX 27"
+      },
+      {
+        "label": "Short sample",
+        "value": "CZ27074358 21.07.20"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ27074358 21.07.2026 1 234,56 CZK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ TAX edge 27"
       }
     ],
     "boundaries": [
@@ -1065,20 +1389,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "TAX local evidence",
+        "text": "Czech Tax Authority Handoff Helper analyzes Czechia-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid TAX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized TAX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1098,6 +1422,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ AUDIT 28"
+      },
+      {
+        "label": "Short sample",
+        "value": "invoice 21.07.2026 1 234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ invoice 21.07.2026 1 234,56 CZK CZ27074358"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ AUDIT edge 28"
       }
     ],
     "boundaries": [
@@ -1105,20 +1441,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "AUDIT local evidence",
+        "text": "Czech Accounting Audit Trail Checklist Helper analyzes Czechia-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid AUDIT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized AUDIT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1138,6 +1474,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ POST 29"
+      },
+      {
+        "label": "Short sample",
+        "value": "110 00 P"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 110 00 Praha 1"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ POST edge 29"
       }
     ],
     "boundaries": [
@@ -1145,20 +1493,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "POST local evidence",
+        "text": "Czech Postal Code Validator analyzes Czechia-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid POST examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized POST values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1178,6 +1526,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ ADDR 30"
+      },
+      {
+        "label": "Short sample",
+        "value": "Vaclavske namesti 1,"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ Vaclavske namesti 1, 110 00 Praha 1"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ ADDR edge 30"
       }
     ],
     "boundaries": [
@@ -1185,20 +1545,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ADDR local evidence",
+        "text": "Czech Address Normalizer analyzes Czechia-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ADDR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ADDR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1218,6 +1578,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ ASCII 31"
+      },
+      {
+        "label": "Short sample",
+        "value": "Vaclavske namesti 1,"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ Vaclavske namesti 1, 110 00 Praha 1"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ ASCII edge 31"
       }
     ],
     "boundaries": [
@@ -1225,20 +1597,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ASCII local evidence",
+        "text": "Czech Address Transliteration Normalizer analyzes Czechia-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ASCII examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ASCII values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1258,6 +1630,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ REGION 32"
+      },
+      {
+        "label": "Short sample",
+        "value": "110 00 P"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 110 00 Praha 1"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ REGION edge 32"
       }
     ],
     "boundaries": [
@@ -1265,20 +1649,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REGION local evidence",
+        "text": "Czech Region / Province Code Mapper analyzes Czechia-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REGION examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REGION values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1298,6 +1682,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ MUNI 33"
+      },
+      {
+        "label": "Short sample",
+        "value": "Vaclavske namesti 1,"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ Vaclavske namesti 1, 110 00 Praha 1"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ MUNI edge 33"
       }
     ],
     "boundaries": [
@@ -1305,20 +1701,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "MUNI local evidence",
+        "text": "Czech Municipality Code Inspector analyzes Czechia-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid MUNI examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized MUNI values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1338,6 +1734,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ PHONE 34"
+      },
+      {
+        "label": "Short sample",
+        "value": "+420 777 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ +420 777 123 456"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ PHONE edge 34"
       }
     ],
     "boundaries": [
@@ -1345,20 +1753,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PHONE local evidence",
+        "text": "Czech Phone Number Validator analyzes Czechia-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PHONE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PHONE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1378,6 +1786,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ E164 35"
+      },
+      {
+        "label": "Short sample",
+        "value": "+420 777 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ +420 777 123 456"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ E164 edge 35"
       }
     ],
     "boundaries": [
@@ -1385,20 +1805,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "E164 local evidence",
+        "text": "Czech Phone E.164 Formatter analyzes Czechia-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid E164 examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized E164 values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1418,6 +1838,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ DATE 36"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07."
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 21.07.2026"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ DATE edge 36"
       }
     ],
     "boundaries": [
@@ -1425,20 +1857,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "DATE local evidence",
+        "text": "Czech Date Locale Formatter analyzes Czechia-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid DATE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized DATE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1458,6 +1890,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ CSV 37"
+      },
+      {
+        "label": "Short sample",
+        "value": "id;amount;date;tax\\n1;1 234,56 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ id;amount;date;tax\\n1;1 234,56 CZK;21.07.2026;CZ27074358"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ CSV edge 37"
       }
     ],
     "boundaries": [
@@ -1465,20 +1909,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CSV local evidence",
+        "text": "Czech CSV Locale Normalizer analyzes Czechia-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CSV examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CSV values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1498,6 +1942,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ SLUG 38"
+      },
+      {
+        "label": "Short sample",
+        "value": "Czechia sample company Vaclavske"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ Czechia sample company Vaclavske namesti 1, 110 00 Praha 1"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ SLUG edge 38"
       }
     ],
     "boundaries": [
@@ -1505,20 +1961,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SLUG local evidence",
+        "text": "Czech Slug Normalizer analyzes Czechia-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SLUG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SLUG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1538,6 +1994,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ OCR 39"
+      },
+      {
+        "label": "Short sample",
+        "value": "800101/0006 CZ27074358 CZ6508000000"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 800101/0006 CZ27074358 CZ6508000000192000145399 110 00 Praha 1"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ OCR edge 39"
       }
     ],
     "boundaries": [
@@ -1545,20 +2013,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "OCR local evidence",
+        "text": "Czech Document OCR Fixer analyzes Czechia-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid OCR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized OCR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1578,6 +2046,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ GDPR 40"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ270743"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ {\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ27074358\",\"iban\":\"CZ6508000000192000145399\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ GDPR edge 40"
       }
     ],
     "boundaries": [
@@ -1585,20 +2065,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "GDPR local evidence",
+        "text": "Czech GDPR / UOOU Redaction Helper analyzes Czechia-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid GDPR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized GDPR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1618,6 +2098,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ PII 41"
+      },
+      {
+        "label": "Short sample",
+        "value": "800101/0006 +420 777 123 456 C"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 800101/0006 +420 777 123 456 CZ6508000000192000145399"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ PII edge 41"
       }
     ],
     "boundaries": [
@@ -1625,20 +2117,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PII local evidence",
+        "text": "Czech PII Masker analyzes Czechia-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PII examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PII values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1658,6 +2150,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ FIX 42"
+      },
+      {
+        "label": "Short sample",
+        "value": "800101/0006\\nVaclavske namesti 1, 110"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 800101/0006\\nVaclavske namesti 1, 110 00 Praha 1\\n+420 777 123 456"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ FIX edge 42"
       }
     ],
     "boundaries": [
@@ -1665,20 +2169,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "FIX local evidence",
+        "text": "Czech Personal Data Fixture Helper analyzes Czechia-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid FIX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized FIX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1698,6 +2202,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ DL 43"
+      },
+      {
+        "label": "Short sample",
+        "value": "800101/0006"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 800101/0006 DL 2026"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ DL edge 43"
       }
     ],
     "boundaries": [
@@ -1705,20 +2221,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "DL local evidence",
+        "text": "Czech Driving Licence Format Helper analyzes Czechia-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid DL examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized DL values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1738,6 +2254,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ PERMIT 44"
+      },
+      {
+        "label": "Short sample",
+        "value": "CZ PERMIT 2026 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ PERMIT 2026 800101/0006"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ PERMIT edge 44"
       }
     ],
     "boundaries": [
@@ -1745,20 +2273,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PERMIT local evidence",
+        "text": "Czech Residence Permit Format Helper analyzes Czechia-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PERMIT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PERMIT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1778,6 +2306,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ HEALTH 45"
+      },
+      {
+        "label": "Short sample",
+        "value": "800101/0006 H"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 800101/0006 HEALTH 2026"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ HEALTH edge 45"
       }
     ],
     "boundaries": [
@@ -1785,20 +2325,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "HEALTH local evidence",
+        "text": "Czech Health Card Format Helper analyzes Czechia-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid HEALTH examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized HEALTH values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1817,7 +2357,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ PLATE 46"
+        "value": "1AB 2346"
+      },
+      {
+        "label": "Short sample",
+        "value": "1AB 2"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 1AB 2345"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ PLATE edge 46"
       }
     ],
     "boundaries": [
@@ -1825,20 +2377,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PLATE local evidence",
+        "text": "Czech Vehicle Plate Inspector analyzes Czechia-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PLATE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PLATE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1857,7 +2409,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ VIN 47"
+        "value": "WVWZZZ1JZXW000002"
+      },
+      {
+        "label": "Short sample",
+        "value": "WVWZZZ1JZX"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZWZZZ1JZXW000001"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ VIN edge 47"
       }
     ],
     "boundaries": [
@@ -1865,20 +2429,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "VIN local evidence",
+        "text": "Czech VIN Validator analyzes Czechia-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid VIN examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized VIN values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1898,6 +2462,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ VEH 48"
+      },
+      {
+        "label": "Short sample",
+        "value": "1AB 2345 WVWZZZ1JZXW0"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 1AB 2345 WVWZZZ1JZXW000001 800101/0006"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ VEH edge 48"
       }
     ],
     "boundaries": [
@@ -1905,20 +2481,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "VEH local evidence",
+        "text": "Czech Vehicle Data Redaction Helper analyzes Czechia-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid VEH examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized VEH values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1938,6 +2514,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ CUSTOMS 49"
+      },
+      {
+        "label": "Short sample",
+        "value": "CZ27074358 HS 8471"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ27074358 HS 8471 1 234,56 CZK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ CUSTOMS edge 49"
       }
     ],
     "boundaries": [
@@ -1945,20 +2533,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CUSTOMS local evidence",
+        "text": "Czech Customs Declaration Helper analyzes Czechia-specific government evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CUSTOMS examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CUSTOMS values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1978,6 +2566,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ TRACK 50"
+      },
+      {
+        "label": "Short sample",
+        "value": "TRACK 2026 110"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZACK 2026 110 00 Praha 1"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ TRACK edge 50"
       }
     ],
     "boundaries": [
@@ -1985,20 +2585,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "TRACK local evidence",
+        "text": "Czech Postal Tracking Helper analyzes Czechia-specific logistics evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid TRACK examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized TRACK values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2018,6 +2618,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ DQ 51"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ270743"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ {\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ27074358\",\"iban\":\"CZ6508000000192000145399\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ DQ edge 51"
       }
     ],
     "boundaries": [
@@ -2025,20 +2637,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "DQ local evidence",
+        "text": "Czech Data Quality Workbench analyzes Czechia-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid DQ examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized DQ values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2058,6 +2670,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ JSON 52"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ270743"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ {\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ27074358\",\"iban\":\"CZ6508000000192000145399\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ JSON edge 52"
       }
     ],
     "boundaries": [
@@ -2065,20 +2689,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "JSON local evidence",
+        "text": "Czech JSON Fixture Helper analyzes Czechia-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid JSON examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized JSON values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2098,6 +2722,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ REGEX 53"
+      },
+      {
+        "label": "Short sample",
+        "value": "Rodne cislo ICO PSC  CZ65"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ Rodne cislo ICO PSC  CZ6508000000192000145399"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ REGEX edge 53"
       }
     ],
     "boundaries": [
@@ -2105,20 +2741,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REGEX local evidence",
+        "text": "Czech Regex Pack Helper analyzes Czechia-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REGEX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REGEX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2138,6 +2774,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ API 54"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ270743"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ {\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ27074358\",\"iban\":\"CZ6508000000192000145399\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ API edge 54"
       }
     ],
     "boundaries": [
@@ -2145,20 +2793,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "API local evidence",
+        "text": "Czech API Payload Auditor analyzes Czechia-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid API examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized API values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2178,6 +2826,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ FORM 55"
+      },
+      {
+        "label": "Short sample",
+        "value": "tax=CZ27074358&postal=110 00 Prah"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ tax=CZ27074358&postal=110 00 Praha 1&phone=+420 777 123 456"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ FORM edge 55"
       }
     ],
     "boundaries": [
@@ -2185,20 +2845,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "FORM local evidence",
+        "text": "Czech Form Field Auditor analyzes Czechia-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid FORM examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized FORM values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2218,6 +2878,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ NUM 56"
+      },
+      {
+        "label": "Short sample",
+        "value": "1 234,5"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 1 234,56 CZK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ NUM edge 56"
       }
     ],
     "boundaries": [
@@ -2225,20 +2897,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "NUM local evidence",
+        "text": "Czech Locale Number Parser analyzes Czechia-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid NUM examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized NUM values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2258,6 +2930,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ CAL 57"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07.2026"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 21.07.2026 week 30"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ CAL edge 57"
       }
     ],
     "boundaries": [
@@ -2265,20 +2949,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CAL local evidence",
+        "text": "Czech Calendar Week Helper analyzes Czechia-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CAL examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CAL values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2297,7 +2981,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid CZ SUFFIX 58"
+        "value": "Czechia Sample Holding Ltd 27074359"
+      },
+      {
+        "label": "Short sample",
+        "value": "Czechia Sample Holdi"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ Czechia Sample Holding Ltd 27074358"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ SUFFIX edge 58"
       }
     ],
     "boundaries": [
@@ -2305,20 +3001,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SUFFIX local evidence",
+        "text": "Czech Company Suffix Normalizer analyzes Czechia-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SUFFIX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SUFFIX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2338,6 +3034,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ PROC 59"
+      },
+      {
+        "label": "Short sample",
+        "value": "27074358 PO-2026-0"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ 27074358 PO-2026-001 CZ27074358"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ PROC edge 59"
       }
     ],
     "boundaries": [
@@ -2345,20 +3053,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PROC local evidence",
+        "text": "Czech Procurement Identifier Helper analyzes Czechia-specific government evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PROC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PROC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2378,6 +3086,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ COPY 60"
+      },
+      {
+        "label": "Short sample",
+        "value": "Rodne cislo input, PSC inpu"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ Rodne cislo input, PSC input, amount 1 234,56 CZK"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ COPY edge 60"
       }
     ],
     "boundaries": [
@@ -2385,20 +3105,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "COPY local evidence",
+        "text": "Czech Locale Copy Checker analyzes Czechia-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid COPY examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized COPY values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2418,6 +3138,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ SUP 61"
+      },
+      {
+        "label": "Short sample",
+        "value": "Customer sent 800101/0006, CZ65080000001920001453"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ Customer sent 800101/0006, CZ6508000000192000145399, Vaclavske namesti 1, 110 00 Praha 1"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ SUP edge 61"
       }
     ],
     "boundaries": [
@@ -2425,20 +3157,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SUP local evidence",
+        "text": "Czech Support Ticket Scrubber analyzes Czechia-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SUP examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SUP values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2458,6 +3190,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid CZ SMOKE 62"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ270743"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix CZ {\"country\":\"CZ\",\"ico\":\"27074358\",\"dic\":\"CZ27074358\",\"iban\":\"CZ6508000000192000145399\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review CZ SMOKE edge 62"
       }
     ],
     "boundaries": [
@@ -2465,20 +3209,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SMOKE local evidence",
+        "text": "Czech Integration Smoke Test Builder analyzes Czechia-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Czech parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SMOKE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SMOKE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   }
@@ -2507,6 +3251,7 @@
   function field(label, value, detail) { return { label, value: value == null || value === '' ? 'not detected' : String(value), detail: detail || COUNTRY.adjective + ' evidence slice' }; }
   function check(label, ok, pass, fail) { return { label, status: ok ? 'pass' : 'review', message: ok ? pass : fail }; }
   function mod97(iban) { let rearranged = iban.slice(4) + iban.slice(0, 4); let rem = 0; for (const ch of rearranged) { const value = /[A-Z]/.test(ch) ? String(ch.charCodeAt(0) - 55) : ch; for (const d of value) rem = (rem * 10 + Number(d)) % 97; } return rem; }
+  function isIntentionalInvalid(raw) { return /^(invalid|short|wrong|bad|review)\b/i.test(compact(raw)) || /\b(BAD|INVALID|WRONG)[-_ ]?(CHECKSUM|PREFIX|COUNTRY|SAMPLE)\b/i.test(compact(raw)); }
   function detect(raw) {
     const text = compact(raw); const upper = text.toUpperCase();
     return {
@@ -2538,6 +3283,10 @@
     else if (tool.kind === 'bic') { const bic = alnum(raw); normalized = bic; ok = new RegExp('^[A-Z]{4}' + COUNTRY.iso2 + '[A-Z0-9]{2}([A-Z0-9]{3})?$').test(bic); result.breakdown.push(field('institution', bic.slice(0, 4), 'BIC bank code'), field('country', bic.slice(4, 6), 'expected ' + COUNTRY.iso2), field('location', bic.slice(6, 8), 'location code'), field('branch', bic.slice(8) || 'primary office', 'optional')); }
     else if (tool.kind === 'slug' || tool.kind === 'regex' || tool.kind === 'copycheck' || tool.kind === 'companysuffix') { normalized = raw.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); ok = raw.length > 0; result.breakdown.push(field('source text', raw, 'local display value'), field('normalized key', normalized, 'ASCII/API key'), field('local vocabulary', [COUNTRY.localTerms.personal, COUNTRY.localTerms.company, COUNTRY.localTerms.tax].join(' / '), 'copy/debug terms')); }
     else { normalized = raw.replace(/\s+/g, ' ').trim(); ok = raw.length > 0; result.breakdown.push(field('identifier evidence', ev.personal || ev.company || 'not detected', 'local ID slice'), field('tax evidence', ev.vat || 'not detected', 'tax/VAT slice'), field('payment evidence', ev.iban || ev.amount || 'not detected', 'banking slice'), field('workflow', tool.kind, 'offline workbench context')); }
+    if (isIntentionalInvalid(raw)) {
+      ok = false;
+      result.breakdown.unshift(field('invalid fixture marker', raw.split(/\s+/).slice(0, 3).join(' ') || 'invalid sample', 'Intentional invalid/review sample must not pass.'));
+    }
     result.status = ok ? 'success' : 'review';
     result.headline = tool.code + ': ' + (ok ? phrase('success') : phrase('review'));
     result.detail = ok ? COUNTRY.adjective + ' browser-only evidence is structurally coherent.' : phrase('addEvidence');
@@ -2545,7 +3294,9 @@
     result.normalized = normalized || raw;
     result.fields = [field('normalized', result.normalized, phrase('normalized')), field('masked', mask(result.normalized), 'log-safe preview'), field('tool', tool.name, tool.category), field('official boundary', 'offline only', phrase('official'))];
     result.checks = [check('Input present', raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'), check(COUNTRY.adjective + ' evidence', ok, phrase('localStructure') + ' detected.', phrase('addEvidence')), check('No network', true, 'No upload or registry call is made.'), check('Official boundary', true, phrase('official'))];
-    result.suggestions = ok ? ['Copy normalized value for fixtures.', 'Use official systems for regulated status.'] : ['Load a valid sample.', 'Check country prefix, digit length, separator style, or local evidence.'];
+    result.suggestions = ok
+      ? [{ action: 'copy-normalized', label: 'Copy normalized value', detail: 'Use this local parser output in fixtures.' }, { action: 'load-invalid', label: 'Load invalid fixture', detail: 'Compare the review path.' }, { action: 'run-batch', label: 'Run sample batch', detail: 'Replay all sample states.' }]
+      : [{ action: 'load-valid', label: 'Load valid fixture', detail: 'Compare against the success-first example.' }, { action: 'use-short', label: 'Try short sample', detail: 'Inspect length and parser guards.' }, { action: 'run-batch', label: 'Run sample batch', detail: 'Compare pass/review states.' }];
     result.developerJson = { suite: COUNTRY.slug + '-suite', tool: tool.id, locale: locale(), status: result.status, normalized: result.normalized, masked: mask(result.normalized), checks: result.checks, fields: result.fields, boundary: phrase('official'), breakdown: result.breakdown };
     return result;
   }

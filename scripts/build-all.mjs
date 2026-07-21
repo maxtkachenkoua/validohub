@@ -1333,6 +1333,20 @@ async function normalizeWorkbenchScriptVersions() {
   }
 }
 
+async function ensureGeneratedToolScripts() {
+  const htmlFiles = await scanFolderHtmlFiles(siteRoot);
+  let updated = 0;
+  for (const filePath of htmlFiles) {
+    const content = await readFile(filePath, 'utf8');
+    const next = ensureToolScript(content);
+    if (next !== content) {
+      await writeFile(filePath, next, 'utf8');
+      updated++;
+    }
+  }
+  console.log(`✓ Ensured tool script dependencies on ${updated} generated pages`);
+}
+
 async function pruneCountrySuiteRelatedLinksToCountry() {
   const htmlFiles = await scanFolderHtmlFiles(siteRoot);
   let updated = 0;
@@ -1687,6 +1701,7 @@ async function main() {
     await applyFinalLocalizationPass(routeRegistry, siteRoot, configuredLocales);
     await pruneCountrySuiteRelatedLinksToCountry();
     await normalizeWorkbenchScriptVersions();
+    await ensureGeneratedToolScripts();
     await writeSitemap(routeRegistry);
 
     // 6. Site Integrity Verification & Metrics

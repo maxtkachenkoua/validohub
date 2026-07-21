@@ -52,6 +52,12 @@ if (fs.existsSync('assets/js/tools/country-suite-factory.js')) {
     'relatedTools',
     'buildIbanGeneratorResult',
     'generateIban',
+    'freshIbanGeneratorInput',
+    'intentionalReviewFixture',
+    'isReviewSampleLabel',
+    'withToolSpecificContext',
+    'forceIntentionalReview',
+    'data-csf-repair-action',
     'Premium debug layer',
     'toolIntelligence',
     'apiPreview',
@@ -72,7 +78,11 @@ if (fs.existsSync('assets/js/tools/country-suite-factory.js')) {
     'csf-promoted-shell',
     "closest('.workbench-card')",
     'font-size: clamp(1.32rem, 1.75vw, 1.68rem)',
-    'min-height: 8.25rem'
+    'min-height: 8.25rem',
+    '.csf-button:hover',
+    '.csf-sample-button:hover',
+    ':focus-visible',
+    'csf-strip-panel'
   ];
   for (const token of requiredTokens) {
     if (!factory.includes(token)) failures.push(`factory is missing token: ${token}`);
@@ -101,6 +111,12 @@ if (fs.existsSync('assets/js/tools/country-suite-factory.js')) {
   }
   if (factory.includes('data-csf-related')) {
     failures.push('factory must not render inert related-tool select menus');
+  }
+  if (factory.includes('if (index === 0 || /valid/i.test')) {
+    failures.push('factory must not classify Invalid sample as Valid sample via /valid/i');
+  }
+  if ((factory.match(/class="csf-rich-badge"/g) || []).length > 1) {
+    failures.push('factory rich layer must not duplicate the right-side local badge');
   }
   if (!factory.includes('background: var(--csf-success)')) {
     failures.push('factory primary action must use success color, not country red accents');
@@ -192,6 +208,12 @@ for (const suite of factoryGeneratedSuites) {
     const runtimeText = fs.readFileSync(runtimeFile, 'utf8');
     if (runtimeText.includes('Review sample')) {
       failures.push(suite.runtime + ': factory runtimes must expose clear Invalid sample / Short sample examples, not Review sample');
+    }
+    const batchGenerated = ['romania', 'finland', 'denmark', 'norway', 'sweden', 'czechia', 'ireland', 'belgium', 'austria', 'portugal'].includes(suite.slug);
+    if (batchGenerated) {
+      for (const token of ['Invalid sample', 'Short sample', 'Edge sample', 'isIntentionalInvalid']) {
+        if (!runtimeText.includes(token)) failures.push(`${suite.runtime}: generated runtime missing premium sample/analyzer token: ${token}`);
+      }
     }
   }
   const generatedDir = 'generated/validohub/en/' + suite.slug;

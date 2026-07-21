@@ -74,6 +74,12 @@ The premium debug layer must be discoverable without swallowing the page. Recent
 
 Factory sample UX must present multiple purposeful examples: at least one valid sample and, where useful, invalid/short/wrong-prefix samples. Do not use visible labels like `Review sample` in finished tools, and never put raw IBAN/CSV/JSON/payload values in sample labels.
 
+Sample UX is part of validation correctness. The first valid sample must pass; invalid, short, bad-country, wrong-prefix, bad-checksum, and review/edge examples must produce review/error states. The factory must never classify sample labels with a broad `/valid/` check because `Invalid` contains `valid`. Finished factory tools should expose several paste examples through clear chips/buttons with hover, focus, active, and selected affordances.
+
+Field/evidence breakdown rendering must have one clear title hierarchy. Use a single main breakdown heading, optional token-strip subpanel, segment tiles, and detailed cards with enough padding and wrapping. Do not ship duplicate consecutive headings such as `Evidence breakdown` plus `Identifier breakdown` before the same fields.
+
+Quality notes and repair suggestions must be specific and useful for the active country/tool. Repair suggestions should be interactive buttons where possible: load valid fixture, load invalid fixture, try short sample, run sample batch, or copy normalized output. Advanced debug panels should carry one local badge only.
+
 The exact internals must fit the domain. Identifier and banking tools should expose checksum, body, prefix, branch, account, or control-digit evidence. CSV, OCR, API, form-field, checklist, privacy, locale, and data-quality tools should expose detected evidence groups, parser stages, normalized fields, warning classes, and export payloads. A country tool is not premium if it has only a large input, generic buttons, and a short text output.
 
 Factory-based countries must receive this rich layer from `assets/js/tools/country-suite-factory.js` itself, not from one-off per-country patches. The accepted France/Netherlands/Brazil/Poland bespoke suites use `country-legacy-rich-layer.js` as a bridge; factory suites must expose the same user-facing depth natively through `csf-rich-lab`, so Austria, Czechia, Norway, Sweden, Denmark, Finland, and future factory countries all improve together.
@@ -105,6 +111,7 @@ Every tool config passed to the factory must include:
 - `i18n` coverage for every supported locale whenever the string is visible in the browser workbench
 - analyzer output with `fields`, `breakdownTitle`, `breakdownSummary`, and non-empty `breakdown` slices. A generic result grid without a named breakdown panel is not premium.
 - IBAN tooling must include both validator and generator coverage. A full country with IBAN support needs a country-scoped `*-iban-generator` or a documented country route backed by the global `iban-generator`, with generated check digits, BBAN/check-digit breakdown, MOD-97 replay, masked output, and official bank-ownership boundary notes.
+- IBAN generators must create a fresh structural fixture on each Generate click. Country-scoped generator routes must infer the local country from the route and local profile instead of falling back to the global default sample.
 
 Recommended tool config:
 

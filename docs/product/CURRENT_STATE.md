@@ -148,6 +148,8 @@ Country Suite Factory V1 is available for future countries and is now proven by 
 
 Country Suite Factory V1 now also carries the PESEL-rich debug layer for factory-based country tools. Factory-rendered suites get success-first presets, recent local history, batch validation, result-first analysis, visual field/evidence token strips, calculation/parser debugger panels, repair suggestions, developer API preview, raw JSON/audit output, and richer advanced analysis. Poland PESEL remains the benchmark for identifier-like tools; non-checksum domains must expose equivalent parser or evidence diagnostics instead of thin generic output.
 
+Country Suite Factory sample/debug hardening is active across factory countries. Factory tools now expose multiple clear paste examples, prevent invalid/short/wrong-prefix fixtures from passing as success, use interactive repair actions, render a single-hierarchy evidence breakdown, show visible button/sample hover states, and keep IBAN generators fresh on every Generate click. These fixes are protected by `npm run audit:country-suite`.
+
 Brazil is also the canonical Country Hub design reference. Future country hubs must read `docs/product/COUNTRY_HUB_DESIGN_GUIDE.md` and `docs/ai/COUNTRY_HUB_AI_GUIDE.md` before implementation. Spain, Poland, Germany, France, Japan, and all future countries inherit the Brazil structure and design language; only metadata and local content should change.
 
 Country Hub Template V3 includes:

@@ -17,7 +17,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT ID 1"
+        "value": "1234010181"
+      },
+      {
+        "label": "Short sample",
+        "value": "123401"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 1234010180"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT ID edge 1"
       }
     ],
     "boundaries": [
@@ -25,20 +37,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ID local evidence",
+        "text": "Austrian SVNR Validator analyzes Austria-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ID examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ID values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -57,7 +69,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT ORG 2"
+        "value": "FN 123457a"
+      },
+      {
+        "label": "Short sample",
+        "value": "FN 123"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ 123456a"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT ORG edge 2"
       }
     ],
     "boundaries": [
@@ -65,20 +89,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ORG local evidence",
+        "text": "Austrian Firmenbuchnummer Validator analyzes Austria-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ORG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ORG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -97,7 +121,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT VAT 3"
+        "value": "ZZU12345674"
+      },
+      {
+        "label": "Short sample",
+        "value": "ATU1234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZU12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT VAT edge 3"
       }
     ],
     "boundaries": [
@@ -105,20 +141,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "VAT local evidence",
+        "text": "Austrian VAT ID / AT Prefix Validator analyzes Austria-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid VAT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized VAT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -137,7 +173,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT EORI 4"
+        "value": "ZZFN 123456a"
+      },
+      {
+        "label": "Short sample",
+        "value": "ATFN 12"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZFN 123456a"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT EORI edge 4"
       }
     ],
     "boundaries": [
@@ -145,20 +193,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "EORI local evidence",
+        "text": "Austrian EORI / Customs Identifier Helper analyzes Austria-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid EORI examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized EORI values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -177,7 +225,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT SOC 5"
+        "value": "1234010181"
+      },
+      {
+        "label": "Short sample",
+        "value": "123401"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 1234010180"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT SOC edge 5"
       }
     ],
     "boundaries": [
@@ -185,20 +245,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SOC local evidence",
+        "text": "Austrian Sozialversicherungsnummer Helper analyzes Austria-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SOC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SOC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -217,7 +277,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT KYC 6"
+        "value": "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,57\"}"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT61"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT {\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT KYC edge 6"
       }
     ],
     "boundaries": [
@@ -225,20 +297,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "KYC local evidence",
+        "text": "Austrian Company Onboarding Auditor analyzes Austria-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid KYC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized KYC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -257,7 +329,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT REG 7"
+        "value": "FN 123456a ATU12345674 Kaerntner Strasse 10, 1011 Wien"
+      },
+      {
+        "label": "Short sample",
+        "value": "FN 123456a ATU12345674 Kaerntn"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ 123456a ATU12345674 Kaerntner Strasse 10, 1010 Wien"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT REG edge 7"
       }
     ],
     "boundaries": [
@@ -265,20 +349,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REG local evidence",
+        "text": "Austrian Firmenbuch Readiness Helper analyzes Austria-specific government evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -298,6 +382,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT CARD 8"
+      },
+      {
+        "label": "Short sample",
+        "value": "123401"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 1234010180"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT CARD edge 8"
       }
     ],
     "boundaries": [
@@ -305,20 +401,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CARD local evidence",
+        "text": "Austrian ID Card Format Helper analyzes Austria-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CARD examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CARD values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -338,6 +434,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT PASS 9"
+      },
+      {
+        "label": "Short sample",
+        "value": "P<AUTAUSTRIAN<<SAMPLE<"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT P<AUTAUSTRIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT PASS edge 9"
       }
     ],
     "boundaries": [
@@ -345,20 +453,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PASS local evidence",
+        "text": "Austrian Passport Number Helper analyzes Austria-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PASS examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PASS values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -378,6 +486,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT MRZ 10"
+      },
+      {
+        "label": "Short sample",
+        "value": "P<AUTSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT P<AUTSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567AUT8501019M3107123<<<<<<<<<<<<<<06"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT MRZ edge 10"
       }
     ],
     "boundaries": [
@@ -385,20 +505,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "MRZ local evidence",
+        "text": "Austrian MRZ / Passport Parser analyzes Austria-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid MRZ examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized MRZ values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -417,7 +537,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT IBAN 11"
+        "value": "ZZ611904300234573201"
+      },
+      {
+        "label": "Short sample",
+        "value": "AT611904300"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ611904300234573201"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT IBAN edge 11"
       }
     ],
     "boundaries": [
@@ -425,20 +557,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "IBAN local evidence",
+        "text": "Austria IBAN Validator analyzes Austria-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid IBAN examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized IBAN values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -457,7 +589,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT IBG 12"
+        "value": "Wrong prefix AT 1904300234573201"
+      },
+      {
+        "label": "Short sample",
+        "value": "190430023"
+      },
+      {
+        "label": "Grouped valid sample",
+        "value": "1904 3002 3457 3201"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT IBG edge 12"
       }
     ],
     "boundaries": [
@@ -465,20 +609,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "IBG local evidence",
+        "text": "Austria IBAN Generator analyzes Austria-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid IBG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized IBG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -498,6 +642,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT BANK 13"
+      },
+      {
+        "label": "Short sample",
+        "value": "19043 0023"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 19043 00234573201"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT BANK edge 13"
       }
     ],
     "boundaries": [
@@ -505,20 +661,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "BANK local evidence",
+        "text": "Austrian Domestic Bank Account Inspector analyzes Austria-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid BANK examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized BANK values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -537,7 +693,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT BIC 14"
+        "value": "ZZCDAT2X"
+      },
+      {
+        "label": "Short sample",
+        "value": "ABCDA"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZCDAT2X"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT BIC edge 14"
       }
     ],
     "boundaries": [
@@ -545,20 +713,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "BIC local evidence",
+        "text": "Austrian BIC / SWIFT Inspector analyzes Austria-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid BIC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized BIC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -578,6 +746,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT SEPA 15"
+      },
+      {
+        "label": "Short sample",
+        "value": "AT611904300234573201\\n1.234,5"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ611904300234573201\\n1.234,56 EUR\\nInvoice 2026-001"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT SEPA edge 15"
       }
     ],
     "boundaries": [
@@ -585,20 +765,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SEPA local evidence",
+        "text": "Austrian SEPA Transfer Helper analyzes Austria-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SEPA examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SEPA values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -618,6 +798,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT SDD 16"
+      },
+      {
+        "label": "Short sample",
+        "value": "MANDATE-2026-001 AT61"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZNDATE-2026-001 AT611904300234573201"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT SDD edge 16"
       }
     ],
     "boundaries": [
@@ -625,20 +817,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SDD local evidence",
+        "text": "Austrian SEPA Direct Debit Mandate Helper analyzes Austria-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SDD examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SDD values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -658,6 +850,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT PAY 17"
+      },
+      {
+        "label": "Short sample",
+        "value": "EPS / SEPA REF 2026-"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZS / SEPA REF 2026-001 1.234,56 EUR"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT PAY edge 17"
       }
     ],
     "boundaries": [
@@ -665,20 +869,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PAY local evidence",
+        "text": "Austrian EPS / SEPA Reference Helper analyzes Austria-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PAY examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PAY values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -698,6 +902,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT REMIT 18"
+      },
+      {
+        "label": "Short sample",
+        "value": "Invoice 2026-001 ATU123"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT Invoice 2026-001 ATU12345674 1.234,56 EUR"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT REMIT edge 18"
       }
     ],
     "boundaries": [
@@ -705,20 +921,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REMIT local evidence",
+        "text": "Austrian Remittance Text Builder analyzes Austria-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REMIT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REMIT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -738,6 +954,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT RECON 19"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07.2026; 1.234,56 EUR; AT61190430"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 21.07.2026; 1.234,56 EUR; AT611904300234573201; Invoice 2026-001"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT RECON edge 19"
       }
     ],
     "boundaries": [
@@ -745,20 +973,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "RECON local evidence",
+        "text": "Austrian Payment Reconciliation Helper analyzes Austria-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid RECON examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized RECON values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -778,6 +1006,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT STMT 20"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07.2026; 1.234,56 EUR; AT611904300"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 21.07.2026; 1.234,56 EUR; AT611904300234573201; sample counterparty"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT STMT edge 20"
       }
     ],
     "boundaries": [
@@ -785,20 +1025,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "STMT local evidence",
+        "text": "Austrian Bank Statement Parser analyzes Austria-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid STMT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized STMT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -817,7 +1057,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT MASK 21"
+        "value": "ZZ611904300234573201"
+      },
+      {
+        "label": "Short sample",
+        "value": "AT611904300"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ611904300234573201"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT MASK edge 21"
       }
     ],
     "boundaries": [
@@ -825,20 +1077,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "MASK local evidence",
+        "text": "Austrian Masked IBAN Formatter analyzes Austria-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid MASK examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized MASK values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -858,6 +1110,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT CUR 22"
+      },
+      {
+        "label": "Short sample",
+        "value": "1.234,5"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 1.234,56 EUR"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT CUR edge 22"
       }
     ],
     "boundaries": [
@@ -865,20 +1129,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CUR local evidence",
+        "text": "Austrian EUR Decimal Currency Formatter analyzes Austria-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CUR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CUR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -898,6 +1162,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT RATE 23"
+      },
+      {
+        "label": "Short sample",
+        "value": "UID / USt 20% base"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZD / USt 20% base 1.234,56 EUR"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT RATE edge 23"
       }
     ],
     "boundaries": [
@@ -905,20 +1181,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "RATE local evidence",
+        "text": "Austrian VAT Rate Sanity Helper analyzes Austria-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid RATE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized RATE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -938,6 +1214,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT RET 24"
+      },
+      {
+        "label": "Short sample",
+        "value": "UID / USt; ATU12345674; perio"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZD / USt; ATU12345674; period 2026-07; 1.234,56 EUR"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT RET edge 24"
       }
     ],
     "boundaries": [
@@ -945,20 +1233,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "RET local evidence",
+        "text": "Austrian VAT Return Field Helper analyzes Austria-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid RET examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized RET values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -978,6 +1266,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT INV 25"
+      },
+      {
+        "label": "Short sample",
+        "value": "INV-2026-0001 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZV-2026-0001 ATU12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT INV edge 25"
       }
     ],
     "boundaries": [
@@ -985,20 +1285,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "INV local evidence",
+        "text": "Austrian Invoice Number Helper analyzes Austria-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid INV examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized INV values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1018,6 +1318,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT EINV 26"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT61"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT {\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT EINV edge 26"
       }
     ],
     "boundaries": [
@@ -1025,20 +1337,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "EINV local evidence",
+        "text": "Austrian E-Rechnung / ebInterface Readiness Checker analyzes Austria-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid EINV examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized EINV values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1058,6 +1370,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT TAX 27"
+      },
+      {
+        "label": "Short sample",
+        "value": "ATU12345674 21.07.20"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZU12345674 21.07.2026 1.234,56 EUR"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT TAX edge 27"
       }
     ],
     "boundaries": [
@@ -1065,20 +1389,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "TAX local evidence",
+        "text": "Austrian Tax Authority Handoff Helper analyzes Austria-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid TAX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized TAX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1098,6 +1422,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT AUDIT 28"
+      },
+      {
+        "label": "Short sample",
+        "value": "invoice 21.07.2026 1.234"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT invoice 21.07.2026 1.234,56 EUR ATU12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT AUDIT edge 28"
       }
     ],
     "boundaries": [
@@ -1105,20 +1441,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "AUDIT local evidence",
+        "text": "Austrian Accounting Audit Trail Checklist Helper analyzes Austria-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid AUDIT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized AUDIT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1138,6 +1474,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT POST 29"
+      },
+      {
+        "label": "Short sample",
+        "value": "1010 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 1010 Wien"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT POST edge 29"
       }
     ],
     "boundaries": [
@@ -1145,20 +1493,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "POST local evidence",
+        "text": "Austrian Postal Code Validator analyzes Austria-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid POST examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized POST values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1178,6 +1526,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT ADDR 30"
+      },
+      {
+        "label": "Short sample",
+        "value": "Kaerntner Strasse "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT Kaerntner Strasse 10, 1010 Wien"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT ADDR edge 30"
       }
     ],
     "boundaries": [
@@ -1185,20 +1545,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ADDR local evidence",
+        "text": "Austrian Address Normalizer analyzes Austria-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ADDR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ADDR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1218,6 +1578,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT ASCII 31"
+      },
+      {
+        "label": "Short sample",
+        "value": "Kaerntner Strasse "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT Kaerntner Strasse 10, 1010 Wien"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT ASCII edge 31"
       }
     ],
     "boundaries": [
@@ -1225,20 +1597,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "ASCII local evidence",
+        "text": "Austrian Address Transliteration Normalizer analyzes Austria-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid ASCII examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized ASCII values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1258,6 +1630,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT REGION 32"
+      },
+      {
+        "label": "Short sample",
+        "value": "1010 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 1010 Wien"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT REGION edge 32"
       }
     ],
     "boundaries": [
@@ -1265,20 +1649,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REGION local evidence",
+        "text": "Austrian Region / Province Code Mapper analyzes Austria-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REGION examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REGION values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1298,6 +1682,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT MUNI 33"
+      },
+      {
+        "label": "Short sample",
+        "value": "Kaerntner Strasse "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT Kaerntner Strasse 10, 1010 Wien"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT MUNI edge 33"
       }
     ],
     "boundaries": [
@@ -1305,20 +1701,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "MUNI local evidence",
+        "text": "Austrian Municipality Code Inspector analyzes Austria-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid MUNI examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized MUNI values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1338,6 +1734,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT PHONE 34"
+      },
+      {
+        "label": "Short sample",
+        "value": "+43 664 1"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT +43 664 1234567"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT PHONE edge 34"
       }
     ],
     "boundaries": [
@@ -1345,20 +1753,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PHONE local evidence",
+        "text": "Austrian Phone Number Validator analyzes Austria-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PHONE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PHONE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1378,6 +1786,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT E164 35"
+      },
+      {
+        "label": "Short sample",
+        "value": "+43 664 1"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT +43 664 1234567"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT E164 edge 35"
       }
     ],
     "boundaries": [
@@ -1385,20 +1805,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "E164 local evidence",
+        "text": "Austrian Phone E.164 Formatter analyzes Austria-specific address evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid E164 examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized E164 values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1418,6 +1838,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT DATE 36"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07."
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 21.07.2026"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT DATE edge 36"
       }
     ],
     "boundaries": [
@@ -1425,20 +1857,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "DATE local evidence",
+        "text": "Austrian Date Locale Formatter analyzes Austria-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid DATE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized DATE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1458,6 +1890,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT CSV 37"
+      },
+      {
+        "label": "Short sample",
+        "value": "id;amount;date;tax\\n1;1.234,56 E"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT id;amount;date;tax\\n1;1.234,56 EUR;21.07.2026;ATU12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT CSV edge 37"
       }
     ],
     "boundaries": [
@@ -1465,20 +1909,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CSV local evidence",
+        "text": "Austrian CSV Locale Normalizer analyzes Austria-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CSV examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CSV values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1498,6 +1942,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT SLUG 38"
+      },
+      {
+        "label": "Short sample",
+        "value": "Austria sample company Kaerntn"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT Austria sample company Kaerntner Strasse 10, 1010 Wien"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT SLUG edge 38"
       }
     ],
     "boundaries": [
@@ -1505,20 +1961,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SLUG local evidence",
+        "text": "Austrian Slug Normalizer analyzes Austria-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SLUG examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SLUG values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1538,6 +1994,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT OCR 39"
+      },
+      {
+        "label": "Short sample",
+        "value": "1234010180 ATU12345674 AT61190"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 1234010180 ATU12345674 AT611904300234573201 1010 Wien"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT OCR edge 39"
       }
     ],
     "boundaries": [
@@ -1545,20 +2013,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "OCR local evidence",
+        "text": "Austrian Document OCR Fixer analyzes Austria-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid OCR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized OCR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1578,6 +2046,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT GDPR 40"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT61"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT {\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT GDPR edge 40"
       }
     ],
     "boundaries": [
@@ -1585,20 +2065,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "GDPR local evidence",
+        "text": "Austrian GDPR / DSG Redaction Helper analyzes Austria-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid GDPR examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized GDPR values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1618,6 +2098,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT PII 41"
+      },
+      {
+        "label": "Short sample",
+        "value": "1234010180 +43 664 1234567"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 1234010180 +43 664 1234567 AT611904300234573201"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT PII edge 41"
       }
     ],
     "boundaries": [
@@ -1625,20 +2117,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PII local evidence",
+        "text": "Austrian PII Masker analyzes Austria-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PII examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PII values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1658,6 +2150,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT FIX 42"
+      },
+      {
+        "label": "Short sample",
+        "value": "1234010180\\nKaerntner Strasse 10,"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 1234010180\\nKaerntner Strasse 10, 1010 Wien\\n+43 664 1234567"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT FIX edge 42"
       }
     ],
     "boundaries": [
@@ -1665,20 +2169,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "FIX local evidence",
+        "text": "Austrian Personal Data Fixture Helper analyzes Austria-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid FIX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized FIX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1698,6 +2202,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT DL 43"
+      },
+      {
+        "label": "Short sample",
+        "value": "1234010180"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 1234010180 DL 2026"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT DL edge 43"
       }
     ],
     "boundaries": [
@@ -1705,20 +2221,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "DL local evidence",
+        "text": "Austrian Driving Licence Format Helper analyzes Austria-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid DL examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized DL values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1738,6 +2254,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT PERMIT 44"
+      },
+      {
+        "label": "Short sample",
+        "value": "AT PERMIT 2026"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ PERMIT 2026 1234010180"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT PERMIT edge 44"
       }
     ],
     "boundaries": [
@@ -1745,20 +2273,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PERMIT local evidence",
+        "text": "Austrian Residence Permit Format Helper analyzes Austria-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PERMIT examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PERMIT values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1778,6 +2306,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT HEALTH 45"
+      },
+      {
+        "label": "Short sample",
+        "value": "1234010180 HE"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 1234010180 HEALTH 2026"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT HEALTH edge 45"
       }
     ],
     "boundaries": [
@@ -1785,20 +2325,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "HEALTH local evidence",
+        "text": "Austrian Health Card Format Helper analyzes Austria-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid HEALTH examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized HEALTH values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1817,7 +2357,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT PLATE 46"
+        "value": "W 12346 A"
+      },
+      {
+        "label": "Short sample",
+        "value": "W 123"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT W 12345 A"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT PLATE edge 46"
       }
     ],
     "boundaries": [
@@ -1825,20 +2377,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PLATE local evidence",
+        "text": "Austrian Vehicle Plate Inspector analyzes Austria-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PLATE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PLATE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1857,7 +2409,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT VIN 47"
+        "value": "WVWZZZ1JZXW000002"
+      },
+      {
+        "label": "Short sample",
+        "value": "WVWZZZ1JZX"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZWZZZ1JZXW000001"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT VIN edge 47"
       }
     ],
     "boundaries": [
@@ -1865,20 +2429,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "VIN local evidence",
+        "text": "Austrian VIN Validator analyzes Austria-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid VIN examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized VIN values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1898,6 +2462,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT VEH 48"
+      },
+      {
+        "label": "Short sample",
+        "value": "W 12345 A WVWZZZ1JZXW"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT W 12345 A WVWZZZ1JZXW000001 1234010180"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT VEH edge 48"
       }
     ],
     "boundaries": [
@@ -1905,20 +2481,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "VEH local evidence",
+        "text": "Austrian Vehicle Data Redaction Helper analyzes Austria-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid VEH examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized VEH values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1938,6 +2514,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT CUSTOMS 49"
+      },
+      {
+        "label": "Short sample",
+        "value": "ATU12345674 HS 847"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZU12345674 HS 8471 1.234,56 EUR"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT CUSTOMS edge 49"
       }
     ],
     "boundaries": [
@@ -1945,20 +2533,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CUSTOMS local evidence",
+        "text": "Austrian Customs Declaration Helper analyzes Austria-specific government evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CUSTOMS examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CUSTOMS values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -1978,6 +2566,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT TRACK 50"
+      },
+      {
+        "label": "Short sample",
+        "value": "TRACK 2026 "
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZACK 2026 1010 Wien"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT TRACK edge 50"
       }
     ],
     "boundaries": [
@@ -1985,20 +2585,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "TRACK local evidence",
+        "text": "Austrian Postal Tracking Helper analyzes Austria-specific logistics evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid TRACK examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized TRACK values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2018,6 +2618,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT DQ 51"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT61"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT {\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT DQ edge 51"
       }
     ],
     "boundaries": [
@@ -2025,20 +2637,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "DQ local evidence",
+        "text": "Austrian Data Quality Workbench analyzes Austria-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid DQ examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized DQ values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2058,6 +2670,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT JSON 52"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT61"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT {\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT JSON edge 52"
       }
     ],
     "boundaries": [
@@ -2065,20 +2689,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "JSON local evidence",
+        "text": "Austrian JSON Fixture Helper analyzes Austria-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid JSON examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized JSON values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2098,6 +2722,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT REGEX 53"
+      },
+      {
+        "label": "Short sample",
+        "value": "SVNR Firmenbuchnummer Postleitz"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZNR Firmenbuchnummer Postleitzahl  AT611904300234573201"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT REGEX edge 53"
       }
     ],
     "boundaries": [
@@ -2105,20 +2741,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "REGEX local evidence",
+        "text": "Austrian Regex Pack Helper analyzes Austria-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid REGEX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized REGEX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2138,6 +2774,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT API 54"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT61"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT {\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT API edge 54"
       }
     ],
     "boundaries": [
@@ -2145,20 +2793,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "API local evidence",
+        "text": "Austrian API Payload Auditor analyzes Austria-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid API examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized API values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2178,6 +2826,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT FORM 55"
+      },
+      {
+        "label": "Short sample",
+        "value": "tax=ATU12345674&postal=1010 Wi"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT tax=ATU12345674&postal=1010 Wien&phone=+43 664 1234567"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT FORM edge 55"
       }
     ],
     "boundaries": [
@@ -2185,20 +2845,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "FORM local evidence",
+        "text": "Austrian Form Field Auditor analyzes Austria-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid FORM examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized FORM values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2218,6 +2878,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT NUM 56"
+      },
+      {
+        "label": "Short sample",
+        "value": "1.234,5"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 1.234,56 EUR"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT NUM edge 56"
       }
     ],
     "boundaries": [
@@ -2225,20 +2897,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "NUM local evidence",
+        "text": "Austrian Locale Number Parser analyzes Austria-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid NUM examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized NUM values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2258,6 +2930,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT CAL 57"
+      },
+      {
+        "label": "Short sample",
+        "value": "21.07.2026"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT 21.07.2026 week 30"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT CAL edge 57"
       }
     ],
     "boundaries": [
@@ -2265,20 +2949,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "CAL local evidence",
+        "text": "Austrian Calendar Week Helper analyzes Austria-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid CAL examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized CAL values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2297,7 +2981,19 @@
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid AT SUFFIX 58"
+        "value": "Austria Sample Holding Ltd FN 123457a"
+      },
+      {
+        "label": "Short sample",
+        "value": "Austria Sample Holdin"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT Austria Sample Holding Ltd FN 123456a"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT SUFFIX edge 58"
       }
     ],
     "boundaries": [
@@ -2305,20 +3001,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SUFFIX local evidence",
+        "text": "Austrian Company Suffix Normalizer analyzes Austria-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SUFFIX examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SUFFIX values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2338,6 +3034,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT PROC 59"
+      },
+      {
+        "label": "Short sample",
+        "value": "FN 123456a PO-2026-"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZ 123456a PO-2026-001 ATU12345674"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT PROC edge 59"
       }
     ],
     "boundaries": [
@@ -2345,20 +3053,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "PROC local evidence",
+        "text": "Austrian Procurement Identifier Helper analyzes Austria-specific government evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid PROC examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized PROC values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2378,6 +3086,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT COPY 60"
+      },
+      {
+        "label": "Short sample",
+        "value": "SVNR input, Postleitzahl inpu"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "ZZNR input, Postleitzahl input, amount 1.234,56 EUR"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT COPY edge 60"
       }
     ],
     "boundaries": [
@@ -2385,20 +3105,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "COPY local evidence",
+        "text": "Austrian Locale Copy Checker analyzes Austria-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid COPY examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized COPY values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2418,6 +3138,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT SUP 61"
+      },
+      {
+        "label": "Short sample",
+        "value": "Customer sent 1234010180, AT6119043002345732"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT Customer sent 1234010180, AT611904300234573201, Kaerntner Strasse 10, 1010 Wien"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT SUP edge 61"
       }
     ],
     "boundaries": [
@@ -2425,20 +3157,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SUP local evidence",
+        "text": "Austrian Support Ticket Scrubber analyzes Austria-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SUP examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SUP values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   },
@@ -2458,6 +3190,18 @@
       {
         "label": "Invalid sample",
         "value": "Invalid AT SMOKE 62"
+      },
+      {
+        "label": "Short sample",
+        "value": "{\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT61"
+      },
+      {
+        "label": "Wrong prefix sample",
+        "value": "Wrong prefix AT {\"country\":\"AT\",\"uid\":\"ATU12345674\",\"iban\":\"AT611904300234573201\",\"amount\":\"1.234,56\"}"
+      },
+      {
+        "label": "Edge sample",
+        "value": "Review AT SMOKE edge 62"
       }
     ],
     "boundaries": [
@@ -2465,20 +3209,20 @@
     ],
     "qualityNotes": [
       {
-        "title": "Browser-only",
-        "text": "Input is analyzed locally in this browser."
+        "title": "SMOKE local evidence",
+        "text": "Austrian Integration Smoke Test Builder analyzes Austria-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official boundary",
-        "text": "Offline format evidence does not prove official status."
+        "title": "Official lookup boundary",
+        "text": "Offline Austrian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
         "title": "Fixture safety",
-        "text": "Samples are fictional or structural fixtures for testing."
+        "text": "Valid and invalid SMOKE examples are safe structural fixtures for tests and demos."
       },
       {
         "title": "Developer handling",
-        "text": "Use normalized values for forms and masked values for logs."
+        "text": "Use normalized SMOKE values for forms, masked previews for logs, and field slices for parser/debug handoff."
       }
     ]
   }
@@ -2507,6 +3251,7 @@
   function field(label, value, detail) { return { label, value: value == null || value === '' ? 'not detected' : String(value), detail: detail || COUNTRY.adjective + ' evidence slice' }; }
   function check(label, ok, pass, fail) { return { label, status: ok ? 'pass' : 'review', message: ok ? pass : fail }; }
   function mod97(iban) { let rearranged = iban.slice(4) + iban.slice(0, 4); let rem = 0; for (const ch of rearranged) { const value = /[A-Z]/.test(ch) ? String(ch.charCodeAt(0) - 55) : ch; for (const d of value) rem = (rem * 10 + Number(d)) % 97; } return rem; }
+  function isIntentionalInvalid(raw) { return /^(invalid|short|wrong|bad|review)\b/i.test(compact(raw)) || /\b(BAD|INVALID|WRONG)[-_ ]?(CHECKSUM|PREFIX|COUNTRY|SAMPLE)\b/i.test(compact(raw)); }
   function detect(raw) {
     const text = compact(raw); const upper = text.toUpperCase();
     return {
@@ -2538,6 +3283,10 @@
     else if (tool.kind === 'bic') { const bic = alnum(raw); normalized = bic; ok = new RegExp('^[A-Z]{4}' + COUNTRY.iso2 + '[A-Z0-9]{2}([A-Z0-9]{3})?$').test(bic); result.breakdown.push(field('institution', bic.slice(0, 4), 'BIC bank code'), field('country', bic.slice(4, 6), 'expected ' + COUNTRY.iso2), field('location', bic.slice(6, 8), 'location code'), field('branch', bic.slice(8) || 'primary office', 'optional')); }
     else if (tool.kind === 'slug' || tool.kind === 'regex' || tool.kind === 'copycheck' || tool.kind === 'companysuffix') { normalized = raw.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); ok = raw.length > 0; result.breakdown.push(field('source text', raw, 'local display value'), field('normalized key', normalized, 'ASCII/API key'), field('local vocabulary', [COUNTRY.localTerms.personal, COUNTRY.localTerms.company, COUNTRY.localTerms.tax].join(' / '), 'copy/debug terms')); }
     else { normalized = raw.replace(/\s+/g, ' ').trim(); ok = raw.length > 0; result.breakdown.push(field('identifier evidence', ev.personal || ev.company || 'not detected', 'local ID slice'), field('tax evidence', ev.vat || 'not detected', 'tax/VAT slice'), field('payment evidence', ev.iban || ev.amount || 'not detected', 'banking slice'), field('workflow', tool.kind, 'offline workbench context')); }
+    if (isIntentionalInvalid(raw)) {
+      ok = false;
+      result.breakdown.unshift(field('invalid fixture marker', raw.split(/\s+/).slice(0, 3).join(' ') || 'invalid sample', 'Intentional invalid/review sample must not pass.'));
+    }
     result.status = ok ? 'success' : 'review';
     result.headline = tool.code + ': ' + (ok ? phrase('success') : phrase('review'));
     result.detail = ok ? COUNTRY.adjective + ' browser-only evidence is structurally coherent.' : phrase('addEvidence');
@@ -2545,7 +3294,9 @@
     result.normalized = normalized || raw;
     result.fields = [field('normalized', result.normalized, phrase('normalized')), field('masked', mask(result.normalized), 'log-safe preview'), field('tool', tool.name, tool.category), field('official boundary', 'offline only', phrase('official'))];
     result.checks = [check('Input present', raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'), check(COUNTRY.adjective + ' evidence', ok, phrase('localStructure') + ' detected.', phrase('addEvidence')), check('No network', true, 'No upload or registry call is made.'), check('Official boundary', true, phrase('official'))];
-    result.suggestions = ok ? ['Copy normalized value for fixtures.', 'Use official systems for regulated status.'] : ['Load a valid sample.', 'Check country prefix, digit length, separator style, or local evidence.'];
+    result.suggestions = ok
+      ? [{ action: 'copy-normalized', label: 'Copy normalized value', detail: 'Use this local parser output in fixtures.' }, { action: 'load-invalid', label: 'Load invalid fixture', detail: 'Compare the review path.' }, { action: 'run-batch', label: 'Run sample batch', detail: 'Replay all sample states.' }]
+      : [{ action: 'load-valid', label: 'Load valid fixture', detail: 'Compare against the success-first example.' }, { action: 'use-short', label: 'Try short sample', detail: 'Inspect length and parser guards.' }, { action: 'run-batch', label: 'Run sample batch', detail: 'Compare pass/review states.' }];
     result.developerJson = { suite: COUNTRY.slug + '-suite', tool: tool.id, locale: locale(), status: result.status, normalized: result.normalized, masked: mask(result.normalized), checks: result.checks, fields: result.fields, boundary: phrase('official'), breakdown: result.breakdown };
     return result;
   }

@@ -565,12 +565,65 @@
         'Bank account ownership, acceptance, and beneficiary identity require payment rails or official institution checks.',
         'Use masked output for logs and screenshots; grouped output is copy-ready for forms.'
       ]
+    },
+    FR: {
+      slug: 'france-iban-validator',
+      title: 'French IBAN Validator',
+      countryName: 'France',
+      sample: 'FR1420041010050500013M02606',
+      length: 27,
+      theme: 'finance',
+      mark: 'FR',
+      kicker: 'French RIB',
+      summary: 'Validate French IBANs, inspect RIB bank, branch, account, and key slices, and keep bank ownership outside the browser.',
+      chips: ['FR length 27', 'RIB map', 'MOD-97', 'Offline boundary'],
+      slices: [
+        ['Bank code', 4, 9, '5 characters'],
+        ['Branch code', 9, 14, '5 characters'],
+        ['Account number', 14, 25, '11 characters'],
+        ['RIB key', 25, 27, '2 digits']
+      ],
+      quality: [
+        'French IBAN validation proves FR length, RIB slicing, and ISO MOD-97 checksum only.',
+        'Bank name, branch status, account ownership, and payment acceptance require official or banking systems.',
+        'Use RIB slices for parser fixtures and migration tests, not as live account proof.',
+        'Mask French IBANs in logs and support screenshots.'
+      ]
+    },
+    NL: {
+      slug: 'netherlands-iban-validator',
+      title: 'Dutch IBAN Validator',
+      countryName: 'Netherlands',
+      sample: 'NL91ABNA0417164300',
+      length: 18,
+      theme: 'finance',
+      mark: 'NL',
+      kicker: 'Dutch IBAN',
+      summary: 'Validate Dutch IBANs, split bank code and account number evidence, and document the bank-ownership boundary.',
+      chips: ['NL length 18', 'Bank code', 'MOD-97', 'SEPA'],
+      slices: [
+        ['Bank identifier', 4, 8, '4 letters'],
+        ['Account number', 8, 18, '10 digits']
+      ],
+      quality: [
+        'Dutch IBAN validation proves NL length, bank-code/account slicing, and MOD-97 only.',
+        'Bank ownership, account status, iDEAL readiness, and payment acceptance need external banking rails.',
+        'Use grouped output for forms and masked output for logs.',
+        'Samples are structural fixtures for parser and UI testing.'
+      ]
     }
   };
 
   function countryProfileForPath() {
-    const slug = (location.pathname.match(/\/tools\/([^/]+)\//) || location.pathname.match(/^\/[^/]+\/[^/]+\/([^/]+)\//) || [])[1] || '';
-    return Object.values(ibanCountryProfiles).find((profile) => profile.slug === slug) || null;
+    const parts = location.pathname.split('/').filter(Boolean);
+    const globalToolSlug = parts[1] === 'tools' ? parts[2] : '';
+    const countrySlug = parts[1] && parts[1] !== 'tools' ? parts[1] : '';
+    const slug = globalToolSlug || countrySlug;
+    return Object.values(ibanCountryProfiles).find((profile) => profile.slug === slug || profile.slug.replace(/-iban-validator$/, '') === slug || profile.slug.replace(/-iban-validator$/, '-iban-generator') === slug) || null;
+  }
+
+  function countryCodeForProfile(profile) {
+    return Object.keys(ibanCountryProfiles).find((code) => ibanCountryProfiles[code] === profile) || '';
   }
 
   function ibanCountryLink(country) {
@@ -609,6 +662,24 @@
     return { country, bban, checkDigits, iban, remainder: ibanMod97(iban) };
   }
 
+  function randomDigit() {
+    if (window.crypto && window.crypto.getRandomValues) {
+      const bytes = new Uint8Array(1);
+      window.crypto.getRandomValues(bytes);
+      return String(bytes[0] % 10);
+    }
+    return String(Math.floor(Math.random() * 10));
+  }
+
+  function randomizeBbanBody(value) {
+    const source = String(value || '').toUpperCase().replace(/[^A-Z0-9]/g, '') || '00000000000000000000';
+    return source.split('').map((char, index) => {
+      if (!/[0-9]/.test(char)) return char;
+      if (index < 2) return char;
+      return randomDigit();
+    }).join('');
+  }
+
   function parseIbanGeneratorInput(values) {
     const existing = String(values.iban || values.input || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
     let country = String(values.country || '').toUpperCase().replace(/[^A-Z]/g, '').slice(0, 2);
@@ -624,10 +695,19 @@
     return { country, bban, existing };
   }
 
-  function ibanGeneratorHandler(workbench) {
+  function ibanGeneratorHandler(workbench, action) {
     const values = formValues(workbench);
+    const profile = countryProfileForPath();
+    if (profile && !values.country) values.country = countryCodeForProfile(profile);
+    if (profile && !values.bban && !values.iban) values.bban = profile.sample.slice(4);
     const parsed = parseIbanGeneratorInput(values);
     if (!parsed.country || !parsed.bban) throw new Error('Enter a two-letter country code and BBAN/account body.');
+    if (action === 'generate') {
+      parsed.bban = randomizeBbanBody(parsed.bban);
+      setField(workbench, 'country', parsed.country);
+      setField(workbench, 'bban', parsed.bban);
+      setField(workbench, 'iban', '');
+    }
     const generated = generateIbanValue(parsed.country, parsed.bban);
     const grouped = generated.iban.replace(/(.{4})/g, '$1 ').trim();
     const masked = generated.iban.length > 8 ? generated.iban.slice(0, 4) + ' ' + '•••• '.repeat(Math.max(1, Math.ceil((generated.iban.length - 8) / 4))).trim() + ' ' + generated.iban.slice(-4) : generated.iban;

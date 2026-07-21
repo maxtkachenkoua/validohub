@@ -1,3 +1,15 @@
+## 2026-07-21 - Country tool sample correctness and debug UX hardening
+
+- Fixed the shared factory sample classifier so `Invalid sample` no longer matches the word `valid` and cannot be treated as a success fixture.
+- Added broader valid/invalid/short/wrong-prefix/edge examples to generated factory country tools and forced intentional invalid/review fixtures into review results even when a broad generic analyzer would otherwise pass.
+- Made factory repair suggestions interactive, tool-specific, and action-backed: load valid fixture, load invalid fixture, try short sample, run sample batch, or copy normalized output.
+- Reworked factory evidence breakdown hierarchy to avoid duplicate `Evidence breakdown` / `Identifier breakdown` headers, added safer token-strip spacing, and improved wrapping so long values do not touch card borders.
+- Added hover/focus/active affordances for country tool buttons, sample chips, related links, rich tabs, and repair actions.
+- Removed duplicate local badges from the advanced tools body and kept a single badge in the summary.
+- Updated global and country-scoped IBAN generator behavior so Generate creates fresh structural fixtures and country routes infer local profiles for France and Netherlands as well as existing supported profiles.
+- Added audit and product-rule coverage for these regressions so future countries inherit the same standard.
+- Kept Valido Engine untouched.
+
 ## 2026-07-21 - Factory sample UX and IBAN generator hardening
 
 - Replaced confusing factory sample dropdown behavior with clear valid/invalid/edge sample buttons and same-country related links that actually navigate.

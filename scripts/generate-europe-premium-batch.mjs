@@ -245,23 +245,57 @@ function toolObjects(country) {
     const name = fill(nameTpl, country);
     const summary = fill(summaryTpl, country);
     const sample = fill(sampleTpl, country);
+    const invalid = makeInvalidSample(country, code, kind, sample, index);
+    const short = makeShortSample(sample);
+    const wrongPrefix = makeWrongPrefixSample(country, sample);
     return {
       id, name, code, summary, category, actionLabel, kind,
       samples: [
         { label: 'Valid sample', value: sample },
-        { label: 'Invalid sample', value: `Invalid ${country.iso2} ${code} ${index + 1}` }
+        { label: 'Invalid sample', value: invalid },
+        { label: 'Short sample', value: short },
+        { label: kind === 'ibangenerator' ? 'Grouped valid sample' : 'Wrong prefix sample', value: kind === 'ibangenerator' ? String(sample).replace(/(.{4})/g, '$1 ').trim() : wrongPrefix },
+        { label: 'Edge sample', value: `Review ${country.iso2} ${code} edge ${index + 1}` }
       ],
       boundaries: [
         `Official ${country.name} identity, registry, tax, banking, vehicle, postal, filing, carrier, and legal status require the responsible local authority or provider.`
       ],
       qualityNotes: [
-        { title: 'Browser-only', text: 'Input is analyzed locally in this browser.' },
-        { title: 'Official boundary', text: 'Offline format evidence does not prove official status.' },
-        { title: 'Fixture safety', text: 'Samples are fictional or structural fixtures for testing.' },
-        { title: 'Developer handling', text: 'Use normalized values for forms and masked values for logs.' }
+        { title: `${code} local evidence`, text: `${name} analyzes ${country.name}-specific ${category} evidence locally in this browser.` },
+        { title: 'Official lookup boundary', text: `Offline ${country.adjective} parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status.` },
+        { title: 'Fixture safety', text: `Valid and invalid ${code} examples are safe structural fixtures for tests and demos.` },
+        { title: 'Developer handling', text: `Use normalized ${code} values for forms, masked previews for logs, and field slices for parser/debug handoff.` }
       ]
     };
   });
+}
+
+function makeShortSample(value) {
+  const raw = String(value || '').trim();
+  return raw.slice(0, Math.max(3, Math.ceil(raw.length * 0.55)));
+}
+
+function bumpLastDigit(value) {
+  const chars = String(value || '').split('');
+  for (let index = chars.length - 1; index >= 0; index -= 1) {
+    if (/\d/.test(chars[index])) {
+      chars[index] = String((Number(chars[index]) + 1) % 10);
+      return chars.join('');
+    }
+  }
+  return `Invalid ${value}`;
+}
+
+function makeWrongPrefixSample(country, value) {
+  const raw = String(value || '').trim();
+  if (/^[A-Z]{2}/.test(raw)) return `ZZ${raw.slice(2)}`;
+  return `Wrong prefix ${country.iso2} ${raw}`;
+}
+
+function makeInvalidSample(country, code, kind, value, index) {
+  if (/iban|vat|eori|bic/i.test(kind)) return makeWrongPrefixSample(country, value);
+  if (/personal|social|company|register|plate|vin/i.test(kind)) return bumpLastDigit(value);
+  return `Invalid ${country.iso2} ${code} ${index + 1}`;
 }
 
 function countryYaml(country) {
@@ -358,6 +392,7 @@ function runtime(country, tools) {
   function field(label, value, detail) { return { label, value: value == null || value === '' ? 'not detected' : String(value), detail: detail || COUNTRY.adjective + ' evidence slice' }; }
   function check(label, ok, pass, fail) { return { label, status: ok ? 'pass' : 'review', message: ok ? pass : fail }; }
   function mod97(iban) { let rearranged = iban.slice(4) + iban.slice(0, 4); let rem = 0; for (const ch of rearranged) { const value = /[A-Z]/.test(ch) ? String(ch.charCodeAt(0) - 55) : ch; for (const d of value) rem = (rem * 10 + Number(d)) % 97; } return rem; }
+  function isIntentionalInvalid(raw) { return /^(invalid|short|wrong|bad|review)\\b/i.test(compact(raw)) || /\\b(BAD|INVALID|WRONG)[-_ ]?(CHECKSUM|PREFIX|COUNTRY|SAMPLE)\\b/i.test(compact(raw)); }
   function detect(raw) {
     const text = compact(raw); const upper = text.toUpperCase();
     return {
@@ -389,6 +424,10 @@ function runtime(country, tools) {
     else if (tool.kind === 'bic') { const bic = alnum(raw); normalized = bic; ok = new RegExp('^[A-Z]{4}' + COUNTRY.iso2 + '[A-Z0-9]{2}([A-Z0-9]{3})?$').test(bic); result.breakdown.push(field('institution', bic.slice(0, 4), 'BIC bank code'), field('country', bic.slice(4, 6), 'expected ' + COUNTRY.iso2), field('location', bic.slice(6, 8), 'location code'), field('branch', bic.slice(8) || 'primary office', 'optional')); }
     else if (tool.kind === 'slug' || tool.kind === 'regex' || tool.kind === 'copycheck' || tool.kind === 'companysuffix') { normalized = raw.normalize('NFKD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); ok = raw.length > 0; result.breakdown.push(field('source text', raw, 'local display value'), field('normalized key', normalized, 'ASCII/API key'), field('local vocabulary', [COUNTRY.localTerms.personal, COUNTRY.localTerms.company, COUNTRY.localTerms.tax].join(' / '), 'copy/debug terms')); }
     else { normalized = raw.replace(/\\s+/g, ' ').trim(); ok = raw.length > 0; result.breakdown.push(field('identifier evidence', ev.personal || ev.company || 'not detected', 'local ID slice'), field('tax evidence', ev.vat || 'not detected', 'tax/VAT slice'), field('payment evidence', ev.iban || ev.amount || 'not detected', 'banking slice'), field('workflow', tool.kind, 'offline workbench context')); }
+    if (isIntentionalInvalid(raw)) {
+      ok = false;
+      result.breakdown.unshift(field('invalid fixture marker', raw.split(/\\s+/).slice(0, 3).join(' ') || 'invalid sample', 'Intentional invalid/review sample must not pass.'));
+    }
     result.status = ok ? 'success' : 'review';
     result.headline = tool.code + ': ' + (ok ? phrase('success') : phrase('review'));
     result.detail = ok ? COUNTRY.adjective + ' browser-only evidence is structurally coherent.' : phrase('addEvidence');
@@ -396,7 +435,9 @@ function runtime(country, tools) {
     result.normalized = normalized || raw;
     result.fields = [field('normalized', result.normalized, phrase('normalized')), field('masked', mask(result.normalized), 'log-safe preview'), field('tool', tool.name, tool.category), field('official boundary', 'offline only', phrase('official'))];
     result.checks = [check('Input present', raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'), check(COUNTRY.adjective + ' evidence', ok, phrase('localStructure') + ' detected.', phrase('addEvidence')), check('No network', true, 'No upload or registry call is made.'), check('Official boundary', true, phrase('official'))];
-    result.suggestions = ok ? ['Copy normalized value for fixtures.', 'Use official systems for regulated status.'] : ['Load a valid sample.', 'Check country prefix, digit length, separator style, or local evidence.'];
+    result.suggestions = ok
+      ? [{ action: 'copy-normalized', label: 'Copy normalized value', detail: 'Use this local parser output in fixtures.' }, { action: 'load-invalid', label: 'Load invalid fixture', detail: 'Compare the review path.' }, { action: 'run-batch', label: 'Run sample batch', detail: 'Replay all sample states.' }]
+      : [{ action: 'load-valid', label: 'Load valid fixture', detail: 'Compare against the success-first example.' }, { action: 'use-short', label: 'Try short sample', detail: 'Inspect length and parser guards.' }, { action: 'run-batch', label: 'Run sample batch', detail: 'Compare pass/review states.' }];
     result.developerJson = { suite: COUNTRY.slug + '-suite', tool: tool.id, locale: locale(), status: result.status, normalized: result.normalized, masked: mask(result.normalized), checks: result.checks, fields: result.fields, boundary: phrase('official'), breakdown: result.breakdown };
     return result;
   }

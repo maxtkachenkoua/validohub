@@ -178,6 +178,46 @@
     return incrementLastDigit(raw);
   }
 
+  function isIbanGeneratorTool(tool) {
+    return text(tool && tool.kind).toLowerCase() === 'ibangenerator' || /iban-generator/i.test(`${tool && tool.id || ''} ${tool && tool.name || ''}`);
+  }
+
+  function isIbanLikeTool(tool) {
+    return /iban/i.test(`${tool && tool.id || ''} ${tool && tool.name || ''} ${tool && tool.kind || ''}`);
+  }
+
+  function isReviewSampleLabel(label) {
+    return /review|invalid|bad|missing|short|wrong|checksum|edge/i.test(text(label));
+  }
+
+  function isValidSampleLabel(label) {
+    const raw = text(label);
+    return /\bvalid\b/i.test(raw) && !/\binvalid\b/i.test(raw);
+  }
+
+  function intentionalReviewFixture(value) {
+    return /^(invalid|short|wrong|bad|review)\b/i.test(text(value).trim()) || /\b(BAD|INVALID|WRONG)[-_ ]?(CHECKSUM|PREFIX|COUNTRY|SAMPLE)\b/i.test(text(value));
+  }
+
+  function makeWrongPrefixSample(suite, value) {
+    const raw = text(value).trim();
+    const iso = text(suite.country && (suite.country.iso2 || suite.country.slug)).slice(0, 2).toUpperCase();
+    if (/^[A-Z]{2}/.test(raw) && iso) return `ZZ${raw.slice(2)}`;
+    if (/^\d/.test(raw)) return `${iso || 'ZZ'}-${raw}`;
+    return `Wrong prefix ${iso || 'XX'} ${raw || 'sample'}`.trim();
+  }
+
+  function makeInvalidFixture(suite, tool, value, label) {
+    const raw = text(value).trim();
+    if (/checksum|control|check/i.test(`${tool && tool.name || ''} ${tool && tool.kind || ''}`) && raw) {
+      return incrementLastDigit(raw);
+    }
+    if (/prefix|country|iban|vat|eori/i.test(`${label || ''} ${tool && tool.name || ''} ${tool && tool.kind || ''}`)) {
+      return makeWrongPrefixSample(suite, raw);
+    }
+    return raw ? `Invalid ${raw}` : `Invalid ${text(suite.country && suite.country.iso2 || 'XX').toUpperCase()} sample`;
+  }
+
   function labelLooksRaw(label, value) {
     const rawLabel = text(label).trim();
     const rawValue = text(value).trim();
@@ -191,22 +231,26 @@
     const firstCompact = alnumOnly(firstValue);
     const normalized = source.map((sample, index) => {
       const placeholderReview = /^review\s+/i.test(text(sample.label)) || /^review\s+/i.test(text(sample.value));
-      const value = placeholderReview ? incrementLastDigit(firstValue || sample.value) : sample.value;
+      const originalLabel = text(sample.label);
+      const reviewIntent = placeholderReview || isReviewSampleLabel(originalLabel) || intentionalReviewFixture(sample.value);
+      const value = placeholderReview ? makeInvalidFixture(suite, tool, firstValue || sample.value, originalLabel) : sample.value;
       let label = sample.label;
-      if (index === 0 || /valid/i.test(text(label))) label = labels.validSample;
-      if (placeholderReview || /review|invalid|bad|missing|short/i.test(text(label))) label = labels.invalidSample;
-      if (labelLooksRaw(label, value)) label = index === 0 ? labels.validSample : labels.invalidSample;
-      return Object.assign({}, sample, { label, value, tone: index === 0 ? 'success' : 'review' });
+      if (index === 0 || isValidSampleLabel(label)) label = labels.validSample;
+      if (reviewIntent) label = /short/i.test(originalLabel) ? labels.shortSample : labels.invalidSample;
+      if (labelLooksRaw(label, value)) label = index === 0 && !reviewIntent ? labels.validSample : labels.invalidSample;
+      return Object.assign({}, sample, { label, value, tone: index === 0 && !reviewIntent ? 'success' : 'review' });
     });
-    if (firstCompact && /iban/i.test(`${tool.id} ${tool.name} ${tool.kind}`) && normalized.length < 4) {
+    if (firstCompact && isIbanLikeTool(tool)) {
       normalized.push({ label: labels.groupedValidSample, value: firstCompact.replace(/(.{4})/g, '$1 ').trim(), tone: 'success' });
     }
-    if (firstValue && normalized.length < 3) {
-      normalized.push({ label: labels.invalidSample, value: incrementLastDigit(firstValue), tone: 'review' });
+    if (firstValue) {
+      normalized.push({ label: labels.invalidSample, value: makeInvalidFixture(suite, tool, firstValue, labels.invalidSample), tone: 'review' });
       normalized.push({ label: labels.shortSample, value: makeShortSample(firstValue), tone: 'review' });
     }
-    if (firstValue && /iban/i.test(`${tool.id} ${tool.name} ${tool.kind}`) && normalized.length < 4) {
+    if (firstValue && isIbanLikeTool(tool)) {
       normalized.push({ label: labels.badCountrySample, value: makeBadCountrySample(suite, firstValue), tone: 'review' });
+    } else if (firstValue) {
+      normalized.push({ label: labels.badCountrySample || 'Wrong prefix', value: makeWrongPrefixSample(suite, firstValue), tone: 'review' });
     }
     const seen = new Set();
     return normalized.filter((sample) => {
@@ -214,7 +258,7 @@
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
-    }).slice(0, 4);
+    }).slice(0, 6);
   }
 
   function firstNonEmpty(values, fallback) {
@@ -367,6 +411,35 @@
     return { country, bban, checkDigits, iban, remainder: ibanRemainder(iban) };
   }
 
+  function randomDigit() {
+    if (root.crypto && root.crypto.getRandomValues) {
+      const bytes = new Uint8Array(1);
+      root.crypto.getRandomValues(bytes);
+      return String(bytes[0] % 10);
+    }
+    return String(Math.floor(Math.random() * 10));
+  }
+
+  function freshBbanBody(seed) {
+    const raw = alnumOnly(seed);
+    const source = raw.length >= 4 ? raw : '00000000000000000000';
+    return source.split('').map((char, index) => {
+      if (!/[0-9]/.test(char)) return char;
+      if (index < 2) return char;
+      return randomDigit();
+    }).join('');
+  }
+
+  function freshIbanGeneratorInput(suite, tool, current) {
+    const compact = alnumOnly(current || (tool.samples && tool.samples[0] && tool.samples[0].value) || '');
+    const country = countryCodeForSuite(suite, tool, compact);
+    let body = compact;
+    if (country && body.startsWith(country)) {
+      body = /^\d{2}/.test(body.slice(2, 4)) ? body.slice(4) : body.slice(2);
+    }
+    return `${country}${freshBbanBody(body)}`;
+  }
+
   const FACTORY_IBAN_COUNTRIES = {
     austria: 'AT',
     belgium: 'BE',
@@ -456,6 +529,78 @@
 
   function statusCheck(label, ok, passText, reviewText) {
     return { label, pass: !!ok, text: ok ? passText : reviewText };
+  }
+
+  function withToolSpecificContext(suite, tool, result) {
+    const countryName = suite.country.name;
+    const topic = [tool.code, tool.name].filter(Boolean).join(' / ');
+    const normalized = text(result && (result.normalized || result.primary)).trim();
+    const localNotes = [
+      {
+        title: `${tool.code} local evidence`,
+        text: `${tool.name} analyzes ${countryName}-specific structure in this browser and keeps raw input local.`
+      },
+      {
+        title: 'Official lookup boundary',
+        text: `${countryName} registry, tax, identity, banking, vehicle, postal, or filing status still requires the responsible official system.`
+      },
+      {
+        title: 'Fixture safety',
+        text: 'Use valid and invalid examples as structural test fixtures; a passing offline result is not a live-state proof.'
+      },
+      {
+        title: 'Developer handling',
+        text: `Copy normalized ${tool.code} values for forms, masked previews for logs, and field slices for parser tests.`
+      }
+    ];
+    const suggestions = result && result.status === 'success'
+      ? [
+        { action: 'copy-normalized', label: `Copy normalized ${tool.code}`, detail: normalized || topic },
+        { action: 'load-invalid', label: 'Load invalid fixture', detail: 'Compare the review path against the valid result.' },
+        { action: 'run-batch', label: 'Run sample batch', detail: 'Replay valid, invalid, short, and prefix cases together.' }
+      ]
+      : [
+        { action: 'load-valid', label: 'Load valid fixture', detail: `Restore a known-good ${countryName} sample.` },
+        { action: 'use-short', label: 'Try short sample', detail: 'See the length and parser guard fail cleanly.' },
+        { action: 'copy-normalized', label: 'Copy current normalized value', detail: normalized || 'No normalized value yet.' }
+      ];
+    return Object.assign({}, result, {
+      qualityNotes: localNotes,
+      suggestions
+    });
+  }
+
+  function forceIntentionalReview(suite, tool, input, result) {
+    if (!intentionalReviewFixture(input)) return result;
+    const raw = text(input).trim();
+    const normalized = raw.replace(/\s+/g, ' ');
+    const forced = Object.assign({}, result, {
+      status: 'review',
+      headline: `${tool.code}: intentional invalid sample`,
+      detail: `This fixture is deliberately invalid for ${suite.country.name}; use it to inspect the review path.`,
+      primary: normalized || raw || 'invalid sample',
+      normalized: normalized || raw,
+      checks: [
+        statusCheck('Input present', raw.length > 0, 'Input is available locally.', 'Paste a value or load a sample.'),
+        statusCheck('Intentional invalid fixture', false, 'Fixture accepted.', 'This sample is marked invalid and must not pass.'),
+        statusCheck('Official boundary', true, 'No official lookup is made.', 'No official lookup is made.')
+      ].concat(asArray(result && result.checks).slice(0, 3)),
+      fields: [
+        fieldSlice('source payload', shortValue(normalized, 120), 'Current browser-local value.', 'red'),
+        fieldSlice('expected result', 'review', 'Invalid fixtures must exercise the review path.', 'red'),
+        fieldSlice('tool', tool.name, tool.category),
+        fieldSlice('official boundary', 'offline only', 'Official status remains outside this browser workbench.')
+      ],
+      breakdownTitle: `${tool.name} invalid fixture breakdown`,
+      breakdownSummary: `The selected example is intentionally invalid so ${suite.country.name} parser/debug states are visible.`,
+      breakdown: [
+        fieldSlice('invalid fixture marker', raw.split(/\s+/).slice(0, 3).join(' ') || 'invalid', 'Visible sample intent.', 'red'),
+        fieldSlice('source payload', shortValue(normalized, 120), 'Browser-local source value.', 'red'),
+        fieldSlice('expected status', 'review', 'Invalid samples must never report success.', 'red'),
+        fieldSlice('repair path', 'load valid sample', 'Compare against a valid fixture before official handoff.')
+      ]
+    });
+    return withToolSpecificContext(suite, tool, forced);
   }
 
   const COUNTRY_INTELLIGENCE_PROFILES = {
@@ -1150,15 +1295,15 @@
 
   function enhanceAnalyzerResult(suite, tool, input, result) {
     if (tool.kind === 'ibangenerator' || /iban-generator/i.test(`${tool.id} ${tool.name}`)) {
-      return buildIbanGeneratorResult(suite, tool, input);
+      return withToolSpecificContext(suite, tool, buildIbanGeneratorResult(suite, tool, input));
     }
     const profileResult = buildProfileResult(suite, tool, input, result);
-    if (profileResult) return profileResult;
-    if (!isWeakFactoryResult(result)) return result;
+    if (profileResult) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, profileResult));
+    if (!isWeakFactoryResult(result)) return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, result));
     const raw = text(input).trim();
     const normalized = raw.replace(/\s+/g, ' ');
     const localTerms = [tool.code, tool.name, suite.country.name].filter(Boolean).join(' / ');
-    return Object.assign({}, result, {
+    const enhanced = Object.assign({}, result, {
       breakdownTitle: `${tool.name} evidence breakdown`,
       breakdownSummary: `Detected ${suite.country.name} parser evidence groups for debugging and handoff.`,
       breakdown: [
@@ -1168,6 +1313,7 @@
         fieldSlice('official boundary', 'offline only', 'Live status remains outside this browser workbench.', 'red')
       ]
     });
+    return forceIntentionalReview(suite, tool, input, withToolSpecificContext(suite, tool, enhanced));
   }
 
   function normalizeResult(tool, result) {
@@ -1327,6 +1473,36 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+      }
+      .csf-related-links a,
+      .csf-sample-button,
+      .csf-button,
+      .csf-rich-tab,
+      .csf-suggestion {
+        transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background-color .16s ease, color .16s ease;
+      }
+      .csf-related-links a:hover,
+      .csf-sample-button:hover,
+      .csf-button:hover,
+      .csf-rich-tab:hover,
+      .csf-suggestion:hover {
+        transform: translateY(-1px);
+        border-color: color-mix(in srgb, var(--csf-accent) 46%, var(--csf-line));
+        box-shadow: 0 10px 22px rgba(15, 23, 42, .10);
+      }
+      .csf-related-links a:focus-visible,
+      .csf-sample-button:focus-visible,
+      .csf-button:focus-visible,
+      .csf-rich-tab:focus-visible,
+      .csf-suggestion:focus-visible {
+        outline: 3px solid color-mix(in srgb, var(--csf-accent-2) 34%, transparent);
+        outline-offset: 3px;
+      }
+      .csf-sample-button:active,
+      .csf-button:active,
+      .csf-rich-tab:active,
+      .csf-suggestion:active {
+        transform: translateY(0);
       }
       .csf-presets-grid {
         display: grid;
@@ -1646,6 +1822,10 @@
         border: 0;
         color: var(--csf-muted);
       }
+      .csf-button-primary:hover {
+        background: color-mix(in srgb, var(--csf-success) 88%, #000);
+        border-color: color-mix(in srgb, var(--csf-success) 88%, #000);
+      }
       .csf-results {
         display: grid;
         gap: 1rem;
@@ -1793,6 +1973,26 @@
       .csf-breakdown {
         background: linear-gradient(120deg, #fff, #f8fafc 55%, color-mix(in srgb, var(--csf-accent-2) 6%, #fff));
       }
+      .csf-breakdown-body {
+        display: grid;
+        gap: .85rem;
+      }
+      .csf-strip-panel {
+        border: 1px solid color-mix(in srgb, var(--csf-accent-2) 15%, var(--csf-line));
+        border-radius: .86rem;
+        background: rgba(255, 255, 255, .72);
+        padding: .82rem;
+        overflow: hidden;
+      }
+      .csf-strip-label {
+        display: block;
+        margin: 0 0 .55rem;
+        color: var(--csf-muted);
+        font-size: .68rem;
+        font-weight: 950;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+      }
       .csf-segments {
         display: flex;
         flex-wrap: wrap;
@@ -1805,8 +2005,9 @@
         border: 1px solid color-mix(in srgb, var(--csf-accent-2) 25%, var(--csf-line));
         border-radius: .78rem;
         background: #fff;
-        padding: .78rem;
+        padding: .9rem .82rem;
         text-align: center;
+        overflow: hidden;
       }
       .csf-strip {
         display: flex;
@@ -1831,7 +2032,11 @@
       }
       .csf-segment strong {
         color: var(--csf-accent-2);
-        font-size: 1.08rem;
+        font-size: clamp(.9rem, 1vw, 1.03rem);
+        line-height: 1.25;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
       }
       .csf-quality {
         background: linear-gradient(120deg, #fff, color-mix(in srgb, var(--csf-accent-3) 8%, #fff));
@@ -1878,6 +2083,32 @@
         text-align: left;
         font-size: .8rem;
         overflow-wrap: anywhere;
+      }
+      .csf-suggestions {
+        display: grid;
+        gap: .58rem;
+      }
+      .csf-suggestion {
+        width: 100%;
+        min-width: 0;
+        border: 1px solid var(--csf-line);
+        border-radius: .72rem;
+        background: #fff;
+        color: var(--csf-ink);
+        padding: .62rem .72rem;
+        text-align: left;
+        font: inherit;
+        font-size: .84rem;
+        font-weight: 850;
+        cursor: pointer;
+        overflow-wrap: anywhere;
+      }
+      .csf-suggestion small {
+        display: block;
+        margin-top: .16rem;
+        color: var(--csf-muted);
+        font-size: .72rem;
+        line-height: 1.35;
       }
       .csf-debug-table th {
         color: var(--csf-muted);
@@ -2049,7 +2280,6 @@
             <h3>${esc(formatLabel(labels.toolIntelligence, suite))}</h3>
             <p>${esc(labels.toolIntelligenceSummary)}</p>
           </div>
-          <span class="csf-rich-badge">${esc(badge)}</span>
         </div>
         <div class="csf-rich-grid">
           <article class="csf-rich-card">
@@ -2161,24 +2391,23 @@
 
   function renderBreakdown(suite, result) {
     const labels = labelsFor(suite);
+    const strip = renderTokenStrip(result);
     return `
       <section class="csf-panel csf-breakdown">
         <div class="csf-section-head">
           <span class="csf-icon">▥</span>
           <div><h3>${esc(result.breakdownTitle || labels.fieldBreakdown)}</h3><p>${esc(result.breakdownSummary || labels.localStructuralSlices)}</p></div>
         </div>
-        <div class="csf-section-head">
-          <span class="csf-icon">▦</span>
-          <div><h3>${esc(labels.identifierBreakdown)}</h3><p>${esc(labels.hoverBreakdown)}</p></div>
+        <div class="csf-breakdown-body">
+          ${strip ? `<div class="csf-strip-panel"><span class="csf-strip-label">${esc(labels.identifierBreakdown)}</span>${strip}<p class="csf-note">${esc(labels.hoverBreakdown)}</p></div>` : ''}
+          <div class="csf-segments">${result.breakdown.map((part) => `
+            <article class="csf-segment">
+              <strong>${esc(part.value)}</strong>
+              <span>${esc(part.label)}</span>
+            </article>
+          `).join('')}</div>
+          ${cardGrid(result.breakdown)}
         </div>
-        ${renderTokenStrip(result)}
-        <div class="csf-segments">${result.breakdown.map((part) => `
-          <article class="csf-segment">
-            <strong>${esc(part.value)}</strong>
-            <span>${esc(part.label)}</span>
-          </article>
-        `).join('')}</div>
-        ${cardGrid(result.breakdown)}
       </section>
     `;
   }
@@ -2208,10 +2437,10 @@
     const labels = labelsFor(suite);
     const tool = suite.toolById && suite.toolById.get(result.developerJson && result.developerJson.tool) ? suite.toolById.get(result.developerJson.tool) : { id: result.developerJson && result.developerJson.tool || 'tool' };
     const rows = debuggerRows(result);
-    const suggestions = asArray(result.suggestions).length ? result.suggestions : [
-      result.status === 'success' ? 'Use the normalized value in test fixtures and masked values in logs.' : 'Load a valid preset and compare the field breakdown against your input.',
-      'Keep official status, ownership, filing, delivery, and legal decisions outside this browser-only check.'
-    ];
+    const suggestions = (asArray(result.suggestions).length ? result.suggestions : [
+      { action: result.status === 'success' ? 'copy-normalized' : 'load-valid', label: result.status === 'success' ? 'Copy normalized value' : 'Load valid fixture', detail: result.status === 'success' ? 'Use the normalized value in test fixtures and masked values in logs.' : 'Compare the field breakdown against your input.' },
+      { action: 'run-batch', label: 'Run sample batch', detail: 'Compare pass/review states without leaving this page.' }
+    ]).map((item) => typeof item === 'string' ? { action: '', label: item, detail: '' } : item);
     return `
       <section class="csf-results">
         <details class="csf-advanced" open>
@@ -2226,7 +2455,7 @@
             </div>
             <div>
               <div class="csf-section-head"><span class="csf-icon">✦</span><div><h3>${esc(labels.repairSuggestions)}</h3><p>${esc(labels.regexDetails)}</p></div></div>
-              <div class="csf-suggestions">${suggestions.map((item) => `<div class="csf-suggestion">${esc(item)}</div>`).join('')}</div>
+              <div class="csf-suggestions">${suggestions.map((item) => `<button class="csf-suggestion" type="button" data-csf-repair-action="${esc(item.action || '')}">${esc(item.label || item.title || item.text || '')}${item.detail ? `<small>${esc(item.detail)}</small>` : ''}</button>`).join('')}</div>
             </div>
           </div>
         </details>
@@ -2333,7 +2562,10 @@
         if (richJson) richJson.textContent = JSON.stringify(richSnapshot(), null, 2);
       }
 
-      function run() {
+      function run(options) {
+        if (options && options.freshGenerate && isIbanGeneratorTool(tool)) {
+          input.value = freshIbanGeneratorInput(suite, tool, input.value);
+        }
         lastResult = analyze(rawTool, input.value);
         output.innerHTML = renderResultBlocks(suite, lastResult);
         state.textContent = lastResult.status === 'success' ? labels.offlinePassed : labels.reviewNeeded;
@@ -2398,7 +2630,7 @@
         refreshRichPanels();
       }
 
-      rootElement.querySelector('[data-csf-run]').addEventListener('click', run);
+      rootElement.querySelector('[data-csf-run]').addEventListener('click', () => run({ freshGenerate: true }));
       rootElement.querySelector('[data-csf-clear]').addEventListener('click', () => {
         input.value = '';
         output.innerHTML = '';
@@ -2421,6 +2653,42 @@
       rootElement.addEventListener('click', (event) => {
         const copy = event.target.closest('[data-csf-copy-value]');
         if (copy && navigator.clipboard) navigator.clipboard.writeText(copy.dataset.csfCopyValue || '');
+        const repair = event.target.closest('[data-csf-repair-action]');
+        if (!repair) return;
+        const action = repair.dataset.csfRepairAction;
+        if (action === 'copy-normalized' && navigator.clipboard) {
+          navigator.clipboard.writeText(text(lastResult && lastResult.normalized || input.value));
+        }
+        if (action === 'load-valid') {
+          const sample = tool.samples.find((item) => item.tone === 'success') || tool.samples[0];
+          if (sample) {
+            input.value = sample.value;
+            run();
+          }
+        }
+        if (action === 'load-invalid') {
+          const sample = tool.samples.find((item) => item.tone === 'review' && /invalid/i.test(item.label)) || tool.samples.find((item) => item.tone === 'review');
+          if (sample) {
+            input.value = sample.value;
+            run();
+          }
+        }
+        if (action === 'use-short') {
+          input.value = makeShortSample(input.value || (tool.samples[0] && tool.samples[0].value) || '');
+          run();
+        }
+        if (action === 'run-batch') {
+          const values = tool.samples.map((item) => item.value).filter(Boolean).slice(0, 6).join('\n');
+          if (richBatchInput) {
+            richBatchInput.value = values;
+            runRichBatch();
+            const richLayer = rootElement.querySelector('[data-csf-rich-layer]');
+            if (richLayer) richLayer.open = true;
+          } else if (batchInput) {
+            batchInput.value = values;
+            runBatch();
+          }
+        }
       });
       rootElement.querySelectorAll('[data-csf-sample]').forEach((button) => {
         button.addEventListener('click', () => {
