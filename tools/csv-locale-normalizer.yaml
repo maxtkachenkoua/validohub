@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: csv-locale-normalizer
+kind: tool
+module: validohub
+category: encoding
+status: active
+name:
+  en: CSV Locale Repair & Normalizer
+summary:
+  en: Detect delimiters, decimal conventions, row consistency, and produce repair-ready CSV output.
+capabilities: [validate, generate, parse, explain]
+algorithm:
+  algorithmId: validohub.csv-repair
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: CSV / table text
+      - type: select
+        name: delimiter
+        label:
+          en: Output delimiter
+        options: [comma, semicolon, tab]
+        default: comma
+    actions: [validate, generate, parse, explain]
+related:
+  explicit: [iban-validator, iban-generator, uuid-generator, regex-tester]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: CSV Locale Repair & Normalizer
+  description:
+    en: Detect delimiters, decimal conventions, row consistency, and produce repair-ready CSV output.

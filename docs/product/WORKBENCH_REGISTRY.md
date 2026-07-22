@@ -5,10 +5,13 @@ This registry records production browser workbenches currently owned by ValidoHu
 ## Generic Workbench Product Bar
 
 All generic, non-country workbenches are governed by `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md`.
+The global tools directory and launch workflow are governed by `docs/product/TOOLS_PORTAL_SPEC.md`; new global tools must be registered, searchable, audited, and visible on `/en/tools/`.
 
 Generic tools must not be treated as lightweight utilities. They must match the Poland and Brazil premium country workbench baseline for visual polish, interaction density, advanced analysis, result cards, mode-specific presets, developer snippets, local/offline behavior, and exploratory functionality. The first preset, primary success path, invalid/error path, advanced tab, and mobile layout must all be audited before a generic tool can be called premium.
 
 Future global tools must be born premium: deterministic neutral theme, tool-specific header, success-first preset, intentional invalid/edge preset, result block immediately after input, advanced analysis below results, premium cards, quality notes, copy/download, and browser verification. Do not ship a new global tool as a basic form with a plan to clean it up later.
+
+Current global expansion adds these first-class workbenches: Phone E.164 Validator & Generator, Postal Code Validator & Generator, SWIFT/BIC Workbench, MRZ Passport Workbench, CSV Locale Normalizer, EU VAT Number Workbench, ISO 20022 / SEPA Inspector, Secret + PII Redactor, Locale Test Data Generator, and Webhook Signature Verifier.
 
 ## Future Country Suite Factory
 

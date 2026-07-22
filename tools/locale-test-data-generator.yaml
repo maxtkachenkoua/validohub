@@ -1,0 +1,46 @@
+schemaVersion: 1
+id: locale-test-data-generator
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Locale Test Data Generator
+summary:
+  en: Generate locale-aware names, addresses, dates, money, decimals, phones, postal codes, and JSON/CSV fixtures.
+capabilities: [validate, generate, parse, explain]
+algorithm:
+  algorithmId: validohub.locale-test-data
+forms:
+  generate:
+    inputs:
+      - type: select
+        name: country
+        label:
+          en: Country profile
+        options: [US, GB, DE, FR, PL, BR, UA, ES, IT, NL, IE, FI, CZ, AT]
+        default: DE
+      - type: select
+        name: format
+        label:
+          en: Output format
+        options: [json, csv]
+        default: json
+      - type: number
+        name: count
+        label:
+          en: Fixture count
+        default: 3
+    actions: [generate, validate, parse, explain]
+related:
+  explicit: [iban-validator, iban-generator, uuid-generator, regex-tester]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Locale Test Data Generator
+  description:
+    en: Generate locale-aware names, addresses, dates, money, decimals, phones, postal codes, and JSON/CSV fixtures.

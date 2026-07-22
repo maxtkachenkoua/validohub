@@ -11,13 +11,16 @@ If you arrived here from the repository root, keep `AGENTS.md` in mind as the ca
 Read in this order before implementation:
 
 1. `docs/ai/START_HERE_AI.md`
-2. `docs/product/PRODUCT_VISION.md`
-3. `docs/product/CURRENT_STATE.md`
-4. `docs/product/DEVELOPMENT_RULES.md`
-5. `docs/product/WORKBENCH_REGISTRY.md`
-6. `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md`
-7. `docs/ai/AI_DEVELOPMENT_PROTOCOL.md`
-8. The corresponding `docs/product/*_SPEC.md` for the workbench or area being changed
+2. `docs/ai/NEXT_CHAT_HANDOFF.md`
+3. `docs/product/PRODUCT_VISION.md`
+4. `docs/product/CURRENT_STATE.md`
+5. `docs/product/DEVELOPMENT_RULES.md`
+6. `docs/product/WORKBENCH_REGISTRY.md`
+7. `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md`
+8. `docs/product/BUILD_HARDENING_V2.md`
+9. `docs/product/TOOLS_PORTAL_SPEC.md`
+10. `docs/ai/AI_DEVELOPMENT_PROTOCOL.md`
+11. The corresponding `docs/product/*_SPEC.md` for the workbench or area being changed
 
 For visual identity, logo, icon, or brand work, also read:
 
@@ -49,7 +52,7 @@ For future full-country suites and standalone country-scoped tools, treat `docs/
 
 Before calling a country full premium, run `npm run audit:country-premium -- --country <slug>` and fix blockers. Tool count for full-country suites is quality-driven: use 60 as a reference density, not a quota. Add more tools when the country has more strong local developer workflows; ship fewer when fewer high-quality offline/browser-only cases exist. Never pad a suite with weak tools just to hit a number.
 
-For generic, non-country tools, the gold standard is not a simple utility page. Read `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md` and treat Poland/Brazil premium workbenches as the visual and functional baseline.
+For generic, non-country tools, the gold standard is not a simple utility page. Read `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md`, `docs/product/TOOLS_PORTAL_SPEC.md`, and `docs/product/BUILD_HARDENING_V2.md`; treat Poland/Brazil premium workbenches as the visual and functional baseline. For normal iteration, prefer `build:portal`, `build:country`, or `build:tools` plus scoped audits. Do not run the full build unless the task is a release gate or a new YAML route must be published.
 
 If the task may affect architecture, also read:
 

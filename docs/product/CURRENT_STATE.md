@@ -2,6 +2,10 @@
 
 This document records the current ValidoHub and Valido Engine boundary so future sessions do not accidentally undo it.
 
+## Build Hardening V2
+
+ValidoHub now has scoped development loops so agents do not run the full generated-site build for routine edits. Use `npm run build:portal`, `npm run build:country -- --country <slug>`, or `npm run build:tools -- --slugs <slug-a>,<slug-b>` first, then run the matching scoped audit. `npm run build:full` / `npm run audit:full` are release gates. See `docs/product/BUILD_HARDENING_V2.md`.
+
 ## Premium Country Contract
 
 Full-premium country work is now gated by `docs/product/PREMIUM_COUNTRY_CONTRACT.md` and `npm run audit:country-premium -- --country <slug>`. The gate checks generated country pages, runtime field-breakdown coverage, related-link locality, foreign fallback copy, empty hub cards, `[object Object]`, generic tool shells, and readiness reporting before future country batches start.
@@ -310,6 +314,8 @@ Brazil now follows the Poland country-hub gold-standard layout with its own loca
 ## Generic Utility Workbench Suite
 
 Global non-country tools now use the ValidoHub-owned Generic Utility Workbench Suite when they do not yet justify a dedicated gold-standard plugin. The suite lives in `assets/js/tools/generic-suite.js` and covers HTML encode/decode, slug generation, case conversion, UUID, IBAN, regex, text diff, and hash tools with real browser-only behavior. The ValidoHub build post-processes those generated tool pages in `scripts/build-all.mjs`, materializes full premium workbench markup where Engine output is too generic, and injects the shared workbench helper scripts plus `generic-suite.js` without changing Valido Engine. The generic suite now includes the premium country-tool interaction baseline where the domain supports it: branded tool headers, working success-first samples, intentional edge/error samples, local result cards, validation pipelines, field breakdowns, quality notes, expanded advanced analysis, UUID batch generation, IBAN masked display, regex capture-group reporting, text diff result cards, hash digest comparison, and corrected hash/slug execution.
+
+The global tool layer now has a dedicated `/en/tools/` portal and a mandatory product spec in `docs/product/TOOLS_PORTAL_SPEC.md`. The first mega-premium expansion added Phone E.164, Postal Code, SWIFT/BIC, MRZ Passport, CSV Locale Normalizer, EU VAT, ISO 20022 / SEPA, Secret + PII Redactor, Locale Test Data Generator, and Webhook Signature Verifier workbenches. These must remain discoverable from the Tools portal and covered by `npm run audit:global-premium`.
 
 Generic tools are now governed by `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.md`. That standard is mandatory product memory: generic tools must look and behave like first-class premium workbenches, not secondary utilities. Poland and Brazil country workbenches are the visual and functional baseline. Future generic tools must be tool-first, mode-correct, richly interactive, competitor-aware, advanced-analysis-heavy, and deeper than the strongest public tools in their category wherever the domain supports it.
 

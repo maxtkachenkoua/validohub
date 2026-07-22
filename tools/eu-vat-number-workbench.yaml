@@ -1,0 +1,44 @@
+schemaVersion: 1
+id: eu-vat-number-workbench
+kind: tool
+module: validohub
+category: finance
+status: active
+name:
+  en: EU VAT Number Validator & Generator
+summary:
+  en: Validate VAT prefix patterns, generate fixtures, and explain the VIES/live-lookup boundary.
+capabilities: [validate, generate, parse, explain]
+algorithm:
+  algorithmId: validohub.eu-vat
+forms:
+  validate:
+    inputs:
+      - type: select
+        name: country
+        label:
+          en: Country prefix
+        options: [AT, BE, CZ, DE, DK, ES, FI, FR, IE, IT, NL, PL, PT, SE]
+        default: DE
+      - type: text
+        name: input
+        label:
+          en: VAT number
+      - type: number
+        name: count
+        label:
+          en: Generate count
+        default: 1
+    actions: [validate, generate, parse, explain]
+related:
+  explicit: [iban-validator, iban-generator, uuid-generator, regex-tester]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: EU VAT Number Validator & Generator
+  description:
+    en: Validate VAT prefix patterns, generate fixtures, and explain the VIES/live-lookup boundary.

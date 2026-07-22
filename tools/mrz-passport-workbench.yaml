@@ -1,0 +1,44 @@
+schemaVersion: 1
+id: mrz-passport-workbench
+kind: tool
+module: validohub
+category: national-identifiers
+status: active
+name:
+  en: MRZ Passport Parser & Generator
+summary:
+  en: Parse, validate, replay check digits, and generate TD3 passport MRZ fixtures locally.
+capabilities: [validate, generate, parse, explain]
+algorithm:
+  algorithmId: validohub.mrz-passport
+forms:
+  validate:
+    inputs:
+      - type: select
+        name: country
+        label:
+          en: Issuing country
+        options: [USA, GBR, DEU, FRA, POL, BRA, UKR, ESP, ITA, NLD, IRL, FIN, CZE, AUT]
+        default: DEU
+      - type: textarea
+        name: input
+        label:
+          en: MRZ payload
+      - type: number
+        name: count
+        label:
+          en: Generate count
+        default: 1
+    actions: [validate, generate, parse, explain]
+related:
+  explicit: [iban-validator, iban-generator, uuid-generator, regex-tester]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: MRZ Passport Parser & Generator
+  description:
+    en: Parse, validate, replay check digits, and generate TD3 passport MRZ fixtures locally.

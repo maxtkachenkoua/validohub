@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { readFile, writeFile, readdir, rm, access, mkdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { buildRouteRegistry } from './route-registry.mjs';
-import { compileCountriesPortal, compileHomePortal } from './build-countries-portal.mjs';
+import { compileCountriesPortal, compileHomePortal, compileToolsPortal } from './build-countries-portal.mjs';
 import { compileIdentifiers } from './build-identifiers.mjs';
 import { applyFinalLocalizationPass } from './localization-pass.mjs';
 
@@ -102,6 +102,14 @@ async function compileAssets() {
   await writeFile(resolve(destCssDir, cssFileName), cssContent, 'utf8');
   await writeFile(resolve(destJsDir, jsFileName), jsContent, 'utf8');
 
+  for (const file of ['portal-home.js', 'portal-tools.js', 'countries-portal.js', 'countries.js', 'brand-assets.js']) {
+    const source = resolve(srcJsDir, file);
+    if (await pathExists(source)) {
+      const content = await readFile(source, 'utf8');
+      await writeFile(resolve(destJsDir, file), content, 'utf8');
+    }
+  }
+
   const manifest = {
     css: `/assets/css/${cssFileName}`,
     js: `/assets/js/${jsFileName}`
@@ -168,6 +176,16 @@ const TOOL_SCRIPT_BY_ALGORITHM = {
   'validohub.denmark-suite': ['country-suite-factory.js', 'denmark-suite.js'],
   'validohub.finland-suite': ['country-suite-factory.js', 'finland-suite.js'],
   'validohub.romania-suite': ['country-suite-factory.js', 'romania-suite.js'],
+  'validohub.phone-e164': 'generic-suite.js',
+  'validohub.postal-code': 'generic-suite.js',
+  'validohub.swift-bic': 'generic-suite.js',
+  'validohub.mrz-passport': 'generic-suite.js',
+  'validohub.csv-repair': 'generic-suite.js',
+  'validohub.eu-vat': 'generic-suite.js',
+  'validohub.iso20022-sepa': 'generic-suite.js',
+  'validohub.secret-pii': 'generic-suite.js',
+  'validohub.locale-test-data': 'generic-suite.js',
+  'validohub.webhook-signature': 'generic-suite.js',
   'validohub.case-converter': 'generic-suite.js',
   'validohub.html-decoder': 'generic-suite.js',
   'validohub.html-encoder': 'generic-suite.js',
@@ -299,6 +317,16 @@ function stripHtml(value) {
 }
 
 const GENERIC_UTILITY_WORKBENCHES = {
+  'phone-e164-workbench': { id: 'phone-e164-workbench', algorithmId: 'validohub.phone-e164', capability: 'validate', forms: [{ capability: 'validate', title: 'Validate or generate', fields: [{ type: 'select', name: 'country', label: 'Country profile', options: ['US','GB','DE','FR','PL','BR','UA','FI','CZ','AT'], value: 'US' }, { type: 'text', name: 'input', label: 'Phone number' }, { type: 'number', name: 'count', label: 'Generate count', value: '1', min: '1', max: '50' }], actions: ['validate','generate','parse','explain'] }] },
+  'postal-code-workbench': { id: 'postal-code-workbench', algorithmId: 'validohub.postal-code', capability: 'validate', forms: [{ capability: 'validate', title: 'Validate or generate', fields: [{ type: 'select', name: 'country', label: 'Country profile', options: ['DE','GB','FR','PL','BR','UA','FI','CZ','AT','NL','IE'], value: 'DE' }, { type: 'text', name: 'input', label: 'Postal code' }, { type: 'number', name: 'count', label: 'Generate count', value: '1', min: '1', max: '50' }], actions: ['validate','generate','parse','explain'] }] },
+  'swift-bic-workbench': { id: 'swift-bic-workbench', algorithmId: 'validohub.swift-bic', capability: 'validate', forms: [{ capability: 'validate', title: 'Validate or generate', fields: [{ type: 'select', name: 'country', label: 'Country code', options: ['DE','GB','FR','PL','FI','CZ','AT','NL','IE'], value: 'DE' }, { type: 'text', name: 'input', label: 'SWIFT / BIC' }, { type: 'number', name: 'count', label: 'Generate count', value: '1', min: '1', max: '50' }], actions: ['validate','generate','parse','explain'] }] },
+  'mrz-passport-workbench': { id: 'mrz-passport-workbench', algorithmId: 'validohub.mrz-passport', capability: 'validate', forms: [{ capability: 'validate', title: 'Parse or generate', fields: [{ type: 'text', name: 'country', label: 'Issuing country ISO-3', value: 'DEU' }, { type: 'textarea', name: 'input', label: 'MRZ TD3 lines' }], actions: ['validate','generate','parse','explain'] }] },
+  'csv-locale-normalizer': { id: 'csv-locale-normalizer', algorithmId: 'validohub.csv-repair', capability: 'normalize', forms: [{ capability: 'normalize', title: 'Normalize', fields: [{ type: 'textarea', name: 'input', label: 'CSV payload' }, { type: 'select', name: 'delimiter', label: 'Output delimiter', options: ['comma','semicolon','tab'], value: 'comma' }], actions: ['normalize','validate','parse','explain'] }] },
+  'eu-vat-number-workbench': { id: 'eu-vat-number-workbench', algorithmId: 'validohub.eu-vat', capability: 'validate', forms: [{ capability: 'validate', title: 'Validate or generate', fields: [{ type: 'select', name: 'country', label: 'EU country prefix', options: ['DE','FR','PL','ES','IT','NL','IE','FI','CZ','AT'], value: 'DE' }, { type: 'text', name: 'input', label: 'VAT number' }, { type: 'number', name: 'count', label: 'Generate count', value: '1', min: '1', max: '50' }], actions: ['validate','generate','parse','explain'] }] },
+  'iso20022-sepa-inspector': { id: 'iso20022-sepa-inspector', algorithmId: 'validohub.iso20022-sepa', capability: 'inspect', forms: [{ capability: 'inspect', title: 'Inspect XML', fields: [{ type: 'select', name: 'profile', label: 'Profile', options: ['auto','pain.001','pain.008','camt.053'], value: 'auto' }, { type: 'textarea', name: 'input', label: 'ISO 20022 XML' }], actions: ['inspect','validate','parse','explain'] }] },
+  'secret-pii-redactor': { id: 'secret-pii-redactor', algorithmId: 'validohub.secret-pii', capability: 'inspect', forms: [{ capability: 'inspect', title: 'Scan and redact', fields: [{ type: 'select', name: 'mode', label: 'Redaction mode', options: ['balanced','strict'], value: 'balanced' }, { type: 'textarea', name: 'input', label: 'Payload, log, or text' }], actions: ['inspect','redact','validate','explain'] }] },
+  'locale-test-data-generator': { id: 'locale-test-data-generator', algorithmId: 'validohub.locale-test-data', capability: 'generate', forms: [{ capability: 'generate', title: 'Generate fixtures', fields: [{ type: 'select', name: 'country', label: 'Country profile', options: ['DE','FR','GB','PL','BR','UA','FI','CZ','AT'], value: 'DE' }, { type: 'select', name: 'format', label: 'Output format', options: ['json','csv'], value: 'json' }, { type: 'number', name: 'count', label: 'Rows', value: '3', min: '1', max: '50' }], actions: ['generate','validate','explain'] }] },
+  'webhook-signature-verifier': { id: 'webhook-signature-verifier', algorithmId: 'validohub.webhook-signature', capability: 'validate', forms: [{ capability: 'validate', title: 'Verify or generate', fields: [{ type: 'textarea', name: 'payload', label: 'Raw payload' }, { type: 'text', name: 'secret', label: 'Signing secret', value: 'whsec_demo_secret' }, { type: 'text', name: 'signature', label: 'Signature header' }, { type: 'text', name: 'prefix', label: 'Header prefix', value: 'sha256=' }], actions: ['validate','generate','explain'] }] },
   'html-encoder': {
     id: 'html-encoder',
     algorithmId: 'validohub.html-encoder',
@@ -1715,6 +1743,7 @@ async function main() {
     const homeRoute = routeRegistry.get('/en/');
     if (homeRoute) homeRoute.sourceOwner = 'node';
     await compileHomePortal(routeRegistry, assetsManifest);
+    await compileToolsPortal(routeRegistry, assetsManifest);
     await compileCountriesPortal(routeRegistry, assetsManifest);
     await compileIdentifiers(routeRegistry, assetsManifest);
     await ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest);

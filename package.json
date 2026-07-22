@@ -6,7 +6,11 @@
     "build:country": "node scripts/build-country-dev.mjs",
     "build:portal": "node scripts/build-portal-dev.mjs",
     "audit:country-premium": "node scripts/audit-country-premium.mjs",
-    "audit:global-premium": "node scripts/audit-global-tools-premium.mjs"
+    "audit:global-premium": "node scripts/audit-global-tools-premium.mjs",
+    "build:tools": "node scripts/build-tools-dev.mjs",
+    "build:full": "node scripts/build-all.mjs",
+    "audit:tools": "node scripts/audit-global-tools-premium.mjs",
+    "audit:full": "node scripts/audit-country-suite-factory.mjs && node scripts/audit-country-tool-shell.mjs && node scripts/audit-country-field-breakdown.mjs && node scripts/audit-global-tools-premium.mjs"
   },
   "dependencies": {
     "playwright": "^1.61.1"

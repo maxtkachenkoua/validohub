@@ -1,0 +1,44 @@
+schemaVersion: 1
+id: swift-bic-workbench
+kind: tool
+module: validohub
+category: finance
+status: active
+name:
+  en: SWIFT / BIC Validator & Generator
+summary:
+  en: Validate BIC structure, split bank/country/location/branch fields, and generate safe bank-code fixtures.
+capabilities: [validate, generate, parse, explain]
+algorithm:
+  algorithmId: validohub.swift-bic
+forms:
+  validate:
+    inputs:
+      - type: select
+        name: country
+        label:
+          en: Country profile
+        options: [US, GB, DE, FR, PL, BR, UA, ES, IT, NL, IE, FI, CZ, AT]
+        default: DE
+      - type: text
+        name: input
+        label:
+          en: SWIFT/BIC
+      - type: number
+        name: count
+        label:
+          en: Generate count
+        default: 1
+    actions: [validate, generate, parse, explain]
+related:
+  explicit: [iban-validator, iban-generator, uuid-generator, regex-tester]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: SWIFT / BIC Validator & Generator
+  description:
+    en: Validate BIC structure, split bank/country/location/branch fields, and generate safe bank-code fixtures.

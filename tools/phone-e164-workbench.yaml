@@ -1,0 +1,44 @@
+schemaVersion: 1
+id: phone-e164-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Phone E.164 Validator & Generator
+summary:
+  en: Validate, parse, format, and generate E.164 phone fixtures across major country prefixes.
+capabilities: [validate, generate, parse, explain]
+algorithm:
+  algorithmId: validohub.phone-e164
+forms:
+  validate:
+    inputs:
+      - type: select
+        name: country
+        label:
+          en: Country profile
+        options: [US, GB, DE, FR, PL, BR, UA, ES, IT, NL, IE, FI, CZ, AT]
+        default: US
+      - type: text
+        name: input
+        label:
+          en: Phone number
+      - type: number
+        name: count
+        label:
+          en: Generate count
+        default: 1
+    actions: [validate, generate, parse, explain]
+related:
+  explicit: [iban-validator, iban-generator, uuid-generator, regex-tester]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Phone E.164 Validator & Generator
+  description:
+    en: Validate, parse, format, and generate E.164 phone fixtures across major country prefixes.

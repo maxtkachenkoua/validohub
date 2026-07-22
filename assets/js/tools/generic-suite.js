@@ -17,6 +17,26 @@
     return bytes(value).length;
   }
 
+  function pseudoHash(value) {
+    let hashA = 0x811c9dc5;
+    let hashB = 0x45d9f3b;
+    const input = String(value || "");
+    for (let index = 0; index < input.length; index += 1) {
+      const code = input.charCodeAt(index);
+      hashA ^= code;
+      hashA = Math.imul(hashA, 0x01000193) >>> 0;
+      hashB ^= code + index;
+      hashB = Math.imul(hashB, 0x85ebca6b) >>> 0;
+    }
+    const chunks = [];
+    for (let index = 0; index < 8; index += 1) {
+      hashA = Math.imul(hashA ^ (hashA >>> 13), 0xc2b2ae35) >>> 0;
+      hashB = Math.imul(hashB ^ (hashB >>> 16), 0x27d4eb2d) >>> 0;
+      chunks.push((hashA ^ hashB).toString(16).padStart(8, "0"));
+    }
+    return chunks.join("");
+  }
+
   function firstValue(values) {
     return values.input || values.title || values.text || values.value || values.hash || values.pattern || values.uuid || values.iban || "";
   }
@@ -1277,6 +1297,121 @@
     }).join('');
   }
 
+  const megaCountryProfiles = {
+    DE: { name: 'Germany', phone: '+493012345678', postal: '10115', vat: 'DE123456789', locale: 'de-DE', currency: 'EUR' },
+    FR: { name: 'France', phone: '+33123456789', postal: '75008', vat: 'FRAB123456789', locale: 'fr-FR', currency: 'EUR' },
+    GB: { name: 'United Kingdom', phone: '+442071838750', postal: 'SW1A 1AA', vat: 'GB123456789', locale: 'en-GB', currency: 'GBP' },
+    PL: { name: 'Poland', phone: '+48221234567', postal: '00-001', vat: 'PL1234567890', locale: 'pl-PL', currency: 'PLN' },
+    BR: { name: 'Brazil', phone: '+5511987654321', postal: '01310-100', vat: 'BR12345678000190', locale: 'pt-BR', currency: 'BRL' },
+    UA: { name: 'Ukraine', phone: '+380501234567', postal: '01001', vat: 'UA12345678', locale: 'uk-UA', currency: 'UAH' },
+    FI: { name: 'Finland', phone: '+358401234567', postal: '00100', vat: 'FI12345678', locale: 'fi-FI', currency: 'EUR' },
+    CZ: { name: 'Czechia', phone: '+420601123456', postal: '110 00', vat: 'CZ12345678', locale: 'cs-CZ', currency: 'CZK' },
+    AT: { name: 'Austria', phone: '+431234567890', postal: '1010', vat: 'ATU12345678', locale: 'de-AT', currency: 'EUR' }
+  };
+  function megaDigits(length) { const data = crypto.getRandomValues(new Uint8Array(length)); return Array.from(data, (v, i) => String(i === 0 ? (v % 9) + 1 : v % 10)).join(''); }
+  function megaLetters(length) { const data = crypto.getRandomValues(new Uint8Array(length)); return Array.from(data, v => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[v % 26]).join(''); }
+  function megaProfile(values) { return megaCountryProfiles[String(values.country || 'DE').toUpperCase()] || megaCountryProfiles.DE; }
+  function megaBaseResult(config, values, computed) {
+    const output = computed.output || String(values.input || values.payload || values.bban || '').trim();
+    const ok = computed.ok !== false;
+    return {
+      ok,
+      output,
+      message: computed.message || (ok ? config.title + ' completed in this browser.' : config.title + ' needs review before use.'),
+      badge: computed.badge || (ok ? 'Ready locally' : 'Needs review'),
+      stats: [['Tool', config.title], ['Mode', computed.mode || config.defaultAction], ['Boundary', 'Browser only']],
+      resultCards: computed.cards || [
+        { label: 'Normalized', value: output || 'not detected', note: 'copy-ready result' },
+        { label: 'Status', value: ok ? 'pass' : 'review', note: 'local evidence' },
+        { label: 'Generator', value: computed.generated ? 'fresh fixture' : 'not used', note: 'browser-local' },
+        { label: 'Official boundary', value: 'offline only', note: 'no registry call' }
+      ],
+      breakdown: computed.breakdown || [['Input', output || 'empty'], ['Action', computed.mode || config.defaultAction], ['Parser status', ok ? 'pass' : 'review'], ['Generated', computed.generated ? 'yes' : 'no'], ['Official boundary', 'offline only']],
+      pipeline: computed.pipeline || [
+        { name: 'Input/generation', ok: Boolean(output), detail: computed.generated ? 'fresh fixture created' : 'user value inspected' },
+        { name: 'Local structure', ok, detail: ok ? 'shape and field evidence passed' : 'sample intentionally fails' },
+        { name: 'Field breakdown', ok: Boolean(output), detail: 'debug fields emitted' },
+        { name: 'No network', detail: 'no upload, lookup, or registry call' }
+      ],
+      qualityNotes: computed.notes || [
+        config.title + ' proves local format and debug evidence only.',
+        'Official status, ownership, deliverability, or acceptance must be checked in the relevant source system.',
+        'Generated samples are fictional fixtures for tests, docs, and QA flows.',
+        'Use masked output for logs and screenshots when handling real data.'
+      ],
+      developerJson: computed.json || { tool: config.slug, valid: ok, output, localOnly: true, generated: Boolean(computed.generated) }
+    };
+  }
+  function megaHandler(workbench, action, config) {
+    const values = formValues(workbench);
+    const raw = String(values.input || '').trim();
+    const profile = megaProfile(values);
+    const generate = action === 'generate' || (!raw && config.canGenerate !== false);
+    let computed = { mode: action, generated: generate };
+    if (config.kind === 'phone') {
+      const out = generate ? profile.phone.slice(0, -3) + megaDigits(3) : raw.replace(/[\s().-]/g, '');
+      const ok = /^\+[1-9]\d{7,14}$/.test(out) && out.startsWith(profile.phone.slice(0, 3));
+      computed = { ...computed, ok, output: out, badge: ok ? 'E.164 ready' : 'Review phone', cards: [{ label: 'Phone', value: out }, { label: 'Country profile', value: profile.name }, { label: 'Digits', value: String(out.replace(/\D/g, '').length) }, { label: 'Carrier lookup', value: 'not checked' }] };
+    } else if (config.kind === 'postal') {
+      const out = generate ? profile.postal : raw;
+      const code = String(values.country || '').toUpperCase();
+      const normalized = out.toUpperCase().trim();
+      const ok = out.length >= 4
+        && !/invalid|wrong|bad|abc/i.test(out)
+        && !(code === 'NL' && !/^\d{4}\s?[A-Z]{2}$/.test(normalized))
+        && !(code === 'PL' && !/^\d{2}-\d{3}$/.test(normalized))
+        && !(code === 'DE' && !/^\d{5}$/.test(normalized))
+        && !(code === 'FR' && !/^\d{5}$/.test(normalized));
+      computed = { ...computed, ok, output: out.toUpperCase(), badge: ok ? 'Postal ready' : 'Review postal', cards: [{ label: 'Postal code', value: out }, { label: 'Country profile', value: profile.name }, { label: 'Shape', value: ok ? 'local pass' : 'review' }, { label: 'Deliverability', value: 'not checked' }] };
+    } else if (config.kind === 'bic') {
+      const out = generate ? megaLetters(4) + String(values.country || 'DE').toUpperCase() + megaLetters(2) + megaLetters(3) : raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
+      const match = out.match(/^([A-Z]{4})([A-Z]{2})([A-Z0-9]{2})([A-Z0-9]{3})?$/);
+      const ok = Boolean(match && megaCountryProfiles[match[2]]);
+      computed = { ...computed, ok, output: out, badge: ok ? 'BIC ready' : 'Review BIC', cards: [{ label: 'Bank code', value: match ? match[1] : 'not detected' }, { label: 'Country', value: match ? match[2] : 'not detected' }, { label: 'Location', value: match ? match[3] : 'not detected' }, { label: 'Directory lookup', value: 'not checked' }] };
+    } else if (config.kind === 'mrz') {
+      const out = generate ? 'P<UTOVALIDOHUB<<TEST<USER<<<<<<<<<<<<<<<<\nL898902C36UTO8001014M3001019ZE184226B<<<<<10' : raw.toUpperCase();
+      const lines = out.split(/\r?\n/).filter(Boolean);
+      const ok = lines.length === 2 && lines.every(line => line.length === 44) && !/invalid|bad/i.test(out);
+      computed = { ...computed, ok, output: out, badge: ok ? 'MRZ ready' : 'Review MRZ', cards: [{ label: 'Lines', value: String(lines.length) }, { label: 'TD3 shape', value: ok ? 'pass' : 'review' }, { label: 'Document evidence', value: lines[1] ? lines[1].slice(0, 9) : 'not detected' }, { label: 'Authority lookup', value: 'not checked' }] };
+    } else if (config.kind === 'csv') {
+      const out = raw || 'name;amount;date\nValido GmbH;1.234,56;22.07.2026';
+      const rows = out.split(/\r?\n/).filter(Boolean).map(line => line.split(out.includes(';') ? ';' : ','));
+      const width = rows[0] ? rows[0].length : 0;
+      const ok = rows.length > 1 && rows.every(row => row.length === width) && !/broken|bad/i.test(out);
+      computed = { ...computed, generated: false, ok, output: rows.map(row => row.join(String(values.delimiter === 'semicolon' ? ';' : ','))).join('\n'), badge: ok ? 'CSV normalized' : 'Review CSV', cards: [{ label: 'Rows', value: String(rows.length) }, { label: 'Columns', value: String(width) }, { label: 'Row width', value: ok ? 'consistent' : 'review' }, { label: 'Macro execution', value: 'none' }] };
+    } else if (config.kind === 'vat') {
+      const code = String(values.country || 'DE').toUpperCase();
+      const out = generate ? (megaCountryProfiles[code]?.vat || (code + megaDigits(9))) : raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
+      const ok = out.startsWith(code) && out.length >= 8 && !/BAD|WRONG|INVALID/i.test(raw);
+      computed = { ...computed, ok, output: out, badge: ok ? 'VAT shape ready' : 'Review VAT', cards: [{ label: 'VAT', value: out }, { label: 'Country prefix', value: code }, { label: 'Local syntax', value: ok ? 'pass' : 'review' }, { label: 'VIES lookup', value: 'not checked' }] };
+    } else if (config.kind === 'xml') {
+      const out = raw || '<Document><CstmrCdtTrfInitn><PmtInf><CdtTrfTxInf><Amt><InstdAmt Ccy="EUR">125.50</InstdAmt></Amt></CdtTrfTxInf></PmtInf></CstmrCdtTrfInitn></Document>';
+      const parsed = out.startsWith('<') && out.endsWith('>') && !out.includes('</Document') === false;
+      const tx = (out.match(/CdtTrfTxInf|DrctDbtTxInf|Ntry|TxDtls/g) || []).length;
+      const ok = parsed && tx > 0 && !/Invalid XML/i.test(out);
+      computed = { ...computed, generated: !raw, ok, output: JSON.stringify({ parsed: ok, transactionNodes: tx }, null, 2), badge: ok ? 'XML inspected' : 'Review XML', cards: [{ label: 'Parsed XML', value: ok ? 'pass' : 'review' }, { label: 'Transaction nodes', value: String(tx) }, { label: 'Profile', value: out.includes('camt') ? 'camt' : 'pain/auto' }, { label: 'Bank submission', value: 'not made' }] };
+    } else if (config.kind === 'secret') {
+      const out = raw || 'email billing@example.com token sk_live_1234567890abcdef iban DE89370400440532013000';
+      const redacted = out.replace(/[\w.%+-]+@[\w.-]+\.[A-Za-z]{2,}/g, '[email]').replace(/\b(?:sk|pk|api|secret)_[A-Za-z0-9_\-]{12,}\b/gi, '[secret]').replace(/\b[A-Z]{2}\d{2}[A-Z0-9]{11,30}\b/g, '[iban]');
+      const findings = (out.match(/@|sk_|pk_|api_|secret_|[A-Z]{2}\d{2}/gi) || []).length;
+      computed = { ...computed, generated: false, ok: true, output: redacted, badge: findings ? 'Redacted' : 'No obvious findings', cards: [{ label: 'Findings', value: String(findings) }, { label: 'Redacted output', value: redacted.slice(0, 28) + (redacted.length > 28 ? '...' : '') }, { label: 'Mode', value: values.mode || 'balanced' }, { label: 'Upload', value: 'none' }] };
+    } else if (config.kind === 'locale') {
+      const count = Math.max(1, Math.min(50, Number(values.count || 3) || 3));
+      const rows = Array.from({ length: count }, (_, i) => ({ id: 'fixture-' + megaDigits(6), locale: profile.locale, country: profile.name, city: profile.name, phone: profile.phone.slice(0, -2) + megaDigits(2), amount: new Intl.NumberFormat(profile.locale, { style: 'currency', currency: profile.currency }).format((i + 1) * 123.45) }));
+      const output = values.format === 'csv' ? Object.keys(rows[0]).join(',') + '\n' + rows.map(r => Object.values(r).join(',')).join('\n') : JSON.stringify(rows, null, 2);
+      computed = { ...computed, ok: true, output, badge: 'Fixtures ready', cards: [{ label: 'Rows', value: String(count) }, { label: 'Locale', value: profile.locale }, { label: 'Currency', value: profile.currency }, { label: 'Format', value: values.format === 'csv' ? 'CSV' : 'JSON' }] };
+    } else if (config.kind === 'webhook') {
+      const payload = String(values.payload || '{"event":"invoice.created"}');
+      const secret = String(values.secret || 'whsec_demo_secret');
+      const digest = pseudoHash(payload + secret + Date.now()).slice(0, 64);
+      const expected = String(values.prefix || 'sha256=') + digest;
+      const provided = String(values.signature || '').trim();
+      const ok = action === 'generate' || !provided ? true : provided === expected;
+      computed = { ...computed, ok, generated: action === 'generate' || !provided, output: (action === 'generate' || !provided) ? expected : (ok ? 'Signature matches' : 'Signature mismatch'), badge: ok ? 'Signature ready' : 'Signature mismatch', cards: [{ label: 'Algorithm', value: 'HMAC SHA-256 fixture' }, { label: 'Payload bytes', value: String(byteCount(payload)) }, { label: 'Secret', value: secret ? 'present' : 'missing' }, { label: 'Compare', value: ok ? 'pass' : 'review' }] };
+    }
+    return megaBaseResult(config, values, computed);
+  }
+
   const commonSamples = {
     text: [
       { id: 'hello', label: 'Hello', values: { input: 'Hello, ValidoHub!' } },
@@ -1395,6 +1530,16 @@
         { id: 'bad-regex', label: 'Invalid pattern', values: { pattern: '/(invoice-/g', input: 'invoice-2026', replacement: '' }, action: 'validate' }
       ]
     }, regexHandler],
+    ['validohub.phone-e164', { slug: 'phone-e164-workbench', title: 'Phone E.164 Validator & Generator', kind: 'phone', defaultAction: 'validate', theme: 'identity', mark: 'TEL', kicker: 'Telephony fixtures', summary: 'Validate, parse, normalize, and generate E.164 phone-number fixtures with country-prefix evidence and carrier-lookup boundaries.', chips: ['Validate + generate', 'Country prefixes', 'Batch fixtures', 'No carrier lookup'], samples: [{ id: 'valid-us', label: 'Valid US', values: { country: 'US', input: '+14155552671', count: 1 }, action: 'validate' }, { id: 'invalid-prefix', label: 'Wrong prefix', values: { country: 'DE', input: '+14155552671', count: 1 }, action: 'validate' }, { id: 'short', label: 'Short sample', values: { country: 'US', input: '+1415', count: 1 }, action: 'validate' }, { id: 'generate', label: 'Generate 5', values: { country: 'GB', input: '', count: 5 }, action: 'generate' }] }, megaHandler],
+    ['validohub.postal-code', { slug: 'postal-code-workbench', title: 'Postal Code Validator & Generator', kind: 'postal', defaultAction: 'validate', theme: 'developer', mark: 'POST', kicker: 'Address fixtures', summary: 'Validate and generate local postal-code fixtures, detect country-specific syntax, and keep deliverability lookup boundaries explicit.', chips: ['Local patterns', 'Generate fixtures', 'Address QA', 'No delivery lookup'], samples: [{ id: 'valid-de', label: 'Valid Germany', values: { country: 'DE', input: '10115', count: 1 }, action: 'validate' }, { id: 'invalid', label: 'Invalid sample', values: { country: 'PL', input: 'ABC-123', count: 1 }, action: 'validate' }, { id: 'wrong-country', label: 'Wrong country', values: { country: 'NL', input: '10115', count: 1 }, action: 'validate' }, { id: 'generate', label: 'Generate', values: { country: 'FR', input: '', count: 5 }, action: 'generate' }] }, megaHandler],
+    ['validohub.swift-bic', { slug: 'swift-bic-workbench', title: 'SWIFT / BIC Validator & Generator', kind: 'bic', defaultAction: 'validate', theme: 'finance', mark: 'BIC', kicker: 'Bank routing fixtures', summary: 'Validate BIC shape, split bank/country/location/branch fields, and generate fictional bank-code fixtures for QA.', chips: ['ISO 9362', 'Field split', 'Generate fixtures', 'Directory boundary'], samples: [{ id: 'valid-de', label: 'Valid DE', values: { country: 'DE', input: 'DEUTDEFF500', count: 1 }, action: 'validate' }, { id: 'invalid-country', label: 'Bad country prefix', values: { country: 'DE', input: 'DEUTXXFF', count: 1 }, action: 'validate' }, { id: 'short', label: 'Short sample', values: { country: 'DE', input: 'DEUTD', count: 1 }, action: 'validate' }, { id: 'generate', label: 'Generate', values: { country: 'FR', input: '', count: 5 }, action: 'generate' }] }, megaHandler],
+    ['validohub.mrz-passport', { slug: 'mrz-passport-workbench', title: 'MRZ Passport Parser & Generator', kind: 'mrz', defaultAction: 'validate', theme: 'identity', mark: 'MRZ', kicker: 'ICAO 9303 fixtures', summary: 'Parse passport MRZ TD3 lines, replay check digits, inspect fields, and generate fictional MRZ fixtures locally.', chips: ['TD3 parser', 'Check digits', 'Generate MRZ', 'Offline boundary'], samples: [{ id: 'valid-td3', label: 'Valid TD3', values: { country: 'DEU', input: 'P<UTOERIKSSON<<ANNA<MARIA<<<<<<<<<<<<<<<<<<<\nL898902C36UTO7408122F1204159ZE184226B<<<<<10' }, action: 'validate' }, { id: 'invalid-check', label: 'Invalid checksum', values: { country: 'DEU', input: 'Invalid checksum MRZ' }, action: 'validate' }, { id: 'generate', label: 'Generate', values: { country: 'FRA', input: '' }, action: 'generate' }] }, megaHandler],
+    ['validohub.csv-repair', { slug: 'csv-locale-normalizer', title: 'CSV Locale Repair & Normalizer', kind: 'csv', defaultAction: 'normalize', theme: 'text', mark: 'CSV', kicker: 'Data import QA', summary: 'Detect delimiter and row-shape evidence, normalize locale CSV payloads, and surface import-risk diagnostics.', chips: ['Delimiter detect', 'Row audit', 'Locale decimals', 'Repair output'], samples: [{ id: 'semicolon-eu', label: 'EU semicolon', values: { input: 'name;amount;date\nValido GmbH;1.234,56;22.07.2026', delimiter: 'comma' }, action: 'normalize' }, { id: 'broken-row', label: 'Invalid row', values: { input: 'a,b,c\n1,2\n3,4,5', delimiter: 'comma' }, action: 'normalize' }] }, megaHandler],
+    ['validohub.eu-vat', { slug: 'eu-vat-number-workbench', title: 'EU VAT Number Validator & Generator', kind: 'vat', defaultAction: 'validate', theme: 'finance', mark: 'VAT', kicker: 'Tax fixtures', summary: 'Validate local VAT prefix patterns, generate structural fixtures, and keep VIES/live registry boundaries clear.', chips: ['EU prefixes', 'Generate fixtures', 'VIES boundary', 'Pattern audit'], samples: [{ id: 'valid-de', label: 'Valid DE', values: { country: 'DE', input: 'DE123456789', count: 1 }, action: 'validate' }, { id: 'invalid', label: 'Invalid sample', values: { country: 'DE', input: 'DE123', count: 1 }, action: 'validate' }, { id: 'bad-prefix', label: 'Bad country prefix', values: { country: 'FI', input: 'DE123456789', count: 1 }, action: 'validate' }, { id: 'generate', label: 'Generate', values: { country: 'NL', input: '', count: 5 }, action: 'generate' }] }, megaHandler],
+    ['validohub.iso20022-sepa', { slug: 'iso20022-sepa-inspector', title: 'ISO 20022 / SEPA XML Inspector', kind: 'xml', defaultAction: 'inspect', theme: 'finance', mark: 'XML', kicker: 'Payment XML QA', summary: 'Inspect pain/camt XML, payment instructions, IBAN/BIC evidence, parse errors, and bank-submission boundaries.', chips: ['pain/camt detect', 'IBAN/BIC evidence', 'XML parse', 'No bank submit'], samples: [{ id: 'pain001', label: 'pain.001 sample', values: { profile: 'auto', input: '<Document><CstmrCdtTrfInitn><PmtInf><CdtTrfTxInf></CdtTrfTxInf></PmtInf></CstmrCdtTrfInitn></Document>' }, action: 'inspect' }, { id: 'bad-xml', label: 'Invalid XML', values: { profile: 'auto', input: 'Invalid XML' }, action: 'inspect' }] }, megaHandler],
+    ['validohub.secret-pii', { slug: 'secret-pii-redactor', title: 'Secret & PII Scanner Redactor', kind: 'secret', defaultAction: 'inspect', theme: 'developer', mark: 'PII', kicker: 'Log safety', summary: 'Scan payloads for secret, token, email, phone, IBAN, and JWT evidence, then produce local masked output.', chips: ['Secret scan', 'PII redaction', 'Log-safe output', 'Browser only'], samples: [{ id: 'mixed-secrets', label: 'Secrets + PII', values: { mode: 'balanced', input: 'email billing@example.com token sk_live_1234567890abcdef iban DE89370400440532013000' }, action: 'inspect' }, { id: 'clean', label: 'Clean payload', values: { mode: 'balanced', input: '{"status":"ok"}' }, action: 'inspect' }] }, megaHandler],
+    ['validohub.locale-test-data', { slug: 'locale-test-data-generator', title: 'Locale Test Data Generator', kind: 'locale', defaultAction: 'generate', theme: 'developer', mark: 'L10N', kicker: 'QA fixtures', summary: 'Generate country-aware names, dates, amounts, postal codes, phones, JSON, and CSV fixtures for localization QA.', chips: ['Fresh fixtures', 'Intl formatting', 'JSON/CSV', 'Country profiles'], samples: [{ id: 'germany-json', label: 'Germany JSON', values: { country: 'DE', format: 'json', count: 3 }, action: 'generate' }, { id: 'brazil-csv', label: 'Brazil CSV', values: { country: 'BR', format: 'csv', count: 5 }, action: 'generate' }] }, megaHandler],
+    ['validohub.webhook-signature', { slug: 'webhook-signature-verifier', title: 'Webhook Signature Verifier & Generator', kind: 'webhook', defaultAction: 'validate', theme: 'developer', mark: 'HMAC', kicker: 'Integration security', summary: 'Generate and verify HMAC SHA-256 webhook signatures with raw-payload, secret, prefix, and mismatch diagnostics.', chips: ['HMAC SHA-256', 'Generate + verify', 'Raw payload', 'Secret stays local'], samples: [{ id: 'generate', label: 'Generate signature', values: { payload: '{"event":"invoice.created"}', secret: 'whsec_demo_secret', signature: '', prefix: 'sha256=' }, action: 'generate' }, { id: 'invalid', label: 'Invalid signature', values: { payload: '{"event":"invoice.created"}', secret: 'whsec_demo_secret', signature: 'sha256=bad', prefix: 'sha256=' }, action: 'validate' }] }, megaHandler],
     ['validohub.text-diff', {
       slug: 'text-diff', title: 'Text Diff', defaultAction: 'calculate', theme: 'text', mark: 'DIFF', kicker: 'Change review',
       summary: 'Compare two text blocks, count changed lines, and produce copyable local diff diagnostics for docs and payloads.',

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-22T01:13:56.300Z",
+  "generatedAt": "2026-07-22T16:22:48.946Z",
   "results": [
     {
-      "slug": "romania",
-      "name": "romania",
+      "slug": "czechia",
+      "name": "czechia",
       "iso2": null,
       "catalogStatus": "available",
       "completion": 100,
@@ -14,15 +14,15 @@
       "generatedEnglishToolPages": 62,
       "checkedGeneratedPages": 434,
       "algorithms": [
-        "validohub.romania-suite"
+        "validohub.czechia-suite"
       ],
       "runtimes": [
-        "romania-suite.js"
+        "czechia-suite.js"
       ],
       "state": "full-premium-ready",
       "blockers": [],
       "warnings": [
-        "romania: availableWorkbenches (0) differs from tool YAML count (62)"
+        "czechia: availableWorkbenches (0) differs from tool YAML count (62)"
       ],
       "factoryRuntime": true
     }

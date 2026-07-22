@@ -6,6 +6,12 @@ const baseUrl = baseArgIndex >= 0 ? process.argv[baseArgIndex + 1] : DEFAULT_BAS
 
 const routes = [
   {
+    path: "/en/tools/",
+    input: null,
+    sampleText: null,
+    mustContain: ["Global Workbench Registry", "Phone E.164", "Webhook Signature", "All Global Tools"],
+  },
+  {
     path: "/en/tools/json-formatter/",
     input: "textarea, input",
     sampleText: "Secret scan payload",
@@ -53,7 +59,92 @@ const routes = [
     sampleText: "Bad country prefix",
     mustContain: ["Generated IBAN", "MOD-97", "Developer API preview"],
   },
+  {
+    path: "/en/tools/phone-e164-workbench/",
+    input: "textarea, input",
+    sampleText: "Wrong prefix",
+    mustContain: ["E.164", "Field breakdown", "Developer API preview"],
+  },
+  {
+    path: "/en/tools/postal-code-workbench/",
+    input: "textarea, input",
+    sampleText: "Invalid sample",
+    mustContain: ["Postal", "Field breakdown", "Developer API preview"],
+  },
+  {
+    path: "/en/tools/swift-bic-workbench/",
+    input: "textarea, input",
+    sampleText: "Bad country prefix",
+    mustContain: ["BIC", "Field breakdown", "Developer API preview"],
+  },
+  {
+    path: "/en/tools/mrz-passport-workbench/",
+    input: "textarea, input",
+    sampleText: "Invalid checksum",
+    mustContain: ["MRZ", "Field breakdown", "Developer API preview"],
+  },
+  {
+    path: "/en/tools/csv-locale-normalizer/",
+    input: "textarea, input",
+    sampleText: "Invalid row",
+    mustContain: ["CSV", "Field breakdown", "Developer API preview"],
+  },
+  {
+    path: "/en/tools/eu-vat-number-workbench/",
+    input: "textarea, input",
+    sampleText: "Bad country prefix",
+    mustContain: ["VAT", "VIES", "Developer API preview"],
+  },
+  {
+    path: "/en/tools/iso20022-sepa-inspector/",
+    input: "textarea, input",
+    sampleText: "Invalid XML",
+    mustContain: ["ISO 20022", "Field breakdown", "Developer API preview"],
+  },
+  {
+    path: "/en/tools/secret-pii-redactor/",
+    input: "textarea, input",
+    sampleText: "Secrets + PII",
+    mustContain: ["Secret", "Redacted", "Developer API preview"],
+  },
+  {
+    path: "/en/tools/locale-test-data-generator/",
+    input: "textarea, input",
+    sampleText: "Brazil CSV",
+    mustContain: ["Locale", "Fixtures ready", "Developer API preview"],
+  },
+  {
+    path: "/en/tools/webhook-signature-verifier/",
+    input: "textarea, input",
+    sampleText: "Invalid signature",
+    mustContain: ["Webhook", "Signature mismatch", "Developer API preview"],
+  },
 ];
+
+function selectedSlugs() {
+  const index = process.argv.indexOf("--slugs");
+  const inline = process.argv.find(arg => arg.startsWith("--slugs="));
+  const raw = inline ? inline.slice("--slugs=".length) : (index >= 0 ? process.argv[index + 1] || "" : "");
+  return raw.split(",").map(item => item.trim()).filter(Boolean);
+}
+
+function routeSlug(path) {
+  return String(path || "").replace(/^\/en\/tools\//, "").replace(/\/$/, "");
+}
+
+const requestedSlugs = selectedSlugs();
+const auditedRoutes = requestedSlugs.length
+  ? routes.filter(route => requestedSlugs.includes(routeSlug(route.path)))
+  : routes;
+
+if (requestedSlugs.length && auditedRoutes.length !== requestedSlugs.length) {
+  const found = new Set(auditedRoutes.map(route => routeSlug(route.path)));
+  const missing = requestedSlugs.filter(slug => !found.has(slug));
+  if (missing.length) {
+    console.error("Global premium audit unknown --slugs: " + missing.join(", "));
+    process.exit(1);
+  }
+}
 
 function url(path) {
   return new URL(path, baseUrl).toString();
@@ -80,7 +171,7 @@ async function clickSample(page, label) {
 }
 
 async function runPrimary(page) {
-  const button = page.getByRole("button", { name: /Validate|Inspect|Generate|Encode|Decode|Format|Parse/i }).first();
+  const button = page.locator(".button-row button").filter({ hasText: /^(Validate|Inspect|Generate|Encode|Decode|Format|Parse)$/i }).first();
   if (await button.count()) {
     await button.click();
   }
@@ -90,7 +181,7 @@ const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1440, height: 1200 } });
 const failures = [];
 
-for (const route of routes) {
+for (const route of auditedRoutes) {
   await page.goto(url(route.path), { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(400);
 
@@ -112,7 +203,7 @@ for (const route of routes) {
     }
   }
 
-  if (/Invalid|Malformed|Bad country prefix|Unsigned/i.test(route.sampleText || "")) {
+  if (/Invalid|Malformed|Bad country prefix|Wrong prefix|Wrong country|Unsigned/i.test(route.sampleText || "")) {
     if (/Offline checks passed|Completed locally|Generated IBAN/i.test(text) && !/review|invalid|error|unsigned|Repair status/i.test(text)) {
       failures.push(`${route.path}: review sample appears fake-green`);
     }
@@ -127,4 +218,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Global premium audit passed for ${routes.length} routes at ${baseUrl}`);
+console.log(`Global premium audit passed for ${auditedRoutes.length} routes at ${baseUrl}`);

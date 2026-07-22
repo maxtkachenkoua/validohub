@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildRouteRegistry } from './route-registry.mjs';
-import { compileCountriesPortal, compileHomePortal } from './build-countries-portal.mjs';
+import { compileCountriesPortal, compileHomePortal, compileToolsPortal } from './build-countries-portal.mjs';
 import { applyFinalLocalizationPass } from './localization-pass.mjs';
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
@@ -80,7 +80,7 @@ async function compileDesignAssets() {
 async function syncPortalRuntimeAssets() {
   const destJsDir = resolve(siteRoot, 'assets', 'js');
   await mkdir(destJsDir, { recursive: true });
-  for (const file of ['portal-home.js', 'countries-portal.js', 'countries.js', 'brand-assets.js']) {
+  for (const file of ['portal-home.js', 'portal-tools.js', 'countries-portal.js', 'countries.js', 'brand-assets.js']) {
     const source = resolve(projectRoot, 'assets', 'js', file);
     if (await pathExists(source)) await cp(source, resolve(destJsDir, file));
   }
@@ -95,7 +95,7 @@ async function configuredLocales() {
 }
 
 async function main() {
-  console.log('=== ValidoHub portal dev build: home + countries ===');
+  console.log('=== ValidoHub portal dev build: home + tools + countries ===');
   const locales = await configuredLocales();
   const assetsManifest = await compileDesignAssets();
   await syncPortalRuntimeAssets();
@@ -106,8 +106,9 @@ async function main() {
   if (homeRoute) homeRoute.sourceOwner = 'node';
 
   await compileHomePortal(routeRegistry, assetsManifest);
+  await compileToolsPortal(routeRegistry, assetsManifest);
   await compileCountriesPortal(routeRegistry, assetsManifest, { renderCountryPages: false });
-  await applyFinalLocalizationPass(routeRegistry, siteRoot, locales, { includeSuffixes: ['/', '/countries/'] });
+  await applyFinalLocalizationPass(routeRegistry, siteRoot, locales, { includeSuffixes: ['/', '/tools/', '/countries/'] });
 
   console.log(`✓ Localized portal pages: ${locales.map(locale => `/${locale}/ + /${locale}/countries/`).join(', ')}`);
   console.log('Note: this is a dev accelerator. Run npm run build before release.');

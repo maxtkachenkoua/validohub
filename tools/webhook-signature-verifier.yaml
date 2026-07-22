@@ -1,0 +1,46 @@
+schemaVersion: 1
+id: webhook-signature-verifier
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Webhook Signature Verifier & Generator
+summary:
+  en: Generate and verify HMAC SHA-256 webhook signatures for payload replay and integration debugging.
+capabilities: [validate, generate, parse, explain]
+algorithm:
+  algorithmId: validohub.webhook-signature
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: payload
+        label:
+          en: Payload
+      - type: text
+        name: secret
+        label:
+          en: Signing secret
+      - type: text
+        name: signature
+        label:
+          en: Signature to verify
+      - type: text
+        name: prefix
+        label:
+          en: Header prefix
+        default: sha256=
+    actions: [validate, generate, parse, explain]
+related:
+  explicit: [iban-validator, iban-generator, uuid-generator, regex-tester]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Webhook Signature Verifier & Generator
+  description:
+    en: Generate and verify HMAC SHA-256 webhook signatures for payload replay and integration debugging.

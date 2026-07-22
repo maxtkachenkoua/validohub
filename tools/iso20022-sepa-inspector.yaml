@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: iso20022-sepa-inspector
+kind: tool
+module: validohub
+category: finance
+status: active
+name:
+  en: ISO 20022 / SEPA XML Inspector
+summary:
+  en: Inspect pain/camt XML messages, count payment instructions, detect IBAN/BIC evidence, and export debug summaries.
+capabilities: [validate, generate, parse, explain]
+algorithm:
+  algorithmId: validohub.iso20022-sepa
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: ISO 20022 XML
+      - type: select
+        name: profile
+        label:
+          en: Expected profile
+        options: [auto, pain.001, pain.008, camt.053]
+        default: auto
+    actions: [validate, generate, parse, explain]
+related:
+  explicit: [iban-validator, iban-generator, uuid-generator, regex-tester]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: ISO 20022 / SEPA XML Inspector
+  description:
+    en: Inspect pain/camt XML messages, count payment instructions, detect IBAN/BIC evidence, and export debug summaries.

@@ -895,3 +895,20 @@ Impact:
 - Replaced placeholder `Europe local time zone` values in new Europe country data with real IANA zones so every country hub can render the compact hero clock reliably.
 - Added a mandatory factory tool-context block after each country-tool hero and before advanced diagnostics/input. The block explains the real workflow use case, local browser checks, and official/source-system boundary with tool-specific copy.
 - Added `docs/ai/PREMIUM_COUNTRY_PLAYBOOK.md` as the AI handoff for future premium country work and switched copy feedback to an anchored popover above the clicked copy button.
+# 2026-07-22 - Global tools portal and mega-premium expansion
+
+- Added `/en/tools/` as a first-class global tools portal with search, featured workbenches, categories, and premium discovery cards.
+- Added ten global mega-premium workbench configs: Phone E.164, Postal Code, SWIFT/BIC, MRZ Passport, CSV Locale Normalizer, EU VAT, ISO 20022 / SEPA, Secret + PII Redactor, Locale Test Data Generator, and Webhook Signature Verifier.
+- Added `docs/product/TOOLS_PORTAL_SPEC.md` so future AI sessions know global tools must be registered, searchable, audited, invalid-state correct, and richer than a basic generated form.
+- Extended global premium audit coverage so the Tools portal and new invalid/review samples are release gates.
+
+# 2026-07-22 - Build Hardening V2
+
+- Added `npm run build:tools` for scoped global-tool development builds that refresh assets, runtime scripts, `/en/tools/`, selected generated tool pages, and localized tools portal shells without invoking the full Java publisher.
+- Added `npm run audit:tools -- --slugs ...` for selected global-tool premium checks and kept `build:full` / `audit:full` as explicit release-gate commands.
+- Documented the new workflow in `docs/product/BUILD_HARDENING_V2.md`, `docs/product/CURRENT_STATE.md`, and `docs/ai/START_HERE_AI.md` so future sessions avoid full-site rebuilds for normal iteration.
+
+# 2026-07-22 - Next Chat Handoff
+
+- Added `docs/ai/NEXT_CHAT_HANDOFF.md` as compact project memory for fresh AI sessions.
+- Linked the handoff from `START_HERE_AI.md` so future chats inherit the fixed-regression bar, build discipline, country/tool contracts, IBAN rules, and Europe modeling notes without relying on chat history.

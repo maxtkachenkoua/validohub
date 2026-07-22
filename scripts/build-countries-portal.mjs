@@ -67,6 +67,7 @@ async function pathExists(path) {
 
 function renderHeader(active = 'countries') {
   const homeCurrent = active === 'home' ? ' aria-current="page" class="is-active"' : '';
+  const toolsCurrent = active === 'tools' ? ' aria-current="page" class="is-active"' : '';
   const countriesCurrent = active === 'countries' ? ' aria-current="page" class="is-active"' : '';
   return `
     <header class="site-header">
@@ -77,6 +78,7 @@ function renderHeader(active = 'countries') {
         </a>
         <nav class="primary-nav" aria-label="Main navigation">
           <a href="/en/"${homeCurrent}>Home</a>
+          <a href="/en/tools/"${toolsCurrent}>Tools</a>
           <a href="/en/countries/"${countriesCurrent}>Countries</a>
           <a href="/en/categories/national-identifiers/">Identifiers</a>
         </nav>
@@ -479,6 +481,227 @@ export async function compileHomePortal(routeRegistry, assetsManifest) {
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, assembledHtml, 'utf8');
   console.log('✓ Generated: /en/');
+}
+
+function cleanToolTitle(route) {
+  return String(route.title || 'Developer Tool')
+    .replace(/\s*\|\s*ValidoHub\s*$/i, '')
+    .replace(/\s*-\s*ValidoHub\s*$/i, '')
+    .trim();
+}
+
+function classifyToolRoute(route) {
+  const title = cleanToolTitle(route);
+  const slug = route.path.split('/').filter(Boolean).pop() || '';
+  const haystack = `${title} ${slug}`.toLowerCase();
+  if (/generator|generate|fixture|uuid|locale-test-data/.test(haystack)) return 'Generators';
+  if (/jwt|secret|pii|webhook|hash|md5|sha|signature/.test(haystack)) return 'Security & Integrity';
+  if (/json|csv|xml|iso20022|regex|diff|html|url|base64|case|slug|mrz/.test(haystack)) return 'Parsers & Debuggers';
+  if (/iban|vat|swift|bic|phone|postal/.test(haystack)) return 'Validation Workbenches';
+  return 'Developer Utilities';
+}
+
+function toolSummaryFor(route) {
+  const title = cleanToolTitle(route);
+  const slug = route.path.split('/').filter(Boolean).pop() || '';
+  const haystack = `${title} ${slug}`.toLowerCase();
+  if (haystack.includes('phone')) return 'Normalize, generate, and inspect E.164 phone fixtures with country-prefix evidence.';
+  if (haystack.includes('postal')) return 'Validate or generate postal-code samples while keeping deliverability lookup boundaries explicit.';
+  if (haystack.includes('swift') || haystack.includes('bic')) return 'Inspect SWIFT/BIC structure, country evidence, branch shape, and directory lookup boundaries.';
+  if (haystack.includes('mrz')) return 'Parse passport MRZ lines, replay structural checks, and generate safe travel-document fixtures.';
+  if (haystack.includes('csv')) return 'Normalize locale-sensitive CSV payloads and expose row, delimiter, and decimal evidence.';
+  if (haystack.includes('vat')) return 'Check EU VAT prefix and local syntax while clearly separating VIES status from offline evidence.';
+  if (haystack.includes('iso20022') || haystack.includes('sepa')) return 'Inspect ISO 20022 / SEPA XML structure before bank handoff or QA review.';
+  if (haystack.includes('secret') || haystack.includes('pii')) return 'Detect and redact common secrets, emails, IBANs, and log-sensitive payload fragments.';
+  if (haystack.includes('locale-test')) return 'Generate localized JSON or CSV fixtures for country-aware QA and form testing.';
+  if (haystack.includes('webhook')) return 'Generate or verify webhook signature fixtures and compare payload, secret, and header evidence.';
+  if (haystack.includes('iban-generator')) return 'Generate structural IBAN fixtures with MOD-97 check digits and copy-ready grouping.';
+  if (haystack.includes('iban')) return 'Validate IBAN structure, country profile, length, and MOD-97 evidence in the browser.';
+  if (haystack.includes('json')) return 'Format, repair, inspect schema hints, flatten paths, and scan sensitive payload keys.';
+  if (haystack.includes('jwt')) return 'Decode JWT headers and claims locally, inspect registered claims, and highlight security boundaries.';
+  if (haystack.includes('base64')) return 'Encode or decode Base64, detect data URIs, byte signatures, and URL-safe variants.';
+  if (haystack.includes('url')) return 'Encode, decode, parse query parameters, and inspect redirect or credential risk hints.';
+  if (haystack.includes('regex')) return 'Test regex patterns, named groups, replacement previews, and match diagnostics.';
+  if (haystack.includes('uuid')) return 'Generate and validate UUID fixtures with version, variant, and batch support.';
+  return 'Open a browser-only developer workbench with premium debug evidence and copy-ready output.';
+}
+
+function toolMarkFor(route) {
+  const title = cleanToolTitle(route);
+  const slug = route.path.split('/').filter(Boolean).pop() || '';
+  const haystack = `${title} ${slug}`.toLowerCase();
+  if (haystack.includes('json')) return '{}';
+  if (haystack.includes('jwt')) return 'JWT';
+  if (haystack.includes('iban')) return 'IBAN';
+  if (haystack.includes('phone')) return 'TEL';
+  if (haystack.includes('postal')) return 'POST';
+  if (haystack.includes('swift') || haystack.includes('bic')) return 'BIC';
+  if (haystack.includes('mrz')) return 'MRZ';
+  if (haystack.includes('csv')) return 'CSV';
+  if (haystack.includes('vat')) return 'VAT';
+  if (haystack.includes('iso20022') || haystack.includes('sepa')) return 'XML';
+  if (haystack.includes('secret') || haystack.includes('pii')) return 'PII';
+  if (haystack.includes('webhook')) return 'SIG';
+  if (haystack.includes('uuid')) return 'ID';
+  if (haystack.includes('regex')) return '.*';
+  if (haystack.includes('url')) return 'URL';
+  return 'VH';
+}
+
+function renderToolsPortalCards(toolRoutes) {
+  return toolRoutes.map(route => {
+    const title = cleanToolTitle(route);
+    const category = classifyToolRoute(route);
+    const summary = toolSummaryFor(route);
+    const mark = toolMarkFor(route);
+    const search = [title, category, summary, route.path].join(' ').toLowerCase();
+    return `
+      <a class="vh-tool-card" href="${route.path}" data-tool-card data-category="${escapeHtml(category)}" data-search="${escapeHtml(search)}">
+        <span class="vh-tool-card-mark">${escapeHtml(mark)}</span>
+        <span class="vh-tool-card-category">${escapeHtml(category)}</span>
+        <strong>${escapeHtml(title)}</strong>
+        <span>${escapeHtml(summary)}</span>
+        <em>Open workbench</em>
+      </a>
+    `;
+  }).join('\n');
+}
+
+export async function compileToolsPortal(routeRegistry, assetsManifest) {
+  console.log('--- Pass 2b: Rendering Global Tools Portal ---');
+  if (!routeRegistry.has('/en/tools/')) {
+    routeRegistry.register('/en/tools/', {
+      type: 'tools',
+      title: 'Global Tools | ValidoHub',
+      sourceOwner: 'node'
+    });
+  }
+
+  const layoutTemplate = await readFile(resolve(projectRoot, 'templates', 'layout.html'), 'utf8');
+  const toolRoutes = routeRegistry.getAll()
+    .filter(route => route.path.startsWith('/en/tools/') && route.path !== '/en/tools/')
+    .sort((a, b) => cleanToolTitle(a).localeCompare(cleanToolTitle(b)));
+  const categories = [...new Set(toolRoutes.map(classifyToolRoute))].sort();
+  const cardsHtml = renderToolsPortalCards(toolRoutes);
+  const featured = [
+    '/en/tools/phone-e164-workbench/',
+    '/en/tools/iban-generator/',
+    '/en/tools/webhook-signature-verifier/',
+    '/en/tools/iso20022-sepa-inspector/'
+  ].map(path => routeRegistry.get(path)).filter(Boolean);
+  const featuredHtml = featured.map(route => `
+    <a class="vh-tools-feature" href="${route.path}">
+      <span>${escapeHtml(toolMarkFor(route))}</span>
+      <strong>${escapeHtml(cleanToolTitle(route))}</strong>
+      <em>${escapeHtml(toolSummaryFor(route))}</em>
+    </a>
+  `).join('\n');
+
+  const headHtml = `
+    <title>Global Developer Tools | ValidoHub</title>
+    <meta name="description" content="Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.">
+    <link rel="canonical" href="https://validohub.com/en/tools/">
+    <link rel="alternate" hreflang="en" href="https://validohub.com/en/tools/">
+    <link rel="stylesheet" href="${assetsManifest.css}">
+  `;
+
+  const breadcrumbsHtml = `
+    <nav class="vh-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/en/">Home</a></li>
+        <li><span aria-current="page">Tools</span></li>
+      </ol>
+    </nav>
+  `;
+
+  const heroHtml = `
+    <section class="vh-tools-hero" aria-labelledby="tools-title">
+      <div class="vh-tools-hero-copy">
+        <span class="vh-eyebrow">Global Workbench Registry</span>
+        <h1 id="tools-title">Universal validators, generators, parsers, and debugging labs.</h1>
+        <p>Use browser-only tools for payloads, identities, payments, secrets, signatures, locales, and QA fixtures before data reaches production.</p>
+      </div>
+      <aside class="vh-tools-hero-panel" aria-label="Global tool coverage">
+        <div><strong>${toolRoutes.length}</strong><span>global tools</span></div>
+        <div><strong>${categories.length}</strong><span>tool families</span></div>
+        <div><strong>0</strong><span>uploads required</span></div>
+      </aside>
+    </section>
+  `;
+
+  const contentHtml = `
+    <div class="vh-tools-portal" data-tools-search>
+      <section class="vh-tools-command">
+        <div>
+          <span class="vh-eyebrow">Find A Global Tool</span>
+          <h2>Search by format, workflow, or debugging need.</h2>
+        </div>
+        <label class="vh-tools-search">
+          <span class="vh-sr-only">Search global tools</span>
+          <input type="search" placeholder="Search IBAN generator, webhook signature, MRZ, CSV, VAT, JWT..." autocomplete="off" data-tools-search-input>
+        </label>
+        <div class="vh-tools-chips" aria-label="Suggested tool searches">
+          <button type="button" data-tools-query="generator">Generators</button>
+          <button type="button" data-tools-query="payment">Payments</button>
+          <button type="button" data-tools-query="security">Security</button>
+          <button type="button" data-tools-query="locale">Locale QA</button>
+          <button type="button" data-tools-query="field breakdown">Field breakdown</button>
+          <button type="button" data-tools-query="">Clear</button>
+        </div>
+      </section>
+
+      <section class="vh-tools-section">
+        <div class="vh-tools-section-head">
+          <span class="vh-eyebrow">Featured</span>
+          <h2>High-intent workbenches for validation and generation.</h2>
+        </div>
+        <div class="vh-tools-feature-grid">
+          ${featuredHtml}
+        </div>
+      </section>
+
+      <section class="vh-tools-section">
+        <div class="vh-tools-section-head">
+          <span class="vh-eyebrow">All Global Tools</span>
+          <h2><span data-tools-count>${toolRoutes.length}</span> workbenches ready.</h2>
+          <p>Every new global tool must ship with valid and invalid samples, field breakdown, pipeline evidence, copy feedback, and a clear official-boundary note.</p>
+        </div>
+        <div class="vh-tools-grid">
+          ${cardsHtml}
+        </div>
+        <p class="vh-tools-empty" data-tools-empty hidden>No global tools match this search.</p>
+      </section>
+    </div>
+  `;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Global Developer Tools | ValidoHub',
+    description: 'Browse ValidoHub global browser-only validators, generators, parsers, security helpers, locale fixtures, and payload debuggers.',
+    url: 'https://validohub.com/en/tools/',
+    inLanguage: 'en'
+  };
+  const jsonLdScript = `<script type="application/ld+json">${escapeHtmlJson(JSON.stringify(jsonLd))}</script>`;
+
+  const assembledHtml = layoutTemplate
+    .replaceAll('{{ HEAD }}', () => headHtml)
+    .replaceAll('{{ HEADER }}', () => renderHeader('tools'))
+    .replaceAll('{{ BREADCRUMBS }}', () => breadcrumbsHtml)
+    .replaceAll('{{ HERO }}', () => heroHtml)
+    .replaceAll('{{ CONTENT }}', () => contentHtml)
+    .replaceAll('{{ FOOTER }}', () => renderFooter())
+    .replaceAll('{{ JSON_LD }}', () => jsonLdScript)
+    .replaceAll('{{ SCRIPTS }}', () => `<script src="/assets/js/portal-tools.js"></script>\n<script src="${assetsManifest.js}" defer></script>`);
+
+  if (assembledHtml.includes('{{')) {
+    throw new Error('FATAL: Unresolved template slot marker found in generated tools portal page');
+  }
+
+  const outputPath = resolve(siteRoot, locale, 'tools', 'index.html');
+  await mkdir(dirname(outputPath), { recursive: true });
+  await writeFile(outputPath, assembledHtml, 'utf8');
+  console.log('✓ Generated: /en/tools/');
 }
 
 export async function compileCountriesPortal(routeRegistry, assetsManifest, options = {}) {

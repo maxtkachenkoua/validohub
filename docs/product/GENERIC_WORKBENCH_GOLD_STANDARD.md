@@ -100,6 +100,8 @@ Any new generic instrument must start from this gold standard. It is not accepta
 
 When adding a new global tool under `/{locale}/tools/{tool-slug}/`, do not start from the minimum Engine-generated form. Start from the premium workbench contract:
 
+The `/en/tools/` directory is mandatory for global-tool discovery. Follow `docs/product/TOOLS_PORTAL_SPEC.md` in addition to this gold standard whenever adding, renaming, or hardening a global tool.
+
 - Define the tool-specific product spec and registry entry before or alongside implementation.
 - Choose a deterministic neutral visual theme, mark, chips, and header copy; never use country flag colors for a country-neutral tool.
 - Ship a success-first default preset for every primary mode. The first available preset must succeed in the selected mode.

@@ -1,0 +1,44 @@
+schemaVersion: 1
+id: postal-code-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Postal Code Validator & Generator
+summary:
+  en: Validate, parse, and generate local postal-code fixtures for common delivery and address flows.
+capabilities: [validate, generate, parse, explain]
+algorithm:
+  algorithmId: validohub.postal-code
+forms:
+  validate:
+    inputs:
+      - type: select
+        name: country
+        label:
+          en: Country profile
+        options: [US, GB, DE, FR, PL, BR, UA, ES, IT, NL, IE, FI, CZ, AT]
+        default: DE
+      - type: text
+        name: input
+        label:
+          en: Postal code
+      - type: number
+        name: count
+        label:
+          en: Generate count
+        default: 1
+    actions: [validate, generate, parse, explain]
+related:
+  explicit: [iban-validator, iban-generator, uuid-generator, regex-tester]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Postal Code Validator & Generator
+  description:
+    en: Validate, parse, and generate local postal-code fixtures for common delivery and address flows.
