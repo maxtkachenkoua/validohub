@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: rag-chunking-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: RAG Chunking Workbench
+summary:
+  en: Split documents into retrieval chunks, estimate token-like size, preview overlap, metadata payloads, boundaries, and embedding handoff JSON.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.rag-chunking
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Document text
+      - type: number
+        name: chunkSize
+        label:
+          en: Target chunk words
+        default: "120"
+        min: 20
+        max: 2000
+      - type: number
+        name: overlap
+        label:
+          en: Overlap words
+        default: "20"
+        min: 0
+        max: 500
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: RAG Chunking Workbench
+  description:
+    en: Split documents into retrieval chunks, estimate token-like size, preview overlap, metadata payloads, boundaries, and embedding handoff JSON.

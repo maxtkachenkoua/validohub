@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: github-actions-workflow-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: GitHub Actions Workflow Inspector
+summary:
+  en: Inspect GitHub Actions workflows for permissions, secrets, matrix jobs, caches, pull_request_target, shell injection, and supply-chain risk.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.github-actions
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: GitHub Actions workflow YAML
+      - type: select
+        name: profile
+        label:
+          en: Workflow profile
+        options:
+          - ci
+          - release
+          - deploy
+        default: "ci"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, terraform-hcl-plan-inspector, nginx-apache-config-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: GitHub Actions Workflow Inspector
+  description:
+    en: Inspect GitHub Actions workflows for permissions, secrets, matrix jobs, caches, pull_request_target, shell injection, and supply-chain risk.

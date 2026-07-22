@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: html-meta-seo-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: HTML Meta / SEO Inspector
+summary:
+  en: Inspect HTML head markup for title, canonical, robots, hreflang, Open Graph, Twitter cards, structured data, and search snippet quality.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.html-meta-seo
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: HTML document or head markup
+      - type: select
+        name: profile
+        label:
+          en: Page profile
+        options:
+          - tool-page
+          - article
+          - landing
+        default: "tool-page"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: HTML Meta / SEO Inspector
+  description:
+    en: Inspect HTML head markup for title, canonical, robots, hreflang, Open Graph, Twitter cards, structured data, and search snippet quality.

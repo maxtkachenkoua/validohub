@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: eval-dataset-builder
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Eval Dataset Builder
+summary:
+  en: Build and inspect evaluation cases with inputs, expected outputs, rubrics, pass/fail labels, CSV/JSON export shape, and coverage gaps.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.eval-dataset
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Eval cases or notes
+      - type: select
+        name: format
+        label:
+          en: Export format
+        options:
+          - json
+          - csv
+          - rubric
+        default: "json"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Eval Dataset Builder
+  description:
+    en: Build and inspect evaluation cases with inputs, expected outputs, rubrics, pass/fail labels, CSV/JSON export shape, and coverage gaps.

@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: prompt-injection-scanner
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Prompt Injection Scanner
+summary:
+  en: Scan prompts, retrieved documents, and tool instructions for hidden directives, override attempts, data exfiltration language, and tool-call risk.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.prompt-injection
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Prompt, document, or retrieved context
+      - type: select
+        name: profile
+        label:
+          en: Scan profile
+        options:
+          - rag
+          - agent
+          - system-prompt
+        default: "rag"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Prompt Injection Scanner
+  description:
+    en: Scan prompts, retrieved documents, and tool instructions for hidden directives, override attempts, data exfiltration language, and tool-call risk.

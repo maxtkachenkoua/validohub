@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: websocket-sse-message-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: WebSocket / SSE Message Inspector
+summary:
+  en: Inspect WebSocket and Server-Sent Event frames for event names, JSON payloads, reconnect hints, heartbeats, ordering, and client contract gaps.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.websocket-sse
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: WebSocket messages or SSE frames
+      - type: select
+        name: profile
+        label:
+          en: Realtime profile
+        options:
+          - websocket
+          - sse
+          - mixed
+        default: "mixed"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: WebSocket / SSE Message Inspector
+  description:
+    en: Inspect WebSocket and Server-Sent Event frames for event names, JSON payloads, reconnect hints, heartbeats, ordering, and client contract gaps.

@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: cors-policy-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: CORS Policy Workbench
+summary:
+  en: Inspect CORS origin, method, header, credential, Vary, and preflight response behavior with risk scoring and repair examples.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.cors-policy
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: CORS request/response headers
+      - type: select
+        name: profile
+        label:
+          en: API profile
+        options:
+          - public-api
+          - credentialed-app
+          - same-origin
+        default: "credentialed-app"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: CORS Policy Workbench
+  description:
+    en: Inspect CORS origin, method, header, credential, Vary, and preflight response behavior with risk scoring and repair examples.

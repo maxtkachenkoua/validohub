@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: idempotency-key-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Idempotency Key Workbench
+summary:
+  en: Model idempotency-key scenarios for retries, conflict detection, expiry windows, payload fingerprints, replay boundaries, and API handoff rules.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.idempotency-key
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Idempotency scenario or headers
+      - type: text
+        name: key
+        label:
+          en: Idempotency key
+        default: "idem_20260723_checkout_01"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Idempotency Key Workbench
+  description:
+    en: Model idempotency-key scenarios for retries, conflict detection, expiry windows, payload fingerprints, replay boundaries, and API handoff rules.

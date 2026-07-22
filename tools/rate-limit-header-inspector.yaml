@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: rate-limit-header-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Rate Limit Header Inspector
+summary:
+  en: Inspect Retry-After, RateLimit, X-RateLimit, quota windows, reset times, client backoff previews, and inconsistent API limit headers.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.rate-limit-headers
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Rate limit HTTP headers
+      - type: select
+        name: profile
+        label:
+          en: Header profile
+        options:
+          - rfc
+          - x-ratelimit
+          - mixed
+        default: "mixed"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Rate Limit Header Inspector
+  description:
+    en: Inspect Retry-After, RateLimit, X-RateLimit, quota windows, reset times, client backoff previews, and inconsistent API limit headers.

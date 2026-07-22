@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: design-token-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Design Token Inspector
+summary:
+  en: Inspect CSS variables and token JSON for naming consistency, duplicate values, contrast-pair hints, semantic coverage, and export readiness.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.design-token
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: CSS variables or token JSON
+      - type: select
+        name: profile
+        label:
+          en: Token profile
+        options:
+          - css
+          - json
+          - mixed
+        default: "mixed"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Design Token Inspector
+  description:
+    en: Inspect CSS variables and token JSON for naming consistency, duplicate values, contrast-pair hints, semantic coverage, and export readiness.

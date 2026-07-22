@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: source-map-stack-trace-parser
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Source Map / Stack Trace Parser
+summary:
+  en: Parse JavaScript stack traces and source-map hints for frames, minified bundles, release metadata, error grouping, and triage handoff.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.stack-trace
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Stack trace, error log, or sourcemap note
+      - type: select
+        name: profile
+        label:
+          en: Runtime profile
+        options:
+          - browser
+          - node
+          - react
+        default: "browser"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Source Map / Stack Trace Parser
+  description:
+    en: Parse JavaScript stack traces and source-map hints for frames, minified bundles, release metadata, error grouping, and triage handoff.

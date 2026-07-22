@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: nginx-apache-config-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: NGINX / Apache Config Inspector
+summary:
+  en: Inspect NGINX and Apache snippets for headers, redirects, compression, proxy forwarding, TLS hints, caching, and unsafe exposure.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.webserver-config
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: NGINX or Apache config
+      - type: select
+        name: profile
+        label:
+          en: Server profile
+        options:
+          - nginx
+          - apache
+          - auto
+        default: "auto"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: NGINX / Apache Config Inspector
+  description:
+    en: Inspect NGINX and Apache snippets for headers, redirects, compression, proxy forwarding, TLS hints, caching, and unsafe exposure.

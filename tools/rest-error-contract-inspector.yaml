@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: rest-error-contract-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: REST Error Contract Inspector
+summary:
+  en: Inspect REST error payloads for RFC 7807 problem+json shape, error codes, retryability, localization readiness, trace fields, and client handling.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.rest-error-contract
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Error response JSON or HTTP response
+      - type: select
+        name: profile
+        label:
+          en: API profile
+        options:
+          - problem-json
+          - json-api
+          - custom
+        default: "problem-json"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: REST Error Contract Inspector
+  description:
+    en: Inspect REST error payloads for RFC 7807 problem+json shape, error codes, retryability, localization readiness, trace fields, and client handling.

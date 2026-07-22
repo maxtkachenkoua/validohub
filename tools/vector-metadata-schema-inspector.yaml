@@ -1,0 +1,43 @@
+schemaVersion: 1
+id: vector-metadata-schema-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Vector Metadata Schema Inspector
+summary:
+  en: Validate vector metadata payloads, namespaces, filter keys, scalar types, cardinality, PII hints, and retrieval filter readiness.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.vector-metadata
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Vector metadata JSON or JSONL
+      - type: select
+        name: profile
+        label:
+          en: Vector DB profile
+        options:
+          - generic
+          - pinecone
+          - weaviate
+          - qdrant
+        default: "generic"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Vector Metadata Schema Inspector
+  description:
+    en: Validate vector metadata payloads, namespaces, filter keys, scalar types, cardinality, PII hints, and retrieval filter readiness.

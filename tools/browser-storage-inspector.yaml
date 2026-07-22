@@ -1,0 +1,43 @@
+schemaVersion: 1
+id: browser-storage-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Browser Storage Inspector
+summary:
+  en: Inspect localStorage, sessionStorage, cookie, and IndexedDB-like payloads for size, expiry, PII, auth token risk, and migration readiness.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.browser-storage
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Browser storage dump or key-value list
+      - type: select
+        name: profile
+        label:
+          en: Storage profile
+        options:
+          - localStorage
+          - sessionStorage
+          - cookies
+          - mixed
+        default: "mixed"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Browser Storage Inspector
+  description:
+    en: Inspect localStorage, sessionStorage, cookie, and IndexedDB-like payloads for size, expiry, PII, auth token risk, and migration readiness.

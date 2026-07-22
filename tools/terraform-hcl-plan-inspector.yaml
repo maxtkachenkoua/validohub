@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: terraform-hcl-plan-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Terraform Plan / HCL Inspector
+summary:
+  en: Inspect Terraform HCL and plan snippets for resource maps, destructive changes, provider/version pinning, public exposure, and state-secret risks.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.terraform-hcl
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Terraform HCL or plan text
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - plan
+          - hcl
+          - module
+        default: "plan"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, nginx-apache-config-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Terraform Plan / HCL Inspector
+  description:
+    en: Inspect Terraform HCL and plan snippets for resource maps, destructive changes, provider/version pinning, public exposure, and state-secret risks.

@@ -1,0 +1,43 @@
+schemaVersion: 1
+id: accessibility-snapshot-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Accessibility Snapshot Inspector
+summary:
+  en: Inspect pasted HTML for headings, labels, alt text, buttons, links, ARIA attributes, landmark hints, and accessibility regression risks.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.accessibility-snapshot
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: HTML snapshot
+      - type: select
+        name: profile
+        label:
+          en: Component profile
+        options:
+          - page
+          - form
+          - dialog
+          - nav
+        default: "page"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Accessibility Snapshot Inspector
+  description:
+    en: Inspect pasted HTML for headings, labels, alt text, buttons, links, ARIA attributes, landmark hints, and accessibility regression risks.

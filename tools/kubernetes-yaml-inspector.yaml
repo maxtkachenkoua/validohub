@@ -1,0 +1,43 @@
+schemaVersion: 1
+id: kubernetes-yaml-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Kubernetes YAML Inspector
+summary:
+  en: Inspect Kubernetes manifests for workloads, services, ingress, probes, resources, image tags, securityContext, and deployment risk signals.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.kubernetes-yaml
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Kubernetes YAML manifests
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - deployment
+          - service
+          - ingress
+          - mixed
+        default: "mixed"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector, nginx-apache-config-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Kubernetes YAML Inspector
+  description:
+    en: Inspect Kubernetes manifests for workloads, services, ingress, probes, resources, image tags, securityContext, and deployment risk signals.

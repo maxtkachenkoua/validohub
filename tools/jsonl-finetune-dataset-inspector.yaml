@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: jsonl-finetune-dataset-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: JSONL Fine-Tune Dataset Inspector
+summary:
+  en: Inspect JSONL fine-tune datasets for malformed rows, message role order, prompt/completion shape, token-like length, duplicates, and safety redaction.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.jsonl-finetune
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Fine-tune JSONL dataset
+      - type: select
+        name: profile
+        label:
+          en: Dataset profile
+        options:
+          - chat
+          - prompt-completion
+          - eval
+        default: "chat"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, dockerfile-auditor, github-actions-workflow-inspector, terraform-hcl-plan-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: JSONL Fine-Tune Dataset Inspector
+  description:
+    en: Inspect JSONL fine-tune datasets for malformed rows, message role order, prompt/completion shape, token-like length, duplicates, and safety redaction.

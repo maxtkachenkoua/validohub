@@ -1,0 +1,43 @@
+schemaVersion: 1
+id: dockerfile-auditor
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Dockerfile Auditor
+summary:
+  en: Audit Dockerfiles for layer count, root user, pinned base images, secret leakage, cache behavior, package cleanup, and production hardening hints.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.dockerfile-auditor
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Dockerfile
+      - type: select
+        name: profile
+        label:
+          en: Runtime profile
+        options:
+          - node
+          - python
+          - java
+          - generic
+        default: "generic"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [kubernetes-yaml-inspector, github-actions-workflow-inspector, terraform-hcl-plan-inspector, nginx-apache-config-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Dockerfile Auditor
+  description:
+    en: Audit Dockerfiles for layer count, root user, pinned base images, secret leakage, cache behavior, package cleanup, and production hardening hints.
