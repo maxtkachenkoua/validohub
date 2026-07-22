@@ -865,6 +865,10 @@ Impact:
 - No backend, REST API, database, Java execution, or server-side runtime was added.
 # 2026-07-21
 
+- Added the Homepage Portal as a ValidoHub-owned command-center homepage rendered after publish, with working country/tool search, featured premium workbenches, country hub entry cards, platform metrics, and premium-contract messaging.
+- Added `npm run build:portal` for fast homepage + Countries Portal development rebuilds after a prior full build, including targeted localization only for `/` and `/countries/`.
+- Documented the homepage/countries portal ownership and rebuild workflow in `docs/product/HOMEPAGE_PORTAL_SPEC.md`, `docs/product/COUNTRIES_PORTAL_SPEC.md`, `docs/product/CURRENT_STATE.md`, and `docs/ai/START_HERE_AI.md` so future AI sessions do not reintroduce generic homepage shells or full-site rebuilds for portal-only iteration.
+
 - Hardened Country Suite Factory sample semantics: invalid/short/bad-country/review sample buttons now carry executable review intent, invalid fixture values remain self-marking for batch/debug flows, and IBAN generators no longer fresh-generate over an active invalid fixture.
 - Added shared country-suite copy feedback via a toast/status announcer for Copy result, Copy normalized, batch JSON copy, and repair-copy actions.
 - Fixed factory field/evidence breakdown readability by keeping segment/card/token values high-contrast and wrapped inside their containers.

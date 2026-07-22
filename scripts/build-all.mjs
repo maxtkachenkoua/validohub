@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { readFile, writeFile, readdir, rm, access, mkdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { buildRouteRegistry } from './route-registry.mjs';
-import { compileCountriesPortal } from './build-countries-portal.mjs';
+import { compileCountriesPortal, compileHomePortal } from './build-countries-portal.mjs';
 import { compileIdentifiers } from './build-identifiers.mjs';
 import { applyFinalLocalizationPass } from './localization-pass.mjs';
 
@@ -1712,6 +1712,9 @@ async function main() {
 
     // 5. Pass 2: Generators Materialization
     console.log('\n[Step 5/5] Re-compiling Template Archetypes...');
+    const homeRoute = routeRegistry.get('/en/');
+    if (homeRoute) homeRoute.sourceOwner = 'node';
+    await compileHomePortal(routeRegistry, assetsManifest);
     await compileCountriesPortal(routeRegistry, assetsManifest);
     await compileIdentifiers(routeRegistry, assetsManifest);
     await ensureLocalizedRouteFallbacks(routeRegistry, assetsManifest);

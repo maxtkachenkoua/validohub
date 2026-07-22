@@ -65,7 +65,9 @@ async function pathExists(path) {
   }
 }
 
-function renderHeader() {
+function renderHeader(active = 'countries') {
+  const homeCurrent = active === 'home' ? ' aria-current="page" class="is-active"' : '';
+  const countriesCurrent = active === 'countries' ? ' aria-current="page" class="is-active"' : '';
   return `
     <header class="site-header">
       <div class="vh-container header-inner">
@@ -74,8 +76,8 @@ function renderHeader() {
           <span class="brand-text">ValidoHub</span>
         </a>
         <nav class="primary-nav" aria-label="Main navigation">
-          <a href="/en/">Home</a>
-          <a href="/en/countries/" aria-current="page" class="is-active">Countries</a>
+          <a href="/en/"${homeCurrent}>Home</a>
+          <a href="/en/countries/"${countriesCurrent}>Countries</a>
           <a href="/en/categories/national-identifiers/">Identifiers</a>
         </nav>
       </div>
@@ -203,7 +205,233 @@ export async function renderCountryPage(route, routeRegistry, assetsManifest, op
   return outputFilePath;
 }
 
-export async function compileCountriesPortal(routeRegistry, assetsManifest) {
+function collectCountryPortalMetrics(countryRoutes) {
+  let totalWorkbenches = 0;
+  const uniqueIdentifiers = new Set();
+  const uniquePayments = new Set();
+  let totalAvailableGuides = 0;
+
+  for (const route of countryRoutes) {
+    const data = route.metadata;
+    totalWorkbenches += (data.catalog.availableWorkbenches || []).length + (data.catalog.plannedWorkbenches || []).length;
+    (data.catalog.identifiers || []).forEach(id => uniqueIdentifiers.add(id));
+    (data.catalog.payments || []).forEach(payment => uniquePayments.add(payment));
+    if (data.catalog.status === 'available') totalAvailableGuides += 1;
+  }
+
+  return {
+    totalCountries: countryRoutes.length,
+    totalWorkbenches,
+    totalIdentifiers: uniqueIdentifiers.size,
+    totalPayments: uniquePayments.size,
+    totalAvailableGuides
+  };
+}
+
+function findRouteByPath(routeRegistry, path) {
+  return routeRegistry.get(path) || null;
+}
+
+function renderFeaturedHomeTools(routeRegistry) {
+  const featuredPaths = [
+    '/en/poland/pesel-validator/',
+    '/en/brazil/brazil-pix-validator/',
+    '/en/france/france-siret-validator/',
+    '/en/germany/german-tax-id-validator/',
+    '/en/netherlands/netherlands-bsn-validator/',
+    '/en/czechia/czechia-rodne-cislo-validator/',
+    '/en/ukraine/ukraine-rnokpp-validator/',
+    '/en/tools/iban-validator/'
+  ];
+
+  const fallbackTitles = {
+    '/en/poland/pesel-validator/': 'Poland PESEL Validator',
+    '/en/brazil/brazil-pix-validator/': 'Brazil PIX Validator',
+    '/en/france/france-siret-validator/': 'France SIRET Validator',
+    '/en/germany/german-tax-id-validator/': 'German Tax ID Validator',
+    '/en/netherlands/netherlands-bsn-validator/': 'Dutch BSN Validator',
+    '/en/czechia/czechia-rodne-cislo-validator/': 'Czech Rodne Cislo Validator',
+    '/en/ukraine/ukraine-rnokpp-validator/': 'Ukraine RNOKPP Validator',
+    '/en/tools/iban-validator/': 'Global IBAN Validator'
+  };
+
+  const families = ['identity', 'payments', 'registry', 'tax', 'banking', 'debug', 'fixtures', 'global'];
+
+  return featuredPaths.map((path, index) => {
+    const route = findRouteByPath(routeRegistry, path);
+    const title = route?.title || fallbackTitles[path] || 'Developer Workbench';
+    const family = families[index] || 'tool';
+    return `
+      <a class="vh-home-tool-card vh-home-search-card" href="${path}" data-search="${escapeHtml(`${title} ${family}`.toLowerCase())}">
+        <span class="vh-home-tool-kicker">${escapeHtml(family)}</span>
+        <strong>${escapeHtml(title.replace(/\s*\|\s*ValidoHub\s*$/i, ''))}</strong>
+        <span>Open workbench</span>
+      </a>
+    `;
+  }).join('\n');
+}
+
+function renderHomeCountryCards(countryRoutes) {
+  const preferred = ['brazil', 'poland', 'france', 'netherlands', 'germany', 'italy', 'spain', 'switzerland'];
+  const byId = new Map(countryRoutes.map(route => [route.metadata.id, route]));
+  return preferred
+    .map(id => byId.get(id))
+    .filter(Boolean)
+    .map(route => {
+      const data = route.metadata;
+      const workbenchCount = (data.catalog.availableWorkbenches || []).length;
+      const search = [
+        data.catalog.name,
+        data.catalog.iso2,
+        data.catalog.iso3,
+        data.catalog.currency,
+        data.catalog.language,
+        ...(data.catalog.identifiers || []),
+        ...(data.catalog.payments || [])
+      ].join(' ').toLowerCase();
+      return `
+        <a class="vh-home-country-card vh-home-search-card" href="${route.path}" data-search="${escapeHtml(search)}">
+          <span class="vh-flag">${escapeHtml(data.catalog.flag)}</span>
+          <strong>${escapeHtml(data.catalog.name)}</strong>
+          <span>${workbenchCount} local workbenches</span>
+        </a>
+      `;
+    }).join('\n');
+}
+
+export async function compileHomePortal(routeRegistry, assetsManifest) {
+  console.log('--- Pass 2a: Rendering Home Portal ---');
+  const layoutTemplate = await readFile(resolve(projectRoot, 'templates', 'layout.html'), 'utf8');
+  const countryRoutes = routeRegistry.getAll().filter(route => route.type === 'country').sort((a, b) => a.metadata.catalog.name.localeCompare(b.metadata.catalog.name));
+  const metrics = collectCountryPortalMetrics(countryRoutes);
+  const featuredToolsHtml = renderFeaturedHomeTools(routeRegistry);
+  const featuredCountriesHtml = renderHomeCountryCards(countryRoutes);
+
+  const headHtml = `
+    <title>ValidoHub | Browser-only developer workbenches for global formats</title>
+    <meta name="description" content="Validate, inspect, generate, and debug country-aware identifiers, payments, banking formats, locale data, and developer fixtures in your browser.">
+    <link rel="canonical" href="https://validohub.com/en/">
+    <link rel="alternate" hreflang="en" href="https://validohub.com/en/">
+    <link rel="stylesheet" href="${assetsManifest.css}">
+  `;
+
+  const heroHtml = `
+    <section class="vh-home-hero" aria-labelledby="home-title">
+      <div class="vh-home-hero-copy">
+        <span class="vh-eyebrow">Developer Intelligence Platform</span>
+        <h1 id="home-title">Validate, generate, and debug local formats before they break production.</h1>
+        <p>Country-aware browser workbenches for identifiers, tax IDs, IBANs, payment payloads, invoices, locale formats, and test fixtures. Private by default, rich enough for real debugging.</p>
+        <div class="vh-home-search-panel" data-home-search>
+          <label class="vh-home-search-label" for="home-command-search">Find a country or workbench</label>
+          <div class="vh-home-search-row">
+            <input id="home-command-search" type="search" placeholder="Search PESEL, PIX, IBAN, SIRET, VAT, Brazil, Poland..." autocomplete="off" data-home-search-input>
+            <a class="vh-home-search-action" href="/en/countries/">Browse countries</a>
+          </div>
+          <div class="vh-home-search-chips" aria-label="Suggested searches">
+            <button type="button" data-home-query="iban">IBAN</button>
+            <button type="button" data-home-query="tax id">Tax ID</button>
+            <button type="button" data-home-query="payment">Payments</button>
+            <button type="button" data-home-query="invoice">Invoices</button>
+          </div>
+          <p class="vh-home-search-status" data-home-search-status>${metrics.totalWorkbenches} workbenches indexed.</p>
+        </div>
+      </div>
+      <aside class="vh-home-command-card" aria-label="Platform snapshot">
+        <div class="vh-home-command-top">
+          <span>Live coverage</span>
+          <strong>${metrics.totalCountries}</strong>
+        </div>
+        <div class="vh-home-command-grid">
+          <div><strong>${metrics.totalWorkbenches}</strong><span>Workbench routes</span></div>
+          <div><strong>${metrics.totalIdentifiers}</strong><span>Identifier families</span></div>
+          <div><strong>${metrics.totalPayments}</strong><span>Payment rails</span></div>
+          <div><strong>7</strong><span>Core locales</span></div>
+        </div>
+        <div class="vh-home-command-pipeline">
+          <span>Field breakdown</span>
+          <span>Validation replay</span>
+          <span>Generator fixtures</span>
+          <span>Official boundary</span>
+        </div>
+      </aside>
+    </section>
+  `;
+
+  const contentHtml = `
+    <div class="vh-home-portal-page">
+      <section class="vh-home-section vh-home-search-results" aria-labelledby="home-featured-tools">
+        <div class="vh-home-section-head">
+          <span class="vh-eyebrow">Featured Workbenches</span>
+          <h2 id="home-featured-tools">Start with the strongest local instruments.</h2>
+          <p>High-signal tools with examples, generators, local parsing, field breakdown, debug replay, and copy-ready outputs.</p>
+        </div>
+        <div class="vh-home-tool-grid">
+          ${featuredToolsHtml}
+        </div>
+      </section>
+
+      <section class="vh-home-section vh-home-map-band" aria-labelledby="home-countries">
+        <div class="vh-home-section-head">
+          <span class="vh-eyebrow">Country Intelligence</span>
+          <h2 id="home-countries">Browse premium country hubs.</h2>
+          <p>Each full-premium country is generated from the same strict contract: useful local tools, readable visual identity, field-level debugging, and no fake official lookup promises.</p>
+        </div>
+        <div class="vh-home-country-strip">
+          ${featuredCountriesHtml}
+        </div>
+        <a class="vh-home-wide-link" href="/en/countries/">Open all ${metrics.totalCountries} country hubs</a>
+      </section>
+
+      <section class="vh-home-section vh-home-contract" aria-labelledby="home-contract">
+        <div class="vh-home-section-head">
+          <span class="vh-eyebrow">Premium Contract</span>
+          <h2 id="home-contract">Every serious tool needs more than a green check.</h2>
+        </div>
+        <div class="vh-home-contract-grid">
+          <div><strong>Explain the fields</strong><span>Named slices, local meaning, checksums, masks, and copy-safe values.</span></div>
+          <div><strong>Show the pipeline</strong><span>Pass/review states must match the sample, with green success and clear invalid paths.</span></div>
+          <div><strong>Generate fixtures</strong><span>When the domain supports generation, give users fresh browser-only test data.</span></div>
+          <div><strong>Name the boundary</strong><span>Offline structure is not official registry status; the page says exactly where that line is.</span></div>
+        </div>
+      </section>
+    </div>
+  `;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'ValidoHub',
+    url: 'https://validohub.com/en/',
+    inLanguage: 'en',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://validohub.com/en/countries/?q={search_term_string}',
+      'query-input': 'required name=search_term_string'
+    }
+  };
+  const jsonLdScript = `<script type="application/ld+json">${escapeHtmlJson(JSON.stringify(jsonLd))}</script>`;
+
+  const assembledHtml = layoutTemplate
+    .replaceAll('{{ HEAD }}', () => headHtml)
+    .replaceAll('{{ HEADER }}', () => renderHeader('home'))
+    .replaceAll('{{ BREADCRUMBS }}', () => '')
+    .replaceAll('{{ HERO }}', () => heroHtml)
+    .replaceAll('{{ CONTENT }}', () => contentHtml)
+    .replaceAll('{{ FOOTER }}', () => renderFooter())
+    .replaceAll('{{ JSON_LD }}', () => jsonLdScript)
+    .replaceAll('{{ SCRIPTS }}', () => `<script src="/assets/js/portal-home.js"></script>\n<script src="${assetsManifest.js}" defer></script>`);
+
+  if (assembledHtml.includes('{{')) {
+    throw new Error('FATAL: Unresolved template slot marker found in generated home portal page');
+  }
+
+  const outputPath = resolve(siteRoot, locale, 'index.html');
+  await mkdir(dirname(outputPath), { recursive: true });
+  await writeFile(outputPath, assembledHtml, 'utf8');
+  console.log('✓ Generated: /en/');
+}
+
+export async function compileCountriesPortal(routeRegistry, assetsManifest, options = {}) {
   console.log('--- Pass 2: Rendering Country Pages & Portal ---');
 
   const layoutTemplate = await readFile(resolve(projectRoot, 'templates', 'layout.html'), 'utf8');
@@ -212,27 +440,21 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest) {
   countryRoutes.sort((a, b) => a.path.localeCompare(b.path));
   const discoveryData = JSON.parse(await readFile(resolve(projectRoot, 'knowledge', 'compiled-discovery.json'), 'utf8'));
 
-  for (const route of countryRoutes) {
-    await renderCountryPage(route, routeRegistry, assetsManifest, { layoutTemplate, countryTemplate, discoveryData });
-    console.log(`✓ Generated: /en/${route.metadata.id}/`);
+  if (options.renderCountryPages !== false) {
+    for (const route of countryRoutes) {
+      await renderCountryPage(route, routeRegistry, assetsManifest, { layoutTemplate, countryTemplate, discoveryData });
+      console.log(`✓ Generated: /en/${route.metadata.id}/`);
+    }
   }
 
   // 2. Compile Countries Portal Page
-  const totalCountries = countryRoutes.length;
-  let totalWorkbenches = 0;
-  const uniqueIdentifiers = new Set();
-  const uniquePayments = new Set();
-  let totalAvailableGuides = 0;
-
-  for (const r of countryRoutes) {
-    const d = r.metadata;
-    totalWorkbenches += (d.catalog.availableWorkbenches || []).length + (d.catalog.plannedWorkbenches || []).length;
-    (d.catalog.identifiers || []).forEach(id => uniqueIdentifiers.add(id));
-    (d.catalog.payments || []).forEach(p => uniquePayments.add(p));
-    if (d.catalog.status === 'available') {
-      totalAvailableGuides++;
-    }
-  }
+  const {
+    totalCountries,
+    totalWorkbenches,
+    totalIdentifiers,
+    totalPayments,
+    totalAvailableGuides
+  } = collectCountryPortalMetrics(countryRoutes);
 
   const markersHtml = countryRoutes.map(r => {
     const d = r.metadata;
@@ -435,11 +657,11 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest) {
           <span>Workbenches</span>
         </div>
         <div class="vh-countries-hero-stat-item">
-          <strong>${uniqueIdentifiers.size}</strong>
+          <strong>${totalIdentifiers}</strong>
           <span>Identifiers</span>
         </div>
         <div class="vh-countries-hero-stat-item">
-          <strong>${uniquePayments.size}</strong>
+          <strong>${totalPayments}</strong>
           <span>Payments</span>
         </div>
         <div class="vh-countries-hero-stat-item">
@@ -475,7 +697,7 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest) {
 
   let assembledPortalHtml = layoutTemplate
     .replaceAll('{{ HEAD }}', () => portalHeadHtml)
-    .replaceAll('{{ HEADER }}', () => renderHeader())
+    .replaceAll('{{ HEADER }}', () => renderHeader('countries'))
     .replaceAll('{{ BREADCRUMBS }}', () => portalBreadcrumbsHtml)
     .replaceAll('{{ HERO }}', () => portalHeroHtml)
     .replaceAll('{{ CONTENT }}', () => portalContentHtml)

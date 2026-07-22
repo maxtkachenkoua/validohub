@@ -4,6 +4,7 @@
     "audit:country-suite": "node scripts/audit-country-suite-factory.mjs && node scripts/audit-country-tool-shell.mjs && node scripts/audit-country-field-breakdown.mjs",
     "test": "node scripts/test-pages.mjs",
     "build:country": "node scripts/build-country-dev.mjs",
+    "build:portal": "node scripts/build-portal-dev.mjs",
     "audit:country-premium": "node scripts/audit-country-premium.mjs"
   },
   "dependencies": {

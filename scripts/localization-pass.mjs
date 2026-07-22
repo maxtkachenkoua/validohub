@@ -4233,9 +4233,19 @@ function translateVisibleHtml(content, locale) {
   return applyCountryProtectedValueTranslations(restored, normalized);
 }
 
-export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locales) {
+export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locales, options = {}) {
   const configuredLocales = locales && locales.length ? locales : ['en'];
-  const englishRoutes = routeRegistry.getAll().filter(route => route.path.startsWith('/en/'));
+  const includeSuffixes = new Set((options.includeSuffixes || []).map(suffix => {
+    const normalized = String(suffix || '/').trim();
+    if (!normalized || normalized === '/') return '/';
+    const withLead = normalized.startsWith('/') ? normalized : `/${normalized}`;
+    return withLead.endsWith('/') ? withLead : `${withLead}/`;
+  }));
+  const shouldProcessRoute = (route) => {
+    if (!includeSuffixes.size) return true;
+    return includeSuffixes.has(splitRouteLocale(route.path).suffix);
+  };
+  const englishRoutes = routeRegistry.getAll().filter(route => route.path.startsWith('/en/') && shouldProcessRoute(route));
 
   for (const locale of configuredLocales) {
     if (locale === 'en') continue;
@@ -4254,7 +4264,7 @@ export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locale
     }
   }
 
-  for (const route of routeRegistry.getAll()) {
+  for (const route of routeRegistry.getAll().filter(shouldProcessRoute)) {
     const { locale, suffix } = splitRouteLocale(route.path);
     if (locale === 'en') continue;
 
@@ -4274,7 +4284,7 @@ export async function applyFinalLocalizationPass(routeRegistry, siteRoot, locale
     console.log(`✓ Generated localized route: ${route.path}`);
   }
 
-  for (const route of routeRegistry.getAll()) {
+  for (const route of routeRegistry.getAll().filter(shouldProcessRoute)) {
     if (!(await pathExists(route.outputPath))) continue;
     const { locale } = splitRouteLocale(route.path);
     let content = await readFile(route.outputPath, 'utf8');

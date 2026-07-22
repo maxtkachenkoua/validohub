@@ -37,6 +37,8 @@ Full-premium country work is now gated by `docs/product/PREMIUM_COUNTRY_CONTRACT
 
 Countries are now treated as a first-class ValidoHub product section.
 
+The homepage is now a ValidoHub-owned Homepage Portal command center rendered by `compileHomePortal` in `scripts/build-countries-portal.mjs`. It replaces the generic generated home shell after publish with a premium search-first entry surface for country hubs, featured workbenches, platform metrics, and the premium debug contract. Runtime search lives in `assets/js/portal-home.js`; styling lives in `assets/css/validohub.css`; the product spec is `docs/product/HOMEPAGE_PORTAL_SPEC.md`. Valido Engine remains generic and untouched.
+
 Current country hubs:
 
 - Brazil: `/en/brazil/`
@@ -263,6 +265,15 @@ npm run build:country -- --country italy
 ```
 
 This syncs the country runtime assets, materializes only `/{locale}/{country}/` for the configured core locales, and runs targeted country HTML guards. Run `npm run build` before release.
+
+Fast homepage/countries-only development refresh after a prior full build/publish:
+
+```bash
+cd /Users/maxtkachenko/work/validohub
+npm run build:portal
+```
+
+This recompiles shared assets, renders `/en/` and `/en/countries/`, refreshes localized `/` and `/countries/` pages for the configured core locales, and does not regenerate every country hub or country tool page. Run `npm run build` before release.
 
 Local preview:
 

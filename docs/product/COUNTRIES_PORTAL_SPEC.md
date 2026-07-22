@@ -21,7 +21,8 @@ Source files:
 - `assets/js/countries.js`: shared country platform metadata, country hub renderer, and Countries navigation.
 - `assets/js/portal-countries.js`: Countries Portal renderer and interactions.
 - `assets/css/validohub.css`: portal visual system.
-- `scripts/build-countries-portal.mjs`: ValidoHub-owned post-publish route builder for `/en/countries/`.
+- `scripts/build-countries-portal.mjs`: ValidoHub-owned post-publish route builder for `/en/countries/` and shared portal-shell helpers.
+- `scripts/build-portal-dev.mjs`: fast development rebuild for `/` and `/countries/` only.
 
 Valido Engine must not contain Countries Portal product logic, country-specific browser behavior, or product styling.
 
@@ -51,6 +52,15 @@ generated/validohub/en/spain/index.html
 The browser-side shared `assets/js/countries.js` renderer then renders the full country hub from `COUNTRY_HUBS` metadata. The script must stay generic and must not duplicate the country renderer.
 
 Generated output remains ignored and must not be committed.
+
+For homepage/countries design iteration after a prior full build, use:
+
+```bash
+cd /Users/maxtkachenko/work/validohub
+npm run build:portal
+```
+
+This recompiles shared assets, renders `/en/` and `/en/countries/`, and applies localization only to `/` and `/countries/` for the configured production locales. It must not regenerate every country hub or every local country tool page. A full `npm run build` remains the release gate.
 
 ## Data Model
 
@@ -165,7 +175,9 @@ Validate with:
 ```bash
 node --check assets/js/countries.js
 node --check assets/js/portal-countries.js
+node --check assets/js/portal-home.js
 node --check scripts/build-countries-portal.mjs
+node --check scripts/build-portal-dev.mjs
 ```
 
 Then from Valido Engine:

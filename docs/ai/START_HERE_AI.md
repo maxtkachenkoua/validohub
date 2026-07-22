@@ -26,6 +26,7 @@ For visual identity, logo, icon, or brand work, also read:
 
 For Country Hub work, also read:
 
+- `docs/product/HOMEPAGE_PORTAL_SPEC.md` when changing `/` or `/countries/`
 - `docs/ai/COUNTRY_HUB_AI_GUIDE.md`
 - `docs/ai/PREMIUM_COUNTRY_PLAYBOOK.md`
 - `docs/ai/COUNTRY_PREMIUM_READINESS_REPORT.md`
