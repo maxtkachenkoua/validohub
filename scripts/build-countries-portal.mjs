@@ -346,24 +346,41 @@ export async function compileHomePortal(routeRegistry, assetsManifest) {
           </div>
           <p class="vh-home-search-status" data-home-search-status>${metrics.totalWorkbenches} workbenches indexed.</p>
         </div>
+        <div class="vh-home-metric-strip" aria-label="ValidoHub coverage snapshot">
+          <div><strong>${metrics.totalCountries}</strong><span>premium hubs</span></div>
+          <div><strong>${metrics.totalWorkbenches}</strong><span>workbenches</span></div>
+          <div><strong>${metrics.totalIdentifiers}</strong><span>identifier families</span></div>
+          <div><strong>7</strong><span>core locales</span></div>
+        </div>
       </div>
       <aside class="vh-home-command-card" aria-label="Launch lanes">
         <a href="#home-global-tools" class="vh-home-lane vh-home-search-card" data-search="global tools json jwt base64 url regex uuid iban developer">
           <span>Global Tools</span>
           <strong>JSON, JWT, Base64, URL, Regex</strong>
+          <em>Universal browser utilities</em>
         </a>
-        <a href="/en/countries/" class="vh-home-lane vh-home-search-card" data-search="country tools countries local identifiers payments banking tax">
+        <a href="/en/countries/" class="vh-home-lane vh-home-search-card" data-search="country tools countries local identifiers payments banking tax local formats local rules">
           <span>Country Tools</span>
           <strong>${metrics.totalCountries} hubs, ${metrics.totalWorkbenches} workbenches</strong>
+          <em>Local formats and rules</em>
         </a>
-        <a href="#home-generators" class="vh-home-lane vh-home-search-card" data-search="generators iban uuid fixtures test data payment qr">
+        <a href="#home-generators" class="vh-home-lane vh-home-search-card" data-search="generators iban generator iban uuid fixtures test data payment qr">
           <span>Generators</span>
           <strong>IBAN, UUID, test fixtures, payments</strong>
+          <em>Fresh values for QA</em>
         </a>
         <a href="#home-contract" class="vh-home-lane vh-home-search-card" data-search="debug field breakdown validation replay quality official boundary">
           <span>Debug Contract</span>
           <strong>Field breakdown, replay, raw output</strong>
+          <em>Evidence before trust</em>
         </a>
+        <div class="vh-home-signal-board" aria-label="Example signals">
+          <span>Try signals</span>
+          <button type="button" data-home-query="json">{ JSON }</button>
+          <button type="button" data-home-query="iban generator">IBAN generator</button>
+          <button type="button" data-home-query="pesel">PESEL</button>
+          <button type="button" data-home-query="pix">PIX</button>
+        </div>
       </aside>
     </section>
   `;

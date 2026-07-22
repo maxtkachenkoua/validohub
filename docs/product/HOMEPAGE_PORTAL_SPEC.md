@@ -66,6 +66,8 @@ It is a development accelerator. `npm run build` remains the release gate.
 
 - The homepage is a command center, not a decorative hero-only page.
 - Use premium ValidoHub card density, strong typography, and calm operational layout.
+- Hero typography must stay useful and scannable; do not regress to oversized marketing type that pushes search and launcher actions out of the first viewport.
+- Coverage metrics and example signal buttons are allowed only when they are compact and tied to real homepage behavior.
 - Avoid huge marketing-only sections, empty stat cards, generic SaaS filler, gradient-only decoration, and one-note palettes.
 - Keep the first viewport useful on desktop and mobile.
 - Search, cards, metrics, and calls to action must not overflow horizontally.

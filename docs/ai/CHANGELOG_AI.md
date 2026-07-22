@@ -1,3 +1,10 @@
+## 2026-07-22 - Homepage command center visual polish
+
+- Tightened homepage hero typography and spacing so the first viewport reads like a premium launcher instead of an oversized marketing panel.
+- Added a compact coverage metric strip and actionable signal buttons that reuse the real homepage search behavior.
+- Strengthened the homepage visual layer with denser command lanes, richer but restrained gradients, and mobile-safe responsive rules.
+- Kept Valido Engine untouched and used the fast `npm run build:portal` path for homepage/countries-only regeneration.
+
 ## 2026-07-22 - Homepage command center refinement
 
 - Reworked the Homepage Portal away from a large marketing/stat hero into a denser command-center launcher.
