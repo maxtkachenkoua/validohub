@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: sri-hash-integrity-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: SRI Hash Generator & Asset Integrity Inspector
+summary:
+  en: Generate SHA-256/384/512 SRI hashes, inspect integrity attributes, crossorigin requirements, and asset pinning risks.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.sri-hash
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Asset content or integrity attribute
+      - type: select
+        name: algorithm
+        label:
+          en: Hash algorithm
+        options:
+          - sha384
+          - sha256
+          - sha512
+        default: "sha384"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, csp-builder-auditor, cookie-security-inspector, url-redirect-utm-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: SRI Hash Generator & Asset Integrity Inspector
+  description:
+    en: Generate SHA-256/384/512 SRI hashes, inspect integrity attributes, crossorigin requirements, and asset pinning risks.

@@ -1695,3 +1695,78 @@ select:focus {
     width: fit-content;
   }
 }
+
+
+/* Generic global tools advanced-analysis containment pass. */
+.generic-suite-workbench .advanced-panel {
+  max-width: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.generic-suite-workbench .advanced-panel > div,
+.generic-suite-workbench .advanced-panel .rich-text,
+.generic-suite-workbench .generic-analysis-section,
+.generic-suite-workbench .generic-api-preview {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.generic-suite-workbench .generic-kv-grid,
+.generic-suite-workbench .generic-pipeline,
+.generic-suite-workbench .generic-quality-grid,
+.generic-suite-workbench .generic-result-card-grid,
+.generic-suite-workbench .generic-result-preview__grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  align-items: stretch;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.generic-suite-workbench .generic-kv-card,
+.generic-suite-workbench .generic-pipeline-step,
+.generic-suite-workbench .generic-quality-card,
+.generic-suite-workbench .generic-result-card,
+.generic-suite-workbench .generic-result-preview__grid div {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.generic-suite-workbench .generic-kv-card *,
+.generic-suite-workbench .generic-pipeline-step *,
+.generic-suite-workbench .generic-quality-card *,
+.generic-suite-workbench .generic-result-card *,
+.generic-suite-workbench .generic-result-preview__grid *,
+.generic-suite-workbench .generic-premium-hero *,
+.generic-suite-workbench .generic-code,
+.generic-suite-workbench .generic-code code,
+.generic-suite-workbench .generic-result-preview__code {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.generic-suite-workbench .generic-pipeline-step b,
+.generic-suite-workbench .generic-kv-card strong,
+.generic-suite-workbench .generic-quality-card p,
+.generic-suite-workbench .generic-result-card strong {
+  display: block;
+}
+
+.generic-suite-workbench .generic-code,
+.generic-suite-workbench .generic-result-preview__code {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+@container (max-width: 760px) {
+  .generic-suite-workbench .generic-kv-grid,
+  .generic-suite-workbench .generic-pipeline,
+  .generic-suite-workbench .generic-quality-grid,
+  .generic-suite-workbench .generic-result-card-grid,
+  .generic-suite-workbench .generic-result-preview__grid {
+    grid-template-columns: 1fr;
+  }
+}

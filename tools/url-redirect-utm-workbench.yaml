@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: url-redirect-utm-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: URL Redirect & UTM Workbench
+summary:
+  en: Parse URLs, normalize query strings, detect redirect and credential risks, clean tracking parameters, and build canonical campaign links.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.url-redirect-utm
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: URL or URL list
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - privacy-cleanup
+          - campaign
+          - redirect-review
+        default: "privacy-cleanup"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, csp-builder-auditor, cookie-security-inspector, http-message-diff-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: URL Redirect & UTM Workbench
+  description:
+    en: Parse URLs, normalize query strings, detect redirect and credential risks, clean tracking parameters, and build canonical campaign links.

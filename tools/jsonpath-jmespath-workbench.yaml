@@ -1,0 +1,46 @@
+schemaVersion: 1
+id: jsonpath-jmespath-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: JSONPath / JMESPath Workbench
+summary:
+  en: Query JSON locally, preview matches, explain selector shape, generate pointer evidence, and compare path-style extraction behavior.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.jsonpath-jmespath
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: JSON payload
+      - type: text
+        name: selector
+        label:
+          en: Selector
+        default: "$.orders[*].total"
+      - type: select
+        name: selectorMode
+        label:
+          en: Selector mode
+        options:
+          - jsonpath
+          - jmespath
+        default: "jsonpath"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, csp-builder-auditor, cookie-security-inspector, url-redirect-utm-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: JSONPath / JMESPath Workbench
+  description:
+    en: Query JSON locally, preview matches, explain selector shape, generate pointer evidence, and compare path-style extraction behavior.

@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: avro-protobuf-schema-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Avro / Protobuf Schema Inspector
+summary:
+  en: Inspect Avro and Protobuf schemas for required/default fields, enum drift, compatibility risk, and fixture-ready field maps.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.avro-protobuf
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Avro JSON schema or .proto SDL
+      - type: select
+        name: format
+        label:
+          en: Format
+        options:
+          - auto
+          - avro
+          - protobuf
+        default: "auto"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, csp-builder-auditor, cookie-security-inspector, url-redirect-utm-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Avro / Protobuf Schema Inspector
+  description:
+    en: Inspect Avro and Protobuf schemas for required/default fields, enum drift, compatibility risk, and fixture-ready field maps.

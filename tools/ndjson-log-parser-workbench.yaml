@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: ndjson-log-parser-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: NDJSON / Log Parser Workbench
+summary:
+  en: Parse line-delimited JSON and logs, identify malformed rows, timestamps, severity distribution, fields, and redaction hints.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.ndjson-log-parser
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: NDJSON or log lines
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - ndjson
+          - application-log
+          - security-log
+        default: "ndjson"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, csp-builder-auditor, cookie-security-inspector, url-redirect-utm-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: NDJSON / Log Parser Workbench
+  description:
+    en: Parse line-delimited JSON and logs, identify malformed rows, timestamps, severity distribution, fields, and redaction hints.

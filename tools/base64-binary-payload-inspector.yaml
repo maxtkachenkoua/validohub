@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: base64-binary-payload-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Base64 / Binary Payload Inspector
+summary:
+  en: Decode Base64 and data URIs, sniff MIME signatures, inspect entropy, payload size, preview safety, and copy-safe metadata.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.base64-binary
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Base64, data URI, or text payload
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - auto
+          - data-uri
+          - jwt-part
+        default: "auto"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, csp-builder-auditor, cookie-security-inspector, url-redirect-utm-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Base64 / Binary Payload Inspector
+  description:
+    en: Decode Base64 and data URIs, sniff MIME signatures, inspect entropy, payload size, preview safety, and copy-safe metadata.

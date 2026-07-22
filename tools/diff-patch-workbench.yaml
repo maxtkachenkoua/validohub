@@ -1,0 +1,46 @@
+schemaVersion: 1
+id: diff-patch-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Diff / Patch Workbench
+summary:
+  en: Compare text, JSON, and YAML payloads, produce semantic change summaries, unified patch previews, and whitespace/order diagnostics.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.diff-patch
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Original text
+      - type: textarea
+        name: changed
+        label:
+          en: Changed text
+      - type: select
+        name: mode
+        label:
+          en: Diff mode
+        options:
+          - text
+          - json
+          - yaml
+        default: "text"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, csp-builder-auditor, cookie-security-inspector, url-redirect-utm-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Diff / Patch Workbench
+  description:
+    en: Compare text, JSON, and YAML payloads, produce semantic change summaries, unified patch previews, and whitespace/order diagnostics.

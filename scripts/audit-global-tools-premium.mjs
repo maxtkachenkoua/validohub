@@ -209,6 +209,96 @@ const routes = [
     sampleText: "Weak CORS",
     mustContain: ["HTTP","Field breakdown","Developer API preview"],
   },
+  {
+    path: "/en/tools/jwt-jwk-oauth-inspector/",
+    input: "textarea, input",
+    sampleText: "JWKS keys",
+    mustContain: ["JWT","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/csp-builder-auditor/",
+    input: "textarea, input",
+    sampleText: "Unsafe CSP",
+    mustContain: ["CSP","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/cookie-security-inspector/",
+    input: "textarea, input",
+    sampleText: "Weak cookie",
+    mustContain: ["Cookie","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/url-redirect-utm-workbench/",
+    input: "textarea, input",
+    sampleText: "Campaign URL",
+    mustContain: ["URL","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/http-message-diff-inspector/",
+    input: "textarea, input",
+    sampleText: "Status change",
+    mustContain: ["HTTP","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/jsonpath-jmespath-workbench/",
+    input: "textarea, input",
+    sampleText: "Missing path",
+    mustContain: ["JSONPath","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/avro-protobuf-schema-inspector/",
+    input: "textarea, input",
+    sampleText: "Protobuf schema",
+    mustContain: ["Avro","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/ndjson-log-parser-workbench/",
+    input: "textarea, input",
+    sampleText: "Malformed line",
+    mustContain: ["NDJSON","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/diff-patch-workbench/",
+    input: "textarea, input",
+    sampleText: "Text diff",
+    mustContain: ["Diff","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/base64-binary-payload-inspector/",
+    input: "textarea, input",
+    sampleText: "JWT part",
+    mustContain: ["Base64","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/secret-scanner-workbench/",
+    input: "textarea, input",
+    sampleText: "Clean config",
+    mustContain: ["Secret","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/tls-certificate-inspector/",
+    input: "textarea, input",
+    sampleText: "Expired dates",
+    mustContain: ["TLS","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/dns-record-workbench/",
+    input: "textarea, input",
+    sampleText: "Weak SPF",
+    mustContain: ["DNS","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/spf-dmarc-builder/",
+    input: "textarea, input",
+    sampleText: "Reject policy",
+    mustContain: ["SPF","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/sri-hash-integrity-inspector/",
+    input: "textarea, input",
+    sampleText: "Integrity attr",
+    mustContain: ["SRI","Field breakdown","Developer API preview"],
+  },
 ];
 
 function selectedSlugs() {

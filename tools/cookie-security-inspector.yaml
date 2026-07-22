@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: cookie-security-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Cookie Security Inspector
+summary:
+  en: Inspect Set-Cookie headers for SameSite, Secure, HttpOnly, domain/path scope, expiry, prefixes, and hardened rewrites.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.cookie-security
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Set-Cookie headers
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - session
+          - third-party
+          - api
+        default: "session"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, csp-builder-auditor, url-redirect-utm-workbench, http-message-diff-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Cookie Security Inspector
+  description:
+    en: Inspect Set-Cookie headers for SameSite, Secure, HttpOnly, domain/path scope, expiry, prefixes, and hardened rewrites.

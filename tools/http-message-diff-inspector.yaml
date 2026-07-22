@@ -1,0 +1,46 @@
+schemaVersion: 1
+id: http-message-diff-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: HTTP Request / Response Diff Inspector
+summary:
+  en: Compare raw HTTP messages for status, header, cache, security, CORS, cookie, and body changes without network calls.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.http-message-diff
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Before HTTP message
+      - type: textarea
+        name: changed
+        label:
+          en: Changed / after payload
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - response
+          - request
+          - api-regression
+        default: "response"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, csp-builder-auditor, cookie-security-inspector, url-redirect-utm-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: HTTP Request / Response Diff Inspector
+  description:
+    en: Compare raw HTTP messages for status, header, cache, security, CORS, cookie, and body changes without network calls.

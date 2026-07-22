@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: spf-dmarc-builder
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: SPF / DMARC Builder
+summary:
+  en: Validate and build SPF and DMARC policies, explain mechanisms, alignment, flattening risk, and rollout from none to quarantine/reject.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.spf-dmarc
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: SPF and DMARC records
+      - type: text
+        name: domain
+        label:
+          en: Domain
+        default: "example.com"
+      - type: select
+        name: policy
+        label:
+          en: Policy
+        options:
+          - monitor
+          - quarantine
+          - reject
+        default: "monitor"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, csp-builder-auditor, cookie-security-inspector, url-redirect-utm-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: SPF / DMARC Builder
+  description:
+    en: Validate and build SPF and DMARC policies, explain mechanisms, alignment, flattening risk, and rollout from none to quarantine/reject.

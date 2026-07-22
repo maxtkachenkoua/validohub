@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: dns-record-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: DNS Record Workbench
+summary:
+  en: Inspect DNS zone snippets, SPF, DMARC, DKIM, MX, TXT, CAA, TTLs, and email/security posture without live DNS lookup.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.dns-records
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: DNS zone records
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - email-security
+          - zone-audit
+          - migration
+        default: "email-security"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, csp-builder-auditor, cookie-security-inspector, url-redirect-utm-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: DNS Record Workbench
+  description:
+    en: Inspect DNS zone snippets, SPF, DMARC, DKIM, MX, TXT, CAA, TTLs, and email/security posture without live DNS lookup.

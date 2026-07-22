@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: tls-certificate-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: TLS Certificate Inspector
+summary:
+  en: Parse pasted PEM certificate material for subject, issuer, SAN hints, validity dates, key-usage markers, and chain handoff notes.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.tls-certificate
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: PEM certificate or chain
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - leaf
+          - chain
+          - csr
+        default: "leaf"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, csp-builder-auditor, cookie-security-inspector, url-redirect-utm-workbench]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: TLS Certificate Inspector
+  description:
+    en: Parse pasted PEM certificate material for subject, issuer, SAN hints, validity dates, key-usage markers, and chain handoff notes.

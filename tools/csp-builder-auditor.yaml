@@ -1,0 +1,42 @@
+schemaVersion: 1
+id: csp-builder-auditor
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: CSP Builder & Auditor
+summary:
+  en: Parse Content-Security-Policy headers, explain directives, flag unsafe sources, and generate hardened baseline policies.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.csp-auditor
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Content-Security-Policy
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options:
+          - web-app
+          - api
+          - static-site
+        default: "web-app"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [jwt-jwk-oauth-inspector, cookie-security-inspector, url-redirect-utm-workbench, http-message-diff-inspector]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: CSP Builder & Auditor
+  description:
+    en: Parse Content-Security-Policy headers, explain directives, flag unsafe sources, and generate hardened baseline policies.

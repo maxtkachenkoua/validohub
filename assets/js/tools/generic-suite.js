@@ -1708,6 +1708,292 @@
     ]
   };
 
+
+
+  function linesOf(value) {
+    return String(value || '').split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+  }
+
+  function unique(items) {
+    return Array.from(new Set((items || []).filter(Boolean)));
+  }
+
+  function detectSecrets(text) {
+    const value = String(text || '');
+    const patterns = [
+      ['Stripe secret', /sk_(?:live|test)_[A-Za-z0-9]{10,}/g],
+      ['AWS access key', /AKIA[0-9A-Z]{16}/g],
+      ['Private key', /-----BEGIN [A-Z ]*PRIVATE KEY-----/g],
+      ['JWT', /eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]*/g],
+      ['Bearer token', /Bearer\s+[A-Za-z0-9._-]{12,}/gi],
+      ['Password assignment', /(?:password|passwd|pwd)\s*[:=]\s*[^\s]+/gi],
+      ['Email', /[\w.%+-]+@[\w.-]+\.[A-Za-z]{2,}/g]
+    ];
+    return patterns.map(([label, pattern]) => {
+      const matches = value.match(pattern) || [];
+      return { label, count: matches.length };
+    }).filter((item) => item.count);
+  }
+
+  function maskSensitive(text) {
+    return String(text || '')
+      .replace(/sk_(live|test)_[A-Za-z0-9]{10,}/g, 'sk_$1_[masked]')
+      .replace(/AKIA[0-9A-Z]{16}/g, 'AKIA[masked]')
+      .replace(/eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]*/g, '[jwt-masked]')
+      .replace(/Bearer\s+[A-Za-z0-9._-]{12,}/gi, 'Bearer [masked]')
+      .replace(/([\w.%+-]{2})[\w.%+-]*@([\w.-]+\.[A-Za-z]{2,})/g, '$1***@$2');
+  }
+
+  function base64UrlDecode(value) {
+    const text = String(value || '').replace(/-/g, '+').replace(/_/g, '/');
+    const padded = text + '='.repeat((4 - text.length % 4) % 4);
+    try { return decodeURIComponent(escape(atob(padded))); } catch {
+      try { return atob(padded); } catch { return ''; }
+    }
+  }
+
+  function parseJwtLite(token) {
+    const parts = String(token || '').trim().split('.');
+    const header = parts[0] ? parseJsonSafe(base64UrlDecode(parts[0])) : { ok: false };
+    const payload = parts[1] ? parseJsonSafe(base64UrlDecode(parts[1])) : { ok: false };
+    return { parts, header, payload };
+  }
+
+  function headerMap(text) {
+    const map = {};
+    linesOf(text).forEach((line) => {
+      const clean = line.replace(/^Set-Cookie:\s*/i, 'Set-Cookie: ');
+      const index = clean.indexOf(':');
+      if (index > 0) {
+        const key = clean.slice(0, index).trim().toLowerCase();
+        const val = clean.slice(index + 1).trim();
+        map[key] = map[key] ? map[key] + '\n' + val : val;
+      }
+    });
+    return map;
+  }
+
+  function parseUrlSafe(value) {
+    try { return new URL(String(value || '').trim()); } catch { return null; }
+  }
+
+  function pathLookup(object, selector) {
+    const clean = String(selector || '$').replace(/^\$\.?/, '');
+    if (!clean) return [object];
+    const parts = clean.replace(/\[(\d+)\]/g, '.$1').replace(/\[\*\]/g, '.*').split('.').filter(Boolean);
+    let nodes = [object];
+    parts.forEach((part) => {
+      const next = [];
+      nodes.forEach((node) => {
+        if (part === '*' && Array.isArray(node)) next.push(...node);
+        else if (node && Object.prototype.hasOwnProperty.call(node, part)) next.push(node[part]);
+      });
+      nodes = next;
+    });
+    return nodes;
+  }
+
+  async function sriHash(text, algorithm) {
+    const alg = algorithm === 'sha256' ? 'SHA-256' : algorithm === 'sha512' ? 'SHA-512' : 'SHA-384';
+    const data = new TextEncoder().encode(String(text || ''));
+    const digest = await crypto.subtle.digest(alg, data);
+    const bytes = Array.from(new Uint8Array(digest));
+    const b64 = btoa(String.fromCharCode.apply(null, bytes));
+    return algorithm + '-' + b64;
+  }
+
+  async function globalPremiumBatchHandler(workbench, action, config) {
+    const values = formValues(workbench);
+    const input = String(values.input || '').trim();
+    const changed = String(values.changed || '').trim();
+    const kind = config.kind;
+    const group = config.group || 'Global Premium';
+    let ok = Boolean(input) || action === 'generate';
+    let output = input;
+    let cards = [];
+    let breakdown = [];
+    let pipeline = [];
+    let notes = [
+      group + ' analysis runs fully in this browser.',
+      'No live lookup, network request, endpoint execution, DNS query, certificate-chain validation, or token verification is performed.',
+      'Use this output for debugging, review, fixtures, and handoff before production verification.',
+      'Sensitive examples should be masked before sharing outside your team.'
+    ];
+    let json = { tool: config.slug, category: group, mode: action, localOnly: true };
+
+    if (kind === 'jwt-oauth') {
+      const parsed = parseJwtLite(input);
+      const payload = parsed.payload.ok ? parsed.payload.value : {};
+      const header = parsed.header.ok ? parsed.header.value : {};
+      const jwks = parseJsonSafe(input);
+      const scopes = String(payload.scope || payload.scp || '').split(/[\s,]+/).filter(Boolean);
+      const expired = payload.exp ? Date.now() / 1000 > Number(payload.exp) : false;
+      const weakAlg = !header.alg || /^none$/i.test(header.alg) || /^HS/i.test(header.alg);
+      const keyCount = jwks.ok && Array.isArray(jwks.value.keys) ? jwks.value.keys.length : 0;
+      ok = (parsed.parts.length >= 2 && parsed.payload.ok && !expired && !weakAlg) || keyCount > 0;
+      output = JSON.stringify({ header, claims: payload, scopes, jwksKeys: keyCount, expired, weakAlg }, null, 2);
+      cards = [{ label: 'Token shape', value: parsed.parts.length >= 2 ? 'JWT' : keyCount ? 'JWKS' : 'review' }, { label: 'Algorithm', value: header.alg || 'n/a' }, { label: 'Scopes', value: String(scopes.length) }, { label: 'Expiry', value: payload.exp ? (expired ? 'expired' : 'future') : 'missing' }];
+      breakdown = [['Issuer', payload.iss || 'missing'], ['Audience', payload.aud || 'missing'], ['Subject', payload.sub || 'missing'], ['Key count', String(keyCount)], ['Risk', weakAlg ? 'weak/missing alg' : 'algorithm declared']];
+      pipeline = [{ name: 'Decode', ok: parsed.payload.ok || keyCount > 0, detail: parsed.payload.ok ? 'claims parsed' : keyCount + ' JWK keys' }, { name: 'Algorithm', ok: !weakAlg, detail: header.alg || 'missing' }, { name: 'Expiry', ok: !expired, detail: payload.exp ? new Date(Number(payload.exp) * 1000).toISOString() : 'missing' }, { name: 'Verification boundary', detail: 'signature not verified locally without trusted key binding' }];
+      json = { ...json, header, claims: payload, scopes, keyCount, expired, weakAlg };
+    } else if (kind === 'csp') {
+      const directives = input.split(';').map(s => s.trim()).filter(Boolean).map(d => [d.split(/\s+/)[0], d.split(/\s+/).slice(1)]);
+      const names = directives.map(d => d[0]);
+      const unsafe = /unsafe-inline|unsafe-eval|\*/i.test(input);
+      ok = directives.length > 0 && names.includes('default-src') && names.includes('object-src') && names.includes('frame-ancestors') && !unsafe;
+      output = ok ? input : "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests";
+      cards = [{ label: 'Directives', value: String(directives.length) }, { label: 'Unsafe sources', value: unsafe ? 'present' : 'none' }, { label: 'Framing', value: names.includes('frame-ancestors') ? 'controlled' : 'missing' }, { label: 'Baseline', value: ok ? 'hardened' : 'generated' }];
+      breakdown = directives.map(([name, values]) => [name, values.join(' ') || '(empty)', 'directive']).concat([['Generated baseline', output]]);
+      pipeline = [{ name: 'default-src', ok: names.includes('default-src'), detail: names.includes('default-src') ? 'present' : 'missing' }, { name: 'unsafe scan', ok: !unsafe, detail: unsafe ? 'unsafe token or wildcard' : 'none' }, { name: 'object/framing', ok: names.includes('object-src') && names.includes('frame-ancestors'), detail: 'clickjacking/plugin boundary' }];
+      json = { ...json, directives: names, unsafe, recommended: output };
+    } else if (kind === 'cookie') {
+      const cookies = linesOf(input).map(line => line.replace(/^Set-Cookie:\s*/i, ''));
+      const attrs = cookies.map(c => c.split(';').map(part => part.trim()));
+      const weak = attrs.filter(parts => !parts.some(p => /^secure$/i.test(p)) || !parts.some(p => /^httponly$/i.test(p)) || !parts.some(p => /^samesite=/i.test(p)));
+      ok = cookies.length > 0 && weak.length === 0;
+      output = cookies.map(c => c + (/(;|^)\s*Secure/i.test(c) ? '' : '; Secure') + (/(;|^)\s*HttpOnly/i.test(c) ? '' : '; HttpOnly') + (/SameSite=/i.test(c) ? '' : '; SameSite=Lax')).join('\n');
+      cards = [{ label: 'Cookies', value: String(cookies.length) }, { label: 'Weak cookies', value: String(weak.length) }, { label: 'Prefix use', value: /__Host-|__Secure-/i.test(input) ? 'present' : 'none' }, { label: 'Rewrite', value: weak.length ? 'suggested' : 'not needed' }];
+      breakdown = attrs.map((parts, index) => ['Cookie ' + (index + 1), parts[0], parts.slice(1).join('; ') || 'no attributes']);
+      pipeline = [{ name: 'Secure', ok: /Secure/i.test(input), detail: 'HTTPS transport flag' }, { name: 'HttpOnly', ok: /HttpOnly/i.test(input), detail: 'script access boundary' }, { name: 'SameSite', ok: /SameSite=/i.test(input), detail: 'cross-site send policy' }];
+      json = { ...json, cookies: cookies.length, weak: weak.length, hardened: output };
+    } else if (kind === 'url-utm') {
+      const url = parseUrlSafe(input);
+      const params = url ? Array.from(url.searchParams.entries()) : [];
+      const tracking = params.filter(([k]) => /^utm_|^fbclid$|^gclid$|^mc_/i.test(k));
+      const redirect = params.filter(([k, v]) => /redirect|return|next|url/i.test(k) || /^https?:/i.test(v));
+      if (url) tracking.forEach(([k]) => url.searchParams.delete(k));
+      ok = Boolean(url) && redirect.length === 0;
+      output = url ? url.toString() : 'Invalid URL';
+      cards = [{ label: 'URL parse', value: url ? 'pass' : 'fail' }, { label: 'Query params', value: String(params.length) }, { label: 'Tracking params', value: String(tracking.length) }, { label: 'Redirect hints', value: String(redirect.length) }];
+      breakdown = params.map(([k, v]) => [k, v, /^utm_/i.test(k) ? 'tracking' : 'query']).concat([['Canonical', output]]);
+      pipeline = [{ name: 'Parse', ok: Boolean(url), detail: url ? url.hostname : 'invalid' }, { name: 'Credentials', ok: url ? !url.username && !url.password : false, detail: 'userinfo check' }, { name: 'Redirect risk', ok: redirect.length === 0, detail: redirect.length + ' hints' }];
+      json = { ...json, canonical: output, params, tracking, redirect };
+    } else if (kind === 'http-diff' || kind === 'diff-patch') {
+      const beforeLines = String(input).split(/\r?\n/);
+      const afterLines = String(changed).split(/\r?\n/);
+      const max = Math.max(beforeLines.length, afterLines.length);
+      const changes = [];
+      for (let i = 0; i < max; i += 1) if (beforeLines[i] !== afterLines[i]) changes.push({ line: i + 1, before: beforeLines[i] || '', after: afterLines[i] || '' });
+      const beforeHeaders = headerMap(input);
+      const afterHeaders = headerMap(changed);
+      const removedSecurity = ['content-security-policy','strict-transport-security','x-content-type-options','referrer-policy'].filter(h => beforeHeaders[h] && !afterHeaders[h]);
+      ok = changes.length === 0 || removedSecurity.length === 0;
+      output = changes.slice(0, 80).map(c => '-' + c.before + '\n+' + c.after).join('\n');
+      cards = [{ label: 'Changed lines', value: String(changes.length) }, { label: 'Removed security', value: String(removedSecurity.length) }, { label: 'Before lines', value: String(beforeLines.length) }, { label: 'After lines', value: String(afterLines.length) }];
+      breakdown = changes.slice(0, 20).map(c => ['Line ' + c.line, c.before || '(empty)', 'after: ' + (c.after || '(empty)')]).concat(removedSecurity.map(h => ['Removed header', h, 'security regression']));
+      pipeline = [{ name: 'Inputs', ok: Boolean(input && changed), detail: 'before/after payloads' }, { name: 'Change map', detail: changes.length + ' changed lines' }, { name: 'Security regression', ok: removedSecurity.length === 0, detail: removedSecurity.join(', ') || 'none' }];
+      json = { ...json, changes, removedSecurity };
+    } else if (kind === 'jsonpath') {
+      const parsed = parseJsonSafe(input);
+      const matches = parsed.ok ? pathLookup(parsed.value, values.selector || '$') : [];
+      ok = parsed.ok && matches.length > 0;
+      output = JSON.stringify(matches, null, 2);
+      cards = [{ label: 'JSON parse', value: parsed.ok ? 'pass' : 'fail' }, { label: 'Matches', value: String(matches.length) }, { label: 'Selector', value: values.selector || '$' }, { label: 'Mode', value: values.selectorMode || 'jsonpath' }];
+      breakdown = matches.slice(0, 16).map((m, i) => ['Match ' + (i + 1), typeof m === 'object' ? JSON.stringify(m) : String(m), 'selector result']);
+      pipeline = [{ name: 'JSON parse', ok: parsed.ok, detail: parsed.ok ? 'payload parsed' : parsed.error }, { name: 'Selector', ok: Boolean(values.selector), detail: values.selector || '$' }, { name: 'Matches', ok: matches.length > 0, detail: matches.length + ' results' }];
+      json = { ...json, selector: values.selector, matches };
+    } else if (kind === 'avro-protobuf') {
+      const parsed = parseJsonSafe(input);
+      const protoFields = Array.from(input.matchAll(/\b(string|int32|int64|double|float|bool|bytes)\s+(\w+)\s*=\s*(\d+)/g)).map(m => ({ type: m[1], name: m[2], tag: m[3] }));
+      const avroFields = parsed.ok && Array.isArray(parsed.value.fields) ? parsed.value.fields : [];
+      const fields = avroFields.length ? avroFields.map(f => ({ name: f.name, type: JSON.stringify(f.type), defaulted: Object.prototype.hasOwnProperty.call(f, 'default') })) : protoFields;
+      const defaultGaps = avroFields.filter(f => /null/.test(JSON.stringify(f.type)) && !Object.prototype.hasOwnProperty.call(f, 'default')).length;
+      ok = fields.length > 0 && defaultGaps === 0;
+      output = JSON.stringify({ fields, compatibilityRisk: defaultGaps ? 'nullable fields without default' : 'low static risk' }, null, 2);
+      cards = [{ label: 'Format', value: avroFields.length ? 'Avro' : protoFields.length ? 'Protobuf' : 'unknown' }, { label: 'Fields', value: String(fields.length) }, { label: 'Default gaps', value: String(defaultGaps) }, { label: 'Enums', value: String((input.match(/enum\s+\w+|"symbols"/g) || []).length) }];
+      breakdown = fields.map(f => [f.name, f.type || f.tag || 'field', f.defaulted ? 'defaulted' : 'no default marker']);
+      pipeline = [{ name: 'Schema parse', ok: fields.length > 0, detail: fields.length + ' fields' }, { name: 'Defaults', ok: defaultGaps === 0, detail: defaultGaps + ' nullable gaps' }, { name: 'Compatibility boundary', detail: 'registry rules not executed' }];
+      json = { ...json, fields, defaultGaps };
+    } else if (kind === 'ndjson') {
+      const rows = String(input).split(/\r?\n/).filter(line => line.trim());
+      const parsedRows = rows.map(line => parseJsonSafe(line));
+      const bad = parsedRows.filter(r => !r.ok);
+      const objects = parsedRows.filter(r => r.ok).map(r => r.value);
+      const severities = objects.reduce((acc, row) => { const level = row.level || row.severity || 'unknown'; acc[level] = (acc[level] || 0) + 1; return acc; }, {});
+      const fields = unique(objects.flatMap(row => Object.keys(row || {})));
+      ok = rows.length > 0 && bad.length === 0;
+      output = JSON.stringify({ rows: rows.length, badLines: bad.length, severities, fields }, null, 2);
+      cards = [{ label: 'Lines', value: String(rows.length) }, { label: 'Malformed', value: String(bad.length) }, { label: 'Fields', value: String(fields.length) }, { label: 'PII hints', value: String(detectSecrets(input).length) }];
+      breakdown = Object.entries(severities).map(([k, v]) => ['Severity ' + k, String(v), 'log level']).concat(fields.slice(0, 14).map(f => ['Field', f, 'detected']));
+      pipeline = [{ name: 'Line parse', ok: bad.length === 0, detail: bad.length + ' malformed' }, { name: 'Field map', detail: fields.length + ' keys' }, { name: 'Redaction hints', ok: detectSecrets(input).length === 0, detail: detectSecrets(input).length + ' findings' }];
+      json = { ...json, rows: rows.length, bad: bad.length, severities, fields };
+    } else if (kind === 'base64-binary') {
+      const dataUri = input.match(/^data:([^;,]+)?(;base64)?,(.*)$/i);
+      const body = dataUri ? dataUri[3] : input;
+      let decoded = '';
+      try { decoded = atob(body.replace(/\s/g, '')); } catch { decoded = base64UrlDecode(body); }
+      const bytesArr = Array.from(decoded).map(ch => ch.charCodeAt(0));
+      const signature = bytesArr.slice(0, 8).map(b => b.toString(16).padStart(2, '0')).join(' ');
+      const entropy = unique(bytesArr).length;
+      ok = decoded.length > 0;
+      output = decoded.slice(0, 1200);
+      cards = [{ label: 'Decoded bytes', value: String(bytesArr.length) }, { label: 'MIME', value: dataUri ? dataUri[1] || 'unknown' : 'not declared' }, { label: 'Signature', value: signature || 'n/a' }, { label: 'Entropy classes', value: String(entropy) }];
+      breakdown = [['Data URI', dataUri ? 'yes' : 'no'], ['MIME', dataUri ? dataUri[1] || 'unknown' : 'n/a'], ['Signature', signature || 'n/a'], ['Preview safe', /[\x00-\x08\x0E-\x1F]/.test(decoded) ? 'binary-like' : 'text-like']];
+      pipeline = [{ name: 'Decode', ok, detail: bytesArr.length + ' bytes' }, { name: 'MIME sniff', detail: signature || 'none' }, { name: 'Secret scan', ok: detectSecrets(decoded).length === 0, detail: detectSecrets(decoded).length + ' hints' }];
+      json = { ...json, bytes: bytesArr.length, signature, mime: dataUri && dataUri[1] };
+    } else if (kind === 'secret-scanner') {
+      const findings = detectSecrets(input);
+      ok = findings.length === 0;
+      output = maskSensitive(input);
+      cards = [{ label: 'Findings', value: String(findings.length) }, { label: 'Mode', value: values.mode || 'balanced' }, { label: 'Masked output', value: output !== input ? 'changed' : 'unchanged' }, { label: 'Risk', value: findings.length ? 'review' : 'low' }];
+      breakdown = findings.map(f => [f.label, String(f.count), 'local pattern']).concat([['Remediation', findings.length ? 'rotate, revoke, remove from history' : 'no obvious secret pattern']]);
+      pipeline = [{ name: 'Pattern scan', ok: findings.length === 0, detail: findings.length + ' findings' }, { name: 'Masking', detail: output !== input ? 'applied' : 'not needed' }, { name: 'Boundary', detail: 'no upload or vault lookup' }];
+      json = { ...json, findings, masked: output };
+    } else if (kind === 'tls-cert') {
+      const pemCount = (input.match(/BEGIN CERTIFICATE/g) || []).length;
+      const subject = (input.match(/Subject:\s*([^\n]+)/i) || [])[1] || 'not parsed';
+      const issuer = (input.match(/Issuer:\s*([^\n]+)/i) || [])[1] || 'not parsed';
+      const notAfter = (input.match(/Not After\s*:?\s*([^\n]+)/i) || [])[1] || '';
+      const sans = unique(Array.from(input.matchAll(/DNS:([^,\s]+)/g)).map(m => m[1]));
+      const expired = /202[0-5]/.test(notAfter);
+      ok = (pemCount > 0 || subject !== 'not parsed') && !expired;
+      output = JSON.stringify({ certificates: pemCount, subject, issuer, notAfter, sans, expired }, null, 2);
+      cards = [{ label: 'Certificates', value: String(pemCount || 1) }, { label: 'Subject', value: subject }, { label: 'Issuer', value: issuer }, { label: 'Expiry', value: notAfter ? expired ? 'review' : 'future-ish' : 'missing' }];
+      breakdown = [['Subject', subject], ['Issuer', issuer], ['Not After', notAfter || 'missing'], ['SANs', sans.join(', ') || 'not parsed'], ['Chain', pemCount > 1 ? 'multiple PEM blocks' : 'leaf/single pasted block']];
+      pipeline = [{ name: 'PEM material', ok: pemCount > 0 || subject !== 'not parsed', detail: pemCount + ' PEM blocks' }, { name: 'Validity hint', ok: !expired, detail: notAfter || 'not parsed' }, { name: 'Chain boundary', detail: 'trust path not verified offline' }];
+      json = { ...json, pemCount, subject, issuer, notAfter, sans, expired };
+    } else if (kind === 'dns-records' || kind === 'spf-dmarc') {
+      const records = linesOf(input);
+      const spf = records.filter(r => /v=spf1/i.test(r));
+      const dmarc = records.filter(r => /v=DMARC1/i.test(r));
+      const dkim = records.filter(r => /v=DKIM1/i.test(r));
+      const mx = records.filter(r => /\bMX\b/i.test(r));
+      const weak = /\+all|~all|p=none/i.test(input);
+      const generated = values.domain ? [
+        values.domain + '. TXT "v=spf1 include:_spf.' + values.domain + ' -all"',
+        '_dmarc.' + values.domain + '. TXT "v=DMARC1; p=' + (values.policy === 'reject' ? 'reject' : values.policy === 'quarantine' ? 'quarantine' : 'none') + '; rua=mailto:dmarc@' + values.domain + '"'
+      ].join('\n') : input;
+      ok = (spf.length > 0 || dmarc.length > 0 || mx.length > 0) && !weak;
+      output = action === 'generate' ? generated : JSON.stringify({ records: records.length, spf: spf.length, dmarc: dmarc.length, dkim: dkim.length, mx: mx.length, weak }, null, 2);
+      cards = [{ label: 'Records', value: String(records.length) }, { label: 'SPF', value: String(spf.length) }, { label: 'DMARC', value: String(dmarc.length) }, { label: 'Weak policy', value: weak ? 'present' : 'none' }];
+      breakdown = records.slice(0, 18).map((r, i) => ['Record ' + (i + 1), r, /spf|dmarc|dkim/i.test(r) ? 'email auth' : 'dns']).concat([['Generated policy', generated || 'n/a']]);
+      pipeline = [{ name: 'Record parse', ok: records.length > 0, detail: records.length + ' rows' }, { name: 'Email auth', ok: spf.length > 0 && dmarc.length > 0, detail: 'SPF ' + spf.length + ', DMARC ' + dmarc.length }, { name: 'Policy strength', ok: !weak, detail: weak ? 'monitor/soft policy' : 'strict-ish' }];
+      json = { ...json, records, spf, dmarc, dkim, mx, weak, generated };
+    } else if (kind === 'sri') {
+      const looksAttr = /integrity=/i.test(input);
+      const integrity = looksAttr ? (input.match(/integrity=["']([^"']+)/i) || [])[1] || '' : await sriHash(input, values.algorithm || 'sha384');
+      ok = Boolean(integrity) && (/sha(256|384|512)-/.test(integrity));
+      output = integrity;
+      cards = [{ label: 'Integrity', value: ok ? 'present' : 'missing' }, { label: 'Algorithm', value: (integrity.match(/sha\d+/) || [values.algorithm || 'sha384'])[0] }, { label: 'Crossorigin', value: /crossorigin=/i.test(input) ? 'present' : 'review' }, { label: 'Mode', value: looksAttr ? 'inspect' : 'generate' }];
+      breakdown = [['Integrity value', integrity || 'missing'], ['crossorigin', /crossorigin=/i.test(input) ? 'present' : 'missing'], ['Asset bytes', String(byteCount(input))], ['Pinning note', 'regenerate hash after every asset change']];
+      pipeline = [{ name: 'Hash/attr', ok, detail: looksAttr ? 'attribute inspected' : 'hash generated' }, { name: 'Algorithm', ok: /sha(256|384|512)-/.test(integrity), detail: (integrity.match(/sha\d+/) || ['missing'])[0] }, { name: 'CORS note', ok: /crossorigin=/i.test(input) || !looksAttr, detail: 'required for many cross-origin assets' }];
+      json = { ...json, integrity, generated: !looksAttr };
+    }
+
+    return {
+      ok,
+      output,
+      badge: ok ? 'Premium pass' : 'Review',
+      resultCards: cards,
+      breakdown,
+      pipeline,
+      qualityNotes: notes,
+      developerJson: json,
+      extension: kind === 'sri' || kind === 'csp' || kind === 'cookie' ? 'txt' : 'json',
+      mime: 'text/plain;charset=utf-8'
+    };
+  }
+
   const configs = [
     ['validohub.html-encoder', {
       slug: 'html-encoder', title: 'HTML Encoder', defaultAction: 'encode', theme: 'markup', mark: 'HTML', kicker: 'Markup safety',
@@ -1842,6 +2128,21 @@
     ['validohub.graphql', { slug: 'graphql-workbench', title: "GraphQL Workbench", kind: 'graphql', defaultAction: 'inspect', theme: "developer", mark: "GQL", kicker: "API operation QA", summary: "Format GraphQL operations, inspect variables, fragments, selections, aliases, schema SDL hints, and mock response shapes.", chips: ["Operation map","Variables","Fragments","Mock shape"], samples: [{ id: "query", label: "Query operation", values: {"query":"query Invoice($id: ID!) { invoice(id: $id) { id total customer { email } } }","variables":"{\"id\":\"inv_123\"}"}, action: "inspect" }, { id: "mutation", label: "Mutation", values: {"query":"mutation CreateInvoice($input: InvoiceInput!) { createInvoice(input: $input) { id status } }","variables":"{\"input\":{\"total\":125.5}}"}, action: "inspect" }, { id: "bad-variables", label: "Bad variables", values: {"query":"query User($id: ID!) { user(id: $id) { id } }","variables":"{bad json}"}, action: "validate" }] }, premiumLabHandler],
     ['validohub.email-domain', { slug: 'email-domain-workbench', title: "Email Address & Domain Workbench", kind: 'email-domain', defaultAction: 'validate', theme: "identity", mark: "@", kicker: "Address QA", summary: "Validate email syntax, normalize domains, inspect IDN/punycode, plus addressing, safe fixtures, and DNS/live-deliverability boundaries.", chips: ["Syntax","IDN","Plus tags","No MX lookup"], samples: [{ id: "valid-email", label: "Valid email", values: {"input":"billing+test@example.com","count":3}, action: "validate" }, { id: "idn-domain", label: "IDN domain", values: {"input":"support@bücher.example","count":3}, action: "parse" }, { id: "invalid-email", label: "Invalid email", values: {"input":"bad@@example..com","count":3}, action: "validate" }] }, premiumLabHandler],
     ['validohub.user-agent', { slug: 'user-agent-client-hints-parser', title: "User-Agent & Client Hints Parser", kind: 'user-agent', defaultAction: 'parse', theme: "developer", mark: "UA", kicker: "Client detection", summary: "Parse User-Agent and Client Hints headers for browser, OS, device, bot signals, privacy caveats, and analytics handoff JSON.", chips: ["Browser hints","Bot signals","Device class","Privacy caveat"], samples: [{ id: "chrome", label: "Chrome UA", values: {"profile":"browser","input":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36\nSec-CH-UA: \"Chromium\";v=\"126\", \"Not.A/Brand\";v=\"8\""}, action: "parse" }, { id: "mobile", label: "Mobile UA", values: {"profile":"mobile","input":"Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1"}, action: "parse" }, { id: "bot", label: "Bot UA", values: {"profile":"bot","input":"Mozilla/5.0 compatible; Googlebot/2.1; +http://www.google.com/bot.html"}, action: "validate" }] }, premiumLabHandler],
+    ['validohub.jwt-jwk-oauth', { slug: 'jwt-jwk-oauth-inspector', title: "JWT / JWK / OAuth Token Inspector", kind: 'jwt-oauth', group: 'Security / Ops Premium', defaultAction: 'validate', theme: 'security', mark: 'JWT', kicker: "Token security", summary: "Decode JWTs, inspect JWK/JWKS metadata, OAuth scopes, claim timelines, algorithm risk, and browser-only verification boundaries.", chips: ["Security / Ops Premium","jwt","Browser only","Developer JSON"], samples: [{"id":"jwt-expired","label":"Expired JWT","values":{"mode":"jwt","input":"eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL2F1dGguZXhhbXBsZSIsInN1YiI6InVzcl8xMjMiLCJhdWQiOiJiaWxsaW5nIiwiZXhwIjoxNzIwMDAwMDAwLCJpYXQiOjE3MTAwMDAwMDAsInNjb3BlIjoicmVhZDppbnZvaWNlcyB3cml0ZTpwYXltZW50cyJ9."},"action":"parse"},{"id":"jwks","label":"JWKS keys","values":{"mode":"jwks","input":"{\"keys\":[{\"kty\":\"RSA\",\"kid\":\"billing-2026\",\"alg\":\"RS256\",\"use\":\"sig\"},{\"kty\":\"oct\",\"kid\":\"legacy\",\"alg\":\"HS256\"}]}"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.csp-auditor', { slug: 'csp-builder-auditor', title: "CSP Builder & Auditor", kind: 'csp', group: 'Web/API Quality', defaultAction: 'validate', theme: 'security', mark: 'CSP', kicker: "Browser policy QA", summary: "Parse Content-Security-Policy headers, explain directives, flag unsafe sources, and generate hardened baseline policies.", chips: ["Web/API Quality","web-app","Browser only","Developer JSON"], samples: [{"id":"strict-csp","label":"Strict CSP","values":{"profile":"web-app","input":"default-src 'self'; script-src 'self' 'nonce-demo'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'"},"action":"validate"},{"id":"unsafe-csp","label":"Unsafe CSP","values":{"profile":"web-app","input":"default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'; frame-ancestors *"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.cookie-security', { slug: 'cookie-security-inspector', title: "Cookie Security Inspector", kind: 'cookie', group: 'Security / Ops Premium', defaultAction: 'validate', theme: 'security', mark: 'CKIE', kicker: "Session safety", summary: "Inspect Set-Cookie headers for SameSite, Secure, HttpOnly, domain/path scope, expiry, prefixes, and hardened rewrites.", chips: ["Security / Ops Premium","session","Browser only","Developer JSON"], samples: [{"id":"secure-cookie","label":"Secure cookie","values":{"profile":"session","input":"Set-Cookie: __Host-session=abc; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=3600"},"action":"inspect"},{"id":"weak-cookie","label":"Weak cookie","values":{"profile":"session","input":"Set-Cookie: sid=abc; Domain=.example.com"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.url-redirect-utm', { slug: 'url-redirect-utm-workbench', title: "URL Redirect & UTM Workbench", kind: 'url-utm', group: 'Web/API Quality', defaultAction: 'validate', theme: 'developer', mark: 'URL', kicker: "URL hygiene", summary: "Parse URLs, normalize query strings, detect redirect and credential risks, clean tracking parameters, and build canonical campaign links.", chips: ["Web/API Quality","privacy-cleanup","Browser only","Developer JSON"], samples: [{"id":"tracking-url","label":"Tracking URL","values":{"profile":"privacy-cleanup","input":"https://example.com/pay?utm_source=newsletter&utm_campaign=q3&redirect=https%3A%2F%2Fevil.example&email=billing%40example.com"},"action":"inspect"},{"id":"campaign-url","label":"Campaign URL","values":{"profile":"campaign","input":"https://validohub.com/tools?utm_source=launch&utm_medium=email&utm_campaign=global-tools"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.http-message-diff', { slug: 'http-message-diff-inspector', title: "HTTP Request / Response Diff Inspector", kind: 'http-diff', group: 'Web/API Quality', defaultAction: 'validate', theme: 'developer', mark: 'DIFF', kicker: "HTTP regression QA", summary: "Compare raw HTTP messages for status, header, cache, security, CORS, cookie, and body changes without network calls.", chips: ["Web/API Quality","response","Browser only","Developer JSON"], samples: [{"id":"security-regression","label":"Security regression","values":{"profile":"response","input":"HTTP/1.1 200 OK\nContent-Security-Policy: default-src self\nStrict-Transport-Security: max-age=31536000\nCache-Control: no-store","changed":"HTTP/1.1 200 OK\nCache-Control: public, max-age=3600\nX-Powered-By: Express"},"action":"validate"},{"id":"status-change","label":"Status change","values":{"profile":"response","input":"HTTP/1.1 200 OK\nContent-Type: application/json\n\n{\"ok\":true}","changed":"HTTP/1.1 500 Internal Server Error\nContent-Type: application/json\n\n{\"ok\":false}"},"action":"inspect"}] }, globalPremiumBatchHandler],
+    ['validohub.jsonpath-jmespath', { slug: 'jsonpath-jmespath-workbench', title: "JSONPath / JMESPath Workbench", kind: 'jsonpath', group: 'Data & Integration', defaultAction: 'validate', theme: 'developer', mark: 'PATH', kicker: "JSON query lab", summary: "Query JSON locally, preview matches, explain selector shape, generate pointer evidence, and compare path-style extraction behavior.", chips: ["Data & Integration","jsonpath","Browser only","Developer JSON"], samples: [{"id":"jsonpath-orders","label":"JSONPath orders","values":{"selectorMode":"jsonpath","selector":"$.orders[*].total","input":"{\"orders\":[{\"id\":\"o1\",\"total\":125.5},{\"id\":\"o2\",\"total\":88}]}"},"action":"parse"},{"id":"missing-selector","label":"Missing path","values":{"selectorMode":"jsonpath","selector":"$.users[*].email","input":"{\"orders\":[{\"id\":\"o1\"}]}"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.avro-protobuf', { slug: 'avro-protobuf-schema-inspector', title: "Avro / Protobuf Schema Inspector", kind: 'avro-protobuf', group: 'Data & Integration', defaultAction: 'validate', theme: 'developer', mark: 'IDL', kicker: "Schema compatibility", summary: "Inspect Avro and Protobuf schemas for required/default fields, enum drift, compatibility risk, and fixture-ready field maps.", chips: ["Data & Integration","auto","Browser only","Developer JSON"], samples: [{"id":"avro-schema","label":"Avro schema","values":{"format":"avro","input":"{\"type\":\"record\",\"name\":\"Invoice\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"total\",\"type\":\"double\"},{\"name\":\"status\",\"type\":[\"null\",\"string\"],\"default\":null}]}"},"action":"parse"},{"id":"proto-schema","label":"Protobuf schema","values":{"format":"protobuf","input":"syntax = \"proto3\"; message Invoice { string id = 1; double total = 2; string status = 3; }"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.ndjson-log-parser', { slug: 'ndjson-log-parser-workbench', title: "NDJSON / Log Parser Workbench", kind: 'ndjson', group: 'Data & Integration', defaultAction: 'validate', theme: 'text', mark: 'LOG', kicker: "Operational log QA", summary: "Parse line-delimited JSON and logs, identify malformed rows, timestamps, severity distribution, fields, and redaction hints.", chips: ["Data & Integration","ndjson","Browser only","Developer JSON"], samples: [{"id":"ndjson-log","label":"NDJSON log","values":{"profile":"ndjson","input":"{\"level\":\"info\",\"ts\":\"2026-07-23T09:00:00Z\",\"msg\":\"started\"}\n{\"level\":\"error\",\"ts\":\"2026-07-23T09:01:00Z\",\"msg\":\"failed\",\"email\":\"billing@example.com\"}"},"action":"parse"},{"id":"bad-line","label":"Malformed line","values":{"profile":"ndjson","input":"{\"level\":\"info\"}\nnot json\n{\"level\":\"warn\"}"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.diff-patch', { slug: 'diff-patch-workbench', title: "Diff / Patch Workbench", kind: 'diff-patch', group: 'Data & Integration', defaultAction: 'validate', theme: 'text', mark: 'PATCH', kicker: "Change review", summary: "Compare text, JSON, and YAML payloads, produce semantic change summaries, unified patch previews, and whitespace/order diagnostics.", chips: ["Data & Integration","text","Browser only","Developer JSON"], samples: [{"id":"json-diff","label":"JSON diff","values":{"mode":"json","input":"{\"status\":\"draft\",\"total\":100}","changed":"{\"status\":\"paid\",\"total\":125}"},"action":"inspect"},{"id":"text-diff","label":"Text diff","values":{"mode":"text","input":"alpha\nbeta\ngamma","changed":"alpha\nbeta changed\ngamma\nnew line"},"action":"inspect"}] }, globalPremiumBatchHandler],
+    ['validohub.base64-binary', { slug: 'base64-binary-payload-inspector', title: "Base64 / Binary Payload Inspector", kind: 'base64-binary', group: 'Data & Integration', defaultAction: 'validate', theme: 'hash', mark: 'B64+', kicker: "Binary payload QA", summary: "Decode Base64 and data URIs, sniff MIME signatures, inspect entropy, payload size, preview safety, and copy-safe metadata.", chips: ["Data & Integration","auto","Browser only","Developer JSON"], samples: [{"id":"data-uri","label":"Data URI","values":{"profile":"data-uri","input":"data:text/plain;base64,SGVsbG8sIFZhbGlkb0h1YiE="},"action":"parse"},{"id":"jwt-part","label":"JWT part","values":{"profile":"jwt-part","input":"eyJpc3MiOiJkZW1vIiwiZXhwIjoxOTAwMDAwMDAwfQ"},"action":"parse"}] }, globalPremiumBatchHandler],
+    ['validohub.secret-scanner', { slug: 'secret-scanner-workbench', title: "Secret Scanner Workbench", kind: 'secret-scanner', group: 'Security / Ops Premium', defaultAction: 'validate', theme: 'security', mark: 'KEY', kicker: "Secret hygiene", summary: "Scan pasted payloads for API keys, private keys, JWTs, OAuth tokens, credentials, and produce masked remediation output locally.", chips: ["Security / Ops Premium","balanced","Browser only","Developer JSON"], samples: [{"id":"env-secrets","label":"Env secrets","values":{"mode":"strict","input":"STRIPE_SECRET_KEY=sk_live_1234567890abcdef\nAWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE\nPRIVATE_KEY=-----BEGIN PRIVATE KEY-----demo"},"action":"validate"},{"id":"clean-config","label":"Clean config","values":{"mode":"balanced","input":"PUBLIC_API_URL=https://api.example.com\nFEATURE_FLAG=true"},"action":"inspect"}] }, globalPremiumBatchHandler],
+    ['validohub.tls-certificate', { slug: 'tls-certificate-inspector', title: "TLS Certificate Inspector", kind: 'tls-cert', group: 'Security / Ops Premium', defaultAction: 'validate', theme: 'security', mark: 'TLS', kicker: "Certificate QA", summary: "Parse pasted PEM certificate material for subject, issuer, SAN hints, validity dates, key-usage markers, and chain handoff notes.", chips: ["Security / Ops Premium","leaf","Browser only","Developer JSON"], samples: [{"id":"pem-cert","label":"PEM certificate","values":{"profile":"leaf","input":"-----BEGIN CERTIFICATE-----\nMIIDdemoexamplecertificatebody\n-----END CERTIFICATE-----\nSubject: CN=api.example.com\nIssuer: CN=Example CA\nNot Before: Jul 1 00:00:00 2026 GMT\nNot After : Jul 1 00:00:00 2027 GMT\nDNS:api.example.com,DNS:www.example.com"},"action":"parse"},{"id":"expired-note","label":"Expired dates","values":{"profile":"leaf","input":"Subject: CN=old.example.com\nIssuer: CN=Example CA\nNot After : Jan 1 00:00:00 2024 GMT"},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.dns-records', { slug: 'dns-record-workbench', title: "DNS Record Workbench", kind: 'dns-records', group: 'Security / Ops Premium', defaultAction: 'validate', theme: 'security', mark: 'DNS', kicker: "Zone record QA", summary: "Inspect DNS zone snippets, SPF, DMARC, DKIM, MX, TXT, CAA, TTLs, and email/security posture without live DNS lookup.", chips: ["Security / Ops Premium","email-security","Browser only","Developer JSON"], samples: [{"id":"mail-records","label":"Mail records","values":{"profile":"email-security","input":"example.com. 3600 IN MX 10 mail.example.com.\nexample.com. 3600 IN TXT \"v=spf1 include:_spf.example.com -all\"\n_dmarc.example.com. 3600 IN TXT \"v=DMARC1; p=quarantine; rua=mailto:dmarc@example.com\"\ndefault._domainkey.example.com. 3600 IN TXT \"v=DKIM1; k=rsa; p=MIIB...\""},"action":"inspect"},{"id":"weak-spf","label":"Weak SPF","values":{"profile":"email-security","input":"example.com. IN TXT \"v=spf1 include:_spf.example.com ~all\""},"action":"validate"}] }, globalPremiumBatchHandler],
+    ['validohub.spf-dmarc', { slug: 'spf-dmarc-builder', title: "SPF / DMARC Builder", kind: 'spf-dmarc', group: 'Security / Ops Premium', defaultAction: 'validate', theme: 'security', mark: 'MAIL', kicker: "Email auth policy", summary: "Validate and build SPF and DMARC policies, explain mechanisms, alignment, flattening risk, and rollout from none to quarantine/reject.", chips: ["Security / Ops Premium","monitor","Browser only","Developer JSON"], samples: [{"id":"monitor-policy","label":"Monitor policy","values":{"policy":"monitor","domain":"example.com","input":"v=spf1 include:_spf.example.com -all\nv=DMARC1; p=none; rua=mailto:dmarc@example.com"},"action":"inspect"},{"id":"reject-policy","label":"Reject policy","values":{"policy":"reject","domain":"example.com","input":"v=spf1 include:_spf.example.com -all\nv=DMARC1; p=reject; adkim=s; aspf=s; pct=100"},"action":"generate"}] }, globalPremiumBatchHandler],
+    ['validohub.sri-hash', { slug: 'sri-hash-integrity-inspector', title: "SRI Hash Generator & Asset Integrity Inspector", kind: 'sri', group: 'Security / Ops Premium', defaultAction: 'validate', theme: 'hash', mark: 'SRI', kicker: "Asset integrity", summary: "Generate SHA-256/384/512 SRI hashes, inspect integrity attributes, crossorigin requirements, and asset pinning risks.", chips: ["Security / Ops Premium","sha384","Browser only","Developer JSON"], samples: [{"id":"asset-content","label":"Asset content","values":{"algorithm":"sha384","input":"console.log(\"ValidoHub global tools\");"},"action":"generate"},{"id":"integrity-attr","label":"Integrity attr","values":{"algorithm":"sha384","input":"<script src=\"/bundle.js\" integrity=\"sha384-demo\" crossorigin=\"anonymous\"></script>"},"action":"inspect"}] }, globalPremiumBatchHandler],
     ['validohub.http-headers', { slug: 'http-security-headers-inspector', title: "HTTP Headers & Security Headers Inspector", kind: 'http-headers', defaultAction: 'inspect', theme: "security", mark: "HDR", kicker: "Web security QA", summary: "Inspect pasted HTTP headers for CSP, CORS, HSTS, cookies, cache policy, framing, redirects, and repair suggestions.", chips: ["CSP","Cookies","CORS","Cache policy"], samples: [{ id: "secure", label: "Secure headers", values: {"profile":"web-app","input":"Content-Security-Policy: default-src 'self'; frame-ancestors 'none'\nStrict-Transport-Security: max-age=31536000; includeSubDomains\nX-Content-Type-Options: nosniff\nReferrer-Policy: strict-origin-when-cross-origin\nSet-Cookie: sid=demo; HttpOnly; Secure; SameSite=Lax"}, action: "inspect" }, { id: "weak-cors", label: "Weak CORS", values: {"profile":"api","input":"Access-Control-Allow-Origin: *\nSet-Cookie: sid=demo\nX-Powered-By: Express"}, action: "validate" }, { id: "generate-static", label: "Generate baseline", values: {"profile":"static-site","input":""}, action: "generate" }] }, premiumLabHandler],
     ['validohub.text-diff', {
       slug: 'text-diff', title: 'Text Diff', defaultAction: 'calculate', theme: 'text', mark: 'DIFF', kicker: 'Change review',

@@ -91,6 +91,56 @@ async function syncRuntimeAssets() {
   if (await pathExists(sourceWorkbench)) await cp(sourceWorkbench, destWorkbench, { recursive: true });
 }
 
+
+
+const WORKBENCH_SCRIPT_VERSION = "country-premium-20260719";
+
+const GENERIC_SUITE_ALGORITHMS = new Set([
+  "validohub.json-schema", "validohub.openapi", "validohub.yaml-toml", "validohub.xml-xpath",
+  "validohub.csv-profiler", "validohub.sql-inspector", "validohub.cron", "validohub.regex-explainer",
+  "validohub.datetime", "validohub.color-contrast", "validohub.markdown-mdx", "validohub.graphql",
+  "validohub.email-domain", "validohub.user-agent", "validohub.http-headers",
+  "validohub.jwt-jwk-oauth", "validohub.csp-auditor", "validohub.cookie-security",
+  "validohub.url-redirect-utm", "validohub.http-message-diff", "validohub.jsonpath-jmespath",
+  "validohub.avro-protobuf", "validohub.ndjson-log-parser", "validohub.diff-patch",
+  "validohub.base64-binary", "validohub.secret-scanner", "validohub.tls-certificate",
+  "validohub.dns-records", "validohub.spf-dmarc", "validohub.sri-hash",
+  "validohub.phone-e164", "validohub.postal-code", "validohub.swift-bic", "validohub.mrz-passport",
+  "validohub.csv-repair", "validohub.eu-vat", "validohub.iso20022-sepa", "validohub.secret-pii",
+  "validohub.locale-test-data", "validohub.webhook-signature", "validohub.case-converter",
+  "validohub.html-decoder", "validohub.html-encoder", "validohub.iban", "validohub.iban-generator",
+  "validohub.md5", "validohub.regex-tester", "validohub.sha1", "validohub.sha256",
+  "validohub.slug-generator", "validohub.text-diff", "validohub.uuid"
+]);
+
+function ensureRegExp(value) {
+  return String(value || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function ensureScriptTag(content, src) {
+  const tag = '<script src="' + src + '?v=' + WORKBENCH_SCRIPT_VERSION + '"></script>';
+  const escaped = ensureRegExp(src);
+  let next = content.replace(new RegExp('<script src="' + escaped + '(?:\\?[^"\\n]*)?"></script>', "g"), "");
+  return next.replace("</body>", tag + "\n</body>");
+}
+function ensureGenericSuiteScripts(content) {
+  const match = content.match(/data-algorithm-id="([^"]+)"/);
+  if (!match || !GENERIC_SUITE_ALGORITHMS.has(match[1])) return content;
+  const helperSrcs = [
+    "/assets/js/workbench/clipboard.js",
+    "/assets/js/workbench/download.js",
+    "/assets/js/workbench/file.js",
+    "/assets/js/workbench/keyboard.js",
+    "/assets/js/workbench/preview.js",
+    "/assets/js/workbench/stats.js",
+    "/assets/js/workbench/utf8.js",
+    "/assets/js/workbench/hex.js",
+    "/assets/js/workbench/framework.js",
+    "/assets/js/tools/generic-suite.js"
+  ];
+  return helperSrcs.reduce((next, src) => ensureScriptTag(next, src), content);
+}
+
 function updateAssetLinks(content, assetsManifest) {
   let next = content;
   next = next.replace(/<link rel="stylesheet" href="\/assets\/css\/bundle\.[a-f0-9]{6}\.css">/gi, "<link rel=\"stylesheet\" href=\"" + assetsManifest.css + "\">");
@@ -113,7 +163,7 @@ async function refreshToolPageAssets(slugs, locales, assetsManifest) {
       }
       checked += 1;
       const content = await readFile(filePath, "utf8");
-      const next = updateAssetLinks(content, assetsManifest);
+      const next = ensureGenericSuiteScripts(updateAssetLinks(content, assetsManifest));
       if (next !== content) {
         await writeFile(filePath, next, "utf8");
         updated += 1;
