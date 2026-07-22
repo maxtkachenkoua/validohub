@@ -587,9 +587,11 @@ This is a product platform section, not a browser workbench plugin.
   - IBAN masked display alongside grouped output, country detection, country page routing, BBAN field maps, and MOD-97 diagnostics.
   - Country-aware IBAN maps now cover Brazil, Germany, Spain, Poland, France, Netherlands, Austria, Belgium, Czechia, Denmark, Finland, United Kingdom, Ireland, Italy, Norway, Portugal, Romania, Sweden, and Ukraine. Spain IBAN also replays domestic CCC check digits locally; Germany extracts BLZ/account segments; Brazil extracts bank, branch, account, and account-type fields. Poland remains on the dedicated Polish IBAN / NRB Workbench.
   - Regex capture-group reporting in output, named-group capture maps, match context snippets, replacement preview, flag audit, backtracking-risk heuristic, field breakdown, and developer JSON.
+  - Dedicated gold-standard global hardening for JSON, JWT, Base64, and URL tools: JSON repair lab, schema inference, JSONPath/pointer and flattened fixture previews, secret-key scan; JWT registered-claim timeline, local security checklist, risk scoring, and verification-boundary copy; Base64 data-URI support, byte signatures, file-type sniffing, byte histograms, canonical standard/URL-safe analysis; URL full parser, query table, canonical URL output, redirect/credential/UTM/security hints.
   - Text diff premium result cards for added, removed, unchanged, and character delta metrics.
   - Hash digest shape validation and optional recompute/compare against provided input for MD5, SHA-1, and SHA-256.
   - Developer API preview before raw JSON on shared generic tools so integration handoff has a copy-ready payload shape while preserving the browser-only execution boundary.
+  - `npm run audit:global-premium` is the fast-loop browser audit for global routes and must pass for global hardening work.
   - Correct dedicated slug generation and hash algorithm execution for MD5, SHA-1, and SHA-256.
   - Shared premium card styling so global tools visually match country workbench standards.
   - Premium generic tool header with identity mark, theme accent, domain-specific summary, capability chips, and privacy boundary.
@@ -597,7 +599,7 @@ This is a product platform section, not a browser workbench plugin.
   - Promote high-traffic generic tools into dedicated gold-standard plugins when their domain requires deeper product UX.
   - Add human-reviewed documentation packs for each generic utility after usage data confirms priority.
   - Expand country-specific IBAN workbenches only when the page can add country-local structure, national checks, or real user demand beyond generic ISO validation.
-- Current quality status: Production-quality V3 shared premium suite for global non-country tools, aligned with the Poland/Brazil premium workbench structure where practical.
+- Current quality status: Production-quality V4 shared premium suite for global non-country tools, aligned with the Poland/Brazil premium workbench structure and hardened with domain-specific debugger depth where practical.
 
 
 ## Premium Country Readiness Gate

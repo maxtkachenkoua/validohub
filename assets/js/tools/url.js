@@ -36,6 +36,10 @@
         input.value = "Café こんにちは 👋";
       } else if (sampleId === "url-encoded") {
         input.value = "https%3A%2F%2Fexample.com%2Fsearch%3Fq%3Dhello%2520world";
+      } else if (sampleId === "url-full") {
+        input.value = "https://shop.example.test/checkout?utm_source=newsletter&redirect_uri=https%3A%2F%2Fapp.example.test%2Freturn&amount=1299";
+      } else if (sampleId === "url-query") {
+        input.value = "q=IBAN%20generator&country=DE&debug=true&next=%2Ftools";
       } else if (sampleId === "url-malformed") {
         input.value = "hello%2 world%ZZ";
       }
@@ -185,6 +189,60 @@
       return `<pre><code>${html}</code></pre>`;
     }
 
+    function parseFullUrlCandidate(value) {
+      const input = String(value || "").trim();
+      try {
+        const url = new URL(input);
+        return inspectUrl(url, input);
+      } catch (_error) {
+        try {
+          const url = new URL(input, "https://example.test");
+          if (/^[/?#]/.test(input)) {
+            return inspectUrl(url, input, true);
+          }
+        } catch (_ignored) {}
+      }
+      return null;
+    }
+
+    function inspectUrl(url, original, relative) {
+      const params = Array.from(url.searchParams.entries());
+      const warnings = [];
+      if (url.username || url.password) warnings.push("Credentials are embedded in the URL.");
+      if (url.protocol === "http:") warnings.push("Plain HTTP URL; use HTTPS for production traffic.");
+      if (!["http:", "https:", "mailto:", "tel:", "urn:"].includes(url.protocol)) warnings.push(`Review unusual scheme: ${url.protocol}`);
+      if (params.some(([key]) => /^(redirect|redirect_uri|return|return_url|next|url)$/i.test(key))) warnings.push("Redirect-style parameter detected; validate allowlists before following it.");
+      if (params.some(([key]) => /^utm_/i.test(key))) warnings.push("UTM tracking parameters detected; consider stripping for canonical URLs.");
+      const canonical = canonicalUrl(url, relative);
+      return {
+        valid: true,
+        relative: Boolean(relative),
+        original: original,
+        protocol: relative ? "relative" : url.protocol.replace(":", ""),
+        host: relative ? "relative path" : url.host,
+        pathname: url.pathname,
+        hash: url.hash || "none",
+        params: params,
+        warnings: warnings,
+        canonical: canonical
+      };
+    }
+
+    function canonicalUrl(url, relative) {
+      const sorted = Array.from(url.searchParams.entries()).sort((a, b) => a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]));
+      const qs = sorted.map(([key, value]) => encodeURIComponent(key) + "=" + encodeURIComponent(value)).join("&");
+      const path = url.pathname + (qs ? "?" + qs : "") + (url.hash || "");
+      return relative ? path : url.protocol + "//" + url.host + path;
+    }
+
+    function tableHtml(headers, rows) {
+      return '<div class="generic-table-shell"><table class="pesel-dev-table"><thead><tr>'
+        + headers.map(h => '<th>' + util.escapeHtml(h) + '</th>').join('')
+        + '</tr></thead><tbody>'
+        + rows.map(row => '<tr>' + row.map(cell => '<td>' + util.escapeHtml(String(cell)) + '</td>').join('') + '</tr>').join('')
+        + '</tbody></table></div>';
+    }
+
     function getPercentEscapesExplanationHtml(inputStr, mode) {
       let encoded = "";
       if (mode === "encode") {
@@ -302,7 +360,7 @@
           </div>
           <select class="pesel-select" id="pesel-presets" style="width: 100%; height: 42px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.85rem; cursor: pointer;">
             <option value="">-- Select Preset --</option>
-            ${workbench.form.dataset.algorithmId === URL_DECODER_ALGORITHM ? '<option value="url-encoded">Encoded URL Query</option><option value="url-hello">Plain Text</option><option value="url-unicode">Unicode String</option>' : '<option value="url-hello">Plain Text</option><option value="url-unicode">Unicode String</option><option value="url-encoded">Encoded URL Query</option>'}
+            ${workbench.form.dataset.algorithmId === URL_DECODER_ALGORITHM ? '<option value="url-encoded">Encoded URL Query</option><option value="url-query">Query string</option><option value="url-full">Full URL with redirect</option><option value="url-hello">Plain Text</option><option value="url-unicode">Unicode String</option>' : '<option value="url-full">Full URL with redirect</option><option value="url-query">Query string</option><option value="url-hello">Plain Text</option><option value="url-unicode">Unicode String</option><option value="url-encoded">Encoded URL Query</option>'}
             <option value="url-malformed">Malformed percent escapes</option>
           </select>
         `;
@@ -595,6 +653,7 @@
         }
 
         const analysis = analyzeUrlEncoding(inputVal, decodedOutput, "decode");
+        const fullUrl = parseFullUrlCandidate(decodedOutput);
         workbench.setOutput(decodedOutput);
         workbench.setMessage("Decoded successfully.", warnings.concat(analysis.warnings).length > 0 ? "warning" : "success");
         workbench.setStats(analysis.details, warnings.concat(analysis.warnings), warnings.concat(analysis.warnings).length > 0 ? "warning" : "success");
@@ -653,6 +712,17 @@
         const snippets = apiSnippetsFor("decode", inputVal);
         workbench.setAdvanced(`
           <div class="pesel-dev-section">
+            ${fullUrl ? `
+            <section class="generic-analysis-section">
+              <h4>Full URL and query intelligence</h4>
+              <div class="generic-quality-grid">
+                <article class="generic-quality-card"><strong>Parsed target</strong><p>${fullUrl.protocol} / ${fullUrl.host} / ${fullUrl.pathname}</p></article>
+                <article class="generic-quality-card"><strong>Query params</strong><p>${fullUrl.params.length} parameter pair(s) detected after decoding.</p></article>
+                <article class="generic-quality-card"><strong>Canonical URL</strong><p>${util.escapeHtml(fullUrl.canonical)}</p></article>
+                <article class="generic-quality-card"><strong>Security hints</strong><p>${fullUrl.warnings.length ? util.escapeHtml(fullUrl.warnings.join(' ')) : 'No obvious redirect, credential, scheme, or UTM warnings detected.'}</p></article>
+              </div>
+              ${fullUrl.params.length ? tableHtml(['Key', 'Value'], fullUrl.params.slice(0, 24)) : ''}
+            </section>` : ''}
             <section class="generic-analysis-section">
               <h4>URL decode quality notes</h4>
               <div class="generic-quality-grid">
@@ -723,6 +793,7 @@
         }
 
         const analysis = analyzeUrlEncoding(inputVal, encodedOutput, "encode");
+        const fullUrl = parseFullUrlCandidate(inputVal);
         workbench.setOutput(encodedOutput);
         workbench.setMessage("Encoded successfully.", analysis.warnings.length > 0 ? "warning" : "success");
         workbench.setStats(analysis.details, analysis.warnings, analysis.warnings.length > 0 ? "warning" : "success");
@@ -781,6 +852,17 @@
         const snippets = apiSnippetsFor("encode", inputVal);
         workbench.setAdvanced(`
           <div class="pesel-dev-section">
+            ${fullUrl ? `
+            <section class="generic-analysis-section">
+              <h4>Full URL and query intelligence</h4>
+              <div class="generic-quality-grid">
+                <article class="generic-quality-card"><strong>Parsed target</strong><p>${fullUrl.protocol} / ${fullUrl.host} / ${fullUrl.pathname}</p></article>
+                <article class="generic-quality-card"><strong>Query params</strong><p>${fullUrl.params.length} parameter pair(s) detected before encoding.</p></article>
+                <article class="generic-quality-card"><strong>Canonical URL</strong><p>${util.escapeHtml(fullUrl.canonical)}</p></article>
+                <article class="generic-quality-card"><strong>Security hints</strong><p>${fullUrl.warnings.length ? util.escapeHtml(fullUrl.warnings.join(' ')) : 'No obvious redirect, credential, scheme, or UTM warnings detected.'}</p></article>
+              </div>
+              ${fullUrl.params.length ? tableHtml(['Key', 'Value'], fullUrl.params.slice(0, 24)) : ''}
+            </section>` : ''}
             <section class="generic-analysis-section">
               <h4>URL encode quality notes</h4>
               <div class="generic-quality-grid">

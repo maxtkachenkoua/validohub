@@ -213,6 +213,47 @@
       return Math.floor(length * 3 / 4);
     }
 
+    function detectDataUri(value) {
+      const match = String(value || "").trim().match(/^data:([^;,]+)?((?:;[a-z0-9=.-]+)*);base64,(.*)$/i);
+      if (!match) return null;
+      return {
+        mime: match[1] || "text/plain",
+        parameters: match[2] || "",
+        payload: match[3] || ""
+      };
+    }
+
+    function sniffBytes(bytes) {
+      const sig = Array.from(bytes.slice(0, 12)).map(b => b.toString(16).padStart(2, "0")).join(" ");
+      let type = "unknown";
+      if (bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4e && bytes[3] === 0x47) type = "PNG image";
+      else if (bytes[0] === 0xff && bytes[1] === 0xd8) type = "JPEG image";
+      else if (bytes[0] === 0x47 && bytes[1] === 0x49 && bytes[2] === 0x46) type = "GIF image";
+      else if (bytes[0] === 0x25 && bytes[1] === 0x50 && bytes[2] === 0x44 && bytes[3] === 0x46) type = "PDF document";
+      else if (bytes[0] === 0x50 && bytes[1] === 0x4b) type = "ZIP/Office archive";
+      else if (bytes[0] === 0x7b || bytes[0] === 0x5b) type = "JSON-like text";
+      return { type: type, signature: sig || "empty" };
+    }
+
+    function byteHistogram(bytes) {
+      const buckets = { control: 0, printable: 0, extended: 0, zero: 0 };
+      bytes.forEach(byte => {
+        if (byte === 0) buckets.zero++;
+        else if (byte < 32 || byte === 127) buckets.control++;
+        else if (byte >= 32 && byte <= 126) buckets.printable++;
+        else buckets.extended++;
+      });
+      return buckets;
+    }
+
+    function tableHtml(headers, rows) {
+      return '<div class="generic-table-shell"><table class="pesel-dev-table"><thead><tr>'
+        + headers.map(h => '<th>' + util.escapeHtml(h) + '</th>').join('')
+        + '</tr></thead><tbody>'
+        + rows.map(row => '<tr>' + row.map(cell => '<td>' + util.escapeHtml(String(cell)) + '</td>').join('') + '</tr>').join('')
+        + '</tbody></table></div>';
+    }
+
     const copyToClipboard = function (text, workbench, message) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text)
@@ -358,6 +399,10 @@
         input.value = "SGVsbG8sIHdvcmxkIQ==";
       } else if (sampleId === "validate") {
         input.value = "eyJzdGF0dXMiOiJvayIsImNvdW50IjoyfQ==";
+      } else if (sampleId === "data-uri") {
+        input.value = "data:application/json;base64,eyJ0b29sIjoiVmFsaWRvSHViIiwiZmVhdHVyZSI6ImRhdGEtdXJpIGRlY29kZSJ9";
+      } else if (sampleId === "invalid-base64") {
+        input.value = "SGVsbG8===%%%";
       }
       input.dispatchEvent(new Event('input', { bubbles: true }));
     }
@@ -422,8 +467,9 @@
             ${isDecodeWorkbench
               ? `<option value="">-- Select Preset --</option>
                  <option value="decode">Decode Hello</option>
+                 <option value="data-uri">Decode data URI</option>
                  <option value="validate">Decode JSON payload</option>
-                 <option value="encode-unicode">Invalid Unicode text</option>`
+                 <option value="invalid-base64">Invalid Base64</option>`
               : `<option value="">-- Select Preset --</option>
                  <option value="encode-hello">Encode Hello</option>
                  <option value="encode-unicode">Encode Unicode</option>
@@ -685,7 +731,8 @@
       // Handle operations
       if (isValidateMode) {
         // Validation / Decoding
-        const analysis = analyzeBase64(inputVal);
+        const dataUri = detectDataUri(inputVal);
+        const analysis = analyzeBase64(dataUri ? dataUri.payload : inputVal);
         const elapsed = (performance.now() - startTime).toFixed(2);
 
         if (!analysis.valid) {
@@ -733,6 +780,8 @@
         }
 
         const decodedOutput = analysis.textStatus === "UTF-8 text" ? analysis.text : `[Binary stream, ${util.formatBytes(analysis.bytes.length)}]`;
+        const sniff = sniffBytes(analysis.bytes);
+        const histogram = byteHistogram(analysis.bytes);
         workbench.setOutput(decodedOutput);
         workbench.setMessage(analysis.message, analysis.warnings.length > 0 ? "warning" : "success");
         workbench.setStats(analysis.details, analysis.warnings, analysis.warnings.length > 0 ? "warning" : "success");
@@ -803,6 +852,16 @@
         const apiSnippets = apiSnippetsFor("decode");
         workbench.setAdvanced(`
           <div class="pesel-dev-section">
+            <section class="generic-analysis-section">
+              <h4>Base64 byte and payload intelligence</h4>
+              <div class="generic-quality-grid">
+                <article class="generic-quality-card"><strong>Detected container</strong><p>${dataUri ? `Data URI (${dataUri.mime})` : 'Raw Base64/Base64URL string'}.</p></article>
+                <article class="generic-quality-card"><strong>Byte signature</strong><p>${sniff.type}; first bytes: ${sniff.signature}.</p></article>
+                <article class="generic-quality-card"><strong>Canonical forms</strong><p>Standard and URL-safe canonical strings are available for copy-safe fixture normalization.</p></article>
+                <article class="generic-quality-card"><strong>Decode boundary</strong><p>Base64 validity proves transport encoding only, not file trust, malware safety, or semantic correctness.</p></article>
+              </div>
+              ${tableHtml(['Bucket', 'Bytes'], Object.keys(histogram).map(key => [key, histogram[key]]))}
+            </section>
             <details class="pesel-dev-accordion" open>
               <summary>Decoded Hex Dump</summary>
               <div class="pesel-dev-accordion-content">
@@ -865,6 +924,8 @@
         // Encoding
         const bytes = util.utf8Bytes(inputVal);
         const encoded = encodeBytes(bytes, { urlSafe: values.urlSafe, padding: values.padding !== false });
+        const sniff = sniffBytes(bytes);
+        const histogram = byteHistogram(bytes);
         const elapsed = (performance.now() - startTime).toFixed(2);
 
         // Add to history
@@ -942,6 +1003,16 @@
         const apiSnippets = apiSnippetsFor("encode");
         workbench.setAdvanced(`
           <div class="pesel-dev-section">
+            <section class="generic-analysis-section">
+              <h4>Base64 encoding intelligence</h4>
+              <div class="generic-quality-grid">
+                <article class="generic-quality-card"><strong>Input profile</strong><p>${sniff.type}; ${util.formatBytes(bytes.length)} before Base64 expansion.</p></article>
+                <article class="generic-quality-card"><strong>Expansion</strong><p>Encoded output is ${encoded.length} characters; Base64 normally expands bytes by roughly 33%.</p></article>
+                <article class="generic-quality-card"><strong>Variant</strong><p>${values.urlSafe ? 'Base64URL selected for URLs/JWT-like transport.' : 'Standard Base64 selected for MIME and common text transport.'}</p></article>
+                <article class="generic-quality-card"><strong>Padding</strong><p>${values.padding !== false ? 'Padding included for canonical compatibility.' : 'Padding omitted for URL-safe compact fixtures.'}</p></article>
+              </div>
+              ${tableHtml(['Bucket', 'Bytes'], Object.keys(histogram).map(key => [key, histogram[key]]))}
+            </section>
             <details class="pesel-dev-accordion" open>
               <summary>Input UTF-8 Byte Preview</summary>
               <div class="pesel-dev-accordion-content">

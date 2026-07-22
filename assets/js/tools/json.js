@@ -35,6 +35,9 @@
       let nodes = 0;
       let depth = 0;
       let elements = 0;
+      let objects = 0;
+      let arrays = 0;
+      let scalars = 0;
       let largeMode = false;
 
       function traverse(val, currentDepth) {
@@ -46,11 +49,18 @@
           largeMode = true;
         }
         if (val && typeof val === "object") {
+          if (Array.isArray(val)) {
+            arrays++;
+          } else {
+            objects++;
+          }
           const keys = Object.keys(val);
           elements += keys.length;
           keys.forEach(k => {
             traverse(val[k], currentDepth + 1);
           });
+        } else {
+          scalars++;
         }
       }
 
@@ -59,8 +69,119 @@
         nodes: nodes,
         depth: depth,
         elements: elements,
+        objects: objects,
+        arrays: arrays,
+        scalars: scalars,
         largeMode: largeMode
       };
+    }
+
+    function repairJsonCandidate(input) {
+      let repaired = input
+        .replace(/[\u201C\u201D]/g, '"')
+        .replace(/[\u2018\u2019]/g, "'")
+        .replace(/,\s*([}\]])/g, "$1");
+      repaired = repaired.replace(/([{,]\s*)([A-Za-z_$][\w$-]*)(\s*:)/g, '$1"$2"$3');
+      repaired = repaired.replace(/'([^'\\]*(?:\\.[^'\\]*)*)'/g, function (_m, body) {
+        return '"' + body.replace(/"/g, '\\"') + '"';
+      });
+      const parsed = parseJson(repaired);
+      return parsed.valid ? { ok: true, value: repaired, parsed: parsed } : { ok: false, value: repaired, error: parsed.message };
+    }
+
+    function collectJsonPaths(value) {
+      const rows = [];
+      function walk(node, path, pointer, depth) {
+        if (rows.length >= 14) return;
+        const type = typeLabel(node);
+        rows.push({ path: path, pointer: pointer || "/", type: type, preview: previewValue(node) });
+        if (node && typeof node === "object" && depth < 4) {
+          const keys = Object.keys(node).slice(0, 8);
+          keys.forEach(key => {
+            const nextPath = Array.isArray(node) ? `${path}[${key}]` : path + jsonPathSegment(key);
+            walk(node[key], nextPath, pointer + "/" + key.replace(/~/g, "~0").replace(/\//g, "~1"), depth + 1);
+          });
+        }
+      }
+      walk(value, "$", "", 0);
+      return rows;
+    }
+
+    function jsonPathSegment(key) {
+      return /^[A-Za-z_$][\w$]*$/.test(key) ? "." + key : "['" + String(key).replace(/\\/g, "\\\\").replace(/'/g, "\\'") + "']";
+    }
+
+    function previewValue(value) {
+      if (value && typeof value === "object") {
+        return Array.isArray(value) ? `${value.length} items` : `${Object.keys(value).length} keys`;
+      }
+      const raw = value === null ? "null" : String(value);
+      return raw.length > 42 ? raw.slice(0, 39) + "..." : raw;
+    }
+
+    function inferSchema(value) {
+      if (Array.isArray(value)) {
+        return {
+          type: "array",
+          minItems: value.length,
+          items: value.length ? inferSchema(value[0]) : {}
+        };
+      }
+      if (value && typeof value === "object") {
+        const properties = {};
+        Object.keys(value).slice(0, 24).forEach(key => {
+          properties[key] = inferSchema(value[key]);
+        });
+        return { type: "object", required: Object.keys(value), properties: properties };
+      }
+      if (value === null) return { type: "null" };
+      if (Number.isInteger(value)) return { type: "integer" };
+      return { type: typeof value };
+    }
+
+    function flattenedPreview(value) {
+      const rows = [];
+      function walk(node, path) {
+        if (rows.length >= 18) return;
+        if (node && typeof node === "object") {
+          const keys = Object.keys(node);
+          if (!keys.length) {
+            rows.push([path, Array.isArray(node) ? "[]" : "{}"]);
+          }
+          keys.forEach(key => walk(node[key], Array.isArray(node) ? `${path}[${key}]` : `${path}.${key}`));
+        } else {
+          rows.push([path, previewValue(node)]);
+        }
+      }
+      walk(value, "$");
+      return rows;
+    }
+
+    function secretFindings(value) {
+      const hits = [];
+      const secretKeyPattern = /(secret|token|password|passwd|api[_-]?key|private[_-]?key|authorization|credential)/i;
+      function walk(node, path) {
+        if (hits.length >= 10) return;
+        if (node && typeof node === "object") {
+          Object.keys(node).forEach(key => {
+            const nextPath = Array.isArray(node) ? `${path}[${key}]` : `${path}.${key}`;
+            if (secretKeyPattern.test(key)) {
+              hits.push(nextPath);
+            }
+            walk(node[key], nextPath);
+          });
+        }
+      }
+      walk(value, "$");
+      return hits;
+    }
+
+    function tableHtml(headers, rows) {
+      return '<div class="generic-table-shell"><table class="pesel-dev-table"><thead><tr>'
+        + headers.map(h => '<th>' + util.escapeHtml(h) + '</th>').join('')
+        + '</tr></thead><tbody>'
+        + rows.map(row => '<tr>' + row.map(cell => '<td>' + util.escapeHtml(String(cell)) + '</td>').join('') + '</tr>').join('')
+        + '</tbody></table></div>';
     }
 
     const copyToClipboard = function (text, workbench, message) {
@@ -92,6 +213,10 @@
         input.value = '{\n  "app": "validohub",\n  "features": {\n    "liveMode": true,\n    "offline": true,\n    "treeExplorer": true\n  },\n  "limits": {\n    "maxUploadMb": 5,\n    "indent": 2\n  }\n}';
       } else if (sampleId === "json-array") {
         input.value = '[\n  "Standard Base64",\n  "Base64URL",\n  "RFC 4648"\n]';
+      } else if (sampleId === "json-security") {
+        input.value = '{\n  "user": {\n    "id": "usr_123",\n    "email": "developer@example.test"\n  },\n  "apiKey": "test_sk_redacted",\n  "features": ["audit", "local-only"],\n  "expiresAt": "2026-12-31T23:59:59Z"\n}';
+      } else if (sampleId === "json-repair") {
+        input.value = "{\n  name: 'validohub',\n  mode: 'repair-lab',\n  enabled: true,\n}";
       } else if (sampleId === "json-invalid") {
         input.value = '{\n  "name": "validohub"\n  "incomplete": true\n}';
       }
@@ -155,6 +280,8 @@
             <option value="json-api">API Response</option>
             <option value="json-config">Config Object</option>
             <option value="json-array">Array Data</option>
+            <option value="json-security">Secret scan payload</option>
+            <option value="json-repair">Repairable malformed JSON</option>
             <option value="json-invalid">Invalid JSON</option>
           </select>
         `;
@@ -435,6 +562,7 @@
       if (!parsed.valid) {
         setTimelineStatus('syntax', 'error');
         setTimelineStatus('complete', 'error');
+        const repair = repairJsonCandidate(inputVal);
 
         workbench.setOutput(`Invalid JSON: ${parsed.message}`);
         workbench.setMessage("Invalid JSON structure.", "error");
@@ -459,6 +587,28 @@
 
         if (customActions) customActions.style.display = 'none';
         if (treeExplorerContainer) treeExplorerContainer.style.display = 'none';
+        workbench.setAdvanced(`
+          <div class="pesel-dev-section">
+            <section class="generic-analysis-section">
+              <h4>JSON repair lab</h4>
+              <div class="generic-quality-grid">
+                <article class="generic-quality-card"><strong>Syntax failure</strong><p>${util.escapeHtml(parsed.message)}</p></article>
+                <article class="generic-quality-card"><strong>Repair status</strong><p>${repair.ok ? 'A browser-local repair candidate parses successfully.' : 'The automatic repair pass still needs manual review.'}</p></article>
+                <article class="generic-quality-card"><strong>Common fixes</strong><p>Trailing commas, smart quotes, single-quoted strings, and unquoted object keys are tested locally.</p></article>
+                <article class="generic-quality-card"><strong>Safety boundary</strong><p>Repair suggestions are fixtures; review meaning before using them in production payloads.</p></article>
+              </div>
+              <div class="pesel-dev-accordion-content" style="background: var(--code-bg); padding: 12px; border-radius: 6px; margin-top: 14px;">
+                <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
+                <pre style="margin:0; color: var(--code-text);">${util.escapeHtml(repair.ok ? JSON.stringify(repair.parsed.value, null, 2) : (repair.value || inputVal))}</pre>
+              </div>
+            </section>
+          </div>
+        `);
+        const repairCopy = workbench.form.querySelector('.pesel-dev-accordion-copy-btn');
+        const repairPre = workbench.form.querySelector('.pesel-dev-accordion-content pre');
+        if (repairCopy && repairPre) {
+          repairCopy.addEventListener('click', () => copyToClipboard(repairPre.textContent, workbench, 'Copied repair candidate.'));
+        }
         return;
       }
 
@@ -513,11 +663,16 @@
       workbench.setBadge({ label: `${parsed.counts.nodes} nodes`, state: "success" });
 
       const stats = subtreeStats(parsed.value);
+      const paths = collectJsonPaths(parsed.value);
+      const flat = flattenedPreview(parsed.value);
+      const schema = inferSchema(parsed.value);
+      const secrets = secretFindings(parsed.value);
       const detailRows = [
         ["JSON state", "Valid"],
         ["Byte size", util.formatBytes(util.utf8Bytes(outputText).length)],
         ["Subtree size", `${stats.nodes} nodes`],
         ["Depth", String(stats.depth)],
+        ["Objects / arrays", `${stats.objects} / ${stats.arrays}`],
         ["Subtree elements", String(stats.elements)]
       ];
       workbench.setStats(detailRows, [], "success");
@@ -608,6 +763,26 @@
               <article class="generic-quality-card"><strong>Developer handling</strong><p>Copy normalized output for fixtures, but avoid pasting secrets or production tokens into shared logs.</p></article>
               <article class="generic-quality-card"><strong>Fixture safety</strong><p>Samples are safe developer fixtures; live payloads should still be reviewed for private data.</p></article>
             </div>
+          </section>
+          <section class="generic-analysis-section">
+            <h4>Path, schema, and fixture intelligence</h4>
+            <div class="generic-quality-grid">
+              <article class="generic-quality-card"><strong>Root type</strong><p>${typeLabel(parsed.value)} with ${stats.nodes} nodes and ${stats.depth} levels.</p></article>
+              <article class="generic-quality-card"><strong>Secret scan</strong><p>${secrets.length ? `${secrets.length} suspicious key path(s): ${secrets.slice(0, 3).join(', ')}` : 'No obvious secret-like key names detected.'}</p></article>
+              <article class="generic-quality-card"><strong>Schema inference</strong><p>Generated a JSON Schema-style draft from the current payload for test fixture handoff.</p></article>
+              <article class="generic-quality-card"><strong>Flatten map</strong><p>Produced copyable JSONPath/value rows for debugging API contracts.</p></article>
+            </div>
+            <h5 style="margin:18px 0 8px;">Top JSONPath / pointer rows</h5>
+            ${tableHtml(['JSONPath', 'Pointer', 'Type', 'Preview'], paths.map(row => [row.path, row.pointer, row.type, row.preview]))}
+            <h5 style="margin:18px 0 8px;">Flattened fixture preview</h5>
+            ${tableHtml(['Path', 'Value'], flat)}
+            <details class="pesel-dev-accordion" open style="margin-top: 16px;">
+              <summary>Inferred schema preview</summary>
+              <div class="pesel-dev-accordion-content">
+                <button type="button" class="pesel-dev-accordion-copy-btn">Copy</button>
+                <pre>${util.escapeHtml(JSON.stringify(schema, null, 2))}</pre>
+              </div>
+            </details>
           </section>
           <div class="pesel-api-card">
             <div class="pesel-section-title">

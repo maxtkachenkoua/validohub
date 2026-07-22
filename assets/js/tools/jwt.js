@@ -194,6 +194,63 @@
       };
     }
 
+    function claimRows(parsed) {
+      const now = Math.floor(Date.now() / 1000);
+      const registered = [
+        ["iss", "Issuer"],
+        ["sub", "Subject"],
+        ["aud", "Audience"],
+        ["exp", "Expiration"],
+        ["nbf", "Not before"],
+        ["iat", "Issued at"],
+        ["jti", "JWT ID"]
+      ];
+      return registered.map(pair => {
+        const key = pair[0];
+        const value = parsed.payload[key];
+        let status = value === undefined ? "missing" : "present";
+        let detail = value === undefined ? "Not provided" : String(Array.isArray(value) ? value.join(", ") : value);
+        if (["exp", "nbf", "iat"].indexOf(key) !== -1 && typeof value === "number") {
+          const delta = value - now;
+          detail = new Date(value * 1000).toUTCString();
+          status = key === "exp" && delta < 0 ? "expired" : key === "nbf" && delta > 0 ? "future" : "ok";
+        }
+        return [key, pair[1], status, detail];
+      });
+    }
+
+    function securityReview(parsed) {
+      const alg = parsed.header.alg || "missing";
+      const rows = [];
+      rows.push(["Algorithm", alg, alg === "none" ? "review" : KNOWN_ALGORITHMS.indexOf(alg) === -1 ? "unknown" : "known"]);
+      rows.push(["Signature bytes", String(parsed.signature ? parsed.signature.length : 0), parsed.signature ? "present" : "missing"]);
+      rows.push(["Expiration", parsed.payload.exp === undefined ? "missing" : "present", parsed.payload.exp === undefined ? "review" : parsed.health.errors.some(e => e.indexOf("expired") !== -1) ? "expired" : "ok"]);
+      rows.push(["Audience", parsed.payload.aud === undefined ? "missing" : "present", parsed.payload.aud === undefined ? "review" : "ok"]);
+      rows.push(["Issuer", parsed.payload.iss === undefined ? "missing" : "present", parsed.payload.iss === undefined ? "review" : "ok"]);
+      rows.push(["Subject", parsed.payload.sub === undefined ? "missing" : "present", parsed.payload.sub === undefined ? "review" : "ok"]);
+      return rows;
+    }
+
+    function jwtRiskScore(parsed) {
+      let score = 100;
+      if (!parsed.header.alg || parsed.header.alg === "none") score -= 35;
+      if (!parsed.signature) score -= 20;
+      if (parsed.payload.exp === undefined) score -= 20;
+      if (parsed.payload.aud === undefined) score -= 10;
+      if (parsed.payload.iss === undefined) score -= 10;
+      if (parsed.health.errors.length) score -= 25;
+      if (parsed.health.warnings.length) score -= Math.min(20, parsed.health.warnings.length * 5);
+      return Math.max(0, score);
+    }
+
+    function tableHtml(headers, rows) {
+      return '<div class="generic-table-shell"><table class="pesel-dev-table"><thead><tr>'
+        + headers.map(h => '<th>' + util.escapeHtml(h) + '</th>').join('')
+        + '</tr></thead><tbody>'
+        + rows.map(row => '<tr>' + row.map(cell => '<td>' + util.escapeHtml(String(cell)) + '</td>').join('') + '</tr>').join('')
+        + '</tbody></table></div>';
+    }
+
     function onMount(workbench) {
       workbench.form._workbench = workbench;
 
@@ -572,6 +629,9 @@
 
       // Valid output formatted JSON
       const decodedOutput = JSON.stringify(decodedJson(parsed), null, 2);
+      const claimTable = claimRows(parsed);
+      const securityRows = securityReview(parsed);
+      const riskScore = jwtRiskScore(parsed);
       workbench.setOutput(decodedOutput);
       workbench.setMessage("Decoded JWT locally in your browser.", parsed.health.errors.length > 0 ? "error" : parsed.health.warnings.length > 0 ? "warning" : "success");
       workbench.setStats(stats(parsed), parsed.health.messages, parsed.health.errors.length > 0 ? "error" : parsed.health.warnings.length > 0 ? "warning" : "success");
@@ -624,6 +684,19 @@
       // Setup API Developer Snippets Panel
       workbench.setAdvanced(`
         <div class="pesel-dev-section">
+          <section class="generic-analysis-section">
+            <h4>JWT security and claim intelligence</h4>
+            <div class="generic-quality-grid">
+              <article class="generic-quality-card"><strong>Local risk score</strong><p>${riskScore}/100 based on algorithm, signature presence, expiration, issuer, audience, and parser errors.</p></article>
+              <article class="generic-quality-card"><strong>Verification boundary</strong><p>This workbench decodes and audits structure locally. Cryptographic trust still requires the correct secret, public key, or JWKS.</p></article>
+              <article class="generic-quality-card"><strong>Claim clock</strong><p>exp, nbf, and iat are interpreted against the browser clock for immediate expiry and activation review.</p></article>
+              <article class="generic-quality-card"><strong>Header safety</strong><p>alg none, unknown algorithms, missing typ, or empty signatures are surfaced as review conditions.</p></article>
+            </div>
+            <h5 style="margin:18px 0 8px;">Registered claims</h5>
+            ${tableHtml(['Claim', 'Meaning', 'State', 'Value'], claimTable)}
+            <h5 style="margin:18px 0 8px;">Security checklist</h5>
+            ${tableHtml(['Check', 'Evidence', 'State'], securityRows)}
+          </section>
           <div class="pesel-api-card">
             <div class="pesel-section-title">
               <span>🔌</span> Developer API Preview

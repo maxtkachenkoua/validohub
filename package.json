@@ -5,7 +5,8 @@
     "test": "node scripts/test-pages.mjs",
     "build:country": "node scripts/build-country-dev.mjs",
     "build:portal": "node scripts/build-portal-dev.mjs",
-    "audit:country-premium": "node scripts/audit-country-premium.mjs"
+    "audit:country-premium": "node scripts/audit-country-premium.mjs",
+    "audit:global-premium": "node scripts/audit-global-tools-premium.mjs"
   },
   "dependencies": {
     "playwright": "^1.61.1"

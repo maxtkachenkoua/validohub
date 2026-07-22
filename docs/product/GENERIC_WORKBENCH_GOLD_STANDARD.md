@@ -109,6 +109,8 @@ When adding a new global tool under `/{locale}/tools/{tool-slug}/`, do not start
 - Include copy/download behavior for the values developers actually need, not only the raw textarea output.
 - Browser-verify first load, first preset, primary success, invalid/error, mobile layout, and advanced analysis before calling the tool complete.
 - If a competing public tool has a meaningful capability, ValidoHub should match it and add a richer local analysis layer.
+- Global tools must compete on domain depth, not only presentation. JSON needs repair/schema/path/flatten/secret-scan intelligence; JWT needs claim timeline, security checklist, and verification-boundary explanation; Base64 needs byte/data-URI/MIME/canonicalization inspection; URL tools need full URL parsing, query tables, canonical output, redirect/credential/UTM/security hints; UUID and IBAN tools need generation plus validation/debug replay where the domain allows it.
+- `npm run audit:global-premium -- --base <local-url>` is the required fast-loop audit for global tool work. It must pass before a global tool hardening task is called done. A full `npm run build` remains the release gate, but global-only development should not wait on full-site materialization when targeted generated assets and browser audits are enough for iteration.
 
 When upgrading existing generic tools, audit the whole user flow:
 

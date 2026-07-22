@@ -67,6 +67,8 @@ Generic utility pages must include:
 - Compact premium card typography: small uppercase labels, moderate-weight values, muted explanatory text, and wrapped long strings.
 - No oversized bold paragraph blocks inside result cards.
 - Validators and generators must not share fake-green results: invalid samples must render invalid/review states, while generators must clearly label generated fixture output.
+- Global utility tools must carry top-tier domain intelligence. JSON, JWT, Base64, URL, Regex, UUID, and IBAN routes are incomplete if they only validate/convert; they must expose domain-specific debugger surfaces such as repair candidates, schema/path maps, claim/security timelines, byte signatures, full URL/query/security analysis, capture-group maps, UUID version/variant/timestamp details, and IBAN MOD-97/BBAN breakdowns.
+- Global tool changes must run `npm run audit:global-premium -- --base <local-url>` in addition to syntax checks. The audit exists to prevent pretty-but-thin regressions and fake-green invalid sample behavior.
 
 ## Identity Rules
 
