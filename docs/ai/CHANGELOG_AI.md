@@ -1,3 +1,11 @@
+## 2026-07-22 - Homepage command center refinement
+
+- Reworked the Homepage Portal away from a large marketing/stat hero into a denser command-center launcher.
+- Added first-class global tool discovery for JSON, JWT, Base64, URL, Regex, UUID, IBAN validation, and IBAN generation alongside premium country workbenches.
+- Added real launcher lanes for Global Tools, Country Tools, Generators, and the Debug Contract; cards now link only to real routes or stable in-page sections.
+- Updated the homepage spec so future AI sessions keep global tools visible and do not regress to empty stat panels or hero-only marketing.
+- Kept Valido Engine untouched and used the fast `npm run build:portal` path for homepage/countries-only regeneration.
+
 ## 2026-07-21 - Strict Europe full-premium expansion batch
 
 - Added a documented strict-Europe premium generation batch for Portugal (portugal), Austria (austria), Belgium (belgium), Ireland (ireland), Czechia (czechia), Sweden (sweden), Norway (norway), Denmark (denmark), Finland (finland), Romania (romania), Albania (albania), Andorra (andorra), Bosnia and Herzegovina (bosnia-and-herzegovina), Bulgaria (bulgaria), Croatia (croatia), Cyprus (cyprus), Estonia (estonia), Greece (greece), Hungary (hungary), Iceland (iceland), Latvia (latvia), Liechtenstein (liechtenstein), Lithuania (lithuania), Luxembourg (luxembourg), Malta (malta), Moldova (moldova), Monaco (monaco), Montenegro (montenegro), North Macedonia (north-macedonia), San Marino (san-marino), Serbia (serbia), Slovakia (slovakia), Slovenia (slovenia), Ukraine (ukraine), United Kingdom (united-kingdom), Vatican City (vatican-city).

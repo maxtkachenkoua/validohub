@@ -10,15 +10,16 @@ Route:
 
 ## Product Goal
 
-The homepage must feel like a premium developer work surface, not a marketing landing page. It should help users immediately find a country, format, validator, generator, or debugging workflow.
+The homepage must feel like a premium developer work surface, not a marketing landing page. It should help users immediately find a global tool, country hub, local format, validator, generator, or debugging workflow.
 
 The first viewport must expose:
 
 - A clear product promise.
 - A working country/tool search.
-- Coverage metrics derived from the current country registry.
-- Direct links into strong premium workbenches.
+- Direct links into global tools such as JSON, JWT, Base64, URL, Regex, UUID, IBAN Validator, and IBAN Generator when those routes exist.
+- Direct links into strong premium country workbenches.
 - A clear path into the Countries Portal.
+- Real launcher lanes for global tools, country tools, generators, and the debug contract.
 
 ## Ownership
 
@@ -57,6 +58,7 @@ It is a development accelerator. `npm run build` remains the release gate.
 - Homepage search must be real. Typing filters visible country/tool cards, and Enter opens the first matching result.
 - Suggested search chips must perform an observable search action.
 - Cards must link to real existing routes or stable portal routes.
+- The homepage must include global tools, not only country tools; users may arrive looking for generic encoding, JSON, JWT, regex, UUID, or IBAN workflows.
 - Do not ship fake buttons, inactive controls, or "coming soon" primary actions on the homepage.
 - Homepage content must not claim that a country/tool exists unless the linked route exists or the card clearly points to the Countries Portal.
 
@@ -64,7 +66,7 @@ It is a development accelerator. `npm run build` remains the release gate.
 
 - The homepage is a command center, not a decorative hero-only page.
 - Use premium ValidoHub card density, strong typography, and calm operational layout.
-- Avoid huge marketing-only sections, empty panels, generic SaaS filler, gradient-only decoration, and one-note palettes.
+- Avoid huge marketing-only sections, empty stat cards, generic SaaS filler, gradient-only decoration, and one-note palettes.
 - Keep the first viewport useful on desktop and mobile.
 - Search, cards, metrics, and calls to action must not overflow horizontally.
 

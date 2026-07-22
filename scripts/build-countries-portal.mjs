@@ -232,43 +232,26 @@ function findRouteByPath(routeRegistry, path) {
   return routeRegistry.get(path) || null;
 }
 
-function renderFeaturedHomeTools(routeRegistry) {
-  const featuredPaths = [
-    '/en/poland/pesel-validator/',
-    '/en/brazil/brazil-pix-validator/',
-    '/en/france/france-siret-validator/',
-    '/en/germany/german-tax-id-validator/',
-    '/en/netherlands/netherlands-bsn-validator/',
-    '/en/czechia/czechia-rodne-cislo-validator/',
-    '/en/ukraine/ukraine-rnokpp-validator/',
-    '/en/tools/iban-validator/'
-  ];
-
-  const fallbackTitles = {
-    '/en/poland/pesel-validator/': 'Poland PESEL Validator',
-    '/en/brazil/brazil-pix-validator/': 'Brazil PIX Validator',
-    '/en/france/france-siret-validator/': 'France SIRET Validator',
-    '/en/germany/german-tax-id-validator/': 'German Tax ID Validator',
-    '/en/netherlands/netherlands-bsn-validator/': 'Dutch BSN Validator',
-    '/en/czechia/czechia-rodne-cislo-validator/': 'Czech Rodne Cislo Validator',
-    '/en/ukraine/ukraine-rnokpp-validator/': 'Ukraine RNOKPP Validator',
-    '/en/tools/iban-validator/': 'Global IBAN Validator'
-  };
-
-  const families = ['identity', 'payments', 'registry', 'tax', 'banking', 'debug', 'fixtures', 'global'];
-
-  return featuredPaths.map((path, index) => {
-    const route = findRouteByPath(routeRegistry, path);
-    const title = route?.title || fallbackTitles[path] || 'Developer Workbench';
-    const family = families[index] || 'tool';
+function renderHomeToolCards(routeRegistry, items, cardClass = '') {
+  return items.map(item => {
+    const route = findRouteByPath(routeRegistry, item.path);
+    if (!route && item.requireRoute !== false) return '';
+    const title = route?.title || item.title || 'Developer Workbench';
+    const cleanTitle = title.replace(/\s*\|\s*ValidoHub\s*$/i, '');
+    const search = [
+      cleanTitle,
+      item.kicker,
+      item.summary,
+      ...(item.keywords || [])
+    ].filter(Boolean).join(' ').toLowerCase();
     return `
-      <a class="vh-home-tool-card vh-home-search-card" href="${path}" data-search="${escapeHtml(`${title} ${family}`.toLowerCase())}">
-        <span class="vh-home-tool-kicker">${escapeHtml(family)}</span>
-        <strong>${escapeHtml(title.replace(/\s*\|\s*ValidoHub\s*$/i, ''))}</strong>
-        <span>Open workbench</span>
+      <a class="vh-home-tool-card vh-home-search-card ${cardClass}" href="${item.path}" data-search="${escapeHtml(search)}">
+        <span class="vh-home-tool-kicker">${escapeHtml(item.kicker || 'tool')}</span>
+        <strong>${escapeHtml(cleanTitle)}</strong>
+        <span>${escapeHtml(item.summary || 'Open workbench')}</span>
       </a>
     `;
-  }).join('\n');
+  }).filter(Boolean).join('\n');
 }
 
 function renderHomeCountryCards(countryRoutes) {
@@ -304,7 +287,32 @@ export async function compileHomePortal(routeRegistry, assetsManifest) {
   const layoutTemplate = await readFile(resolve(projectRoot, 'templates', 'layout.html'), 'utf8');
   const countryRoutes = routeRegistry.getAll().filter(route => route.type === 'country').sort((a, b) => a.metadata.catalog.name.localeCompare(b.metadata.catalog.name));
   const metrics = collectCountryPortalMetrics(countryRoutes);
-  const featuredToolsHtml = renderFeaturedHomeTools(routeRegistry);
+  const globalToolsHtml = renderHomeToolCards(routeRegistry, [
+    { path: '/en/tools/json-formatter/', kicker: 'JSON', summary: 'Format, inspect, and copy clean payloads.', keywords: ['global', 'developer', 'debug'] },
+    { path: '/en/tools/jwt-decoder/', kicker: 'JWT', summary: 'Decode token headers and claims locally.', keywords: ['global', 'security', 'debug'] },
+    { path: '/en/tools/base64-encoder/', kicker: 'Base64', summary: 'Encode browser-only test strings.', keywords: ['global', 'encoding', 'generator'] },
+    { path: '/en/tools/url-encoder/', kicker: 'URL', summary: 'Encode query strings and route-safe values.', keywords: ['global', 'encoding'] },
+    { path: '/en/tools/regex-tester/', kicker: 'Regex', summary: 'Test pattern behavior before shipping.', keywords: ['global', 'debug'] },
+    { path: '/en/tools/uuid-generator/', kicker: 'UUID', summary: 'Generate copy-ready identifiers.', keywords: ['global', 'generator', 'fixtures'] },
+    { path: '/en/tools/iban-validator/', kicker: 'IBAN', summary: 'Validate global ISO 13616 shape and MOD-97.', keywords: ['global', 'banking', 'payments'] },
+    { path: '/en/tools/iban-generator/', kicker: 'IBAN Generator', summary: 'Create structural IBAN fixtures for supported countries.', keywords: ['global', 'generator', 'payments'] }
+  ]);
+  const countryToolsHtml = renderHomeToolCards(routeRegistry, [
+    { path: '/en/poland/pesel-validator/', kicker: 'Poland', summary: 'PESEL checksum, date, gender, and debugger.', keywords: ['identity', 'checksum', 'field breakdown'] },
+    { path: '/en/brazil/brazil-pix-validator/', kicker: 'Brazil', summary: 'PIX payload checks and payment handoff context.', keywords: ['payment', 'qr', 'pix'] },
+    { path: '/en/france/france-siret-validator/', kicker: 'France', summary: 'SIRET/SIREN/NIC evidence and registry boundary.', keywords: ['registry', 'company', 'tax'] },
+    { path: '/en/germany/german-tax-id-validator/', kicker: 'Germany', summary: 'IdNr structure, control evidence, and fixtures.', keywords: ['tax id', 'identity'] },
+    { path: '/en/netherlands/netherlands-bsn-validator/', kicker: 'Netherlands', summary: 'BSN 11-test replay and field-level output.', keywords: ['identity', 'checksum'] },
+    { path: '/en/czechia/czechia-rodne-cislo-validator/', kicker: 'Czechia', summary: 'Rodne cislo parser, date evidence, and review states.', keywords: ['identity', 'birth number'] },
+    { path: '/en/ukraine/ukraine-rnokpp-validator/', kicker: 'Ukraine', summary: 'RNOKPP local structure and safe fixture handling.', keywords: ['tax id', 'identity'] },
+    { path: '/en/italy/italy-codice-fiscale-validator/', kicker: 'Italy', summary: 'Codice fiscale parser and local evidence slices.', keywords: ['tax id', 'identity'] }
+  ]);
+  const generatorToolsHtml = renderHomeToolCards(routeRegistry, [
+    { path: '/en/tools/iban-generator/', kicker: 'Global', summary: 'IBAN generator for structural fixtures.', keywords: ['generator', 'iban'] },
+    { path: '/en/poland/poland-iban-generator/', kicker: 'Poland', summary: 'Generate Polish IBAN/NRB-style fixtures.', keywords: ['generator', 'payments'] },
+    { path: '/en/france/france-iban-generator/', kicker: 'France', summary: 'Generate French IBAN fixture payloads.', keywords: ['generator', 'payments'] },
+    { path: '/en/germany/germany-iban-generator/', kicker: 'Germany', summary: 'Generate German IBAN fixture payloads.', keywords: ['generator', 'payments'] }
+  ], 'vh-home-tool-card-compact');
   const featuredCountriesHtml = renderHomeCountryCards(countryRoutes);
 
   const headHtml = `
@@ -318,55 +326,80 @@ export async function compileHomePortal(routeRegistry, assetsManifest) {
   const heroHtml = `
     <section class="vh-home-hero" aria-labelledby="home-title">
       <div class="vh-home-hero-copy">
-        <span class="vh-eyebrow">Developer Intelligence Platform</span>
-        <h1 id="home-title">Validate, generate, and debug local formats before they break production.</h1>
-        <p>Country-aware browser workbenches for identifiers, tax IDs, IBANs, payment payloads, invoices, locale formats, and test fixtures. Private by default, rich enough for real debugging.</p>
+        <span class="vh-eyebrow">Developer Intelligence Command Center</span>
+        <h1 id="home-title">Find the right validator, generator, or debugger.</h1>
+        <p>Search global tools, country workbenches, local identifiers, payment formats, IBAN generators, and parser diagnostics from one browser-only launcher.</p>
         <div class="vh-home-search-panel" data-home-search>
-          <label class="vh-home-search-label" for="home-command-search">Find a country or workbench</label>
+          <label class="vh-home-search-label" for="home-command-search">Paste or search any format</label>
           <div class="vh-home-search-row">
-            <input id="home-command-search" type="search" placeholder="Search PESEL, PIX, IBAN, SIRET, VAT, Brazil, Poland..." autocomplete="off" data-home-search-input>
+            <input id="home-command-search" type="search" placeholder="Search JSON, JWT, IBAN generator, PESEL, PIX, SIRET, VAT..." autocomplete="off" data-home-search-input>
             <a class="vh-home-search-action" href="/en/countries/">Browse countries</a>
           </div>
           <div class="vh-home-search-chips" aria-label="Suggested searches">
+            <button type="button" data-home-query="json">JSON</button>
+            <button type="button" data-home-query="jwt">JWT</button>
             <button type="button" data-home-query="iban">IBAN</button>
+            <button type="button" data-home-query="generator">Generators</button>
             <button type="button" data-home-query="tax id">Tax ID</button>
             <button type="button" data-home-query="payment">Payments</button>
-            <button type="button" data-home-query="invoice">Invoices</button>
+            <button type="button" data-home-query="debug">Debug</button>
           </div>
           <p class="vh-home-search-status" data-home-search-status>${metrics.totalWorkbenches} workbenches indexed.</p>
         </div>
       </div>
-      <aside class="vh-home-command-card" aria-label="Platform snapshot">
-        <div class="vh-home-command-top">
-          <span>Live coverage</span>
-          <strong>${metrics.totalCountries}</strong>
-        </div>
-        <div class="vh-home-command-grid">
-          <div><strong>${metrics.totalWorkbenches}</strong><span>Workbench routes</span></div>
-          <div><strong>${metrics.totalIdentifiers}</strong><span>Identifier families</span></div>
-          <div><strong>${metrics.totalPayments}</strong><span>Payment rails</span></div>
-          <div><strong>7</strong><span>Core locales</span></div>
-        </div>
-        <div class="vh-home-command-pipeline">
-          <span>Field breakdown</span>
-          <span>Validation replay</span>
-          <span>Generator fixtures</span>
-          <span>Official boundary</span>
-        </div>
+      <aside class="vh-home-command-card" aria-label="Launch lanes">
+        <a href="#home-global-tools" class="vh-home-lane vh-home-search-card" data-search="global tools json jwt base64 url regex uuid iban developer">
+          <span>Global Tools</span>
+          <strong>JSON, JWT, Base64, URL, Regex</strong>
+        </a>
+        <a href="/en/countries/" class="vh-home-lane vh-home-search-card" data-search="country tools countries local identifiers payments banking tax">
+          <span>Country Tools</span>
+          <strong>${metrics.totalCountries} hubs, ${metrics.totalWorkbenches} workbenches</strong>
+        </a>
+        <a href="#home-generators" class="vh-home-lane vh-home-search-card" data-search="generators iban uuid fixtures test data payment qr">
+          <span>Generators</span>
+          <strong>IBAN, UUID, test fixtures, payments</strong>
+        </a>
+        <a href="#home-contract" class="vh-home-lane vh-home-search-card" data-search="debug field breakdown validation replay quality official boundary">
+          <span>Debug Contract</span>
+          <strong>Field breakdown, replay, raw output</strong>
+        </a>
       </aside>
     </section>
   `;
 
   const contentHtml = `
     <div class="vh-home-portal-page">
-      <section class="vh-home-section vh-home-search-results" aria-labelledby="home-featured-tools">
+      <section class="vh-home-section vh-home-search-results" id="home-global-tools" aria-labelledby="home-global-tools-title">
         <div class="vh-home-section-head">
-          <span class="vh-eyebrow">Featured Workbenches</span>
-          <h2 id="home-featured-tools">Start with the strongest local instruments.</h2>
-          <p>High-signal tools with examples, generators, local parsing, field breakdown, debug replay, and copy-ready outputs.</p>
+          <span class="vh-eyebrow">Global Tools</span>
+          <h2 id="home-global-tools-title">Fast utilities that are not tied to one country.</h2>
+          <p>Open the universal workbenches for payloads, encoding, tokens, identifiers, regexes, and cross-country IBAN workflows.</p>
         </div>
         <div class="vh-home-tool-grid">
-          ${featuredToolsHtml}
+          ${globalToolsHtml}
+        </div>
+      </section>
+
+      <section class="vh-home-section vh-home-search-results" aria-labelledby="home-featured-tools">
+        <div class="vh-home-section-head">
+          <span class="vh-eyebrow">Local Instruments</span>
+          <h2 id="home-featured-tools">Premium country tools with real debugging depth.</h2>
+          <p>Identity, registry, tax, payment, and banking workbenches with local samples, validation replay, field breakdown, and official-boundary notes.</p>
+        </div>
+        <div class="vh-home-tool-grid">
+          ${countryToolsHtml}
+        </div>
+      </section>
+
+      <section class="vh-home-section vh-home-generators" id="home-generators" aria-labelledby="home-generators-title">
+        <div class="vh-home-section-head">
+          <span class="vh-eyebrow">Generators</span>
+          <h2 id="home-generators-title">Generate fixtures when validation is not enough.</h2>
+          <p>Use fresh browser-only values for tests, demos, forms, and QA flows. Generation belongs next to validation so users can both inspect and create.</p>
+        </div>
+        <div class="vh-home-tool-grid vh-home-tool-grid-compact">
+          ${generatorToolsHtml}
         </div>
       </section>
 
