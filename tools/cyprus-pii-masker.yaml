@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-pii-masker
+kind: tool
+module: validohub
+country: CY
+category: privacy
+status: active
+name:
+  en: "Cypriot PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1234567L +357 99 123456 CY17002001280000001200527600"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-personal-data-fixture-generator, cyprus-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

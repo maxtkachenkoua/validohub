@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: HR
+category: transport
+status: active
+name:
+  en: "Croatian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "ZG 1234 AB WVWZZZ1JZXW000001 12345678903"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-customs-declaration-helper, croatia-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: BA
+category: developer-tools
+status: active
+name:
+  en: "Bosnian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BA\",\"jib\":\"4200123450006\",\"iban\":\"BA391290079401028494\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-jmbg-validator, bosnia-and-herzegovina-jib-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

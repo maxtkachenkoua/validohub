@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-pii-masker
+kind: tool
+module: validohub
+country: HR
+category: privacy
+status: active
+name:
+  en: "Croatian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "12345678903 +385 91 123 4567 HR1210010051863000160"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-personal-data-fixture-generator, croatia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

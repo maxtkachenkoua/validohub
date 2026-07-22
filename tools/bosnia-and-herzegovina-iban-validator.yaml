@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-iban-validator
+kind: tool
+module: validohub
+country: BA
+category: finance
+status: active
+name:
+  en: "Bosnia and Herzegovina IBAN Validator"
+summary:
+  en: "Validate BA IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "BA391290079401028494"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-iban-generator, bosnia-and-herzegovina-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnia and Herzegovina IBAN Validator | ValidoHub"
+  description:
+    en: "Validate BA IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

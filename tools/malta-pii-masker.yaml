@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-pii-masker
+kind: tool
+module: validohub
+country: MT
+category: privacy
+status: active
+name:
+  en: "Maltese PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1234567M +356 2123 4567 MT84MALT011000012345MTLCAST001S"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-personal-data-fixture-generator, malta-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

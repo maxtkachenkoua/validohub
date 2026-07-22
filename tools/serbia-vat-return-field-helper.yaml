@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-vat-return-field-helper
+kind: tool
+module: validohub
+country: RS
+category: tax
+status: active
+name:
+  en: "Serbian VAT Return Field Helper"
+summary:
+  en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "PIB / PDV; RS100123456; period 2026-07; 1.234,56 RSD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-invoice-number-helper, serbia-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-json-fixture-generator
+kind: tool
+module: validohub
+country: BA
+category: developer-tools
+status: active
+name:
+  en: "Bosnian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BA\",\"jib\":\"4200123450006\",\"iban\":\"BA391290079401028494\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-regex-pack-helper, bosnia-and-herzegovina-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

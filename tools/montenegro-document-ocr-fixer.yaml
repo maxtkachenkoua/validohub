@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: montenegro-document-ocr-fixer
+kind: tool
+module: validohub
+country: ME
+category: documents
+status: active
+name:
+  en: "Montenegrin Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.montenegro-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "0101980234567 ME02712345 ME25505000012345678951 81000 Podgorica"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [montenegro-gdpr-redaction-helper, montenegro-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Montenegrin Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

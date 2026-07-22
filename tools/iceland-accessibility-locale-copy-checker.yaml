@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: IS
+category: localization
+status: active
+name:
+  en: "Icelandic Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "Kennitala input, postnumer input, amount 1.234,56 ISK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-support-ticket-scrubber, iceland-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

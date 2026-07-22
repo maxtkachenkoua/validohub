@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-bank-account-inspector
+kind: tool
+module: validohub
+country: LV
+category: finance
+status: active
+name:
+  en: "Latvian Domestic Bank Account Inspector"
+summary:
+  en: "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "BANK 0000435195001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [latvia-bic-swift-inspector, latvia-sepa-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvian Domestic Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."

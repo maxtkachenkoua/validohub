@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-bank-statement-parser
+kind: tool
+module: validohub
+country: RS
+category: finance
+status: active
+name:
+  en: "Serbian Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "21.07.2026; 1.234,56 RSD; RS35260005601001611379; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-masked-iban-formatter, serbia-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."

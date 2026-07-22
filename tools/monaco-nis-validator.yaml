@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-nis-validator
+kind: tool
+module: validohub
+country: MC
+category: national-identifiers
+status: active
+name:
+  en: "Monegasque NIS Validator"
+summary:
+  en: "Validate NIS shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-rci-number-validator, monaco-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque NIS Validator | ValidoHub"
+  description:
+    en: "Validate NIS shape, split date/control/body evidence, and prepare privacy-safe debugging output."

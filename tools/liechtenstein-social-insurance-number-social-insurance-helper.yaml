@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-social-insurance-number-social-insurance-helper
+kind: tool
+module: validohub
+country: LI
+category: national-identifiers
+status: active
+name:
+  en: "Liechtenstein social insurance number Helper"
+summary:
+  en: "Split social insurance number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "756.1234.5678.97"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-company-onboarding-auditor, liechtenstein-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein social insurance number Helper | ValidoHub"
+  description:
+    en: "Split social insurance number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

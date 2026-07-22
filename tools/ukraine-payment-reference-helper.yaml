@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-payment-reference-helper
+kind: tool
+module: validohub
+country: UA
+category: finance
+status: active
+name:
+  en: "Ukrainian IBAN / MFO reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "IBAN / MFO reference REF 2026-001 1 234,56 UAH"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-remittance-text-builder, ukraine-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian IBAN / MFO reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

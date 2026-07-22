@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: MK
+category: tax
+status: active
+name:
+  en: "Macedonian VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "DDV / VAT 20% base 1.234,56 MKD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-vat-return-field-helper, north-macedonia-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-json-fixture-generator
+kind: tool
+module: validohub
+country: AL
+category: developer-tools
+status: active
+name:
+  en: "Albanian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AL\",\"nipt\":\"L12345678A\",\"iban\":\"AL47212110090000000235698741\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-regex-pack-helper, albania-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

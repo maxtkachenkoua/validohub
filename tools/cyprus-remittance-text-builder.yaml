@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-remittance-text-builder
+kind: tool
+module: validohub
+country: CY
+category: finance
+status: active
+name:
+  en: "Cypriot Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 CY12345678L 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-payment-reconciliation-helper, cyprus-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

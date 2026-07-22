@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-json-fixture-generator
+kind: tool
+module: validohub
+country: GR
+category: developer-tools
+status: active
+name:
+  en: "Greek JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"GR\",\"afm\":\"123456789\",\"iban\":\"GR1601101250000000012300695\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-regex-pack-helper, greece-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

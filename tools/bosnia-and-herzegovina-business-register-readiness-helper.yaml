@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-business-register-readiness-helper
+kind: tool
+module: validohub
+country: BA
+category: government
+status: active
+name:
+  en: "Bosnian company court register Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated company court register lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "4200123450006 BA4200123450006 Ferhadija 1, 71000 Sarajevo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-id-card-format-helper, bosnia-and-herzegovina-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian company court register Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated company court register lookup or company registry workflow."

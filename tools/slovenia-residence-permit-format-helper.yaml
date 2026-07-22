@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-residence-permit-format-helper
+kind: tool
+module: validohub
+country: SI
+category: documents
+status: active
+name:
+  en: "Slovenian Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "SI PERMIT 2026 0101980500123"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-health-card-format-helper, slovenia-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

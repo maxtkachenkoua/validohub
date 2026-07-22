@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: montenegro-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: ME
+category: privacy
+status: active
+name:
+  en: "Montenegrin Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.montenegro-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "0101980234567\\nBulevar Svetog Petra 1, 81000 Podgorica\\n+382 67 123 456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [montenegro-driving-licence-format-helper, montenegro-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Montenegrin Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

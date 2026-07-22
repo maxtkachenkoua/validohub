@@ -13,23 +13,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1850101123451"
+        "value": "1850101123451",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "1850101123452"
+        "value": "Invalid 1850101123452",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "18501011"
+        "value": "18501011",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 1850101123451"
+        "value": "Wrong prefix RO 1850101123451",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO ID edge 1"
+        "value": "Review RO ID edge 1",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -41,7 +51,7 @@
         "text": "Romanian CNP Validator analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -65,23 +75,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RO12345674"
+        "value": "RO12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "RO12345675"
+        "value": "Invalid RO12345675",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RO1234"
+        "value": "RO1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345674"
+        "value": "Wrong prefix ZZ12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO ORG edge 2"
+        "value": "Review RO ORG edge 2",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -93,7 +113,7 @@
         "text": "Romanian CUI / CIF Validator analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -117,23 +137,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RO12345674"
+        "value": "RO12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ12345674"
+        "value": "Wrong prefix ZZ12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RO1234"
+        "value": "RO1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345674"
+        "value": "Wrong prefix ZZ12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO VAT edge 3"
+        "value": "Review RO VAT edge 3",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -145,7 +175,7 @@
         "text": "Romanian VAT ID / RO Prefix Validator analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -169,23 +199,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RORO12345674"
+        "value": "RORO12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZRO12345674"
+        "value": "Wrong prefix ZZRO12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RORO123"
+        "value": "RORO123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZRO12345674"
+        "value": "Wrong prefix ZZRO12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO EORI edge 4"
+        "value": "Review RO EORI edge 4",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -197,7 +237,7 @@
         "text": "Romanian EORI / Customs Identifier Helper analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -221,23 +261,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1850101123451"
+        "value": "1850101123451",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "1850101123452"
+        "value": "Invalid 1850101123452",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "18501011"
+        "value": "18501011",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 1850101123451"
+        "value": "Wrong prefix RO 1850101123451",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO SOC edge 5"
+        "value": "Review RO SOC edge 5",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -249,7 +299,7 @@
         "text": "Romanian CNP Helper analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -273,23 +323,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840001\"}"
+        "value": "Invalid {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840001\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO KYC edge 6"
+        "value": "Review RO KYC edge 6",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -301,7 +361,7 @@
         "text": "Romanian Company Onboarding Auditor analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -325,23 +385,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RO12345674 RO12345674 Calea Victoriei 1, 010061 Bucuresti"
+        "value": "RO12345674 RO12345674 Calea Victoriei 1, 010061 Bucuresti",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "RO12345674 RO12345674 Calea Victoriei 1, 010062 Bucuresti"
+        "value": "Invalid RO12345674 RO12345674 Calea Victoriei 1, 010062 Bucuresti",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RO12345674 RO12345674 Calea Vict"
+        "value": "RO12345674 RO12345674 Calea Vict",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345674 RO12345674 Calea Victoriei 1, 010061 Bucuresti"
+        "value": "Wrong prefix ZZ12345674 RO12345674 Calea Victoriei 1, 010061 Bucuresti",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO REG edge 7"
+        "value": "Review RO REG edge 7",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -353,7 +423,7 @@
         "text": "Romanian ONRC Readiness Helper analyzes Romania-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -377,23 +447,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1850101123451"
+        "value": "1850101123451",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO CARD 8"
+        "value": "Invalid RO CARD 8",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "18501011"
+        "value": "18501011",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 1850101123451"
+        "value": "Wrong prefix RO 1850101123451",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO CARD edge 8"
+        "value": "Review RO CARD edge 8",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -405,7 +485,7 @@
         "text": "Romanian ID Card Format Helper analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -429,23 +509,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<ROUROMANIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "P<ROUROMANIAN<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO PASS 9"
+        "value": "Invalid RO PASS 9",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<ROUROMANIAN<<SAMPLE<"
+        "value": "P<ROUROMANIAN<<SAMPLE<",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO P<ROUROMANIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "Wrong prefix RO P<ROUROMANIAN<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO PASS edge 9"
+        "value": "Review RO PASS edge 9",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -457,7 +547,7 @@
         "text": "Romanian Passport Number Helper analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -481,23 +571,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<ROUSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567ROU8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "P<ROUSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567ROU8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO MRZ 10"
+        "value": "Invalid RO MRZ 10",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<ROUSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345"
+        "value": "P<ROUSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO P<ROUSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567ROU8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "Wrong prefix RO P<ROUSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567ROU8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO MRZ edge 10"
+        "value": "Review RO MRZ edge 10",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -509,7 +609,7 @@
         "text": "Romanian MRZ / Passport Parser analyzes Romania-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -533,23 +633,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RO49AAAA1B31007593840000"
+        "value": "RO49AAAA1B31007593840000",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ49AAAA1B31007593840000"
+        "value": "Wrong prefix ZZ49AAAA1B31007593840000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RO49AAAA1B3100"
+        "value": "RO49AAAA1B3100",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ49AAAA1B31007593840000"
+        "value": "Wrong prefix ZZ49AAAA1B31007593840000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO IBAN edge 11"
+        "value": "Review RO IBAN edge 11",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -561,7 +671,7 @@
         "text": "Romania IBAN Validator analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -585,23 +695,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "AAAA1B31007593840000"
+        "value": "AAAA1B31007593840000",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZAA1B31007593840000"
+        "value": "Wrong prefix ZZAA1B31007593840000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "AAAA1B31007"
+        "value": "AAAA1B31007",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Grouped valid sample",
-        "value": "AAAA 1B31 0075 9384 0000"
+        "value": "AAAA 1B31 0075 9384 0000",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO IBG edge 12"
+        "value": "Review RO IBG edge 12",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -613,7 +733,7 @@
         "text": "Romania IBAN Generator analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -637,23 +757,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "AAAA 1B31007593840000"
+        "value": "AAAA 1B31007593840000",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO BANK 13"
+        "value": "Invalid RO BANK 13",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "AAAA 1B31007"
+        "value": "AAAA 1B31007",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZAA 1B31007593840000"
+        "value": "Wrong prefix ZZAA 1B31007593840000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO BANK edge 13"
+        "value": "Review RO BANK edge 13",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -665,7 +795,7 @@
         "text": "Romanian Domestic Bank Account Inspector analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -689,23 +819,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "ABCDRO2X"
+        "value": "ABCDRO2X",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZCDRO2X"
+        "value": "Wrong prefix ZZCDRO2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "ABCDR"
+        "value": "ABCDR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZCDRO2X"
+        "value": "Wrong prefix ZZCDRO2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO BIC edge 14"
+        "value": "Review RO BIC edge 14",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -717,7 +857,7 @@
         "text": "Romanian BIC / SWIFT Inspector analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -741,23 +881,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RO49AAAA1B31007593840000\\n1.234,56 RON\\nInvoice 2026-001"
+        "value": "RO49AAAA1B31007593840000\\n1.234,56 RON\\nInvoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO SEPA 15"
+        "value": "Invalid RO SEPA 15",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RO49AAAA1B31007593840000\\n1.234"
+        "value": "RO49AAAA1B31007593840000\\n1.234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ49AAAA1B31007593840000\\n1.234,56 RON\\nInvoice 2026-001"
+        "value": "Wrong prefix ZZ49AAAA1B31007593840000\\n1.234,56 RON\\nInvoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO SEPA edge 15"
+        "value": "Review RO SEPA edge 15",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -769,7 +919,7 @@
         "text": "Romanian SEPA Transfer Helper analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -793,23 +943,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "MANDATE-2026-001 RO49AAAA1B31007593840000"
+        "value": "MANDATE-2026-001 RO49AAAA1B31007593840000",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO SDD 16"
+        "value": "Invalid RO SDD 16",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "MANDATE-2026-001 RO49AA"
+        "value": "MANDATE-2026-001 RO49AA",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZNDATE-2026-001 RO49AAAA1B31007593840000"
+        "value": "Wrong prefix ZZNDATE-2026-001 RO49AAAA1B31007593840000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO SDD edge 16"
+        "value": "Review RO SDD edge 16",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -821,7 +981,7 @@
         "text": "Romanian SEPA Direct Debit Mandate Helper analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -845,23 +1005,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "treasury / SEPA handoff REF 2026-001 1.234,56 RON"
+        "value": "treasury / SEPA handoff REF 2026-001 1.234,56 RON",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO PAY 17"
+        "value": "Invalid RO PAY 17",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "treasury / SEPA handoff REF"
+        "value": "treasury / SEPA handoff REF",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO treasury / SEPA handoff REF 2026-001 1.234,56 RON"
+        "value": "Wrong prefix RO treasury / SEPA handoff REF 2026-001 1.234,56 RON",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO PAY edge 17"
+        "value": "Review RO PAY edge 17",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -873,7 +1043,7 @@
         "text": "Romanian treasury / SEPA handoff Reference Helper analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -897,23 +1067,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Invoice 2026-001 RO12345674 1.234,56 RON"
+        "value": "Invoice 2026-001 RO12345674 1.234,56 RON",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO REMIT 18"
+        "value": "Invalid RO REMIT 18",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Invoice 2026-001 RO123"
+        "value": "Invoice 2026-001 RO123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO Invoice 2026-001 RO12345674 1.234,56 RON"
+        "value": "Wrong prefix RO Invoice 2026-001 RO12345674 1.234,56 RON",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO REMIT edge 18"
+        "value": "Review RO REMIT edge 18",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -925,7 +1105,7 @@
         "text": "Romanian Remittance Text Builder analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -949,23 +1129,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.07.2026; 1.234,56 RON; RO49AAAA1B31007593840000; Invoice 2026-001"
+        "value": "21.07.2026; 1.234,56 RON; RO49AAAA1B31007593840000; Invoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO RECON 19"
+        "value": "Invalid RO RECON 19",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.07.2026; 1.234,56 RON; RO49AAAA1B31"
+        "value": "21.07.2026; 1.234,56 RON; RO49AAAA1B31",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 21.07.2026; 1.234,56 RON; RO49AAAA1B31007593840000; Invoice 2026-001"
+        "value": "Wrong prefix RO 21.07.2026; 1.234,56 RON; RO49AAAA1B31007593840000; Invoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO RECON edge 19"
+        "value": "Review RO RECON edge 19",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -977,7 +1167,7 @@
         "text": "Romanian Payment Reconciliation Helper analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1001,23 +1191,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.07.2026; 1.234,56 RON; RO49AAAA1B31007593840000; sample counterparty"
+        "value": "21.07.2026; 1.234,56 RON; RO49AAAA1B31007593840000; sample counterparty",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO STMT 20"
+        "value": "Invalid RO STMT 20",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.07.2026; 1.234,56 RON; RO49AAAA1B3100"
+        "value": "21.07.2026; 1.234,56 RON; RO49AAAA1B3100",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 21.07.2026; 1.234,56 RON; RO49AAAA1B31007593840000; sample counterparty"
+        "value": "Wrong prefix RO 21.07.2026; 1.234,56 RON; RO49AAAA1B31007593840000; sample counterparty",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO STMT edge 20"
+        "value": "Review RO STMT edge 20",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1029,7 +1229,7 @@
         "text": "Romanian Bank Statement Parser analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1053,23 +1253,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RO49AAAA1B31007593840000"
+        "value": "RO49AAAA1B31007593840000",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ49AAAA1B31007593840000"
+        "value": "Wrong prefix ZZ49AAAA1B31007593840000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RO49AAAA1B3100"
+        "value": "RO49AAAA1B3100",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ49AAAA1B31007593840000"
+        "value": "Wrong prefix ZZ49AAAA1B31007593840000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO MASK edge 21"
+        "value": "Review RO MASK edge 21",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1081,7 +1291,7 @@
         "text": "Romanian Masked IBAN Formatter analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1105,23 +1315,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1.234,56 RON"
+        "value": "1.234,56 RON",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO CUR 22"
+        "value": "Invalid RO CUR 22",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1.234,5"
+        "value": "1.234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 1.234,56 RON"
+        "value": "Wrong prefix RO 1.234,56 RON",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO CUR edge 22"
+        "value": "Review RO CUR edge 22",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1133,7 +1353,7 @@
         "text": "Romanian RON Decimal Currency Formatter analyzes Romania-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1157,23 +1377,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "TVA 20% base 1.234,56 RON"
+        "value": "TVA 20% base 1.234,56 RON",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO RATE 23"
+        "value": "Invalid RO RATE 23",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "TVA 20% base 1"
+        "value": "TVA 20% base 1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZA 20% base 1.234,56 RON"
+        "value": "Wrong prefix ZZA 20% base 1.234,56 RON",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO RATE edge 23"
+        "value": "Review RO RATE edge 23",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1185,7 +1415,7 @@
         "text": "Romanian VAT Rate Sanity Helper analyzes Romania-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1209,23 +1439,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "TVA; RO12345674; period 2026-07; 1.234,56 RON"
+        "value": "TVA; RO12345674; period 2026-07; 1.234,56 RON",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO RET 24"
+        "value": "Invalid RO RET 24",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "TVA; RO12345674; period 2"
+        "value": "TVA; RO12345674; period 2",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZA; RO12345674; period 2026-07; 1.234,56 RON"
+        "value": "Wrong prefix ZZA; RO12345674; period 2026-07; 1.234,56 RON",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO RET edge 24"
+        "value": "Review RO RET edge 24",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1237,7 +1477,7 @@
         "text": "Romanian VAT Return Field Helper analyzes Romania-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1261,23 +1501,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "INV-2026-0001 RO12345674"
+        "value": "INV-2026-0001 RO12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO INV 25"
+        "value": "Invalid RO INV 25",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "INV-2026-0001 "
+        "value": "INV-2026-0001 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZV-2026-0001 RO12345674"
+        "value": "Wrong prefix ZZV-2026-0001 RO12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO INV edge 25"
+        "value": "Review RO INV edge 25",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1289,7 +1539,7 @@
         "text": "Romanian Invoice Number Helper analyzes Romania-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1313,23 +1563,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO EINV 26"
+        "value": "Invalid RO EINV 26",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO EINV edge 26"
+        "value": "Review RO EINV edge 26",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1341,7 +1601,7 @@
         "text": "Romanian RO e-Factura / ANAF Readiness Checker analyzes Romania-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1365,23 +1625,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RO12345674 21.07.2026 1.234,56 RON"
+        "value": "RO12345674 21.07.2026 1.234,56 RON",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO TAX 27"
+        "value": "Invalid RO TAX 27",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RO12345674 21.07.20"
+        "value": "RO12345674 21.07.20",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345674 21.07.2026 1.234,56 RON"
+        "value": "Wrong prefix ZZ12345674 21.07.2026 1.234,56 RON",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO TAX edge 27"
+        "value": "Review RO TAX edge 27",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1393,7 +1663,7 @@
         "text": "Romanian Tax Authority Handoff Helper analyzes Romania-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1417,23 +1687,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "invoice 21.07.2026 1.234,56 RON RO12345674"
+        "value": "invoice 21.07.2026 1.234,56 RON RO12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO AUDIT 28"
+        "value": "Invalid RO AUDIT 28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "invoice 21.07.2026 1.234"
+        "value": "invoice 21.07.2026 1.234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO invoice 21.07.2026 1.234,56 RON RO12345674"
+        "value": "Wrong prefix RO invoice 21.07.2026 1.234,56 RON RO12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO AUDIT edge 28"
+        "value": "Review RO AUDIT edge 28",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1445,7 +1725,7 @@
         "text": "Romanian Accounting Audit Trail Checklist Helper analyzes Romania-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1469,23 +1749,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010011 Bucuresti"
+        "value": "010011 Bucuresti",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO POST 29"
+        "value": "Invalid RO POST 29",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010011 Bu"
+        "value": "010011 Bu",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 010011 Bucuresti"
+        "value": "Wrong prefix RO 010011 Bucuresti",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO POST edge 29"
+        "value": "Review RO POST edge 29",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1497,7 +1787,7 @@
         "text": "Romanian Postal Code Validator analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1521,23 +1811,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Calea Victoriei 1, 010061 Bucuresti"
+        "value": "Calea Victoriei 1, 010061 Bucuresti",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO ADDR 30"
+        "value": "Invalid RO ADDR 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Calea Victoriei 1, 0"
+        "value": "Calea Victoriei 1, 0",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO Calea Victoriei 1, 010061 Bucuresti"
+        "value": "Wrong prefix RO Calea Victoriei 1, 010061 Bucuresti",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO ADDR edge 30"
+        "value": "Review RO ADDR edge 30",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1549,7 +1849,7 @@
         "text": "Romanian Address Normalizer analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1573,23 +1873,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Calea Victoriei 1, 010061 Bucuresti"
+        "value": "Calea Victoriei 1, 010061 Bucuresti",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO ASCII 31"
+        "value": "Invalid RO ASCII 31",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Calea Victoriei 1, 0"
+        "value": "Calea Victoriei 1, 0",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO Calea Victoriei 1, 010061 Bucuresti"
+        "value": "Wrong prefix RO Calea Victoriei 1, 010061 Bucuresti",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO ASCII edge 31"
+        "value": "Review RO ASCII edge 31",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1601,7 +1911,7 @@
         "text": "Romanian Address Transliteration Normalizer analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1625,23 +1935,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010011 Bucuresti"
+        "value": "010011 Bucuresti",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO REGION 32"
+        "value": "Invalid RO REGION 32",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010011 Bu"
+        "value": "010011 Bu",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 010011 Bucuresti"
+        "value": "Wrong prefix RO 010011 Bucuresti",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO REGION edge 32"
+        "value": "Review RO REGION edge 32",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1653,7 +1973,7 @@
         "text": "Romanian Region / Province Code Mapper analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1677,23 +1997,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Calea Victoriei 1, 010061 Bucuresti"
+        "value": "Calea Victoriei 1, 010061 Bucuresti",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO MUNI 33"
+        "value": "Invalid RO MUNI 33",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Calea Victoriei 1, 0"
+        "value": "Calea Victoriei 1, 0",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO Calea Victoriei 1, 010061 Bucuresti"
+        "value": "Wrong prefix RO Calea Victoriei 1, 010061 Bucuresti",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO MUNI edge 33"
+        "value": "Review RO MUNI edge 33",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1705,7 +2035,7 @@
         "text": "Romanian Municipality Code Inspector analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1729,23 +2059,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+40 721 234 567"
+        "value": "+40 721 234 567",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO PHONE 34"
+        "value": "Invalid RO PHONE 34",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+40 721 2"
+        "value": "+40 721 2",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO +40 721 234 567"
+        "value": "Wrong prefix RO +40 721 234 567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO PHONE edge 34"
+        "value": "Review RO PHONE edge 34",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1757,7 +2097,7 @@
         "text": "Romanian Phone Number Validator analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1781,23 +2121,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+40 721 234 567"
+        "value": "+40 721 234 567",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO E164 35"
+        "value": "Invalid RO E164 35",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+40 721 2"
+        "value": "+40 721 2",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO +40 721 234 567"
+        "value": "Wrong prefix RO +40 721 234 567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO E164 edge 35"
+        "value": "Review RO E164 edge 35",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1809,7 +2159,7 @@
         "text": "Romanian Phone E.164 Formatter analyzes Romania-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1833,23 +2183,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.07.2026"
+        "value": "21.07.2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO DATE 36"
+        "value": "Invalid RO DATE 36",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.07."
+        "value": "21.07.",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 21.07.2026"
+        "value": "Wrong prefix RO 21.07.2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO DATE edge 36"
+        "value": "Review RO DATE edge 36",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1861,7 +2221,7 @@
         "text": "Romanian Date Locale Formatter analyzes Romania-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1885,23 +2245,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "id;amount;date;tax\\n1;1.234,56 RON;21.07.2026;RO12345674"
+        "value": "id;amount;date;tax\\n1;1.234,56 RON;21.07.2026;RO12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO CSV 37"
+        "value": "Invalid RO CSV 37",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "id;amount;date;tax\\n1;1.234,56 "
+        "value": "id;amount;date;tax\\n1;1.234,56 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO id;amount;date;tax\\n1;1.234,56 RON;21.07.2026;RO12345674"
+        "value": "Wrong prefix RO id;amount;date;tax\\n1;1.234,56 RON;21.07.2026;RO12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO CSV edge 37"
+        "value": "Review RO CSV edge 37",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1913,7 +2283,7 @@
         "text": "Romanian CSV Locale Normalizer analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1937,23 +2307,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Romania sample company Calea Victoriei 1, 010061 Bucuresti"
+        "value": "Romania sample company Calea Victoriei 1, 010061 Bucuresti",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO SLUG 38"
+        "value": "Invalid RO SLUG 38",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Romania sample company Calea Vic"
+        "value": "Romania sample company Calea Vic",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO Romania sample company Calea Victoriei 1, 010061 Bucuresti"
+        "value": "Wrong prefix RO Romania sample company Calea Victoriei 1, 010061 Bucuresti",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO SLUG edge 38"
+        "value": "Review RO SLUG edge 38",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1965,7 +2345,7 @@
         "text": "Romanian Slug Normalizer analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1989,23 +2369,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1850101123451 RO12345674 RO49AAAA1B31007593840000 010011 Bucuresti"
+        "value": "1850101123451 RO12345674 RO49AAAA1B31007593840000 010011 Bucuresti",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO OCR 39"
+        "value": "Invalid RO OCR 39",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1850101123451 RO12345674 RO49AAAA1B31"
+        "value": "1850101123451 RO12345674 RO49AAAA1B31",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 1850101123451 RO12345674 RO49AAAA1B31007593840000 010011 Bucuresti"
+        "value": "Wrong prefix RO 1850101123451 RO12345674 RO49AAAA1B31007593840000 010011 Bucuresti",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO OCR edge 39"
+        "value": "Review RO OCR edge 39",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2017,7 +2407,7 @@
         "text": "Romanian Document OCR Fixer analyzes Romania-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2041,23 +2431,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO GDPR 40"
+        "value": "Invalid RO GDPR 40",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO GDPR edge 40"
+        "value": "Review RO GDPR edge 40",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2069,7 +2469,7 @@
         "text": "Romanian GDPR / ANSPDCP Redaction Helper analyzes Romania-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2093,23 +2493,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1850101123451 +40 721 234 567 RO49AAAA1B31007593840000"
+        "value": "1850101123451 +40 721 234 567 RO49AAAA1B31007593840000",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO PII 41"
+        "value": "Invalid RO PII 41",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1850101123451 +40 721 234 567 "
+        "value": "1850101123451 +40 721 234 567 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 1850101123451 +40 721 234 567 RO49AAAA1B31007593840000"
+        "value": "Wrong prefix RO 1850101123451 +40 721 234 567 RO49AAAA1B31007593840000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO PII edge 41"
+        "value": "Review RO PII edge 41",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2121,7 +2531,7 @@
         "text": "Romanian PII Masker analyzes Romania-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2145,23 +2555,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1850101123451\\nCalea Victoriei 1, 010061 Bucuresti\\n+40 721 234 567"
+        "value": "1850101123451\\nCalea Victoriei 1, 010061 Bucuresti\\n+40 721 234 567",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO FIX 42"
+        "value": "Invalid RO FIX 42",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1850101123451\\nCalea Victoriei 1, 010"
+        "value": "1850101123451\\nCalea Victoriei 1, 010",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 1850101123451\\nCalea Victoriei 1, 010061 Bucuresti\\n+40 721 234 567"
+        "value": "Wrong prefix RO 1850101123451\\nCalea Victoriei 1, 010061 Bucuresti\\n+40 721 234 567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO FIX edge 42"
+        "value": "Review RO FIX edge 42",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2173,7 +2593,7 @@
         "text": "Romanian Personal Data Fixture Helper analyzes Romania-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2197,23 +2617,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1850101123451 DL 2026"
+        "value": "1850101123451 DL 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO DL 43"
+        "value": "Invalid RO DL 43",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "185010112345"
+        "value": "185010112345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 1850101123451 DL 2026"
+        "value": "Wrong prefix RO 1850101123451 DL 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO DL edge 43"
+        "value": "Review RO DL edge 43",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2225,7 +2655,7 @@
         "text": "Romanian Driving Licence Format Helper analyzes Romania-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2249,23 +2679,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RO PERMIT 2026 1850101123451"
+        "value": "RO PERMIT 2026 1850101123451",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO PERMIT 44"
+        "value": "Invalid RO PERMIT 44",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RO PERMIT 2026 1"
+        "value": "RO PERMIT 2026 1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ PERMIT 2026 1850101123451"
+        "value": "Wrong prefix ZZ PERMIT 2026 1850101123451",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO PERMIT edge 44"
+        "value": "Review RO PERMIT edge 44",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2277,7 +2717,7 @@
         "text": "Romanian Residence Permit Format Helper analyzes Romania-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2301,23 +2741,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1850101123451 HEALTH 2026"
+        "value": "1850101123451 HEALTH 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO HEALTH 45"
+        "value": "Invalid RO HEALTH 45",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1850101123451 "
+        "value": "1850101123451 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 1850101123451 HEALTH 2026"
+        "value": "Wrong prefix RO 1850101123451 HEALTH 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO HEALTH edge 45"
+        "value": "Review RO HEALTH edge 45",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2329,7 +2779,7 @@
         "text": "Romanian Health Card Format Helper analyzes Romania-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2353,23 +2803,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "B 123 ABC"
+        "value": "B 123 ABC",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "B 124 ABC"
+        "value": "Invalid B 124 ABC",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "B 123"
+        "value": "B 123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO B 123 ABC"
+        "value": "Wrong prefix RO B 123 ABC",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO PLATE edge 46"
+        "value": "Review RO PLATE edge 46",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2381,7 +2841,7 @@
         "text": "Romanian Vehicle Plate Inspector analyzes Romania-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2405,23 +2865,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "WVWZZZ1JZXW000001"
+        "value": "WVWZZZ1JZXW000001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "WVWZZZ1JZXW000002"
+        "value": "Invalid WVWZZZ1JZXW000002",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "WVWZZZ1JZX"
+        "value": "WVWZZZ1JZX",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZWZZZ1JZXW000001"
+        "value": "Wrong prefix ZZWZZZ1JZXW000001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO VIN edge 47"
+        "value": "Review RO VIN edge 47",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2433,7 +2903,7 @@
         "text": "Romanian VIN Validator analyzes Romania-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2457,23 +2927,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "B 123 ABC WVWZZZ1JZXW000001 1850101123451"
+        "value": "B 123 ABC WVWZZZ1JZXW000001 1850101123451",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO VEH 48"
+        "value": "Invalid RO VEH 48",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "B 123 ABC WVWZZZ1JZXW00"
+        "value": "B 123 ABC WVWZZZ1JZXW00",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO B 123 ABC WVWZZZ1JZXW000001 1850101123451"
+        "value": "Wrong prefix RO B 123 ABC WVWZZZ1JZXW000001 1850101123451",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO VEH edge 48"
+        "value": "Review RO VEH edge 48",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2485,7 +2965,7 @@
         "text": "Romanian Vehicle Data Redaction Helper analyzes Romania-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2509,23 +2989,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RO12345674 HS 8471 1.234,56 RON"
+        "value": "RO12345674 HS 8471 1.234,56 RON",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO CUSTOMS 49"
+        "value": "Invalid RO CUSTOMS 49",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RO12345674 HS 8471"
+        "value": "RO12345674 HS 8471",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345674 HS 8471 1.234,56 RON"
+        "value": "Wrong prefix ZZ12345674 HS 8471 1.234,56 RON",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO CUSTOMS edge 49"
+        "value": "Review RO CUSTOMS edge 49",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2537,7 +3027,7 @@
         "text": "Romanian Customs Declaration Helper analyzes Romania-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2561,23 +3051,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "TRACK 2026 010011 Bucuresti"
+        "value": "TRACK 2026 010011 Bucuresti",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO TRACK 50"
+        "value": "Invalid RO TRACK 50",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "TRACK 2026 0100"
+        "value": "TRACK 2026 0100",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZACK 2026 010011 Bucuresti"
+        "value": "Wrong prefix ZZACK 2026 010011 Bucuresti",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO TRACK edge 50"
+        "value": "Review RO TRACK edge 50",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2589,7 +3089,7 @@
         "text": "Romanian Postal Tracking Helper analyzes Romania-specific logistics evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2613,23 +3113,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO DQ 51"
+        "value": "Invalid RO DQ 51",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO DQ edge 51"
+        "value": "Review RO DQ edge 51",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2641,7 +3151,7 @@
         "text": "Romanian Data Quality Workbench analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2665,23 +3175,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO JSON 52"
+        "value": "Invalid RO JSON 52",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO JSON edge 52"
+        "value": "Review RO JSON edge 52",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2693,7 +3213,7 @@
         "text": "Romanian JSON Fixture Helper analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2717,23 +3237,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "CNP CUI / CIF cod postal  RO49AAAA1B31007593840000"
+        "value": "CNP CUI / CIF cod postal  RO49AAAA1B31007593840000",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO REGEX 53"
+        "value": "Invalid RO REGEX 53",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "CNP CUI / CIF cod postal  RO"
+        "value": "CNP CUI / CIF cod postal  RO",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZP CUI / CIF cod postal  RO49AAAA1B31007593840000"
+        "value": "Wrong prefix ZZP CUI / CIF cod postal  RO49AAAA1B31007593840000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO REGEX edge 53"
+        "value": "Review RO REGEX edge 53",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2745,7 +3275,7 @@
         "text": "Romanian Regex Pack Helper analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2769,23 +3299,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO API 54"
+        "value": "Invalid RO API 54",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO API edge 54"
+        "value": "Review RO API edge 54",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2797,7 +3337,7 @@
         "text": "Romanian API Payload Auditor analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2821,23 +3361,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "tax=RO12345674&postal=010011 Bucuresti&phone=+40 721 234 567"
+        "value": "tax=RO12345674&postal=010011 Bucuresti&phone=+40 721 234 567",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO FORM 55"
+        "value": "Invalid RO FORM 55",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "tax=RO12345674&postal=010011 Bucu"
+        "value": "tax=RO12345674&postal=010011 Bucu",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO tax=RO12345674&postal=010011 Bucuresti&phone=+40 721 234 567"
+        "value": "Wrong prefix RO tax=RO12345674&postal=010011 Bucuresti&phone=+40 721 234 567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO FORM edge 55"
+        "value": "Review RO FORM edge 55",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2849,7 +3399,7 @@
         "text": "Romanian Form Field Auditor analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2873,23 +3423,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1.234,56 RON"
+        "value": "1.234,56 RON",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO NUM 56"
+        "value": "Invalid RO NUM 56",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1.234,5"
+        "value": "1.234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 1.234,56 RON"
+        "value": "Wrong prefix RO 1.234,56 RON",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO NUM edge 56"
+        "value": "Review RO NUM edge 56",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2901,7 +3461,7 @@
         "text": "Romanian Locale Number Parser analyzes Romania-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2925,23 +3485,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.07.2026 week 30"
+        "value": "21.07.2026 week 30",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO CAL 57"
+        "value": "Invalid RO CAL 57",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.07.2026"
+        "value": "21.07.2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO 21.07.2026 week 30"
+        "value": "Wrong prefix RO 21.07.2026 week 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO CAL edge 57"
+        "value": "Review RO CAL edge 57",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2953,7 +3523,7 @@
         "text": "Romanian Calendar Week Helper analyzes Romania-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2977,23 +3547,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Romania Sample Holding Ltd RO12345674"
+        "value": "Romania Sample Holding Ltd RO12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Romania Sample Holding Ltd RO12345675"
+        "value": "Invalid Romania Sample Holding Ltd RO12345675",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Romania Sample Holdin"
+        "value": "Romania Sample Holdin",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO Romania Sample Holding Ltd RO12345674"
+        "value": "Wrong prefix RO Romania Sample Holding Ltd RO12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO SUFFIX edge 58"
+        "value": "Review RO SUFFIX edge 58",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3005,7 +3585,7 @@
         "text": "Romanian Company Suffix Normalizer analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3029,23 +3609,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RO12345674 PO-2026-001 RO12345674"
+        "value": "RO12345674 PO-2026-001 RO12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO PROC 59"
+        "value": "Invalid RO PROC 59",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RO12345674 PO-2026-"
+        "value": "RO12345674 PO-2026-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345674 PO-2026-001 RO12345674"
+        "value": "Wrong prefix ZZ12345674 PO-2026-001 RO12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO PROC edge 59"
+        "value": "Review RO PROC edge 59",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3057,7 +3647,7 @@
         "text": "Romanian Procurement Identifier Helper analyzes Romania-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3081,23 +3671,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "CNP input, cod postal input, amount 1.234,56 RON"
+        "value": "CNP input, cod postal input, amount 1.234,56 RON",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO COPY 60"
+        "value": "Invalid RO COPY 60",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "CNP input, cod postal input"
+        "value": "CNP input, cod postal input",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZP input, cod postal input, amount 1.234,56 RON"
+        "value": "Wrong prefix ZZP input, cod postal input, amount 1.234,56 RON",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO COPY edge 60"
+        "value": "Review RO COPY edge 60",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3109,7 +3709,7 @@
         "text": "Romanian Locale Copy Checker analyzes Romania-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3133,23 +3733,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Customer sent 1850101123451, RO49AAAA1B31007593840000, Calea Victoriei 1, 010061 Bucuresti"
+        "value": "Customer sent 1850101123451, RO49AAAA1B31007593840000, Calea Victoriei 1, 010061 Bucuresti",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO SUP 61"
+        "value": "Invalid RO SUP 61",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Customer sent 1850101123451, RO49AAAA1B31007593840"
+        "value": "Customer sent 1850101123451, RO49AAAA1B31007593840",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO Customer sent 1850101123451, RO49AAAA1B31007593840000, Calea Victoriei 1, 010061 Bucuresti"
+        "value": "Wrong prefix RO Customer sent 1850101123451, RO49AAAA1B31007593840000, Calea Victoriei 1, 010061 Bucuresti",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO SUP edge 61"
+        "value": "Review RO SUP edge 61",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3161,7 +3771,7 @@
         "text": "Romanian Support Ticket Scrubber analyzes Romania-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3185,23 +3795,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid RO SMOKE 62"
+        "value": "Invalid RO SMOKE 62",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234"
+        "value": "{\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}"
+        "value": "Wrong prefix RO {\"country\":\"RO\",\"cnp\":\"1850101123451\",\"cui\":\"RO12345674\",\"iban\":\"RO49AAAA1B31007593840000\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review RO SMOKE edge 62"
+        "value": "Review RO SMOKE edge 62",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3213,7 +3833,7 @@
         "text": "Romanian Integration Smoke Test Builder analyzes Romania-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Romanian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {

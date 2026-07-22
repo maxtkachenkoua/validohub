@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-companies-house-number-validator
+kind: tool
+module: validohub
+country: GB
+category: national-identifiers
+status: active
+name:
+  en: "British Companies House number Validator"
+summary:
+  en: "Inspect Companies House number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "01234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-vat-id-validator, united-kingdom-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British Companies House number Validator | ValidoHub"
+  description:
+    en: "Inspect Companies House number structure, registry-style prefixes, control digits, and official lookup boundaries."

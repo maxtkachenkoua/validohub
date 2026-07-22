@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: HR
+category: government
+status: active
+name:
+  en: "Croatian Sudski registar Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Sudski registar lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "080012345 HR12345678903 Ilica 1, 10000 Zagreb"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-id-card-format-helper, croatia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian Sudski registar Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Sudski registar lookup or company registry workflow."

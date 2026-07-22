@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-vat-id-validator
+kind: tool
+module: validohub
+country: AD
+category: national-identifiers
+status: active
+name:
+  en: "Andorran VAT ID / AD Prefix Validator"
+summary:
+  en: "Normalize AD VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "AD F123456Z"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-eori-validator, andorra-cass-number-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran VAT ID / AD Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize AD VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

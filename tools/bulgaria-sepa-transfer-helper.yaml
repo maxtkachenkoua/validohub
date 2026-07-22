@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-sepa-transfer-helper
+kind: tool
+module: validohub
+country: BG
+category: finance
+status: active
+name:
+  en: "Bulgarian SEPA Transfer Helper"
+summary:
+  en: "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SEPA input"
+        required: true
+        placeholder:
+          en: "BG80BNBG96611020345678\\n1 234,56 BGN\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-sepa-direct-debit-mandate-helper, bulgaria-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian SEPA Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."

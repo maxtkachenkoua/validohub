@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: RS
+category: address
+status: active
+name:
+  en: "Serbian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Knez Mihailova 1, 11000 Belgrade"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-region-code-mapper, serbia-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

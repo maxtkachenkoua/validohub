@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-api-payload-auditor
+kind: tool
+module: validohub
+country: LT
+category: developer-tools
+status: active
+name:
+  en: "Lithuanian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"LT\",\"pvm\":\"LT123456789\",\"iban\":\"LT121000011101001000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-form-field-auditor, lithuania-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-json-fixture-generator
+kind: tool
+module: validohub
+country: SM
+category: developer-tools
+status: active
+name:
+  en: "Sammarinese JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SM\",\"coe\":\"SM12345\",\"iban\":\"SM86U0322509800000000270100\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-regex-pack-helper, san-marino-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-invoice-number-helper
+kind: tool
+module: validohub
+country: AD
+category: tax
+status: active
+name:
+  en: "Andorran Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 AD F123456Z"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-e-invoicing-readiness-checker, andorra-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

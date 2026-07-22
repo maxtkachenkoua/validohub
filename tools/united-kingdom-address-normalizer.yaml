@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-address-normalizer
+kind: tool
+module: validohub
+country: GB
+category: address
+status: active
+name:
+  en: "British Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "10 Downing Street, London SW1A 2AA"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-address-transliteration-normalizer, united-kingdom-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

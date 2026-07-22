@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-health-social-insurance-number-social-insurance-helper
+kind: tool
+module: validohub
+country: BA
+category: national-identifiers
+status: active
+name:
+  en: "Bosnian health/social insurance number Helper"
+summary:
+  en: "Split health/social insurance number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "0101980123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-company-onboarding-auditor, bosnia-and-herzegovina-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian health/social insurance number Helper | ValidoHub"
+  description:
+    en: "Split health/social insurance number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

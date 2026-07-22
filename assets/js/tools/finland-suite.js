@@ -13,23 +13,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-123B"
+        "value": "010185-123B",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "010185-124B"
+        "value": "Invalid 010185-124B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-"
+        "value": "010185-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 010185-123B"
+        "value": "Wrong prefix FI 010185-123B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI ID edge 1"
+        "value": "Review FI ID edge 1",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -41,7 +51,7 @@
         "text": "Finnish HETU Validator analyzes Finland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -65,23 +75,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1234567-1"
+        "value": "1234567-1",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "1234567-2"
+        "value": "Invalid 1234567-2",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "12345"
+        "value": "12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 1234567-1"
+        "value": "Wrong prefix FI 1234567-1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI ORG edge 2"
+        "value": "Review FI ORG edge 2",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -93,7 +113,7 @@
         "text": "Finnish Y-tunnus Validator analyzes Finland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -117,23 +137,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "FI12345671"
+        "value": "FI12345671",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ12345671"
+        "value": "Wrong prefix ZZ12345671",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "FI1234"
+        "value": "FI1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345671"
+        "value": "Wrong prefix ZZ12345671",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI VAT edge 3"
+        "value": "Review FI VAT edge 3",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -145,7 +175,7 @@
         "text": "Finnish VAT ID / FI Prefix Validator analyzes Finland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -169,23 +199,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "FI1234567-1"
+        "value": "FI1234567-1",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ1234567-1"
+        "value": "Wrong prefix ZZ1234567-1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "FI12345"
+        "value": "FI12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ1234567-1"
+        "value": "Wrong prefix ZZ1234567-1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI EORI edge 4"
+        "value": "Review FI EORI edge 4",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -197,7 +237,7 @@
         "text": "Finnish EORI / Customs Identifier Helper analyzes Finland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -221,23 +261,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-123B"
+        "value": "010185-123B",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "010185-124B"
+        "value": "Invalid 010185-124B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-"
+        "value": "010185-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 010185-123B"
+        "value": "Wrong prefix FI 010185-123B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI SOC edge 5"
+        "value": "Review FI SOC edge 5",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -249,7 +299,7 @@
         "text": "Finnish HETU Helper analyzes Finland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -273,23 +323,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000786\"}"
+        "value": "Invalid {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000786\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\""
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI KYC edge 6"
+        "value": "Review FI KYC edge 6",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -301,7 +361,7 @@
         "text": "Finnish Company Onboarding Auditor analyzes Finland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -325,23 +385,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1234567-1 FI12345671 Mannerheimintie 1, 00100 Helsinki"
+        "value": "1234567-1 FI12345671 Mannerheimintie 1, 00100 Helsinki",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "1234567-1 FI12345671 Mannerheimintie 1, 00101 Helsinki"
+        "value": "Invalid 1234567-1 FI12345671 Mannerheimintie 1, 00101 Helsinki",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1234567-1 FI12345671 Mannerhei"
+        "value": "1234567-1 FI12345671 Mannerhei",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 1234567-1 FI12345671 Mannerheimintie 1, 00100 Helsinki"
+        "value": "Wrong prefix FI 1234567-1 FI12345671 Mannerheimintie 1, 00100 Helsinki",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI REG edge 7"
+        "value": "Review FI REG edge 7",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -353,7 +423,7 @@
         "text": "Finnish YTJ / Trade Register Readiness Helper analyzes Finland-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -377,23 +447,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-123B"
+        "value": "010185-123B",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI CARD 8"
+        "value": "Invalid FI CARD 8",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-"
+        "value": "010185-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 010185-123B"
+        "value": "Wrong prefix FI 010185-123B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI CARD edge 8"
+        "value": "Review FI CARD edge 8",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -405,7 +485,7 @@
         "text": "Finnish ID Card Format Helper analyzes Finland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -429,23 +509,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<FINFINNISH<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "P<FINFINNISH<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI PASS 9"
+        "value": "Invalid FI PASS 9",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<FINFINNISH<<SAMPLE<"
+        "value": "P<FINFINNISH<<SAMPLE<",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI P<FINFINNISH<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "Wrong prefix FI P<FINFINNISH<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI PASS edge 9"
+        "value": "Review FI PASS edge 9",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -457,7 +547,7 @@
         "text": "Finnish Passport Number Helper analyzes Finland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -481,23 +571,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<FINSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567FIN8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "P<FINSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567FIN8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI MRZ 10"
+        "value": "Invalid FI MRZ 10",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<FINSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345"
+        "value": "P<FINSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI P<FINSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567FIN8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "Wrong prefix FI P<FINSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567FIN8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI MRZ edge 10"
+        "value": "Review FI MRZ edge 10",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -509,7 +609,7 @@
         "text": "Finnish MRZ / Passport Parser analyzes Finland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -533,23 +633,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "FI2112345600000785"
+        "value": "FI2112345600000785",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ2112345600000785"
+        "value": "Wrong prefix ZZ2112345600000785",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "FI21123456"
+        "value": "FI21123456",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ2112345600000785"
+        "value": "Wrong prefix ZZ2112345600000785",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI IBAN edge 11"
+        "value": "Review FI IBAN edge 11",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -561,7 +671,7 @@
         "text": "Finland IBAN Validator analyzes Finland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -585,23 +695,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "12345600000785"
+        "value": "12345600000785",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Wrong prefix FI 12345600000785"
+        "value": "Wrong prefix FI 12345600000785",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "12345600"
+        "value": "12345600",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Grouped valid sample",
-        "value": "1234 5600 0007 85"
+        "value": "1234 5600 0007 85",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI IBG edge 12"
+        "value": "Review FI IBG edge 12",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -613,7 +733,7 @@
         "text": "Finland IBAN Generator analyzes Finland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -637,23 +757,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "123456 00000785"
+        "value": "123456 00000785",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI BANK 13"
+        "value": "Invalid FI BANK 13",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "123456 00"
+        "value": "123456 00",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 123456 00000785"
+        "value": "Wrong prefix FI 123456 00000785",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI BANK edge 13"
+        "value": "Review FI BANK edge 13",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -665,7 +795,7 @@
         "text": "Finnish Domestic Bank Account Inspector analyzes Finland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -689,23 +819,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "ABCDFI2X"
+        "value": "ABCDFI2X",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZCDFI2X"
+        "value": "Wrong prefix ZZCDFI2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "ABCDF"
+        "value": "ABCDF",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZCDFI2X"
+        "value": "Wrong prefix ZZCDFI2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI BIC edge 14"
+        "value": "Review FI BIC edge 14",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -717,7 +857,7 @@
         "text": "Finnish BIC / SWIFT Inspector analyzes Finland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -741,23 +881,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "FI2112345600000785\\n1 234,56 EUR\\nInvoice 2026-001"
+        "value": "FI2112345600000785\\n1 234,56 EUR\\nInvoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI SEPA 15"
+        "value": "Invalid FI SEPA 15",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "FI2112345600000785\\n1 234,56"
+        "value": "FI2112345600000785\\n1 234,56",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ2112345600000785\\n1 234,56 EUR\\nInvoice 2026-001"
+        "value": "Wrong prefix ZZ2112345600000785\\n1 234,56 EUR\\nInvoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI SEPA edge 15"
+        "value": "Review FI SEPA edge 15",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -769,7 +919,7 @@
         "text": "Finnish SEPA Transfer Helper analyzes Finland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -793,23 +943,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "MANDATE-2026-001 FI2112345600000785"
+        "value": "MANDATE-2026-001 FI2112345600000785",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI SDD 16"
+        "value": "Invalid FI SDD 16",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "MANDATE-2026-001 FI2"
+        "value": "MANDATE-2026-001 FI2",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZNDATE-2026-001 FI2112345600000785"
+        "value": "Wrong prefix ZZNDATE-2026-001 FI2112345600000785",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI SDD edge 16"
+        "value": "Review FI SDD edge 16",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -821,7 +981,7 @@
         "text": "Finnish SEPA Direct Debit Mandate Helper analyzes Finland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -845,23 +1005,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "viitenumero REF 2026-001 1 234,56 EUR"
+        "value": "viitenumero REF 2026-001 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI PAY 17"
+        "value": "Invalid FI PAY 17",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "viitenumero REF 2026-"
+        "value": "viitenumero REF 2026-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI viitenumero REF 2026-001 1 234,56 EUR"
+        "value": "Wrong prefix FI viitenumero REF 2026-001 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI PAY edge 17"
+        "value": "Review FI PAY edge 17",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -873,7 +1043,7 @@
         "text": "Finnish viitenumero Reference Helper analyzes Finland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -897,23 +1067,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Invoice 2026-001 FI12345671 1 234,56 EUR"
+        "value": "Invoice 2026-001 FI12345671 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI REMIT 18"
+        "value": "Invalid FI REMIT 18",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Invoice 2026-001 FI123"
+        "value": "Invoice 2026-001 FI123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI Invoice 2026-001 FI12345671 1 234,56 EUR"
+        "value": "Wrong prefix FI Invoice 2026-001 FI12345671 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI REMIT edge 18"
+        "value": "Review FI REMIT edge 18",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -925,7 +1105,7 @@
         "text": "Finnish Remittance Text Builder analyzes Finland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -949,23 +1129,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.7.2026; 1 234,56 EUR; FI2112345600000785; Invoice 2026-001"
+        "value": "21.7.2026; 1 234,56 EUR; FI2112345600000785; Invoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI RECON 19"
+        "value": "Invalid FI RECON 19",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.7.2026; 1 234,56 EUR; FI2112345"
+        "value": "21.7.2026; 1 234,56 EUR; FI2112345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 21.7.2026; 1 234,56 EUR; FI2112345600000785; Invoice 2026-001"
+        "value": "Wrong prefix FI 21.7.2026; 1 234,56 EUR; FI2112345600000785; Invoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI RECON edge 19"
+        "value": "Review FI RECON edge 19",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -977,7 +1167,7 @@
         "text": "Finnish Payment Reconciliation Helper analyzes Finland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1001,23 +1191,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.7.2026; 1 234,56 EUR; FI2112345600000785; sample counterparty"
+        "value": "21.7.2026; 1 234,56 EUR; FI2112345600000785; sample counterparty",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI STMT 20"
+        "value": "Invalid FI STMT 20",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.7.2026; 1 234,56 EUR; FI211234560"
+        "value": "21.7.2026; 1 234,56 EUR; FI211234560",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 21.7.2026; 1 234,56 EUR; FI2112345600000785; sample counterparty"
+        "value": "Wrong prefix FI 21.7.2026; 1 234,56 EUR; FI2112345600000785; sample counterparty",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI STMT edge 20"
+        "value": "Review FI STMT edge 20",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1029,7 +1229,7 @@
         "text": "Finnish Bank Statement Parser analyzes Finland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1053,23 +1253,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "FI2112345600000785"
+        "value": "FI2112345600000785",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ2112345600000785"
+        "value": "Wrong prefix ZZ2112345600000785",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "FI21123456"
+        "value": "FI21123456",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ2112345600000785"
+        "value": "Wrong prefix ZZ2112345600000785",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI MASK edge 21"
+        "value": "Review FI MASK edge 21",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1081,7 +1291,7 @@
         "text": "Finnish Masked IBAN Formatter analyzes Finland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1105,23 +1315,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1 234,56 EUR"
+        "value": "1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI CUR 22"
+        "value": "Invalid FI CUR 22",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1 234,5"
+        "value": "1 234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 1 234,56 EUR"
+        "value": "Wrong prefix FI 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI CUR edge 22"
+        "value": "Review FI CUR edge 22",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1133,7 +1353,7 @@
         "text": "Finnish EUR Decimal Currency Formatter analyzes Finland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1157,23 +1377,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "ALV / VAT 20% base 1 234,56 EUR"
+        "value": "ALV / VAT 20% base 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI RATE 23"
+        "value": "Invalid FI RATE 23",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "ALV / VAT 20% base"
+        "value": "ALV / VAT 20% base",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZV / VAT 20% base 1 234,56 EUR"
+        "value": "Wrong prefix ZZV / VAT 20% base 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI RATE edge 23"
+        "value": "Review FI RATE edge 23",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1185,7 +1415,7 @@
         "text": "Finnish VAT Rate Sanity Helper analyzes Finland-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1209,23 +1439,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "ALV / VAT; FI12345671; period 2026-07; 1 234,56 EUR"
+        "value": "ALV / VAT; FI12345671; period 2026-07; 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI RET 24"
+        "value": "Invalid FI RET 24",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "ALV / VAT; FI12345671; period"
+        "value": "ALV / VAT; FI12345671; period",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZV / VAT; FI12345671; period 2026-07; 1 234,56 EUR"
+        "value": "Wrong prefix ZZV / VAT; FI12345671; period 2026-07; 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI RET edge 24"
+        "value": "Review FI RET edge 24",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1237,7 +1477,7 @@
         "text": "Finnish VAT Return Field Helper analyzes Finland-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1261,23 +1501,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "INV-2026-0001 FI12345671"
+        "value": "INV-2026-0001 FI12345671",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI INV 25"
+        "value": "Invalid FI INV 25",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "INV-2026-0001 "
+        "value": "INV-2026-0001 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZV-2026-0001 FI12345671"
+        "value": "Wrong prefix ZZV-2026-0001 FI12345671",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI INV edge 25"
+        "value": "Review FI INV edge 25",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1289,7 +1539,7 @@
         "text": "Finnish Invoice Number Helper analyzes Finland-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1313,23 +1563,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI EINV 26"
+        "value": "Invalid FI EINV 26",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\""
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI EINV edge 26"
+        "value": "Review FI EINV edge 26",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1341,7 +1601,7 @@
         "text": "Finnish Finvoice / Peppol Readiness Checker analyzes Finland-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1365,23 +1625,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "FI12345671 21.7.2026 1 234,56 EUR"
+        "value": "FI12345671 21.7.2026 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI TAX 27"
+        "value": "Invalid FI TAX 27",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "FI12345671 21.7.202"
+        "value": "FI12345671 21.7.202",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345671 21.7.2026 1 234,56 EUR"
+        "value": "Wrong prefix ZZ12345671 21.7.2026 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI TAX edge 27"
+        "value": "Review FI TAX edge 27",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1393,7 +1663,7 @@
         "text": "Finnish Tax Authority Handoff Helper analyzes Finland-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1417,23 +1687,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "invoice 21.7.2026 1 234,56 EUR FI12345671"
+        "value": "invoice 21.7.2026 1 234,56 EUR FI12345671",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI AUDIT 28"
+        "value": "Invalid FI AUDIT 28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "invoice 21.7.2026 1 234"
+        "value": "invoice 21.7.2026 1 234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI invoice 21.7.2026 1 234,56 EUR FI12345671"
+        "value": "Wrong prefix FI invoice 21.7.2026 1 234,56 EUR FI12345671",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI AUDIT edge 28"
+        "value": "Review FI AUDIT edge 28",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1445,7 +1725,7 @@
         "text": "Finnish Accounting Audit Trail Checklist Helper analyzes Finland-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1469,23 +1749,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "00100 Helsinki"
+        "value": "00100 Helsinki",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI POST 29"
+        "value": "Invalid FI POST 29",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "00100 He"
+        "value": "00100 He",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 00100 Helsinki"
+        "value": "Wrong prefix FI 00100 Helsinki",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI POST edge 29"
+        "value": "Review FI POST edge 29",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1497,7 +1787,7 @@
         "text": "Finnish Postal Code Validator analyzes Finland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1521,23 +1811,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Mannerheimintie 1, 00100 Helsinki"
+        "value": "Mannerheimintie 1, 00100 Helsinki",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI ADDR 30"
+        "value": "Invalid FI ADDR 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Mannerheimintie 1, "
+        "value": "Mannerheimintie 1, ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI Mannerheimintie 1, 00100 Helsinki"
+        "value": "Wrong prefix FI Mannerheimintie 1, 00100 Helsinki",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI ADDR edge 30"
+        "value": "Review FI ADDR edge 30",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1549,7 +1849,7 @@
         "text": "Finnish Address Normalizer analyzes Finland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1573,23 +1873,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Mannerheimintie 1, 00100 Helsinki"
+        "value": "Mannerheimintie 1, 00100 Helsinki",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI ASCII 31"
+        "value": "Invalid FI ASCII 31",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Mannerheimintie 1, "
+        "value": "Mannerheimintie 1, ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI Mannerheimintie 1, 00100 Helsinki"
+        "value": "Wrong prefix FI Mannerheimintie 1, 00100 Helsinki",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI ASCII edge 31"
+        "value": "Review FI ASCII edge 31",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1601,7 +1911,7 @@
         "text": "Finnish Address Transliteration Normalizer analyzes Finland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1625,23 +1935,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "00100 Helsinki"
+        "value": "00100 Helsinki",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI REGION 32"
+        "value": "Invalid FI REGION 32",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "00100 He"
+        "value": "00100 He",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 00100 Helsinki"
+        "value": "Wrong prefix FI 00100 Helsinki",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI REGION edge 32"
+        "value": "Review FI REGION edge 32",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1653,7 +1973,7 @@
         "text": "Finnish Region / Province Code Mapper analyzes Finland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1677,23 +1997,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Mannerheimintie 1, 00100 Helsinki"
+        "value": "Mannerheimintie 1, 00100 Helsinki",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI MUNI 33"
+        "value": "Invalid FI MUNI 33",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Mannerheimintie 1, "
+        "value": "Mannerheimintie 1, ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI Mannerheimintie 1, 00100 Helsinki"
+        "value": "Wrong prefix FI Mannerheimintie 1, 00100 Helsinki",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI MUNI edge 33"
+        "value": "Review FI MUNI edge 33",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1705,7 +2035,7 @@
         "text": "Finnish Municipality Code Inspector analyzes Finland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1729,23 +2059,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+358 40 123 4567"
+        "value": "+358 40 123 4567",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI PHONE 34"
+        "value": "Invalid FI PHONE 34",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+358 40 1"
+        "value": "+358 40 1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI +358 40 123 4567"
+        "value": "Wrong prefix FI +358 40 123 4567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI PHONE edge 34"
+        "value": "Review FI PHONE edge 34",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1757,7 +2097,7 @@
         "text": "Finnish Phone Number Validator analyzes Finland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1781,23 +2121,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+358 40 123 4567"
+        "value": "+358 40 123 4567",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI E164 35"
+        "value": "Invalid FI E164 35",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+358 40 1"
+        "value": "+358 40 1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI +358 40 123 4567"
+        "value": "Wrong prefix FI +358 40 123 4567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI E164 edge 35"
+        "value": "Review FI E164 edge 35",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1809,7 +2159,7 @@
         "text": "Finnish Phone E.164 Formatter analyzes Finland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1833,23 +2183,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.7.2026"
+        "value": "21.7.2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI DATE 36"
+        "value": "Invalid FI DATE 36",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.7."
+        "value": "21.7.",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 21.7.2026"
+        "value": "Wrong prefix FI 21.7.2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI DATE edge 36"
+        "value": "Review FI DATE edge 36",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1861,7 +2221,7 @@
         "text": "Finnish Date Locale Formatter analyzes Finland-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1885,23 +2245,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "id;amount;date;tax\\n1;1 234,56 EUR;21.7.2026;FI12345671"
+        "value": "id;amount;date;tax\\n1;1 234,56 EUR;21.7.2026;FI12345671",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI CSV 37"
+        "value": "Invalid FI CSV 37",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "id;amount;date;tax\\n1;1 234,56 "
+        "value": "id;amount;date;tax\\n1;1 234,56 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI id;amount;date;tax\\n1;1 234,56 EUR;21.7.2026;FI12345671"
+        "value": "Wrong prefix FI id;amount;date;tax\\n1;1 234,56 EUR;21.7.2026;FI12345671",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI CSV edge 37"
+        "value": "Review FI CSV edge 37",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1913,7 +2283,7 @@
         "text": "Finnish CSV Locale Normalizer analyzes Finland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1937,23 +2307,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Finland sample company Mannerheimintie 1, 00100 Helsinki"
+        "value": "Finland sample company Mannerheimintie 1, 00100 Helsinki",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI SLUG 38"
+        "value": "Invalid FI SLUG 38",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Finland sample company Mannerhe"
+        "value": "Finland sample company Mannerhe",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI Finland sample company Mannerheimintie 1, 00100 Helsinki"
+        "value": "Wrong prefix FI Finland sample company Mannerheimintie 1, 00100 Helsinki",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI SLUG edge 38"
+        "value": "Review FI SLUG edge 38",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1965,7 +2345,7 @@
         "text": "Finnish Slug Normalizer analyzes Finland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1989,23 +2369,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-123B FI12345671 FI2112345600000785 00100 Helsinki"
+        "value": "010185-123B FI12345671 FI2112345600000785 00100 Helsinki",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI OCR 39"
+        "value": "Invalid FI OCR 39",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-123B FI12345671 FI211234"
+        "value": "010185-123B FI12345671 FI211234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 010185-123B FI12345671 FI2112345600000785 00100 Helsinki"
+        "value": "Wrong prefix FI 010185-123B FI12345671 FI2112345600000785 00100 Helsinki",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI OCR edge 39"
+        "value": "Review FI OCR edge 39",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2017,7 +2407,7 @@
         "text": "Finnish Document OCR Fixer analyzes Finland-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2041,23 +2431,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI GDPR 40"
+        "value": "Invalid FI GDPR 40",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\""
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI GDPR edge 40"
+        "value": "Review FI GDPR edge 40",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2069,7 +2469,7 @@
         "text": "Finnish GDPR / Tietosuojavaltuutettu Redaction Helper analyzes Finland-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2093,23 +2493,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-123B +358 40 123 4567 FI2112345600000785"
+        "value": "010185-123B +358 40 123 4567 FI2112345600000785",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI PII 41"
+        "value": "Invalid FI PII 41",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-123B +358 40 123 45"
+        "value": "010185-123B +358 40 123 45",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 010185-123B +358 40 123 4567 FI2112345600000785"
+        "value": "Wrong prefix FI 010185-123B +358 40 123 4567 FI2112345600000785",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI PII edge 41"
+        "value": "Review FI PII edge 41",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2121,7 +2531,7 @@
         "text": "Finnish PII Masker analyzes Finland-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2145,23 +2555,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-123B\\nMannerheimintie 1, 00100 Helsinki\\n+358 40 123 4567"
+        "value": "010185-123B\\nMannerheimintie 1, 00100 Helsinki\\n+358 40 123 4567",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI FIX 42"
+        "value": "Invalid FI FIX 42",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-123B\\nMannerheimintie 1, 0010"
+        "value": "010185-123B\\nMannerheimintie 1, 0010",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 010185-123B\\nMannerheimintie 1, 00100 Helsinki\\n+358 40 123 4567"
+        "value": "Wrong prefix FI 010185-123B\\nMannerheimintie 1, 00100 Helsinki\\n+358 40 123 4567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI FIX edge 42"
+        "value": "Review FI FIX edge 42",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2173,7 +2593,7 @@
         "text": "Finnish Personal Data Fixture Helper analyzes Finland-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2197,23 +2617,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-123B DL 2026"
+        "value": "010185-123B DL 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI DL 43"
+        "value": "Invalid FI DL 43",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-123B"
+        "value": "010185-123B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 010185-123B DL 2026"
+        "value": "Wrong prefix FI 010185-123B DL 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI DL edge 43"
+        "value": "Review FI DL edge 43",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2225,7 +2655,7 @@
         "text": "Finnish Driving Licence Format Helper analyzes Finland-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2249,23 +2679,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "FI PERMIT 2026 010185-123B"
+        "value": "FI PERMIT 2026 010185-123B",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI PERMIT 44"
+        "value": "Invalid FI PERMIT 44",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "FI PERMIT 2026 "
+        "value": "FI PERMIT 2026 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ PERMIT 2026 010185-123B"
+        "value": "Wrong prefix ZZ PERMIT 2026 010185-123B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI PERMIT edge 44"
+        "value": "Review FI PERMIT edge 44",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2277,7 +2717,7 @@
         "text": "Finnish Residence Permit Format Helper analyzes Finland-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2301,23 +2741,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-123B HEALTH 2026"
+        "value": "010185-123B HEALTH 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI HEALTH 45"
+        "value": "Invalid FI HEALTH 45",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-123B H"
+        "value": "010185-123B H",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 010185-123B HEALTH 2026"
+        "value": "Wrong prefix FI 010185-123B HEALTH 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI HEALTH edge 45"
+        "value": "Review FI HEALTH edge 45",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2329,7 +2779,7 @@
         "text": "Finnish Health Card Format Helper analyzes Finland-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2353,23 +2803,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "ABC-123"
+        "value": "ABC-123",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ABC-124"
+        "value": "Invalid ABC-124",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "ABC-"
+        "value": "ABC-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZC-123"
+        "value": "Wrong prefix ZZC-123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI PLATE edge 46"
+        "value": "Review FI PLATE edge 46",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2381,7 +2841,7 @@
         "text": "Finnish Vehicle Plate Inspector analyzes Finland-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2405,23 +2865,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "WVWZZZ1JZXW000001"
+        "value": "WVWZZZ1JZXW000001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "WVWZZZ1JZXW000002"
+        "value": "Invalid WVWZZZ1JZXW000002",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "WVWZZZ1JZX"
+        "value": "WVWZZZ1JZX",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZWZZZ1JZXW000001"
+        "value": "Wrong prefix ZZWZZZ1JZXW000001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI VIN edge 47"
+        "value": "Review FI VIN edge 47",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2433,7 +2903,7 @@
         "text": "Finnish VIN Validator analyzes Finland-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2457,23 +2927,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "ABC-123 WVWZZZ1JZXW000001 010185-123B"
+        "value": "ABC-123 WVWZZZ1JZXW000001 010185-123B",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI VEH 48"
+        "value": "Invalid FI VEH 48",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "ABC-123 WVWZZZ1JZXW00"
+        "value": "ABC-123 WVWZZZ1JZXW00",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZC-123 WVWZZZ1JZXW000001 010185-123B"
+        "value": "Wrong prefix ZZC-123 WVWZZZ1JZXW000001 010185-123B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI VEH edge 48"
+        "value": "Review FI VEH edge 48",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2485,7 +2965,7 @@
         "text": "Finnish Vehicle Data Redaction Helper analyzes Finland-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2509,23 +2989,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "FI12345671 HS 8471 1 234,56 EUR"
+        "value": "FI12345671 HS 8471 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI CUSTOMS 49"
+        "value": "Invalid FI CUSTOMS 49",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "FI12345671 HS 8471"
+        "value": "FI12345671 HS 8471",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345671 HS 8471 1 234,56 EUR"
+        "value": "Wrong prefix ZZ12345671 HS 8471 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI CUSTOMS edge 49"
+        "value": "Review FI CUSTOMS edge 49",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2537,7 +3027,7 @@
         "text": "Finnish Customs Declaration Helper analyzes Finland-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2561,23 +3051,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "TRACK 2026 00100 Helsinki"
+        "value": "TRACK 2026 00100 Helsinki",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI TRACK 50"
+        "value": "Invalid FI TRACK 50",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "TRACK 2026 001"
+        "value": "TRACK 2026 001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZACK 2026 00100 Helsinki"
+        "value": "Wrong prefix ZZACK 2026 00100 Helsinki",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI TRACK edge 50"
+        "value": "Review FI TRACK edge 50",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2589,7 +3089,7 @@
         "text": "Finnish Postal Tracking Helper analyzes Finland-specific logistics evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2613,23 +3113,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI DQ 51"
+        "value": "Invalid FI DQ 51",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\""
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI DQ edge 51"
+        "value": "Review FI DQ edge 51",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2641,7 +3151,7 @@
         "text": "Finnish Data Quality Workbench analyzes Finland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2665,23 +3175,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI JSON 52"
+        "value": "Invalid FI JSON 52",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\""
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI JSON edge 52"
+        "value": "Review FI JSON edge 52",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2693,7 +3213,7 @@
         "text": "Finnish JSON Fixture Helper analyzes Finland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2717,23 +3237,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "HETU Y-tunnus postinumero  FI2112345600000785"
+        "value": "HETU Y-tunnus postinumero  FI2112345600000785",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI REGEX 53"
+        "value": "Invalid FI REGEX 53",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "HETU Y-tunnus postinumero"
+        "value": "HETU Y-tunnus postinumero",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZTU Y-tunnus postinumero  FI2112345600000785"
+        "value": "Wrong prefix ZZTU Y-tunnus postinumero  FI2112345600000785",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI REGEX edge 53"
+        "value": "Review FI REGEX edge 53",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2745,7 +3275,7 @@
         "text": "Finnish Regex Pack Helper analyzes Finland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2769,23 +3299,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI API 54"
+        "value": "Invalid FI API 54",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\""
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI API edge 54"
+        "value": "Review FI API edge 54",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2797,7 +3337,7 @@
         "text": "Finnish API Payload Auditor analyzes Finland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2821,23 +3361,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "tax=FI12345671&postal=00100 Helsinki&phone=+358 40 123 4567"
+        "value": "tax=FI12345671&postal=00100 Helsinki&phone=+358 40 123 4567",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI FORM 55"
+        "value": "Invalid FI FORM 55",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "tax=FI12345671&postal=00100 Helsi"
+        "value": "tax=FI12345671&postal=00100 Helsi",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI tax=FI12345671&postal=00100 Helsinki&phone=+358 40 123 4567"
+        "value": "Wrong prefix FI tax=FI12345671&postal=00100 Helsinki&phone=+358 40 123 4567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI FORM edge 55"
+        "value": "Review FI FORM edge 55",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2849,7 +3399,7 @@
         "text": "Finnish Form Field Auditor analyzes Finland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2873,23 +3423,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1 234,56 EUR"
+        "value": "1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI NUM 56"
+        "value": "Invalid FI NUM 56",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1 234,5"
+        "value": "1 234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 1 234,56 EUR"
+        "value": "Wrong prefix FI 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI NUM edge 56"
+        "value": "Review FI NUM edge 56",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2901,7 +3461,7 @@
         "text": "Finnish Locale Number Parser analyzes Finland-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2925,23 +3485,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.7.2026 week 30"
+        "value": "21.7.2026 week 30",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI CAL 57"
+        "value": "Invalid FI CAL 57",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.7.2026 "
+        "value": "21.7.2026 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 21.7.2026 week 30"
+        "value": "Wrong prefix FI 21.7.2026 week 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI CAL edge 57"
+        "value": "Review FI CAL edge 57",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2953,7 +3523,7 @@
         "text": "Finnish Calendar Week Helper analyzes Finland-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2977,23 +3547,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Finland Sample Holding Ltd 1234567-1"
+        "value": "Finland Sample Holding Ltd 1234567-1",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Finland Sample Holding Ltd 1234567-2"
+        "value": "Invalid Finland Sample Holding Ltd 1234567-2",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Finland Sample Holdi"
+        "value": "Finland Sample Holdi",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI Finland Sample Holding Ltd 1234567-1"
+        "value": "Wrong prefix FI Finland Sample Holding Ltd 1234567-1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI SUFFIX edge 58"
+        "value": "Review FI SUFFIX edge 58",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3005,7 +3585,7 @@
         "text": "Finnish Company Suffix Normalizer analyzes Finland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3029,23 +3609,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1234567-1 PO-2026-001 FI12345671"
+        "value": "1234567-1 PO-2026-001 FI12345671",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI PROC 59"
+        "value": "Invalid FI PROC 59",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1234567-1 PO-2026-"
+        "value": "1234567-1 PO-2026-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI 1234567-1 PO-2026-001 FI12345671"
+        "value": "Wrong prefix FI 1234567-1 PO-2026-001 FI12345671",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI PROC edge 59"
+        "value": "Review FI PROC edge 59",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3057,7 +3647,7 @@
         "text": "Finnish Procurement Identifier Helper analyzes Finland-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3081,23 +3671,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "HETU input, postinumero input, amount 1 234,56 EUR"
+        "value": "HETU input, postinumero input, amount 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI COPY 60"
+        "value": "Invalid FI COPY 60",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "HETU input, postinumero inpu"
+        "value": "HETU input, postinumero inpu",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZTU input, postinumero input, amount 1 234,56 EUR"
+        "value": "Wrong prefix ZZTU input, postinumero input, amount 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI COPY edge 60"
+        "value": "Review FI COPY edge 60",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3109,7 +3709,7 @@
         "text": "Finnish Locale Copy Checker analyzes Finland-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3133,23 +3733,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Customer sent 010185-123B, FI2112345600000785, Mannerheimintie 1, 00100 Helsinki"
+        "value": "Customer sent 010185-123B, FI2112345600000785, Mannerheimintie 1, 00100 Helsinki",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI SUP 61"
+        "value": "Invalid FI SUP 61",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Customer sent 010185-123B, FI211234560000078"
+        "value": "Customer sent 010185-123B, FI211234560000078",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI Customer sent 010185-123B, FI2112345600000785, Mannerheimintie 1, 00100 Helsinki"
+        "value": "Wrong prefix FI Customer sent 010185-123B, FI2112345600000785, Mannerheimintie 1, 00100 Helsinki",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI SUP edge 61"
+        "value": "Review FI SUP edge 61",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3161,7 +3771,7 @@
         "text": "Finnish Support Ticket Scrubber analyzes Finland-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3185,23 +3795,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid FI SMOKE 62"
+        "value": "Invalid FI SMOKE 62",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\""
+        "value": "{\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}"
+        "value": "Wrong prefix FI {\"country\":\"FI\",\"hetu\":\"010185-123B\",\"ytunnus\":\"1234567-1\",\"iban\":\"FI2112345600000785\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review FI SMOKE edge 62"
+        "value": "Review FI SMOKE edge 62",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3213,7 +3833,7 @@
         "text": "Finnish Integration Smoke Test Builder analyzes Finland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Finnish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {

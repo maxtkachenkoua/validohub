@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: LU
+category: tax
+status: active
+name:
+  en: "Luxembourgish VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "TVA / VAT 20% base 1 234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-vat-return-field-helper, luxembourg-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

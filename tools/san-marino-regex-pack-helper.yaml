@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-regex-pack-helper
+kind: tool
+module: validohub
+country: SM
+category: developer-tools
+status: active
+name:
+  en: "Sammarinese Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "ISS code COE number codice postale  SM86U0322509800000000270100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-api-payload-auditor, san-marino-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

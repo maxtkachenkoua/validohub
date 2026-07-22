@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-iban-validator
+kind: tool
+module: validohub
+country: GR
+category: finance
+status: active
+name:
+  en: "Greece IBAN Validator"
+summary:
+  en: "Validate GR IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "GR1601101250000000012300695"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-iban-generator, greece-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greece IBAN Validator | ValidoHub"
+  description:
+    en: "Validate GR IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

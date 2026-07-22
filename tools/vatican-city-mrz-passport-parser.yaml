@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-mrz-passport-parser
+kind: tool
+module: validohub
+country: VA
+category: national-identifiers
+status: active
+name:
+  en: "Vatican MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<VATSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567VAT8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-iban-validator, vatican-city-iban-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

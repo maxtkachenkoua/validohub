@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: SI
+category: localization
+status: active
+name:
+  en: "Slovenian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "EMSO input, postna stevilka input, amount 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-support-ticket-scrubber, slovenia-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-iban-generator
+kind: tool
+module: validohub
+country: LI
+category: finance
+status: active
+name:
+  en: "Liechtenstein IBAN Generator"
+summary:
+  en: "Generate LI IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "088100002324013AA"
+    actions: [generate, validate, explain]
+related:
+  explicit: [liechtenstein-bank-account-inspector, liechtenstein-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein IBAN Generator | ValidoHub"
+  description:
+    en: "Generate LI IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

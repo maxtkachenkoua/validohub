@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-date-locale-formatter
+kind: tool
+module: validohub
+country: VA
+category: localization
+status: active
+name:
+  en: "Vatican Date Locale Formatter"
+summary:
+  en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "21/07/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-csv-locale-normalizer, vatican-city-slug-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Date Locale Formatter | ValidoHub"
+  description:
+    en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."

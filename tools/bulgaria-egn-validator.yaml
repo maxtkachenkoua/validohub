@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-egn-validator
+kind: tool
+module: validohub
+country: BG
+category: national-identifiers
+status: active
+name:
+  en: "Bulgarian EGN Validator"
+summary:
+  en: "Validate EGN shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "8001010008"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-uic-eik-validator, bulgaria-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian EGN Validator | ValidoHub"
+  description:
+    en: "Validate EGN shape, split date/control/body evidence, and prepare privacy-safe debugging output."

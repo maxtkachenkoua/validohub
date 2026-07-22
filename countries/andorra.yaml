@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: AD
+slug: andorra
+name:
+  en: Andorra
+region: Europe
+languages:
+  - ca
+currency: EUR
+relatedCountries:
+  - ES
+  - FR
+  - PT

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-iban-validator
+kind: tool
+module: validohub
+country: CY
+category: finance
+status: active
+name:
+  en: "Cyprus IBAN Validator"
+summary:
+  en: "Validate CY IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "CY17002001280000001200527600"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-iban-generator, cyprus-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cyprus IBAN Validator | ValidoHub"
+  description:
+    en: "Validate CY IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

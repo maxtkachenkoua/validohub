@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: RS
+category: transport
+status: active
+name:
+  en: "Serbian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "BG 1234 AB WVWZZZ1JZXW000001 0101980712345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-customs-declaration-helper, serbia-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

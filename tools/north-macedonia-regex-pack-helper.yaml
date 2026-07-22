@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-regex-pack-helper
+kind: tool
+module: validohub
+country: MK
+category: developer-tools
+status: active
+name:
+  en: "Macedonian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "EMBG company registration number postal code  MK07250120000058984"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-api-payload-auditor, north-macedonia-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

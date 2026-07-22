@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-municipality-code-inspector
+kind: tool
+module: validohub
+country: LI
+category: address
+status: active
+name:
+  en: "Liechtenstein Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Staedtle 1, 9490 Vaduz"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-phone-number-validator, liechtenstein-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

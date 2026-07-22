@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: MC
+category: address
+status: active
+name:
+  en: "Monegasque Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Avenue de la Costa 1, 98000 Monaco"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-region-code-mapper, monaco-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

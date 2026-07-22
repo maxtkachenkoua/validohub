@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-pii-masker
+kind: tool
+module: validohub
+country: SK
+category: privacy
+status: active
+name:
+  en: "Slovak PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "800101/0008 +421 905 123 456 SK3112000000198742637541"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-personal-data-fixture-generator, slovakia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

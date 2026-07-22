@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: UA
+category: developer-tools
+status: active
+name:
+  en: "Ukrainian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"UA\",\"rnokpp\":\"1234567890\",\"edrpou\":\"12345678\",\"iban\":\"UA213223130000026007233566001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-rnokpp-validator, ukraine-edrpou-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

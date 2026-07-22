@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: montenegro-pib-validator
+kind: tool
+module: validohub
+country: ME
+category: national-identifiers
+status: active
+name:
+  en: "Montenegrin PIB Validator"
+summary:
+  en: "Inspect PIB structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.montenegro-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "02712345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [montenegro-vat-id-validator, montenegro-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Montenegrin PIB Validator | ValidoHub"
+  description:
+    en: "Inspect PIB structure, registry-style prefixes, control digits, and official lookup boundaries."

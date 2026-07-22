@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-slug-normalizer
+kind: tool
+module: validohub
+country: HR
+category: developer-tools
+status: active
+name:
+  en: "Croatian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Croatia sample company Ilica 1, 10000 Zagreb"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-document-ocr-fixer, croatia-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

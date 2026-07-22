@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-json-fixture-generator
+kind: tool
+module: validohub
+country: LU
+category: developer-tools
+status: active
+name:
+  en: "Luxembourgish JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"LU\",\"vat\":\"LU12345678\",\"iban\":\"LU280019400644750000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-regex-pack-helper, luxembourg-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

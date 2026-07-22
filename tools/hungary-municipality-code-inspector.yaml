@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-municipality-code-inspector
+kind: tool
+module: validohub
+country: HU
+category: address
+status: active
+name:
+  en: "Hungarian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Andrassy ut 1, 1051 Budapest"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-phone-number-validator, hungary-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

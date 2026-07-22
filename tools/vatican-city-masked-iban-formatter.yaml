@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-masked-iban-formatter
+kind: tool
+module: validohub
+country: VA
+category: finance
+status: active
+name:
+  en: "Vatican Masked IBAN Formatter"
+summary:
+  en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "VA59001123000000012345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-currency-decimal-formatter, vatican-city-vat-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Masked IBAN Formatter | ValidoHub"
+  description:
+    en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."

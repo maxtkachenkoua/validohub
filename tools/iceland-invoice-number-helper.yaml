@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-invoice-number-helper
+kind: tool
+module: validohub
+country: IS
+category: tax
+status: active
+name:
+  en: "Icelandic Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 IS5501692829"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-e-invoicing-readiness-checker, iceland-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

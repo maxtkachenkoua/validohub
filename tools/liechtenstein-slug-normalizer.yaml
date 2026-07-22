@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-slug-normalizer
+kind: tool
+module: validohub
+country: LI
+category: developer-tools
+status: active
+name:
+  en: "Liechtenstein Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Liechtenstein sample company Staedtle 1, 9490 Vaduz"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-document-ocr-fixer, liechtenstein-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

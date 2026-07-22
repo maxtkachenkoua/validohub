@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-residence-permit-format-helper
+kind: tool
+module: validohub
+country: AD
+category: documents
+status: active
+name:
+  en: "Andorran Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "AD PERMIT 2026 A123456Z"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-health-card-format-helper, andorra-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

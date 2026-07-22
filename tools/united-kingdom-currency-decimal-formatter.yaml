@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-currency-decimal-formatter
+kind: tool
+module: validohub
+country: GB
+category: finance
+status: active
+name:
+  en: "British GBP Decimal Currency Formatter"
+summary:
+  en: "Normalize GBP amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 GBP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-vat-rate-sanity-helper, united-kingdom-vat-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British GBP Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize GBP amount strings, decimal separators, grouping, and API-safe numeric previews."

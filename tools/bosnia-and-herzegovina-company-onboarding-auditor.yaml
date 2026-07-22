@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-company-onboarding-auditor
+kind: tool
+module: validohub
+country: BA
+category: developer-tools
+status: active
+name:
+  en: "Bosnian Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for JIB, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BA\",\"jib\":\"4200123450006\",\"iban\":\"BA391290079401028494\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-business-register-readiness-helper, bosnia-and-herzegovina-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for JIB, VAT, address, banking, and official registry handoff readiness."

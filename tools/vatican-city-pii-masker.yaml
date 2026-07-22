@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-pii-masker
+kind: tool
+module: validohub
+country: VA
+category: privacy
+status: active
+name:
+  en: "Vatican PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "SCV123456 +39 06 6982 1234 VA59001123000000012345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-personal-data-fixture-generator, vatican-city-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

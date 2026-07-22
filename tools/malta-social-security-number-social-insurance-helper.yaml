@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-social-security-number-social-insurance-helper
+kind: tool
+module: validohub
+country: MT
+category: national-identifiers
+status: active
+name:
+  en: "Maltese social security number Helper"
+summary:
+  en: "Split social security number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1234567M"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-company-onboarding-auditor, malta-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese social security number Helper | ValidoHub"
+  description:
+    en: "Split social security number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

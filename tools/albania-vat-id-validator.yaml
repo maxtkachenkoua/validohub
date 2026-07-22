@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-vat-id-validator
+kind: tool
+module: validohub
+country: AL
+category: national-identifiers
+status: active
+name:
+  en: "Albanian VAT ID / AL Prefix Validator"
+summary:
+  en: "Normalize AL VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "AL L12345678A"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-eori-validator, albania-social-insurance-number-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian VAT ID / AL Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize AL VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

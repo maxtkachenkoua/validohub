@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-invoice-number-helper
+kind: tool
+module: validohub
+country: HU
+category: tax
+status: active
+name:
+  en: "Hungarian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 HU12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-e-invoicing-readiness-checker, hungary-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

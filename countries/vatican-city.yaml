@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: VA
+slug: vatican-city
+name:
+  en: Vatican City
+region: Europe
+languages:
+  - it
+currency: EUR
+relatedCountries:
+  - IT
+  - SM
+  - FR

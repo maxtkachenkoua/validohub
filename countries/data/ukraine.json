@@ -1,10 +1,22 @@
 {
   "id": "ukraine",
-  "visualAssets": null,
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/ukraine-outline.svg",
+    "outlineAlt": "Ukraine country outline",
+    "mapSrc": "/assets/images/countries/ukraine-location.svg",
+    "mapAlt": "World map with Ukraine location marker",
+    "mapMarker": {
+      "x": 58,
+      "y": 56,
+      "label": "Ukraine"
+    },
+    "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+  },
   "catalog": {
     "id": "ukraine",
     "flag": "🇺🇦",
     "name": "Ukraine",
+    "nativeName": "Ukraina",
     "iso2": "UA",
     "iso3": "UKR",
     "continent": "Europe",
@@ -12,31 +24,618 @@
     "language": "Ukrainian",
     "currency": "UAH",
     "currencyName": "Ukrainian hryvnia",
-    "status": "planned",
-    "summary": "Future hub for Ukrainian identifiers, banking, locale, and government integration notes.",
+    "status": "available",
+    "summary": "Premium Ukraine developer hub for RNOKPP, EDRPOU, MFO, postal code, phone, IBAN, MFO bank code, EDRPOU payment reference, Diia/QES handoff, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
     "identifiers": [
       "RNOKPP",
-      "EDRPOU"
+      "EDRPOU",
+      "MFO",
+      "postal code",
+      "phone"
     ],
     "payments": [
       "IBAN",
-      "bank codes"
+      "MFO bank code",
+      "EDRPOU payment reference",
+      "Diia/QES handoff"
     ],
     "features": [
+      "payments",
       "identity",
       "government",
       "banking"
     ],
-    "availableWorkbenches": [],
-    "plannedWorkbenches": [
-      "RNOKPP Notes",
-      "EDRPOU Notes"
+    "availableWorkbenches": [
+      "Ukrainian RNOKPP Validator",
+      "Ukrainian EDRPOU Validator",
+      "Ukrainian VAT ID / UA Prefix Validator",
+      "Ukrainian EORI / Customs Identifier Helper",
+      "Ukrainian RNOKPP Helper",
+      "Ukrainian Company Onboarding Auditor",
+      "Ukrainian EDR / company register Readiness Helper",
+      "Ukrainian ID Card Format Helper",
+      "Ukrainian Passport Number Helper",
+      "Ukrainian MRZ / Passport Parser",
+      "Ukraine IBAN Validator",
+      "Ukraine IBAN Generator",
+      "Ukrainian Domestic Bank Account Inspector",
+      "Ukrainian BIC / SWIFT Inspector",
+      "Ukrainian SEPA Transfer Helper",
+      "Ukrainian SEPA Direct Debit Mandate Helper",
+      "Ukrainian IBAN / MFO reference Reference Helper",
+      "Ukrainian Remittance Text Builder",
+      "Ukrainian Payment Reconciliation Helper",
+      "Ukrainian Bank Statement Parser",
+      "Ukrainian Masked IBAN Formatter",
+      "Ukrainian UAH Decimal Currency Formatter",
+      "Ukrainian VAT Rate Sanity Helper",
+      "Ukrainian VAT Return Field Helper",
+      "Ukrainian Invoice Number Helper",
+      "Ukrainian PDV invoice / tax invoice Readiness Checker",
+      "Ukrainian Tax Authority Handoff Helper",
+      "Ukrainian Accounting Audit Trail Checklist Helper",
+      "Ukrainian Postal Code Validator",
+      "Ukrainian Address Normalizer",
+      "Ukrainian Address Transliteration Normalizer",
+      "Ukrainian Region / Province Code Mapper",
+      "Ukrainian Municipality Code Inspector",
+      "Ukrainian Phone Number Validator",
+      "Ukrainian Phone E.164 Formatter",
+      "Ukrainian Date Locale Formatter",
+      "Ukrainian CSV Locale Normalizer",
+      "Ukrainian Slug Normalizer",
+      "Ukrainian Document OCR Fixer",
+      "Ukrainian personal-data protection Redaction Helper",
+      "Ukrainian PII Masker",
+      "Ukrainian Personal Data Fixture Helper",
+      "Ukrainian Driving Licence Format Helper",
+      "Ukrainian Residence Permit Format Helper",
+      "Ukrainian Health Card Format Helper",
+      "Ukrainian Vehicle Plate Inspector",
+      "Ukrainian VIN Validator",
+      "Ukrainian Vehicle Data Redaction Helper",
+      "Ukrainian Customs Declaration Helper",
+      "Ukrainian Postal Tracking Helper",
+      "Ukrainian Data Quality Workbench",
+      "Ukrainian JSON Fixture Helper",
+      "Ukrainian Regex Pack Helper",
+      "Ukrainian API Payload Auditor",
+      "Ukrainian Form Field Auditor",
+      "Ukrainian Locale Number Parser",
+      "Ukrainian Calendar Week Helper",
+      "Ukrainian Company Suffix Normalizer",
+      "Ukrainian Procurement Identifier Helper",
+      "Ukrainian Locale Copy Checker",
+      "Ukrainian Support Ticket Scrubber",
+      "Ukrainian Integration Smoke Test Builder"
     ],
-    "completion": 20,
+    "plannedWorkbenches": [
+      "Live EDR / company register lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
     "coordinates": {
-      "x": 54,
-      "y": 36
-    }
+      "x": 58,
+      "y": 56
+    },
+    "searchHints": [
+      "RNOKPP",
+      "EDRPOU",
+      "MFO",
+      "PDV",
+      "IBAN",
+      "DIIA"
+    ]
   },
-  "hub": null
+  "hub": {
+    "flag": "🇺🇦",
+    "name": "Ukraine",
+    "badge": "Premium Ukraine developer suite",
+    "description": "Developer intelligence and browser-only workbenches for ukrainian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Ukraina",
+      "population": "approximately 37M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Kyiv",
+      "continent": "Europe",
+      "region": "Eastern Europe",
+      "languages": "Ukrainian",
+      "currency": "Ukrainian hryvnia",
+      "currencyCode": "UAH",
+      "callingCode": "+380",
+      "internetTld": ".ua",
+      "drivingSide": "Right",
+      "iso2": "UA",
+      "iso3": "UKR",
+      "isoNumeric": "804",
+      "locale": "uk-UA",
+      "icuLocale": "uk_UA",
+      "dateFormat": "DD.MM.YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Space grouping",
+      "addressFormat": "Street, number, postal code, locality, Ukraine",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Europe/Kyiv (EET/EEST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "uk-UA",
+      "cldrLocale": "uk_UA",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "ukraine",
+      "outlineLabel": "Ukraine outline",
+      "mapLabel": "Ukraine in the world",
+      "continentBadge": "Europe",
+      "flagLabel": "Ukraine flag",
+      "heroAccentPrimary": "15 118 110",
+      "heroAccentSecondary": "37 99 235",
+      "heroAccentTertiary": "245 158 11"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "RNOKPP and EDRPOU",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "PDV / VAT and payments",
+        "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Ukraine registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /ukraine/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Space grouping rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Ukrainian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "EDR / company register",
+        "text": "Official business registry or company lookup remains the source of truth for Ukraine.",
+        "status": "official boundary"
+      },
+      {
+        "title": "PDV / VAT",
+        "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data protection",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "RNOKPP, EDRPOU, MFO, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, MFO bank code, EDRPOU payment reference, Diia/QES handoff",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "uk-UA / uk_UA; date DD.MM.YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "UAH amounts use Comma (,) and Space grouping.",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "RNOKPP, EDRPOU, postal code, phone, address, and IBAN need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "EU-wide emergency number; local alternatives may also exist."
+      }
+    ],
+    "searchHints": [
+      "RNOKPP",
+      "EDRPOU",
+      "MFO",
+      "PDV",
+      "IBAN",
+      "DIIA"
+    ],
+    "routes": [
+      {
+        "title": "Ukrainian RNOKPP Validator",
+        "href": "/en/ukraine/ukraine-rnokpp-validator/",
+        "text": "Validate RNOKPP shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Ukrainian EDRPOU Validator",
+        "href": "/en/ukraine/ukraine-edrpou-validator/",
+        "text": "Inspect EDRPOU structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Ukrainian VAT ID / UA Prefix Validator",
+        "href": "/en/ukraine/ukraine-vat-id-validator/",
+        "text": "Normalize UA VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+      },
+      {
+        "title": "Ukrainian EORI / Customs Identifier Helper",
+        "href": "/en/ukraine/ukraine-eori-validator/",
+        "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+      },
+      {
+        "title": "Ukrainian RNOKPP Helper",
+        "href": "/en/ukraine/ukraine-rnokpp-social-insurance-helper/",
+        "text": "Split RNOKPP evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Ukrainian Company Onboarding Auditor",
+        "href": "/en/ukraine/ukraine-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for EDRPOU, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Ukrainian EDR / company register Readiness Helper",
+        "href": "/en/ukraine/ukraine-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated EDR / company register lookup or company registry workflow."
+      },
+      {
+        "title": "Ukrainian ID Card Format Helper",
+        "href": "/en/ukraine/ukraine-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Ukrainian Passport Number Helper",
+        "href": "/en/ukraine/ukraine-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Ukrainian MRZ / Passport Parser",
+        "href": "/en/ukraine/ukraine-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Ukraine IBAN Validator",
+        "href": "/en/ukraine/ukraine-iban-validator/",
+        "text": "Validate UA IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+      },
+      {
+        "title": "Ukraine IBAN Generator",
+        "href": "/en/ukraine/ukraine-iban-generator/",
+        "text": "Generate UA IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+      },
+      {
+        "title": "Ukrainian Domestic Bank Account Inspector",
+        "href": "/en/ukraine/ukraine-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+      },
+      {
+        "title": "Ukrainian BIC / SWIFT Inspector",
+        "href": "/en/ukraine/ukraine-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Ukraine banking integrations."
+      },
+      {
+        "title": "Ukrainian SEPA Transfer Helper",
+        "href": "/en/ukraine/ukraine-sepa-transfer-helper/",
+        "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+      },
+      {
+        "title": "Ukrainian SEPA Direct Debit Mandate Helper",
+        "href": "/en/ukraine/ukraine-sepa-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+      },
+      {
+        "title": "Ukrainian IBAN / MFO reference Reference Helper",
+        "href": "/en/ukraine/ukraine-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Ukrainian Remittance Text Builder",
+        "href": "/en/ukraine/ukraine-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Ukrainian Payment Reconciliation Helper",
+        "href": "/en/ukraine/ukraine-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Ukrainian Bank Statement Parser",
+        "href": "/en/ukraine/ukraine-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Ukrainian Masked IBAN Formatter",
+        "href": "/en/ukraine/ukraine-masked-iban-formatter/",
+        "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+      },
+      {
+        "title": "Ukrainian UAH Decimal Currency Formatter",
+        "href": "/en/ukraine/ukraine-currency-decimal-formatter/",
+        "text": "Normalize UAH amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Ukrainian VAT Rate Sanity Helper",
+        "href": "/en/ukraine/ukraine-vat-rate-sanity-helper/",
+        "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Ukrainian VAT Return Field Helper",
+        "href": "/en/ukraine/ukraine-vat-return-field-helper/",
+        "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Ukrainian Invoice Number Helper",
+        "href": "/en/ukraine/ukraine-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Ukrainian PDV invoice / tax invoice Readiness Checker",
+        "href": "/en/ukraine/ukraine-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Ukrainian Tax Authority Handoff Helper",
+        "href": "/en/ukraine/ukraine-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Ukrainian Accounting Audit Trail Checklist Helper",
+        "href": "/en/ukraine/ukraine-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+      },
+      {
+        "title": "Ukrainian Postal Code Validator",
+        "href": "/en/ukraine/ukraine-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Ukrainian Address Normalizer",
+        "href": "/en/ukraine/ukraine-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Ukrainian Address Transliteration Normalizer",
+        "href": "/en/ukraine/ukraine-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Ukrainian Region / Province Code Mapper",
+        "href": "/en/ukraine/ukraine-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Ukrainian Municipality Code Inspector",
+        "href": "/en/ukraine/ukraine-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Ukrainian Phone Number Validator",
+        "href": "/en/ukraine/ukraine-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Ukrainian Phone E.164 Formatter",
+        "href": "/en/ukraine/ukraine-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Ukrainian Date Locale Formatter",
+        "href": "/en/ukraine/ukraine-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Ukrainian CSV Locale Normalizer",
+        "href": "/en/ukraine/ukraine-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Ukraine decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Ukrainian Slug Normalizer",
+        "href": "/en/ukraine/ukraine-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Ukrainian Document OCR Fixer",
+        "href": "/en/ukraine/ukraine-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Ukrainian personal-data protection Redaction Helper",
+        "href": "/en/ukraine/ukraine-gdpr-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Ukrainian PII Masker",
+        "href": "/en/ukraine/ukraine-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Ukrainian Personal Data Fixture Helper",
+        "href": "/en/ukraine/ukraine-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Ukrainian Driving Licence Format Helper",
+        "href": "/en/ukraine/ukraine-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Ukrainian Residence Permit Format Helper",
+        "href": "/en/ukraine/ukraine-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Ukrainian Health Card Format Helper",
+        "href": "/en/ukraine/ukraine-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Ukrainian Vehicle Plate Inspector",
+        "href": "/en/ukraine/ukraine-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Ukrainian VIN Validator",
+        "href": "/en/ukraine/ukraine-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Ukrainian Vehicle Data Redaction Helper",
+        "href": "/en/ukraine/ukraine-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Ukrainian Customs Declaration Helper",
+        "href": "/en/ukraine/ukraine-customs-declaration-helper/",
+        "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Ukrainian Postal Tracking Helper",
+        "href": "/en/ukraine/ukraine-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Ukrainian Data Quality Workbench",
+        "href": "/en/ukraine/ukraine-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Ukrainian JSON Fixture Helper",
+        "href": "/en/ukraine/ukraine-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Ukrainian Regex Pack Helper",
+        "href": "/en/ukraine/ukraine-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Ukrainian API Payload Auditor",
+        "href": "/en/ukraine/ukraine-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Ukrainian Form Field Auditor",
+        "href": "/en/ukraine/ukraine-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Ukrainian Locale Number Parser",
+        "href": "/en/ukraine/ukraine-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Ukraine."
+      },
+      {
+        "title": "Ukrainian Calendar Week Helper",
+        "href": "/en/ukraine/ukraine-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Ukrainian Company Suffix Normalizer",
+        "href": "/en/ukraine/ukraine-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Ukrainian Procurement Identifier Helper",
+        "href": "/en/ukraine/ukraine-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Ukrainian Locale Copy Checker",
+        "href": "/en/ukraine/ukraine-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Ukrainian Support Ticket Scrubber",
+        "href": "/en/ukraine/ukraine-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Ukrainian Integration Smoke Test Builder",
+        "href": "/en/ukraine/ukraine-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
 }

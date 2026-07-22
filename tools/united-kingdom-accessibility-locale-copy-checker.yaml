@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: GB
+category: localization
+status: active
+name:
+  en: "British Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "National Insurance number input, postcode input, amount 1,234.56 GBP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-support-ticket-scrubber, united-kingdom-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

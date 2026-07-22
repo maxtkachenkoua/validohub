@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-lnch-social-insurance-helper
+kind: tool
+module: validohub
+country: BG
+category: national-identifiers
+status: active
+name:
+  en: "Bulgarian LNCh Helper"
+summary:
+  en: "Split LNCh evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "8001010008"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-company-onboarding-auditor, bulgaria-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian LNCh Helper | ValidoHub"
+  description:
+    en: "Split LNCh evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

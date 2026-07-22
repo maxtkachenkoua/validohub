@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: BA
+category: tax
+status: active
+name:
+  en: "Bosnian PDV invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BA\",\"jib\":\"4200123450006\",\"iban\":\"BA391290079401028494\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-tax-authority-handoff-helper, bosnia-and-herzegovina-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian PDV invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

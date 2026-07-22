@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: MK
+category: privacy
+status: active
+name:
+  en: "Macedonian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 0101980456789, MK07250120000058984, Macedonia Square 1, 1000 Skopje"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-integration-smoke-test-builder, north-macedonia-embg-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

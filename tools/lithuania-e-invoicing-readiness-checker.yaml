@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: LT
+category: tax
+status: active
+name:
+  en: "Lithuanian PVM invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"LT\",\"pvm\":\"LT123456789\",\"iban\":\"LT121000011101001000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-tax-authority-handoff-helper, lithuania-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian PVM invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

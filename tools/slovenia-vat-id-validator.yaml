@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-vat-id-validator
+kind: tool
+module: validohub
+country: SI
+category: national-identifiers
+status: active
+name:
+  en: "Slovenian VAT ID / SI Prefix Validator"
+summary:
+  en: "Normalize SI VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "SI12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-eori-validator, slovenia-emso-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian VAT ID / SI Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize SI VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

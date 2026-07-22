@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-address-normalizer
+kind: tool
+module: validohub
+country: EE
+category: address
+status: active
+name:
+  en: "Estonian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Viru 1, 10111 Tallinn"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-address-transliteration-normalizer, estonia-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

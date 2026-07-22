@@ -13,23 +13,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "01018500120"
+        "value": "01018500120",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "01018500121"
+        "value": "Invalid 01018500121",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "0101850"
+        "value": "0101850",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 01018500120"
+        "value": "Wrong prefix NO 01018500120",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO ID edge 1"
+        "value": "Review NO ID edge 1",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -41,7 +51,7 @@
         "text": "Norwegian Fodselsnummer Validator analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -65,23 +75,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "915545943"
+        "value": "915545943",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "915545944"
+        "value": "Invalid 915545944",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "91554"
+        "value": "91554",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 915545943"
+        "value": "Wrong prefix NO 915545943",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO ORG edge 2"
+        "value": "Review NO ORG edge 2",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -93,7 +113,7 @@
         "text": "Norwegian Organisasjonsnummer Validator analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -117,23 +137,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "NO915545943MVA"
+        "value": "NO915545943MVA",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ915545943MVA"
+        "value": "Wrong prefix ZZ915545943MVA",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "NO915545"
+        "value": "NO915545",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ915545943MVA"
+        "value": "Wrong prefix ZZ915545943MVA",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO VAT edge 3"
+        "value": "Review NO VAT edge 3",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -145,7 +175,7 @@
         "text": "Norwegian VAT ID / NO Prefix Validator analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -169,23 +199,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "NO915545943"
+        "value": "NO915545943",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ915545943"
+        "value": "Wrong prefix ZZ915545943",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "NO91554"
+        "value": "NO91554",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ915545943"
+        "value": "Wrong prefix ZZ915545943",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO EORI edge 4"
+        "value": "Review NO EORI edge 4",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -197,7 +237,7 @@
         "text": "Norwegian EORI / Customs Identifier Helper analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -221,23 +261,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "01018500120"
+        "value": "01018500120",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "01018500121"
+        "value": "Invalid 01018500121",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "0101850"
+        "value": "0101850",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 01018500120"
+        "value": "Wrong prefix NO 01018500120",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO SOC edge 5"
+        "value": "Review NO SOC edge 5",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -249,7 +299,7 @@
         "text": "Norwegian D-number Helper analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -273,23 +323,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117948\"}"
+        "value": "Invalid {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117948\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO KYC edge 6"
+        "value": "Review NO KYC edge 6",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -301,7 +361,7 @@
         "text": "Norwegian Company Onboarding Auditor analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -325,23 +385,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "915545943 NO915545943MVA Karl Johans gate 1, 0154 Oslo"
+        "value": "915545943 NO915545943MVA Karl Johans gate 1, 0154 Oslo",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "915545943 NO915545943MVA Karl Johans gate 1, 0155 Oslo"
+        "value": "Invalid 915545943 NO915545943MVA Karl Johans gate 1, 0155 Oslo",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "915545943 NO915545943MVA Karl "
+        "value": "915545943 NO915545943MVA Karl ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 915545943 NO915545943MVA Karl Johans gate 1, 0154 Oslo"
+        "value": "Wrong prefix NO 915545943 NO915545943MVA Karl Johans gate 1, 0154 Oslo",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO REG edge 7"
+        "value": "Review NO REG edge 7",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -353,7 +423,7 @@
         "text": "Norwegian Brreg Readiness Helper analyzes Norway-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -377,23 +447,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "01018500120"
+        "value": "01018500120",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO CARD 8"
+        "value": "Invalid NO CARD 8",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "0101850"
+        "value": "0101850",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 01018500120"
+        "value": "Wrong prefix NO 01018500120",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO CARD edge 8"
+        "value": "Review NO CARD edge 8",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -405,7 +485,7 @@
         "text": "Norwegian ID Card Format Helper analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -429,23 +509,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<NORNORWEGIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "P<NORNORWEGIAN<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO PASS 9"
+        "value": "Invalid NO PASS 9",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<NORNORWEGIAN<<SAMPLE"
+        "value": "P<NORNORWEGIAN<<SAMPLE",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO P<NORNORWEGIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "Wrong prefix NO P<NORNORWEGIAN<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO PASS edge 9"
+        "value": "Review NO PASS edge 9",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -457,7 +547,7 @@
         "text": "Norwegian Passport Number Helper analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -481,23 +571,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<NORSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567NOR8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "P<NORSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567NOR8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO MRZ 10"
+        "value": "Invalid NO MRZ 10",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<NORSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345"
+        "value": "P<NORSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO P<NORSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567NOR8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "Wrong prefix NO P<NORSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567NOR8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO MRZ edge 10"
+        "value": "Review NO MRZ edge 10",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -509,7 +609,7 @@
         "text": "Norwegian MRZ / Passport Parser analyzes Norway-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -533,23 +633,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "NO9386011117947"
+        "value": "NO9386011117947",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ9386011117947"
+        "value": "Wrong prefix ZZ9386011117947",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "NO9386011"
+        "value": "NO9386011",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ9386011117947"
+        "value": "Wrong prefix ZZ9386011117947",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO IBAN edge 11"
+        "value": "Review NO IBAN edge 11",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -561,7 +671,7 @@
         "text": "Norway IBAN Validator analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -585,23 +695,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "86011117947"
+        "value": "86011117947",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Wrong prefix NO 86011117947"
+        "value": "Wrong prefix NO 86011117947",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "8601111"
+        "value": "8601111",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Grouped valid sample",
-        "value": "8601 1117 947"
+        "value": "8601 1117 947",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO IBG edge 12"
+        "value": "Review NO IBG edge 12",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -613,7 +733,7 @@
         "text": "Norway IBAN Generator analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -637,23 +757,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "8601 11 17947"
+        "value": "8601 11 17947",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO BANK 13"
+        "value": "Invalid NO BANK 13",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "8601 11 "
+        "value": "8601 11 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 8601 11 17947"
+        "value": "Wrong prefix NO 8601 11 17947",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO BANK edge 13"
+        "value": "Review NO BANK edge 13",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -665,7 +795,7 @@
         "text": "Norwegian Domestic Bank Account Inspector analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -689,23 +819,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "ABCDNO2X"
+        "value": "ABCDNO2X",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZCDNO2X"
+        "value": "Wrong prefix ZZCDNO2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "ABCDN"
+        "value": "ABCDN",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZCDNO2X"
+        "value": "Wrong prefix ZZCDNO2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO BIC edge 14"
+        "value": "Review NO BIC edge 14",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -717,7 +857,7 @@
         "text": "Norwegian BIC / SWIFT Inspector analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -741,23 +881,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "NO9386011117947\\n1 234,56 NOK\\nInvoice 2026-001"
+        "value": "NO9386011117947\\n1 234,56 NOK\\nInvoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO SEPA 15"
+        "value": "Invalid NO SEPA 15",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "NO9386011117947\\n1 234,56 "
+        "value": "NO9386011117947\\n1 234,56 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ9386011117947\\n1 234,56 NOK\\nInvoice 2026-001"
+        "value": "Wrong prefix ZZ9386011117947\\n1 234,56 NOK\\nInvoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO SEPA edge 15"
+        "value": "Review NO SEPA edge 15",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -769,7 +919,7 @@
         "text": "Norwegian SEPA Transfer Helper analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -793,23 +943,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "MANDATE-2026-001 NO9386011117947"
+        "value": "MANDATE-2026-001 NO9386011117947",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO SDD 16"
+        "value": "Invalid NO SDD 16",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "MANDATE-2026-001 N"
+        "value": "MANDATE-2026-001 N",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZNDATE-2026-001 NO9386011117947"
+        "value": "Wrong prefix ZZNDATE-2026-001 NO9386011117947",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO SDD edge 16"
+        "value": "Review NO SDD edge 16",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -821,7 +981,7 @@
         "text": "Norwegian SEPA Direct Debit Mandate Helper analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -845,23 +1005,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "KID reference REF 2026-001 1 234,56 NOK"
+        "value": "KID reference REF 2026-001 1 234,56 NOK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO PAY 17"
+        "value": "Invalid NO PAY 17",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "KID reference REF 2026"
+        "value": "KID reference REF 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZD reference REF 2026-001 1 234,56 NOK"
+        "value": "Wrong prefix ZZD reference REF 2026-001 1 234,56 NOK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO PAY edge 17"
+        "value": "Review NO PAY edge 17",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -873,7 +1043,7 @@
         "text": "Norwegian KID reference Reference Helper analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -897,23 +1067,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Invoice 2026-001 NO915545943MVA 1 234,56 NOK"
+        "value": "Invoice 2026-001 NO915545943MVA 1 234,56 NOK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO REMIT 18"
+        "value": "Invalid NO REMIT 18",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Invoice 2026-001 NO915545"
+        "value": "Invoice 2026-001 NO915545",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO Invoice 2026-001 NO915545943MVA 1 234,56 NOK"
+        "value": "Wrong prefix NO Invoice 2026-001 NO915545943MVA 1 234,56 NOK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO REMIT edge 18"
+        "value": "Review NO REMIT edge 18",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -925,7 +1105,7 @@
         "text": "Norwegian Remittance Text Builder analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -949,23 +1129,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.07.2026; 1 234,56 NOK; NO9386011117947; Invoice 2026-001"
+        "value": "21.07.2026; 1 234,56 NOK; NO9386011117947; Invoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO RECON 19"
+        "value": "Invalid NO RECON 19",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.07.2026; 1 234,56 NOK; NO93860"
+        "value": "21.07.2026; 1 234,56 NOK; NO93860",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 21.07.2026; 1 234,56 NOK; NO9386011117947; Invoice 2026-001"
+        "value": "Wrong prefix NO 21.07.2026; 1 234,56 NOK; NO9386011117947; Invoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO RECON edge 19"
+        "value": "Review NO RECON edge 19",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -977,7 +1167,7 @@
         "text": "Norwegian Payment Reconciliation Helper analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1001,23 +1191,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.07.2026; 1 234,56 NOK; NO9386011117947; sample counterparty"
+        "value": "21.07.2026; 1 234,56 NOK; NO9386011117947; sample counterparty",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO STMT 20"
+        "value": "Invalid NO STMT 20",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.07.2026; 1 234,56 NOK; NO9386011"
+        "value": "21.07.2026; 1 234,56 NOK; NO9386011",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 21.07.2026; 1 234,56 NOK; NO9386011117947; sample counterparty"
+        "value": "Wrong prefix NO 21.07.2026; 1 234,56 NOK; NO9386011117947; sample counterparty",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO STMT edge 20"
+        "value": "Review NO STMT edge 20",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1029,7 +1229,7 @@
         "text": "Norwegian Bank Statement Parser analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1053,23 +1253,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "NO9386011117947"
+        "value": "NO9386011117947",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ9386011117947"
+        "value": "Wrong prefix ZZ9386011117947",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "NO9386011"
+        "value": "NO9386011",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ9386011117947"
+        "value": "Wrong prefix ZZ9386011117947",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO MASK edge 21"
+        "value": "Review NO MASK edge 21",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1081,7 +1291,7 @@
         "text": "Norwegian Masked IBAN Formatter analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1105,23 +1315,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1 234,56 NOK"
+        "value": "1 234,56 NOK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO CUR 22"
+        "value": "Invalid NO CUR 22",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1 234,5"
+        "value": "1 234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 1 234,56 NOK"
+        "value": "Wrong prefix NO 1 234,56 NOK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO CUR edge 22"
+        "value": "Review NO CUR edge 22",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1133,7 +1353,7 @@
         "text": "Norwegian NOK Decimal Currency Formatter analyzes Norway-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1157,23 +1377,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "MVA 20% base 1 234,56 NOK"
+        "value": "MVA 20% base 1 234,56 NOK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO RATE 23"
+        "value": "Invalid NO RATE 23",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "MVA 20% base 1"
+        "value": "MVA 20% base 1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZA 20% base 1 234,56 NOK"
+        "value": "Wrong prefix ZZA 20% base 1 234,56 NOK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO RATE edge 23"
+        "value": "Review NO RATE edge 23",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1185,7 +1415,7 @@
         "text": "Norwegian VAT Rate Sanity Helper analyzes Norway-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1209,23 +1439,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "MVA; NO915545943MVA; period 2026-07; 1 234,56 NOK"
+        "value": "MVA; NO915545943MVA; period 2026-07; 1 234,56 NOK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO RET 24"
+        "value": "Invalid NO RET 24",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "MVA; NO915545943MVA; period"
+        "value": "MVA; NO915545943MVA; period",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZA; NO915545943MVA; period 2026-07; 1 234,56 NOK"
+        "value": "Wrong prefix ZZA; NO915545943MVA; period 2026-07; 1 234,56 NOK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO RET edge 24"
+        "value": "Review NO RET edge 24",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1237,7 +1477,7 @@
         "text": "Norwegian VAT Return Field Helper analyzes Norway-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1261,23 +1501,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "INV-2026-0001 NO915545943MVA"
+        "value": "INV-2026-0001 NO915545943MVA",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO INV 25"
+        "value": "Invalid NO INV 25",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "INV-2026-0001 NO"
+        "value": "INV-2026-0001 NO",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZV-2026-0001 NO915545943MVA"
+        "value": "Wrong prefix ZZV-2026-0001 NO915545943MVA",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO INV edge 25"
+        "value": "Review NO INV edge 25",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1289,7 +1539,7 @@
         "text": "Norwegian Invoice Number Helper analyzes Norway-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1313,23 +1563,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO EINV 26"
+        "value": "Invalid NO EINV 26",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO EINV edge 26"
+        "value": "Review NO EINV edge 26",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1341,7 +1601,7 @@
         "text": "Norwegian EHF / Peppol Readiness Checker analyzes Norway-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1365,23 +1625,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "NO915545943MVA 21.07.2026 1 234,56 NOK"
+        "value": "NO915545943MVA 21.07.2026 1 234,56 NOK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO TAX 27"
+        "value": "Invalid NO TAX 27",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "NO915545943MVA 21.07."
+        "value": "NO915545943MVA 21.07.",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ915545943MVA 21.07.2026 1 234,56 NOK"
+        "value": "Wrong prefix ZZ915545943MVA 21.07.2026 1 234,56 NOK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO TAX edge 27"
+        "value": "Review NO TAX edge 27",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1393,7 +1663,7 @@
         "text": "Norwegian Tax Authority Handoff Helper analyzes Norway-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1417,23 +1687,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "invoice 21.07.2026 1 234,56 NOK NO915545943MVA"
+        "value": "invoice 21.07.2026 1 234,56 NOK NO915545943MVA",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO AUDIT 28"
+        "value": "Invalid NO AUDIT 28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "invoice 21.07.2026 1 234,5"
+        "value": "invoice 21.07.2026 1 234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO invoice 21.07.2026 1 234,56 NOK NO915545943MVA"
+        "value": "Wrong prefix NO invoice 21.07.2026 1 234,56 NOK NO915545943MVA",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO AUDIT edge 28"
+        "value": "Review NO AUDIT edge 28",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1445,7 +1725,7 @@
         "text": "Norwegian Accounting Audit Trail Checklist Helper analyzes Norway-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1469,23 +1749,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "0150 Oslo"
+        "value": "0150 Oslo",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO POST 29"
+        "value": "Invalid NO POST 29",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "0150 "
+        "value": "0150 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 0150 Oslo"
+        "value": "Wrong prefix NO 0150 Oslo",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO POST edge 29"
+        "value": "Review NO POST edge 29",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1497,7 +1787,7 @@
         "text": "Norwegian Postal Code Validator analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1521,23 +1811,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Karl Johans gate 1, 0154 Oslo"
+        "value": "Karl Johans gate 1, 0154 Oslo",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO ADDR 30"
+        "value": "Invalid NO ADDR 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Karl Johans gate"
+        "value": "Karl Johans gate",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO Karl Johans gate 1, 0154 Oslo"
+        "value": "Wrong prefix NO Karl Johans gate 1, 0154 Oslo",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO ADDR edge 30"
+        "value": "Review NO ADDR edge 30",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1549,7 +1849,7 @@
         "text": "Norwegian Address Normalizer analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1573,23 +1873,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Karl Johans gate 1, 0154 Oslo"
+        "value": "Karl Johans gate 1, 0154 Oslo",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO ASCII 31"
+        "value": "Invalid NO ASCII 31",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Karl Johans gate"
+        "value": "Karl Johans gate",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO Karl Johans gate 1, 0154 Oslo"
+        "value": "Wrong prefix NO Karl Johans gate 1, 0154 Oslo",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO ASCII edge 31"
+        "value": "Review NO ASCII edge 31",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1601,7 +1911,7 @@
         "text": "Norwegian Address Transliteration Normalizer analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1625,23 +1935,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "0150 Oslo"
+        "value": "0150 Oslo",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO REGION 32"
+        "value": "Invalid NO REGION 32",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "0150 "
+        "value": "0150 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 0150 Oslo"
+        "value": "Wrong prefix NO 0150 Oslo",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO REGION edge 32"
+        "value": "Review NO REGION edge 32",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1653,7 +1973,7 @@
         "text": "Norwegian Region / Province Code Mapper analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1677,23 +1997,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Karl Johans gate 1, 0154 Oslo"
+        "value": "Karl Johans gate 1, 0154 Oslo",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO MUNI 33"
+        "value": "Invalid NO MUNI 33",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Karl Johans gate"
+        "value": "Karl Johans gate",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO Karl Johans gate 1, 0154 Oslo"
+        "value": "Wrong prefix NO Karl Johans gate 1, 0154 Oslo",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO MUNI edge 33"
+        "value": "Review NO MUNI edge 33",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1705,7 +2035,7 @@
         "text": "Norwegian Municipality Code Inspector analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1729,23 +2059,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+47 912 34 567"
+        "value": "+47 912 34 567",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO PHONE 34"
+        "value": "Invalid NO PHONE 34",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+47 912 "
+        "value": "+47 912 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO +47 912 34 567"
+        "value": "Wrong prefix NO +47 912 34 567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO PHONE edge 34"
+        "value": "Review NO PHONE edge 34",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1757,7 +2097,7 @@
         "text": "Norwegian Phone Number Validator analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1781,23 +2121,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+47 912 34 567"
+        "value": "+47 912 34 567",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO E164 35"
+        "value": "Invalid NO E164 35",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+47 912 "
+        "value": "+47 912 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO +47 912 34 567"
+        "value": "Wrong prefix NO +47 912 34 567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO E164 edge 35"
+        "value": "Review NO E164 edge 35",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1809,7 +2159,7 @@
         "text": "Norwegian Phone E.164 Formatter analyzes Norway-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1833,23 +2183,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.07.2026"
+        "value": "21.07.2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO DATE 36"
+        "value": "Invalid NO DATE 36",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.07."
+        "value": "21.07.",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 21.07.2026"
+        "value": "Wrong prefix NO 21.07.2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO DATE edge 36"
+        "value": "Review NO DATE edge 36",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1861,7 +2221,7 @@
         "text": "Norwegian Date Locale Formatter analyzes Norway-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1885,23 +2245,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "id;amount;date;tax\\n1;1 234,56 NOK;21.07.2026;NO915545943MVA"
+        "value": "id;amount;date;tax\\n1;1 234,56 NOK;21.07.2026;NO915545943MVA",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO CSV 37"
+        "value": "Invalid NO CSV 37",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "id;amount;date;tax\\n1;1 234,56 NO"
+        "value": "id;amount;date;tax\\n1;1 234,56 NO",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO id;amount;date;tax\\n1;1 234,56 NOK;21.07.2026;NO915545943MVA"
+        "value": "Wrong prefix NO id;amount;date;tax\\n1;1 234,56 NOK;21.07.2026;NO915545943MVA",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO CSV edge 37"
+        "value": "Review NO CSV edge 37",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1913,7 +2283,7 @@
         "text": "Norwegian CSV Locale Normalizer analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1937,23 +2307,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Norway sample company Karl Johans gate 1, 0154 Oslo"
+        "value": "Norway sample company Karl Johans gate 1, 0154 Oslo",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO SLUG 38"
+        "value": "Invalid NO SLUG 38",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Norway sample company Karl Jo"
+        "value": "Norway sample company Karl Jo",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO Norway sample company Karl Johans gate 1, 0154 Oslo"
+        "value": "Wrong prefix NO Norway sample company Karl Johans gate 1, 0154 Oslo",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO SLUG edge 38"
+        "value": "Review NO SLUG edge 38",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1965,7 +2345,7 @@
         "text": "Norwegian Slug Normalizer analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1989,23 +2369,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "01018500120 NO915545943MVA NO9386011117947 0150 Oslo"
+        "value": "01018500120 NO915545943MVA NO9386011117947 0150 Oslo",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO OCR 39"
+        "value": "Invalid NO OCR 39",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "01018500120 NO915545943MVA NO"
+        "value": "01018500120 NO915545943MVA NO",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 01018500120 NO915545943MVA NO9386011117947 0150 Oslo"
+        "value": "Wrong prefix NO 01018500120 NO915545943MVA NO9386011117947 0150 Oslo",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO OCR edge 39"
+        "value": "Review NO OCR edge 39",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2017,7 +2407,7 @@
         "text": "Norwegian Document OCR Fixer analyzes Norway-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2041,23 +2431,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO GDPR 40"
+        "value": "Invalid NO GDPR 40",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO GDPR edge 40"
+        "value": "Review NO GDPR edge 40",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2069,7 +2469,7 @@
         "text": "Norwegian GDPR / Datatilsynet Redaction Helper analyzes Norway-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2093,23 +2493,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "01018500120 +47 912 34 567 NO9386011117947"
+        "value": "01018500120 +47 912 34 567 NO9386011117947",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO PII 41"
+        "value": "Invalid NO PII 41",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "01018500120 +47 912 34 5"
+        "value": "01018500120 +47 912 34 5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 01018500120 +47 912 34 567 NO9386011117947"
+        "value": "Wrong prefix NO 01018500120 +47 912 34 567 NO9386011117947",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO PII edge 41"
+        "value": "Review NO PII edge 41",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2121,7 +2531,7 @@
         "text": "Norwegian PII Masker analyzes Norway-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2145,23 +2555,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "01018500120\\nKarl Johans gate 1, 0154 Oslo\\n+47 912 34 567"
+        "value": "01018500120\\nKarl Johans gate 1, 0154 Oslo\\n+47 912 34 567",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO FIX 42"
+        "value": "Invalid NO FIX 42",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "01018500120\\nKarl Johans gate 1,"
+        "value": "01018500120\\nKarl Johans gate 1,",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 01018500120\\nKarl Johans gate 1, 0154 Oslo\\n+47 912 34 567"
+        "value": "Wrong prefix NO 01018500120\\nKarl Johans gate 1, 0154 Oslo\\n+47 912 34 567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO FIX edge 42"
+        "value": "Review NO FIX edge 42",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2173,7 +2593,7 @@
         "text": "Norwegian Personal Data Fixture Helper analyzes Norway-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2197,23 +2617,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "01018500120 DL 2026"
+        "value": "01018500120 DL 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO DL 43"
+        "value": "Invalid NO DL 43",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "01018500120"
+        "value": "01018500120",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 01018500120 DL 2026"
+        "value": "Wrong prefix NO 01018500120 DL 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO DL edge 43"
+        "value": "Review NO DL edge 43",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2225,7 +2655,7 @@
         "text": "Norwegian Driving Licence Format Helper analyzes Norway-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2249,23 +2679,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "NO PERMIT 2026 01018500120"
+        "value": "NO PERMIT 2026 01018500120",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO PERMIT 44"
+        "value": "Invalid NO PERMIT 44",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "NO PERMIT 2026 "
+        "value": "NO PERMIT 2026 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ PERMIT 2026 01018500120"
+        "value": "Wrong prefix ZZ PERMIT 2026 01018500120",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO PERMIT edge 44"
+        "value": "Review NO PERMIT edge 44",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2277,7 +2717,7 @@
         "text": "Norwegian Residence Permit Format Helper analyzes Norway-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2301,23 +2741,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "01018500120 HEALTH 2026"
+        "value": "01018500120 HEALTH 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO HEALTH 45"
+        "value": "Invalid NO HEALTH 45",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "01018500120 H"
+        "value": "01018500120 H",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 01018500120 HEALTH 2026"
+        "value": "Wrong prefix NO 01018500120 HEALTH 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO HEALTH edge 45"
+        "value": "Review NO HEALTH edge 45",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2329,7 +2779,7 @@
         "text": "Norwegian Health Card Format Helper analyzes Norway-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2353,23 +2803,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "AB12345"
+        "value": "AB12345",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "AB12346"
+        "value": "Invalid AB12346",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "AB12"
+        "value": "AB12",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345"
+        "value": "Wrong prefix ZZ12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO PLATE edge 46"
+        "value": "Review NO PLATE edge 46",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2381,7 +2841,7 @@
         "text": "Norwegian Vehicle Plate Inspector analyzes Norway-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2405,23 +2865,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "WVWZZZ1JZXW000001"
+        "value": "WVWZZZ1JZXW000001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "WVWZZZ1JZXW000002"
+        "value": "Invalid WVWZZZ1JZXW000002",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "WVWZZZ1JZX"
+        "value": "WVWZZZ1JZX",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZWZZZ1JZXW000001"
+        "value": "Wrong prefix ZZWZZZ1JZXW000001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO VIN edge 47"
+        "value": "Review NO VIN edge 47",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2433,7 +2903,7 @@
         "text": "Norwegian VIN Validator analyzes Norway-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2457,23 +2927,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "AB12345 WVWZZZ1JZXW000001 01018500120"
+        "value": "AB12345 WVWZZZ1JZXW000001 01018500120",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO VEH 48"
+        "value": "Invalid NO VEH 48",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "AB12345 WVWZZZ1JZXW00"
+        "value": "AB12345 WVWZZZ1JZXW00",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345 WVWZZZ1JZXW000001 01018500120"
+        "value": "Wrong prefix ZZ12345 WVWZZZ1JZXW000001 01018500120",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO VEH edge 48"
+        "value": "Review NO VEH edge 48",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2485,7 +2965,7 @@
         "text": "Norwegian Vehicle Data Redaction Helper analyzes Norway-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2509,23 +2989,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "NO915545943MVA HS 8471 1 234,56 NOK"
+        "value": "NO915545943MVA HS 8471 1 234,56 NOK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO CUSTOMS 49"
+        "value": "Invalid NO CUSTOMS 49",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "NO915545943MVA HS 84"
+        "value": "NO915545943MVA HS 84",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ915545943MVA HS 8471 1 234,56 NOK"
+        "value": "Wrong prefix ZZ915545943MVA HS 8471 1 234,56 NOK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO CUSTOMS edge 49"
+        "value": "Review NO CUSTOMS edge 49",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2537,7 +3027,7 @@
         "text": "Norwegian Customs Declaration Helper analyzes Norway-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2561,23 +3051,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "TRACK 2026 0150 Oslo"
+        "value": "TRACK 2026 0150 Oslo",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO TRACK 50"
+        "value": "Invalid NO TRACK 50",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "TRACK 2026 "
+        "value": "TRACK 2026 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZACK 2026 0150 Oslo"
+        "value": "Wrong prefix ZZACK 2026 0150 Oslo",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO TRACK edge 50"
+        "value": "Review NO TRACK edge 50",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2589,7 +3089,7 @@
         "text": "Norwegian Postal Tracking Helper analyzes Norway-specific logistics evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2613,23 +3113,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO DQ 51"
+        "value": "Invalid NO DQ 51",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO DQ edge 51"
+        "value": "Review NO DQ edge 51",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2641,7 +3151,7 @@
         "text": "Norwegian Data Quality Workbench analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2665,23 +3175,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO JSON 52"
+        "value": "Invalid NO JSON 52",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO JSON edge 52"
+        "value": "Review NO JSON edge 52",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2693,7 +3213,7 @@
         "text": "Norwegian JSON Fixture Helper analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2717,23 +3237,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Fodselsnummer Organisasjonsnummer postnummer  NO9386011117947"
+        "value": "Fodselsnummer Organisasjonsnummer postnummer  NO9386011117947",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO REGEX 53"
+        "value": "Invalid NO REGEX 53",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Fodselsnummer Organisasjonsnummer "
+        "value": "Fodselsnummer Organisasjonsnummer ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO Fodselsnummer Organisasjonsnummer postnummer  NO9386011117947"
+        "value": "Wrong prefix NO Fodselsnummer Organisasjonsnummer postnummer  NO9386011117947",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO REGEX edge 53"
+        "value": "Review NO REGEX edge 53",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2745,7 +3275,7 @@
         "text": "Norwegian Regex Pack Helper analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2769,23 +3299,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO API 54"
+        "value": "Invalid NO API 54",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO API edge 54"
+        "value": "Review NO API edge 54",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2797,7 +3337,7 @@
         "text": "Norwegian API Payload Auditor analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2821,23 +3361,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "tax=NO915545943MVA&postal=0150 Oslo&phone=+47 912 34 567"
+        "value": "tax=NO915545943MVA&postal=0150 Oslo&phone=+47 912 34 567",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO FORM 55"
+        "value": "Invalid NO FORM 55",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "tax=NO915545943MVA&postal=0150 "
+        "value": "tax=NO915545943MVA&postal=0150 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO tax=NO915545943MVA&postal=0150 Oslo&phone=+47 912 34 567"
+        "value": "Wrong prefix NO tax=NO915545943MVA&postal=0150 Oslo&phone=+47 912 34 567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO FORM edge 55"
+        "value": "Review NO FORM edge 55",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2849,7 +3399,7 @@
         "text": "Norwegian Form Field Auditor analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2873,23 +3423,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1 234,56 NOK"
+        "value": "1 234,56 NOK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO NUM 56"
+        "value": "Invalid NO NUM 56",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1 234,5"
+        "value": "1 234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 1 234,56 NOK"
+        "value": "Wrong prefix NO 1 234,56 NOK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO NUM edge 56"
+        "value": "Review NO NUM edge 56",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2901,7 +3461,7 @@
         "text": "Norwegian Locale Number Parser analyzes Norway-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2925,23 +3485,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.07.2026 week 30"
+        "value": "21.07.2026 week 30",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO CAL 57"
+        "value": "Invalid NO CAL 57",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.07.2026"
+        "value": "21.07.2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 21.07.2026 week 30"
+        "value": "Wrong prefix NO 21.07.2026 week 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO CAL edge 57"
+        "value": "Review NO CAL edge 57",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2953,7 +3523,7 @@
         "text": "Norwegian Calendar Week Helper analyzes Norway-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2977,23 +3547,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Norway Sample Holding Ltd 915545943"
+        "value": "Norway Sample Holding Ltd 915545943",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Norway Sample Holding Ltd 915545944"
+        "value": "Invalid Norway Sample Holding Ltd 915545944",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Norway Sample Holdin"
+        "value": "Norway Sample Holdin",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO Norway Sample Holding Ltd 915545943"
+        "value": "Wrong prefix NO Norway Sample Holding Ltd 915545943",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO SUFFIX edge 58"
+        "value": "Review NO SUFFIX edge 58",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3005,7 +3585,7 @@
         "text": "Norwegian Company Suffix Normalizer analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3029,23 +3609,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "915545943 PO-2026-001 NO915545943MVA"
+        "value": "915545943 PO-2026-001 NO915545943MVA",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO PROC 59"
+        "value": "Invalid NO PROC 59",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "915545943 PO-2026-00"
+        "value": "915545943 PO-2026-00",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO 915545943 PO-2026-001 NO915545943MVA"
+        "value": "Wrong prefix NO 915545943 PO-2026-001 NO915545943MVA",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO PROC edge 59"
+        "value": "Review NO PROC edge 59",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3057,7 +3647,7 @@
         "text": "Norwegian Procurement Identifier Helper analyzes Norway-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3081,23 +3671,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Fodselsnummer input, postnummer input, amount 1 234,56 NOK"
+        "value": "Fodselsnummer input, postnummer input, amount 1 234,56 NOK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO COPY 60"
+        "value": "Invalid NO COPY 60",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Fodselsnummer input, postnummer "
+        "value": "Fodselsnummer input, postnummer ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO Fodselsnummer input, postnummer input, amount 1 234,56 NOK"
+        "value": "Wrong prefix NO Fodselsnummer input, postnummer input, amount 1 234,56 NOK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO COPY edge 60"
+        "value": "Review NO COPY edge 60",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3109,7 +3709,7 @@
         "text": "Norwegian Locale Copy Checker analyzes Norway-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3133,23 +3733,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Customer sent 01018500120, NO9386011117947, Karl Johans gate 1, 0154 Oslo"
+        "value": "Customer sent 01018500120, NO9386011117947, Karl Johans gate 1, 0154 Oslo",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO SUP 61"
+        "value": "Invalid NO SUP 61",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Customer sent 01018500120, NO938601111794"
+        "value": "Customer sent 01018500120, NO938601111794",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO Customer sent 01018500120, NO9386011117947, Karl Johans gate 1, 0154 Oslo"
+        "value": "Wrong prefix NO Customer sent 01018500120, NO9386011117947, Karl Johans gate 1, 0154 Oslo",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO SUP edge 61"
+        "value": "Review NO SUP edge 61",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3161,7 +3771,7 @@
         "text": "Norwegian Support Ticket Scrubber analyzes Norway-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3185,23 +3795,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid NO SMOKE 62"
+        "value": "Invalid NO SMOKE 62",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91"
+        "value": "{\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO91",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}"
+        "value": "Wrong prefix NO {\"country\":\"NO\",\"orgnr\":\"915545943\",\"mva\":\"NO915545943MVA\",\"iban\":\"NO9386011117947\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review NO SMOKE edge 62"
+        "value": "Review NO SMOKE edge 62",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3213,7 +3833,7 @@
         "text": "Norwegian Integration Smoke Test Builder analyzes Norway-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Norwegian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {

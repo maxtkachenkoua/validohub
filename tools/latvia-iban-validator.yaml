@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-iban-validator
+kind: tool
+module: validohub
+country: LV
+category: finance
+status: active
+name:
+  en: "Latvia IBAN Validator"
+summary:
+  en: "Validate LV IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "LV80BANK0000435195001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [latvia-iban-generator, latvia-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvia IBAN Validator | ValidoHub"
+  description:
+    en: "Validate LV IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

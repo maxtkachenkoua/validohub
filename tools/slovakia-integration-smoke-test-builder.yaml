@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: SK
+category: developer-tools
+status: active
+name:
+  en: "Slovak Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SK\",\"ico\":\"31331131\",\"iban\":\"SK3112000000198742637541\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-rodne-cislo-validator, slovakia-ico-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

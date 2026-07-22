@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-form-field-auditor
+kind: tool
+module: validohub
+country: UA
+category: developer-tools
+status: active
+name:
+  en: "Ukrainian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=UA123456789012&postal=01001 Kyiv&phone=+380 67 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-locale-number-parser, ukraine-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

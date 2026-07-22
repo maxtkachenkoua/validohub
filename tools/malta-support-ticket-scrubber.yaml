@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-support-ticket-scrubber
+kind: tool
+module: validohub
+country: MT
+category: privacy
+status: active
+name:
+  en: "Maltese Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1234567M, MT84MALT011000012345MTLCAST001S, Republic Street 1, VLT 1111 Valletta"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-integration-smoke-test-builder, malta-id-card-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

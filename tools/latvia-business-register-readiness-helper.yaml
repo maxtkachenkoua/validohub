@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: LV
+category: government
+status: active
+name:
+  en: "Latvian Uzņēmumu registrs Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Uzņēmumu registrs lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "40003000000 LV40003000000 Brivibas iela 1, LV-1050 Riga"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [latvia-id-card-format-helper, latvia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvian Uzņēmumu registrs Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Uzņēmumu registrs lookup or company registry workflow."

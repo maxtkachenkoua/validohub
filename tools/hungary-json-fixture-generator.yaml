@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-json-fixture-generator
+kind: tool
+module: validohub
+country: HU
+category: developer-tools
+status: active
+name:
+  en: "Hungarian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"HU\",\"tax\":\"HU12345678\",\"iban\":\"HU42117730161111101800000000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-regex-pack-helper, hungary-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

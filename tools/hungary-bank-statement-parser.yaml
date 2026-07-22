@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-bank-statement-parser
+kind: tool
+module: validohub
+country: HU
+category: finance
+status: active
+name:
+  en: "Hungarian Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "2026.07.21; 1 234,56 HUF; HU42117730161111101800000000; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-masked-iban-formatter, hungary-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."

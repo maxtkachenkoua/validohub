@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-mrz-passport-parser
+kind: tool
+module: validohub
+country: LI
+category: national-identifiers
+status: active
+name:
+  en: "Liechtenstein MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<LIESAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567LIE8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-iban-validator, liechtenstein-iban-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

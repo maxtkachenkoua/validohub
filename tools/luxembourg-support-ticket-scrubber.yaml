@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-support-ticket-scrubber
+kind: tool
+module: validohub
+country: LU
+category: privacy
+status: active
+name:
+  en: "Luxembourgish Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1980010101234, LU280019400644750000, Grand-Rue 1, L-1661 Luxembourg"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-integration-smoke-test-builder, luxembourg-matricule-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

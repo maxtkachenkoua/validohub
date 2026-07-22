@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: HU
+category: tax
+status: active
+name:
+  en: "Hungarian NAV Online Szamla Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"HU\",\"tax\":\"HU12345678\",\"iban\":\"HU42117730161111101800000000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-tax-authority-handoff-helper, hungary-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian NAV Online Szamla Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

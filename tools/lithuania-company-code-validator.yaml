@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-company-code-validator
+kind: tool
+module: validohub
+country: LT
+category: national-identifiers
+status: active
+name:
+  en: "Lithuanian company code Validator"
+summary:
+  en: "Inspect company code structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-vat-id-validator, lithuania-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian company code Validator | ValidoHub"
+  description:
+    en: "Inspect company code structure, registry-style prefixes, control digits, and official lookup boundaries."

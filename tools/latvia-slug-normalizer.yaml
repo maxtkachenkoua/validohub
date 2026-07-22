@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-slug-normalizer
+kind: tool
+module: validohub
+country: LV
+category: developer-tools
+status: active
+name:
+  en: "Latvian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Latvia sample company Brivibas iela 1, LV-1050 Riga"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [latvia-document-ocr-fixer, latvia-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

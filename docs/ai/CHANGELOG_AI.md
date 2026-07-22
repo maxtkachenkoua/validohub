@@ -1,3 +1,9 @@
+## 2026-07-21 - Strict Europe full-premium expansion batch
+
+- Added a documented strict-Europe premium generation batch for Portugal (portugal), Austria (austria), Belgium (belgium), Ireland (ireland), Czechia (czechia), Sweden (sweden), Norway (norway), Denmark (denmark), Finland (finland), Romania (romania), Albania (albania), Andorra (andorra), Bosnia and Herzegovina (bosnia-and-herzegovina), Bulgaria (bulgaria), Croatia (croatia), Cyprus (cyprus), Estonia (estonia), Greece (greece), Hungary (hungary), Iceland (iceland), Latvia (latvia), Liechtenstein (liechtenstein), Lithuania (lithuania), Luxembourg (luxembourg), Malta (malta), Moldova (moldova), Monaco (monaco), Montenegro (montenegro), North Macedonia (north-macedonia), San Marino (san-marino), Serbia (serbia), Slovakia (slovakia), Slovenia (slovenia), Ukraine (ukraine), United Kingdom (united-kingdom), Vatican City (vatican-city).
+- Each country uses Country Suite Factory V1, quality-driven local workbenches, runtime localization for en/es/pt-BR/de/fr/pl/uk, mandatory field breakdown, same-country related links, validate/generate affordances, and explicit official boundaries.
+- Added `docs/product/EUROPE_BATCH_PREMIUM_SUITE_SPEC.md` so future AI sessions treat batch generation quality as a contract, not a one-off.
+
 ## 2026-07-21 - Country tool sample correctness and debug UX hardening
 
 - Fixed the shared factory sample classifier so `Invalid sample` no longer matches the word `valid` and cannot be treated as a success fixture.
@@ -66,11 +72,12 @@
 - Promoted the fixes into the Premium Country Contract, country-suite guardrails, and Europe batch spec as mandatory future-country rules.
 - Kept Valido Engine untouched.
 
-## 2026-07-21 - Europe premium 10-country stress batch
+## 2026-07-21 - Europe premium 10-country stress batch (superseded by strict-Europe V2)
 
 - Added a documented 10-country premium generation batch for Portugal (portugal), Austria (austria), Belgium (belgium), Ireland (ireland), Czechia (czechia), Sweden (sweden), Norway (norway), Denmark (denmark), Finland (finland), Romania (romania).
 - Each country uses Country Suite Factory V1, 60 local workbenches, runtime localization for en/es/pt-BR/de/fr/pl/uk, mandatory field breakdown, same-country related links, and explicit official boundaries.
 - Added `docs/product/EUROPE_BATCH_PREMIUM_SUITE_SPEC.md` so future AI sessions treat batch generation quality as a contract, not a one-off.
+- Superseded by the strict-Europe V2 expansion, where the same generator contract covers all approved missing strict-Europe countries and keeps 60 as a density reference rather than a hard cap.
 
 # 2026-07-21 - Premium country suite tool-count rule
 

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-health-card-format-helper
+kind: tool
+module: validohub
+country: LT
+category: documents
+status: active
+name:
+  en: "Lithuanian Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "38001010017 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-vehicle-plate-inspector, lithuania-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

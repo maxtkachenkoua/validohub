@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-address-normalizer
+kind: tool
+module: validohub
+country: BA
+category: address
+status: active
+name:
+  en: "Bosnian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Ferhadija 1, 71000 Sarajevo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-address-transliteration-normalizer, bosnia-and-herzegovina-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: VA
+category: tax
+status: active
+name:
+  en: "Vatican Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "VA00123456789 21/07/2026 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-accounting-audit-trail-checklist-generator, vatican-city-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

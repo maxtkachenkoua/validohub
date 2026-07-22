@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: UA
+slug: ukraine
+name:
+  en: Ukraine
+region: Europe
+languages:
+  - uk
+currency: UAH
+relatedCountries:
+  - PL
+  - RO
+  - MD

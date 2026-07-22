@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-iban-validator
+kind: tool
+module: validohub
+country: AD
+category: finance
+status: active
+name:
+  en: "Andorra IBAN Validator"
+summary:
+  en: "Validate AD IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "AD1200012030200359100100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-iban-generator, andorra-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorra IBAN Validator | ValidoHub"
+  description:
+    en: "Validate AD IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

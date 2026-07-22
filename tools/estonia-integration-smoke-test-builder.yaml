@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: EE
+category: developer-tools
+status: active
+name:
+  en: "Estonian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"EE\",\"isikukood\":\"38501010018\",\"iban\":\"EE382200221020145685\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-isikukood-validator, estonia-registry-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

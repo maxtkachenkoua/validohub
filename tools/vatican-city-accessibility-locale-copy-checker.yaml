@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: VA
+category: localization
+status: active
+name:
+  en: "Vatican Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "document number input, postal code input, amount 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-support-ticket-scrubber, vatican-city-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

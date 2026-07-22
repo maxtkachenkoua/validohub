@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-embg-social-insurance-helper
+kind: tool
+module: validohub
+country: MK
+category: national-identifiers
+status: active
+name:
+  en: "Macedonian EMBG Helper"
+summary:
+  en: "Split EMBG evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "0101980456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-company-onboarding-auditor, north-macedonia-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian EMBG Helper | ValidoHub"
+  description:
+    en: "Split EMBG evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-uic-eik-validator
+kind: tool
+module: validohub
+country: BG
+category: national-identifiers
+status: active
+name:
+  en: "Bulgarian UIC / EIK Validator"
+summary:
+  en: "Inspect UIC / EIK structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-vat-id-validator, bulgaria-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian UIC / EIK Validator | ValidoHub"
+  description:
+    en: "Inspect UIC / EIK structure, registry-style prefixes, control digits, and official lookup boundaries."

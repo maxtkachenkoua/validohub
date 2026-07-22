@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-health-card-format-helper
+kind: tool
+module: validohub
+country: LI
+category: documents
+status: active
+name:
+  en: "Liechtenstein Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "756.1234.5678.97 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-vehicle-plate-inspector, liechtenstein-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

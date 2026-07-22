@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-calendar-week-helper
+kind: tool
+module: validohub
+country: VA
+category: localization
+status: active
+name:
+  en: "Vatican Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "21/07/2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-company-suffix-normalizer, vatican-city-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

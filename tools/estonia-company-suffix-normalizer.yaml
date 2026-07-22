@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-company-suffix-normalizer
+kind: tool
+module: validohub
+country: EE
+category: developer-tools
+status: active
+name:
+  en: "Estonian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Estonia Sample Holding Ltd 12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-procurement-identifier-helper, estonia-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

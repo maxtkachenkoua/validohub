@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-data-quality-workbench
+kind: tool
+module: validohub
+country: MT
+category: developer-tools
+status: active
+name:
+  en: "Maltese Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MT\",\"vat\":\"MT12345678\",\"iban\":\"MT84MALT011000012345MTLCAST001S\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-json-fixture-generator, malta-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: AD
+category: developer-tools
+status: active
+name:
+  en: "Andorran Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AD\",\"nrt\":\"F-123456-Z\",\"iban\":\"AD1200012030200359100100\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-cass-number-validator, andorra-nrt-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

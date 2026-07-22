@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: CY
+category: tax
+status: active
+name:
+  en: "Cypriot VAT invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CY\",\"vat\":\"CY12345678L\",\"iban\":\"CY17002001280000001200527600\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-tax-authority-handoff-helper, cyprus-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot VAT invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: AL
+category: privacy
+status: active
+name:
+  en: "Albanian GDPR-aligned privacy Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AL\",\"nipt\":\"L12345678A\",\"iban\":\"AL47212110090000000235698741\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-pii-masker, albania-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian GDPR-aligned privacy Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

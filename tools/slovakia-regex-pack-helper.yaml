@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-regex-pack-helper
+kind: tool
+module: validohub
+country: SK
+category: developer-tools
+status: active
+name:
+  en: "Slovak Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "Rodne cislo ICO PSC  SK3112000000198742637541"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-api-payload-auditor, slovakia-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

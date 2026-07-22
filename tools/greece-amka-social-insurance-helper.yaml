@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-amka-social-insurance-helper
+kind: tool
+module: validohub
+country: GR
+category: national-identifiers
+status: active
+name:
+  en: "Greek AMKA Helper"
+summary:
+  en: "Split AMKA evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "01018012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-company-onboarding-auditor, greece-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek AMKA Helper | ValidoHub"
+  description:
+    en: "Split AMKA evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

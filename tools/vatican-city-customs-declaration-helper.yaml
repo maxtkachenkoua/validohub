@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-customs-declaration-helper
+kind: tool
+module: validohub
+country: VA
+category: government
+status: active
+name:
+  en: "Vatican Customs Declaration Helper"
+summary:
+  en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "VA00123456789 HS 8471 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-postal-tracking-helper, vatican-city-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."

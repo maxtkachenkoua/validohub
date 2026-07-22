@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-phone-e164-formatter
+kind: tool
+module: validohub
+country: HU
+category: address
+status: active
+name:
+  en: "Hungarian Phone E.164 Formatter"
+summary:
+  en: "Normalize local phone input to E.164-style previews and split country/national evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "E164 input"
+        required: true
+        placeholder:
+          en: "+36 30 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-date-locale-formatter, hungary-csv-locale-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Phone E.164 Formatter | ValidoHub"
+  description:
+    en: "Normalize local phone input to E.164-style previews and split country/national evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-company-onboarding-auditor
+kind: tool
+module: validohub
+country: SM
+category: developer-tools
+status: active
+name:
+  en: "Sammarinese Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for COE number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SM\",\"coe\":\"SM12345\",\"iban\":\"SM86U0322509800000000270100\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-business-register-readiness-helper, san-marino-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for COE number, VAT, address, banking, and official registry handoff readiness."

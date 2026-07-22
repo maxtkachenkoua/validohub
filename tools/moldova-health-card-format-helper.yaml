@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: moldova-health-card-format-helper
+kind: tool
+module: validohub
+country: MD
+category: documents
+status: active
+name:
+  en: "Moldovan Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.moldova-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "2000010101234 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [moldova-vehicle-plate-inspector, moldova-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moldovan Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

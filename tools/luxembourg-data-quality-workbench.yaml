@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-data-quality-workbench
+kind: tool
+module: validohub
+country: LU
+category: developer-tools
+status: active
+name:
+  en: "Luxembourgish Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"LU\",\"vat\":\"LU12345678\",\"iban\":\"LU280019400644750000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-json-fixture-generator, luxembourg-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

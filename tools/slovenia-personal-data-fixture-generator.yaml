@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: SI
+category: privacy
+status: active
+name:
+  en: "Slovenian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "0101980500123\\nSlovenska cesta 1, 1000 Ljubljana\\n+386 40 123 456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-driving-licence-format-helper, slovenia-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

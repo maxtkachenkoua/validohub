@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-regex-pack-helper
+kind: tool
+module: validohub
+country: IS
+category: developer-tools
+status: active
+name:
+  en: "Icelandic Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "Kennitala company kennitala postnumer  IS140159260076545510730339"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-api-payload-auditor, iceland-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

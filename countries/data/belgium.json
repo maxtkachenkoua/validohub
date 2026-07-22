@@ -10,7 +10,7 @@
       "y": 52,
       "label": "Belgium"
     },
-    "source": "Simplified generated geographic reference for ValidoHub country navigation"
+    "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
   },
   "catalog": {
     "id": "belgium",
@@ -121,7 +121,13 @@
     "coordinates": {
       "x": 47,
       "y": 52
-    }
+    },
+    "searchHints": [
+      "National Register Number",
+      "IBAN",
+      "BTW / TVA",
+      "Peppol / e-invoicing"
+    ]
   },
   "hub": {
     "flag": "🇧🇪",
@@ -160,7 +166,10 @@
       "rtlSupport": "No",
       "unicodeLocale": "nl-BE",
       "cldrLocale": "nl_BE",
-      "metricVsImperial": "Metric-first"
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "230V",
+      "frequency": "50Hz"
     },
     "visualIdentity": {
       "countryId": "belgium",
@@ -285,6 +294,34 @@
         "text": "RRN / NISS, KBO / BCE, postcode / code postal, phone, address, and IBAN need local labels.",
         "status": "available"
       }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "EU-wide emergency number; local alternatives may also exist."
+      }
+    ],
+    "searchHints": [
+      "National Register Number",
+      "IBAN",
+      "BTW / TVA",
+      "Peppol / e-invoicing"
     ],
     "routes": [
       {

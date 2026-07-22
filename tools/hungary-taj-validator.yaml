@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-taj-validator
+kind: tool
+module: validohub
+country: HU
+category: national-identifiers
+status: active
+name:
+  en: "Hungarian TAJ Validator"
+summary:
+  en: "Validate TAJ shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-company-registry-number-validator, hungary-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian TAJ Validator | ValidoHub"
+  description:
+    en: "Validate TAJ shape, split date/control/body evidence, and prepare privacy-safe debugging output."

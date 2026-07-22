@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-document-ocr-fixer
+kind: tool
+module: validohub
+country: IS
+category: documents
+status: active
+name:
+  en: "Icelandic Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "1201743399 IS5501692829 IS140159260076545510730339 101 Reykjavik"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-gdpr-redaction-helper, iceland-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

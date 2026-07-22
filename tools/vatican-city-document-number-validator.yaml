@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-document-number-validator
+kind: tool
+module: validohub
+country: VA
+category: national-identifiers
+status: active
+name:
+  en: "Vatican document number Validator"
+summary:
+  en: "Validate document number shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "SCV123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-vatican-entity-code-validator, vatican-city-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican document number Validator | ValidoHub"
+  description:
+    en: "Validate document number shape, split date/control/body evidence, and prepare privacy-safe debugging output."

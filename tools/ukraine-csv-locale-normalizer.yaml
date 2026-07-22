@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-csv-locale-normalizer
+kind: tool
+module: validohub
+country: UA
+category: developer-tools
+status: active
+name:
+  en: "Ukrainian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Ukraine decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1 234,56 UAH;21.07.2026;UA123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-slug-normalizer, ukraine-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Ukraine decimal, date, postal, phone, tax, and banking fields."

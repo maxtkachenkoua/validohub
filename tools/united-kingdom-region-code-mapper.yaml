@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-region-code-mapper
+kind: tool
+module: validohub
+country: GB
+category: address
+status: active
+name:
+  en: "British Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "SW1A 1AA London"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-municipality-code-inspector, united-kingdom-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

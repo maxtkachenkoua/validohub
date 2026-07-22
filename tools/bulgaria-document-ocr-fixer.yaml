@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-document-ocr-fixer
+kind: tool
+module: validohub
+country: BG
+category: documents
+status: active
+name:
+  en: "Bulgarian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "8001010008 BG123456789 BG80BNBG96611020345678 1000 Sofia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-gdpr-redaction-helper, bulgaria-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

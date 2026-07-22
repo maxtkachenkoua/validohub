@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: RS
+category: privacy
+status: active
+name:
+  en: "Serbian personal-data protection Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"RS\",\"pib\":\"100123456\",\"iban\":\"RS35260005601001611379\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-pii-masker, serbia-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian personal-data protection Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

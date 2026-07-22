@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-json-fixture-generator
+kind: tool
+module: validohub
+country: LI
+category: developer-tools
+status: active
+name:
+  en: "Liechtenstein JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"LI\",\"company\":\"FL-0002.123.456-7\",\"iban\":\"LI21088100002324013AA\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-regex-pack-helper, liechtenstein-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

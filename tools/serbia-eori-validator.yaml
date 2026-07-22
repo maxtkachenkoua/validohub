@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-eori-validator
+kind: tool
+module: validohub
+country: RS
+category: national-identifiers
+status: active
+name:
+  en: "Serbian EORI / Customs Identifier Helper"
+summary:
+  en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EORI input"
+        required: true
+        placeholder:
+          en: "RS17123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-jmbg-social-insurance-helper, serbia-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian EORI / Customs Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."

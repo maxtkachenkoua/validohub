@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-csv-locale-normalizer
+kind: tool
+module: validohub
+country: VA
+category: developer-tools
+status: active
+name:
+  en: "Vatican CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Vatican City decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1.234,56 EUR;21/07/2026;VA00123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-slug-normalizer, vatican-city-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Vatican City decimal, date, postal, phone, tax, and banking fields."

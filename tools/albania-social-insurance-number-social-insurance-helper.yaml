@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-social-insurance-number-social-insurance-helper
+kind: tool
+module: validohub
+country: AL
+category: national-identifiers
+status: active
+name:
+  en: "Albanian social insurance number Helper"
+summary:
+  en: "Split social insurance number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-company-onboarding-auditor, albania-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian social insurance number Helper | ValidoHub"
+  description:
+    en: "Split social insurance number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

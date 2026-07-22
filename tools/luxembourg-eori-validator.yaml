@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-eori-validator
+kind: tool
+module: validohub
+country: LU
+category: national-identifiers
+status: active
+name:
+  en: "Luxembourgish EORI / Customs Identifier Helper"
+summary:
+  en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EORI input"
+        required: true
+        placeholder:
+          en: "LUB123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-matricule-social-insurance-helper, luxembourg-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish EORI / Customs Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."

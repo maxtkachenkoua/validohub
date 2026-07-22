@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: AL
+category: localization
+status: active
+name:
+  en: "Albanian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "Personal number input, postal code input, amount 1.234,56 ALL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-support-ticket-scrubber, albania-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

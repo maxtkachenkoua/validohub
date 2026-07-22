@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-driving-licence-format-helper
+kind: tool
+module: validohub
+country: HR
+category: documents
+status: active
+name:
+  en: "Croatian Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "12345678903 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-residence-permit-format-helper, croatia-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-company-c-number-validator
+kind: tool
+module: validohub
+country: MT
+category: national-identifiers
+status: active
+name:
+  en: "Maltese company C number Validator"
+summary:
+  en: "Inspect company C number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "C12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-vat-id-validator, malta-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese company C number Validator | ValidoHub"
+  description:
+    en: "Inspect company C number structure, registry-style prefixes, control digits, and official lookup boundaries."

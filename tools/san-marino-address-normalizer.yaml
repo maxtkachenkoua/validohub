@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-address-normalizer
+kind: tool
+module: validohub
+country: SM
+category: address
+status: active
+name:
+  en: "Sammarinese Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Contrada Omerelli 1, 47890 San Marino"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-address-transliteration-normalizer, san-marino-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

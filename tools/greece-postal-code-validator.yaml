@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-postal-code-validator
+kind: tool
+module: validohub
+country: GR
+category: address
+status: active
+name:
+  en: "Greek Postal Code Validator"
+summary:
+  en: "Validate TK postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "105 57 Athens"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-address-normalizer, greece-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate TK postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."

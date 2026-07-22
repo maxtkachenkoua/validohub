@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-business-register-readiness-helper
+kind: tool
+module: validohub
+country: CY
+category: government
+status: active
+name:
+  en: "Cypriot Registrar of Companies Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Registrar of Companies lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "HE123456 CY12345678L Ledras 1, 1010 Nicosia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-id-card-format-helper, cyprus-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot Registrar of Companies Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Registrar of Companies lookup or company registry workflow."

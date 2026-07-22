@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-rodne-cislo-validator
+kind: tool
+module: validohub
+country: SK
+category: national-identifiers
+status: active
+name:
+  en: "Slovak Rodne cislo Validator"
+summary:
+  en: "Validate Rodne cislo shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "800101/0008"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-ico-validator, slovakia-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak Rodne cislo Validator | ValidoHub"
+  description:
+    en: "Validate Rodne cislo shape, split date/control/body evidence, and prepare privacy-safe debugging output."

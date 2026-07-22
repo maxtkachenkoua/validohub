@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-api-payload-auditor
+kind: tool
+module: validohub
+country: BA
+category: developer-tools
+status: active
+name:
+  en: "Bosnian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BA\",\"jib\":\"4200123450006\",\"iban\":\"BA391290079401028494\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-form-field-auditor, bosnia-and-herzegovina-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

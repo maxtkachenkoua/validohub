@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: HU
+category: finance
+status: active
+name:
+  en: "Hungarian Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "2026.07.21; 1 234,56 HUF; HU42117730161111101800000000; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-bank-statement-parser, hungary-masked-iban-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-municipality-code-inspector
+kind: tool
+module: validohub
+country: LV
+category: address
+status: active
+name:
+  en: "Latvian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Brivibas iela 1, LV-1050 Riga"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [latvia-phone-number-validator, latvia-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

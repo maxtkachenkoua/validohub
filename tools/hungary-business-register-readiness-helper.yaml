@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-business-register-readiness-helper
+kind: tool
+module: validohub
+country: HU
+category: government
+status: active
+name:
+  en: "Hungarian Cegjegyzek Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Cegjegyzek lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "01-09-123456 HU12345678 Andrassy ut 1, 1051 Budapest"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-id-card-format-helper, hungary-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Cegjegyzek Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Cegjegyzek lookup or company registry workflow."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-eori-validator
+kind: tool
+module: validohub
+country: BG
+category: national-identifiers
+status: active
+name:
+  en: "Bulgarian EORI / Customs Identifier Helper"
+summary:
+  en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EORI input"
+        required: true
+        placeholder:
+          en: "BG123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-lnch-social-insurance-helper, bulgaria-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian EORI / Customs Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."

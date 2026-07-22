@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-api-payload-auditor
+kind: tool
+module: validohub
+country: RS
+category: developer-tools
+status: active
+name:
+  en: "Serbian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"RS\",\"pib\":\"100123456\",\"iban\":\"RS35260005601001611379\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-form-field-auditor, serbia-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

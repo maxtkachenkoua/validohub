@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-iban-generator
+kind: tool
+module: validohub
+country: EE
+category: finance
+status: active
+name:
+  en: "Estonia IBAN Generator"
+summary:
+  en: "Generate EE IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "2200221020145685"
+    actions: [generate, validate, explain]
+related:
+  explicit: [estonia-bank-account-inspector, estonia-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonia IBAN Generator | ValidoHub"
+  description:
+    en: "Generate EE IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

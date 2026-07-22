@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-regex-pack-helper
+kind: tool
+module: validohub
+country: BG
+category: developer-tools
+status: active
+name:
+  en: "Bulgarian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "EGN UIC / EIK postal code  BG80BNBG96611020345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-api-payload-auditor, bulgaria-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

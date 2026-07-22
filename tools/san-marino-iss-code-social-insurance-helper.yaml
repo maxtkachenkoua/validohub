@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-iss-code-social-insurance-helper
+kind: tool
+module: validohub
+country: SM
+category: national-identifiers
+status: active
+name:
+  en: "Sammarinese ISS code Helper"
+summary:
+  en: "Split ISS code evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "SM1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-company-onboarding-auditor, san-marino-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese ISS code Helper | ValidoHub"
+  description:
+    en: "Split ISS code evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

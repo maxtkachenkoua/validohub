@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-health-card-format-helper
+kind: tool
+module: validohub
+country: VA
+category: documents
+status: active
+name:
+  en: "Vatican Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "SCV123456 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-vehicle-plate-inspector, vatican-city-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

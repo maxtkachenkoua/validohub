@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-phone-number-validator
+kind: tool
+module: validohub
+country: VA
+category: address
+status: active
+name:
+  en: "Vatican Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+39 06 6982 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-phone-e164-formatter, vatican-city-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

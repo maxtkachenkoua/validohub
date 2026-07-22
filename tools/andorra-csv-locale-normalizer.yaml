@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-csv-locale-normalizer
+kind: tool
+module: validohub
+country: AD
+category: developer-tools
+status: active
+name:
+  en: "Andorran CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Andorra decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1.234,56 EUR;21/07/2026;AD F123456Z"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-slug-normalizer, andorra-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Andorra decimal, date, postal, phone, tax, and banking fields."

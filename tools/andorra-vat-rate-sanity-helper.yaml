@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: AD
+category: tax
+status: active
+name:
+  en: "Andorran VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "IGI / NRT 20% base 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-vat-return-field-helper, andorra-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CY
+slug: cyprus
+name:
+  en: Cyprus
+region: Europe
+languages:
+  - el
+currency: EUR
+relatedCountries:
+  - GR
+  - MT
+  - BG

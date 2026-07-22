@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-driving-licence-format-helper
+kind: tool
+module: validohub
+country: LT
+category: documents
+status: active
+name:
+  en: "Lithuanian Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "38001010017 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-residence-permit-format-helper, lithuania-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

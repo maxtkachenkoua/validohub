@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-csv-locale-normalizer
+kind: tool
+module: validohub
+country: AL
+category: developer-tools
+status: active
+name:
+  en: "Albanian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Albania decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1.234,56 ALL;21.07.2026;AL L12345678A"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-slug-normalizer, albania-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Albania decimal, date, postal, phone, tax, and banking fields."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-company-suffix-normalizer
+kind: tool
+module: validohub
+country: LT
+category: developer-tools
+status: active
+name:
+  en: "Lithuanian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Lithuania Sample Holding Ltd 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-procurement-identifier-helper, lithuania-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

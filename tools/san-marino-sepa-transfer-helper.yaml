@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-sepa-transfer-helper
+kind: tool
+module: validohub
+country: SM
+category: finance
+status: active
+name:
+  en: "Sammarinese SEPA Transfer Helper"
+summary:
+  en: "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SEPA input"
+        required: true
+        placeholder:
+          en: "SM86U0322509800000000270100\\n1.234,56 EUR\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-sepa-direct-debit-mandate-helper, san-marino-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese SEPA Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-payment-reference-helper
+kind: tool
+module: validohub
+country: HR
+category: finance
+status: active
+name:
+  en: "Croatian model i poziv na broj Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "model i poziv na broj REF 2026-001 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-remittance-text-builder, croatia-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian model i poziv na broj Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

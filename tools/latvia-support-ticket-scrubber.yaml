@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: LV
+category: privacy
+status: active
+name:
+  en: "Latvian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 010180-12345, LV80BANK0000435195001, Brivibas iela 1, LV-1050 Riga"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [latvia-integration-smoke-test-builder, latvia-personal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

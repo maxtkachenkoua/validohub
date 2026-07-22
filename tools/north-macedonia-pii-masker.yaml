@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-pii-masker
+kind: tool
+module: validohub
+country: MK
+category: privacy
+status: active
+name:
+  en: "Macedonian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "0101980456789 +389 70 123 456 MK07250120000058984"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-personal-data-fixture-generator, north-macedonia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

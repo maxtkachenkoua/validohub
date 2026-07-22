@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-business-register-readiness-helper
+kind: tool
+module: validohub
+country: SM
+category: government
+status: active
+name:
+  en: "Sammarinese Registro Imprese Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Registro Imprese lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "SM12345 SM12345 Contrada Omerelli 1, 47890 San Marino"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-id-card-format-helper, san-marino-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese Registro Imprese Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Registro Imprese lookup or company registry workflow."

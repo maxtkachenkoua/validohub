@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-bank-statement-parser
+kind: tool
+module: validohub
+country: VA
+category: finance
+status: active
+name:
+  en: "Vatican Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1.234,56 EUR; VA59001123000000012345678; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-masked-iban-formatter, vatican-city-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."

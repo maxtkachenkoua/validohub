@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-document-ocr-fixer
+kind: tool
+module: validohub
+country: SM
+category: documents
+status: active
+name:
+  en: "Sammarinese Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "SM1234567 SM12345 SM86U0322509800000000270100 47890 San Marino"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-gdpr-redaction-helper, san-marino-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

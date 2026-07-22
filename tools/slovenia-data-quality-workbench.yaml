@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-data-quality-workbench
+kind: tool
+module: validohub
+country: SI
+category: developer-tools
+status: active
+name:
+  en: "Slovenian Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SI\",\"ddv\":\"SI12345678\",\"iban\":\"SI56263300012039086\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-json-fixture-generator, slovenia-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

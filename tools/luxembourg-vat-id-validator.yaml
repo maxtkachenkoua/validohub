@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-vat-id-validator
+kind: tool
+module: validohub
+country: LU
+category: national-identifiers
+status: active
+name:
+  en: "Luxembourgish VAT ID / LU Prefix Validator"
+summary:
+  en: "Normalize LU VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "LU12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-eori-validator, luxembourg-matricule-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish VAT ID / LU Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize LU VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

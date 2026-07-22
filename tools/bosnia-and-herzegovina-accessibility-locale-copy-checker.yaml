@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: BA
+category: localization
+status: active
+name:
+  en: "Bosnian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "JMBG input, postanski broj input, amount 1.234,56 BAM"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-support-ticket-scrubber, bosnia-and-herzegovina-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-vat-return-field-helper
+kind: tool
+module: validohub
+country: AL
+category: tax
+status: active
+name:
+  en: "Albanian VAT Return Field Helper"
+summary:
+  en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "TVSH / VAT; AL L12345678A; period 2026-07; 1.234,56 ALL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-invoice-number-helper, albania-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."

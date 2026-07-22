@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-api-payload-auditor
+kind: tool
+module: validohub
+country: GR
+category: developer-tools
+status: active
+name:
+  en: "Greek API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"GR\",\"afm\":\"123456789\",\"iban\":\"GR1601101250000000012300695\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-form-field-auditor, greece-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

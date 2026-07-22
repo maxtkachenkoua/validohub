@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-vat-return-field-helper
+kind: tool
+module: validohub
+country: HR
+category: tax
+status: active
+name:
+  en: "Croatian VAT Return Field Helper"
+summary:
+  en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "PDV / VAT; HR12345678903; period 2026-07; 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-invoice-number-helper, croatia-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."

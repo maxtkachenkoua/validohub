@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-document-ocr-fixer
+kind: tool
+module: validohub
+country: MC
+category: documents
+status: active
+name:
+  en: "Monegasque Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "123456789 FR12345678901 MC5811222000010123456789030 98000 Monaco"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-gdpr-redaction-helper, monaco-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: MC
+category: privacy
+status: active
+name:
+  en: "Monegasque personal-data protection Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MC\",\"rci\":\"22S12345\",\"iban\":\"MC5811222000010123456789030\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-pii-masker, monaco-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque personal-data protection Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-customs-declaration-helper
+kind: tool
+module: validohub
+country: SM
+category: government
+status: active
+name:
+  en: "Sammarinese Customs Declaration Helper"
+summary:
+  en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "SM12345 HS 8471 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-postal-tracking-helper, san-marino-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."

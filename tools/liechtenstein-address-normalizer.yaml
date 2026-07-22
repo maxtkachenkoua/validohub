@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-address-normalizer
+kind: tool
+module: validohub
+country: LI
+category: address
+status: active
+name:
+  en: "Liechtenstein Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Staedtle 1, 9490 Vaduz"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-address-transliteration-normalizer, liechtenstein-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

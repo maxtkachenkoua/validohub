@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-municipality-code-inspector
+kind: tool
+module: validohub
+country: LT
+category: address
+status: active
+name:
+  en: "Lithuanian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Gedimino pr. 1, LT-01103 Vilnius"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-phone-number-validator, lithuania-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-masked-iban-formatter
+kind: tool
+module: validohub
+country: AL
+category: finance
+status: active
+name:
+  en: "Albanian Masked IBAN Formatter"
+summary:
+  en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "AL47212110090000000235698741"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-currency-decimal-formatter, albania-vat-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian Masked IBAN Formatter | ValidoHub"
+  description:
+    en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."

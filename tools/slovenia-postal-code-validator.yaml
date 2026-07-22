@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-postal-code-validator
+kind: tool
+module: validohub
+country: SI
+category: address
+status: active
+name:
+  en: "Slovenian Postal Code Validator"
+summary:
+  en: "Validate postna stevilka shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "1000 Ljubljana"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-address-normalizer, slovenia-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postna stevilka shape, split area/delivery hints, and preserve official postal lookup boundaries."

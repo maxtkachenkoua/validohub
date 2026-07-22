@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: montenegro-business-register-readiness-helper
+kind: tool
+module: validohub
+country: ME
+category: government
+status: active
+name:
+  en: "Montenegrin Central Registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Central Registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.montenegro-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "02712345 ME02712345 Bulevar Svetog Petra 1, 81000 Podgorica"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [montenegro-id-card-format-helper, montenegro-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Montenegrin Central Registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Central Registry lookup or company registry workflow."

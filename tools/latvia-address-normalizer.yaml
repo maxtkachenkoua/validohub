@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-address-normalizer
+kind: tool
+module: validohub
+country: LV
+category: address
+status: active
+name:
+  en: "Latvian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Brivibas iela 1, LV-1050 Riga"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [latvia-address-transliteration-normalizer, latvia-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

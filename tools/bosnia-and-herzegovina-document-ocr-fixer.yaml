@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-document-ocr-fixer
+kind: tool
+module: validohub
+country: BA
+category: documents
+status: active
+name:
+  en: "Bosnian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "0101980123456 BA4200123450006 BA391290079401028494 71000 Sarajevo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-gdpr-redaction-helper, bosnia-and-herzegovina-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

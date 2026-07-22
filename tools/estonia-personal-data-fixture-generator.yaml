@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: EE
+category: privacy
+status: active
+name:
+  en: "Estonian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "38501010018\\nViru 1, 10111 Tallinn\\n+372 5123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-driving-licence-format-helper, estonia-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: GB
+category: tax
+status: active
+name:
+  en: "British VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "VAT / UTR 20% base 1,234.56 GBP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-vat-return-field-helper, united-kingdom-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

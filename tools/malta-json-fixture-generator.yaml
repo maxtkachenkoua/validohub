@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-json-fixture-generator
+kind: tool
+module: validohub
+country: MT
+category: developer-tools
+status: active
+name:
+  en: "Maltese JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MT\",\"vat\":\"MT12345678\",\"iban\":\"MT84MALT011000012345MTLCAST001S\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-regex-pack-helper, malta-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-support-ticket-scrubber
+kind: tool
+module: validohub
+country: LI
+category: privacy
+status: active
+name:
+  en: "Liechtenstein Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 756.1234.5678.97, LI21088100002324013AA, Staedtle 1, 9490 Vaduz"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-integration-smoke-test-builder, liechtenstein-peid-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

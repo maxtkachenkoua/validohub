@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: MT
+category: localization
+status: active
+name:
+  en: "Maltese Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "ID card number input, postal code input, amount 1,234.56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-support-ticket-scrubber, malta-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

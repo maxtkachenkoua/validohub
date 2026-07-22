@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-masked-iban-formatter
+kind: tool
+module: validohub
+country: CY
+category: finance
+status: active
+name:
+  en: "Cypriot Masked IBAN Formatter"
+summary:
+  en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "CY17002001280000001200527600"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-currency-decimal-formatter, cyprus-vat-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot Masked IBAN Formatter | ValidoHub"
+  description:
+    en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."

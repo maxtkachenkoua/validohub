@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: BA
+category: transport
+status: active
+name:
+  en: "Bosnian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "A12-J-345 WVWZZZ1JZXW000001 0101980123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-customs-declaration-helper, bosnia-and-herzegovina-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

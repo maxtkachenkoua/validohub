@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-civil-id-validator
+kind: tool
+module: validohub
+country: CY
+category: national-identifiers
+status: active
+name:
+  en: "Cypriot Civil ID Validator"
+summary:
+  en: "Validate Civil ID shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "1234567L"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-he-company-number-validator, cyprus-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot Civil ID Validator | ValidoHub"
+  description:
+    en: "Validate Civil ID shape, split date/control/body evidence, and prepare privacy-safe debugging output."

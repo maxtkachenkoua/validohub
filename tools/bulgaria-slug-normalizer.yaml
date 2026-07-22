@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-slug-normalizer
+kind: tool
+module: validohub
+country: BG
+category: developer-tools
+status: active
+name:
+  en: "Bulgarian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Bulgaria sample company Vitosha Blvd 1, 1000 Sofia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-document-ocr-fixer, bulgaria-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

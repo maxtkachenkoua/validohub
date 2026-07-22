@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: LI
+category: transport
+status: active
+name:
+  en: "Liechtenstein Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "FL 12345 WVWZZZ1JZXW000001 756.1234.5678.97"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-customs-declaration-helper, liechtenstein-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

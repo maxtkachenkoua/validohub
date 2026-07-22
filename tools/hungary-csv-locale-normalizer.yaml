@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-csv-locale-normalizer
+kind: tool
+module: validohub
+country: HU
+category: developer-tools
+status: active
+name:
+  en: "Hungarian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Hungary decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1 234,56 HUF;2026.07.21;HU12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-slug-normalizer, hungary-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Hungary decimal, date, postal, phone, tax, and banking fields."

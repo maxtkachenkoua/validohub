@@ -130,6 +130,383 @@ const COUNTRY_TIME_ZONES = {
   romania: 'Europe/Bucharest (EET/EEST)'
 };
 
+const STRICT_EUROPE_EXPANSION_COUNTRIES = [
+  {
+    slug: 'albania', iso2: 'AL', iso3: 'ALB', isoNumeric: '008', name: 'Albania', adjective: 'Albanian', nativeName: 'Shqiperia',
+    flag: '🇦🇱', language: 'Albanian', localLanguage: 'sq-AL', currency: 'ALL', currencyName: 'Albanian lek', symbol: 'ALL',
+    locale: 'sq-AL', icu: 'sq_AL', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Dot or space grouping', phone: '+355',
+    capital: 'Tirana', region: 'Southeastern Europe', population: 'approximately 2.8M',
+    identifiers: ['NIPT', 'personal number', 'business number', 'postal code', 'phone'],
+    payments: ['IBAN', 'SWIFT', 'domestic account', 'tax payment reference'],
+    localTerms: { personal: 'Personal number', company: 'NIPT', tax: 'TVSH / VAT', social: 'social insurance number', register: 'QKB business register', invoice: 'fiscalization invoice', payment: 'bank payment reference', plate: 'vehicle plate', postal: 'postal code', privacy: 'GDPR-aligned privacy' },
+    samples: { personal: 'J12345678K', company: 'L12345678A', social: '1234567890', iban: 'AL47212110090000000235698741', bank: '2121 1009 0000000235698741', phone: '+355 69 123 4567', postal: '1001 Tirana', plate: 'AA 123 AB', vat: 'AL L12345678A', amount: '1.234,56 ALL', date: '21.07.2026', address: 'Bulevardi Deshmoret e Kombit 1, 1001 Tirana', json: '{"country":"AL","nipt":"L12345678A","iban":"AL47212110090000000235698741"}' },
+    theme: ['#E41E20', '#111827', '#F8FAFC'], marker: { x: 53, y: 64 }, related: ['ME', 'MK', 'GR'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['NIPT', 'TVSH', 'QKB', 'IBAN', 'FISCALIZATION', 'PHONE']
+  },
+  {
+    slug: 'andorra', iso2: 'AD', iso3: 'AND', isoNumeric: '020', name: 'Andorra', adjective: 'Andorran', nativeName: 'Andorra',
+    flag: '🇦🇩', language: 'Catalan', localLanguage: 'ca-AD', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'ca-AD', icu: 'ca_AD', date: 'DD/MM/YYYY', decimal: 'Comma (,)', thousands: 'Dot grouping', phone: '+376',
+    capital: 'Andorra la Vella', region: 'Southern Europe', population: 'approximately 0.08M',
+    identifiers: ['NRT', 'CASS number', 'company registry number', 'postal code', 'phone'],
+    payments: ['IBAN', 'SWIFT', 'SEPA', 'tax payment reference'],
+    localTerms: { personal: 'CASS number', company: 'NRT', tax: 'IGI / NRT', social: 'CASS number', register: 'Registre de Societats', invoice: 'IGI invoice', payment: 'SEPA reference', plate: 'matricula', postal: 'codi postal', privacy: 'LQPD privacy' },
+    samples: { personal: 'A123456Z', company: 'F-123456-Z', social: 'CASS 123456', iban: 'AD1200012030200359100100', bank: '0001 2030 200359100100', phone: '+376 312 345', postal: 'AD500 Andorra la Vella', plate: 'A1234', vat: 'AD F123456Z', amount: '1.234,56 EUR', date: '21/07/2026', address: 'Avinguda Meritxell 1, AD500 Andorra la Vella', json: '{"country":"AD","nrt":"F-123456-Z","iban":"AD1200012030200359100100"}' },
+    theme: ['#10069F', '#FEDD00', '#D50032'], marker: { x: 45, y: 61 }, related: ['ES', 'FR', 'PT'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['NRT', 'CASS', 'IGI', 'IBAN', 'SEPA', 'AD POSTAL']
+  },
+  {
+    slug: 'bosnia-and-herzegovina', iso2: 'BA', iso3: 'BIH', isoNumeric: '070', name: 'Bosnia and Herzegovina', adjective: 'Bosnian', nativeName: 'Bosna i Hercegovina',
+    flag: '🇧🇦', language: 'Bosnian, Croatian, and Serbian', localLanguage: 'bs-BA', currency: 'BAM', currencyName: 'Convertible mark', symbol: 'BAM',
+    locale: 'bs-BA', icu: 'bs_BA', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Dot grouping', phone: '+387',
+    capital: 'Sarajevo', region: 'Southeastern Europe', population: 'approximately 3.2M',
+    identifiers: ['JMBG', 'JIB', 'PDV number', 'postal code', 'phone'],
+    payments: ['IBAN', 'SWIFT', 'domestic account', 'payment reference'],
+    localTerms: { personal: 'JMBG', company: 'JIB', tax: 'PDV', social: 'health/social insurance number', register: 'company court register', invoice: 'PDV invoice', payment: 'domestic payment reference', plate: 'registracijska oznaka', postal: 'postanski broj', privacy: 'personal-data protection' },
+    samples: { personal: '0101980123456', company: '4200123450006', social: '0101980123456', iban: 'BA391290079401028494', bank: '129 0079401028494', phone: '+387 61 123 456', postal: '71000 Sarajevo', plate: 'A12-J-345', vat: 'BA4200123450006', amount: '1.234,56 BAM', date: '21.07.2026', address: 'Ferhadija 1, 71000 Sarajevo', json: '{"country":"BA","jib":"4200123450006","iban":"BA391290079401028494"}' },
+    theme: ['#002395', '#FECB00', '#FFFFFF'], marker: { x: 52, y: 61 }, related: ['HR', 'RS', 'ME'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['JMBG', 'JIB', 'PDV', 'IBAN', 'SWIFT', 'PAYMENT']
+  },
+  {
+    slug: 'bulgaria', iso2: 'BG', iso3: 'BGR', isoNumeric: '100', name: 'Bulgaria', adjective: 'Bulgarian', nativeName: 'Bulgaria',
+    flag: '🇧🇬', language: 'Bulgarian', localLanguage: 'bg-BG', currency: 'BGN', currencyName: 'Bulgarian lev', symbol: 'BGN',
+    locale: 'bg-BG', icu: 'bg_BG', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Space grouping', phone: '+359',
+    capital: 'Sofia', region: 'Southeastern Europe / European Union', population: 'approximately 6.4M',
+    identifiers: ['EGN', 'LNCh', 'UIC/EIK', 'VAT', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'payment code', 'VIES'],
+    localTerms: { personal: 'EGN', company: 'UIC / EIK', tax: 'DDS / VAT', social: 'LNCh', register: 'Commercial Register', invoice: 'DDS invoice', payment: 'payment code', plate: 'registration plate', postal: 'postal code', privacy: 'GDPR / CPDP' },
+    samples: { personal: '8001010008', company: '123456789', social: '8001010008', iban: 'BG80BNBG96611020345678', bank: 'BNBG 96611020345678', phone: '+359 88 123 4567', postal: '1000 Sofia', plate: 'CB1234AB', vat: 'BG123456789', amount: '1 234,56 BGN', date: '21.07.2026', address: 'Vitosha Blvd 1, 1000 Sofia', json: '{"country":"BG","egn":"8001010008","vat":"BG123456789","iban":"BG80BNBG96611020345678"}' },
+    theme: ['#00966E', '#FFFFFF', '#D62612'], marker: { x: 56, y: 63 }, related: ['RO', 'GR', 'RS'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['EGN', 'LNCH', 'EIK', 'DDS', 'IBAN', 'VIES']
+  },
+  {
+    slug: 'croatia', iso2: 'HR', iso3: 'HRV', isoNumeric: '191', name: 'Croatia', adjective: 'Croatian', nativeName: 'Hrvatska',
+    flag: '🇭🇷', language: 'Croatian', localLanguage: 'hr-HR', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'hr-HR', icu: 'hr_HR', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Dot grouping', phone: '+385',
+    capital: 'Zagreb', region: 'Southeastern Europe / European Union', population: 'approximately 3.8M',
+    identifiers: ['OIB', 'MBS', 'VAT', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'model/reference number', 'VIES'],
+    localTerms: { personal: 'OIB', company: 'MBS / OIB', tax: 'PDV / VAT', social: 'OIB', register: 'Sudski registar', invoice: 'PDV invoice', payment: 'model i poziv na broj', plate: 'registracija', postal: 'postanski broj', privacy: 'GDPR / AZOP' },
+    samples: { personal: '12345678903', company: '080012345', social: '12345678903', iban: 'HR1210010051863000160', bank: '1001005 1863000160', phone: '+385 91 123 4567', postal: '10000 Zagreb', plate: 'ZG 1234 AB', vat: 'HR12345678903', amount: '1.234,56 EUR', date: '21.07.2026', address: 'Ilica 1, 10000 Zagreb', json: '{"country":"HR","oib":"12345678903","iban":"HR1210010051863000160"}' },
+    theme: ['#FF0000', '#FFFFFF', '#171796'], marker: { x: 51, y: 60 }, related: ['SI', 'BA', 'HU'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['OIB', 'MBS', 'PDV', 'POZIV NA BROJ', 'IBAN', 'SEPA']
+  },
+  {
+    slug: 'cyprus', iso2: 'CY', iso3: 'CYP', isoNumeric: '196', name: 'Cyprus', adjective: 'Cypriot', nativeName: 'Kypros',
+    flag: '🇨🇾', language: 'Greek and Turkish', localLanguage: 'el-CY', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'el-CY', icu: 'el_CY', date: 'DD/MM/YYYY', decimal: 'Comma (,)', thousands: 'Dot grouping', phone: '+357',
+    capital: 'Nicosia', region: 'Eastern Mediterranean / European Union', population: 'approximately 0.9M',
+    identifiers: ['Civil ID', 'company HE number', 'VAT', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'tax payment reference', 'VIES'],
+    localTerms: { personal: 'Civil ID', company: 'HE company number', tax: 'VAT', social: 'social insurance number', register: 'Registrar of Companies', invoice: 'VAT invoice', payment: 'SEPA reference', plate: 'registration plate', postal: 'postal code', privacy: 'GDPR / Commissioner' },
+    samples: { personal: '1234567L', company: 'HE123456', social: '1234567L', iban: 'CY17002001280000001200527600', bank: '002001280000001200527600', phone: '+357 99 123456', postal: '1010 Nicosia', plate: 'ABC123', vat: 'CY12345678L', amount: '1.234,56 EUR', date: '21/07/2026', address: 'Ledras 1, 1010 Nicosia', json: '{"country":"CY","vat":"CY12345678L","iban":"CY17002001280000001200527600"}' },
+    theme: ['#D57800', '#FFFFFF', '#4E9F3D'], marker: { x: 60, y: 69 }, related: ['GR', 'MT', 'BG'],
+    plugTypes: 'Type G', voltage: '230V', frequency: '50Hz',
+    searchHints: ['CIVIL ID', 'HE', 'VAT', 'IBAN', 'SEPA', 'NICOSIA']
+  },
+  {
+    slug: 'estonia', iso2: 'EE', iso3: 'EST', isoNumeric: '233', name: 'Estonia', adjective: 'Estonian', nativeName: 'Eesti',
+    flag: '🇪🇪', language: 'Estonian', localLanguage: 'et-EE', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'et-EE', icu: 'et_EE', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Space grouping', phone: '+372',
+    capital: 'Tallinn', region: 'Northern Europe / European Union', population: 'approximately 1.4M',
+    identifiers: ['Isikukood', 'registry code', 'KMKR', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'e-invoice reference', 'VIES'],
+    localTerms: { personal: 'Isikukood', company: 'registry code', tax: 'KMKR / VAT', social: 'Isikukood', register: 'e-Business Register', invoice: 'e-invoice', payment: 'payment reference', plate: 'registration plate', postal: 'postal code', privacy: 'GDPR / AKI' },
+    samples: { personal: '38501010018', company: '12345678', social: '38501010018', iban: 'EE382200221020145685', bank: '2200 221020145685', phone: '+372 5123 4567', postal: '10111 Tallinn', plate: '123ABC', vat: 'EE123456789', amount: '1 234,56 EUR', date: '21.07.2026', address: 'Viru 1, 10111 Tallinn', json: '{"country":"EE","isikukood":"38501010018","iban":"EE382200221020145685"}' },
+    theme: ['#0072CE', '#000000', '#FFFFFF'], marker: { x: 56, y: 39 }, related: ['FI', 'LV', 'LT'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['ISIKUKOOD', 'KMKR', 'REGISTRY CODE', 'IBAN', 'SEPA', 'E-INVOICE']
+  },
+  {
+    slug: 'greece', iso2: 'GR', iso3: 'GRC', isoNumeric: '300', name: 'Greece', adjective: 'Greek', nativeName: 'Ellada',
+    flag: '🇬🇷', language: 'Greek', localLanguage: 'el-GR', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'el-GR', icu: 'el_GR', date: 'DD/MM/YYYY', decimal: 'Comma (,)', thousands: 'Dot grouping', phone: '+30',
+    capital: 'Athens', region: 'Southern Europe / European Union', population: 'approximately 10.3M',
+    identifiers: ['AFM', 'AMKA', 'GEMI', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'RF payment code', 'VIES'],
+    localTerms: { personal: 'AMKA', company: 'GEMI number', tax: 'AFM / VAT', social: 'AMKA', register: 'GEMI business register', invoice: 'myDATA / AADE invoice', payment: 'RF payment code', plate: 'vehicle plate', postal: 'TK postal code', privacy: 'GDPR / HDPA' },
+    samples: { personal: '01018012345', company: '123456789000', social: '01018012345', iban: 'GR1601101250000000012300695', bank: '01101250000000012300695', phone: '+30 210 123 4567', postal: '105 57 Athens', plate: 'YKY 1234', vat: 'EL123456789', amount: '1.234,56 EUR', date: '21/07/2026', address: 'Ermou 1, 105 57 Athens', json: '{"country":"GR","afm":"123456789","iban":"GR1601101250000000012300695"}' },
+    theme: ['#0D5EAF', '#FFFFFF', '#0D5EAF'], marker: { x: 56, y: 67 }, related: ['BG', 'CY', 'IT'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['AFM', 'AMKA', 'GEMI', 'MYDATA', 'AADE', 'IBAN']
+  },
+  {
+    slug: 'hungary', iso2: 'HU', iso3: 'HUN', isoNumeric: '348', name: 'Hungary', adjective: 'Hungarian', nativeName: 'Magyarorszag',
+    flag: '🇭🇺', language: 'Hungarian', localLanguage: 'hu-HU', currency: 'HUF', currencyName: 'Hungarian forint', symbol: 'HUF',
+    locale: 'hu-HU', icu: 'hu_HU', date: 'YYYY.MM.DD', decimal: 'Comma (,)', thousands: 'Space grouping', phone: '+36',
+    capital: 'Budapest', region: 'Central Europe / European Union', population: 'approximately 9.6M',
+    identifiers: ['tax number', 'TAJ', 'company registry number', 'postal code', 'phone'],
+    payments: ['IBAN', 'GIRO', 'SWIFT', 'NAV payment reference', 'VIES'],
+    localTerms: { personal: 'TAJ', company: 'company registry number', tax: 'adoszam / VAT', social: 'TAJ', register: 'Cegjegyzek', invoice: 'NAV Online Szamla', payment: 'GIRO / NAV reference', plate: 'rendszam', postal: 'iranyitoszam', privacy: 'GDPR / NAIH' },
+    samples: { personal: '123456789', company: '01-09-123456', social: '123456789', iban: 'HU42117730161111101800000000', bank: '11773016 11111018 00000000', phone: '+36 30 123 4567', postal: '1051 Budapest', plate: 'ABC-123', vat: 'HU12345678', amount: '1 234,56 HUF', date: '2026.07.21', address: 'Andrassy ut 1, 1051 Budapest', json: '{"country":"HU","tax":"HU12345678","iban":"HU42117730161111101800000000"}' },
+    theme: ['#CE2939', '#FFFFFF', '#477050'], marker: { x: 53, y: 58 }, related: ['AT', 'SK', 'RO'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['TAJ', 'ADOSZAM', 'NAV', 'GIRO', 'ONLINE SZAMLA', 'IBAN']
+  },
+  {
+    slug: 'iceland', iso2: 'IS', iso3: 'ISL', isoNumeric: '352', name: 'Iceland', adjective: 'Icelandic', nativeName: 'Island',
+    flag: '🇮🇸', language: 'Icelandic', localLanguage: 'is-IS', currency: 'ISK', currencyName: 'Icelandic krona', symbol: 'ISK',
+    locale: 'is-IS', icu: 'is_IS', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Dot grouping', phone: '+354',
+    capital: 'Reykjavik', region: 'Northern Europe / EEA', population: 'approximately 0.4M',
+    identifiers: ['Kennitala', 'VAT number', 'company number', 'postal code', 'phone'],
+    payments: ['IBAN', 'SWIFT', 'domestic account', 'invoice reference'],
+    localTerms: { personal: 'Kennitala', company: 'company kennitala', tax: 'VSK / VAT', social: 'Kennitala', register: 'Companies Register', invoice: 'e-invoice', payment: 'payment reference', plate: 'skraningarnumer', postal: 'postnumer', privacy: 'GDPR / Persónuvernd' },
+    samples: { personal: '1201743399', company: '5501692829', social: '1201743399', iban: 'IS140159260076545510730339', bank: '0159 26 007654 5510730339', phone: '+354 555 1234', postal: '101 Reykjavik', plate: 'AB123', vat: 'IS5501692829', amount: '1.234,56 ISK', date: '21.07.2026', address: 'Laugavegur 1, 101 Reykjavik', json: '{"country":"IS","kennitala":"1201743399","iban":"IS140159260076545510730339"}' },
+    theme: ['#02529C', '#FFFFFF', '#DC1E35'], marker: { x: 39, y: 30 }, related: ['NO', 'DK', 'GB'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['KENNITALA', 'VSK', 'IBAN', 'SWIFT', 'POSTNUMER', 'PHONE']
+  },
+  {
+    slug: 'latvia', iso2: 'LV', iso3: 'LVA', isoNumeric: '428', name: 'Latvia', adjective: 'Latvian', nativeName: 'Latvija',
+    flag: '🇱🇻', language: 'Latvian', localLanguage: 'lv-LV', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'lv-LV', icu: 'lv_LV', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Space grouping', phone: '+371',
+    capital: 'Riga', region: 'Northern Europe / European Union', population: 'approximately 1.8M',
+    identifiers: ['personal code', 'registration number', 'PVN number', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'payment reference', 'VIES'],
+    localTerms: { personal: 'personal code', company: 'registration number', tax: 'PVN / VAT', social: 'personal code', register: 'Uzņēmumu registrs', invoice: 'PVN invoice', payment: 'payment reference', plate: 'registration plate', postal: 'pasta indekss', privacy: 'GDPR / DVI' },
+    samples: { personal: '010180-12345', company: '40003000000', social: '010180-12345', iban: 'LV80BANK0000435195001', bank: 'BANK 0000435195001', phone: '+371 29 123 456', postal: 'LV-1050 Riga', plate: 'AB-1234', vat: 'LV40003000000', amount: '1 234,56 EUR', date: '21.07.2026', address: 'Brivibas iela 1, LV-1050 Riga', json: '{"country":"LV","pvn":"LV40003000000","iban":"LV80BANK0000435195001"}' },
+    theme: ['#9E3039', '#FFFFFF', '#9E3039'], marker: { x: 55, y: 43 }, related: ['EE', 'LT', 'PL'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['PERSONAL CODE', 'PVN', 'REGISTRATION', 'IBAN', 'SEPA', 'LV POSTAL']
+  },
+  {
+    slug: 'liechtenstein', iso2: 'LI', iso3: 'LIE', isoNumeric: '438', name: 'Liechtenstein', adjective: 'Liechtenstein', nativeName: 'Liechtenstein',
+    flag: '🇱🇮', language: 'German', localLanguage: 'de-LI', currency: 'CHF', currencyName: 'Swiss franc', symbol: 'CHF',
+    locale: 'de-LI', icu: 'de_LI', date: 'DD.MM.YYYY', decimal: 'Dot (.)', thousands: 'Apostrophe or space grouping', phone: '+423',
+    capital: 'Vaduz', region: 'Central Europe / EEA', population: 'approximately 0.04M',
+    identifiers: ['PEID', 'company number', 'VAT number', 'postal code', 'phone'],
+    payments: ['IBAN', 'SWIFT', 'SIC/Swiss rail handoff', 'payment reference'],
+    localTerms: { personal: 'PEID', company: 'company register number', tax: 'MWST / VAT', social: 'social insurance number', register: 'Handelsregister', invoice: 'MWST invoice', payment: 'Swiss-style payment reference', plate: 'Kontrollschild', postal: 'Postleitzahl', privacy: 'GDPR / Datenschutzstelle' },
+    samples: { personal: '756.1234.5678.97', company: 'FL-0002.123.456-7', social: '756.1234.5678.97', iban: 'LI21088100002324013AA', bank: '08810 0002324013AA', phone: '+423 234 56 78', postal: '9490 Vaduz', plate: 'FL 12345', vat: 'CHE-123.456.789 MWST', amount: "1'234.56 CHF", date: '21.07.2026', address: 'Staedtle 1, 9490 Vaduz', json: '{"country":"LI","company":"FL-0002.123.456-7","iban":"LI21088100002324013AA"}' },
+    theme: ['#002B7F', '#CE1126', '#FFD100'], marker: { x: 49, y: 57 }, related: ['CH', 'AT', 'DE'],
+    plugTypes: 'Type C / Type J', voltage: '230V', frequency: '50Hz',
+    searchHints: ['PEID', 'MWST', 'HANDELSREGISTER', 'IBAN', 'CHF', 'FL']
+  },
+  {
+    slug: 'lithuania', iso2: 'LT', iso3: 'LTU', isoNumeric: '440', name: 'Lithuania', adjective: 'Lithuanian', nativeName: 'Lietuva',
+    flag: '🇱🇹', language: 'Lithuanian', localLanguage: 'lt-LT', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'lt-LT', icu: 'lt_LT', date: 'YYYY-MM-DD', decimal: 'Comma (,)', thousands: 'Space grouping', phone: '+370',
+    capital: 'Vilnius', region: 'Northern Europe / European Union', population: 'approximately 2.9M',
+    identifiers: ['asmens kodas', 'company code', 'PVM code', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'payment code', 'VIES'],
+    localTerms: { personal: 'asmens kodas', company: 'company code', tax: 'PVM / VAT', social: 'asmens kodas', register: 'Registru centras', invoice: 'PVM invoice', payment: 'payment code', plate: 'registration plate', postal: 'pasto kodas', privacy: 'GDPR / VDAI' },
+    samples: { personal: '38001010017', company: '123456789', social: '38001010017', iban: 'LT121000011101001000', bank: '10000 11101001000', phone: '+370 612 34567', postal: 'LT-01100 Vilnius', plate: 'ABC123', vat: 'LT123456789', amount: '1 234,56 EUR', date: '2026-07-21', address: 'Gedimino pr. 1, LT-01103 Vilnius', json: '{"country":"LT","pvm":"LT123456789","iban":"LT121000011101001000"}' },
+    theme: ['#FDB913', '#006A44', '#C1272D'], marker: { x: 55, y: 45 }, related: ['LV', 'PL', 'EE'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['ASMENS KODAS', 'PVM', 'REGISTRU CENTRAS', 'IBAN', 'SEPA', 'POSTAL']
+  },
+  {
+    slug: 'luxembourg', iso2: 'LU', iso3: 'LUX', isoNumeric: '442', name: 'Luxembourg', adjective: 'Luxembourgish', nativeName: 'Luxembourg',
+    flag: '🇱🇺', language: 'Luxembourgish, French, and German', localLanguage: 'fr-LU', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'fr-LU', icu: 'fr_LU', date: 'DD/MM/YYYY', decimal: 'Comma (,)', thousands: 'Space grouping', phone: '+352',
+    capital: 'Luxembourg City', region: 'Western Europe / European Union', population: 'approximately 0.7M',
+    identifiers: ['matricule', 'RCS number', 'VAT', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'payment reference', 'VIES'],
+    localTerms: { personal: 'matricule', company: 'RCS number', tax: 'TVA / VAT', social: 'matricule', register: 'Registre de Commerce', invoice: 'TVA invoice', payment: 'SEPA reference', plate: 'registration plate', postal: 'code postal', privacy: 'GDPR / CNPD' },
+    samples: { personal: '1980010101234', company: 'B123456', social: '1980010101234', iban: 'LU280019400644750000', bank: '0019 400644750000', phone: '+352 621 123 456', postal: 'L-1111 Luxembourg', plate: 'AB1234', vat: 'LU12345678', amount: '1 234,56 EUR', date: '21/07/2026', address: 'Grand-Rue 1, L-1661 Luxembourg', json: '{"country":"LU","vat":"LU12345678","iban":"LU280019400644750000"}' },
+    theme: ['#EF3340', '#FFFFFF', '#00A3E0'], marker: { x: 47, y: 55 }, related: ['BE', 'FR', 'DE'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['MATRICULE', 'RCS', 'TVA', 'IBAN', 'SEPA', 'L-POSTAL']
+  },
+  {
+    slug: 'malta', iso2: 'MT', iso3: 'MLT', isoNumeric: '470', name: 'Malta', adjective: 'Maltese', nativeName: 'Malta',
+    flag: '🇲🇹', language: 'Maltese and English', localLanguage: 'mt-MT', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'mt-MT', icu: 'mt_MT', date: 'DD/MM/YYYY', decimal: 'Dot (.)', thousands: 'Comma (,)', phone: '+356',
+    capital: 'Valletta', region: 'Southern Europe / European Union', population: 'approximately 0.5M',
+    identifiers: ['ID card number', 'company C number', 'VAT', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'payment reference', 'VIES'],
+    localTerms: { personal: 'ID card number', company: 'company C number', tax: 'VAT', social: 'social security number', register: 'Malta Business Registry', invoice: 'VAT invoice', payment: 'SEPA reference', plate: 'registration plate', postal: 'postal code', privacy: 'GDPR / IDPC' },
+    samples: { personal: '1234567M', company: 'C12345', social: '1234567M', iban: 'MT84MALT011000012345MTLCAST001S', bank: 'MALT 011000012345MTLCAST001S', phone: '+356 2123 4567', postal: 'VLT 1111 Valletta', plate: 'ABC 123', vat: 'MT12345678', amount: '1,234.56 EUR', date: '21/07/2026', address: 'Republic Street 1, VLT 1111 Valletta', json: '{"country":"MT","vat":"MT12345678","iban":"MT84MALT011000012345MTLCAST001S"}' },
+    theme: ['#FFFFFF', '#CF142B', '#9CA3AF'], marker: { x: 52, y: 70 }, related: ['IT', 'CY', 'GR'],
+    plugTypes: 'Type G', voltage: '230V', frequency: '50Hz',
+    searchHints: ['ID CARD', 'VAT', 'MBR', 'IBAN', 'SEPA', 'VLT']
+  },
+  {
+    slug: 'moldova', iso2: 'MD', iso3: 'MDA', isoNumeric: '498', name: 'Moldova', adjective: 'Moldovan', nativeName: 'Moldova',
+    flag: '🇲🇩', language: 'Romanian', localLanguage: 'ro-MD', currency: 'MDL', currencyName: 'Moldovan leu', symbol: 'MDL',
+    locale: 'ro-MD', icu: 'ro_MD', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Space grouping', phone: '+373',
+    capital: 'Chisinau', region: 'Eastern Europe', population: 'approximately 2.5M',
+    identifiers: ['IDNP', 'IDNO', 'VAT code', 'postal code', 'phone'],
+    payments: ['IBAN', 'SWIFT', 'domestic account', 'payment reference'],
+    localTerms: { personal: 'IDNP', company: 'IDNO', tax: 'TVA / VAT', social: 'CNAS evidence', register: 'ASP state register', invoice: 'TVA invoice', payment: 'payment reference', plate: 'registration plate', postal: 'cod postal', privacy: 'personal-data protection' },
+    samples: { personal: '2000010101234', company: '1003600000001', social: '2000010101234', iban: 'MD24AG000225100013104168', bank: 'AG000225100013104168', phone: '+373 69 123 456', postal: 'MD-2001 Chisinau', plate: 'ABC 123', vat: 'MD1003600000001', amount: '1 234,56 MDL', date: '21.07.2026', address: 'Stefan cel Mare 1, MD-2001 Chisinau', json: '{"country":"MD","idno":"1003600000001","iban":"MD24AG000225100013104168"}' },
+    theme: ['#0033A0', '#FFD100', '#CE1126'], marker: { x: 59, y: 59 }, related: ['RO', 'UA', 'BG'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['IDNP', 'IDNO', 'TVA', 'IBAN', 'ASP', 'MD POSTAL']
+  },
+  {
+    slug: 'monaco', iso2: 'MC', iso3: 'MCO', isoNumeric: '492', name: 'Monaco', adjective: 'Monegasque', nativeName: 'Monaco',
+    flag: '🇲🇨', language: 'French', localLanguage: 'fr-MC', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'fr-MC', icu: 'fr_MC', date: 'DD/MM/YYYY', decimal: 'Comma (,)', thousands: 'Space grouping', phone: '+377',
+    capital: 'Monaco', region: 'Western Europe', population: 'approximately 0.04M',
+    identifiers: ['NIS', 'RCI number', 'VAT-style number', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'payment reference'],
+    localTerms: { personal: 'NIS', company: 'RCI number', tax: 'TVA / VAT', social: 'social insurance number', register: 'RCI Monaco', invoice: 'TVA invoice', payment: 'SEPA reference', plate: 'registration plate', postal: 'code postal', privacy: 'personal-data protection' },
+    samples: { personal: '123456789', company: '22S12345', social: '123456789', iban: 'MC5811222000010123456789030', bank: '11222 000010123456789030', phone: '+377 93 15 12 34', postal: '98000 Monaco', plate: '1234', vat: 'FR12345678901', amount: '1 234,56 EUR', date: '21/07/2026', address: 'Avenue de la Costa 1, 98000 Monaco', json: '{"country":"MC","rci":"22S12345","iban":"MC5811222000010123456789030"}' },
+    theme: ['#CE1126', '#FFFFFF', '#111827'], marker: { x: 48, y: 61 }, related: ['FR', 'IT', 'AD'],
+    plugTypes: 'Type C / Type E / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['RCI', 'NIS', 'TVA', 'IBAN', 'SEPA', '98000']
+  },
+  {
+    slug: 'montenegro', iso2: 'ME', iso3: 'MNE', isoNumeric: '499', name: 'Montenegro', adjective: 'Montenegrin', nativeName: 'Crna Gora',
+    flag: '🇲🇪', language: 'Montenegrin', localLanguage: 'sr-ME', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'sr-ME', icu: 'sr_ME', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Dot grouping', phone: '+382',
+    capital: 'Podgorica', region: 'Southeastern Europe', population: 'approximately 0.6M',
+    identifiers: ['JMBG', 'PIB', 'VAT', 'postal code', 'phone'],
+    payments: ['IBAN', 'SWIFT', 'domestic payment reference'],
+    localTerms: { personal: 'JMBG', company: 'PIB', tax: 'PDV / VAT', social: 'JMBG', register: 'Central Registry', invoice: 'PDV invoice', payment: 'payment reference', plate: 'registracija', postal: 'postanski broj', privacy: 'personal-data protection' },
+    samples: { personal: '0101980234567', company: '02712345', social: '0101980234567', iban: 'ME25505000012345678951', bank: '505 000012345678951', phone: '+382 67 123 456', postal: '81000 Podgorica', plate: 'PG AB123', vat: 'ME02712345', amount: '1.234,56 EUR', date: '21.07.2026', address: 'Bulevar Svetog Petra 1, 81000 Podgorica', json: '{"country":"ME","pib":"02712345","iban":"ME25505000012345678951"}' },
+    theme: ['#C40308', '#D4AF37', '#0F172A'], marker: { x: 53, y: 63 }, related: ['AL', 'BA', 'RS'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['JMBG', 'PIB', 'PDV', 'IBAN', 'SWIFT', 'POSTAL']
+  },
+  {
+    slug: 'north-macedonia', iso2: 'MK', iso3: 'MKD', isoNumeric: '807', name: 'North Macedonia', adjective: 'Macedonian', nativeName: 'Severna Makedonija',
+    flag: '🇲🇰', language: 'Macedonian', localLanguage: 'mk-MK', currency: 'MKD', currencyName: 'Macedonian denar', symbol: 'MKD',
+    locale: 'mk-MK', icu: 'mk_MK', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Dot grouping', phone: '+389',
+    capital: 'Skopje', region: 'Southeastern Europe', population: 'approximately 1.8M',
+    identifiers: ['EMBG', 'EDB', 'company number', 'postal code', 'phone'],
+    payments: ['IBAN', 'SWIFT', 'domestic payment reference'],
+    localTerms: { personal: 'EMBG', company: 'company registration number', tax: 'DDV / VAT', social: 'EMBG', register: 'Central Register', invoice: 'DDV invoice', payment: 'payment reference', plate: 'registration plate', postal: 'postal code', privacy: 'personal-data protection' },
+    samples: { personal: '0101980456789', company: '1234567', social: '0101980456789', iban: 'MK07250120000058984', bank: '250 120000058984', phone: '+389 70 123 456', postal: '1000 Skopje', plate: 'SK 1234 AB', vat: 'MK4032013544513', amount: '1.234,56 MKD', date: '21.07.2026', address: 'Macedonia Square 1, 1000 Skopje', json: '{"country":"MK","embg":"0101980456789","iban":"MK07250120000058984"}' },
+    theme: ['#D20000', '#FFE600', '#D20000'], marker: { x: 55, y: 65 }, related: ['AL', 'BG', 'GR'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['EMBG', 'EDB', 'DDV', 'IBAN', 'SWIFT', 'SKOPJE']
+  },
+  {
+    slug: 'san-marino', iso2: 'SM', iso3: 'SMR', isoNumeric: '674', name: 'San Marino', adjective: 'Sammarinese', nativeName: 'San Marino',
+    flag: '🇸🇲', language: 'Italian', localLanguage: 'it-SM', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'it-SM', icu: 'it_SM', date: 'DD/MM/YYYY', decimal: 'Comma (,)', thousands: 'Dot grouping', phone: '+378',
+    capital: 'San Marino', region: 'Southern Europe', population: 'approximately 0.03M',
+    identifiers: ['ISS code', 'COE number', 'operator code', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'payment reference'],
+    localTerms: { personal: 'ISS code', company: 'COE number', tax: 'operator code', social: 'ISS code', register: 'Registro Imprese', invoice: 'fiscal invoice', payment: 'SEPA reference', plate: 'targa', postal: 'codice postale', privacy: 'personal-data protection' },
+    samples: { personal: 'SM1234567', company: 'SM12345', social: 'SM1234567', iban: 'SM86U0322509800000000270100', bank: '03225 09800 000000270100', phone: '+378 0549 123456', postal: '47890 San Marino', plate: 'RSM 1234', vat: 'SM12345', amount: '1.234,56 EUR', date: '21/07/2026', address: 'Contrada Omerelli 1, 47890 San Marino', json: '{"country":"SM","coe":"SM12345","iban":"SM86U0322509800000000270100"}' },
+    theme: ['#FFFFFF', '#5EB6E4', '#D4AF37'], marker: { x: 51, y: 62 }, related: ['IT', 'VA', 'MC'],
+    plugTypes: 'Type C / Type F / Type L', voltage: '230V', frequency: '50Hz',
+    searchHints: ['COE', 'ISS', 'IBAN', 'SEPA', 'RSM', '47890']
+  },
+  {
+    slug: 'serbia', iso2: 'RS', iso3: 'SRB', isoNumeric: '688', name: 'Serbia', adjective: 'Serbian', nativeName: 'Srbija',
+    flag: '🇷🇸', language: 'Serbian', localLanguage: 'sr-RS', currency: 'RSD', currencyName: 'Serbian dinar', symbol: 'RSD',
+    locale: 'sr-RS', icu: 'sr_RS', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Dot grouping', phone: '+381',
+    capital: 'Belgrade', region: 'Southeastern Europe', population: 'approximately 6.6M',
+    identifiers: ['JMBG', 'PIB', 'MB company number', 'postal code', 'phone'],
+    payments: ['IBAN', 'SWIFT', 'model/reference number', 'IPS QR handoff'],
+    localTerms: { personal: 'JMBG', company: 'MB / registration number', tax: 'PIB / PDV', social: 'JMBG', register: 'APR business register', invoice: 'eFaktura / PDV invoice', payment: 'model i poziv na broj', plate: 'registracija', postal: 'postanski broj', privacy: 'personal-data protection' },
+    samples: { personal: '0101980712345', company: '17123456', social: '0101980712345', iban: 'RS35260005601001611379', bank: '260 005601001611379', phone: '+381 60 1234567', postal: '11000 Belgrade', plate: 'BG 1234 AB', vat: 'RS100123456', amount: '1.234,56 RSD', date: '21.07.2026', address: 'Knez Mihailova 1, 11000 Belgrade', json: '{"country":"RS","pib":"100123456","iban":"RS35260005601001611379"}' },
+    theme: ['#C6363C', '#0C4076', '#FFFFFF'], marker: { x: 54, y: 62 }, related: ['BA', 'ME', 'RO'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['JMBG', 'PIB', 'APR', 'IPS QR', 'IBAN', 'EFAKTURA']
+  },
+  {
+    slug: 'slovakia', iso2: 'SK', iso3: 'SVK', isoNumeric: '703', name: 'Slovakia', adjective: 'Slovak', nativeName: 'Slovensko',
+    flag: '🇸🇰', language: 'Slovak', localLanguage: 'sk-SK', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'sk-SK', icu: 'sk_SK', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Space grouping', phone: '+421',
+    capital: 'Bratislava', region: 'Central Europe / European Union', population: 'approximately 5.4M',
+    identifiers: ['Rodne cislo', 'ICO', 'DIC', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'variable symbol', 'VIES'],
+    localTerms: { personal: 'Rodne cislo', company: 'ICO', tax: 'DIC / DPH', social: 'Rodne cislo', register: 'Obchodny register', invoice: 'DPH invoice', payment: 'variabilny symbol', plate: 'EVC vehicle plate', postal: 'PSC', privacy: 'GDPR / UOOU' },
+    samples: { personal: '800101/0008', company: '31331131', social: '800101/0008', iban: 'SK3112000000198742637541', bank: '1200 0000198742637541', phone: '+421 905 123 456', postal: '811 01 Bratislava', plate: 'BA123AB', vat: 'SK2020312297', amount: '1 234,56 EUR', date: '21.07.2026', address: 'Hlavne namestie 1, 811 01 Bratislava', json: '{"country":"SK","ico":"31331131","iban":"SK3112000000198742637541"}' },
+    theme: ['#0B4EA2', '#FFFFFF', '#EE1C25'], marker: { x: 53, y: 57 }, related: ['CZ', 'AT', 'HU'],
+    plugTypes: 'Type C / Type E', voltage: '230V', frequency: '50Hz',
+    searchHints: ['RODNE CISLO', 'ICO', 'DIC', 'VARIABILNY SYMBOL', 'IBAN', 'DPH']
+  },
+  {
+    slug: 'slovenia', iso2: 'SI', iso3: 'SVN', isoNumeric: '705', name: 'Slovenia', adjective: 'Slovenian', nativeName: 'Slovenija',
+    flag: '🇸🇮', language: 'Slovenian', localLanguage: 'sl-SI', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'sl-SI', icu: 'sl_SI', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Dot grouping', phone: '+386',
+    capital: 'Ljubljana', region: 'Central/Southern Europe / European Union', population: 'approximately 2.1M',
+    identifiers: ['EMSO', 'manticna stevilka', 'Davcna stevilka', 'postal code', 'phone'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'UPN QR handoff', 'VIES'],
+    localTerms: { personal: 'EMSO', company: 'maticna stevilka', tax: 'davcna stevilka / DDV', social: 'EMSO', register: 'AJPES', invoice: 'eRacun / DDV invoice', payment: 'UPN QR reference', plate: 'registrska oznaka', postal: 'postna stevilka', privacy: 'GDPR / IP-RS' },
+    samples: { personal: '0101980500123', company: '1234567000', social: '0101980500123', iban: 'SI56263300012039086', bank: '26330 0012039086', phone: '+386 40 123 456', postal: '1000 Ljubljana', plate: 'LJ AB-123', vat: 'SI12345678', amount: '1.234,56 EUR', date: '21.07.2026', address: 'Slovenska cesta 1, 1000 Ljubljana', json: '{"country":"SI","ddv":"SI12345678","iban":"SI56263300012039086"}' },
+    theme: ['#005DA4', '#FFFFFF', '#ED1C24'], marker: { x: 51, y: 59 }, related: ['HR', 'AT', 'IT'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['EMSO', 'DDV', 'AJPES', 'UPN QR', 'IBAN', 'ERACUN']
+  },
+  {
+    slug: 'ukraine', iso2: 'UA', iso3: 'UKR', isoNumeric: '804', name: 'Ukraine', adjective: 'Ukrainian', nativeName: 'Ukraina',
+    flag: '🇺🇦', language: 'Ukrainian', localLanguage: 'uk-UA', currency: 'UAH', currencyName: 'Ukrainian hryvnia', symbol: 'UAH',
+    locale: 'uk-UA', icu: 'uk_UA', date: 'DD.MM.YYYY', decimal: 'Comma (,)', thousands: 'Space grouping', phone: '+380',
+    capital: 'Kyiv', region: 'Eastern Europe', population: 'approximately 37M',
+    identifiers: ['RNOKPP', 'EDRPOU', 'MFO', 'postal code', 'phone'],
+    payments: ['IBAN', 'MFO bank code', 'EDRPOU payment reference', 'Diia/QES handoff'],
+    localTerms: { personal: 'RNOKPP', company: 'EDRPOU', tax: 'PDV / VAT', social: 'RNOKPP', register: 'EDR / company register', invoice: 'PDV invoice / tax invoice', payment: 'IBAN / MFO reference', plate: 'vehicle plate', postal: 'postal code', privacy: 'personal-data protection' },
+    samples: { personal: '1234567890', company: '12345678', social: '1234567890', iban: 'UA213223130000026007233566001', bank: '322313 26007233566001', phone: '+380 67 123 4567', postal: '01001 Kyiv', plate: 'AA1234BB', vat: 'UA123456789012', amount: '1 234,56 UAH', date: '21.07.2026', address: 'Khreshchatyk 1, 01001 Kyiv', json: '{"country":"UA","rnokpp":"1234567890","edrpou":"12345678","iban":"UA213223130000026007233566001"}' },
+    theme: ['#0057B7', '#FFD700', '#F8FAFC'], marker: { x: 58, y: 56 }, related: ['PL', 'RO', 'MD'],
+    plugTypes: 'Type C / Type F', voltage: '230V', frequency: '50Hz',
+    searchHints: ['RNOKPP', 'EDRPOU', 'MFO', 'PDV', 'IBAN', 'DIIA']
+  },
+  {
+    slug: 'united-kingdom', iso2: 'GB', iso3: 'GBR', isoNumeric: '826', name: 'United Kingdom', adjective: 'British', nativeName: 'United Kingdom',
+    flag: '🇬🇧', language: 'English', localLanguage: 'en-GB', currency: 'GBP', currencyName: 'Pound sterling', symbol: 'GBP',
+    locale: 'en-GB', icu: 'en_GB', date: 'DD/MM/YYYY', decimal: 'Dot (.)', thousands: 'Comma (,)', phone: '+44',
+    capital: 'London', region: 'Northern/Western Europe', population: 'approximately 68M',
+    identifiers: ['National Insurance number', 'Companies House number', 'UTR', 'VAT', 'postcode', 'phone'],
+    payments: ['IBAN', 'sort code', 'account number', 'BACS', 'Faster Payments', 'CHAPS', 'SWIFT'],
+    localTerms: { personal: 'National Insurance number', company: 'Companies House number', tax: 'VAT / UTR', social: 'National Insurance number', register: 'Companies House', invoice: 'VAT invoice / HMRC MTD', payment: 'sort code / Faster Payments', plate: 'vehicle registration mark', postal: 'postcode', privacy: 'UK GDPR / ICO' },
+    samples: { personal: 'QQ123456C', company: '01234567', social: 'QQ123456C', iban: 'GB29NWBK60161331926819', bank: '60-16-13 31926819', phone: '+44 20 7946 0018', postal: 'SW1A 1AA London', plate: 'AB12 CDE', vat: 'GB123456789', amount: '1,234.56 GBP', date: '21/07/2026', address: '10 Downing Street, London SW1A 2AA', json: '{"country":"GB","nino":"QQ123456C","company":"01234567","sortCode":"60-16-13"}' },
+    theme: ['#012169', '#FFFFFF', '#C8102E'], marker: { x: 43, y: 49 }, related: ['IE', 'FR', 'NL'],
+    plugTypes: 'Type G', voltage: '230V', frequency: '50Hz',
+    searchHints: ['NINO', 'COMPANIES HOUSE', 'UTR', 'SORT CODE', 'BACS', 'FASTER PAYMENTS'],
+    regionalContexts: [
+      'England and Wales: Companies House defaults, company law, courts, address wording.',
+      'Scotland: Scottish company prefixes, charity/register notes, address/legal differences.',
+      'Northern Ireland: postcode and vehicle edge cases plus Ireland cross-border context.',
+      'Wales: bilingual Welsh/English display, address labels, and copy QA.'
+    ]
+  },
+  {
+    slug: 'vatican-city', iso2: 'VA', iso3: 'VAT', isoNumeric: '336', name: 'Vatican City', adjective: 'Vatican', nativeName: 'Citta del Vaticano',
+    flag: '🇻🇦', language: 'Italian and Latin', localLanguage: 'it-VA', currency: 'EUR', currencyName: 'Euro', symbol: 'EUR',
+    locale: 'it-VA', icu: 'it_VA', date: 'DD/MM/YYYY', decimal: 'Comma (,)', thousands: 'Dot grouping', phone: '+379',
+    capital: 'Vatican City', region: 'Southern Europe', population: 'approximately 0.001M',
+    identifiers: ['Vatican entity code', 'postal code', 'phone', 'document number'],
+    payments: ['IBAN', 'SEPA', 'SWIFT', 'payment reference'],
+    localTerms: { personal: 'document number', company: 'Vatican entity code', tax: 'fiscal reference', social: 'document number', register: 'Vatican administration', invoice: 'fiscal invoice', payment: 'SEPA reference', plate: 'SCV/CV plate', postal: 'postal code', privacy: 'personal-data protection' },
+    samples: { personal: 'SCV123456', company: 'VA-ENTITY-001', social: 'SCV123456', iban: 'VA59001123000000012345678', bank: '001123000000012345678', phone: '+39 06 6982 1234', postal: '00120 Vatican City', plate: 'SCV 12345', vat: 'VA00123456789', amount: '1.234,56 EUR', date: '21/07/2026', address: 'Cortile San Damaso, 00120 Vatican City', json: '{"country":"VA","entity":"VA-ENTITY-001","iban":"VA59001123000000012345678"}' },
+    theme: ['#FFD700', '#FFFFFF', '#9CA3AF'], marker: { x: 51, y: 64 }, related: ['IT', 'SM', 'FR'],
+    plugTypes: 'Type C / Type F / Type L', voltage: '230V', frequency: '50Hz',
+    searchHints: ['SCV', 'CV', 'IBAN', 'SEPA', '00120', 'ENTITY']
+  }
+];
+
+COUNTRIES.push(...STRICT_EUROPE_EXPANSION_COUNTRIES);
+Object.assign(COUNTRY_TIME_ZONES, {
+  albania: 'Europe/Tirane (CET/CEST)',
+  andorra: 'Europe/Andorra (CET/CEST)',
+  'bosnia-and-herzegovina': 'Europe/Sarajevo (CET/CEST)',
+  bulgaria: 'Europe/Sofia (EET/EEST)',
+  croatia: 'Europe/Zagreb (CET/CEST)',
+  cyprus: 'Asia/Nicosia (EET/EEST)',
+  estonia: 'Europe/Tallinn (EET/EEST)',
+  greece: 'Europe/Athens (EET/EEST)',
+  hungary: 'Europe/Budapest (CET/CEST)',
+  iceland: 'Atlantic/Reykjavik (GMT)',
+  latvia: 'Europe/Riga (EET/EEST)',
+  liechtenstein: 'Europe/Vaduz (CET/CEST)',
+  lithuania: 'Europe/Vilnius (EET/EEST)',
+  luxembourg: 'Europe/Luxembourg (CET/CEST)',
+  malta: 'Europe/Malta (CET/CEST)',
+  moldova: 'Europe/Chisinau (EET/EEST)',
+  monaco: 'Europe/Monaco (CET/CEST)',
+  montenegro: 'Europe/Podgorica (CET/CEST)',
+  'north-macedonia': 'Europe/Skopje (CET/CEST)',
+  'san-marino': 'Europe/San_Marino (CET/CEST)',
+  serbia: 'Europe/Belgrade (CET/CEST)',
+  slovakia: 'Europe/Bratislava (CET/CEST)',
+  slovenia: 'Europe/Ljubljana (CET/CEST)',
+  ukraine: 'Europe/Kyiv (EET/EEST)',
+  'united-kingdom': 'Europe/London (GMT/BST)',
+  'vatican-city': 'Europe/Rome (CET/CEST)'
+});
+
 const TOOL_TEMPLATES = [
   ['{personalSlug}-validator', '{adj} {personal} Validator', 'ID', 'Validate {personal} shape, split date/control/body evidence, and prepare privacy-safe debugging output.', 'national-identifiers', 'personal', 'Validate', '{personalSample}'],
   ['{companySlug}-validator', '{adj} {company} Validator', 'ORG', 'Inspect {company} structure, registry-style prefixes, control digits, and official lookup boundaries.', 'national-identifiers', 'company', 'Validate', '{companySample}'],
@@ -464,6 +841,12 @@ function runtime(country, tools) {
 function countryData(country, tools) {
   const workbenches = tools.map((tool) => tool.name);
   const routes = tools.map((tool) => ({ title: tool.name, href: `/en/${country.slug}/${tool.id}/`, text: tool.summary }));
+  const searchHints = country.searchHints || [country.identifiers[0], country.payments[0], country.localTerms.tax, country.localTerms.invoice].filter(Boolean);
+  const regionalNotes = (country.regionalContexts || []).map((context) => ({
+    title: typeof context === 'string' ? context.split(':')[0] : context.region,
+    text: typeof context === 'string' ? context : `${context.region}: ${context.notes.join(' ')}`,
+    status: 'regional context'
+  }));
   return {
     id: country.slug,
     visualAssets: {
@@ -472,7 +855,7 @@ function countryData(country, tools) {
       mapSrc: `/assets/images/countries/${country.slug}-location.svg`,
       mapAlt: `World map with ${country.name} location marker`,
       mapMarker: { ...country.marker, label: country.name },
-      source: 'Simplified generated geographic reference for ValidoHub country navigation'
+      source: 'Natural Earth geometry when available; generated fallback for microstates and country navigation'
     },
     catalog: {
       id: country.slug, flag: country.flag, name: country.name, nativeName: country.nativeName, iso2: country.iso2, iso3: country.iso3,
@@ -483,7 +866,8 @@ function countryData(country, tools) {
       availableWorkbenches: workbenches,
       plannedWorkbenches: [`Live ${country.localTerms.register} lookup`, 'Live VAT/tax status confirmation', 'Live bank ownership lookup', 'Live vehicle or postal provider lookup'],
       completion: 100,
-      coordinates: country.marker
+      coordinates: country.marker,
+      searchHints
     },
     hub: {
       flag: country.flag, name: country.name, badge: `Premium ${country.name} developer suite`,
@@ -496,7 +880,8 @@ function countryData(country, tools) {
         dateFormat: country.date, timeFormat: '24-hour, HH:mm', decimalSeparator: country.decimal, thousandsSeparator: country.thousands,
         addressFormat: `Street, number, postal code, locality, ${country.name}`, postalCodeFormat: country.localTerms.postal,
         primaryTimeZone: COUNTRY_TIME_ZONES[country.slug] || 'Europe/Brussels (CET/CEST)', measurementSystem: 'Metric', paperSize: 'A4', emergencyNumber: '112', weekStarts: 'Monday',
-        rtlSupport: 'No', unicodeLocale: country.locale, cldrLocale: country.icu, metricVsImperial: 'Metric-first'
+        rtlSupport: 'No', unicodeLocale: country.locale, cldrLocale: country.icu, metricVsImperial: 'Metric-first',
+        powerPlugTypes: country.plugTypes || 'Type C / Type F', voltage: country.voltage || '230V', frequency: country.frequency || '50Hz'
       },
       visualIdentity: {
         countryId: country.slug, outlineLabel: `${country.name} outline`, mapLabel: `${country.name} in the world`, continentBadge: 'Europe', flagLabel: `${country.name} flag`,
@@ -515,7 +900,8 @@ function countryData(country, tools) {
       developerNotes: [
         { title: 'No official claims', text: `Offline checks never prove official ${country.name} registry, tax, bank, vehicle, postal, or identity status.` },
         { title: 'Field breakdown required', text: 'Every tool must keep named slices visible because they are the primary debugging surface.' },
-        { title: 'Same-country links', text: `Related workbenches stay inside /${country.slug}/ unless a comparison route is explicitly designed.` }
+        { title: 'Same-country links', text: `Related workbenches stay inside /${country.slug}/ unless a comparison route is explicitly designed.` },
+        ...regionalNotes
       ],
       commonMistakes: [
         { title: 'Treating syntax as status', text: 'A passing checksum or shape check is not an official lookup result.' },
@@ -538,6 +924,13 @@ function countryData(country, tools) {
         { title: 'Numbers', text: `${country.currency} amounts use ${country.decimal} and ${country.thousands}.`, status: 'available' },
         { title: 'Forms', text: `${country.localTerms.personal}, ${country.localTerms.company}, ${country.localTerms.postal}, phone, address, and IBAN need local labels.`, status: 'available' }
       ],
+      technicalStandards: [
+        { title: 'Plug types', value: country.plugTypes || 'Type C / Type F', text: 'Public utility fixture for travel, QA, and onboarding copy.' },
+        { title: 'Electrical voltage', value: country.voltage || '230V', text: 'Common mains voltage used by country-profile fixtures.' },
+        { title: 'Grid frequency', value: country.frequency || '50Hz', text: 'Common grid frequency for technical defaults.' },
+        { title: 'Emergency number', value: '112', text: 'EU-wide emergency number; local alternatives may also exist.' }
+      ],
+      searchHints,
       routes
     }
   };
@@ -631,18 +1024,22 @@ function updateAlgorithms(countries) {
 
 function updateDocs(countries) {
   const list = countries.map((c) => `${c.name} (${c.slug})`).join(', ');
+  const auditCommands = countries.map((c) => `npm run audit:country-premium -- --country ${c.slug}`).join('\n');
   write('docs/product/EUROPE_BATCH_PREMIUM_SUITE_SPEC.md', `# Europe Premium Batch Suite Spec
 
-This spec covers the first 10-country premium generation stress test: ${list}.
+This spec covers the strict-Europe full-premium generation batch: ${list}.
 
 ## Contract
 
 - Use Country Suite Factory V1 for every new country runtime.
-- Keep the tool count quality-driven. This batch uses 60 strong local workbenches per country because each selected market has enough identifiers, tax, payment, address, privacy, document, vehicle, logistics, and developer-data workflows to justify it.
-- Every tool must render compact premium shell UI, validation pipeline, result cards, field breakdown, quality notes, advanced analysis, developer JSON, localized controls, and explicit official/live lookup boundaries.
+- Keep the tool count quality-driven. 60 tools is a density reference, not a cap or a filler target: add every meaningful local validator/generator/parser/debugger, and stop only when the local market truly has no more useful workflows.
+- Every tool must render compact premium shell UI, validate/generate/explain where safe, validation pipeline, result cards, field breakdown, tool-context explanation, quality notes, advanced analysis, developer JSON, localized controls, and explicit official/live lookup boundaries.
+- Local generators must create fresh values on every Generate click, enforce country prefixes/check digits, and route invalid/bad-prefix fixtures into review/error states rather than green success.
+- Country-specific analyzers must replace generic parser output whenever a local identifier has real structure. Generic "source payload / offline only" breakdown is only a fallback for tools with no formal structure.
 - Country hubs must contain human-readable highlights, developer notes, common mistakes, official boundaries, ecosystem cards, localization notes, and routes. No [object Object], empty cards, foreign fallback copy, or icon-only/status-only placeholders.
 - Related tools stay same-country by default.
 - Runtime locales required for this batch: en, es, pt-BR, de, fr, pl, uk.
+- Russia and Belarus are explicitly excluded. Controversial/special territories and Asia-adjacent markets are handled later by separate jurisdiction rules.
 
 ## Batch Countries
 
@@ -653,16 +1050,7 @@ ${countries.map((c) => `- ${c.name}: ${c.localTerms.personal}, ${c.localTerms.co
 Run the premium gate per country:
 
 \`\`\`bash
-npm run audit:country-premium -- --country portugal
-npm run audit:country-premium -- --country austria
-npm run audit:country-premium -- --country belgium
-npm run audit:country-premium -- --country ireland
-npm run audit:country-premium -- --country czechia
-npm run audit:country-premium -- --country sweden
-npm run audit:country-premium -- --country norway
-npm run audit:country-premium -- --country denmark
-npm run audit:country-premium -- --country finland
-npm run audit:country-premium -- --country romania
+${auditCommands}
 \`\`\`
 
 Then run \`npm run audit:country-suite\`, full \`npm run build\`, and Engine doctor before sign-off.
@@ -670,27 +1058,27 @@ Then run \`npm run audit:country-suite\`, full \`npm run build\`, and Engine doc
   const changelog = path.join(ROOT, 'docs/ai/CHANGELOG_AI.md');
   if (fs.existsSync(changelog)) {
     let text = fs.readFileSync(changelog, 'utf8');
-    const marker = 'Europe premium 10-country stress batch';
+    const marker = 'Strict Europe full-premium expansion batch';
     if (!text.includes(marker)) {
-      text = `## 2026-07-21 - ${marker}\n\n- Added a documented 10-country premium generation batch for ${list}.\n- Each country uses Country Suite Factory V1, 60 local workbenches, runtime localization for en/es/pt-BR/de/fr/pl/uk, mandatory field breakdown, same-country related links, and explicit official boundaries.\n- Added \`docs/product/EUROPE_BATCH_PREMIUM_SUITE_SPEC.md\` so future AI sessions treat batch generation quality as a contract, not a one-off.\n\n` + text;
+      text = `## 2026-07-21 - ${marker}\n\n- Added a documented strict-Europe premium generation batch for ${list}.\n- Each country uses Country Suite Factory V1, quality-driven local workbenches, runtime localization for en/es/pt-BR/de/fr/pl/uk, mandatory field breakdown, same-country related links, validate/generate affordances, and explicit official boundaries.\n- Added \`docs/product/EUROPE_BATCH_PREMIUM_SUITE_SPEC.md\` so future AI sessions treat batch generation quality as a contract, not a one-off.\n\n` + text;
       fs.writeFileSync(changelog, text);
     }
   }
   const current = path.join(ROOT, 'docs/product/CURRENT_STATE.md');
   if (fs.existsSync(current)) {
     let text = fs.readFileSync(current, 'utf8');
-    const marker = 'European Premium Batch V1';
+    const marker = 'Strict Europe Premium Batch V2';
     if (!text.includes(marker)) {
-      text += `\n\n## ${marker}\n\nPortugal, Austria, Belgium, Ireland, Czechia, Sweden, Norway, Denmark, Finland, and Romania are generated as the first 10-country premium stress batch. Each country uses Country Suite Factory V1 with 60 local developer workbenches, field breakdown on every tool, seven production runtime locales, same-country related links, rich country hub sections, and explicit official/live lookup boundaries.\n`;
+      text += `\n\n## ${marker}\n\nStrict-Europe coverage is generated as full premium with Country Suite Factory V1. Each country uses quality-driven local developer workbenches, field breakdown on every tool, seven production runtime locales, validate/generate affordances where safe, same-country related links, rich country hub sections, and explicit official/live lookup boundaries. Russia and Belarus remain excluded; controversial/special territories are handled later by separate jurisdiction rules.\n`;
       fs.writeFileSync(current, text);
     }
   }
   const registry = path.join(ROOT, 'docs/product/WORKBENCH_REGISTRY.md');
   if (fs.existsSync(registry)) {
     let text = fs.readFileSync(registry, 'utf8');
-    const marker = 'Europe Premium Batch V1';
+    const marker = 'Strict Europe Premium Batch V2';
     if (!text.includes(marker)) {
-      text += `\n\n## ${marker}\n\nRuntime source: \`assets/js/tools/<country>-suite.js\` using \`country-suite-factory.js\`.\n\nCountries: ${list}.\n\nEach country registers 60 active browser-only workbenches covering identifiers, VAT/tax, payments, banking, address, phone, locale formatting, privacy/redaction, documents, vehicles, logistics, and developer QA. Field breakdown is mandatory for every route.\n`;
+      text += `\n\n## ${marker}\n\nRuntime source: \`assets/js/tools/<country>-suite.js\` using \`country-suite-factory.js\`.\n\nCountries: ${list}.\n\nEach country registers quality-driven active browser-only workbenches covering identifiers, VAT/tax, payments, banking, address, phone, locale formatting, privacy/redaction, documents, vehicles, logistics, and developer QA. Field breakdown, tool-context explanation, valid/invalid fixtures, fresh generator output, copy feedback, and official boundary copy are mandatory for every route.\n`;
       fs.writeFileSync(registry, text);
     }
   }

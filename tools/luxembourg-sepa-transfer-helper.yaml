@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-sepa-transfer-helper
+kind: tool
+module: validohub
+country: LU
+category: finance
+status: active
+name:
+  en: "Luxembourgish SEPA Transfer Helper"
+summary:
+  en: "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SEPA input"
+        required: true
+        placeholder:
+          en: "LU280019400644750000\\n1 234,56 EUR\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-sepa-direct-debit-mandate-helper, luxembourg-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish SEPA Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."

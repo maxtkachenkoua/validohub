@@ -13,23 +13,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-1234"
+        "value": "010185-1234",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "010185-1235"
+        "value": "Invalid 010185-1235",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-"
+        "value": "010185-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 010185-1234"
+        "value": "Wrong prefix DK 010185-1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK ID edge 1"
+        "value": "Review DK ID edge 1",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -41,7 +51,7 @@
         "text": "Danish CPR Validator analyzes Denmark-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -65,23 +75,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "12345674"
+        "value": "12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "12345675"
+        "value": "Invalid 12345675",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "12345"
+        "value": "12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 12345674"
+        "value": "Wrong prefix DK 12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK ORG edge 2"
+        "value": "Review DK ORG edge 2",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -93,7 +113,7 @@
         "text": "Danish CVR Validator analyzes Denmark-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -117,23 +137,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "DK12345674"
+        "value": "DK12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ12345674"
+        "value": "Wrong prefix ZZ12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "DK1234"
+        "value": "DK1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345674"
+        "value": "Wrong prefix ZZ12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK VAT edge 3"
+        "value": "Review DK VAT edge 3",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -145,7 +175,7 @@
         "text": "Danish VAT ID / DK Prefix Validator analyzes Denmark-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -169,23 +199,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "DK12345674"
+        "value": "DK12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ12345674"
+        "value": "Wrong prefix ZZ12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "DK1234"
+        "value": "DK1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345674"
+        "value": "Wrong prefix ZZ12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK EORI edge 4"
+        "value": "Review DK EORI edge 4",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -197,7 +237,7 @@
         "text": "Danish EORI / Customs Identifier Helper analyzes Denmark-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -221,23 +261,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-1234"
+        "value": "010185-1234",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "010185-1235"
+        "value": "Invalid 010185-1235",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-"
+        "value": "010185-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 010185-1234"
+        "value": "Wrong prefix DK 010185-1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK SOC edge 5"
+        "value": "Review DK SOC edge 5",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -249,7 +299,7 @@
         "text": "Danish CPR Helper analyzes Denmark-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -273,23 +323,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116244\"}"
+        "value": "Invalid {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116244\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK KYC edge 6"
+        "value": "Review DK KYC edge 6",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -301,7 +361,7 @@
         "text": "Danish Company Onboarding Auditor analyzes Denmark-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -325,23 +385,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "12345674 DK12345674 Nyhavn 1, 1051 Copenhagen K"
+        "value": "12345674 DK12345674 Nyhavn 1, 1051 Copenhagen K",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "12345674 DK12345674 Nyhavn 1, 1052 Copenhagen K"
+        "value": "Invalid 12345674 DK12345674 Nyhavn 1, 1052 Copenhagen K",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "12345674 DK12345674 Nyhavn"
+        "value": "12345674 DK12345674 Nyhavn",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 12345674 DK12345674 Nyhavn 1, 1051 Copenhagen K"
+        "value": "Wrong prefix DK 12345674 DK12345674 Nyhavn 1, 1051 Copenhagen K",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK REG edge 7"
+        "value": "Review DK REG edge 7",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -353,7 +423,7 @@
         "text": "Danish CVR register Readiness Helper analyzes Denmark-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -377,23 +447,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-1234"
+        "value": "010185-1234",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK CARD 8"
+        "value": "Invalid DK CARD 8",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-"
+        "value": "010185-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 010185-1234"
+        "value": "Wrong prefix DK 010185-1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK CARD edge 8"
+        "value": "Review DK CARD edge 8",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -405,7 +485,7 @@
         "text": "Danish ID Card Format Helper analyzes Denmark-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -429,23 +509,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<DNKDANISH<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "P<DNKDANISH<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK PASS 9"
+        "value": "Invalid DK PASS 9",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<DNKDANISH<<SAMPLE<<"
+        "value": "P<DNKDANISH<<SAMPLE<<",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK P<DNKDANISH<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "Wrong prefix DK P<DNKDANISH<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK PASS edge 9"
+        "value": "Review DK PASS edge 9",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -457,7 +547,7 @@
         "text": "Danish Passport Number Helper analyzes Denmark-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -481,23 +571,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<DNKSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567DNK8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "P<DNKSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567DNK8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK MRZ 10"
+        "value": "Invalid DK MRZ 10",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<DNKSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345"
+        "value": "P<DNKSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK P<DNKSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567DNK8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "Wrong prefix DK P<DNKSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567DNK8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK MRZ edge 10"
+        "value": "Review DK MRZ edge 10",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -509,7 +609,7 @@
         "text": "Danish MRZ / Passport Parser analyzes Denmark-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -533,23 +633,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "DK5000400440116243"
+        "value": "DK5000400440116243",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ5000400440116243"
+        "value": "Wrong prefix ZZ5000400440116243",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "DK50004004"
+        "value": "DK50004004",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ5000400440116243"
+        "value": "Wrong prefix ZZ5000400440116243",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK IBAN edge 11"
+        "value": "Review DK IBAN edge 11",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -561,7 +671,7 @@
         "text": "Denmark IBAN Validator analyzes Denmark-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -585,23 +695,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "00400440116243"
+        "value": "00400440116243",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Wrong prefix DK 00400440116243"
+        "value": "Wrong prefix DK 00400440116243",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "00400440"
+        "value": "00400440",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Grouped valid sample",
-        "value": "0040 0440 1162 43"
+        "value": "0040 0440 1162 43",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK IBG edge 12"
+        "value": "Review DK IBG edge 12",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -613,7 +733,7 @@
         "text": "Denmark IBAN Generator analyzes Denmark-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -637,23 +757,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "0040 0440116243"
+        "value": "0040 0440116243",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK BANK 13"
+        "value": "Invalid DK BANK 13",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "0040 0440"
+        "value": "0040 0440",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 0040 0440116243"
+        "value": "Wrong prefix DK 0040 0440116243",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK BANK edge 13"
+        "value": "Review DK BANK edge 13",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -665,7 +795,7 @@
         "text": "Danish Domestic Bank Account Inspector analyzes Denmark-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -689,23 +819,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "ABCDDK2X"
+        "value": "ABCDDK2X",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZCDDK2X"
+        "value": "Wrong prefix ZZCDDK2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "ABCDD"
+        "value": "ABCDD",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZCDDK2X"
+        "value": "Wrong prefix ZZCDDK2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK BIC edge 14"
+        "value": "Review DK BIC edge 14",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -717,7 +857,7 @@
         "text": "Danish BIC / SWIFT Inspector analyzes Denmark-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -741,23 +881,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "DK5000400440116243\\n1.234,56 DKK\\nInvoice 2026-001"
+        "value": "DK5000400440116243\\n1.234,56 DKK\\nInvoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK SEPA 15"
+        "value": "Invalid DK SEPA 15",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "DK5000400440116243\\n1.234,56"
+        "value": "DK5000400440116243\\n1.234,56",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ5000400440116243\\n1.234,56 DKK\\nInvoice 2026-001"
+        "value": "Wrong prefix ZZ5000400440116243\\n1.234,56 DKK\\nInvoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK SEPA edge 15"
+        "value": "Review DK SEPA edge 15",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -769,7 +919,7 @@
         "text": "Danish SEPA Transfer Helper analyzes Denmark-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -793,23 +943,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "MANDATE-2026-001 DK5000400440116243"
+        "value": "MANDATE-2026-001 DK5000400440116243",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK SDD 16"
+        "value": "Invalid DK SDD 16",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "MANDATE-2026-001 DK5"
+        "value": "MANDATE-2026-001 DK5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZNDATE-2026-001 DK5000400440116243"
+        "value": "Wrong prefix ZZNDATE-2026-001 DK5000400440116243",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK SDD edge 16"
+        "value": "Review DK SDD edge 16",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -821,7 +981,7 @@
         "text": "Danish SEPA Direct Debit Mandate Helper analyzes Denmark-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -845,23 +1005,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "FI / Betalingsservice REF 2026-001 1.234,56 DKK"
+        "value": "FI / Betalingsservice REF 2026-001 1.234,56 DKK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK PAY 17"
+        "value": "Invalid DK PAY 17",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "FI / Betalingsservice REF "
+        "value": "FI / Betalingsservice REF ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ / Betalingsservice REF 2026-001 1.234,56 DKK"
+        "value": "Wrong prefix ZZ / Betalingsservice REF 2026-001 1.234,56 DKK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK PAY edge 17"
+        "value": "Review DK PAY edge 17",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -873,7 +1043,7 @@
         "text": "Danish FI / Betalingsservice Reference Helper analyzes Denmark-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -897,23 +1067,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Invoice 2026-001 DK12345674 1.234,56 DKK"
+        "value": "Invoice 2026-001 DK12345674 1.234,56 DKK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK REMIT 18"
+        "value": "Invalid DK REMIT 18",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Invoice 2026-001 DK123"
+        "value": "Invoice 2026-001 DK123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK Invoice 2026-001 DK12345674 1.234,56 DKK"
+        "value": "Wrong prefix DK Invoice 2026-001 DK12345674 1.234,56 DKK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK REMIT edge 18"
+        "value": "Review DK REMIT edge 18",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -925,7 +1105,7 @@
         "text": "Danish Remittance Text Builder analyzes Denmark-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -949,23 +1129,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.07.2026; 1.234,56 DKK; DK5000400440116243; Invoice 2026-001"
+        "value": "21.07.2026; 1.234,56 DKK; DK5000400440116243; Invoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK RECON 19"
+        "value": "Invalid DK RECON 19",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.07.2026; 1.234,56 DKK; DK5000400"
+        "value": "21.07.2026; 1.234,56 DKK; DK5000400",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 21.07.2026; 1.234,56 DKK; DK5000400440116243; Invoice 2026-001"
+        "value": "Wrong prefix DK 21.07.2026; 1.234,56 DKK; DK5000400440116243; Invoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK RECON edge 19"
+        "value": "Review DK RECON edge 19",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -977,7 +1167,7 @@
         "text": "Danish Payment Reconciliation Helper analyzes Denmark-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1001,23 +1191,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.07.2026; 1.234,56 DKK; DK5000400440116243; sample counterparty"
+        "value": "21.07.2026; 1.234,56 DKK; DK5000400440116243; sample counterparty",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK STMT 20"
+        "value": "Invalid DK STMT 20",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.07.2026; 1.234,56 DKK; DK50004004"
+        "value": "21.07.2026; 1.234,56 DKK; DK50004004",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 21.07.2026; 1.234,56 DKK; DK5000400440116243; sample counterparty"
+        "value": "Wrong prefix DK 21.07.2026; 1.234,56 DKK; DK5000400440116243; sample counterparty",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK STMT edge 20"
+        "value": "Review DK STMT edge 20",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1029,7 +1229,7 @@
         "text": "Danish Bank Statement Parser analyzes Denmark-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1053,23 +1253,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "DK5000400440116243"
+        "value": "DK5000400440116243",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ5000400440116243"
+        "value": "Wrong prefix ZZ5000400440116243",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "DK50004004"
+        "value": "DK50004004",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ5000400440116243"
+        "value": "Wrong prefix ZZ5000400440116243",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK MASK edge 21"
+        "value": "Review DK MASK edge 21",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1081,7 +1291,7 @@
         "text": "Danish Masked IBAN Formatter analyzes Denmark-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1105,23 +1315,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1.234,56 DKK"
+        "value": "1.234,56 DKK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK CUR 22"
+        "value": "Invalid DK CUR 22",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1.234,5"
+        "value": "1.234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 1.234,56 DKK"
+        "value": "Wrong prefix DK 1.234,56 DKK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK CUR edge 22"
+        "value": "Review DK CUR edge 22",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1133,7 +1353,7 @@
         "text": "Danish DKK Decimal Currency Formatter analyzes Denmark-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1157,23 +1377,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Moms / VAT 20% base 1.234,56 DKK"
+        "value": "Moms / VAT 20% base 1.234,56 DKK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK RATE 23"
+        "value": "Invalid DK RATE 23",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Moms / VAT 20% bas"
+        "value": "Moms / VAT 20% bas",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK Moms / VAT 20% base 1.234,56 DKK"
+        "value": "Wrong prefix DK Moms / VAT 20% base 1.234,56 DKK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK RATE edge 23"
+        "value": "Review DK RATE edge 23",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1185,7 +1415,7 @@
         "text": "Danish VAT Rate Sanity Helper analyzes Denmark-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1209,23 +1439,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Moms / VAT; DK12345674; period 2026-07; 1.234,56 DKK"
+        "value": "Moms / VAT; DK12345674; period 2026-07; 1.234,56 DKK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK RET 24"
+        "value": "Invalid DK RET 24",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Moms / VAT; DK12345674; perio"
+        "value": "Moms / VAT; DK12345674; perio",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK Moms / VAT; DK12345674; period 2026-07; 1.234,56 DKK"
+        "value": "Wrong prefix DK Moms / VAT; DK12345674; period 2026-07; 1.234,56 DKK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK RET edge 24"
+        "value": "Review DK RET edge 24",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1237,7 +1477,7 @@
         "text": "Danish VAT Return Field Helper analyzes Denmark-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1261,23 +1501,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "INV-2026-0001 DK12345674"
+        "value": "INV-2026-0001 DK12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK INV 25"
+        "value": "Invalid DK INV 25",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "INV-2026-0001 "
+        "value": "INV-2026-0001 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZV-2026-0001 DK12345674"
+        "value": "Wrong prefix ZZV-2026-0001 DK12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK INV edge 25"
+        "value": "Review DK INV edge 25",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1289,7 +1539,7 @@
         "text": "Danish Invoice Number Helper analyzes Denmark-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1313,23 +1563,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK EINV 26"
+        "value": "Invalid DK EINV 26",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK EINV edge 26"
+        "value": "Review DK EINV edge 26",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1341,7 +1601,7 @@
         "text": "Danish NemHandel / Peppol Readiness Checker analyzes Denmark-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1365,23 +1625,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "DK12345674 21.07.2026 1.234,56 DKK"
+        "value": "DK12345674 21.07.2026 1.234,56 DKK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK TAX 27"
+        "value": "Invalid DK TAX 27",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "DK12345674 21.07.20"
+        "value": "DK12345674 21.07.20",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345674 21.07.2026 1.234,56 DKK"
+        "value": "Wrong prefix ZZ12345674 21.07.2026 1.234,56 DKK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK TAX edge 27"
+        "value": "Review DK TAX edge 27",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1393,7 +1663,7 @@
         "text": "Danish Tax Authority Handoff Helper analyzes Denmark-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1417,23 +1687,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "invoice 21.07.2026 1.234,56 DKK DK12345674"
+        "value": "invoice 21.07.2026 1.234,56 DKK DK12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK AUDIT 28"
+        "value": "Invalid DK AUDIT 28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "invoice 21.07.2026 1.234"
+        "value": "invoice 21.07.2026 1.234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK invoice 21.07.2026 1.234,56 DKK DK12345674"
+        "value": "Wrong prefix DK invoice 21.07.2026 1.234,56 DKK DK12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK AUDIT edge 28"
+        "value": "Review DK AUDIT edge 28",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1445,7 +1725,7 @@
         "text": "Danish Accounting Audit Trail Checklist Helper analyzes Denmark-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1469,23 +1749,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1050 Copenhagen K"
+        "value": "1050 Copenhagen K",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK POST 29"
+        "value": "Invalid DK POST 29",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1050 Copen"
+        "value": "1050 Copen",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 1050 Copenhagen K"
+        "value": "Wrong prefix DK 1050 Copenhagen K",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK POST edge 29"
+        "value": "Review DK POST edge 29",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1497,7 +1787,7 @@
         "text": "Danish Postal Code Validator analyzes Denmark-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1521,23 +1811,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Nyhavn 1, 1051 Copenhagen K"
+        "value": "Nyhavn 1, 1051 Copenhagen K",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK ADDR 30"
+        "value": "Invalid DK ADDR 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Nyhavn 1, 1051 "
+        "value": "Nyhavn 1, 1051 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK Nyhavn 1, 1051 Copenhagen K"
+        "value": "Wrong prefix DK Nyhavn 1, 1051 Copenhagen K",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK ADDR edge 30"
+        "value": "Review DK ADDR edge 30",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1549,7 +1849,7 @@
         "text": "Danish Address Normalizer analyzes Denmark-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1573,23 +1873,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Nyhavn 1, 1051 Copenhagen K"
+        "value": "Nyhavn 1, 1051 Copenhagen K",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK ASCII 31"
+        "value": "Invalid DK ASCII 31",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Nyhavn 1, 1051 "
+        "value": "Nyhavn 1, 1051 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK Nyhavn 1, 1051 Copenhagen K"
+        "value": "Wrong prefix DK Nyhavn 1, 1051 Copenhagen K",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK ASCII edge 31"
+        "value": "Review DK ASCII edge 31",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1601,7 +1911,7 @@
         "text": "Danish Address Transliteration Normalizer analyzes Denmark-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1625,23 +1935,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1050 Copenhagen K"
+        "value": "1050 Copenhagen K",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK REGION 32"
+        "value": "Invalid DK REGION 32",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1050 Copen"
+        "value": "1050 Copen",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 1050 Copenhagen K"
+        "value": "Wrong prefix DK 1050 Copenhagen K",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK REGION edge 32"
+        "value": "Review DK REGION edge 32",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1653,7 +1973,7 @@
         "text": "Danish Region / Province Code Mapper analyzes Denmark-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1677,23 +1997,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Nyhavn 1, 1051 Copenhagen K"
+        "value": "Nyhavn 1, 1051 Copenhagen K",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK MUNI 33"
+        "value": "Invalid DK MUNI 33",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Nyhavn 1, 1051 "
+        "value": "Nyhavn 1, 1051 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK Nyhavn 1, 1051 Copenhagen K"
+        "value": "Wrong prefix DK Nyhavn 1, 1051 Copenhagen K",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK MUNI edge 33"
+        "value": "Review DK MUNI edge 33",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1705,7 +2035,7 @@
         "text": "Danish Municipality Code Inspector analyzes Denmark-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1729,23 +2059,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+45 12 34 56 78"
+        "value": "+45 12 34 56 78",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK PHONE 34"
+        "value": "Invalid DK PHONE 34",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+45 12 34"
+        "value": "+45 12 34",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK +45 12 34 56 78"
+        "value": "Wrong prefix DK +45 12 34 56 78",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK PHONE edge 34"
+        "value": "Review DK PHONE edge 34",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1757,7 +2097,7 @@
         "text": "Danish Phone Number Validator analyzes Denmark-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1781,23 +2121,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+45 12 34 56 78"
+        "value": "+45 12 34 56 78",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK E164 35"
+        "value": "Invalid DK E164 35",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+45 12 34"
+        "value": "+45 12 34",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK +45 12 34 56 78"
+        "value": "Wrong prefix DK +45 12 34 56 78",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK E164 edge 35"
+        "value": "Review DK E164 edge 35",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1809,7 +2159,7 @@
         "text": "Danish Phone E.164 Formatter analyzes Denmark-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1833,23 +2183,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.07.2026"
+        "value": "21.07.2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK DATE 36"
+        "value": "Invalid DK DATE 36",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.07."
+        "value": "21.07.",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 21.07.2026"
+        "value": "Wrong prefix DK 21.07.2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK DATE edge 36"
+        "value": "Review DK DATE edge 36",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1861,7 +2221,7 @@
         "text": "Danish Date Locale Formatter analyzes Denmark-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1885,23 +2245,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "id;amount;date;tax\\n1;1.234,56 DKK;21.07.2026;DK12345674"
+        "value": "id;amount;date;tax\\n1;1.234,56 DKK;21.07.2026;DK12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK CSV 37"
+        "value": "Invalid DK CSV 37",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "id;amount;date;tax\\n1;1.234,56 "
+        "value": "id;amount;date;tax\\n1;1.234,56 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK id;amount;date;tax\\n1;1.234,56 DKK;21.07.2026;DK12345674"
+        "value": "Wrong prefix DK id;amount;date;tax\\n1;1.234,56 DKK;21.07.2026;DK12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK CSV edge 37"
+        "value": "Review DK CSV edge 37",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1913,7 +2283,7 @@
         "text": "Danish CSV Locale Normalizer analyzes Denmark-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1937,23 +2307,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Denmark sample company Nyhavn 1, 1051 Copenhagen K"
+        "value": "Denmark sample company Nyhavn 1, 1051 Copenhagen K",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK SLUG 38"
+        "value": "Invalid DK SLUG 38",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Denmark sample company Nyhav"
+        "value": "Denmark sample company Nyhav",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK Denmark sample company Nyhavn 1, 1051 Copenhagen K"
+        "value": "Wrong prefix DK Denmark sample company Nyhavn 1, 1051 Copenhagen K",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK SLUG edge 38"
+        "value": "Review DK SLUG edge 38",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1965,7 +2345,7 @@
         "text": "Danish Slug Normalizer analyzes Denmark-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1989,23 +2369,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-1234 DK12345674 DK5000400440116243 1050 Copenhagen K"
+        "value": "010185-1234 DK12345674 DK5000400440116243 1050 Copenhagen K",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK OCR 39"
+        "value": "Invalid DK OCR 39",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-1234 DK12345674 DK50004004"
+        "value": "010185-1234 DK12345674 DK50004004",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 010185-1234 DK12345674 DK5000400440116243 1050 Copenhagen K"
+        "value": "Wrong prefix DK 010185-1234 DK12345674 DK5000400440116243 1050 Copenhagen K",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK OCR edge 39"
+        "value": "Review DK OCR edge 39",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2017,7 +2407,7 @@
         "text": "Danish Document OCR Fixer analyzes Denmark-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2041,23 +2431,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK GDPR 40"
+        "value": "Invalid DK GDPR 40",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK GDPR edge 40"
+        "value": "Review DK GDPR edge 40",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2069,7 +2469,7 @@
         "text": "Danish GDPR / Datatilsynet Redaction Helper analyzes Denmark-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2093,23 +2493,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-1234 +45 12 34 56 78 DK5000400440116243"
+        "value": "010185-1234 +45 12 34 56 78 DK5000400440116243",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK PII 41"
+        "value": "Invalid DK PII 41",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-1234 +45 12 34 56 7"
+        "value": "010185-1234 +45 12 34 56 7",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 010185-1234 +45 12 34 56 78 DK5000400440116243"
+        "value": "Wrong prefix DK 010185-1234 +45 12 34 56 78 DK5000400440116243",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK PII edge 41"
+        "value": "Review DK PII edge 41",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2121,7 +2531,7 @@
         "text": "Danish PII Masker analyzes Denmark-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2145,23 +2555,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-1234\\nNyhavn 1, 1051 Copenhagen K\\n+45 12 34 56 78"
+        "value": "010185-1234\\nNyhavn 1, 1051 Copenhagen K\\n+45 12 34 56 78",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK FIX 42"
+        "value": "Invalid DK FIX 42",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-1234\\nNyhavn 1, 1051 Cope"
+        "value": "010185-1234\\nNyhavn 1, 1051 Cope",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 010185-1234\\nNyhavn 1, 1051 Copenhagen K\\n+45 12 34 56 78"
+        "value": "Wrong prefix DK 010185-1234\\nNyhavn 1, 1051 Copenhagen K\\n+45 12 34 56 78",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK FIX edge 42"
+        "value": "Review DK FIX edge 42",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2173,7 +2593,7 @@
         "text": "Danish Personal Data Fixture Helper analyzes Denmark-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2197,23 +2617,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-1234 DL 2026"
+        "value": "010185-1234 DL 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK DL 43"
+        "value": "Invalid DK DL 43",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-1234"
+        "value": "010185-1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 010185-1234 DL 2026"
+        "value": "Wrong prefix DK 010185-1234 DL 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK DL edge 43"
+        "value": "Review DK DL edge 43",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2225,7 +2655,7 @@
         "text": "Danish Driving Licence Format Helper analyzes Denmark-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2249,23 +2679,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "DK PERMIT 2026 010185-1234"
+        "value": "DK PERMIT 2026 010185-1234",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK PERMIT 44"
+        "value": "Invalid DK PERMIT 44",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "DK PERMIT 2026 "
+        "value": "DK PERMIT 2026 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ PERMIT 2026 010185-1234"
+        "value": "Wrong prefix ZZ PERMIT 2026 010185-1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK PERMIT edge 44"
+        "value": "Review DK PERMIT edge 44",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2277,7 +2717,7 @@
         "text": "Danish Residence Permit Format Helper analyzes Denmark-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2301,23 +2741,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "010185-1234 HEALTH 2026"
+        "value": "010185-1234 HEALTH 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK HEALTH 45"
+        "value": "Invalid DK HEALTH 45",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "010185-1234 H"
+        "value": "010185-1234 H",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 010185-1234 HEALTH 2026"
+        "value": "Wrong prefix DK 010185-1234 HEALTH 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK HEALTH edge 45"
+        "value": "Review DK HEALTH edge 45",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2329,7 +2779,7 @@
         "text": "Danish Health Card Format Helper analyzes Denmark-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2353,23 +2803,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "AB 12 345"
+        "value": "AB 12 345",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "AB 12 346"
+        "value": "Invalid AB 12 346",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "AB 12"
+        "value": "AB 12",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ 12 345"
+        "value": "Wrong prefix ZZ 12 345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK PLATE edge 46"
+        "value": "Review DK PLATE edge 46",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2381,7 +2841,7 @@
         "text": "Danish Vehicle Plate Inspector analyzes Denmark-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2405,23 +2865,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "WVWZZZ1JZXW000001"
+        "value": "WVWZZZ1JZXW000001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "WVWZZZ1JZXW000002"
+        "value": "Invalid WVWZZZ1JZXW000002",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "WVWZZZ1JZX"
+        "value": "WVWZZZ1JZX",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZWZZZ1JZXW000001"
+        "value": "Wrong prefix ZZWZZZ1JZXW000001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK VIN edge 47"
+        "value": "Review DK VIN edge 47",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2433,7 +2903,7 @@
         "text": "Danish VIN Validator analyzes Denmark-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2457,23 +2927,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "AB 12 345 WVWZZZ1JZXW000001 010185-1234"
+        "value": "AB 12 345 WVWZZZ1JZXW000001 010185-1234",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK VEH 48"
+        "value": "Invalid DK VEH 48",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "AB 12 345 WVWZZZ1JZXW0"
+        "value": "AB 12 345 WVWZZZ1JZXW0",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ 12 345 WVWZZZ1JZXW000001 010185-1234"
+        "value": "Wrong prefix ZZ 12 345 WVWZZZ1JZXW000001 010185-1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK VEH edge 48"
+        "value": "Review DK VEH edge 48",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2485,7 +2965,7 @@
         "text": "Danish Vehicle Data Redaction Helper analyzes Denmark-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2509,23 +2989,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "DK12345674 HS 8471 1.234,56 DKK"
+        "value": "DK12345674 HS 8471 1.234,56 DKK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK CUSTOMS 49"
+        "value": "Invalid DK CUSTOMS 49",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "DK12345674 HS 8471"
+        "value": "DK12345674 HS 8471",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ12345674 HS 8471 1.234,56 DKK"
+        "value": "Wrong prefix ZZ12345674 HS 8471 1.234,56 DKK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK CUSTOMS edge 49"
+        "value": "Review DK CUSTOMS edge 49",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2537,7 +3027,7 @@
         "text": "Danish Customs Declaration Helper analyzes Denmark-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2561,23 +3051,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "TRACK 2026 1050 Copenhagen K"
+        "value": "TRACK 2026 1050 Copenhagen K",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK TRACK 50"
+        "value": "Invalid DK TRACK 50",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "TRACK 2026 1050 "
+        "value": "TRACK 2026 1050 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZACK 2026 1050 Copenhagen K"
+        "value": "Wrong prefix ZZACK 2026 1050 Copenhagen K",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK TRACK edge 50"
+        "value": "Review DK TRACK edge 50",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2589,7 +3089,7 @@
         "text": "Danish Postal Tracking Helper analyzes Denmark-specific logistics evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2613,23 +3113,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK DQ 51"
+        "value": "Invalid DK DQ 51",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK DQ edge 51"
+        "value": "Review DK DQ edge 51",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2641,7 +3151,7 @@
         "text": "Danish Data Quality Workbench analyzes Denmark-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2665,23 +3175,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK JSON 52"
+        "value": "Invalid DK JSON 52",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK JSON edge 52"
+        "value": "Review DK JSON edge 52",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2693,7 +3213,7 @@
         "text": "Danish JSON Fixture Helper analyzes Denmark-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2717,23 +3237,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "CPR CVR postnummer  DK5000400440116243"
+        "value": "CPR CVR postnummer  DK5000400440116243",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK REGEX 53"
+        "value": "Invalid DK REGEX 53",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "CPR CVR postnummer  D"
+        "value": "CPR CVR postnummer  D",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZR CVR postnummer  DK5000400440116243"
+        "value": "Wrong prefix ZZR CVR postnummer  DK5000400440116243",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK REGEX edge 53"
+        "value": "Review DK REGEX edge 53",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2745,7 +3275,7 @@
         "text": "Danish Regex Pack Helper analyzes Denmark-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2769,23 +3299,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK API 54"
+        "value": "Invalid DK API 54",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK API edge 54"
+        "value": "Review DK API edge 54",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2797,7 +3337,7 @@
         "text": "Danish API Payload Auditor analyzes Denmark-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2821,23 +3361,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "tax=DK12345674&postal=1050 Copenhagen K&phone=+45 12 34 56 78"
+        "value": "tax=DK12345674&postal=1050 Copenhagen K&phone=+45 12 34 56 78",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK FORM 55"
+        "value": "Invalid DK FORM 55",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "tax=DK12345674&postal=1050 Copenha"
+        "value": "tax=DK12345674&postal=1050 Copenha",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK tax=DK12345674&postal=1050 Copenhagen K&phone=+45 12 34 56 78"
+        "value": "Wrong prefix DK tax=DK12345674&postal=1050 Copenhagen K&phone=+45 12 34 56 78",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK FORM edge 55"
+        "value": "Review DK FORM edge 55",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2849,7 +3399,7 @@
         "text": "Danish Form Field Auditor analyzes Denmark-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2873,23 +3423,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1.234,56 DKK"
+        "value": "1.234,56 DKK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK NUM 56"
+        "value": "Invalid DK NUM 56",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1.234,5"
+        "value": "1.234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 1.234,56 DKK"
+        "value": "Wrong prefix DK 1.234,56 DKK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK NUM edge 56"
+        "value": "Review DK NUM edge 56",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2901,7 +3461,7 @@
         "text": "Danish Locale Number Parser analyzes Denmark-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2925,23 +3485,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21.07.2026 week 30"
+        "value": "21.07.2026 week 30",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK CAL 57"
+        "value": "Invalid DK CAL 57",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21.07.2026"
+        "value": "21.07.2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 21.07.2026 week 30"
+        "value": "Wrong prefix DK 21.07.2026 week 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK CAL edge 57"
+        "value": "Review DK CAL edge 57",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2953,7 +3523,7 @@
         "text": "Danish Calendar Week Helper analyzes Denmark-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2977,23 +3547,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Denmark Sample Holding Ltd 12345674"
+        "value": "Denmark Sample Holding Ltd 12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Denmark Sample Holding Ltd 12345675"
+        "value": "Invalid Denmark Sample Holding Ltd 12345675",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Denmark Sample Holdi"
+        "value": "Denmark Sample Holdi",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK Denmark Sample Holding Ltd 12345674"
+        "value": "Wrong prefix DK Denmark Sample Holding Ltd 12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK SUFFIX edge 58"
+        "value": "Review DK SUFFIX edge 58",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3005,7 +3585,7 @@
         "text": "Danish Company Suffix Normalizer analyzes Denmark-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3029,23 +3609,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "12345674 PO-2026-001 DK12345674"
+        "value": "12345674 PO-2026-001 DK12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK PROC 59"
+        "value": "Invalid DK PROC 59",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "12345674 PO-2026-0"
+        "value": "12345674 PO-2026-0",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK 12345674 PO-2026-001 DK12345674"
+        "value": "Wrong prefix DK 12345674 PO-2026-001 DK12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK PROC edge 59"
+        "value": "Review DK PROC edge 59",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3057,7 +3647,7 @@
         "text": "Danish Procurement Identifier Helper analyzes Denmark-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3081,23 +3671,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "CPR input, postnummer input, amount 1.234,56 DKK"
+        "value": "CPR input, postnummer input, amount 1.234,56 DKK",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK COPY 60"
+        "value": "Invalid DK COPY 60",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "CPR input, postnummer input"
+        "value": "CPR input, postnummer input",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZR input, postnummer input, amount 1.234,56 DKK"
+        "value": "Wrong prefix ZZR input, postnummer input, amount 1.234,56 DKK",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK COPY edge 60"
+        "value": "Review DK COPY edge 60",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3109,7 +3709,7 @@
         "text": "Danish Locale Copy Checker analyzes Denmark-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3133,23 +3733,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Customer sent 010185-1234, DK5000400440116243, Nyhavn 1, 1051 Copenhagen K"
+        "value": "Customer sent 010185-1234, DK5000400440116243, Nyhavn 1, 1051 Copenhagen K",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK SUP 61"
+        "value": "Invalid DK SUP 61",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Customer sent 010185-1234, DK500040044011"
+        "value": "Customer sent 010185-1234, DK500040044011",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK Customer sent 010185-1234, DK5000400440116243, Nyhavn 1, 1051 Copenhagen K"
+        "value": "Wrong prefix DK Customer sent 010185-1234, DK5000400440116243, Nyhavn 1, 1051 Copenhagen K",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK SUP edge 61"
+        "value": "Review DK SUP edge 61",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3161,7 +3771,7 @@
         "text": "Danish Support Ticket Scrubber analyzes Denmark-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3185,23 +3795,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid DK SMOKE 62"
+        "value": "Invalid DK SMOKE 62",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12"
+        "value": "{\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}"
+        "value": "Wrong prefix DK {\"country\":\"DK\",\"cvr\":\"12345674\",\"vat\":\"DK12345674\",\"iban\":\"DK5000400440116243\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review DK SMOKE edge 62"
+        "value": "Review DK SMOKE edge 62",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3213,7 +3833,7 @@
         "text": "Danish Integration Smoke Test Builder analyzes Denmark-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Danish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {

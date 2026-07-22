@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-iban-generator
+kind: tool
+module: validohub
+country: LV
+category: finance
+status: active
+name:
+  en: "Latvia IBAN Generator"
+summary:
+  en: "Generate LV IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "BANK0000435195001"
+    actions: [generate, validate, explain]
+related:
+  explicit: [latvia-bank-account-inspector, latvia-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvia IBAN Generator | ValidoHub"
+  description:
+    en: "Generate LV IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

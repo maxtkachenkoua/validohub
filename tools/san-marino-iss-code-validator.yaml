@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-iss-code-validator
+kind: tool
+module: validohub
+country: SM
+category: national-identifiers
+status: active
+name:
+  en: "Sammarinese ISS code Validator"
+summary:
+  en: "Validate ISS code shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "SM1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-coe-number-validator, san-marino-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese ISS code Validator | ValidoHub"
+  description:
+    en: "Validate ISS code shape, split date/control/body evidence, and prepare privacy-safe debugging output."

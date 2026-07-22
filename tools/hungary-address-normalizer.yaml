@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-address-normalizer
+kind: tool
+module: validohub
+country: HU
+category: address
+status: active
+name:
+  en: "Hungarian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Andrassy ut 1, 1051 Budapest"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-address-transliteration-normalizer, hungary-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

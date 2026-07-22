@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-support-ticket-scrubber
+kind: tool
+module: validohub
+country: IS
+category: privacy
+status: active
+name:
+  en: "Icelandic Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1201743399, IS140159260076545510730339, Laugavegur 1, 101 Reykjavik"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-integration-smoke-test-builder, iceland-kennitala-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

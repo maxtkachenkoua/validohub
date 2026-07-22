@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: AL
+category: transport
+status: active
+name:
+  en: "Albanian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "AA 123 AB WVWZZZ1JZXW000001 J12345678K"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-customs-declaration-helper, albania-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

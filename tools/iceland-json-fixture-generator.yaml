@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-json-fixture-generator
+kind: tool
+module: validohub
+country: IS
+category: developer-tools
+status: active
+name:
+  en: "Icelandic JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IS\",\"kennitala\":\"1201743399\",\"iban\":\"IS140159260076545510730339\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-regex-pack-helper, iceland-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

@@ -1,6 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Sweden outline">
-  <rect width="320" height="220" rx="18" fill="#f8fafc"/>
-  <path d="M86 48 L151 31 L222 55 L245 108 L219 169 L150 191 L84 158 L64 96 Z" fill="#006AA7" opacity=".14" stroke="#006AA7" stroke-width="8" stroke-linejoin="round"/>
-  <circle cx="160" cy="110" r="24" fill="#FECC00" opacity=".22"/>
-  <text x="160" y="118" text-anchor="middle" font-family="Inter, Arial" font-size="42" font-weight="900" fill="#0f172a">SE</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" role="img" aria-labelledby="title desc">
+  <title id="title">Sweden country outline</title>
+  <desc id="desc">Sweden country outline centered on canvas, derived from Natural Earth public-domain admin-0 geometry.</desc>
+  <rect width="360" height="260" rx="24" fill="#f8fafc"/>
+  <defs>
+    <linearGradient id="sweden-land" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ddeceb"/>
+      <stop offset="0.55" stop-color="#cfddfb"/>
+      <stop offset="1" stop-color="#fce4bb"/>
+    </linearGradient>
+    <filter id="sweden-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#0b554f" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g transform="translate(95.345, 43.675) scale(0.391537)" fill="url(#sweden-land)" stroke="#0f766e" stroke-width="4.342" stroke-linejoin="round" filter="url(#sweden-shadow)">
+    <g id="se">
+        <path  d="M445.232,329.52l1.693,1.563h3.173l1.746,3.354l0.477,5.748l-4.278,3.035v3.033l-3.017,4.158l-1.746,0.154l-2.378,3.994l0.155,3.838l4.124,3.035l-0.319,1.754l-1.582,2.396l-2.377,2.074l0.155,6.872l-3.647,1.279l-1.271,2.713h-1.747l-0.949-4.789l-3.969-6.084l3.26-5.455l0.225-13.477l2.248-1.236l0.545-7.709l6.405-9.172L445.232,329.52L445.232,329.52z"/>
+        <path d="M445.898,368.927l-1.824,1.443l0.917,2.118l1.616-1.573L445.898,368.927L445.898,368.927z"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#f59e0b" stroke-width="1.1" opacity="0.18">
+    <path d="M94 112 C130 98 172 104 214 94 C238 89 260 98 279 116"/>
+    <path d="M112 145 C148 132 188 136 224 126 C242 121 260 126 274 139"/>
+  </g>
+  <circle cx="180" cy="132" r="4" fill="#0b554f"/>
+  <text x="181" y="238" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="760" fill="#475569">Sweden</text>
 </svg>

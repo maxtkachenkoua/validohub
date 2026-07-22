@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-company-onboarding-auditor
+kind: tool
+module: validohub
+country: VA
+category: developer-tools
+status: active
+name:
+  en: "Vatican Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for Vatican entity code, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"VA\",\"entity\":\"VA-ENTITY-001\",\"iban\":\"VA59001123000000012345678\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-business-register-readiness-helper, vatican-city-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for Vatican entity code, VAT, address, banking, and official registry handoff readiness."

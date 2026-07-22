@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-payment-reference-helper
+kind: tool
+module: validohub
+country: CY
+category: finance
+status: active
+name:
+  en: "Cypriot SEPA reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "SEPA reference REF 2026-001 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-remittance-text-builder, cyprus-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot SEPA reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

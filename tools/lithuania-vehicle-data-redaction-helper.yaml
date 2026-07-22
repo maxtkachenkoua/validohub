@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: LT
+category: transport
+status: active
+name:
+  en: "Lithuanian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "ABC123 WVWZZZ1JZXW000001 38001010017"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-customs-declaration-helper, lithuania-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

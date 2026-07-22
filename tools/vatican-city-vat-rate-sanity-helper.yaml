@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: VA
+category: tax
+status: active
+name:
+  en: "Vatican VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "fiscal reference 20% base 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-vat-return-field-helper, vatican-city-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

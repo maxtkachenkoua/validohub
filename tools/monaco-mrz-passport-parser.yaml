@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-mrz-passport-parser
+kind: tool
+module: validohub
+country: MC
+category: national-identifiers
+status: active
+name:
+  en: "Monegasque MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<MCOSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567MCO8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-iban-validator, monaco-iban-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

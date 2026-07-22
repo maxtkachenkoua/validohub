@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-municipality-code-inspector
+kind: tool
+module: validohub
+country: CY
+category: address
+status: active
+name:
+  en: "Cypriot Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Ledras 1, 1010 Nicosia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-phone-number-validator, cyprus-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

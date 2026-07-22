@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: LT
+category: privacy
+status: active
+name:
+  en: "Lithuanian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "38001010017\\nGedimino pr. 1, LT-01103 Vilnius\\n+370 612 34567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-driving-licence-format-helper, lithuania-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

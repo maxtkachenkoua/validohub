@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: GR
+category: privacy
+status: active
+name:
+  en: "Greek GDPR / HDPA Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"GR\",\"afm\":\"123456789\",\"iban\":\"GR1601101250000000012300695\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-pii-masker, greece-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek GDPR / HDPA Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

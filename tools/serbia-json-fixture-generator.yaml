@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-json-fixture-generator
+kind: tool
+module: validohub
+country: RS
+category: developer-tools
+status: active
+name:
+  en: "Serbian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"RS\",\"pib\":\"100123456\",\"iban\":\"RS35260005601001611379\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-regex-pack-helper, serbia-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

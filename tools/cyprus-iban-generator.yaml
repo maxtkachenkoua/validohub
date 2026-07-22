@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-iban-generator
+kind: tool
+module: validohub
+country: CY
+category: finance
+status: active
+name:
+  en: "Cyprus IBAN Generator"
+summary:
+  en: "Generate CY IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "002001280000001200527600"
+    actions: [generate, validate, explain]
+related:
+  explicit: [cyprus-bank-account-inspector, cyprus-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cyprus IBAN Generator | ValidoHub"
+  description:
+    en: "Generate CY IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

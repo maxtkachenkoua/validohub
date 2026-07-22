@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-support-ticket-scrubber
+kind: tool
+module: validohub
+country: BG
+category: privacy
+status: active
+name:
+  en: "Bulgarian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 8001010008, BG80BNBG96611020345678, Vitosha Blvd 1, 1000 Sofia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-integration-smoke-test-builder, bulgaria-egn-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

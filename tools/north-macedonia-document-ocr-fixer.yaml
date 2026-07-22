@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-document-ocr-fixer
+kind: tool
+module: validohub
+country: MK
+category: documents
+status: active
+name:
+  en: "Macedonian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "0101980456789 MK4032013544513 MK07250120000058984 1000 Skopje"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-gdpr-redaction-helper, north-macedonia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-pii-masker
+kind: tool
+module: validohub
+country: RS
+category: privacy
+status: active
+name:
+  en: "Serbian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "0101980712345 +381 60 1234567 RS35260005601001611379"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-personal-data-fixture-generator, serbia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

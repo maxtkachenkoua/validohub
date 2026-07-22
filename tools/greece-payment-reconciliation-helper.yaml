@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: GR
+category: finance
+status: active
+name:
+  en: "Greek Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1.234,56 EUR; GR1601101250000000012300695; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-bank-statement-parser, greece-masked-iban-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: SI
+category: tax
+status: active
+name:
+  en: "Slovenian VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "davcna stevilka / DDV 20% base 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-vat-return-field-helper, slovenia-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

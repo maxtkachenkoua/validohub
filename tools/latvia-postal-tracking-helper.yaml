@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-postal-tracking-helper
+kind: tool
+module: validohub
+country: LV
+category: logistics
+status: active
+name:
+  en: "Latvian Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 LV-1050 Riga"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [latvia-data-quality-workbench, latvia-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvian Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

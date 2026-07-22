@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-vat-return-field-helper
+kind: tool
+module: validohub
+country: MK
+category: tax
+status: active
+name:
+  en: "Macedonian VAT Return Field Helper"
+summary:
+  en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "DDV / VAT; MK4032013544513; period 2026-07; 1.234,56 MKD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-invoice-number-helper, north-macedonia-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."

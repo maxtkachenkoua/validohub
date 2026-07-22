@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-regex-pack-helper
+kind: tool
+module: validohub
+country: LT
+category: developer-tools
+status: active
+name:
+  en: "Lithuanian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "asmens kodas company code pasto kodas  LT121000011101001000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-api-payload-auditor, lithuania-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

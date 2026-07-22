@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: montenegro-jmbg-social-insurance-helper
+kind: tool
+module: validohub
+country: ME
+category: national-identifiers
+status: active
+name:
+  en: "Montenegrin JMBG Helper"
+summary:
+  en: "Split JMBG evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.montenegro-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "0101980234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [montenegro-company-onboarding-auditor, montenegro-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Montenegrin JMBG Helper | ValidoHub"
+  description:
+    en: "Split JMBG evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

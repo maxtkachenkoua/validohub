@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-phone-number-validator
+kind: tool
+module: validohub
+country: HU
+category: address
+status: active
+name:
+  en: "Hungarian Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+36 30 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-phone-e164-formatter, hungary-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

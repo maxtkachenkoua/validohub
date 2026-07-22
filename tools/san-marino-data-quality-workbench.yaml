@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-data-quality-workbench
+kind: tool
+module: validohub
+country: SM
+category: developer-tools
+status: active
+name:
+  en: "Sammarinese Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SM\",\"coe\":\"SM12345\",\"iban\":\"SM86U0322509800000000270100\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-json-fixture-generator, san-marino-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

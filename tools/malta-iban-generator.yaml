@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-iban-generator
+kind: tool
+module: validohub
+country: MT
+category: finance
+status: active
+name:
+  en: "Malta IBAN Generator"
+summary:
+  en: "Generate MT IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "MALT011000012345MTLCAST001S"
+    actions: [generate, validate, explain]
+related:
+  explicit: [malta-bank-account-inspector, malta-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malta IBAN Generator | ValidoHub"
+  description:
+    en: "Generate MT IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

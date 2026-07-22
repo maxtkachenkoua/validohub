@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: GB
+category: tax
+status: active
+name:
+  en: "British Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "GB123456789 21/07/2026 1,234.56 GBP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-accounting-audit-trail-checklist-generator, united-kingdom-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

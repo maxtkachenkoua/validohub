@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MT
+slug: malta
+name:
+  en: Malta
+region: Europe
+languages:
+  - mt
+currency: EUR
+relatedCountries:
+  - IT
+  - CY
+  - GR

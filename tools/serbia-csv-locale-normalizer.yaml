@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-csv-locale-normalizer
+kind: tool
+module: validohub
+country: RS
+category: developer-tools
+status: active
+name:
+  en: "Serbian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Serbia decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1.234,56 RSD;21.07.2026;RS100123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-slug-normalizer, serbia-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Serbia decimal, date, postal, phone, tax, and banking fields."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-customs-declaration-helper
+kind: tool
+module: validohub
+country: CY
+category: government
+status: active
+name:
+  en: "Cypriot Customs Declaration Helper"
+summary:
+  en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "CY12345678L HS 8471 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-postal-tracking-helper, cyprus-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."

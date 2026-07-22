@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-slug-normalizer
+kind: tool
+module: validohub
+country: AD
+category: developer-tools
+status: active
+name:
+  en: "Andorran Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Andorra sample company Avinguda Meritxell 1, AD500 Andorra la Vella"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-document-ocr-fixer, andorra-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

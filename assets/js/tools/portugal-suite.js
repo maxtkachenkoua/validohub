@@ -13,23 +13,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "123456749"
+        "value": "123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "123456740"
+        "value": "Invalid 123456740",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "12345"
+        "value": "12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 123456749"
+        "value": "Wrong prefix PT 123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT ID edge 1"
+        "value": "Review PT ID edge 1",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -41,7 +51,7 @@
         "text": "Portuguese NIF Validator analyzes Portugal-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -65,23 +75,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PT123456749"
+        "value": "PT123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "PT123456740"
+        "value": "Invalid PT123456740",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PT12345"
+        "value": "PT12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ123456749"
+        "value": "Wrong prefix ZZ123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT ORG edge 2"
+        "value": "Review PT ORG edge 2",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -93,7 +113,7 @@
         "text": "Portuguese NIPC Validator analyzes Portugal-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -117,23 +137,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PT123456749"
+        "value": "PT123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ123456749"
+        "value": "Wrong prefix ZZ123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PT12345"
+        "value": "PT12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ123456749"
+        "value": "Wrong prefix ZZ123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT VAT edge 3"
+        "value": "Review PT VAT edge 3",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -145,7 +175,7 @@
         "text": "Portuguese VAT ID / PT Prefix Validator analyzes Portugal-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -169,23 +199,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PTPT123456749"
+        "value": "PTPT123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZPT123456749"
+        "value": "Wrong prefix ZZPT123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PTPT1234"
+        "value": "PTPT1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZPT123456749"
+        "value": "Wrong prefix ZZPT123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT EORI edge 4"
+        "value": "Review PT EORI edge 4",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -197,7 +237,7 @@
         "text": "Portuguese EORI / Customs Identifier Helper analyzes Portugal-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -221,23 +261,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "12345674901"
+        "value": "12345674901",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "12345674902"
+        "value": "Invalid 12345674902",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1234567"
+        "value": "1234567",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 12345674901"
+        "value": "Wrong prefix PT 12345674901",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT SOC edge 5"
+        "value": "Review PT SOC edge 5",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -249,7 +299,7 @@
         "text": "Portuguese NISS Helper analyzes Portugal-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -273,23 +323,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,57\"}"
+        "value": "Invalid {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,57\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT KYC edge 6"
+        "value": "Review PT KYC edge 6",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -301,7 +361,7 @@
         "text": "Portuguese Company Onboarding Auditor analyzes Portugal-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -325,23 +385,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PT123456749 PT123456749 Rua Augusta 100, 1100-053 Lisboa"
+        "value": "PT123456749 PT123456749 Rua Augusta 100, 1100-053 Lisboa",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "PT123456749 PT123456749 Rua Augusta 100, 1100-054 Lisboa"
+        "value": "Invalid PT123456749 PT123456749 Rua Augusta 100, 1100-054 Lisboa",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PT123456749 PT123456749 Rua Aug"
+        "value": "PT123456749 PT123456749 Rua Aug",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ123456749 PT123456749 Rua Augusta 100, 1100-053 Lisboa"
+        "value": "Wrong prefix ZZ123456749 PT123456749 Rua Augusta 100, 1100-053 Lisboa",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT REG edge 7"
+        "value": "Review PT REG edge 7",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -353,7 +423,7 @@
         "text": "Portuguese Registo Comercial Readiness Helper analyzes Portugal-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -377,23 +447,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "123456749"
+        "value": "123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT CARD 8"
+        "value": "Invalid PT CARD 8",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "12345"
+        "value": "12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 123456749"
+        "value": "Wrong prefix PT 123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT CARD edge 8"
+        "value": "Review PT CARD edge 8",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -405,7 +485,7 @@
         "text": "Portuguese ID Card Format Helper analyzes Portugal-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -429,23 +509,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<PRTPORTUGUESE<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "P<PRTPORTUGUESE<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT PASS 9"
+        "value": "Invalid PT PASS 9",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<PRTPORTUGUESE<<SAMPLE"
+        "value": "P<PRTPORTUGUESE<<SAMPLE",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT P<PRTPORTUGUESE<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "Wrong prefix PT P<PRTPORTUGUESE<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT PASS edge 9"
+        "value": "Review PT PASS edge 9",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -457,7 +547,7 @@
         "text": "Portuguese Passport Number Helper analyzes Portugal-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -481,23 +571,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<PRTSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567PRT8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "P<PRTSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567PRT8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT MRZ 10"
+        "value": "Invalid PT MRZ 10",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<PRTSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345"
+        "value": "P<PRTSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT P<PRTSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567PRT8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "Wrong prefix PT P<PRTSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567PRT8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT MRZ edge 10"
+        "value": "Review PT MRZ edge 10",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -509,7 +609,7 @@
         "text": "Portuguese MRZ / Passport Parser analyzes Portugal-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -533,23 +633,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PT50000201231234567490154"
+        "value": "PT50000201231234567490154",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ50000201231234567490154"
+        "value": "Wrong prefix ZZ50000201231234567490154",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PT500002012312"
+        "value": "PT500002012312",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ50000201231234567490154"
+        "value": "Wrong prefix ZZ50000201231234567490154",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT IBAN edge 11"
+        "value": "Review PT IBAN edge 11",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -561,7 +671,7 @@
         "text": "Portugal IBAN Validator analyzes Portugal-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -585,23 +695,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "000201231234567490154"
+        "value": "000201231234567490154",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Wrong prefix PT 000201231234567490154"
+        "value": "Wrong prefix PT 000201231234567490154",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "000201231234"
+        "value": "000201231234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Grouped valid sample",
-        "value": "0002 0123 1234 5674 9015 4"
+        "value": "0002 0123 1234 5674 9015 4",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT IBG edge 12"
+        "value": "Review PT IBG edge 12",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -613,7 +733,7 @@
         "text": "Portugal IBAN Generator analyzes Portugal-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -637,23 +757,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "0002 0123"
+        "value": "0002 0123",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT BANK 13"
+        "value": "Invalid PT BANK 13",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "0002 "
+        "value": "0002 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 0002 0123"
+        "value": "Wrong prefix PT 0002 0123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT BANK edge 13"
+        "value": "Review PT BANK edge 13",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -665,7 +795,7 @@
         "text": "Portuguese Domestic Bank Account Inspector analyzes Portugal-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -689,23 +819,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "ABCDPT2X"
+        "value": "ABCDPT2X",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZCDPT2X"
+        "value": "Wrong prefix ZZCDPT2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "ABCDP"
+        "value": "ABCDP",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZCDPT2X"
+        "value": "Wrong prefix ZZCDPT2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT BIC edge 14"
+        "value": "Review PT BIC edge 14",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -717,7 +857,7 @@
         "text": "Portuguese BIC / SWIFT Inspector analyzes Portugal-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -741,23 +881,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PT50000201231234567490154\\n1 234,56 EUR\\nInvoice 2026-001"
+        "value": "PT50000201231234567490154\\n1 234,56 EUR\\nInvoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT SEPA 15"
+        "value": "Invalid PT SEPA 15",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PT50000201231234567490154\\n1 234"
+        "value": "PT50000201231234567490154\\n1 234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ50000201231234567490154\\n1 234,56 EUR\\nInvoice 2026-001"
+        "value": "Wrong prefix ZZ50000201231234567490154\\n1 234,56 EUR\\nInvoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT SEPA edge 15"
+        "value": "Review PT SEPA edge 15",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -769,7 +919,7 @@
         "text": "Portuguese SEPA Transfer Helper analyzes Portugal-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -793,23 +943,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "MANDATE-2026-001 PT50000201231234567490154"
+        "value": "MANDATE-2026-001 PT50000201231234567490154",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT SDD 16"
+        "value": "Invalid PT SDD 16",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "MANDATE-2026-001 PT50000"
+        "value": "MANDATE-2026-001 PT50000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZNDATE-2026-001 PT50000201231234567490154"
+        "value": "Wrong prefix ZZNDATE-2026-001 PT50000201231234567490154",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT SDD edge 16"
+        "value": "Review PT SDD edge 16",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -821,7 +981,7 @@
         "text": "Portuguese SEPA Direct Debit Mandate Helper analyzes Portugal-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -845,23 +1005,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Multibanco REF 2026-001 1 234,56 EUR"
+        "value": "Multibanco REF 2026-001 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT PAY 17"
+        "value": "Invalid PT PAY 17",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Multibanco REF 2026-"
+        "value": "Multibanco REF 2026-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT Multibanco REF 2026-001 1 234,56 EUR"
+        "value": "Wrong prefix PT Multibanco REF 2026-001 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT PAY edge 17"
+        "value": "Review PT PAY edge 17",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -873,7 +1043,7 @@
         "text": "Portuguese Multibanco Reference Helper analyzes Portugal-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -897,23 +1067,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Invoice 2026-001 PT123456749 1 234,56 EUR"
+        "value": "Invoice 2026-001 PT123456749 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT REMIT 18"
+        "value": "Invalid PT REMIT 18",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Invoice 2026-001 PT1234"
+        "value": "Invoice 2026-001 PT1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT Invoice 2026-001 PT123456749 1 234,56 EUR"
+        "value": "Wrong prefix PT Invoice 2026-001 PT123456749 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT REMIT edge 18"
+        "value": "Review PT REMIT edge 18",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -925,7 +1105,7 @@
         "text": "Portuguese Remittance Text Builder analyzes Portugal-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -949,23 +1129,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21/07/2026; 1 234,56 EUR; PT50000201231234567490154; Invoice 2026-001"
+        "value": "21/07/2026; 1 234,56 EUR; PT50000201231234567490154; Invoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT RECON 19"
+        "value": "Invalid PT RECON 19",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21/07/2026; 1 234,56 EUR; PT5000020123"
+        "value": "21/07/2026; 1 234,56 EUR; PT5000020123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 21/07/2026; 1 234,56 EUR; PT50000201231234567490154; Invoice 2026-001"
+        "value": "Wrong prefix PT 21/07/2026; 1 234,56 EUR; PT50000201231234567490154; Invoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT RECON edge 19"
+        "value": "Review PT RECON edge 19",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -977,7 +1167,7 @@
         "text": "Portuguese Payment Reconciliation Helper analyzes Portugal-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1001,23 +1191,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21/07/2026; 1 234,56 EUR; PT50000201231234567490154; sample counterparty"
+        "value": "21/07/2026; 1 234,56 EUR; PT50000201231234567490154; sample counterparty",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT STMT 20"
+        "value": "Invalid PT STMT 20",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21/07/2026; 1 234,56 EUR; PT500002012312"
+        "value": "21/07/2026; 1 234,56 EUR; PT500002012312",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 21/07/2026; 1 234,56 EUR; PT50000201231234567490154; sample counterparty"
+        "value": "Wrong prefix PT 21/07/2026; 1 234,56 EUR; PT50000201231234567490154; sample counterparty",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT STMT edge 20"
+        "value": "Review PT STMT edge 20",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1029,7 +1229,7 @@
         "text": "Portuguese Bank Statement Parser analyzes Portugal-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1053,23 +1253,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PT50000201231234567490154"
+        "value": "PT50000201231234567490154",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ50000201231234567490154"
+        "value": "Wrong prefix ZZ50000201231234567490154",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PT500002012312"
+        "value": "PT500002012312",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ50000201231234567490154"
+        "value": "Wrong prefix ZZ50000201231234567490154",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT MASK edge 21"
+        "value": "Review PT MASK edge 21",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1081,7 +1291,7 @@
         "text": "Portuguese Masked IBAN Formatter analyzes Portugal-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1105,23 +1315,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1 234,56 EUR"
+        "value": "1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT CUR 22"
+        "value": "Invalid PT CUR 22",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1 234,5"
+        "value": "1 234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 1 234,56 EUR"
+        "value": "Wrong prefix PT 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT CUR edge 22"
+        "value": "Review PT CUR edge 22",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1133,7 +1353,7 @@
         "text": "Portuguese EUR Decimal Currency Formatter analyzes Portugal-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1157,23 +1377,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "IVA 20% base 1 234,56 EUR"
+        "value": "IVA 20% base 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT RATE 23"
+        "value": "Invalid PT RATE 23",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "IVA 20% base 1"
+        "value": "IVA 20% base 1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZA 20% base 1 234,56 EUR"
+        "value": "Wrong prefix ZZA 20% base 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT RATE edge 23"
+        "value": "Review PT RATE edge 23",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1185,7 +1415,7 @@
         "text": "Portuguese VAT Rate Sanity Helper analyzes Portugal-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1209,23 +1439,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "IVA; PT123456749; period 2026-07; 1 234,56 EUR"
+        "value": "IVA; PT123456749; period 2026-07; 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT RET 24"
+        "value": "Invalid PT RET 24",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "IVA; PT123456749; period 2"
+        "value": "IVA; PT123456749; period 2",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZA; PT123456749; period 2026-07; 1 234,56 EUR"
+        "value": "Wrong prefix ZZA; PT123456749; period 2026-07; 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT RET edge 24"
+        "value": "Review PT RET edge 24",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1237,7 +1477,7 @@
         "text": "Portuguese VAT Return Field Helper analyzes Portugal-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1261,23 +1501,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "INV-2026-0001 PT123456749"
+        "value": "INV-2026-0001 PT123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT INV 25"
+        "value": "Invalid PT INV 25",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "INV-2026-0001 "
+        "value": "INV-2026-0001 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZV-2026-0001 PT123456749"
+        "value": "Wrong prefix ZZV-2026-0001 PT123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT INV edge 25"
+        "value": "Review PT INV edge 25",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1289,7 +1539,7 @@
         "text": "Portuguese Invoice Number Helper analyzes Portugal-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1313,23 +1563,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT EINV 26"
+        "value": "Invalid PT EINV 26",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT EINV edge 26"
+        "value": "Review PT EINV edge 26",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1341,7 +1601,7 @@
         "text": "Portuguese SAF-T / e-Fatura Readiness Checker analyzes Portugal-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1365,23 +1625,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PT123456749 21/07/2026 1 234,56 EUR"
+        "value": "PT123456749 21/07/2026 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT TAX 27"
+        "value": "Invalid PT TAX 27",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PT123456749 21/07/20"
+        "value": "PT123456749 21/07/20",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ123456749 21/07/2026 1 234,56 EUR"
+        "value": "Wrong prefix ZZ123456749 21/07/2026 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT TAX edge 27"
+        "value": "Review PT TAX edge 27",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1393,7 +1663,7 @@
         "text": "Portuguese Tax Authority Handoff Helper analyzes Portugal-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1417,23 +1687,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "invoice 21/07/2026 1 234,56 EUR PT123456749"
+        "value": "invoice 21/07/2026 1 234,56 EUR PT123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT AUDIT 28"
+        "value": "Invalid PT AUDIT 28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "invoice 21/07/2026 1 234"
+        "value": "invoice 21/07/2026 1 234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT invoice 21/07/2026 1 234,56 EUR PT123456749"
+        "value": "Wrong prefix PT invoice 21/07/2026 1 234,56 EUR PT123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT AUDIT edge 28"
+        "value": "Review PT AUDIT edge 28",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1445,7 +1725,7 @@
         "text": "Portuguese Accounting Audit Trail Checklist Helper analyzes Portugal-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1469,23 +1749,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1000-001 Lisboa"
+        "value": "1000-001 Lisboa",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT POST 29"
+        "value": "Invalid PT POST 29",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1000-001 "
+        "value": "1000-001 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 1000-001 Lisboa"
+        "value": "Wrong prefix PT 1000-001 Lisboa",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT POST edge 29"
+        "value": "Review PT POST edge 29",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1497,7 +1787,7 @@
         "text": "Portuguese Postal Code Validator analyzes Portugal-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1521,23 +1811,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Rua Augusta 100, 1100-053 Lisboa"
+        "value": "Rua Augusta 100, 1100-053 Lisboa",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT ADDR 30"
+        "value": "Invalid PT ADDR 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Rua Augusta 100, 1"
+        "value": "Rua Augusta 100, 1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT Rua Augusta 100, 1100-053 Lisboa"
+        "value": "Wrong prefix PT Rua Augusta 100, 1100-053 Lisboa",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT ADDR edge 30"
+        "value": "Review PT ADDR edge 30",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1549,7 +1849,7 @@
         "text": "Portuguese Address Normalizer analyzes Portugal-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1573,23 +1873,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Rua Augusta 100, 1100-053 Lisboa"
+        "value": "Rua Augusta 100, 1100-053 Lisboa",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT ASCII 31"
+        "value": "Invalid PT ASCII 31",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Rua Augusta 100, 1"
+        "value": "Rua Augusta 100, 1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT Rua Augusta 100, 1100-053 Lisboa"
+        "value": "Wrong prefix PT Rua Augusta 100, 1100-053 Lisboa",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT ASCII edge 31"
+        "value": "Review PT ASCII edge 31",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1601,7 +1911,7 @@
         "text": "Portuguese Address Transliteration Normalizer analyzes Portugal-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1625,23 +1935,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1000-001 Lisboa"
+        "value": "1000-001 Lisboa",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT REGION 32"
+        "value": "Invalid PT REGION 32",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1000-001 "
+        "value": "1000-001 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 1000-001 Lisboa"
+        "value": "Wrong prefix PT 1000-001 Lisboa",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT REGION edge 32"
+        "value": "Review PT REGION edge 32",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1653,7 +1973,7 @@
         "text": "Portuguese Region / Province Code Mapper analyzes Portugal-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1677,23 +1997,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Rua Augusta 100, 1100-053 Lisboa"
+        "value": "Rua Augusta 100, 1100-053 Lisboa",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT MUNI 33"
+        "value": "Invalid PT MUNI 33",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Rua Augusta 100, 1"
+        "value": "Rua Augusta 100, 1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT Rua Augusta 100, 1100-053 Lisboa"
+        "value": "Wrong prefix PT Rua Augusta 100, 1100-053 Lisboa",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT MUNI edge 33"
+        "value": "Review PT MUNI edge 33",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1705,7 +2035,7 @@
         "text": "Portuguese Municipality Code Inspector analyzes Portugal-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1729,23 +2059,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+351 912 345 678"
+        "value": "+351 912 345 678",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT PHONE 34"
+        "value": "Invalid PT PHONE 34",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+351 912 "
+        "value": "+351 912 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT +351 912 345 678"
+        "value": "Wrong prefix PT +351 912 345 678",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT PHONE edge 34"
+        "value": "Review PT PHONE edge 34",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1757,7 +2097,7 @@
         "text": "Portuguese Phone Number Validator analyzes Portugal-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1781,23 +2121,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+351 912 345 678"
+        "value": "+351 912 345 678",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT E164 35"
+        "value": "Invalid PT E164 35",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+351 912 "
+        "value": "+351 912 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT +351 912 345 678"
+        "value": "Wrong prefix PT +351 912 345 678",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT E164 edge 35"
+        "value": "Review PT E164 edge 35",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1809,7 +2159,7 @@
         "text": "Portuguese Phone E.164 Formatter analyzes Portugal-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1833,23 +2183,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21/07/2026"
+        "value": "21/07/2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT DATE 36"
+        "value": "Invalid PT DATE 36",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21/07/"
+        "value": "21/07/",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 21/07/2026"
+        "value": "Wrong prefix PT 21/07/2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT DATE edge 36"
+        "value": "Review PT DATE edge 36",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1861,7 +2221,7 @@
         "text": "Portuguese Date Locale Formatter analyzes Portugal-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1885,23 +2245,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "id;amount;date;tax\\n1;1 234,56 EUR;21/07/2026;PT123456749"
+        "value": "id;amount;date;tax\\n1;1 234,56 EUR;21/07/2026;PT123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT CSV 37"
+        "value": "Invalid PT CSV 37",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "id;amount;date;tax\\n1;1 234,56 E"
+        "value": "id;amount;date;tax\\n1;1 234,56 E",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT id;amount;date;tax\\n1;1 234,56 EUR;21/07/2026;PT123456749"
+        "value": "Wrong prefix PT id;amount;date;tax\\n1;1 234,56 EUR;21/07/2026;PT123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT CSV edge 37"
+        "value": "Review PT CSV edge 37",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1913,7 +2283,7 @@
         "text": "Portuguese CSV Locale Normalizer analyzes Portugal-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1937,23 +2307,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Portugal sample company Rua Augusta 100, 1100-053 Lisboa"
+        "value": "Portugal sample company Rua Augusta 100, 1100-053 Lisboa",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT SLUG 38"
+        "value": "Invalid PT SLUG 38",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Portugal sample company Rua Aug"
+        "value": "Portugal sample company Rua Aug",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT Portugal sample company Rua Augusta 100, 1100-053 Lisboa"
+        "value": "Wrong prefix PT Portugal sample company Rua Augusta 100, 1100-053 Lisboa",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT SLUG edge 38"
+        "value": "Review PT SLUG edge 38",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1965,7 +2345,7 @@
         "text": "Portuguese Slug Normalizer analyzes Portugal-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1989,23 +2369,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "123456749 PT123456749 PT50000201231234567490154 1000-001 Lisboa"
+        "value": "123456749 PT123456749 PT50000201231234567490154 1000-001 Lisboa",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT OCR 39"
+        "value": "Invalid PT OCR 39",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "123456749 PT123456749 PT50000201231"
+        "value": "123456749 PT123456749 PT50000201231",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 123456749 PT123456749 PT50000201231234567490154 1000-001 Lisboa"
+        "value": "Wrong prefix PT 123456749 PT123456749 PT50000201231234567490154 1000-001 Lisboa",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT OCR edge 39"
+        "value": "Review PT OCR edge 39",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2017,7 +2407,7 @@
         "text": "Portuguese Document OCR Fixer analyzes Portugal-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2041,23 +2431,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT GDPR 40"
+        "value": "Invalid PT GDPR 40",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT GDPR edge 40"
+        "value": "Review PT GDPR edge 40",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2069,7 +2469,7 @@
         "text": "Portuguese GDPR / CNPD Redaction Helper analyzes Portugal-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2093,23 +2493,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "123456749 +351 912 345 678 PT50000201231234567490154"
+        "value": "123456749 +351 912 345 678 PT50000201231234567490154",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT PII 41"
+        "value": "Invalid PT PII 41",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "123456749 +351 912 345 678 PT"
+        "value": "123456749 +351 912 345 678 PT",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 123456749 +351 912 345 678 PT50000201231234567490154"
+        "value": "Wrong prefix PT 123456749 +351 912 345 678 PT50000201231234567490154",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT PII edge 41"
+        "value": "Review PT PII edge 41",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2121,7 +2531,7 @@
         "text": "Portuguese PII Masker analyzes Portugal-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2145,23 +2555,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "123456749\\nRua Augusta 100, 1100-053 Lisboa\\n+351 912 345 678"
+        "value": "123456749\\nRua Augusta 100, 1100-053 Lisboa\\n+351 912 345 678",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT FIX 42"
+        "value": "Invalid PT FIX 42",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "123456749\\nRua Augusta 100, 1100-0"
+        "value": "123456749\\nRua Augusta 100, 1100-0",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 123456749\\nRua Augusta 100, 1100-053 Lisboa\\n+351 912 345 678"
+        "value": "Wrong prefix PT 123456749\\nRua Augusta 100, 1100-053 Lisboa\\n+351 912 345 678",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT FIX edge 42"
+        "value": "Review PT FIX edge 42",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2173,7 +2593,7 @@
         "text": "Portuguese Personal Data Fixture Helper analyzes Portugal-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2197,23 +2617,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "123456749 DL 2026"
+        "value": "123456749 DL 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT DL 43"
+        "value": "Invalid PT DL 43",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "123456749 "
+        "value": "123456749 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 123456749 DL 2026"
+        "value": "Wrong prefix PT 123456749 DL 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT DL edge 43"
+        "value": "Review PT DL edge 43",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2225,7 +2655,7 @@
         "text": "Portuguese Driving Licence Format Helper analyzes Portugal-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2249,23 +2679,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PT PERMIT 2026 123456749"
+        "value": "PT PERMIT 2026 123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT PERMIT 44"
+        "value": "Invalid PT PERMIT 44",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PT PERMIT 2026"
+        "value": "PT PERMIT 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ PERMIT 2026 123456749"
+        "value": "Wrong prefix ZZ PERMIT 2026 123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT PERMIT edge 44"
+        "value": "Review PT PERMIT edge 44",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2277,7 +2717,7 @@
         "text": "Portuguese Residence Permit Format Helper analyzes Portugal-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2301,23 +2741,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "123456749 HEALTH 2026"
+        "value": "123456749 HEALTH 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT HEALTH 45"
+        "value": "Invalid PT HEALTH 45",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "123456749 HE"
+        "value": "123456749 HE",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 123456749 HEALTH 2026"
+        "value": "Wrong prefix PT 123456749 HEALTH 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT HEALTH edge 45"
+        "value": "Review PT HEALTH edge 45",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2329,7 +2779,7 @@
         "text": "Portuguese Health Card Format Helper analyzes Portugal-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2353,23 +2803,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "12-AA-34"
+        "value": "12-AA-34",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "12-AA-35"
+        "value": "Invalid 12-AA-35",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "12-AA"
+        "value": "12-AA",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 12-AA-34"
+        "value": "Wrong prefix PT 12-AA-34",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT PLATE edge 46"
+        "value": "Review PT PLATE edge 46",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2381,7 +2841,7 @@
         "text": "Portuguese Vehicle Plate Inspector analyzes Portugal-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2405,23 +2865,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "WVWZZZ1JZXW000001"
+        "value": "WVWZZZ1JZXW000001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "WVWZZZ1JZXW000002"
+        "value": "Invalid WVWZZZ1JZXW000002",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "WVWZZZ1JZX"
+        "value": "WVWZZZ1JZX",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZWZZZ1JZXW000001"
+        "value": "Wrong prefix ZZWZZZ1JZXW000001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT VIN edge 47"
+        "value": "Review PT VIN edge 47",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2433,7 +2903,7 @@
         "text": "Portuguese VIN Validator analyzes Portugal-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2457,23 +2927,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "12-AA-34 WVWZZZ1JZXW000001 123456749"
+        "value": "12-AA-34 WVWZZZ1JZXW000001 123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT VEH 48"
+        "value": "Invalid PT VEH 48",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "12-AA-34 WVWZZZ1JZXW"
+        "value": "12-AA-34 WVWZZZ1JZXW",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 12-AA-34 WVWZZZ1JZXW000001 123456749"
+        "value": "Wrong prefix PT 12-AA-34 WVWZZZ1JZXW000001 123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT VEH edge 48"
+        "value": "Review PT VEH edge 48",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2485,7 +2965,7 @@
         "text": "Portuguese Vehicle Data Redaction Helper analyzes Portugal-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2509,23 +2989,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PT123456749 HS 8471 1 234,56 EUR"
+        "value": "PT123456749 HS 8471 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT CUSTOMS 49"
+        "value": "Invalid PT CUSTOMS 49",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PT123456749 HS 847"
+        "value": "PT123456749 HS 847",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ123456749 HS 8471 1 234,56 EUR"
+        "value": "Wrong prefix ZZ123456749 HS 8471 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT CUSTOMS edge 49"
+        "value": "Review PT CUSTOMS edge 49",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2537,7 +3027,7 @@
         "text": "Portuguese Customs Declaration Helper analyzes Portugal-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2561,23 +3051,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "TRACK 2026 1000-001 Lisboa"
+        "value": "TRACK 2026 1000-001 Lisboa",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT TRACK 50"
+        "value": "Invalid PT TRACK 50",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "TRACK 2026 1000"
+        "value": "TRACK 2026 1000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZACK 2026 1000-001 Lisboa"
+        "value": "Wrong prefix ZZACK 2026 1000-001 Lisboa",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT TRACK edge 50"
+        "value": "Review PT TRACK edge 50",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2589,7 +3089,7 @@
         "text": "Portuguese Postal Tracking Helper analyzes Portugal-specific logistics evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2613,23 +3113,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT DQ 51"
+        "value": "Invalid PT DQ 51",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT DQ edge 51"
+        "value": "Review PT DQ edge 51",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2641,7 +3151,7 @@
         "text": "Portuguese Data Quality Workbench analyzes Portugal-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2665,23 +3175,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT JSON 52"
+        "value": "Invalid PT JSON 52",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT JSON edge 52"
+        "value": "Review PT JSON edge 52",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2693,7 +3213,7 @@
         "text": "Portuguese JSON Fixture Helper analyzes Portugal-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2717,23 +3237,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "NIF NIPC codigo postal  PT50000201231234567490154"
+        "value": "NIF NIPC codigo postal  PT50000201231234567490154",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT REGEX 53"
+        "value": "Invalid PT REGEX 53",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "NIF NIPC codigo postal  PT5"
+        "value": "NIF NIPC codigo postal  PT5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZF NIPC codigo postal  PT50000201231234567490154"
+        "value": "Wrong prefix ZZF NIPC codigo postal  PT50000201231234567490154",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT REGEX edge 53"
+        "value": "Review PT REGEX edge 53",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2745,7 +3275,7 @@
         "text": "Portuguese Regex Pack Helper analyzes Portugal-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2769,23 +3299,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT API 54"
+        "value": "Invalid PT API 54",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT API edge 54"
+        "value": "Review PT API edge 54",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2797,7 +3337,7 @@
         "text": "Portuguese API Payload Auditor analyzes Portugal-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2821,23 +3361,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "tax=PT123456749&postal=1000-001 Lisboa&phone=+351 912 345 678"
+        "value": "tax=PT123456749&postal=1000-001 Lisboa&phone=+351 912 345 678",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT FORM 55"
+        "value": "Invalid PT FORM 55",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "tax=PT123456749&postal=1000-001 Li"
+        "value": "tax=PT123456749&postal=1000-001 Li",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT tax=PT123456749&postal=1000-001 Lisboa&phone=+351 912 345 678"
+        "value": "Wrong prefix PT tax=PT123456749&postal=1000-001 Lisboa&phone=+351 912 345 678",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT FORM edge 55"
+        "value": "Review PT FORM edge 55",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2849,7 +3399,7 @@
         "text": "Portuguese Form Field Auditor analyzes Portugal-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2873,23 +3423,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1 234,56 EUR"
+        "value": "1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT NUM 56"
+        "value": "Invalid PT NUM 56",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1 234,5"
+        "value": "1 234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 1 234,56 EUR"
+        "value": "Wrong prefix PT 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT NUM edge 56"
+        "value": "Review PT NUM edge 56",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2901,7 +3461,7 @@
         "text": "Portuguese Locale Number Parser analyzes Portugal-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2925,23 +3485,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21/07/2026 week 30"
+        "value": "21/07/2026 week 30",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT CAL 57"
+        "value": "Invalid PT CAL 57",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21/07/2026"
+        "value": "21/07/2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT 21/07/2026 week 30"
+        "value": "Wrong prefix PT 21/07/2026 week 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT CAL edge 57"
+        "value": "Review PT CAL edge 57",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2953,7 +3523,7 @@
         "text": "Portuguese Calendar Week Helper analyzes Portugal-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2977,23 +3547,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Portugal Sample Holding Ltd PT123456749"
+        "value": "Portugal Sample Holding Ltd PT123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Portugal Sample Holding Ltd PT123456740"
+        "value": "Invalid Portugal Sample Holding Ltd PT123456740",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Portugal Sample Holdin"
+        "value": "Portugal Sample Holdin",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT Portugal Sample Holding Ltd PT123456749"
+        "value": "Wrong prefix PT Portugal Sample Holding Ltd PT123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT SUFFIX edge 58"
+        "value": "Review PT SUFFIX edge 58",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3005,7 +3585,7 @@
         "text": "Portuguese Company Suffix Normalizer analyzes Portugal-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3029,23 +3609,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PT123456749 PO-2026-001 PT123456749"
+        "value": "PT123456749 PO-2026-001 PT123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT PROC 59"
+        "value": "Invalid PT PROC 59",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PT123456749 PO-2026-"
+        "value": "PT123456749 PO-2026-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ123456749 PO-2026-001 PT123456749"
+        "value": "Wrong prefix ZZ123456749 PO-2026-001 PT123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT PROC edge 59"
+        "value": "Review PT PROC edge 59",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3057,7 +3647,7 @@
         "text": "Portuguese Procurement Identifier Helper analyzes Portugal-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3081,23 +3671,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "NIF input, codigo postal input, amount 1 234,56 EUR"
+        "value": "NIF input, codigo postal input, amount 1 234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT COPY 60"
+        "value": "Invalid PT COPY 60",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "NIF input, codigo postal inpu"
+        "value": "NIF input, codigo postal inpu",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZF input, codigo postal input, amount 1 234,56 EUR"
+        "value": "Wrong prefix ZZF input, codigo postal input, amount 1 234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT COPY edge 60"
+        "value": "Review PT COPY edge 60",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3109,7 +3709,7 @@
         "text": "Portuguese Locale Copy Checker analyzes Portugal-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3133,23 +3733,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Customer sent 123456749, PT50000201231234567490154, Rua Augusta 100, 1100-053 Lisboa"
+        "value": "Customer sent 123456749, PT50000201231234567490154, Rua Augusta 100, 1100-053 Lisboa",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT SUP 61"
+        "value": "Invalid PT SUP 61",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Customer sent 123456749, PT50000201231234567490"
+        "value": "Customer sent 123456749, PT50000201231234567490",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT Customer sent 123456749, PT50000201231234567490154, Rua Augusta 100, 1100-053 Lisboa"
+        "value": "Wrong prefix PT Customer sent 123456749, PT50000201231234567490154, Rua Augusta 100, 1100-053 Lisboa",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT SUP edge 61"
+        "value": "Review PT SUP edge 61",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3161,7 +3771,7 @@
         "text": "Portuguese Support Ticket Scrubber analyzes Portugal-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3185,23 +3795,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid PT SMOKE 62"
+        "value": "Invalid PT SMOKE 62",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000"
+        "value": "{\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}"
+        "value": "Wrong prefix PT {\"country\":\"PT\",\"nif\":\"123456749\",\"iban\":\"PT50000201231234567490154\",\"amount\":\"1 234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review PT SMOKE edge 62"
+        "value": "Review PT SMOKE edge 62",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3213,7 +3833,7 @@
         "text": "Portuguese Integration Smoke Test Builder analyzes Portugal-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Portuguese parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {

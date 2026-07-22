@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: SI
+category: government
+status: active
+name:
+  en: "Slovenian AJPES Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated AJPES lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "1234567000 SI12345678 Slovenska cesta 1, 1000 Ljubljana"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-id-card-format-helper, slovenia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian AJPES Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated AJPES lookup or company registry workflow."

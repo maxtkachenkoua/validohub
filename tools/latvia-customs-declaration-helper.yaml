@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-customs-declaration-helper
+kind: tool
+module: validohub
+country: LV
+category: government
+status: active
+name:
+  en: "Latvian Customs Declaration Helper"
+summary:
+  en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "LV40003000000 HS 8471 1 234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [latvia-postal-tracking-helper, latvia-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvian Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."

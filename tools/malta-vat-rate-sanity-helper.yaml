@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: MT
+category: tax
+status: active
+name:
+  en: "Maltese VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "VAT 20% base 1,234.56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-vat-return-field-helper, malta-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

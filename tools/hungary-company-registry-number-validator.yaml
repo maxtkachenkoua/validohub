@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-company-registry-number-validator
+kind: tool
+module: validohub
+country: HU
+category: national-identifiers
+status: active
+name:
+  en: "Hungarian company registry number Validator"
+summary:
+  en: "Inspect company registry number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "01-09-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-vat-id-validator, hungary-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian company registry number Validator | ValidoHub"
+  description:
+    en: "Inspect company registry number structure, registry-style prefixes, control digits, and official lookup boundaries."

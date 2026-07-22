@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: GR
+category: address
+status: active
+name:
+  en: "Greek Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Ermou 1, 105 57 Athens"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-region-code-mapper, greece-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

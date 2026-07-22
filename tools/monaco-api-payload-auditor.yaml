@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-api-payload-auditor
+kind: tool
+module: validohub
+country: MC
+category: developer-tools
+status: active
+name:
+  en: "Monegasque API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MC\",\"rci\":\"22S12345\",\"iban\":\"MC5811222000010123456789030\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-form-field-auditor, monaco-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

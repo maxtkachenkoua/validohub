@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Andorra outline">
+  <rect width="320" height="220" rx="18" fill="#f8fafc"/>
+  <path d="M86 48 L151 31 L222 55 L245 108 L219 169 L150 191 L84 158 L64 96 Z" fill="#10069F" opacity=".14" stroke="#10069F" stroke-width="8" stroke-linejoin="round"/>
+  <circle cx="160" cy="110" r="24" fill="#FEDD00" opacity=".22"/>
+  <text x="160" y="118" text-anchor="middle" font-family="Inter, Arial" font-size="42" font-weight="900" fill="#0f172a">AD</text>
+</svg>

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-document-ocr-fixer
+kind: tool
+module: validohub
+country: AL
+category: documents
+status: active
+name:
+  en: "Albanian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "J12345678K AL L12345678A AL47212110090000000235698741 1001 Tirana"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-gdpr-redaction-helper, albania-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

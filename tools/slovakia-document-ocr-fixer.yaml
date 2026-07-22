@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-document-ocr-fixer
+kind: tool
+module: validohub
+country: SK
+category: documents
+status: active
+name:
+  en: "Slovak Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "800101/0008 SK2020312297 SK3112000000198742637541 811 01 Bratislava"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-gdpr-redaction-helper, slovakia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

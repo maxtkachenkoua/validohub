@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-data-quality-workbench
+kind: tool
+module: validohub
+country: UA
+category: developer-tools
+status: active
+name:
+  en: "Ukrainian Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"UA\",\"rnokpp\":\"1234567890\",\"edrpou\":\"12345678\",\"iban\":\"UA213223130000026007233566001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-json-fixture-generator, ukraine-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

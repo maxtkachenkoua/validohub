@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-asmens-kodas-social-insurance-helper
+kind: tool
+module: validohub
+country: LT
+category: national-identifiers
+status: active
+name:
+  en: "Lithuanian asmens kodas Helper"
+summary:
+  en: "Split asmens kodas evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "38001010017"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-company-onboarding-auditor, lithuania-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian asmens kodas Helper | ValidoHub"
+  description:
+    en: "Split asmens kodas evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

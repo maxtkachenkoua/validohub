@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-locale-number-parser
+kind: tool
+module: validohub
+country: MC
+category: localization
+status: active
+name:
+  en: "Monegasque Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Monaco."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1 234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-calendar-week-helper, monaco-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Monaco."

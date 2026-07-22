@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: moldova-pii-masker
+kind: tool
+module: validohub
+country: MD
+category: privacy
+status: active
+name:
+  en: "Moldovan PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.moldova-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "2000010101234 +373 69 123 456 MD24AG000225100013104168"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [moldova-personal-data-fixture-generator, moldova-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moldovan PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

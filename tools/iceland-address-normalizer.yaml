@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-address-normalizer
+kind: tool
+module: validohub
+country: IS
+category: address
+status: active
+name:
+  en: "Icelandic Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Laugavegur 1, 101 Reykjavik"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-address-transliteration-normalizer, iceland-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

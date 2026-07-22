@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-pii-masker
+kind: tool
+module: validohub
+country: SI
+category: privacy
+status: active
+name:
+  en: "Slovenian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "0101980500123 +386 40 123 456 SI56263300012039086"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-personal-data-fixture-generator, slovenia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

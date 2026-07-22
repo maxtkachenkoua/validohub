@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-iban-validator
+kind: tool
+module: validohub
+country: HU
+category: finance
+status: active
+name:
+  en: "Hungary IBAN Validator"
+summary:
+  en: "Validate HU IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "HU42117730161111101800000000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-iban-generator, hungary-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungary IBAN Validator | ValidoHub"
+  description:
+    en: "Validate HU IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

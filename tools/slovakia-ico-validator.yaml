@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-ico-validator
+kind: tool
+module: validohub
+country: SK
+category: national-identifiers
+status: active
+name:
+  en: "Slovak ICO Validator"
+summary:
+  en: "Inspect ICO structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "31331131"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-vat-id-validator, slovakia-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak ICO Validator | ValidoHub"
+  description:
+    en: "Inspect ICO structure, registry-style prefixes, control digits, and official lookup boundaries."

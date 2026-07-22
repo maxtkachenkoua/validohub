@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: HU
+category: transport
+status: active
+name:
+  en: "Hungarian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "ABC-123 WVWZZZ1JZXW000001 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-customs-declaration-helper, hungary-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

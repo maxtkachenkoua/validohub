@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-vat-return-field-helper
+kind: tool
+module: validohub
+country: BA
+category: tax
+status: active
+name:
+  en: "Bosnian VAT Return Field Helper"
+summary:
+  en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "PDV; BA4200123450006; period 2026-07; 1.234,56 BAM"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-invoice-number-helper, bosnia-and-herzegovina-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-csv-locale-normalizer
+kind: tool
+module: validohub
+country: SM
+category: developer-tools
+status: active
+name:
+  en: "Sammarinese CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for San Marino decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1.234,56 EUR;21/07/2026;SM12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-slug-normalizer, san-marino-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for San Marino decimal, date, postal, phone, tax, and banking fields."

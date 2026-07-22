@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: AD
+category: transport
+status: active
+name:
+  en: "Andorran Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "A1234 WVWZZZ1JZXW000001 A123456Z"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-customs-declaration-helper, andorra-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-company-suffix-normalizer
+kind: tool
+module: validohub
+country: BA
+category: developer-tools
+status: active
+name:
+  en: "Bosnian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Bosnia and Herzegovina Sample Holding Ltd 4200123450006"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-procurement-identifier-helper, bosnia-and-herzegovina-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

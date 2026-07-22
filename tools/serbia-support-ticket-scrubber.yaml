@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: RS
+category: privacy
+status: active
+name:
+  en: "Serbian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 0101980712345, RS35260005601001611379, Knez Mihailova 1, 11000 Belgrade"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-integration-smoke-test-builder, serbia-jmbg-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

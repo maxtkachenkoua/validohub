@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-vat-id-validator
+kind: tool
+module: validohub
+country: MK
+category: national-identifiers
+status: active
+name:
+  en: "Macedonian VAT ID / MK Prefix Validator"
+summary:
+  en: "Normalize MK VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "MK4032013544513"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-eori-validator, north-macedonia-embg-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian VAT ID / MK Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize MK VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-postal-code-validator
+kind: tool
+module: validohub
+country: SM
+category: address
+status: active
+name:
+  en: "Sammarinese Postal Code Validator"
+summary:
+  en: "Validate codice postale shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "47890 San Marino"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-address-normalizer, san-marino-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate codice postale shape, split area/delivery hints, and preserve official postal lookup boundaries."

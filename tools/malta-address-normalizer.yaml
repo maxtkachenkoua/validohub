@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-address-normalizer
+kind: tool
+module: validohub
+country: MT
+category: address
+status: active
+name:
+  en: "Maltese Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Republic Street 1, VLT 1111 Valletta"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-address-transliteration-normalizer, malta-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

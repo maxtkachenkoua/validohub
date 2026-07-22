@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-residence-permit-format-helper
+kind: tool
+module: validohub
+country: CY
+category: documents
+status: active
+name:
+  en: "Cypriot Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "CY PERMIT 2026 1234567L"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-health-card-format-helper, cyprus-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

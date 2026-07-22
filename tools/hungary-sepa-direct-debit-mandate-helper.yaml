@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-sepa-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: HU
+category: finance
+status: active
+name:
+  en: "Hungarian SEPA Direct Debit Mandate Helper"
+summary:
+  en: "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SDD input"
+        required: true
+        placeholder:
+          en: "MANDATE-2026-001 HU42117730161111101800000000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-payment-reference-helper, hungary-remittance-text-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian SEPA Direct Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-masked-iban-formatter
+kind: tool
+module: validohub
+country: LI
+category: finance
+status: active
+name:
+  en: "Liechtenstein Masked IBAN Formatter"
+summary:
+  en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "LI21088100002324013AA"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-currency-decimal-formatter, liechtenstein-vat-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein Masked IBAN Formatter | ValidoHub"
+  description:
+    en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."

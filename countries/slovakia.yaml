@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SK
+slug: slovakia
+name:
+  en: Slovakia
+region: Europe
+languages:
+  - sk
+currency: EUR
+relatedCountries:
+  - CZ
+  - AT
+  - HU

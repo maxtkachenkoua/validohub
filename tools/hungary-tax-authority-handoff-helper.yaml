@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: HU
+category: tax
+status: active
+name:
+  en: "Hungarian Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "HU12345678 2026.07.21 1 234,56 HUF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-accounting-audit-trail-checklist-generator, hungary-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

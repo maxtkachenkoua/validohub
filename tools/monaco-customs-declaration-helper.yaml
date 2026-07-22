@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-customs-declaration-helper
+kind: tool
+module: validohub
+country: MC
+category: government
+status: active
+name:
+  en: "Monegasque Customs Declaration Helper"
+summary:
+  en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "FR12345678901 HS 8471 1 234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-postal-tracking-helper, monaco-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."

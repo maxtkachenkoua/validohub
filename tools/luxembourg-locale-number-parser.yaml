@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-locale-number-parser
+kind: tool
+module: validohub
+country: LU
+category: localization
+status: active
+name:
+  en: "Luxembourgish Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Luxembourg."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1 234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-calendar-week-helper, luxembourg-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Luxembourg."

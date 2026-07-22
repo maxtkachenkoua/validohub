@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-procurement-identifier-helper
+kind: tool
+module: validohub
+country: SM
+category: government
+status: active
+name:
+  en: "Sammarinese Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "SM12345 PO-2026-001 SM12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-accessibility-locale-copy-checker, san-marino-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

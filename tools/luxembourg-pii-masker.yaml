@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-pii-masker
+kind: tool
+module: validohub
+country: LU
+category: privacy
+status: active
+name:
+  en: "Luxembourgish PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1980010101234 +352 621 123 456 LU280019400644750000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-personal-data-fixture-generator, luxembourg-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

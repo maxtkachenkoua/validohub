@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-calendar-week-helper
+kind: tool
+module: validohub
+country: RS
+category: localization
+status: active
+name:
+  en: "Serbian Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "21.07.2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-company-suffix-normalizer, serbia-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

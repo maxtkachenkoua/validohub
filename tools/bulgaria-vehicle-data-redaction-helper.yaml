@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: BG
+category: transport
+status: active
+name:
+  en: "Bulgarian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "CB1234AB WVWZZZ1JZXW000001 8001010008"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-customs-declaration-helper, bulgaria-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

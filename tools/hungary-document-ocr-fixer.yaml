@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-document-ocr-fixer
+kind: tool
+module: validohub
+country: HU
+category: documents
+status: active
+name:
+  en: "Hungarian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "123456789 HU12345678 HU42117730161111101800000000 1051 Budapest"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-gdpr-redaction-helper, hungary-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

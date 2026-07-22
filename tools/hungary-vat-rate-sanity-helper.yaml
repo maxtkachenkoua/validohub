@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: HU
+category: tax
+status: active
+name:
+  en: "Hungarian VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "adoszam / VAT 20% base 1 234,56 HUF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-vat-return-field-helper, hungary-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

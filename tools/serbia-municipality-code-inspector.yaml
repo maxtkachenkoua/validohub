@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-municipality-code-inspector
+kind: tool
+module: validohub
+country: RS
+category: address
+status: active
+name:
+  en: "Serbian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Knez Mihailova 1, 11000 Belgrade"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-phone-number-validator, serbia-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-form-field-auditor
+kind: tool
+module: validohub
+country: LV
+category: developer-tools
+status: active
+name:
+  en: "Latvian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=LV40003000000&postal=LV-1050 Riga&phone=+371 29 123 456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [latvia-locale-number-parser, latvia-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

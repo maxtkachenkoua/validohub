@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-iban-generator
+kind: tool
+module: validohub
+country: AL
+category: finance
+status: active
+name:
+  en: "Albania IBAN Generator"
+summary:
+  en: "Generate AL IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "212110090000000235698741"
+    actions: [generate, validate, explain]
+related:
+  explicit: [albania-bank-account-inspector, albania-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albania IBAN Generator | ValidoHub"
+  description:
+    en: "Generate AL IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

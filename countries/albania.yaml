@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: AL
+slug: albania
+name:
+  en: Albania
+region: Europe
+languages:
+  - sq
+currency: ALL
+relatedCountries:
+  - ME
+  - MK
+  - GR

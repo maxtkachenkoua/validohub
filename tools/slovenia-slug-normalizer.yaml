@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-slug-normalizer
+kind: tool
+module: validohub
+country: SI
+category: developer-tools
+status: active
+name:
+  en: "Slovenian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Slovenia sample company Slovenska cesta 1, 1000 Ljubljana"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-document-ocr-fixer, slovenia-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

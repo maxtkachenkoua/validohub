@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-jmbg-validator
+kind: tool
+module: validohub
+country: BA
+category: national-identifiers
+status: active
+name:
+  en: "Bosnian JMBG Validator"
+summary:
+  en: "Validate JMBG shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "0101980123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-jib-validator, bosnia-and-herzegovina-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian JMBG Validator | ValidoHub"
+  description:
+    en: "Validate JMBG shape, split date/control/body evidence, and prepare privacy-safe debugging output."

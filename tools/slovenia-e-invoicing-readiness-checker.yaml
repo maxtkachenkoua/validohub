@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: SI
+category: tax
+status: active
+name:
+  en: "Slovenian eRacun / DDV invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SI\",\"ddv\":\"SI12345678\",\"iban\":\"SI56263300012039086\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-tax-authority-handoff-helper, slovenia-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian eRacun / DDV invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

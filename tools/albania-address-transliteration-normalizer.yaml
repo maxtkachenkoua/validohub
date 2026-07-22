@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: AL
+category: address
+status: active
+name:
+  en: "Albanian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Bulevardi Deshmoret e Kombit 1, 1001 Tirana"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-region-code-mapper, albania-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

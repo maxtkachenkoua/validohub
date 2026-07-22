@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: IS
+category: address
+status: active
+name:
+  en: "Icelandic Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Laugavegur 1, 101 Reykjavik"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-region-code-mapper, iceland-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

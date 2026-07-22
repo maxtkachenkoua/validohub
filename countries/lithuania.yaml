@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: LT
+slug: lithuania
+name:
+  en: Lithuania
+region: Europe
+languages:
+  - lt
+currency: EUR
+relatedCountries:
+  - LV
+  - PL
+  - EE

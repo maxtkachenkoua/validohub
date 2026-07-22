@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-eori-validator
+kind: tool
+module: validohub
+country: LV
+category: national-identifiers
+status: active
+name:
+  en: "Latvian EORI / Customs Identifier Helper"
+summary:
+  en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EORI input"
+        required: true
+        placeholder:
+          en: "LV40003000000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [latvia-personal-code-social-insurance-helper, latvia-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvian EORI / Customs Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."

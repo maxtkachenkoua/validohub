@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MD
+slug: moldova
+name:
+  en: Moldova
+region: Europe
+languages:
+  - ro
+currency: MDL
+relatedCountries:
+  - RO
+  - UA
+  - BG

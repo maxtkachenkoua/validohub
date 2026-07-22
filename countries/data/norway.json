@@ -10,7 +10,7 @@
       "y": 34,
       "label": "Norway"
     },
-    "source": "Simplified generated geographic reference for ValidoHub country navigation"
+    "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
   },
   "catalog": {
     "id": "norway",
@@ -121,7 +121,13 @@
     "coordinates": {
       "x": 52,
       "y": 34
-    }
+    },
+    "searchHints": [
+      "Fodselsnummer",
+      "IBAN",
+      "MVA",
+      "EHF / Peppol"
+    ]
   },
   "hub": {
     "flag": "🇳🇴",
@@ -160,7 +166,10 @@
       "rtlSupport": "No",
       "unicodeLocale": "nb-NO",
       "cldrLocale": "nb_NO",
-      "metricVsImperial": "Metric-first"
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "230V",
+      "frequency": "50Hz"
     },
     "visualIdentity": {
       "countryId": "norway",
@@ -285,6 +294,34 @@
         "text": "Fodselsnummer, Organisasjonsnummer, postnummer, phone, address, and IBAN need local labels.",
         "status": "available"
       }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "EU-wide emergency number; local alternatives may also exist."
+      }
+    ],
+    "searchHints": [
+      "Fodselsnummer",
+      "IBAN",
+      "MVA",
+      "EHF / Peppol"
     ],
     "routes": [
       {

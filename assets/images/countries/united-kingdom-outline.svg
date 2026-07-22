@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" role="img" aria-labelledby="title desc">
+  <title id="title">United Kingdom country outline</title>
+  <desc id="desc">United Kingdom country outline centered on canvas, derived from Natural Earth public-domain admin-0 geometry.</desc>
+  <rect width="360" height="260" rx="24" fill="#f8fafc"/>
+  <defs>
+    <linearGradient id="united-kingdom-land" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ddeceb"/>
+      <stop offset="0.55" stop-color="#cfddfb"/>
+      <stop offset="1" stop-color="#fce4bb"/>
+    </linearGradient>
+    <filter id="united-kingdom-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#0b554f" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g transform="translate(89.970, 44.920) scale(0.457047)" fill="url(#united-kingdom-land)" stroke="#0f766e" stroke-width="3.720" stroke-linejoin="round" filter="url(#united-kingdom-shadow)">
+    <g id="gb">
+        <path  d="M400.629,367.984l-1.582,2.395l0.631,0.959h3.648v1.6l-0.952,1.278l0.632,3.354l2.058,3.994l1.581,3.672l2.533,0.959l1.105,1.92l-0.155,1.755l-1.582,0.959l-0.156,0.795l1.106,0.64l-0.951,1.279l-2.221,0.959l-4.279-0.477l-6.664,3.035l-2.221-1.115l6.345-3.674l-0.796-0.477l-3.328-0.32l2.058-3.033l0.319-2.56l2.696-0.319l-0.475-4.953l-3.174-0.155l-0.95-1.115l0.155-3.674l-1.901,0.156l1.901-6.388l3.492-2.56L400.629,367.984L400.629,367.984z"/>
+        <path d="M393.974,378.693l-2.853,0.32l-0.156,2.56l1.901,1.278l2.058-0.475l0.796-1.436L393.974,378.693L393.974,378.693z"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#f59e0b" stroke-width="1.1" opacity="0.18">
+    <path d="M94 112 C130 98 172 104 214 94 C238 89 260 98 279 116"/>
+    <path d="M112 145 C148 132 188 136 224 126 C242 121 260 126 274 139"/>
+  </g>
+  <circle cx="180" cy="132" r="4" fill="#0b554f"/>
+  <text x="181" y="238" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="760" fill="#475569">United Kingdom</text>
+</svg>

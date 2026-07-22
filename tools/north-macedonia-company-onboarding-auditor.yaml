@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-company-onboarding-auditor
+kind: tool
+module: validohub
+country: MK
+category: developer-tools
+status: active
+name:
+  en: "Macedonian Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MK\",\"embg\":\"0101980456789\",\"iban\":\"MK07250120000058984\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-business-register-readiness-helper, north-macedonia-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."

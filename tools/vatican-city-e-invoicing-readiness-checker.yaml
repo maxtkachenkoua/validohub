@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: VA
+category: tax
+status: active
+name:
+  en: "Vatican fiscal invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"VA\",\"entity\":\"VA-ENTITY-001\",\"iban\":\"VA59001123000000012345678\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-tax-authority-handoff-helper, vatican-city-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican fiscal invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

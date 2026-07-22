@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-vat-id-validator
+kind: tool
+module: validohub
+country: CY
+category: national-identifiers
+status: active
+name:
+  en: "Cypriot VAT ID / CY Prefix Validator"
+summary:
+  en: "Normalize CY VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "CY12345678L"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-eori-validator, cyprus-social-insurance-number-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot VAT ID / CY Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize CY VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

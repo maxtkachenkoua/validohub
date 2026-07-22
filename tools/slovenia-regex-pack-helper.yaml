@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-regex-pack-helper
+kind: tool
+module: validohub
+country: SI
+category: developer-tools
+status: active
+name:
+  en: "Slovenian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "EMSO maticna stevilka postna stevilka  SI56263300012039086"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-api-payload-auditor, slovenia-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

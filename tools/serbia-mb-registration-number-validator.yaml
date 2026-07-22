@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-mb-registration-number-validator
+kind: tool
+module: validohub
+country: RS
+category: national-identifiers
+status: active
+name:
+  en: "Serbian MB / registration number Validator"
+summary:
+  en: "Inspect MB / registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "17123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-vat-id-validator, serbia-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian MB / registration number Validator | ValidoHub"
+  description:
+    en: "Inspect MB / registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

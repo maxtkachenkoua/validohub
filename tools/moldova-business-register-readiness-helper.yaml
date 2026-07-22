@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: moldova-business-register-readiness-helper
+kind: tool
+module: validohub
+country: MD
+category: government
+status: active
+name:
+  en: "Moldovan ASP state register Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated ASP state register lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.moldova-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "1003600000001 MD1003600000001 Stefan cel Mare 1, MD-2001 Chisinau"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [moldova-id-card-format-helper, moldova-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moldovan ASP state register Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated ASP state register lookup or company registry workflow."

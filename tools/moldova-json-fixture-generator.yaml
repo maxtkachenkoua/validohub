@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: moldova-json-fixture-generator
+kind: tool
+module: validohub
+country: MD
+category: developer-tools
+status: active
+name:
+  en: "Moldovan JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.moldova-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MD\",\"idno\":\"1003600000001\",\"iban\":\"MD24AG000225100013104168\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [moldova-regex-pack-helper, moldova-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moldovan JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-masked-iban-formatter
+kind: tool
+module: validohub
+country: UA
+category: finance
+status: active
+name:
+  en: "Ukrainian Masked IBAN Formatter"
+summary:
+  en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "UA213223130000026007233566001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-currency-decimal-formatter, ukraine-vat-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian Masked IBAN Formatter | ValidoHub"
+  description:
+    en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-company-kennitala-validator
+kind: tool
+module: validohub
+country: IS
+category: national-identifiers
+status: active
+name:
+  en: "Icelandic company kennitala Validator"
+summary:
+  en: "Inspect company kennitala structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "5501692829"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-vat-id-validator, iceland-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic company kennitala Validator | ValidoHub"
+  description:
+    en: "Inspect company kennitala structure, registry-style prefixes, control digits, and official lookup boundaries."

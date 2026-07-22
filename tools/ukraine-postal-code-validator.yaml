@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-postal-code-validator
+kind: tool
+module: validohub
+country: UA
+category: address
+status: active
+name:
+  en: "Ukrainian Postal Code Validator"
+summary:
+  en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "01001 Kyiv"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-address-normalizer, ukraine-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-payment-reference-helper
+kind: tool
+module: validohub
+country: BG
+category: finance
+status: active
+name:
+  en: "Bulgarian payment code Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "payment code REF 2026-001 1 234,56 BGN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-remittance-text-builder, bulgaria-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian payment code Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

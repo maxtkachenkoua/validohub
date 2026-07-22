@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-health-card-format-helper
+kind: tool
+module: validohub
+country: IS
+category: documents
+status: active
+name:
+  en: "Icelandic Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "1201743399 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-vehicle-plate-inspector, iceland-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

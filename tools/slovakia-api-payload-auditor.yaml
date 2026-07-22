@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-api-payload-auditor
+kind: tool
+module: validohub
+country: SK
+category: developer-tools
+status: active
+name:
+  en: "Slovak API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SK\",\"ico\":\"31331131\",\"iban\":\"SK3112000000198742637541\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-form-field-auditor, slovakia-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

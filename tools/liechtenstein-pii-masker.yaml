@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-pii-masker
+kind: tool
+module: validohub
+country: LI
+category: privacy
+status: active
+name:
+  en: "Liechtenstein PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "756.1234.5678.97 +423 234 56 78 LI21088100002324013AA"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-personal-data-fixture-generator, liechtenstein-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

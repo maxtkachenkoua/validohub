@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-api-payload-auditor
+kind: tool
+module: validohub
+country: VA
+category: developer-tools
+status: active
+name:
+  en: "Vatican API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"VA\",\"entity\":\"VA-ENTITY-001\",\"iban\":\"VA59001123000000012345678\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-form-field-auditor, vatican-city-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

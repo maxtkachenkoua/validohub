@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-pii-masker
+kind: tool
+module: validohub
+country: GR
+category: privacy
+status: active
+name:
+  en: "Greek PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "01018012345 +30 210 123 4567 GR1601101250000000012300695"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-personal-data-fixture-generator, greece-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

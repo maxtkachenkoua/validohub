@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-address-normalizer
+kind: tool
+module: validohub
+country: RS
+category: address
+status: active
+name:
+  en: "Serbian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Knez Mihailova 1, 11000 Belgrade"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-address-transliteration-normalizer, serbia-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

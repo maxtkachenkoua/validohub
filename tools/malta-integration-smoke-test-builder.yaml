@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: MT
+category: developer-tools
+status: active
+name:
+  en: "Maltese Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MT\",\"vat\":\"MT12345678\",\"iban\":\"MT84MALT011000012345MTLCAST001S\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-id-card-number-validator, malta-company-c-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

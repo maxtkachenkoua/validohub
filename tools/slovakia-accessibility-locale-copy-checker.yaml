@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: SK
+category: localization
+status: active
+name:
+  en: "Slovak Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "Rodne cislo input, PSC input, amount 1 234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-support-ticket-scrubber, slovakia-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

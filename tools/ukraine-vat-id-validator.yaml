@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-vat-id-validator
+kind: tool
+module: validohub
+country: UA
+category: national-identifiers
+status: active
+name:
+  en: "Ukrainian VAT ID / UA Prefix Validator"
+summary:
+  en: "Normalize UA VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "UA123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-eori-validator, ukraine-rnokpp-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian VAT ID / UA Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize UA VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

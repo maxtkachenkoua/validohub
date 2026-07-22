@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-currency-decimal-formatter
+kind: tool
+module: validohub
+country: AL
+category: finance
+status: active
+name:
+  en: "Albanian ALL Decimal Currency Formatter"
+summary:
+  en: "Normalize ALL amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1.234,56 ALL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-vat-rate-sanity-helper, albania-vat-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian ALL Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize ALL amount strings, decimal separators, grouping, and API-safe numeric previews."

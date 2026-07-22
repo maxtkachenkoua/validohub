@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-support-ticket-scrubber
+kind: tool
+module: validohub
+country: HU
+category: privacy
+status: active
+name:
+  en: "Hungarian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 123456789, HU42117730161111101800000000, Andrassy ut 1, 1051 Budapest"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-integration-smoke-test-builder, hungary-taj-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

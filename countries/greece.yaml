@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: GR
+slug: greece
+name:
+  en: Greece
+region: Europe
+languages:
+  - el
+currency: EUR
+relatedCountries:
+  - BG
+  - CY
+  - IT

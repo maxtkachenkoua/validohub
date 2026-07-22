@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: LT
+category: address
+status: active
+name:
+  en: "Lithuanian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Gedimino pr. 1, LT-01103 Vilnius"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-region-code-mapper, lithuania-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

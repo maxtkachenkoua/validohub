@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-locale-number-parser
+kind: tool
+module: validohub
+country: GB
+category: localization
+status: active
+name:
+  en: "British Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for United Kingdom."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 GBP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-calendar-week-helper, united-kingdom-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for United Kingdom."

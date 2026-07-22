@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-municipality-code-inspector
+kind: tool
+module: validohub
+country: MK
+category: address
+status: active
+name:
+  en: "Macedonian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Macedonia Square 1, 1000 Skopje"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-phone-number-validator, north-macedonia-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

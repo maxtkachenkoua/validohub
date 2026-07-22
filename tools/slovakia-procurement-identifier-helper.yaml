@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-procurement-identifier-helper
+kind: tool
+module: validohub
+country: SK
+category: government
+status: active
+name:
+  en: "Slovak Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "31331131 PO-2026-001 SK2020312297"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-accessibility-locale-copy-checker, slovakia-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

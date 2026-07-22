@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: moldova-slug-normalizer
+kind: tool
+module: validohub
+country: MD
+category: developer-tools
+status: active
+name:
+  en: "Moldovan Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.moldova-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Moldova sample company Stefan cel Mare 1, MD-2001 Chisinau"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [moldova-document-ocr-fixer, moldova-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moldovan Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

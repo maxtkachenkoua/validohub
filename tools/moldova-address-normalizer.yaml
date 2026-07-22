@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: moldova-address-normalizer
+kind: tool
+module: validohub
+country: MD
+category: address
+status: active
+name:
+  en: "Moldovan Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.moldova-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Stefan cel Mare 1, MD-2001 Chisinau"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [moldova-address-transliteration-normalizer, moldova-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moldovan Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-residence-permit-format-helper
+kind: tool
+module: validohub
+country: MC
+category: documents
+status: active
+name:
+  en: "Monegasque Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "MC PERMIT 2026 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-health-card-format-helper, monaco-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-rodne-cislo-social-insurance-helper
+kind: tool
+module: validohub
+country: SK
+category: national-identifiers
+status: active
+name:
+  en: "Slovak Rodne cislo Helper"
+summary:
+  en: "Split Rodne cislo evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "800101/0008"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-company-onboarding-auditor, slovakia-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak Rodne cislo Helper | ValidoHub"
+  description:
+    en: "Split Rodne cislo evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

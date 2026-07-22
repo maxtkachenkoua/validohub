@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-postal-code-validator
+kind: tool
+module: validohub
+country: GB
+category: address
+status: active
+name:
+  en: "British Postal Code Validator"
+summary:
+  en: "Validate postcode shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "SW1A 1AA London"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-address-normalizer, united-kingdom-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postcode shape, split area/delivery hints, and preserve official postal lookup boundaries."

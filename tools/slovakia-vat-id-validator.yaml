@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-vat-id-validator
+kind: tool
+module: validohub
+country: SK
+category: national-identifiers
+status: active
+name:
+  en: "Slovak VAT ID / SK Prefix Validator"
+summary:
+  en: "Normalize SK VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "SK2020312297"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-eori-validator, slovakia-rodne-cislo-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak VAT ID / SK Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize SK VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

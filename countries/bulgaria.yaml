@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BG
+slug: bulgaria
+name:
+  en: Bulgaria
+region: Europe
+languages:
+  - bg
+currency: BGN
+relatedCountries:
+  - RO
+  - GR
+  - RS

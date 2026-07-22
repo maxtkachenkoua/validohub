@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-id-card-format-helper
+kind: tool
+module: validohub
+country: LI
+category: national-identifiers
+status: active
+name:
+  en: "Liechtenstein ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "756.1234.5678.97"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-passport-number-helper, liechtenstein-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

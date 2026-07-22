@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: ME
+slug: montenegro
+name:
+  en: Montenegro
+region: Europe
+languages:
+  - sr
+currency: EUR
+relatedCountries:
+  - AL
+  - BA
+  - RS

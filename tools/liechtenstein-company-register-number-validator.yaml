@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-company-register-number-validator
+kind: tool
+module: validohub
+country: LI
+category: national-identifiers
+status: active
+name:
+  en: "Liechtenstein company register number Validator"
+summary:
+  en: "Inspect company register number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "FL-0002.123.456-7"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-vat-id-validator, liechtenstein-eori-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein company register number Validator | ValidoHub"
+  description:
+    en: "Inspect company register number structure, registry-style prefixes, control digits, and official lookup boundaries."

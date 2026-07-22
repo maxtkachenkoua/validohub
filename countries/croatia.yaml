@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: HR
+slug: croatia
+name:
+  en: Croatia
+region: Europe
+languages:
+  - hr
+currency: EUR
+relatedCountries:
+  - SI
+  - BA
+  - HU

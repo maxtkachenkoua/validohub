@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-json-fixture-generator
+kind: tool
+module: validohub
+country: UA
+category: developer-tools
+status: active
+name:
+  en: "Ukrainian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"UA\",\"rnokpp\":\"1234567890\",\"edrpou\":\"12345678\",\"iban\":\"UA213223130000026007233566001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-regex-pack-helper, ukraine-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

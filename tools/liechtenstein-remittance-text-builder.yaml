@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-remittance-text-builder
+kind: tool
+module: validohub
+country: LI
+category: finance
+status: active
+name:
+  en: "Liechtenstein Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 CHE-123.456.789 MWST 1'234.56 CHF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-payment-reconciliation-helper, liechtenstein-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: AL
+category: tax
+status: active
+name:
+  en: "Albanian fiscalization invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AL\",\"nipt\":\"L12345678A\",\"iban\":\"AL47212110090000000235698741\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-tax-authority-handoff-helper, albania-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian fiscalization invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

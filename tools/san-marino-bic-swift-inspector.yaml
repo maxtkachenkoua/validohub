@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-bic-swift-inspector
+kind: tool
+module: validohub
+country: SM
+category: finance
+status: active
+name:
+  en: "Sammarinese BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for San Marino banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDSM2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-sepa-transfer-helper, san-marino-sepa-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for San Marino banking integrations."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-document-ocr-fixer
+kind: tool
+module: validohub
+country: AD
+category: documents
+status: active
+name:
+  en: "Andorran Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "A123456Z AD F123456Z AD1200012030200359100100 AD500 Andorra la Vella"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-gdpr-redaction-helper, andorra-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

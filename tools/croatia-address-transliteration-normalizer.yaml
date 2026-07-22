@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: HR
+category: address
+status: active
+name:
+  en: "Croatian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Ilica 1, 10000 Zagreb"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-region-code-mapper, croatia-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

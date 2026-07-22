@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: LI
+category: privacy
+status: active
+name:
+  en: "Liechtenstein GDPR / Datenschutzstelle Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"LI\",\"company\":\"FL-0002.123.456-7\",\"iban\":\"LI21088100002324013AA\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-pii-masker, liechtenstein-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein GDPR / Datenschutzstelle Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

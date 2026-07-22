@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-regex-pack-helper
+kind: tool
+module: validohub
+country: MC
+category: developer-tools
+status: active
+name:
+  en: "Monegasque Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "NIS RCI number code postal  MC5811222000010123456789030"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-api-payload-auditor, monaco-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

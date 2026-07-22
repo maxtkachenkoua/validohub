@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SI
+slug: slovenia
+name:
+  en: Slovenia
+region: Europe
+languages:
+  - sl
+currency: EUR
+relatedCountries:
+  - HR
+  - AT
+  - IT

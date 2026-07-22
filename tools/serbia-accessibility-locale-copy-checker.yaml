@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: RS
+category: localization
+status: active
+name:
+  en: "Serbian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "JMBG input, postanski broj input, amount 1.234,56 RSD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-support-ticket-scrubber, serbia-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

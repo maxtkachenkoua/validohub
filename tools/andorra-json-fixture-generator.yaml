@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-json-fixture-generator
+kind: tool
+module: validohub
+country: AD
+category: developer-tools
+status: active
+name:
+  en: "Andorran JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AD\",\"nrt\":\"F-123456-Z\",\"iban\":\"AD1200012030200359100100\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-regex-pack-helper, andorra-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

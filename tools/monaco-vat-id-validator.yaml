@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-vat-id-validator
+kind: tool
+module: validohub
+country: MC
+category: national-identifiers
+status: active
+name:
+  en: "Monegasque VAT ID / MC Prefix Validator"
+summary:
+  en: "Normalize MC VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "FR12345678901"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-eori-validator, monaco-social-insurance-number-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque VAT ID / MC Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize MC VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

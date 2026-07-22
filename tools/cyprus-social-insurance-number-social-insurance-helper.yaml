@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-social-insurance-number-social-insurance-helper
+kind: tool
+module: validohub
+country: CY
+category: national-identifiers
+status: active
+name:
+  en: "Cypriot social insurance number Helper"
+summary:
+  en: "Split social insurance number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1234567L"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-company-onboarding-auditor, cyprus-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot social insurance number Helper | ValidoHub"
+  description:
+    en: "Split social insurance number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

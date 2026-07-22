@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-iban-generator
+kind: tool
+module: validohub
+country: SK
+category: finance
+status: active
+name:
+  en: "Slovakia IBAN Generator"
+summary:
+  en: "Generate SK IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "12000000198742637541"
+    actions: [generate, validate, explain]
+related:
+  explicit: [slovakia-bank-account-inspector, slovakia-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovakia IBAN Generator | ValidoHub"
+  description:
+    en: "Generate SK IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-matricule-validator
+kind: tool
+module: validohub
+country: LU
+category: national-identifiers
+status: active
+name:
+  en: "Luxembourgish matricule Validator"
+summary:
+  en: "Validate matricule shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "1980010101234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-rcs-number-validator, luxembourg-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish matricule Validator | ValidoHub"
+  description:
+    en: "Validate matricule shape, split date/control/body evidence, and prepare privacy-safe debugging output."

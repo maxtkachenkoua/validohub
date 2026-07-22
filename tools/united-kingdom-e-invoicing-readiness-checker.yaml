@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: GB
+category: tax
+status: active
+name:
+  en: "British VAT invoice / HMRC MTD Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"GB\",\"nino\":\"QQ123456C\",\"company\":\"01234567\",\"sortCode\":\"60-16-13\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-tax-authority-handoff-helper, united-kingdom-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British VAT invoice / HMRC MTD Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

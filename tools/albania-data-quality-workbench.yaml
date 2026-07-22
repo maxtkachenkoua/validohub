@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-data-quality-workbench
+kind: tool
+module: validohub
+country: AL
+category: developer-tools
+status: active
+name:
+  en: "Albanian Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AL\",\"nipt\":\"L12345678A\",\"iban\":\"AL47212110090000000235698741\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-json-fixture-generator, albania-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

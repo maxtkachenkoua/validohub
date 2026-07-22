@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: UA
+category: localization
+status: active
+name:
+  en: "Ukrainian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "RNOKPP input, postal code input, amount 1 234,56 UAH"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-support-ticket-scrubber, ukraine-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

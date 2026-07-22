@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-regex-pack-helper
+kind: tool
+module: validohub
+country: HU
+category: developer-tools
+status: active
+name:
+  en: "Hungarian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "TAJ company registry number iranyitoszam  HU42117730161111101800000000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-api-payload-auditor, hungary-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

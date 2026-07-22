@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SM
+slug: san-marino
+name:
+  en: San Marino
+region: Europe
+languages:
+  - it
+currency: EUR
+relatedCountries:
+  - IT
+  - VA
+  - MC

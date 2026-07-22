@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-support-ticket-scrubber
+kind: tool
+module: validohub
+country: AD
+category: privacy
+status: active
+name:
+  en: "Andorran Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent A123456Z, AD1200012030200359100100, Avinguda Meritxell 1, AD500 Andorra la Vella"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-integration-smoke-test-builder, andorra-cass-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

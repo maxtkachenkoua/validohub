@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-eori-validator
+kind: tool
+module: validohub
+country: VA
+category: national-identifiers
+status: active
+name:
+  en: "Vatican EORI / Customs Identifier Helper"
+summary:
+  en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EORI input"
+        required: true
+        placeholder:
+          en: "VAVA-ENTITY-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-document-number-social-insurance-helper, vatican-city-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican EORI / Customs Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."

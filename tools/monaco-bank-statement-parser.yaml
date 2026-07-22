@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-bank-statement-parser
+kind: tool
+module: validohub
+country: MC
+category: finance
+status: active
+name:
+  en: "Monegasque Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1 234,56 EUR; MC5811222000010123456789030; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-masked-iban-formatter, monaco-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."

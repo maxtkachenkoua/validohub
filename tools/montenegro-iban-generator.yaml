@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: montenegro-iban-generator
+kind: tool
+module: validohub
+country: ME
+category: finance
+status: active
+name:
+  en: "Montenegro IBAN Generator"
+summary:
+  en: "Generate ME IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.montenegro-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "505000012345678951"
+    actions: [generate, validate, explain]
+related:
+  explicit: [montenegro-bank-account-inspector, montenegro-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Montenegro IBAN Generator | ValidoHub"
+  description:
+    en: "Generate ME IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

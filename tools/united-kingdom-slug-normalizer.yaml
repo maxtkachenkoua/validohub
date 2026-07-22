@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-slug-normalizer
+kind: tool
+module: validohub
+country: GB
+category: developer-tools
+status: active
+name:
+  en: "British Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "United Kingdom sample company 10 Downing Street, London SW1A 2AA"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-document-ocr-fixer, united-kingdom-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

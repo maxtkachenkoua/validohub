@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-postal-code-validator
+kind: tool
+module: validohub
+country: LT
+category: address
+status: active
+name:
+  en: "Lithuanian Postal Code Validator"
+summary:
+  en: "Validate pasto kodas shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "LT-01100 Vilnius"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-address-normalizer, lithuania-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate pasto kodas shape, split area/delivery hints, and preserve official postal lookup boundaries."

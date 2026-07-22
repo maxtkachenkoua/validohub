@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: MC
+category: transport
+status: active
+name:
+  en: "Monegasque Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "1234 WVWZZZ1JZXW000001 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-customs-declaration-helper, monaco-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

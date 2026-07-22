@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-data-quality-workbench
+kind: tool
+module: validohub
+country: LT
+category: developer-tools
+status: active
+name:
+  en: "Lithuanian Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"LT\",\"pvm\":\"LT123456789\",\"iban\":\"LT121000011101001000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-json-fixture-generator, lithuania-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-vat-id-validator
+kind: tool
+module: validohub
+country: LI
+category: national-identifiers
+status: active
+name:
+  en: "Liechtenstein VAT ID / LI Prefix Validator"
+summary:
+  en: "Normalize LI VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "CHE-123.456.789 MWST"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-eori-validator, liechtenstein-social-insurance-number-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein VAT ID / LI Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize LI VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

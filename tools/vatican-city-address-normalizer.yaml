@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-address-normalizer
+kind: tool
+module: validohub
+country: VA
+category: address
+status: active
+name:
+  en: "Vatican Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Cortile San Damaso, 00120 Vatican City"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-address-transliteration-normalizer, vatican-city-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

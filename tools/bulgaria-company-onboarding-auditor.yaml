@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-company-onboarding-auditor
+kind: tool
+module: validohub
+country: BG
+category: developer-tools
+status: active
+name:
+  en: "Bulgarian Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for UIC / EIK, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BG\",\"egn\":\"8001010008\",\"vat\":\"BG123456789\",\"iban\":\"BG80BNBG96611020345678\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-business-register-readiness-helper, bulgaria-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for UIC / EIK, VAT, address, banking, and official registry handoff readiness."

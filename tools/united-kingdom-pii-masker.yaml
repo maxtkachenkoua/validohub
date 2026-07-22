@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-pii-masker
+kind: tool
+module: validohub
+country: GB
+category: privacy
+status: active
+name:
+  en: "British PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "QQ123456C +44 20 7946 0018 GB29NWBK60161331926819"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-personal-data-fixture-generator, united-kingdom-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

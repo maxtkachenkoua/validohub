@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: IS
+category: tax
+status: active
+name:
+  en: "Icelandic Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "IS5501692829 21.07.2026 1.234,56 ISK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-accounting-audit-trail-checklist-generator, iceland-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

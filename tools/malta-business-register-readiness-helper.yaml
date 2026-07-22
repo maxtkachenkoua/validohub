@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-business-register-readiness-helper
+kind: tool
+module: validohub
+country: MT
+category: government
+status: active
+name:
+  en: "Maltese Malta Business Registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Malta Business Registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "C12345 MT12345678 Republic Street 1, VLT 1111 Valletta"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-id-card-format-helper, malta-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese Malta Business Registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Malta Business Registry lookup or company registry workflow."

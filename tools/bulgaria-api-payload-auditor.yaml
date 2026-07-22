@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-api-payload-auditor
+kind: tool
+module: validohub
+country: BG
+category: developer-tools
+status: active
+name:
+  en: "Bulgarian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BG\",\"egn\":\"8001010008\",\"vat\":\"BG123456789\",\"iban\":\"BG80BNBG96611020345678\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-form-field-auditor, bulgaria-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

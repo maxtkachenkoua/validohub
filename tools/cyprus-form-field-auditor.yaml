@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-form-field-auditor
+kind: tool
+module: validohub
+country: CY
+category: developer-tools
+status: active
+name:
+  en: "Cypriot Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=CY12345678L&postal=1010 Nicosia&phone=+357 99 123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-locale-number-parser, cyprus-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

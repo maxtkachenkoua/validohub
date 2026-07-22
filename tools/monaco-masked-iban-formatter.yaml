@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-masked-iban-formatter
+kind: tool
+module: validohub
+country: MC
+category: finance
+status: active
+name:
+  en: "Monegasque Masked IBAN Formatter"
+summary:
+  en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "MC5811222000010123456789030"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-currency-decimal-formatter, monaco-vat-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Masked IBAN Formatter | ValidoHub"
+  description:
+    en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."

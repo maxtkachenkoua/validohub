@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: MK
+category: developer-tools
+status: active
+name:
+  en: "Macedonian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MK\",\"embg\":\"0101980456789\",\"iban\":\"MK07250120000058984\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-embg-validator, north-macedonia-company-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

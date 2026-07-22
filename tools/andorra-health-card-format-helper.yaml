@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-health-card-format-helper
+kind: tool
+module: validohub
+country: AD
+category: documents
+status: active
+name:
+  en: "Andorran Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "A123456Z HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-vehicle-plate-inspector, andorra-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

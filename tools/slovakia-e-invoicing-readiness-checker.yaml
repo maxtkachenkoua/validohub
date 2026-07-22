@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: SK
+category: tax
+status: active
+name:
+  en: "Slovak DPH invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SK\",\"ico\":\"31331131\",\"iban\":\"SK3112000000198742637541\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-tax-authority-handoff-helper, slovakia-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak DPH invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

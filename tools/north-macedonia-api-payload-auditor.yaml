@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-api-payload-auditor
+kind: tool
+module: validohub
+country: MK
+category: developer-tools
+status: active
+name:
+  en: "Macedonian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MK\",\"embg\":\"0101980456789\",\"iban\":\"MK07250120000058984\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-form-field-auditor, north-macedonia-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

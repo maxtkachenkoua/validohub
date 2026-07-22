@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-data-quality-workbench
+kind: tool
+module: validohub
+country: CY
+category: developer-tools
+status: active
+name:
+  en: "Cypriot Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CY\",\"vat\":\"CY12345678L\",\"iban\":\"CY17002001280000001200527600\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-json-fixture-generator, cyprus-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

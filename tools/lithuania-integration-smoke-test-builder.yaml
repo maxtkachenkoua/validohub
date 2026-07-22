@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: LT
+category: developer-tools
+status: active
+name:
+  en: "Lithuanian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"LT\",\"pvm\":\"LT123456789\",\"iban\":\"LT121000011101001000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-asmens-kodas-validator, lithuania-company-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-iban-generator
+kind: tool
+module: validohub
+country: HU
+category: finance
+status: active
+name:
+  en: "Hungary IBAN Generator"
+summary:
+  en: "Generate HU IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "117730161111101800000000"
+    actions: [generate, validate, explain]
+related:
+  explicit: [hungary-bank-account-inspector, hungary-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungary IBAN Generator | ValidoHub"
+  description:
+    en: "Generate HU IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

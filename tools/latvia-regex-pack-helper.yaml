@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: latvia-regex-pack-helper
+kind: tool
+module: validohub
+country: LV
+category: developer-tools
+status: active
+name:
+  en: "Latvian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.latvia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "personal code registration number pasta indekss  LV80BANK0000435195001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [latvia-api-payload-auditor, latvia-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Latvian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

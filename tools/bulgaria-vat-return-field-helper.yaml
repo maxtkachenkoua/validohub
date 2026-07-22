@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-vat-return-field-helper
+kind: tool
+module: validohub
+country: BG
+category: tax
+status: active
+name:
+  en: "Bulgarian VAT Return Field Helper"
+summary:
+  en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "DDS / VAT; BG123456789; period 2026-07; 1 234,56 BGN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-invoice-number-helper, bulgaria-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."

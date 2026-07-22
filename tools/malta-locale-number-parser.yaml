@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-locale-number-parser
+kind: tool
+module: validohub
+country: MT
+category: localization
+status: active
+name:
+  en: "Maltese Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Malta."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-calendar-week-helper, malta-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Malta."

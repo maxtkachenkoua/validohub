@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-eori-validator
+kind: tool
+module: validohub
+country: MT
+category: national-identifiers
+status: active
+name:
+  en: "Maltese EORI / Customs Identifier Helper"
+summary:
+  en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EORI input"
+        required: true
+        placeholder:
+          en: "MTC12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-social-security-number-social-insurance-helper, malta-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese EORI / Customs Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."

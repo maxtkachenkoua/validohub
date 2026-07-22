@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-vat-id-validator
+kind: tool
+module: validohub
+country: GR
+category: national-identifiers
+status: active
+name:
+  en: "Greek VAT ID / GR Prefix Validator"
+summary:
+  en: "Normalize GR VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "EL123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-eori-validator, greece-amka-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek VAT ID / GR Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize GR VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

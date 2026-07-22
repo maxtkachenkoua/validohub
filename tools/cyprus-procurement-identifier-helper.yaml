@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-procurement-identifier-helper
+kind: tool
+module: validohub
+country: CY
+category: government
+status: active
+name:
+  en: "Cypriot Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "HE123456 PO-2026-001 CY12345678L"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-accessibility-locale-copy-checker, cyprus-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

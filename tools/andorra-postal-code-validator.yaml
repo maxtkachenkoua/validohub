@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-postal-code-validator
+kind: tool
+module: validohub
+country: AD
+category: address
+status: active
+name:
+  en: "Andorran Postal Code Validator"
+summary:
+  en: "Validate codi postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "AD500 Andorra la Vella"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-address-normalizer, andorra-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate codi postal shape, split area/delivery hints, and preserve official postal lookup boundaries."

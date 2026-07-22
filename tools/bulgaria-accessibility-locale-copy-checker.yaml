@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: BG
+category: localization
+status: active
+name:
+  en: "Bulgarian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "EGN input, postal code input, amount 1 234,56 BGN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-support-ticket-scrubber, bulgaria-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

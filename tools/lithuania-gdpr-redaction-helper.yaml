@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: LT
+category: privacy
+status: active
+name:
+  en: "Lithuanian GDPR / VDAI Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"LT\",\"pvm\":\"LT123456789\",\"iban\":\"LT121000011101001000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-pii-masker, lithuania-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian GDPR / VDAI Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

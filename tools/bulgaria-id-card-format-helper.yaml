@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-id-card-format-helper
+kind: tool
+module: validohub
+country: BG
+category: national-identifiers
+status: active
+name:
+  en: "Bulgarian ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "8001010008"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-passport-number-helper, bulgaria-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

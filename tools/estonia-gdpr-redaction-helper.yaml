@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: EE
+category: privacy
+status: active
+name:
+  en: "Estonian GDPR / AKI Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"EE\",\"isikukood\":\"38501010018\",\"iban\":\"EE382200221020145685\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-pii-masker, estonia-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian GDPR / AKI Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-procurement-identifier-helper
+kind: tool
+module: validohub
+country: AL
+category: government
+status: active
+name:
+  en: "Albanian Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "L12345678A PO-2026-001 AL L12345678A"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-accessibility-locale-copy-checker, albania-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: SK
+category: privacy
+status: active
+name:
+  en: "Slovak Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 800101/0008, SK3112000000198742637541, Hlavne namestie 1, 811 01 Bratislava"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-integration-smoke-test-builder, slovakia-rodne-cislo-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

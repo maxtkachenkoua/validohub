@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-municipality-code-inspector
+kind: tool
+module: validohub
+country: MC
+category: address
+status: active
+name:
+  en: "Monegasque Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Avenue de la Costa 1, 98000 Monaco"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-phone-number-validator, monaco-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

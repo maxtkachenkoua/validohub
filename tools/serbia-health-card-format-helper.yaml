@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-health-card-format-helper
+kind: tool
+module: validohub
+country: RS
+category: documents
+status: active
+name:
+  en: "Serbian Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "0101980712345 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-vehicle-plate-inspector, serbia-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

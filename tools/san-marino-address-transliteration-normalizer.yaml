@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: SM
+category: address
+status: active
+name:
+  en: "Sammarinese Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Contrada Omerelli 1, 47890 San Marino"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-region-code-mapper, san-marino-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

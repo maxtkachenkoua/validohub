@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: SM
+category: tax
+status: active
+name:
+  en: "Sammarinese VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "operator code 20% base 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-vat-return-field-helper, san-marino-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

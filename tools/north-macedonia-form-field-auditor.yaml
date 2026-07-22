@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-form-field-auditor
+kind: tool
+module: validohub
+country: MK
+category: developer-tools
+status: active
+name:
+  en: "Macedonian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=MK4032013544513&postal=1000 Skopje&phone=+389 70 123 456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-locale-number-parser, north-macedonia-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

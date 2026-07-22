@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-slug-normalizer
+kind: tool
+module: validohub
+country: MT
+category: developer-tools
+status: active
+name:
+  en: "Maltese Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Malta sample company Republic Street 1, VLT 1111 Valletta"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-document-ocr-fixer, malta-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

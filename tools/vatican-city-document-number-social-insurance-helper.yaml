@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-document-number-social-insurance-helper
+kind: tool
+module: validohub
+country: VA
+category: national-identifiers
+status: active
+name:
+  en: "Vatican document number Helper"
+summary:
+  en: "Split document number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "SCV123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-company-onboarding-auditor, vatican-city-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican document number Helper | ValidoHub"
+  description:
+    en: "Split document number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

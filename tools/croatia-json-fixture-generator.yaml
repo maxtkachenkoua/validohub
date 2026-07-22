@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-json-fixture-generator
+kind: tool
+module: validohub
+country: HR
+category: developer-tools
+status: active
+name:
+  en: "Croatian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"HR\",\"oib\":\"12345678903\",\"iban\":\"HR1210010051863000160\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-regex-pack-helper, croatia-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

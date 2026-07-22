@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: SK
+category: government
+status: active
+name:
+  en: "Slovak Obchodny register Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Obchodny register lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "31331131 SK2020312297 Hlavne namestie 1, 811 01 Bratislava"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-id-card-format-helper, slovakia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak Obchodny register Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Obchodny register lookup or company registry workflow."

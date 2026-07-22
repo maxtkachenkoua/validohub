@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-slug-normalizer
+kind: tool
+module: validohub
+country: AL
+category: developer-tools
+status: active
+name:
+  en: "Albanian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Albania sample company Bulevardi Deshmoret e Kombit 1, 1001 Tirana"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-document-ocr-fixer, albania-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

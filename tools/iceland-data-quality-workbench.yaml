@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-data-quality-workbench
+kind: tool
+module: validohub
+country: IS
+category: developer-tools
+status: active
+name:
+  en: "Icelandic Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IS\",\"kennitala\":\"1201743399\",\"iban\":\"IS140159260076545510730339\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-json-fixture-generator, iceland-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

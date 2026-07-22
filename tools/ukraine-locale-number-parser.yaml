@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-locale-number-parser
+kind: tool
+module: validohub
+country: UA
+category: localization
+status: active
+name:
+  en: "Ukrainian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Ukraine."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1 234,56 UAH"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-calendar-week-helper, ukraine-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Ukraine."

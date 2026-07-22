@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-invoice-number-helper
+kind: tool
+module: validohub
+country: UA
+category: tax
+status: active
+name:
+  en: "Ukrainian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 UA123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-e-invoicing-readiness-checker, ukraine-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

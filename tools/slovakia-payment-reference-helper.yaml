@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-payment-reference-helper
+kind: tool
+module: validohub
+country: SK
+category: finance
+status: active
+name:
+  en: "Slovak variabilny symbol Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "variabilny symbol REF 2026-001 1 234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-remittance-text-builder, slovakia-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak variabilny symbol Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

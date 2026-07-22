@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-slug-normalizer
+kind: tool
+module: validohub
+country: MC
+category: developer-tools
+status: active
+name:
+  en: "Monegasque Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Monaco sample company Avenue de la Costa 1, 98000 Monaco"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-document-ocr-fixer, monaco-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

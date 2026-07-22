@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-municipality-code-inspector
+kind: tool
+module: validohub
+country: EE
+category: address
+status: active
+name:
+  en: "Estonian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Viru 1, 10111 Tallinn"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-phone-number-validator, estonia-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

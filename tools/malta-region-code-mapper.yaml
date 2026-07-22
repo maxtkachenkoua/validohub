@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-region-code-mapper
+kind: tool
+module: validohub
+country: MT
+category: address
+status: active
+name:
+  en: "Maltese Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "VLT 1111 Valletta"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-municipality-code-inspector, malta-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

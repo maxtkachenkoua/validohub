@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-regex-pack-helper
+kind: tool
+module: validohub
+country: LI
+category: developer-tools
+status: active
+name:
+  en: "Liechtenstein Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "PEID company register number Postleitzahl  LI21088100002324013AA"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-api-payload-auditor, liechtenstein-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-company-onboarding-auditor
+kind: tool
+module: validohub
+country: HR
+category: developer-tools
+status: active
+name:
+  en: "Croatian Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for MBS / OIB, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"HR\",\"oib\":\"12345678903\",\"iban\":\"HR1210010051863000160\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-business-register-readiness-helper, croatia-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for MBS / OIB, VAT, address, banking, and official registry handoff readiness."

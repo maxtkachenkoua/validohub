@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-residence-permit-format-helper
+kind: tool
+module: validohub
+country: GR
+category: documents
+status: active
+name:
+  en: "Greek Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "GR PERMIT 2026 01018012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-health-card-format-helper, greece-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-form-field-auditor
+kind: tool
+module: validohub
+country: HU
+category: developer-tools
+status: active
+name:
+  en: "Hungarian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=HU12345678&postal=1051 Budapest&phone=+36 30 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-locale-number-parser, hungary-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

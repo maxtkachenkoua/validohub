@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-company-suffix-normalizer
+kind: tool
+module: validohub
+country: RS
+category: developer-tools
+status: active
+name:
+  en: "Serbian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Serbia Sample Holding Ltd 17123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-procurement-identifier-helper, serbia-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

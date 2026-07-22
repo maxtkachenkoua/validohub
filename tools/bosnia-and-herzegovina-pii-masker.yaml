@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-pii-masker
+kind: tool
+module: validohub
+country: BA
+category: privacy
+status: active
+name:
+  en: "Bosnian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "0101980123456 +387 61 123 456 BA391290079401028494"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-personal-data-fixture-generator, bosnia-and-herzegovina-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

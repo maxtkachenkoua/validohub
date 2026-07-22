@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: montenegro-jmbg-validator
+kind: tool
+module: validohub
+country: ME
+category: national-identifiers
+status: active
+name:
+  en: "Montenegrin JMBG Validator"
+summary:
+  en: "Validate JMBG shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.montenegro-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "0101980234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [montenegro-pib-validator, montenegro-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Montenegrin JMBG Validator | ValidoHub"
+  description:
+    en: "Validate JMBG shape, split date/control/body evidence, and prepare privacy-safe debugging output."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-region-code-mapper
+kind: tool
+module: validohub
+country: AD
+category: address
+status: active
+name:
+  en: "Andorran Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "AD500 Andorra la Vella"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-municipality-code-inspector, andorra-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-company-suffix-normalizer
+kind: tool
+module: validohub
+country: MC
+category: developer-tools
+status: active
+name:
+  en: "Monegasque Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Monaco Sample Holding Ltd 22S12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-procurement-identifier-helper, monaco-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

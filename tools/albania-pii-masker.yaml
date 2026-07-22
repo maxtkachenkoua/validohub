@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-pii-masker
+kind: tool
+module: validohub
+country: AL
+category: privacy
+status: active
+name:
+  en: "Albanian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "J12345678K +355 69 123 4567 AL47212110090000000235698741"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-personal-data-fixture-generator, albania-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

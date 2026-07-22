@@ -1,0 +1,641 @@
+{
+  "id": "monaco",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/monaco-outline.svg",
+    "outlineAlt": "Monaco country outline",
+    "mapSrc": "/assets/images/countries/monaco-location.svg",
+    "mapAlt": "World map with Monaco location marker",
+    "mapMarker": {
+      "x": 48,
+      "y": 61,
+      "label": "Monaco"
+    },
+    "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+  },
+  "catalog": {
+    "id": "monaco",
+    "flag": "🇲🇨",
+    "name": "Monaco",
+    "nativeName": "Monaco",
+    "iso2": "MC",
+    "iso3": "MCO",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "French",
+    "currency": "EUR",
+    "currencyName": "Euro",
+    "status": "available",
+    "summary": "Premium Monaco developer hub for NIS, RCI number, VAT-style number, postal code, phone, IBAN, SEPA, SWIFT, payment reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "NIS",
+      "RCI number",
+      "VAT-style number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "IBAN",
+      "SEPA",
+      "SWIFT",
+      "payment reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Monegasque NIS Validator",
+      "Monegasque RCI number Validator",
+      "Monegasque VAT ID / MC Prefix Validator",
+      "Monegasque EORI / Customs Identifier Helper",
+      "Monegasque social insurance number Helper",
+      "Monegasque Company Onboarding Auditor",
+      "Monegasque RCI Monaco Readiness Helper",
+      "Monegasque ID Card Format Helper",
+      "Monegasque Passport Number Helper",
+      "Monegasque MRZ / Passport Parser",
+      "Monaco IBAN Validator",
+      "Monaco IBAN Generator",
+      "Monegasque Domestic Bank Account Inspector",
+      "Monegasque BIC / SWIFT Inspector",
+      "Monegasque SEPA Transfer Helper",
+      "Monegasque SEPA Direct Debit Mandate Helper",
+      "Monegasque SEPA reference Reference Helper",
+      "Monegasque Remittance Text Builder",
+      "Monegasque Payment Reconciliation Helper",
+      "Monegasque Bank Statement Parser",
+      "Monegasque Masked IBAN Formatter",
+      "Monegasque EUR Decimal Currency Formatter",
+      "Monegasque VAT Rate Sanity Helper",
+      "Monegasque VAT Return Field Helper",
+      "Monegasque Invoice Number Helper",
+      "Monegasque TVA invoice Readiness Checker",
+      "Monegasque Tax Authority Handoff Helper",
+      "Monegasque Accounting Audit Trail Checklist Helper",
+      "Monegasque Postal Code Validator",
+      "Monegasque Address Normalizer",
+      "Monegasque Address Transliteration Normalizer",
+      "Monegasque Region / Province Code Mapper",
+      "Monegasque Municipality Code Inspector",
+      "Monegasque Phone Number Validator",
+      "Monegasque Phone E.164 Formatter",
+      "Monegasque Date Locale Formatter",
+      "Monegasque CSV Locale Normalizer",
+      "Monegasque Slug Normalizer",
+      "Monegasque Document OCR Fixer",
+      "Monegasque personal-data protection Redaction Helper",
+      "Monegasque PII Masker",
+      "Monegasque Personal Data Fixture Helper",
+      "Monegasque Driving Licence Format Helper",
+      "Monegasque Residence Permit Format Helper",
+      "Monegasque Health Card Format Helper",
+      "Monegasque Vehicle Plate Inspector",
+      "Monegasque VIN Validator",
+      "Monegasque Vehicle Data Redaction Helper",
+      "Monegasque Customs Declaration Helper",
+      "Monegasque Postal Tracking Helper",
+      "Monegasque Data Quality Workbench",
+      "Monegasque JSON Fixture Helper",
+      "Monegasque Regex Pack Helper",
+      "Monegasque API Payload Auditor",
+      "Monegasque Form Field Auditor",
+      "Monegasque Locale Number Parser",
+      "Monegasque Calendar Week Helper",
+      "Monegasque Company Suffix Normalizer",
+      "Monegasque Procurement Identifier Helper",
+      "Monegasque Locale Copy Checker",
+      "Monegasque Support Ticket Scrubber",
+      "Monegasque Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live RCI Monaco lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 48,
+      "y": 61
+    },
+    "searchHints": [
+      "RCI",
+      "NIS",
+      "TVA",
+      "IBAN",
+      "SEPA",
+      "98000"
+    ]
+  },
+  "hub": {
+    "flag": "🇲🇨",
+    "name": "Monaco",
+    "badge": "Premium Monaco developer suite",
+    "description": "Developer intelligence and browser-only workbenches for monegasque identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Monaco",
+      "population": "approximately 0.04M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Monaco",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "languages": "French",
+      "currency": "Euro",
+      "currencyCode": "EUR",
+      "callingCode": "+377",
+      "internetTld": ".mc",
+      "drivingSide": "Right",
+      "iso2": "MC",
+      "iso3": "MCO",
+      "isoNumeric": "492",
+      "locale": "fr-MC",
+      "icuLocale": "fr_MC",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Space grouping",
+      "addressFormat": "Street, number, postal code, locality, Monaco",
+      "postalCodeFormat": "code postal",
+      "primaryTimeZone": "Europe/Monaco (CET/CEST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "fr-MC",
+      "cldrLocale": "fr_MC",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type E / Type F",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "monaco",
+      "outlineLabel": "Monaco outline",
+      "mapLabel": "Monaco in the world",
+      "continentBadge": "Europe",
+      "flagLabel": "Monaco flag",
+      "heroAccentPrimary": "15 118 110",
+      "heroAccentSecondary": "37 99 235",
+      "heroAccentTertiary": "245 158 11"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "NIS and RCI number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "TVA / VAT and payments",
+        "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Monaco registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /monaco/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Space grouping rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Monegasque examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "RCI Monaco",
+        "text": "Official business registry or company lookup remains the source of truth for Monaco.",
+        "status": "official boundary"
+      },
+      {
+        "title": "TVA / VAT",
+        "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data protection",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "NIS, RCI number, VAT-style number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, SEPA, SWIFT, payment reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "fr-MC / fr_MC; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "EUR amounts use Comma (,) and Space grouping.",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "NIS, RCI number, code postal, phone, address, and IBAN need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type E / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "EU-wide emergency number; local alternatives may also exist."
+      }
+    ],
+    "searchHints": [
+      "RCI",
+      "NIS",
+      "TVA",
+      "IBAN",
+      "SEPA",
+      "98000"
+    ],
+    "routes": [
+      {
+        "title": "Monegasque NIS Validator",
+        "href": "/en/monaco/monaco-nis-validator/",
+        "text": "Validate NIS shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Monegasque RCI number Validator",
+        "href": "/en/monaco/monaco-rci-number-validator/",
+        "text": "Inspect RCI number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Monegasque VAT ID / MC Prefix Validator",
+        "href": "/en/monaco/monaco-vat-id-validator/",
+        "text": "Normalize MC VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+      },
+      {
+        "title": "Monegasque EORI / Customs Identifier Helper",
+        "href": "/en/monaco/monaco-eori-validator/",
+        "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+      },
+      {
+        "title": "Monegasque social insurance number Helper",
+        "href": "/en/monaco/monaco-social-insurance-number-social-insurance-helper/",
+        "text": "Split social insurance number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Monegasque Company Onboarding Auditor",
+        "href": "/en/monaco/monaco-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for RCI number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Monegasque RCI Monaco Readiness Helper",
+        "href": "/en/monaco/monaco-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated RCI Monaco lookup or company registry workflow."
+      },
+      {
+        "title": "Monegasque ID Card Format Helper",
+        "href": "/en/monaco/monaco-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Monegasque Passport Number Helper",
+        "href": "/en/monaco/monaco-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Monegasque MRZ / Passport Parser",
+        "href": "/en/monaco/monaco-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Monaco IBAN Validator",
+        "href": "/en/monaco/monaco-iban-validator/",
+        "text": "Validate MC IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+      },
+      {
+        "title": "Monaco IBAN Generator",
+        "href": "/en/monaco/monaco-iban-generator/",
+        "text": "Generate MC IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+      },
+      {
+        "title": "Monegasque Domestic Bank Account Inspector",
+        "href": "/en/monaco/monaco-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+      },
+      {
+        "title": "Monegasque BIC / SWIFT Inspector",
+        "href": "/en/monaco/monaco-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Monaco banking integrations."
+      },
+      {
+        "title": "Monegasque SEPA Transfer Helper",
+        "href": "/en/monaco/monaco-sepa-transfer-helper/",
+        "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+      },
+      {
+        "title": "Monegasque SEPA Direct Debit Mandate Helper",
+        "href": "/en/monaco/monaco-sepa-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+      },
+      {
+        "title": "Monegasque SEPA reference Reference Helper",
+        "href": "/en/monaco/monaco-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Monegasque Remittance Text Builder",
+        "href": "/en/monaco/monaco-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Monegasque Payment Reconciliation Helper",
+        "href": "/en/monaco/monaco-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Monegasque Bank Statement Parser",
+        "href": "/en/monaco/monaco-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Monegasque Masked IBAN Formatter",
+        "href": "/en/monaco/monaco-masked-iban-formatter/",
+        "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+      },
+      {
+        "title": "Monegasque EUR Decimal Currency Formatter",
+        "href": "/en/monaco/monaco-currency-decimal-formatter/",
+        "text": "Normalize EUR amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Monegasque VAT Rate Sanity Helper",
+        "href": "/en/monaco/monaco-vat-rate-sanity-helper/",
+        "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Monegasque VAT Return Field Helper",
+        "href": "/en/monaco/monaco-vat-return-field-helper/",
+        "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Monegasque Invoice Number Helper",
+        "href": "/en/monaco/monaco-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Monegasque TVA invoice Readiness Checker",
+        "href": "/en/monaco/monaco-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Monegasque Tax Authority Handoff Helper",
+        "href": "/en/monaco/monaco-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Monegasque Accounting Audit Trail Checklist Helper",
+        "href": "/en/monaco/monaco-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+      },
+      {
+        "title": "Monegasque Postal Code Validator",
+        "href": "/en/monaco/monaco-postal-code-validator/",
+        "text": "Validate code postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Monegasque Address Normalizer",
+        "href": "/en/monaco/monaco-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Monegasque Address Transliteration Normalizer",
+        "href": "/en/monaco/monaco-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Monegasque Region / Province Code Mapper",
+        "href": "/en/monaco/monaco-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Monegasque Municipality Code Inspector",
+        "href": "/en/monaco/monaco-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Monegasque Phone Number Validator",
+        "href": "/en/monaco/monaco-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Monegasque Phone E.164 Formatter",
+        "href": "/en/monaco/monaco-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Monegasque Date Locale Formatter",
+        "href": "/en/monaco/monaco-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Monegasque CSV Locale Normalizer",
+        "href": "/en/monaco/monaco-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Monaco decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Monegasque Slug Normalizer",
+        "href": "/en/monaco/monaco-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Monegasque Document OCR Fixer",
+        "href": "/en/monaco/monaco-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Monegasque personal-data protection Redaction Helper",
+        "href": "/en/monaco/monaco-gdpr-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Monegasque PII Masker",
+        "href": "/en/monaco/monaco-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Monegasque Personal Data Fixture Helper",
+        "href": "/en/monaco/monaco-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Monegasque Driving Licence Format Helper",
+        "href": "/en/monaco/monaco-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Monegasque Residence Permit Format Helper",
+        "href": "/en/monaco/monaco-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Monegasque Health Card Format Helper",
+        "href": "/en/monaco/monaco-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Monegasque Vehicle Plate Inspector",
+        "href": "/en/monaco/monaco-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Monegasque VIN Validator",
+        "href": "/en/monaco/monaco-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Monegasque Vehicle Data Redaction Helper",
+        "href": "/en/monaco/monaco-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Monegasque Customs Declaration Helper",
+        "href": "/en/monaco/monaco-customs-declaration-helper/",
+        "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Monegasque Postal Tracking Helper",
+        "href": "/en/monaco/monaco-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Monegasque Data Quality Workbench",
+        "href": "/en/monaco/monaco-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Monegasque JSON Fixture Helper",
+        "href": "/en/monaco/monaco-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Monegasque Regex Pack Helper",
+        "href": "/en/monaco/monaco-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Monegasque API Payload Auditor",
+        "href": "/en/monaco/monaco-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Monegasque Form Field Auditor",
+        "href": "/en/monaco/monaco-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Monegasque Locale Number Parser",
+        "href": "/en/monaco/monaco-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Monaco."
+      },
+      {
+        "title": "Monegasque Calendar Week Helper",
+        "href": "/en/monaco/monaco-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Monegasque Company Suffix Normalizer",
+        "href": "/en/monaco/monaco-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Monegasque Procurement Identifier Helper",
+        "href": "/en/monaco/monaco-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Monegasque Locale Copy Checker",
+        "href": "/en/monaco/monaco-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Monegasque Support Ticket Scrubber",
+        "href": "/en/monaco/monaco-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Monegasque Integration Smoke Test Builder",
+        "href": "/en/monaco/monaco-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

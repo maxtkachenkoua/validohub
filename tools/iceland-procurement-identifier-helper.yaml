@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-procurement-identifier-helper
+kind: tool
+module: validohub
+country: IS
+category: government
+status: active
+name:
+  en: "Icelandic Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "5501692829 PO-2026-001 IS5501692829"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-accessibility-locale-copy-checker, iceland-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

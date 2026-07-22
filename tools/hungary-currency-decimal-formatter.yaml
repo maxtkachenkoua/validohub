@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-currency-decimal-formatter
+kind: tool
+module: validohub
+country: HU
+category: finance
+status: active
+name:
+  en: "Hungarian HUF Decimal Currency Formatter"
+summary:
+  en: "Normalize HUF amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1 234,56 HUF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-vat-rate-sanity-helper, hungary-vat-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian HUF Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize HUF amount strings, decimal separators, grouping, and API-safe numeric previews."

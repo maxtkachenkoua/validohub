@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-residence-permit-format-helper
+kind: tool
+module: validohub
+country: MT
+category: documents
+status: active
+name:
+  en: "Maltese Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "MT PERMIT 2026 1234567M"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-health-card-format-helper, malta-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

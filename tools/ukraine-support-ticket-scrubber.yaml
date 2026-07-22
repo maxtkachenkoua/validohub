@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-support-ticket-scrubber
+kind: tool
+module: validohub
+country: UA
+category: privacy
+status: active
+name:
+  en: "Ukrainian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1234567890, UA213223130000026007233566001, Khreshchatyk 1, 01001 Kyiv"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-integration-smoke-test-builder, ukraine-rnokpp-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

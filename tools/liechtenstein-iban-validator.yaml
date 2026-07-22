@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liechtenstein-iban-validator
+kind: tool
+module: validohub
+country: LI
+category: finance
+status: active
+name:
+  en: "Liechtenstein IBAN Validator"
+summary:
+  en: "Validate LI IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liechtenstein-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "LI21088100002324013AA"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liechtenstein-iban-generator, liechtenstein-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liechtenstein IBAN Validator | ValidoHub"
+  description:
+    en: "Validate LI IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

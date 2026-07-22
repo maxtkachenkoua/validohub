@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-phone-number-validator
+kind: tool
+module: validohub
+country: IS
+category: address
+status: active
+name:
+  en: "Icelandic Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+354 555 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-phone-e164-formatter, iceland-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

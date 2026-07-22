@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-phone-number-validator
+kind: tool
+module: validohub
+country: SK
+category: address
+status: active
+name:
+  en: "Slovak Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+421 905 123 456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-phone-e164-formatter, slovakia-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-document-ocr-fixer
+kind: tool
+module: validohub
+country: GR
+category: documents
+status: active
+name:
+  en: "Greek Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "01018012345 EL123456789 GR1601101250000000012300695 105 57 Athens"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-gdpr-redaction-helper, greece-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-eori-validator
+kind: tool
+module: validohub
+country: MK
+category: national-identifiers
+status: active
+name:
+  en: "Macedonian EORI / Customs Identifier Helper"
+summary:
+  en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EORI input"
+        required: true
+        placeholder:
+          en: "MK1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-embg-social-insurance-helper, north-macedonia-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian EORI / Customs Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-json-fixture-generator
+kind: tool
+module: validohub
+country: SK
+category: developer-tools
+status: active
+name:
+  en: "Slovak JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SK\",\"ico\":\"31331131\",\"iban\":\"SK3112000000198742637541\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-regex-pack-helper, slovakia-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

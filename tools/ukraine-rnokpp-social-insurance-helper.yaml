@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-rnokpp-social-insurance-helper
+kind: tool
+module: validohub
+country: UA
+category: national-identifiers
+status: active
+name:
+  en: "Ukrainian RNOKPP Helper"
+summary:
+  en: "Split RNOKPP evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-company-onboarding-auditor, ukraine-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian RNOKPP Helper | ValidoHub"
+  description:
+    en: "Split RNOKPP evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

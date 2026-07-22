@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-iban-generator
+kind: tool
+module: validohub
+country: BG
+category: finance
+status: active
+name:
+  en: "Bulgaria IBAN Generator"
+summary:
+  en: "Generate BG IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "BNBG96611020345678"
+    actions: [generate, validate, explain]
+related:
+  explicit: [bulgaria-bank-account-inspector, bulgaria-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgaria IBAN Generator | ValidoHub"
+  description:
+    en: "Generate BG IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: HR
+category: privacy
+status: active
+name:
+  en: "Croatian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 12345678903, HR1210010051863000160, Ilica 1, 10000 Zagreb"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-integration-smoke-test-builder, croatia-oib-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

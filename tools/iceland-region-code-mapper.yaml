@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-region-code-mapper
+kind: tool
+module: validohub
+country: IS
+category: address
+status: active
+name:
+  en: "Icelandic Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "101 Reykjavik"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-municipality-code-inspector, iceland-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

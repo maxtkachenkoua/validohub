@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-business-register-readiness-helper
+kind: tool
+module: validohub
+country: AD
+category: government
+status: active
+name:
+  en: "Andorran Registre de Societats Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Registre de Societats lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "F-123456-Z AD F123456Z Avinguda Meritxell 1, AD500 Andorra la Vella"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-id-card-format-helper, andorra-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran Registre de Societats Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Registre de Societats lookup or company registry workflow."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: HR
+category: tax
+status: active
+name:
+  en: "Croatian PDV invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"HR\",\"oib\":\"12345678903\",\"iban\":\"HR1210010051863000160\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-tax-authority-handoff-helper, croatia-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian PDV invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

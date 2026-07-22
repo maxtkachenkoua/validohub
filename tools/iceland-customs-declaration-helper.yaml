@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-customs-declaration-helper
+kind: tool
+module: validohub
+country: IS
+category: government
+status: active
+name:
+  en: "Icelandic Customs Declaration Helper"
+summary:
+  en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "IS5501692829 HS 8471 1.234,56 ISK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-postal-tracking-helper, iceland-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."

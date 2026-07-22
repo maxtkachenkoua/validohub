@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-json-fixture-generator
+kind: tool
+module: validohub
+country: MC
+category: developer-tools
+status: active
+name:
+  en: "Monegasque JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MC\",\"rci\":\"22S12345\",\"iban\":\"MC5811222000010123456789030\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-regex-pack-helper, monaco-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

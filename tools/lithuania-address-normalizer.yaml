@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-address-normalizer
+kind: tool
+module: validohub
+country: LT
+category: address
+status: active
+name:
+  en: "Lithuanian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Gedimino pr. 1, LT-01103 Vilnius"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-address-transliteration-normalizer, lithuania-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

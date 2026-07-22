@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: EE
+category: government
+status: active
+name:
+  en: "Estonian e-Business Register Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated e-Business Register lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "12345678 EE123456789 Viru 1, 10111 Tallinn"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-id-card-format-helper, estonia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian e-Business Register Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated e-Business Register lookup or company registry workflow."

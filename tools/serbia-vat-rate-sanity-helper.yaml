@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: RS
+category: tax
+status: active
+name:
+  en: "Serbian VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "PIB / PDV 20% base 1.234,56 RSD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-vat-return-field-helper, serbia-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

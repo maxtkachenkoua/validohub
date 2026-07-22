@@ -1,0 +1,642 @@
+{
+  "id": "malta",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/malta-outline.svg",
+    "outlineAlt": "Malta country outline",
+    "mapSrc": "/assets/images/countries/malta-location.svg",
+    "mapAlt": "World map with Malta location marker",
+    "mapMarker": {
+      "x": 52,
+      "y": 70,
+      "label": "Malta"
+    },
+    "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+  },
+  "catalog": {
+    "id": "malta",
+    "flag": "🇲🇹",
+    "name": "Malta",
+    "nativeName": "Malta",
+    "iso2": "MT",
+    "iso3": "MLT",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "Maltese and English",
+    "currency": "EUR",
+    "currencyName": "Euro",
+    "status": "available",
+    "summary": "Premium Malta developer hub for ID card number, company C number, VAT, postal code, phone, IBAN, SEPA, SWIFT, payment reference, VIES, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "ID card number",
+      "company C number",
+      "VAT",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "IBAN",
+      "SEPA",
+      "SWIFT",
+      "payment reference",
+      "VIES"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Maltese ID card number Validator",
+      "Maltese company C number Validator",
+      "Maltese VAT ID / MT Prefix Validator",
+      "Maltese EORI / Customs Identifier Helper",
+      "Maltese social security number Helper",
+      "Maltese Company Onboarding Auditor",
+      "Maltese Malta Business Registry Readiness Helper",
+      "Maltese ID Card Format Helper",
+      "Maltese Passport Number Helper",
+      "Maltese MRZ / Passport Parser",
+      "Malta IBAN Validator",
+      "Malta IBAN Generator",
+      "Maltese Domestic Bank Account Inspector",
+      "Maltese BIC / SWIFT Inspector",
+      "Maltese SEPA Transfer Helper",
+      "Maltese SEPA Direct Debit Mandate Helper",
+      "Maltese SEPA reference Reference Helper",
+      "Maltese Remittance Text Builder",
+      "Maltese Payment Reconciliation Helper",
+      "Maltese Bank Statement Parser",
+      "Maltese Masked IBAN Formatter",
+      "Maltese EUR Decimal Currency Formatter",
+      "Maltese VAT Rate Sanity Helper",
+      "Maltese VAT Return Field Helper",
+      "Maltese Invoice Number Helper",
+      "Maltese VAT invoice Readiness Checker",
+      "Maltese Tax Authority Handoff Helper",
+      "Maltese Accounting Audit Trail Checklist Helper",
+      "Maltese Postal Code Validator",
+      "Maltese Address Normalizer",
+      "Maltese Address Transliteration Normalizer",
+      "Maltese Region / Province Code Mapper",
+      "Maltese Municipality Code Inspector",
+      "Maltese Phone Number Validator",
+      "Maltese Phone E.164 Formatter",
+      "Maltese Date Locale Formatter",
+      "Maltese CSV Locale Normalizer",
+      "Maltese Slug Normalizer",
+      "Maltese Document OCR Fixer",
+      "Maltese GDPR / IDPC Redaction Helper",
+      "Maltese PII Masker",
+      "Maltese Personal Data Fixture Helper",
+      "Maltese Driving Licence Format Helper",
+      "Maltese Residence Permit Format Helper",
+      "Maltese Health Card Format Helper",
+      "Maltese Vehicle Plate Inspector",
+      "Maltese VIN Validator",
+      "Maltese Vehicle Data Redaction Helper",
+      "Maltese Customs Declaration Helper",
+      "Maltese Postal Tracking Helper",
+      "Maltese Data Quality Workbench",
+      "Maltese JSON Fixture Helper",
+      "Maltese Regex Pack Helper",
+      "Maltese API Payload Auditor",
+      "Maltese Form Field Auditor",
+      "Maltese Locale Number Parser",
+      "Maltese Calendar Week Helper",
+      "Maltese Company Suffix Normalizer",
+      "Maltese Procurement Identifier Helper",
+      "Maltese Locale Copy Checker",
+      "Maltese Support Ticket Scrubber",
+      "Maltese Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live Malta Business Registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 52,
+      "y": 70
+    },
+    "searchHints": [
+      "ID CARD",
+      "VAT",
+      "MBR",
+      "IBAN",
+      "SEPA",
+      "VLT"
+    ]
+  },
+  "hub": {
+    "flag": "🇲🇹",
+    "name": "Malta",
+    "badge": "Premium Malta developer suite",
+    "description": "Developer intelligence and browser-only workbenches for maltese identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Malta",
+      "population": "approximately 0.5M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Valletta",
+      "continent": "Europe",
+      "region": "Southern Europe / European Union",
+      "languages": "Maltese and English",
+      "currency": "Euro",
+      "currencyCode": "EUR",
+      "callingCode": "+356",
+      "internetTld": ".mt",
+      "drivingSide": "Right",
+      "iso2": "MT",
+      "iso3": "MLT",
+      "isoNumeric": "470",
+      "locale": "mt-MT",
+      "icuLocale": "mt_MT",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Malta",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Europe/Malta (CET/CEST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "mt-MT",
+      "cldrLocale": "mt_MT",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type G",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "malta",
+      "outlineLabel": "Malta outline",
+      "mapLabel": "Malta in the world",
+      "continentBadge": "Europe",
+      "flagLabel": "Malta flag",
+      "heroAccentPrimary": "15 118 110",
+      "heroAccentSecondary": "37 99 235",
+      "heroAccentTertiary": "245 158 11"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "ID card number and company C number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "VAT and payments",
+        "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Malta registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /malta/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Maltese examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "Malta Business Registry",
+        "text": "Official business registry or company lookup remains the source of truth for Malta.",
+        "status": "official boundary"
+      },
+      {
+        "title": "VAT",
+        "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+        "status": "official boundary"
+      },
+      {
+        "title": "GDPR / IDPC",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "ID card number, company C number, VAT, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, SEPA, SWIFT, payment reference, VIES",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "mt-MT / mt_MT; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "EUR amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "ID card number, company C number, postal code, phone, address, and IBAN need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type G",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "EU-wide emergency number; local alternatives may also exist."
+      }
+    ],
+    "searchHints": [
+      "ID CARD",
+      "VAT",
+      "MBR",
+      "IBAN",
+      "SEPA",
+      "VLT"
+    ],
+    "routes": [
+      {
+        "title": "Maltese ID card number Validator",
+        "href": "/en/malta/malta-id-card-number-validator/",
+        "text": "Validate ID card number shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Maltese company C number Validator",
+        "href": "/en/malta/malta-company-c-number-validator/",
+        "text": "Inspect company C number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Maltese VAT ID / MT Prefix Validator",
+        "href": "/en/malta/malta-vat-id-validator/",
+        "text": "Normalize MT VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+      },
+      {
+        "title": "Maltese EORI / Customs Identifier Helper",
+        "href": "/en/malta/malta-eori-validator/",
+        "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+      },
+      {
+        "title": "Maltese social security number Helper",
+        "href": "/en/malta/malta-social-security-number-social-insurance-helper/",
+        "text": "Split social security number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Maltese Company Onboarding Auditor",
+        "href": "/en/malta/malta-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company C number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Maltese Malta Business Registry Readiness Helper",
+        "href": "/en/malta/malta-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated Malta Business Registry lookup or company registry workflow."
+      },
+      {
+        "title": "Maltese ID Card Format Helper",
+        "href": "/en/malta/malta-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Maltese Passport Number Helper",
+        "href": "/en/malta/malta-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Maltese MRZ / Passport Parser",
+        "href": "/en/malta/malta-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Malta IBAN Validator",
+        "href": "/en/malta/malta-iban-validator/",
+        "text": "Validate MT IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+      },
+      {
+        "title": "Malta IBAN Generator",
+        "href": "/en/malta/malta-iban-generator/",
+        "text": "Generate MT IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+      },
+      {
+        "title": "Maltese Domestic Bank Account Inspector",
+        "href": "/en/malta/malta-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+      },
+      {
+        "title": "Maltese BIC / SWIFT Inspector",
+        "href": "/en/malta/malta-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Malta banking integrations."
+      },
+      {
+        "title": "Maltese SEPA Transfer Helper",
+        "href": "/en/malta/malta-sepa-transfer-helper/",
+        "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+      },
+      {
+        "title": "Maltese SEPA Direct Debit Mandate Helper",
+        "href": "/en/malta/malta-sepa-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+      },
+      {
+        "title": "Maltese SEPA reference Reference Helper",
+        "href": "/en/malta/malta-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Maltese Remittance Text Builder",
+        "href": "/en/malta/malta-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Maltese Payment Reconciliation Helper",
+        "href": "/en/malta/malta-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Maltese Bank Statement Parser",
+        "href": "/en/malta/malta-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Maltese Masked IBAN Formatter",
+        "href": "/en/malta/malta-masked-iban-formatter/",
+        "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+      },
+      {
+        "title": "Maltese EUR Decimal Currency Formatter",
+        "href": "/en/malta/malta-currency-decimal-formatter/",
+        "text": "Normalize EUR amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Maltese VAT Rate Sanity Helper",
+        "href": "/en/malta/malta-vat-rate-sanity-helper/",
+        "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Maltese VAT Return Field Helper",
+        "href": "/en/malta/malta-vat-return-field-helper/",
+        "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Maltese Invoice Number Helper",
+        "href": "/en/malta/malta-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Maltese VAT invoice Readiness Checker",
+        "href": "/en/malta/malta-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Maltese Tax Authority Handoff Helper",
+        "href": "/en/malta/malta-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Maltese Accounting Audit Trail Checklist Helper",
+        "href": "/en/malta/malta-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+      },
+      {
+        "title": "Maltese Postal Code Validator",
+        "href": "/en/malta/malta-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Maltese Address Normalizer",
+        "href": "/en/malta/malta-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Maltese Address Transliteration Normalizer",
+        "href": "/en/malta/malta-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Maltese Region / Province Code Mapper",
+        "href": "/en/malta/malta-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Maltese Municipality Code Inspector",
+        "href": "/en/malta/malta-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Maltese Phone Number Validator",
+        "href": "/en/malta/malta-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Maltese Phone E.164 Formatter",
+        "href": "/en/malta/malta-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Maltese Date Locale Formatter",
+        "href": "/en/malta/malta-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Maltese CSV Locale Normalizer",
+        "href": "/en/malta/malta-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Malta decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Maltese Slug Normalizer",
+        "href": "/en/malta/malta-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Maltese Document OCR Fixer",
+        "href": "/en/malta/malta-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Maltese GDPR / IDPC Redaction Helper",
+        "href": "/en/malta/malta-gdpr-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Maltese PII Masker",
+        "href": "/en/malta/malta-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Maltese Personal Data Fixture Helper",
+        "href": "/en/malta/malta-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Maltese Driving Licence Format Helper",
+        "href": "/en/malta/malta-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Maltese Residence Permit Format Helper",
+        "href": "/en/malta/malta-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Maltese Health Card Format Helper",
+        "href": "/en/malta/malta-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Maltese Vehicle Plate Inspector",
+        "href": "/en/malta/malta-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Maltese VIN Validator",
+        "href": "/en/malta/malta-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Maltese Vehicle Data Redaction Helper",
+        "href": "/en/malta/malta-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Maltese Customs Declaration Helper",
+        "href": "/en/malta/malta-customs-declaration-helper/",
+        "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Maltese Postal Tracking Helper",
+        "href": "/en/malta/malta-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Maltese Data Quality Workbench",
+        "href": "/en/malta/malta-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Maltese JSON Fixture Helper",
+        "href": "/en/malta/malta-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Maltese Regex Pack Helper",
+        "href": "/en/malta/malta-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Maltese API Payload Auditor",
+        "href": "/en/malta/malta-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Maltese Form Field Auditor",
+        "href": "/en/malta/malta-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Maltese Locale Number Parser",
+        "href": "/en/malta/malta-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Malta."
+      },
+      {
+        "title": "Maltese Calendar Week Helper",
+        "href": "/en/malta/malta-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Maltese Company Suffix Normalizer",
+        "href": "/en/malta/malta-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Maltese Procurement Identifier Helper",
+        "href": "/en/malta/malta-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Maltese Locale Copy Checker",
+        "href": "/en/malta/malta-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Maltese Support Ticket Scrubber",
+        "href": "/en/malta/malta-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Maltese Integration Smoke Test Builder",
+        "href": "/en/malta/malta-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

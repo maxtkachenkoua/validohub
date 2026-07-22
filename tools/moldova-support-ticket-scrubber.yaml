@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: moldova-support-ticket-scrubber
+kind: tool
+module: validohub
+country: MD
+category: privacy
+status: active
+name:
+  en: "Moldovan Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.moldova-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 2000010101234, MD24AG000225100013104168, Stefan cel Mare 1, MD-2001 Chisinau"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [moldova-integration-smoke-test-builder, moldova-idnp-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moldovan Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

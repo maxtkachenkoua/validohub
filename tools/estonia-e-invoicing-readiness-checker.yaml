@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: EE
+category: tax
+status: active
+name:
+  en: "Estonian e-invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"EE\",\"isikukood\":\"38501010018\",\"iban\":\"EE382200221020145685\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-tax-authority-handoff-helper, estonia-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian e-invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

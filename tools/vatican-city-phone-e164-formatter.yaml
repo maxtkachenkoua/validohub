@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-phone-e164-formatter
+kind: tool
+module: validohub
+country: VA
+category: address
+status: active
+name:
+  en: "Vatican Phone E.164 Formatter"
+summary:
+  en: "Normalize local phone input to E.164-style previews and split country/national evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "E164 input"
+        required: true
+        placeholder:
+          en: "+39 06 6982 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-date-locale-formatter, vatican-city-csv-locale-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Phone E.164 Formatter | ValidoHub"
+  description:
+    en: "Normalize local phone input to E.164-style previews and split country/national evidence."

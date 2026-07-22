@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-isikukood-validator
+kind: tool
+module: validohub
+country: EE
+category: national-identifiers
+status: active
+name:
+  en: "Estonian Isikukood Validator"
+summary:
+  en: "Validate Isikukood shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "38501010018"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-registry-code-validator, estonia-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian Isikukood Validator | ValidoHub"
+  description:
+    en: "Validate Isikukood shape, split date/control/body evidence, and prepare privacy-safe debugging output."

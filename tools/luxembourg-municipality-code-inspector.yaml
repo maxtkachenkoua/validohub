@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-municipality-code-inspector
+kind: tool
+module: validohub
+country: LU
+category: address
+status: active
+name:
+  en: "Luxembourgish Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Grand-Rue 1, L-1661 Luxembourg"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-phone-number-validator, luxembourg-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

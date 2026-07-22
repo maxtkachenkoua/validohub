@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-postal-tracking-helper
+kind: tool
+module: validohub
+country: LU
+category: logistics
+status: active
+name:
+  en: "Luxembourgish Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 L-1111 Luxembourg"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-data-quality-workbench, luxembourg-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

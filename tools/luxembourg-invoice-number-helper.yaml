@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-invoice-number-helper
+kind: tool
+module: validohub
+country: LU
+category: tax
+status: active
+name:
+  en: "Luxembourgish Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 LU12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-e-invoicing-readiness-checker, luxembourg-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

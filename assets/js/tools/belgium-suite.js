@@ -13,23 +13,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "85.07.30-033.28"
+        "value": "85.07.30-033.28",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "85.07.30-033.29"
+        "value": "Invalid 85.07.30-033.29",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "85.07.30-"
+        "value": "85.07.30-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 85.07.30-033.28"
+        "value": "Wrong prefix BE 85.07.30-033.28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE ID edge 1"
+        "value": "Review BE ID edge 1",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -41,7 +51,7 @@
         "text": "Belgian RRN / NISS Validator analyzes Belgium-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -65,23 +75,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BE0123456749"
+        "value": "BE0123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "BE0123456740"
+        "value": "Invalid BE0123456740",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BE01234"
+        "value": "BE01234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ0123456749"
+        "value": "Wrong prefix ZZ0123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE ORG edge 2"
+        "value": "Review BE ORG edge 2",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -93,7 +113,7 @@
         "text": "Belgian KBO / BCE Validator analyzes Belgium-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -117,23 +137,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BE0123456749"
+        "value": "BE0123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ0123456749"
+        "value": "Wrong prefix ZZ0123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BE01234"
+        "value": "BE01234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ0123456749"
+        "value": "Wrong prefix ZZ0123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE VAT edge 3"
+        "value": "Review BE VAT edge 3",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -145,7 +175,7 @@
         "text": "Belgian VAT ID / BE Prefix Validator analyzes Belgium-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -169,23 +199,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BEBE0123456749"
+        "value": "BEBE0123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZBE0123456749"
+        "value": "Wrong prefix ZZBE0123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BEBE0123"
+        "value": "BEBE0123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZBE0123456749"
+        "value": "Wrong prefix ZZBE0123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE EORI edge 4"
+        "value": "Review BE EORI edge 4",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -197,7 +237,7 @@
         "text": "Belgian EORI / Customs Identifier Helper analyzes Belgium-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -221,23 +261,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "85.07.30-033.28"
+        "value": "85.07.30-033.28",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "85.07.30-033.29"
+        "value": "Invalid 85.07.30-033.29",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "85.07.30-"
+        "value": "85.07.30-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 85.07.30-033.28"
+        "value": "Wrong prefix BE 85.07.30-033.28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE SOC edge 5"
+        "value": "Review BE SOC edge 5",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -249,7 +299,7 @@
         "text": "Belgian BIS number Helper analyzes Belgium-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -273,23 +323,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,57\"}"
+        "value": "Invalid {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,57\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE KYC edge 6"
+        "value": "Review BE KYC edge 6",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -301,7 +361,7 @@
         "text": "Belgian Company Onboarding Auditor analyzes Belgium-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -325,23 +385,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BE0123456749 BE0123456749 Rue de la Loi 16, 1000 Brussels"
+        "value": "BE0123456749 BE0123456749 Rue de la Loi 16, 1000 Brussels",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "BE0123456749 BE0123456749 Rue de la Loi 16, 1001 Brussels"
+        "value": "Invalid BE0123456749 BE0123456749 Rue de la Loi 16, 1001 Brussels",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BE0123456749 BE0123456749 Rue de"
+        "value": "BE0123456749 BE0123456749 Rue de",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ0123456749 BE0123456749 Rue de la Loi 16, 1000 Brussels"
+        "value": "Wrong prefix ZZ0123456749 BE0123456749 Rue de la Loi 16, 1000 Brussels",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE REG edge 7"
+        "value": "Review BE REG edge 7",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -353,7 +423,7 @@
         "text": "Belgian KBO / BCE register Readiness Helper analyzes Belgium-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -377,23 +447,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "85.07.30-033.28"
+        "value": "85.07.30-033.28",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE CARD 8"
+        "value": "Invalid BE CARD 8",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "85.07.30-"
+        "value": "85.07.30-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 85.07.30-033.28"
+        "value": "Wrong prefix BE 85.07.30-033.28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE CARD edge 8"
+        "value": "Review BE CARD edge 8",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -405,7 +485,7 @@
         "text": "Belgian ID Card Format Helper analyzes Belgium-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -429,23 +509,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<BELBELGIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "P<BELBELGIAN<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE PASS 9"
+        "value": "Invalid BE PASS 9",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<BELBELGIAN<<SAMPLE<"
+        "value": "P<BELBELGIAN<<SAMPLE<",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE P<BELBELGIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "Wrong prefix BE P<BELBELGIAN<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE PASS edge 9"
+        "value": "Review BE PASS edge 9",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -457,7 +547,7 @@
         "text": "Belgian Passport Number Helper analyzes Belgium-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -481,23 +571,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<BELSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567BEL8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "P<BELSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567BEL8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE MRZ 10"
+        "value": "Invalid BE MRZ 10",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<BELSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345"
+        "value": "P<BELSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE P<BELSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567BEL8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "Wrong prefix BE P<BELSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567BEL8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE MRZ edge 10"
+        "value": "Review BE MRZ edge 10",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -509,7 +609,7 @@
         "text": "Belgian MRZ / Passport Parser analyzes Belgium-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -533,23 +633,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BE68539007547034"
+        "value": "BE68539007547034",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ68539007547034"
+        "value": "Wrong prefix ZZ68539007547034",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BE6853900"
+        "value": "BE6853900",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ68539007547034"
+        "value": "Wrong prefix ZZ68539007547034",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE IBAN edge 11"
+        "value": "Review BE IBAN edge 11",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -561,7 +671,7 @@
         "text": "Belgium IBAN Validator analyzes Belgium-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -585,23 +695,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "539007547034"
+        "value": "539007547034",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Wrong prefix BE 539007547034"
+        "value": "Wrong prefix BE 539007547034",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "5390075"
+        "value": "5390075",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Grouped valid sample",
-        "value": "5390 0754 7034"
+        "value": "5390 0754 7034",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE IBG edge 12"
+        "value": "Review BE IBG edge 12",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -613,7 +733,7 @@
         "text": "Belgium IBAN Generator analyzes Belgium-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -637,23 +757,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "539 0075470 34"
+        "value": "539 0075470 34",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE BANK 13"
+        "value": "Invalid BE BANK 13",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "539 0075"
+        "value": "539 0075",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 539 0075470 34"
+        "value": "Wrong prefix BE 539 0075470 34",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE BANK edge 13"
+        "value": "Review BE BANK edge 13",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -665,7 +795,7 @@
         "text": "Belgian Domestic Bank Account Inspector analyzes Belgium-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -689,23 +819,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "ABCDBE2X"
+        "value": "ABCDBE2X",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZCDBE2X"
+        "value": "Wrong prefix ZZCDBE2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "ABCDB"
+        "value": "ABCDB",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZCDBE2X"
+        "value": "Wrong prefix ZZCDBE2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE BIC edge 14"
+        "value": "Review BE BIC edge 14",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -717,7 +857,7 @@
         "text": "Belgian BIC / SWIFT Inspector analyzes Belgium-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -741,23 +881,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BE68539007547034\\n1.234,56 EUR\\nInvoice 2026-001"
+        "value": "BE68539007547034\\n1.234,56 EUR\\nInvoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE SEPA 15"
+        "value": "Invalid BE SEPA 15",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BE68539007547034\\n1.234,56 "
+        "value": "BE68539007547034\\n1.234,56 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ68539007547034\\n1.234,56 EUR\\nInvoice 2026-001"
+        "value": "Wrong prefix ZZ68539007547034\\n1.234,56 EUR\\nInvoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE SEPA edge 15"
+        "value": "Review BE SEPA edge 15",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -769,7 +919,7 @@
         "text": "Belgian SEPA Transfer Helper analyzes Belgium-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -793,23 +943,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "MANDATE-2026-001 BE68539007547034"
+        "value": "MANDATE-2026-001 BE68539007547034",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE SDD 16"
+        "value": "Invalid BE SDD 16",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "MANDATE-2026-001 BE"
+        "value": "MANDATE-2026-001 BE",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZNDATE-2026-001 BE68539007547034"
+        "value": "Wrong prefix ZZNDATE-2026-001 BE68539007547034",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE SDD edge 16"
+        "value": "Review BE SDD edge 16",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -821,7 +981,7 @@
         "text": "Belgian SEPA Direct Debit Mandate Helper analyzes Belgium-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -845,23 +1005,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "OGM structured communication REF 2026-001 1.234,56 EUR"
+        "value": "OGM structured communication REF 2026-001 1.234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE PAY 17"
+        "value": "Invalid BE PAY 17",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "OGM structured communication R"
+        "value": "OGM structured communication R",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZM structured communication REF 2026-001 1.234,56 EUR"
+        "value": "Wrong prefix ZZM structured communication REF 2026-001 1.234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE PAY edge 17"
+        "value": "Review BE PAY edge 17",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -873,7 +1043,7 @@
         "text": "Belgian OGM structured communication Reference Helper analyzes Belgium-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -897,23 +1067,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Invoice 2026-001 BE0123456749 1.234,56 EUR"
+        "value": "Invoice 2026-001 BE0123456749 1.234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE REMIT 18"
+        "value": "Invalid BE REMIT 18",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Invoice 2026-001 BE01234"
+        "value": "Invoice 2026-001 BE01234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE Invoice 2026-001 BE0123456749 1.234,56 EUR"
+        "value": "Wrong prefix BE Invoice 2026-001 BE0123456749 1.234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE REMIT edge 18"
+        "value": "Review BE REMIT edge 18",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -925,7 +1105,7 @@
         "text": "Belgian Remittance Text Builder analyzes Belgium-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -949,23 +1129,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21/07/2026; 1.234,56 EUR; BE68539007547034; Invoice 2026-001"
+        "value": "21/07/2026; 1.234,56 EUR; BE68539007547034; Invoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE RECON 19"
+        "value": "Invalid BE RECON 19",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21/07/2026; 1.234,56 EUR; BE68539"
+        "value": "21/07/2026; 1.234,56 EUR; BE68539",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 21/07/2026; 1.234,56 EUR; BE68539007547034; Invoice 2026-001"
+        "value": "Wrong prefix BE 21/07/2026; 1.234,56 EUR; BE68539007547034; Invoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE RECON edge 19"
+        "value": "Review BE RECON edge 19",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -977,7 +1167,7 @@
         "text": "Belgian Payment Reconciliation Helper analyzes Belgium-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1001,23 +1191,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21/07/2026; 1.234,56 EUR; BE68539007547034; sample counterparty"
+        "value": "21/07/2026; 1.234,56 EUR; BE68539007547034; sample counterparty",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE STMT 20"
+        "value": "Invalid BE STMT 20",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21/07/2026; 1.234,56 EUR; BE6853900"
+        "value": "21/07/2026; 1.234,56 EUR; BE6853900",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 21/07/2026; 1.234,56 EUR; BE68539007547034; sample counterparty"
+        "value": "Wrong prefix BE 21/07/2026; 1.234,56 EUR; BE68539007547034; sample counterparty",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE STMT edge 20"
+        "value": "Review BE STMT edge 20",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1029,7 +1229,7 @@
         "text": "Belgian Bank Statement Parser analyzes Belgium-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1053,23 +1253,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BE68539007547034"
+        "value": "BE68539007547034",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ68539007547034"
+        "value": "Wrong prefix ZZ68539007547034",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BE6853900"
+        "value": "BE6853900",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ68539007547034"
+        "value": "Wrong prefix ZZ68539007547034",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE MASK edge 21"
+        "value": "Review BE MASK edge 21",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1081,7 +1291,7 @@
         "text": "Belgian Masked IBAN Formatter analyzes Belgium-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1105,23 +1315,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1.234,56 EUR"
+        "value": "1.234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE CUR 22"
+        "value": "Invalid BE CUR 22",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1.234,5"
+        "value": "1.234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 1.234,56 EUR"
+        "value": "Wrong prefix BE 1.234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE CUR edge 22"
+        "value": "Review BE CUR edge 22",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1133,7 +1353,7 @@
         "text": "Belgian EUR Decimal Currency Formatter analyzes Belgium-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1157,23 +1377,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BTW / TVA 20% base 1.234,56 EUR"
+        "value": "BTW / TVA 20% base 1.234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE RATE 23"
+        "value": "Invalid BE RATE 23",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BTW / TVA 20% base"
+        "value": "BTW / TVA 20% base",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZW / TVA 20% base 1.234,56 EUR"
+        "value": "Wrong prefix ZZW / TVA 20% base 1.234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE RATE edge 23"
+        "value": "Review BE RATE edge 23",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1185,7 +1415,7 @@
         "text": "Belgian VAT Rate Sanity Helper analyzes Belgium-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1209,23 +1439,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BTW / TVA; BE0123456749; period 2026-07; 1.234,56 EUR"
+        "value": "BTW / TVA; BE0123456749; period 2026-07; 1.234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE RET 24"
+        "value": "Invalid BE RET 24",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BTW / TVA; BE0123456749; perio"
+        "value": "BTW / TVA; BE0123456749; perio",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZW / TVA; BE0123456749; period 2026-07; 1.234,56 EUR"
+        "value": "Wrong prefix ZZW / TVA; BE0123456749; period 2026-07; 1.234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE RET edge 24"
+        "value": "Review BE RET edge 24",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1237,7 +1477,7 @@
         "text": "Belgian VAT Return Field Helper analyzes Belgium-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1261,23 +1501,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "INV-2026-0001 BE0123456749"
+        "value": "INV-2026-0001 BE0123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE INV 25"
+        "value": "Invalid BE INV 25",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "INV-2026-0001 B"
+        "value": "INV-2026-0001 B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZV-2026-0001 BE0123456749"
+        "value": "Wrong prefix ZZV-2026-0001 BE0123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE INV edge 25"
+        "value": "Review BE INV edge 25",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1289,7 +1539,7 @@
         "text": "Belgian Invoice Number Helper analyzes Belgium-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1313,23 +1563,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE EINV 26"
+        "value": "Invalid BE EINV 26",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE EINV edge 26"
+        "value": "Review BE EINV edge 26",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1341,7 +1601,7 @@
         "text": "Belgian Peppol / e-invoicing Readiness Checker analyzes Belgium-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1365,23 +1625,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BE0123456749 21/07/2026 1.234,56 EUR"
+        "value": "BE0123456749 21/07/2026 1.234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE TAX 27"
+        "value": "Invalid BE TAX 27",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BE0123456749 21/07/2"
+        "value": "BE0123456749 21/07/2",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ0123456749 21/07/2026 1.234,56 EUR"
+        "value": "Wrong prefix ZZ0123456749 21/07/2026 1.234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE TAX edge 27"
+        "value": "Review BE TAX edge 27",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1393,7 +1663,7 @@
         "text": "Belgian Tax Authority Handoff Helper analyzes Belgium-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1417,23 +1687,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "invoice 21/07/2026 1.234,56 EUR BE0123456749"
+        "value": "invoice 21/07/2026 1.234,56 EUR BE0123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE AUDIT 28"
+        "value": "Invalid BE AUDIT 28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "invoice 21/07/2026 1.234,"
+        "value": "invoice 21/07/2026 1.234,",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE invoice 21/07/2026 1.234,56 EUR BE0123456749"
+        "value": "Wrong prefix BE invoice 21/07/2026 1.234,56 EUR BE0123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE AUDIT edge 28"
+        "value": "Review BE AUDIT edge 28",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1445,7 +1725,7 @@
         "text": "Belgian Accounting Audit Trail Checklist Helper analyzes Belgium-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1469,23 +1749,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1000 Brussels"
+        "value": "1000 Brussels",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE POST 29"
+        "value": "Invalid BE POST 29",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1000 Bru"
+        "value": "1000 Bru",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 1000 Brussels"
+        "value": "Wrong prefix BE 1000 Brussels",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE POST edge 29"
+        "value": "Review BE POST edge 29",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1497,7 +1787,7 @@
         "text": "Belgian Postal Code Validator analyzes Belgium-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1521,23 +1811,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Rue de la Loi 16, 1000 Brussels"
+        "value": "Rue de la Loi 16, 1000 Brussels",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE ADDR 30"
+        "value": "Invalid BE ADDR 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Rue de la Loi 16, "
+        "value": "Rue de la Loi 16, ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE Rue de la Loi 16, 1000 Brussels"
+        "value": "Wrong prefix BE Rue de la Loi 16, 1000 Brussels",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE ADDR edge 30"
+        "value": "Review BE ADDR edge 30",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1549,7 +1849,7 @@
         "text": "Belgian Address Normalizer analyzes Belgium-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1573,23 +1873,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Rue de la Loi 16, 1000 Brussels"
+        "value": "Rue de la Loi 16, 1000 Brussels",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE ASCII 31"
+        "value": "Invalid BE ASCII 31",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Rue de la Loi 16, "
+        "value": "Rue de la Loi 16, ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE Rue de la Loi 16, 1000 Brussels"
+        "value": "Wrong prefix BE Rue de la Loi 16, 1000 Brussels",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE ASCII edge 31"
+        "value": "Review BE ASCII edge 31",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1601,7 +1911,7 @@
         "text": "Belgian Address Transliteration Normalizer analyzes Belgium-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1625,23 +1935,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1000 Brussels"
+        "value": "1000 Brussels",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE REGION 32"
+        "value": "Invalid BE REGION 32",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1000 Bru"
+        "value": "1000 Bru",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 1000 Brussels"
+        "value": "Wrong prefix BE 1000 Brussels",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE REGION edge 32"
+        "value": "Review BE REGION edge 32",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1653,7 +1973,7 @@
         "text": "Belgian Region / Province Code Mapper analyzes Belgium-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1677,23 +1997,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Rue de la Loi 16, 1000 Brussels"
+        "value": "Rue de la Loi 16, 1000 Brussels",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE MUNI 33"
+        "value": "Invalid BE MUNI 33",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Rue de la Loi 16, "
+        "value": "Rue de la Loi 16, ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE Rue de la Loi 16, 1000 Brussels"
+        "value": "Wrong prefix BE Rue de la Loi 16, 1000 Brussels",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE MUNI edge 33"
+        "value": "Review BE MUNI edge 33",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1705,7 +2035,7 @@
         "text": "Belgian Municipality Code Inspector analyzes Belgium-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1729,23 +2059,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+32 2 123 45 67"
+        "value": "+32 2 123 45 67",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE PHONE 34"
+        "value": "Invalid BE PHONE 34",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+32 2 123"
+        "value": "+32 2 123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE +32 2 123 45 67"
+        "value": "Wrong prefix BE +32 2 123 45 67",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE PHONE edge 34"
+        "value": "Review BE PHONE edge 34",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1757,7 +2097,7 @@
         "text": "Belgian Phone Number Validator analyzes Belgium-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1781,23 +2121,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+32 2 123 45 67"
+        "value": "+32 2 123 45 67",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE E164 35"
+        "value": "Invalid BE E164 35",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+32 2 123"
+        "value": "+32 2 123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE +32 2 123 45 67"
+        "value": "Wrong prefix BE +32 2 123 45 67",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE E164 edge 35"
+        "value": "Review BE E164 edge 35",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1809,7 +2159,7 @@
         "text": "Belgian Phone E.164 Formatter analyzes Belgium-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1833,23 +2183,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21/07/2026"
+        "value": "21/07/2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE DATE 36"
+        "value": "Invalid BE DATE 36",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21/07/"
+        "value": "21/07/",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 21/07/2026"
+        "value": "Wrong prefix BE 21/07/2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE DATE edge 36"
+        "value": "Review BE DATE edge 36",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1861,7 +2221,7 @@
         "text": "Belgian Date Locale Formatter analyzes Belgium-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1885,23 +2245,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "id;amount;date;tax\\n1;1.234,56 EUR;21/07/2026;BE0123456749"
+        "value": "id;amount;date;tax\\n1;1.234,56 EUR;21/07/2026;BE0123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE CSV 37"
+        "value": "Invalid BE CSV 37",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "id;amount;date;tax\\n1;1.234,56 E"
+        "value": "id;amount;date;tax\\n1;1.234,56 E",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE id;amount;date;tax\\n1;1.234,56 EUR;21/07/2026;BE0123456749"
+        "value": "Wrong prefix BE id;amount;date;tax\\n1;1.234,56 EUR;21/07/2026;BE0123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE CSV edge 37"
+        "value": "Review BE CSV edge 37",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1913,7 +2283,7 @@
         "text": "Belgian CSV Locale Normalizer analyzes Belgium-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1937,23 +2307,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Belgium sample company Rue de la Loi 16, 1000 Brussels"
+        "value": "Belgium sample company Rue de la Loi 16, 1000 Brussels",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE SLUG 38"
+        "value": "Invalid BE SLUG 38",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Belgium sample company Rue de "
+        "value": "Belgium sample company Rue de ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE Belgium sample company Rue de la Loi 16, 1000 Brussels"
+        "value": "Wrong prefix BE Belgium sample company Rue de la Loi 16, 1000 Brussels",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE SLUG edge 38"
+        "value": "Review BE SLUG edge 38",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1965,7 +2345,7 @@
         "text": "Belgian Slug Normalizer analyzes Belgium-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1989,23 +2369,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "85.07.30-033.28 BE0123456749 BE68539007547034 1000 Brussels"
+        "value": "85.07.30-033.28 BE0123456749 BE68539007547034 1000 Brussels",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE OCR 39"
+        "value": "Invalid BE OCR 39",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "85.07.30-033.28 BE0123456749 BE68"
+        "value": "85.07.30-033.28 BE0123456749 BE68",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 85.07.30-033.28 BE0123456749 BE68539007547034 1000 Brussels"
+        "value": "Wrong prefix BE 85.07.30-033.28 BE0123456749 BE68539007547034 1000 Brussels",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE OCR edge 39"
+        "value": "Review BE OCR edge 39",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2017,7 +2407,7 @@
         "text": "Belgian Document OCR Fixer analyzes Belgium-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2041,23 +2431,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE GDPR 40"
+        "value": "Invalid BE GDPR 40",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE GDPR edge 40"
+        "value": "Review BE GDPR edge 40",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2069,7 +2469,7 @@
         "text": "Belgian GDPR / APD-GBA Redaction Helper analyzes Belgium-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2093,23 +2493,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "85.07.30-033.28 +32 2 123 45 67 BE68539007547034"
+        "value": "85.07.30-033.28 +32 2 123 45 67 BE68539007547034",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE PII 41"
+        "value": "Invalid BE PII 41",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "85.07.30-033.28 +32 2 123 4"
+        "value": "85.07.30-033.28 +32 2 123 4",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 85.07.30-033.28 +32 2 123 45 67 BE68539007547034"
+        "value": "Wrong prefix BE 85.07.30-033.28 +32 2 123 45 67 BE68539007547034",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE PII edge 41"
+        "value": "Review BE PII edge 41",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2121,7 +2531,7 @@
         "text": "Belgian PII Masker analyzes Belgium-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2145,23 +2555,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "85.07.30-033.28\\nRue de la Loi 16, 1000 Brussels\\n+32 2 123 45 67"
+        "value": "85.07.30-033.28\\nRue de la Loi 16, 1000 Brussels\\n+32 2 123 45 67",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE FIX 42"
+        "value": "Invalid BE FIX 42",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "85.07.30-033.28\\nRue de la Loi 16, 1"
+        "value": "85.07.30-033.28\\nRue de la Loi 16, 1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 85.07.30-033.28\\nRue de la Loi 16, 1000 Brussels\\n+32 2 123 45 67"
+        "value": "Wrong prefix BE 85.07.30-033.28\\nRue de la Loi 16, 1000 Brussels\\n+32 2 123 45 67",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE FIX edge 42"
+        "value": "Review BE FIX edge 42",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2173,7 +2593,7 @@
         "text": "Belgian Personal Data Fixture Helper analyzes Belgium-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2197,23 +2617,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "85.07.30-033.28 DL 2026"
+        "value": "85.07.30-033.28 DL 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE DL 43"
+        "value": "Invalid BE DL 43",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "85.07.30-033."
+        "value": "85.07.30-033.",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 85.07.30-033.28 DL 2026"
+        "value": "Wrong prefix BE 85.07.30-033.28 DL 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE DL edge 43"
+        "value": "Review BE DL edge 43",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2225,7 +2655,7 @@
         "text": "Belgian Driving Licence Format Helper analyzes Belgium-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2249,23 +2679,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BE PERMIT 2026 85.07.30-033.28"
+        "value": "BE PERMIT 2026 85.07.30-033.28",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE PERMIT 44"
+        "value": "Invalid BE PERMIT 44",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BE PERMIT 2026 85"
+        "value": "BE PERMIT 2026 85",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ PERMIT 2026 85.07.30-033.28"
+        "value": "Wrong prefix ZZ PERMIT 2026 85.07.30-033.28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE PERMIT edge 44"
+        "value": "Review BE PERMIT edge 44",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2277,7 +2717,7 @@
         "text": "Belgian Residence Permit Format Helper analyzes Belgium-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2301,23 +2741,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "85.07.30-033.28 HEALTH 2026"
+        "value": "85.07.30-033.28 HEALTH 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE HEALTH 45"
+        "value": "Invalid BE HEALTH 45",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "85.07.30-033.28"
+        "value": "85.07.30-033.28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 85.07.30-033.28 HEALTH 2026"
+        "value": "Wrong prefix BE 85.07.30-033.28 HEALTH 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE HEALTH edge 45"
+        "value": "Review BE HEALTH edge 45",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2329,7 +2779,7 @@
         "text": "Belgian Health Card Format Helper analyzes Belgium-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2353,23 +2803,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1-ABC-123"
+        "value": "1-ABC-123",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "1-ABC-124"
+        "value": "Invalid 1-ABC-124",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1-ABC"
+        "value": "1-ABC",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 1-ABC-123"
+        "value": "Wrong prefix BE 1-ABC-123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE PLATE edge 46"
+        "value": "Review BE PLATE edge 46",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2381,7 +2841,7 @@
         "text": "Belgian Vehicle Plate Inspector analyzes Belgium-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2405,23 +2865,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "WVWZZZ1JZXW000001"
+        "value": "WVWZZZ1JZXW000001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "WVWZZZ1JZXW000002"
+        "value": "Invalid WVWZZZ1JZXW000002",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "WVWZZZ1JZX"
+        "value": "WVWZZZ1JZX",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZWZZZ1JZXW000001"
+        "value": "Wrong prefix ZZWZZZ1JZXW000001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE VIN edge 47"
+        "value": "Review BE VIN edge 47",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2433,7 +2903,7 @@
         "text": "Belgian VIN Validator analyzes Belgium-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2457,23 +2927,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1-ABC-123 WVWZZZ1JZXW000001 85.07.30-033.28"
+        "value": "1-ABC-123 WVWZZZ1JZXW000001 85.07.30-033.28",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE VEH 48"
+        "value": "Invalid BE VEH 48",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1-ABC-123 WVWZZZ1JZXW000"
+        "value": "1-ABC-123 WVWZZZ1JZXW000",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 1-ABC-123 WVWZZZ1JZXW000001 85.07.30-033.28"
+        "value": "Wrong prefix BE 1-ABC-123 WVWZZZ1JZXW000001 85.07.30-033.28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE VEH edge 48"
+        "value": "Review BE VEH edge 48",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2485,7 +2965,7 @@
         "text": "Belgian Vehicle Data Redaction Helper analyzes Belgium-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2509,23 +2989,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BE0123456749 HS 8471 1.234,56 EUR"
+        "value": "BE0123456749 HS 8471 1.234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE CUSTOMS 49"
+        "value": "Invalid BE CUSTOMS 49",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BE0123456749 HS 847"
+        "value": "BE0123456749 HS 847",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ0123456749 HS 8471 1.234,56 EUR"
+        "value": "Wrong prefix ZZ0123456749 HS 8471 1.234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE CUSTOMS edge 49"
+        "value": "Review BE CUSTOMS edge 49",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2537,7 +3027,7 @@
         "text": "Belgian Customs Declaration Helper analyzes Belgium-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2561,23 +3051,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "TRACK 2026 1000 Brussels"
+        "value": "TRACK 2026 1000 Brussels",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE TRACK 50"
+        "value": "Invalid BE TRACK 50",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "TRACK 2026 100"
+        "value": "TRACK 2026 100",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZACK 2026 1000 Brussels"
+        "value": "Wrong prefix ZZACK 2026 1000 Brussels",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE TRACK edge 50"
+        "value": "Review BE TRACK edge 50",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2589,7 +3089,7 @@
         "text": "Belgian Postal Tracking Helper analyzes Belgium-specific logistics evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2613,23 +3113,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE DQ 51"
+        "value": "Invalid BE DQ 51",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE DQ edge 51"
+        "value": "Review BE DQ edge 51",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2641,7 +3151,7 @@
         "text": "Belgian Data Quality Workbench analyzes Belgium-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2665,23 +3175,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE JSON 52"
+        "value": "Invalid BE JSON 52",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE JSON edge 52"
+        "value": "Review BE JSON edge 52",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2693,7 +3213,7 @@
         "text": "Belgian JSON Fixture Helper analyzes Belgium-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2717,23 +3237,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RRN / NISS KBO / BCE postcode / code postal  BE68539007547034"
+        "value": "RRN / NISS KBO / BCE postcode / code postal  BE68539007547034",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE REGEX 53"
+        "value": "Invalid BE REGEX 53",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RRN / NISS KBO / BCE postcode / co"
+        "value": "RRN / NISS KBO / BCE postcode / co",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZN / NISS KBO / BCE postcode / code postal  BE68539007547034"
+        "value": "Wrong prefix ZZN / NISS KBO / BCE postcode / code postal  BE68539007547034",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE REGEX edge 53"
+        "value": "Review BE REGEX edge 53",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2745,7 +3275,7 @@
         "text": "Belgian Regex Pack Helper analyzes Belgium-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2769,23 +3299,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE API 54"
+        "value": "Invalid BE API 54",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE API edge 54"
+        "value": "Review BE API edge 54",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2797,7 +3337,7 @@
         "text": "Belgian API Payload Auditor analyzes Belgium-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2821,23 +3361,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "tax=BE0123456749&postal=1000 Brussels&phone=+32 2 123 45 67"
+        "value": "tax=BE0123456749&postal=1000 Brussels&phone=+32 2 123 45 67",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE FORM 55"
+        "value": "Invalid BE FORM 55",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "tax=BE0123456749&postal=1000 Brus"
+        "value": "tax=BE0123456749&postal=1000 Brus",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE tax=BE0123456749&postal=1000 Brussels&phone=+32 2 123 45 67"
+        "value": "Wrong prefix BE tax=BE0123456749&postal=1000 Brussels&phone=+32 2 123 45 67",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE FORM edge 55"
+        "value": "Review BE FORM edge 55",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2849,7 +3399,7 @@
         "text": "Belgian Form Field Auditor analyzes Belgium-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2873,23 +3423,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1.234,56 EUR"
+        "value": "1.234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE NUM 56"
+        "value": "Invalid BE NUM 56",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1.234,5"
+        "value": "1.234,5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 1.234,56 EUR"
+        "value": "Wrong prefix BE 1.234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE NUM edge 56"
+        "value": "Review BE NUM edge 56",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2901,7 +3461,7 @@
         "text": "Belgian Locale Number Parser analyzes Belgium-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2925,23 +3485,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21/07/2026 week 30"
+        "value": "21/07/2026 week 30",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE CAL 57"
+        "value": "Invalid BE CAL 57",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21/07/2026"
+        "value": "21/07/2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE 21/07/2026 week 30"
+        "value": "Wrong prefix BE 21/07/2026 week 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE CAL edge 57"
+        "value": "Review BE CAL edge 57",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2953,7 +3523,7 @@
         "text": "Belgian Calendar Week Helper analyzes Belgium-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2977,23 +3547,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Belgium Sample Holding Ltd BE0123456749"
+        "value": "Belgium Sample Holding Ltd BE0123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Belgium Sample Holding Ltd BE0123456740"
+        "value": "Invalid Belgium Sample Holding Ltd BE0123456740",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Belgium Sample Holding"
+        "value": "Belgium Sample Holding",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE Belgium Sample Holding Ltd BE0123456749"
+        "value": "Wrong prefix BE Belgium Sample Holding Ltd BE0123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE SUFFIX edge 58"
+        "value": "Review BE SUFFIX edge 58",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3005,7 +3585,7 @@
         "text": "Belgian Company Suffix Normalizer analyzes Belgium-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3029,23 +3609,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "BE0123456749 PO-2026-001 BE0123456749"
+        "value": "BE0123456749 PO-2026-001 BE0123456749",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE PROC 59"
+        "value": "Invalid BE PROC 59",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "BE0123456749 PO-2026-"
+        "value": "BE0123456749 PO-2026-",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ0123456749 PO-2026-001 BE0123456749"
+        "value": "Wrong prefix ZZ0123456749 PO-2026-001 BE0123456749",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE PROC edge 59"
+        "value": "Review BE PROC edge 59",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3057,7 +3647,7 @@
         "text": "Belgian Procurement Identifier Helper analyzes Belgium-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3081,23 +3671,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "RRN / NISS input, postcode / code postal input, amount 1.234,56 EUR"
+        "value": "RRN / NISS input, postcode / code postal input, amount 1.234,56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE COPY 60"
+        "value": "Invalid BE COPY 60",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "RRN / NISS input, postcode / code pos"
+        "value": "RRN / NISS input, postcode / code pos",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZN / NISS input, postcode / code postal input, amount 1.234,56 EUR"
+        "value": "Wrong prefix ZZN / NISS input, postcode / code postal input, amount 1.234,56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE COPY edge 60"
+        "value": "Review BE COPY edge 60",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3109,7 +3709,7 @@
         "text": "Belgian Locale Copy Checker analyzes Belgium-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3133,23 +3733,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Customer sent 85.07.30-033.28, BE68539007547034, Rue de la Loi 16, 1000 Brussels"
+        "value": "Customer sent 85.07.30-033.28, BE68539007547034, Rue de la Loi 16, 1000 Brussels",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE SUP 61"
+        "value": "Invalid BE SUP 61",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Customer sent 85.07.30-033.28, BE68539007547"
+        "value": "Customer sent 85.07.30-033.28, BE68539007547",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE Customer sent 85.07.30-033.28, BE68539007547034, Rue de la Loi 16, 1000 Brussels"
+        "value": "Wrong prefix BE Customer sent 85.07.30-033.28, BE68539007547034, Rue de la Loi 16, 1000 Brussels",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE SUP edge 61"
+        "value": "Review BE SUP edge 61",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3161,7 +3771,7 @@
         "text": "Belgian Support Ticket Scrubber analyzes Belgium-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3185,23 +3795,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid BE SMOKE 62"
+        "value": "Invalid BE SMOKE 62",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B"
+        "value": "{\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"B",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}"
+        "value": "Wrong prefix BE {\"country\":\"BE\",\"vat\":\"BE0123456749\",\"iban\":\"BE68539007547034\",\"amount\":\"1.234,56\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review BE SMOKE edge 62"
+        "value": "Review BE SMOKE edge 62",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3213,7 +3833,7 @@
         "text": "Belgian Integration Smoke Test Builder analyzes Belgium-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Belgian parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {

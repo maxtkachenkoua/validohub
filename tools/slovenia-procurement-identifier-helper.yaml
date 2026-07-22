@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-procurement-identifier-helper
+kind: tool
+module: validohub
+country: SI
+category: government
+status: active
+name:
+  en: "Slovenian Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "1234567000 PO-2026-001 SI12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-accessibility-locale-copy-checker, slovenia-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

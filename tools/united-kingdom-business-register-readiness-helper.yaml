@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-business-register-readiness-helper
+kind: tool
+module: validohub
+country: GB
+category: government
+status: active
+name:
+  en: "British Companies House Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Companies House lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "01234567 GB123456789 10 Downing Street, London SW1A 2AA"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-id-card-format-helper, united-kingdom-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British Companies House Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Companies House lookup or company registry workflow."

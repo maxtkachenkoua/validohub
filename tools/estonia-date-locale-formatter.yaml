@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-date-locale-formatter
+kind: tool
+module: validohub
+country: EE
+category: localization
+status: active
+name:
+  en: "Estonian Date Locale Formatter"
+summary:
+  en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "21.07.2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-csv-locale-normalizer, estonia-slug-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian Date Locale Formatter | ValidoHub"
+  description:
+    en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: GB
+category: privacy
+status: active
+name:
+  en: "British UK GDPR / ICO Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"GB\",\"nino\":\"QQ123456C\",\"company\":\"01234567\",\"sortCode\":\"60-16-13\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-pii-masker, united-kingdom-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British UK GDPR / ICO Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

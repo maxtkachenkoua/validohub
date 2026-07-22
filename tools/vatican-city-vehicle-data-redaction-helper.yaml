@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: VA
+category: transport
+status: active
+name:
+  en: "Vatican Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "SCV 12345 WVWZZZ1JZXW000001 SCV123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-customs-declaration-helper, vatican-city-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

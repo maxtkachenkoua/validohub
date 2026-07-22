@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-api-payload-auditor
+kind: tool
+module: validohub
+country: IS
+category: developer-tools
+status: active
+name:
+  en: "Icelandic API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IS\",\"kennitala\":\"1201743399\",\"iban\":\"IS140159260076545510730339\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-form-field-auditor, iceland-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

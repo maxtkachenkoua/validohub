@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-bic-swift-inspector
+kind: tool
+module: validohub
+country: GR
+category: finance
+status: active
+name:
+  en: "Greek BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Greece banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDGR2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-sepa-transfer-helper, greece-sepa-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Greece banking integrations."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-locale-number-parser
+kind: tool
+module: validohub
+country: BG
+category: localization
+status: active
+name:
+  en: "Bulgarian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Bulgaria."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1 234,56 BGN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-calendar-week-helper, bulgaria-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Bulgaria."

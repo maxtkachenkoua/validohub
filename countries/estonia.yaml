@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: EE
+slug: estonia
+name:
+  en: Estonia
+region: Europe
+languages:
+  - et
+currency: EUR
+relatedCountries:
+  - FI
+  - LV
+  - LT

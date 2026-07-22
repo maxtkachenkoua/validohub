@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-bic-swift-inspector
+kind: tool
+module: validohub
+country: IS
+category: finance
+status: active
+name:
+  en: "Icelandic BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Iceland banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDIS2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-sepa-transfer-helper, iceland-sepa-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Iceland banking integrations."

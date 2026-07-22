@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-pii-masker
+kind: tool
+module: validohub
+country: IS
+category: privacy
+status: active
+name:
+  en: "Icelandic PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1201743399 +354 555 1234 IS140159260076545510730339"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-personal-data-fixture-generator, iceland-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

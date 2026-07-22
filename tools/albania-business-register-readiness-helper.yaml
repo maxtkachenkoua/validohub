@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-business-register-readiness-helper
+kind: tool
+module: validohub
+country: AL
+category: government
+status: active
+name:
+  en: "Albanian QKB business register Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated QKB business register lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "L12345678A AL L12345678A Bulevardi Deshmoret e Kombit 1, 1001 Tirana"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-id-card-format-helper, albania-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian QKB business register Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated QKB business register lookup or company registry workflow."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-regex-pack-helper
+kind: tool
+module: validohub
+country: VA
+category: developer-tools
+status: active
+name:
+  en: "Vatican Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "document number Vatican entity code postal code  VA59001123000000012345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-api-payload-auditor, vatican-city-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-macedonia-postal-code-validator
+kind: tool
+module: validohub
+country: MK
+category: address
+status: active
+name:
+  en: "Macedonian Postal Code Validator"
+summary:
+  en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-macedonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "1000 Skopje"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-macedonia-address-normalizer, north-macedonia-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Macedonian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."

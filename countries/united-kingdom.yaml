@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: GB
+slug: united-kingdom
+name:
+  en: United Kingdom
+region: Europe
+languages:
+  - en
+currency: GBP
+relatedCountries:
+  - IE
+  - FR
+  - NL

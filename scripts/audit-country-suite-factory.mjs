@@ -193,9 +193,8 @@ if (fs.existsSync('scripts/build-all.mjs')) {
   if (!build.includes("'validohub.iban-generator': 'generic-suite.js'")) {
     failures.push('build pipeline missing generic IBAN generator runtime mapping');
   }
-  const ibanGeneratorMappings = build.match(/'validohub\.iban-generator': 'generic-suite\.js'/g) || [];
-  if (ibanGeneratorMappings.length < 2) {
-    failures.push('build pipeline must map IBAN generator in both post-process and integrity script tables');
+  if (!build.includes('...TOOL_SCRIPT_BY_ALGORITHM')) {
+    failures.push('build pipeline integrity script table must inherit TOOL_SCRIPT_BY_ALGORITHM instead of drifting into a second manual suite mapping');
   }
   const requiredLegacyMappings = [
     "'validohub.brazil-suite': ['country-legacy-rich-layer.js', 'brazil-suite.js']",
@@ -238,6 +237,32 @@ const factoryGeneratedSuites = [
   { slug: 'spain', runtime: 'spain-suite.js', label: 'Spanish' },
   { slug: 'germany', runtime: 'germany-suite.js', label: 'German' },
   { slug: 'italy', runtime: 'italy-suite.js', label: 'Italian' },
+  { slug: 'vatican-city', runtime: 'vatican-city-suite.js', label: 'Vatican' },
+  { slug: 'united-kingdom', runtime: 'united-kingdom-suite.js', label: 'British' },
+  { slug: 'ukraine', runtime: 'ukraine-suite.js', label: 'Ukrainian' },
+  { slug: 'slovenia', runtime: 'slovenia-suite.js', label: 'Slovenian' },
+  { slug: 'slovakia', runtime: 'slovakia-suite.js', label: 'Slovak' },
+  { slug: 'serbia', runtime: 'serbia-suite.js', label: 'Serbian' },
+  { slug: 'san-marino', runtime: 'san-marino-suite.js', label: 'Sammarinese' },
+  { slug: 'north-macedonia', runtime: 'north-macedonia-suite.js', label: 'Macedonian' },
+  { slug: 'montenegro', runtime: 'montenegro-suite.js', label: 'Montenegrin' },
+  { slug: 'monaco', runtime: 'monaco-suite.js', label: 'Monegasque' },
+  { slug: 'moldova', runtime: 'moldova-suite.js', label: 'Moldovan' },
+  { slug: 'malta', runtime: 'malta-suite.js', label: 'Maltese' },
+  { slug: 'luxembourg', runtime: 'luxembourg-suite.js', label: 'Luxembourgish' },
+  { slug: 'lithuania', runtime: 'lithuania-suite.js', label: 'Lithuanian' },
+  { slug: 'liechtenstein', runtime: 'liechtenstein-suite.js', label: 'Liechtenstein' },
+  { slug: 'latvia', runtime: 'latvia-suite.js', label: 'Latvian' },
+  { slug: 'iceland', runtime: 'iceland-suite.js', label: 'Icelandic' },
+  { slug: 'hungary', runtime: 'hungary-suite.js', label: 'Hungarian' },
+  { slug: 'greece', runtime: 'greece-suite.js', label: 'Greek' },
+  { slug: 'estonia', runtime: 'estonia-suite.js', label: 'Estonian' },
+  { slug: 'cyprus', runtime: 'cyprus-suite.js', label: 'Cypriot' },
+  { slug: 'croatia', runtime: 'croatia-suite.js', label: 'Croatian' },
+  { slug: 'bulgaria', runtime: 'bulgaria-suite.js', label: 'Bulgarian' },
+  { slug: 'bosnia-and-herzegovina', runtime: 'bosnia-and-herzegovina-suite.js', label: 'Bosnian' },
+  { slug: 'andorra', runtime: 'andorra-suite.js', label: 'Andorran' },
+  { slug: 'albania', runtime: 'albania-suite.js', label: 'Albanian' },
   { slug: 'romania', runtime: 'romania-suite.js', label: 'Romanian' },
   { slug: 'finland', runtime: 'finland-suite.js', label: 'Finnish' },
   { slug: 'denmark', runtime: 'denmark-suite.js', label: 'Danish' },

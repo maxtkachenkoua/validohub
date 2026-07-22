@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: SK
+category: privacy
+status: active
+name:
+  en: "Slovak GDPR / UOOU Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SK\",\"ico\":\"31331131\",\"iban\":\"SK3112000000198742637541\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-pii-masker, slovakia-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak GDPR / UOOU Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-business-register-readiness-helper
+kind: tool
+module: validohub
+country: LU
+category: government
+status: active
+name:
+  en: "Luxembourgish Registre de Commerce Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Registre de Commerce lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "B123456 LU12345678 Grand-Rue 1, L-1661 Luxembourg"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-id-card-format-helper, luxembourg-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish Registre de Commerce Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Registre de Commerce lookup or company registry workflow."

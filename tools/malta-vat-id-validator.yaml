@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malta-vat-id-validator
+kind: tool
+module: validohub
+country: MT
+category: national-identifiers
+status: active
+name:
+  en: "Maltese VAT ID / MT Prefix Validator"
+summary:
+  en: "Normalize MT VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malta-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "MT12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malta-eori-validator, malta-social-security-number-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maltese VAT ID / MT Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize MT VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-postal-code-validator
+kind: tool
+module: validohub
+country: LU
+category: address
+status: active
+name:
+  en: "Luxembourgish Postal Code Validator"
+summary:
+  en: "Validate code postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "L-1111 Luxembourg"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-address-normalizer, luxembourg-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate code postal shape, split area/delivery hints, and preserve official postal lookup boundaries."

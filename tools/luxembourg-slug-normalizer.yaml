@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-slug-normalizer
+kind: tool
+module: validohub
+country: LU
+category: developer-tools
+status: active
+name:
+  en: "Luxembourgish Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Luxembourg sample company Grand-Rue 1, L-1661 Luxembourg"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-document-ocr-fixer, luxembourg-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

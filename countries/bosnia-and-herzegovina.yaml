@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BA
+slug: bosnia-and-herzegovina
+name:
+  en: Bosnia and Herzegovina
+region: Europe
+languages:
+  - bs
+currency: BAM
+relatedCountries:
+  - HR
+  - RS
+  - ME

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-csv-locale-normalizer
+kind: tool
+module: validohub
+country: BA
+category: developer-tools
+status: active
+name:
+  en: "Bosnian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Bosnia and Herzegovina decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1.234,56 BAM;21.07.2026;BA4200123450006"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-slug-normalizer, bosnia-and-herzegovina-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Bosnia and Herzegovina decimal, date, postal, phone, tax, and banking fields."

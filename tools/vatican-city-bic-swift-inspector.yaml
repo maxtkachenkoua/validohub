@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-bic-swift-inspector
+kind: tool
+module: validohub
+country: VA
+category: finance
+status: active
+name:
+  en: "Vatican BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Vatican City banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDVA2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-sepa-transfer-helper, vatican-city-sepa-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Vatican City banking integrations."

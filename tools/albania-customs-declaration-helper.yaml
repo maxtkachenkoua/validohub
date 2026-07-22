@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-customs-declaration-helper
+kind: tool
+module: validohub
+country: AL
+category: government
+status: active
+name:
+  en: "Albanian Customs Declaration Helper"
+summary:
+  en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "AL L12345678A HS 8471 1.234,56 ALL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-postal-tracking-helper, albania-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."

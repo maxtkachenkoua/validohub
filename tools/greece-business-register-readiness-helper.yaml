@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-business-register-readiness-helper
+kind: tool
+module: validohub
+country: GR
+category: government
+status: active
+name:
+  en: "Greek GEMI business register Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated GEMI business register lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "123456789000 EL123456789 Ermou 1, 105 57 Athens"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-id-card-format-helper, greece-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek GEMI business register Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated GEMI business register lookup or company registry workflow."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-jmbg-validator
+kind: tool
+module: validohub
+country: RS
+category: national-identifiers
+status: active
+name:
+  en: "Serbian JMBG Validator"
+summary:
+  en: "Validate JMBG shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "0101980712345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-mb-registration-number-validator, serbia-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian JMBG Validator | ValidoHub"
+  description:
+    en: "Validate JMBG shape, split date/control/body evidence, and prepare privacy-safe debugging output."

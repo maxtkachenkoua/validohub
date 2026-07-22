@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-oib-social-insurance-helper
+kind: tool
+module: validohub
+country: HR
+category: national-identifiers
+status: active
+name:
+  en: "Croatian OIB Helper"
+summary:
+  en: "Split OIB evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "12345678903"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-company-onboarding-auditor, croatia-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian OIB Helper | ValidoHub"
+  description:
+    en: "Split OIB evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-bic-swift-inspector
+kind: tool
+module: validohub
+country: HU
+category: finance
+status: active
+name:
+  en: "Hungarian BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Hungary banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDHU2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-sepa-transfer-helper, hungary-sepa-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Hungary banking integrations."

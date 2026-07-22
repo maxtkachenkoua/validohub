@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: SI
+category: privacy
+status: active
+name:
+  en: "Slovenian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 0101980500123, SI56263300012039086, Slovenska cesta 1, 1000 Ljubljana"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-integration-smoke-test-builder, slovenia-emso-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

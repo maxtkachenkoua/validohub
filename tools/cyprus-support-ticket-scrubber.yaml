@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-support-ticket-scrubber
+kind: tool
+module: validohub
+country: CY
+category: privacy
+status: active
+name:
+  en: "Cypriot Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1234567L, CY17002001280000001200527600, Ledras 1, 1010 Nicosia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-integration-smoke-test-builder, cyprus-civil-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

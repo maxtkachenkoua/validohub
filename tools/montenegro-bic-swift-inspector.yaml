@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: montenegro-bic-swift-inspector
+kind: tool
+module: validohub
+country: ME
+category: finance
+status: active
+name:
+  en: "Montenegrin BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Montenegro banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.montenegro-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDME2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [montenegro-sepa-transfer-helper, montenegro-sepa-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Montenegrin BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Montenegro banking integrations."

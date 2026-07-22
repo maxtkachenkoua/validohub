@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-postal-tracking-helper
+kind: tool
+module: validohub
+country: GB
+category: logistics
+status: active
+name:
+  en: "British Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 SW1A 1AA London"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-data-quality-workbench, united-kingdom-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

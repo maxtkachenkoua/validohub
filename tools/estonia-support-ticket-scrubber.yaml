@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: EE
+category: privacy
+status: active
+name:
+  en: "Estonian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 38501010018, EE382200221020145685, Viru 1, 10111 Tallinn"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-integration-smoke-test-builder, estonia-isikukood-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

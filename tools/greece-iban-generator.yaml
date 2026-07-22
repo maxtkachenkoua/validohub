@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-iban-generator
+kind: tool
+module: validohub
+country: GR
+category: finance
+status: active
+name:
+  en: "Greece IBAN Generator"
+summary:
+  en: "Generate GR IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "01101250000000012300695"
+    actions: [generate, validate, explain]
+related:
+  explicit: [greece-bank-account-inspector, greece-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greece IBAN Generator | ValidoHub"
+  description:
+    en: "Generate GR IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: LI
+slug: liechtenstein
+name:
+  en: Liechtenstein
+region: Europe
+languages:
+  - de
+currency: CHF
+relatedCountries:
+  - CH
+  - AT
+  - DE

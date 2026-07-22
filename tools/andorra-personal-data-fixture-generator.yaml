@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: AD
+category: privacy
+status: active
+name:
+  en: "Andorran Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "A123456Z\\nAvinguda Meritxell 1, AD500 Andorra la Vella\\n+376 312 345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-driving-licence-format-helper, andorra-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

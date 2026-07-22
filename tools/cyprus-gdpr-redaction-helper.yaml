@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: CY
+category: privacy
+status: active
+name:
+  en: "Cypriot GDPR / Commissioner Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CY\",\"vat\":\"CY12345678L\",\"iban\":\"CY17002001280000001200527600\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-pii-masker, cyprus-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot GDPR / Commissioner Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

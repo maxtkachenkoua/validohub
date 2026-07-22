@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-pii-masker
+kind: tool
+module: validohub
+country: AD
+category: privacy
+status: active
+name:
+  en: "Andorran PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "A123456Z +376 312 345 AD1200012030200359100100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-personal-data-fixture-generator, andorra-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-data-quality-workbench
+kind: tool
+module: validohub
+country: GR
+category: developer-tools
+status: active
+name:
+  en: "Greek Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"GR\",\"afm\":\"123456789\",\"iban\":\"GR1601101250000000012300695\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-json-fixture-generator, greece-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

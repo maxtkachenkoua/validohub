@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-matricule-social-insurance-helper
+kind: tool
+module: validohub
+country: LU
+category: national-identifiers
+status: active
+name:
+  en: "Luxembourgish matricule Helper"
+summary:
+  en: "Split matricule evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1980010101234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-company-onboarding-auditor, luxembourg-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish matricule Helper | ValidoHub"
+  description:
+    en: "Split matricule evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

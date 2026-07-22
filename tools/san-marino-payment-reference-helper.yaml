@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-payment-reference-helper
+kind: tool
+module: validohub
+country: SM
+category: finance
+status: active
+name:
+  en: "Sammarinese SEPA reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "SEPA reference REF 2026-001 1.234,56 EUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-remittance-text-builder, san-marino-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese SEPA reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

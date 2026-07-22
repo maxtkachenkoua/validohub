@@ -19,6 +19,8 @@ A full premium country is a browser-only developer suite for local compliance an
 - Tool suite covering the country's real local developer needs: identifiers, tax, banking, payments, addresses, phone, documents, privacy/redaction, logistics, locale formatting, API payloads, and test fixtures when those domains exist.
 - Every tool has immediate analysis, normalization, masking where relevant, copy/download, validation pipeline, field breakdown, quality notes, advanced analysis, developer JSON, and offline/live boundary copy.
 - Every country-scoped tool must be as rich as the domain honestly allows.
+- Every country-scoped tool should guide the user through both validation/inspection and fixture generation when generation is safe for the domain. The UI must make it visually obvious that the workbench can validate, generate, explain, and debug rather than only accept pasted input.
+- This contract applies to existing countries and future countries. Shared factory fixes, sample semantics, copy feedback, generator behavior, field-breakdown improvements, tool-context copy, and analyzer upgrades must be rolled into existing country suites instead of only being applied to newly generated suites.
 - Existing bespoke country runtimes must not regress below this bar while they remain outside Country Suite Factory V1. Brazil, Poland, France, and Netherlands pages must load the shared legacy rich layer before their suite runtime so accepted analyzers keep PESEL-level history, batch, API preview, raw JSON, and related-tool ergonomics.
  Factory-based country runtimes must provide the same depth natively through `csf-rich-lab`; this is mandatory for current factory countries and every future country generated from Country Suite Factory V1.
  Poland PESEL is the debug-depth reference: presets/history, batch where useful, immediate result cards, validation pipeline, field/evidence breakdown, calculation/parser debugger, repair suggestions, developer API preview, and raw JSON/audit output are part of the premium bar.
@@ -50,6 +52,8 @@ Every country-scoped tool must include:
 - Advanced analysis and developer payload that wrap locally and cannot create page-level horizontal overflow.
 - Field/evidence breakdown text that stays high-contrast and readable across success/review states and all production locales.
 - A PESEL-like debug layer: either checksum replay, parser stages, field extraction evidence, data-quality diagnostics, or another domain-specific debugger. Do not fake math for non-math tools; expose the real evidence the browser can prove.
+- Country-specific enrichment is required whenever the local workflow has unique structure. If a VAT, ID, company, bank, payment, document, vehicle, invoice, address, or tax format can expose richer local fields than the default factory analyzer, add a local analyzer/profile for that tool. A generic analyzer is a fallback only for broad free-text tools or truly unstructured diagnostics.
+- Generators must be first-class where the domain supports safe fixtures: generated IDs, IBANs, payment references, invoice payloads, postal/address examples, CSV/JSON rows, masking fixtures, and API bodies should produce fresh valid values, expose their construction, and explain fixture/official boundaries.
 
 ## Mandatory Country Hub Standard
 

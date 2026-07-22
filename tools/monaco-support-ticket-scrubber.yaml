@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-support-ticket-scrubber
+kind: tool
+module: validohub
+country: MC
+category: privacy
+status: active
+name:
+  en: "Monegasque Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 123456789, MC5811222000010123456789030, Avenue de la Costa 1, 98000 Monaco"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-integration-smoke-test-builder, monaco-nis-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

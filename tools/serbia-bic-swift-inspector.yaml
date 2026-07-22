@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-bic-swift-inspector
+kind: tool
+module: validohub
+country: RS
+category: finance
+status: active
+name:
+  en: "Serbian BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Serbia banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDRS2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-sepa-transfer-helper, serbia-sepa-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Serbia banking integrations."

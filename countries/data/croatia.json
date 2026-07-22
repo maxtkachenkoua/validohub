@@ -1,0 +1,642 @@
+{
+  "id": "croatia",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/croatia-outline.svg",
+    "outlineAlt": "Croatia country outline",
+    "mapSrc": "/assets/images/countries/croatia-location.svg",
+    "mapAlt": "World map with Croatia location marker",
+    "mapMarker": {
+      "x": 51,
+      "y": 60,
+      "label": "Croatia"
+    },
+    "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+  },
+  "catalog": {
+    "id": "croatia",
+    "flag": "🇭🇷",
+    "name": "Croatia",
+    "nativeName": "Hrvatska",
+    "iso2": "HR",
+    "iso3": "HRV",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "Croatian",
+    "currency": "EUR",
+    "currencyName": "Euro",
+    "status": "available",
+    "summary": "Premium Croatia developer hub for OIB, MBS, VAT, postal code, phone, IBAN, SEPA, SWIFT, model/reference number, VIES, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "OIB",
+      "MBS",
+      "VAT",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "IBAN",
+      "SEPA",
+      "SWIFT",
+      "model/reference number",
+      "VIES"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Croatian OIB Validator",
+      "Croatian MBS / OIB Validator",
+      "Croatian VAT ID / HR Prefix Validator",
+      "Croatian EORI / Customs Identifier Helper",
+      "Croatian OIB Helper",
+      "Croatian Company Onboarding Auditor",
+      "Croatian Sudski registar Readiness Helper",
+      "Croatian ID Card Format Helper",
+      "Croatian Passport Number Helper",
+      "Croatian MRZ / Passport Parser",
+      "Croatia IBAN Validator",
+      "Croatia IBAN Generator",
+      "Croatian Domestic Bank Account Inspector",
+      "Croatian BIC / SWIFT Inspector",
+      "Croatian SEPA Transfer Helper",
+      "Croatian SEPA Direct Debit Mandate Helper",
+      "Croatian model i poziv na broj Reference Helper",
+      "Croatian Remittance Text Builder",
+      "Croatian Payment Reconciliation Helper",
+      "Croatian Bank Statement Parser",
+      "Croatian Masked IBAN Formatter",
+      "Croatian EUR Decimal Currency Formatter",
+      "Croatian VAT Rate Sanity Helper",
+      "Croatian VAT Return Field Helper",
+      "Croatian Invoice Number Helper",
+      "Croatian PDV invoice Readiness Checker",
+      "Croatian Tax Authority Handoff Helper",
+      "Croatian Accounting Audit Trail Checklist Helper",
+      "Croatian Postal Code Validator",
+      "Croatian Address Normalizer",
+      "Croatian Address Transliteration Normalizer",
+      "Croatian Region / Province Code Mapper",
+      "Croatian Municipality Code Inspector",
+      "Croatian Phone Number Validator",
+      "Croatian Phone E.164 Formatter",
+      "Croatian Date Locale Formatter",
+      "Croatian CSV Locale Normalizer",
+      "Croatian Slug Normalizer",
+      "Croatian Document OCR Fixer",
+      "Croatian GDPR / AZOP Redaction Helper",
+      "Croatian PII Masker",
+      "Croatian Personal Data Fixture Helper",
+      "Croatian Driving Licence Format Helper",
+      "Croatian Residence Permit Format Helper",
+      "Croatian Health Card Format Helper",
+      "Croatian Vehicle Plate Inspector",
+      "Croatian VIN Validator",
+      "Croatian Vehicle Data Redaction Helper",
+      "Croatian Customs Declaration Helper",
+      "Croatian Postal Tracking Helper",
+      "Croatian Data Quality Workbench",
+      "Croatian JSON Fixture Helper",
+      "Croatian Regex Pack Helper",
+      "Croatian API Payload Auditor",
+      "Croatian Form Field Auditor",
+      "Croatian Locale Number Parser",
+      "Croatian Calendar Week Helper",
+      "Croatian Company Suffix Normalizer",
+      "Croatian Procurement Identifier Helper",
+      "Croatian Locale Copy Checker",
+      "Croatian Support Ticket Scrubber",
+      "Croatian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live Sudski registar lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 51,
+      "y": 60
+    },
+    "searchHints": [
+      "OIB",
+      "MBS",
+      "PDV",
+      "POZIV NA BROJ",
+      "IBAN",
+      "SEPA"
+    ]
+  },
+  "hub": {
+    "flag": "🇭🇷",
+    "name": "Croatia",
+    "badge": "Premium Croatia developer suite",
+    "description": "Developer intelligence and browser-only workbenches for croatian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Hrvatska",
+      "population": "approximately 3.8M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Zagreb",
+      "continent": "Europe",
+      "region": "Southeastern Europe / European Union",
+      "languages": "Croatian",
+      "currency": "Euro",
+      "currencyCode": "EUR",
+      "callingCode": "+385",
+      "internetTld": ".hr",
+      "drivingSide": "Right",
+      "iso2": "HR",
+      "iso3": "HRV",
+      "isoNumeric": "191",
+      "locale": "hr-HR",
+      "icuLocale": "hr_HR",
+      "dateFormat": "DD.MM.YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Dot grouping",
+      "addressFormat": "Street, number, postal code, locality, Croatia",
+      "postalCodeFormat": "postanski broj",
+      "primaryTimeZone": "Europe/Zagreb (CET/CEST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "hr-HR",
+      "cldrLocale": "hr_HR",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "croatia",
+      "outlineLabel": "Croatia outline",
+      "mapLabel": "Croatia in the world",
+      "continentBadge": "Europe",
+      "flagLabel": "Croatia flag",
+      "heroAccentPrimary": "15 118 110",
+      "heroAccentSecondary": "37 99 235",
+      "heroAccentTertiary": "245 158 11"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "OIB and MBS / OIB",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "PDV / VAT and payments",
+        "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Croatia registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /croatia/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Dot grouping rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Croatian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "Sudski registar",
+        "text": "Official business registry or company lookup remains the source of truth for Croatia.",
+        "status": "official boundary"
+      },
+      {
+        "title": "PDV / VAT",
+        "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+        "status": "official boundary"
+      },
+      {
+        "title": "GDPR / AZOP",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "OIB, MBS, VAT, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, SEPA, SWIFT, model/reference number, VIES",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "hr-HR / hr_HR; date DD.MM.YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "EUR amounts use Comma (,) and Dot grouping.",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "OIB, MBS / OIB, postanski broj, phone, address, and IBAN need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "EU-wide emergency number; local alternatives may also exist."
+      }
+    ],
+    "searchHints": [
+      "OIB",
+      "MBS",
+      "PDV",
+      "POZIV NA BROJ",
+      "IBAN",
+      "SEPA"
+    ],
+    "routes": [
+      {
+        "title": "Croatian OIB Validator",
+        "href": "/en/croatia/croatia-oib-validator/",
+        "text": "Validate OIB shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Croatian MBS / OIB Validator",
+        "href": "/en/croatia/croatia-mbs-oib-validator/",
+        "text": "Inspect MBS / OIB structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Croatian VAT ID / HR Prefix Validator",
+        "href": "/en/croatia/croatia-vat-id-validator/",
+        "text": "Normalize HR VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+      },
+      {
+        "title": "Croatian EORI / Customs Identifier Helper",
+        "href": "/en/croatia/croatia-eori-validator/",
+        "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+      },
+      {
+        "title": "Croatian OIB Helper",
+        "href": "/en/croatia/croatia-oib-social-insurance-helper/",
+        "text": "Split OIB evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Croatian Company Onboarding Auditor",
+        "href": "/en/croatia/croatia-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for MBS / OIB, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Croatian Sudski registar Readiness Helper",
+        "href": "/en/croatia/croatia-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated Sudski registar lookup or company registry workflow."
+      },
+      {
+        "title": "Croatian ID Card Format Helper",
+        "href": "/en/croatia/croatia-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Croatian Passport Number Helper",
+        "href": "/en/croatia/croatia-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Croatian MRZ / Passport Parser",
+        "href": "/en/croatia/croatia-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Croatia IBAN Validator",
+        "href": "/en/croatia/croatia-iban-validator/",
+        "text": "Validate HR IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+      },
+      {
+        "title": "Croatia IBAN Generator",
+        "href": "/en/croatia/croatia-iban-generator/",
+        "text": "Generate HR IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+      },
+      {
+        "title": "Croatian Domestic Bank Account Inspector",
+        "href": "/en/croatia/croatia-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+      },
+      {
+        "title": "Croatian BIC / SWIFT Inspector",
+        "href": "/en/croatia/croatia-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Croatia banking integrations."
+      },
+      {
+        "title": "Croatian SEPA Transfer Helper",
+        "href": "/en/croatia/croatia-sepa-transfer-helper/",
+        "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+      },
+      {
+        "title": "Croatian SEPA Direct Debit Mandate Helper",
+        "href": "/en/croatia/croatia-sepa-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+      },
+      {
+        "title": "Croatian model i poziv na broj Reference Helper",
+        "href": "/en/croatia/croatia-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Croatian Remittance Text Builder",
+        "href": "/en/croatia/croatia-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Croatian Payment Reconciliation Helper",
+        "href": "/en/croatia/croatia-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Croatian Bank Statement Parser",
+        "href": "/en/croatia/croatia-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Croatian Masked IBAN Formatter",
+        "href": "/en/croatia/croatia-masked-iban-formatter/",
+        "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+      },
+      {
+        "title": "Croatian EUR Decimal Currency Formatter",
+        "href": "/en/croatia/croatia-currency-decimal-formatter/",
+        "text": "Normalize EUR amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Croatian VAT Rate Sanity Helper",
+        "href": "/en/croatia/croatia-vat-rate-sanity-helper/",
+        "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Croatian VAT Return Field Helper",
+        "href": "/en/croatia/croatia-vat-return-field-helper/",
+        "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Croatian Invoice Number Helper",
+        "href": "/en/croatia/croatia-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Croatian PDV invoice Readiness Checker",
+        "href": "/en/croatia/croatia-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Croatian Tax Authority Handoff Helper",
+        "href": "/en/croatia/croatia-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Croatian Accounting Audit Trail Checklist Helper",
+        "href": "/en/croatia/croatia-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+      },
+      {
+        "title": "Croatian Postal Code Validator",
+        "href": "/en/croatia/croatia-postal-code-validator/",
+        "text": "Validate postanski broj shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Croatian Address Normalizer",
+        "href": "/en/croatia/croatia-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Croatian Address Transliteration Normalizer",
+        "href": "/en/croatia/croatia-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Croatian Region / Province Code Mapper",
+        "href": "/en/croatia/croatia-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Croatian Municipality Code Inspector",
+        "href": "/en/croatia/croatia-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Croatian Phone Number Validator",
+        "href": "/en/croatia/croatia-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Croatian Phone E.164 Formatter",
+        "href": "/en/croatia/croatia-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Croatian Date Locale Formatter",
+        "href": "/en/croatia/croatia-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Croatian CSV Locale Normalizer",
+        "href": "/en/croatia/croatia-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Croatia decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Croatian Slug Normalizer",
+        "href": "/en/croatia/croatia-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Croatian Document OCR Fixer",
+        "href": "/en/croatia/croatia-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Croatian GDPR / AZOP Redaction Helper",
+        "href": "/en/croatia/croatia-gdpr-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Croatian PII Masker",
+        "href": "/en/croatia/croatia-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Croatian Personal Data Fixture Helper",
+        "href": "/en/croatia/croatia-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Croatian Driving Licence Format Helper",
+        "href": "/en/croatia/croatia-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Croatian Residence Permit Format Helper",
+        "href": "/en/croatia/croatia-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Croatian Health Card Format Helper",
+        "href": "/en/croatia/croatia-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Croatian Vehicle Plate Inspector",
+        "href": "/en/croatia/croatia-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Croatian VIN Validator",
+        "href": "/en/croatia/croatia-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Croatian Vehicle Data Redaction Helper",
+        "href": "/en/croatia/croatia-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Croatian Customs Declaration Helper",
+        "href": "/en/croatia/croatia-customs-declaration-helper/",
+        "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Croatian Postal Tracking Helper",
+        "href": "/en/croatia/croatia-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Croatian Data Quality Workbench",
+        "href": "/en/croatia/croatia-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Croatian JSON Fixture Helper",
+        "href": "/en/croatia/croatia-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Croatian Regex Pack Helper",
+        "href": "/en/croatia/croatia-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Croatian API Payload Auditor",
+        "href": "/en/croatia/croatia-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Croatian Form Field Auditor",
+        "href": "/en/croatia/croatia-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Croatian Locale Number Parser",
+        "href": "/en/croatia/croatia-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Croatia."
+      },
+      {
+        "title": "Croatian Calendar Week Helper",
+        "href": "/en/croatia/croatia-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Croatian Company Suffix Normalizer",
+        "href": "/en/croatia/croatia-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Croatian Procurement Identifier Helper",
+        "href": "/en/croatia/croatia-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Croatian Locale Copy Checker",
+        "href": "/en/croatia/croatia-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Croatian Support Ticket Scrubber",
+        "href": "/en/croatia/croatia-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Croatian Integration Smoke Test Builder",
+        "href": "/en/croatia/croatia-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

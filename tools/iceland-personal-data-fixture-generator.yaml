@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: IS
+category: privacy
+status: active
+name:
+  en: "Icelandic Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "1201743399\\nLaugavegur 1, 101 Reykjavik\\n+354 555 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-driving-licence-format-helper, iceland-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

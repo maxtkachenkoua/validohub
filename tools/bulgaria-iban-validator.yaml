@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-iban-validator
+kind: tool
+module: validohub
+country: BG
+category: finance
+status: active
+name:
+  en: "Bulgaria IBAN Validator"
+summary:
+  en: "Validate BG IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "BG80BNBG96611020345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-iban-generator, bulgaria-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgaria IBAN Validator | ValidoHub"
+  description:
+    en: "Validate BG IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

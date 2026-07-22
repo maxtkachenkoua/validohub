@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: BG
+category: privacy
+status: active
+name:
+  en: "Bulgarian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "8001010008\\nVitosha Blvd 1, 1000 Sofia\\n+359 88 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-driving-licence-format-helper, bulgaria-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

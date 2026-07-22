@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-document-ocr-fixer
+kind: tool
+module: validohub
+country: EE
+category: documents
+status: active
+name:
+  en: "Estonian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "38501010018 EE123456789 EE382200221020145685 10111 Tallinn"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-gdpr-redaction-helper, estonia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

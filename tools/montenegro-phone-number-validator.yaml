@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: montenegro-phone-number-validator
+kind: tool
+module: validohub
+country: ME
+category: address
+status: active
+name:
+  en: "Montenegrin Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.montenegro-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+382 67 123 456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [montenegro-phone-e164-formatter, montenegro-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Montenegrin Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

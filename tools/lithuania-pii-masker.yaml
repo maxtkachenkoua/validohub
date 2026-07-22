@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-pii-masker
+kind: tool
+module: validohub
+country: LT
+category: privacy
+status: active
+name:
+  en: "Lithuanian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "38001010017 +370 612 34567 LT121000011101001000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lithuania-personal-data-fixture-generator, lithuania-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuanian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

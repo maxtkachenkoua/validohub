@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: estonia-driving-licence-format-helper
+kind: tool
+module: validohub
+country: EE
+category: documents
+status: active
+name:
+  en: "Estonian Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.estonia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "38501010018 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [estonia-residence-permit-format-helper, estonia-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Estonian Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

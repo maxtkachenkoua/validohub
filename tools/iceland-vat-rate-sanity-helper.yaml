@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: IS
+category: tax
+status: active
+name:
+  en: "Icelandic VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "VSK / VAT 20% base 1.234,56 ISK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-vat-return-field-helper, iceland-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

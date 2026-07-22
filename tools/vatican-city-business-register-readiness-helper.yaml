@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-business-register-readiness-helper
+kind: tool
+module: validohub
+country: VA
+category: government
+status: active
+name:
+  en: "Vatican Vatican administration Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Vatican administration lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "VA-ENTITY-001 VA00123456789 Cortile San Damaso, 00120 Vatican City"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-id-card-format-helper, vatican-city-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Vatican administration Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Vatican administration lookup or company registry workflow."

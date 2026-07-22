@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lithuania-iban-generator
+kind: tool
+module: validohub
+country: LT
+category: finance
+status: active
+name:
+  en: "Lithuania IBAN Generator"
+summary:
+  en: "Generate LT IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.lithuania-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "1000011101001000"
+    actions: [generate, validate, explain]
+related:
+  explicit: [lithuania-bank-account-inspector, lithuania-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lithuania IBAN Generator | ValidoHub"
+  description:
+    en: "Generate LT IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

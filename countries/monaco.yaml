@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MC
+slug: monaco
+name:
+  en: Monaco
+region: Europe
+languages:
+  - fr
+currency: EUR
+relatedCountries:
+  - FR
+  - IT
+  - AD

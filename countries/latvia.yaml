@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: LV
+slug: latvia
+name:
+  en: Latvia
+region: Europe
+languages:
+  - lv
+currency: EUR
+relatedCountries:
+  - EE
+  - LT
+  - PL

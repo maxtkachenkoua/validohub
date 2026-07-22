@@ -13,23 +13,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1234567T"
+        "value": "1234567T",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "1234568T"
+        "value": "Invalid 1234568T",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "12345"
+        "value": "12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1234567T"
+        "value": "Wrong prefix IE 1234567T",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE ID edge 1"
+        "value": "Review IE ID edge 1",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -41,7 +51,7 @@
         "text": "Irish PPSN Validator analyzes Ireland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -65,23 +75,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "123456"
+        "value": "123456",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "123457"
+        "value": "Invalid 123457",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1234"
+        "value": "1234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 123456"
+        "value": "Wrong prefix IE 123456",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE ORG edge 2"
+        "value": "Review IE ORG edge 2",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -93,7 +113,7 @@
         "text": "Irish CRO number Validator analyzes Ireland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -117,23 +137,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "IE6388047V"
+        "value": "IE6388047V",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ6388047V"
+        "value": "Wrong prefix ZZ6388047V",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "IE6388"
+        "value": "IE6388",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ6388047V"
+        "value": "Wrong prefix ZZ6388047V",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE VAT edge 3"
+        "value": "Review IE VAT edge 3",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -145,7 +175,7 @@
         "text": "Irish VAT ID / IE Prefix Validator analyzes Ireland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -169,23 +199,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "IE123456"
+        "value": "IE123456",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ123456"
+        "value": "Wrong prefix ZZ123456",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "IE123"
+        "value": "IE123",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ123456"
+        "value": "Wrong prefix ZZ123456",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE EORI edge 4"
+        "value": "Review IE EORI edge 4",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -197,7 +237,7 @@
         "text": "Irish EORI / Customs Identifier Helper analyzes Ireland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -221,23 +261,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1234567T"
+        "value": "1234567T",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "1234568T"
+        "value": "Invalid 1234568T",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "12345"
+        "value": "12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1234567T"
+        "value": "Wrong prefix IE 1234567T",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE SOC edge 5"
+        "value": "Review IE SOC edge 5",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -249,7 +299,7 @@
         "text": "Irish PPSN Helper analyzes Ireland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -273,23 +323,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X286\"}"
+        "value": "Invalid {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X286\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE KYC edge 6"
+        "value": "Review IE KYC edge 6",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -301,7 +361,7 @@
         "text": "Irish Company Onboarding Auditor analyzes Ireland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -325,23 +385,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "123456 IE6388047V 1 Grafton Street, Dublin, D02 X285"
+        "value": "123456 IE6388047V 1 Grafton Street, Dublin, D02 X285",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "123456 IE6388047V 1 Grafton Street, Dublin, D02 X286"
+        "value": "Invalid 123456 IE6388047V 1 Grafton Street, Dublin, D02 X286",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "123456 IE6388047V 1 Grafton S"
+        "value": "123456 IE6388047V 1 Grafton S",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 123456 IE6388047V 1 Grafton Street, Dublin, D02 X285"
+        "value": "Wrong prefix IE 123456 IE6388047V 1 Grafton Street, Dublin, D02 X285",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE REG edge 7"
+        "value": "Review IE REG edge 7",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -353,7 +423,7 @@
         "text": "Irish Companies Registration Office Readiness Helper analyzes Ireland-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -377,23 +447,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1234567T"
+        "value": "1234567T",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE CARD 8"
+        "value": "Invalid IE CARD 8",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "12345"
+        "value": "12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1234567T"
+        "value": "Wrong prefix IE 1234567T",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE CARD edge 8"
+        "value": "Review IE CARD edge 8",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -405,7 +485,7 @@
         "text": "Irish ID Card Format Helper analyzes Ireland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -429,23 +509,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<IRLIRISH<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "P<IRLIRISH<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE PASS 9"
+        "value": "Invalid IE PASS 9",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<IRLIRISH<<SAMPLE<<"
+        "value": "P<IRLIRISH<<SAMPLE<<",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE P<IRLIRISH<<SAMPLE<<<<<<<<<<<<<<<<<<"
+        "value": "Wrong prefix IE P<IRLIRISH<<SAMPLE<<<<<<<<<<<<<<<<<<",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE PASS edge 9"
+        "value": "Review IE PASS edge 9",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -457,7 +547,7 @@
         "text": "Irish Passport Number Helper analyzes Ireland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -481,23 +571,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "P<IRLSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567IRL8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "P<IRLSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567IRL8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE MRZ 10"
+        "value": "Invalid IE MRZ 10",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "P<IRLSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345"
+        "value": "P<IRLSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE P<IRLSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567IRL8501019M3107123<<<<<<<<<<<<<<06"
+        "value": "Wrong prefix IE P<IRLSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567IRL8501019M3107123<<<<<<<<<<<<<<06",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE MRZ edge 10"
+        "value": "Review IE MRZ edge 10",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -509,7 +609,7 @@
         "text": "Irish MRZ / Passport Parser analyzes Ireland-specific national-identifiers evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -533,23 +633,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "IE29AIBK93115212345674"
+        "value": "IE29AIBK93115212345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ29AIBK93115212345674"
+        "value": "Wrong prefix ZZ29AIBK93115212345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "IE29AIBK93115"
+        "value": "IE29AIBK93115",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ29AIBK93115212345674"
+        "value": "Wrong prefix ZZ29AIBK93115212345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE IBAN edge 11"
+        "value": "Review IE IBAN edge 11",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -561,7 +671,7 @@
         "text": "Ireland IBAN Validator analyzes Ireland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -585,23 +695,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "AIBK93115212345674"
+        "value": "AIBK93115212345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZBK93115212345674"
+        "value": "Wrong prefix ZZBK93115212345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "AIBK931152"
+        "value": "AIBK931152",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Grouped valid sample",
-        "value": "AIBK 9311 5212 3456 74"
+        "value": "AIBK 9311 5212 3456 74",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE IBG edge 12"
+        "value": "Review IE IBG edge 12",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -613,7 +733,7 @@
         "text": "Ireland IBAN Generator analyzes Ireland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -637,23 +757,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "AIBK 931152 12345674"
+        "value": "AIBK 931152 12345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE BANK 13"
+        "value": "Invalid IE BANK 13",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "AIBK 931152"
+        "value": "AIBK 931152",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZBK 931152 12345674"
+        "value": "Wrong prefix ZZBK 931152 12345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE BANK edge 13"
+        "value": "Review IE BANK edge 13",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -665,7 +795,7 @@
         "text": "Irish Domestic Bank Account Inspector analyzes Ireland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -689,23 +819,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "ABCDIE2X"
+        "value": "ABCDIE2X",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZCDIE2X"
+        "value": "Wrong prefix ZZCDIE2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "ABCDI"
+        "value": "ABCDI",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZCDIE2X"
+        "value": "Wrong prefix ZZCDIE2X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE BIC edge 14"
+        "value": "Review IE BIC edge 14",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -717,7 +857,7 @@
         "text": "Irish BIC / SWIFT Inspector analyzes Ireland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -741,23 +881,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "IE29AIBK93115212345674\\n1,234.56 EUR\\nInvoice 2026-001"
+        "value": "IE29AIBK93115212345674\\n1,234.56 EUR\\nInvoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE SEPA 15"
+        "value": "Invalid IE SEPA 15",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "IE29AIBK93115212345674\\n1,234."
+        "value": "IE29AIBK93115212345674\\n1,234.",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ29AIBK93115212345674\\n1,234.56 EUR\\nInvoice 2026-001"
+        "value": "Wrong prefix ZZ29AIBK93115212345674\\n1,234.56 EUR\\nInvoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE SEPA edge 15"
+        "value": "Review IE SEPA edge 15",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -769,7 +919,7 @@
         "text": "Irish SEPA Transfer Helper analyzes Ireland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -793,23 +943,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "MANDATE-2026-001 IE29AIBK93115212345674"
+        "value": "MANDATE-2026-001 IE29AIBK93115212345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE SDD 16"
+        "value": "Invalid IE SDD 16",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "MANDATE-2026-001 IE29A"
+        "value": "MANDATE-2026-001 IE29A",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZNDATE-2026-001 IE29AIBK93115212345674"
+        "value": "Wrong prefix ZZNDATE-2026-001 IE29AIBK93115212345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE SDD edge 16"
+        "value": "Review IE SDD edge 16",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -821,7 +981,7 @@
         "text": "Irish SEPA Direct Debit Mandate Helper analyzes Ireland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -845,23 +1005,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "SEPA / Direct Debit REF 2026-001 1,234.56 EUR"
+        "value": "SEPA / Direct Debit REF 2026-001 1,234.56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE PAY 17"
+        "value": "Invalid IE PAY 17",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "SEPA / Direct Debit REF 2"
+        "value": "SEPA / Direct Debit REF 2",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZPA / Direct Debit REF 2026-001 1,234.56 EUR"
+        "value": "Wrong prefix ZZPA / Direct Debit REF 2026-001 1,234.56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE PAY edge 17"
+        "value": "Review IE PAY edge 17",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -873,7 +1043,7 @@
         "text": "Irish SEPA / Direct Debit Reference Helper analyzes Ireland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -897,23 +1067,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Invoice 2026-001 IE6388047V 1,234.56 EUR"
+        "value": "Invoice 2026-001 IE6388047V 1,234.56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE REMIT 18"
+        "value": "Invalid IE REMIT 18",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Invoice 2026-001 IE638"
+        "value": "Invoice 2026-001 IE638",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE Invoice 2026-001 IE6388047V 1,234.56 EUR"
+        "value": "Wrong prefix IE Invoice 2026-001 IE6388047V 1,234.56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE REMIT edge 18"
+        "value": "Review IE REMIT edge 18",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -925,7 +1105,7 @@
         "text": "Irish Remittance Text Builder analyzes Ireland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -949,23 +1129,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21/07/2026; 1,234.56 EUR; IE29AIBK93115212345674; Invoice 2026-001"
+        "value": "21/07/2026; 1,234.56 EUR; IE29AIBK93115212345674; Invoice 2026-001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE RECON 19"
+        "value": "Invalid IE RECON 19",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21/07/2026; 1,234.56 EUR; IE29AIBK931"
+        "value": "21/07/2026; 1,234.56 EUR; IE29AIBK931",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 21/07/2026; 1,234.56 EUR; IE29AIBK93115212345674; Invoice 2026-001"
+        "value": "Wrong prefix IE 21/07/2026; 1,234.56 EUR; IE29AIBK93115212345674; Invoice 2026-001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE RECON edge 19"
+        "value": "Review IE RECON edge 19",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -977,7 +1167,7 @@
         "text": "Irish Payment Reconciliation Helper analyzes Ireland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1001,23 +1191,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21/07/2026; 1,234.56 EUR; IE29AIBK93115212345674; sample counterparty"
+        "value": "21/07/2026; 1,234.56 EUR; IE29AIBK93115212345674; sample counterparty",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE STMT 20"
+        "value": "Invalid IE STMT 20",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21/07/2026; 1,234.56 EUR; IE29AIBK9311"
+        "value": "21/07/2026; 1,234.56 EUR; IE29AIBK9311",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 21/07/2026; 1,234.56 EUR; IE29AIBK93115212345674; sample counterparty"
+        "value": "Wrong prefix IE 21/07/2026; 1,234.56 EUR; IE29AIBK93115212345674; sample counterparty",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE STMT edge 20"
+        "value": "Review IE STMT edge 20",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1029,7 +1229,7 @@
         "text": "Irish Bank Statement Parser analyzes Ireland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1053,23 +1253,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "IE29AIBK93115212345674"
+        "value": "IE29AIBK93115212345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "ZZ29AIBK93115212345674"
+        "value": "Wrong prefix ZZ29AIBK93115212345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "IE29AIBK93115"
+        "value": "IE29AIBK93115",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ29AIBK93115212345674"
+        "value": "Wrong prefix ZZ29AIBK93115212345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE MASK edge 21"
+        "value": "Review IE MASK edge 21",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1081,7 +1291,7 @@
         "text": "Irish Masked IBAN Formatter analyzes Ireland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1105,23 +1315,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1,234.56 EUR"
+        "value": "1,234.56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE CUR 22"
+        "value": "Invalid IE CUR 22",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1,234.5"
+        "value": "1,234.5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1,234.56 EUR"
+        "value": "Wrong prefix IE 1,234.56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE CUR edge 22"
+        "value": "Review IE CUR edge 22",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1133,7 +1353,7 @@
         "text": "Irish EUR Decimal Currency Formatter analyzes Ireland-specific finance evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1157,23 +1377,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "VAT / Revenue 20% base 1,234.56 EUR"
+        "value": "VAT / Revenue 20% base 1,234.56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE RATE 23"
+        "value": "Invalid IE RATE 23",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "VAT / Revenue 20% ba"
+        "value": "VAT / Revenue 20% ba",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZT / Revenue 20% base 1,234.56 EUR"
+        "value": "Wrong prefix ZZT / Revenue 20% base 1,234.56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE RATE edge 23"
+        "value": "Review IE RATE edge 23",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1185,7 +1415,7 @@
         "text": "Irish VAT Rate Sanity Helper analyzes Ireland-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1209,23 +1439,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "VAT / Revenue; IE6388047V; period 2026-07; 1,234.56 EUR"
+        "value": "VAT / Revenue; IE6388047V; period 2026-07; 1,234.56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE RET 24"
+        "value": "Invalid IE RET 24",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "VAT / Revenue; IE6388047V; peri"
+        "value": "VAT / Revenue; IE6388047V; peri",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZT / Revenue; IE6388047V; period 2026-07; 1,234.56 EUR"
+        "value": "Wrong prefix ZZT / Revenue; IE6388047V; period 2026-07; 1,234.56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE RET edge 24"
+        "value": "Review IE RET edge 24",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1237,7 +1477,7 @@
         "text": "Irish VAT Return Field Helper analyzes Ireland-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1261,23 +1501,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "INV-2026-0001 IE6388047V"
+        "value": "INV-2026-0001 IE6388047V",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE INV 25"
+        "value": "Invalid IE INV 25",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "INV-2026-0001 "
+        "value": "INV-2026-0001 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZV-2026-0001 IE6388047V"
+        "value": "Wrong prefix ZZV-2026-0001 IE6388047V",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE INV edge 25"
+        "value": "Review IE INV edge 25",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1289,7 +1539,7 @@
         "text": "Irish Invoice Number Helper analyzes Ireland-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1313,23 +1563,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE EINV 26"
+        "value": "Invalid IE EINV 26",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE EINV edge 26"
+        "value": "Review IE EINV edge 26",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1341,7 +1601,7 @@
         "text": "Irish Revenue e-invoicing readiness Readiness Checker analyzes Ireland-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1365,23 +1625,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "IE6388047V 21/07/2026 1,234.56 EUR"
+        "value": "IE6388047V 21/07/2026 1,234.56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE TAX 27"
+        "value": "Invalid IE TAX 27",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "IE6388047V 21/07/20"
+        "value": "IE6388047V 21/07/20",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ6388047V 21/07/2026 1,234.56 EUR"
+        "value": "Wrong prefix ZZ6388047V 21/07/2026 1,234.56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE TAX edge 27"
+        "value": "Review IE TAX edge 27",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1393,7 +1663,7 @@
         "text": "Irish Tax Authority Handoff Helper analyzes Ireland-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1417,23 +1687,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "invoice 21/07/2026 1,234.56 EUR IE6388047V"
+        "value": "invoice 21/07/2026 1,234.56 EUR IE6388047V",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE AUDIT 28"
+        "value": "Invalid IE AUDIT 28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "invoice 21/07/2026 1,234"
+        "value": "invoice 21/07/2026 1,234",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE invoice 21/07/2026 1,234.56 EUR IE6388047V"
+        "value": "Wrong prefix IE invoice 21/07/2026 1,234.56 EUR IE6388047V",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE AUDIT edge 28"
+        "value": "Review IE AUDIT edge 28",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1445,7 +1725,7 @@
         "text": "Irish Accounting Audit Trail Checklist Helper analyzes Ireland-specific tax evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1469,23 +1749,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "D02 X285"
+        "value": "D02 X285",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE POST 29"
+        "value": "Invalid IE POST 29",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "D02 X"
+        "value": "D02 X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE D02 X285"
+        "value": "Wrong prefix IE D02 X285",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE POST edge 29"
+        "value": "Review IE POST edge 29",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1497,7 +1787,7 @@
         "text": "Irish Postal Code Validator analyzes Ireland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1521,23 +1811,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1 Grafton Street, Dublin, D02 X285"
+        "value": "1 Grafton Street, Dublin, D02 X285",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE ADDR 30"
+        "value": "Invalid IE ADDR 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1 Grafton Street, D"
+        "value": "1 Grafton Street, D",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1 Grafton Street, Dublin, D02 X285"
+        "value": "Wrong prefix IE 1 Grafton Street, Dublin, D02 X285",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE ADDR edge 30"
+        "value": "Review IE ADDR edge 30",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1549,7 +1849,7 @@
         "text": "Irish Address Normalizer analyzes Ireland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1573,23 +1873,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1 Grafton Street, Dublin, D02 X285"
+        "value": "1 Grafton Street, Dublin, D02 X285",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE ASCII 31"
+        "value": "Invalid IE ASCII 31",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1 Grafton Street, D"
+        "value": "1 Grafton Street, D",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1 Grafton Street, Dublin, D02 X285"
+        "value": "Wrong prefix IE 1 Grafton Street, Dublin, D02 X285",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE ASCII edge 31"
+        "value": "Review IE ASCII edge 31",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1601,7 +1911,7 @@
         "text": "Irish Address Transliteration Normalizer analyzes Ireland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1625,23 +1935,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "D02 X285"
+        "value": "D02 X285",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE REGION 32"
+        "value": "Invalid IE REGION 32",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "D02 X"
+        "value": "D02 X",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE D02 X285"
+        "value": "Wrong prefix IE D02 X285",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE REGION edge 32"
+        "value": "Review IE REGION edge 32",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1653,7 +1973,7 @@
         "text": "Irish Region / Province Code Mapper analyzes Ireland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1677,23 +1997,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1 Grafton Street, Dublin, D02 X285"
+        "value": "1 Grafton Street, Dublin, D02 X285",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE MUNI 33"
+        "value": "Invalid IE MUNI 33",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1 Grafton Street, D"
+        "value": "1 Grafton Street, D",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1 Grafton Street, Dublin, D02 X285"
+        "value": "Wrong prefix IE 1 Grafton Street, Dublin, D02 X285",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE MUNI edge 33"
+        "value": "Review IE MUNI edge 33",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1705,7 +2035,7 @@
         "text": "Irish Municipality Code Inspector analyzes Ireland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1729,23 +2059,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+353 1 234 5678"
+        "value": "+353 1 234 5678",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE PHONE 34"
+        "value": "Invalid IE PHONE 34",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+353 1 23"
+        "value": "+353 1 23",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE +353 1 234 5678"
+        "value": "Wrong prefix IE +353 1 234 5678",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE PHONE edge 34"
+        "value": "Review IE PHONE edge 34",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1757,7 +2097,7 @@
         "text": "Irish Phone Number Validator analyzes Ireland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1781,23 +2121,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "+353 1 234 5678"
+        "value": "+353 1 234 5678",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE E164 35"
+        "value": "Invalid IE E164 35",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "+353 1 23"
+        "value": "+353 1 23",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE +353 1 234 5678"
+        "value": "Wrong prefix IE +353 1 234 5678",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE E164 edge 35"
+        "value": "Review IE E164 edge 35",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1809,7 +2159,7 @@
         "text": "Irish Phone E.164 Formatter analyzes Ireland-specific address evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1833,23 +2183,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21/07/2026"
+        "value": "21/07/2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE DATE 36"
+        "value": "Invalid IE DATE 36",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21/07/"
+        "value": "21/07/",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 21/07/2026"
+        "value": "Wrong prefix IE 21/07/2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE DATE edge 36"
+        "value": "Review IE DATE edge 36",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1861,7 +2221,7 @@
         "text": "Irish Date Locale Formatter analyzes Ireland-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1885,23 +2245,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "id;amount;date;tax\\n1;1,234.56 EUR;21/07/2026;IE6388047V"
+        "value": "id;amount;date;tax\\n1;1,234.56 EUR;21/07/2026;IE6388047V",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE CSV 37"
+        "value": "Invalid IE CSV 37",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "id;amount;date;tax\\n1;1,234.56 "
+        "value": "id;amount;date;tax\\n1;1,234.56 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE id;amount;date;tax\\n1;1,234.56 EUR;21/07/2026;IE6388047V"
+        "value": "Wrong prefix IE id;amount;date;tax\\n1;1,234.56 EUR;21/07/2026;IE6388047V",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE CSV edge 37"
+        "value": "Review IE CSV edge 37",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1913,7 +2283,7 @@
         "text": "Irish CSV Locale Normalizer analyzes Ireland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1937,23 +2307,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Ireland sample company 1 Grafton Street, Dublin, D02 X285"
+        "value": "Ireland sample company 1 Grafton Street, Dublin, D02 X285",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE SLUG 38"
+        "value": "Invalid IE SLUG 38",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Ireland sample company 1 Grafton"
+        "value": "Ireland sample company 1 Grafton",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE Ireland sample company 1 Grafton Street, Dublin, D02 X285"
+        "value": "Wrong prefix IE Ireland sample company 1 Grafton Street, Dublin, D02 X285",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE SLUG edge 38"
+        "value": "Review IE SLUG edge 38",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -1965,7 +2345,7 @@
         "text": "Irish Slug Normalizer analyzes Ireland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -1989,23 +2369,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1234567T IE6388047V IE29AIBK93115212345674 D02 X285"
+        "value": "1234567T IE6388047V IE29AIBK93115212345674 D02 X285",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE OCR 39"
+        "value": "Invalid IE OCR 39",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1234567T IE6388047V IE29AIBK9"
+        "value": "1234567T IE6388047V IE29AIBK9",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1234567T IE6388047V IE29AIBK93115212345674 D02 X285"
+        "value": "Wrong prefix IE 1234567T IE6388047V IE29AIBK93115212345674 D02 X285",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE OCR edge 39"
+        "value": "Review IE OCR edge 39",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2017,7 +2407,7 @@
         "text": "Irish Document OCR Fixer analyzes Ireland-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2041,23 +2431,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE GDPR 40"
+        "value": "Invalid IE GDPR 40",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE GDPR edge 40"
+        "value": "Review IE GDPR edge 40",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2069,7 +2469,7 @@
         "text": "Irish GDPR / Data Protection Commission Redaction Helper analyzes Ireland-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2093,23 +2493,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1234567T +353 1 234 5678 IE29AIBK93115212345674"
+        "value": "1234567T +353 1 234 5678 IE29AIBK93115212345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE PII 41"
+        "value": "Invalid IE PII 41",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1234567T +353 1 234 5678 I"
+        "value": "1234567T +353 1 234 5678 I",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1234567T +353 1 234 5678 IE29AIBK93115212345674"
+        "value": "Wrong prefix IE 1234567T +353 1 234 5678 IE29AIBK93115212345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE PII edge 41"
+        "value": "Review IE PII edge 41",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2121,7 +2531,7 @@
         "text": "Irish PII Masker analyzes Ireland-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2145,23 +2555,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1234567T\\n1 Grafton Street, Dublin, D02 X285\\n+353 1 234 5678"
+        "value": "1234567T\\n1 Grafton Street, Dublin, D02 X285\\n+353 1 234 5678",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE FIX 42"
+        "value": "Invalid IE FIX 42",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1234567T\\n1 Grafton Street, Dublin"
+        "value": "1234567T\\n1 Grafton Street, Dublin",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1234567T\\n1 Grafton Street, Dublin, D02 X285\\n+353 1 234 5678"
+        "value": "Wrong prefix IE 1234567T\\n1 Grafton Street, Dublin, D02 X285\\n+353 1 234 5678",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE FIX edge 42"
+        "value": "Review IE FIX edge 42",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2173,7 +2593,7 @@
         "text": "Irish Personal Data Fixture Helper analyzes Ireland-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2197,23 +2617,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1234567T DL 2026"
+        "value": "1234567T DL 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE DL 43"
+        "value": "Invalid IE DL 43",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1234567T "
+        "value": "1234567T ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1234567T DL 2026"
+        "value": "Wrong prefix IE 1234567T DL 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE DL edge 43"
+        "value": "Review IE DL edge 43",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2225,7 +2655,7 @@
         "text": "Irish Driving Licence Format Helper analyzes Ireland-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2249,23 +2679,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "IE PERMIT 2026 1234567T"
+        "value": "IE PERMIT 2026 1234567T",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE PERMIT 44"
+        "value": "Invalid IE PERMIT 44",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "IE PERMIT 202"
+        "value": "IE PERMIT 202",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ PERMIT 2026 1234567T"
+        "value": "Wrong prefix ZZ PERMIT 2026 1234567T",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE PERMIT edge 44"
+        "value": "Review IE PERMIT edge 44",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2277,7 +2717,7 @@
         "text": "Irish Residence Permit Format Helper analyzes Ireland-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2301,23 +2741,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1234567T HEALTH 2026"
+        "value": "1234567T HEALTH 2026",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE HEALTH 45"
+        "value": "Invalid IE HEALTH 45",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1234567T HE"
+        "value": "1234567T HE",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1234567T HEALTH 2026"
+        "value": "Wrong prefix IE 1234567T HEALTH 2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE HEALTH edge 45"
+        "value": "Review IE HEALTH edge 45",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2329,7 +2779,7 @@
         "text": "Irish Health Card Format Helper analyzes Ireland-specific documents evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2353,23 +2803,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "241-D-12345"
+        "value": "241-D-12345",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "241-D-12346"
+        "value": "Invalid 241-D-12346",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "241-D-1"
+        "value": "241-D-1",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 241-D-12345"
+        "value": "Wrong prefix IE 241-D-12345",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE PLATE edge 46"
+        "value": "Review IE PLATE edge 46",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2381,7 +2841,7 @@
         "text": "Irish Vehicle Plate Inspector analyzes Ireland-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2405,23 +2865,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "WVWZZZ1JZXW000001"
+        "value": "WVWZZZ1JZXW000001",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "WVWZZZ1JZXW000002"
+        "value": "Invalid WVWZZZ1JZXW000002",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "WVWZZZ1JZX"
+        "value": "WVWZZZ1JZX",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZWZZZ1JZXW000001"
+        "value": "Wrong prefix ZZWZZZ1JZXW000001",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE VIN edge 47"
+        "value": "Review IE VIN edge 47",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2433,7 +2903,7 @@
         "text": "Irish VIN Validator analyzes Ireland-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2457,23 +2927,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "241-D-12345 WVWZZZ1JZXW000001 1234567T"
+        "value": "241-D-12345 WVWZZZ1JZXW000001 1234567T",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE VEH 48"
+        "value": "Invalid IE VEH 48",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "241-D-12345 WVWZZZ1JZ"
+        "value": "241-D-12345 WVWZZZ1JZ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 241-D-12345 WVWZZZ1JZXW000001 1234567T"
+        "value": "Wrong prefix IE 241-D-12345 WVWZZZ1JZXW000001 1234567T",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE VEH edge 48"
+        "value": "Review IE VEH edge 48",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2485,7 +2965,7 @@
         "text": "Irish Vehicle Data Redaction Helper analyzes Ireland-specific transport evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2509,23 +2989,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "IE6388047V HS 8471 1,234.56 EUR"
+        "value": "IE6388047V HS 8471 1,234.56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE CUSTOMS 49"
+        "value": "Invalid IE CUSTOMS 49",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "IE6388047V HS 8471"
+        "value": "IE6388047V HS 8471",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZ6388047V HS 8471 1,234.56 EUR"
+        "value": "Wrong prefix ZZ6388047V HS 8471 1,234.56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE CUSTOMS edge 49"
+        "value": "Review IE CUSTOMS edge 49",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2537,7 +3027,7 @@
         "text": "Irish Customs Declaration Helper analyzes Ireland-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2561,23 +3051,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "TRACK 2026 D02 X285"
+        "value": "TRACK 2026 D02 X285",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE TRACK 50"
+        "value": "Invalid IE TRACK 50",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "TRACK 2026 "
+        "value": "TRACK 2026 ",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZACK 2026 D02 X285"
+        "value": "Wrong prefix ZZACK 2026 D02 X285",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE TRACK edge 50"
+        "value": "Review IE TRACK edge 50",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2589,7 +3089,7 @@
         "text": "Irish Postal Tracking Helper analyzes Ireland-specific logistics evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2613,23 +3113,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE DQ 51"
+        "value": "Invalid IE DQ 51",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE DQ edge 51"
+        "value": "Review IE DQ edge 51",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2641,7 +3151,7 @@
         "text": "Irish Data Quality Workbench analyzes Ireland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2665,23 +3175,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE JSON 52"
+        "value": "Invalid IE JSON 52",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE JSON edge 52"
+        "value": "Review IE JSON edge 52",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2693,7 +3213,7 @@
         "text": "Irish JSON Fixture Helper analyzes Ireland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2717,23 +3237,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PPSN CRO number Eircode  IE29AIBK93115212345674"
+        "value": "PPSN CRO number Eircode  IE29AIBK93115212345674",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE REGEX 53"
+        "value": "Invalid IE REGEX 53",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PPSN CRO number Eircode  I"
+        "value": "PPSN CRO number Eircode  I",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZSN CRO number Eircode  IE29AIBK93115212345674"
+        "value": "Wrong prefix ZZSN CRO number Eircode  IE29AIBK93115212345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE REGEX edge 53"
+        "value": "Review IE REGEX edge 53",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2745,7 +3275,7 @@
         "text": "Irish Regex Pack Helper analyzes Ireland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2769,23 +3299,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE API 54"
+        "value": "Invalid IE API 54",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE API edge 54"
+        "value": "Review IE API edge 54",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2797,7 +3337,7 @@
         "text": "Irish API Payload Auditor analyzes Ireland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2821,23 +3361,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "tax=IE6388047V&postal=D02 X285&phone=+353 1 234 5678"
+        "value": "tax=IE6388047V&postal=D02 X285&phone=+353 1 234 5678",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE FORM 55"
+        "value": "Invalid IE FORM 55",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "tax=IE6388047V&postal=D02 X28"
+        "value": "tax=IE6388047V&postal=D02 X28",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE tax=IE6388047V&postal=D02 X285&phone=+353 1 234 5678"
+        "value": "Wrong prefix IE tax=IE6388047V&postal=D02 X285&phone=+353 1 234 5678",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE FORM edge 55"
+        "value": "Review IE FORM edge 55",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2849,7 +3399,7 @@
         "text": "Irish Form Field Auditor analyzes Ireland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2873,23 +3423,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "1,234.56 EUR"
+        "value": "1,234.56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE NUM 56"
+        "value": "Invalid IE NUM 56",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "1,234.5"
+        "value": "1,234.5",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 1,234.56 EUR"
+        "value": "Wrong prefix IE 1,234.56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE NUM edge 56"
+        "value": "Review IE NUM edge 56",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2901,7 +3461,7 @@
         "text": "Irish Locale Number Parser analyzes Ireland-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2925,23 +3485,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "21/07/2026 week 30"
+        "value": "21/07/2026 week 30",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE CAL 57"
+        "value": "Invalid IE CAL 57",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "21/07/2026"
+        "value": "21/07/2026",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 21/07/2026 week 30"
+        "value": "Wrong prefix IE 21/07/2026 week 30",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE CAL edge 57"
+        "value": "Review IE CAL edge 57",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -2953,7 +3523,7 @@
         "text": "Irish Calendar Week Helper analyzes Ireland-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -2977,23 +3547,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Ireland Sample Holding Ltd 123456"
+        "value": "Ireland Sample Holding Ltd 123456",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Ireland Sample Holding Ltd 123457"
+        "value": "Invalid Ireland Sample Holding Ltd 123457",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Ireland Sample Hold"
+        "value": "Ireland Sample Hold",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE Ireland Sample Holding Ltd 123456"
+        "value": "Wrong prefix IE Ireland Sample Holding Ltd 123456",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE SUFFIX edge 58"
+        "value": "Review IE SUFFIX edge 58",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3005,7 +3585,7 @@
         "text": "Irish Company Suffix Normalizer analyzes Ireland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3029,23 +3609,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "123456 PO-2026-001 IE6388047V"
+        "value": "123456 PO-2026-001 IE6388047V",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE PROC 59"
+        "value": "Invalid IE PROC 59",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "123456 PO-2026-0"
+        "value": "123456 PO-2026-0",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE 123456 PO-2026-001 IE6388047V"
+        "value": "Wrong prefix IE 123456 PO-2026-001 IE6388047V",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE PROC edge 59"
+        "value": "Review IE PROC edge 59",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3057,7 +3647,7 @@
         "text": "Irish Procurement Identifier Helper analyzes Ireland-specific government evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3081,23 +3671,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "PPSN input, Eircode input, amount 1,234.56 EUR"
+        "value": "PPSN input, Eircode input, amount 1,234.56 EUR",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE COPY 60"
+        "value": "Invalid IE COPY 60",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "PPSN input, Eircode input,"
+        "value": "PPSN input, Eircode input,",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "ZZSN input, Eircode input, amount 1,234.56 EUR"
+        "value": "Wrong prefix ZZSN input, Eircode input, amount 1,234.56 EUR",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE COPY edge 60"
+        "value": "Review IE COPY edge 60",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3109,7 +3709,7 @@
         "text": "Irish Locale Copy Checker analyzes Ireland-specific localization evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3133,23 +3733,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "Customer sent 1234567T, IE29AIBK93115212345674, 1 Grafton Street, Dublin, D02 X285"
+        "value": "Customer sent 1234567T, IE29AIBK93115212345674, 1 Grafton Street, Dublin, D02 X285",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE SUP 61"
+        "value": "Invalid IE SUP 61",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "Customer sent 1234567T, IE29AIBK93115212345674"
+        "value": "Customer sent 1234567T, IE29AIBK93115212345674",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE Customer sent 1234567T, IE29AIBK93115212345674, 1 Grafton Street, Dublin, D02 X285"
+        "value": "Wrong prefix IE Customer sent 1234567T, IE29AIBK93115212345674, 1 Grafton Street, Dublin, D02 X285",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE SUP edge 61"
+        "value": "Review IE SUP edge 61",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3161,7 +3771,7 @@
         "text": "Irish Support Ticket Scrubber analyzes Ireland-specific privacy evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {
@@ -3185,23 +3795,33 @@
     "samples": [
       {
         "label": "Valid sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "valid",
+        "tone": "success"
       },
       {
         "label": "Invalid sample",
-        "value": "Invalid IE SMOKE 62"
+        "value": "Invalid IE SMOKE 62",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Short sample",
-        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI"
+        "value": "{\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AI",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Wrong prefix sample",
-        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}"
+        "value": "Wrong prefix IE {\"country\":\"IE\",\"ppsn\":\"1234567T\",\"iban\":\"IE29AIBK93115212345674\",\"eircode\":\"D02 X285\"}",
+        "intent": "review",
+        "tone": "review"
       },
       {
         "label": "Edge sample",
-        "value": "Review IE SMOKE edge 62"
+        "value": "Review IE SMOKE edge 62",
+        "intent": "review",
+        "tone": "review"
       }
     ],
     "boundaries": [
@@ -3213,7 +3833,7 @@
         "text": "Irish Integration Smoke Test Builder analyzes Ireland-specific developer-tools evidence locally in this browser."
       },
       {
-        "title": "Official lookup boundary",
+        "title": "Official boundary",
         "text": "Offline Irish parser evidence does not prove registry, tax, banking, filing, vehicle, or legal status."
       },
       {

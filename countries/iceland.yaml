@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: IS
+slug: iceland
+name:
+  en: Iceland
+region: Europe
+languages:
+  - is
+currency: ISK
+relatedCountries:
+  - NO
+  - DK
+  - GB

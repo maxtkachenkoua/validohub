@@ -22,6 +22,8 @@ Every factory-rendered country tool must have this order:
 
 Never ship the old generic `Run the tool` shell, a hybrid generic-plus-premium shell, or a page where the country runtime mounts below stale generated workbench UI.
 
+The expected workbench promise is validate + generate + explain + debug where the domain allows it. A user arriving from search should immediately understand whether the tool can check an existing value, generate a safe fixture, inspect every field, replay the local algorithm, and copy developer-ready output.
+
 ## Non-Negotiable Regression Bar
 
 Do not repeat these already-fixed bugs:
@@ -59,10 +61,12 @@ For a new full-premium country:
 2. Choose strong local tools based on actual country workflows. Around 60 tools is a reference density, not a cap or quota. Add more if there are more genuinely useful local offline workflows; ship fewer rather than padding.
 3. Build country data first: local identifiers, taxes, banking/payment systems, postal/address formats, vehicle/company documents, locale conventions, civic snapshot, technical standards, visual theme, real timezone, and search hints.
 4. Generate tools with explicit sample intent, local quality notes, official boundaries, field breakdowns, and analyzer coverage.
-5. Use `npm run build:country -- --country <slug>` for fast iteration. This must rebuild the country hub and every local tool page under that country with current CSS/JS bundle links.
-6. Run `npm run audit:country-suite` and any country-premium audit available.
-7. Browser-smoke representative routes: hub, local ID, VAT/tax, IBAN validator, IBAN generator, invoice/payment, CSV/locale, and one broad helper.
-8. Run full `npm run build` before release/sign-off.
+5. Add domain-specific analyzer/generator profiles whenever the local format has real structure. Do not accept generic `source payload / offline only` cards for national IDs, VAT/tax IDs, company numbers, IBAN/account formats, payment references, vehicle/documents, or other structured local formats.
+6. Apply shared factory improvements to existing countries too. If a bug was visible in Ireland, Finland, Czechia, Brazil, or any current route, assume all generated countries need the source fix and regenerate/build from source.
+7. Use `npm run build:country -- --country <slug>` for fast iteration. This must rebuild the country hub and every local tool page under that country with current CSS/JS bundle links.
+8. Run `npm run audit:country-suite` and any country-premium audit available.
+9. Browser-smoke representative routes: hub, local ID, VAT/tax, IBAN validator, IBAN generator, invoice/payment, CSV/locale, and one broad helper.
+10. Run full `npm run build` before release/sign-off.
 
 ## Verification Expectations
 

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-document-ocr-fixer
+kind: tool
+module: validohub
+country: GB
+category: documents
+status: active
+name:
+  en: "British Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "QQ123456C GB123456789 GB29NWBK60161331926819 SW1A 1AA London"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-gdpr-redaction-helper, united-kingdom-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

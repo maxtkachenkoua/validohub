@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: HU
+slug: hungary
+name:
+  en: Hungary
+region: Europe
+languages:
+  - hu
+currency: HUF
+relatedCountries:
+  - AT
+  - SK
+  - RO

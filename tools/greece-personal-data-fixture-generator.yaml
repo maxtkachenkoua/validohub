@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: GR
+category: privacy
+status: active
+name:
+  en: "Greek Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "01018012345\\nErmou 1, 105 57 Athens\\n+30 210 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-driving-licence-format-helper, greece-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

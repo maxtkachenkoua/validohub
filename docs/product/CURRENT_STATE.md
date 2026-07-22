@@ -305,6 +305,13 @@ Generic tools are now governed by `docs/product/GENERIC_WORKBENCH_GOLD_STANDARD.
 Future generic instruments must start from the premium contract, not from a temporary generic form. New tools need deterministic neutral theming, success-first presets, polished invalid/error states, result cards immediately after input, advanced analysis below results, copy/download affordances, and browser verification before being called complete.
 
 
-## European Premium Batch V1
+## European Premium Batch V1 (superseded by Strict Europe Premium Batch V2)
 
 Portugal, Austria, Belgium, Ireland, Czechia, Sweden, Norway, Denmark, Finland, and Romania are generated as the first 10-country premium stress batch. Each country uses Country Suite Factory V1 with 60 local developer workbenches, field breakdown on every tool, seven production runtime locales, same-country related links, rich country hub sections, and explicit official/live lookup boundaries.
+
+This was the initial stress batch. The active country-generation contract is now Strict Europe Premium Batch V2 below.
+
+
+## Strict Europe Premium Batch V2
+
+Strict-Europe coverage is generated as full premium with Country Suite Factory V1. Each country uses quality-driven local developer workbenches, field breakdown on every tool, seven production runtime locales, validate/generate affordances where safe, same-country related links, rich country hub sections, and explicit official/live lookup boundaries. Russia and Belarus remain excluded; controversial/special territories are handled later by separate jurisdiction rules.

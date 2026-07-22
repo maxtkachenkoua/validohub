@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-business-register-readiness-helper
+kind: tool
+module: validohub
+country: MC
+category: government
+status: active
+name:
+  en: "Monegasque RCI Monaco Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated RCI Monaco lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "22S12345 FR12345678901 Avenue de la Costa 1, 98000 Monaco"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [monaco-id-card-format-helper, monaco-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monegasque RCI Monaco Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated RCI Monaco lookup or company registry workflow."

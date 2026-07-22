@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: RS
+category: privacy
+status: active
+name:
+  en: "Serbian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "0101980712345\\nKnez Mihailova 1, 11000 Belgrade\\n+381 60 1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-driving-licence-format-helper, serbia-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

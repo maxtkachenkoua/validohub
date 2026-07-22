@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-pii-masker
+kind: tool
+module: validohub
+country: UA
+category: privacy
+status: active
+name:
+  en: "Ukrainian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1234567890 +380 67 123 4567 UA213223130000026007233566001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-personal-data-fixture-generator, ukraine-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

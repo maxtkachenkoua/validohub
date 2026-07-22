@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: serbia-slug-normalizer
+kind: tool
+module: validohub
+country: RS
+category: developer-tools
+status: active
+name:
+  en: "Serbian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.serbia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Serbia sample company Knez Mihailova 1, 11000 Belgrade"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [serbia-document-ocr-fixer, serbia-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Serbian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

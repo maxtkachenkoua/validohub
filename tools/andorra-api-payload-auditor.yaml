@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: andorra-api-payload-auditor
+kind: tool
+module: validohub
+country: AD
+category: developer-tools
+status: active
+name:
+  en: "Andorran API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.andorra-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AD\",\"nrt\":\"F-123456-Z\",\"iban\":\"AD1200012030200359100100\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [andorra-form-field-auditor, andorra-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Andorran API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."

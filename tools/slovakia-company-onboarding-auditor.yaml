@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-company-onboarding-auditor
+kind: tool
+module: validohub
+country: SK
+category: developer-tools
+status: active
+name:
+  en: "Slovak Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for ICO, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SK\",\"ico\":\"31331131\",\"iban\":\"SK3112000000198742637541\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-business-register-readiness-helper, slovakia-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for ICO, VAT, address, banking, and official registry handoff readiness."

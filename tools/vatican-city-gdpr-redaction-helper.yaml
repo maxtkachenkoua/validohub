@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: VA
+category: privacy
+status: active
+name:
+  en: "Vatican personal-data protection Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"VA\",\"entity\":\"VA-ENTITY-001\",\"iban\":\"VA59001123000000012345678\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-pii-masker, vatican-city-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican personal-data protection Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

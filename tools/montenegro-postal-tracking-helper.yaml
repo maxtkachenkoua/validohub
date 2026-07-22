@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: montenegro-postal-tracking-helper
+kind: tool
+module: validohub
+country: ME
+category: logistics
+status: active
+name:
+  en: "Montenegrin Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.montenegro-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 81000 Podgorica"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [montenegro-data-quality-workbench, montenegro-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Montenegrin Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

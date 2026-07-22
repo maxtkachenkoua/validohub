@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: moldova-cnas-evidence-social-insurance-helper
+kind: tool
+module: validohub
+country: MD
+category: national-identifiers
+status: active
+name:
+  en: "Moldovan CNAS evidence Helper"
+summary:
+  en: "Split CNAS evidence evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.moldova-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "2000010101234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [moldova-company-onboarding-auditor, moldova-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moldovan CNAS evidence Helper | ValidoHub"
+  description:
+    en: "Split CNAS evidence evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

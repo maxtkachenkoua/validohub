@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: luxembourg-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: LU
+category: privacy
+status: active
+name:
+  en: "Luxembourgish Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.luxembourg-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "1980010101234\\nGrand-Rue 1, L-1661 Luxembourg\\n+352 621 123 456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [luxembourg-driving-licence-format-helper, luxembourg-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Luxembourgish Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

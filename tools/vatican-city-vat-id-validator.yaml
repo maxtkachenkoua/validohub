@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-vat-id-validator
+kind: tool
+module: validohub
+country: VA
+category: national-identifiers
+status: active
+name:
+  en: "Vatican VAT ID / VA Prefix Validator"
+summary:
+  en: "Normalize VA VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VAT input"
+        required: true
+        placeholder:
+          en: "VA00123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-eori-validator, vatican-city-document-number-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican VAT ID / VA Prefix Validator | ValidoHub"
+  description:
+    en: "Normalize VA VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."

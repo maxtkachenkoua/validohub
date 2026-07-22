@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-procurement-identifier-helper
+kind: tool
+module: validohub
+country: VA
+category: government
+status: active
+name:
+  en: "Vatican Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "VA-ENTITY-001 PO-2026-001 VA00123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-accessibility-locale-copy-checker, vatican-city-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

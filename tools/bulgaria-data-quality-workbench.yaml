@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bulgaria-data-quality-workbench
+kind: tool
+module: validohub
+country: BG
+category: developer-tools
+status: active
+name:
+  en: "Bulgarian Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bulgaria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BG\",\"egn\":\"8001010008\",\"vat\":\"BG123456789\",\"iban\":\"BG80BNBG96611020345678\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bulgaria-json-fixture-generator, bulgaria-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bulgarian Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

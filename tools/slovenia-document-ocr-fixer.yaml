@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovenia-document-ocr-fixer
+kind: tool
+module: validohub
+country: SI
+category: documents
+status: active
+name:
+  en: "Slovenian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "0101980500123 SI12345678 SI56263300012039086 1000 Ljubljana"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovenia-gdpr-redaction-helper, slovenia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovenian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

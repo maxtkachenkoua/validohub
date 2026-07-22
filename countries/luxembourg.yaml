@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: LU
+slug: luxembourg
+name:
+  en: Luxembourg
+region: Europe
+languages:
+  - fr
+currency: EUR
+relatedCountries:
+  - BE
+  - FR
+  - DE

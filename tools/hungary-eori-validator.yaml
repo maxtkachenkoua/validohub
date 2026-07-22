@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: hungary-eori-validator
+kind: tool
+module: validohub
+country: HU
+category: national-identifiers
+status: active
+name:
+  en: "Hungarian EORI / Customs Identifier Helper"
+summary:
+  en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.hungary-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EORI input"
+        required: true
+        placeholder:
+          en: "HU01-09-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [hungary-taj-social-insurance-helper, hungary-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Hungarian EORI / Customs Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."

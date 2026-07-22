@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: BA
+category: privacy
+status: active
+name:
+  en: "Bosnian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "0101980123456\\nFerhadija 1, 71000 Sarajevo\\n+387 61 123 456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-driving-licence-format-helper, bosnia-and-herzegovina-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

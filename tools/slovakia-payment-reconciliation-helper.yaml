@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: slovakia-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: SK
+category: finance
+status: active
+name:
+  en: "Slovak Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.slovakia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "21.07.2026; 1 234,56 EUR; SK3112000000198742637541; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [slovakia-bank-statement-parser, slovakia-masked-iban-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Slovak Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

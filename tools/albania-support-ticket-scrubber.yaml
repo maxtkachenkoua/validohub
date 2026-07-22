@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: albania-support-ticket-scrubber
+kind: tool
+module: validohub
+country: AL
+category: privacy
+status: active
+name:
+  en: "Albanian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.albania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent J12345678K, AL47212110090000000235698741, Bulevardi Deshmoret e Kombit 1, 1001 Tirana"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [albania-integration-smoke-test-builder, albania-personal-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Albanian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-business-register-readiness-helper
+kind: tool
+module: validohub
+country: IS
+category: government
+status: active
+name:
+  en: "Icelandic Companies Register Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Companies Register lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "5501692829 IS5501692829 Laugavegur 1, 101 Reykjavik"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-id-card-format-helper, iceland-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Companies Register Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Companies Register lookup or company registry workflow."

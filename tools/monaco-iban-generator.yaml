@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: monaco-iban-generator
+kind: tool
+module: validohub
+country: MC
+category: finance
+status: active
+name:
+  en: "Monaco IBAN Generator"
+summary:
+  en: "Generate MC IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.monaco-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBG input"
+        required: true
+        placeholder:
+          en: "11222000010123456789030"
+    actions: [generate, validate, explain]
+related:
+  explicit: [monaco-bank-account-inspector, monaco-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Monaco IBAN Generator | ValidoHub"
+  description:
+    en: "Generate MC IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vatican-city-municipality-code-inspector
+kind: tool
+module: validohub
+country: VA
+category: address
+status: active
+name:
+  en: "Vatican Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vatican-city-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Cortile San Damaso, 00120 Vatican City"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vatican-city-phone-number-validator, vatican-city-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vatican Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

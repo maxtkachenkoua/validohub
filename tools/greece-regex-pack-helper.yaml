@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: greece-regex-pack-helper
+kind: tool
+module: validohub
+country: GR
+category: developer-tools
+status: active
+name:
+  en: "Greek Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.greece-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "AMKA GEMI number TK postal code  GR1601101250000000012300695"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [greece-api-payload-auditor, greece-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Greek Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."

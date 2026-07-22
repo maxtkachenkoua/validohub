@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: RS
+slug: serbia
+name:
+  en: Serbia
+region: Europe
+languages:
+  - sr
+currency: RSD
+relatedCountries:
+  - BA
+  - ME
+  - RO

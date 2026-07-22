@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-masked-iban-formatter
+kind: tool
+module: validohub
+country: SM
+category: finance
+status: active
+name:
+  en: "Sammarinese Masked IBAN Formatter"
+summary:
+  en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "SM86U0322509800000000270100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-currency-decimal-formatter, san-marino-vat-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese Masked IBAN Formatter | ValidoHub"
+  description:
+    en: "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."

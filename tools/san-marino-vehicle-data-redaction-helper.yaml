@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: SM
+category: transport
+status: active
+name:
+  en: "Sammarinese Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "RSM 1234 WVWZZZ1JZXW000001 SM1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-customs-declaration-helper, san-marino-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sammarinese Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

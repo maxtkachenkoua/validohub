@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: moldova-data-quality-workbench
+kind: tool
+module: validohub
+country: MD
+category: developer-tools
+status: active
+name:
+  en: "Moldovan Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.moldova-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MD\",\"idno\":\"1003600000001\",\"iban\":\"MD24AG000225100013104168\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [moldova-json-fixture-generator, moldova-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moldovan Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

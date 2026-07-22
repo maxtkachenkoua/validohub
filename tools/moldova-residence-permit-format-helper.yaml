@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: moldova-residence-permit-format-helper
+kind: tool
+module: validohub
+country: MD
+category: documents
+status: active
+name:
+  en: "Moldovan Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.moldova-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "MD PERMIT 2026 2000010101234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [moldova-health-card-format-helper, moldova-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moldovan Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

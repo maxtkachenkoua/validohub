@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bosnia-and-herzegovina-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: BA
+category: finance
+status: active
+name:
+  en: "Bosnian Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bosnia-and-herzegovina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "21.07.2026; 1.234,56 BAM; BA391290079401028494; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bosnia-and-herzegovina-bank-statement-parser, bosnia-and-herzegovina-masked-iban-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bosnian Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

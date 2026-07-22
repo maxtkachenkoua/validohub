@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: croatia-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: HR
+category: developer-tools
+status: active
+name:
+  en: "Croatian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.croatia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"HR\",\"oib\":\"12345678903\",\"iban\":\"HR1210010051863000160\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [croatia-oib-validator, croatia-mbs-oib-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Croatian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cyprus-postal-tracking-helper
+kind: tool
+module: validohub
+country: CY
+category: logistics
+status: active
+name:
+  en: "Cypriot Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cyprus-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1010 Nicosia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cyprus-data-quality-workbench, cyprus-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cypriot Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

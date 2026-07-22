@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-company-onboarding-auditor
+kind: tool
+module: validohub
+country: IS
+category: developer-tools
+status: active
+name:
+  en: "Icelandic Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for company kennitala, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IS\",\"kennitala\":\"1201743399\",\"iban\":\"IS140159260076545510730339\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-business-register-readiness-helper, iceland-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for company kennitala, VAT, address, banking, and official registry handoff readiness."

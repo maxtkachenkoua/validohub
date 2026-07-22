@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iceland-kennitala-validator
+kind: tool
+module: validohub
+country: IS
+category: national-identifiers
+status: active
+name:
+  en: "Icelandic Kennitala Validator"
+summary:
+  en: "Validate Kennitala shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iceland-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "1201743399"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iceland-company-kennitala-validator, iceland-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Icelandic Kennitala Validator | ValidoHub"
+  description:
+    en: "Validate Kennitala shape, split date/control/body evidence, and prepare privacy-safe debugging output."

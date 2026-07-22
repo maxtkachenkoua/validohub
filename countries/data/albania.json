@@ -1,0 +1,641 @@
+{
+  "id": "albania",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/albania-outline.svg",
+    "outlineAlt": "Albania country outline",
+    "mapSrc": "/assets/images/countries/albania-location.svg",
+    "mapAlt": "World map with Albania location marker",
+    "mapMarker": {
+      "x": 53,
+      "y": 64,
+      "label": "Albania"
+    },
+    "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+  },
+  "catalog": {
+    "id": "albania",
+    "flag": "🇦🇱",
+    "name": "Albania",
+    "nativeName": "Shqiperia",
+    "iso2": "AL",
+    "iso3": "ALB",
+    "continent": "Europe",
+    "region": "Europe",
+    "language": "Albanian",
+    "currency": "ALL",
+    "currencyName": "Albanian lek",
+    "status": "available",
+    "summary": "Premium Albania developer hub for NIPT, personal number, business number, postal code, phone, IBAN, SWIFT, domestic account, tax payment reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "NIPT",
+      "personal number",
+      "business number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "IBAN",
+      "SWIFT",
+      "domestic account",
+      "tax payment reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Albanian Personal number Validator",
+      "Albanian NIPT Validator",
+      "Albanian VAT ID / AL Prefix Validator",
+      "Albanian EORI / Customs Identifier Helper",
+      "Albanian social insurance number Helper",
+      "Albanian Company Onboarding Auditor",
+      "Albanian QKB business register Readiness Helper",
+      "Albanian ID Card Format Helper",
+      "Albanian Passport Number Helper",
+      "Albanian MRZ / Passport Parser",
+      "Albania IBAN Validator",
+      "Albania IBAN Generator",
+      "Albanian Domestic Bank Account Inspector",
+      "Albanian BIC / SWIFT Inspector",
+      "Albanian SEPA Transfer Helper",
+      "Albanian SEPA Direct Debit Mandate Helper",
+      "Albanian bank payment reference Reference Helper",
+      "Albanian Remittance Text Builder",
+      "Albanian Payment Reconciliation Helper",
+      "Albanian Bank Statement Parser",
+      "Albanian Masked IBAN Formatter",
+      "Albanian ALL Decimal Currency Formatter",
+      "Albanian VAT Rate Sanity Helper",
+      "Albanian VAT Return Field Helper",
+      "Albanian Invoice Number Helper",
+      "Albanian fiscalization invoice Readiness Checker",
+      "Albanian Tax Authority Handoff Helper",
+      "Albanian Accounting Audit Trail Checklist Helper",
+      "Albanian Postal Code Validator",
+      "Albanian Address Normalizer",
+      "Albanian Address Transliteration Normalizer",
+      "Albanian Region / Province Code Mapper",
+      "Albanian Municipality Code Inspector",
+      "Albanian Phone Number Validator",
+      "Albanian Phone E.164 Formatter",
+      "Albanian Date Locale Formatter",
+      "Albanian CSV Locale Normalizer",
+      "Albanian Slug Normalizer",
+      "Albanian Document OCR Fixer",
+      "Albanian GDPR-aligned privacy Redaction Helper",
+      "Albanian PII Masker",
+      "Albanian Personal Data Fixture Helper",
+      "Albanian Driving Licence Format Helper",
+      "Albanian Residence Permit Format Helper",
+      "Albanian Health Card Format Helper",
+      "Albanian Vehicle Plate Inspector",
+      "Albanian VIN Validator",
+      "Albanian Vehicle Data Redaction Helper",
+      "Albanian Customs Declaration Helper",
+      "Albanian Postal Tracking Helper",
+      "Albanian Data Quality Workbench",
+      "Albanian JSON Fixture Helper",
+      "Albanian Regex Pack Helper",
+      "Albanian API Payload Auditor",
+      "Albanian Form Field Auditor",
+      "Albanian Locale Number Parser",
+      "Albanian Calendar Week Helper",
+      "Albanian Company Suffix Normalizer",
+      "Albanian Procurement Identifier Helper",
+      "Albanian Locale Copy Checker",
+      "Albanian Support Ticket Scrubber",
+      "Albanian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live QKB business register lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 53,
+      "y": 64
+    },
+    "searchHints": [
+      "NIPT",
+      "TVSH",
+      "QKB",
+      "IBAN",
+      "FISCALIZATION",
+      "PHONE"
+    ]
+  },
+  "hub": {
+    "flag": "🇦🇱",
+    "name": "Albania",
+    "badge": "Premium Albania developer suite",
+    "description": "Developer intelligence and browser-only workbenches for albanian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Shqiperia",
+      "population": "approximately 2.8M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Tirana",
+      "continent": "Europe",
+      "region": "Southeastern Europe",
+      "languages": "Albanian",
+      "currency": "Albanian lek",
+      "currencyCode": "ALL",
+      "callingCode": "+355",
+      "internetTld": ".al",
+      "drivingSide": "Right",
+      "iso2": "AL",
+      "iso3": "ALB",
+      "isoNumeric": "008",
+      "locale": "sq-AL",
+      "icuLocale": "sq_AL",
+      "dateFormat": "DD.MM.YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Dot or space grouping",
+      "addressFormat": "Street, number, postal code, locality, Albania",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Europe/Tirane (CET/CEST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "sq-AL",
+      "cldrLocale": "sq_AL",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "albania",
+      "outlineLabel": "Albania outline",
+      "mapLabel": "Albania in the world",
+      "continentBadge": "Europe",
+      "flagLabel": "Albania flag",
+      "heroAccentPrimary": "15 118 110",
+      "heroAccentSecondary": "37 99 235",
+      "heroAccentTertiary": "245 158 11"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Personal number and NIPT",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "TVSH / VAT and payments",
+        "text": "Tax, VAT, IBAN, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Albania registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /albania/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Dot or space grouping rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Albanian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "QKB business register",
+        "text": "Official business registry or company lookup remains the source of truth for Albania.",
+        "status": "official boundary"
+      },
+      {
+        "title": "TVSH / VAT",
+        "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+        "status": "official boundary"
+      },
+      {
+        "title": "GDPR-aligned privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "NIPT, personal number, business number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, SWIFT, domestic account, tax payment reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "sq-AL / sq_AL; date DD.MM.YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "ALL amounts use Comma (,) and Dot or space grouping.",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "Personal number, NIPT, postal code, phone, address, and IBAN need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "EU-wide emergency number; local alternatives may also exist."
+      }
+    ],
+    "searchHints": [
+      "NIPT",
+      "TVSH",
+      "QKB",
+      "IBAN",
+      "FISCALIZATION",
+      "PHONE"
+    ],
+    "routes": [
+      {
+        "title": "Albanian Personal number Validator",
+        "href": "/en/albania/albania-personal-number-validator/",
+        "text": "Validate Personal number shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Albanian NIPT Validator",
+        "href": "/en/albania/albania-nipt-validator/",
+        "text": "Inspect NIPT structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Albanian VAT ID / AL Prefix Validator",
+        "href": "/en/albania/albania-vat-id-validator/",
+        "text": "Normalize AL VAT identifiers, inspect local tax body evidence, and prepare VIES handoff diagnostics."
+      },
+      {
+        "title": "Albanian EORI / Customs Identifier Helper",
+        "href": "/en/albania/albania-eori-validator/",
+        "text": "Inspect customs identifiers, country prefixes, VAT-style bodies, and border-process boundaries."
+      },
+      {
+        "title": "Albanian social insurance number Helper",
+        "href": "/en/albania/albania-social-insurance-number-social-insurance-helper/",
+        "text": "Split social insurance number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Albanian Company Onboarding Auditor",
+        "href": "/en/albania/albania-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for NIPT, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Albanian QKB business register Readiness Helper",
+        "href": "/en/albania/albania-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated QKB business register lookup or company registry workflow."
+      },
+      {
+        "title": "Albanian ID Card Format Helper",
+        "href": "/en/albania/albania-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Albanian Passport Number Helper",
+        "href": "/en/albania/albania-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Albanian MRZ / Passport Parser",
+        "href": "/en/albania/albania-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Albania IBAN Validator",
+        "href": "/en/albania/albania-iban-validator/",
+        "text": "Validate AL IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+      },
+      {
+        "title": "Albania IBAN Generator",
+        "href": "/en/albania/albania-iban-generator/",
+        "text": "Generate AL IBAN check digits from a local BBAN/account body, replay MOD-97 evidence, and prepare payment fixtures."
+      },
+      {
+        "title": "Albanian Domestic Bank Account Inspector",
+        "href": "/en/albania/albania-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and IBAN conversion boundaries."
+      },
+      {
+        "title": "Albanian BIC / SWIFT Inspector",
+        "href": "/en/albania/albania-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Albania banking integrations."
+      },
+      {
+        "title": "Albanian SEPA Transfer Helper",
+        "href": "/en/albania/albania-sepa-transfer-helper/",
+        "text": "Check creditor, IBAN, amount, remittance, and offline SEPA handoff fields before bank submission."
+      },
+      {
+        "title": "Albanian SEPA Direct Debit Mandate Helper",
+        "href": "/en/albania/albania-sepa-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor IBAN, and browser-only direct-debit readiness."
+      },
+      {
+        "title": "Albanian bank payment reference Reference Helper",
+        "href": "/en/albania/albania-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Albanian Remittance Text Builder",
+        "href": "/en/albania/albania-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Albanian Payment Reconciliation Helper",
+        "href": "/en/albania/albania-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Albanian Bank Statement Parser",
+        "href": "/en/albania/albania-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, IBAN, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Albanian Masked IBAN Formatter",
+        "href": "/en/albania/albania-masked-iban-formatter/",
+        "text": "Create log-safe IBAN previews while preserving country, check digits, and account-tail evidence."
+      },
+      {
+        "title": "Albanian ALL Decimal Currency Formatter",
+        "href": "/en/albania/albania-currency-decimal-formatter/",
+        "text": "Normalize ALL amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Albanian VAT Rate Sanity Helper",
+        "href": "/en/albania/albania-vat-rate-sanity-helper/",
+        "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Albanian VAT Return Field Helper",
+        "href": "/en/albania/albania-vat-return-field-helper/",
+        "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Albanian Invoice Number Helper",
+        "href": "/en/albania/albania-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Albanian fiscalization invoice Readiness Checker",
+        "href": "/en/albania/albania-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Albanian Tax Authority Handoff Helper",
+        "href": "/en/albania/albania-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Albanian Accounting Audit Trail Checklist Helper",
+        "href": "/en/albania/albania-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+      },
+      {
+        "title": "Albanian Postal Code Validator",
+        "href": "/en/albania/albania-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Albanian Address Normalizer",
+        "href": "/en/albania/albania-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Albanian Address Transliteration Normalizer",
+        "href": "/en/albania/albania-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Albanian Region / Province Code Mapper",
+        "href": "/en/albania/albania-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Albanian Municipality Code Inspector",
+        "href": "/en/albania/albania-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Albanian Phone Number Validator",
+        "href": "/en/albania/albania-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Albanian Phone E.164 Formatter",
+        "href": "/en/albania/albania-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Albanian Date Locale Formatter",
+        "href": "/en/albania/albania-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Albanian CSV Locale Normalizer",
+        "href": "/en/albania/albania-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Albania decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Albanian Slug Normalizer",
+        "href": "/en/albania/albania-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Albanian Document OCR Fixer",
+        "href": "/en/albania/albania-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Albanian GDPR-aligned privacy Redaction Helper",
+        "href": "/en/albania/albania-gdpr-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Albanian PII Masker",
+        "href": "/en/albania/albania-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Albanian Personal Data Fixture Helper",
+        "href": "/en/albania/albania-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Albanian Driving Licence Format Helper",
+        "href": "/en/albania/albania-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Albanian Residence Permit Format Helper",
+        "href": "/en/albania/albania-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Albanian Health Card Format Helper",
+        "href": "/en/albania/albania-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Albanian Vehicle Plate Inspector",
+        "href": "/en/albania/albania-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Albanian VIN Validator",
+        "href": "/en/albania/albania-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Albanian Vehicle Data Redaction Helper",
+        "href": "/en/albania/albania-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Albanian Customs Declaration Helper",
+        "href": "/en/albania/albania-customs-declaration-helper/",
+        "text": "Inspect EORI, VAT, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Albanian Postal Tracking Helper",
+        "href": "/en/albania/albania-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Albanian Data Quality Workbench",
+        "href": "/en/albania/albania-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Albanian JSON Fixture Helper",
+        "href": "/en/albania/albania-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Albanian Regex Pack Helper",
+        "href": "/en/albania/albania-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, VAT, IBAN, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Albanian API Payload Auditor",
+        "href": "/en/albania/albania-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, IBAN, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Albanian Form Field Auditor",
+        "href": "/en/albania/albania-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Albanian Locale Number Parser",
+        "href": "/en/albania/albania-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Albania."
+      },
+      {
+        "title": "Albanian Calendar Week Helper",
+        "href": "/en/albania/albania-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Albanian Company Suffix Normalizer",
+        "href": "/en/albania/albania-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Albanian Procurement Identifier Helper",
+        "href": "/en/albania/albania-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Albanian Locale Copy Checker",
+        "href": "/en/albania/albania-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Albanian Support Ticket Scrubber",
+        "href": "/en/albania/albania-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Albanian Integration Smoke Test Builder",
+        "href": "/en/albania/albania-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

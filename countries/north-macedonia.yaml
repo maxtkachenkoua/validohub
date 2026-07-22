@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MK
+slug: north-macedonia
+name:
+  en: North Macedonia
+region: Europe
+languages:
+  - mk
+currency: MKD
+relatedCountries:
+  - AL
+  - BG
+  - GR

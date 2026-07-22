@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-kingdom-data-quality-workbench
+kind: tool
+module: validohub
+country: GB
+category: developer-tools
+status: active
+name:
+  en: "British Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-kingdom-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"GB\",\"nino\":\"QQ123456C\",\"company\":\"01234567\",\"sortCode\":\"60-16-13\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-kingdom-json-fixture-generator, united-kingdom-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "British Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

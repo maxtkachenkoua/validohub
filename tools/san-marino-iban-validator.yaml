@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: san-marino-iban-validator
+kind: tool
+module: validohub
+country: SM
+category: finance
+status: active
+name:
+  en: "San Marino IBAN Validator"
+summary:
+  en: "Validate SM IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.san-marino-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "IBAN input"
+        required: true
+        placeholder:
+          en: "SM86U0322509800000000270100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [san-marino-iban-generator, san-marino-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "San Marino IBAN Validator | ValidoHub"
+  description:
+    en: "Validate SM IBAN shape, replay MOD-97 evidence, and split bank/account blocks for debugging."

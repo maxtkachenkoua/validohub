@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ukraine-postal-tracking-helper
+kind: tool
+module: validohub
+country: UA
+category: logistics
+status: active
+name:
+  en: "Ukrainian Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ukraine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 01001 Kyiv"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ukraine-data-quality-workbench, ukraine-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ukrainian Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
