@@ -24,6 +24,10 @@ forms:
         label:
           en: Test text
         required: true
+      - type: text
+        name: replacement
+        label:
+          en: Replacement preview
     actions: [validate, explain]
 related:
   explicit: [json-validator]

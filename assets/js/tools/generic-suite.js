@@ -93,6 +93,27 @@
     return '<pre class="generic-code" data-language="' + escape(language || 'text') + '"><code>' + escape(value) + '</code></pre>';
   }
 
+  function apiPreview(config, result) {
+    const payload = {
+      tool: config.slug,
+      mode: result.mode || config.defaultAction || 'run',
+      input: result.developerJson && (result.developerJson.input || result.developerJson.uuid || result.developerJson.iban || result.developerJson.pattern || result.developerJson.country || null),
+      output: result.output || '',
+      localOnly: true
+    };
+    const path = '/v1/tools/' + (config.slug || 'generic-tool') + '/run';
+    return [
+      '<div class="generic-api-preview">',
+      resultCards([
+        { label: 'Endpoint shape', value: path, note: 'example contract only' },
+        { label: 'Execution', value: 'Browser local', note: 'no request is sent' },
+        { label: 'Payload', value: 'JSON', note: 'copy for handoff tests' }
+      ]),
+      codeBlock('curl -X POST https://api.validohub.com' + path + ' \\\n  -H "Content-Type: application/json" \\\n  -d ' + JSON.stringify(JSON.stringify(payload)), 'bash'),
+      '</div>'
+    ].join('');
+  }
+
   function charProfile(value) {
     const text = String(value || '');
     return {
@@ -195,6 +216,7 @@
       sections.push(advancedSection('Quality notes', qualityGrid(result.qualityNotes)));
     }
     if (result.developerJson) {
+      sections.push(advancedSection('Developer API preview', apiPreview(config, result)));
       sections.push(advancedSection('Developer snapshot JSON', codeBlock(JSON.stringify(result.developerJson, null, 2), 'json')));
     }
     return sections.join('');
@@ -202,7 +224,7 @@
 
   function runSafely(workbench, config, action, handler) {
     try {
-      const output = handler(workbench, action);
+      const output = handler(workbench, action, config);
       if (output && typeof output.then === 'function') {
         workbench.setMessage('Running locally in this browser...', '');
         output.then((result) => render(workbench, config, result)).catch((error) => render(workbench, config, failure(config, error.message)));
@@ -419,6 +441,16 @@
     return `${time.slice(0,8)}-${time.slice(8,12)}-7${tail.slice(0,3)}-${((parseInt(tail.slice(3,5),16)&0x3f)|0x80).toString(16).padStart(2,'0')}${tail.slice(5,7)}-${tail.slice(7,19)}`;
   }
 
+  function uuidDetails(normalized) {
+    const compact = String(normalized || '').replace(/-/g, '').toLowerCase();
+    const version = compact.charAt(12) || 'unknown';
+    const variantByte = parseInt(compact.slice(16, 18), 16);
+    const variant = Number.isFinite(variantByte) && (variantByte & 0xc0) === 0x80 ? 'RFC 4122 / Leach-Salz' : 'non-standard';
+    const v7Timestamp = version === '7' ? parseInt(compact.slice(0, 12), 16) : null;
+    const timestampIso = v7Timestamp ? new Date(v7Timestamp).toISOString() : '';
+    return { compact, urn: compact ? 'urn:uuid:' + normalized : '', version, variant, v7Timestamp, timestampIso };
+  }
+
   function uuidHandler(workbench, action) {
     const values = formValues(workbench);
     const input = firstValue(values).trim();
@@ -441,16 +473,28 @@
     const match = uuid.match(/^([0-9a-f]{8})-?([0-9a-f]{4})-?([1-8][0-9a-f]{3})-?([89ab][0-9a-f]{3})-?([0-9a-f]{12})$/i);
     const normalized = match ? match.slice(1).join('-').toLowerCase() : uuid;
     const valid = Boolean(match);
+    const details = valid ? uuidDetails(normalized) : null;
     return {
       ok: valid,
       output: normalized,
       message: valid ? (generate ? 'UUID generated locally with browser crypto.' : 'UUID structure is valid.') : 'UUID shape is invalid.',
       badge: valid ? 'UUID valid' : 'Invalid UUID',
-      stats: [['Version', valid ? normalized.charAt(14) : 'unknown'], ['Variant', valid ? 'RFC 4122 compatible' : 'invalid'], ['Characters', normalized.length], ['Hyphenated', normalized.includes('-') ? 'Yes' : 'No']],
+      stats: [['Version', valid ? 'v' + details.version : 'unknown'], ['Variant', valid ? details.variant : 'invalid'], ['Characters', normalized.length], ['Hyphenated', normalized.includes('-') ? 'Yes' : 'No'], ['URN ready', valid ? 'Yes' : 'No']],
       pipeline: [{ name: 'Shape', ok: valid, detail: valid ? '32 hex digits' : 'Expected UUID hex format' }, { name: 'Version', ok: valid, detail: valid ? 'v' + normalized.charAt(14) : 'Unknown' }, { name: 'Randomness', detail: generate ? 'Browser crypto' : 'Not testable from value alone' }],
-      breakdown: valid ? [['time_low', normalized.slice(0,8)], ['time_mid', normalized.slice(9,13)], ['version', normalized.charAt(14)], ['variant', normalized.charAt(19)], ['node/random', normalized.slice(24)]] : [['Input', uuid], ['Expected', 'xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx']],
-      qualityNotes: ['Generated UUID values are fixtures unless your product records them as real IDs.', 'Uniqueness cannot be proven by validating one UUID string.'],
-      developerJson: { uuid: normalized, valid, version: valid ? normalized.charAt(14) : null }
+      resultCards: valid ? [
+        { label: 'Normalized UUID', value: normalized, note: 'canonical lowercase' },
+        { label: 'Compact hex', value: details.compact, note: '32 characters' },
+        { label: 'URN form', value: details.urn, note: 'copy-ready identifier URI' },
+        { label: details.version === '7' ? 'v7 timestamp' : 'Collision note', value: details.version === '7' ? details.timestampIso : 'Random space', note: details.version === '7' ? 'decoded from prefix' : 'uniqueness is probabilistic' }
+      ] : [
+        { label: 'Input', value: uuid || 'empty', note: 'review shape' },
+        { label: 'Expected', value: '8-4-4-4-12', note: 'hex UUID groups' },
+        { label: 'Version nibble', value: '1-8', note: 'third group first char' },
+        { label: 'Variant nibble', value: '8, 9, a, b', note: 'fourth group first char' }
+      ],
+      breakdown: valid ? [['time_low', normalized.slice(0,8)], ['time_mid', normalized.slice(9,13)], ['version', details.version, 'UUID version nibble'], ['variant', normalized.charAt(19), details.variant], ['node/random', normalized.slice(24)], ['compact', details.compact], ['urn', details.urn], ['v7 timestamp', details.timestampIso || 'n/a']] : [['Input', uuid], ['Expected', 'xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx']],
+      qualityNotes: ['Generated UUID values are fixtures unless your product records them as real IDs.', 'Uniqueness cannot be proven by validating one UUID string.', 'UUID v7 timestamps are useful for ordering but may reveal generation time.', 'Use UUIDs for identifiers, not authentication secrets.'],
+      developerJson: { uuid: normalized, valid, version: valid ? details.version : null, variant: valid ? details.variant : null, compact: valid ? details.compact : null, urn: valid ? details.urn : null, timestampIso: valid ? details.timestampIso || null : null }
     };
   }
 
@@ -611,6 +655,188 @@
         'Use grouped output for forms and masked output for logs.',
         'Samples are structural fixtures for parser and UI testing.'
       ]
+    },
+    AT: {
+      slug: 'austria-iban-validator',
+      title: 'Austrian IBAN Validator',
+      countryName: 'Austria',
+      sample: 'AT611904300234573201',
+      length: 20,
+      theme: 'finance',
+      mark: 'AT',
+      kicker: 'Austrian banking',
+      summary: 'Validate Austrian IBANs, split bank and account evidence, and explain the offline account-status boundary.',
+      chips: ['AT length 20', 'Bank code', 'MOD-97', 'SEPA'],
+      slices: [['Bank code', 4, 9, '5 digits'], ['Account number', 9, 20, '11 digits']],
+      quality: ['Austrian IBAN validation proves AT length, BBAN slicing, and MOD-97 only.', 'Bank/account status requires banking rails or official institution data.', 'Use masked Austrian IBAN output in logs and fixtures.', 'Generated and sample values are structural test data.']
+    },
+    BE: {
+      slug: 'belgium-iban-validator',
+      title: 'Belgian IBAN Validator',
+      countryName: 'Belgium',
+      sample: 'BE68539007547034',
+      length: 16,
+      theme: 'finance',
+      mark: 'BE',
+      kicker: 'Belgian banking',
+      summary: 'Validate Belgian IBANs, inspect compact BBAN account evidence, and separate MOD-97 syntax from live bank checks.',
+      chips: ['BE length 16', 'BBAN map', 'MOD-97', 'Offline'],
+      slices: [['Bank/account body', 4, 14, '10 digits'], ['National check', 14, 16, '2 digits']],
+      quality: ['Belgian IBAN validation proves BE length and ISO checksum only.', 'National bank directory, account existence, and beneficiary checks stay outside this browser.', 'Use grouped output for payment form QA.', 'Use masked values for support and logs.']
+    },
+    CZ: {
+      slug: 'czechia-iban-validator',
+      title: 'Czech IBAN Validator',
+      countryName: 'Czechia',
+      sample: 'CZ6508000000192000145399',
+      length: 24,
+      theme: 'finance',
+      mark: 'CZ',
+      kicker: 'Czech banking',
+      summary: 'Validate Czech IBANs, split bank code and account-prefix/account-number evidence, and replay MOD-97 locally.',
+      chips: ['CZ length 24', 'Bank code', 'Account split', 'MOD-97'],
+      slices: [['Bank code', 4, 8, '4 digits'], ['Account prefix', 8, 14, '6 digits'], ['Account number', 14, 24, '10 digits']],
+      quality: ['Czech IBAN validation proves CZ length, bank/account segmentation, and MOD-97 only.', 'Bank registry, account status, and owner checks require external authoritative systems.', 'The account-prefix split is useful for parser fixtures.', 'Samples are structural browser-local fixtures.']
+    },
+    DK: {
+      slug: 'denmark-iban-validator',
+      title: 'Danish IBAN Validator',
+      countryName: 'Denmark',
+      sample: 'DK5000400440116243',
+      length: 18,
+      theme: 'finance',
+      mark: 'DK',
+      kicker: 'Danish banking',
+      summary: 'Validate Danish IBANs, inspect registration and account-number evidence, and keep ownership checks outside the browser.',
+      chips: ['DK length 18', 'Reg number', 'MOD-97', 'SEPA'],
+      slices: [['Registration number', 4, 8, '4 digits'], ['Account number', 8, 18, '10 digits']],
+      quality: ['Danish IBAN validation proves DK length, account slicing, and MOD-97 only.', 'Bank directory and account status require official or banking data.', 'Use masked output for logs.', 'Samples are fixtures for parser and form QA.']
+    },
+    FI: {
+      slug: 'finland-iban-validator',
+      title: 'Finnish IBAN Validator',
+      countryName: 'Finland',
+      sample: 'FI2112345600000785',
+      length: 18,
+      theme: 'finance',
+      mark: 'FI',
+      kicker: 'Finnish banking',
+      summary: 'Validate Finnish IBANs, inspect domestic account evidence, and separate MOD-97 syntax from bank acceptance.',
+      chips: ['FI length 18', 'Account body', 'MOD-97', 'Offline'],
+      slices: [['Bank/account body', 4, 18, '14 digits']],
+      quality: ['Finnish IBAN validation proves FI length, numeric body shape, and MOD-97 only.', 'Account ownership and payment acceptance need banking rails.', 'Generated outputs are fixture data.', 'Mask real Finnish IBANs before logging.']
+    },
+    GB: {
+      slug: 'united-kingdom-iban-validator',
+      title: 'UK IBAN Validator',
+      countryName: 'United Kingdom',
+      sample: 'GB82WEST12345698765432',
+      length: 22,
+      theme: 'finance',
+      mark: 'GB',
+      kicker: 'UK banking',
+      summary: 'Validate UK IBANs, split bank identifier, sort code, and account number, and explain the lookup boundary.',
+      chips: ['GB length 22', 'Sort code', 'Account split', 'MOD-97'],
+      slices: [['Bank identifier', 4, 8, '4 letters'], ['Sort code', 8, 14, '6 digits'], ['Account number', 14, 22, '8 digits']],
+      quality: ['UK IBAN validation proves GB length, BBAN slicing, and MOD-97 only.', 'Sort-code directory, BIC, branch, and account acceptance require external rails.', 'Use this for parser/debug fixtures, not live payment assurance.', 'Mask UK IBANs in logs and screenshots.']
+    },
+    IE: {
+      slug: 'ireland-iban-validator',
+      title: 'Irish IBAN Validator',
+      countryName: 'Ireland',
+      sample: 'IE29AIBK93115212345678',
+      length: 22,
+      theme: 'finance',
+      mark: 'IE',
+      kicker: 'Irish banking',
+      summary: 'Validate Irish IBANs, inspect bank identifier, sort code, and account evidence, and keep live checks out of the browser.',
+      chips: ['IE length 22', 'Sort code', 'MOD-97', 'SEPA'],
+      slices: [['Bank identifier', 4, 8, '4 letters'], ['Sort code', 8, 14, '6 digits'], ['Account number', 14, 22, '8 digits']],
+      quality: ['Irish IBAN validation proves IE length, BBAN slicing, and MOD-97 only.', 'Bank status, BIC, and account ownership require external banking systems.', 'Use grouped output for forms and masked output for logs.', 'Samples are structural fixtures.']
+    },
+    IT: {
+      slug: 'italy-iban-validator',
+      title: 'Italian IBAN Validator',
+      countryName: 'Italy',
+      sample: 'IT60X0542811101000000123456',
+      length: 27,
+      theme: 'finance',
+      mark: 'IT',
+      kicker: 'Italian banking',
+      summary: 'Validate Italian IBANs, split CIN, ABI, CAB, and account evidence, and replay ISO MOD-97 locally.',
+      chips: ['IT length 27', 'CIN/ABI/CAB', 'MOD-97', 'SEPA'],
+      slices: [['CIN', 4, 5, '1 character'], ['ABI bank code', 5, 10, '5 digits'], ['CAB branch code', 10, 15, '5 digits'], ['Account number', 15, 27, '12 characters']],
+      quality: ['Italian IBAN validation proves IT length, BBAN slicing, and ISO checksum only.', 'ABI/CAB directory status and account ownership require authoritative data.', 'CIN/ABI/CAB breakdown is useful for migration and parser QA.', 'Use masked values in logs.']
+    },
+    NO: {
+      slug: 'norway-iban-validator',
+      title: 'Norwegian IBAN Validator',
+      countryName: 'Norway',
+      sample: 'NO9386011117947',
+      length: 15,
+      theme: 'finance',
+      mark: 'NO',
+      kicker: 'Norwegian banking',
+      summary: 'Validate Norwegian IBANs, split bank and account evidence, and keep account-status checks outside the browser.',
+      chips: ['NO length 15', 'Bank/account', 'MOD-97', 'Offline'],
+      slices: [['Bank/account body', 4, 15, '11 digits']],
+      quality: ['Norwegian IBAN validation proves NO length and MOD-97 only.', 'Domestic bank/account acceptance requires banking systems.', 'Use this for QA fixtures and parser debugging.', 'Mask real values before logging.']
+    },
+    PT: {
+      slug: 'portugal-iban-validator',
+      title: 'Portuguese IBAN Validator',
+      countryName: 'Portugal',
+      sample: 'PT50000201231234567890154',
+      length: 25,
+      theme: 'finance',
+      mark: 'PT',
+      kicker: 'Portuguese banking',
+      summary: 'Validate Portuguese IBANs, inspect NIB bank, branch, account, and control slices, and replay MOD-97 locally.',
+      chips: ['PT length 25', 'NIB map', 'MOD-97', 'SEPA'],
+      slices: [['Bank code', 4, 8, '4 digits'], ['Branch code', 8, 12, '4 digits'], ['Account number', 12, 23, '11 digits'], ['Control digits', 23, 25, '2 digits']],
+      quality: ['Portuguese IBAN validation proves PT length, NIB slicing, and MOD-97 only.', 'Bank directory and account acceptance require official banking rails.', 'NIB slices are useful for domestic-format migrations.', 'Samples are structural fixtures.']
+    },
+    RO: {
+      slug: 'romania-iban-validator',
+      title: 'Romanian IBAN Validator',
+      countryName: 'Romania',
+      sample: 'RO49AAAA1B31007593840000',
+      length: 24,
+      theme: 'finance',
+      mark: 'RO',
+      kicker: 'Romanian banking',
+      summary: 'Validate Romanian IBANs, split bank identifier and account body, and explain the offline syntax boundary.',
+      chips: ['RO length 24', 'Bank code', 'MOD-97', 'Offline'],
+      slices: [['Bank identifier', 4, 8, '4 letters'], ['Account body', 8, 24, '16 characters']],
+      quality: ['Romanian IBAN validation proves RO length, bank-code slicing, and MOD-97 only.', 'Bank/account status and ownership require external systems.', 'Use grouped output for form fixtures.', 'Mask raw IBANs in logs.']
+    },
+    SE: {
+      slug: 'sweden-iban-validator',
+      title: 'Swedish IBAN Validator',
+      countryName: 'Sweden',
+      sample: 'SE4550000000058398257466',
+      length: 24,
+      theme: 'finance',
+      mark: 'SE',
+      kicker: 'Swedish banking',
+      summary: 'Validate Swedish IBANs, inspect clearing/account evidence, and separate local syntax from bank acceptance.',
+      chips: ['SE length 24', 'Clearing/account', 'MOD-97', 'SEPA'],
+      slices: [['Clearing/account body', 4, 24, '20 digits']],
+      quality: ['Swedish IBAN validation proves SE length, numeric body shape, and MOD-97 only.', 'Clearing/account status requires banking rails.', 'Use masked output for logs.', 'Samples are structural fixtures.']
+    },
+    UA: {
+      slug: 'ukraine-iban-validator',
+      title: 'Ukrainian IBAN Validator',
+      countryName: 'Ukraine',
+      sample: 'UA213223130000026007233566001',
+      length: 29,
+      theme: 'finance',
+      mark: 'UA',
+      kicker: 'Ukrainian banking',
+      summary: 'Validate Ukrainian IBANs, inspect MFO bank code and account body evidence, and keep live bank checks external.',
+      chips: ['UA length 29', 'MFO code', 'MOD-97', 'Offline'],
+      slices: [['MFO bank code', 4, 10, '6 digits'], ['Account body', 10, 29, '19 digits']],
+      quality: ['Ukrainian IBAN validation proves UA length, MFO/account slicing, and MOD-97 only.', 'Bank status, beneficiary checks, and account acceptance require official banking systems.', 'MFO/account breakdown is useful for parser QA.', 'Use masked output for logs and screenshots.']
     }
   };
 
@@ -619,7 +845,11 @@
     const globalToolSlug = parts[1] === 'tools' ? parts[2] : '';
     const countrySlug = parts[1] && parts[1] !== 'tools' ? parts[1] : '';
     const slug = globalToolSlug || countrySlug;
-    return Object.values(ibanCountryProfiles).find((profile) => profile.slug === slug || profile.slug.replace(/-iban-validator$/, '') === slug || profile.slug.replace(/-iban-validator$/, '-iban-generator') === slug) || null;
+    return Object.values(ibanCountryProfiles).find((profile) => {
+      const derivedCountrySlug = profile.countrySlug || profile.slug.replace(/-iban.*$/, '');
+      const generatorSlug = profile.slug.replace(/-iban.*$/, '-iban-generator');
+      return profile.slug === slug || derivedCountrySlug === slug || generatorSlug === slug;
+    }) || null;
   }
 
   function countryCodeForProfile(profile) {
@@ -628,7 +858,9 @@
 
   function ibanCountryLink(country) {
     const profile = ibanCountryProfiles[country];
-    return profile ? '/en/tools/' + profile.slug + '/' : '';
+    if (!profile) return '';
+    const countrySlug = profile.countrySlug || profile.slug.replace(/-iban.*$/, '');
+    return '/en/' + countrySlug + '/' + profile.slug + '/';
   }
 
   function ibanSlices(normalized, profile) {
@@ -747,7 +979,7 @@
     };
   }
 
-  function ibanHandler(workbench) {
+  function ibanHandler(workbench, action, config) {
     const input = firstValue(formValues(workbench));
     const normalized = input.replace(/\s+/g, '').toUpperCase();
     if (!normalized) throw new Error('Enter an IBAN to validate.');
@@ -801,6 +1033,7 @@
         { label: 'Bank lookup', value: 'Not performed', note: 'offline browser boundary' }
       ])),
       advancedSection('Quality notes', qualityGrid((profile || detectedProfile) ? (profile || detectedProfile).quality : ['IBAN validation proves syntax and checksum only.', 'Account ownership, status, and bank acceptance require official rails.'])),
+      advancedSection('Developer API preview', apiPreview(config || { slug: 'iban-validator', defaultAction: 'validate' }, { output: grouped, mode: action || 'validate', developerJson: { iban: normalized, country, valid } })),
       advancedSection('Developer snapshot JSON', codeBlock(JSON.stringify({ iban: normalized, masked, country, expectedLength: expected, mod97: mod, valid, countryWorkbench: localLink || null, nationalCheck }, null, 2), 'json'))
     ];
     return {
@@ -826,6 +1059,7 @@
     const values = formValues(workbench);
     const pattern = values.pattern || values.input || '';
     const test = values.test || values.text || values.value || values.input || '';
+    const replacement = values.replacement || values.replace || '';
     if (!pattern) throw new Error('Enter a regular expression pattern.');
     let source = pattern;
     let flags = values.flags || 'g';
@@ -834,27 +1068,58 @@
     if (!flags.includes('g')) flags += 'g';
     const regex = new RegExp(source, flags);
     const matches = [];
+    const namedGroupNames = [];
     let match;
     while ((match = regex.exec(test)) && matches.length < 100) {
-      matches.push({ value: match[0], index: match.index, groups: match.slice(1) });
+      if (match.groups) {
+        Object.keys(match.groups).forEach((name) => {
+          if (!namedGroupNames.includes(name)) namedGroupNames.push(name);
+        });
+      }
+      matches.push({
+        value: match[0],
+        index: match.index,
+        end: match.index + match[0].length,
+        groups: match.slice(1),
+        named: match.groups || null,
+        context: test.slice(Math.max(0, match.index - 18), Math.min(test.length, match.index + match[0].length + 18))
+      });
       if (match[0] === '') regex.lastIndex += 1;
     }
-    const output = matches.length ? matches.map((m, i) => `${i + 1}. [${m.index}] ${m.value}` + (m.groups && m.groups.length ? ` | groups: ${m.groups.map((g) => g == null ? '(empty)' : g).join(', ')}` : '')).join('\n') : 'No matches';
+    const replacePreview = replacement && matches.length ? test.replace(new RegExp(source, flags), replacement).slice(0, 800) : '';
+    const risky = /(\([^)]*[+*][^)]*\)[+*])|(\.\*[+*])|(\[[^\]]+\][+*]\))|(\([^)]*\|[^)]*\)[+*].*[+*])/.test(source);
+    const flagsMap = [
+      ['global', flags.includes('g') ? 'on' : 'off'],
+      ['ignoreCase', flags.includes('i') ? 'on' : 'off'],
+      ['multiline', flags.includes('m') ? 'on' : 'off'],
+      ['dotAll', flags.includes('s') ? 'on' : 'off'],
+      ['unicode', flags.includes('u') ? 'on' : 'off'],
+      ['sticky', flags.includes('y') ? 'on' : 'off']
+    ];
+    const output = matches.length ? matches.map((m, i) => `${i + 1}. [${m.index}-${m.end}] ${m.value}` + (m.groups && m.groups.length ? ` | groups: ${m.groups.map((g) => g == null ? '(empty)' : g).join(', ')}` : '') + (m.named ? ` | named: ${JSON.stringify(m.named)}` : '')).join('\n') : 'No matches';
+    const captureCount = matches[0] && matches[0].groups ? matches[0].groups.length : (source.match(/\((?!\?:|\?=|\?!|\?<=|\?<!|\?#)/g) || []).length;
     return {
       output,
-      message: 'Regex evaluated locally.',
+      message: matches.length ? 'Regex matched locally with debug evidence.' : 'Regex compiled locally; no matches were found.',
       badge: matches.length ? matches.length + ' matches' : 'No matches',
-      stats: [['Pattern length', pattern.length], ['Flags', flags], ['Input characters', test.length], ['Matches', matches.length], ['Capture groups', matches[0] && matches[0].groups ? matches[0].groups.length : 0], ['Capped', matches.length >= 100 ? 'Yes' : 'No']],
-      pipeline: [{ name: 'Compile', detail: 'Pattern compiled' }, { name: 'Execute', detail: matches.length + ' matches' }, { name: 'Boundary', detail: 'Browser RegExp engine only' }],
+      stats: [['Pattern length', pattern.length], ['Flags', flags], ['Input characters', test.length], ['Matches', matches.length], ['Capture groups', captureCount], ['Named groups', namedGroupNames.length], ['Risk heuristic', risky ? 'Review' : 'Low']],
+      previewTitle: 'Regex match preview',
+      previewHtml: '<div class="generic-result-preview">' + resultCards([
+        { label: 'Matches', value: String(matches.length), note: matches.length >= 100 ? 'capped at 100' : 'full local scan' },
+        { label: 'Capture groups', value: String(captureCount), note: namedGroupNames.length ? namedGroupNames.join(', ') : 'numbered groups' },
+        { label: 'Replacement preview', value: replacePreview ? 'Available' : 'Not requested', note: replacement ? 'uses browser replace' : 'add replacement input' },
+        { label: 'Backtracking risk', value: risky ? 'Review' : 'Low', note: 'static heuristic' }
+      ]) + (matches.length ? keyValueGrid(matches.slice(0, 8).map((m, i) => ['Match ' + (i + 1), m.value, 'index ' + m.index + '; context: ' + m.context])) : statusHtml('info', 'No matches', 'Pattern compiled but did not match the supplied text.')) + (replacePreview ? codeBlock(replacePreview, 'text') : '') + '</div>',
+      pipeline: [{ name: 'Compile', detail: 'Pattern compiled' }, { name: 'Execute', ok: matches.length > 0, detail: matches.length + ' matches' }, { name: 'Capture map', detail: captureCount + ' groups, ' + namedGroupNames.length + ' named' }, { name: 'Risk scan', ok: !risky, detail: risky ? 'Review nested quantifiers' : 'No obvious nested-quantifier risk' }, { name: 'Boundary', detail: 'Browser RegExp engine only' }],
       resultCards: [
         { label: 'Matches', value: String(matches.length), note: matches.length >= 100 ? 'capped at 100' : 'full local scan' },
         { label: 'Flags', value: flags || 'none', note: 'JavaScript RegExp' },
-        { label: 'Capture groups', value: String(matches[0] && matches[0].groups ? matches[0].groups.length : 0), note: 'from first match' },
+        { label: 'Capture groups', value: String(captureCount), note: namedGroupNames.length ? namedGroupNames.join(', ') : 'from pattern/match' },
         { label: 'Engine', value: 'Browser JS', note: 'not PCRE/Java' }
       ],
-      breakdown: matches.slice(0, 6).map((m, i) => ['Match ' + (i + 1), m.value, 'index ' + m.index + (m.groups && m.groups.length ? '; groups: ' + m.groups.map((g) => g == null ? '(empty)' : g).join(', ') : '')]),
-      qualityNotes: ['Performance depends on your pattern; avoid catastrophic backtracking in production.', 'JavaScript RegExp behavior may differ from PCRE, Java, or PostgreSQL.'],
-      developerJson: { pattern: source, flags, matchCount: matches.length, matches: matches.slice(0, 20) }
+      breakdown: matches.length ? matches.slice(0, 10).map((m, i) => ['Match ' + (i + 1), m.value, 'index ' + m.index + (m.groups && m.groups.length ? '; groups: ' + m.groups.map((g) => g == null ? '(empty)' : g).join(', ') : '') + (m.named ? '; named: ' + JSON.stringify(m.named) : '')]) : [['Pattern', source], ['Input characters', String(test.length)], ['Result', 'No matches']],
+      qualityNotes: ['Performance depends on your pattern; avoid catastrophic backtracking in production.', 'JavaScript RegExp behavior may differ from PCRE, Java, PostgreSQL, or RE2.', 'Use the flag audit to catch multiline, unicode, and dotAll assumptions before shipping.', 'Replacement previews are local examples and should be retested in the target runtime.'],
+      developerJson: { pattern: source, flags, flagState: Object.fromEntries(flagsMap), matchCount: matches.length, captureGroups: captureCount, namedGroups: namedGroupNames, risky, replacementPreview: replacePreview || null, matches: matches.slice(0, 20) }
     };
   }
 
@@ -1061,7 +1326,14 @@
     ['validohub.uuid', {
       slug: 'uuid-generator', title: 'UUID Workbench', defaultAction: 'generate', theme: 'identity', mark: 'UUID', kicker: 'Identifier fixtures',
       summary: 'Generate UUIDs, validate version and variant bits, normalize casing, and copy safe identifier fixtures for tests.',
-      chips: ['Generate v4', 'Validate', 'Version bits', 'Fixture-safe'], samples: [{ id: 'uuid-v4', label: 'UUID v4', values: { uuid: '550e8400-e29b-41d4-a716-446655440000' }, action: 'validate' }, { id: 'batch-v7', label: 'Batch v7', values: { version: 'v7', count: 5 }, action: 'generate' }]
+      chips: ['Generate v4/v7', 'Validate', 'Version bits', 'Fixture-safe'], samples: [
+        { id: 'generate-v4', label: 'Generate v4', values: { version: 'v4', count: 1, uuid: '' }, action: 'generate' },
+        { id: 'batch-v7', label: 'Batch v7', values: { version: 'v7', count: 5, uuid: '' }, action: 'generate' },
+        { id: 'uuid-v4', label: 'Validate v4', values: { uuid: '550e8400-e29b-41d4-a716-446655440000' }, action: 'validate' },
+        { id: 'uuid-v7', label: 'Validate v7', values: { uuid: '018f2f1f-7c5e-7a91-9d5a-3d3e70f778af' }, action: 'validate' },
+        { id: 'compact', label: 'Compact UUID', values: { uuid: '550e8400e29b41d4a716446655440000' }, action: 'validate' },
+        { id: 'invalid', label: 'Invalid UUID', values: { uuid: '550e8400-e29b-91d4-z716-446655440000' }, action: 'validate' }
+      ]
     }, uuidHandler],
     ['validohub.iban', {
       slug: 'iban-validator', title: 'IBAN Validator', defaultAction: 'validate', theme: 'finance', mark: 'IBAN', kicker: 'Banking syntax',
@@ -1071,7 +1343,10 @@
         { id: 'germany', label: 'Germany', values: { iban: 'DE89370400440532013000' }, action: 'validate' },
         { id: 'spain', label: 'Spain', values: { iban: 'ES9121000418450200051332' }, action: 'validate' },
         { id: 'brazil', label: 'Brazil', values: { iban: 'BR1500000000000010932840814P2' }, action: 'validate' },
-        { id: 'invalid-checksum', label: 'Invalid checksum', values: { iban: 'DE89370400440532013001' }, action: 'validate' }
+        { id: 'uk', label: 'UK', values: { iban: 'GB82WEST12345698765432' }, action: 'validate' },
+        { id: 'italy', label: 'Italy ABI/CAB', values: { iban: 'IT60X0542811101000000123456' }, action: 'validate' },
+        { id: 'invalid-checksum', label: 'Invalid checksum', values: { iban: 'DE89370400440532013001' }, action: 'validate' },
+        { id: 'bad-shape', label: 'Bad shape', values: { iban: 'IBAN 1234 ???' }, action: 'validate' }
       ],
       resolve() {
         const profile = countryProfileForPath();
@@ -1102,6 +1377,9 @@
         { id: 'germany-bban', label: 'Germany BBAN', values: { country: 'DE', bban: '370400440532013000' }, action: 'generate' },
         { id: 'czechia-bban', label: 'Czechia BBAN', values: { country: 'CZ', bban: '08000000192000145399' }, action: 'generate' },
         { id: 'spain-bban', label: 'Spain BBAN', values: { country: 'ES', bban: '21000418450200051332' }, action: 'generate' },
+        { id: 'uk-sort-code', label: 'UK sort code', values: { country: 'GB', bban: 'WEST12345698765432' }, action: 'generate' },
+        { id: 'italy-abi-cab', label: 'Italy ABI/CAB', values: { country: 'IT', bban: 'X0542811101000000123456' }, action: 'generate' },
+        { id: 'bad-country', label: 'Bad country prefix', values: { country: '1X', bban: '370400440532013000' }, action: 'validate' },
         { id: 'repair-existing', label: 'Repair existing', values: { country: '', bban: '', iban: 'DE00370400440532013000' }, action: 'generate' }
       ]
     }, ibanGeneratorHandler],
@@ -1109,9 +1387,12 @@
       slug: 'regex-tester', title: 'Regex Tester', defaultAction: 'validate', theme: 'developer', mark: '.*', kicker: 'Pattern debugger',
       summary: 'Test JavaScript regular expressions against text, inspect match counts, flags, and replacement behavior locally.',
       chips: ['Match count', 'Flags', 'Capture groups', 'Pattern audit'], samples: [
-        { id: 'email', label: 'Email match', values: { pattern: '/\\b[\\w.%+-]+@[\\w.-]+\\.[A-Za-z]{2,}\\b/g', input: 'hello@example.com\nnot-an-email\nbilling@validohub.com' }, action: 'validate' },
-        { id: 'capture', label: 'Capture groups', values: { pattern: '/(invoice)-(\\d{4})/g', input: 'invoice-2026\ninvoice-1842\nreceipt-2026' }, action: 'validate' },
-        { id: 'no-match', label: 'No match', values: { pattern: '/^PL\\d{10}$/gm', input: 'DE123456789\nPL123' }, action: 'validate' }
+        { id: 'email', label: 'Email match', values: { pattern: '/\\b[\\w.%+-]+@[\\w.-]+\\.[A-Za-z]{2,}\\b/g', input: 'hello@example.com\nnot-an-email\nbilling@validohub.com', replacement: '[email]' }, action: 'validate' },
+        { id: 'capture', label: 'Capture groups', values: { pattern: '/(invoice)-(\\d{4})/g', input: 'invoice-2026\ninvoice-1842\nreceipt-2026', replacement: '$1/$2' }, action: 'validate' },
+        { id: 'named-groups', label: 'Named groups', values: { pattern: '/(?<type>INV|CN)-(?<year>\\d{4})-(?<seq>\\d{4})/g', input: 'INV-2026-0042\nCN-2026-0007', replacement: '$<type> $<seq>/$<year>' }, action: 'validate' },
+        { id: 'no-match', label: 'No match', values: { pattern: '/^PL\\d{10}$/gm', input: 'DE123456789\nPL123', replacement: '' }, action: 'validate' },
+        { id: 'risk', label: 'Backtracking risk', values: { pattern: '/^(a+)+$/g', input: 'aaaaaaaaaaaaaaaaaaaaab', replacement: '' }, action: 'validate' },
+        { id: 'bad-regex', label: 'Invalid pattern', values: { pattern: '/(invoice-/g', input: 'invoice-2026', replacement: '' }, action: 'validate' }
       ]
     }, regexHandler],
     ['validohub.text-diff', {

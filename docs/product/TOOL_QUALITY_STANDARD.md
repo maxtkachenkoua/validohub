@@ -60,10 +60,13 @@ Generic utility pages must include:
 - Tool-specific descriptions. Never repeat generic copy such as "open the production-grade workbench" across cards.
 - Real local actions for the domain whenever browser APIs make them possible.
 - Samples, copy, download, diagnostics, result cards, and advanced analysis.
+- Multiple meaningful samples per mode: valid, invalid, malformed/short, and at least one edge case that proves the error path really fails.
 - A premium identity shell with tool-specific mark, color theme, domain summary, chips, and local-execution boundary.
 - Expanded advanced analysis by default after a result is produced.
+- Developer API preview before raw JSON when the tool returns structured diagnostics.
 - Compact premium card typography: small uppercase labels, moderate-weight values, muted explanatory text, and wrapped long strings.
 - No oversized bold paragraph blocks inside result cards.
+- Validators and generators must not share fake-green results: invalid samples must render invalid/review states, while generators must clearly label generated fixture output.
 
 ## Identity Rules
 

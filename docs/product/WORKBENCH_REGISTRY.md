@@ -583,12 +583,13 @@ This is a product platform section, not a browser workbench plugin.
   - Tool-specific validation, normalization, diagnostics, samples, copy, download, local result cards, preview, and expanded advanced analysis.
   - HTML encode/decode, slug generation, case conversion, UUID v4/v7 generation and validation, global IBAN MOD-97 validation, country-specific Brazil/Germany/Spain IBAN workbenches, regular-expression testing, text diffing, and MD5/SHA-1/SHA-256 hashing.
   - Working success-first sample chips and intentional edge/error samples for every generic-suite page.
-  - UUID batch generation capped at 100 local values.
+  - UUID batch generation capped at 100 local values, UUID v4/v7 validation, canonical/compact/URN output, variant/version decoding, and UUID v7 timestamp inspection.
   - IBAN masked display alongside grouped output, country detection, country page routing, BBAN field maps, and MOD-97 diagnostics.
-  - Spain IBAN replays domestic CCC check digits locally; Germany extracts BLZ/account segments; Brazil extracts bank, branch, account, and account-type fields. Poland remains on the dedicated Polish IBAN / NRB Workbench.
-  - Regex capture-group reporting in output, field breakdown, and developer JSON.
+  - Country-aware IBAN maps now cover Brazil, Germany, Spain, Poland, France, Netherlands, Austria, Belgium, Czechia, Denmark, Finland, United Kingdom, Ireland, Italy, Norway, Portugal, Romania, Sweden, and Ukraine. Spain IBAN also replays domestic CCC check digits locally; Germany extracts BLZ/account segments; Brazil extracts bank, branch, account, and account-type fields. Poland remains on the dedicated Polish IBAN / NRB Workbench.
+  - Regex capture-group reporting in output, named-group capture maps, match context snippets, replacement preview, flag audit, backtracking-risk heuristic, field breakdown, and developer JSON.
   - Text diff premium result cards for added, removed, unchanged, and character delta metrics.
   - Hash digest shape validation and optional recompute/compare against provided input for MD5, SHA-1, and SHA-256.
+  - Developer API preview before raw JSON on shared generic tools so integration handoff has a copy-ready payload shape while preserving the browser-only execution boundary.
   - Correct dedicated slug generation and hash algorithm execution for MD5, SHA-1, and SHA-256.
   - Shared premium card styling so global tools visually match country workbench standards.
   - Premium generic tool header with identity mark, theme accent, domain-specific summary, capability chips, and privacy boundary.
