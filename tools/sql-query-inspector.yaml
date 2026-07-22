@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: sql-query-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: SQL Formatter & Query Risk Inspector
+summary:
+  en: Format SQL, detect risky query patterns, inspect parameters, joins, limits, mutations, and dialect-sensitive handoff notes.
+capabilities: [validate, format, explain, parse]
+algorithm:
+  algorithmId: validohub.sql-inspector
+forms:
+  validate:
+    inputs:
+      - type: select
+        name: dialect
+        label:
+          en: Dialect
+        options: [generic, postgres, mysql, sqlite, sqlserver]
+        default: "postgres"
+      - type: textarea
+        name: input
+        label:
+          en: SQL query
+    actions: [validate, format, explain, parse]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: SQL Formatter & Query Risk Inspector
+  description:
+    en: Format SQL, detect risky query patterns, inspect parameters, joins, limits, mutations, and dialect-sensitive handoff notes.

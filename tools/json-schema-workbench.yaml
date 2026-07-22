@@ -1,0 +1,44 @@
+schemaVersion: 1
+id: json-schema-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: JSON Schema Workbench
+summary:
+  en: Infer JSON Schema from examples, validate payloads against lightweight schema rules, and generate safe fixtures with path evidence.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.json-schema
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: JSON payload
+      - type: textarea
+        name: schema
+        label:
+          en: JSON Schema
+      - type: number
+        name: count
+        label:
+          en: Fixture count
+        default: "2"
+        min: 1
+        max: 25
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: JSON Schema Workbench
+  description:
+    en: Infer JSON Schema from examples, validate payloads against lightweight schema rules, and generate safe fixtures with path evidence.

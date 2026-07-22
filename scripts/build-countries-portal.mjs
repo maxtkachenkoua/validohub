@@ -584,10 +584,10 @@ export async function compileToolsPortal(routeRegistry, assetsManifest) {
   const categories = [...new Set(toolRoutes.map(classifyToolRoute))].sort();
   const cardsHtml = renderToolsPortalCards(toolRoutes);
   const featured = [
-    '/en/tools/phone-e164-workbench/',
-    '/en/tools/iban-generator/',
-    '/en/tools/webhook-signature-verifier/',
-    '/en/tools/iso20022-sepa-inspector/'
+    '/en/tools/json-schema-workbench/',
+    '/en/tools/openapi-inspector/',
+    '/en/tools/http-security-headers-inspector/',
+    '/en/tools/cron-expression-workbench/'
   ].map(path => routeRegistry.get(path)).filter(Boolean);
   const featuredHtml = featured.map(route => `
     <a class="vh-tools-feature" href="${route.path}">
@@ -638,7 +638,7 @@ export async function compileToolsPortal(routeRegistry, assetsManifest) {
         </div>
         <label class="vh-tools-search">
           <span class="vh-sr-only">Search global tools</span>
-          <input type="search" placeholder="Search IBAN generator, webhook signature, MRZ, CSV, VAT, JWT..." autocomplete="off" data-tools-search-input>
+          <input type="search" placeholder="Search JSON Schema, OpenAPI, cron, headers, SQL, GraphQL, webhook, MRZ, VAT..." autocomplete="off" data-tools-search-input>
         </label>
         <div class="vh-tools-chips" aria-label="Suggested tool searches">
           <button type="button" data-tools-query="generator">Generators</button>

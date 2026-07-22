@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: openapi-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: OpenAPI / Swagger Inspector
+summary:
+  en: Inspect OpenAPI documents for endpoints, schemas, auth schemes, examples, and breaking-risk signals without sending specs anywhere.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.openapi
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: OpenAPI JSON or YAML
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options: [auto, openapi-3, swagger-2]
+        default: "auto"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: OpenAPI / Swagger Inspector
+  description:
+    en: Inspect OpenAPI documents for endpoints, schemas, auth schemes, examples, and breaking-risk signals without sending specs anywhere.

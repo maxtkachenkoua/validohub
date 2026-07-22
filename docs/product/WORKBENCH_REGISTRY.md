@@ -13,6 +13,29 @@ Future global tools must be born premium: deterministic neutral theme, tool-spec
 
 Current global expansion adds these first-class workbenches: Phone E.164 Validator & Generator, Postal Code Validator & Generator, SWIFT/BIC Workbench, MRZ Passport Workbench, CSV Locale Normalizer, EU VAT Number Workbench, ISO 20022 / SEPA Inspector, Secret + PII Redactor, Locale Test Data Generator, and Webhook Signature Verifier.
 
+## Global Premium Tools Batch V2
+
+- Source JS: `assets/js/tools/generic-suite.js`
+- Related YAML tool pages:
+  - `tools/json-schema-workbench.yaml`
+  - `tools/openapi-inspector.yaml`
+  - `tools/yaml-toml-workbench.yaml`
+  - `tools/xml-xpath-workbench.yaml`
+  - `tools/csv-profiler.yaml`
+  - `tools/sql-query-inspector.yaml`
+  - `tools/cron-expression-workbench.yaml`
+  - `tools/regex-explainer-generator.yaml`
+  - `tools/date-timezone-workbench.yaml`
+  - `tools/color-contrast-token-workbench.yaml`
+  - `tools/markdown-mdx-inspector.yaml`
+  - `tools/graphql-workbench.yaml`
+  - `tools/email-domain-workbench.yaml`
+  - `tools/user-agent-client-hints-parser.yaml`
+  - `tools/http-security-headers-inspector.yaml`
+- Product spec: `docs/product/GLOBAL_PREMIUM_TOOLS_BATCH_V2_SPEC.md`
+- Current capabilities: browser-only parsing, validation, generation, fixture export, field breakdowns, pipelines, quality notes, Developer API previews, and snapshot JSON for structured developer workflows spanning APIs, data formats, schedulers, security headers, SQL, GraphQL, email/domain, user-agent parsing, colors, and documentation QA.
+- Current quality status: Premium global batch implemented on the shared Generic Utility Workbench Suite; scoped audit required before final sign-off.
+
 ## Future Country Suite Factory
 
 - Source JS: `assets/js/tools/country-suite-factory.js`

@@ -119,6 +119,96 @@ const routes = [
     sampleText: "Invalid signature",
     mustContain: ["Webhook", "Signature mismatch", "Developer API preview"],
   },
+  {
+    path: "/en/tools/json-schema-workbench/",
+    input: "textarea, input",
+    sampleText: "Missing required",
+    mustContain: ["JSON","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/openapi-inspector/",
+    input: "textarea, input",
+    sampleText: "Missing info",
+    mustContain: ["OpenAPI","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/yaml-toml-workbench/",
+    input: "textarea, input",
+    sampleText: "Bad indent",
+    mustContain: ["YAML","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/xml-xpath-workbench/",
+    input: "textarea, input",
+    sampleText: "Invalid XML",
+    mustContain: ["XML","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/csv-profiler/",
+    input: "textarea, input",
+    sampleText: "Ragged row",
+    mustContain: ["CSV","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/sql-query-inspector/",
+    input: "textarea, input",
+    sampleText: "Dangerous DELETE",
+    mustContain: ["SQL","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/cron-expression-workbench/",
+    input: "textarea, input",
+    sampleText: "Invalid cron",
+    mustContain: ["Cron","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/regex-explainer-generator/",
+    input: "textarea, input",
+    sampleText: "ReDoS risk",
+    mustContain: ["Regex","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/date-timezone-workbench/",
+    input: "textarea, input",
+    sampleText: "Invalid date",
+    mustContain: ["Date","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/color-contrast-token-workbench/",
+    input: "textarea, input",
+    sampleText: "Low contrast",
+    mustContain: ["Color","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/markdown-mdx-inspector/",
+    input: "textarea, input",
+    sampleText: "Broken anchor",
+    mustContain: ["Markdown","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/graphql-workbench/",
+    input: "textarea, input",
+    sampleText: "Bad variables",
+    mustContain: ["GraphQL","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/email-domain-workbench/",
+    input: "textarea, input",
+    sampleText: "Invalid email",
+    mustContain: ["Email","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/user-agent-client-hints-parser/",
+    input: "textarea, input",
+    sampleText: "Bot UA",
+    mustContain: ["User-Agent","Field breakdown","Developer API preview"],
+  },
+  {
+    path: "/en/tools/http-security-headers-inspector/",
+    input: "textarea, input",
+    sampleText: "Weak CORS",
+    mustContain: ["HTTP","Field breakdown","Developer API preview"],
+  },
 ];
 
 function selectedSlugs() {

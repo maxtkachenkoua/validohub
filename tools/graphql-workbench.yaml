@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: graphql-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: GraphQL Workbench
+summary:
+  en: Format GraphQL operations, inspect variables, fragments, selections, aliases, schema SDL hints, and mock response shapes.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.graphql
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: query
+        label:
+          en: GraphQL query or SDL
+      - type: textarea
+        name: variables
+        label:
+          en: Variables JSON
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: GraphQL Workbench
+  description:
+    en: Format GraphQL operations, inspect variables, fragments, selections, aliases, schema SDL hints, and mock response shapes.

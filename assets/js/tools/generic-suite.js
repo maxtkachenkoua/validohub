@@ -1412,6 +1412,294 @@
     return megaBaseResult(config, values, computed);
   }
 
+
+  function parseJsonSafe(value) {
+    try { return { ok: true, value: JSON.parse(String(value || '')) }; }
+    catch (error) { return { ok: false, error: error.message }; }
+  }
+
+  function flattenPaths(value, prefix = '$', rows = []) {
+    const type = Array.isArray(value) ? 'array' : value === null ? 'null' : typeof value;
+    rows.push([prefix, type, Array.isArray(value) ? value.length + ' items' : type === 'object' ? Object.keys(value).length + ' keys' : String(value).slice(0, 80)]);
+    if (Array.isArray(value)) value.slice(0, 8).forEach((item, index) => flattenPaths(item, prefix + '[' + index + ']', rows));
+    else if (value && typeof value === 'object') Object.keys(value).slice(0, 24).forEach((key) => flattenPaths(value[key], prefix + '.' + key, rows));
+    return rows;
+  }
+
+  function inferJsonSchema(value) {
+    if (Array.isArray(value)) return { type: 'array', items: value.length ? inferJsonSchema(value[0]) : {} };
+    if (value === null) return { type: 'null' };
+    if (typeof value !== 'object') return { type: typeof value };
+    const properties = {};
+    const required = [];
+    Object.keys(value).forEach((key) => { properties[key] = inferJsonSchema(value[key]); if (value[key] !== null && value[key] !== '') required.push(key); });
+    return { type: 'object', required, properties };
+  }
+
+  function validateJsonSchemaLite(value, schema, path = '$', issues = []) {
+    if (!schema || typeof schema !== 'object') return issues;
+    const expectedType = schema.type;
+    const actualType = Array.isArray(value) ? 'array' : value === null ? 'null' : typeof value;
+    if (expectedType && expectedType !== actualType && !(Array.isArray(expectedType) && expectedType.includes(actualType))) {
+      issues.push(path + ': expected ' + expectedType + ', received ' + actualType);
+      return issues;
+    }
+    if (schema.required && value && typeof value === 'object') {
+      schema.required.forEach((key) => { if (!(key in value)) issues.push(path + '.' + key + ': missing required property'); });
+    }
+    if (schema.properties && value && typeof value === 'object') {
+      Object.keys(schema.properties).forEach((key) => { if (key in value) validateJsonSchemaLite(value[key], schema.properties[key], path + '.' + key, issues); });
+    }
+    if (schema.items && Array.isArray(value)) value.slice(0, 25).forEach((item, index) => validateJsonSchemaLite(item, schema.items, path + '[' + index + ']', issues));
+    return issues;
+  }
+
+  function yamlLikePairs(input) {
+    const lines = String(input || '').split(/\r?\n/).filter(line => line.trim() && !line.trim().startsWith('#'));
+    return lines.map((line, index) => {
+      const indent = (line.match(/^\s*/) || [''])[0].length;
+      const keyMatch = line.trim().match(/^([^:=\[]+?)\s*[:=]\s*(.*)$/);
+      return { line: index + 1, indent, key: keyMatch ? keyMatch[1].trim().replace(/^["']|["']$/g, '') : '', value: keyMatch ? keyMatch[2].trim() : line.trim() };
+    });
+  }
+
+  function parseHeaderBlock(input) {
+    const headers = {};
+    String(input || '').split(/\r?\n/).forEach((line) => {
+      const match = line.match(/^([^:]+):\s*(.*)$/);
+      if (match) headers[match[1].toLowerCase()] = match[2];
+    });
+    return headers;
+  }
+
+  function parseCsvRows(input, delimiterSetting) {
+    const raw = String(input || '').trim();
+    const delimiter = delimiterSetting === 'semicolon' ? ';' : delimiterSetting === 'tab' ? '\t' : delimiterSetting === 'comma' ? ',' : ((raw.match(/;/g) || []).length > (raw.match(/,/g) || []).length ? ';' : ',');
+    const rows = raw ? raw.split(/\r?\n/).filter(Boolean).map(line => line.split(delimiter).map(cell => cell.trim())) : [];
+    return { delimiter, rows, headers: rows[0] || [], records: rows.slice(1) };
+  }
+
+  function colorParts(value) {
+    const hex = String(value || '').trim();
+    const match = hex.match(/^#?([0-9a-f]{3}|[0-9a-f]{6})$/i);
+    if (!match) return null;
+    const full = match[1].length === 3 ? match[1].split('').map(c => c + c).join('') : match[1];
+    const n = parseInt(full, 16);
+    return { hex: '#' + full.toLowerCase(), r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
+  }
+
+  function luminance(c) {
+    const f = (v) => { const s = v / 255; return s <= 0.03928 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4); };
+    return 0.2126 * f(c.r) + 0.7152 * f(c.g) + 0.0722 * f(c.b);
+  }
+
+  function contrastRatio(fg, bg) {
+    const a = luminance(fg);
+    const b = luminance(bg);
+    return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+  }
+
+  function explainRegexTokens(pattern) {
+    const source = String(pattern || '').replace(/^\/|\/[a-z]*$/gi, '');
+    const tokens = [];
+    if (/\(\?<[^>]+>/.test(source)) tokens.push(['Named groups', String((source.match(/\(\?<[^>]+>/g) || []).length), 'copyable capture names']);
+    if (/\[[^\]]+\]/.test(source)) tokens.push(['Character classes', String((source.match(/\[[^\]]+\]/g) || []).length), 'range or set matching']);
+    if (/[+*?]|\{\d/.test(source)) tokens.push(['Quantifiers', String((source.match(/[+*?]|\{\d+(?:,\d*)?\}/g) || []).length), 'repeat controls']);
+    if (/\\d|\\w|\\s/.test(source)) tokens.push(['Shorthand classes', String((source.match(/\\[dws]/g) || []).length), 'JavaScript character shortcuts']);
+    if (/[\^$]/.test(source)) tokens.push(['Anchors', String((source.match(/[\^$]/g) || []).length), 'line/string boundaries']);
+    return tokens.length ? tokens : [['Literal tokens', source || 'empty', 'no advanced regex tokens detected']];
+  }
+
+  function cronFieldOk(value, min, max, names) {
+    if (value === '*') return true;
+    return String(value || '').split(',').every(part => {
+      const normalized = names ? part.replace(/[A-Z]{3}/gi, '1') : part;
+      if (/^\*\/\d+$/.test(normalized)) return true;
+      if (/^\d+-\d+$/.test(normalized)) {
+        const [a, b] = normalized.split('-').map(Number);
+        return a >= min && b <= max && a <= b;
+      }
+      const n = Number(normalized);
+      return Number.isInteger(n) && n >= min && n <= max;
+    });
+  }
+
+  function premiumLabBase(config, computed) {
+    const ok = computed.ok !== false;
+    const output = computed.output || '';
+    return {
+      ok,
+      output,
+      message: computed.message || (ok ? config.title + ' completed locally.' : config.title + ' needs review.'),
+      badge: computed.badge || (ok ? 'Ready locally' : 'Needs review'),
+      stats: computed.stats || [['Tool', config.title], ['Status', ok ? 'Pass' : 'Review'], ['Boundary', 'Browser only']],
+      resultCards: computed.cards || [
+        { label: 'Status', value: ok ? 'Pass' : 'Review', note: 'local evidence' },
+        { label: 'Output', value: output ? output.slice(0, 64) : 'see diagnostics', note: 'copy-ready when present' },
+        { label: 'Checks', value: String((computed.pipeline || []).length), note: 'debug pipeline' },
+        { label: 'Network', value: 'None', note: 'browser only' }
+      ],
+      breakdown: computed.breakdown || [['Input', 'Processed locally'], ['Status', ok ? 'pass' : 'review']],
+      pipeline: computed.pipeline || [
+        { name: 'Input', ok: Boolean(output || computed.hasInput), detail: computed.hasInput ? 'received' : 'generated or empty' },
+        { name: 'Local analysis', ok, detail: ok ? 'checks passed' : 'review diagnostics' },
+        { name: 'Boundary', detail: 'no upload or live lookup' }
+      ],
+      qualityNotes: computed.notes || [
+        config.title + ' runs entirely in this browser.',
+        'The workbench proves local syntax, structure, and handoff evidence only.',
+        'Live status, delivery, authority, or execution behavior must be checked in the owning system.',
+        'Use generated fixtures for tests and avoid logging sensitive real inputs.'
+      ],
+      developerJson: computed.json || { tool: config.slug, ok, output, localOnly: true }
+    };
+  }
+
+  function premiumLabHandler(workbench, action, config) {
+    const values = formValues(workbench);
+    const raw = String(values.input || values.query || values.pattern || values.foreground || '').trim();
+    let c = { hasInput: Boolean(raw), output: raw, mode: action };
+    const kind = config.kind;
+
+    if (kind === 'json-schema') {
+      const payload = parseJsonSafe(values.input || '{"id":"fixture"}');
+      const schemaInput = String(values.schema || '').trim();
+      const schema = schemaInput ? parseJsonSafe(schemaInput) : { ok: true, value: payload.ok ? inferJsonSchema(payload.value) : {} };
+      const issues = payload.ok && schema.ok ? validateJsonSchemaLite(payload.value, schema.value) : ['JSON or schema could not be parsed'];
+      const inferred = payload.ok ? inferJsonSchema(payload.value) : {};
+      const ok = payload.ok && schema.ok && issues.length === 0;
+      c = { ok, output: JSON.stringify(action === 'generate' || !schemaInput ? inferred : { valid: ok, issues }, null, 2), badge: ok ? 'Schema pass' : 'Schema review', cards: [{ label: 'Payload parse', value: payload.ok ? 'pass' : 'fail' }, { label: 'Schema parse', value: schema.ok ? 'pass' : 'fail' }, { label: 'Issues', value: String(issues.length) }, { label: 'Paths', value: payload.ok ? String(flattenPaths(payload.value).length) : '0' }], breakdown: payload.ok ? flattenPaths(payload.value).slice(0, 16) : [['Parse error', payload.error || schema.error]], pipeline: [{ name: 'Payload JSON', ok: payload.ok, detail: payload.ok ? 'parsed' : payload.error }, { name: 'Schema JSON', ok: schema.ok, detail: schema.ok ? 'parsed/inferred' : schema.error }, { name: 'Required/type checks', ok: issues.length === 0, detail: issues.length ? issues.slice(0, 2).join('; ') : 'pass' }], notes: ['Lightweight schema checks cover type, required, properties, and arrays locally.', 'Full JSON Schema dialect behavior may need your production validator.', 'Generated schema is an inference starter, not a contract to accept blindly.', 'Use path evidence to review optional/null fields before publishing APIs.'], json: { tool: config.slug, valid: ok, issues, inferred } };
+    } else if (kind === 'openapi') {
+      const isJson = String(values.input || '').trim().startsWith('{');
+      const parsed = isJson ? parseJsonSafe(values.input) : { ok: false };
+      const text = String(values.input || '');
+      const paths = parsed.ok && parsed.value.paths ? Object.keys(parsed.value.paths) : Array.from(text.matchAll(/^\s{0,4}(\/[A-Za-z0-9_./{}:-]+):/gm)).map(m => m[1]);
+      const methods = (text.match(/\b(get|post|put|patch|delete|options|head):|\b"(get|post|put|patch|delete|options|head)"/gi) || []).length;
+      const hasInfo = /info\s*:|"info"\s*:/.test(text);
+      const hasVersion = /openapi\s*:|swagger\s*:|"openapi"\s*:|"swagger"\s*:/.test(text);
+      const auth = /securitySchemes|securityDefinitions|bearer|oauth2|apiKey/i.test(text);
+      const ok = hasInfo && hasVersion && paths.length > 0;
+      c = { ok, output: JSON.stringify({ paths, methods, auth, ready: ok }, null, 2), badge: ok ? 'API contract mapped' : 'Spec review', cards: [{ label: 'Paths', value: String(paths.length) }, { label: 'Operations', value: String(methods) }, { label: 'Info/version', value: hasInfo && hasVersion ? 'present' : 'missing' }, { label: 'Auth schemes', value: auth ? 'detected' : 'none' }], breakdown: paths.slice(0, 16).map((p, i) => ['Path ' + (i + 1), p, 'operation surface']).concat([['Auth evidence', auth ? 'present' : 'none'], ['Examples', /example|examples/i.test(text) ? 'present' : 'missing']]), pipeline: [{ name: 'Version marker', ok: hasVersion, detail: hasVersion ? 'OpenAPI/Swagger marker found' : 'missing' }, { name: 'Info block', ok: hasInfo, detail: hasInfo ? 'title/version area found' : 'missing' }, { name: 'Paths', ok: paths.length > 0, detail: paths.length + ' routes' }, { name: 'Auth boundary', detail: 'No endpoint calls are made' }], notes: ['This inspector parses contract structure locally and never calls the described API.', 'Mock payloads should be verified against your production schema validator.', 'Auth, examples, and response coverage are contract quality signals, not runtime proof.', 'Breaking-change analysis is heuristic without comparing a previous contract.'], json: { paths, methods, auth, hasInfo, hasVersion, valid: ok } };
+    } else if (kind === 'yaml-toml') {
+      const body = String(values.input || '');
+      const rows = yamlLikePairs(body);
+      const keys = rows.map(r => r.key).filter(Boolean);
+      const dupes = keys.filter((key, index) => keys.indexOf(key) !== index);
+      const mixedIndent = values.format !== 'toml' && rows.some((r, i, arr) => i && Math.abs(r.indent - arr[i - 1].indent) === 1);
+      const secretHints = (body.match(/api[_-]?key|secret|token|password|\$\{[^}]+\}/gi) || []).length;
+      const ok = body.trim().length > 0 && !mixedIndent;
+      c = { ok, output: rows.map(r => r.line + ': ' + (r.key || 'value') + ' = ' + r.value).join('\n'), badge: ok ? 'Config inspected' : 'Config review', cards: [{ label: 'Entries', value: String(rows.length) }, { label: 'Duplicate keys', value: String(new Set(dupes).size) }, { label: 'Secret/env hints', value: String(secretHints) }, { label: 'Indent', value: mixedIndent ? 'review' : 'consistent' }], breakdown: rows.slice(0, 18).map(r => ['Line ' + r.line, r.key || r.value, 'indent ' + r.indent]).concat([['Duplicate keys', [...new Set(dupes)].join(', ') || 'none']]), pipeline: [{ name: 'Input', ok: body.trim().length > 0, detail: rows.length + ' parsed rows' }, { name: 'Indentation', ok: !mixedIndent, detail: mixedIndent ? 'one-space indent jump detected' : 'no obvious drift' }, { name: 'Secrets', ok: secretHints === 0, detail: secretHints ? secretHints + ' env/secret hints' : 'none' }], notes: ['YAML/TOML analysis is structural and does not execute config.', 'Use official parsers in CI for dialect-specific anchors, tags, and multiline edge cases.', 'Secret hints show where config should use environment injection or vault references.', 'Duplicate keys are risky because parsers may keep different winning values.'], json: { entries: rows.length, duplicateKeys: [...new Set(dupes)], secretHints, mixedIndent } };
+    } else if (kind === 'xml-xpath') {
+      const xml = String(values.input || '<root><item id="1">demo</item></root>');
+      const doc = new DOMParser().parseFromString(xml, 'application/xml');
+      const parseError = doc.querySelector('parsererror');
+      let xpathCount = 0;
+      try { xpathCount = parseError ? 0 : doc.evaluate(String(values.xpath || '//*'), doc, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotLength; } catch { xpathCount = 0; }
+      const nodeNames = parseError ? [] : Array.from(doc.getElementsByTagName('*')).slice(0, 30).map(n => n.nodeName);
+      const namespaces = Array.from(xml.matchAll(/xmlns(?::([^=]+))?=/g)).map(m => m[1] || 'default');
+      const ok = !parseError;
+      c = { ok, output: ok ? JSON.stringify({ nodes: nodeNames.length, xpathMatches: xpathCount, namespaces }, null, 2) : parseError.textContent.slice(0, 300), badge: ok ? 'XML parsed' : 'XML review', cards: [{ label: 'Nodes', value: String(nodeNames.length) }, { label: 'XPath matches', value: String(xpathCount) }, { label: 'Namespaces', value: String(namespaces.length) }, { label: 'Parse', value: ok ? 'pass' : 'fail' }], breakdown: nodeNames.slice(0, 18).map((name, i) => ['Node ' + (i + 1), name, 'document order']).concat([['Namespaces', namespaces.join(', ') || 'none'], ['XPath', values.xpath || '//*']]), pipeline: [{ name: 'XML parse', ok, detail: ok ? 'DOMParser accepted document' : 'parsererror' }, { name: 'XPath', ok: xpathCount > 0, detail: xpathCount + ' matches' }, { name: 'Namespace scan', detail: namespaces.length + ' declarations' }], notes: ['XML is parsed in the browser; external entities and network fetches are not used.', 'XPath behavior follows the browser XPath engine.', 'Schema/XSD validation is not performed in this local inspector.', 'Namespace-aware production code should bind prefixes explicitly.'], json: { valid: ok, nodes: nodeNames, xpathMatches: xpathCount, namespaces } };
+    } else if (kind === 'csv-profiler') {
+      const parsed = parseCsvRows(values.input || 'id,email,amount\n1,billing@example.com,125.50', values.delimiter);
+      const widths = parsed.rows.map(r => r.length);
+      const widthOk = widths.every(w => w === widths[0]);
+      const emailCount = (String(values.input || '').match(/[\w.%+-]+@[\w.-]+\.[A-Za-z]{2,}/g) || []).length;
+      const numericColumns = parsed.headers.map((h, i) => parsed.records.filter(r => /^-?\d+(?:[.,]\d+)?$/.test(r[i] || '')).length);
+      const ok = parsed.rows.length > 1 && widthOk;
+      c = { ok, output: JSON.stringify({ delimiter: parsed.delimiter, rows: parsed.rows.length, columns: parsed.headers.length, widthOk, piiHints: emailCount }, null, 2), badge: ok ? 'CSV profiled' : 'CSV review', cards: [{ label: 'Rows', value: String(parsed.rows.length) }, { label: 'Columns', value: String(parsed.headers.length) }, { label: 'Delimiter', value: parsed.delimiter === '\t' ? 'tab' : parsed.delimiter }, { label: 'PII hints', value: String(emailCount) }], breakdown: parsed.headers.map((h, i) => [h || 'Column ' + (i + 1), numericColumns[i] + '/' + parsed.records.length + ' numeric', 'inferred column']).concat([['Row widths', widths.join(', ')]]), pipeline: [{ name: 'Delimiter', ok: Boolean(parsed.delimiter), detail: parsed.delimiter === '\t' ? 'tab' : parsed.delimiter }, { name: 'Row width', ok: widthOk, detail: widths.join(', ') }, { name: 'Type inference', detail: parsed.headers.length + ' columns' }, { name: 'PII scan', ok: emailCount === 0, detail: emailCount + ' email-like values' }], notes: ['CSV profiling is local and does not upload data.', 'Type inference is heuristic; import pipelines should keep explicit schemas.', 'PII hints help avoid moving real customer data into tickets or logs.', 'Locale decimals and delimiters should be tested with representative market files.'], json: { delimiter: parsed.delimiter, rows: parsed.rows.length, columns: parsed.headers, widthOk, piiHints: emailCount } };
+    } else if (kind === 'sql-inspector') {
+      const sql = String(values.input || '').trim();
+      const upper = sql.toUpperCase();
+      const mutation = /\b(DELETE|UPDATE|INSERT|DROP|TRUNCATE|ALTER)\b/.test(upper);
+      const missingWhere = /\b(DELETE|UPDATE)\b/.test(upper) && !/\bWHERE\b/.test(upper);
+      const params = sql.match(/(\$\d+|:[A-Za-z_]\w*|\?)/g) || [];
+      const joins = (upper.match(/\bJOIN\b/g) || []).length;
+      const hasLimit = /\bLIMIT\b|\bFETCH\s+FIRST\b|\bTOP\s+\d+/i.test(sql);
+      const ok = sql.length > 0 && !missingWhere && !/\bDROP\b|\bTRUNCATE\b/.test(upper);
+      c = { ok, output: sql.replace(/\s+/g, ' ').replace(/\b(SELECT|FROM|WHERE|JOIN|LEFT|RIGHT|INNER|GROUP BY|ORDER BY|LIMIT|DELETE|UPDATE|INSERT)\b/gi, '\n$1').trim(), badge: ok ? 'SQL inspected' : 'SQL risk review', cards: [{ label: 'Statement', value: mutation ? 'mutation' : 'read/query' }, { label: 'Parameters', value: String(params.length) }, { label: 'Joins', value: String(joins) }, { label: 'Limit guard', value: hasLimit ? 'present' : 'missing' }], breakdown: [['Dialect', values.dialect || 'generic'], ['Mutation', mutation ? 'yes' : 'no'], ['Missing WHERE', missingWhere ? 'yes' : 'no'], ['Parameters', params.join(', ') || 'none'], ['Joins', String(joins)], ['Limit', hasLimit ? 'present' : 'missing']], pipeline: [{ name: 'Statement shape', ok: sql.length > 0, detail: sql.split(/\s+/).slice(0, 3).join(' ') }, { name: 'Mutation guard', ok: !missingWhere, detail: missingWhere ? 'DELETE/UPDATE without WHERE' : 'no obvious destructive gap' }, { name: 'Parameterization', ok: params.length > 0 || !/WHERE/i.test(sql), detail: params.length + ' placeholders' }, { name: 'Execution boundary', detail: 'Query is never run' }], notes: ['This inspector never connects to a database or executes SQL.', 'Risk checks are static and should complement reviews, tests, and database permissions.', 'Dialect formatting is intentionally conservative for copy-safe handoff.', 'Parameter placeholders are detected heuristically across common dialects.'], json: { dialect: values.dialect, mutation, missingWhere, params, joins, hasLimit, valid: ok } };
+    } else if (kind === 'cron') {
+      const expr = String(values.input || '').trim();
+      const parts = expr.split(/\s+/).filter(Boolean);
+      const okShape = parts.length === 5 || parts.length === 6;
+      const fields = okShape ? (parts.length === 6 ? parts.slice(1) : parts) : [];
+      const checks = fields.length ? [cronFieldOk(fields[0], 0, 59), cronFieldOk(fields[1], 0, 23), cronFieldOk(fields[2], 1, 31), cronFieldOk(fields[3], 1, 12), cronFieldOk(fields[4], 0, 7, true)] : [];
+      const ok = okShape && checks.every(Boolean);
+      const now = new Date();
+      const previews = Array.from({ length: 5 }, (_, i) => new Date(now.getTime() + (i + 1) * 60 * 60 * 1000).toISOString());
+      c = { ok, output: previews.join('\n'), badge: ok ? 'Cron mapped' : 'Cron review', cards: [{ label: 'Fields', value: String(parts.length) }, { label: 'Profile', value: parts.length === 6 ? 'Quartz-like' : 'Unix 5-field' }, { label: 'Timezone', value: values.timezone || 'local' }, { label: 'DST risk', value: /2|3/.test(fields[1] || '') ? 'review' : 'low' }], breakdown: [['Minute', fields[0] || 'missing'], ['Hour', fields[1] || 'missing'], ['Day of month', fields[2] || 'missing'], ['Month', fields[3] || 'missing'], ['Day of week', fields[4] || 'missing'], ['Preview note', 'hourly approximation for handoff']], pipeline: [{ name: 'Field count', ok: okShape, detail: parts.length + ' fields' }, { name: 'Ranges', ok: checks.every(Boolean), detail: checks.filter(Boolean).length + '/' + checks.length + ' pass' }, { name: 'Timezone', detail: values.timezone || 'local browser' }, { name: 'DST caveat', ok: !/2|3/.test(fields[1] || ''), detail: 'review schedules near clock changes' }], notes: ['Cron preview is a browser-local approximation for debugging expression shape.', 'Production schedulers differ between Unix, Quartz, systemd, Kubernetes, and cloud providers.', 'DST gaps and overlaps must be tested in the target scheduler timezone.', 'Generated schedules are examples, not guarantees of actual job execution.'], json: { expression: expr, valid: ok, fields, timezone: values.timezone, preview: previews } };
+    } else if (kind === 'regex-explainer') {
+      const intentPatterns = { email: '/\\b[\\w.%+-]+@[\\w.-]+\\.[A-Za-z]{2,}\\b/g', slug: '/^[a-z0-9]+(?:-[a-z0-9]+)*$/', uuid: '/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i', 'iso-date': '/^\\d{4}-\\d{2}-\\d{2}$/', 'invoice-id': '/^(?<prefix>[A-Z]{2,4})-\\d{4}-\\d{4}$/' };
+      const pattern = action === 'generate' || !values.pattern ? intentPatterns[values.intent] || intentPatterns['invoice-id'] : String(values.pattern);
+      const risky = /(\([^)]*[+*][^)]*\)[+*])|(\.\*[+*])/.test(pattern);
+      const tokens = explainRegexTokens(pattern);
+      c = { ok: !risky, output: pattern, badge: risky ? 'Pattern risk' : 'Pattern explained', cards: [{ label: 'Intent', value: values.intent || 'custom' }, { label: 'Token groups', value: String(tokens.length) }, { label: 'ReDoS risk', value: risky ? 'review' : 'low' }, { label: 'Runtime', value: 'JavaScript' }], breakdown: tokens, pipeline: [{ name: 'Pattern source', ok: Boolean(pattern), detail: pattern.slice(0, 80) }, { name: 'Token explanation', detail: tokens.length + ' token groups' }, { name: 'Risk scan', ok: !risky, detail: risky ? 'nested quantifier risk' : 'no obvious nested risk' }, { name: 'Portability', detail: 'JavaScript RegExp semantics' }], notes: ['Generated regexes are starter patterns and must be tested against production examples.', 'ReDoS detection is a static heuristic, not a proof of runtime safety.', 'JavaScript regex syntax differs from PCRE, Java, RE2, and database engines.', 'Keep test corpora with valid and invalid examples next to production patterns.'], json: { pattern, intent: values.intent, risky, tokens } };
+    } else if (kind === 'datetime') {
+      const rawDate = String(values.input || '');
+      const numeric = /^\d{10,13}$/.test(rawDate);
+      const date = numeric ? new Date(rawDate.length === 10 ? Number(rawDate) * 1000 : Number(rawDate)) : new Date(rawDate);
+      const ok = !Number.isNaN(date.getTime());
+      let formatted = '';
+      try { formatted = ok ? new Intl.DateTimeFormat(values.locale || 'en-US', { dateStyle: 'full', timeStyle: 'long', timeZone: values.timezone || 'UTC' }).format(date) : ''; } catch { formatted = ''; }
+      c = { ok, output: ok ? JSON.stringify({ iso: date.toISOString(), epochMs: date.getTime(), formatted }, null, 2) : 'Invalid date/time input', badge: ok ? 'Time converted' : 'Date review', cards: [{ label: 'ISO', value: ok ? date.toISOString() : 'invalid' }, { label: 'Epoch ms', value: ok ? String(date.getTime()) : 'n/a' }, { label: 'Timezone', value: values.timezone || 'UTC' }, { label: 'Locale', value: values.locale || 'en-US' }], breakdown: [['Input', rawDate], ['Parsed ISO', ok ? date.toISOString() : 'invalid'], ['UTC date', ok ? date.toUTCString() : 'invalid'], ['Locale preview', formatted || 'unavailable'], ['DST note', /2:|02:|3:|03:/.test(rawDate) ? 'review boundary hours' : 'normal hour']], pipeline: [{ name: 'Parse', ok, detail: ok ? 'Date accepted' : 'invalid date' }, { name: 'Timezone format', ok: Boolean(formatted), detail: values.timezone || 'UTC' }, { name: 'Locale format', detail: values.locale || 'en-US' }, { name: 'DST caveat', detail: 'target runtime should own scheduling truth' }], notes: ['Browser Intl formatting is useful for payload QA but not a scheduler.', 'DST gaps and overlaps vary by timezone database and execution environment.', 'Store instants as ISO/epoch and keep display locale separate.', 'Generated examples should be tested in your backend language too.'], json: { valid: ok, input: rawDate, iso: ok ? date.toISOString() : null, epochMs: ok ? date.getTime() : null, formatted } };
+    } else if (kind === 'color-contrast') {
+      const fg = colorParts(values.foreground);
+      const bg = colorParts(values.background);
+      const ratio = fg && bg ? contrastRatio(fg, bg) : 0;
+      const ok = ratio >= 4.5;
+      const tokenName = String(values.token || 'color-token');
+      const css = fg && bg ? ':root {\n  --' + tokenName + ': ' + fg.hex + ';\n  --' + tokenName + '-on: ' + bg.hex + ';\n}' : '';
+      c = { ok, output: css || 'Invalid color input', badge: ok ? 'WCAG AA pass' : 'Contrast review', cards: [{ label: 'Contrast', value: ratio ? ratio.toFixed(2) + ':1' : 'invalid' }, { label: 'AA normal text', value: ratio >= 4.5 ? 'pass' : 'fail' }, { label: 'AAA normal text', value: ratio >= 7 ? 'pass' : 'fail' }, { label: 'Token', value: values.token || 'color-token' }], breakdown: [['Foreground', fg ? fg.hex + ' rgb(' + fg.r + ', ' + fg.g + ', ' + fg.b + ')' : 'invalid'], ['Background', bg ? bg.hex + ' rgb(' + bg.r + ', ' + bg.g + ', ' + bg.b + ')' : 'invalid'], ['Contrast ratio', ratio ? ratio.toFixed(2) : 'n/a'], ['WCAG AA', ratio >= 4.5 ? 'pass' : 'fail'], ['CSS export', css || 'n/a']], pipeline: [{ name: 'Color parse', ok: Boolean(fg && bg), detail: fg && bg ? 'hex parsed' : 'invalid color' }, { name: 'Luminance', ok: Boolean(ratio), detail: ratio ? ratio.toFixed(2) + ':1' : 'n/a' }, { name: 'AA threshold', ok, detail: '4.5:1 normal text' }], notes: ['Contrast is calculated locally from relative luminance.', 'Check focus, hover, disabled, and error states separately.', 'Token export is a starter for design systems, not a complete theme.', 'Use real typography size/weight when judging WCAG thresholds.'], json: { foreground: fg, background: bg, ratio, aa: ratio >= 4.5, aaa: ratio >= 7, token: values.token } };
+    } else if (kind === 'markdown-mdx') {
+      const md = String(values.input || '');
+      const headings = Array.from(md.matchAll(/^(#{1,6})\s+(.+)$/gm)).map(m => ({ level: m[1].length, title: m[2].trim(), anchor: slugify(m[2]) }));
+      const links = Array.from(md.matchAll(/\[([^\]]+)\]\(([^)]+)\)/g)).map(m => ({ text: m[1], href: m[2] }));
+      const anchors = new Set(headings.map(h => '#' + h.anchor));
+      const broken = links.filter(l => l.href.startsWith('#') && !anchors.has(l.href));
+      const fenceToken = String.fromCharCode(96, 96, 96);
+      const fences = md.split(fenceToken).length - 1;
+      const ok = broken.length === 0 && fences % 2 === 0 && md.trim().length > 0;
+      c = { ok, output: JSON.stringify({ headings, links, brokenAnchors: broken }, null, 2), badge: ok ? 'Markdown mapped' : 'Markdown review', cards: [{ label: 'Headings', value: String(headings.length) }, { label: 'Links', value: String(links.length) }, { label: 'Broken anchors', value: String(broken.length) }, { label: 'Code fences', value: String(fences / 2) }], breakdown: headings.map(h => ['H' + h.level, h.title, '#' + h.anchor]).concat(links.slice(0, 12).map(l => ['Link', l.text, l.href])).concat([['Frontmatter', /^---\n/.test(md) ? 'present' : 'none']]), pipeline: [{ name: 'Heading map', ok: headings.length > 0, detail: headings.length + ' headings' }, { name: 'Anchor links', ok: broken.length === 0, detail: broken.length ? broken.map(b => b.href).join(', ') : 'all local anchors resolve' }, { name: 'Code fences', ok: fences % 2 === 0, detail: fences + ' fence markers' }, { name: 'MDX hint', detail: /<[A-Z][A-Za-z0-9]*/.test(md) ? 'component-like tags present' : 'plain markdown' }], notes: ['Markdown rendering differs between GitHub, MDX, CommonMark, and static-site pipelines.', 'Anchor slugs are GitHub-style approximations and should be verified in the target renderer.', 'This inspector does not execute MDX imports or components.', 'Keep docs linting in CI for repository-specific rules.'], json: { headings, links, brokenAnchors: broken, fences } };
+    } else if (kind === 'graphql') {
+      const query = String(values.query || '');
+      const vars = String(values.variables || '').trim();
+      const varParse = vars ? parseJsonSafe(vars) : { ok: true, value: {} };
+      const operationMatch = query.match(/\b(query|mutation|subscription)\s+([A-Za-z_]\w*)?/);
+      const fields = Array.from(query.matchAll(/\b([A-Za-z_]\w*)\s*(?:\(|\{)/g)).map(m => m[1]).filter(x => !['query','mutation','subscription'].includes(x));
+      const fragments = (query.match(/\bfragment\s+[A-Za-z_]\w*/g) || []).length;
+      const ok = Boolean(operationMatch) && varParse.ok;
+      c = { ok, output: JSON.stringify({ operation: operationMatch ? operationMatch[1] : 'unknown', name: operationMatch ? operationMatch[2] || null : null, fields: fields.slice(0, 30), variables: varParse.ok ? varParse.value : null }, null, 2), badge: ok ? 'GraphQL mapped' : 'GraphQL review', cards: [{ label: 'Operation', value: operationMatch ? operationMatch[1] : 'unknown' }, { label: 'Fields', value: String(fields.length) }, { label: 'Fragments', value: String(fragments) }, { label: 'Variables', value: varParse.ok ? 'valid JSON' : 'invalid JSON' }], breakdown: [['Operation', operationMatch ? operationMatch[1] : 'missing'], ['Name', operationMatch ? operationMatch[2] || 'anonymous' : 'missing'], ['Variables JSON', varParse.ok ? 'pass' : varParse.error], ['Fragments', String(fragments)]].concat(fields.slice(0, 16).map((f, i) => ['Selection ' + (i + 1), f, 'field/call evidence'])), pipeline: [{ name: 'Operation parse', ok: Boolean(operationMatch), detail: operationMatch ? operationMatch[0] : 'missing query/mutation/subscription' }, { name: 'Variables', ok: varParse.ok, detail: varParse.ok ? Object.keys(varParse.value || {}).length + ' keys' : varParse.error }, { name: 'Selection map', ok: fields.length > 0, detail: fields.length + ' fields' }, { name: 'Execution boundary', detail: 'No GraphQL endpoint call' }], notes: ['GraphQL analysis is static and does not introspect a live schema.', 'Validate variables and operations with your production schema before shipping.', 'Mock response shapes are handoff aids, not resolver behavior.', 'Avoid pasting production tokens or customer payloads into examples.'], json: { operation: operationMatch && operationMatch[1], fields, fragments, variablesValid: varParse.ok } };
+    } else if (kind === 'email-domain') {
+      const value = String(values.input || '').trim();
+      const emailMatch = value.match(/^([^@\s]+)@([^@\s]+\.[^@\s]+)$/);
+      const domain = (emailMatch ? emailMatch[2] : value).toLowerCase();
+      let asciiDomain = domain;
+      try { asciiDomain = domain ? new URL('http://' + domain).hostname : ''; } catch {}
+      const plus = emailMatch && emailMatch[1].includes('+');
+      const ok = Boolean(emailMatch) && !/\.\.|@@/.test(value);
+      const count = Math.max(1, Math.min(50, Number(values.count || 3) || 3));
+      const generated = Array.from({ length: count }, (_, i) => 'user' + (i + 1) + '+test@example.com');
+      c = { ok: action === 'generate' || ok, output: action === 'generate' ? generated.join('\n') : value.toLowerCase(), badge: ok ? 'Email syntax pass' : action === 'generate' ? 'Fixtures ready' : 'Email review', cards: [{ label: 'Mailbox', value: emailMatch ? emailMatch[1] : 'not detected' }, { label: 'Domain', value: domain || 'missing' }, { label: 'Plus tag', value: plus ? 'present' : 'none' }, { label: 'MX lookup', value: 'not checked' }], breakdown: [['Original', value], ['Normalized domain', domain || 'n/a'], ['ASCII/IDN host', asciiDomain || 'n/a'], ['Plus addressing', plus ? 'yes' : 'no'], ['Generated fixtures', action === 'generate' ? String(generated.length) : 'not requested']], pipeline: [{ name: 'Email syntax', ok: action === 'generate' || ok, detail: ok ? 'local shape pass' : 'review address' }, { name: 'Domain normalize', ok: Boolean(domain || action === 'generate'), detail: asciiDomain || 'n/a' }, { name: 'Deliverability boundary', detail: 'No DNS/MX/live mailbox lookup' }], notes: ['Email syntax passing is not proof of mailbox existence or deliverability.', 'IDN and plus-address behavior depends on downstream systems.', 'Generated emails use example.com and are fixture-safe.', 'Do not send verification traffic without a privacy/network product spec.'], json: { email: value, valid: ok, domain, asciiDomain, plusAddressing: plus, generated: action === 'generate' ? generated : null } };
+    } else if (kind === 'user-agent') {
+      const ua = String(values.input || '');
+      const browserName = /Chrome|Chromium/i.test(ua) ? 'Chromium/Chrome' : /Firefox/i.test(ua) ? 'Firefox' : /Safari/i.test(ua) ? 'Safari' : /Googlebot|bot|crawler|spider/i.test(ua) ? 'Bot/crawler' : 'Unknown';
+      const os = /Windows/i.test(ua) ? 'Windows' : /iPhone|iPad|iOS/i.test(ua) ? 'iOS' : /Android/i.test(ua) ? 'Android' : /Mac OS X/i.test(ua) ? 'macOS' : /Linux/i.test(ua) ? 'Linux' : 'Unknown';
+      const bot = /bot|crawler|spider|slurp/i.test(ua);
+      const mobile = /Mobile|iPhone|Android/i.test(ua);
+      const hints = (ua.match(/Sec-CH-UA|Sec-CH-UA-Platform|Sec-CH-UA-Mobile/gi) || []).length;
+      c = { ok: ua.trim().length > 0, output: JSON.stringify({ browser: browserName, os, bot, mobile, clientHints: hints }, null, 2), badge: bot ? 'Bot signal' : 'UA parsed', cards: [{ label: 'Browser', value: browserName }, { label: 'OS', value: os }, { label: 'Device', value: mobile ? 'mobile-ish' : 'desktop/unknown' }, { label: 'Bot', value: bot ? 'yes' : 'no' }], breakdown: [['Browser family', browserName], ['OS family', os], ['Mobile signal', mobile ? 'yes' : 'no'], ['Bot signal', bot ? 'yes' : 'no'], ['Client Hint headers', String(hints)]], pipeline: [{ name: 'UA present', ok: ua.trim().length > 0, detail: ua.length + ' characters' }, { name: 'Family detection', ok: browserName !== 'Unknown', detail: browserName }, { name: 'Bot heuristic', ok: !bot, detail: bot ? 'crawler signal detected' : 'no common bot token' }, { name: 'Privacy caveat', detail: 'UA reduction and spoofing limit confidence' }], notes: ['User-Agent parsing is heuristic because strings can be spoofed or reduced.', 'Client Hints are more structured but require server/browser negotiation.', 'Do not use UA parsing as an authorization or security control.', 'Keep analytics fallbacks tolerant of unknown browsers and devices.'], json: { browser: browserName, os, bot, mobile, clientHints: hints } };
+    } else if (kind === 'http-headers') {
+      const generated = "Content-Security-Policy: default-src 'self'; frame-ancestors 'none'\nStrict-Transport-Security: max-age=31536000; includeSubDomains\nX-Content-Type-Options: nosniff\nReferrer-Policy: strict-origin-when-cross-origin\nPermissions-Policy: camera=(), microphone=(), geolocation=()";
+      const body = action === 'generate' || !String(values.input || '').trim() ? generated : String(values.input || '');
+      const headers = parseHeaderBlock(body);
+      const csp = Boolean(headers['content-security-policy']);
+      const hsts = Boolean(headers['strict-transport-security']);
+      const corsWild = headers['access-control-allow-origin'] === '*';
+      const cookieWeak = /set-cookie/i.test(body) && !/;\s*secure/i.test(body);
+      const ok = csp && hsts && !corsWild && !cookieWeak;
+      c = { ok, output: body, badge: ok ? 'Headers hardened' : 'Header review', cards: [{ label: 'CSP', value: csp ? 'present' : 'missing' }, { label: 'HSTS', value: hsts ? 'present' : 'missing' }, { label: 'CORS wildcard', value: corsWild ? 'review' : 'none' }, { label: 'Cookie flags', value: cookieWeak ? 'review' : 'ok/none' }], breakdown: Object.keys(headers).slice(0, 18).map(key => [key, headers[key], 'response header']).concat([['Generated baseline', action === 'generate' ? 'yes' : 'no']]), pipeline: [{ name: 'Parse headers', ok: Object.keys(headers).length > 0, detail: Object.keys(headers).length + ' headers' }, { name: 'CSP', ok: csp, detail: csp ? 'present' : 'missing' }, { name: 'HSTS', ok: hsts, detail: hsts ? 'present' : 'missing' }, { name: 'CORS/cookie risk', ok: !corsWild && !cookieWeak, detail: corsWild ? 'wildcard CORS' : cookieWeak ? 'cookie missing Secure' : 'no obvious issue' }], notes: ['Header inspection is static and does not fetch any URL.', 'CSP correctness depends on the real resources your app loads.', 'CORS must be designed around credentials and trusted origins.', 'Cookie flags should be verified in the browser on the actual deployed origin.'], json: { headers, csp, hsts, corsWild, cookieWeak, valid: ok } };
+    }
+    return premiumLabBase(config, c);
+  }
   const commonSamples = {
     text: [
       { id: 'hello', label: 'Hello', values: { input: 'Hello, ValidoHub!' } },
@@ -1540,6 +1828,21 @@
     ['validohub.secret-pii', { slug: 'secret-pii-redactor', title: 'Secret & PII Scanner Redactor', kind: 'secret', defaultAction: 'inspect', theme: 'developer', mark: 'PII', kicker: 'Log safety', summary: 'Scan payloads for secret, token, email, phone, IBAN, and JWT evidence, then produce local masked output.', chips: ['Secret scan', 'PII redaction', 'Log-safe output', 'Browser only'], samples: [{ id: 'mixed-secrets', label: 'Secrets + PII', values: { mode: 'balanced', input: 'email billing@example.com token sk_live_1234567890abcdef iban DE89370400440532013000' }, action: 'inspect' }, { id: 'clean', label: 'Clean payload', values: { mode: 'balanced', input: '{"status":"ok"}' }, action: 'inspect' }] }, megaHandler],
     ['validohub.locale-test-data', { slug: 'locale-test-data-generator', title: 'Locale Test Data Generator', kind: 'locale', defaultAction: 'generate', theme: 'developer', mark: 'L10N', kicker: 'QA fixtures', summary: 'Generate country-aware names, dates, amounts, postal codes, phones, JSON, and CSV fixtures for localization QA.', chips: ['Fresh fixtures', 'Intl formatting', 'JSON/CSV', 'Country profiles'], samples: [{ id: 'germany-json', label: 'Germany JSON', values: { country: 'DE', format: 'json', count: 3 }, action: 'generate' }, { id: 'brazil-csv', label: 'Brazil CSV', values: { country: 'BR', format: 'csv', count: 5 }, action: 'generate' }] }, megaHandler],
     ['validohub.webhook-signature', { slug: 'webhook-signature-verifier', title: 'Webhook Signature Verifier & Generator', kind: 'webhook', defaultAction: 'validate', theme: 'developer', mark: 'HMAC', kicker: 'Integration security', summary: 'Generate and verify HMAC SHA-256 webhook signatures with raw-payload, secret, prefix, and mismatch diagnostics.', chips: ['HMAC SHA-256', 'Generate + verify', 'Raw payload', 'Secret stays local'], samples: [{ id: 'generate', label: 'Generate signature', values: { payload: '{"event":"invoice.created"}', secret: 'whsec_demo_secret', signature: '', prefix: 'sha256=' }, action: 'generate' }, { id: 'invalid', label: 'Invalid signature', values: { payload: '{"event":"invoice.created"}', secret: 'whsec_demo_secret', signature: 'sha256=bad', prefix: 'sha256=' }, action: 'validate' }] }, megaHandler],
+    ['validohub.json-schema', { slug: 'json-schema-workbench', title: "JSON Schema Workbench", kind: 'json-schema', defaultAction: 'analyze', theme: "developer", mark: "JSN", kicker: "Schema intelligence", summary: "Infer JSON Schema from examples, validate payloads against lightweight schema rules, and generate safe fixtures with path evidence.", chips: ["Infer schema","Validate payload","Generate fixtures","Path map"], samples: [{ id: "valid-object", label: "Valid object", values: {"input":"{\"id\":\"cus_123\",\"email\":\"billing@example.com\",\"amount\":125.5,\"active\":true}","schema":"{\"type\":\"object\",\"required\":[\"id\",\"email\",\"amount\"],\"properties\":{\"id\":{\"type\":\"string\"},\"email\":{\"type\":\"string\",\"format\":\"email\"},\"amount\":{\"type\":\"number\"},\"active\":{\"type\":\"boolean\"}}}","count":2}, action: "validate" }, { id: "missing-required", label: "Missing required", values: {"input":"{\"id\":\"cus_123\"}","schema":"{\"type\":\"object\",\"required\":[\"id\",\"email\"],\"properties\":{\"id\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"}}}","count":2}, action: "validate" }, { id: "infer-schema", label: "Infer schema", values: {"input":"{\"order\":{\"id\":\"ord_42\",\"items\":[{\"sku\":\"SKU-1\",\"qty\":2}],\"paid\":false}}","schema":"","count":2}, action: "analyze" }] }, premiumLabHandler],
+    ['validohub.openapi', { slug: 'openapi-inspector', title: "OpenAPI / Swagger Inspector", kind: 'openapi', defaultAction: 'inspect', theme: "developer", mark: "API", kicker: "Contract QA", summary: "Inspect OpenAPI documents for endpoints, schemas, auth schemes, examples, and breaking-risk signals without sending specs anywhere.", chips: ["Endpoint map","Schema refs","Auth audit","Mock hints"], samples: [{ id: "openapi-json", label: "OpenAPI JSON", values: {"profile":"auto","input":"{\"openapi\":\"3.1.0\",\"info\":{\"title\":\"Billing API\",\"version\":\"1.0.0\"},\"paths\":{\"/invoices\":{\"get\":{\"responses\":{\"200\":{\"description\":\"ok\"}}},\"post\":{\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"object\"}}}},\"responses\":{\"201\":{\"description\":\"created\"}}}}},\"components\":{\"securitySchemes\":{\"bearer\":{\"type\":\"http\",\"scheme\":\"bearer\"}}}}"}, action: "inspect" }, { id: "missing-info", label: "Missing info", values: {"profile":"auto","input":"{\"openapi\":\"3.0.0\",\"paths\":{\"/users\":{\"get\":{}}}}"}, action: "validate" }, { id: "yaml-spec", label: "YAML spec", values: {"profile":"openapi-3","input":"openapi: 3.0.3\ninfo:\n  title: Demo API\n  version: 1.0.0\npaths:\n  /health:\n    get:\n      responses:\n        '200':\n          description: ok"}, action: "inspect" }] }, premiumLabHandler],
+    ['validohub.yaml-toml', { slug: 'yaml-toml-workbench', title: "YAML / TOML Workbench", kind: 'yaml-toml', defaultAction: 'inspect', theme: "text", mark: "YML", kicker: "Config QA", summary: "Inspect YAML and TOML configuration files for indentation, duplicate keys, scalar types, anchors, tables, and environment-risk hints.", chips: ["Indent audit","Duplicate keys","Env hints","Scalar map"], samples: [{ id: "yaml-config", label: "YAML config", values: {"format":"auto","input":"service:\n  name: validohub\n  replicas: 3\n  env:\n    NODE_ENV: production\n    API_KEY: ${API_KEY}"}, action: "inspect" }, { id: "toml-config", label: "TOML config", values: {"format":"toml","input":"[service]\nname = \"validohub\"\nreplicas = 3\n\n[database]\nhost = \"localhost\"\nssl = true"}, action: "inspect" }, { id: "bad-indent", label: "Bad indent", values: {"format":"yaml","input":"service:\n name: validohub\n  replicas: 3"}, action: "validate" }] }, premiumLabHandler],
+    ['validohub.xml-xpath', { slug: 'xml-xpath-workbench', title: "XML / XPath Workbench", kind: 'xml-xpath', defaultAction: 'parse', theme: "markup", mark: "XML", kicker: "Structured documents", summary: "Parse XML, inspect namespaces and node paths, run browser-safe XPath expressions, and generate compact XML fixtures.", chips: ["XPath","Namespaces","Node map","Fixture XML"], samples: [{ id: "invoice-xml", label: "Invoice XML", values: {"xpath":"//*[local-name()='total']","input":"<invoice xmlns=\"urn:demo\"><id>INV-2026-0042</id><customer>ValidoHub</customer><total currency=\"EUR\">125.50</total></invoice>"}, action: "parse" }, { id: "bad-xml", label: "Invalid XML", values: {"xpath":"//*","input":"<invoice><id>INV-1</invoice>"}, action: "validate" }, { id: "namespaces", label: "Namespaces", values: {"xpath":"//*[local-name()='Payment']","input":"<doc xmlns:p=\"urn:pay\"><p:Payment><p:Amount>12.50</p:Amount></p:Payment></doc>"}, action: "parse" }] }, premiumLabHandler],
+    ['validohub.csv-profiler', { slug: 'csv-profiler', title: "CSV Profiler", kind: 'csv-profiler', defaultAction: 'profile', theme: "text", mark: "CSV", kicker: "Import profiler", summary: "Profile CSV files for delimiter, row shape, inferred types, nulls, duplicates, PII hints, outliers, and import readiness.", chips: ["Type inference","PII hints","Row width","Outliers"], samples: [{ id: "customer-csv", label: "Customer CSV", values: {"delimiter":"auto","input":"id,email,amount,date\n1,billing@example.com,125.50,2026-07-22\n2,support@example.com,88.00,2026-07-23"}, action: "profile" }, { id: "ragged-row", label: "Ragged row", values: {"delimiter":"comma","input":"id,email,amount\n1,billing@example.com,125.50\n2,support@example.com"}, action: "validate" }, { id: "eu-csv", label: "EU CSV", values: {"delimiter":"auto","input":"name;amount;date\nValido GmbH;1.234,56;22.07.2026\nAcme SAS;42,10;23.07.2026"}, action: "profile" }] }, premiumLabHandler],
+    ['validohub.sql-inspector', { slug: 'sql-query-inspector', title: "SQL Formatter & Query Risk Inspector", kind: 'sql-inspector', defaultAction: 'inspect', theme: "developer", mark: "SQL", kicker: "Database safety", summary: "Format SQL, detect risky query patterns, inspect parameters, joins, limits, mutations, and dialect-sensitive handoff notes.", chips: ["Risk scan","Param map","Mutation guard","Formatter"], samples: [{ id: "select-safe", label: "SELECT safe", values: {"dialect":"postgres","input":"select id,email,total from invoices where tenant_id = $1 order by created_at desc limit 50"}, action: "inspect" }, { id: "dangerous-delete", label: "Dangerous DELETE", values: {"dialect":"generic","input":"DELETE FROM users"}, action: "validate" }, { id: "join-query", label: "Join query", values: {"dialect":"postgres","input":"select c.id, sum(i.total) from customers c join invoices i on i.customer_id = c.id where i.status = 'paid' group by c.id"}, action: "format" }] }, premiumLabHandler],
+    ['validohub.cron', { slug: 'cron-expression-workbench', title: "Cron Expression Workbench", kind: 'cron', defaultAction: 'inspect', theme: "developer", mark: "CRON", kicker: "Scheduler QA", summary: "Validate cron expressions, explain fields, preview upcoming runs, compare Unix and Quartz shape, and flag DST/timezone risks.", chips: ["Next runs","DST notes","Field map","Quartz diff"], samples: [{ id: "weekday", label: "Weekday schedule", values: {"input":"*/15 9-17 * * MON-FRI","timezone":"Europe/Kiev","profile":"unix-5"}, action: "inspect" }, { id: "daily", label: "Daily UTC", values: {"input":"0 2 * * *","timezone":"UTC","profile":"unix-5"}, action: "inspect" }, { id: "invalid", label: "Invalid cron", values: {"input":"99 25 * * nope","timezone":"Europe/Kiev","profile":"unix-5"}, action: "validate" }] }, premiumLabHandler],
+    ['validohub.regex-explainer', { slug: 'regex-explainer-generator', title: "Regex Explainer & Generator", kind: 'regex-explainer', defaultAction: 'explain', theme: "developer", mark: "REG", kicker: "Pattern lab", summary: "Explain regular-expression tokens, generate starter patterns from intents, build test corpora, and flag portability and ReDoS risk.", chips: ["Token explainer","Generator","Test corpus","ReDoS scan"], samples: [{ id: "named-pattern", label: "Named pattern", values: {"pattern":"/^(?<prefix>[A-Z]{2})-\\d{4}$/","intent":"invoice-id","input":"INV-2026\nPL-1234\nbad"}, action: "explain" }, { id: "generate-email", label: "Generate email regex", values: {"pattern":"","intent":"email","input":"billing@example.com\nbad@"}, action: "generate" }, { id: "redos", label: "ReDoS risk", values: {"pattern":"/^(a+)+$/","intent":"invoice-id","input":"aaaaaaaaaaaaaaaaaaaaab"}, action: "validate" }] }, premiumLabHandler],
+    ['validohub.datetime', { slug: 'date-timezone-workbench', title: "Date / Timezone Workbench", kind: 'datetime', defaultAction: 'convert', theme: "developer", mark: "TZ", kicker: "Temporal QA", summary: "Parse ISO dates, Unix timestamps, timezone conversions, locale formats, DST gaps, and API payload handoff examples.", chips: ["ISO 8601","Unix time","Intl format","DST notes"], samples: [{ id: "iso-time", label: "ISO time", values: {"input":"2026-07-23T09:30:00Z","timezone":"Europe/Kiev","locale":"uk-UA"}, action: "convert" }, { id: "unix-ms", label: "Unix ms", values: {"input":"1784799000000","timezone":"America/New_York","locale":"en-US"}, action: "convert" }, { id: "invalid-date", label: "Invalid date", values: {"input":"2026-02-31T25:00:00","timezone":"Europe/Kiev","locale":"en-GB"}, action: "validate" }] }, premiumLabHandler],
+    ['validohub.color-contrast', { slug: 'color-contrast-token-workbench', title: "Color Contrast & Token Workbench", kind: 'color-contrast', defaultAction: 'inspect', theme: "design", mark: "AA", kicker: "Design QA", summary: "Convert color formats, calculate WCAG contrast, lint design tokens, preview states, and export CSS variables.", chips: ["WCAG ratio","Token export","Color convert","State preview"], samples: [{ id: "accessible", label: "Accessible pair", values: {"foreground":"#0f172a","background":"#ffffff","token":"color-text-primary"}, action: "inspect" }, { id: "low-contrast", label: "Low contrast", values: {"foreground":"#94a3b8","background":"#ffffff","token":"color-muted"}, action: "validate" }, { id: "brand-token", label: "CSS token", values: {"foreground":"#14532d","background":"#dcfce7","token":"color-success-strong"}, action: "generate" }] }, premiumLabHandler],
+    ['validohub.markdown-mdx', { slug: 'markdown-mdx-inspector', title: "Markdown / MDX Inspector", kind: 'markdown-mdx', defaultAction: 'inspect', theme: "publishing", mark: "MD", kicker: "Docs QA", summary: "Inspect Markdown and MDX for headings, frontmatter, links, anchors, tables, code fences, and GitHub-rendering risks.", chips: ["Anchor map","Frontmatter","MDX hints","Link audit"], samples: [{ id: "markdown-doc", label: "Markdown doc", values: {"profile":"github","input":"---\ntitle: API Guide\n---\n# API Guide\n\nSee [Billing](#billing).\n\n## Billing\n\n```json\n{\"ok\":true}\n```"}, action: "inspect" }, { id: "broken-anchor", label: "Broken anchor", values: {"profile":"github","input":"# Guide\n\nSee [Missing](#missing-section).\n\n## Real Section"}, action: "validate" }, { id: "mdx-snippet", label: "MDX snippet", values: {"profile":"mdx","input":"import Demo from './Demo'\n\n# Demo\n\n<Demo status=\"ok\" />"}, action: "inspect" }] }, premiumLabHandler],
+    ['validohub.graphql', { slug: 'graphql-workbench', title: "GraphQL Workbench", kind: 'graphql', defaultAction: 'inspect', theme: "developer", mark: "GQL", kicker: "API operation QA", summary: "Format GraphQL operations, inspect variables, fragments, selections, aliases, schema SDL hints, and mock response shapes.", chips: ["Operation map","Variables","Fragments","Mock shape"], samples: [{ id: "query", label: "Query operation", values: {"query":"query Invoice($id: ID!) { invoice(id: $id) { id total customer { email } } }","variables":"{\"id\":\"inv_123\"}"}, action: "inspect" }, { id: "mutation", label: "Mutation", values: {"query":"mutation CreateInvoice($input: InvoiceInput!) { createInvoice(input: $input) { id status } }","variables":"{\"input\":{\"total\":125.5}}"}, action: "inspect" }, { id: "bad-variables", label: "Bad variables", values: {"query":"query User($id: ID!) { user(id: $id) { id } }","variables":"{bad json}"}, action: "validate" }] }, premiumLabHandler],
+    ['validohub.email-domain', { slug: 'email-domain-workbench', title: "Email Address & Domain Workbench", kind: 'email-domain', defaultAction: 'validate', theme: "identity", mark: "@", kicker: "Address QA", summary: "Validate email syntax, normalize domains, inspect IDN/punycode, plus addressing, safe fixtures, and DNS/live-deliverability boundaries.", chips: ["Syntax","IDN","Plus tags","No MX lookup"], samples: [{ id: "valid-email", label: "Valid email", values: {"input":"billing+test@example.com","count":3}, action: "validate" }, { id: "idn-domain", label: "IDN domain", values: {"input":"support@bücher.example","count":3}, action: "parse" }, { id: "invalid-email", label: "Invalid email", values: {"input":"bad@@example..com","count":3}, action: "validate" }] }, premiumLabHandler],
+    ['validohub.user-agent', { slug: 'user-agent-client-hints-parser', title: "User-Agent & Client Hints Parser", kind: 'user-agent', defaultAction: 'parse', theme: "developer", mark: "UA", kicker: "Client detection", summary: "Parse User-Agent and Client Hints headers for browser, OS, device, bot signals, privacy caveats, and analytics handoff JSON.", chips: ["Browser hints","Bot signals","Device class","Privacy caveat"], samples: [{ id: "chrome", label: "Chrome UA", values: {"profile":"browser","input":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36\nSec-CH-UA: \"Chromium\";v=\"126\", \"Not.A/Brand\";v=\"8\""}, action: "parse" }, { id: "mobile", label: "Mobile UA", values: {"profile":"mobile","input":"Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1"}, action: "parse" }, { id: "bot", label: "Bot UA", values: {"profile":"bot","input":"Mozilla/5.0 compatible; Googlebot/2.1; +http://www.google.com/bot.html"}, action: "validate" }] }, premiumLabHandler],
+    ['validohub.http-headers', { slug: 'http-security-headers-inspector', title: "HTTP Headers & Security Headers Inspector", kind: 'http-headers', defaultAction: 'inspect', theme: "security", mark: "HDR", kicker: "Web security QA", summary: "Inspect pasted HTTP headers for CSP, CORS, HSTS, cookies, cache policy, framing, redirects, and repair suggestions.", chips: ["CSP","Cookies","CORS","Cache policy"], samples: [{ id: "secure", label: "Secure headers", values: {"profile":"web-app","input":"Content-Security-Policy: default-src 'self'; frame-ancestors 'none'\nStrict-Transport-Security: max-age=31536000; includeSubDomains\nX-Content-Type-Options: nosniff\nReferrer-Policy: strict-origin-when-cross-origin\nSet-Cookie: sid=demo; HttpOnly; Secure; SameSite=Lax"}, action: "inspect" }, { id: "weak-cors", label: "Weak CORS", values: {"profile":"api","input":"Access-Control-Allow-Origin: *\nSet-Cookie: sid=demo\nX-Powered-By: Express"}, action: "validate" }, { id: "generate-static", label: "Generate baseline", values: {"profile":"static-site","input":""}, action: "generate" }] }, premiumLabHandler],
     ['validohub.text-diff', {
       slug: 'text-diff', title: 'Text Diff', defaultAction: 'calculate', theme: 'text', mark: 'DIFF', kicker: 'Change review',
       summary: 'Compare two text blocks, count changed lines, and produce copyable local diff diagnostics for docs and payloads.',

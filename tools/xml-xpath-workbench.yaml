@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: xml-xpath-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: XML / XPath Workbench
+summary:
+  en: Parse XML, inspect namespaces and node paths, run browser-safe XPath expressions, and generate compact XML fixtures.
+capabilities: [parse, validate, generate, explain]
+algorithm:
+  algorithmId: validohub.xml-xpath
+forms:
+  parse:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: XML document
+      - type: text
+        name: xpath
+        label:
+          en: XPath expression
+        default: "//*[local-name()='invoice']"
+    actions: [parse, validate, generate, explain]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: XML / XPath Workbench
+  description:
+    en: Parse XML, inspect namespaces and node paths, run browser-safe XPath expressions, and generate compact XML fixtures.

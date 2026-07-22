@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: user-agent-client-hints-parser
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: User-Agent & Client Hints Parser
+summary:
+  en: Parse User-Agent and Client Hints headers for browser, OS, device, bot signals, privacy caveats, and analytics handoff JSON.
+capabilities: [parse, validate, generate, explain]
+algorithm:
+  algorithmId: validohub.user-agent
+forms:
+  parse:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: User-Agent and optional headers
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options: [auto, browser, bot, mobile]
+        default: "auto"
+    actions: [parse, validate, generate, explain]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: User-Agent & Client Hints Parser
+  description:
+    en: Parse User-Agent and Client Hints headers for browser, OS, device, bot signals, privacy caveats, and analytics handoff JSON.

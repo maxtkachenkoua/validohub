@@ -1,0 +1,44 @@
+schemaVersion: 1
+id: regex-explainer-generator
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Regex Explainer & Generator
+summary:
+  en: Explain regular-expression tokens, generate starter patterns from intents, build test corpora, and flag portability and ReDoS risk.
+capabilities: [explain, generate, validate, parse]
+algorithm:
+  algorithmId: validohub.regex-explainer
+forms:
+  explain:
+    inputs:
+      - type: text
+        name: pattern
+        label:
+          en: Regex pattern
+        default: "/^(?<prefix>[A-Z]{2})-\\d{4}$/"
+      - type: select
+        name: intent
+        label:
+          en: Generate intent
+        options: [email, slug, uuid, iso-date, invoice-id]
+        default: "invoice-id"
+      - type: textarea
+        name: input
+        label:
+          en: Test corpus
+    actions: [explain, generate, validate, parse]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Regex Explainer & Generator
+  description:
+    en: Explain regular-expression tokens, generate starter patterns from intents, build test corpora, and flag portability and ReDoS risk.

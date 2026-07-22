@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: http-security-headers-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: HTTP Headers & Security Headers Inspector
+summary:
+  en: Inspect pasted HTTP headers for CSP, CORS, HSTS, cookies, cache policy, framing, redirects, and repair suggestions.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.http-headers
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: HTTP response headers
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options: [web-app, api, static-site]
+        default: "web-app"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: HTTP Headers & Security Headers Inspector
+  description:
+    en: Inspect pasted HTTP headers for CSP, CORS, HSTS, cookies, cache policy, framing, redirects, and repair suggestions.

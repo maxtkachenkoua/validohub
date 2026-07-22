@@ -1,0 +1,44 @@
+schemaVersion: 1
+id: color-contrast-token-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Color Contrast & Token Workbench
+summary:
+  en: Convert color formats, calculate WCAG contrast, lint design tokens, preview states, and export CSS variables.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.color-contrast
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: foreground
+        label:
+          en: Foreground color
+        default: "#0f172a"
+      - type: text
+        name: background
+        label:
+          en: Background color
+        default: "#ffffff"
+      - type: text
+        name: token
+        label:
+          en: Token name
+        default: "color-text-primary"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Color Contrast & Token Workbench
+  description:
+    en: Convert color formats, calculate WCAG contrast, lint design tokens, preview states, and export CSS variables.

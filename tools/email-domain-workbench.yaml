@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: email-domain-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Email Address & Domain Workbench
+summary:
+  en: Validate email syntax, normalize domains, inspect IDN/punycode, plus addressing, safe fixtures, and DNS/live-deliverability boundaries.
+capabilities: [validate, generate, parse, explain]
+algorithm:
+  algorithmId: validohub.email-domain
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Email address or domain
+        default: "billing+test@example.com"
+      - type: number
+        name: count
+        label:
+          en: Generate count
+        default: "3"
+        min: 1
+        max: 50
+    actions: [validate, generate, parse, explain]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Email Address & Domain Workbench
+  description:
+    en: Validate email syntax, normalize domains, inspect IDN/punycode, plus addressing, safe fixtures, and DNS/live-deliverability boundaries.

@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: yaml-toml-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: YAML / TOML Workbench
+summary:
+  en: Inspect YAML and TOML configuration files for indentation, duplicate keys, scalar types, anchors, tables, and environment-risk hints.
+capabilities: [validate, format, explain, parse]
+algorithm:
+  algorithmId: validohub.yaml-toml
+forms:
+  validate:
+    inputs:
+      - type: select
+        name: format
+        label:
+          en: Format
+        options: [auto, yaml, toml]
+        default: "auto"
+      - type: textarea
+        name: input
+        label:
+          en: YAML or TOML config
+    actions: [validate, format, explain, parse]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: YAML / TOML Workbench
+  description:
+    en: Inspect YAML and TOML configuration files for indentation, duplicate keys, scalar types, anchors, tables, and environment-risk hints.

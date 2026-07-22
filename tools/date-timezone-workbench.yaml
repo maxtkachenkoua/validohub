@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: date-timezone-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Date / Timezone Workbench
+summary:
+  en: Parse ISO dates, Unix timestamps, timezone conversions, locale formats, DST gaps, and API payload handoff examples.
+capabilities: [format, validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.datetime
+forms:
+  format:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Date, time, or timestamp
+        default: "2026-07-23T09:30:00Z"
+      - type: text
+        name: timezone
+        label:
+          en: Target timezone
+        default: "Europe/Kiev"
+      - type: select
+        name: locale
+        label:
+          en: Locale
+        options: [en-US, en-GB, de-DE, fr-FR, pl-PL, uk-UA, pt-BR]
+        default: "uk-UA"
+    actions: [format, validate, generate, explain, parse]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Date / Timezone Workbench
+  description:
+    en: Parse ISO dates, Unix timestamps, timezone conversions, locale formats, DST gaps, and API payload handoff examples.

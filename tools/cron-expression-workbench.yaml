@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: cron-expression-workbench
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Cron Expression Workbench
+summary:
+  en: Validate cron expressions, explain fields, preview upcoming runs, compare Unix and Quartz shape, and flag DST/timezone risks.
+capabilities: [validate, generate, explain, parse]
+algorithm:
+  algorithmId: validohub.cron
+forms:
+  validate:
+    inputs:
+      - type: text
+        name: input
+        label:
+          en: Cron expression
+        default: "*/15 9-17 * * MON-FRI"
+      - type: text
+        name: timezone
+        label:
+          en: Timezone
+        default: "Europe/Kiev"
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options: [unix-5, quartz-6]
+        default: "unix-5"
+    actions: [validate, generate, explain, parse]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Cron Expression Workbench
+  description:
+    en: Validate cron expressions, explain fields, preview upcoming runs, compare Unix and Quartz shape, and flag DST/timezone risks.

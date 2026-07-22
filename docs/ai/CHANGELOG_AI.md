@@ -1,3 +1,10 @@
+## 2026-07-23 - Global Premium Tools Batch V2
+
+- Added fifteen new premium global workbench definitions for JSON Schema, OpenAPI, YAML/TOML, XML/XPath, CSV profiling, SQL query risk inspection, cron expressions, regex explanation/generation, date/timezone conversion, color contrast/tokens, Markdown/MDX, GraphQL, email/domain parsing, user-agent/client hints, and HTTP security headers.
+- Wired the batch into the shared ValidoHub generic-suite runtime, build mappings, Tools portal discovery, and global premium audit route list.
+- Added `docs/product/GLOBAL_PREMIUM_TOOLS_BATCH_V2_SPEC.md` as the batch product contract.
+- Kept Valido Engine untouched; new YAML routes require one full route materialization build before scoped `build:tools` loops can refresh pages.
+
 ## 2026-07-22 - Homepage command center visual polish
 
 - Tightened homepage hero typography and spacing so the first viewport reads like a premium launcher instead of an oversized marketing panel.

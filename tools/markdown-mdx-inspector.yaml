@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: markdown-mdx-inspector
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: Markdown / MDX Inspector
+summary:
+  en: Inspect Markdown and MDX for headings, frontmatter, links, anchors, tables, code fences, and GitHub-rendering risks.
+capabilities: [validate, format, explain, parse]
+algorithm:
+  algorithmId: validohub.markdown-mdx
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: Markdown or MDX
+      - type: select
+        name: profile
+        label:
+          en: Profile
+        options: [github, mdx, commonmark]
+        default: "github"
+    actions: [validate, format, explain, parse]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: Markdown / MDX Inspector
+  description:
+    en: Inspect Markdown and MDX for headings, frontmatter, links, anchors, tables, code fences, and GitHub-rendering risks.

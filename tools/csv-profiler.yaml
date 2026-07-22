@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: csv-profiler
+kind: tool
+module: validohub
+category: developer-tools
+status: active
+name:
+  en: CSV Profiler
+summary:
+  en: Profile CSV files for delimiter, row shape, inferred types, nulls, duplicates, PII hints, outliers, and import readiness.
+capabilities: [validate, format, explain, parse]
+algorithm:
+  algorithmId: validohub.csv-profiler
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: CSV data
+      - type: select
+        name: delimiter
+        label:
+          en: Delimiter
+        options: [auto, comma, semicolon, tab]
+        default: "auto"
+    actions: [validate, format, explain, parse]
+related:
+  explicit: [json-formatter, regex-tester, uuid-generator, webhook-signature-verifier]
+  auto:
+    sameCountry: false
+    sameCategory: true
+    sameCapability: true
+    sameModule: true
+seo:
+  title:
+    en: CSV Profiler
+  description:
+    en: Profile CSV files for delimiter, row shape, inferred types, nulls, duplicates, PII hints, outliers, and import readiness.
