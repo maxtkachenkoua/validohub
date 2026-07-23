@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-slug-normalizer
+kind: tool
+module: validohub
+country: VE
+category: developer-tools
+status: active
+name:
+  en: "Venezuelan Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Venezuela sample company Av. Francisco de Miranda 123, 1010 Caracas"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-document-ocr-fixer, venezuela-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

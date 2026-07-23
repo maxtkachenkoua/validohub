@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bolivia-customs-tax-identifier-helper
+kind: tool
+module: validohub
+country: BO
+category: national-identifiers
+status: active
+name:
+  en: "Bolivian Customs / Tax Identifier Helper"
+summary:
+  en: "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bolivia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUST input"
+        required: true
+        placeholder:
+          en: "BO1023459028"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bolivia-insured-person-evidence-social-insurance-helper, bolivia-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bolivian Customs / Tax Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."

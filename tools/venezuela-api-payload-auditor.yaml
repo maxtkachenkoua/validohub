@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-api-payload-auditor
+kind: tool
+module: validohub
+country: VE
+category: developer-tools
+status: active
+name:
+  en: "Venezuelan API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"VE\",\"rif\":\"J-12345678-9\",\"pagoMovil\":\"+584121234567\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-form-field-auditor, venezuela-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: CL
+category: developer-tools
+status: active
+name:
+  en: "Chilean Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CL\",\"rut\":\"76.123.456-7\",\"account\":\"0123-12345678\",\"amount\":\"1.234\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-run-validator, chile-rut-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

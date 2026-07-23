@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-cuil-social-insurance-helper
+kind: tool
+module: validohub
+country: AR
+category: national-identifiers
+status: active
+name:
+  en: "Argentine CUIL Helper"
+summary:
+  en: "Split CUIL evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "20-30123456-7"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-company-onboarding-auditor, argentina-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine CUIL Helper | ValidoHub"
+  description:
+    en: "Split CUIL evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

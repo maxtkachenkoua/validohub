@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-postal-code-validator
+kind: tool
+module: validohub
+country: EC
+category: address
+status: active
+name:
+  en: "Ecuadorian Postal Code Validator"
+summary:
+  en: "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "170150 Quito"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-address-normalizer, ecuador-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."

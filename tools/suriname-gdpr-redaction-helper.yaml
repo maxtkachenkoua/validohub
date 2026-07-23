@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: SR
+category: privacy
+status: active
+name:
+  en: "Surinamese personal-data protection Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SR\",\"tax\":\"123456\",\"account\":\"001-123456789\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-pii-masker, suriname-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese personal-data protection Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

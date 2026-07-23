@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-api-payload-auditor
+kind: tool
+module: validohub
+country: CL
+category: developer-tools
+status: active
+name:
+  en: "Chilean API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CL\",\"rut\":\"76.123.456-7\",\"account\":\"0123-12345678\",\"amount\":\"1.234\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-form-field-auditor, chile-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."

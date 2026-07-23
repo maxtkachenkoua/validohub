@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-domestic-account-fixture-generator
+kind: tool
+module: validohub
+country: AR
+category: finance
+status: active
+name:
+  en: "Argentine Domestic Account Fixture Generator"
+summary:
+  en: "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ACG input"
+        required: true
+        placeholder:
+          en: "2850590940090418135201"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-bank-account-inspector, argentina-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine Domestic Account Fixture Generator | ValidoHub"
+  description:
+    en: "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."

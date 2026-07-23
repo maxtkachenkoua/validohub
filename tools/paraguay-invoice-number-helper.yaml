@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-invoice-number-helper
+kind: tool
+module: validohub
+country: PY
+category: tax
+status: active
+name:
+  en: "Paraguayan Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 PY 80012345-6"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-e-invoicing-readiness-checker, paraguay-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: AR
+category: privacy
+status: active
+name:
+  en: "Argentine Ley 25.326 / AAIP Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AR\",\"cuit\":\"30-12345678-9\",\"cbu\":\"2850590940090418135201\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-pii-masker, argentina-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine Ley 25.326 / AAIP Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

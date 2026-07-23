@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-id-number-validator
+kind: tool
+module: validohub
+country: SR
+category: national-identifiers
+status: active
+name:
+  en: "Surinamese ID number Validator"
+summary:
+  en: "Validate ID number shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "AB123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-company-registry-number-validator, suriname-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese ID number Validator | ValidoHub"
+  description:
+    en: "Validate ID number shape, split date/control/body evidence, and prepare privacy-safe debugging output."

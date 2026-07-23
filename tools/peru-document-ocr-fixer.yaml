@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-document-ocr-fixer
+kind: tool
+module: validohub
+country: PE
+category: documents
+status: active
+name:
+  en: "Peruvian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "12345678 PE RUC 20123456789 PE-CCI-002-12345678901234567890 15001 Lima"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-gdpr-redaction-helper, peru-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

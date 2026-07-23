@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-business-register-readiness-helper
+kind: tool
+module: validohub
+country: EC
+category: government
+status: active
+name:
+  en: "Ecuadorian Supercias / SRI Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Supercias / SRI lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "1790012345001 EC RUC 1790012345001 Av. Amazonas N34-123, 170150 Quito"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-id-card-format-helper, ecuador-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian Supercias / SRI Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Supercias / SRI lookup or company registry workflow."

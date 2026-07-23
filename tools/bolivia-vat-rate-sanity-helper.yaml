@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bolivia-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: BO
+category: tax
+status: active
+name:
+  en: "Bolivian VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bolivia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "IVA / NIT 20% base 1.234,56 BOB"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bolivia-vat-return-field-helper, bolivia-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bolivian VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

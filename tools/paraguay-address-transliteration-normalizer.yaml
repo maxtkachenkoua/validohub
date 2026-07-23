@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: PY
+category: address
+status: active
+name:
+  en: "Paraguayan Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Mariscal Lopez 123, 1209 Asuncion"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-region-code-mapper, paraguay-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

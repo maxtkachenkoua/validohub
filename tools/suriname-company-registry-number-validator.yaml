@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-company-registry-number-validator
+kind: tool
+module: validohub
+country: SR
+category: national-identifiers
+status: active
+name:
+  en: "Surinamese company registry number Validator"
+summary:
+  en: "Inspect company registry number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "SR-CO-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-vat-id-validator, suriname-customs-tax-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese company registry number Validator | ValidoHub"
+  description:
+    en: "Inspect company registry number structure, registry-style prefixes, control digits, and official lookup boundaries."

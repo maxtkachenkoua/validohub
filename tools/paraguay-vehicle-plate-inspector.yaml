@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-vehicle-plate-inspector
+kind: tool
+module: validohub
+country: PY
+category: transport
+status: active
+name:
+  en: "Paraguayan Vehicle Plate Inspector"
+summary:
+  en: "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PLATE input"
+        required: true
+        placeholder:
+          en: "ABC123"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-vin-validator, paraguay-vehicle-data-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Vehicle Plate Inspector | ValidoHub"
+  description:
+    en: "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."

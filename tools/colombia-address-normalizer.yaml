@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-address-normalizer
+kind: tool
+module: validohub
+country: CO
+category: address
+status: active
+name:
+  en: "Colombian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Carrera 7 # 12-34, 110111 Bogota"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-address-transliteration-normalizer, colombia-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

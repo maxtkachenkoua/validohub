@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bolivia-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: BO
+category: tax
+status: active
+name:
+  en: "Bolivian factura electronica / CUF Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bolivia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BO\",\"nit\":\"1023459028\",\"account\":\"001-1234567890\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bolivia-tax-authority-handoff-helper, bolivia-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bolivian factura electronica / CUF Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

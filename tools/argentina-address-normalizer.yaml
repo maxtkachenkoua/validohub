@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-address-normalizer
+kind: tool
+module: validohub
+country: AR
+category: address
+status: active
+name:
+  en: "Argentine Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Av. Corrientes 1234, C1043 Buenos Aires"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-address-transliteration-normalizer, argentina-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

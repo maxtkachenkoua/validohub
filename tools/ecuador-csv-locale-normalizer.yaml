@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-csv-locale-normalizer
+kind: tool
+module: validohub
+country: EC
+category: developer-tools
+status: active
+name:
+  en: "Ecuadorian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Ecuador decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 USD;21/07/2026;EC RUC 1790012345001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-slug-normalizer, ecuador-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Ecuador decimal, date, postal, phone, tax, and banking fields."

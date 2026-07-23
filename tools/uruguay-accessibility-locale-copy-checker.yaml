@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: UY
+category: localization
+status: active
+name:
+  en: "Uruguayan Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "Cedula de identidad input, codigo postal input, amount 1.234,56 UYU"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-support-ticket-scrubber, uruguay-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

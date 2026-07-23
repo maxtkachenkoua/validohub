@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-regex-pack-helper
+kind: tool
+module: validohub
+country: GY
+category: developer-tools
+status: active
+name:
+  en: "Guyanese Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "TIN / NIS company registration number postal/address reference  GY-BANK-001-123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-api-payload-auditor, guyana-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-domestic-account-validator
+kind: tool
+module: validohub
+country: EC
+category: finance
+status: active
+name:
+  en: "Ecuadorian Domestic Bank Account Validator"
+summary:
+  en: "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ACCT input"
+        required: true
+        placeholder:
+          en: "010-1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-domestic-account-fixture-generator, ecuador-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian Domestic Bank Account Validator | ValidoHub"
+  description:
+    en: "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."

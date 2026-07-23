@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-ruc-validator
+kind: tool
+module: validohub
+country: PY
+category: national-identifiers
+status: active
+name:
+  en: "Paraguayan RUC Validator"
+summary:
+  en: "Inspect RUC structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "80012345-6"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-vat-id-validator, paraguay-customs-tax-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan RUC Validator | ValidoHub"
+  description:
+    en: "Inspect RUC structure, registry-style prefixes, control digits, and official lookup boundaries."

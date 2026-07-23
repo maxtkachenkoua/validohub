@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-debit-authorization-helper
+kind: tool
+module: validohub
+country: GY
+category: finance
+status: active
+name:
+  en: "Guyanese Debit Authorization Helper"
+summary:
+  en: "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DEBIT input"
+        required: true
+        placeholder:
+          en: "MANDATE-2026-001 GY-BANK-001-123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-payment-reference-helper, guyana-remittance-text-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese Debit Authorization Helper | ValidoHub"
+  description:
+    en: "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-support-ticket-scrubber
+kind: tool
+module: validohub
+country: CL
+category: privacy
+status: active
+name:
+  en: "Chilean Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 12.345.678-5, CL-BANK-0123-12345678, Av. Providencia 1234, 8320000 Santiago"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-integration-smoke-test-builder, chile-run-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

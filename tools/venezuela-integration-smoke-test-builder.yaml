@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: VE
+category: developer-tools
+status: active
+name:
+  en: "Venezuelan Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"VE\",\"rif\":\"J-12345678-9\",\"pagoMovil\":\"+584121234567\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-cedula-validator, venezuela-rif-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

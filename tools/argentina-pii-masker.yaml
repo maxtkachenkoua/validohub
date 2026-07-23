@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-pii-masker
+kind: tool
+module: validohub
+country: AR
+category: privacy
+status: active
+name:
+  en: "Argentine PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "30123456 +54 9 11 2345 6789 CBU 2850590940090418135201"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-personal-data-fixture-generator, argentina-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

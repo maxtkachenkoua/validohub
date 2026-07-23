@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-form-field-auditor
+kind: tool
+module: validohub
+country: UY
+category: developer-tools
+status: active
+name:
+  en: "Uruguayan Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=UY RUT 210123456789&postal=11000 Montevideo&phone=+598 94 123 456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-locale-number-parser, uruguay-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

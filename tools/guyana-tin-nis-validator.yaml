@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-tin-nis-validator
+kind: tool
+module: validohub
+country: GY
+category: national-identifiers
+status: active
+name:
+  en: "Guyanese TIN / NIS Validator"
+summary:
+  en: "Validate TIN / NIS shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-company-registration-number-validator, guyana-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese TIN / NIS Validator | ValidoHub"
+  description:
+    en: "Validate TIN / NIS shape, split date/control/body evidence, and prepare privacy-safe debugging output."

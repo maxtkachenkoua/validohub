@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-rif-validator
+kind: tool
+module: validohub
+country: VE
+category: national-identifiers
+status: active
+name:
+  en: "Venezuelan RIF Validator"
+summary:
+  en: "Inspect RIF structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "J-12345678-9"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-vat-id-validator, venezuela-customs-tax-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan RIF Validator | ValidoHub"
+  description:
+    en: "Inspect RIF structure, registry-style prefixes, control digits, and official lookup boundaries."

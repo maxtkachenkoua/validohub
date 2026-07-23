@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-business-register-readiness-helper
+kind: tool
+module: validohub
+country: PE
+category: government
+status: active
+name:
+  en: "Peruvian SUNARP / SUNAT Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated SUNARP / SUNAT lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "20123456789 PE RUC 20123456789 Av. Larco 123, Miraflores, 15074 Lima"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-id-card-format-helper, peru-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian SUNARP / SUNAT Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated SUNARP / SUNAT lookup or company registry workflow."

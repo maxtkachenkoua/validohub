@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-customs-declaration-helper
+kind: tool
+module: validohub
+country: CL
+category: government
+status: active
+name:
+  en: "Chilean Customs Declaration Helper"
+summary:
+  en: "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "CL 76.123.456-7 HS 8471 1.234 CLP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-postal-tracking-helper, chile-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."

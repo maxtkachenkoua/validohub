@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-postal-code-validator
+kind: tool
+module: validohub
+country: PY
+category: address
+status: active
+name:
+  en: "Paraguayan Postal Code Validator"
+summary:
+  en: "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "1209 Asuncion"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-address-normalizer, paraguay-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."

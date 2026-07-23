@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-domestic-account-validator
+kind: tool
+module: validohub
+country: CO
+category: finance
+status: active
+name:
+  en: "Colombian Domestic Bank Account Validator"
+summary:
+  en: "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ACCT input"
+        required: true
+        placeholder:
+          en: "007-123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-domestic-account-fixture-generator, colombia-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian Domestic Bank Account Validator | ValidoHub"
+  description:
+    en: "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."

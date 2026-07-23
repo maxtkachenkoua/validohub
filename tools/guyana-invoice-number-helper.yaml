@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-invoice-number-helper
+kind: tool
+module: validohub
+country: GY
+category: tax
+status: active
+name:
+  en: "Guyanese Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 GY TIN 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-e-invoicing-readiness-checker, guyana-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

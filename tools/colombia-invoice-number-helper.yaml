@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-invoice-number-helper
+kind: tool
+module: validohub
+country: CO
+category: tax
+status: active
+name:
+  en: "Colombian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 CO 900.123.456-7"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-e-invoicing-readiness-checker, colombia-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CO
+slug: colombia
+name:
+  en: Colombia
+region: South America
+languages:
+  - es
+currency: COP
+relatedCountries:
+  - EC
+  - PE
+  - VE

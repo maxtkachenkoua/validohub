@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: PE
+category: tax
+status: active
+name:
+  en: "Peruvian comprobante electronico / CPE Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PE\",\"ruc\":\"20123456789\",\"cci\":\"00212345678901234567890\",\"amount\":\"1,234.56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-tax-authority-handoff-helper, peru-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian comprobante electronico / CPE Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

@@ -1,0 +1,642 @@
+{
+  "id": "colombia",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/colombia-outline.svg",
+    "outlineAlt": "Colombia country outline",
+    "mapSrc": "/assets/images/countries/colombia-location.svg",
+    "mapAlt": "World map with Colombia location marker",
+    "mapMarker": {
+      "x": 43,
+      "y": 53,
+      "label": "Colombia"
+    },
+    "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+  },
+  "catalog": {
+    "id": "colombia",
+    "flag": "🇨🇴",
+    "name": "Colombia",
+    "nativeName": "Colombia",
+    "iso2": "CO",
+    "iso3": "COL",
+    "continent": "South America",
+    "region": "South America",
+    "language": "Spanish",
+    "currency": "COP",
+    "currencyName": "Colombian peso",
+    "status": "available",
+    "summary": "Premium Colombia developer hub for Cedula, NIT, RUT, DIAN CUFE, postal code, phone, PSE reference, ACH Colombia, Nequi/Daviplata handoff, bank account, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "Cedula",
+      "NIT",
+      "RUT",
+      "DIAN CUFE",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "PSE reference",
+      "ACH Colombia",
+      "Nequi/Daviplata handoff",
+      "bank account"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Colombian Cedula de ciudadania Validator",
+      "Colombian NIT Validator",
+      "Colombian IVA / NIT Tax ID Validator",
+      "Colombian Customs / Tax Identifier Helper",
+      "Colombian Cedula Helper",
+      "Colombian Company Onboarding Auditor",
+      "Colombian RUES / Camara de Comercio Readiness Helper",
+      "Colombian ID Card Format Helper",
+      "Colombian Passport Number Helper",
+      "Colombian MRZ / Passport Parser",
+      "Colombian Domestic Bank Account Validator",
+      "Colombian Domestic Account Fixture Generator",
+      "Colombian Domestic Bank Account Inspector",
+      "Colombian BIC / SWIFT Inspector",
+      "Colombian Domestic Transfer Helper",
+      "Colombian Debit Authorization Helper",
+      "Colombian PSE / bank transfer Reference Helper",
+      "Colombian Remittance Text Builder",
+      "Colombian Payment Reconciliation Helper",
+      "Colombian Bank Statement Parser",
+      "Colombian Masked Bank Account Formatter",
+      "Colombian COP Decimal Currency Formatter",
+      "Colombian VAT Rate Sanity Helper",
+      "Colombian VAT Return Field Helper",
+      "Colombian Invoice Number Helper",
+      "Colombian factura electronica / CUFE Readiness Checker",
+      "Colombian Tax Authority Handoff Helper",
+      "Colombian Accounting Audit Trail Checklist Helper",
+      "Colombian Postal Code Validator",
+      "Colombian Address Normalizer",
+      "Colombian Address Transliteration Normalizer",
+      "Colombian Region / Province Code Mapper",
+      "Colombian Municipality Code Inspector",
+      "Colombian Phone Number Validator",
+      "Colombian Phone E.164 Formatter",
+      "Colombian Date Locale Formatter",
+      "Colombian CSV Locale Normalizer",
+      "Colombian Slug Normalizer",
+      "Colombian Document OCR Fixer",
+      "Colombian Ley 1581 / SIC Redaction Helper",
+      "Colombian PII Masker",
+      "Colombian Personal Data Fixture Helper",
+      "Colombian Driving Licence Format Helper",
+      "Colombian Residence Permit Format Helper",
+      "Colombian Health Card Format Helper",
+      "Colombian Vehicle Plate Inspector",
+      "Colombian VIN Validator",
+      "Colombian Vehicle Data Redaction Helper",
+      "Colombian Customs Declaration Helper",
+      "Colombian Postal Tracking Helper",
+      "Colombian Data Quality Workbench",
+      "Colombian JSON Fixture Helper",
+      "Colombian Regex Pack Helper",
+      "Colombian API Payload Auditor",
+      "Colombian Form Field Auditor",
+      "Colombian Locale Number Parser",
+      "Colombian Calendar Week Helper",
+      "Colombian Company Suffix Normalizer",
+      "Colombian Procurement Identifier Helper",
+      "Colombian Locale Copy Checker",
+      "Colombian Support Ticket Scrubber",
+      "Colombian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live RUES / Camara de Comercio lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 43,
+      "y": 53
+    },
+    "searchHints": [
+      "CEDULA",
+      "NIT",
+      "RUT",
+      "DIAN",
+      "CUFE",
+      "PSE"
+    ]
+  },
+  "hub": {
+    "flag": "🇨🇴",
+    "name": "Colombia",
+    "badge": "Premium Colombia developer suite",
+    "description": "Developer intelligence and browser-only workbenches for colombian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Colombia",
+      "population": "approximately 52M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Bogota",
+      "continent": "South America",
+      "region": "South America / Andean Community",
+      "languages": "Spanish",
+      "currency": "Colombian peso",
+      "currencyCode": "COP",
+      "callingCode": "+57",
+      "internetTld": ".co",
+      "drivingSide": "Right",
+      "iso2": "CO",
+      "iso3": "COL",
+      "isoNumeric": "170",
+      "locale": "es-CO",
+      "icuLocale": "es_CO",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Dot (.)",
+      "addressFormat": "Street, number, postal code, locality, Colombia",
+      "postalCodeFormat": "codigo postal",
+      "primaryTimeZone": "America/Bogota (COT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "123",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "es-CO",
+      "cldrLocale": "es_CO",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type A / Type B",
+      "voltage": "110V",
+      "frequency": "60Hz"
+    },
+    "visualIdentity": {
+      "countryId": "colombia",
+      "outlineLabel": "Colombia outline",
+      "mapLabel": "Colombia in the world",
+      "continentBadge": "South America",
+      "flagLabel": "Colombia flag",
+      "heroAccentPrimary": "252 209 22",
+      "heroAccentSecondary": "0 56 147",
+      "heroAccentTertiary": "206 17 38"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Cedula de ciudadania and NIT",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "IVA / NIT and payments",
+        "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Colombia registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /colombia/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Dot (.) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Colombian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "RUES / Camara de Comercio",
+        "text": "Official business registry or company lookup remains the source of truth for Colombia.",
+        "status": "official boundary"
+      },
+      {
+        "title": "IVA / NIT",
+        "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+        "status": "official boundary"
+      },
+      {
+        "title": "Ley 1581 / SIC",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "Cedula, NIT, RUT, DIAN CUFE, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "PSE reference, ACH Colombia, Nequi/Daviplata handoff, bank account",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "es-CO / es_CO; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "COP amounts use Comma (,) and Dot (.).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "Cedula de ciudadania, NIT, codigo postal, phone, address, and domestic account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type A / Type B",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "110V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "60Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "Primary emergency number fixture; local alternatives may also exist."
+      }
+    ],
+    "searchHints": [
+      "CEDULA",
+      "NIT",
+      "RUT",
+      "DIAN",
+      "CUFE",
+      "PSE"
+    ],
+    "routes": [
+      {
+        "title": "Colombian Cedula de ciudadania Validator",
+        "href": "/en/colombia/colombia-cedula-de-ciudadania-validator/",
+        "text": "Validate Cedula de ciudadania shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Colombian NIT Validator",
+        "href": "/en/colombia/colombia-nit-validator/",
+        "text": "Inspect NIT structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Colombian IVA / NIT Tax ID Validator",
+        "href": "/en/colombia/colombia-vat-id-validator/",
+        "text": "Normalize IVA / NIT identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+      },
+      {
+        "title": "Colombian Customs / Tax Identifier Helper",
+        "href": "/en/colombia/colombia-customs-tax-identifier-helper/",
+        "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+      },
+      {
+        "title": "Colombian Cedula Helper",
+        "href": "/en/colombia/colombia-cedula-social-insurance-helper/",
+        "text": "Split Cedula evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Colombian Company Onboarding Auditor",
+        "href": "/en/colombia/colombia-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for NIT, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Colombian RUES / Camara de Comercio Readiness Helper",
+        "href": "/en/colombia/colombia-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated RUES / Camara de Comercio lookup or company registry workflow."
+      },
+      {
+        "title": "Colombian ID Card Format Helper",
+        "href": "/en/colombia/colombia-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Colombian Passport Number Helper",
+        "href": "/en/colombia/colombia-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Colombian MRZ / Passport Parser",
+        "href": "/en/colombia/colombia-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Colombian Domestic Bank Account Validator",
+        "href": "/en/colombia/colombia-domestic-account-validator/",
+        "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+      },
+      {
+        "title": "Colombian Domestic Account Fixture Generator",
+        "href": "/en/colombia/colombia-domestic-account-fixture-generator/",
+        "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+      },
+      {
+        "title": "Colombian Domestic Bank Account Inspector",
+        "href": "/en/colombia/colombia-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+      },
+      {
+        "title": "Colombian BIC / SWIFT Inspector",
+        "href": "/en/colombia/colombia-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Colombia banking integrations."
+      },
+      {
+        "title": "Colombian Domestic Transfer Helper",
+        "href": "/en/colombia/colombia-domestic-transfer-helper/",
+        "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+      },
+      {
+        "title": "Colombian Debit Authorization Helper",
+        "href": "/en/colombia/colombia-debit-authorization-helper/",
+        "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+      },
+      {
+        "title": "Colombian PSE / bank transfer Reference Helper",
+        "href": "/en/colombia/colombia-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Colombian Remittance Text Builder",
+        "href": "/en/colombia/colombia-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Colombian Payment Reconciliation Helper",
+        "href": "/en/colombia/colombia-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Colombian Bank Statement Parser",
+        "href": "/en/colombia/colombia-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Colombian Masked Bank Account Formatter",
+        "href": "/en/colombia/colombia-masked-bank-account-formatter/",
+        "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+      },
+      {
+        "title": "Colombian COP Decimal Currency Formatter",
+        "href": "/en/colombia/colombia-currency-decimal-formatter/",
+        "text": "Normalize COP amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Colombian VAT Rate Sanity Helper",
+        "href": "/en/colombia/colombia-vat-rate-sanity-helper/",
+        "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Colombian VAT Return Field Helper",
+        "href": "/en/colombia/colombia-vat-return-field-helper/",
+        "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Colombian Invoice Number Helper",
+        "href": "/en/colombia/colombia-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Colombian factura electronica / CUFE Readiness Checker",
+        "href": "/en/colombia/colombia-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Colombian Tax Authority Handoff Helper",
+        "href": "/en/colombia/colombia-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Colombian Accounting Audit Trail Checklist Helper",
+        "href": "/en/colombia/colombia-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+      },
+      {
+        "title": "Colombian Postal Code Validator",
+        "href": "/en/colombia/colombia-postal-code-validator/",
+        "text": "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Colombian Address Normalizer",
+        "href": "/en/colombia/colombia-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Colombian Address Transliteration Normalizer",
+        "href": "/en/colombia/colombia-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Colombian Region / Province Code Mapper",
+        "href": "/en/colombia/colombia-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Colombian Municipality Code Inspector",
+        "href": "/en/colombia/colombia-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Colombian Phone Number Validator",
+        "href": "/en/colombia/colombia-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Colombian Phone E.164 Formatter",
+        "href": "/en/colombia/colombia-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Colombian Date Locale Formatter",
+        "href": "/en/colombia/colombia-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Colombian CSV Locale Normalizer",
+        "href": "/en/colombia/colombia-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Colombia decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Colombian Slug Normalizer",
+        "href": "/en/colombia/colombia-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Colombian Document OCR Fixer",
+        "href": "/en/colombia/colombia-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Colombian Ley 1581 / SIC Redaction Helper",
+        "href": "/en/colombia/colombia-gdpr-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Colombian PII Masker",
+        "href": "/en/colombia/colombia-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Colombian Personal Data Fixture Helper",
+        "href": "/en/colombia/colombia-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Colombian Driving Licence Format Helper",
+        "href": "/en/colombia/colombia-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Colombian Residence Permit Format Helper",
+        "href": "/en/colombia/colombia-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Colombian Health Card Format Helper",
+        "href": "/en/colombia/colombia-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Colombian Vehicle Plate Inspector",
+        "href": "/en/colombia/colombia-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Colombian VIN Validator",
+        "href": "/en/colombia/colombia-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Colombian Vehicle Data Redaction Helper",
+        "href": "/en/colombia/colombia-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Colombian Customs Declaration Helper",
+        "href": "/en/colombia/colombia-customs-declaration-helper/",
+        "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Colombian Postal Tracking Helper",
+        "href": "/en/colombia/colombia-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Colombian Data Quality Workbench",
+        "href": "/en/colombia/colombia-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Colombian JSON Fixture Helper",
+        "href": "/en/colombia/colombia-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Colombian Regex Pack Helper",
+        "href": "/en/colombia/colombia-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Colombian API Payload Auditor",
+        "href": "/en/colombia/colombia-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Colombian Form Field Auditor",
+        "href": "/en/colombia/colombia-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Colombian Locale Number Parser",
+        "href": "/en/colombia/colombia-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Colombia."
+      },
+      {
+        "title": "Colombian Calendar Week Helper",
+        "href": "/en/colombia/colombia-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Colombian Company Suffix Normalizer",
+        "href": "/en/colombia/colombia-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Colombian Procurement Identifier Helper",
+        "href": "/en/colombia/colombia-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Colombian Locale Copy Checker",
+        "href": "/en/colombia/colombia-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Colombian Support Ticket Scrubber",
+        "href": "/en/colombia/colombia-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Colombian Integration Smoke Test Builder",
+        "href": "/en/colombia/colombia-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

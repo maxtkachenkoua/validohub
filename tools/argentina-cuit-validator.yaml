@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-cuit-validator
+kind: tool
+module: validohub
+country: AR
+category: national-identifiers
+status: active
+name:
+  en: "Argentine CUIT Validator"
+summary:
+  en: "Inspect CUIT structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "30-12345678-9"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-vat-id-validator, argentina-customs-tax-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine CUIT Validator | ValidoHub"
+  description:
+    en: "Inspect CUIT structure, registry-style prefixes, control digits, and official lookup boundaries."

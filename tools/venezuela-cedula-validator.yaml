@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-cedula-validator
+kind: tool
+module: validohub
+country: VE
+category: national-identifiers
+status: active
+name:
+  en: "Venezuelan Cedula Validator"
+summary:
+  en: "Validate Cedula shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "V-12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-rif-validator, venezuela-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan Cedula Validator | ValidoHub"
+  description:
+    en: "Validate Cedula shape, split date/control/body evidence, and prepare privacy-safe debugging output."

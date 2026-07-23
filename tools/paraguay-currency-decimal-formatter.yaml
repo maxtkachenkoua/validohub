@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-currency-decimal-formatter
+kind: tool
+module: validohub
+country: PY
+category: finance
+status: active
+name:
+  en: "Paraguayan PYG Decimal Currency Formatter"
+summary:
+  en: "Normalize PYG amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1.234.567 PYG"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-vat-rate-sanity-helper, paraguay-vat-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan PYG Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize PYG amount strings, decimal separators, grouping, and API-safe numeric previews."

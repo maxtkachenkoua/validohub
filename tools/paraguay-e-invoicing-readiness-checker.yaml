@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: PY
+category: tax
+status: active
+name:
+  en: "Paraguayan factura electronica / SIFEN Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PY\",\"ruc\":\"80012345-6\",\"sifen\":\"001-001-0000001\",\"amount\":\"1.234.567\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-tax-authority-handoff-helper, paraguay-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan factura electronica / SIFEN Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

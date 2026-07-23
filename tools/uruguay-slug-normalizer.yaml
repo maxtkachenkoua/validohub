@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-slug-normalizer
+kind: tool
+module: validohub
+country: UY
+category: developer-tools
+status: active
+name:
+  en: "Uruguayan Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Uruguay sample company 18 de Julio 1234, 11000 Montevideo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-document-ocr-fixer, uruguay-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

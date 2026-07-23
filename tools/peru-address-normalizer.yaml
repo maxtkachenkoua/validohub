@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-address-normalizer
+kind: tool
+module: validohub
+country: PE
+category: address
+status: active
+name:
+  en: "Peruvian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Av. Larco 123, Miraflores, 15074 Lima"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-address-transliteration-normalizer, peru-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

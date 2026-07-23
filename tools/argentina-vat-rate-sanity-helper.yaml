@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: AR
+category: tax
+status: active
+name:
+  en: "Argentine VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "IVA / CUIT 20% base 1.234,56 ARS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-vat-return-field-helper, argentina-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

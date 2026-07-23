@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: GY
+category: tax
+status: active
+name:
+  en: "Guyanese VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "VAT / TIN 20% base 1,234.56 GYD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-vat-return-field-helper, guyana-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

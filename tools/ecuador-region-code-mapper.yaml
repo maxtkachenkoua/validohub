@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-region-code-mapper
+kind: tool
+module: validohub
+country: EC
+category: address
+status: active
+name:
+  en: "Ecuadorian Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "170150 Quito"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-municipality-code-inspector, ecuador-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

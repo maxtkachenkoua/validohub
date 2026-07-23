@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bolivia-form-field-auditor
+kind: tool
+module: validohub
+country: BO
+category: developer-tools
+status: active
+name:
+  en: "Bolivian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bolivia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=BO NIT 1023459028&postal=La Paz 0000&phone=+591 71234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bolivia-locale-number-parser, bolivia-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bolivian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

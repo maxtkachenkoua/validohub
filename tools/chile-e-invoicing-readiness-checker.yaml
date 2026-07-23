@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: CL
+category: tax
+status: active
+name:
+  en: "Chilean DTE / folio tributario Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CL\",\"rut\":\"76.123.456-7\",\"account\":\"0123-12345678\",\"amount\":\"1.234\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-tax-authority-handoff-helper, chile-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean DTE / folio tributario Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

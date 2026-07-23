@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bolivia-pii-masker
+kind: tool
+module: validohub
+country: BO
+category: privacy
+status: active
+name:
+  en: "Bolivian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bolivia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1234567 LP +591 71234567 BO-BANK-001-1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bolivia-personal-data-fixture-generator, bolivia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bolivian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

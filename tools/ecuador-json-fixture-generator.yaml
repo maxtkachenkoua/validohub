@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-json-fixture-generator
+kind: tool
+module: validohub
+country: EC
+category: developer-tools
+status: active
+name:
+  en: "Ecuadorian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"EC\",\"ruc\":\"1790012345001\",\"claveAcceso\":\"2107202601179001234500120010010000000011234567819\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-regex-pack-helper, ecuador-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

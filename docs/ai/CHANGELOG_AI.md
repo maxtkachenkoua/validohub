@@ -1,3 +1,16 @@
+
+## 2026-07-23 - Global Tools Deep Premium Lens V1
+
+- Upgraded the shared Batch 4-7 global runtime in `assets/js/tools/generic-suite.js` from mostly generic static signal/risk counting into domain-specific browser-only lenses.
+- Added specialized cards, field breakdown rows, pipeline checks, domain-risk names, and developer JSON for Kubernetes YAML, Dockerfile, GitHub Actions, Terraform, CORS, Accessibility, Prompt Injection, RAG chunking, JSONL fine-tune, HTML SEO, and browser storage workflows.
+- Kept Valido Engine untouched and documented the hardening in Current State and Workbench Registry.
+
+## 2026-07-23 - South America Premium Batch V1
+
+- Added full-premium South America coverage excluding Brazil: Argentina (argentina), Bolivia (bolivia), Chile (chile), Colombia (colombia), Ecuador (ecuador), Guyana (guyana), Paraguay (paraguay), Peru (peru), Suriname (suriname), Uruguay (uruguay), Venezuela (venezuela).
+- Used Country Suite Factory V1, domestic LATAM banking/payment terminology, runtime localization, field breakdowns, same-country related links, and official/live lookup boundaries.
+- Added `docs/product/SOUTH_AMERICA_PREMIUM_SUITE_SPEC.md` as the batch contract.
+
 ## 2026-07-23 - Global Premium Tools Batch V2
 
 - Added fifteen new premium global workbench definitions for JSON Schema, OpenAPI, YAML/TOML, XML/XPath, CSV profiling, SQL query risk inspection, cron expressions, regex explanation/generation, date/timezone conversion, color contrast/tokens, Markdown/MDX, GraphQL, email/domain parsing, user-agent/client hints, and HTTP security headers.

@@ -40,6 +40,18 @@
       },
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
+    "argentina": {
+      "outlineSrc": "/assets/images/countries/argentina-outline.svg",
+      "outlineAlt": "Argentina country outline",
+      "mapSrc": "/assets/images/countries/argentina-location.svg",
+      "mapAlt": "World map with Argentina location marker",
+      "mapMarker": {
+        "x": 55,
+        "y": 77,
+        "label": "Argentina"
+      },
+      "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+    },
     "austria": {
       "outlineSrc": "/assets/images/countries/austria-outline.svg",
       "outlineAlt": "Austria country outline",
@@ -61,6 +73,18 @@
         "x": 47,
         "y": 52,
         "label": "Belgium"
+      },
+      "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+    },
+    "bolivia": {
+      "outlineSrc": "/assets/images/countries/bolivia-outline.svg",
+      "outlineAlt": "Bolivia country outline",
+      "mapSrc": "/assets/images/countries/bolivia-location.svg",
+      "mapAlt": "World map with Bolivia location marker",
+      "mapMarker": {
+        "x": 51,
+        "y": 65,
+        "label": "Bolivia"
       },
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
@@ -97,6 +121,30 @@
         "x": 56,
         "y": 63,
         "label": "Bulgaria"
+      },
+      "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+    },
+    "chile": {
+      "outlineSrc": "/assets/images/countries/chile-outline.svg",
+      "outlineAlt": "Chile country outline",
+      "mapSrc": "/assets/images/countries/chile-location.svg",
+      "mapAlt": "World map with Chile location marker",
+      "mapMarker": {
+        "x": 49,
+        "y": 74,
+        "label": "Chile"
+      },
+      "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+    },
+    "colombia": {
+      "outlineSrc": "/assets/images/countries/colombia-outline.svg",
+      "outlineAlt": "Colombia country outline",
+      "mapSrc": "/assets/images/countries/colombia-location.svg",
+      "mapAlt": "World map with Colombia location marker",
+      "mapMarker": {
+        "x": 43,
+        "y": 53,
+        "label": "Colombia"
       },
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
@@ -145,6 +193,18 @@
         "x": 51,
         "y": 45,
         "label": "Denmark"
+      },
+      "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+    },
+    "ecuador": {
+      "outlineSrc": "/assets/images/countries/ecuador-outline.svg",
+      "outlineAlt": "Ecuador country outline",
+      "mapSrc": "/assets/images/countries/ecuador-location.svg",
+      "mapAlt": "World map with Ecuador location marker",
+      "mapMarker": {
+        "x": 40,
+        "y": 58,
+        "label": "Ecuador"
       },
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
@@ -205,6 +265,18 @@
         "x": 56,
         "y": 67,
         "label": "Greece"
+      },
+      "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+    },
+    "guyana": {
+      "outlineSrc": "/assets/images/countries/guyana-outline.svg",
+      "outlineAlt": "Guyana country outline",
+      "mapSrc": "/assets/images/countries/guyana-location.svg",
+      "mapAlt": "World map with Guyana location marker",
+      "mapMarker": {
+        "x": 49,
+        "y": 47,
+        "label": "Guyana"
       },
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
@@ -388,6 +460,30 @@
       },
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
+    "paraguay": {
+      "outlineSrc": "/assets/images/countries/paraguay-outline.svg",
+      "outlineAlt": "Paraguay country outline",
+      "mapSrc": "/assets/images/countries/paraguay-location.svg",
+      "mapAlt": "World map with Paraguay location marker",
+      "mapMarker": {
+        "x": 54,
+        "y": 68,
+        "label": "Paraguay"
+      },
+      "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+    },
+    "peru": {
+      "outlineSrc": "/assets/images/countries/peru-outline.svg",
+      "outlineAlt": "Peru country outline",
+      "mapSrc": "/assets/images/countries/peru-location.svg",
+      "mapAlt": "World map with Peru location marker",
+      "mapMarker": {
+        "x": 43,
+        "y": 64,
+        "label": "Peru"
+      },
+      "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+    },
     "poland": {
       "outlineSrc": "/assets/images/countries/poland-outline.svg",
       "outlineAlt": "Poland country outline",
@@ -484,6 +580,18 @@
       },
       "source": "Simplified public-domain geographic reference"
     },
+    "suriname": {
+      "outlineSrc": "/assets/images/countries/suriname-outline.svg",
+      "outlineAlt": "Suriname country outline",
+      "mapSrc": "/assets/images/countries/suriname-location.svg",
+      "mapAlt": "World map with Suriname location marker",
+      "mapMarker": {
+        "x": 51,
+        "y": 46,
+        "label": "Suriname"
+      },
+      "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+    },
     "sweden": {
       "outlineSrc": "/assets/images/countries/sweden-outline.svg",
       "outlineAlt": "Sweden country outline",
@@ -532,6 +640,18 @@
       },
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     },
+    "uruguay": {
+      "outlineSrc": "/assets/images/countries/uruguay-outline.svg",
+      "outlineAlt": "Uruguay country outline",
+      "mapSrc": "/assets/images/countries/uruguay-location.svg",
+      "mapAlt": "World map with Uruguay location marker",
+      "mapMarker": {
+        "x": 58,
+        "y": 79,
+        "label": "Uruguay"
+      },
+      "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+    },
     "vatican-city": {
       "outlineSrc": "/assets/images/countries/vatican-city-outline.svg",
       "outlineAlt": "Vatican City country outline",
@@ -541,6 +661,18 @@
         "x": 51,
         "y": 64,
         "label": "Vatican City"
+      },
+      "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+    },
+    "venezuela": {
+      "outlineSrc": "/assets/images/countries/venezuela-outline.svg",
+      "outlineAlt": "Venezuela country outline",
+      "mapSrc": "/assets/images/countries/venezuela-location.svg",
+      "mapAlt": "World map with Venezuela location marker",
+      "mapMarker": {
+        "x": 48,
+        "y": 49,
+        "label": "Venezuela"
       },
       "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
     }
@@ -1565,6 +1697,515 @@
         }
       ]
     },
+    "argentina": {
+      "flag": "🇦🇷",
+      "name": "Argentina",
+      "badge": "Premium Argentina developer suite",
+      "description": "Developer intelligence and browser-only workbenches for argentine identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Argentina",
+        "population": "approximately 46M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Buenos Aires",
+        "continent": "South America",
+        "region": "South America / MERCOSUR",
+        "languages": "Spanish",
+        "currency": "Argentine peso",
+        "currencyCode": "ARS",
+        "callingCode": "+54",
+        "internetTld": ".ar",
+        "drivingSide": "Right",
+        "iso2": "AR",
+        "iso3": "ARG",
+        "isoNumeric": "032",
+        "locale": "es-AR",
+        "icuLocale": "es_AR",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street, number, postal code, locality, Argentina",
+        "postalCodeFormat": "codigo postal argentino",
+        "primaryTimeZone": "America/Argentina/Buenos_Aires (ART)",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "911",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "es-AR",
+        "cldrLocale": "es_AR",
+        "metricVsImperial": "Metric-first",
+        "powerPlugTypes": "Type C / Type I",
+        "voltage": "220V",
+        "frequency": "50Hz"
+      },
+      "visualIdentity": {
+        "countryId": "argentina",
+        "outlineLabel": "Argentina outline",
+        "mapLabel": "Argentina in the world",
+        "continentBadge": "South America",
+        "flagLabel": "Argentina flag",
+        "heroAccentPrimary": "116 172 223",
+        "heroAccentSecondary": "255 255 255",
+        "heroAccentTertiary": "246 180 14"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "DNI and CUIT",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "IVA / CUIT and payments",
+          "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Argentina registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /argentina/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Dot (.) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Argentine examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "AFIP / company registry",
+          "text": "Official business registry or company lookup remains the source of truth for Argentina.",
+          "status": "official boundary"
+        },
+        {
+          "title": "IVA / CUIT",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "Ley 25.326 / AAIP",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "DNI, CUIT, CUIL, CBU/CVU, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "CBU, CVU, Alias CBU, DEBIN, Mercado Pago CVU, QR interoperable payments",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "es-AR / es_AR; date DD/MM/YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "ARS amounts use Comma (,) and Dot (.).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "DNI, CUIT, codigo postal argentino, phone, address, and domestic account fields need local labels.",
+          "status": "available"
+        }
+      ],
+      "technicalStandards": [
+        {
+          "title": "Plug types",
+          "value": "Type C / Type I",
+          "text": "Public utility fixture for travel, QA, and onboarding copy."
+        },
+        {
+          "title": "Electrical voltage",
+          "value": "220V",
+          "text": "Common mains voltage used by country-profile fixtures."
+        },
+        {
+          "title": "Grid frequency",
+          "value": "50Hz",
+          "text": "Common grid frequency for technical defaults."
+        },
+        {
+          "title": "Emergency number",
+          "value": "112",
+          "text": "Primary emergency number fixture; local alternatives may also exist."
+        }
+      ],
+      "searchHints": [
+        "DNI",
+        "CUIT",
+        "CUIL",
+        "CBU",
+        "CVU",
+        "CAE"
+      ],
+      "routes": [
+        {
+          "title": "Argentine DNI Validator",
+          "href": "/en/argentina/argentina-dni-validator/",
+          "text": "Validate DNI shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Argentine CUIT Validator",
+          "href": "/en/argentina/argentina-cuit-validator/",
+          "text": "Inspect CUIT structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Argentine IVA / CUIT Tax ID Validator",
+          "href": "/en/argentina/argentina-vat-id-validator/",
+          "text": "Normalize IVA / CUIT identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+        },
+        {
+          "title": "Argentine Customs / Tax Identifier Helper",
+          "href": "/en/argentina/argentina-customs-tax-identifier-helper/",
+          "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+        },
+        {
+          "title": "Argentine CUIL Helper",
+          "href": "/en/argentina/argentina-cuil-social-insurance-helper/",
+          "text": "Split CUIL evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Argentine Company Onboarding Auditor",
+          "href": "/en/argentina/argentina-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for CUIT, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Argentine AFIP / company registry Readiness Helper",
+          "href": "/en/argentina/argentina-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated AFIP / company registry lookup or company registry workflow."
+        },
+        {
+          "title": "Argentine ID Card Format Helper",
+          "href": "/en/argentina/argentina-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Argentine Passport Number Helper",
+          "href": "/en/argentina/argentina-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Argentine MRZ / Passport Parser",
+          "href": "/en/argentina/argentina-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Argentine Domestic Bank Account Validator",
+          "href": "/en/argentina/argentina-domestic-account-validator/",
+          "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+        },
+        {
+          "title": "Argentine Domestic Account Fixture Generator",
+          "href": "/en/argentina/argentina-domestic-account-fixture-generator/",
+          "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+        },
+        {
+          "title": "Argentine Domestic Bank Account Inspector",
+          "href": "/en/argentina/argentina-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+        },
+        {
+          "title": "Argentine BIC / SWIFT Inspector",
+          "href": "/en/argentina/argentina-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Argentina banking integrations."
+        },
+        {
+          "title": "Argentine Domestic Transfer Helper",
+          "href": "/en/argentina/argentina-domestic-transfer-helper/",
+          "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+        },
+        {
+          "title": "Argentine Debit Authorization Helper",
+          "href": "/en/argentina/argentina-debit-authorization-helper/",
+          "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+        },
+        {
+          "title": "Argentine CBU / CVU / Alias Reference Helper",
+          "href": "/en/argentina/argentina-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Argentine Remittance Text Builder",
+          "href": "/en/argentina/argentina-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Argentine Payment Reconciliation Helper",
+          "href": "/en/argentina/argentina-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Argentine Bank Statement Parser",
+          "href": "/en/argentina/argentina-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Argentine Masked Bank Account Formatter",
+          "href": "/en/argentina/argentina-masked-bank-account-formatter/",
+          "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+        },
+        {
+          "title": "Argentine ARS Decimal Currency Formatter",
+          "href": "/en/argentina/argentina-currency-decimal-formatter/",
+          "text": "Normalize ARS amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Argentine VAT Rate Sanity Helper",
+          "href": "/en/argentina/argentina-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Argentine VAT Return Field Helper",
+          "href": "/en/argentina/argentina-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Argentine Invoice Number Helper",
+          "href": "/en/argentina/argentina-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Argentine Factura electronica / CAE Readiness Checker",
+          "href": "/en/argentina/argentina-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Argentine Tax Authority Handoff Helper",
+          "href": "/en/argentina/argentina-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Argentine Accounting Audit Trail Checklist Helper",
+          "href": "/en/argentina/argentina-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Argentine Postal Code Validator",
+          "href": "/en/argentina/argentina-postal-code-validator/",
+          "text": "Validate codigo postal argentino shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Argentine Address Normalizer",
+          "href": "/en/argentina/argentina-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Argentine Address Transliteration Normalizer",
+          "href": "/en/argentina/argentina-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Argentine Region / Province Code Mapper",
+          "href": "/en/argentina/argentina-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Argentine Municipality Code Inspector",
+          "href": "/en/argentina/argentina-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Argentine Phone Number Validator",
+          "href": "/en/argentina/argentina-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Argentine Phone E.164 Formatter",
+          "href": "/en/argentina/argentina-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Argentine Date Locale Formatter",
+          "href": "/en/argentina/argentina-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Argentine CSV Locale Normalizer",
+          "href": "/en/argentina/argentina-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Argentina decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Argentine Slug Normalizer",
+          "href": "/en/argentina/argentina-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Argentine Document OCR Fixer",
+          "href": "/en/argentina/argentina-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Argentine Ley 25.326 / AAIP Redaction Helper",
+          "href": "/en/argentina/argentina-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Argentine PII Masker",
+          "href": "/en/argentina/argentina-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Argentine Personal Data Fixture Helper",
+          "href": "/en/argentina/argentina-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Argentine Driving Licence Format Helper",
+          "href": "/en/argentina/argentina-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Argentine Residence Permit Format Helper",
+          "href": "/en/argentina/argentina-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Argentine Health Card Format Helper",
+          "href": "/en/argentina/argentina-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Argentine Vehicle Plate Inspector",
+          "href": "/en/argentina/argentina-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Argentine VIN Validator",
+          "href": "/en/argentina/argentina-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Argentine Vehicle Data Redaction Helper",
+          "href": "/en/argentina/argentina-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Argentine Customs Declaration Helper",
+          "href": "/en/argentina/argentina-customs-declaration-helper/",
+          "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Argentine Postal Tracking Helper",
+          "href": "/en/argentina/argentina-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Argentine Data Quality Workbench",
+          "href": "/en/argentina/argentina-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Argentine JSON Fixture Helper",
+          "href": "/en/argentina/argentina-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Argentine Regex Pack Helper",
+          "href": "/en/argentina/argentina-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Argentine API Payload Auditor",
+          "href": "/en/argentina/argentina-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Argentine Form Field Auditor",
+          "href": "/en/argentina/argentina-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Argentine Locale Number Parser",
+          "href": "/en/argentina/argentina-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Argentina."
+        },
+        {
+          "title": "Argentine Calendar Week Helper",
+          "href": "/en/argentina/argentina-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Argentine Company Suffix Normalizer",
+          "href": "/en/argentina/argentina-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Argentine Procurement Identifier Helper",
+          "href": "/en/argentina/argentina-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Argentine Locale Copy Checker",
+          "href": "/en/argentina/argentina-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Argentine Support Ticket Scrubber",
+          "href": "/en/argentina/argentina-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Argentine Integration Smoke Test Builder",
+          "href": "/en/argentina/argentina-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
     "austria": {
       "flag": "🇦🇹",
       "name": "Austria",
@@ -2575,6 +3216,515 @@
         {
           "title": "Belgian Integration Smoke Test Builder",
           "href": "/en/belgium/belgium-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
+    "bolivia": {
+      "flag": "🇧🇴",
+      "name": "Bolivia",
+      "badge": "Premium Bolivia developer suite",
+      "description": "Developer intelligence and browser-only workbenches for bolivian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Bolivia",
+        "population": "approximately 12.5M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Sucre / La Paz",
+        "continent": "South America",
+        "region": "South America / Andean Community",
+        "languages": "Spanish, Quechua, Aymara, and other official languages",
+        "currency": "Bolivian boliviano",
+        "currencyCode": "BOB",
+        "callingCode": "+591",
+        "internetTld": ".bo",
+        "drivingSide": "Right",
+        "iso2": "BO",
+        "iso3": "BOL",
+        "isoNumeric": "068",
+        "locale": "es-BO",
+        "icuLocale": "es_BO",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street, number, postal code, locality, Bolivia",
+        "postalCodeFormat": "postal/address reference",
+        "primaryTimeZone": "America/La_Paz (BOT)",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "110",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "es-BO",
+        "cldrLocale": "es_BO",
+        "metricVsImperial": "Metric-first",
+        "powerPlugTypes": "Type A / Type C",
+        "voltage": "230V",
+        "frequency": "50Hz"
+      },
+      "visualIdentity": {
+        "countryId": "bolivia",
+        "outlineLabel": "Bolivia outline",
+        "mapLabel": "Bolivia in the world",
+        "continentBadge": "South America",
+        "flagLabel": "Bolivia flag",
+        "heroAccentPrimary": "213 43 30",
+        "heroAccentSecondary": "249 227 0",
+        "heroAccentTertiary": "0 121 52"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "CI and NIT",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "IVA / NIT and payments",
+          "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Bolivia registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /bolivia/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Dot (.) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Bolivian examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "SEPREC / SIN",
+          "text": "Official business registry or company lookup remains the source of truth for Bolivia.",
+          "status": "official boundary"
+        },
+        {
+          "title": "IVA / NIT",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "personal-data protection",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "CI, NIT, RUAT, bank account, postal/address, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "bank account, QR Bolivia, SIPAV transfer, tax payment reference",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "es-BO / es_BO; date DD/MM/YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "BOB amounts use Comma (,) and Dot (.).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "CI, NIT, postal/address reference, phone, address, and domestic account fields need local labels.",
+          "status": "available"
+        }
+      ],
+      "technicalStandards": [
+        {
+          "title": "Plug types",
+          "value": "Type A / Type C",
+          "text": "Public utility fixture for travel, QA, and onboarding copy."
+        },
+        {
+          "title": "Electrical voltage",
+          "value": "230V",
+          "text": "Common mains voltage used by country-profile fixtures."
+        },
+        {
+          "title": "Grid frequency",
+          "value": "50Hz",
+          "text": "Common grid frequency for technical defaults."
+        },
+        {
+          "title": "Emergency number",
+          "value": "112",
+          "text": "Primary emergency number fixture; local alternatives may also exist."
+        }
+      ],
+      "searchHints": [
+        "CI",
+        "NIT",
+        "SIN",
+        "CUF",
+        "QR BOLIVIA",
+        "RUAT"
+      ],
+      "routes": [
+        {
+          "title": "Bolivian CI Validator",
+          "href": "/en/bolivia/bolivia-ci-validator/",
+          "text": "Validate CI shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Bolivian NIT Validator",
+          "href": "/en/bolivia/bolivia-nit-validator/",
+          "text": "Inspect NIT structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Bolivian IVA / NIT Tax ID Validator",
+          "href": "/en/bolivia/bolivia-vat-id-validator/",
+          "text": "Normalize IVA / NIT identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+        },
+        {
+          "title": "Bolivian Customs / Tax Identifier Helper",
+          "href": "/en/bolivia/bolivia-customs-tax-identifier-helper/",
+          "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+        },
+        {
+          "title": "Bolivian insured/person evidence Helper",
+          "href": "/en/bolivia/bolivia-insured-person-evidence-social-insurance-helper/",
+          "text": "Split insured/person evidence evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Bolivian Company Onboarding Auditor",
+          "href": "/en/bolivia/bolivia-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for NIT, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Bolivian SEPREC / SIN Readiness Helper",
+          "href": "/en/bolivia/bolivia-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated SEPREC / SIN lookup or company registry workflow."
+        },
+        {
+          "title": "Bolivian ID Card Format Helper",
+          "href": "/en/bolivia/bolivia-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Bolivian Passport Number Helper",
+          "href": "/en/bolivia/bolivia-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Bolivian MRZ / Passport Parser",
+          "href": "/en/bolivia/bolivia-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Bolivian Domestic Bank Account Validator",
+          "href": "/en/bolivia/bolivia-domestic-account-validator/",
+          "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+        },
+        {
+          "title": "Bolivian Domestic Account Fixture Generator",
+          "href": "/en/bolivia/bolivia-domestic-account-fixture-generator/",
+          "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+        },
+        {
+          "title": "Bolivian Domestic Bank Account Inspector",
+          "href": "/en/bolivia/bolivia-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+        },
+        {
+          "title": "Bolivian BIC / SWIFT Inspector",
+          "href": "/en/bolivia/bolivia-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Bolivia banking integrations."
+        },
+        {
+          "title": "Bolivian Domestic Transfer Helper",
+          "href": "/en/bolivia/bolivia-domestic-transfer-helper/",
+          "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+        },
+        {
+          "title": "Bolivian Debit Authorization Helper",
+          "href": "/en/bolivia/bolivia-debit-authorization-helper/",
+          "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+        },
+        {
+          "title": "Bolivian QR Bolivia / bank transfer Reference Helper",
+          "href": "/en/bolivia/bolivia-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Bolivian Remittance Text Builder",
+          "href": "/en/bolivia/bolivia-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Bolivian Payment Reconciliation Helper",
+          "href": "/en/bolivia/bolivia-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Bolivian Bank Statement Parser",
+          "href": "/en/bolivia/bolivia-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Bolivian Masked Bank Account Formatter",
+          "href": "/en/bolivia/bolivia-masked-bank-account-formatter/",
+          "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+        },
+        {
+          "title": "Bolivian BOB Decimal Currency Formatter",
+          "href": "/en/bolivia/bolivia-currency-decimal-formatter/",
+          "text": "Normalize BOB amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Bolivian VAT Rate Sanity Helper",
+          "href": "/en/bolivia/bolivia-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Bolivian VAT Return Field Helper",
+          "href": "/en/bolivia/bolivia-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Bolivian Invoice Number Helper",
+          "href": "/en/bolivia/bolivia-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Bolivian factura electronica / CUF Readiness Checker",
+          "href": "/en/bolivia/bolivia-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Bolivian Tax Authority Handoff Helper",
+          "href": "/en/bolivia/bolivia-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Bolivian Accounting Audit Trail Checklist Helper",
+          "href": "/en/bolivia/bolivia-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Bolivian Postal Code Validator",
+          "href": "/en/bolivia/bolivia-postal-code-validator/",
+          "text": "Validate postal/address reference shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Bolivian Address Normalizer",
+          "href": "/en/bolivia/bolivia-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Bolivian Address Transliteration Normalizer",
+          "href": "/en/bolivia/bolivia-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Bolivian Region / Province Code Mapper",
+          "href": "/en/bolivia/bolivia-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Bolivian Municipality Code Inspector",
+          "href": "/en/bolivia/bolivia-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Bolivian Phone Number Validator",
+          "href": "/en/bolivia/bolivia-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Bolivian Phone E.164 Formatter",
+          "href": "/en/bolivia/bolivia-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Bolivian Date Locale Formatter",
+          "href": "/en/bolivia/bolivia-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Bolivian CSV Locale Normalizer",
+          "href": "/en/bolivia/bolivia-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Bolivia decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Bolivian Slug Normalizer",
+          "href": "/en/bolivia/bolivia-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Bolivian Document OCR Fixer",
+          "href": "/en/bolivia/bolivia-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Bolivian personal-data protection Redaction Helper",
+          "href": "/en/bolivia/bolivia-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Bolivian PII Masker",
+          "href": "/en/bolivia/bolivia-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Bolivian Personal Data Fixture Helper",
+          "href": "/en/bolivia/bolivia-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Bolivian Driving Licence Format Helper",
+          "href": "/en/bolivia/bolivia-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Bolivian Residence Permit Format Helper",
+          "href": "/en/bolivia/bolivia-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Bolivian Health Card Format Helper",
+          "href": "/en/bolivia/bolivia-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Bolivian Vehicle Plate Inspector",
+          "href": "/en/bolivia/bolivia-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Bolivian VIN Validator",
+          "href": "/en/bolivia/bolivia-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Bolivian Vehicle Data Redaction Helper",
+          "href": "/en/bolivia/bolivia-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Bolivian Customs Declaration Helper",
+          "href": "/en/bolivia/bolivia-customs-declaration-helper/",
+          "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Bolivian Postal Tracking Helper",
+          "href": "/en/bolivia/bolivia-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Bolivian Data Quality Workbench",
+          "href": "/en/bolivia/bolivia-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Bolivian JSON Fixture Helper",
+          "href": "/en/bolivia/bolivia-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Bolivian Regex Pack Helper",
+          "href": "/en/bolivia/bolivia-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Bolivian API Payload Auditor",
+          "href": "/en/bolivia/bolivia-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Bolivian Form Field Auditor",
+          "href": "/en/bolivia/bolivia-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Bolivian Locale Number Parser",
+          "href": "/en/bolivia/bolivia-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Bolivia."
+        },
+        {
+          "title": "Bolivian Calendar Week Helper",
+          "href": "/en/bolivia/bolivia-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Bolivian Company Suffix Normalizer",
+          "href": "/en/bolivia/bolivia-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Bolivian Procurement Identifier Helper",
+          "href": "/en/bolivia/bolivia-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Bolivian Locale Copy Checker",
+          "href": "/en/bolivia/bolivia-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Bolivian Support Ticket Scrubber",
+          "href": "/en/bolivia/bolivia-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Bolivian Integration Smoke Test Builder",
+          "href": "/en/bolivia/bolivia-integration-smoke-test-builder/",
           "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
         }
       ]
@@ -5229,6 +6379,1024 @@
         }
       ]
     },
+    "chile": {
+      "flag": "🇨🇱",
+      "name": "Chile",
+      "badge": "Premium Chile developer suite",
+      "description": "Developer intelligence and browser-only workbenches for chilean identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Chile",
+        "population": "approximately 20M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Santiago",
+        "continent": "South America",
+        "region": "South America / Pacific Alliance",
+        "languages": "Spanish",
+        "currency": "Chilean peso",
+        "currencyCode": "CLP",
+        "callingCode": "+56",
+        "internetTld": ".cl",
+        "drivingSide": "Right",
+        "iso2": "CL",
+        "iso3": "CHL",
+        "isoNumeric": "152",
+        "locale": "es-CL",
+        "icuLocale": "es_CL",
+        "dateFormat": "DD-MM-YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street, number, postal code, locality, Chile",
+        "postalCodeFormat": "codigo postal",
+        "primaryTimeZone": "America/Santiago (CLT/CLST)",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "133",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "es-CL",
+        "cldrLocale": "es_CL",
+        "metricVsImperial": "Metric-first",
+        "powerPlugTypes": "Type C / Type L",
+        "voltage": "220V",
+        "frequency": "50Hz"
+      },
+      "visualIdentity": {
+        "countryId": "chile",
+        "outlineLabel": "Chile outline",
+        "mapLabel": "Chile in the world",
+        "continentBadge": "South America",
+        "flagLabel": "Chile flag",
+        "heroAccentPrimary": "0 57 166",
+        "heroAccentSecondary": "255 255 255",
+        "heroAccentTertiary": "213 43 30"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "RUN and RUT",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "IVA / RUT and payments",
+          "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Chile registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /chile/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Dot (.) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Chilean examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "SII / Registro de Empresas",
+          "text": "Official business registry or company lookup remains the source of truth for Chile.",
+          "status": "official boundary"
+        },
+        {
+          "title": "IVA / RUT",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "Ley 19.628",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "RUN, RUT, SII tax ID, bank account, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "CuentaRUT, bank transfer, Khipu handoff, Transbank/Webpay reference",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "es-CL / es_CL; date DD-MM-YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "CLP amounts use Comma (,) and Dot (.).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "RUN, RUT, codigo postal, phone, address, and domestic account fields need local labels.",
+          "status": "available"
+        }
+      ],
+      "technicalStandards": [
+        {
+          "title": "Plug types",
+          "value": "Type C / Type L",
+          "text": "Public utility fixture for travel, QA, and onboarding copy."
+        },
+        {
+          "title": "Electrical voltage",
+          "value": "220V",
+          "text": "Common mains voltage used by country-profile fixtures."
+        },
+        {
+          "title": "Grid frequency",
+          "value": "50Hz",
+          "text": "Common grid frequency for technical defaults."
+        },
+        {
+          "title": "Emergency number",
+          "value": "112",
+          "text": "Primary emergency number fixture; local alternatives may also exist."
+        }
+      ],
+      "searchHints": [
+        "RUN",
+        "RUT",
+        "SII",
+        "DTE",
+        "CUENTARUT",
+        "WEBPAY"
+      ],
+      "routes": [
+        {
+          "title": "Chilean RUN Validator",
+          "href": "/en/chile/chile-run-validator/",
+          "text": "Validate RUN shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Chilean RUT Validator",
+          "href": "/en/chile/chile-rut-validator/",
+          "text": "Inspect RUT structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Chilean IVA / RUT Tax ID Validator",
+          "href": "/en/chile/chile-vat-id-validator/",
+          "text": "Normalize IVA / RUT identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+        },
+        {
+          "title": "Chilean Customs / Tax Identifier Helper",
+          "href": "/en/chile/chile-customs-tax-identifier-helper/",
+          "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+        },
+        {
+          "title": "Chilean RUN Helper",
+          "href": "/en/chile/chile-run-social-insurance-helper/",
+          "text": "Split RUN evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Chilean Company Onboarding Auditor",
+          "href": "/en/chile/chile-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for RUT, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Chilean SII / Registro de Empresas Readiness Helper",
+          "href": "/en/chile/chile-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated SII / Registro de Empresas lookup or company registry workflow."
+        },
+        {
+          "title": "Chilean ID Card Format Helper",
+          "href": "/en/chile/chile-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Chilean Passport Number Helper",
+          "href": "/en/chile/chile-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Chilean MRZ / Passport Parser",
+          "href": "/en/chile/chile-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Chilean Domestic Bank Account Validator",
+          "href": "/en/chile/chile-domestic-account-validator/",
+          "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+        },
+        {
+          "title": "Chilean Domestic Account Fixture Generator",
+          "href": "/en/chile/chile-domestic-account-fixture-generator/",
+          "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+        },
+        {
+          "title": "Chilean Domestic Bank Account Inspector",
+          "href": "/en/chile/chile-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+        },
+        {
+          "title": "Chilean BIC / SWIFT Inspector",
+          "href": "/en/chile/chile-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Chile banking integrations."
+        },
+        {
+          "title": "Chilean Domestic Transfer Helper",
+          "href": "/en/chile/chile-domestic-transfer-helper/",
+          "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+        },
+        {
+          "title": "Chilean Debit Authorization Helper",
+          "href": "/en/chile/chile-debit-authorization-helper/",
+          "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+        },
+        {
+          "title": "Chilean CuentaRUT / bank transfer Reference Helper",
+          "href": "/en/chile/chile-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Chilean Remittance Text Builder",
+          "href": "/en/chile/chile-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Chilean Payment Reconciliation Helper",
+          "href": "/en/chile/chile-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Chilean Bank Statement Parser",
+          "href": "/en/chile/chile-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Chilean Masked Bank Account Formatter",
+          "href": "/en/chile/chile-masked-bank-account-formatter/",
+          "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+        },
+        {
+          "title": "Chilean CLP Decimal Currency Formatter",
+          "href": "/en/chile/chile-currency-decimal-formatter/",
+          "text": "Normalize CLP amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Chilean VAT Rate Sanity Helper",
+          "href": "/en/chile/chile-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Chilean VAT Return Field Helper",
+          "href": "/en/chile/chile-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Chilean Invoice Number Helper",
+          "href": "/en/chile/chile-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Chilean DTE / folio tributario Readiness Checker",
+          "href": "/en/chile/chile-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Chilean Tax Authority Handoff Helper",
+          "href": "/en/chile/chile-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Chilean Accounting Audit Trail Checklist Helper",
+          "href": "/en/chile/chile-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Chilean Postal Code Validator",
+          "href": "/en/chile/chile-postal-code-validator/",
+          "text": "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Chilean Address Normalizer",
+          "href": "/en/chile/chile-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Chilean Address Transliteration Normalizer",
+          "href": "/en/chile/chile-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Chilean Region / Province Code Mapper",
+          "href": "/en/chile/chile-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Chilean Municipality Code Inspector",
+          "href": "/en/chile/chile-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Chilean Phone Number Validator",
+          "href": "/en/chile/chile-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Chilean Phone E.164 Formatter",
+          "href": "/en/chile/chile-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Chilean Date Locale Formatter",
+          "href": "/en/chile/chile-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Chilean CSV Locale Normalizer",
+          "href": "/en/chile/chile-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Chile decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Chilean Slug Normalizer",
+          "href": "/en/chile/chile-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Chilean Document OCR Fixer",
+          "href": "/en/chile/chile-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Chilean Ley 19.628 Redaction Helper",
+          "href": "/en/chile/chile-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Chilean PII Masker",
+          "href": "/en/chile/chile-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Chilean Personal Data Fixture Helper",
+          "href": "/en/chile/chile-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Chilean Driving Licence Format Helper",
+          "href": "/en/chile/chile-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Chilean Residence Permit Format Helper",
+          "href": "/en/chile/chile-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Chilean Health Card Format Helper",
+          "href": "/en/chile/chile-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Chilean Vehicle Plate Inspector",
+          "href": "/en/chile/chile-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Chilean VIN Validator",
+          "href": "/en/chile/chile-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Chilean Vehicle Data Redaction Helper",
+          "href": "/en/chile/chile-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Chilean Customs Declaration Helper",
+          "href": "/en/chile/chile-customs-declaration-helper/",
+          "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Chilean Postal Tracking Helper",
+          "href": "/en/chile/chile-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Chilean Data Quality Workbench",
+          "href": "/en/chile/chile-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Chilean JSON Fixture Helper",
+          "href": "/en/chile/chile-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Chilean Regex Pack Helper",
+          "href": "/en/chile/chile-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Chilean API Payload Auditor",
+          "href": "/en/chile/chile-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Chilean Form Field Auditor",
+          "href": "/en/chile/chile-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Chilean Locale Number Parser",
+          "href": "/en/chile/chile-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Chile."
+        },
+        {
+          "title": "Chilean Calendar Week Helper",
+          "href": "/en/chile/chile-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Chilean Company Suffix Normalizer",
+          "href": "/en/chile/chile-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Chilean Procurement Identifier Helper",
+          "href": "/en/chile/chile-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Chilean Locale Copy Checker",
+          "href": "/en/chile/chile-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Chilean Support Ticket Scrubber",
+          "href": "/en/chile/chile-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Chilean Integration Smoke Test Builder",
+          "href": "/en/chile/chile-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
+    "colombia": {
+      "flag": "🇨🇴",
+      "name": "Colombia",
+      "badge": "Premium Colombia developer suite",
+      "description": "Developer intelligence and browser-only workbenches for colombian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Colombia",
+        "population": "approximately 52M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Bogota",
+        "continent": "South America",
+        "region": "South America / Andean Community",
+        "languages": "Spanish",
+        "currency": "Colombian peso",
+        "currencyCode": "COP",
+        "callingCode": "+57",
+        "internetTld": ".co",
+        "drivingSide": "Right",
+        "iso2": "CO",
+        "iso3": "COL",
+        "isoNumeric": "170",
+        "locale": "es-CO",
+        "icuLocale": "es_CO",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street, number, postal code, locality, Colombia",
+        "postalCodeFormat": "codigo postal",
+        "primaryTimeZone": "America/Bogota (COT)",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "123",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "es-CO",
+        "cldrLocale": "es_CO",
+        "metricVsImperial": "Metric-first",
+        "powerPlugTypes": "Type A / Type B",
+        "voltage": "110V",
+        "frequency": "60Hz"
+      },
+      "visualIdentity": {
+        "countryId": "colombia",
+        "outlineLabel": "Colombia outline",
+        "mapLabel": "Colombia in the world",
+        "continentBadge": "South America",
+        "flagLabel": "Colombia flag",
+        "heroAccentPrimary": "252 209 22",
+        "heroAccentSecondary": "0 56 147",
+        "heroAccentTertiary": "206 17 38"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "Cedula de ciudadania and NIT",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "IVA / NIT and payments",
+          "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Colombia registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /colombia/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Dot (.) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Colombian examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "RUES / Camara de Comercio",
+          "text": "Official business registry or company lookup remains the source of truth for Colombia.",
+          "status": "official boundary"
+        },
+        {
+          "title": "IVA / NIT",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "Ley 1581 / SIC",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "Cedula, NIT, RUT, DIAN CUFE, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "PSE reference, ACH Colombia, Nequi/Daviplata handoff, bank account",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "es-CO / es_CO; date DD/MM/YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "COP amounts use Comma (,) and Dot (.).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "Cedula de ciudadania, NIT, codigo postal, phone, address, and domestic account fields need local labels.",
+          "status": "available"
+        }
+      ],
+      "technicalStandards": [
+        {
+          "title": "Plug types",
+          "value": "Type A / Type B",
+          "text": "Public utility fixture for travel, QA, and onboarding copy."
+        },
+        {
+          "title": "Electrical voltage",
+          "value": "110V",
+          "text": "Common mains voltage used by country-profile fixtures."
+        },
+        {
+          "title": "Grid frequency",
+          "value": "60Hz",
+          "text": "Common grid frequency for technical defaults."
+        },
+        {
+          "title": "Emergency number",
+          "value": "112",
+          "text": "Primary emergency number fixture; local alternatives may also exist."
+        }
+      ],
+      "searchHints": [
+        "CEDULA",
+        "NIT",
+        "RUT",
+        "DIAN",
+        "CUFE",
+        "PSE"
+      ],
+      "routes": [
+        {
+          "title": "Colombian Cedula de ciudadania Validator",
+          "href": "/en/colombia/colombia-cedula-de-ciudadania-validator/",
+          "text": "Validate Cedula de ciudadania shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Colombian NIT Validator",
+          "href": "/en/colombia/colombia-nit-validator/",
+          "text": "Inspect NIT structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Colombian IVA / NIT Tax ID Validator",
+          "href": "/en/colombia/colombia-vat-id-validator/",
+          "text": "Normalize IVA / NIT identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+        },
+        {
+          "title": "Colombian Customs / Tax Identifier Helper",
+          "href": "/en/colombia/colombia-customs-tax-identifier-helper/",
+          "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+        },
+        {
+          "title": "Colombian Cedula Helper",
+          "href": "/en/colombia/colombia-cedula-social-insurance-helper/",
+          "text": "Split Cedula evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Colombian Company Onboarding Auditor",
+          "href": "/en/colombia/colombia-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for NIT, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Colombian RUES / Camara de Comercio Readiness Helper",
+          "href": "/en/colombia/colombia-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated RUES / Camara de Comercio lookup or company registry workflow."
+        },
+        {
+          "title": "Colombian ID Card Format Helper",
+          "href": "/en/colombia/colombia-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Colombian Passport Number Helper",
+          "href": "/en/colombia/colombia-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Colombian MRZ / Passport Parser",
+          "href": "/en/colombia/colombia-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Colombian Domestic Bank Account Validator",
+          "href": "/en/colombia/colombia-domestic-account-validator/",
+          "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+        },
+        {
+          "title": "Colombian Domestic Account Fixture Generator",
+          "href": "/en/colombia/colombia-domestic-account-fixture-generator/",
+          "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+        },
+        {
+          "title": "Colombian Domestic Bank Account Inspector",
+          "href": "/en/colombia/colombia-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+        },
+        {
+          "title": "Colombian BIC / SWIFT Inspector",
+          "href": "/en/colombia/colombia-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Colombia banking integrations."
+        },
+        {
+          "title": "Colombian Domestic Transfer Helper",
+          "href": "/en/colombia/colombia-domestic-transfer-helper/",
+          "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+        },
+        {
+          "title": "Colombian Debit Authorization Helper",
+          "href": "/en/colombia/colombia-debit-authorization-helper/",
+          "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+        },
+        {
+          "title": "Colombian PSE / bank transfer Reference Helper",
+          "href": "/en/colombia/colombia-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Colombian Remittance Text Builder",
+          "href": "/en/colombia/colombia-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Colombian Payment Reconciliation Helper",
+          "href": "/en/colombia/colombia-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Colombian Bank Statement Parser",
+          "href": "/en/colombia/colombia-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Colombian Masked Bank Account Formatter",
+          "href": "/en/colombia/colombia-masked-bank-account-formatter/",
+          "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+        },
+        {
+          "title": "Colombian COP Decimal Currency Formatter",
+          "href": "/en/colombia/colombia-currency-decimal-formatter/",
+          "text": "Normalize COP amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Colombian VAT Rate Sanity Helper",
+          "href": "/en/colombia/colombia-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Colombian VAT Return Field Helper",
+          "href": "/en/colombia/colombia-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Colombian Invoice Number Helper",
+          "href": "/en/colombia/colombia-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Colombian factura electronica / CUFE Readiness Checker",
+          "href": "/en/colombia/colombia-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Colombian Tax Authority Handoff Helper",
+          "href": "/en/colombia/colombia-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Colombian Accounting Audit Trail Checklist Helper",
+          "href": "/en/colombia/colombia-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Colombian Postal Code Validator",
+          "href": "/en/colombia/colombia-postal-code-validator/",
+          "text": "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Colombian Address Normalizer",
+          "href": "/en/colombia/colombia-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Colombian Address Transliteration Normalizer",
+          "href": "/en/colombia/colombia-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Colombian Region / Province Code Mapper",
+          "href": "/en/colombia/colombia-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Colombian Municipality Code Inspector",
+          "href": "/en/colombia/colombia-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Colombian Phone Number Validator",
+          "href": "/en/colombia/colombia-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Colombian Phone E.164 Formatter",
+          "href": "/en/colombia/colombia-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Colombian Date Locale Formatter",
+          "href": "/en/colombia/colombia-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Colombian CSV Locale Normalizer",
+          "href": "/en/colombia/colombia-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Colombia decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Colombian Slug Normalizer",
+          "href": "/en/colombia/colombia-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Colombian Document OCR Fixer",
+          "href": "/en/colombia/colombia-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Colombian Ley 1581 / SIC Redaction Helper",
+          "href": "/en/colombia/colombia-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Colombian PII Masker",
+          "href": "/en/colombia/colombia-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Colombian Personal Data Fixture Helper",
+          "href": "/en/colombia/colombia-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Colombian Driving Licence Format Helper",
+          "href": "/en/colombia/colombia-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Colombian Residence Permit Format Helper",
+          "href": "/en/colombia/colombia-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Colombian Health Card Format Helper",
+          "href": "/en/colombia/colombia-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Colombian Vehicle Plate Inspector",
+          "href": "/en/colombia/colombia-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Colombian VIN Validator",
+          "href": "/en/colombia/colombia-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Colombian Vehicle Data Redaction Helper",
+          "href": "/en/colombia/colombia-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Colombian Customs Declaration Helper",
+          "href": "/en/colombia/colombia-customs-declaration-helper/",
+          "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Colombian Postal Tracking Helper",
+          "href": "/en/colombia/colombia-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Colombian Data Quality Workbench",
+          "href": "/en/colombia/colombia-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Colombian JSON Fixture Helper",
+          "href": "/en/colombia/colombia-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Colombian Regex Pack Helper",
+          "href": "/en/colombia/colombia-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Colombian API Payload Auditor",
+          "href": "/en/colombia/colombia-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Colombian Form Field Auditor",
+          "href": "/en/colombia/colombia-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Colombian Locale Number Parser",
+          "href": "/en/colombia/colombia-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Colombia."
+        },
+        {
+          "title": "Colombian Calendar Week Helper",
+          "href": "/en/colombia/colombia-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Colombian Company Suffix Normalizer",
+          "href": "/en/colombia/colombia-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Colombian Procurement Identifier Helper",
+          "href": "/en/colombia/colombia-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Colombian Locale Copy Checker",
+          "href": "/en/colombia/colombia-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Colombian Support Ticket Scrubber",
+          "href": "/en/colombia/colombia-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Colombian Integration Smoke Test Builder",
+          "href": "/en/colombia/colombia-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
     "croatia": {
       "flag": "🇭🇷",
       "name": "Croatia",
@@ -7257,6 +9425,515 @@
         {
           "title": "Danish Integration Smoke Test Builder",
           "href": "/en/denmark/denmark-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
+    "ecuador": {
+      "flag": "🇪🇨",
+      "name": "Ecuador",
+      "badge": "Premium Ecuador developer suite",
+      "description": "Developer intelligence and browser-only workbenches for ecuadorian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Ecuador",
+        "population": "approximately 18M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Quito",
+        "continent": "South America",
+        "region": "South America / Andean Community",
+        "languages": "Spanish",
+        "currency": "US dollar",
+        "currencyCode": "USD",
+        "callingCode": "+593",
+        "internetTld": ".ec",
+        "drivingSide": "Right",
+        "iso2": "EC",
+        "iso3": "ECU",
+        "isoNumeric": "218",
+        "locale": "es-EC",
+        "icuLocale": "es_EC",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Dot (.)",
+        "thousandsSeparator": "Comma (,)",
+        "addressFormat": "Street, number, postal code, locality, Ecuador",
+        "postalCodeFormat": "codigo postal",
+        "primaryTimeZone": "America/Guayaquil (ECT)",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "911",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "es-EC",
+        "cldrLocale": "es_EC",
+        "metricVsImperial": "Metric-first",
+        "powerPlugTypes": "Type A / Type B",
+        "voltage": "120V",
+        "frequency": "60Hz"
+      },
+      "visualIdentity": {
+        "countryId": "ecuador",
+        "outlineLabel": "Ecuador outline",
+        "mapLabel": "Ecuador in the world",
+        "continentBadge": "South America",
+        "flagLabel": "Ecuador flag",
+        "heroAccentPrimary": "255 221 0",
+        "heroAccentSecondary": "3 78 162",
+        "heroAccentTertiary": "237 28 36"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "cedula and RUC",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "IVA / RUC and payments",
+          "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Ecuador registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /ecuador/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Dot (.) and Comma (,) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Ecuadorian examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "Supercias / SRI",
+          "text": "Official business registry or company lookup remains the source of truth for Ecuador.",
+          "status": "official boundary"
+        },
+        {
+          "title": "IVA / RUC",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "LOPDP",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "Cedula, RUC, SRI authorization, bank account, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "bank transfer, SRI payment reference, DeUna handoff, Banco Central transfer",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "es-EC / es_EC; date DD/MM/YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "USD amounts use Dot (.) and Comma (,).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "cedula, RUC, codigo postal, phone, address, and domestic account fields need local labels.",
+          "status": "available"
+        }
+      ],
+      "technicalStandards": [
+        {
+          "title": "Plug types",
+          "value": "Type A / Type B",
+          "text": "Public utility fixture for travel, QA, and onboarding copy."
+        },
+        {
+          "title": "Electrical voltage",
+          "value": "120V",
+          "text": "Common mains voltage used by country-profile fixtures."
+        },
+        {
+          "title": "Grid frequency",
+          "value": "60Hz",
+          "text": "Common grid frequency for technical defaults."
+        },
+        {
+          "title": "Emergency number",
+          "value": "112",
+          "text": "Primary emergency number fixture; local alternatives may also exist."
+        }
+      ],
+      "searchHints": [
+        "CEDULA",
+        "RUC",
+        "SRI",
+        "CLAVE ACCESO",
+        "DEUNA",
+        "USD"
+      ],
+      "routes": [
+        {
+          "title": "Ecuadorian cedula Validator",
+          "href": "/en/ecuador/ecuador-cedula-validator/",
+          "text": "Validate cedula shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Ecuadorian RUC Validator",
+          "href": "/en/ecuador/ecuador-ruc-validator/",
+          "text": "Inspect RUC structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Ecuadorian IVA / RUC Tax ID Validator",
+          "href": "/en/ecuador/ecuador-vat-id-validator/",
+          "text": "Normalize IVA / RUC identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+        },
+        {
+          "title": "Ecuadorian Customs / Tax Identifier Helper",
+          "href": "/en/ecuador/ecuador-customs-tax-identifier-helper/",
+          "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+        },
+        {
+          "title": "Ecuadorian cedula Helper",
+          "href": "/en/ecuador/ecuador-cedula-social-insurance-helper/",
+          "text": "Split cedula evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Ecuadorian Company Onboarding Auditor",
+          "href": "/en/ecuador/ecuador-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for RUC, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Ecuadorian Supercias / SRI Readiness Helper",
+          "href": "/en/ecuador/ecuador-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated Supercias / SRI lookup or company registry workflow."
+        },
+        {
+          "title": "Ecuadorian ID Card Format Helper",
+          "href": "/en/ecuador/ecuador-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Ecuadorian Passport Number Helper",
+          "href": "/en/ecuador/ecuador-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Ecuadorian MRZ / Passport Parser",
+          "href": "/en/ecuador/ecuador-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Ecuadorian Domestic Bank Account Validator",
+          "href": "/en/ecuador/ecuador-domestic-account-validator/",
+          "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+        },
+        {
+          "title": "Ecuadorian Domestic Account Fixture Generator",
+          "href": "/en/ecuador/ecuador-domestic-account-fixture-generator/",
+          "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+        },
+        {
+          "title": "Ecuadorian Domestic Bank Account Inspector",
+          "href": "/en/ecuador/ecuador-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+        },
+        {
+          "title": "Ecuadorian BIC / SWIFT Inspector",
+          "href": "/en/ecuador/ecuador-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Ecuador banking integrations."
+        },
+        {
+          "title": "Ecuadorian Domestic Transfer Helper",
+          "href": "/en/ecuador/ecuador-domestic-transfer-helper/",
+          "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+        },
+        {
+          "title": "Ecuadorian Debit Authorization Helper",
+          "href": "/en/ecuador/ecuador-debit-authorization-helper/",
+          "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+        },
+        {
+          "title": "Ecuadorian bank transfer / DeUna Reference Helper",
+          "href": "/en/ecuador/ecuador-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Ecuadorian Remittance Text Builder",
+          "href": "/en/ecuador/ecuador-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Ecuadorian Payment Reconciliation Helper",
+          "href": "/en/ecuador/ecuador-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Ecuadorian Bank Statement Parser",
+          "href": "/en/ecuador/ecuador-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Ecuadorian Masked Bank Account Formatter",
+          "href": "/en/ecuador/ecuador-masked-bank-account-formatter/",
+          "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+        },
+        {
+          "title": "Ecuadorian USD Decimal Currency Formatter",
+          "href": "/en/ecuador/ecuador-currency-decimal-formatter/",
+          "text": "Normalize USD amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Ecuadorian VAT Rate Sanity Helper",
+          "href": "/en/ecuador/ecuador-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Ecuadorian VAT Return Field Helper",
+          "href": "/en/ecuador/ecuador-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Ecuadorian Invoice Number Helper",
+          "href": "/en/ecuador/ecuador-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Ecuadorian comprobante electronico / clave de acceso Readiness Checker",
+          "href": "/en/ecuador/ecuador-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Ecuadorian Tax Authority Handoff Helper",
+          "href": "/en/ecuador/ecuador-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Ecuadorian Accounting Audit Trail Checklist Helper",
+          "href": "/en/ecuador/ecuador-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Ecuadorian Postal Code Validator",
+          "href": "/en/ecuador/ecuador-postal-code-validator/",
+          "text": "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Ecuadorian Address Normalizer",
+          "href": "/en/ecuador/ecuador-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Ecuadorian Address Transliteration Normalizer",
+          "href": "/en/ecuador/ecuador-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Ecuadorian Region / Province Code Mapper",
+          "href": "/en/ecuador/ecuador-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Ecuadorian Municipality Code Inspector",
+          "href": "/en/ecuador/ecuador-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Ecuadorian Phone Number Validator",
+          "href": "/en/ecuador/ecuador-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Ecuadorian Phone E.164 Formatter",
+          "href": "/en/ecuador/ecuador-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Ecuadorian Date Locale Formatter",
+          "href": "/en/ecuador/ecuador-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Ecuadorian CSV Locale Normalizer",
+          "href": "/en/ecuador/ecuador-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Ecuador decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Ecuadorian Slug Normalizer",
+          "href": "/en/ecuador/ecuador-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Ecuadorian Document OCR Fixer",
+          "href": "/en/ecuador/ecuador-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Ecuadorian LOPDP Redaction Helper",
+          "href": "/en/ecuador/ecuador-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Ecuadorian PII Masker",
+          "href": "/en/ecuador/ecuador-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Ecuadorian Personal Data Fixture Helper",
+          "href": "/en/ecuador/ecuador-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Ecuadorian Driving Licence Format Helper",
+          "href": "/en/ecuador/ecuador-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Ecuadorian Residence Permit Format Helper",
+          "href": "/en/ecuador/ecuador-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Ecuadorian Health Card Format Helper",
+          "href": "/en/ecuador/ecuador-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Ecuadorian Vehicle Plate Inspector",
+          "href": "/en/ecuador/ecuador-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Ecuadorian VIN Validator",
+          "href": "/en/ecuador/ecuador-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Ecuadorian Vehicle Data Redaction Helper",
+          "href": "/en/ecuador/ecuador-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Ecuadorian Customs Declaration Helper",
+          "href": "/en/ecuador/ecuador-customs-declaration-helper/",
+          "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Ecuadorian Postal Tracking Helper",
+          "href": "/en/ecuador/ecuador-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Ecuadorian Data Quality Workbench",
+          "href": "/en/ecuador/ecuador-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Ecuadorian JSON Fixture Helper",
+          "href": "/en/ecuador/ecuador-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Ecuadorian Regex Pack Helper",
+          "href": "/en/ecuador/ecuador-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Ecuadorian API Payload Auditor",
+          "href": "/en/ecuador/ecuador-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Ecuadorian Form Field Auditor",
+          "href": "/en/ecuador/ecuador-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Ecuadorian Locale Number Parser",
+          "href": "/en/ecuador/ecuador-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Ecuador."
+        },
+        {
+          "title": "Ecuadorian Calendar Week Helper",
+          "href": "/en/ecuador/ecuador-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Ecuadorian Company Suffix Normalizer",
+          "href": "/en/ecuador/ecuador-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Ecuadorian Procurement Identifier Helper",
+          "href": "/en/ecuador/ecuador-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Ecuadorian Locale Copy Checker",
+          "href": "/en/ecuador/ecuador-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Ecuadorian Support Ticket Scrubber",
+          "href": "/en/ecuador/ecuador-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Ecuadorian Integration Smoke Test Builder",
+          "href": "/en/ecuador/ecuador-integration-smoke-test-builder/",
           "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
         }
       ]
@@ -12279,6 +14956,515 @@
         {
           "title": "Greek Integration Smoke Test Builder",
           "href": "/en/greece/greece-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
+    "guyana": {
+      "flag": "🇬🇾",
+      "name": "Guyana",
+      "badge": "Premium Guyana developer suite",
+      "description": "Developer intelligence and browser-only workbenches for guyanese identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Guyana",
+        "population": "approximately 0.8M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Georgetown",
+        "continent": "South America",
+        "region": "South America / CARICOM",
+        "languages": "English",
+        "currency": "Guyanese dollar",
+        "currencyCode": "GYD",
+        "callingCode": "+592",
+        "internetTld": ".gy",
+        "drivingSide": "Left",
+        "iso2": "GY",
+        "iso3": "GUY",
+        "isoNumeric": "328",
+        "locale": "en-GY",
+        "icuLocale": "en_GY",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Dot (.)",
+        "thousandsSeparator": "Comma (,)",
+        "addressFormat": "Street, number, postal code, locality, Guyana",
+        "postalCodeFormat": "postal/address reference",
+        "primaryTimeZone": "America/Guyana (GYT)",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "911",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "en-GY",
+        "cldrLocale": "en_GY",
+        "metricVsImperial": "Metric-first",
+        "powerPlugTypes": "Type A / Type B / Type D / Type G",
+        "voltage": "120V / 240V",
+        "frequency": "60Hz"
+      },
+      "visualIdentity": {
+        "countryId": "guyana",
+        "outlineLabel": "Guyana outline",
+        "mapLabel": "Guyana in the world",
+        "continentBadge": "South America",
+        "flagLabel": "Guyana flag",
+        "heroAccentPrimary": "0 158 73",
+        "heroAccentSecondary": "252 209 22",
+        "heroAccentTertiary": "206 17 38"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "TIN / NIS and company registration number",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "VAT / TIN and payments",
+          "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Guyana registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /guyana/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Dot (.) and Comma (,) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Guyanese examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "Deeds and Commercial Registries Authority",
+          "text": "Official business registry or company lookup remains the source of truth for Guyana.",
+          "status": "official boundary"
+        },
+        {
+          "title": "VAT / TIN",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "Data Protection Act",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "TIN, NIS number, company number, bank account, postal/address, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "bank account, MMG handoff, GRA tax payment reference, SWIFT",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "en-GY / en_GY; date DD/MM/YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "GYD amounts use Dot (.) and Comma (,).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "TIN / NIS, company registration number, postal/address reference, phone, address, and domestic account fields need local labels.",
+          "status": "available"
+        }
+      ],
+      "technicalStandards": [
+        {
+          "title": "Plug types",
+          "value": "Type A / Type B / Type D / Type G",
+          "text": "Public utility fixture for travel, QA, and onboarding copy."
+        },
+        {
+          "title": "Electrical voltage",
+          "value": "120V / 240V",
+          "text": "Common mains voltage used by country-profile fixtures."
+        },
+        {
+          "title": "Grid frequency",
+          "value": "60Hz",
+          "text": "Common grid frequency for technical defaults."
+        },
+        {
+          "title": "Emergency number",
+          "value": "112",
+          "text": "Primary emergency number fixture; local alternatives may also exist."
+        }
+      ],
+      "searchHints": [
+        "TIN",
+        "NIS",
+        "GRA",
+        "MMG",
+        "VAT",
+        "GEORGETOWN"
+      ],
+      "routes": [
+        {
+          "title": "Guyanese TIN / NIS Validator",
+          "href": "/en/guyana/guyana-tin-nis-validator/",
+          "text": "Validate TIN / NIS shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Guyanese company registration number Validator",
+          "href": "/en/guyana/guyana-company-registration-number-validator/",
+          "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Guyanese VAT / TIN Tax ID Validator",
+          "href": "/en/guyana/guyana-vat-id-validator/",
+          "text": "Normalize VAT / TIN identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+        },
+        {
+          "title": "Guyanese Customs / Tax Identifier Helper",
+          "href": "/en/guyana/guyana-customs-tax-identifier-helper/",
+          "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+        },
+        {
+          "title": "Guyanese NIS number Helper",
+          "href": "/en/guyana/guyana-nis-number-social-insurance-helper/",
+          "text": "Split NIS number evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Guyanese Company Onboarding Auditor",
+          "href": "/en/guyana/guyana-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Guyanese Deeds and Commercial Registries Authority Readiness Helper",
+          "href": "/en/guyana/guyana-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated Deeds and Commercial Registries Authority lookup or company registry workflow."
+        },
+        {
+          "title": "Guyanese ID Card Format Helper",
+          "href": "/en/guyana/guyana-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Guyanese Passport Number Helper",
+          "href": "/en/guyana/guyana-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Guyanese MRZ / Passport Parser",
+          "href": "/en/guyana/guyana-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Guyanese Domestic Bank Account Validator",
+          "href": "/en/guyana/guyana-domestic-account-validator/",
+          "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+        },
+        {
+          "title": "Guyanese Domestic Account Fixture Generator",
+          "href": "/en/guyana/guyana-domestic-account-fixture-generator/",
+          "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+        },
+        {
+          "title": "Guyanese Domestic Bank Account Inspector",
+          "href": "/en/guyana/guyana-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+        },
+        {
+          "title": "Guyanese BIC / SWIFT Inspector",
+          "href": "/en/guyana/guyana-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Guyana banking integrations."
+        },
+        {
+          "title": "Guyanese Domestic Transfer Helper",
+          "href": "/en/guyana/guyana-domestic-transfer-helper/",
+          "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+        },
+        {
+          "title": "Guyanese Debit Authorization Helper",
+          "href": "/en/guyana/guyana-debit-authorization-helper/",
+          "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+        },
+        {
+          "title": "Guyanese bank transfer / MMG Reference Helper",
+          "href": "/en/guyana/guyana-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Guyanese Remittance Text Builder",
+          "href": "/en/guyana/guyana-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Guyanese Payment Reconciliation Helper",
+          "href": "/en/guyana/guyana-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Guyanese Bank Statement Parser",
+          "href": "/en/guyana/guyana-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Guyanese Masked Bank Account Formatter",
+          "href": "/en/guyana/guyana-masked-bank-account-formatter/",
+          "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+        },
+        {
+          "title": "Guyanese GYD Decimal Currency Formatter",
+          "href": "/en/guyana/guyana-currency-decimal-formatter/",
+          "text": "Normalize GYD amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Guyanese VAT Rate Sanity Helper",
+          "href": "/en/guyana/guyana-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Guyanese VAT Return Field Helper",
+          "href": "/en/guyana/guyana-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Guyanese Invoice Number Helper",
+          "href": "/en/guyana/guyana-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Guyanese VAT invoice Readiness Checker",
+          "href": "/en/guyana/guyana-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Guyanese Tax Authority Handoff Helper",
+          "href": "/en/guyana/guyana-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Guyanese Accounting Audit Trail Checklist Helper",
+          "href": "/en/guyana/guyana-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Guyanese Postal Code Validator",
+          "href": "/en/guyana/guyana-postal-code-validator/",
+          "text": "Validate postal/address reference shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Guyanese Address Normalizer",
+          "href": "/en/guyana/guyana-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Guyanese Address Transliteration Normalizer",
+          "href": "/en/guyana/guyana-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Guyanese Region / Province Code Mapper",
+          "href": "/en/guyana/guyana-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Guyanese Municipality Code Inspector",
+          "href": "/en/guyana/guyana-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Guyanese Phone Number Validator",
+          "href": "/en/guyana/guyana-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Guyanese Phone E.164 Formatter",
+          "href": "/en/guyana/guyana-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Guyanese Date Locale Formatter",
+          "href": "/en/guyana/guyana-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Guyanese CSV Locale Normalizer",
+          "href": "/en/guyana/guyana-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Guyana decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Guyanese Slug Normalizer",
+          "href": "/en/guyana/guyana-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Guyanese Document OCR Fixer",
+          "href": "/en/guyana/guyana-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Guyanese Data Protection Act Redaction Helper",
+          "href": "/en/guyana/guyana-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Guyanese PII Masker",
+          "href": "/en/guyana/guyana-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Guyanese Personal Data Fixture Helper",
+          "href": "/en/guyana/guyana-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Guyanese Driving Licence Format Helper",
+          "href": "/en/guyana/guyana-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Guyanese Residence Permit Format Helper",
+          "href": "/en/guyana/guyana-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Guyanese Health Card Format Helper",
+          "href": "/en/guyana/guyana-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Guyanese Vehicle Plate Inspector",
+          "href": "/en/guyana/guyana-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Guyanese VIN Validator",
+          "href": "/en/guyana/guyana-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Guyanese Vehicle Data Redaction Helper",
+          "href": "/en/guyana/guyana-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Guyanese Customs Declaration Helper",
+          "href": "/en/guyana/guyana-customs-declaration-helper/",
+          "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Guyanese Postal Tracking Helper",
+          "href": "/en/guyana/guyana-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Guyanese Data Quality Workbench",
+          "href": "/en/guyana/guyana-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Guyanese JSON Fixture Helper",
+          "href": "/en/guyana/guyana-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Guyanese Regex Pack Helper",
+          "href": "/en/guyana/guyana-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Guyanese API Payload Auditor",
+          "href": "/en/guyana/guyana-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Guyanese Form Field Auditor",
+          "href": "/en/guyana/guyana-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Guyanese Locale Number Parser",
+          "href": "/en/guyana/guyana-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Guyana."
+        },
+        {
+          "title": "Guyanese Calendar Week Helper",
+          "href": "/en/guyana/guyana-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Guyanese Company Suffix Normalizer",
+          "href": "/en/guyana/guyana-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Guyanese Procurement Identifier Helper",
+          "href": "/en/guyana/guyana-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Guyanese Locale Copy Checker",
+          "href": "/en/guyana/guyana-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Guyanese Support Ticket Scrubber",
+          "href": "/en/guyana/guyana-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Guyanese Integration Smoke Test Builder",
+          "href": "/en/guyana/guyana-integration-smoke-test-builder/",
           "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
         }
       ]
@@ -21586,6 +24772,1024 @@
         }
       ]
     },
+    "paraguay": {
+      "flag": "🇵🇾",
+      "name": "Paraguay",
+      "badge": "Premium Paraguay developer suite",
+      "description": "Developer intelligence and browser-only workbenches for paraguayan identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Paraguay",
+        "population": "approximately 7.5M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Asuncion",
+        "continent": "South America",
+        "region": "South America / MERCOSUR",
+        "languages": "Spanish and Guarani",
+        "currency": "Paraguayan guarani",
+        "currencyCode": "PYG",
+        "callingCode": "+595",
+        "internetTld": ".py",
+        "drivingSide": "Right",
+        "iso2": "PY",
+        "iso3": "PRY",
+        "isoNumeric": "600",
+        "locale": "es-PY",
+        "icuLocale": "es_PY",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street, number, postal code, locality, Paraguay",
+        "postalCodeFormat": "codigo postal",
+        "primaryTimeZone": "America/Asuncion (PYT/PYST)",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "911",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "es-PY",
+        "cldrLocale": "es_PY",
+        "metricVsImperial": "Metric-first",
+        "powerPlugTypes": "Type C",
+        "voltage": "220V",
+        "frequency": "50Hz"
+      },
+      "visualIdentity": {
+        "countryId": "paraguay",
+        "outlineLabel": "Paraguay outline",
+        "mapLabel": "Paraguay in the world",
+        "continentBadge": "South America",
+        "flagLabel": "Paraguay flag",
+        "heroAccentPrimary": "0 56 168",
+        "heroAccentSecondary": "255 255 255",
+        "heroAccentTertiary": "213 43 30"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "Cedula and RUC",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "IVA / RUC and payments",
+          "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Paraguay registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /paraguay/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Dot (.) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Paraguayan examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "SUACE / company registry",
+          "text": "Official business registry or company lookup remains the source of truth for Paraguay.",
+          "status": "official boundary"
+        },
+        {
+          "title": "IVA / RUC",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "personal-data protection",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "Cedula, RUC, DV, bank account, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "SIPAP transfer, bank account, Billetera electronic handoff, tax payment reference",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "es-PY / es_PY; date DD/MM/YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "PYG amounts use Comma (,) and Dot (.).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "Cedula, RUC, codigo postal, phone, address, and domestic account fields need local labels.",
+          "status": "available"
+        }
+      ],
+      "technicalStandards": [
+        {
+          "title": "Plug types",
+          "value": "Type C",
+          "text": "Public utility fixture for travel, QA, and onboarding copy."
+        },
+        {
+          "title": "Electrical voltage",
+          "value": "220V",
+          "text": "Common mains voltage used by country-profile fixtures."
+        },
+        {
+          "title": "Grid frequency",
+          "value": "50Hz",
+          "text": "Common grid frequency for technical defaults."
+        },
+        {
+          "title": "Emergency number",
+          "value": "112",
+          "text": "Primary emergency number fixture; local alternatives may also exist."
+        }
+      ],
+      "searchHints": [
+        "CEDULA",
+        "RUC",
+        "DV",
+        "SIFEN",
+        "SIPAP",
+        "IVA"
+      ],
+      "routes": [
+        {
+          "title": "Paraguayan Cedula Validator",
+          "href": "/en/paraguay/paraguay-cedula-validator/",
+          "text": "Validate Cedula shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Paraguayan RUC Validator",
+          "href": "/en/paraguay/paraguay-ruc-validator/",
+          "text": "Inspect RUC structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Paraguayan IVA / RUC Tax ID Validator",
+          "href": "/en/paraguay/paraguay-vat-id-validator/",
+          "text": "Normalize IVA / RUC identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+        },
+        {
+          "title": "Paraguayan Customs / Tax Identifier Helper",
+          "href": "/en/paraguay/paraguay-customs-tax-identifier-helper/",
+          "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+        },
+        {
+          "title": "Paraguayan Cedula Helper",
+          "href": "/en/paraguay/paraguay-cedula-social-insurance-helper/",
+          "text": "Split Cedula evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Paraguayan Company Onboarding Auditor",
+          "href": "/en/paraguay/paraguay-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for RUC, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Paraguayan SUACE / company registry Readiness Helper",
+          "href": "/en/paraguay/paraguay-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated SUACE / company registry lookup or company registry workflow."
+        },
+        {
+          "title": "Paraguayan ID Card Format Helper",
+          "href": "/en/paraguay/paraguay-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Paraguayan Passport Number Helper",
+          "href": "/en/paraguay/paraguay-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Paraguayan MRZ / Passport Parser",
+          "href": "/en/paraguay/paraguay-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Paraguayan Domestic Bank Account Validator",
+          "href": "/en/paraguay/paraguay-domestic-account-validator/",
+          "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+        },
+        {
+          "title": "Paraguayan Domestic Account Fixture Generator",
+          "href": "/en/paraguay/paraguay-domestic-account-fixture-generator/",
+          "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+        },
+        {
+          "title": "Paraguayan Domestic Bank Account Inspector",
+          "href": "/en/paraguay/paraguay-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+        },
+        {
+          "title": "Paraguayan BIC / SWIFT Inspector",
+          "href": "/en/paraguay/paraguay-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Paraguay banking integrations."
+        },
+        {
+          "title": "Paraguayan Domestic Transfer Helper",
+          "href": "/en/paraguay/paraguay-domestic-transfer-helper/",
+          "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+        },
+        {
+          "title": "Paraguayan Debit Authorization Helper",
+          "href": "/en/paraguay/paraguay-debit-authorization-helper/",
+          "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+        },
+        {
+          "title": "Paraguayan SIPAP / bank transfer Reference Helper",
+          "href": "/en/paraguay/paraguay-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Paraguayan Remittance Text Builder",
+          "href": "/en/paraguay/paraguay-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Paraguayan Payment Reconciliation Helper",
+          "href": "/en/paraguay/paraguay-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Paraguayan Bank Statement Parser",
+          "href": "/en/paraguay/paraguay-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Paraguayan Masked Bank Account Formatter",
+          "href": "/en/paraguay/paraguay-masked-bank-account-formatter/",
+          "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+        },
+        {
+          "title": "Paraguayan PYG Decimal Currency Formatter",
+          "href": "/en/paraguay/paraguay-currency-decimal-formatter/",
+          "text": "Normalize PYG amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Paraguayan VAT Rate Sanity Helper",
+          "href": "/en/paraguay/paraguay-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Paraguayan VAT Return Field Helper",
+          "href": "/en/paraguay/paraguay-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Paraguayan Invoice Number Helper",
+          "href": "/en/paraguay/paraguay-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Paraguayan factura electronica / SIFEN Readiness Checker",
+          "href": "/en/paraguay/paraguay-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Paraguayan Tax Authority Handoff Helper",
+          "href": "/en/paraguay/paraguay-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Paraguayan Accounting Audit Trail Checklist Helper",
+          "href": "/en/paraguay/paraguay-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Paraguayan Postal Code Validator",
+          "href": "/en/paraguay/paraguay-postal-code-validator/",
+          "text": "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Paraguayan Address Normalizer",
+          "href": "/en/paraguay/paraguay-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Paraguayan Address Transliteration Normalizer",
+          "href": "/en/paraguay/paraguay-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Paraguayan Region / Province Code Mapper",
+          "href": "/en/paraguay/paraguay-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Paraguayan Municipality Code Inspector",
+          "href": "/en/paraguay/paraguay-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Paraguayan Phone Number Validator",
+          "href": "/en/paraguay/paraguay-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Paraguayan Phone E.164 Formatter",
+          "href": "/en/paraguay/paraguay-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Paraguayan Date Locale Formatter",
+          "href": "/en/paraguay/paraguay-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Paraguayan CSV Locale Normalizer",
+          "href": "/en/paraguay/paraguay-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Paraguay decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Paraguayan Slug Normalizer",
+          "href": "/en/paraguay/paraguay-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Paraguayan Document OCR Fixer",
+          "href": "/en/paraguay/paraguay-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Paraguayan personal-data protection Redaction Helper",
+          "href": "/en/paraguay/paraguay-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Paraguayan PII Masker",
+          "href": "/en/paraguay/paraguay-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Paraguayan Personal Data Fixture Helper",
+          "href": "/en/paraguay/paraguay-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Paraguayan Driving Licence Format Helper",
+          "href": "/en/paraguay/paraguay-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Paraguayan Residence Permit Format Helper",
+          "href": "/en/paraguay/paraguay-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Paraguayan Health Card Format Helper",
+          "href": "/en/paraguay/paraguay-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Paraguayan Vehicle Plate Inspector",
+          "href": "/en/paraguay/paraguay-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Paraguayan VIN Validator",
+          "href": "/en/paraguay/paraguay-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Paraguayan Vehicle Data Redaction Helper",
+          "href": "/en/paraguay/paraguay-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Paraguayan Customs Declaration Helper",
+          "href": "/en/paraguay/paraguay-customs-declaration-helper/",
+          "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Paraguayan Postal Tracking Helper",
+          "href": "/en/paraguay/paraguay-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Paraguayan Data Quality Workbench",
+          "href": "/en/paraguay/paraguay-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Paraguayan JSON Fixture Helper",
+          "href": "/en/paraguay/paraguay-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Paraguayan Regex Pack Helper",
+          "href": "/en/paraguay/paraguay-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Paraguayan API Payload Auditor",
+          "href": "/en/paraguay/paraguay-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Paraguayan Form Field Auditor",
+          "href": "/en/paraguay/paraguay-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Paraguayan Locale Number Parser",
+          "href": "/en/paraguay/paraguay-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Paraguay."
+        },
+        {
+          "title": "Paraguayan Calendar Week Helper",
+          "href": "/en/paraguay/paraguay-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Paraguayan Company Suffix Normalizer",
+          "href": "/en/paraguay/paraguay-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Paraguayan Procurement Identifier Helper",
+          "href": "/en/paraguay/paraguay-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Paraguayan Locale Copy Checker",
+          "href": "/en/paraguay/paraguay-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Paraguayan Support Ticket Scrubber",
+          "href": "/en/paraguay/paraguay-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Paraguayan Integration Smoke Test Builder",
+          "href": "/en/paraguay/paraguay-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
+    "peru": {
+      "flag": "🇵🇪",
+      "name": "Peru",
+      "badge": "Premium Peru developer suite",
+      "description": "Developer intelligence and browser-only workbenches for peruvian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Peru",
+        "population": "approximately 34M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Lima",
+        "continent": "South America",
+        "region": "South America / Andean Community",
+        "languages": "Spanish, Quechua, and Aymara",
+        "currency": "Peruvian sol",
+        "currencyCode": "PEN",
+        "callingCode": "+51",
+        "internetTld": ".pe",
+        "drivingSide": "Right",
+        "iso2": "PE",
+        "iso3": "PER",
+        "isoNumeric": "604",
+        "locale": "es-PE",
+        "icuLocale": "es_PE",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Dot (.)",
+        "thousandsSeparator": "Comma (,)",
+        "addressFormat": "Street, number, postal code, locality, Peru",
+        "postalCodeFormat": "codigo postal",
+        "primaryTimeZone": "America/Lima (PET)",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "105",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "es-PE",
+        "cldrLocale": "es_PE",
+        "metricVsImperial": "Metric-first",
+        "powerPlugTypes": "Type A / Type B / Type C",
+        "voltage": "220V",
+        "frequency": "60Hz"
+      },
+      "visualIdentity": {
+        "countryId": "peru",
+        "outlineLabel": "Peru outline",
+        "mapLabel": "Peru in the world",
+        "continentBadge": "South America",
+        "flagLabel": "Peru flag",
+        "heroAccentPrimary": "217 16 35",
+        "heroAccentSecondary": "255 255 255",
+        "heroAccentTertiary": "185 28 28"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "DNI and RUC",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "IGV / RUC and payments",
+          "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Peru registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /peru/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Dot (.) and Comma (,) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Peruvian examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "SUNARP / SUNAT",
+          "text": "Official business registry or company lookup remains the source of truth for Peru.",
+          "status": "official boundary"
+        },
+        {
+          "title": "IGV / RUC",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "Ley de Proteccion de Datos Personales",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "DNI, RUC, SUNAT CPE, CCI, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "CCI, Yape/Plin handoff, bank account, SUNAT payment reference",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "es-PE / es_PE; date DD/MM/YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "PEN amounts use Dot (.) and Comma (,).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "DNI, RUC, codigo postal, phone, address, and domestic account fields need local labels.",
+          "status": "available"
+        }
+      ],
+      "technicalStandards": [
+        {
+          "title": "Plug types",
+          "value": "Type A / Type B / Type C",
+          "text": "Public utility fixture for travel, QA, and onboarding copy."
+        },
+        {
+          "title": "Electrical voltage",
+          "value": "220V",
+          "text": "Common mains voltage used by country-profile fixtures."
+        },
+        {
+          "title": "Grid frequency",
+          "value": "60Hz",
+          "text": "Common grid frequency for technical defaults."
+        },
+        {
+          "title": "Emergency number",
+          "value": "112",
+          "text": "Primary emergency number fixture; local alternatives may also exist."
+        }
+      ],
+      "searchHints": [
+        "DNI",
+        "RUC",
+        "SUNAT",
+        "CPE",
+        "CCI",
+        "YAPE"
+      ],
+      "routes": [
+        {
+          "title": "Peruvian DNI Validator",
+          "href": "/en/peru/peru-dni-validator/",
+          "text": "Validate DNI shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Peruvian RUC Validator",
+          "href": "/en/peru/peru-ruc-validator/",
+          "text": "Inspect RUC structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Peruvian IGV / RUC Tax ID Validator",
+          "href": "/en/peru/peru-vat-id-validator/",
+          "text": "Normalize IGV / RUC identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+        },
+        {
+          "title": "Peruvian Customs / Tax Identifier Helper",
+          "href": "/en/peru/peru-customs-tax-identifier-helper/",
+          "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+        },
+        {
+          "title": "Peruvian DNI Helper",
+          "href": "/en/peru/peru-dni-social-insurance-helper/",
+          "text": "Split DNI evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Peruvian Company Onboarding Auditor",
+          "href": "/en/peru/peru-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for RUC, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Peruvian SUNARP / SUNAT Readiness Helper",
+          "href": "/en/peru/peru-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated SUNARP / SUNAT lookup or company registry workflow."
+        },
+        {
+          "title": "Peruvian ID Card Format Helper",
+          "href": "/en/peru/peru-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Peruvian Passport Number Helper",
+          "href": "/en/peru/peru-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Peruvian MRZ / Passport Parser",
+          "href": "/en/peru/peru-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Peruvian Domestic Bank Account Validator",
+          "href": "/en/peru/peru-domestic-account-validator/",
+          "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+        },
+        {
+          "title": "Peruvian Domestic Account Fixture Generator",
+          "href": "/en/peru/peru-domestic-account-fixture-generator/",
+          "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+        },
+        {
+          "title": "Peruvian Domestic Bank Account Inspector",
+          "href": "/en/peru/peru-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+        },
+        {
+          "title": "Peruvian BIC / SWIFT Inspector",
+          "href": "/en/peru/peru-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Peru banking integrations."
+        },
+        {
+          "title": "Peruvian Domestic Transfer Helper",
+          "href": "/en/peru/peru-domestic-transfer-helper/",
+          "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+        },
+        {
+          "title": "Peruvian Debit Authorization Helper",
+          "href": "/en/peru/peru-debit-authorization-helper/",
+          "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+        },
+        {
+          "title": "Peruvian CCI / Yape / Plin Reference Helper",
+          "href": "/en/peru/peru-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Peruvian Remittance Text Builder",
+          "href": "/en/peru/peru-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Peruvian Payment Reconciliation Helper",
+          "href": "/en/peru/peru-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Peruvian Bank Statement Parser",
+          "href": "/en/peru/peru-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Peruvian Masked Bank Account Formatter",
+          "href": "/en/peru/peru-masked-bank-account-formatter/",
+          "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+        },
+        {
+          "title": "Peruvian PEN Decimal Currency Formatter",
+          "href": "/en/peru/peru-currency-decimal-formatter/",
+          "text": "Normalize PEN amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Peruvian VAT Rate Sanity Helper",
+          "href": "/en/peru/peru-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Peruvian VAT Return Field Helper",
+          "href": "/en/peru/peru-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Peruvian Invoice Number Helper",
+          "href": "/en/peru/peru-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Peruvian comprobante electronico / CPE Readiness Checker",
+          "href": "/en/peru/peru-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Peruvian Tax Authority Handoff Helper",
+          "href": "/en/peru/peru-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Peruvian Accounting Audit Trail Checklist Helper",
+          "href": "/en/peru/peru-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Peruvian Postal Code Validator",
+          "href": "/en/peru/peru-postal-code-validator/",
+          "text": "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Peruvian Address Normalizer",
+          "href": "/en/peru/peru-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Peruvian Address Transliteration Normalizer",
+          "href": "/en/peru/peru-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Peruvian Region / Province Code Mapper",
+          "href": "/en/peru/peru-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Peruvian Municipality Code Inspector",
+          "href": "/en/peru/peru-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Peruvian Phone Number Validator",
+          "href": "/en/peru/peru-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Peruvian Phone E.164 Formatter",
+          "href": "/en/peru/peru-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Peruvian Date Locale Formatter",
+          "href": "/en/peru/peru-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Peruvian CSV Locale Normalizer",
+          "href": "/en/peru/peru-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Peru decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Peruvian Slug Normalizer",
+          "href": "/en/peru/peru-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Peruvian Document OCR Fixer",
+          "href": "/en/peru/peru-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Peruvian Ley de Proteccion de Datos Personales Redaction Helper",
+          "href": "/en/peru/peru-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Peruvian PII Masker",
+          "href": "/en/peru/peru-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Peruvian Personal Data Fixture Helper",
+          "href": "/en/peru/peru-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Peruvian Driving Licence Format Helper",
+          "href": "/en/peru/peru-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Peruvian Residence Permit Format Helper",
+          "href": "/en/peru/peru-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Peruvian Health Card Format Helper",
+          "href": "/en/peru/peru-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Peruvian Vehicle Plate Inspector",
+          "href": "/en/peru/peru-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Peruvian VIN Validator",
+          "href": "/en/peru/peru-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Peruvian Vehicle Data Redaction Helper",
+          "href": "/en/peru/peru-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Peruvian Customs Declaration Helper",
+          "href": "/en/peru/peru-customs-declaration-helper/",
+          "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Peruvian Postal Tracking Helper",
+          "href": "/en/peru/peru-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Peruvian Data Quality Workbench",
+          "href": "/en/peru/peru-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Peruvian JSON Fixture Helper",
+          "href": "/en/peru/peru-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Peruvian Regex Pack Helper",
+          "href": "/en/peru/peru-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Peruvian API Payload Auditor",
+          "href": "/en/peru/peru-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Peruvian Form Field Auditor",
+          "href": "/en/peru/peru-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Peruvian Locale Number Parser",
+          "href": "/en/peru/peru-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Peru."
+        },
+        {
+          "title": "Peruvian Calendar Week Helper",
+          "href": "/en/peru/peru-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Peruvian Company Suffix Normalizer",
+          "href": "/en/peru/peru-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Peruvian Procurement Identifier Helper",
+          "href": "/en/peru/peru-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Peruvian Locale Copy Checker",
+          "href": "/en/peru/peru-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Peruvian Support Ticket Scrubber",
+          "href": "/en/peru/peru-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Peruvian Integration Smoke Test Builder",
+          "href": "/en/peru/peru-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
     "poland": {
       "flag": "🇵🇱",
       "name": "Poland",
@@ -28321,6 +32525,515 @@
         ]
       }
     },
+    "suriname": {
+      "flag": "🇸🇷",
+      "name": "Suriname",
+      "badge": "Premium Suriname developer suite",
+      "description": "Developer intelligence and browser-only workbenches for surinamese identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Suriname",
+        "population": "approximately 0.6M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Paramaribo",
+        "continent": "South America",
+        "region": "South America / CARICOM",
+        "languages": "Dutch",
+        "currency": "Surinamese dollar",
+        "currencyCode": "SRD",
+        "callingCode": "+597",
+        "internetTld": ".sr",
+        "drivingSide": "Left",
+        "iso2": "SR",
+        "iso3": "SUR",
+        "isoNumeric": "740",
+        "locale": "nl-SR",
+        "icuLocale": "nl_SR",
+        "dateFormat": "DD-MM-YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street, number, postal code, locality, Suriname",
+        "postalCodeFormat": "postal/address reference",
+        "primaryTimeZone": "America/Paramaribo (SRT)",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "115",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "nl-SR",
+        "cldrLocale": "nl_SR",
+        "metricVsImperial": "Metric-first",
+        "powerPlugTypes": "Type A / Type B / Type C / Type F",
+        "voltage": "127V / 220V",
+        "frequency": "60Hz"
+      },
+      "visualIdentity": {
+        "countryId": "suriname",
+        "outlineLabel": "Suriname outline",
+        "mapLabel": "Suriname in the world",
+        "continentBadge": "South America",
+        "flagLabel": "Suriname flag",
+        "heroAccentPrimary": "55 126 63",
+        "heroAccentSecondary": "255 255 255",
+        "heroAccentTertiary": "180 10 45"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "ID number and company registry number",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "BTW / tax number and payments",
+          "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Suriname registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /suriname/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Dot (.) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Surinamese examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "KKF / business registry",
+          "text": "Official business registry or company lookup remains the source of truth for Suriname.",
+          "status": "official boundary"
+        },
+        {
+          "title": "BTW / tax number",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "personal-data protection",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "ID number, tax number, company number, bank account, postal/address, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "bank account, SNEPS transfer, tax payment reference, SWIFT",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "nl-SR / nl_SR; date DD-MM-YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "SRD amounts use Comma (,) and Dot (.).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "ID number, company registry number, postal/address reference, phone, address, and domestic account fields need local labels.",
+          "status": "available"
+        }
+      ],
+      "technicalStandards": [
+        {
+          "title": "Plug types",
+          "value": "Type A / Type B / Type C / Type F",
+          "text": "Public utility fixture for travel, QA, and onboarding copy."
+        },
+        {
+          "title": "Electrical voltage",
+          "value": "127V / 220V",
+          "text": "Common mains voltage used by country-profile fixtures."
+        },
+        {
+          "title": "Grid frequency",
+          "value": "60Hz",
+          "text": "Common grid frequency for technical defaults."
+        },
+        {
+          "title": "Emergency number",
+          "value": "112",
+          "text": "Primary emergency number fixture; local alternatives may also exist."
+        }
+      ],
+      "searchHints": [
+        "ID",
+        "BTW",
+        "KKF",
+        "SNEPS",
+        "BANK",
+        "PARAMARIBO"
+      ],
+      "routes": [
+        {
+          "title": "Surinamese ID number Validator",
+          "href": "/en/suriname/suriname-id-number-validator/",
+          "text": "Validate ID number shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Surinamese company registry number Validator",
+          "href": "/en/suriname/suriname-company-registry-number-validator/",
+          "text": "Inspect company registry number structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Surinamese BTW / tax number Tax ID Validator",
+          "href": "/en/suriname/suriname-vat-id-validator/",
+          "text": "Normalize BTW / tax number identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+        },
+        {
+          "title": "Surinamese Customs / Tax Identifier Helper",
+          "href": "/en/suriname/suriname-customs-tax-identifier-helper/",
+          "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+        },
+        {
+          "title": "Surinamese social security evidence Helper",
+          "href": "/en/suriname/suriname-social-security-evidence-social-insurance-helper/",
+          "text": "Split social security evidence evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Surinamese Company Onboarding Auditor",
+          "href": "/en/suriname/suriname-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for company registry number, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Surinamese KKF / business registry Readiness Helper",
+          "href": "/en/suriname/suriname-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated KKF / business registry lookup or company registry workflow."
+        },
+        {
+          "title": "Surinamese ID Card Format Helper",
+          "href": "/en/suriname/suriname-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Surinamese Passport Number Helper",
+          "href": "/en/suriname/suriname-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Surinamese MRZ / Passport Parser",
+          "href": "/en/suriname/suriname-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Surinamese Domestic Bank Account Validator",
+          "href": "/en/suriname/suriname-domestic-account-validator/",
+          "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+        },
+        {
+          "title": "Surinamese Domestic Account Fixture Generator",
+          "href": "/en/suriname/suriname-domestic-account-fixture-generator/",
+          "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+        },
+        {
+          "title": "Surinamese Domestic Bank Account Inspector",
+          "href": "/en/suriname/suriname-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+        },
+        {
+          "title": "Surinamese BIC / SWIFT Inspector",
+          "href": "/en/suriname/suriname-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Suriname banking integrations."
+        },
+        {
+          "title": "Surinamese Domestic Transfer Helper",
+          "href": "/en/suriname/suriname-domestic-transfer-helper/",
+          "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+        },
+        {
+          "title": "Surinamese Debit Authorization Helper",
+          "href": "/en/suriname/suriname-debit-authorization-helper/",
+          "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+        },
+        {
+          "title": "Surinamese bank transfer / SNEPS Reference Helper",
+          "href": "/en/suriname/suriname-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Surinamese Remittance Text Builder",
+          "href": "/en/suriname/suriname-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Surinamese Payment Reconciliation Helper",
+          "href": "/en/suriname/suriname-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Surinamese Bank Statement Parser",
+          "href": "/en/suriname/suriname-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Surinamese Masked Bank Account Formatter",
+          "href": "/en/suriname/suriname-masked-bank-account-formatter/",
+          "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+        },
+        {
+          "title": "Surinamese SRD Decimal Currency Formatter",
+          "href": "/en/suriname/suriname-currency-decimal-formatter/",
+          "text": "Normalize SRD amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Surinamese VAT Rate Sanity Helper",
+          "href": "/en/suriname/suriname-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Surinamese VAT Return Field Helper",
+          "href": "/en/suriname/suriname-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Surinamese Invoice Number Helper",
+          "href": "/en/suriname/suriname-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Surinamese BTW invoice Readiness Checker",
+          "href": "/en/suriname/suriname-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Surinamese Tax Authority Handoff Helper",
+          "href": "/en/suriname/suriname-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Surinamese Accounting Audit Trail Checklist Helper",
+          "href": "/en/suriname/suriname-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Surinamese Postal Code Validator",
+          "href": "/en/suriname/suriname-postal-code-validator/",
+          "text": "Validate postal/address reference shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Surinamese Address Normalizer",
+          "href": "/en/suriname/suriname-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Surinamese Address Transliteration Normalizer",
+          "href": "/en/suriname/suriname-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Surinamese Region / Province Code Mapper",
+          "href": "/en/suriname/suriname-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Surinamese Municipality Code Inspector",
+          "href": "/en/suriname/suriname-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Surinamese Phone Number Validator",
+          "href": "/en/suriname/suriname-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Surinamese Phone E.164 Formatter",
+          "href": "/en/suriname/suriname-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Surinamese Date Locale Formatter",
+          "href": "/en/suriname/suriname-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Surinamese CSV Locale Normalizer",
+          "href": "/en/suriname/suriname-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Suriname decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Surinamese Slug Normalizer",
+          "href": "/en/suriname/suriname-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Surinamese Document OCR Fixer",
+          "href": "/en/suriname/suriname-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Surinamese personal-data protection Redaction Helper",
+          "href": "/en/suriname/suriname-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Surinamese PII Masker",
+          "href": "/en/suriname/suriname-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Surinamese Personal Data Fixture Helper",
+          "href": "/en/suriname/suriname-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Surinamese Driving Licence Format Helper",
+          "href": "/en/suriname/suriname-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Surinamese Residence Permit Format Helper",
+          "href": "/en/suriname/suriname-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Surinamese Health Card Format Helper",
+          "href": "/en/suriname/suriname-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Surinamese Vehicle Plate Inspector",
+          "href": "/en/suriname/suriname-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Surinamese VIN Validator",
+          "href": "/en/suriname/suriname-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Surinamese Vehicle Data Redaction Helper",
+          "href": "/en/suriname/suriname-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Surinamese Customs Declaration Helper",
+          "href": "/en/suriname/suriname-customs-declaration-helper/",
+          "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Surinamese Postal Tracking Helper",
+          "href": "/en/suriname/suriname-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Surinamese Data Quality Workbench",
+          "href": "/en/suriname/suriname-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Surinamese JSON Fixture Helper",
+          "href": "/en/suriname/suriname-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Surinamese Regex Pack Helper",
+          "href": "/en/suriname/suriname-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Surinamese API Payload Auditor",
+          "href": "/en/suriname/suriname-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Surinamese Form Field Auditor",
+          "href": "/en/suriname/suriname-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Surinamese Locale Number Parser",
+          "href": "/en/suriname/suriname-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Suriname."
+        },
+        {
+          "title": "Surinamese Calendar Week Helper",
+          "href": "/en/suriname/suriname-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Surinamese Company Suffix Normalizer",
+          "href": "/en/suriname/suriname-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Surinamese Procurement Identifier Helper",
+          "href": "/en/suriname/suriname-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Surinamese Locale Copy Checker",
+          "href": "/en/suriname/suriname-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Surinamese Support Ticket Scrubber",
+          "href": "/en/suriname/suriname-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Surinamese Integration Smoke Test Builder",
+          "href": "/en/suriname/suriname-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
     "sweden": {
       "flag": "🇸🇪",
       "name": "Sweden",
@@ -30243,6 +34956,515 @@
         }
       ]
     },
+    "uruguay": {
+      "flag": "🇺🇾",
+      "name": "Uruguay",
+      "badge": "Premium Uruguay developer suite",
+      "description": "Developer intelligence and browser-only workbenches for uruguayan identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Uruguay",
+        "population": "approximately 3.5M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Montevideo",
+        "continent": "South America",
+        "region": "South America / MERCOSUR",
+        "languages": "Spanish",
+        "currency": "Uruguayan peso",
+        "currencyCode": "UYU",
+        "callingCode": "+598",
+        "internetTld": ".uy",
+        "drivingSide": "Right",
+        "iso2": "UY",
+        "iso3": "URY",
+        "isoNumeric": "858",
+        "locale": "es-UY",
+        "icuLocale": "es_UY",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street, number, postal code, locality, Uruguay",
+        "postalCodeFormat": "codigo postal",
+        "primaryTimeZone": "America/Montevideo (UYT)",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "911",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "es-UY",
+        "cldrLocale": "es_UY",
+        "metricVsImperial": "Metric-first",
+        "powerPlugTypes": "Type C / Type F / Type I / Type L",
+        "voltage": "230V",
+        "frequency": "50Hz"
+      },
+      "visualIdentity": {
+        "countryId": "uruguay",
+        "outlineLabel": "Uruguay outline",
+        "mapLabel": "Uruguay in the world",
+        "continentBadge": "South America",
+        "flagLabel": "Uruguay flag",
+        "heroAccentPrimary": "0 56 168",
+        "heroAccentSecondary": "255 255 255",
+        "heroAccentTertiary": "252 209 22"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "Cedula de identidad and RUT",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "IVA / RUT and payments",
+          "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Uruguay registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /uruguay/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Dot (.) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Uruguayan examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "DGI / Registro Nacional de Comercio",
+          "text": "Official business registry or company lookup remains the source of truth for Uruguay.",
+          "status": "official boundary"
+        },
+        {
+          "title": "IVA / RUT",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "Ley 18.331 / URCDP",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "Cedula, RUT, DGI, bank account, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "bank account, BROU handoff, DGI payment reference, Pagos QR",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "es-UY / es_UY; date DD/MM/YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "UYU amounts use Comma (,) and Dot (.).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "Cedula de identidad, RUT, codigo postal, phone, address, and domestic account fields need local labels.",
+          "status": "available"
+        }
+      ],
+      "technicalStandards": [
+        {
+          "title": "Plug types",
+          "value": "Type C / Type F / Type I / Type L",
+          "text": "Public utility fixture for travel, QA, and onboarding copy."
+        },
+        {
+          "title": "Electrical voltage",
+          "value": "230V",
+          "text": "Common mains voltage used by country-profile fixtures."
+        },
+        {
+          "title": "Grid frequency",
+          "value": "50Hz",
+          "text": "Common grid frequency for technical defaults."
+        },
+        {
+          "title": "Emergency number",
+          "value": "112",
+          "text": "Primary emergency number fixture; local alternatives may also exist."
+        }
+      ],
+      "searchHints": [
+        "CEDULA",
+        "RUT",
+        "DGI",
+        "CFE",
+        "BROU",
+        "IVA"
+      ],
+      "routes": [
+        {
+          "title": "Uruguayan Cedula de identidad Validator",
+          "href": "/en/uruguay/uruguay-cedula-de-identidad-validator/",
+          "text": "Validate Cedula de identidad shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Uruguayan RUT Validator",
+          "href": "/en/uruguay/uruguay-rut-validator/",
+          "text": "Inspect RUT structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Uruguayan IVA / RUT Tax ID Validator",
+          "href": "/en/uruguay/uruguay-vat-id-validator/",
+          "text": "Normalize IVA / RUT identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+        },
+        {
+          "title": "Uruguayan Customs / Tax Identifier Helper",
+          "href": "/en/uruguay/uruguay-customs-tax-identifier-helper/",
+          "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+        },
+        {
+          "title": "Uruguayan BPS evidence Helper",
+          "href": "/en/uruguay/uruguay-bps-evidence-social-insurance-helper/",
+          "text": "Split BPS evidence evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Uruguayan Company Onboarding Auditor",
+          "href": "/en/uruguay/uruguay-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for RUT, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Uruguayan DGI / Registro Nacional de Comercio Readiness Helper",
+          "href": "/en/uruguay/uruguay-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated DGI / Registro Nacional de Comercio lookup or company registry workflow."
+        },
+        {
+          "title": "Uruguayan ID Card Format Helper",
+          "href": "/en/uruguay/uruguay-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Uruguayan Passport Number Helper",
+          "href": "/en/uruguay/uruguay-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Uruguayan MRZ / Passport Parser",
+          "href": "/en/uruguay/uruguay-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Uruguayan Domestic Bank Account Validator",
+          "href": "/en/uruguay/uruguay-domestic-account-validator/",
+          "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+        },
+        {
+          "title": "Uruguayan Domestic Account Fixture Generator",
+          "href": "/en/uruguay/uruguay-domestic-account-fixture-generator/",
+          "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+        },
+        {
+          "title": "Uruguayan Domestic Bank Account Inspector",
+          "href": "/en/uruguay/uruguay-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+        },
+        {
+          "title": "Uruguayan BIC / SWIFT Inspector",
+          "href": "/en/uruguay/uruguay-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Uruguay banking integrations."
+        },
+        {
+          "title": "Uruguayan Domestic Transfer Helper",
+          "href": "/en/uruguay/uruguay-domestic-transfer-helper/",
+          "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+        },
+        {
+          "title": "Uruguayan Debit Authorization Helper",
+          "href": "/en/uruguay/uruguay-debit-authorization-helper/",
+          "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+        },
+        {
+          "title": "Uruguayan bank transfer / QR payment Reference Helper",
+          "href": "/en/uruguay/uruguay-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Uruguayan Remittance Text Builder",
+          "href": "/en/uruguay/uruguay-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Uruguayan Payment Reconciliation Helper",
+          "href": "/en/uruguay/uruguay-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Uruguayan Bank Statement Parser",
+          "href": "/en/uruguay/uruguay-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Uruguayan Masked Bank Account Formatter",
+          "href": "/en/uruguay/uruguay-masked-bank-account-formatter/",
+          "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+        },
+        {
+          "title": "Uruguayan UYU Decimal Currency Formatter",
+          "href": "/en/uruguay/uruguay-currency-decimal-formatter/",
+          "text": "Normalize UYU amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Uruguayan VAT Rate Sanity Helper",
+          "href": "/en/uruguay/uruguay-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Uruguayan VAT Return Field Helper",
+          "href": "/en/uruguay/uruguay-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Uruguayan Invoice Number Helper",
+          "href": "/en/uruguay/uruguay-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Uruguayan e-Factura / CFE Readiness Checker",
+          "href": "/en/uruguay/uruguay-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Uruguayan Tax Authority Handoff Helper",
+          "href": "/en/uruguay/uruguay-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Uruguayan Accounting Audit Trail Checklist Helper",
+          "href": "/en/uruguay/uruguay-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Uruguayan Postal Code Validator",
+          "href": "/en/uruguay/uruguay-postal-code-validator/",
+          "text": "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Uruguayan Address Normalizer",
+          "href": "/en/uruguay/uruguay-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Uruguayan Address Transliteration Normalizer",
+          "href": "/en/uruguay/uruguay-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Uruguayan Region / Province Code Mapper",
+          "href": "/en/uruguay/uruguay-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Uruguayan Municipality Code Inspector",
+          "href": "/en/uruguay/uruguay-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Uruguayan Phone Number Validator",
+          "href": "/en/uruguay/uruguay-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Uruguayan Phone E.164 Formatter",
+          "href": "/en/uruguay/uruguay-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Uruguayan Date Locale Formatter",
+          "href": "/en/uruguay/uruguay-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Uruguayan CSV Locale Normalizer",
+          "href": "/en/uruguay/uruguay-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Uruguay decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Uruguayan Slug Normalizer",
+          "href": "/en/uruguay/uruguay-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Uruguayan Document OCR Fixer",
+          "href": "/en/uruguay/uruguay-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Uruguayan Ley 18.331 / URCDP Redaction Helper",
+          "href": "/en/uruguay/uruguay-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Uruguayan PII Masker",
+          "href": "/en/uruguay/uruguay-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Uruguayan Personal Data Fixture Helper",
+          "href": "/en/uruguay/uruguay-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Uruguayan Driving Licence Format Helper",
+          "href": "/en/uruguay/uruguay-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Uruguayan Residence Permit Format Helper",
+          "href": "/en/uruguay/uruguay-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Uruguayan Health Card Format Helper",
+          "href": "/en/uruguay/uruguay-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Uruguayan Vehicle Plate Inspector",
+          "href": "/en/uruguay/uruguay-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Uruguayan VIN Validator",
+          "href": "/en/uruguay/uruguay-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Uruguayan Vehicle Data Redaction Helper",
+          "href": "/en/uruguay/uruguay-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Uruguayan Customs Declaration Helper",
+          "href": "/en/uruguay/uruguay-customs-declaration-helper/",
+          "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Uruguayan Postal Tracking Helper",
+          "href": "/en/uruguay/uruguay-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Uruguayan Data Quality Workbench",
+          "href": "/en/uruguay/uruguay-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Uruguayan JSON Fixture Helper",
+          "href": "/en/uruguay/uruguay-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Uruguayan Regex Pack Helper",
+          "href": "/en/uruguay/uruguay-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Uruguayan API Payload Auditor",
+          "href": "/en/uruguay/uruguay-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Uruguayan Form Field Auditor",
+          "href": "/en/uruguay/uruguay-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Uruguayan Locale Number Parser",
+          "href": "/en/uruguay/uruguay-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Uruguay."
+        },
+        {
+          "title": "Uruguayan Calendar Week Helper",
+          "href": "/en/uruguay/uruguay-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Uruguayan Company Suffix Normalizer",
+          "href": "/en/uruguay/uruguay-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Uruguayan Procurement Identifier Helper",
+          "href": "/en/uruguay/uruguay-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Uruguayan Locale Copy Checker",
+          "href": "/en/uruguay/uruguay-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Uruguayan Support Ticket Scrubber",
+          "href": "/en/uruguay/uruguay-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Uruguayan Integration Smoke Test Builder",
+          "href": "/en/uruguay/uruguay-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
+    },
     "vatican-city": {
       "flag": "🇻🇦",
       "name": "Vatican City",
@@ -30751,6 +35973,515 @@
           "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
         }
       ]
+    },
+    "venezuela": {
+      "flag": "🇻🇪",
+      "name": "Venezuela",
+      "badge": "Premium Venezuela developer suite",
+      "description": "Developer intelligence and browser-only workbenches for venezuelan identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+      "metadata": {
+        "nativeName": "Venezuela",
+        "population": "approximately 29M",
+        "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+        "capital": "Caracas",
+        "continent": "South America",
+        "region": "South America / Caribbean coast",
+        "languages": "Spanish",
+        "currency": "Venezuelan bolivar",
+        "currencyCode": "VES",
+        "callingCode": "+58",
+        "internetTld": ".ve",
+        "drivingSide": "Right",
+        "iso2": "VE",
+        "iso3": "VEN",
+        "isoNumeric": "862",
+        "locale": "es-VE",
+        "icuLocale": "es_VE",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "24-hour, HH:mm",
+        "decimalSeparator": "Comma (,)",
+        "thousandsSeparator": "Dot (.)",
+        "addressFormat": "Street, number, postal code, locality, Venezuela",
+        "postalCodeFormat": "codigo postal",
+        "primaryTimeZone": "America/Caracas (VET)",
+        "measurementSystem": "Metric",
+        "paperSize": "A4",
+        "emergencyNumber": "911",
+        "weekStarts": "Monday",
+        "rtlSupport": "No",
+        "unicodeLocale": "es-VE",
+        "cldrLocale": "es_VE",
+        "metricVsImperial": "Metric-first",
+        "powerPlugTypes": "Type A / Type B",
+        "voltage": "120V",
+        "frequency": "60Hz"
+      },
+      "visualIdentity": {
+        "countryId": "venezuela",
+        "outlineLabel": "Venezuela outline",
+        "mapLabel": "Venezuela in the world",
+        "continentBadge": "South America",
+        "flagLabel": "Venezuela flag",
+        "heroAccentPrimary": "252 209 22",
+        "heroAccentSecondary": "0 56 147",
+        "heroAccentTertiary": "206 17 38"
+      },
+      "stats": [
+        {
+          "label": "Premium tools",
+          "value": "62",
+          "text": "Browser-only local developer workbenches"
+        },
+        {
+          "label": "Core locales",
+          "value": "7",
+          "text": "Runtime-localized production locales"
+        },
+        {
+          "label": "Field breakdown",
+          "value": "100%",
+          "text": "Every tool exposes debug slices"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "Cedula and RIF",
+          "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+        },
+        {
+          "title": "IVA / RIF and payments",
+          "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+        },
+        {
+          "title": "Developer debugging",
+          "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+        }
+      ],
+      "developerNotes": [
+        {
+          "title": "No official claims",
+          "text": "Offline checks never prove official Venezuela registry, tax, bank, vehicle, postal, or identity status."
+        },
+        {
+          "title": "Field breakdown required",
+          "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+        },
+        {
+          "title": "Same-country links",
+          "text": "Related workbenches stay inside /venezuela/ unless a comparison route is explicitly designed."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "title": "Treating syntax as status",
+          "text": "A passing checksum or shape check is not an official lookup result."
+        },
+        {
+          "title": "Logging raw personal data",
+          "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+        },
+        {
+          "title": "Ignoring locale separators",
+          "text": "Use Comma (,) and Dot (.) rules before API normalization."
+        },
+        {
+          "title": "Mixing countries",
+          "text": "Do not reuse non-Venezuelan examples, fallback copy, or related links in this suite."
+        }
+      ],
+      "officialSources": [
+        {
+          "title": "SENIAT / Registro Mercantil",
+          "text": "Official business registry or company lookup remains the source of truth for Venezuela.",
+          "status": "official boundary"
+        },
+        {
+          "title": "IVA / RIF",
+          "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+          "status": "official boundary"
+        },
+        {
+          "title": "personal-data protection",
+          "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+          "status": "official boundary"
+        }
+      ],
+      "ecosystem": [
+        {
+          "title": "Identity and tax",
+          "text": "Cedula, RIF, IVSS evidence, bank account, postal code, phone",
+          "status": "available"
+        },
+        {
+          "title": "Banking and payments",
+          "text": "Pago Movil, bank account, SINPE-like mobile payment handoff, SENIAT payment reference",
+          "status": "available"
+        },
+        {
+          "title": "Developer data QA",
+          "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+          "status": "available"
+        }
+      ],
+      "localizationNotes": [
+        {
+          "title": "Locale",
+          "text": "es-VE / es_VE; date DD/MM/YYYY.",
+          "status": "available"
+        },
+        {
+          "title": "Numbers",
+          "text": "VES amounts use Comma (,) and Dot (.).",
+          "status": "available"
+        },
+        {
+          "title": "Forms",
+          "text": "Cedula, RIF, codigo postal, phone, address, and domestic account fields need local labels.",
+          "status": "available"
+        }
+      ],
+      "technicalStandards": [
+        {
+          "title": "Plug types",
+          "value": "Type A / Type B",
+          "text": "Public utility fixture for travel, QA, and onboarding copy."
+        },
+        {
+          "title": "Electrical voltage",
+          "value": "120V",
+          "text": "Common mains voltage used by country-profile fixtures."
+        },
+        {
+          "title": "Grid frequency",
+          "value": "60Hz",
+          "text": "Common grid frequency for technical defaults."
+        },
+        {
+          "title": "Emergency number",
+          "value": "112",
+          "text": "Primary emergency number fixture; local alternatives may also exist."
+        }
+      ],
+      "searchHints": [
+        "CEDULA",
+        "RIF",
+        "SENIAT",
+        "PAGO MOVIL",
+        "IVSS",
+        "VES"
+      ],
+      "routes": [
+        {
+          "title": "Venezuelan Cedula Validator",
+          "href": "/en/venezuela/venezuela-cedula-validator/",
+          "text": "Validate Cedula shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+        },
+        {
+          "title": "Venezuelan RIF Validator",
+          "href": "/en/venezuela/venezuela-rif-validator/",
+          "text": "Inspect RIF structure, registry-style prefixes, control digits, and official lookup boundaries."
+        },
+        {
+          "title": "Venezuelan IVA / RIF Tax ID Validator",
+          "href": "/en/venezuela/venezuela-vat-id-validator/",
+          "text": "Normalize IVA / RIF identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+        },
+        {
+          "title": "Venezuelan Customs / Tax Identifier Helper",
+          "href": "/en/venezuela/venezuela-customs-tax-identifier-helper/",
+          "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+        },
+        {
+          "title": "Venezuelan IVSS evidence Helper",
+          "href": "/en/venezuela/venezuela-ivss-evidence-social-insurance-helper/",
+          "text": "Split IVSS evidence evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+        },
+        {
+          "title": "Venezuelan Company Onboarding Auditor",
+          "href": "/en/venezuela/venezuela-company-onboarding-auditor/",
+          "text": "Audit company intake payloads for RIF, VAT, address, banking, and official registry handoff readiness."
+        },
+        {
+          "title": "Venezuelan SENIAT / Registro Mercantil Readiness Helper",
+          "href": "/en/venezuela/venezuela-business-register-readiness-helper/",
+          "text": "Prepare browser-only evidence before a regulated SENIAT / Registro Mercantil lookup or company registry workflow."
+        },
+        {
+          "title": "Venezuelan ID Card Format Helper",
+          "href": "/en/venezuela/venezuela-id-card-format-helper/",
+          "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+        },
+        {
+          "title": "Venezuelan Passport Number Helper",
+          "href": "/en/venezuela/venezuela-passport-number-helper/",
+          "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+        },
+        {
+          "title": "Venezuelan MRZ / Passport Parser",
+          "href": "/en/venezuela/venezuela-mrz-passport-parser/",
+          "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+        },
+        {
+          "title": "Venezuelan Domestic Bank Account Validator",
+          "href": "/en/venezuela/venezuela-domestic-account-validator/",
+          "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+        },
+        {
+          "title": "Venezuelan Domestic Account Fixture Generator",
+          "href": "/en/venezuela/venezuela-domestic-account-fixture-generator/",
+          "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+        },
+        {
+          "title": "Venezuelan Domestic Bank Account Inspector",
+          "href": "/en/venezuela/venezuela-bank-account-inspector/",
+          "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+        },
+        {
+          "title": "Venezuelan BIC / SWIFT Inspector",
+          "href": "/en/venezuela/venezuela-bic-swift-inspector/",
+          "text": "Inspect BIC institution, country, location, and branch evidence for Venezuela banking integrations."
+        },
+        {
+          "title": "Venezuelan Domestic Transfer Helper",
+          "href": "/en/venezuela/venezuela-domestic-transfer-helper/",
+          "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+        },
+        {
+          "title": "Venezuelan Debit Authorization Helper",
+          "href": "/en/venezuela/venezuela-debit-authorization-helper/",
+          "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+        },
+        {
+          "title": "Venezuelan Pago Movil / bank transfer Reference Helper",
+          "href": "/en/venezuela/venezuela-payment-reference-helper/",
+          "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+        },
+        {
+          "title": "Venezuelan Remittance Text Builder",
+          "href": "/en/venezuela/venezuela-remittance-text-builder/",
+          "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+        },
+        {
+          "title": "Venezuelan Payment Reconciliation Helper",
+          "href": "/en/venezuela/venezuela-payment-reconciliation-helper/",
+          "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+        },
+        {
+          "title": "Venezuelan Bank Statement Parser",
+          "href": "/en/venezuela/venezuela-bank-statement-parser/",
+          "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+        },
+        {
+          "title": "Venezuelan Masked Bank Account Formatter",
+          "href": "/en/venezuela/venezuela-masked-bank-account-formatter/",
+          "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+        },
+        {
+          "title": "Venezuelan VES Decimal Currency Formatter",
+          "href": "/en/venezuela/venezuela-currency-decimal-formatter/",
+          "text": "Normalize VES amount strings, decimal separators, grouping, and API-safe numeric previews."
+        },
+        {
+          "title": "Venezuelan VAT Rate Sanity Helper",
+          "href": "/en/venezuela/venezuela-vat-rate-sanity-helper/",
+          "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+        },
+        {
+          "title": "Venezuelan VAT Return Field Helper",
+          "href": "/en/venezuela/venezuela-vat-return-field-helper/",
+          "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+        },
+        {
+          "title": "Venezuelan Invoice Number Helper",
+          "href": "/en/venezuela/venezuela-invoice-number-helper/",
+          "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+        },
+        {
+          "title": "Venezuelan factura fiscal Readiness Checker",
+          "href": "/en/venezuela/venezuela-e-invoicing-readiness-checker/",
+          "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+        },
+        {
+          "title": "Venezuelan Tax Authority Handoff Helper",
+          "href": "/en/venezuela/venezuela-tax-authority-handoff-helper/",
+          "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+        },
+        {
+          "title": "Venezuelan Accounting Audit Trail Checklist Helper",
+          "href": "/en/venezuela/venezuela-accounting-audit-trail-checklist-generator/",
+          "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+        },
+        {
+          "title": "Venezuelan Postal Code Validator",
+          "href": "/en/venezuela/venezuela-postal-code-validator/",
+          "text": "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+        },
+        {
+          "title": "Venezuelan Address Normalizer",
+          "href": "/en/venezuela/venezuela-address-normalizer/",
+          "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+        },
+        {
+          "title": "Venezuelan Address Transliteration Normalizer",
+          "href": "/en/venezuela/venezuela-address-transliteration-normalizer/",
+          "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+        },
+        {
+          "title": "Venezuelan Region / Province Code Mapper",
+          "href": "/en/venezuela/venezuela-region-code-mapper/",
+          "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+        },
+        {
+          "title": "Venezuelan Municipality Code Inspector",
+          "href": "/en/venezuela/venezuela-municipality-code-inspector/",
+          "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+        },
+        {
+          "title": "Venezuelan Phone Number Validator",
+          "href": "/en/venezuela/venezuela-phone-number-validator/",
+          "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+        },
+        {
+          "title": "Venezuelan Phone E.164 Formatter",
+          "href": "/en/venezuela/venezuela-phone-e164-formatter/",
+          "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+        },
+        {
+          "title": "Venezuelan Date Locale Formatter",
+          "href": "/en/venezuela/venezuela-date-locale-formatter/",
+          "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+        },
+        {
+          "title": "Venezuelan CSV Locale Normalizer",
+          "href": "/en/venezuela/venezuela-csv-locale-normalizer/",
+          "text": "Normalize CSV snippets for Venezuela decimal, date, postal, phone, tax, and banking fields."
+        },
+        {
+          "title": "Venezuelan Slug Normalizer",
+          "href": "/en/venezuela/venezuela-slug-normalizer/",
+          "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+        },
+        {
+          "title": "Venezuelan Document OCR Fixer",
+          "href": "/en/venezuela/venezuela-document-ocr-fixer/",
+          "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+        },
+        {
+          "title": "Venezuelan personal-data protection Redaction Helper",
+          "href": "/en/venezuela/venezuela-gdpr-redaction-helper/",
+          "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+        },
+        {
+          "title": "Venezuelan PII Masker",
+          "href": "/en/venezuela/venezuela-pii-masker/",
+          "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+        },
+        {
+          "title": "Venezuelan Personal Data Fixture Helper",
+          "href": "/en/venezuela/venezuela-personal-data-fixture-generator/",
+          "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+        },
+        {
+          "title": "Venezuelan Driving Licence Format Helper",
+          "href": "/en/venezuela/venezuela-driving-licence-format-helper/",
+          "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+        },
+        {
+          "title": "Venezuelan Residence Permit Format Helper",
+          "href": "/en/venezuela/venezuela-residence-permit-format-helper/",
+          "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+        },
+        {
+          "title": "Venezuelan Health Card Format Helper",
+          "href": "/en/venezuela/venezuela-health-card-format-helper/",
+          "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+        },
+        {
+          "title": "Venezuelan Vehicle Plate Inspector",
+          "href": "/en/venezuela/venezuela-vehicle-plate-inspector/",
+          "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+        },
+        {
+          "title": "Venezuelan VIN Validator",
+          "href": "/en/venezuela/venezuela-vin-validator/",
+          "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+        },
+        {
+          "title": "Venezuelan Vehicle Data Redaction Helper",
+          "href": "/en/venezuela/venezuela-vehicle-data-redaction-helper/",
+          "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+        },
+        {
+          "title": "Venezuelan Customs Declaration Helper",
+          "href": "/en/venezuela/venezuela-customs-declaration-helper/",
+          "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+        },
+        {
+          "title": "Venezuelan Postal Tracking Helper",
+          "href": "/en/venezuela/venezuela-postal-tracking-helper/",
+          "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+        },
+        {
+          "title": "Venezuelan Data Quality Workbench",
+          "href": "/en/venezuela/venezuela-data-quality-workbench/",
+          "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+        },
+        {
+          "title": "Venezuelan JSON Fixture Helper",
+          "href": "/en/venezuela/venezuela-json-fixture-generator/",
+          "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+        },
+        {
+          "title": "Venezuelan Regex Pack Helper",
+          "href": "/en/venezuela/venezuela-regex-pack-helper/",
+          "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+        },
+        {
+          "title": "Venezuelan API Payload Auditor",
+          "href": "/en/venezuela/venezuela-api-payload-auditor/",
+          "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+        },
+        {
+          "title": "Venezuelan Form Field Auditor",
+          "href": "/en/venezuela/venezuela-form-field-auditor/",
+          "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+        },
+        {
+          "title": "Venezuelan Locale Number Parser",
+          "href": "/en/venezuela/venezuela-locale-number-parser/",
+          "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Venezuela."
+        },
+        {
+          "title": "Venezuelan Calendar Week Helper",
+          "href": "/en/venezuela/venezuela-calendar-week-helper/",
+          "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+        },
+        {
+          "title": "Venezuelan Company Suffix Normalizer",
+          "href": "/en/venezuela/venezuela-company-suffix-normalizer/",
+          "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+        },
+        {
+          "title": "Venezuelan Procurement Identifier Helper",
+          "href": "/en/venezuela/venezuela-procurement-identifier-helper/",
+          "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+        },
+        {
+          "title": "Venezuelan Locale Copy Checker",
+          "href": "/en/venezuela/venezuela-accessibility-locale-copy-checker/",
+          "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+        },
+        {
+          "title": "Venezuelan Support Ticket Scrubber",
+          "href": "/en/venezuela/venezuela-support-ticket-scrubber/",
+          "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+        },
+        {
+          "title": "Venezuelan Integration Smoke Test Builder",
+          "href": "/en/venezuela/venezuela-integration-smoke-test-builder/",
+          "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+        }
+      ]
     }
   }
 
@@ -30993,6 +36724,7 @@
       "id": "argentina",
       "flag": "🇦🇷",
       "name": "Argentina",
+      "nativeName": "Argentina",
       "iso2": "AR",
       "iso3": "ARG",
       "continent": "South America",
@@ -31000,17 +36732,23 @@
       "language": "Spanish",
       "currency": "ARS",
       "currencyName": "Argentine peso",
-      "status": "planned",
-      "summary": "Future hub for Argentinian tax identifiers, banking aliases, and localization details.",
+      "status": "available",
+      "summary": "Premium Argentina developer hub for DNI, CUIT, CUIL, CBU/CVU, postal code, phone, CBU, CVU, Alias CBU, DEBIN, Mercado Pago CVU, QR interoperable payments, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
       "identifiers": [
+        "DNI",
         "CUIT",
         "CUIL",
-        "DNI"
+        "CBU/CVU",
+        "postal code",
+        "phone"
       ],
       "payments": [
         "CBU",
         "CVU",
-        "Alias"
+        "Alias CBU",
+        "DEBIN",
+        "Mercado Pago CVU",
+        "QR interoperable payments"
       ],
       "features": [
         "payments",
@@ -31018,16 +36756,89 @@
         "government",
         "banking"
       ],
-      "availableWorkbenches": [],
-      "plannedWorkbenches": [
-        "CUIT Validator",
-        "CBU Notes"
+      "availableWorkbenches": [
+        "Argentine DNI Validator",
+        "Argentine CUIT Validator",
+        "Argentine IVA / CUIT Tax ID Validator",
+        "Argentine Customs / Tax Identifier Helper",
+        "Argentine CUIL Helper",
+        "Argentine Company Onboarding Auditor",
+        "Argentine AFIP / company registry Readiness Helper",
+        "Argentine ID Card Format Helper",
+        "Argentine Passport Number Helper",
+        "Argentine MRZ / Passport Parser",
+        "Argentine Domestic Bank Account Validator",
+        "Argentine Domestic Account Fixture Generator",
+        "Argentine Domestic Bank Account Inspector",
+        "Argentine BIC / SWIFT Inspector",
+        "Argentine Domestic Transfer Helper",
+        "Argentine Debit Authorization Helper",
+        "Argentine CBU / CVU / Alias Reference Helper",
+        "Argentine Remittance Text Builder",
+        "Argentine Payment Reconciliation Helper",
+        "Argentine Bank Statement Parser",
+        "Argentine Masked Bank Account Formatter",
+        "Argentine ARS Decimal Currency Formatter",
+        "Argentine VAT Rate Sanity Helper",
+        "Argentine VAT Return Field Helper",
+        "Argentine Invoice Number Helper",
+        "Argentine Factura electronica / CAE Readiness Checker",
+        "Argentine Tax Authority Handoff Helper",
+        "Argentine Accounting Audit Trail Checklist Helper",
+        "Argentine Postal Code Validator",
+        "Argentine Address Normalizer",
+        "Argentine Address Transliteration Normalizer",
+        "Argentine Region / Province Code Mapper",
+        "Argentine Municipality Code Inspector",
+        "Argentine Phone Number Validator",
+        "Argentine Phone E.164 Formatter",
+        "Argentine Date Locale Formatter",
+        "Argentine CSV Locale Normalizer",
+        "Argentine Slug Normalizer",
+        "Argentine Document OCR Fixer",
+        "Argentine Ley 25.326 / AAIP Redaction Helper",
+        "Argentine PII Masker",
+        "Argentine Personal Data Fixture Helper",
+        "Argentine Driving Licence Format Helper",
+        "Argentine Residence Permit Format Helper",
+        "Argentine Health Card Format Helper",
+        "Argentine Vehicle Plate Inspector",
+        "Argentine VIN Validator",
+        "Argentine Vehicle Data Redaction Helper",
+        "Argentine Customs Declaration Helper",
+        "Argentine Postal Tracking Helper",
+        "Argentine Data Quality Workbench",
+        "Argentine JSON Fixture Helper",
+        "Argentine Regex Pack Helper",
+        "Argentine API Payload Auditor",
+        "Argentine Form Field Auditor",
+        "Argentine Locale Number Parser",
+        "Argentine Calendar Week Helper",
+        "Argentine Company Suffix Normalizer",
+        "Argentine Procurement Identifier Helper",
+        "Argentine Locale Copy Checker",
+        "Argentine Support Ticket Scrubber",
+        "Argentine Integration Smoke Test Builder"
       ],
-      "completion": 20,
+      "plannedWorkbenches": [
+        "Live AFIP / company registry lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
       "coordinates": {
-        "x": 39,
-        "y": 83
-      }
+        "x": 55,
+        "y": 77
+      },
+      "searchHints": [
+        "DNI",
+        "CUIT",
+        "CUIL",
+        "CBU",
+        "CVU",
+        "CAE"
+      ]
     },
     {
       "id": "austria",
@@ -31261,6 +37072,124 @@
         "IBAN",
         "BTW / TVA",
         "Peppol / e-invoicing"
+      ]
+    },
+    {
+      "id": "bolivia",
+      "flag": "🇧🇴",
+      "name": "Bolivia",
+      "nativeName": "Bolivia",
+      "iso2": "BO",
+      "iso3": "BOL",
+      "continent": "South America",
+      "region": "South America",
+      "language": "Spanish, Quechua, Aymara, and other official languages",
+      "currency": "BOB",
+      "currencyName": "Bolivian boliviano",
+      "status": "available",
+      "summary": "Premium Bolivia developer hub for CI, NIT, RUAT, bank account, postal/address, phone, bank account, QR Bolivia, SIPAV transfer, tax payment reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "CI",
+        "NIT",
+        "RUAT",
+        "bank account",
+        "postal/address",
+        "phone"
+      ],
+      "payments": [
+        "bank account",
+        "QR Bolivia",
+        "SIPAV transfer",
+        "tax payment reference"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Bolivian CI Validator",
+        "Bolivian NIT Validator",
+        "Bolivian IVA / NIT Tax ID Validator",
+        "Bolivian Customs / Tax Identifier Helper",
+        "Bolivian insured/person evidence Helper",
+        "Bolivian Company Onboarding Auditor",
+        "Bolivian SEPREC / SIN Readiness Helper",
+        "Bolivian ID Card Format Helper",
+        "Bolivian Passport Number Helper",
+        "Bolivian MRZ / Passport Parser",
+        "Bolivian Domestic Bank Account Validator",
+        "Bolivian Domestic Account Fixture Generator",
+        "Bolivian Domestic Bank Account Inspector",
+        "Bolivian BIC / SWIFT Inspector",
+        "Bolivian Domestic Transfer Helper",
+        "Bolivian Debit Authorization Helper",
+        "Bolivian QR Bolivia / bank transfer Reference Helper",
+        "Bolivian Remittance Text Builder",
+        "Bolivian Payment Reconciliation Helper",
+        "Bolivian Bank Statement Parser",
+        "Bolivian Masked Bank Account Formatter",
+        "Bolivian BOB Decimal Currency Formatter",
+        "Bolivian VAT Rate Sanity Helper",
+        "Bolivian VAT Return Field Helper",
+        "Bolivian Invoice Number Helper",
+        "Bolivian factura electronica / CUF Readiness Checker",
+        "Bolivian Tax Authority Handoff Helper",
+        "Bolivian Accounting Audit Trail Checklist Helper",
+        "Bolivian Postal Code Validator",
+        "Bolivian Address Normalizer",
+        "Bolivian Address Transliteration Normalizer",
+        "Bolivian Region / Province Code Mapper",
+        "Bolivian Municipality Code Inspector",
+        "Bolivian Phone Number Validator",
+        "Bolivian Phone E.164 Formatter",
+        "Bolivian Date Locale Formatter",
+        "Bolivian CSV Locale Normalizer",
+        "Bolivian Slug Normalizer",
+        "Bolivian Document OCR Fixer",
+        "Bolivian personal-data protection Redaction Helper",
+        "Bolivian PII Masker",
+        "Bolivian Personal Data Fixture Helper",
+        "Bolivian Driving Licence Format Helper",
+        "Bolivian Residence Permit Format Helper",
+        "Bolivian Health Card Format Helper",
+        "Bolivian Vehicle Plate Inspector",
+        "Bolivian VIN Validator",
+        "Bolivian Vehicle Data Redaction Helper",
+        "Bolivian Customs Declaration Helper",
+        "Bolivian Postal Tracking Helper",
+        "Bolivian Data Quality Workbench",
+        "Bolivian JSON Fixture Helper",
+        "Bolivian Regex Pack Helper",
+        "Bolivian API Payload Auditor",
+        "Bolivian Form Field Auditor",
+        "Bolivian Locale Number Parser",
+        "Bolivian Calendar Week Helper",
+        "Bolivian Company Suffix Normalizer",
+        "Bolivian Procurement Identifier Helper",
+        "Bolivian Locale Copy Checker",
+        "Bolivian Support Ticket Scrubber",
+        "Bolivian Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live SEPREC / SIN lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 51,
+        "y": 65
+      },
+      "searchHints": [
+        "CI",
+        "NIT",
+        "SIN",
+        "CUF",
+        "QR BOLIVIA",
+        "RUAT"
       ]
     },
     {
@@ -31668,6 +37597,7 @@
       "id": "chile",
       "flag": "🇨🇱",
       "name": "Chile",
+      "nativeName": "Chile",
       "iso2": "CL",
       "iso3": "CHL",
       "continent": "South America",
@@ -31675,30 +37605,229 @@
       "language": "Spanish",
       "currency": "CLP",
       "currencyName": "Chilean peso",
-      "status": "planned",
-      "summary": "Future hub for Chilean RUT, banking, address, and localization notes.",
+      "status": "available",
+      "summary": "Premium Chile developer hub for RUN, RUT, SII tax ID, bank account, postal code, phone, CuentaRUT, bank transfer, Khipu handoff, Transbank/Webpay reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
       "identifiers": [
+        "RUN",
         "RUT",
-        "RUN"
+        "SII tax ID",
+        "bank account",
+        "postal code",
+        "phone"
       ],
       "payments": [
-        "bank account",
-        "SWIFT"
+        "CuentaRUT",
+        "bank transfer",
+        "Khipu handoff",
+        "Transbank/Webpay reference"
       ],
       "features": [
+        "payments",
         "identity",
         "government",
         "banking"
       ],
-      "availableWorkbenches": [],
-      "plannedWorkbenches": [
-        "RUT Validator"
+      "availableWorkbenches": [
+        "Chilean RUN Validator",
+        "Chilean RUT Validator",
+        "Chilean IVA / RUT Tax ID Validator",
+        "Chilean Customs / Tax Identifier Helper",
+        "Chilean RUN Helper",
+        "Chilean Company Onboarding Auditor",
+        "Chilean SII / Registro de Empresas Readiness Helper",
+        "Chilean ID Card Format Helper",
+        "Chilean Passport Number Helper",
+        "Chilean MRZ / Passport Parser",
+        "Chilean Domestic Bank Account Validator",
+        "Chilean Domestic Account Fixture Generator",
+        "Chilean Domestic Bank Account Inspector",
+        "Chilean BIC / SWIFT Inspector",
+        "Chilean Domestic Transfer Helper",
+        "Chilean Debit Authorization Helper",
+        "Chilean CuentaRUT / bank transfer Reference Helper",
+        "Chilean Remittance Text Builder",
+        "Chilean Payment Reconciliation Helper",
+        "Chilean Bank Statement Parser",
+        "Chilean Masked Bank Account Formatter",
+        "Chilean CLP Decimal Currency Formatter",
+        "Chilean VAT Rate Sanity Helper",
+        "Chilean VAT Return Field Helper",
+        "Chilean Invoice Number Helper",
+        "Chilean DTE / folio tributario Readiness Checker",
+        "Chilean Tax Authority Handoff Helper",
+        "Chilean Accounting Audit Trail Checklist Helper",
+        "Chilean Postal Code Validator",
+        "Chilean Address Normalizer",
+        "Chilean Address Transliteration Normalizer",
+        "Chilean Region / Province Code Mapper",
+        "Chilean Municipality Code Inspector",
+        "Chilean Phone Number Validator",
+        "Chilean Phone E.164 Formatter",
+        "Chilean Date Locale Formatter",
+        "Chilean CSV Locale Normalizer",
+        "Chilean Slug Normalizer",
+        "Chilean Document OCR Fixer",
+        "Chilean Ley 19.628 Redaction Helper",
+        "Chilean PII Masker",
+        "Chilean Personal Data Fixture Helper",
+        "Chilean Driving Licence Format Helper",
+        "Chilean Residence Permit Format Helper",
+        "Chilean Health Card Format Helper",
+        "Chilean Vehicle Plate Inspector",
+        "Chilean VIN Validator",
+        "Chilean Vehicle Data Redaction Helper",
+        "Chilean Customs Declaration Helper",
+        "Chilean Postal Tracking Helper",
+        "Chilean Data Quality Workbench",
+        "Chilean JSON Fixture Helper",
+        "Chilean Regex Pack Helper",
+        "Chilean API Payload Auditor",
+        "Chilean Form Field Auditor",
+        "Chilean Locale Number Parser",
+        "Chilean Calendar Week Helper",
+        "Chilean Company Suffix Normalizer",
+        "Chilean Procurement Identifier Helper",
+        "Chilean Locale Copy Checker",
+        "Chilean Support Ticket Scrubber",
+        "Chilean Integration Smoke Test Builder"
       ],
-      "completion": 20,
+      "plannedWorkbenches": [
+        "Live SII / Registro de Empresas lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
       "coordinates": {
-        "x": 38,
-        "y": 86
-      }
+        "x": 49,
+        "y": 74
+      },
+      "searchHints": [
+        "RUN",
+        "RUT",
+        "SII",
+        "DTE",
+        "CUENTARUT",
+        "WEBPAY"
+      ]
+    },
+    {
+      "id": "colombia",
+      "flag": "🇨🇴",
+      "name": "Colombia",
+      "nativeName": "Colombia",
+      "iso2": "CO",
+      "iso3": "COL",
+      "continent": "South America",
+      "region": "South America",
+      "language": "Spanish",
+      "currency": "COP",
+      "currencyName": "Colombian peso",
+      "status": "available",
+      "summary": "Premium Colombia developer hub for Cedula, NIT, RUT, DIAN CUFE, postal code, phone, PSE reference, ACH Colombia, Nequi/Daviplata handoff, bank account, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "Cedula",
+        "NIT",
+        "RUT",
+        "DIAN CUFE",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "PSE reference",
+        "ACH Colombia",
+        "Nequi/Daviplata handoff",
+        "bank account"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Colombian Cedula de ciudadania Validator",
+        "Colombian NIT Validator",
+        "Colombian IVA / NIT Tax ID Validator",
+        "Colombian Customs / Tax Identifier Helper",
+        "Colombian Cedula Helper",
+        "Colombian Company Onboarding Auditor",
+        "Colombian RUES / Camara de Comercio Readiness Helper",
+        "Colombian ID Card Format Helper",
+        "Colombian Passport Number Helper",
+        "Colombian MRZ / Passport Parser",
+        "Colombian Domestic Bank Account Validator",
+        "Colombian Domestic Account Fixture Generator",
+        "Colombian Domestic Bank Account Inspector",
+        "Colombian BIC / SWIFT Inspector",
+        "Colombian Domestic Transfer Helper",
+        "Colombian Debit Authorization Helper",
+        "Colombian PSE / bank transfer Reference Helper",
+        "Colombian Remittance Text Builder",
+        "Colombian Payment Reconciliation Helper",
+        "Colombian Bank Statement Parser",
+        "Colombian Masked Bank Account Formatter",
+        "Colombian COP Decimal Currency Formatter",
+        "Colombian VAT Rate Sanity Helper",
+        "Colombian VAT Return Field Helper",
+        "Colombian Invoice Number Helper",
+        "Colombian factura electronica / CUFE Readiness Checker",
+        "Colombian Tax Authority Handoff Helper",
+        "Colombian Accounting Audit Trail Checklist Helper",
+        "Colombian Postal Code Validator",
+        "Colombian Address Normalizer",
+        "Colombian Address Transliteration Normalizer",
+        "Colombian Region / Province Code Mapper",
+        "Colombian Municipality Code Inspector",
+        "Colombian Phone Number Validator",
+        "Colombian Phone E.164 Formatter",
+        "Colombian Date Locale Formatter",
+        "Colombian CSV Locale Normalizer",
+        "Colombian Slug Normalizer",
+        "Colombian Document OCR Fixer",
+        "Colombian Ley 1581 / SIC Redaction Helper",
+        "Colombian PII Masker",
+        "Colombian Personal Data Fixture Helper",
+        "Colombian Driving Licence Format Helper",
+        "Colombian Residence Permit Format Helper",
+        "Colombian Health Card Format Helper",
+        "Colombian Vehicle Plate Inspector",
+        "Colombian VIN Validator",
+        "Colombian Vehicle Data Redaction Helper",
+        "Colombian Customs Declaration Helper",
+        "Colombian Postal Tracking Helper",
+        "Colombian Data Quality Workbench",
+        "Colombian JSON Fixture Helper",
+        "Colombian Regex Pack Helper",
+        "Colombian API Payload Auditor",
+        "Colombian Form Field Auditor",
+        "Colombian Locale Number Parser",
+        "Colombian Calendar Week Helper",
+        "Colombian Company Suffix Normalizer",
+        "Colombian Procurement Identifier Helper",
+        "Colombian Locale Copy Checker",
+        "Colombian Support Ticket Scrubber",
+        "Colombian Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live RUES / Camara de Comercio lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 43,
+        "y": 53
+      },
+      "searchHints": [
+        "CEDULA",
+        "NIT",
+        "RUT",
+        "DIAN",
+        "CUFE",
+        "PSE"
+      ]
     },
     {
       "id": "croatia",
@@ -32168,6 +38297,124 @@
         "IBAN",
         "Moms / VAT",
         "NemHandel / Peppol"
+      ]
+    },
+    {
+      "id": "ecuador",
+      "flag": "🇪🇨",
+      "name": "Ecuador",
+      "nativeName": "Ecuador",
+      "iso2": "EC",
+      "iso3": "ECU",
+      "continent": "South America",
+      "region": "South America",
+      "language": "Spanish",
+      "currency": "USD",
+      "currencyName": "US dollar",
+      "status": "available",
+      "summary": "Premium Ecuador developer hub for Cedula, RUC, SRI authorization, bank account, postal code, phone, bank transfer, SRI payment reference, DeUna handoff, Banco Central transfer, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "Cedula",
+        "RUC",
+        "SRI authorization",
+        "bank account",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "bank transfer",
+        "SRI payment reference",
+        "DeUna handoff",
+        "Banco Central transfer"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Ecuadorian cedula Validator",
+        "Ecuadorian RUC Validator",
+        "Ecuadorian IVA / RUC Tax ID Validator",
+        "Ecuadorian Customs / Tax Identifier Helper",
+        "Ecuadorian cedula Helper",
+        "Ecuadorian Company Onboarding Auditor",
+        "Ecuadorian Supercias / SRI Readiness Helper",
+        "Ecuadorian ID Card Format Helper",
+        "Ecuadorian Passport Number Helper",
+        "Ecuadorian MRZ / Passport Parser",
+        "Ecuadorian Domestic Bank Account Validator",
+        "Ecuadorian Domestic Account Fixture Generator",
+        "Ecuadorian Domestic Bank Account Inspector",
+        "Ecuadorian BIC / SWIFT Inspector",
+        "Ecuadorian Domestic Transfer Helper",
+        "Ecuadorian Debit Authorization Helper",
+        "Ecuadorian bank transfer / DeUna Reference Helper",
+        "Ecuadorian Remittance Text Builder",
+        "Ecuadorian Payment Reconciliation Helper",
+        "Ecuadorian Bank Statement Parser",
+        "Ecuadorian Masked Bank Account Formatter",
+        "Ecuadorian USD Decimal Currency Formatter",
+        "Ecuadorian VAT Rate Sanity Helper",
+        "Ecuadorian VAT Return Field Helper",
+        "Ecuadorian Invoice Number Helper",
+        "Ecuadorian comprobante electronico / clave de acceso Readiness Checker",
+        "Ecuadorian Tax Authority Handoff Helper",
+        "Ecuadorian Accounting Audit Trail Checklist Helper",
+        "Ecuadorian Postal Code Validator",
+        "Ecuadorian Address Normalizer",
+        "Ecuadorian Address Transliteration Normalizer",
+        "Ecuadorian Region / Province Code Mapper",
+        "Ecuadorian Municipality Code Inspector",
+        "Ecuadorian Phone Number Validator",
+        "Ecuadorian Phone E.164 Formatter",
+        "Ecuadorian Date Locale Formatter",
+        "Ecuadorian CSV Locale Normalizer",
+        "Ecuadorian Slug Normalizer",
+        "Ecuadorian Document OCR Fixer",
+        "Ecuadorian LOPDP Redaction Helper",
+        "Ecuadorian PII Masker",
+        "Ecuadorian Personal Data Fixture Helper",
+        "Ecuadorian Driving Licence Format Helper",
+        "Ecuadorian Residence Permit Format Helper",
+        "Ecuadorian Health Card Format Helper",
+        "Ecuadorian Vehicle Plate Inspector",
+        "Ecuadorian VIN Validator",
+        "Ecuadorian Vehicle Data Redaction Helper",
+        "Ecuadorian Customs Declaration Helper",
+        "Ecuadorian Postal Tracking Helper",
+        "Ecuadorian Data Quality Workbench",
+        "Ecuadorian JSON Fixture Helper",
+        "Ecuadorian Regex Pack Helper",
+        "Ecuadorian API Payload Auditor",
+        "Ecuadorian Form Field Auditor",
+        "Ecuadorian Locale Number Parser",
+        "Ecuadorian Calendar Week Helper",
+        "Ecuadorian Company Suffix Normalizer",
+        "Ecuadorian Procurement Identifier Helper",
+        "Ecuadorian Locale Copy Checker",
+        "Ecuadorian Support Ticket Scrubber",
+        "Ecuadorian Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live Supercias / SRI lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 40,
+        "y": 58
+      },
+      "searchHints": [
+        "CEDULA",
+        "RUC",
+        "SRI",
+        "CLAVE ACCESO",
+        "DEUNA",
+        "USD"
       ]
     },
     {
@@ -32776,6 +39023,124 @@
         "MYDATA",
         "AADE",
         "IBAN"
+      ]
+    },
+    {
+      "id": "guyana",
+      "flag": "🇬🇾",
+      "name": "Guyana",
+      "nativeName": "Guyana",
+      "iso2": "GY",
+      "iso3": "GUY",
+      "continent": "South America",
+      "region": "South America",
+      "language": "English",
+      "currency": "GYD",
+      "currencyName": "Guyanese dollar",
+      "status": "available",
+      "summary": "Premium Guyana developer hub for TIN, NIS number, company number, bank account, postal/address, phone, bank account, MMG handoff, GRA tax payment reference, SWIFT, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "TIN",
+        "NIS number",
+        "company number",
+        "bank account",
+        "postal/address",
+        "phone"
+      ],
+      "payments": [
+        "bank account",
+        "MMG handoff",
+        "GRA tax payment reference",
+        "SWIFT"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Guyanese TIN / NIS Validator",
+        "Guyanese company registration number Validator",
+        "Guyanese VAT / TIN Tax ID Validator",
+        "Guyanese Customs / Tax Identifier Helper",
+        "Guyanese NIS number Helper",
+        "Guyanese Company Onboarding Auditor",
+        "Guyanese Deeds and Commercial Registries Authority Readiness Helper",
+        "Guyanese ID Card Format Helper",
+        "Guyanese Passport Number Helper",
+        "Guyanese MRZ / Passport Parser",
+        "Guyanese Domestic Bank Account Validator",
+        "Guyanese Domestic Account Fixture Generator",
+        "Guyanese Domestic Bank Account Inspector",
+        "Guyanese BIC / SWIFT Inspector",
+        "Guyanese Domestic Transfer Helper",
+        "Guyanese Debit Authorization Helper",
+        "Guyanese bank transfer / MMG Reference Helper",
+        "Guyanese Remittance Text Builder",
+        "Guyanese Payment Reconciliation Helper",
+        "Guyanese Bank Statement Parser",
+        "Guyanese Masked Bank Account Formatter",
+        "Guyanese GYD Decimal Currency Formatter",
+        "Guyanese VAT Rate Sanity Helper",
+        "Guyanese VAT Return Field Helper",
+        "Guyanese Invoice Number Helper",
+        "Guyanese VAT invoice Readiness Checker",
+        "Guyanese Tax Authority Handoff Helper",
+        "Guyanese Accounting Audit Trail Checklist Helper",
+        "Guyanese Postal Code Validator",
+        "Guyanese Address Normalizer",
+        "Guyanese Address Transliteration Normalizer",
+        "Guyanese Region / Province Code Mapper",
+        "Guyanese Municipality Code Inspector",
+        "Guyanese Phone Number Validator",
+        "Guyanese Phone E.164 Formatter",
+        "Guyanese Date Locale Formatter",
+        "Guyanese CSV Locale Normalizer",
+        "Guyanese Slug Normalizer",
+        "Guyanese Document OCR Fixer",
+        "Guyanese Data Protection Act Redaction Helper",
+        "Guyanese PII Masker",
+        "Guyanese Personal Data Fixture Helper",
+        "Guyanese Driving Licence Format Helper",
+        "Guyanese Residence Permit Format Helper",
+        "Guyanese Health Card Format Helper",
+        "Guyanese Vehicle Plate Inspector",
+        "Guyanese VIN Validator",
+        "Guyanese Vehicle Data Redaction Helper",
+        "Guyanese Customs Declaration Helper",
+        "Guyanese Postal Tracking Helper",
+        "Guyanese Data Quality Workbench",
+        "Guyanese JSON Fixture Helper",
+        "Guyanese Regex Pack Helper",
+        "Guyanese API Payload Auditor",
+        "Guyanese Form Field Auditor",
+        "Guyanese Locale Number Parser",
+        "Guyanese Calendar Week Helper",
+        "Guyanese Company Suffix Normalizer",
+        "Guyanese Procurement Identifier Helper",
+        "Guyanese Locale Copy Checker",
+        "Guyanese Support Ticket Scrubber",
+        "Guyanese Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live Deeds and Commercial Registries Authority lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 49,
+        "y": 47
+      },
+      "searchHints": [
+        "TIN",
+        "NIS",
+        "GRA",
+        "MMG",
+        "VAT",
+        "GEORGETOWN"
       ]
     },
     {
@@ -34629,6 +40994,242 @@
       ]
     },
     {
+      "id": "paraguay",
+      "flag": "🇵🇾",
+      "name": "Paraguay",
+      "nativeName": "Paraguay",
+      "iso2": "PY",
+      "iso3": "PRY",
+      "continent": "South America",
+      "region": "South America",
+      "language": "Spanish and Guarani",
+      "currency": "PYG",
+      "currencyName": "Paraguayan guarani",
+      "status": "available",
+      "summary": "Premium Paraguay developer hub for Cedula, RUC, DV, bank account, postal code, phone, SIPAP transfer, bank account, Billetera electronic handoff, tax payment reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "Cedula",
+        "RUC",
+        "DV",
+        "bank account",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "SIPAP transfer",
+        "bank account",
+        "Billetera electronic handoff",
+        "tax payment reference"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Paraguayan Cedula Validator",
+        "Paraguayan RUC Validator",
+        "Paraguayan IVA / RUC Tax ID Validator",
+        "Paraguayan Customs / Tax Identifier Helper",
+        "Paraguayan Cedula Helper",
+        "Paraguayan Company Onboarding Auditor",
+        "Paraguayan SUACE / company registry Readiness Helper",
+        "Paraguayan ID Card Format Helper",
+        "Paraguayan Passport Number Helper",
+        "Paraguayan MRZ / Passport Parser",
+        "Paraguayan Domestic Bank Account Validator",
+        "Paraguayan Domestic Account Fixture Generator",
+        "Paraguayan Domestic Bank Account Inspector",
+        "Paraguayan BIC / SWIFT Inspector",
+        "Paraguayan Domestic Transfer Helper",
+        "Paraguayan Debit Authorization Helper",
+        "Paraguayan SIPAP / bank transfer Reference Helper",
+        "Paraguayan Remittance Text Builder",
+        "Paraguayan Payment Reconciliation Helper",
+        "Paraguayan Bank Statement Parser",
+        "Paraguayan Masked Bank Account Formatter",
+        "Paraguayan PYG Decimal Currency Formatter",
+        "Paraguayan VAT Rate Sanity Helper",
+        "Paraguayan VAT Return Field Helper",
+        "Paraguayan Invoice Number Helper",
+        "Paraguayan factura electronica / SIFEN Readiness Checker",
+        "Paraguayan Tax Authority Handoff Helper",
+        "Paraguayan Accounting Audit Trail Checklist Helper",
+        "Paraguayan Postal Code Validator",
+        "Paraguayan Address Normalizer",
+        "Paraguayan Address Transliteration Normalizer",
+        "Paraguayan Region / Province Code Mapper",
+        "Paraguayan Municipality Code Inspector",
+        "Paraguayan Phone Number Validator",
+        "Paraguayan Phone E.164 Formatter",
+        "Paraguayan Date Locale Formatter",
+        "Paraguayan CSV Locale Normalizer",
+        "Paraguayan Slug Normalizer",
+        "Paraguayan Document OCR Fixer",
+        "Paraguayan personal-data protection Redaction Helper",
+        "Paraguayan PII Masker",
+        "Paraguayan Personal Data Fixture Helper",
+        "Paraguayan Driving Licence Format Helper",
+        "Paraguayan Residence Permit Format Helper",
+        "Paraguayan Health Card Format Helper",
+        "Paraguayan Vehicle Plate Inspector",
+        "Paraguayan VIN Validator",
+        "Paraguayan Vehicle Data Redaction Helper",
+        "Paraguayan Customs Declaration Helper",
+        "Paraguayan Postal Tracking Helper",
+        "Paraguayan Data Quality Workbench",
+        "Paraguayan JSON Fixture Helper",
+        "Paraguayan Regex Pack Helper",
+        "Paraguayan API Payload Auditor",
+        "Paraguayan Form Field Auditor",
+        "Paraguayan Locale Number Parser",
+        "Paraguayan Calendar Week Helper",
+        "Paraguayan Company Suffix Normalizer",
+        "Paraguayan Procurement Identifier Helper",
+        "Paraguayan Locale Copy Checker",
+        "Paraguayan Support Ticket Scrubber",
+        "Paraguayan Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live SUACE / company registry lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 54,
+        "y": 68
+      },
+      "searchHints": [
+        "CEDULA",
+        "RUC",
+        "DV",
+        "SIFEN",
+        "SIPAP",
+        "IVA"
+      ]
+    },
+    {
+      "id": "peru",
+      "flag": "🇵🇪",
+      "name": "Peru",
+      "nativeName": "Peru",
+      "iso2": "PE",
+      "iso3": "PER",
+      "continent": "South America",
+      "region": "South America",
+      "language": "Spanish, Quechua, and Aymara",
+      "currency": "PEN",
+      "currencyName": "Peruvian sol",
+      "status": "available",
+      "summary": "Premium Peru developer hub for DNI, RUC, SUNAT CPE, CCI, postal code, phone, CCI, Yape/Plin handoff, bank account, SUNAT payment reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "DNI",
+        "RUC",
+        "SUNAT CPE",
+        "CCI",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "CCI",
+        "Yape/Plin handoff",
+        "bank account",
+        "SUNAT payment reference"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Peruvian DNI Validator",
+        "Peruvian RUC Validator",
+        "Peruvian IGV / RUC Tax ID Validator",
+        "Peruvian Customs / Tax Identifier Helper",
+        "Peruvian DNI Helper",
+        "Peruvian Company Onboarding Auditor",
+        "Peruvian SUNARP / SUNAT Readiness Helper",
+        "Peruvian ID Card Format Helper",
+        "Peruvian Passport Number Helper",
+        "Peruvian MRZ / Passport Parser",
+        "Peruvian Domestic Bank Account Validator",
+        "Peruvian Domestic Account Fixture Generator",
+        "Peruvian Domestic Bank Account Inspector",
+        "Peruvian BIC / SWIFT Inspector",
+        "Peruvian Domestic Transfer Helper",
+        "Peruvian Debit Authorization Helper",
+        "Peruvian CCI / Yape / Plin Reference Helper",
+        "Peruvian Remittance Text Builder",
+        "Peruvian Payment Reconciliation Helper",
+        "Peruvian Bank Statement Parser",
+        "Peruvian Masked Bank Account Formatter",
+        "Peruvian PEN Decimal Currency Formatter",
+        "Peruvian VAT Rate Sanity Helper",
+        "Peruvian VAT Return Field Helper",
+        "Peruvian Invoice Number Helper",
+        "Peruvian comprobante electronico / CPE Readiness Checker",
+        "Peruvian Tax Authority Handoff Helper",
+        "Peruvian Accounting Audit Trail Checklist Helper",
+        "Peruvian Postal Code Validator",
+        "Peruvian Address Normalizer",
+        "Peruvian Address Transliteration Normalizer",
+        "Peruvian Region / Province Code Mapper",
+        "Peruvian Municipality Code Inspector",
+        "Peruvian Phone Number Validator",
+        "Peruvian Phone E.164 Formatter",
+        "Peruvian Date Locale Formatter",
+        "Peruvian CSV Locale Normalizer",
+        "Peruvian Slug Normalizer",
+        "Peruvian Document OCR Fixer",
+        "Peruvian Ley de Proteccion de Datos Personales Redaction Helper",
+        "Peruvian PII Masker",
+        "Peruvian Personal Data Fixture Helper",
+        "Peruvian Driving Licence Format Helper",
+        "Peruvian Residence Permit Format Helper",
+        "Peruvian Health Card Format Helper",
+        "Peruvian Vehicle Plate Inspector",
+        "Peruvian VIN Validator",
+        "Peruvian Vehicle Data Redaction Helper",
+        "Peruvian Customs Declaration Helper",
+        "Peruvian Postal Tracking Helper",
+        "Peruvian Data Quality Workbench",
+        "Peruvian JSON Fixture Helper",
+        "Peruvian Regex Pack Helper",
+        "Peruvian API Payload Auditor",
+        "Peruvian Form Field Auditor",
+        "Peruvian Locale Number Parser",
+        "Peruvian Calendar Week Helper",
+        "Peruvian Company Suffix Normalizer",
+        "Peruvian Procurement Identifier Helper",
+        "Peruvian Locale Copy Checker",
+        "Peruvian Support Ticket Scrubber",
+        "Peruvian Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live SUNARP / SUNAT lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 43,
+        "y": 64
+      },
+      "searchHints": [
+        "DNI",
+        "RUC",
+        "SUNAT",
+        "CPE",
+        "CCI",
+        "YAPE"
+      ]
+    },
+    {
       "id": "poland",
       "flag": "🇵🇱",
       "name": "Poland",
@@ -35539,6 +42140,124 @@
       }
     },
     {
+      "id": "suriname",
+      "flag": "🇸🇷",
+      "name": "Suriname",
+      "nativeName": "Suriname",
+      "iso2": "SR",
+      "iso3": "SUR",
+      "continent": "South America",
+      "region": "South America",
+      "language": "Dutch",
+      "currency": "SRD",
+      "currencyName": "Surinamese dollar",
+      "status": "available",
+      "summary": "Premium Suriname developer hub for ID number, tax number, company number, bank account, postal/address, phone, bank account, SNEPS transfer, tax payment reference, SWIFT, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "ID number",
+        "tax number",
+        "company number",
+        "bank account",
+        "postal/address",
+        "phone"
+      ],
+      "payments": [
+        "bank account",
+        "SNEPS transfer",
+        "tax payment reference",
+        "SWIFT"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Surinamese ID number Validator",
+        "Surinamese company registry number Validator",
+        "Surinamese BTW / tax number Tax ID Validator",
+        "Surinamese Customs / Tax Identifier Helper",
+        "Surinamese social security evidence Helper",
+        "Surinamese Company Onboarding Auditor",
+        "Surinamese KKF / business registry Readiness Helper",
+        "Surinamese ID Card Format Helper",
+        "Surinamese Passport Number Helper",
+        "Surinamese MRZ / Passport Parser",
+        "Surinamese Domestic Bank Account Validator",
+        "Surinamese Domestic Account Fixture Generator",
+        "Surinamese Domestic Bank Account Inspector",
+        "Surinamese BIC / SWIFT Inspector",
+        "Surinamese Domestic Transfer Helper",
+        "Surinamese Debit Authorization Helper",
+        "Surinamese bank transfer / SNEPS Reference Helper",
+        "Surinamese Remittance Text Builder",
+        "Surinamese Payment Reconciliation Helper",
+        "Surinamese Bank Statement Parser",
+        "Surinamese Masked Bank Account Formatter",
+        "Surinamese SRD Decimal Currency Formatter",
+        "Surinamese VAT Rate Sanity Helper",
+        "Surinamese VAT Return Field Helper",
+        "Surinamese Invoice Number Helper",
+        "Surinamese BTW invoice Readiness Checker",
+        "Surinamese Tax Authority Handoff Helper",
+        "Surinamese Accounting Audit Trail Checklist Helper",
+        "Surinamese Postal Code Validator",
+        "Surinamese Address Normalizer",
+        "Surinamese Address Transliteration Normalizer",
+        "Surinamese Region / Province Code Mapper",
+        "Surinamese Municipality Code Inspector",
+        "Surinamese Phone Number Validator",
+        "Surinamese Phone E.164 Formatter",
+        "Surinamese Date Locale Formatter",
+        "Surinamese CSV Locale Normalizer",
+        "Surinamese Slug Normalizer",
+        "Surinamese Document OCR Fixer",
+        "Surinamese personal-data protection Redaction Helper",
+        "Surinamese PII Masker",
+        "Surinamese Personal Data Fixture Helper",
+        "Surinamese Driving Licence Format Helper",
+        "Surinamese Residence Permit Format Helper",
+        "Surinamese Health Card Format Helper",
+        "Surinamese Vehicle Plate Inspector",
+        "Surinamese VIN Validator",
+        "Surinamese Vehicle Data Redaction Helper",
+        "Surinamese Customs Declaration Helper",
+        "Surinamese Postal Tracking Helper",
+        "Surinamese Data Quality Workbench",
+        "Surinamese JSON Fixture Helper",
+        "Surinamese Regex Pack Helper",
+        "Surinamese API Payload Auditor",
+        "Surinamese Form Field Auditor",
+        "Surinamese Locale Number Parser",
+        "Surinamese Calendar Week Helper",
+        "Surinamese Company Suffix Normalizer",
+        "Surinamese Procurement Identifier Helper",
+        "Surinamese Locale Copy Checker",
+        "Surinamese Support Ticket Scrubber",
+        "Surinamese Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live KKF / business registry lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 51,
+        "y": 46
+      },
+      "searchHints": [
+        "ID",
+        "BTW",
+        "KKF",
+        "SNEPS",
+        "BANK",
+        "PARAMARIBO"
+      ]
+    },
+    {
       "id": "sweden",
       "flag": "🇸🇪",
       "name": "Sweden",
@@ -36055,6 +42774,124 @@
       }
     },
     {
+      "id": "uruguay",
+      "flag": "🇺🇾",
+      "name": "Uruguay",
+      "nativeName": "Uruguay",
+      "iso2": "UY",
+      "iso3": "URY",
+      "continent": "South America",
+      "region": "South America",
+      "language": "Spanish",
+      "currency": "UYU",
+      "currencyName": "Uruguayan peso",
+      "status": "available",
+      "summary": "Premium Uruguay developer hub for Cedula, RUT, DGI, bank account, postal code, phone, bank account, BROU handoff, DGI payment reference, Pagos QR, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "Cedula",
+        "RUT",
+        "DGI",
+        "bank account",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "bank account",
+        "BROU handoff",
+        "DGI payment reference",
+        "Pagos QR"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Uruguayan Cedula de identidad Validator",
+        "Uruguayan RUT Validator",
+        "Uruguayan IVA / RUT Tax ID Validator",
+        "Uruguayan Customs / Tax Identifier Helper",
+        "Uruguayan BPS evidence Helper",
+        "Uruguayan Company Onboarding Auditor",
+        "Uruguayan DGI / Registro Nacional de Comercio Readiness Helper",
+        "Uruguayan ID Card Format Helper",
+        "Uruguayan Passport Number Helper",
+        "Uruguayan MRZ / Passport Parser",
+        "Uruguayan Domestic Bank Account Validator",
+        "Uruguayan Domestic Account Fixture Generator",
+        "Uruguayan Domestic Bank Account Inspector",
+        "Uruguayan BIC / SWIFT Inspector",
+        "Uruguayan Domestic Transfer Helper",
+        "Uruguayan Debit Authorization Helper",
+        "Uruguayan bank transfer / QR payment Reference Helper",
+        "Uruguayan Remittance Text Builder",
+        "Uruguayan Payment Reconciliation Helper",
+        "Uruguayan Bank Statement Parser",
+        "Uruguayan Masked Bank Account Formatter",
+        "Uruguayan UYU Decimal Currency Formatter",
+        "Uruguayan VAT Rate Sanity Helper",
+        "Uruguayan VAT Return Field Helper",
+        "Uruguayan Invoice Number Helper",
+        "Uruguayan e-Factura / CFE Readiness Checker",
+        "Uruguayan Tax Authority Handoff Helper",
+        "Uruguayan Accounting Audit Trail Checklist Helper",
+        "Uruguayan Postal Code Validator",
+        "Uruguayan Address Normalizer",
+        "Uruguayan Address Transliteration Normalizer",
+        "Uruguayan Region / Province Code Mapper",
+        "Uruguayan Municipality Code Inspector",
+        "Uruguayan Phone Number Validator",
+        "Uruguayan Phone E.164 Formatter",
+        "Uruguayan Date Locale Formatter",
+        "Uruguayan CSV Locale Normalizer",
+        "Uruguayan Slug Normalizer",
+        "Uruguayan Document OCR Fixer",
+        "Uruguayan Ley 18.331 / URCDP Redaction Helper",
+        "Uruguayan PII Masker",
+        "Uruguayan Personal Data Fixture Helper",
+        "Uruguayan Driving Licence Format Helper",
+        "Uruguayan Residence Permit Format Helper",
+        "Uruguayan Health Card Format Helper",
+        "Uruguayan Vehicle Plate Inspector",
+        "Uruguayan VIN Validator",
+        "Uruguayan Vehicle Data Redaction Helper",
+        "Uruguayan Customs Declaration Helper",
+        "Uruguayan Postal Tracking Helper",
+        "Uruguayan Data Quality Workbench",
+        "Uruguayan JSON Fixture Helper",
+        "Uruguayan Regex Pack Helper",
+        "Uruguayan API Payload Auditor",
+        "Uruguayan Form Field Auditor",
+        "Uruguayan Locale Number Parser",
+        "Uruguayan Calendar Week Helper",
+        "Uruguayan Company Suffix Normalizer",
+        "Uruguayan Procurement Identifier Helper",
+        "Uruguayan Locale Copy Checker",
+        "Uruguayan Support Ticket Scrubber",
+        "Uruguayan Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live DGI / Registro Nacional de Comercio lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 58,
+        "y": 79
+      },
+      "searchHints": [
+        "CEDULA",
+        "RUT",
+        "DGI",
+        "CFE",
+        "BROU",
+        "IVA"
+      ]
+    },
+    {
       "id": "vatican-city",
       "flag": "🇻🇦",
       "name": "Vatican City",
@@ -36168,6 +43005,124 @@
         "SEPA",
         "00120",
         "ENTITY"
+      ]
+    },
+    {
+      "id": "venezuela",
+      "flag": "🇻🇪",
+      "name": "Venezuela",
+      "nativeName": "Venezuela",
+      "iso2": "VE",
+      "iso3": "VEN",
+      "continent": "South America",
+      "region": "South America",
+      "language": "Spanish",
+      "currency": "VES",
+      "currencyName": "Venezuelan bolivar",
+      "status": "available",
+      "summary": "Premium Venezuela developer hub for Cedula, RIF, IVSS evidence, bank account, postal code, phone, Pago Movil, bank account, SINPE-like mobile payment handoff, SENIAT payment reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+      "identifiers": [
+        "Cedula",
+        "RIF",
+        "IVSS evidence",
+        "bank account",
+        "postal code",
+        "phone"
+      ],
+      "payments": [
+        "Pago Movil",
+        "bank account",
+        "SINPE-like mobile payment handoff",
+        "SENIAT payment reference"
+      ],
+      "features": [
+        "payments",
+        "identity",
+        "government",
+        "banking"
+      ],
+      "availableWorkbenches": [
+        "Venezuelan Cedula Validator",
+        "Venezuelan RIF Validator",
+        "Venezuelan IVA / RIF Tax ID Validator",
+        "Venezuelan Customs / Tax Identifier Helper",
+        "Venezuelan IVSS evidence Helper",
+        "Venezuelan Company Onboarding Auditor",
+        "Venezuelan SENIAT / Registro Mercantil Readiness Helper",
+        "Venezuelan ID Card Format Helper",
+        "Venezuelan Passport Number Helper",
+        "Venezuelan MRZ / Passport Parser",
+        "Venezuelan Domestic Bank Account Validator",
+        "Venezuelan Domestic Account Fixture Generator",
+        "Venezuelan Domestic Bank Account Inspector",
+        "Venezuelan BIC / SWIFT Inspector",
+        "Venezuelan Domestic Transfer Helper",
+        "Venezuelan Debit Authorization Helper",
+        "Venezuelan Pago Movil / bank transfer Reference Helper",
+        "Venezuelan Remittance Text Builder",
+        "Venezuelan Payment Reconciliation Helper",
+        "Venezuelan Bank Statement Parser",
+        "Venezuelan Masked Bank Account Formatter",
+        "Venezuelan VES Decimal Currency Formatter",
+        "Venezuelan VAT Rate Sanity Helper",
+        "Venezuelan VAT Return Field Helper",
+        "Venezuelan Invoice Number Helper",
+        "Venezuelan factura fiscal Readiness Checker",
+        "Venezuelan Tax Authority Handoff Helper",
+        "Venezuelan Accounting Audit Trail Checklist Helper",
+        "Venezuelan Postal Code Validator",
+        "Venezuelan Address Normalizer",
+        "Venezuelan Address Transliteration Normalizer",
+        "Venezuelan Region / Province Code Mapper",
+        "Venezuelan Municipality Code Inspector",
+        "Venezuelan Phone Number Validator",
+        "Venezuelan Phone E.164 Formatter",
+        "Venezuelan Date Locale Formatter",
+        "Venezuelan CSV Locale Normalizer",
+        "Venezuelan Slug Normalizer",
+        "Venezuelan Document OCR Fixer",
+        "Venezuelan personal-data protection Redaction Helper",
+        "Venezuelan PII Masker",
+        "Venezuelan Personal Data Fixture Helper",
+        "Venezuelan Driving Licence Format Helper",
+        "Venezuelan Residence Permit Format Helper",
+        "Venezuelan Health Card Format Helper",
+        "Venezuelan Vehicle Plate Inspector",
+        "Venezuelan VIN Validator",
+        "Venezuelan Vehicle Data Redaction Helper",
+        "Venezuelan Customs Declaration Helper",
+        "Venezuelan Postal Tracking Helper",
+        "Venezuelan Data Quality Workbench",
+        "Venezuelan JSON Fixture Helper",
+        "Venezuelan Regex Pack Helper",
+        "Venezuelan API Payload Auditor",
+        "Venezuelan Form Field Auditor",
+        "Venezuelan Locale Number Parser",
+        "Venezuelan Calendar Week Helper",
+        "Venezuelan Company Suffix Normalizer",
+        "Venezuelan Procurement Identifier Helper",
+        "Venezuelan Locale Copy Checker",
+        "Venezuelan Support Ticket Scrubber",
+        "Venezuelan Integration Smoke Test Builder"
+      ],
+      "plannedWorkbenches": [
+        "Live SENIAT / Registro Mercantil lookup",
+        "Live VAT/tax status confirmation",
+        "Live bank ownership lookup",
+        "Live vehicle or postal provider lookup"
+      ],
+      "completion": 100,
+      "coordinates": {
+        "x": 48,
+        "y": 49
+      },
+      "searchHints": [
+        "CEDULA",
+        "RIF",
+        "SENIAT",
+        "PAGO MOVIL",
+        "IVSS",
+        "VES"
       ]
     }
   ]

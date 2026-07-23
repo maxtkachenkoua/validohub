@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-document-ocr-fixer
+kind: tool
+module: validohub
+country: CL
+category: documents
+status: active
+name:
+  en: "Chilean Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "12.345.678-5 CL 76.123.456-7 CL-BANK-0123-12345678 8320000 Santiago"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-gdpr-redaction-helper, chile-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

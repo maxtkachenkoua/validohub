@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BO
+slug: bolivia
+name:
+  en: Bolivia
+region: South America
+languages:
+  - es
+currency: BOB
+relatedCountries:
+  - PE
+  - CL
+  - PY

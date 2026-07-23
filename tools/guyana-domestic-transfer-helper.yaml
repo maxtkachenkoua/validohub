@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-domestic-transfer-helper
+kind: tool
+module: validohub
+country: GY
+category: finance
+status: active
+name:
+  en: "Guyanese Domestic Transfer Helper"
+summary:
+  en: "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "GY-BANK-001-123456789\\n1,234.56 GYD\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-debit-authorization-helper, guyana-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-id-card-format-helper
+kind: tool
+module: validohub
+country: AR
+category: national-identifiers
+status: active
+name:
+  en: "Argentine ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "30123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-passport-number-helper, argentina-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

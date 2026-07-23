@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: EC
+category: localization
+status: active
+name:
+  en: "Ecuadorian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "cedula input, codigo postal input, amount 1,234.56 USD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-support-ticket-scrubber, ecuador-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

@@ -6,7 +6,7 @@ const ROOT = process.cwd();
 const args = process.argv.slice(2);
 const CORE_LOCALES = ['en', 'es', 'pt-BR', 'de', 'fr', 'pl', 'uk'];
 const ACTIVE_BASELINE_COUNTRIES = ['brazil', 'poland', 'france', 'netherlands', 'switzerland', 'germany', 'italy', 'spain'];
-const FACTORY_COUNTRIES = new Set(['switzerland', 'germany', 'italy', 'spain']);
+const FACTORY_COUNTRIES = new Set(['switzerland', 'germany', 'italy', 'spain', 'argentina', 'bolivia', 'chile', 'colombia', 'ecuador', 'guyana', 'paraguay', 'peru', 'suriname', 'uruguay', 'venezuela']);
 const RUNTIME_BY_ALGORITHM = new Map([
   ['validohub.brazil-pix', 'pix.js'],
   ['validohub.brazil-suite', 'brazil-suite.js'],
@@ -57,6 +57,17 @@ const RUNTIME_BY_ALGORITHM = new Map([
   ['validohub.ireland-suite', 'ireland-suite.js'],
   ['validohub.belgium-suite', 'belgium-suite.js'],
   ['validohub.austria-suite', 'austria-suite.js'],
+  ['validohub.argentina-suite', 'argentina-suite.js'],
+  ['validohub.venezuela-suite', 'venezuela-suite.js'],
+  ['validohub.uruguay-suite', 'uruguay-suite.js'],
+  ['validohub.suriname-suite', 'suriname-suite.js'],
+  ['validohub.peru-suite', 'peru-suite.js'],
+  ['validohub.paraguay-suite', 'paraguay-suite.js'],
+  ['validohub.guyana-suite', 'guyana-suite.js'],
+  ['validohub.ecuador-suite', 'ecuador-suite.js'],
+  ['validohub.colombia-suite', 'colombia-suite.js'],
+  ['validohub.chile-suite', 'chile-suite.js'],
+  ['validohub.bolivia-suite', 'bolivia-suite.js'],
   ['validohub.portugal-suite', 'portugal-suite.js']
 ]);
 const FOREIGN_TERMS = {

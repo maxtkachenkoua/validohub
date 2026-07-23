@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bolivia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: BO
+category: privacy
+status: active
+name:
+  en: "Bolivian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bolivia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1234567 LP, BO-BANK-001-1234567890, Av. Arce 123, La Paz"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bolivia-integration-smoke-test-builder, bolivia-ci-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bolivian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

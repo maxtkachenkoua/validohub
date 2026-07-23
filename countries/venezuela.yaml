@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: VE
+slug: venezuela
+name:
+  en: Venezuela
+region: South America
+languages:
+  - es
+currency: VES
+relatedCountries:
+  - CO
+  - GY
+  - BR

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: PY
+category: tax
+status: active
+name:
+  en: "Paraguayan Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "PY 80012345-6 21/07/2026 1.234.567 PYG"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-accounting-audit-trail-checklist-generator, paraguay-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

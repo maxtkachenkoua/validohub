@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-invoice-number-helper
+kind: tool
+module: validohub
+country: AR
+category: tax
+status: active
+name:
+  en: "Argentine Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 AR 30-12345678-9"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-e-invoicing-readiness-checker, argentina-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

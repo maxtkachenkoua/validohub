@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: CL
+category: tax
+status: active
+name:
+  en: "Chilean VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "IVA / RUT 20% base 1.234 CLP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-vat-return-field-helper, chile-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-customs-tax-identifier-helper
+kind: tool
+module: validohub
+country: GY
+category: national-identifiers
+status: active
+name:
+  en: "Guyanese Customs / Tax Identifier Helper"
+summary:
+  en: "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUST input"
+        required: true
+        placeholder:
+          en: "GYGY-CO-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-nis-number-social-insurance-helper, guyana-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese Customs / Tax Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."

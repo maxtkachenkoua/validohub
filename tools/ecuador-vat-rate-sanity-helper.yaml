@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-vat-rate-sanity-helper
+kind: tool
+module: validohub
+country: EC
+category: tax
+status: active
+name:
+  en: "Ecuadorian VAT Rate Sanity Helper"
+summary:
+  en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "IVA / RUC 20% base 1,234.56 USD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-vat-return-field-helper, ecuador-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian VAT Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

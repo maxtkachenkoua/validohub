@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-company-onboarding-auditor
+kind: tool
+module: validohub
+country: CO
+category: developer-tools
+status: active
+name:
+  en: "Colombian Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for NIT, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CO\",\"nit\":\"900.123.456-7\",\"cufe\":\"ABCDEF1234567890\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-business-register-readiness-helper, colombia-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for NIT, VAT, address, banking, and official registry handoff readiness."

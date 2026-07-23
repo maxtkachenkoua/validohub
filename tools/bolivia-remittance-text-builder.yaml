@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bolivia-remittance-text-builder
+kind: tool
+module: validohub
+country: BO
+category: finance
+status: active
+name:
+  en: "Bolivian Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bolivia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 BO NIT 1023459028 1.234,56 BOB"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bolivia-payment-reconciliation-helper, bolivia-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bolivian Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

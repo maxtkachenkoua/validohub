@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-customs-tax-identifier-helper
+kind: tool
+module: validohub
+country: PY
+category: national-identifiers
+status: active
+name:
+  en: "Paraguayan Customs / Tax Identifier Helper"
+summary:
+  en: "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUST input"
+        required: true
+        placeholder:
+          en: "PY80012345-6"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-cedula-social-insurance-helper, paraguay-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Customs / Tax Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."

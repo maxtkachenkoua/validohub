@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-vat-id-validator
+kind: tool
+module: validohub
+country: PE
+category: national-identifiers
+status: active
+name:
+  en: "Peruvian IGV / RUC Tax ID Validator"
+summary:
+  en: "Normalize IGV / RUC identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "PE RUC 20123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-customs-tax-identifier-helper, peru-dni-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian IGV / RUC Tax ID Validator | ValidoHub"
+  description:
+    en: "Normalize IGV / RUC identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."

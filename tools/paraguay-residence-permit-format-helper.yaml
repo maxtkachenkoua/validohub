@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-residence-permit-format-helper
+kind: tool
+module: validohub
+country: PY
+category: documents
+status: active
+name:
+  en: "Paraguayan Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "PY PERMIT 2026 1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-health-card-format-helper, paraguay-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

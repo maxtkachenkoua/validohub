@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-vat-id-validator
+kind: tool
+module: validohub
+country: CO
+category: national-identifiers
+status: active
+name:
+  en: "Colombian IVA / NIT Tax ID Validator"
+summary:
+  en: "Normalize IVA / NIT identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "CO 900.123.456-7"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-customs-tax-identifier-helper, colombia-cedula-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian IVA / NIT Tax ID Validator | ValidoHub"
+  description:
+    en: "Normalize IVA / NIT identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."

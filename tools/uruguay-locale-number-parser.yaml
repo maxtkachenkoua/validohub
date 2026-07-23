@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-locale-number-parser
+kind: tool
+module: validohub
+country: UY
+category: localization
+status: active
+name:
+  en: "Uruguayan Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Uruguay."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1.234,56 UYU"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-calendar-week-helper, uruguay-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Uruguay."

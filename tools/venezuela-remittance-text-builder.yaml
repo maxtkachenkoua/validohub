@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-remittance-text-builder
+kind: tool
+module: validohub
+country: VE
+category: finance
+status: active
+name:
+  en: "Venezuelan Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 VE J-12345678-9 1.234,56 VES"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-payment-reconciliation-helper, venezuela-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

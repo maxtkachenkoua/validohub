@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-procurement-identifier-helper
+kind: tool
+module: validohub
+country: SR
+category: government
+status: active
+name:
+  en: "Surinamese Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "SR-CO-123456 PO-2026-001 SR TAX 123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-accessibility-locale-copy-checker, suriname-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

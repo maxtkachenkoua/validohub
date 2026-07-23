@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-business-register-readiness-helper
+kind: tool
+module: validohub
+country: UY
+category: government
+status: active
+name:
+  en: "Uruguayan DGI / Registro Nacional de Comercio Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated DGI / Registro Nacional de Comercio lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "210123456789 UY RUT 210123456789 18 de Julio 1234, 11000 Montevideo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-id-card-format-helper, uruguay-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan DGI / Registro Nacional de Comercio Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated DGI / Registro Nacional de Comercio lookup or company registry workflow."

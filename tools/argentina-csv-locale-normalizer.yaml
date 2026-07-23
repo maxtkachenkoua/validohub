@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-csv-locale-normalizer
+kind: tool
+module: validohub
+country: AR
+category: developer-tools
+status: active
+name:
+  en: "Argentine CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Argentina decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1.234,56 ARS;21/07/2026;AR 30-12345678-9"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-slug-normalizer, argentina-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Argentina decimal, date, postal, phone, tax, and banking fields."

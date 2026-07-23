@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-pii-masker
+kind: tool
+module: validohub
+country: SR
+category: privacy
+status: active
+name:
+  en: "Surinamese PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "AB123456 +597 812 3456 SR-BANK-001-123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-personal-data-fixture-generator, suriname-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

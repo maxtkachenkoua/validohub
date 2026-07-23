@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-debit-authorization-helper
+kind: tool
+module: validohub
+country: PE
+category: finance
+status: active
+name:
+  en: "Peruvian Debit Authorization Helper"
+summary:
+  en: "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DEBIT input"
+        required: true
+        placeholder:
+          en: "MANDATE-2026-001 PE-CCI-002-12345678901234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-payment-reference-helper, peru-remittance-text-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Debit Authorization Helper | ValidoHub"
+  description:
+    en: "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-run-social-insurance-helper
+kind: tool
+module: validohub
+country: CL
+category: national-identifiers
+status: active
+name:
+  en: "Chilean RUN Helper"
+summary:
+  en: "Split RUN evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "12.345.678-5"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-company-onboarding-auditor, chile-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean RUN Helper | ValidoHub"
+  description:
+    en: "Split RUN evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

@@ -6,6 +6,7 @@ This is the executable product contract for any country described as **full prem
 
 A full premium country is a browser-only developer suite for local compliance and data workflows. It must feel like a polished product, not generated filler:
 
+- A full premium country should be the strongest practical developer resource for that country's browser-capable workflows. For every local identifier, tax, banking, payment, address, privacy, logistics, document, or developer-data tool that is included, benchmark the best public competitor, then exceed it with deeper local parsing, validation/generation parity where safe, field-level evidence, debugger output, developer exports, and explicit official/live lookup boundaries.
 - Country hub with country-specific content, route groups, highlights, developer notes, official boundaries, ecosystem links, localization notes, and available workbenches.
 - Country hub technical standards with non-empty plug type, voltage, grid frequency, and emergency-number values.
 - Country hub search with local market hints in the placeholder/chips, such as BLIK, PIX, Multibanco, KID, Bankgiro, PlusGiro, OGM, variable symbol, viitenumero, Eircode, HETU, CPR, CVR, CNP, or the strongest equivalent local identifiers/payment abbreviations. Do not ship only generic `IBAN, SWIFT/BIC, SEPA, VAT, INVOICE`.

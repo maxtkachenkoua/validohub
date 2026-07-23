@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: EC
+category: privacy
+status: active
+name:
+  en: "Ecuadorian LOPDP Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"EC\",\"ruc\":\"1790012345001\",\"claveAcceso\":\"2107202601179001234500120010010000000011234567819\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-pii-masker, ecuador-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian LOPDP Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

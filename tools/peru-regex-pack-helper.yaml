@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-regex-pack-helper
+kind: tool
+module: validohub
+country: PE
+category: developer-tools
+status: active
+name:
+  en: "Peruvian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "DNI RUC codigo postal  PE-CCI-002-12345678901234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-api-payload-auditor, peru-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."

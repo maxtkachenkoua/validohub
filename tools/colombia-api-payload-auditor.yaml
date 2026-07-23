@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-api-payload-auditor
+kind: tool
+module: validohub
+country: CO
+category: developer-tools
+status: active
+name:
+  en: "Colombian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CO\",\"nit\":\"900.123.456-7\",\"cufe\":\"ABCDEF1234567890\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-form-field-auditor, colombia-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."

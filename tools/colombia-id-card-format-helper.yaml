@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-id-card-format-helper
+kind: tool
+module: validohub
+country: CO
+category: national-identifiers
+status: active
+name:
+  en: "Colombian ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "1.234.567.890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-passport-number-helper, colombia-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

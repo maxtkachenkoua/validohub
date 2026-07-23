@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-company-registration-number-validator
+kind: tool
+module: validohub
+country: GY
+category: national-identifiers
+status: active
+name:
+  en: "Guyanese company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "GY-CO-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-vat-id-validator, guyana-customs-tax-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-company-suffix-normalizer
+kind: tool
+module: validohub
+country: PE
+category: developer-tools
+status: active
+name:
+  en: "Peruvian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Peru Sample Holding Ltd 20123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-procurement-identifier-helper, peru-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

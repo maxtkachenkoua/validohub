@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: GY
+category: localization
+status: active
+name:
+  en: "Guyanese Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "TIN / NIS input, postal/address reference input, amount 1,234.56 GYD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-support-ticket-scrubber, guyana-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

@@ -1,0 +1,642 @@
+{
+  "id": "bolivia",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/bolivia-outline.svg",
+    "outlineAlt": "Bolivia country outline",
+    "mapSrc": "/assets/images/countries/bolivia-location.svg",
+    "mapAlt": "World map with Bolivia location marker",
+    "mapMarker": {
+      "x": 51,
+      "y": 65,
+      "label": "Bolivia"
+    },
+    "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+  },
+  "catalog": {
+    "id": "bolivia",
+    "flag": "🇧🇴",
+    "name": "Bolivia",
+    "nativeName": "Bolivia",
+    "iso2": "BO",
+    "iso3": "BOL",
+    "continent": "South America",
+    "region": "South America",
+    "language": "Spanish, Quechua, Aymara, and other official languages",
+    "currency": "BOB",
+    "currencyName": "Bolivian boliviano",
+    "status": "available",
+    "summary": "Premium Bolivia developer hub for CI, NIT, RUAT, bank account, postal/address, phone, bank account, QR Bolivia, SIPAV transfer, tax payment reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "CI",
+      "NIT",
+      "RUAT",
+      "bank account",
+      "postal/address",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "QR Bolivia",
+      "SIPAV transfer",
+      "tax payment reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Bolivian CI Validator",
+      "Bolivian NIT Validator",
+      "Bolivian IVA / NIT Tax ID Validator",
+      "Bolivian Customs / Tax Identifier Helper",
+      "Bolivian insured/person evidence Helper",
+      "Bolivian Company Onboarding Auditor",
+      "Bolivian SEPREC / SIN Readiness Helper",
+      "Bolivian ID Card Format Helper",
+      "Bolivian Passport Number Helper",
+      "Bolivian MRZ / Passport Parser",
+      "Bolivian Domestic Bank Account Validator",
+      "Bolivian Domestic Account Fixture Generator",
+      "Bolivian Domestic Bank Account Inspector",
+      "Bolivian BIC / SWIFT Inspector",
+      "Bolivian Domestic Transfer Helper",
+      "Bolivian Debit Authorization Helper",
+      "Bolivian QR Bolivia / bank transfer Reference Helper",
+      "Bolivian Remittance Text Builder",
+      "Bolivian Payment Reconciliation Helper",
+      "Bolivian Bank Statement Parser",
+      "Bolivian Masked Bank Account Formatter",
+      "Bolivian BOB Decimal Currency Formatter",
+      "Bolivian VAT Rate Sanity Helper",
+      "Bolivian VAT Return Field Helper",
+      "Bolivian Invoice Number Helper",
+      "Bolivian factura electronica / CUF Readiness Checker",
+      "Bolivian Tax Authority Handoff Helper",
+      "Bolivian Accounting Audit Trail Checklist Helper",
+      "Bolivian Postal Code Validator",
+      "Bolivian Address Normalizer",
+      "Bolivian Address Transliteration Normalizer",
+      "Bolivian Region / Province Code Mapper",
+      "Bolivian Municipality Code Inspector",
+      "Bolivian Phone Number Validator",
+      "Bolivian Phone E.164 Formatter",
+      "Bolivian Date Locale Formatter",
+      "Bolivian CSV Locale Normalizer",
+      "Bolivian Slug Normalizer",
+      "Bolivian Document OCR Fixer",
+      "Bolivian personal-data protection Redaction Helper",
+      "Bolivian PII Masker",
+      "Bolivian Personal Data Fixture Helper",
+      "Bolivian Driving Licence Format Helper",
+      "Bolivian Residence Permit Format Helper",
+      "Bolivian Health Card Format Helper",
+      "Bolivian Vehicle Plate Inspector",
+      "Bolivian VIN Validator",
+      "Bolivian Vehicle Data Redaction Helper",
+      "Bolivian Customs Declaration Helper",
+      "Bolivian Postal Tracking Helper",
+      "Bolivian Data Quality Workbench",
+      "Bolivian JSON Fixture Helper",
+      "Bolivian Regex Pack Helper",
+      "Bolivian API Payload Auditor",
+      "Bolivian Form Field Auditor",
+      "Bolivian Locale Number Parser",
+      "Bolivian Calendar Week Helper",
+      "Bolivian Company Suffix Normalizer",
+      "Bolivian Procurement Identifier Helper",
+      "Bolivian Locale Copy Checker",
+      "Bolivian Support Ticket Scrubber",
+      "Bolivian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live SEPREC / SIN lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 51,
+      "y": 65
+    },
+    "searchHints": [
+      "CI",
+      "NIT",
+      "SIN",
+      "CUF",
+      "QR BOLIVIA",
+      "RUAT"
+    ]
+  },
+  "hub": {
+    "flag": "🇧🇴",
+    "name": "Bolivia",
+    "badge": "Premium Bolivia developer suite",
+    "description": "Developer intelligence and browser-only workbenches for bolivian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Bolivia",
+      "population": "approximately 12.5M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Sucre / La Paz",
+      "continent": "South America",
+      "region": "South America / Andean Community",
+      "languages": "Spanish, Quechua, Aymara, and other official languages",
+      "currency": "Bolivian boliviano",
+      "currencyCode": "BOB",
+      "callingCode": "+591",
+      "internetTld": ".bo",
+      "drivingSide": "Right",
+      "iso2": "BO",
+      "iso3": "BOL",
+      "isoNumeric": "068",
+      "locale": "es-BO",
+      "icuLocale": "es_BO",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Dot (.)",
+      "addressFormat": "Street, number, postal code, locality, Bolivia",
+      "postalCodeFormat": "postal/address reference",
+      "primaryTimeZone": "America/La_Paz (BOT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "110",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "es-BO",
+      "cldrLocale": "es_BO",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type A / Type C",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "bolivia",
+      "outlineLabel": "Bolivia outline",
+      "mapLabel": "Bolivia in the world",
+      "continentBadge": "South America",
+      "flagLabel": "Bolivia flag",
+      "heroAccentPrimary": "213 43 30",
+      "heroAccentSecondary": "249 227 0",
+      "heroAccentTertiary": "0 121 52"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "CI and NIT",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "IVA / NIT and payments",
+        "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Bolivia registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /bolivia/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Dot (.) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Bolivian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "SEPREC / SIN",
+        "text": "Official business registry or company lookup remains the source of truth for Bolivia.",
+        "status": "official boundary"
+      },
+      {
+        "title": "IVA / NIT",
+        "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data protection",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "CI, NIT, RUAT, bank account, postal/address, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, QR Bolivia, SIPAV transfer, tax payment reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "es-BO / es_BO; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "BOB amounts use Comma (,) and Dot (.).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "CI, NIT, postal/address reference, phone, address, and domestic account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type A / Type C",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "Primary emergency number fixture; local alternatives may also exist."
+      }
+    ],
+    "searchHints": [
+      "CI",
+      "NIT",
+      "SIN",
+      "CUF",
+      "QR BOLIVIA",
+      "RUAT"
+    ],
+    "routes": [
+      {
+        "title": "Bolivian CI Validator",
+        "href": "/en/bolivia/bolivia-ci-validator/",
+        "text": "Validate CI shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Bolivian NIT Validator",
+        "href": "/en/bolivia/bolivia-nit-validator/",
+        "text": "Inspect NIT structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Bolivian IVA / NIT Tax ID Validator",
+        "href": "/en/bolivia/bolivia-vat-id-validator/",
+        "text": "Normalize IVA / NIT identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+      },
+      {
+        "title": "Bolivian Customs / Tax Identifier Helper",
+        "href": "/en/bolivia/bolivia-customs-tax-identifier-helper/",
+        "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+      },
+      {
+        "title": "Bolivian insured/person evidence Helper",
+        "href": "/en/bolivia/bolivia-insured-person-evidence-social-insurance-helper/",
+        "text": "Split insured/person evidence evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Bolivian Company Onboarding Auditor",
+        "href": "/en/bolivia/bolivia-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for NIT, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Bolivian SEPREC / SIN Readiness Helper",
+        "href": "/en/bolivia/bolivia-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated SEPREC / SIN lookup or company registry workflow."
+      },
+      {
+        "title": "Bolivian ID Card Format Helper",
+        "href": "/en/bolivia/bolivia-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Bolivian Passport Number Helper",
+        "href": "/en/bolivia/bolivia-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Bolivian MRZ / Passport Parser",
+        "href": "/en/bolivia/bolivia-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Bolivian Domestic Bank Account Validator",
+        "href": "/en/bolivia/bolivia-domestic-account-validator/",
+        "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+      },
+      {
+        "title": "Bolivian Domestic Account Fixture Generator",
+        "href": "/en/bolivia/bolivia-domestic-account-fixture-generator/",
+        "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+      },
+      {
+        "title": "Bolivian Domestic Bank Account Inspector",
+        "href": "/en/bolivia/bolivia-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+      },
+      {
+        "title": "Bolivian BIC / SWIFT Inspector",
+        "href": "/en/bolivia/bolivia-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Bolivia banking integrations."
+      },
+      {
+        "title": "Bolivian Domestic Transfer Helper",
+        "href": "/en/bolivia/bolivia-domestic-transfer-helper/",
+        "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+      },
+      {
+        "title": "Bolivian Debit Authorization Helper",
+        "href": "/en/bolivia/bolivia-debit-authorization-helper/",
+        "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+      },
+      {
+        "title": "Bolivian QR Bolivia / bank transfer Reference Helper",
+        "href": "/en/bolivia/bolivia-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Bolivian Remittance Text Builder",
+        "href": "/en/bolivia/bolivia-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Bolivian Payment Reconciliation Helper",
+        "href": "/en/bolivia/bolivia-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Bolivian Bank Statement Parser",
+        "href": "/en/bolivia/bolivia-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Bolivian Masked Bank Account Formatter",
+        "href": "/en/bolivia/bolivia-masked-bank-account-formatter/",
+        "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+      },
+      {
+        "title": "Bolivian BOB Decimal Currency Formatter",
+        "href": "/en/bolivia/bolivia-currency-decimal-formatter/",
+        "text": "Normalize BOB amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Bolivian VAT Rate Sanity Helper",
+        "href": "/en/bolivia/bolivia-vat-rate-sanity-helper/",
+        "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Bolivian VAT Return Field Helper",
+        "href": "/en/bolivia/bolivia-vat-return-field-helper/",
+        "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Bolivian Invoice Number Helper",
+        "href": "/en/bolivia/bolivia-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Bolivian factura electronica / CUF Readiness Checker",
+        "href": "/en/bolivia/bolivia-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Bolivian Tax Authority Handoff Helper",
+        "href": "/en/bolivia/bolivia-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Bolivian Accounting Audit Trail Checklist Helper",
+        "href": "/en/bolivia/bolivia-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+      },
+      {
+        "title": "Bolivian Postal Code Validator",
+        "href": "/en/bolivia/bolivia-postal-code-validator/",
+        "text": "Validate postal/address reference shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Bolivian Address Normalizer",
+        "href": "/en/bolivia/bolivia-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Bolivian Address Transliteration Normalizer",
+        "href": "/en/bolivia/bolivia-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Bolivian Region / Province Code Mapper",
+        "href": "/en/bolivia/bolivia-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Bolivian Municipality Code Inspector",
+        "href": "/en/bolivia/bolivia-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Bolivian Phone Number Validator",
+        "href": "/en/bolivia/bolivia-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Bolivian Phone E.164 Formatter",
+        "href": "/en/bolivia/bolivia-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Bolivian Date Locale Formatter",
+        "href": "/en/bolivia/bolivia-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Bolivian CSV Locale Normalizer",
+        "href": "/en/bolivia/bolivia-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Bolivia decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Bolivian Slug Normalizer",
+        "href": "/en/bolivia/bolivia-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Bolivian Document OCR Fixer",
+        "href": "/en/bolivia/bolivia-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Bolivian personal-data protection Redaction Helper",
+        "href": "/en/bolivia/bolivia-gdpr-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Bolivian PII Masker",
+        "href": "/en/bolivia/bolivia-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Bolivian Personal Data Fixture Helper",
+        "href": "/en/bolivia/bolivia-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Bolivian Driving Licence Format Helper",
+        "href": "/en/bolivia/bolivia-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Bolivian Residence Permit Format Helper",
+        "href": "/en/bolivia/bolivia-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Bolivian Health Card Format Helper",
+        "href": "/en/bolivia/bolivia-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Bolivian Vehicle Plate Inspector",
+        "href": "/en/bolivia/bolivia-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Bolivian VIN Validator",
+        "href": "/en/bolivia/bolivia-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Bolivian Vehicle Data Redaction Helper",
+        "href": "/en/bolivia/bolivia-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Bolivian Customs Declaration Helper",
+        "href": "/en/bolivia/bolivia-customs-declaration-helper/",
+        "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Bolivian Postal Tracking Helper",
+        "href": "/en/bolivia/bolivia-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Bolivian Data Quality Workbench",
+        "href": "/en/bolivia/bolivia-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Bolivian JSON Fixture Helper",
+        "href": "/en/bolivia/bolivia-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Bolivian Regex Pack Helper",
+        "href": "/en/bolivia/bolivia-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Bolivian API Payload Auditor",
+        "href": "/en/bolivia/bolivia-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Bolivian Form Field Auditor",
+        "href": "/en/bolivia/bolivia-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Bolivian Locale Number Parser",
+        "href": "/en/bolivia/bolivia-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Bolivia."
+      },
+      {
+        "title": "Bolivian Calendar Week Helper",
+        "href": "/en/bolivia/bolivia-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Bolivian Company Suffix Normalizer",
+        "href": "/en/bolivia/bolivia-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Bolivian Procurement Identifier Helper",
+        "href": "/en/bolivia/bolivia-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Bolivian Locale Copy Checker",
+        "href": "/en/bolivia/bolivia-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Bolivian Support Ticket Scrubber",
+        "href": "/en/bolivia/bolivia-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Bolivian Integration Smoke Test Builder",
+        "href": "/en/bolivia/bolivia-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

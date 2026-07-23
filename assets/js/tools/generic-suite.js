@@ -1844,7 +1844,167 @@
       chunks.push(words.slice(index, index + chunkSize).join(' '));
       if (chunks.length >= 12 || index + chunkSize >= words.length) break;
     }
-    return { text, compareText, lines, words, parsed, jsonlRows, badJsonl, signals, risks, secretFindings, cssVars, htmlTags, httpHeaders, k8sKinds, tfResources, stackFrames, sseEvents, chunks, chunkSize, overlap };
+    const domain = domainPremiumLens(config.kind, { text, compareText, allText, lines, words, parsed, jsonlRows, badJsonl, signals, risks, secretFindings, cssVars, htmlTags, httpHeaders, k8sKinds, tfResources, stackFrames, sseEvents, chunks, chunkSize, overlap });
+    return { text, compareText, lines, words, parsed, jsonlRows, badJsonl, signals, risks, secretFindings, cssVars, htmlTags, httpHeaders, k8sKinds, tfResources, stackFrames, sseEvents, chunks, chunkSize, overlap, domain };
+  }
+
+  function domainPremiumLens(kind, ctx) {
+    const text = ctx.text || '';
+    const lines = ctx.lines || [];
+    const lower = text.toLowerCase();
+    const has = (pattern) => pattern.test(text);
+    const count = (pattern) => (text.match(pattern) || []).length;
+    const lens = { cards: [], breakdown: [], pipeline: [], notes: [], risks: [] };
+    function addCard(label, value, note) { lens.cards.push({ label, value: String(value), note }); }
+    function addBreak(label, value, note) { lens.breakdown.push([label, String(value == null || value === '' ? 'not detected' : value), note || 'domain evidence']); }
+    function addPipe(name, ok, detail) { lens.pipeline.push({ name, ok, detail }); }
+    if (kind === 'kubernetes-yaml') {
+      const containers = count(/^\s*-\s*name:\s*/gmi);
+      const probes = count(/\b(readinessProbe|livenessProbe|startupProbe)\s*:/g);
+      const resourceBlocks = count(/\b(resources|requests|limits)\s*:/g);
+      const riskyRoot = has(/runAsUser:\s*0|privileged:\s*true|allowPrivilegeEscalation:\s*true/i);
+      addCard('Workloads', ctx.k8sKinds.join(', ') || 'not detected', 'kind map');
+      addCard('Containers', containers, 'container specs');
+      addCard('Probes', probes, 'readiness/liveness/startup');
+      addCard('Resources', resourceBlocks, 'requests/limits evidence');
+      addBreak('Image pinning', has(/image:\s*[^:\s]+:latest/i) ? 'latest tag found' : 'tag review passed', 'avoid mutable tags');
+      addBreak('Security context', has(/securityContext:/i) ? 'present' : 'missing', 'pod/container hardening');
+      addBreak('Resource policy', resourceBlocks ? 'requests/limits present' : 'missing', 'scheduler pressure');
+      addBreak('Probe coverage', probes ? probes + ' probes' : 'missing', 'rollout safety');
+      addPipe('Kubernetes kinds', ctx.k8sKinds.length > 0, ctx.k8sKinds.join(', ') || 'none');
+      addPipe('Runtime safety', !riskyRoot, riskyRoot ? 'privilege/root signal' : 'no obvious privilege escalation');
+      addPipe('Operability', probes > 0 && resourceBlocks > 0, probes + ' probes, ' + resourceBlocks + ' resource signals');
+      lens.risks.push(...(riskyRoot ? ['Privileged/root container signal'] : []));
+    } else if (kind === 'dockerfile') {
+      const from = count(/^FROM\s+/gmi), run = count(/^RUN\s+/gmi), copy = count(/^(COPY|ADD)\s+/gmi);
+      const user = (text.match(/^USER\s+(.+)$/mi) || [])[1] || '';
+      const mutable = has(/^FROM\s+\S+:latest\b/mi);
+      addCard('Stages', from, 'FROM lines');
+      addCard('Layers', run + copy, 'RUN/COPY/ADD');
+      addCard('User', user || 'not set', user ? 'explicit runtime user' : 'root default risk');
+      addCard('Base pin', mutable ? 'mutable latest' : 'pinned-ish', 'tag scan');
+      addBreak('Cache hygiene', has(/npm ci|pnpm install --frozen|pip install --require-hashes|go mod download/i) ? 'deterministic install hint' : 'review install determinism');
+      addBreak('Secret hygiene', has(/ARG\s+\w*(TOKEN|SECRET|PASSWORD)|ENV\s+\w*(TOKEN|SECRET|PASSWORD)/i) ? 'secret-like build arg/env' : 'no obvious secret arg/env');
+      addBreak('Package cleanup', has(/apt-get update/i) && !has(/rm -rf \/var\/lib\/apt\/lists/i) ? 'missing apt cleanup hint' : 'cleanup acceptable or not applicable');
+      addPipe('Base image', from > 0 && !mutable, from + ' stage(s), ' + (mutable ? 'latest tag' : 'no latest tag'));
+      addPipe('Runtime user', Boolean(user) && !/^root\b/i.test(user), user || 'missing');
+      addPipe('Secret scan', !has(/TOKEN|SECRET|PASSWORD/i), has(/TOKEN|SECRET|PASSWORD/i) ? 'secret-like token' : 'none');
+      lens.risks.push(...(mutable ? ['Mutable :latest base image'] : []), ...(user && !/^root\b/i.test(user) ? [] : ['No non-root USER']));
+    } else if (kind === 'github-actions') {
+      const uses = Array.from(text.matchAll(/uses:\s*([^\s#]+)/g)).map(m => m[1]);
+      const unpinned = uses.filter(u => /@(main|master|HEAD)\b/i.test(u) || !/@/.test(u));
+      const permissions = (text.match(/permissions:\s*([^\n]+)/i) || [])[1] || (has(/permissions:/i) ? 'block' : 'missing');
+      addCard('Actions', uses.length, 'uses steps');
+      addCard('Unpinned', unpinned.length, unpinned.slice(0, 2).join(', ') || 'none');
+      addCard('Permissions', permissions, 'token scope');
+      addCard('Matrix', has(/matrix:/i) ? 'present' : 'missing', 'coverage hint');
+      addBreak('Trigger risk', has(/pull_request_target/i) ? 'pull_request_target' : 'normal-ish trigger', 'fork security');
+      addBreak('Shell injection', has(/\$\{\{\s*github\.event\..+?\}\}.*\|\s*sh/i) ? 'event data piped to shell' : 'no direct event pipe');
+      addPipe('Token permissions', !/write-all/i.test(text) && permissions !== 'missing', permissions);
+      addPipe('Action pinning', unpinned.length === 0, unpinned.length + ' unpinned/mutable');
+      addPipe('Dangerous trigger', !has(/pull_request_target/i), has(/pull_request_target/i) ? 'review fork secret boundary' : 'not detected');
+      lens.risks.push(...unpinned.map(u => 'Mutable action ref: ' + u));
+    } else if (kind === 'terraform') {
+      const adds = count(/\bto add\b|\+\s*resource/g), changes = count(/\bto change\b|~\s*resource/g), destroys = count(/\bto destroy\b|-\s*destroy/g);
+      addCard('Resources', ctx.tfResources.length, 'resource blocks');
+      addCard('Adds', adds, 'plan additions');
+      addCard('Changes', changes, 'plan changes');
+      addCard('Destroys', destroys, 'destructive changes');
+      addBreak('Public exposure', has(/0\.0\.0\.0\/0|public-read|0\.0\.0\.0/i) ? 'public exposure hint' : 'not detected');
+      addBreak('Provider pinning', has(/required_providers|required_version/i) ? 'version metadata present' : 'missing version metadata');
+      addPipe('Resource map', ctx.tfResources.length > 0 || adds + changes + destroys > 0, (ctx.tfResources.length || adds + changes + destroys) + ' signals');
+      addPipe('Destruction guard', destroys === 0, destroys + ' destroy signals');
+      addPipe('Secret scan', !has(/secret|password|access_key/i), has(/secret|password|access_key/i) ? 'secret-like HCL' : 'none');
+      lens.risks.push(...(destroys ? ['Destructive plan signal'] : []));
+    } else if (kind === 'cors') {
+      const origin = ctx.httpHeaders['access-control-allow-origin'] || '';
+      const creds = /true/i.test(ctx.httpHeaders['access-control-allow-credentials'] || '');
+      addCard('Origin', origin || 'missing', 'allow-origin');
+      addCard('Credentials', creds ? 'true' : 'false/missing', 'credential mode');
+      addCard('Methods', ctx.httpHeaders['access-control-allow-methods'] || 'missing', 'method matrix');
+      addCard('Vary', ctx.httpHeaders.vary || 'missing', 'cache safety');
+      addBreak('Wildcard+credentials', origin === '*' && creds ? 'unsafe combination' : 'not detected', 'browser credential boundary');
+      addBreak('Preflight headers', ctx.httpHeaders['access-control-allow-headers'] || 'missing', 'request header allowlist');
+      addPipe('Origin policy', Boolean(origin) && !(origin === '*' && creds), origin || 'missing');
+      addPipe('Cache variance', /origin/i.test(ctx.httpHeaders.vary || ''), ctx.httpHeaders.vary || 'missing Vary: Origin');
+      addPipe('Preflight shape', Boolean(ctx.httpHeaders['access-control-allow-methods']), ctx.httpHeaders['access-control-allow-methods'] || 'missing methods');
+      lens.risks.push(...(origin === '*' && creds ? ['Wildcard origin with credentials'] : []));
+    } else if (kind === 'accessibility') {
+      const labels = count(/<label\b/gi), inputs = count(/<(input|select|textarea)\b/gi), imgs = count(/<img\b/gi), emptyAlt = count(/<img\b(?![^>]*\balt=)/gi);
+      addCard('Headings', count(/<h[1-6]\b/gi), 'heading outline');
+      addCard('Labels', labels + '/' + inputs, 'form coverage');
+      addCard('Images', imgs, 'alt review');
+      addCard('ARIA', count(/\baria-[a-z-]+=/gi), 'attribute hints');
+      addBreak('Unlabelled controls', Math.max(0, inputs - labels), 'static approximation');
+      addBreak('Images missing alt', emptyAlt, 'decorative images need explicit handling');
+      addBreak('Click-only divs', count(/<div\b[^>]*onclick=/gi), 'keyboard risk');
+      addPipe('Document outline', count(/<h1\b/gi) === 1, count(/<h1\b/gi) + ' h1 tags');
+      addPipe('Form labels', inputs === 0 || labels >= inputs, labels + '/' + inputs);
+      addPipe('Alt text', emptyAlt === 0, emptyAlt + ' images missing alt');
+      lens.risks.push(...(emptyAlt ? ['Image without alt attribute'] : []));
+    } else if (kind === 'prompt-injection') {
+      const override = count(/ignore (previous|all)|developer message|system prompt|bypass|jailbreak/gi);
+      const tools = count(/\b(call|invoke|use)\s+(the\s+)?(tool|function|api)|tool_call|function_call/gi);
+      const exfil = count(/reveal|exfiltrate|send .*secret|print .*key|leak/gi);
+      addCard('Override attempts', override, 'instruction hierarchy');
+      addCard('Tool-call pressure', tools, 'agentic risk');
+      addCard('Exfiltration', exfil, 'data boundary');
+      addCard('Secrets', ctx.secretFindings.length, 'PII/secret hints');
+      addBreak('Instruction boundary', override ? 'override language detected' : 'no obvious override language');
+      addBreak('Tool boundary', tools ? 'tool invocation pressure' : 'no direct tool-call pressure');
+      addPipe('Override scan', override === 0, override + ' findings');
+      addPipe('Exfil scan', exfil === 0, exfil + ' findings');
+      addPipe('Tool-call scan', tools === 0, tools + ' findings');
+      lens.risks.push(...(override ? ['Prompt override language'] : []), ...(tools ? ['Tool-call pressure'] : []), ...(exfil ? ['Exfiltration language'] : []));
+    } else if (kind === 'rag-chunking') {
+      const avg = ctx.chunks.length ? Math.round(ctx.chunks.reduce((sum, c) => sum + (c.match(/\S+/g) || []).length, 0) / ctx.chunks.length) : 0;
+      addCard('Chunks', ctx.chunks.length, ctx.chunkSize + ' target words');
+      addCard('Overlap', ctx.overlap, 'word overlap');
+      addCard('Average size', avg, 'token-ish words');
+      addCard('Metadata IDs', ctx.chunks.length, 'chunk payloads');
+      addBreak('First chunk', ctx.chunks[0] || 'missing', 'preview');
+      addBreak('Overlap policy', ctx.overlap + ' words', ctx.overlap >= ctx.chunkSize / 2 ? 'too high' : 'reasonable-ish');
+      addPipe('Chunk size', ctx.chunkSize >= 20, ctx.chunkSize + ' words');
+      addPipe('Overlap sanity', ctx.overlap < ctx.chunkSize / 2, ctx.overlap + '/' + ctx.chunkSize);
+      addPipe('Secret scan', ctx.secretFindings.length === 0, ctx.secretFindings.length + ' findings');
+    } else if (kind === 'jsonl-finetune') {
+      const roleCounts = { system: count(/"role"\s*:\s*"system"/g), user: count(/"role"\s*:\s*"user"/g), assistant: count(/"role"\s*:\s*"assistant"/g) };
+      addCard('Rows', ctx.jsonlRows.length, 'JSONL lines');
+      addCard('Malformed', ctx.badJsonl, 'parse failures');
+      addCard('User turns', roleCounts.user, 'role count');
+      addCard('Assistant turns', roleCounts.assistant, 'role count');
+      addBreak('System rows', roleCounts.system, 'optional instruction layer');
+      addBreak('Role order', has(/"role"\s*:\s*"assistant"[\s\S]{0,80}"role"\s*:\s*"user"/) ? 'assistant before user risk' : 'no obvious reversal');
+      addPipe('JSONL parse', ctx.badJsonl === 0, ctx.badJsonl + ' malformed rows');
+      addPipe('Chat roles', roleCounts.user > 0 && roleCounts.assistant > 0, 'user ' + roleCounts.user + ', assistant ' + roleCounts.assistant);
+      addPipe('Safety scan', ctx.secretFindings.length === 0, ctx.secretFindings.length + ' sensitive hints');
+    } else if (kind === 'html-seo') {
+      const title = (text.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '';
+      const desc = (text.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)/i) || [])[1] || '';
+      addCard('Title', title ? title.length + ' chars' : 'missing', title.slice(0, 48));
+      addCard('Description', desc ? desc.length + ' chars' : 'missing', desc.slice(0, 48));
+      addCard('Canonical', has(/rel=["']canonical["']/i) ? 'present' : 'missing', 'URL authority');
+      addCard('Structured data', has(/application\/ld\+json/i) ? 'present' : 'missing', 'rich result hint');
+      addBreak('Open Graph', count(/property=["']og:/gi), 'social metadata');
+      addBreak('hreflang', count(/hreflang=/gi), 'locale alternates');
+      addPipe('Title quality', title.length >= 20 && title.length <= 70, title.length + ' chars');
+      addPipe('Description quality', desc.length >= 80 && desc.length <= 180, desc.length + ' chars');
+      addPipe('Indexing', !has(/noindex/i), has(/noindex/i) ? 'noindex present' : 'indexable hint');
+    } else if (kind === 'browser-storage') {
+      const entries = lines.map(line => line.split(/[=:]/)[0]).filter(Boolean);
+      const bytesTotal = byteCount(text);
+      addCard('Entries', entries.length, 'key/value rows');
+      addCard('Size', util.formatBytes(bytesTotal), 'payload size');
+      addCard('Tokens', count(/access_token|refresh_token|id_token|eyJ/gi), 'auth risk');
+      addCard('PII hints', ctx.secretFindings.length, 'sensitive scan');
+      addBreak('Storage keys', entries.slice(0, 8).join(', ') || 'none');
+      addBreak('JWT/token storage', has(/access_token|refresh_token|id_token|eyJ/i) ? 'token-like data present' : 'not detected');
+      addPipe('Size budget', bytesTotal < 4096, util.formatBytes(bytesTotal));
+      addPipe('Auth token boundary', !has(/access_token|refresh_token|id_token|eyJ/i), 'browser storage is readable by script');
+      addPipe('Sensitive scan', ctx.secretFindings.length === 0, ctx.secretFindings.length + ' findings');
+      lens.risks.push(...(has(/access_token|refresh_token|id_token|eyJ/i) ? ['Auth token in browser storage'] : []));
+    }
+    return lens;
   }
 
   async function globalPremiumBatchHandler(workbench, action, config) {
@@ -2064,6 +2224,7 @@
       if (kind === 'rag-chunking') structuralCounts.push(['Chunks', String(insights.chunks.length), insights.chunkSize + ' words with ' + insights.overlap + ' overlap']);
       if (kind === 'jsonl-finetune') structuralCounts.push(['Malformed JSONL', String(insights.badJsonl), 'line parser']);
       if (kind === 'rest-error' || kind === 'rate-limit' || kind === 'cors') structuralCounts.push(['Headers', String(Object.keys(insights.httpHeaders).length), 'HTTP header map']);
+      const domainRiskCount = insights.domain && insights.domain.risks ? insights.domain.risks.length : 0;
 
       const generated = kind === 'rag-chunking'
         ? insights.chunks.map((chunk, index) => ({ id: 'chunk-' + (index + 1), text: chunk, metadata: { source: 'browser-local', chunkIndex: index, fingerprint: simpleHash8(chunk) } }))
@@ -2075,32 +2236,34 @@
               ? 'Retry-After: 60\\nRateLimit-Limit: 100\\nRateLimit-Remaining: 0\\nRateLimit-Reset: 60'
               : maskSensitive(input || config.summary);
 
-      ok = Boolean(input) && insights.risks.length === 0 && insights.secretFindings.length === 0 && insights.badJsonl === 0;
+      ok = Boolean(input) && insights.risks.length === 0 && insights.secretFindings.length === 0 && insights.badJsonl === 0 && domainRiskCount === 0;
       if (kind === 'rag-chunking' || kind === 'eval-dataset') ok = Boolean(input) && insights.secretFindings.length === 0;
       output = typeof generated === 'string' ? generated : JSON.stringify(generated, null, 2);
-      cards = [
+      cards = (insights.domain && insights.domain.cards && insights.domain.cards.length ? insights.domain.cards : []).concat([
         { label: 'Artifact', value: kindLabel },
         { label: 'Signals', value: String(insights.signals.length), note: insights.signals.slice(0, 3).map(item => item.label).join(', ') || 'none' },
-        { label: 'Risks', value: String(insights.risks.length + insights.secretFindings.length), note: insights.risks.slice(0, 3).map(item => item.label).join(', ') || 'none' },
+        { label: 'Risks', value: String(insights.risks.length + insights.secretFindings.length + domainRiskCount), note: insights.risks.slice(0, 3).map(item => item.label).join(', ') || (insights.domain && insights.domain.risks && insights.domain.risks[0]) || 'none' },
         { label: 'Fingerprint', value: simpleHash8(input || output), note: 'local handoff id' }
-      ];
+      ]).slice(0, 8);
       breakdown = structuralCounts
+        .concat(insights.domain && insights.domain.breakdown ? insights.domain.breakdown : [])
         .concat(insights.signals.slice(0, 12).map(item => ['Signal: ' + item.label, String(item.count), 'detected evidence']))
         .concat(insights.risks.slice(0, 12).map(item => ['Risk: ' + item.label, String(item.count), 'review before production']))
-        .concat(insights.secretFindings.slice(0, 8).map(item => ['Sensitive hint: ' + item.label, String(item.count), 'mask before sharing']));
-      pipeline = [
+        .concat(insights.secretFindings.slice(0, 8).map(item => ['Sensitive hint: ' + item.label, String(item.count), 'mask before sharing']))
+        .concat(insights.domain && insights.domain.risks ? insights.domain.risks.map(item => ['Domain risk: ' + item, 'review', 'specialized lens']) : []);
+      pipeline = (insights.domain && insights.domain.pipeline && insights.domain.pipeline.length ? insights.domain.pipeline : []).concat([
         { name: 'Input shape', ok: Boolean(input), detail: insights.lines.length + ' lines, ' + insights.words.length + ' words' },
         { name: 'Domain evidence', ok: insights.signals.length > 0, detail: insights.signals.length + ' positive signals' },
-        { name: 'Risk scan', ok: insights.risks.length === 0 && insights.secretFindings.length === 0, detail: (insights.risks.length + insights.secretFindings.length) + ' findings' },
+        { name: 'Risk scan', ok: insights.risks.length === 0 && insights.secretFindings.length === 0 && domainRiskCount === 0, detail: (insights.risks.length + insights.secretFindings.length + domainRiskCount) + ' findings' },
         { name: 'Boundary', detail: 'static browser-only analysis; no cloud, CI, cluster, DNS, API, LLM, or browser automation is executed' }
-      ];
+      ]).slice(0, 8);
       notes = [
+        'This workbench now uses a domain-specific lens for ' + kindLabel + ' instead of only generic keyword counting.',
         config.group + ' analysis runs locally and never executes pasted infrastructure, prompts, code, HTML, HTTP, or browser-state data.',
         'Static findings are review signals; production truth still belongs to CI, cloud providers, test runners, scanners, and runtime logs.',
-        'Use the field breakdown to turn risky snippets into checklist items before merging or sharing.',
-        'Generated output is fixture/handoff material and should be reviewed before becoming production configuration.'
-      ];
-      json = { ...json, kind, profile: values.profile || values.format || values.mode || values.algorithm || null, signals: insights.signals, risks: insights.risks, secretFindings: insights.secretFindings, fingerprint: simpleHash8(input || output), generated };
+        'Use the field breakdown to turn risky snippets into checklist items before merging or sharing.'
+      ].concat(insights.domain && insights.domain.notes ? insights.domain.notes : []).slice(0, 6);
+      json = { ...json, kind, profile: values.profile || values.format || values.mode || values.algorithm || null, signals: insights.signals, risks: insights.risks, domainRisks: insights.domain ? insights.domain.risks : [], domainLens: insights.domain ? { cards: insights.domain.cards, breakdown: insights.domain.breakdown, pipeline: insights.domain.pipeline } : null, secretFindings: insights.secretFindings, fingerprint: simpleHash8(input || output), generated };
 
     }
 

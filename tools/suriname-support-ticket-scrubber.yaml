@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-support-ticket-scrubber
+kind: tool
+module: validohub
+country: SR
+category: privacy
+status: active
+name:
+  en: "Surinamese Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent AB123456, SR-BANK-001-123456789, Waterkant 1, Paramaribo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-integration-smoke-test-builder, suriname-id-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

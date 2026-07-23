@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-customs-declaration-helper
+kind: tool
+module: validohub
+country: UY
+category: government
+status: active
+name:
+  en: "Uruguayan Customs Declaration Helper"
+summary:
+  en: "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "UY RUT 210123456789 HS 8471 1.234,56 UYU"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-postal-tracking-helper, uruguay-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-business-register-readiness-helper
+kind: tool
+module: validohub
+country: CL
+category: government
+status: active
+name:
+  en: "Chilean SII / Registro de Empresas Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated SII / Registro de Empresas lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "76.123.456-7 CL 76.123.456-7 Av. Providencia 1234, 8320000 Santiago"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-id-card-format-helper, chile-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean SII / Registro de Empresas Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated SII / Registro de Empresas lookup or company registry workflow."

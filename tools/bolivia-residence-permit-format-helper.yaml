@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bolivia-residence-permit-format-helper
+kind: tool
+module: validohub
+country: BO
+category: documents
+status: active
+name:
+  en: "Bolivian Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bolivia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "BO PERMIT 2026 1234567 LP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bolivia-health-card-format-helper, bolivia-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bolivian Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

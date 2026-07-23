@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-data-quality-workbench
+kind: tool
+module: validohub
+country: CL
+category: developer-tools
+status: active
+name:
+  en: "Chilean Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CL\",\"rut\":\"76.123.456-7\",\"account\":\"0123-12345678\",\"amount\":\"1.234\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-json-fixture-generator, chile-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

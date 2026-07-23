@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-vat-return-field-helper
+kind: tool
+module: validohub
+country: AR
+category: tax
+status: active
+name:
+  en: "Argentine VAT Return Field Helper"
+summary:
+  en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "IVA / CUIT; AR 30-12345678-9; period 2026-07; 1.234,56 ARS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-invoice-number-helper, argentina-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."

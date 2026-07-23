@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-domestic-account-fixture-generator
+kind: tool
+module: validohub
+country: GY
+category: finance
+status: active
+name:
+  en: "Guyanese Domestic Account Fixture Generator"
+summary:
+  en: "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ACG input"
+        required: true
+        placeholder:
+          en: "001-123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-bank-account-inspector, guyana-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese Domestic Account Fixture Generator | ValidoHub"
+  description:
+    en: "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."

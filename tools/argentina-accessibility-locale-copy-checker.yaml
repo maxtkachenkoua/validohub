@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: AR
+category: localization
+status: active
+name:
+  en: "Argentine Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "DNI input, codigo postal argentino input, amount 1.234,56 ARS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-support-ticket-scrubber, argentina-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

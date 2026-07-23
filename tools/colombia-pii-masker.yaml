@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-pii-masker
+kind: tool
+module: validohub
+country: CO
+category: privacy
+status: active
+name:
+  en: "Colombian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1.234.567.890 +57 300 123 4567 CO-BANK-007-123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-personal-data-fixture-generator, colombia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

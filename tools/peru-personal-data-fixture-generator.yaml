@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: PE
+category: privacy
+status: active
+name:
+  en: "Peruvian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "12345678\\nAv. Larco 123, Miraflores, 15074 Lima\\n+51 912 345 678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-driving-licence-format-helper, peru-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

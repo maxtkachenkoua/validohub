@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-api-payload-auditor
+kind: tool
+module: validohub
+country: SR
+category: developer-tools
+status: active
+name:
+  en: "Surinamese API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SR\",\"tax\":\"123456\",\"account\":\"001-123456789\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-form-field-auditor, suriname-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."

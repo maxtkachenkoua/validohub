@@ -623,3 +623,113 @@ algorithms:
       en: Vatican City Premium Suite Algorithm
     summary:
       en: Metadata entry for ValidoHub browser-side vatican identifiers, banking, payments, tax, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.argentina-suite
+    javaClass: com.validohub.algorithms.argentina.ArgentinaSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Argentina Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side argentine identifiers, tax, banking, payments, invoices, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.bolivia-suite
+    javaClass: com.validohub.algorithms.bolivia.BoliviaSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Bolivia Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side bolivian identifiers, tax, banking, payments, invoices, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.chile-suite
+    javaClass: com.validohub.algorithms.chile.ChileSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Chile Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side chilean identifiers, tax, banking, payments, invoices, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.colombia-suite
+    javaClass: com.validohub.algorithms.colombia.ColombiaSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Colombia Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side colombian identifiers, tax, banking, payments, invoices, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.ecuador-suite
+    javaClass: com.validohub.algorithms.ecuador.EcuadorSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Ecuador Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side ecuadorian identifiers, tax, banking, payments, invoices, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.guyana-suite
+    javaClass: com.validohub.algorithms.guyana.GuyanaSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Guyana Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side guyanese identifiers, tax, banking, payments, invoices, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.paraguay-suite
+    javaClass: com.validohub.algorithms.paraguay.ParaguaySuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Paraguay Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side paraguayan identifiers, tax, banking, payments, invoices, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.peru-suite
+    javaClass: com.validohub.algorithms.peru.PeruSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Peru Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side peruvian identifiers, tax, banking, payments, invoices, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.suriname-suite
+    javaClass: com.validohub.algorithms.suriname.SurinameSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Suriname Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side surinamese identifiers, tax, banking, payments, invoices, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.uruguay-suite
+    javaClass: com.validohub.algorithms.uruguay.UruguaySuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Uruguay Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side uruguayan identifiers, tax, banking, payments, invoices, locale, privacy, vehicle, document, and developer workbenches.
+
+
+  - algorithmId: validohub.venezuela-suite
+    javaClass: com.validohub.algorithms.venezuela.VenezuelaSuiteAlgorithm
+    version: 1
+    capabilities: [validate, parse, format, generate, calculate, explain]
+    name:
+      en: Venezuela Premium Suite Algorithm
+    summary:
+      en: Metadata entry for ValidoHub browser-side venezuelan identifiers, tax, banking, payments, invoices, locale, privacy, vehicle, document, and developer workbenches.

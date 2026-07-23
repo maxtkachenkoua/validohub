@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-residence-permit-format-helper
+kind: tool
+module: validohub
+country: VE
+category: documents
+status: active
+name:
+  en: "Venezuelan Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "VE PERMIT 2026 V-12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-health-card-format-helper, venezuela-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

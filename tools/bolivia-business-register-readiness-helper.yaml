@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bolivia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: BO
+category: government
+status: active
+name:
+  en: "Bolivian SEPREC / SIN Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated SEPREC / SIN lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bolivia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "1023459028 BO NIT 1023459028 Av. Arce 123, La Paz"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bolivia-id-card-format-helper, bolivia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bolivian SEPREC / SIN Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated SEPREC / SIN lookup or company registry workflow."

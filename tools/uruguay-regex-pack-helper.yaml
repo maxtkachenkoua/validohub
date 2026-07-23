@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-regex-pack-helper
+kind: tool
+module: validohub
+country: UY
+category: developer-tools
+status: active
+name:
+  en: "Uruguayan Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "Cedula de identidad RUT codigo postal  UY-BANK-001-1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-api-payload-auditor, uruguay-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."

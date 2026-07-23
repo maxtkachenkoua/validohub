@@ -1,0 +1,642 @@
+{
+  "id": "venezuela",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/venezuela-outline.svg",
+    "outlineAlt": "Venezuela country outline",
+    "mapSrc": "/assets/images/countries/venezuela-location.svg",
+    "mapAlt": "World map with Venezuela location marker",
+    "mapMarker": {
+      "x": 48,
+      "y": 49,
+      "label": "Venezuela"
+    },
+    "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+  },
+  "catalog": {
+    "id": "venezuela",
+    "flag": "🇻🇪",
+    "name": "Venezuela",
+    "nativeName": "Venezuela",
+    "iso2": "VE",
+    "iso3": "VEN",
+    "continent": "South America",
+    "region": "South America",
+    "language": "Spanish",
+    "currency": "VES",
+    "currencyName": "Venezuelan bolivar",
+    "status": "available",
+    "summary": "Premium Venezuela developer hub for Cedula, RIF, IVSS evidence, bank account, postal code, phone, Pago Movil, bank account, SINPE-like mobile payment handoff, SENIAT payment reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "Cedula",
+      "RIF",
+      "IVSS evidence",
+      "bank account",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "Pago Movil",
+      "bank account",
+      "SINPE-like mobile payment handoff",
+      "SENIAT payment reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Venezuelan Cedula Validator",
+      "Venezuelan RIF Validator",
+      "Venezuelan IVA / RIF Tax ID Validator",
+      "Venezuelan Customs / Tax Identifier Helper",
+      "Venezuelan IVSS evidence Helper",
+      "Venezuelan Company Onboarding Auditor",
+      "Venezuelan SENIAT / Registro Mercantil Readiness Helper",
+      "Venezuelan ID Card Format Helper",
+      "Venezuelan Passport Number Helper",
+      "Venezuelan MRZ / Passport Parser",
+      "Venezuelan Domestic Bank Account Validator",
+      "Venezuelan Domestic Account Fixture Generator",
+      "Venezuelan Domestic Bank Account Inspector",
+      "Venezuelan BIC / SWIFT Inspector",
+      "Venezuelan Domestic Transfer Helper",
+      "Venezuelan Debit Authorization Helper",
+      "Venezuelan Pago Movil / bank transfer Reference Helper",
+      "Venezuelan Remittance Text Builder",
+      "Venezuelan Payment Reconciliation Helper",
+      "Venezuelan Bank Statement Parser",
+      "Venezuelan Masked Bank Account Formatter",
+      "Venezuelan VES Decimal Currency Formatter",
+      "Venezuelan VAT Rate Sanity Helper",
+      "Venezuelan VAT Return Field Helper",
+      "Venezuelan Invoice Number Helper",
+      "Venezuelan factura fiscal Readiness Checker",
+      "Venezuelan Tax Authority Handoff Helper",
+      "Venezuelan Accounting Audit Trail Checklist Helper",
+      "Venezuelan Postal Code Validator",
+      "Venezuelan Address Normalizer",
+      "Venezuelan Address Transliteration Normalizer",
+      "Venezuelan Region / Province Code Mapper",
+      "Venezuelan Municipality Code Inspector",
+      "Venezuelan Phone Number Validator",
+      "Venezuelan Phone E.164 Formatter",
+      "Venezuelan Date Locale Formatter",
+      "Venezuelan CSV Locale Normalizer",
+      "Venezuelan Slug Normalizer",
+      "Venezuelan Document OCR Fixer",
+      "Venezuelan personal-data protection Redaction Helper",
+      "Venezuelan PII Masker",
+      "Venezuelan Personal Data Fixture Helper",
+      "Venezuelan Driving Licence Format Helper",
+      "Venezuelan Residence Permit Format Helper",
+      "Venezuelan Health Card Format Helper",
+      "Venezuelan Vehicle Plate Inspector",
+      "Venezuelan VIN Validator",
+      "Venezuelan Vehicle Data Redaction Helper",
+      "Venezuelan Customs Declaration Helper",
+      "Venezuelan Postal Tracking Helper",
+      "Venezuelan Data Quality Workbench",
+      "Venezuelan JSON Fixture Helper",
+      "Venezuelan Regex Pack Helper",
+      "Venezuelan API Payload Auditor",
+      "Venezuelan Form Field Auditor",
+      "Venezuelan Locale Number Parser",
+      "Venezuelan Calendar Week Helper",
+      "Venezuelan Company Suffix Normalizer",
+      "Venezuelan Procurement Identifier Helper",
+      "Venezuelan Locale Copy Checker",
+      "Venezuelan Support Ticket Scrubber",
+      "Venezuelan Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live SENIAT / Registro Mercantil lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 48,
+      "y": 49
+    },
+    "searchHints": [
+      "CEDULA",
+      "RIF",
+      "SENIAT",
+      "PAGO MOVIL",
+      "IVSS",
+      "VES"
+    ]
+  },
+  "hub": {
+    "flag": "🇻🇪",
+    "name": "Venezuela",
+    "badge": "Premium Venezuela developer suite",
+    "description": "Developer intelligence and browser-only workbenches for venezuelan identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Venezuela",
+      "population": "approximately 29M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Caracas",
+      "continent": "South America",
+      "region": "South America / Caribbean coast",
+      "languages": "Spanish",
+      "currency": "Venezuelan bolivar",
+      "currencyCode": "VES",
+      "callingCode": "+58",
+      "internetTld": ".ve",
+      "drivingSide": "Right",
+      "iso2": "VE",
+      "iso3": "VEN",
+      "isoNumeric": "862",
+      "locale": "es-VE",
+      "icuLocale": "es_VE",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Dot (.)",
+      "addressFormat": "Street, number, postal code, locality, Venezuela",
+      "postalCodeFormat": "codigo postal",
+      "primaryTimeZone": "America/Caracas (VET)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "911",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "es-VE",
+      "cldrLocale": "es_VE",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type A / Type B",
+      "voltage": "120V",
+      "frequency": "60Hz"
+    },
+    "visualIdentity": {
+      "countryId": "venezuela",
+      "outlineLabel": "Venezuela outline",
+      "mapLabel": "Venezuela in the world",
+      "continentBadge": "South America",
+      "flagLabel": "Venezuela flag",
+      "heroAccentPrimary": "252 209 22",
+      "heroAccentSecondary": "0 56 147",
+      "heroAccentTertiary": "206 17 38"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Cedula and RIF",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "IVA / RIF and payments",
+        "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Venezuela registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /venezuela/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Dot (.) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Venezuelan examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "SENIAT / Registro Mercantil",
+        "text": "Official business registry or company lookup remains the source of truth for Venezuela.",
+        "status": "official boundary"
+      },
+      {
+        "title": "IVA / RIF",
+        "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data protection",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "Cedula, RIF, IVSS evidence, bank account, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "Pago Movil, bank account, SINPE-like mobile payment handoff, SENIAT payment reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "es-VE / es_VE; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "VES amounts use Comma (,) and Dot (.).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "Cedula, RIF, codigo postal, phone, address, and domestic account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type A / Type B",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "120V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "60Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "Primary emergency number fixture; local alternatives may also exist."
+      }
+    ],
+    "searchHints": [
+      "CEDULA",
+      "RIF",
+      "SENIAT",
+      "PAGO MOVIL",
+      "IVSS",
+      "VES"
+    ],
+    "routes": [
+      {
+        "title": "Venezuelan Cedula Validator",
+        "href": "/en/venezuela/venezuela-cedula-validator/",
+        "text": "Validate Cedula shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Venezuelan RIF Validator",
+        "href": "/en/venezuela/venezuela-rif-validator/",
+        "text": "Inspect RIF structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Venezuelan IVA / RIF Tax ID Validator",
+        "href": "/en/venezuela/venezuela-vat-id-validator/",
+        "text": "Normalize IVA / RIF identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+      },
+      {
+        "title": "Venezuelan Customs / Tax Identifier Helper",
+        "href": "/en/venezuela/venezuela-customs-tax-identifier-helper/",
+        "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+      },
+      {
+        "title": "Venezuelan IVSS evidence Helper",
+        "href": "/en/venezuela/venezuela-ivss-evidence-social-insurance-helper/",
+        "text": "Split IVSS evidence evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Venezuelan Company Onboarding Auditor",
+        "href": "/en/venezuela/venezuela-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for RIF, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Venezuelan SENIAT / Registro Mercantil Readiness Helper",
+        "href": "/en/venezuela/venezuela-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated SENIAT / Registro Mercantil lookup or company registry workflow."
+      },
+      {
+        "title": "Venezuelan ID Card Format Helper",
+        "href": "/en/venezuela/venezuela-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Venezuelan Passport Number Helper",
+        "href": "/en/venezuela/venezuela-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Venezuelan MRZ / Passport Parser",
+        "href": "/en/venezuela/venezuela-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Venezuelan Domestic Bank Account Validator",
+        "href": "/en/venezuela/venezuela-domestic-account-validator/",
+        "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+      },
+      {
+        "title": "Venezuelan Domestic Account Fixture Generator",
+        "href": "/en/venezuela/venezuela-domestic-account-fixture-generator/",
+        "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+      },
+      {
+        "title": "Venezuelan Domestic Bank Account Inspector",
+        "href": "/en/venezuela/venezuela-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+      },
+      {
+        "title": "Venezuelan BIC / SWIFT Inspector",
+        "href": "/en/venezuela/venezuela-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Venezuela banking integrations."
+      },
+      {
+        "title": "Venezuelan Domestic Transfer Helper",
+        "href": "/en/venezuela/venezuela-domestic-transfer-helper/",
+        "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+      },
+      {
+        "title": "Venezuelan Debit Authorization Helper",
+        "href": "/en/venezuela/venezuela-debit-authorization-helper/",
+        "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+      },
+      {
+        "title": "Venezuelan Pago Movil / bank transfer Reference Helper",
+        "href": "/en/venezuela/venezuela-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Venezuelan Remittance Text Builder",
+        "href": "/en/venezuela/venezuela-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Venezuelan Payment Reconciliation Helper",
+        "href": "/en/venezuela/venezuela-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Venezuelan Bank Statement Parser",
+        "href": "/en/venezuela/venezuela-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Venezuelan Masked Bank Account Formatter",
+        "href": "/en/venezuela/venezuela-masked-bank-account-formatter/",
+        "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+      },
+      {
+        "title": "Venezuelan VES Decimal Currency Formatter",
+        "href": "/en/venezuela/venezuela-currency-decimal-formatter/",
+        "text": "Normalize VES amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Venezuelan VAT Rate Sanity Helper",
+        "href": "/en/venezuela/venezuela-vat-rate-sanity-helper/",
+        "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Venezuelan VAT Return Field Helper",
+        "href": "/en/venezuela/venezuela-vat-return-field-helper/",
+        "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Venezuelan Invoice Number Helper",
+        "href": "/en/venezuela/venezuela-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Venezuelan factura fiscal Readiness Checker",
+        "href": "/en/venezuela/venezuela-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Venezuelan Tax Authority Handoff Helper",
+        "href": "/en/venezuela/venezuela-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Venezuelan Accounting Audit Trail Checklist Helper",
+        "href": "/en/venezuela/venezuela-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+      },
+      {
+        "title": "Venezuelan Postal Code Validator",
+        "href": "/en/venezuela/venezuela-postal-code-validator/",
+        "text": "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Venezuelan Address Normalizer",
+        "href": "/en/venezuela/venezuela-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Venezuelan Address Transliteration Normalizer",
+        "href": "/en/venezuela/venezuela-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Venezuelan Region / Province Code Mapper",
+        "href": "/en/venezuela/venezuela-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Venezuelan Municipality Code Inspector",
+        "href": "/en/venezuela/venezuela-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Venezuelan Phone Number Validator",
+        "href": "/en/venezuela/venezuela-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Venezuelan Phone E.164 Formatter",
+        "href": "/en/venezuela/venezuela-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Venezuelan Date Locale Formatter",
+        "href": "/en/venezuela/venezuela-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Venezuelan CSV Locale Normalizer",
+        "href": "/en/venezuela/venezuela-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Venezuela decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Venezuelan Slug Normalizer",
+        "href": "/en/venezuela/venezuela-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Venezuelan Document OCR Fixer",
+        "href": "/en/venezuela/venezuela-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Venezuelan personal-data protection Redaction Helper",
+        "href": "/en/venezuela/venezuela-gdpr-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Venezuelan PII Masker",
+        "href": "/en/venezuela/venezuela-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Venezuelan Personal Data Fixture Helper",
+        "href": "/en/venezuela/venezuela-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Venezuelan Driving Licence Format Helper",
+        "href": "/en/venezuela/venezuela-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Venezuelan Residence Permit Format Helper",
+        "href": "/en/venezuela/venezuela-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Venezuelan Health Card Format Helper",
+        "href": "/en/venezuela/venezuela-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Venezuelan Vehicle Plate Inspector",
+        "href": "/en/venezuela/venezuela-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Venezuelan VIN Validator",
+        "href": "/en/venezuela/venezuela-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Venezuelan Vehicle Data Redaction Helper",
+        "href": "/en/venezuela/venezuela-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Venezuelan Customs Declaration Helper",
+        "href": "/en/venezuela/venezuela-customs-declaration-helper/",
+        "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Venezuelan Postal Tracking Helper",
+        "href": "/en/venezuela/venezuela-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Venezuelan Data Quality Workbench",
+        "href": "/en/venezuela/venezuela-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Venezuelan JSON Fixture Helper",
+        "href": "/en/venezuela/venezuela-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Venezuelan Regex Pack Helper",
+        "href": "/en/venezuela/venezuela-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Venezuelan API Payload Auditor",
+        "href": "/en/venezuela/venezuela-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Venezuelan Form Field Auditor",
+        "href": "/en/venezuela/venezuela-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Venezuelan Locale Number Parser",
+        "href": "/en/venezuela/venezuela-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Venezuela."
+      },
+      {
+        "title": "Venezuelan Calendar Week Helper",
+        "href": "/en/venezuela/venezuela-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Venezuelan Company Suffix Normalizer",
+        "href": "/en/venezuela/venezuela-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Venezuelan Procurement Identifier Helper",
+        "href": "/en/venezuela/venezuela-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Venezuelan Locale Copy Checker",
+        "href": "/en/venezuela/venezuela-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Venezuelan Support Ticket Scrubber",
+        "href": "/en/venezuela/venezuela-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Venezuelan Integration Smoke Test Builder",
+        "href": "/en/venezuela/venezuela-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

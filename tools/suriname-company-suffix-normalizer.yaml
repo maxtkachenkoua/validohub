@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-company-suffix-normalizer
+kind: tool
+module: validohub
+country: SR
+category: developer-tools
+status: active
+name:
+  en: "Surinamese Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Suriname Sample Holding Ltd SR-CO-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-procurement-identifier-helper, suriname-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

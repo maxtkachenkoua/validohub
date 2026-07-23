@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-customs-tax-identifier-helper
+kind: tool
+module: validohub
+country: SR
+category: national-identifiers
+status: active
+name:
+  en: "Surinamese Customs / Tax Identifier Helper"
+summary:
+  en: "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUST input"
+        required: true
+        placeholder:
+          en: "SRSR-CO-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-social-security-evidence-social-insurance-helper, suriname-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese Customs / Tax Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."

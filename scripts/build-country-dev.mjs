@@ -17,6 +17,17 @@ const COUNTRY_RUNTIME_BY_SLUG = {
   germany: 'germany-suite.js',
   italy: 'italy-suite.js',
   spain: 'spain-suite.js',
+  venezuela: 'venezuela-suite.js',
+  uruguay: 'uruguay-suite.js',
+  suriname: 'suriname-suite.js',
+  peru: 'peru-suite.js',
+  paraguay: 'paraguay-suite.js',
+  guyana: 'guyana-suite.js',
+  ecuador: 'ecuador-suite.js',
+  colombia: 'colombia-suite.js',
+  chile: 'chile-suite.js',
+  bolivia: 'bolivia-suite.js',
+  argentina: 'argentina-suite.js',
   brazil: 'brazil-suite.js',
   poland: 'poland-suite.js'
 };
@@ -68,7 +79,18 @@ const COUNTRY_ALGORITHM_BY_SLUG = {
   'united-kingdom': 'validohub.united-kingdom-suite',
   'vatican-city': 'validohub.vatican-city-suite',
   austria: 'validohub.austria-suite',
-  belgium: 'validohub.belgium-suite'
+  belgium: 'validohub.belgium-suite',
+  venezuela: 'validohub.venezuela-suite',
+  uruguay: 'validohub.uruguay-suite',
+  suriname: 'validohub.suriname-suite',
+  peru: 'validohub.peru-suite',
+  paraguay: 'validohub.paraguay-suite',
+  guyana: 'validohub.guyana-suite',
+  ecuador: 'validohub.ecuador-suite',
+  colombia: 'validohub.colombia-suite',
+  chile: 'validohub.chile-suite',
+  bolivia: 'validohub.bolivia-suite',
+  argentina: 'validohub.argentina-suite'
 };
 
 const FACTORY_COUNTRY_SLUGS = new Set([
@@ -111,7 +133,8 @@ const FACTORY_COUNTRY_SLUGS = new Set([
   'switzerland',
   'ukraine',
   'united-kingdom',
-  'vatican-city'
+  'vatican-city',
+  'argentina'
 ]);
 
 function usage() {

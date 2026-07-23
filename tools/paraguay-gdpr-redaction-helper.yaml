@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: PY
+category: privacy
+status: active
+name:
+  en: "Paraguayan personal-data protection Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PY\",\"ruc\":\"80012345-6\",\"sifen\":\"001-001-0000001\",\"amount\":\"1.234.567\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-pii-masker, paraguay-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan personal-data protection Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

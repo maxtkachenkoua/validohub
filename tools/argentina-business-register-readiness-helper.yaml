@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-business-register-readiness-helper
+kind: tool
+module: validohub
+country: AR
+category: government
+status: active
+name:
+  en: "Argentine AFIP / company registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated AFIP / company registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "30-12345678-9 AR 30-12345678-9 Av. Corrientes 1234, C1043 Buenos Aires"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-id-card-format-helper, argentina-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine AFIP / company registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated AFIP / company registry lookup or company registry workflow."

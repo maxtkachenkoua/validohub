@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-business-register-readiness-helper
+kind: tool
+module: validohub
+country: SR
+category: government
+status: active
+name:
+  en: "Surinamese KKF / business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated KKF / business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "SR-CO-123456 SR TAX 123456 Waterkant 1, Paramaribo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-id-card-format-helper, suriname-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese KKF / business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated KKF / business registry lookup or company registry workflow."

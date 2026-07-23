@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-customs-declaration-helper
+kind: tool
+module: validohub
+country: AR
+category: government
+status: active
+name:
+  en: "Argentine Customs Declaration Helper"
+summary:
+  en: "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "AR 30-12345678-9 HS 8471 1.234,56 ARS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-postal-tracking-helper, argentina-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-form-field-auditor
+kind: tool
+module: validohub
+country: GY
+category: developer-tools
+status: active
+name:
+  en: "Guyanese Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=GY TIN 123456789&postal=Georgetown&phone=+592 231 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-locale-number-parser, guyana-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

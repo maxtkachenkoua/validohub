@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: GY
+slug: guyana
+name:
+  en: Guyana
+region: South America
+languages:
+  - en
+currency: GYD
+relatedCountries:
+  - SR
+  - VE
+  - BR

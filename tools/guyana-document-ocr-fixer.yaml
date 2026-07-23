@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-document-ocr-fixer
+kind: tool
+module: validohub
+country: GY
+category: documents
+status: active
+name:
+  en: "Guyanese Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "123456789 GY TIN 123456789 GY-BANK-001-123456789 Georgetown"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-gdpr-redaction-helper, guyana-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

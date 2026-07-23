@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-company-suffix-normalizer
+kind: tool
+module: validohub
+country: AR
+category: developer-tools
+status: active
+name:
+  en: "Argentine Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Argentina Sample Holding Ltd 30-12345678-9"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-procurement-identifier-helper, argentina-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-customs-tax-identifier-helper
+kind: tool
+module: validohub
+country: EC
+category: national-identifiers
+status: active
+name:
+  en: "Ecuadorian Customs / Tax Identifier Helper"
+summary:
+  en: "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUST input"
+        required: true
+        placeholder:
+          en: "EC1790012345001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-cedula-social-insurance-helper, ecuador-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian Customs / Tax Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-bank-statement-parser
+kind: tool
+module: validohub
+country: PY
+category: finance
+status: active
+name:
+  en: "Paraguayan Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1.234.567 PYG; PY-BANK-001-1234567890; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-masked-bank-account-formatter, paraguay-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."

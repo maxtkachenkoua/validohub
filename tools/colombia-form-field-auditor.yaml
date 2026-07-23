@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-form-field-auditor
+kind: tool
+module: validohub
+country: CO
+category: developer-tools
+status: active
+name:
+  en: "Colombian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=CO 900.123.456-7&postal=110111 Bogota&phone=+57 300 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-locale-number-parser, colombia-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-municipality-code-inspector
+kind: tool
+module: validohub
+country: GY
+category: address
+status: active
+name:
+  en: "Guyanese Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Regent Street 1, Georgetown"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-phone-number-validator, guyana-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

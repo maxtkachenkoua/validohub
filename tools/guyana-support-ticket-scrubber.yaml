@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-support-ticket-scrubber
+kind: tool
+module: validohub
+country: GY
+category: privacy
+status: active
+name:
+  en: "Guyanese Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 123456789, GY-BANK-001-123456789, Regent Street 1, Georgetown"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-integration-smoke-test-builder, guyana-tin-nis-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

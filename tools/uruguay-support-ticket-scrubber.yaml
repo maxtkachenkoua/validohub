@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-support-ticket-scrubber
+kind: tool
+module: validohub
+country: UY
+category: privacy
+status: active
+name:
+  en: "Uruguayan Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1.234.567-8, UY-BANK-001-1234567890, 18 de Julio 1234, 11000 Montevideo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-integration-smoke-test-builder, uruguay-cedula-de-identidad-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

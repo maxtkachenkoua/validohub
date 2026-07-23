@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-gdpr-redaction-helper
+kind: tool
+module: validohub
+country: PE
+category: privacy
+status: active
+name:
+  en: "Peruvian Ley de Proteccion de Datos Personales Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "GDPR input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PE\",\"ruc\":\"20123456789\",\"cci\":\"00212345678901234567890\",\"amount\":\"1,234.56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-pii-masker, peru-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Ley de Proteccion de Datos Personales Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

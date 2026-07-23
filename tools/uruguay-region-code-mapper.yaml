@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-region-code-mapper
+kind: tool
+module: validohub
+country: UY
+category: address
+status: active
+name:
+  en: "Uruguayan Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "11000 Montevideo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-municipality-code-inspector, uruguay-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

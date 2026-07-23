@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: VE
+category: transport
+status: active
+name:
+  en: "Venezuelan Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "ABC12D WVWZZZ1JZXW000001 V-12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-customs-declaration-helper, venezuela-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

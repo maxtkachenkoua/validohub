@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: EC
+category: developer-tools
+status: active
+name:
+  en: "Ecuadorian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"EC\",\"ruc\":\"1790012345001\",\"claveAcceso\":\"2107202601179001234500120010010000000011234567819\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-cedula-validator, ecuador-ruc-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

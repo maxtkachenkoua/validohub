@@ -1,0 +1,642 @@
+{
+  "id": "peru",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/peru-outline.svg",
+    "outlineAlt": "Peru country outline",
+    "mapSrc": "/assets/images/countries/peru-location.svg",
+    "mapAlt": "World map with Peru location marker",
+    "mapMarker": {
+      "x": 43,
+      "y": 64,
+      "label": "Peru"
+    },
+    "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+  },
+  "catalog": {
+    "id": "peru",
+    "flag": "🇵🇪",
+    "name": "Peru",
+    "nativeName": "Peru",
+    "iso2": "PE",
+    "iso3": "PER",
+    "continent": "South America",
+    "region": "South America",
+    "language": "Spanish, Quechua, and Aymara",
+    "currency": "PEN",
+    "currencyName": "Peruvian sol",
+    "status": "available",
+    "summary": "Premium Peru developer hub for DNI, RUC, SUNAT CPE, CCI, postal code, phone, CCI, Yape/Plin handoff, bank account, SUNAT payment reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "DNI",
+      "RUC",
+      "SUNAT CPE",
+      "CCI",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "CCI",
+      "Yape/Plin handoff",
+      "bank account",
+      "SUNAT payment reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Peruvian DNI Validator",
+      "Peruvian RUC Validator",
+      "Peruvian IGV / RUC Tax ID Validator",
+      "Peruvian Customs / Tax Identifier Helper",
+      "Peruvian DNI Helper",
+      "Peruvian Company Onboarding Auditor",
+      "Peruvian SUNARP / SUNAT Readiness Helper",
+      "Peruvian ID Card Format Helper",
+      "Peruvian Passport Number Helper",
+      "Peruvian MRZ / Passport Parser",
+      "Peruvian Domestic Bank Account Validator",
+      "Peruvian Domestic Account Fixture Generator",
+      "Peruvian Domestic Bank Account Inspector",
+      "Peruvian BIC / SWIFT Inspector",
+      "Peruvian Domestic Transfer Helper",
+      "Peruvian Debit Authorization Helper",
+      "Peruvian CCI / Yape / Plin Reference Helper",
+      "Peruvian Remittance Text Builder",
+      "Peruvian Payment Reconciliation Helper",
+      "Peruvian Bank Statement Parser",
+      "Peruvian Masked Bank Account Formatter",
+      "Peruvian PEN Decimal Currency Formatter",
+      "Peruvian VAT Rate Sanity Helper",
+      "Peruvian VAT Return Field Helper",
+      "Peruvian Invoice Number Helper",
+      "Peruvian comprobante electronico / CPE Readiness Checker",
+      "Peruvian Tax Authority Handoff Helper",
+      "Peruvian Accounting Audit Trail Checklist Helper",
+      "Peruvian Postal Code Validator",
+      "Peruvian Address Normalizer",
+      "Peruvian Address Transliteration Normalizer",
+      "Peruvian Region / Province Code Mapper",
+      "Peruvian Municipality Code Inspector",
+      "Peruvian Phone Number Validator",
+      "Peruvian Phone E.164 Formatter",
+      "Peruvian Date Locale Formatter",
+      "Peruvian CSV Locale Normalizer",
+      "Peruvian Slug Normalizer",
+      "Peruvian Document OCR Fixer",
+      "Peruvian Ley de Proteccion de Datos Personales Redaction Helper",
+      "Peruvian PII Masker",
+      "Peruvian Personal Data Fixture Helper",
+      "Peruvian Driving Licence Format Helper",
+      "Peruvian Residence Permit Format Helper",
+      "Peruvian Health Card Format Helper",
+      "Peruvian Vehicle Plate Inspector",
+      "Peruvian VIN Validator",
+      "Peruvian Vehicle Data Redaction Helper",
+      "Peruvian Customs Declaration Helper",
+      "Peruvian Postal Tracking Helper",
+      "Peruvian Data Quality Workbench",
+      "Peruvian JSON Fixture Helper",
+      "Peruvian Regex Pack Helper",
+      "Peruvian API Payload Auditor",
+      "Peruvian Form Field Auditor",
+      "Peruvian Locale Number Parser",
+      "Peruvian Calendar Week Helper",
+      "Peruvian Company Suffix Normalizer",
+      "Peruvian Procurement Identifier Helper",
+      "Peruvian Locale Copy Checker",
+      "Peruvian Support Ticket Scrubber",
+      "Peruvian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live SUNARP / SUNAT lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 43,
+      "y": 64
+    },
+    "searchHints": [
+      "DNI",
+      "RUC",
+      "SUNAT",
+      "CPE",
+      "CCI",
+      "YAPE"
+    ]
+  },
+  "hub": {
+    "flag": "🇵🇪",
+    "name": "Peru",
+    "badge": "Premium Peru developer suite",
+    "description": "Developer intelligence and browser-only workbenches for peruvian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Peru",
+      "population": "approximately 34M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Lima",
+      "continent": "South America",
+      "region": "South America / Andean Community",
+      "languages": "Spanish, Quechua, and Aymara",
+      "currency": "Peruvian sol",
+      "currencyCode": "PEN",
+      "callingCode": "+51",
+      "internetTld": ".pe",
+      "drivingSide": "Right",
+      "iso2": "PE",
+      "iso3": "PER",
+      "isoNumeric": "604",
+      "locale": "es-PE",
+      "icuLocale": "es_PE",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Peru",
+      "postalCodeFormat": "codigo postal",
+      "primaryTimeZone": "America/Lima (PET)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "105",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "es-PE",
+      "cldrLocale": "es_PE",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type A / Type B / Type C",
+      "voltage": "220V",
+      "frequency": "60Hz"
+    },
+    "visualIdentity": {
+      "countryId": "peru",
+      "outlineLabel": "Peru outline",
+      "mapLabel": "Peru in the world",
+      "continentBadge": "South America",
+      "flagLabel": "Peru flag",
+      "heroAccentPrimary": "217 16 35",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "185 28 28"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "DNI and RUC",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "IGV / RUC and payments",
+        "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Peru registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /peru/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Peruvian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "SUNARP / SUNAT",
+        "text": "Official business registry or company lookup remains the source of truth for Peru.",
+        "status": "official boundary"
+      },
+      {
+        "title": "IGV / RUC",
+        "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+        "status": "official boundary"
+      },
+      {
+        "title": "Ley de Proteccion de Datos Personales",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "DNI, RUC, SUNAT CPE, CCI, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "CCI, Yape/Plin handoff, bank account, SUNAT payment reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "es-PE / es_PE; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "PEN amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "DNI, RUC, codigo postal, phone, address, and domestic account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type A / Type B / Type C",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "220V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "60Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "Primary emergency number fixture; local alternatives may also exist."
+      }
+    ],
+    "searchHints": [
+      "DNI",
+      "RUC",
+      "SUNAT",
+      "CPE",
+      "CCI",
+      "YAPE"
+    ],
+    "routes": [
+      {
+        "title": "Peruvian DNI Validator",
+        "href": "/en/peru/peru-dni-validator/",
+        "text": "Validate DNI shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Peruvian RUC Validator",
+        "href": "/en/peru/peru-ruc-validator/",
+        "text": "Inspect RUC structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Peruvian IGV / RUC Tax ID Validator",
+        "href": "/en/peru/peru-vat-id-validator/",
+        "text": "Normalize IGV / RUC identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+      },
+      {
+        "title": "Peruvian Customs / Tax Identifier Helper",
+        "href": "/en/peru/peru-customs-tax-identifier-helper/",
+        "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+      },
+      {
+        "title": "Peruvian DNI Helper",
+        "href": "/en/peru/peru-dni-social-insurance-helper/",
+        "text": "Split DNI evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Peruvian Company Onboarding Auditor",
+        "href": "/en/peru/peru-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for RUC, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Peruvian SUNARP / SUNAT Readiness Helper",
+        "href": "/en/peru/peru-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated SUNARP / SUNAT lookup or company registry workflow."
+      },
+      {
+        "title": "Peruvian ID Card Format Helper",
+        "href": "/en/peru/peru-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Peruvian Passport Number Helper",
+        "href": "/en/peru/peru-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Peruvian MRZ / Passport Parser",
+        "href": "/en/peru/peru-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Peruvian Domestic Bank Account Validator",
+        "href": "/en/peru/peru-domestic-account-validator/",
+        "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+      },
+      {
+        "title": "Peruvian Domestic Account Fixture Generator",
+        "href": "/en/peru/peru-domestic-account-fixture-generator/",
+        "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+      },
+      {
+        "title": "Peruvian Domestic Bank Account Inspector",
+        "href": "/en/peru/peru-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+      },
+      {
+        "title": "Peruvian BIC / SWIFT Inspector",
+        "href": "/en/peru/peru-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Peru banking integrations."
+      },
+      {
+        "title": "Peruvian Domestic Transfer Helper",
+        "href": "/en/peru/peru-domestic-transfer-helper/",
+        "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+      },
+      {
+        "title": "Peruvian Debit Authorization Helper",
+        "href": "/en/peru/peru-debit-authorization-helper/",
+        "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+      },
+      {
+        "title": "Peruvian CCI / Yape / Plin Reference Helper",
+        "href": "/en/peru/peru-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Peruvian Remittance Text Builder",
+        "href": "/en/peru/peru-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Peruvian Payment Reconciliation Helper",
+        "href": "/en/peru/peru-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Peruvian Bank Statement Parser",
+        "href": "/en/peru/peru-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Peruvian Masked Bank Account Formatter",
+        "href": "/en/peru/peru-masked-bank-account-formatter/",
+        "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+      },
+      {
+        "title": "Peruvian PEN Decimal Currency Formatter",
+        "href": "/en/peru/peru-currency-decimal-formatter/",
+        "text": "Normalize PEN amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Peruvian VAT Rate Sanity Helper",
+        "href": "/en/peru/peru-vat-rate-sanity-helper/",
+        "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Peruvian VAT Return Field Helper",
+        "href": "/en/peru/peru-vat-return-field-helper/",
+        "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Peruvian Invoice Number Helper",
+        "href": "/en/peru/peru-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Peruvian comprobante electronico / CPE Readiness Checker",
+        "href": "/en/peru/peru-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Peruvian Tax Authority Handoff Helper",
+        "href": "/en/peru/peru-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Peruvian Accounting Audit Trail Checklist Helper",
+        "href": "/en/peru/peru-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+      },
+      {
+        "title": "Peruvian Postal Code Validator",
+        "href": "/en/peru/peru-postal-code-validator/",
+        "text": "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Peruvian Address Normalizer",
+        "href": "/en/peru/peru-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Peruvian Address Transliteration Normalizer",
+        "href": "/en/peru/peru-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Peruvian Region / Province Code Mapper",
+        "href": "/en/peru/peru-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Peruvian Municipality Code Inspector",
+        "href": "/en/peru/peru-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Peruvian Phone Number Validator",
+        "href": "/en/peru/peru-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Peruvian Phone E.164 Formatter",
+        "href": "/en/peru/peru-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Peruvian Date Locale Formatter",
+        "href": "/en/peru/peru-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Peruvian CSV Locale Normalizer",
+        "href": "/en/peru/peru-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Peru decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Peruvian Slug Normalizer",
+        "href": "/en/peru/peru-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Peruvian Document OCR Fixer",
+        "href": "/en/peru/peru-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Peruvian Ley de Proteccion de Datos Personales Redaction Helper",
+        "href": "/en/peru/peru-gdpr-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Peruvian PII Masker",
+        "href": "/en/peru/peru-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Peruvian Personal Data Fixture Helper",
+        "href": "/en/peru/peru-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Peruvian Driving Licence Format Helper",
+        "href": "/en/peru/peru-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Peruvian Residence Permit Format Helper",
+        "href": "/en/peru/peru-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Peruvian Health Card Format Helper",
+        "href": "/en/peru/peru-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Peruvian Vehicle Plate Inspector",
+        "href": "/en/peru/peru-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Peruvian VIN Validator",
+        "href": "/en/peru/peru-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Peruvian Vehicle Data Redaction Helper",
+        "href": "/en/peru/peru-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Peruvian Customs Declaration Helper",
+        "href": "/en/peru/peru-customs-declaration-helper/",
+        "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Peruvian Postal Tracking Helper",
+        "href": "/en/peru/peru-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Peruvian Data Quality Workbench",
+        "href": "/en/peru/peru-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Peruvian JSON Fixture Helper",
+        "href": "/en/peru/peru-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Peruvian Regex Pack Helper",
+        "href": "/en/peru/peru-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Peruvian API Payload Auditor",
+        "href": "/en/peru/peru-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Peruvian Form Field Auditor",
+        "href": "/en/peru/peru-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Peruvian Locale Number Parser",
+        "href": "/en/peru/peru-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Peru."
+      },
+      {
+        "title": "Peruvian Calendar Week Helper",
+        "href": "/en/peru/peru-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Peruvian Company Suffix Normalizer",
+        "href": "/en/peru/peru-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Peruvian Procurement Identifier Helper",
+        "href": "/en/peru/peru-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Peruvian Locale Copy Checker",
+        "href": "/en/peru/peru-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Peruvian Support Ticket Scrubber",
+        "href": "/en/peru/peru-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Peruvian Integration Smoke Test Builder",
+        "href": "/en/peru/peru-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

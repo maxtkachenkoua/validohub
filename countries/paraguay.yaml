@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: PY
+slug: paraguay
+name:
+  en: Paraguay
+region: South America
+languages:
+  - es
+currency: PYG
+relatedCountries:
+  - AR
+  - BR
+  - BO

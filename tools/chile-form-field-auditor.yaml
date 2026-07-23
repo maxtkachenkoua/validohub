@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-form-field-auditor
+kind: tool
+module: validohub
+country: CL
+category: developer-tools
+status: active
+name:
+  en: "Chilean Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=CL 76.123.456-7&postal=8320000 Santiago&phone=+56 9 1234 5678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-locale-number-parser, chile-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

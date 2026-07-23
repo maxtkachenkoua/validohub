@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-remittance-text-builder
+kind: tool
+module: validohub
+country: PY
+category: finance
+status: active
+name:
+  en: "Paraguayan Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 PY 80012345-6 1.234.567 PYG"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-payment-reconciliation-helper, paraguay-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

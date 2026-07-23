@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-run-validator
+kind: tool
+module: validohub
+country: CL
+category: national-identifiers
+status: active
+name:
+  en: "Chilean RUN Validator"
+summary:
+  en: "Validate RUN shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "12.345.678-5"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-rut-validator, chile-vat-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean RUN Validator | ValidoHub"
+  description:
+    en: "Validate RUN shape, split date/control/body evidence, and prepare privacy-safe debugging output."

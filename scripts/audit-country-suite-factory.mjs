@@ -272,7 +272,18 @@ const factoryGeneratedSuites = [
   { slug: 'ireland', runtime: 'ireland-suite.js', label: 'Irish' },
   { slug: 'belgium', runtime: 'belgium-suite.js', label: 'Belgian' },
   { slug: 'austria', runtime: 'austria-suite.js', label: 'Austrian' },
-  { slug: 'portugal', runtime: 'portugal-suite.js', label: 'Portuguese' }
+  { slug: 'portugal', runtime: 'portugal-suite.js', label: 'Portuguese' },
+  { slug: 'venezuela', runtime: 'venezuela-suite.js', label: 'Venezuelan' },
+  { slug: 'uruguay', runtime: 'uruguay-suite.js', label: 'Uruguayan' },
+  { slug: 'suriname', runtime: 'suriname-suite.js', label: 'Surinamese' },
+  { slug: 'peru', runtime: 'peru-suite.js', label: 'Peruvian' },
+  { slug: 'paraguay', runtime: 'paraguay-suite.js', label: 'Paraguayan' },
+  { slug: 'guyana', runtime: 'guyana-suite.js', label: 'Guyanese' },
+  { slug: 'ecuador', runtime: 'ecuador-suite.js', label: 'Ecuadorian' },
+  { slug: 'colombia', runtime: 'colombia-suite.js', label: 'Colombian' },
+  { slug: 'chile', runtime: 'chile-suite.js', label: 'Chilean' },
+  { slug: 'bolivia', runtime: 'bolivia-suite.js', label: 'Bolivian' },
+  { slug: 'argentina', runtime: 'argentina-suite.js', label: 'Argentine' }
 ];
 
 for (const suite of factoryGeneratedSuites) {

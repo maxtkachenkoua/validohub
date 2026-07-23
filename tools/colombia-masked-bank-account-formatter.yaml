@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-masked-bank-account-formatter
+kind: tool
+module: validohub
+country: CO
+category: finance
+status: active
+name:
+  en: "Colombian Masked Bank Account Formatter"
+summary:
+  en: "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "007-123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-currency-decimal-formatter, colombia-vat-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian Masked Bank Account Formatter | ValidoHub"
+  description:
+    en: "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."

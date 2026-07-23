@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: UY
+category: address
+status: active
+name:
+  en: "Uruguayan Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "18 de Julio 1234, 11000 Montevideo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-region-code-mapper, uruguay-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

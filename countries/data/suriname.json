@@ -1,0 +1,642 @@
+{
+  "id": "suriname",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/suriname-outline.svg",
+    "outlineAlt": "Suriname country outline",
+    "mapSrc": "/assets/images/countries/suriname-location.svg",
+    "mapAlt": "World map with Suriname location marker",
+    "mapMarker": {
+      "x": 51,
+      "y": 46,
+      "label": "Suriname"
+    },
+    "source": "Natural Earth geometry when available; generated fallback for microstates and country navigation"
+  },
+  "catalog": {
+    "id": "suriname",
+    "flag": "🇸🇷",
+    "name": "Suriname",
+    "nativeName": "Suriname",
+    "iso2": "SR",
+    "iso3": "SUR",
+    "continent": "South America",
+    "region": "South America",
+    "language": "Dutch",
+    "currency": "SRD",
+    "currencyName": "Surinamese dollar",
+    "status": "available",
+    "summary": "Premium Suriname developer hub for ID number, tax number, company number, bank account, postal/address, phone, bank account, SNEPS transfer, tax payment reference, SWIFT, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "ID number",
+      "tax number",
+      "company number",
+      "bank account",
+      "postal/address",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "SNEPS transfer",
+      "tax payment reference",
+      "SWIFT"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Surinamese ID number Validator",
+      "Surinamese company registry number Validator",
+      "Surinamese BTW / tax number Tax ID Validator",
+      "Surinamese Customs / Tax Identifier Helper",
+      "Surinamese social security evidence Helper",
+      "Surinamese Company Onboarding Auditor",
+      "Surinamese KKF / business registry Readiness Helper",
+      "Surinamese ID Card Format Helper",
+      "Surinamese Passport Number Helper",
+      "Surinamese MRZ / Passport Parser",
+      "Surinamese Domestic Bank Account Validator",
+      "Surinamese Domestic Account Fixture Generator",
+      "Surinamese Domestic Bank Account Inspector",
+      "Surinamese BIC / SWIFT Inspector",
+      "Surinamese Domestic Transfer Helper",
+      "Surinamese Debit Authorization Helper",
+      "Surinamese bank transfer / SNEPS Reference Helper",
+      "Surinamese Remittance Text Builder",
+      "Surinamese Payment Reconciliation Helper",
+      "Surinamese Bank Statement Parser",
+      "Surinamese Masked Bank Account Formatter",
+      "Surinamese SRD Decimal Currency Formatter",
+      "Surinamese VAT Rate Sanity Helper",
+      "Surinamese VAT Return Field Helper",
+      "Surinamese Invoice Number Helper",
+      "Surinamese BTW invoice Readiness Checker",
+      "Surinamese Tax Authority Handoff Helper",
+      "Surinamese Accounting Audit Trail Checklist Helper",
+      "Surinamese Postal Code Validator",
+      "Surinamese Address Normalizer",
+      "Surinamese Address Transliteration Normalizer",
+      "Surinamese Region / Province Code Mapper",
+      "Surinamese Municipality Code Inspector",
+      "Surinamese Phone Number Validator",
+      "Surinamese Phone E.164 Formatter",
+      "Surinamese Date Locale Formatter",
+      "Surinamese CSV Locale Normalizer",
+      "Surinamese Slug Normalizer",
+      "Surinamese Document OCR Fixer",
+      "Surinamese personal-data protection Redaction Helper",
+      "Surinamese PII Masker",
+      "Surinamese Personal Data Fixture Helper",
+      "Surinamese Driving Licence Format Helper",
+      "Surinamese Residence Permit Format Helper",
+      "Surinamese Health Card Format Helper",
+      "Surinamese Vehicle Plate Inspector",
+      "Surinamese VIN Validator",
+      "Surinamese Vehicle Data Redaction Helper",
+      "Surinamese Customs Declaration Helper",
+      "Surinamese Postal Tracking Helper",
+      "Surinamese Data Quality Workbench",
+      "Surinamese JSON Fixture Helper",
+      "Surinamese Regex Pack Helper",
+      "Surinamese API Payload Auditor",
+      "Surinamese Form Field Auditor",
+      "Surinamese Locale Number Parser",
+      "Surinamese Calendar Week Helper",
+      "Surinamese Company Suffix Normalizer",
+      "Surinamese Procurement Identifier Helper",
+      "Surinamese Locale Copy Checker",
+      "Surinamese Support Ticket Scrubber",
+      "Surinamese Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live KKF / business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 51,
+      "y": 46
+    },
+    "searchHints": [
+      "ID",
+      "BTW",
+      "KKF",
+      "SNEPS",
+      "BANK",
+      "PARAMARIBO"
+    ]
+  },
+  "hub": {
+    "flag": "🇸🇷",
+    "name": "Suriname",
+    "badge": "Premium Suriname developer suite",
+    "description": "Developer intelligence and browser-only workbenches for surinamese identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Suriname",
+      "population": "approximately 0.6M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Paramaribo",
+      "continent": "South America",
+      "region": "South America / CARICOM",
+      "languages": "Dutch",
+      "currency": "Surinamese dollar",
+      "currencyCode": "SRD",
+      "callingCode": "+597",
+      "internetTld": ".sr",
+      "drivingSide": "Left",
+      "iso2": "SR",
+      "iso3": "SUR",
+      "isoNumeric": "740",
+      "locale": "nl-SR",
+      "icuLocale": "nl_SR",
+      "dateFormat": "DD-MM-YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Dot (.)",
+      "addressFormat": "Street, number, postal code, locality, Suriname",
+      "postalCodeFormat": "postal/address reference",
+      "primaryTimeZone": "America/Paramaribo (SRT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "115",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "nl-SR",
+      "cldrLocale": "nl_SR",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type A / Type B / Type C / Type F",
+      "voltage": "127V / 220V",
+      "frequency": "60Hz"
+    },
+    "visualIdentity": {
+      "countryId": "suriname",
+      "outlineLabel": "Suriname outline",
+      "mapLabel": "Suriname in the world",
+      "continentBadge": "South America",
+      "flagLabel": "Suriname flag",
+      "heroAccentPrimary": "55 126 63",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "180 10 45"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "ID number and company registry number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "BTW / tax number and payments",
+        "text": "Tax, domestic account, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Suriname registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /suriname/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Dot (.) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Surinamese examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "KKF / business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Suriname.",
+        "status": "official boundary"
+      },
+      {
+        "title": "BTW / tax number",
+        "text": "Tax/VAT validity and filing acceptance require the responsible tax authority or VIES where applicable.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data protection",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "ID number, tax number, company number, bank account, postal/address, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, SNEPS transfer, tax payment reference, SWIFT",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "nl-SR / nl_SR; date DD-MM-YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "SRD amounts use Comma (,) and Dot (.).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "ID number, company registry number, postal/address reference, phone, address, and domestic account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type A / Type B / Type C / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "127V / 220V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "60Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "Primary emergency number fixture; local alternatives may also exist."
+      }
+    ],
+    "searchHints": [
+      "ID",
+      "BTW",
+      "KKF",
+      "SNEPS",
+      "BANK",
+      "PARAMARIBO"
+    ],
+    "routes": [
+      {
+        "title": "Surinamese ID number Validator",
+        "href": "/en/suriname/suriname-id-number-validator/",
+        "text": "Validate ID number shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Surinamese company registry number Validator",
+        "href": "/en/suriname/suriname-company-registry-number-validator/",
+        "text": "Inspect company registry number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Surinamese BTW / tax number Tax ID Validator",
+        "href": "/en/suriname/suriname-vat-id-validator/",
+        "text": "Normalize BTW / tax number identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+      },
+      {
+        "title": "Surinamese Customs / Tax Identifier Helper",
+        "href": "/en/suriname/suriname-customs-tax-identifier-helper/",
+        "text": "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+      },
+      {
+        "title": "Surinamese social security evidence Helper",
+        "href": "/en/suriname/suriname-social-security-evidence-social-insurance-helper/",
+        "text": "Split social security evidence evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Surinamese Company Onboarding Auditor",
+        "href": "/en/suriname/suriname-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registry number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Surinamese KKF / business registry Readiness Helper",
+        "href": "/en/suriname/suriname-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated KKF / business registry lookup or company registry workflow."
+      },
+      {
+        "title": "Surinamese ID Card Format Helper",
+        "href": "/en/suriname/suriname-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Surinamese Passport Number Helper",
+        "href": "/en/suriname/suriname-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Surinamese MRZ / Passport Parser",
+        "href": "/en/suriname/suriname-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Surinamese Domestic Bank Account Validator",
+        "href": "/en/suriname/suriname-domestic-account-validator/",
+        "text": "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+      },
+      {
+        "title": "Surinamese Domestic Account Fixture Generator",
+        "href": "/en/suriname/suriname-domestic-account-fixture-generator/",
+        "text": "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+      },
+      {
+        "title": "Surinamese Domestic Bank Account Inspector",
+        "href": "/en/suriname/suriname-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and domestic account conversion boundaries."
+      },
+      {
+        "title": "Surinamese BIC / SWIFT Inspector",
+        "href": "/en/suriname/suriname-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Suriname banking integrations."
+      },
+      {
+        "title": "Surinamese Domestic Transfer Helper",
+        "href": "/en/suriname/suriname-domestic-transfer-helper/",
+        "text": "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+      },
+      {
+        "title": "Surinamese Debit Authorization Helper",
+        "href": "/en/suriname/suriname-debit-authorization-helper/",
+        "text": "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+      },
+      {
+        "title": "Surinamese bank transfer / SNEPS Reference Helper",
+        "href": "/en/suriname/suriname-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Surinamese Remittance Text Builder",
+        "href": "/en/suriname/suriname-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Surinamese Payment Reconciliation Helper",
+        "href": "/en/suriname/suriname-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Surinamese Bank Statement Parser",
+        "href": "/en/suriname/suriname-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, domestic account, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Surinamese Masked Bank Account Formatter",
+        "href": "/en/suriname/suriname-masked-bank-account-formatter/",
+        "text": "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+      },
+      {
+        "title": "Surinamese SRD Decimal Currency Formatter",
+        "href": "/en/suriname/suriname-currency-decimal-formatter/",
+        "text": "Normalize SRD amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Surinamese VAT Rate Sanity Helper",
+        "href": "/en/suriname/suriname-vat-rate-sanity-helper/",
+        "text": "Inspect VAT-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Surinamese VAT Return Field Helper",
+        "href": "/en/suriname/suriname-vat-return-field-helper/",
+        "text": "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Surinamese Invoice Number Helper",
+        "href": "/en/suriname/suriname-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Surinamese BTW invoice Readiness Checker",
+        "href": "/en/suriname/suriname-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Surinamese Tax Authority Handoff Helper",
+        "href": "/en/suriname/suriname-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Surinamese Accounting Audit Trail Checklist Helper",
+        "href": "/en/suriname/suriname-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+      },
+      {
+        "title": "Surinamese Postal Code Validator",
+        "href": "/en/suriname/suriname-postal-code-validator/",
+        "text": "Validate postal/address reference shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Surinamese Address Normalizer",
+        "href": "/en/suriname/suriname-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Surinamese Address Transliteration Normalizer",
+        "href": "/en/suriname/suriname-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Surinamese Region / Province Code Mapper",
+        "href": "/en/suriname/suriname-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Surinamese Municipality Code Inspector",
+        "href": "/en/suriname/suriname-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Surinamese Phone Number Validator",
+        "href": "/en/suriname/suriname-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Surinamese Phone E.164 Formatter",
+        "href": "/en/suriname/suriname-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Surinamese Date Locale Formatter",
+        "href": "/en/suriname/suriname-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Surinamese CSV Locale Normalizer",
+        "href": "/en/suriname/suriname-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Suriname decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Surinamese Slug Normalizer",
+        "href": "/en/suriname/suriname-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Surinamese Document OCR Fixer",
+        "href": "/en/suriname/suriname-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Surinamese personal-data protection Redaction Helper",
+        "href": "/en/suriname/suriname-gdpr-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Surinamese PII Masker",
+        "href": "/en/suriname/suriname-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Surinamese Personal Data Fixture Helper",
+        "href": "/en/suriname/suriname-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Surinamese Driving Licence Format Helper",
+        "href": "/en/suriname/suriname-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Surinamese Residence Permit Format Helper",
+        "href": "/en/suriname/suriname-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Surinamese Health Card Format Helper",
+        "href": "/en/suriname/suriname-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Surinamese Vehicle Plate Inspector",
+        "href": "/en/suriname/suriname-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Surinamese VIN Validator",
+        "href": "/en/suriname/suriname-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Surinamese Vehicle Data Redaction Helper",
+        "href": "/en/suriname/suriname-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Surinamese Customs Declaration Helper",
+        "href": "/en/suriname/suriname-customs-declaration-helper/",
+        "text": "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Surinamese Postal Tracking Helper",
+        "href": "/en/suriname/suriname-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Surinamese Data Quality Workbench",
+        "href": "/en/suriname/suriname-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Surinamese JSON Fixture Helper",
+        "href": "/en/suriname/suriname-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Surinamese Regex Pack Helper",
+        "href": "/en/suriname/suriname-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Surinamese API Payload Auditor",
+        "href": "/en/suriname/suriname-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Surinamese Form Field Auditor",
+        "href": "/en/suriname/suriname-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Surinamese Locale Number Parser",
+        "href": "/en/suriname/suriname-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Suriname."
+      },
+      {
+        "title": "Surinamese Calendar Week Helper",
+        "href": "/en/suriname/suriname-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Surinamese Company Suffix Normalizer",
+        "href": "/en/suriname/suriname-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Surinamese Procurement Identifier Helper",
+        "href": "/en/suriname/suriname-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Surinamese Locale Copy Checker",
+        "href": "/en/suriname/suriname-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Surinamese Support Ticket Scrubber",
+        "href": "/en/suriname/suriname-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Surinamese Integration Smoke Test Builder",
+        "href": "/en/suriname/suriname-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

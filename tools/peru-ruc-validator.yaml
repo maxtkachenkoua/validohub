@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-ruc-validator
+kind: tool
+module: validohub
+country: PE
+category: national-identifiers
+status: active
+name:
+  en: "Peruvian RUC Validator"
+summary:
+  en: "Inspect RUC structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "20123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-vat-id-validator, peru-customs-tax-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian RUC Validator | ValidoHub"
+  description:
+    en: "Inspect RUC structure, registry-style prefixes, control digits, and official lookup boundaries."

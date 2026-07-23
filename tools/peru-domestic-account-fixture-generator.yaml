@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-domestic-account-fixture-generator
+kind: tool
+module: validohub
+country: PE
+category: finance
+status: active
+name:
+  en: "Peruvian Domestic Account Fixture Generator"
+summary:
+  en: "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ACG input"
+        required: true
+        placeholder:
+          en: "002-12345678901234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-bank-account-inspector, peru-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Domestic Account Fixture Generator | ValidoHub"
+  description:
+    en: "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."

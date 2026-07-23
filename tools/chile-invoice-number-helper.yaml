@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-invoice-number-helper
+kind: tool
+module: validohub
+country: CL
+category: tax
+status: active
+name:
+  en: "Chilean Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 CL 76.123.456-7"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-e-invoicing-readiness-checker, chile-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

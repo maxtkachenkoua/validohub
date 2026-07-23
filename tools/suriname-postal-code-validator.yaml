@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-postal-code-validator
+kind: tool
+module: validohub
+country: SR
+category: address
+status: active
+name:
+  en: "Surinamese Postal Code Validator"
+summary:
+  en: "Validate postal/address reference shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "Paramaribo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-address-normalizer, suriname-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal/address reference shape, split area/delivery hints, and preserve official postal lookup boundaries."

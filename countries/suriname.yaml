@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SR
+slug: suriname
+name:
+  en: Suriname
+region: South America
+languages:
+  - nl
+currency: SRD
+relatedCountries:
+  - GY
+  - GF
+  - BR

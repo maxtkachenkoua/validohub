@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-customs-tax-identifier-helper
+kind: tool
+module: validohub
+country: AR
+category: national-identifiers
+status: active
+name:
+  en: "Argentine Customs / Tax Identifier Helper"
+summary:
+  en: "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUST input"
+        required: true
+        placeholder:
+          en: "AR30-12345678-9"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-cuil-social-insurance-helper, argentina-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine Customs / Tax Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect customs, importer/exporter, tax, and border-process identifiers without claiming official customs status."

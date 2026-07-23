@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-customs-declaration-helper
+kind: tool
+module: validohub
+country: PE
+category: government
+status: active
+name:
+  en: "Peruvian Customs Declaration Helper"
+summary:
+  en: "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "PE RUC 20123456789 HS 8471 1,234.56 PEN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-postal-tracking-helper, peru-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect customs/tax ID, invoice, amount, HS-code, and border handoff evidence without official filing."

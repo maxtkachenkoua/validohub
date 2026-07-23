@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-form-field-auditor
+kind: tool
+module: validohub
+country: PE
+category: developer-tools
+status: active
+name:
+  en: "Peruvian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=PE RUC 20123456789&postal=15001 Lima&phone=+51 912 345 678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-locale-number-parser, peru-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

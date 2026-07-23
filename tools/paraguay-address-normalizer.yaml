@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-address-normalizer
+kind: tool
+module: validohub
+country: PY
+category: address
+status: active
+name:
+  en: "Paraguayan Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Mariscal Lopez 123, 1209 Asuncion"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-address-transliteration-normalizer, paraguay-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

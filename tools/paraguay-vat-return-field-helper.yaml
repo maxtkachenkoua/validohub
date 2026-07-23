@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-vat-return-field-helper
+kind: tool
+module: validohub
+country: PY
+category: tax
+status: active
+name:
+  en: "Paraguayan VAT Return Field Helper"
+summary:
+  en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "IVA / RUC; PY 80012345-6; period 2026-07; 1.234.567 PYG"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-invoice-number-helper, paraguay-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan VAT Return Field Helper | ValidoHub"
+  description:
+    en: "Map VAT-return field labels, tax evidence, period dates, and export-safe developer payloads."

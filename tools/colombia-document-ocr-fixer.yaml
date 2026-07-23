@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-document-ocr-fixer
+kind: tool
+module: validohub
+country: CO
+category: documents
+status: active
+name:
+  en: "Colombian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "1.234.567.890 CO 900.123.456-7 CO-BANK-007-123456789 110111 Bogota"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-gdpr-redaction-helper, colombia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

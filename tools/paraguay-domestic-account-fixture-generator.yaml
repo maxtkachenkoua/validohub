@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-domestic-account-fixture-generator
+kind: tool
+module: validohub
+country: PY
+category: finance
+status: active
+name:
+  en: "Paraguayan Domestic Account Fixture Generator"
+summary:
+  en: "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ACG input"
+        required: true
+        placeholder:
+          en: "001-1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-bank-account-inspector, paraguay-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Domestic Account Fixture Generator | ValidoHub"
+  description:
+    en: "Generate fixture-safe domestic account references, split bank/account evidence, and prepare payment test payloads."

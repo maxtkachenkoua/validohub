@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-company-onboarding-auditor
+kind: tool
+module: validohub
+country: VE
+category: developer-tools
+status: active
+name:
+  en: "Venezuelan Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for RIF, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"VE\",\"rif\":\"J-12345678-9\",\"pagoMovil\":\"+584121234567\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-business-register-readiness-helper, venezuela-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for RIF, VAT, address, banking, and official registry handoff readiness."

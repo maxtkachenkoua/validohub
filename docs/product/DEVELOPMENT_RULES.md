@@ -31,6 +31,7 @@ These rules are mandatory for future ValidoHub work.
 - Do not add fake buttons, inactive controls, or "not available" UI.
 - Prefer additive improvements.
 - Preserve production quality.
+- Every finished global tool and every finished country suite must target best-in-world usefulness for its specific workflow: match the strongest public competitor's meaningful capabilities, then add ValidoHub's richer browser-only diagnostics, field breakdowns, fixture generation, developer payloads, and official-boundary explanations wherever the domain supports them. Do not ship "premium" work that is merely nicer-looking than a basic validator.
 - Tool pages are tool first, docs second.
 - Documentation belongs below the interactive tool.
 - Country Hubs must inherit the Brazil reference design unless the user explicitly approves a reusable architecture update.

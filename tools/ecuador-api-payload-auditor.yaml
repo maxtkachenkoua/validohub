@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-api-payload-auditor
+kind: tool
+module: validohub
+country: EC
+category: developer-tools
+status: active
+name:
+  en: "Ecuadorian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"EC\",\"ruc\":\"1790012345001\",\"claveAcceso\":\"2107202601179001234500120010010000000011234567819\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-form-field-auditor, ecuador-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, domestic accounts, dates, amounts, and official boundaries."

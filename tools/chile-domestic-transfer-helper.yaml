@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-domestic-transfer-helper
+kind: tool
+module: validohub
+country: CL
+category: finance
+status: active
+name:
+  en: "Chilean Domestic Transfer Helper"
+summary:
+  en: "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "CL-BANK-0123-12345678\\n1.234 CLP\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-debit-authorization-helper, chile-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."

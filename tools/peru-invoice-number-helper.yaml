@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-invoice-number-helper
+kind: tool
+module: validohub
+country: PE
+category: tax
+status: active
+name:
+  en: "Peruvian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 PE RUC 20123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-e-invoicing-readiness-checker, peru-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

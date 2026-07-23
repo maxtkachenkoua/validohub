@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: VE
+category: tax
+status: active
+name:
+  en: "Venezuelan factura fiscal Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"VE\",\"rif\":\"J-12345678-9\",\"pagoMovil\":\"+584121234567\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-tax-authority-handoff-helper, venezuela-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan factura fiscal Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

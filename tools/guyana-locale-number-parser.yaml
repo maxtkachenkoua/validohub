@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guyana-locale-number-parser
+kind: tool
+module: validohub
+country: GY
+category: localization
+status: active
+name:
+  en: "Guyanese Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Guyana."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guyana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 GYD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guyana-calendar-week-helper, guyana-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guyanese Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Guyana."

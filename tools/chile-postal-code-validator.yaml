@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-postal-code-validator
+kind: tool
+module: validohub
+country: CL
+category: address
+status: active
+name:
+  en: "Chilean Postal Code Validator"
+summary:
+  en: "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "8320000 Santiago"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-address-normalizer, chile-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."

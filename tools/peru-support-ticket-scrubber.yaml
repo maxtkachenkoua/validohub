@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-support-ticket-scrubber
+kind: tool
+module: validohub
+country: PE
+category: privacy
+status: active
+name:
+  en: "Peruvian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 12345678, PE-CCI-002-12345678901234567890, Av. Larco 123, Miraflores, 15074 Lima"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-integration-smoke-test-builder, peru-dni-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

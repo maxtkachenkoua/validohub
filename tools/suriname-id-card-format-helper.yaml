@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-id-card-format-helper
+kind: tool
+module: validohub
+country: SR
+category: national-identifiers
+status: active
+name:
+  en: "Surinamese ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "AB123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-passport-number-helper, suriname-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

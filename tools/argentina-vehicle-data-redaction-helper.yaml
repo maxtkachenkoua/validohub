@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: AR
+category: transport
+status: active
+name:
+  en: "Argentine Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "AB123CD WVWZZZ1JZXW000001 30123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-customs-declaration-helper, argentina-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

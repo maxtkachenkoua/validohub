@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-currency-decimal-formatter
+kind: tool
+module: validohub
+country: UY
+category: finance
+status: active
+name:
+  en: "Uruguayan UYU Decimal Currency Formatter"
+summary:
+  en: "Normalize UYU amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1.234,56 UYU"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-vat-rate-sanity-helper, uruguay-vat-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan UYU Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize UYU amount strings, decimal separators, grouping, and API-safe numeric previews."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-postal-code-validator
+kind: tool
+module: validohub
+country: CO
+category: address
+status: active
+name:
+  en: "Colombian Postal Code Validator"
+summary:
+  en: "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "110111 Bogota"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-address-normalizer, colombia-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate codigo postal shape, split area/delivery hints, and preserve official postal lookup boundaries."

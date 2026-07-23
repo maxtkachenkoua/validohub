@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CL
+slug: chile
+name:
+  en: Chile
+region: South America
+languages:
+  - es
+currency: CLP
+relatedCountries:
+  - AR
+  - PE
+  - BO

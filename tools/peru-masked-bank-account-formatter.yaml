@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-masked-bank-account-formatter
+kind: tool
+module: validohub
+country: PE
+category: finance
+status: active
+name:
+  en: "Peruvian Masked Bank Account Formatter"
+summary:
+  en: "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "002-12345678901234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-currency-decimal-formatter, peru-vat-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Masked Bank Account Formatter | ValidoHub"
+  description:
+    en: "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."

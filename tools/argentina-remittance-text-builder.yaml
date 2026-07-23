@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-remittance-text-builder
+kind: tool
+module: validohub
+country: AR
+category: finance
+status: active
+name:
+  en: "Argentine Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 AR 30-12345678-9 1.234,56 ARS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-payment-reconciliation-helper, argentina-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

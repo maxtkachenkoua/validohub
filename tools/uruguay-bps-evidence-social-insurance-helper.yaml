@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-bps-evidence-social-insurance-helper
+kind: tool
+module: validohub
+country: UY
+category: national-identifiers
+status: active
+name:
+  en: "Uruguayan BPS evidence Helper"
+summary:
+  en: "Split BPS evidence evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1.234.567-8"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-company-onboarding-auditor, uruguay-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan BPS evidence Helper | ValidoHub"
+  description:
+    en: "Split BPS evidence evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: PE
+category: address
+status: active
+name:
+  en: "Peruvian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Av. Larco 123, Miraflores, 15074 Lima"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-region-code-mapper, peru-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

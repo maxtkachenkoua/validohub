@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-domestic-account-validator
+kind: tool
+module: validohub
+country: VE
+category: finance
+status: active
+name:
+  en: "Venezuelan Domestic Bank Account Validator"
+summary:
+  en: "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ACCT input"
+        required: true
+        placeholder:
+          en: "0102-1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-domestic-account-fixture-generator, venezuela-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan Domestic Bank Account Validator | ValidoHub"
+  description:
+    en: "Validate domestic bank account shape, bank/account slices, payment-rail evidence, and official bank ownership boundaries."

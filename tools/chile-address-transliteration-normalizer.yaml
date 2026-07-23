@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: CL
+category: address
+status: active
+name:
+  en: "Chilean Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Av. Providencia 1234, 8320000 Santiago"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-region-code-mapper, chile-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

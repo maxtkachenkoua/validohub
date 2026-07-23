@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-csv-locale-normalizer
+kind: tool
+module: validohub
+country: SR
+category: developer-tools
+status: active
+name:
+  en: "Surinamese CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Suriname decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1.234,56 SRD;21-07-2026;SR TAX 123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-slug-normalizer, suriname-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Suriname decimal, date, postal, phone, tax, and banking fields."

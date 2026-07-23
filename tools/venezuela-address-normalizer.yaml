@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-address-normalizer
+kind: tool
+module: validohub
+country: VE
+category: address
+status: active
+name:
+  en: "Venezuelan Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Av. Francisco de Miranda 123, 1010 Caracas"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-address-transliteration-normalizer, venezuela-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

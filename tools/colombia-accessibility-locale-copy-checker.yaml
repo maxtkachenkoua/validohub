@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: CO
+category: localization
+status: active
+name:
+  en: "Colombian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "Cedula de ciudadania input, codigo postal input, amount 1.234,56 COP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-support-ticket-scrubber, colombia-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

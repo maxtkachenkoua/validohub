@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-json-fixture-generator
+kind: tool
+module: validohub
+country: PY
+category: developer-tools
+status: active
+name:
+  en: "Paraguayan JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PY\",\"ruc\":\"80012345-6\",\"sifen\":\"001-001-0000001\",\"amount\":\"1.234.567\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-regex-pack-helper, paraguay-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

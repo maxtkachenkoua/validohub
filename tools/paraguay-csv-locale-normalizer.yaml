@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-csv-locale-normalizer
+kind: tool
+module: validohub
+country: PY
+category: developer-tools
+status: active
+name:
+  en: "Paraguayan CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Paraguay decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1.234.567 PYG;21/07/2026;PY 80012345-6"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-slug-normalizer, paraguay-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Paraguay decimal, date, postal, phone, tax, and banking fields."

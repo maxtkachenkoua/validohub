@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-debit-authorization-helper
+kind: tool
+module: validohub
+country: CL
+category: finance
+status: active
+name:
+  en: "Chilean Debit Authorization Helper"
+summary:
+  en: "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DEBIT input"
+        required: true
+        placeholder:
+          en: "MANDATE-2026-001 CL-BANK-0123-12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-payment-reference-helper, chile-remittance-text-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Debit Authorization Helper | ValidoHub"
+  description:
+    en: "Inspect debit authorization references, creditor data, payer account evidence, and browser-only readiness."

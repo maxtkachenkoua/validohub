@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-cedula-social-insurance-helper
+kind: tool
+module: validohub
+country: CO
+category: national-identifiers
+status: active
+name:
+  en: "Colombian Cedula Helper"
+summary:
+  en: "Split Cedula evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1.234.567.890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-company-onboarding-auditor, colombia-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian Cedula Helper | ValidoHub"
+  description:
+    en: "Split Cedula evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

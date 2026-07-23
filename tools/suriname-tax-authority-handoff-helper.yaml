@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: SR
+category: tax
+status: active
+name:
+  en: "Surinamese Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "SR TAX 123456 21-07-2026 1.234,56 SRD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-accounting-audit-trail-checklist-generator, suriname-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

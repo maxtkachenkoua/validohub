@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-masked-bank-account-formatter
+kind: tool
+module: validohub
+country: CL
+category: finance
+status: active
+name:
+  en: "Chilean Masked Bank Account Formatter"
+summary:
+  en: "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "0123-12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-currency-decimal-formatter, chile-vat-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Masked Bank Account Formatter | ValidoHub"
+  description:
+    en: "Create log-safe domestic account previews while preserving bank, branch, and account-tail evidence."

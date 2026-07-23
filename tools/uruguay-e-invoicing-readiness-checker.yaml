@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: UY
+category: tax
+status: active
+name:
+  en: "Uruguayan e-Factura / CFE Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"UY\",\"rut\":\"210123456789\",\"cfe\":\"A-123456\",\"amount\":\"1.234,56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-tax-authority-handoff-helper, uruguay-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan e-Factura / CFE Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

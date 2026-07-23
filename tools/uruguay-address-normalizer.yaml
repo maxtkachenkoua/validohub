@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-address-normalizer
+kind: tool
+module: validohub
+country: UY
+category: address
+status: active
+name:
+  en: "Uruguayan Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "18 de Julio 1234, 11000 Montevideo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-address-transliteration-normalizer, uruguay-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

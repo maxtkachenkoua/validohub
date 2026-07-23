@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bolivia-vat-id-validator
+kind: tool
+module: validohub
+country: BO
+category: national-identifiers
+status: active
+name:
+  en: "Bolivian IVA / NIT Tax ID Validator"
+summary:
+  en: "Normalize IVA / NIT identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bolivia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "BO NIT 1023459028"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bolivia-customs-tax-identifier-helper, bolivia-insured-person-evidence-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bolivian IVA / NIT Tax ID Validator | ValidoHub"
+  description:
+    en: "Normalize IVA / NIT identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."

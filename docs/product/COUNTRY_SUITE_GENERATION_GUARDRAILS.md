@@ -114,6 +114,7 @@ Run this sweep after any new full country or broad country-suite generation:
 When the user asks for a complete country, interpret it as:
 
 - Create or expand the country hub to Poland/Brazil quality.
+- Aim for best-in-world local developer utility, not just parity with the existing factory. For every included country workflow, compare against the strongest public tool or documentation pattern and add more useful browser-only functionality: local parsing, fixture generation, field evidence, debugger traces, batch/history/API payloads, exportable audit JSON, and honest official-boundary copy.
 - Add a broad local tool suite where offline/browser-only validation or analysis is useful.
 - Choose the number of tools by real local market utility. Do not force exactly 60 tools, and do not stop at 60 if the country has more strong offline workbench cases. A smaller high-quality suite is better than padded filler; a larger high-quality suite is allowed when justified by local identifiers, tax, banking, payments, address, privacy, document, logistics, or developer-data workflows.
 - Treat Brazil CPF/CNPJ-style validation pipeline, field breakdown, result card, and quality-note richness as the minimum visual/functionality bar for structured local tools.

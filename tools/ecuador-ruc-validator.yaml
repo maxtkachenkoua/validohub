@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-ruc-validator
+kind: tool
+module: validohub
+country: EC
+category: national-identifiers
+status: active
+name:
+  en: "Ecuadorian RUC Validator"
+summary:
+  en: "Inspect RUC structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "1790012345001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-vat-id-validator, ecuador-customs-tax-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian RUC Validator | ValidoHub"
+  description:
+    en: "Inspect RUC structure, registry-style prefixes, control digits, and official lookup boundaries."

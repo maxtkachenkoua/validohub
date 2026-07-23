@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Guyana location">
+  <rect width="320" height="220" rx="18" fill="#eef4fb"/>
+  <path d="M22 72 C62 44 101 50 139 70 C173 89 206 80 247 58 C270 45 294 42 306 50" fill="none" stroke="#cbd5e1" stroke-width="10" stroke-linecap="round"/>
+  <path d="M42 150 C82 126 119 132 151 151 C190 173 231 159 285 128" fill="none" stroke="#cbd5e1" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="156.8" cy="103.4" r="16" fill="#009E49" opacity=".22"/>
+  <circle cx="156.8" cy="103.4" r="7" fill="#FCD116"/>
+  <text x="24" y="196" font-family="Inter, Arial" font-size="18" font-weight="800" fill="#0f172a">Guyana</text>
+</svg>

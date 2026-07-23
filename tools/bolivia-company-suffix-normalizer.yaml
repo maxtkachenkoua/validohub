@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bolivia-company-suffix-normalizer
+kind: tool
+module: validohub
+country: BO
+category: developer-tools
+status: active
+name:
+  en: "Bolivian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bolivia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Bolivia Sample Holding Ltd 1023459028"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bolivia-procurement-identifier-helper, bolivia-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bolivian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

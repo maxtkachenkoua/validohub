@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-vat-id-validator
+kind: tool
+module: validohub
+country: EC
+category: national-identifiers
+status: active
+name:
+  en: "Ecuadorian IVA / RUC Tax ID Validator"
+summary:
+  en: "Normalize IVA / RUC identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "EC RUC 1790012345001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-customs-tax-identifier-helper, ecuador-cedula-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian IVA / RUC Tax ID Validator | ValidoHub"
+  description:
+    en: "Normalize IVA / RUC identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."

@@ -659,3 +659,19 @@ Added 15 global premium workbenches across Web/API Quality, Data & Integration, 
 ## Global Premium Tools Batch 4-7
 
 Added 20 global premium workbenches across Cloud / DevOps, AI / Data / RAG, Backend / API, and Frontend / QA. These continue the browser-only premium standard with local static analyzers, tool-specific samples, validation pipelines, field breakdowns, quality notes, Developer API previews, and snapshot JSON.
+
+## Global Tools Deep Premium Lens V1
+
+- Source JS: `assets/js/tools/generic-suite.js`
+- Related tools: Batch 4-7 global workbenches across Cloud / DevOps, AI / Data / RAG, Backend / API, and Frontend / QA.
+- Current capabilities: shared domain-specific browser-only lenses for Kubernetes YAML, Dockerfile, GitHub Actions, Terraform, CORS, Accessibility, Prompt Injection, RAG chunking, JSONL fine-tune datasets, HTML SEO, and browser storage. These lenses add domain cards, field breakdown rows, pipeline checks, risk names, and developer JSON beyond generic keyword counts.
+- Current quality status: Deep premium shared hardening layer for newer global tools; dedicated full parsers remain future per-tool promotions where justified.
+
+
+## South America Premium Batch V1
+
+Runtime source: `assets/js/tools/<country>-suite.js` using `country-suite-factory.js`.
+
+Countries: Argentina (argentina), Bolivia (bolivia), Chile (chile), Colombia (colombia), Ecuador (ecuador), Guyana (guyana), Paraguay (paraguay), Peru (peru), Suriname (suriname), Uruguay (uruguay), Venezuela (venezuela).
+
+Each country registers broad browser-only workbenches across identifiers, tax/invoicing, domestic banking/payments, address, phone, locale formatting, privacy/redaction, documents, vehicles, logistics, and developer QA. Domestic account/payment helpers replace IBAN-specific pages where the country does not use IBAN.

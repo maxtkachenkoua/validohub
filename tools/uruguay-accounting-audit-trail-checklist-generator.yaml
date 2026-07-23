@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-accounting-audit-trail-checklist-generator
+kind: tool
+module: validohub
+country: UY
+category: tax
+status: active
+name:
+  en: "Uruguayan Accounting Audit Trail Checklist Helper"
+summary:
+  en: "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "AUDIT input"
+        required: true
+        placeholder:
+          en: "invoice 21/07/2026 1.234,56 UYU UY RUT 210123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-postal-code-validator, uruguay-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan Accounting Audit Trail Checklist Helper | ValidoHub"
+  description:
+    en: "Generate local accounting evidence checklist for invoices, payments, VAT, dates, and immutable logs."

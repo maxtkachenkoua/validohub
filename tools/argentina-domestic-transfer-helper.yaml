@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-domestic-transfer-helper
+kind: tool
+module: validohub
+country: AR
+category: finance
+status: active
+name:
+  en: "Argentine Domestic Transfer Helper"
+summary:
+  en: "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "CBU 2850590940090418135201\\n1.234,56 ARS\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-debit-authorization-helper, argentina-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."

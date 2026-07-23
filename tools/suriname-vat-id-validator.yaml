@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-vat-id-validator
+kind: tool
+module: validohub
+country: SR
+category: national-identifiers
+status: active
+name:
+  en: "Surinamese BTW / tax number Tax ID Validator"
+summary:
+  en: "Normalize BTW / tax number identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "SR TAX 123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-customs-tax-identifier-helper, suriname-social-security-evidence-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese BTW / tax number Tax ID Validator | ValidoHub"
+  description:
+    en: "Normalize BTW / tax number identifiers, inspect local tax body evidence, and prepare tax-authority handoff diagnostics."

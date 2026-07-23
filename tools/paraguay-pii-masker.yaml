@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-pii-masker
+kind: tool
+module: validohub
+country: PY
+category: privacy
+status: active
+name:
+  en: "Paraguayan PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1234567 +595 981 123456 PY-BANK-001-1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-personal-data-fixture-generator, paraguay-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

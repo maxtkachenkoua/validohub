@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: UY
+slug: uruguay
+name:
+  en: Uruguay
+region: South America
+languages:
+  - es
+currency: UYU
+relatedCountries:
+  - AR
+  - BR
+  - PY

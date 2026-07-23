@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-slug-normalizer
+kind: tool
+module: validohub
+country: EC
+category: developer-tools
+status: active
+name:
+  en: "Ecuadorian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Ecuador sample company Av. Amazonas N34-123, 170150 Quito"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-document-ocr-fixer, ecuador-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

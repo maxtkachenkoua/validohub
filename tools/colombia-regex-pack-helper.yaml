@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-regex-pack-helper
+kind: tool
+module: validohub
+country: CO
+category: developer-tools
+status: active
+name:
+  en: "Colombian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "Cedula de ciudadania NIT codigo postal  CO-BANK-007-123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-api-payload-auditor, colombia-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."

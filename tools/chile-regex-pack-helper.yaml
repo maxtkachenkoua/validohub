@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-regex-pack-helper
+kind: tool
+module: validohub
+country: CL
+category: developer-tools
+status: active
+name:
+  en: "Chilean Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "RUN RUT codigo postal  CL-BANK-0123-12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-api-payload-auditor, chile-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax, domestic account, postal, phone, dates, and debug labels."

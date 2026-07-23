@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uruguay-domestic-transfer-helper
+kind: tool
+module: validohub
+country: UY
+category: finance
+status: active
+name:
+  en: "Uruguayan Domestic Transfer Helper"
+summary:
+  en: "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uruguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "UY-BANK-001-1234567890\\n1.234,56 UYU\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uruguay-debit-authorization-helper, uruguay-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uruguayan Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check recipient, domestic account, amount, remittance, and local payment-rail handoff fields before bank submission."

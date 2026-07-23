@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-id-card-format-helper
+kind: tool
+module: validohub
+country: CL
+category: national-identifiers
+status: active
+name:
+  en: "Chilean ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "12.345.678-5"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-passport-number-helper, chile-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

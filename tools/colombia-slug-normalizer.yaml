@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-slug-normalizer
+kind: tool
+module: validohub
+country: CO
+category: developer-tools
+status: active
+name:
+  en: "Colombian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Colombia sample company Carrera 7 # 12-34, 110111 Bogota"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-document-ocr-fixer, colombia-gdpr-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

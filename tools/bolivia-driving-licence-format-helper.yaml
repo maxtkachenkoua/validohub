@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bolivia-driving-licence-format-helper
+kind: tool
+module: validohub
+country: BO
+category: documents
+status: active
+name:
+  en: "Bolivian Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bolivia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "1234567 LP DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bolivia-residence-permit-format-helper, bolivia-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bolivian Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

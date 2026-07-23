@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-cedula-social-insurance-helper
+kind: tool
+module: validohub
+country: PY
+category: national-identifiers
+status: active
+name:
+  en: "Paraguayan Cedula Helper"
+summary:
+  en: "Split Cedula evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-company-onboarding-auditor, paraguay-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Cedula Helper | ValidoHub"
+  description:
+    en: "Split Cedula evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

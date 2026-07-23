@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ecuador-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: EC
+category: tax
+status: active
+name:
+  en: "Ecuadorian Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ecuador-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "EC RUC 1790012345001 21/07/2026 1,234.56 USD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ecuador-accounting-audit-trail-checklist-generator, ecuador-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ecuadorian Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

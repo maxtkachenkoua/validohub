@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-invoice-number-helper
+kind: tool
+module: validohub
+country: VE
+category: tax
+status: active
+name:
+  en: "Venezuelan Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 VE J-12345678-9"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-e-invoicing-readiness-checker, venezuela-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

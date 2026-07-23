@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: argentina-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: AR
+category: privacy
+status: active
+name:
+  en: "Argentine Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.argentina-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "30123456\\nAv. Corrientes 1234, C1043 Buenos Aires\\n+54 9 11 2345 6789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [argentina-driving-licence-format-helper, argentina-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Argentine Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

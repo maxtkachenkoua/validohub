@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: suriname-currency-decimal-formatter
+kind: tool
+module: validohub
+country: SR
+category: finance
+status: active
+name:
+  en: "Surinamese SRD Decimal Currency Formatter"
+summary:
+  en: "Normalize SRD amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.suriname-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1.234,56 SRD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [suriname-vat-rate-sanity-helper, suriname-vat-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Surinamese SRD Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize SRD amount strings, decimal separators, grouping, and API-safe numeric previews."

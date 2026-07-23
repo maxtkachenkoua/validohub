@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: colombia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: CO
+category: government
+status: active
+name:
+  en: "Colombian RUES / Camara de Comercio Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated RUES / Camara de Comercio lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.colombia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "900.123.456-7 CO 900.123.456-7 Carrera 7 # 12-34, 110111 Bogota"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [colombia-id-card-format-helper, colombia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Colombian RUES / Camara de Comercio Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated RUES / Camara de Comercio lookup or company registry workflow."

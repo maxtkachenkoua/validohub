@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: peru-dni-social-insurance-helper
+kind: tool
+module: validohub
+country: PE
+category: national-identifiers
+status: active
+name:
+  en: "Peruvian DNI Helper"
+summary:
+  en: "Split DNI evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.peru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [peru-company-onboarding-auditor, peru-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Peruvian DNI Helper | ValidoHub"
+  description:
+    en: "Split DNI evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

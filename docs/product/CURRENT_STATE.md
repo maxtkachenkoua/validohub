@@ -344,3 +344,10 @@ Added 15 global premium workbenches across Web/API Quality, Data & Integration, 
 ## Global Premium Tools Batch 4-7
 
 Added 20 global premium workbenches across Cloud / DevOps, AI / Data / RAG, Backend / API, and Frontend / QA. These continue the browser-only premium standard with local static analyzers, tool-specific samples, validation pipelines, field breakdowns, quality notes, Developer API previews, and snapshot JSON.
+
+Global Tools Deep Premium Lens V1 upgrades the shared Batch 4-7 runtime from mostly generic signal/risk counting into tool-specific browser-only analysis lenses. Kubernetes now surfaces workload/container/probe/resource/security-context evidence; Dockerfile surfaces stages/layers/user/base-pin/cache/secret hygiene; GitHub Actions surfaces permissions, action pinning, matrix, trigger, and shell-injection risk; Terraform surfaces resource maps and destructive/public-exposure/provider hints; CORS, accessibility, prompt-injection, RAG chunking, JSONL fine-tune, HTML SEO, and browser storage tools now emit domain-specific result cards, field breakdown rows, pipeline checks, domain risks, and developer JSON. Valido Engine remains untouched.
+
+
+## South America Premium Batch V1
+
+South America excluding Brazil is generated as full premium on Country Suite Factory V1. Countries: Argentina (argentina), Bolivia (bolivia), Chile (chile), Colombia (colombia), Ecuador (ecuador), Guyana (guyana), Paraguay (paraguay), Peru (peru), Suriname (suriname), Uruguay (uruguay), Venezuela (venezuela). The batch uses domestic banking/payment rails instead of false IBAN/SEPA assumptions, adds local identifiers, tax/invoice helpers, privacy, vehicle/document/logistics, locale, and developer QA workbenches with field breakdowns and official-boundary copy.

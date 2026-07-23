@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: venezuela-calendar-week-helper
+kind: tool
+module: validohub
+country: VE
+category: localization
+status: active
+name:
+  en: "Venezuelan Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.venezuela-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "21/07/2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [venezuela-company-suffix-normalizer, venezuela-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Venezuelan Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

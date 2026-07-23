@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-postal-tracking-helper
+kind: tool
+module: validohub
+country: CL
+category: logistics
+status: active
+name:
+  en: "Chilean Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 8320000 Santiago"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-data-quality-workbench, chile-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

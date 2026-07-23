@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chile-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: CL
+category: privacy
+status: active
+name:
+  en: "Chilean Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chile-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "12.345.678-5\\nAv. Providencia 1234, 8320000 Santiago\\n+56 9 1234 5678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chile-driving-licence-format-helper, chile-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chilean Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

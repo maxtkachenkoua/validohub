@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: paraguay-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: PY
+category: localization
+status: active
+name:
+  en: "Paraguayan Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.paraguay-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "Cedula input, codigo postal input, amount 1.234.567 PYG"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [paraguay-support-ticket-scrubber, paraguay-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Paraguayan Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
