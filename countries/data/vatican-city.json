@@ -1,9 +1,9 @@
 {
   "id": "vatican-city",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/vatican-city-outline.svg",
+    "outlineSrc": "/assets/images/countries/vatican-city-outline.png",
     "outlineAlt": "Vatican City country outline",
-    "mapSrc": "/assets/images/countries/vatican-city-location.svg",
+    "mapSrc": "/assets/images/countries/vatican-city-location.png",
     "mapAlt": "World map with Vatican City location marker",
     "mapMarker": {
       "x": 51,

@@ -1,0 +1,673 @@
+{
+  "id": "saint-kitts-and-nevis",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/saint-kitts-and-nevis-outline.png",
+    "outlineAlt": "Saint Kitts and Nevis country outline",
+    "mapSrc": "/assets/images/countries/saint-kitts-and-nevis-location.png",
+    "mapAlt": "Saint Kitts and Nevis location map",
+    "mapMarker": {
+      "x": 34,
+      "y": 48,
+      "label": "Basseterre"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "saint-kitts-and-nevis",
+    "flag": "🇰🇳",
+    "name": "Saint Kitts and Nevis",
+    "nativeName": "Saint Kitts and Nevis",
+    "iso2": "KN",
+    "iso3": "KNA",
+    "continent": "North America",
+    "region": "North America / Caribbean and Central America",
+    "language": "English",
+    "currency": "XCD",
+    "currencyName": "East Caribbean dollar",
+    "status": "available",
+    "summary": "Premium Saint Kitts and Nevis developer hub for national ID, company number, VAT registration, parish/locality, phone, domestic bank account, SWIFT/BIC, payment reference, locale, privacy, documents, banking, tax, and browser-only data-quality workflows.",
+    "identifiers": [
+      "national ID",
+      "company number",
+      "VAT registration",
+      "parish/locality",
+      "phone"
+    ],
+    "payments": [
+      "domestic bank account",
+      "SWIFT/BIC",
+      "payment reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Kittitian and Nevisian national ID Validator",
+      "Kittitian and Nevisian company number Validator",
+      "Kittitian and Nevisian VAT registration Inspector",
+      "Kittitian and Nevisian Company Onboarding Auditor",
+      "Kittitian and Nevisian Business Registry Readiness Helper",
+      "Kittitian and Nevisian ID Card Format Helper",
+      "Kittitian and Nevisian MRZ / Passport Parser",
+      "Kittitian and Nevisian domestic bank account Inspector",
+      "Kittitian and Nevisian BIC / SWIFT Inspector",
+      "Kittitian and Nevisian domestic payment reference Helper",
+      "Kittitian and Nevisian Remittance Text Builder",
+      "Kittitian and Nevisian Bank Statement Parser",
+      "Kittitian and Nevisian XCD Decimal Currency Formatter",
+      "Kittitian and Nevisian parish/locality Validator",
+      "Kittitian and Nevisian Address Normalizer",
+      "Kittitian and Nevisian Phone Number Validator",
+      "Kittitian and Nevisian Date Locale Formatter",
+      "Kittitian and Nevisian CSV Locale Normalizer",
+      "Kittitian and Nevisian Document OCR Fixer",
+      "Kittitian and Nevisian Privacy Redaction Helper",
+      "Kittitian and Nevisian Data Quality Workbench",
+      "Kittitian and Nevisian API Payload Auditor",
+      "Kittitian and Nevisian State / Province Code Mapper",
+      "Kittitian and Nevisian Locality Autocomplete Fixture Builder",
+      "Kittitian and Nevisian Government Form Field Normalizer",
+      "Kittitian and Nevisian Tax Invoice Field Auditor",
+      "Kittitian and Nevisian Sales Tax / VAT Threshold Checklist",
+      "Kittitian and Nevisian Withholding Tax Form Helper",
+      "Kittitian and Nevisian Customs / Import Code Inspector",
+      "Kittitian and Nevisian Payroll ID Intake Helper",
+      "Kittitian and Nevisian Benefits / Social Number Redaction Helper",
+      "Kittitian and Nevisian Business License Checklist",
+      "Kittitian and Nevisian Ownership / KYB Payload Auditor",
+      "Kittitian and Nevisian Sanctions Screening Payload Helper",
+      "Kittitian and Nevisian Bank Routing Handoff Checklist",
+      "Kittitian and Nevisian Payout Recipient Validator",
+      "Kittitian and Nevisian Refund Reference Builder",
+      "Kittitian and Nevisian Chargeback Evidence Pack Helper",
+      "Kittitian and Nevisian Ecommerce Checkout Locale Auditor",
+      "Kittitian and Nevisian Shipping Label Normalizer",
+      "Kittitian and Nevisian Customs Address Line Helper",
+      "Kittitian and Nevisian Vehicle Registration Format Helper",
+      "Kittitian and Nevisian Driver License Format Helper",
+      "Kittitian and Nevisian Utility Bill Address Proof Auditor",
+      "Kittitian and Nevisian KYC Document Bundle Auditor",
+      "Kittitian and Nevisian Invoice Number Format Helper",
+      "Kittitian and Nevisian Receipt Tax Line Parser",
+      "Kittitian and Nevisian Phone Extension Normalizer",
+      "Kittitian and Nevisian Business Hours / Time Zone Helper",
+      "Kittitian and Nevisian Holiday Calendar Fixture Builder",
+      "Kittitian and Nevisian Name Parser / Transliteration Helper",
+      "Kittitian and Nevisian Email Domain Locality Checker",
+      "Kittitian and Nevisian Form Autofill Fixture Generator",
+      "Kittitian and Nevisian Webhook Local Payload Fixture",
+      "Kittitian and Nevisian GraphQL Input Auditor",
+      "Kittitian and Nevisian OpenAPI Country Schema Helper",
+      "Kittitian and Nevisian SQL Seed Data Builder",
+      "Kittitian and Nevisian JSON Schema Local Rules Helper",
+      "Kittitian and Nevisian Test Case Matrix Builder",
+      "Kittitian and Nevisian Data Retention Policy Helper",
+      "Kittitian and Nevisian Accessibility Form Label Auditor"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live tax/registry status confirmation",
+      "Live bank ownership lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 34,
+      "y": 48
+    },
+    "searchHints": [
+      "national ID",
+      "company number",
+      "VAT registration",
+      "parish/locality",
+      "phone",
+      "domestic bank account",
+      "SWIFT/BIC",
+      "payment reference"
+    ]
+  },
+  "hub": {
+    "flag": "🇰🇳",
+    "name": "Saint Kitts and Nevis",
+    "badge": "Premium Saint Kitts and Nevis developer suite",
+    "description": "Developer intelligence and browser-only workbenches for kittitian and nevisian identifiers, tax, payments, banking, locale conventions, privacy, documents, and integration QA.",
+    "metadata": {
+      "nativeName": "Saint Kitts and Nevis",
+      "population": "approximately 0.05M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Basseterre",
+      "continent": "North America",
+      "region": "North America / Caribbean and Central America",
+      "languages": "English",
+      "currency": "East Caribbean dollar",
+      "currencyCode": "XCD",
+      "callingCode": "+1-869",
+      "internetTld": ".kn",
+      "drivingSide": "Right",
+      "iso2": "KN",
+      "iso3": "KNA",
+      "isoNumeric": "659",
+      "locale": "en",
+      "icuLocale": "en",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour where used; local display varies",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, locality/administrative area, postal code, Saint Kitts and Nevis",
+      "postalCodeFormat": "parish/locality",
+      "primaryTimeZone": "America/St_Kitts",
+      "measurementSystem": "Metric-first",
+      "paperSize": "Letter/A4 varies by workflow",
+      "emergencyNumber": "local emergency number varies",
+      "weekStarts": "Sunday/Monday by workflow",
+      "rtlSupport": "No",
+      "unicodeLocale": "en",
+      "cldrLocale": "en",
+      "metricVsImperial": "Metric-first"
+    },
+    "visualIdentity": {
+      "countryId": "saint-kitts-and-nevis",
+      "outlineLabel": "Saint Kitts and Nevis outline",
+      "mapLabel": "Saint Kitts and Nevis in North America",
+      "continentBadge": "North America",
+      "flagLabel": "Saint Kitts and Nevis flag",
+      "heroAccentPrimary": "0 151 57",
+      "heroAccentSecondary": "239 51 64",
+      "heroAccentTertiary": "252 209 22"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "61",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID and company number",
+        "text": "Local identifier workbenches split body, prefixes, local vocabulary, and official boundaries."
+      },
+      {
+        "title": "VAT registration and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, privacy, OCR, locale, and data-quality tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Saint Kitts and Nevis registry, tax, bank, postal, identity, or legal status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /saint-kitts-and-nevis/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring local separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing jurisdictions",
+        "text": "Do not reuse non-Kittitian and Nevisian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry lookup remains the source of truth for Saint Kitts and Nevis.",
+        "status": "official boundary"
+      },
+      {
+        "title": "VAT registration",
+        "text": "Tax validity and filing acceptance require the responsible tax authority or provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "local privacy/data protection",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "national ID, company number, VAT registration, parish/locality, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "domestic bank account, SWIFT/BIC, payment reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en / en; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "XCD amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID, company number, parish/locality, phone, address, and local banking labels need jurisdiction-specific copy.",
+        "status": "available"
+      }
+    ],
+    "searchHints": [
+      "national ID",
+      "company number",
+      "VAT registration",
+      "parish/locality",
+      "phone",
+      "domestic bank account",
+      "SWIFT/BIC",
+      "payment reference"
+    ],
+    "routes": [
+      {
+        "title": "Kittitian and Nevisian national ID Validator",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-national-id-validator/",
+        "text": "Validate local personal identifier shape, split visible evidence, and keep official identity status out of browser-only results.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Kittitian and Nevisian company number Validator",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-company-number-validator/",
+        "text": "Inspect company or registry identifier shape, prefixes, local vocabulary, and official registry handoff boundaries.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Kittitian and Nevisian VAT registration Inspector",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-tax-id-inspector/",
+        "text": "Normalize tax identifier snippets, inspect local body evidence, and prepare official tax-authority handoff notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Kittitian and Nevisian Company Onboarding Auditor",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for identifier, address, banking, tax, and privacy readiness.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian Business Registry Readiness Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or filing workflow.",
+        "category": "government"
+      },
+      {
+        "title": "Kittitian and Nevisian ID Card Format Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-id-card-format-helper/",
+        "text": "Inspect identity-card snippets, document numbers, dates, and privacy boundaries without proving identity.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Kittitian and Nevisian MRZ / Passport Parser",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-passport-mrz-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Kittitian and Nevisian domestic bank account Inspector",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-domestic-bank-account-inspector/",
+        "text": "Inspect domestic bank account slices, routing blocks, account text, and payment-provider boundaries.",
+        "category": "finance"
+      },
+      {
+        "title": "Kittitian and Nevisian BIC / SWIFT Inspector",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for cross-border banking integrations.",
+        "category": "finance"
+      },
+      {
+        "title": "Kittitian and Nevisian domestic payment reference Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting.",
+        "category": "finance"
+      },
+      {
+        "title": "Kittitian and Nevisian Remittance Text Builder",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, tax, and local payment reference evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Kittitian and Nevisian Bank Statement Parser",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, counterparty, reference, and local decimal conventions.",
+        "category": "finance"
+      },
+      {
+        "title": "Kittitian and Nevisian XCD Decimal Currency Formatter",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-currency-decimal-formatter/",
+        "text": "Normalize local amount strings, decimal separators, grouping, and API-safe numeric previews.",
+        "category": "finance"
+      },
+      {
+        "title": "Kittitian and Nevisian parish/locality Validator",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-postal-code-validator/",
+        "text": "Validate postal/address locality shape, split locality hints, and preserve official postal lookup boundaries.",
+        "category": "address"
+      },
+      {
+        "title": "Kittitian and Nevisian Address Normalizer",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-address-normalizer/",
+        "text": "Normalize street, locality, administrative area, postal code, and country lines for local forms.",
+        "category": "address"
+      },
+      {
+        "title": "Kittitian and Nevisian Phone Number Validator",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes.",
+        "category": "address"
+      },
+      {
+        "title": "Kittitian and Nevisian Date Locale Formatter",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics.",
+        "category": "localization"
+      },
+      {
+        "title": "Kittitian and Nevisian CSV Locale Normalizer",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for decimal, date, postal, phone, tax, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian Document OCR Fixer",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Kittitian and Nevisian Privacy Redaction Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets.",
+        "category": "privacy"
+      },
+      {
+        "title": "Kittitian and Nevisian Data Quality Workbench",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian API Payload Auditor",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, banking, dates, amounts, and official boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian State / Province Code Mapper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-state-province-code-mapper/",
+        "text": "Map local administrative area labels, abbreviations, and address payload hints for browser-only form routing.",
+        "category": "address"
+      },
+      {
+        "title": "Kittitian and Nevisian Locality Autocomplete Fixture Builder",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-locality-autocomplete-fixture-builder/",
+        "text": "Build country-local city, district, postal, and address fixtures for autocomplete QA without live geocoding.",
+        "category": "address"
+      },
+      {
+        "title": "Kittitian and Nevisian Government Form Field Normalizer",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-government-form-field-normalizer/",
+        "text": "Normalize local government-form labels, identifier fields, dates, and address lines before portal handoff.",
+        "category": "government"
+      },
+      {
+        "title": "Kittitian and Nevisian Tax Invoice Field Auditor",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-tax-invoice-field-auditor/",
+        "text": "Audit invoice snippets for local tax IDs, currency, address, date, line totals, and official filing boundaries.",
+        "category": "tax"
+      },
+      {
+        "title": "Kittitian and Nevisian Sales Tax / VAT Threshold Checklist",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-sales-tax-vat-threshold-checklist/",
+        "text": "Inspect revenue, registration, local tax labels, and threshold handoff notes without making legal conclusions.",
+        "category": "tax"
+      },
+      {
+        "title": "Kittitian and Nevisian Withholding Tax Form Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-withholding-tax-form-helper/",
+        "text": "Prepare local withholding-tax form evidence, payee IDs, dates, amounts, and review notes for finance teams.",
+        "category": "tax"
+      },
+      {
+        "title": "Kittitian and Nevisian Customs / Import Code Inspector",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-customs-import-code-inspector/",
+        "text": "Inspect customs references, importer IDs, invoice fields, currency, and shipment handoff evidence.",
+        "category": "logistics"
+      },
+      {
+        "title": "Kittitian and Nevisian Payroll ID Intake Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-payroll-id-intake-helper/",
+        "text": "Check employee intake payloads for local personal IDs, tax IDs, dates, address, and privacy-safe masking.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Kittitian and Nevisian Benefits / Social Number Redaction Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-benefits-social-number-redaction/",
+        "text": "Mask local social, benefits, tax, phone, and address evidence before logs, tickets, or screenshots.",
+        "category": "privacy"
+      },
+      {
+        "title": "Kittitian and Nevisian Business License Checklist",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-business-license-checklist/",
+        "text": "Audit local business-license intake evidence, registry IDs, addresses, tax labels, and official lookup boundaries.",
+        "category": "government"
+      },
+      {
+        "title": "Kittitian and Nevisian Ownership / KYB Payload Auditor",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-ownership-kyb-payload-auditor/",
+        "text": "Inspect KYB payloads for company IDs, beneficial-owner fields, addresses, dates, and masked evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian Sanctions Screening Payload Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-sanctions-screening-payload-helper/",
+        "text": "Prepare offline screening payloads with names, addresses, identifiers, and no false match-status claims.",
+        "category": "privacy"
+      },
+      {
+        "title": "Kittitian and Nevisian Bank Routing Handoff Checklist",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-bank-routing-handoff-checklist/",
+        "text": "Check routing, account, branch, currency, payment reference, and provider-boundary fields before bank handoff.",
+        "category": "finance"
+      },
+      {
+        "title": "Kittitian and Nevisian Payout Recipient Validator",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-payout-recipient-validator/",
+        "text": "Inspect payout recipient payloads for local name, account, tax, phone, address, currency, and retry-safe evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Kittitian and Nevisian Refund Reference Builder",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-refund-reference-builder/",
+        "text": "Build local refund references from invoice, customer, payment, amount, and reconciliation fields.",
+        "category": "finance"
+      },
+      {
+        "title": "Kittitian and Nevisian Chargeback Evidence Pack Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-chargeback-evidence-pack-helper/",
+        "text": "Organize browser-only payment, invoice, address, date, and customer evidence for dispute workflows.",
+        "category": "finance"
+      },
+      {
+        "title": "Kittitian and Nevisian Ecommerce Checkout Locale Auditor",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-ecommerce-checkout-locale-auditor/",
+        "text": "Audit checkout payloads for local address, phone, postal, currency, date, and tax-field assumptions.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian Shipping Label Normalizer",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-shipping-label-normalizer/",
+        "text": "Normalize local shipping-label blocks, recipient names, postal/locality fields, phone, and delivery notes.",
+        "category": "logistics"
+      },
+      {
+        "title": "Kittitian and Nevisian Customs Address Line Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-customs-address-line-helper/",
+        "text": "Split exporter/importer address lines, locality, postal data, country code, and customs-safe payloads.",
+        "category": "logistics"
+      },
+      {
+        "title": "Kittitian and Nevisian Vehicle Registration Format Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-vehicle-registration-format-helper/",
+        "text": "Inspect vehicle-registration snippets, plate shapes, region hints, and official transport boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Kittitian and Nevisian Driver License Format Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-driver-license-format-helper/",
+        "text": "Inspect driving-license snippets, dates, document numbers, and privacy-safe evidence for transport intake.",
+        "category": "documents"
+      },
+      {
+        "title": "Kittitian and Nevisian Utility Bill Address Proof Auditor",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-utility-bill-address-proof-auditor/",
+        "text": "Audit utility-bill OCR text for names, dates, address lines, account numbers, and masked support evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Kittitian and Nevisian KYC Document Bundle Auditor",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-kyc-document-bundle-auditor/",
+        "text": "Check KYC document bundles for local ID, tax, address, date, file labels, and official-boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Kittitian and Nevisian Invoice Number Format Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-invoice-number-format-helper/",
+        "text": "Normalize invoice-number patterns, series, date fragments, counterparty hints, and duplicate-risk notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Kittitian and Nevisian Receipt Tax Line Parser",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-receipt-tax-line-parser/",
+        "text": "Parse receipt text for tax labels, totals, currency, dates, and local decimal/grouping evidence.",
+        "category": "tax"
+      },
+      {
+        "title": "Kittitian and Nevisian Phone Extension Normalizer",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-phone-extension-normalizer/",
+        "text": "Normalize local phone numbers with extension, country prefix, national blocks, and CRM-safe output.",
+        "category": "address"
+      },
+      {
+        "title": "Kittitian and Nevisian Business Hours / Time Zone Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-timezone-business-hours-helper/",
+        "text": "Preview local business-hour windows, date cutoffs, support handoffs, and timezone caveats.",
+        "category": "localization"
+      },
+      {
+        "title": "Kittitian and Nevisian Holiday Calendar Fixture Builder",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-holiday-calendar-fixture-builder/",
+        "text": "Build local calendar fixtures and holiday-review payloads without claiming official holiday coverage.",
+        "category": "localization"
+      },
+      {
+        "title": "Kittitian and Nevisian Name Parser / Transliteration Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-name-parser-transliteration-helper/",
+        "text": "Split local personal/company names, accents, casing, transliteration, and search-key fixtures.",
+        "category": "localization"
+      },
+      {
+        "title": "Kittitian and Nevisian Email Domain Locality Checker",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-email-domain-locality-checker/",
+        "text": "Inspect email/domain strings for local TLD hints, plus addressing, masking, and no-deliverability boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian Form Autofill Fixture Generator",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-form-autofill-fixture-generator/",
+        "text": "Generate browser-only local form fixtures for IDs, tax, phone, postal, address, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian Webhook Local Payload Fixture",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-webhook-local-payload-fixture/",
+        "text": "Build webhook payload fixtures with local IDs, tax, currency, dates, masked fields, and replay metadata.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian GraphQL Input Auditor",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-graphql-input-auditor/",
+        "text": "Audit GraphQL-style input objects for local identifiers, tax fields, dates, amounts, and nullable hazards.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian OpenAPI Country Schema Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-openapi-country-schema-helper/",
+        "text": "Draft and inspect OpenAPI schema snippets for local identifiers, address, phone, payment, and tax fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian SQL Seed Data Builder",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-sql-seed-data-builder/",
+        "text": "Build local seed-data rows for identifiers, tax, address, phone, amount, and bank fixtures.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian JSON Schema Local Rules Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-json-schema-local-rules-helper/",
+        "text": "Inspect JSON Schema rules for local field names, patterns, examples, and official-boundary copy.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian Test Case Matrix Builder",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-test-case-matrix-builder/",
+        "text": "Generate valid, invalid, short, wrong-country, masking, and boundary test-case matrices for local workflows.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Kittitian and Nevisian Data Retention Policy Helper",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-data-retention-policy-helper/",
+        "text": "Organize local retention, masking, audit-log, and deletion checklist fields without giving legal advice.",
+        "category": "privacy"
+      },
+      {
+        "title": "Kittitian and Nevisian Accessibility Form Label Auditor",
+        "href": "/en/saint-kitts-and-nevis/saint-kitts-and-nevis-accessibility-form-label-auditor/",
+        "text": "Audit local form labels, autocomplete names, error copy, and screen-reader hints for identifier workflows.",
+        "category": "developer-tools"
+      }
+    ]
+  }
+}

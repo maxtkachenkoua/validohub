@@ -1,9 +1,9 @@
 {
   "id": "italy",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/italy-outline.svg",
+    "outlineSrc": "/assets/images/countries/italy-outline.png",
     "outlineAlt": "Italy country outline",
-    "mapSrc": "/assets/images/countries/italy-location.svg",
+    "mapSrc": "/assets/images/countries/italy-location.png",
     "mapAlt": "World map with Italy location marker",
     "mapMarker": {
       "x": 50,
@@ -390,8 +390,8 @@
       "accent": "#008C45",
       "accent2": "#CD212A",
       "accent3": "#F4F5F0",
-      "outline": "/assets/images/countries/italy-outline.svg",
-      "map": "/assets/images/countries/italy-location.svg",
+      "outline": "/assets/images/countries/italy-outline.png",
+      "map": "/assets/images/countries/italy-location.png",
       "note": "Italy hub uses ValidoHub country visual assets and Italy flag colors for local identity.",
       "tags": [
         "identity",

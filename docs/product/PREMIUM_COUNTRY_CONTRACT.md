@@ -10,7 +10,7 @@ A full premium country is a browser-only developer suite for local compliance an
 - Country hub with country-specific content, route groups, highlights, developer notes, official boundaries, ecosystem links, localization notes, and available workbenches.
 - Country hub technical standards with non-empty plug type, voltage, grid frequency, and emergency-number values.
 - Country hub search with local market hints in the placeholder/chips, such as BLIK, PIX, Multibanco, KID, Bankgiro, PlusGiro, OGM, variable symbol, viitenumero, Eircode, HETU, CPR, CVR, CNP, or the strongest equivalent local identifiers/payment abbreviations. Do not ship only generic `IBAN, SWIFT/BIC, SEPA, VAT, INVOICE`.
-- Country visual assets and hero accents that visibly use the local flag/brand palette. New generated countries must not reuse the same generic teal/blue placeholder visual system. Country outline/location cards must use real Natural Earth geometry whenever available; Brazil is the reference for this visual quality.
+- Country visual assets and hero accents that visibly use the local flag/brand palette. New generated countries must not reuse the same generic teal/blue placeholder visual system. Country outline/location cards must use real Natural Earth geometry or premium raster assets with Brazil/Guyana/France/UK-level quality. Outline and location cards must be generated as separate final assets, never as one paired image that is cropped later.
 - Country hub civic snapshot before Developer Actions with flag, state languages, capital, major cities with approximate population, and useful country-level developer context.
 - Country civic snapshot must use a dedicated inner layout wrapper, not the same CSS class as the outer section. It must never overlap headings, fact cards, or city lists at desktop or mobile widths.
 - Country breadcrumbs with a single separator. `Home / / Countries / / X` is a regression.
@@ -41,15 +41,17 @@ Sixty tools is a reference density from Spain, Italy, Switzerland, and Germany. 
 Every country-scoped tool must include:
 
 - Compact Brazil-scale premium shell, not a generic `Workbench / Run the tool` utility page.
-- Short mark/code badge, concise summary, short sample labels, country-local related tools, and no raw payloads in selectors.
+- Compact tool hero with concise summary and capability chips, short sample labels near the input, country-local related tools in the advanced/debug layer, and no raw payloads in selectors. Decorative acronym/logo tiles in the hero are not allowed.
 - Sample examples with executable semantics: visible invalid/short/bad-country/bad-checksum examples must carry review intent and must never validate as success because a generic analyzer accepted the raw shape.
 - Browser-only validation or analysis with explicit official/live lookup boundaries.
 - Success states that are green/teal/neutral, never red; red is reserved for actual errors or destructive warnings.
 - Validation pipeline with meaningful checks, not decorative placeholder steps.
 - Dedicated field breakdown panel for every tool. This is mandatory for debugging: split identifiers, bank accounts, taxes, address/phone components, document parts, detected CSV/data fields, evidence slices, or local parsing groups as appropriate.
+- Structured country tools must teach the user to read the value: show segment anatomy for prefixes, body blocks, registry/type blocks, check/control digits, routing/account pieces, postal/phone/vehicle/date/amount parts, and display-only punctuation. Keep live owner/status/existence claims behind explicit official-boundary notes.
 - Result cards with normalized/masked/copyable values where relevant.
 - Copyable values with visible copied feedback through a shared toast/status announcement.
 - Quality notes explaining privacy, fixture safety, official boundary, and developer handling.
+- A compact `Integration traps` / developer time-saver block with 3-10 concrete mistakes that teams commonly make when integrating this workflow.
 - Advanced analysis and developer payload that wrap locally and cannot create page-level horizontal overflow.
 - Field/evidence breakdown text that stays high-contrast and readable across success/review states and all production locales.
 - A PESEL-like debug layer: either checksum replay, parser stages, field extraction evidence, data-quality diagnostics, or another domain-specific debugger. Do not fake math for non-math tools; expose the real evidence the browser can prove.
@@ -68,7 +70,7 @@ Every full premium country hub must include country-specific source data and ren
 - Route groups and related links must be country-local by default.
 - Technical standards cards must not be empty. If plug type, voltage, frequency, or emergency number is unknown, research/fill it before full-premium sign-off.
 - Search placeholders and shortcut chips must include local identifiers and payment systems, not only generic European banking terms.
-- Outline/location cards must carry country-specific color treatment derived from flag/visual identity values and real country geometry from the shared Natural Earth map source whenever available. Generic polygons, abstract waves, and ISO-only placeholders are not accepted for full-premium countries when real geometry exists.
+- Outline/location cards must carry country-specific color treatment derived from flag/visual identity values and real country geometry or premium raster source material. Generic polygons, abstract waves, ISO-only placeholders, paired-panel cropped images, vertical split panels, side gutters, satellite/terrain textures, and accidental neighboring-country highlights are not accepted for full-premium countries.
 - Inlined country SVG visuals must not contain `<style>` blocks. Active-country paint and base map paint must be expressed through SVG attributes or external bundle CSS so generated HTML passes integrity checks and never degrades into raw unstyled pages.
 - Civic snapshot must appear before Developer Actions and include flag, official/state languages, capital, main cities with approximate population, and city shield-style icons.
 - Civic snapshot layout must be structurally stable: one outer `vh-country-civic-snapshot` section, one inner `vh-country-civic-layout` wrapper, responsive fact cards, wrapped long values, and no duplicated layout class on child divs.
@@ -117,7 +119,7 @@ A future country is not complete if any of these appear:
 - Empty lower-page cards or headings.
 - Empty technical standards cards.
 - Generic country search placeholder/chips without local payment systems or identifier abbreviations.
-- Generic non-flag visual cards or reused teal/blue placeholder accents for a new country.
+- Generic non-flag visual cards, reused teal/blue placeholder accents, paired/cropped country-map composites, or side-gutter country visuals for a new country.
 - Missing civic snapshot before Developer Actions.
 - Civic snapshot overlap, duplicated snapshot class on inner wrappers, or missing `vh-country-civic-layout`.
 - Breadcrumb official-language quick actions when official-language navigation is not real.
@@ -127,6 +129,8 @@ A future country is not complete if any of these appear:
 - Inline `<style>` blocks embedded by country SVG/map assets.
 - Icon-only/status-only ecosystem/localization cards.
 - Raw payload sample labels.
+- Decorative acronym/logo hero tiles or a hero-side `Examples` panel on tool pages.
+- Missing `Integration traps` / developer time-saver block on a country-scoped or global tool.
 - Foreign fallback copy.
 - Cross-country related links by default.
 - Horizontal overflow from long values, JSON, tables, selectors, or code blocks.

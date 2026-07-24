@@ -1,0 +1,673 @@
+{
+  "id": "dominica",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/dominica-outline.png",
+    "outlineAlt": "Dominica country outline",
+    "mapSrc": "/assets/images/countries/dominica-location.png",
+    "mapAlt": "Dominica location map",
+    "mapMarker": {
+      "x": 34,
+      "y": 48,
+      "label": "Roseau"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "dominica",
+    "flag": "🇩🇲",
+    "name": "Dominica",
+    "nativeName": "Dominica",
+    "iso2": "DM",
+    "iso3": "DMA",
+    "continent": "North America",
+    "region": "North America / Caribbean and Central America",
+    "language": "English",
+    "currency": "XCD",
+    "currencyName": "East Caribbean dollar",
+    "status": "available",
+    "summary": "Premium Dominica developer hub for national ID, company number, VAT registration, parish/locality, phone, domestic bank account, SWIFT/BIC, payment reference, locale, privacy, documents, banking, tax, and browser-only data-quality workflows.",
+    "identifiers": [
+      "national ID",
+      "company number",
+      "VAT registration",
+      "parish/locality",
+      "phone"
+    ],
+    "payments": [
+      "domestic bank account",
+      "SWIFT/BIC",
+      "payment reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Dominican national ID Validator",
+      "Dominican company number Validator",
+      "Dominican VAT registration Inspector",
+      "Dominican Company Onboarding Auditor",
+      "Dominican Business Registry Readiness Helper",
+      "Dominican ID Card Format Helper",
+      "Dominican MRZ / Passport Parser",
+      "Dominican domestic bank account Inspector",
+      "Dominican BIC / SWIFT Inspector",
+      "Dominican domestic payment reference Helper",
+      "Dominican Remittance Text Builder",
+      "Dominican Bank Statement Parser",
+      "Dominican XCD Decimal Currency Formatter",
+      "Dominican parish/locality Validator",
+      "Dominican Address Normalizer",
+      "Dominican Phone Number Validator",
+      "Dominican Date Locale Formatter",
+      "Dominican CSV Locale Normalizer",
+      "Dominican Document OCR Fixer",
+      "Dominican Privacy Redaction Helper",
+      "Dominican Data Quality Workbench",
+      "Dominican API Payload Auditor",
+      "Dominican State / Province Code Mapper",
+      "Dominican Locality Autocomplete Fixture Builder",
+      "Dominican Government Form Field Normalizer",
+      "Dominican Tax Invoice Field Auditor",
+      "Dominican Sales Tax / VAT Threshold Checklist",
+      "Dominican Withholding Tax Form Helper",
+      "Dominican Customs / Import Code Inspector",
+      "Dominican Payroll ID Intake Helper",
+      "Dominican Benefits / Social Number Redaction Helper",
+      "Dominican Business License Checklist",
+      "Dominican Ownership / KYB Payload Auditor",
+      "Dominican Sanctions Screening Payload Helper",
+      "Dominican Bank Routing Handoff Checklist",
+      "Dominican Payout Recipient Validator",
+      "Dominican Refund Reference Builder",
+      "Dominican Chargeback Evidence Pack Helper",
+      "Dominican Ecommerce Checkout Locale Auditor",
+      "Dominican Shipping Label Normalizer",
+      "Dominican Customs Address Line Helper",
+      "Dominican Vehicle Registration Format Helper",
+      "Dominican Driver License Format Helper",
+      "Dominican Utility Bill Address Proof Auditor",
+      "Dominican KYC Document Bundle Auditor",
+      "Dominican Invoice Number Format Helper",
+      "Dominican Receipt Tax Line Parser",
+      "Dominican Phone Extension Normalizer",
+      "Dominican Business Hours / Time Zone Helper",
+      "Dominican Holiday Calendar Fixture Builder",
+      "Dominican Name Parser / Transliteration Helper",
+      "Dominican Email Domain Locality Checker",
+      "Dominican Form Autofill Fixture Generator",
+      "Dominican Webhook Local Payload Fixture",
+      "Dominican GraphQL Input Auditor",
+      "Dominican OpenAPI Country Schema Helper",
+      "Dominican SQL Seed Data Builder",
+      "Dominican JSON Schema Local Rules Helper",
+      "Dominican Test Case Matrix Builder",
+      "Dominican Data Retention Policy Helper",
+      "Dominican Accessibility Form Label Auditor"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live tax/registry status confirmation",
+      "Live bank ownership lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 34,
+      "y": 48
+    },
+    "searchHints": [
+      "national ID",
+      "company number",
+      "VAT registration",
+      "parish/locality",
+      "phone",
+      "domestic bank account",
+      "SWIFT/BIC",
+      "payment reference"
+    ]
+  },
+  "hub": {
+    "flag": "🇩🇲",
+    "name": "Dominica",
+    "badge": "Premium Dominica developer suite",
+    "description": "Developer intelligence and browser-only workbenches for dominican identifiers, tax, payments, banking, locale conventions, privacy, documents, and integration QA.",
+    "metadata": {
+      "nativeName": "Dominica",
+      "population": "approximately 0.07M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Roseau",
+      "continent": "North America",
+      "region": "North America / Caribbean and Central America",
+      "languages": "English",
+      "currency": "East Caribbean dollar",
+      "currencyCode": "XCD",
+      "callingCode": "+1-767",
+      "internetTld": ".dm",
+      "drivingSide": "Right",
+      "iso2": "DM",
+      "iso3": "DMA",
+      "isoNumeric": "212",
+      "locale": "en",
+      "icuLocale": "en",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour where used; local display varies",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, locality/administrative area, postal code, Dominica",
+      "postalCodeFormat": "parish/locality",
+      "primaryTimeZone": "America/Dominica",
+      "measurementSystem": "Metric-first",
+      "paperSize": "Letter/A4 varies by workflow",
+      "emergencyNumber": "local emergency number varies",
+      "weekStarts": "Sunday/Monday by workflow",
+      "rtlSupport": "No",
+      "unicodeLocale": "en",
+      "cldrLocale": "en",
+      "metricVsImperial": "Metric-first"
+    },
+    "visualIdentity": {
+      "countryId": "dominica",
+      "outlineLabel": "Dominica outline",
+      "mapLabel": "Dominica in North America",
+      "continentBadge": "North America",
+      "flagLabel": "Dominica flag",
+      "heroAccentPrimary": "0 107 63",
+      "heroAccentSecondary": "252 209 22",
+      "heroAccentTertiary": "17 24 39"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "61",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID and company number",
+        "text": "Local identifier workbenches split body, prefixes, local vocabulary, and official boundaries."
+      },
+      {
+        "title": "VAT registration and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, privacy, OCR, locale, and data-quality tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Dominica registry, tax, bank, postal, identity, or legal status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /dominica/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring local separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing jurisdictions",
+        "text": "Do not reuse non-Dominican examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry lookup remains the source of truth for Dominica.",
+        "status": "official boundary"
+      },
+      {
+        "title": "VAT registration",
+        "text": "Tax validity and filing acceptance require the responsible tax authority or provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "local privacy/data protection",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "national ID, company number, VAT registration, parish/locality, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "domestic bank account, SWIFT/BIC, payment reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en / en; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "XCD amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID, company number, parish/locality, phone, address, and local banking labels need jurisdiction-specific copy.",
+        "status": "available"
+      }
+    ],
+    "searchHints": [
+      "national ID",
+      "company number",
+      "VAT registration",
+      "parish/locality",
+      "phone",
+      "domestic bank account",
+      "SWIFT/BIC",
+      "payment reference"
+    ],
+    "routes": [
+      {
+        "title": "Dominican national ID Validator",
+        "href": "/en/dominica/dominica-national-id-validator/",
+        "text": "Validate local personal identifier shape, split visible evidence, and keep official identity status out of browser-only results.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Dominican company number Validator",
+        "href": "/en/dominica/dominica-company-number-validator/",
+        "text": "Inspect company or registry identifier shape, prefixes, local vocabulary, and official registry handoff boundaries.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Dominican VAT registration Inspector",
+        "href": "/en/dominica/dominica-tax-id-inspector/",
+        "text": "Normalize tax identifier snippets, inspect local body evidence, and prepare official tax-authority handoff notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Dominican Company Onboarding Auditor",
+        "href": "/en/dominica/dominica-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for identifier, address, banking, tax, and privacy readiness.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican Business Registry Readiness Helper",
+        "href": "/en/dominica/dominica-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or filing workflow.",
+        "category": "government"
+      },
+      {
+        "title": "Dominican ID Card Format Helper",
+        "href": "/en/dominica/dominica-id-card-format-helper/",
+        "text": "Inspect identity-card snippets, document numbers, dates, and privacy boundaries without proving identity.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Dominican MRZ / Passport Parser",
+        "href": "/en/dominica/dominica-passport-mrz-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Dominican domestic bank account Inspector",
+        "href": "/en/dominica/dominica-domestic-bank-account-inspector/",
+        "text": "Inspect domestic bank account slices, routing blocks, account text, and payment-provider boundaries.",
+        "category": "finance"
+      },
+      {
+        "title": "Dominican BIC / SWIFT Inspector",
+        "href": "/en/dominica/dominica-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for cross-border banking integrations.",
+        "category": "finance"
+      },
+      {
+        "title": "Dominican domestic payment reference Helper",
+        "href": "/en/dominica/dominica-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting.",
+        "category": "finance"
+      },
+      {
+        "title": "Dominican Remittance Text Builder",
+        "href": "/en/dominica/dominica-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, tax, and local payment reference evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Dominican Bank Statement Parser",
+        "href": "/en/dominica/dominica-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, counterparty, reference, and local decimal conventions.",
+        "category": "finance"
+      },
+      {
+        "title": "Dominican XCD Decimal Currency Formatter",
+        "href": "/en/dominica/dominica-currency-decimal-formatter/",
+        "text": "Normalize local amount strings, decimal separators, grouping, and API-safe numeric previews.",
+        "category": "finance"
+      },
+      {
+        "title": "Dominican parish/locality Validator",
+        "href": "/en/dominica/dominica-postal-code-validator/",
+        "text": "Validate postal/address locality shape, split locality hints, and preserve official postal lookup boundaries.",
+        "category": "address"
+      },
+      {
+        "title": "Dominican Address Normalizer",
+        "href": "/en/dominica/dominica-address-normalizer/",
+        "text": "Normalize street, locality, administrative area, postal code, and country lines for local forms.",
+        "category": "address"
+      },
+      {
+        "title": "Dominican Phone Number Validator",
+        "href": "/en/dominica/dominica-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes.",
+        "category": "address"
+      },
+      {
+        "title": "Dominican Date Locale Formatter",
+        "href": "/en/dominica/dominica-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics.",
+        "category": "localization"
+      },
+      {
+        "title": "Dominican CSV Locale Normalizer",
+        "href": "/en/dominica/dominica-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for decimal, date, postal, phone, tax, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican Document OCR Fixer",
+        "href": "/en/dominica/dominica-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Dominican Privacy Redaction Helper",
+        "href": "/en/dominica/dominica-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets.",
+        "category": "privacy"
+      },
+      {
+        "title": "Dominican Data Quality Workbench",
+        "href": "/en/dominica/dominica-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican API Payload Auditor",
+        "href": "/en/dominica/dominica-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, banking, dates, amounts, and official boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican State / Province Code Mapper",
+        "href": "/en/dominica/dominica-state-province-code-mapper/",
+        "text": "Map local administrative area labels, abbreviations, and address payload hints for browser-only form routing.",
+        "category": "address"
+      },
+      {
+        "title": "Dominican Locality Autocomplete Fixture Builder",
+        "href": "/en/dominica/dominica-locality-autocomplete-fixture-builder/",
+        "text": "Build country-local city, district, postal, and address fixtures for autocomplete QA without live geocoding.",
+        "category": "address"
+      },
+      {
+        "title": "Dominican Government Form Field Normalizer",
+        "href": "/en/dominica/dominica-government-form-field-normalizer/",
+        "text": "Normalize local government-form labels, identifier fields, dates, and address lines before portal handoff.",
+        "category": "government"
+      },
+      {
+        "title": "Dominican Tax Invoice Field Auditor",
+        "href": "/en/dominica/dominica-tax-invoice-field-auditor/",
+        "text": "Audit invoice snippets for local tax IDs, currency, address, date, line totals, and official filing boundaries.",
+        "category": "tax"
+      },
+      {
+        "title": "Dominican Sales Tax / VAT Threshold Checklist",
+        "href": "/en/dominica/dominica-sales-tax-vat-threshold-checklist/",
+        "text": "Inspect revenue, registration, local tax labels, and threshold handoff notes without making legal conclusions.",
+        "category": "tax"
+      },
+      {
+        "title": "Dominican Withholding Tax Form Helper",
+        "href": "/en/dominica/dominica-withholding-tax-form-helper/",
+        "text": "Prepare local withholding-tax form evidence, payee IDs, dates, amounts, and review notes for finance teams.",
+        "category": "tax"
+      },
+      {
+        "title": "Dominican Customs / Import Code Inspector",
+        "href": "/en/dominica/dominica-customs-import-code-inspector/",
+        "text": "Inspect customs references, importer IDs, invoice fields, currency, and shipment handoff evidence.",
+        "category": "logistics"
+      },
+      {
+        "title": "Dominican Payroll ID Intake Helper",
+        "href": "/en/dominica/dominica-payroll-id-intake-helper/",
+        "text": "Check employee intake payloads for local personal IDs, tax IDs, dates, address, and privacy-safe masking.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Dominican Benefits / Social Number Redaction Helper",
+        "href": "/en/dominica/dominica-benefits-social-number-redaction/",
+        "text": "Mask local social, benefits, tax, phone, and address evidence before logs, tickets, or screenshots.",
+        "category": "privacy"
+      },
+      {
+        "title": "Dominican Business License Checklist",
+        "href": "/en/dominica/dominica-business-license-checklist/",
+        "text": "Audit local business-license intake evidence, registry IDs, addresses, tax labels, and official lookup boundaries.",
+        "category": "government"
+      },
+      {
+        "title": "Dominican Ownership / KYB Payload Auditor",
+        "href": "/en/dominica/dominica-ownership-kyb-payload-auditor/",
+        "text": "Inspect KYB payloads for company IDs, beneficial-owner fields, addresses, dates, and masked evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican Sanctions Screening Payload Helper",
+        "href": "/en/dominica/dominica-sanctions-screening-payload-helper/",
+        "text": "Prepare offline screening payloads with names, addresses, identifiers, and no false match-status claims.",
+        "category": "privacy"
+      },
+      {
+        "title": "Dominican Bank Routing Handoff Checklist",
+        "href": "/en/dominica/dominica-bank-routing-handoff-checklist/",
+        "text": "Check routing, account, branch, currency, payment reference, and provider-boundary fields before bank handoff.",
+        "category": "finance"
+      },
+      {
+        "title": "Dominican Payout Recipient Validator",
+        "href": "/en/dominica/dominica-payout-recipient-validator/",
+        "text": "Inspect payout recipient payloads for local name, account, tax, phone, address, currency, and retry-safe evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Dominican Refund Reference Builder",
+        "href": "/en/dominica/dominica-refund-reference-builder/",
+        "text": "Build local refund references from invoice, customer, payment, amount, and reconciliation fields.",
+        "category": "finance"
+      },
+      {
+        "title": "Dominican Chargeback Evidence Pack Helper",
+        "href": "/en/dominica/dominica-chargeback-evidence-pack-helper/",
+        "text": "Organize browser-only payment, invoice, address, date, and customer evidence for dispute workflows.",
+        "category": "finance"
+      },
+      {
+        "title": "Dominican Ecommerce Checkout Locale Auditor",
+        "href": "/en/dominica/dominica-ecommerce-checkout-locale-auditor/",
+        "text": "Audit checkout payloads for local address, phone, postal, currency, date, and tax-field assumptions.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican Shipping Label Normalizer",
+        "href": "/en/dominica/dominica-shipping-label-normalizer/",
+        "text": "Normalize local shipping-label blocks, recipient names, postal/locality fields, phone, and delivery notes.",
+        "category": "logistics"
+      },
+      {
+        "title": "Dominican Customs Address Line Helper",
+        "href": "/en/dominica/dominica-customs-address-line-helper/",
+        "text": "Split exporter/importer address lines, locality, postal data, country code, and customs-safe payloads.",
+        "category": "logistics"
+      },
+      {
+        "title": "Dominican Vehicle Registration Format Helper",
+        "href": "/en/dominica/dominica-vehicle-registration-format-helper/",
+        "text": "Inspect vehicle-registration snippets, plate shapes, region hints, and official transport boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Dominican Driver License Format Helper",
+        "href": "/en/dominica/dominica-driver-license-format-helper/",
+        "text": "Inspect driving-license snippets, dates, document numbers, and privacy-safe evidence for transport intake.",
+        "category": "documents"
+      },
+      {
+        "title": "Dominican Utility Bill Address Proof Auditor",
+        "href": "/en/dominica/dominica-utility-bill-address-proof-auditor/",
+        "text": "Audit utility-bill OCR text for names, dates, address lines, account numbers, and masked support evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Dominican KYC Document Bundle Auditor",
+        "href": "/en/dominica/dominica-kyc-document-bundle-auditor/",
+        "text": "Check KYC document bundles for local ID, tax, address, date, file labels, and official-boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Dominican Invoice Number Format Helper",
+        "href": "/en/dominica/dominica-invoice-number-format-helper/",
+        "text": "Normalize invoice-number patterns, series, date fragments, counterparty hints, and duplicate-risk notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Dominican Receipt Tax Line Parser",
+        "href": "/en/dominica/dominica-receipt-tax-line-parser/",
+        "text": "Parse receipt text for tax labels, totals, currency, dates, and local decimal/grouping evidence.",
+        "category": "tax"
+      },
+      {
+        "title": "Dominican Phone Extension Normalizer",
+        "href": "/en/dominica/dominica-phone-extension-normalizer/",
+        "text": "Normalize local phone numbers with extension, country prefix, national blocks, and CRM-safe output.",
+        "category": "address"
+      },
+      {
+        "title": "Dominican Business Hours / Time Zone Helper",
+        "href": "/en/dominica/dominica-timezone-business-hours-helper/",
+        "text": "Preview local business-hour windows, date cutoffs, support handoffs, and timezone caveats.",
+        "category": "localization"
+      },
+      {
+        "title": "Dominican Holiday Calendar Fixture Builder",
+        "href": "/en/dominica/dominica-holiday-calendar-fixture-builder/",
+        "text": "Build local calendar fixtures and holiday-review payloads without claiming official holiday coverage.",
+        "category": "localization"
+      },
+      {
+        "title": "Dominican Name Parser / Transliteration Helper",
+        "href": "/en/dominica/dominica-name-parser-transliteration-helper/",
+        "text": "Split local personal/company names, accents, casing, transliteration, and search-key fixtures.",
+        "category": "localization"
+      },
+      {
+        "title": "Dominican Email Domain Locality Checker",
+        "href": "/en/dominica/dominica-email-domain-locality-checker/",
+        "text": "Inspect email/domain strings for local TLD hints, plus addressing, masking, and no-deliverability boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican Form Autofill Fixture Generator",
+        "href": "/en/dominica/dominica-form-autofill-fixture-generator/",
+        "text": "Generate browser-only local form fixtures for IDs, tax, phone, postal, address, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican Webhook Local Payload Fixture",
+        "href": "/en/dominica/dominica-webhook-local-payload-fixture/",
+        "text": "Build webhook payload fixtures with local IDs, tax, currency, dates, masked fields, and replay metadata.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican GraphQL Input Auditor",
+        "href": "/en/dominica/dominica-graphql-input-auditor/",
+        "text": "Audit GraphQL-style input objects for local identifiers, tax fields, dates, amounts, and nullable hazards.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican OpenAPI Country Schema Helper",
+        "href": "/en/dominica/dominica-openapi-country-schema-helper/",
+        "text": "Draft and inspect OpenAPI schema snippets for local identifiers, address, phone, payment, and tax fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican SQL Seed Data Builder",
+        "href": "/en/dominica/dominica-sql-seed-data-builder/",
+        "text": "Build local seed-data rows for identifiers, tax, address, phone, amount, and bank fixtures.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican JSON Schema Local Rules Helper",
+        "href": "/en/dominica/dominica-json-schema-local-rules-helper/",
+        "text": "Inspect JSON Schema rules for local field names, patterns, examples, and official-boundary copy.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican Test Case Matrix Builder",
+        "href": "/en/dominica/dominica-test-case-matrix-builder/",
+        "text": "Generate valid, invalid, short, wrong-country, masking, and boundary test-case matrices for local workflows.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Dominican Data Retention Policy Helper",
+        "href": "/en/dominica/dominica-data-retention-policy-helper/",
+        "text": "Organize local retention, masking, audit-log, and deletion checklist fields without giving legal advice.",
+        "category": "privacy"
+      },
+      {
+        "title": "Dominican Accessibility Form Label Auditor",
+        "href": "/en/dominica/dominica-accessibility-form-label-auditor/",
+        "text": "Audit local form labels, autocomplete names, error copy, and screen-reader hints for identifier workflows.",
+        "category": "developer-tools"
+      }
+    ]
+  }
+}

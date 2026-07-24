@@ -1,9 +1,9 @@
 {
   "id": "slovenia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/slovenia-outline.svg",
+    "outlineSrc": "/assets/images/countries/slovenia-outline.png",
     "outlineAlt": "Slovenia country outline",
-    "mapSrc": "/assets/images/countries/slovenia-location.svg",
+    "mapSrc": "/assets/images/countries/slovenia-location.png",
     "mapAlt": "World map with Slovenia location marker",
     "mapMarker": {
       "x": 51,

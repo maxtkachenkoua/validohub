@@ -1,9 +1,9 @@
 {
   "id": "united-kingdom",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/united-kingdom-outline.svg",
+    "outlineSrc": "/assets/images/countries/united-kingdom-outline.png",
     "outlineAlt": "United Kingdom country outline",
-    "mapSrc": "/assets/images/countries/united-kingdom-location.svg",
+    "mapSrc": "/assets/images/countries/united-kingdom-location.png",
     "mapAlt": "World map with United Kingdom location marker",
     "mapMarker": {
       "x": 43,

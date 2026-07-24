@@ -1,0 +1,673 @@
+{
+  "id": "panama",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/panama-outline.png",
+    "outlineAlt": "Panama country outline",
+    "mapSrc": "/assets/images/countries/panama-location.png",
+    "mapAlt": "Panama location map",
+    "mapMarker": {
+      "x": 34,
+      "y": 48,
+      "label": "Panama City"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "panama",
+    "flag": "🇵🇦",
+    "name": "Panama",
+    "nativeName": "Panama",
+    "iso2": "PA",
+    "iso3": "PAN",
+    "continent": "North America",
+    "region": "North America / Caribbean and Central America",
+    "language": "Spanish",
+    "currency": "PAB/USD",
+    "currencyName": "balboa / US dollar",
+    "status": "available",
+    "summary": "Premium Panama developer hub for Cedula, RUC / DV, ITBMS / RUC, codigo postal, phone, domestic account, SWIFT/BIC, payment reference, locale, privacy, documents, banking, tax, and browser-only data-quality workflows.",
+    "identifiers": [
+      "Cedula",
+      "RUC / DV",
+      "ITBMS / RUC",
+      "codigo postal",
+      "phone"
+    ],
+    "payments": [
+      "domestic account",
+      "SWIFT/BIC",
+      "payment reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Panamanian Cedula Validator",
+      "Panamanian RUC / DV Validator",
+      "Panamanian ITBMS / RUC Inspector",
+      "Panamanian Company Onboarding Auditor",
+      "Panamanian Business Registry Readiness Helper",
+      "Panamanian ID Card Format Helper",
+      "Panamanian MRZ / Passport Parser",
+      "Panamanian domestic account Inspector",
+      "Panamanian BIC / SWIFT Inspector",
+      "Panamanian domestic payment reference Helper",
+      "Panamanian Remittance Text Builder",
+      "Panamanian Bank Statement Parser",
+      "Panamanian PAB/USD Decimal Currency Formatter",
+      "Panamanian codigo postal Validator",
+      "Panamanian Address Normalizer",
+      "Panamanian Phone Number Validator",
+      "Panamanian Date Locale Formatter",
+      "Panamanian CSV Locale Normalizer",
+      "Panamanian Document OCR Fixer",
+      "Panamanian Privacy Redaction Helper",
+      "Panamanian Data Quality Workbench",
+      "Panamanian API Payload Auditor",
+      "Panamanian State / Province Code Mapper",
+      "Panamanian Locality Autocomplete Fixture Builder",
+      "Panamanian Government Form Field Normalizer",
+      "Panamanian Tax Invoice Field Auditor",
+      "Panamanian Sales Tax / VAT Threshold Checklist",
+      "Panamanian Withholding Tax Form Helper",
+      "Panamanian Customs / Import Code Inspector",
+      "Panamanian Payroll ID Intake Helper",
+      "Panamanian Benefits / Social Number Redaction Helper",
+      "Panamanian Business License Checklist",
+      "Panamanian Ownership / KYB Payload Auditor",
+      "Panamanian Sanctions Screening Payload Helper",
+      "Panamanian Bank Routing Handoff Checklist",
+      "Panamanian Payout Recipient Validator",
+      "Panamanian Refund Reference Builder",
+      "Panamanian Chargeback Evidence Pack Helper",
+      "Panamanian Ecommerce Checkout Locale Auditor",
+      "Panamanian Shipping Label Normalizer",
+      "Panamanian Customs Address Line Helper",
+      "Panamanian Vehicle Registration Format Helper",
+      "Panamanian Driver License Format Helper",
+      "Panamanian Utility Bill Address Proof Auditor",
+      "Panamanian KYC Document Bundle Auditor",
+      "Panamanian Invoice Number Format Helper",
+      "Panamanian Receipt Tax Line Parser",
+      "Panamanian Phone Extension Normalizer",
+      "Panamanian Business Hours / Time Zone Helper",
+      "Panamanian Holiday Calendar Fixture Builder",
+      "Panamanian Name Parser / Transliteration Helper",
+      "Panamanian Email Domain Locality Checker",
+      "Panamanian Form Autofill Fixture Generator",
+      "Panamanian Webhook Local Payload Fixture",
+      "Panamanian GraphQL Input Auditor",
+      "Panamanian OpenAPI Country Schema Helper",
+      "Panamanian SQL Seed Data Builder",
+      "Panamanian JSON Schema Local Rules Helper",
+      "Panamanian Test Case Matrix Builder",
+      "Panamanian Data Retention Policy Helper",
+      "Panamanian Accessibility Form Label Auditor"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live tax/registry status confirmation",
+      "Live bank ownership lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 34,
+      "y": 48
+    },
+    "searchHints": [
+      "Cedula",
+      "RUC / DV",
+      "ITBMS / RUC",
+      "codigo postal",
+      "phone",
+      "domestic account",
+      "SWIFT/BIC",
+      "payment reference"
+    ]
+  },
+  "hub": {
+    "flag": "🇵🇦",
+    "name": "Panama",
+    "badge": "Premium Panama developer suite",
+    "description": "Developer intelligence and browser-only workbenches for panamanian identifiers, tax, payments, banking, locale conventions, privacy, documents, and integration QA.",
+    "metadata": {
+      "nativeName": "Panama",
+      "population": "approximately 4.6M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Panama City",
+      "continent": "North America",
+      "region": "North America / Caribbean and Central America",
+      "languages": "Spanish",
+      "currency": "balboa / US dollar",
+      "currencyCode": "PAB/USD",
+      "callingCode": "+507",
+      "internetTld": ".pa",
+      "drivingSide": "Right",
+      "iso2": "PA",
+      "iso3": "PAN",
+      "isoNumeric": "591",
+      "locale": "es",
+      "icuLocale": "es",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour where used; local display varies",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, locality/administrative area, postal code, Panama",
+      "postalCodeFormat": "codigo postal",
+      "primaryTimeZone": "America/Panama",
+      "measurementSystem": "Metric-first",
+      "paperSize": "Letter/A4 varies by workflow",
+      "emergencyNumber": "local emergency number varies",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "es",
+      "cldrLocale": "es",
+      "metricVsImperial": "Metric-first"
+    },
+    "visualIdentity": {
+      "countryId": "panama",
+      "outlineLabel": "Panama outline",
+      "mapLabel": "Panama in North America",
+      "continentBadge": "North America",
+      "flagLabel": "Panama flag",
+      "heroAccentPrimary": "0 82 147",
+      "heroAccentSecondary": "210 16 52",
+      "heroAccentTertiary": "255 255 255"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "61",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Cedula and RUC / DV",
+        "text": "Local identifier workbenches split body, prefixes, local vocabulary, and official boundaries."
+      },
+      {
+        "title": "ITBMS / RUC and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, privacy, OCR, locale, and data-quality tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Panama registry, tax, bank, postal, identity, or legal status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /panama/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring local separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing jurisdictions",
+        "text": "Do not reuse non-Panamanian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry lookup remains the source of truth for Panama.",
+        "status": "official boundary"
+      },
+      {
+        "title": "ITBMS / RUC",
+        "text": "Tax validity and filing acceptance require the responsible tax authority or provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "local privacy/data protection",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "Cedula, RUC / DV, ITBMS / RUC, codigo postal, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "domestic account, SWIFT/BIC, payment reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "es / es; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "PAB/USD amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "Cedula, RUC / DV, codigo postal, phone, address, and local banking labels need jurisdiction-specific copy.",
+        "status": "available"
+      }
+    ],
+    "searchHints": [
+      "Cedula",
+      "RUC / DV",
+      "ITBMS / RUC",
+      "codigo postal",
+      "phone",
+      "domestic account",
+      "SWIFT/BIC",
+      "payment reference"
+    ],
+    "routes": [
+      {
+        "title": "Panamanian Cedula Validator",
+        "href": "/en/panama/panama-cedula-validator/",
+        "text": "Validate local personal identifier shape, split visible evidence, and keep official identity status out of browser-only results.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Panamanian RUC / DV Validator",
+        "href": "/en/panama/panama-ruc-dv-validator/",
+        "text": "Inspect company or registry identifier shape, prefixes, local vocabulary, and official registry handoff boundaries.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Panamanian ITBMS / RUC Inspector",
+        "href": "/en/panama/panama-tax-id-inspector/",
+        "text": "Normalize tax identifier snippets, inspect local body evidence, and prepare official tax-authority handoff notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Panamanian Company Onboarding Auditor",
+        "href": "/en/panama/panama-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for identifier, address, banking, tax, and privacy readiness.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian Business Registry Readiness Helper",
+        "href": "/en/panama/panama-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or filing workflow.",
+        "category": "government"
+      },
+      {
+        "title": "Panamanian ID Card Format Helper",
+        "href": "/en/panama/panama-id-card-format-helper/",
+        "text": "Inspect identity-card snippets, document numbers, dates, and privacy boundaries without proving identity.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Panamanian MRZ / Passport Parser",
+        "href": "/en/panama/panama-passport-mrz-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Panamanian domestic account Inspector",
+        "href": "/en/panama/panama-domestic-bank-account-inspector/",
+        "text": "Inspect domestic bank account slices, routing blocks, account text, and payment-provider boundaries.",
+        "category": "finance"
+      },
+      {
+        "title": "Panamanian BIC / SWIFT Inspector",
+        "href": "/en/panama/panama-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for cross-border banking integrations.",
+        "category": "finance"
+      },
+      {
+        "title": "Panamanian domestic payment reference Helper",
+        "href": "/en/panama/panama-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting.",
+        "category": "finance"
+      },
+      {
+        "title": "Panamanian Remittance Text Builder",
+        "href": "/en/panama/panama-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, tax, and local payment reference evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Panamanian Bank Statement Parser",
+        "href": "/en/panama/panama-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, counterparty, reference, and local decimal conventions.",
+        "category": "finance"
+      },
+      {
+        "title": "Panamanian PAB/USD Decimal Currency Formatter",
+        "href": "/en/panama/panama-currency-decimal-formatter/",
+        "text": "Normalize local amount strings, decimal separators, grouping, and API-safe numeric previews.",
+        "category": "finance"
+      },
+      {
+        "title": "Panamanian codigo postal Validator",
+        "href": "/en/panama/panama-postal-code-validator/",
+        "text": "Validate postal/address locality shape, split locality hints, and preserve official postal lookup boundaries.",
+        "category": "address"
+      },
+      {
+        "title": "Panamanian Address Normalizer",
+        "href": "/en/panama/panama-address-normalizer/",
+        "text": "Normalize street, locality, administrative area, postal code, and country lines for local forms.",
+        "category": "address"
+      },
+      {
+        "title": "Panamanian Phone Number Validator",
+        "href": "/en/panama/panama-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes.",
+        "category": "address"
+      },
+      {
+        "title": "Panamanian Date Locale Formatter",
+        "href": "/en/panama/panama-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics.",
+        "category": "localization"
+      },
+      {
+        "title": "Panamanian CSV Locale Normalizer",
+        "href": "/en/panama/panama-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for decimal, date, postal, phone, tax, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian Document OCR Fixer",
+        "href": "/en/panama/panama-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Panamanian Privacy Redaction Helper",
+        "href": "/en/panama/panama-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets.",
+        "category": "privacy"
+      },
+      {
+        "title": "Panamanian Data Quality Workbench",
+        "href": "/en/panama/panama-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian API Payload Auditor",
+        "href": "/en/panama/panama-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, banking, dates, amounts, and official boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian State / Province Code Mapper",
+        "href": "/en/panama/panama-state-province-code-mapper/",
+        "text": "Map local administrative area labels, abbreviations, and address payload hints for browser-only form routing.",
+        "category": "address"
+      },
+      {
+        "title": "Panamanian Locality Autocomplete Fixture Builder",
+        "href": "/en/panama/panama-locality-autocomplete-fixture-builder/",
+        "text": "Build country-local city, district, postal, and address fixtures for autocomplete QA without live geocoding.",
+        "category": "address"
+      },
+      {
+        "title": "Panamanian Government Form Field Normalizer",
+        "href": "/en/panama/panama-government-form-field-normalizer/",
+        "text": "Normalize local government-form labels, identifier fields, dates, and address lines before portal handoff.",
+        "category": "government"
+      },
+      {
+        "title": "Panamanian Tax Invoice Field Auditor",
+        "href": "/en/panama/panama-tax-invoice-field-auditor/",
+        "text": "Audit invoice snippets for local tax IDs, currency, address, date, line totals, and official filing boundaries.",
+        "category": "tax"
+      },
+      {
+        "title": "Panamanian Sales Tax / VAT Threshold Checklist",
+        "href": "/en/panama/panama-sales-tax-vat-threshold-checklist/",
+        "text": "Inspect revenue, registration, local tax labels, and threshold handoff notes without making legal conclusions.",
+        "category": "tax"
+      },
+      {
+        "title": "Panamanian Withholding Tax Form Helper",
+        "href": "/en/panama/panama-withholding-tax-form-helper/",
+        "text": "Prepare local withholding-tax form evidence, payee IDs, dates, amounts, and review notes for finance teams.",
+        "category": "tax"
+      },
+      {
+        "title": "Panamanian Customs / Import Code Inspector",
+        "href": "/en/panama/panama-customs-import-code-inspector/",
+        "text": "Inspect customs references, importer IDs, invoice fields, currency, and shipment handoff evidence.",
+        "category": "logistics"
+      },
+      {
+        "title": "Panamanian Payroll ID Intake Helper",
+        "href": "/en/panama/panama-payroll-id-intake-helper/",
+        "text": "Check employee intake payloads for local personal IDs, tax IDs, dates, address, and privacy-safe masking.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Panamanian Benefits / Social Number Redaction Helper",
+        "href": "/en/panama/panama-benefits-social-number-redaction/",
+        "text": "Mask local social, benefits, tax, phone, and address evidence before logs, tickets, or screenshots.",
+        "category": "privacy"
+      },
+      {
+        "title": "Panamanian Business License Checklist",
+        "href": "/en/panama/panama-business-license-checklist/",
+        "text": "Audit local business-license intake evidence, registry IDs, addresses, tax labels, and official lookup boundaries.",
+        "category": "government"
+      },
+      {
+        "title": "Panamanian Ownership / KYB Payload Auditor",
+        "href": "/en/panama/panama-ownership-kyb-payload-auditor/",
+        "text": "Inspect KYB payloads for company IDs, beneficial-owner fields, addresses, dates, and masked evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian Sanctions Screening Payload Helper",
+        "href": "/en/panama/panama-sanctions-screening-payload-helper/",
+        "text": "Prepare offline screening payloads with names, addresses, identifiers, and no false match-status claims.",
+        "category": "privacy"
+      },
+      {
+        "title": "Panamanian Bank Routing Handoff Checklist",
+        "href": "/en/panama/panama-bank-routing-handoff-checklist/",
+        "text": "Check routing, account, branch, currency, payment reference, and provider-boundary fields before bank handoff.",
+        "category": "finance"
+      },
+      {
+        "title": "Panamanian Payout Recipient Validator",
+        "href": "/en/panama/panama-payout-recipient-validator/",
+        "text": "Inspect payout recipient payloads for local name, account, tax, phone, address, currency, and retry-safe evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Panamanian Refund Reference Builder",
+        "href": "/en/panama/panama-refund-reference-builder/",
+        "text": "Build local refund references from invoice, customer, payment, amount, and reconciliation fields.",
+        "category": "finance"
+      },
+      {
+        "title": "Panamanian Chargeback Evidence Pack Helper",
+        "href": "/en/panama/panama-chargeback-evidence-pack-helper/",
+        "text": "Organize browser-only payment, invoice, address, date, and customer evidence for dispute workflows.",
+        "category": "finance"
+      },
+      {
+        "title": "Panamanian Ecommerce Checkout Locale Auditor",
+        "href": "/en/panama/panama-ecommerce-checkout-locale-auditor/",
+        "text": "Audit checkout payloads for local address, phone, postal, currency, date, and tax-field assumptions.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian Shipping Label Normalizer",
+        "href": "/en/panama/panama-shipping-label-normalizer/",
+        "text": "Normalize local shipping-label blocks, recipient names, postal/locality fields, phone, and delivery notes.",
+        "category": "logistics"
+      },
+      {
+        "title": "Panamanian Customs Address Line Helper",
+        "href": "/en/panama/panama-customs-address-line-helper/",
+        "text": "Split exporter/importer address lines, locality, postal data, country code, and customs-safe payloads.",
+        "category": "logistics"
+      },
+      {
+        "title": "Panamanian Vehicle Registration Format Helper",
+        "href": "/en/panama/panama-vehicle-registration-format-helper/",
+        "text": "Inspect vehicle-registration snippets, plate shapes, region hints, and official transport boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Panamanian Driver License Format Helper",
+        "href": "/en/panama/panama-driver-license-format-helper/",
+        "text": "Inspect driving-license snippets, dates, document numbers, and privacy-safe evidence for transport intake.",
+        "category": "documents"
+      },
+      {
+        "title": "Panamanian Utility Bill Address Proof Auditor",
+        "href": "/en/panama/panama-utility-bill-address-proof-auditor/",
+        "text": "Audit utility-bill OCR text for names, dates, address lines, account numbers, and masked support evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Panamanian KYC Document Bundle Auditor",
+        "href": "/en/panama/panama-kyc-document-bundle-auditor/",
+        "text": "Check KYC document bundles for local ID, tax, address, date, file labels, and official-boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Panamanian Invoice Number Format Helper",
+        "href": "/en/panama/panama-invoice-number-format-helper/",
+        "text": "Normalize invoice-number patterns, series, date fragments, counterparty hints, and duplicate-risk notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Panamanian Receipt Tax Line Parser",
+        "href": "/en/panama/panama-receipt-tax-line-parser/",
+        "text": "Parse receipt text for tax labels, totals, currency, dates, and local decimal/grouping evidence.",
+        "category": "tax"
+      },
+      {
+        "title": "Panamanian Phone Extension Normalizer",
+        "href": "/en/panama/panama-phone-extension-normalizer/",
+        "text": "Normalize local phone numbers with extension, country prefix, national blocks, and CRM-safe output.",
+        "category": "address"
+      },
+      {
+        "title": "Panamanian Business Hours / Time Zone Helper",
+        "href": "/en/panama/panama-timezone-business-hours-helper/",
+        "text": "Preview local business-hour windows, date cutoffs, support handoffs, and timezone caveats.",
+        "category": "localization"
+      },
+      {
+        "title": "Panamanian Holiday Calendar Fixture Builder",
+        "href": "/en/panama/panama-holiday-calendar-fixture-builder/",
+        "text": "Build local calendar fixtures and holiday-review payloads without claiming official holiday coverage.",
+        "category": "localization"
+      },
+      {
+        "title": "Panamanian Name Parser / Transliteration Helper",
+        "href": "/en/panama/panama-name-parser-transliteration-helper/",
+        "text": "Split local personal/company names, accents, casing, transliteration, and search-key fixtures.",
+        "category": "localization"
+      },
+      {
+        "title": "Panamanian Email Domain Locality Checker",
+        "href": "/en/panama/panama-email-domain-locality-checker/",
+        "text": "Inspect email/domain strings for local TLD hints, plus addressing, masking, and no-deliverability boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian Form Autofill Fixture Generator",
+        "href": "/en/panama/panama-form-autofill-fixture-generator/",
+        "text": "Generate browser-only local form fixtures for IDs, tax, phone, postal, address, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian Webhook Local Payload Fixture",
+        "href": "/en/panama/panama-webhook-local-payload-fixture/",
+        "text": "Build webhook payload fixtures with local IDs, tax, currency, dates, masked fields, and replay metadata.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian GraphQL Input Auditor",
+        "href": "/en/panama/panama-graphql-input-auditor/",
+        "text": "Audit GraphQL-style input objects for local identifiers, tax fields, dates, amounts, and nullable hazards.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian OpenAPI Country Schema Helper",
+        "href": "/en/panama/panama-openapi-country-schema-helper/",
+        "text": "Draft and inspect OpenAPI schema snippets for local identifiers, address, phone, payment, and tax fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian SQL Seed Data Builder",
+        "href": "/en/panama/panama-sql-seed-data-builder/",
+        "text": "Build local seed-data rows for identifiers, tax, address, phone, amount, and bank fixtures.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian JSON Schema Local Rules Helper",
+        "href": "/en/panama/panama-json-schema-local-rules-helper/",
+        "text": "Inspect JSON Schema rules for local field names, patterns, examples, and official-boundary copy.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian Test Case Matrix Builder",
+        "href": "/en/panama/panama-test-case-matrix-builder/",
+        "text": "Generate valid, invalid, short, wrong-country, masking, and boundary test-case matrices for local workflows.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Panamanian Data Retention Policy Helper",
+        "href": "/en/panama/panama-data-retention-policy-helper/",
+        "text": "Organize local retention, masking, audit-log, and deletion checklist fields without giving legal advice.",
+        "category": "privacy"
+      },
+      {
+        "title": "Panamanian Accessibility Form Label Auditor",
+        "href": "/en/panama/panama-accessibility-form-label-auditor/",
+        "text": "Audit local form labels, autocomplete names, error copy, and screen-reader hints for identifier workflows.",
+        "category": "developer-tools"
+      }
+    ]
+  }
+}

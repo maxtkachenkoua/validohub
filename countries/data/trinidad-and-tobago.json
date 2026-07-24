@@ -1,0 +1,673 @@
+{
+  "id": "trinidad-and-tobago",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/trinidad-and-tobago-outline.png",
+    "outlineAlt": "Trinidad and Tobago country outline",
+    "mapSrc": "/assets/images/countries/trinidad-and-tobago-location.png",
+    "mapAlt": "Trinidad and Tobago location map",
+    "mapMarker": {
+      "x": 34,
+      "y": 48,
+      "label": "Port of Spain"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "trinidad-and-tobago",
+    "flag": "🇹🇹",
+    "name": "Trinidad and Tobago",
+    "nativeName": "Trinidad and Tobago",
+    "iso2": "TT",
+    "iso3": "TTO",
+    "continent": "North America",
+    "region": "North America / Caribbean and Central America",
+    "language": "English",
+    "currency": "TTD",
+    "currencyName": "Trinidad and Tobago dollar",
+    "status": "available",
+    "summary": "Premium Trinidad and Tobago developer hub for national ID, BIR number, VAT registration, postal code, phone, domestic bank account, SWIFT/BIC, payment reference, locale, privacy, documents, banking, tax, and browser-only data-quality workflows.",
+    "identifiers": [
+      "national ID",
+      "BIR number",
+      "VAT registration",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "domestic bank account",
+      "SWIFT/BIC",
+      "payment reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Trinidadian and Tobagonian national ID Validator",
+      "Trinidadian and Tobagonian BIR number Validator",
+      "Trinidadian and Tobagonian VAT registration Inspector",
+      "Trinidadian and Tobagonian Company Onboarding Auditor",
+      "Trinidadian and Tobagonian Business Registry Readiness Helper",
+      "Trinidadian and Tobagonian ID Card Format Helper",
+      "Trinidadian and Tobagonian MRZ / Passport Parser",
+      "Trinidadian and Tobagonian domestic bank account Inspector",
+      "Trinidadian and Tobagonian BIC / SWIFT Inspector",
+      "Trinidadian and Tobagonian domestic payment reference Helper",
+      "Trinidadian and Tobagonian Remittance Text Builder",
+      "Trinidadian and Tobagonian Bank Statement Parser",
+      "Trinidadian and Tobagonian TTD Decimal Currency Formatter",
+      "Trinidadian and Tobagonian postal code Validator",
+      "Trinidadian and Tobagonian Address Normalizer",
+      "Trinidadian and Tobagonian Phone Number Validator",
+      "Trinidadian and Tobagonian Date Locale Formatter",
+      "Trinidadian and Tobagonian CSV Locale Normalizer",
+      "Trinidadian and Tobagonian Document OCR Fixer",
+      "Trinidadian and Tobagonian Privacy Redaction Helper",
+      "Trinidadian and Tobagonian Data Quality Workbench",
+      "Trinidadian and Tobagonian API Payload Auditor",
+      "Trinidadian and Tobagonian State / Province Code Mapper",
+      "Trinidadian and Tobagonian Locality Autocomplete Fixture Builder",
+      "Trinidadian and Tobagonian Government Form Field Normalizer",
+      "Trinidadian and Tobagonian Tax Invoice Field Auditor",
+      "Trinidadian and Tobagonian Sales Tax / VAT Threshold Checklist",
+      "Trinidadian and Tobagonian Withholding Tax Form Helper",
+      "Trinidadian and Tobagonian Customs / Import Code Inspector",
+      "Trinidadian and Tobagonian Payroll ID Intake Helper",
+      "Trinidadian and Tobagonian Benefits / Social Number Redaction Helper",
+      "Trinidadian and Tobagonian Business License Checklist",
+      "Trinidadian and Tobagonian Ownership / KYB Payload Auditor",
+      "Trinidadian and Tobagonian Sanctions Screening Payload Helper",
+      "Trinidadian and Tobagonian Bank Routing Handoff Checklist",
+      "Trinidadian and Tobagonian Payout Recipient Validator",
+      "Trinidadian and Tobagonian Refund Reference Builder",
+      "Trinidadian and Tobagonian Chargeback Evidence Pack Helper",
+      "Trinidadian and Tobagonian Ecommerce Checkout Locale Auditor",
+      "Trinidadian and Tobagonian Shipping Label Normalizer",
+      "Trinidadian and Tobagonian Customs Address Line Helper",
+      "Trinidadian and Tobagonian Vehicle Registration Format Helper",
+      "Trinidadian and Tobagonian Driver License Format Helper",
+      "Trinidadian and Tobagonian Utility Bill Address Proof Auditor",
+      "Trinidadian and Tobagonian KYC Document Bundle Auditor",
+      "Trinidadian and Tobagonian Invoice Number Format Helper",
+      "Trinidadian and Tobagonian Receipt Tax Line Parser",
+      "Trinidadian and Tobagonian Phone Extension Normalizer",
+      "Trinidadian and Tobagonian Business Hours / Time Zone Helper",
+      "Trinidadian and Tobagonian Holiday Calendar Fixture Builder",
+      "Trinidadian and Tobagonian Name Parser / Transliteration Helper",
+      "Trinidadian and Tobagonian Email Domain Locality Checker",
+      "Trinidadian and Tobagonian Form Autofill Fixture Generator",
+      "Trinidadian and Tobagonian Webhook Local Payload Fixture",
+      "Trinidadian and Tobagonian GraphQL Input Auditor",
+      "Trinidadian and Tobagonian OpenAPI Country Schema Helper",
+      "Trinidadian and Tobagonian SQL Seed Data Builder",
+      "Trinidadian and Tobagonian JSON Schema Local Rules Helper",
+      "Trinidadian and Tobagonian Test Case Matrix Builder",
+      "Trinidadian and Tobagonian Data Retention Policy Helper",
+      "Trinidadian and Tobagonian Accessibility Form Label Auditor"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live tax/registry status confirmation",
+      "Live bank ownership lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 34,
+      "y": 48
+    },
+    "searchHints": [
+      "national ID",
+      "BIR number",
+      "VAT registration",
+      "postal code",
+      "phone",
+      "domestic bank account",
+      "SWIFT/BIC",
+      "payment reference"
+    ]
+  },
+  "hub": {
+    "flag": "🇹🇹",
+    "name": "Trinidad and Tobago",
+    "badge": "Premium Trinidad and Tobago developer suite",
+    "description": "Developer intelligence and browser-only workbenches for trinidadian and tobagonian identifiers, tax, payments, banking, locale conventions, privacy, documents, and integration QA.",
+    "metadata": {
+      "nativeName": "Trinidad and Tobago",
+      "population": "approximately 1.5M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Port of Spain",
+      "continent": "North America",
+      "region": "North America / Caribbean and Central America",
+      "languages": "English",
+      "currency": "Trinidad and Tobago dollar",
+      "currencyCode": "TTD",
+      "callingCode": "+1-868",
+      "internetTld": ".tt",
+      "drivingSide": "Right",
+      "iso2": "TT",
+      "iso3": "TTO",
+      "isoNumeric": "780",
+      "locale": "en",
+      "icuLocale": "en",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour where used; local display varies",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, locality/administrative area, postal code, Trinidad and Tobago",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "America/Port_of_Spain",
+      "measurementSystem": "Metric-first",
+      "paperSize": "Letter/A4 varies by workflow",
+      "emergencyNumber": "local emergency number varies",
+      "weekStarts": "Sunday/Monday by workflow",
+      "rtlSupport": "No",
+      "unicodeLocale": "en",
+      "cldrLocale": "en",
+      "metricVsImperial": "Metric-first"
+    },
+    "visualIdentity": {
+      "countryId": "trinidad-and-tobago",
+      "outlineLabel": "Trinidad and Tobago outline",
+      "mapLabel": "Trinidad and Tobago in North America",
+      "continentBadge": "North America",
+      "flagLabel": "Trinidad and Tobago flag",
+      "heroAccentPrimary": "206 17 38",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "17 24 39"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "61",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID and BIR number",
+        "text": "Local identifier workbenches split body, prefixes, local vocabulary, and official boundaries."
+      },
+      {
+        "title": "VAT registration and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, privacy, OCR, locale, and data-quality tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Trinidad and Tobago registry, tax, bank, postal, identity, or legal status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /trinidad-and-tobago/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring local separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing jurisdictions",
+        "text": "Do not reuse non-Trinidadian and Tobagonian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry lookup remains the source of truth for Trinidad and Tobago.",
+        "status": "official boundary"
+      },
+      {
+        "title": "VAT registration",
+        "text": "Tax validity and filing acceptance require the responsible tax authority or provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "local privacy/data protection",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "national ID, BIR number, VAT registration, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "domestic bank account, SWIFT/BIC, payment reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en / en; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "TTD amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID, BIR number, postal code, phone, address, and local banking labels need jurisdiction-specific copy.",
+        "status": "available"
+      }
+    ],
+    "searchHints": [
+      "national ID",
+      "BIR number",
+      "VAT registration",
+      "postal code",
+      "phone",
+      "domestic bank account",
+      "SWIFT/BIC",
+      "payment reference"
+    ],
+    "routes": [
+      {
+        "title": "Trinidadian and Tobagonian national ID Validator",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-national-id-validator/",
+        "text": "Validate local personal identifier shape, split visible evidence, and keep official identity status out of browser-only results.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Trinidadian and Tobagonian BIR number Validator",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-bir-number-validator/",
+        "text": "Inspect company or registry identifier shape, prefixes, local vocabulary, and official registry handoff boundaries.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Trinidadian and Tobagonian VAT registration Inspector",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-tax-id-inspector/",
+        "text": "Normalize tax identifier snippets, inspect local body evidence, and prepare official tax-authority handoff notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Company Onboarding Auditor",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for identifier, address, banking, tax, and privacy readiness.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Business Registry Readiness Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or filing workflow.",
+        "category": "government"
+      },
+      {
+        "title": "Trinidadian and Tobagonian ID Card Format Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-id-card-format-helper/",
+        "text": "Inspect identity-card snippets, document numbers, dates, and privacy boundaries without proving identity.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Trinidadian and Tobagonian MRZ / Passport Parser",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-passport-mrz-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Trinidadian and Tobagonian domestic bank account Inspector",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-domestic-bank-account-inspector/",
+        "text": "Inspect domestic bank account slices, routing blocks, account text, and payment-provider boundaries.",
+        "category": "finance"
+      },
+      {
+        "title": "Trinidadian and Tobagonian BIC / SWIFT Inspector",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for cross-border banking integrations.",
+        "category": "finance"
+      },
+      {
+        "title": "Trinidadian and Tobagonian domestic payment reference Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting.",
+        "category": "finance"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Remittance Text Builder",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, tax, and local payment reference evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Bank Statement Parser",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, counterparty, reference, and local decimal conventions.",
+        "category": "finance"
+      },
+      {
+        "title": "Trinidadian and Tobagonian TTD Decimal Currency Formatter",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-currency-decimal-formatter/",
+        "text": "Normalize local amount strings, decimal separators, grouping, and API-safe numeric previews.",
+        "category": "finance"
+      },
+      {
+        "title": "Trinidadian and Tobagonian postal code Validator",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-postal-code-validator/",
+        "text": "Validate postal/address locality shape, split locality hints, and preserve official postal lookup boundaries.",
+        "category": "address"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Address Normalizer",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-address-normalizer/",
+        "text": "Normalize street, locality, administrative area, postal code, and country lines for local forms.",
+        "category": "address"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Phone Number Validator",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes.",
+        "category": "address"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Date Locale Formatter",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics.",
+        "category": "localization"
+      },
+      {
+        "title": "Trinidadian and Tobagonian CSV Locale Normalizer",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for decimal, date, postal, phone, tax, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Document OCR Fixer",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Privacy Redaction Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets.",
+        "category": "privacy"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Data Quality Workbench",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian API Payload Auditor",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, banking, dates, amounts, and official boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian State / Province Code Mapper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-state-province-code-mapper/",
+        "text": "Map local administrative area labels, abbreviations, and address payload hints for browser-only form routing.",
+        "category": "address"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Locality Autocomplete Fixture Builder",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-locality-autocomplete-fixture-builder/",
+        "text": "Build country-local city, district, postal, and address fixtures for autocomplete QA without live geocoding.",
+        "category": "address"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Government Form Field Normalizer",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-government-form-field-normalizer/",
+        "text": "Normalize local government-form labels, identifier fields, dates, and address lines before portal handoff.",
+        "category": "government"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Tax Invoice Field Auditor",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-tax-invoice-field-auditor/",
+        "text": "Audit invoice snippets for local tax IDs, currency, address, date, line totals, and official filing boundaries.",
+        "category": "tax"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Sales Tax / VAT Threshold Checklist",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-sales-tax-vat-threshold-checklist/",
+        "text": "Inspect revenue, registration, local tax labels, and threshold handoff notes without making legal conclusions.",
+        "category": "tax"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Withholding Tax Form Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-withholding-tax-form-helper/",
+        "text": "Prepare local withholding-tax form evidence, payee IDs, dates, amounts, and review notes for finance teams.",
+        "category": "tax"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Customs / Import Code Inspector",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-customs-import-code-inspector/",
+        "text": "Inspect customs references, importer IDs, invoice fields, currency, and shipment handoff evidence.",
+        "category": "logistics"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Payroll ID Intake Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-payroll-id-intake-helper/",
+        "text": "Check employee intake payloads for local personal IDs, tax IDs, dates, address, and privacy-safe masking.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Benefits / Social Number Redaction Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-benefits-social-number-redaction/",
+        "text": "Mask local social, benefits, tax, phone, and address evidence before logs, tickets, or screenshots.",
+        "category": "privacy"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Business License Checklist",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-business-license-checklist/",
+        "text": "Audit local business-license intake evidence, registry IDs, addresses, tax labels, and official lookup boundaries.",
+        "category": "government"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Ownership / KYB Payload Auditor",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-ownership-kyb-payload-auditor/",
+        "text": "Inspect KYB payloads for company IDs, beneficial-owner fields, addresses, dates, and masked evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Sanctions Screening Payload Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-sanctions-screening-payload-helper/",
+        "text": "Prepare offline screening payloads with names, addresses, identifiers, and no false match-status claims.",
+        "category": "privacy"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Bank Routing Handoff Checklist",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-bank-routing-handoff-checklist/",
+        "text": "Check routing, account, branch, currency, payment reference, and provider-boundary fields before bank handoff.",
+        "category": "finance"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Payout Recipient Validator",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-payout-recipient-validator/",
+        "text": "Inspect payout recipient payloads for local name, account, tax, phone, address, currency, and retry-safe evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Refund Reference Builder",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-refund-reference-builder/",
+        "text": "Build local refund references from invoice, customer, payment, amount, and reconciliation fields.",
+        "category": "finance"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Chargeback Evidence Pack Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-chargeback-evidence-pack-helper/",
+        "text": "Organize browser-only payment, invoice, address, date, and customer evidence for dispute workflows.",
+        "category": "finance"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Ecommerce Checkout Locale Auditor",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-ecommerce-checkout-locale-auditor/",
+        "text": "Audit checkout payloads for local address, phone, postal, currency, date, and tax-field assumptions.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Shipping Label Normalizer",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-shipping-label-normalizer/",
+        "text": "Normalize local shipping-label blocks, recipient names, postal/locality fields, phone, and delivery notes.",
+        "category": "logistics"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Customs Address Line Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-customs-address-line-helper/",
+        "text": "Split exporter/importer address lines, locality, postal data, country code, and customs-safe payloads.",
+        "category": "logistics"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Vehicle Registration Format Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-vehicle-registration-format-helper/",
+        "text": "Inspect vehicle-registration snippets, plate shapes, region hints, and official transport boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Driver License Format Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-driver-license-format-helper/",
+        "text": "Inspect driving-license snippets, dates, document numbers, and privacy-safe evidence for transport intake.",
+        "category": "documents"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Utility Bill Address Proof Auditor",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-utility-bill-address-proof-auditor/",
+        "text": "Audit utility-bill OCR text for names, dates, address lines, account numbers, and masked support evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Trinidadian and Tobagonian KYC Document Bundle Auditor",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-kyc-document-bundle-auditor/",
+        "text": "Check KYC document bundles for local ID, tax, address, date, file labels, and official-boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Invoice Number Format Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-invoice-number-format-helper/",
+        "text": "Normalize invoice-number patterns, series, date fragments, counterparty hints, and duplicate-risk notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Receipt Tax Line Parser",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-receipt-tax-line-parser/",
+        "text": "Parse receipt text for tax labels, totals, currency, dates, and local decimal/grouping evidence.",
+        "category": "tax"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Phone Extension Normalizer",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-phone-extension-normalizer/",
+        "text": "Normalize local phone numbers with extension, country prefix, national blocks, and CRM-safe output.",
+        "category": "address"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Business Hours / Time Zone Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-timezone-business-hours-helper/",
+        "text": "Preview local business-hour windows, date cutoffs, support handoffs, and timezone caveats.",
+        "category": "localization"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Holiday Calendar Fixture Builder",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-holiday-calendar-fixture-builder/",
+        "text": "Build local calendar fixtures and holiday-review payloads without claiming official holiday coverage.",
+        "category": "localization"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Name Parser / Transliteration Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-name-parser-transliteration-helper/",
+        "text": "Split local personal/company names, accents, casing, transliteration, and search-key fixtures.",
+        "category": "localization"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Email Domain Locality Checker",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-email-domain-locality-checker/",
+        "text": "Inspect email/domain strings for local TLD hints, plus addressing, masking, and no-deliverability boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Form Autofill Fixture Generator",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-form-autofill-fixture-generator/",
+        "text": "Generate browser-only local form fixtures for IDs, tax, phone, postal, address, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Webhook Local Payload Fixture",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-webhook-local-payload-fixture/",
+        "text": "Build webhook payload fixtures with local IDs, tax, currency, dates, masked fields, and replay metadata.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian GraphQL Input Auditor",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-graphql-input-auditor/",
+        "text": "Audit GraphQL-style input objects for local identifiers, tax fields, dates, amounts, and nullable hazards.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian OpenAPI Country Schema Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-openapi-country-schema-helper/",
+        "text": "Draft and inspect OpenAPI schema snippets for local identifiers, address, phone, payment, and tax fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian SQL Seed Data Builder",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-sql-seed-data-builder/",
+        "text": "Build local seed-data rows for identifiers, tax, address, phone, amount, and bank fixtures.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian JSON Schema Local Rules Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-json-schema-local-rules-helper/",
+        "text": "Inspect JSON Schema rules for local field names, patterns, examples, and official-boundary copy.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Test Case Matrix Builder",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-test-case-matrix-builder/",
+        "text": "Generate valid, invalid, short, wrong-country, masking, and boundary test-case matrices for local workflows.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Data Retention Policy Helper",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-data-retention-policy-helper/",
+        "text": "Organize local retention, masking, audit-log, and deletion checklist fields without giving legal advice.",
+        "category": "privacy"
+      },
+      {
+        "title": "Trinidadian and Tobagonian Accessibility Form Label Auditor",
+        "href": "/en/trinidad-and-tobago/trinidad-and-tobago-accessibility-form-label-auditor/",
+        "text": "Audit local form labels, autocomplete names, error copy, and screen-reader hints for identifier workflows.",
+        "category": "developer-tools"
+      }
+    ]
+  }
+}

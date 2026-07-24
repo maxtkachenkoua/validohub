@@ -1,9 +1,9 @@
 {
   "id": "switzerland",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/switzerland-outline.svg",
+    "outlineSrc": "/assets/images/countries/switzerland-outline.png",
     "outlineAlt": "Switzerland country outline",
-    "mapSrc": "/assets/images/countries/switzerland-location.svg",
+    "mapSrc": "/assets/images/countries/switzerland-location.png",
     "mapAlt": "World map with Switzerland location marker",
     "mapMarker": {
       "x": 50,

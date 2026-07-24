@@ -1,9 +1,9 @@
 {
   "id": "iceland",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/iceland-outline.svg",
+    "outlineSrc": "/assets/images/countries/iceland-outline.png",
     "outlineAlt": "Iceland country outline",
-    "mapSrc": "/assets/images/countries/iceland-location.svg",
+    "mapSrc": "/assets/images/countries/iceland-location.png",
     "mapAlt": "World map with Iceland location marker",
     "mapMarker": {
       "x": 39,

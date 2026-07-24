@@ -51,6 +51,24 @@ function createMetricCard(label, value, icon = null, copyValue = null, brandKey 
 }
 
 const CIVIC_CITY_PROFILES = {
+  albania: [
+    ['Tirana', 'approx. 0.6M municipality', 'TI'],
+    ['Durres', 'approx. 0.1M', 'DR'],
+    ['Vlore', 'approx. 0.1M', 'VL'],
+    ['Elbasan', 'approx. 0.1M', 'EL']
+  ],
+  andorra: [
+    ['Andorra la Vella', 'approx. 0.02M', 'AV'],
+    ['Escaldes-Engordany', 'approx. 0.01M', 'EE'],
+    ['Encamp', 'approx. 0.01M', 'EN'],
+    ['La Massana', 'approx. 0.01M', 'LM']
+  ],
+  argentina: [
+    ['Buenos Aires', 'approx. 3.1M city / 15M metro', 'BA'],
+    ['Cordoba', 'approx. 1.6M', 'CB'],
+    ['Rosario', 'approx. 1.3M metro', 'RO'],
+    ['Mendoza', 'approx. 1.1M metro', 'MZ']
+  ],
   austria: [
     ['Vienna', 'approx. 2.0M', 'WI'],
     ['Graz', 'approx. 0.3M', 'GZ'],
@@ -69,6 +87,186 @@ const CIVIC_CITY_PROFILES = {
     ['Brasilia', 'approx. 2.8M', 'DF'],
     ['Salvador', 'approx. 2.4M', 'SA']
   ],
+  bolivia: [
+    ['Santa Cruz de la Sierra', 'approx. 1.9M', 'SC'],
+    ['El Alto', 'approx. 1.1M', 'EA'],
+    ['La Paz', 'approx. 0.8M', 'LP'],
+    ['Cochabamba', 'approx. 0.8M', 'CB']
+  ],
+  'united-states': [
+    ['New York City', 'approx. 8.3M', 'NY'],
+    ['Los Angeles', 'approx. 3.8M', 'LA'],
+    ['Chicago', 'approx. 2.7M', 'CH'],
+    ['Houston', 'approx. 2.3M', 'HO']
+  ],
+  canada: [
+    ['Toronto', 'approx. 3.0M city / 6M metro', 'TO'],
+    ['Montreal', 'approx. 1.8M city / 4M metro', 'MT'],
+    ['Calgary', 'approx. 1.4M', 'CG'],
+    ['Ottawa', 'approx. 1.1M city / 1.5M metro', 'OT']
+  ],
+  mexico: [
+    ['Mexico City', 'approx. 9.2M city / 22M metro', 'MX'],
+    ['Tijuana', 'approx. 1.9M', 'TJ'],
+    ['Ecatepec', 'approx. 1.6M', 'EC'],
+    ['Leon', 'approx. 1.6M', 'LE']
+  ],
+  belize: [
+    ['Belize City', 'approx. 0.06M', 'BZ'],
+    ['San Ignacio', 'approx. 0.02M', 'SI'],
+    ['Belmopan', 'approx. 0.02M', 'BP'],
+    ['Orange Walk Town', 'approx. 0.02M', 'OW']
+  ],
+  guatemala: [
+    ['Guatemala City', 'approx. 1.0M city / 3M metro', 'GC'],
+    ['Villa Nueva', 'approx. 0.6M', 'VN'],
+    ['Mixco', 'approx. 0.5M', 'MX'],
+    ['Quetzaltenango', 'approx. 0.2M', 'QZ']
+  ],
+  'el-salvador': [
+    ['San Salvador', 'approx. 0.3M city / 1.7M metro', 'SS'],
+    ['Soyapango', 'approx. 0.25M', 'SO'],
+    ['Santa Ana', 'approx. 0.25M', 'SA'],
+    ['San Miguel', 'approx. 0.2M', 'SM']
+  ],
+  honduras: [
+    ['Tegucigalpa', 'approx. 1.2M metro', 'TG'],
+    ['San Pedro Sula', 'approx. 0.8M', 'SP'],
+    ['Choloma', 'approx. 0.3M', 'CH'],
+    ['La Ceiba', 'approx. 0.2M', 'LC']
+  ],
+  nicaragua: [
+    ['Managua', 'approx. 1.1M', 'MG'],
+    ['Leon', 'approx. 0.2M', 'LE'],
+    ['Masaya', 'approx. 0.2M', 'MS'],
+    ['Chinandega', 'approx. 0.15M', 'CH']
+  ],
+  'costa-rica': [
+    ['San Jose', 'approx. 0.35M city / 2M metro', 'SJ'],
+    ['Alajuela', 'approx. 0.3M canton', 'AL'],
+    ['Cartago', 'approx. 0.2M canton', 'CA'],
+    ['Heredia', 'approx. 0.15M canton', 'HE']
+  ],
+  panama: [
+    ['Panama City', 'approx. 0.9M city / 1.9M metro', 'PC'],
+    ['San Miguelito', 'approx. 0.3M', 'SM'],
+    ['Tocumen', 'approx. 0.1M', 'TC'],
+    ['David', 'approx. 0.1M', 'DV']
+  ],
+  bahamas: [
+    ['Nassau', 'approx. 0.27M', 'NS'],
+    ['Freeport', 'approx. 0.03M', 'FP'],
+    ['West End', 'approx. 0.01M', 'WE'],
+    ['Coopers Town', 'approx. 0.01M', 'CT']
+  ],
+  cuba: [
+    ['Havana', 'approx. 2.1M', 'HA'],
+    ['Santiago de Cuba', 'approx. 0.4M', 'SC'],
+    ['Camaguey', 'approx. 0.3M', 'CM'],
+    ['Holguin', 'approx. 0.3M', 'HG']
+  ],
+  jamaica: [
+    ['Kingston', 'approx. 0.6M metro', 'KG'],
+    ['Portmore', 'approx. 0.2M', 'PM'],
+    ['Spanish Town', 'approx. 0.15M', 'ST'],
+    ['Montego Bay', 'approx. 0.1M', 'MB']
+  ],
+  haiti: [
+    ['Port-au-Prince', 'approx. 1M city / 3M metro', 'PP'],
+    ['Carrefour', 'approx. 0.5M', 'CF'],
+    ['Delmas', 'approx. 0.4M', 'DE'],
+    ['Cap-Haitien', 'approx. 0.3M', 'CH']
+  ],
+  'dominican-republic': [
+    ['Santo Domingo', 'approx. 1.0M city / 3M metro', 'SD'],
+    ['Santiago de los Caballeros', 'approx. 0.7M', 'ST'],
+    ['La Romana', 'approx. 0.2M', 'LR'],
+    ['San Pedro de Macoris', 'approx. 0.2M', 'SP']
+  ],
+  'antigua-and-barbuda': [
+    ["St. John's", 'approx. 0.02M', 'SJ'],
+    ['All Saints', 'approx. 0.003M', 'AS'],
+    ['Liberta', 'approx. 0.003M', 'LB'],
+    ['Codrington', 'Barbuda main settlement', 'CD']
+  ],
+  dominica: [
+    ['Roseau', 'approx. 0.015M', 'RS'],
+    ['Portsmouth', 'approx. 0.004M', 'PM'],
+    ['Marigot', 'approx. 0.003M', 'MG'],
+    ['Mahaut', 'approx. 0.002M', 'MH']
+  ],
+  'saint-kitts-and-nevis': [
+    ['Basseterre', 'approx. 0.013M', 'BS'],
+    ['Charlestown', 'approx. 0.002M', 'CH'],
+    ['Sandy Point Town', 'approx. 0.003M', 'SP'],
+    ['Cayon', 'approx. 0.003M', 'CY']
+  ],
+  'saint-lucia': [
+    ['Castries', 'approx. 0.02M city / 0.07M district', 'CA'],
+    ['Vieux Fort', 'approx. 0.005M town / 0.02M district', 'VF'],
+    ['Gros Islet', 'approx. 0.02M district', 'GI'],
+    ['Soufriere', 'approx. 0.008M', 'SF']
+  ],
+  'saint-vincent-and-the-grenadines': [
+    ['Kingstown', 'approx. 0.013M', 'KG'],
+    ['Georgetown', 'approx. 0.002M', 'GT'],
+    ['Barrouallie', 'approx. 0.005M', 'BR'],
+    ['Port Elizabeth', 'Bequia main town', 'PE']
+  ],
+  grenada: [
+    ["St. George's", 'approx. 0.034M', 'SG'],
+    ['Gouyave', 'approx. 0.003M', 'GV'],
+    ['Grenville', 'approx. 0.002M', 'GR'],
+    ['Victoria', 'approx. 0.002M', 'VC']
+  ],
+  barbados: [
+    ['Bridgetown', 'approx. 0.11M metro', 'BG'],
+    ['Speightstown', 'approx. 0.004M', 'SP'],
+    ['Oistins', 'approx. 0.002M', 'OI'],
+    ['Holetown', 'approx. 0.001M', 'HT']
+  ],
+  'trinidad-and-tobago': [
+    ['Chaguanas', 'approx. 0.08M', 'CH'],
+    ['San Fernando', 'approx. 0.05M', 'SF'],
+    ['Port of Spain', 'approx. 0.04M city / 0.5M metro', 'PS'],
+    ['Arima', 'approx. 0.03M', 'AR']
+  ],
+  'bosnia-and-herzegovina': [
+    ['Sarajevo', 'approx. 0.3M city / 0.4M metro', 'SA'],
+    ['Banja Luka', 'approx. 0.2M', 'BL'],
+    ['Tuzla', 'approx. 0.1M', 'TZ'],
+    ['Zenica', 'approx. 0.1M', 'ZE']
+  ],
+  bulgaria: [
+    ['Sofia', 'approx. 1.3M', 'SO'],
+    ['Plovdiv', 'approx. 0.3M', 'PV'],
+    ['Varna', 'approx. 0.3M', 'VA'],
+    ['Burgas', 'approx. 0.2M', 'BU']
+  ],
+  chile: [
+    ['Santiago', 'approx. 6.8M metro', 'ST'],
+    ['Valparaiso', 'approx. 1.0M metro', 'VP'],
+    ['Concepcion', 'approx. 1.0M metro', 'CC'],
+    ['La Serena', 'approx. 0.5M metro', 'LS']
+  ],
+  colombia: [
+    ['Bogota', 'approx. 7.9M', 'BO'],
+    ['Medellin', 'approx. 2.6M', 'ME'],
+    ['Cali', 'approx. 2.2M', 'CA'],
+    ['Barranquilla', 'approx. 1.3M', 'BQ']
+  ],
+  croatia: [
+    ['Zagreb', 'approx. 0.8M', 'ZG'],
+    ['Split', 'approx. 0.2M', 'SP'],
+    ['Rijeka', 'approx. 0.1M', 'RI'],
+    ['Osijek', 'approx. 0.1M', 'OS']
+  ],
+  cyprus: [
+    ['Nicosia', 'approx. 0.2M district', 'NI'],
+    ['Limassol', 'approx. 0.2M', 'LI'],
+    ['Larnaca', 'approx. 0.1M', 'LA'],
+    ['Paphos', 'approx. 0.1M', 'PA']
+  ],
   czechia: [
     ['Prague', 'approx. 1.4M', 'PR'],
     ['Brno', 'approx. 0.4M', 'BR'],
@@ -80,6 +278,18 @@ const CIVIC_CITY_PROFILES = {
     ['Aarhus', 'approx. 0.3M', 'AA'],
     ['Odense', 'approx. 0.2M', 'OD'],
     ['Aalborg', 'approx. 0.1M', 'AL']
+  ],
+  ecuador: [
+    ['Guayaquil', 'approx. 2.7M', 'GY'],
+    ['Quito', 'approx. 2.0M', 'QU'],
+    ['Cuenca', 'approx. 0.6M canton', 'CU'],
+    ['Santo Domingo', 'approx. 0.5M canton', 'SD']
+  ],
+  estonia: [
+    ['Tallinn', 'approx. 0.5M', 'TA'],
+    ['Tartu', 'approx. 0.1M', 'TR'],
+    ['Narva', 'approx. 0.1M', 'NA'],
+    ['Parnu', 'approx. 0.05M', 'PA']
   ],
   finland: [
     ['Helsinki', 'approx. 0.7M', 'HE'],
@@ -99,6 +309,30 @@ const CIVIC_CITY_PROFILES = {
     ['Munich', 'approx. 1.5M', 'MU'],
     ['Cologne', 'approx. 1.1M', 'CO']
   ],
+  greece: [
+    ['Athens', 'approx. 3.1M metro', 'AT'],
+    ['Thessaloniki', 'approx. 1.1M metro', 'TH'],
+    ['Patras', 'approx. 0.2M', 'PA'],
+    ['Heraklion', 'approx. 0.2M', 'HE']
+  ],
+  guyana: [
+    ['Georgetown', 'approx. 0.2M metro', 'GT'],
+    ['Linden', 'approx. 0.03M', 'LI'],
+    ['New Amsterdam', 'approx. 0.02M', 'NA'],
+    ['Anna Regina', 'approx. 0.01M', 'AR']
+  ],
+  hungary: [
+    ['Budapest', 'approx. 1.7M', 'BU'],
+    ['Debrecen', 'approx. 0.2M', 'DE'],
+    ['Szeged', 'approx. 0.2M', 'SZ'],
+    ['Miskolc', 'approx. 0.2M', 'MI']
+  ],
+  iceland: [
+    ['Reykjavik', 'approx. 0.1M city / 0.2M capital area', 'RV'],
+    ['Kopavogur', 'approx. 0.04M', 'KO'],
+    ['Hafnarfjordur', 'approx. 0.03M', 'HF'],
+    ['Akureyri', 'approx. 0.02M', 'AK']
+  ],
   ireland: [
     ['Dublin', 'approx. 0.6M city / 1.3M county', 'DU'],
     ['Cork', 'approx. 0.2M', 'CK'],
@@ -111,17 +345,83 @@ const CIVIC_CITY_PROFILES = {
     ['Naples', 'approx. 0.9M', 'NA'],
     ['Turin', 'approx. 0.8M', 'TO']
   ],
+  latvia: [
+    ['Riga', 'approx. 0.6M', 'RI'],
+    ['Daugavpils', 'approx. 0.08M', 'DA'],
+    ['Liepaja', 'approx. 0.07M', 'LI'],
+    ['Jelgava', 'approx. 0.06M', 'JE']
+  ],
+  liechtenstein: [
+    ['Schaan', 'approx. 0.006M', 'SC'],
+    ['Vaduz', 'approx. 0.006M', 'VA'],
+    ['Triesen', 'approx. 0.005M', 'TR'],
+    ['Balzers', 'approx. 0.005M', 'BA']
+  ],
+  lithuania: [
+    ['Vilnius', 'approx. 0.6M', 'VI'],
+    ['Kaunas', 'approx. 0.3M', 'KA'],
+    ['Klaipeda', 'approx. 0.2M', 'KL'],
+    ['Siauliai', 'approx. 0.1M', 'SI']
+  ],
+  luxembourg: [
+    ['Luxembourg City', 'approx. 0.1M', 'LU'],
+    ['Esch-sur-Alzette', 'approx. 0.04M', 'ES'],
+    ['Differdange', 'approx. 0.03M', 'DI'],
+    ['Dudelange', 'approx. 0.02M', 'DU']
+  ],
+  malta: [
+    ['Birkirkara', 'approx. 0.03M', 'BI'],
+    ['Mosta', 'approx. 0.02M', 'MO'],
+    ['Sliema', 'approx. 0.02M', 'SL'],
+    ['Valletta', 'approx. 0.006M', 'VA']
+  ],
+  moldova: [
+    ['Chisinau', 'approx. 0.7M municipality', 'CH'],
+    ['Balti', 'approx. 0.1M', 'BA'],
+    ['Tiraspol', 'approx. 0.1M', 'TI'],
+    ['Bender', 'approx. 0.09M', 'BD']
+  ],
+  monaco: [
+    ['Monte Carlo', 'approx. 0.02M quarter', 'MC'],
+    ['La Condamine', 'approx. 0.01M quarter', 'LC'],
+    ['Fontvieille', 'approx. 0.004M quarter', 'FV'],
+    ['Monaco-Ville', 'approx. 0.001M quarter', 'MV']
+  ],
+  montenegro: [
+    ['Podgorica', 'approx. 0.2M', 'PG'],
+    ['Niksic', 'approx. 0.06M', 'NK'],
+    ['Herceg Novi', 'approx. 0.03M', 'HN'],
+    ['Pljevlja', 'approx. 0.03M', 'PV']
+  ],
   netherlands: [
     ['Amsterdam', 'approx. 0.9M', 'AM'],
     ['Rotterdam', 'approx. 0.7M', 'RT'],
     ['The Hague', 'approx. 0.6M', 'DH'],
     ['Utrecht', 'approx. 0.4M', 'UT']
   ],
+  'north-macedonia': [
+    ['Skopje', 'approx. 0.5M', 'SK'],
+    ['Bitola', 'approx. 0.07M', 'BI'],
+    ['Kumanovo', 'approx. 0.07M', 'KU'],
+    ['Prilep', 'approx. 0.06M', 'PR']
+  ],
   norway: [
     ['Oslo', 'approx. 0.7M', 'OS'],
     ['Bergen', 'approx. 0.3M', 'BE'],
     ['Trondheim', 'approx. 0.2M', 'TR'],
     ['Stavanger', 'approx. 0.1M', 'ST']
+  ],
+  paraguay: [
+    ['Asuncion', 'approx. 0.5M city / 2.8M metro', 'AS'],
+    ['Ciudad del Este', 'approx. 0.3M', 'CE'],
+    ['San Lorenzo', 'approx. 0.3M', 'SL'],
+    ['Luque', 'approx. 0.3M', 'LU']
+  ],
+  peru: [
+    ['Lima', 'approx. 10M metro', 'LI'],
+    ['Arequipa', 'approx. 1.1M metro', 'AQ'],
+    ['Trujillo', 'approx. 1.0M metro', 'TR'],
+    ['Chiclayo', 'approx. 0.6M metro', 'CH']
   ],
   poland: [
     ['Warsaw', 'approx. 1.9M', 'WA'],
@@ -141,11 +441,41 @@ const CIVIC_CITY_PROFILES = {
     ['Timisoara', 'approx. 0.3M', 'TM'],
     ['Iasi', 'approx. 0.3M', 'IS']
   ],
+  'san-marino': [
+    ['Serravalle', 'approx. 0.01M', 'SE'],
+    ['Borgo Maggiore', 'approx. 0.007M', 'BM'],
+    ['City of San Marino', 'approx. 0.004M', 'SM'],
+    ['Domagnano', 'approx. 0.004M', 'DO']
+  ],
+  serbia: [
+    ['Belgrade', 'approx. 1.4M city / 1.7M metro', 'BG'],
+    ['Novi Sad', 'approx. 0.3M', 'NS'],
+    ['Nis', 'approx. 0.2M', 'NI'],
+    ['Kragujevac', 'approx. 0.2M', 'KG']
+  ],
+  slovakia: [
+    ['Bratislava', 'approx. 0.5M', 'BA'],
+    ['Kosice', 'approx. 0.2M', 'KE'],
+    ['Presov', 'approx. 0.08M', 'PO'],
+    ['Zilina', 'approx. 0.08M', 'ZA']
+  ],
+  slovenia: [
+    ['Ljubljana', 'approx. 0.3M', 'LJ'],
+    ['Maribor', 'approx. 0.1M', 'MB'],
+    ['Celje', 'approx. 0.04M', 'CE'],
+    ['Kranj', 'approx. 0.04M', 'KR']
+  ],
   spain: [
     ['Madrid', 'approx. 3.3M', 'MD'],
     ['Barcelona', 'approx. 1.7M', 'BC'],
     ['Valencia', 'approx. 0.8M', 'VA'],
     ['Seville', 'approx. 0.7M', 'SV']
+  ],
+  suriname: [
+    ['Paramaribo', 'approx. 0.2M', 'PA'],
+    ['Lelydorp', 'approx. 0.02M', 'LE'],
+    ['Nieuw Nickerie', 'approx. 0.01M', 'NN'],
+    ['Moengo', 'approx. 0.01M', 'MO']
   ],
   sweden: [
     ['Stockholm', 'approx. 1.0M municipality / 1.7M urban', 'ST'],
@@ -158,6 +488,36 @@ const CIVIC_CITY_PROFILES = {
     ['Geneva', 'approx. 0.2M', 'GE'],
     ['Basel', 'approx. 0.2M', 'BS'],
     ['Bern', 'approx. 0.1M', 'BE']
+  ],
+  ukraine: [
+    ['Kyiv', 'approx. 3.0M', 'KY'],
+    ['Kharkiv', 'approx. 1.4M pre-war', 'KH'],
+    ['Odesa', 'approx. 1.0M', 'OD'],
+    ['Dnipro', 'approx. 1.0M', 'DN']
+  ],
+  'united-kingdom': [
+    ['London', 'approx. 9.0M', 'LN'],
+    ['Birmingham', 'approx. 1.1M', 'BI'],
+    ['Leeds', 'approx. 0.8M', 'LE'],
+    ['Glasgow', 'approx. 0.6M', 'GL']
+  ],
+  uruguay: [
+    ['Montevideo', 'approx. 1.3M', 'MV'],
+    ['Salto', 'approx. 0.1M', 'SA'],
+    ['Ciudad de la Costa', 'approx. 0.1M', 'CC'],
+    ['Paysandu', 'approx. 0.08M', 'PY']
+  ],
+  'vatican-city': [
+    ['Vatican City', 'approx. 0.0008M', 'VA'],
+    ['St. Peter area', 'microstate district', 'SP'],
+    ['Vatican Museums area', 'microstate district', 'VM'],
+    ['Gardens area', 'microstate district', 'VG']
+  ],
+  venezuela: [
+    ['Caracas', 'approx. 2.9M metro', 'CA'],
+    ['Maracaibo', 'approx. 1.7M metro', 'MA'],
+    ['Valencia', 'approx. 1.5M metro', 'VA'],
+    ['Barquisimeto', 'approx. 1.0M metro', 'BQ']
   ]
 };
 

@@ -1,0 +1,673 @@
+{
+  "id": "costa-rica",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/costa-rica-outline.png",
+    "outlineAlt": "Costa Rica country outline",
+    "mapSrc": "/assets/images/countries/costa-rica-location.png",
+    "mapAlt": "Costa Rica location map",
+    "mapMarker": {
+      "x": 34,
+      "y": 48,
+      "label": "San Jose"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "costa-rica",
+    "flag": "🇨🇷",
+    "name": "Costa Rica",
+    "nativeName": "Costa Rica",
+    "iso2": "CR",
+    "iso3": "CRI",
+    "continent": "North America",
+    "region": "North America / Caribbean and Central America",
+    "language": "Spanish",
+    "currency": "CRC",
+    "currencyName": "Costa Rican colon",
+    "status": "available",
+    "summary": "Premium Costa Rica developer hub for Cedula, Cedula juridica, IVA / cedula juridica, codigo postal, phone, IBAN / cuenta cliente, SWIFT/BIC, payment reference, locale, privacy, documents, banking, tax, and browser-only data-quality workflows.",
+    "identifiers": [
+      "Cedula",
+      "Cedula juridica",
+      "IVA / cedula juridica",
+      "codigo postal",
+      "phone"
+    ],
+    "payments": [
+      "IBAN / cuenta cliente",
+      "SWIFT/BIC",
+      "payment reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Costa Rican Cedula Validator",
+      "Costa Rican Cedula juridica Validator",
+      "Costa Rican IVA / cedula juridica Inspector",
+      "Costa Rican Company Onboarding Auditor",
+      "Costa Rican Business Registry Readiness Helper",
+      "Costa Rican ID Card Format Helper",
+      "Costa Rican MRZ / Passport Parser",
+      "Costa Rican IBAN / cuenta cliente Inspector",
+      "Costa Rican BIC / SWIFT Inspector",
+      "Costa Rican domestic payment reference Helper",
+      "Costa Rican Remittance Text Builder",
+      "Costa Rican Bank Statement Parser",
+      "Costa Rican CRC Decimal Currency Formatter",
+      "Costa Rican codigo postal Validator",
+      "Costa Rican Address Normalizer",
+      "Costa Rican Phone Number Validator",
+      "Costa Rican Date Locale Formatter",
+      "Costa Rican CSV Locale Normalizer",
+      "Costa Rican Document OCR Fixer",
+      "Costa Rican Privacy Redaction Helper",
+      "Costa Rican Data Quality Workbench",
+      "Costa Rican API Payload Auditor",
+      "Costa Rican State / Province Code Mapper",
+      "Costa Rican Locality Autocomplete Fixture Builder",
+      "Costa Rican Government Form Field Normalizer",
+      "Costa Rican Tax Invoice Field Auditor",
+      "Costa Rican Sales Tax / VAT Threshold Checklist",
+      "Costa Rican Withholding Tax Form Helper",
+      "Costa Rican Customs / Import Code Inspector",
+      "Costa Rican Payroll ID Intake Helper",
+      "Costa Rican Benefits / Social Number Redaction Helper",
+      "Costa Rican Business License Checklist",
+      "Costa Rican Ownership / KYB Payload Auditor",
+      "Costa Rican Sanctions Screening Payload Helper",
+      "Costa Rican Bank Routing Handoff Checklist",
+      "Costa Rican Payout Recipient Validator",
+      "Costa Rican Refund Reference Builder",
+      "Costa Rican Chargeback Evidence Pack Helper",
+      "Costa Rican Ecommerce Checkout Locale Auditor",
+      "Costa Rican Shipping Label Normalizer",
+      "Costa Rican Customs Address Line Helper",
+      "Costa Rican Vehicle Registration Format Helper",
+      "Costa Rican Driver License Format Helper",
+      "Costa Rican Utility Bill Address Proof Auditor",
+      "Costa Rican KYC Document Bundle Auditor",
+      "Costa Rican Invoice Number Format Helper",
+      "Costa Rican Receipt Tax Line Parser",
+      "Costa Rican Phone Extension Normalizer",
+      "Costa Rican Business Hours / Time Zone Helper",
+      "Costa Rican Holiday Calendar Fixture Builder",
+      "Costa Rican Name Parser / Transliteration Helper",
+      "Costa Rican Email Domain Locality Checker",
+      "Costa Rican Form Autofill Fixture Generator",
+      "Costa Rican Webhook Local Payload Fixture",
+      "Costa Rican GraphQL Input Auditor",
+      "Costa Rican OpenAPI Country Schema Helper",
+      "Costa Rican SQL Seed Data Builder",
+      "Costa Rican JSON Schema Local Rules Helper",
+      "Costa Rican Test Case Matrix Builder",
+      "Costa Rican Data Retention Policy Helper",
+      "Costa Rican Accessibility Form Label Auditor"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live tax/registry status confirmation",
+      "Live bank ownership lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 34,
+      "y": 48
+    },
+    "searchHints": [
+      "Cedula",
+      "Cedula juridica",
+      "IVA / cedula juridica",
+      "codigo postal",
+      "phone",
+      "IBAN / cuenta cliente",
+      "SWIFT/BIC",
+      "payment reference"
+    ]
+  },
+  "hub": {
+    "flag": "🇨🇷",
+    "name": "Costa Rica",
+    "badge": "Premium Costa Rica developer suite",
+    "description": "Developer intelligence and browser-only workbenches for costa rican identifiers, tax, payments, banking, locale conventions, privacy, documents, and integration QA.",
+    "metadata": {
+      "nativeName": "Costa Rica",
+      "population": "approximately 5.3M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "San Jose",
+      "continent": "North America",
+      "region": "North America / Caribbean and Central America",
+      "languages": "Spanish",
+      "currency": "Costa Rican colon",
+      "currencyCode": "CRC",
+      "callingCode": "+506",
+      "internetTld": ".cr",
+      "drivingSide": "Right",
+      "iso2": "CR",
+      "iso3": "CRI",
+      "isoNumeric": "188",
+      "locale": "es",
+      "icuLocale": "es",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour where used; local display varies",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, locality/administrative area, postal code, Costa Rica",
+      "postalCodeFormat": "codigo postal",
+      "primaryTimeZone": "America/Costa_Rica",
+      "measurementSystem": "Metric-first",
+      "paperSize": "Letter/A4 varies by workflow",
+      "emergencyNumber": "local emergency number varies",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "es",
+      "cldrLocale": "es",
+      "metricVsImperial": "Metric-first"
+    },
+    "visualIdentity": {
+      "countryId": "costa-rica",
+      "outlineLabel": "Costa Rica outline",
+      "mapLabel": "Costa Rica in North America",
+      "continentBadge": "North America",
+      "flagLabel": "Costa Rica flag",
+      "heroAccentPrimary": "0 43 127",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "206 17 38"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "61",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Cedula and Cedula juridica",
+        "text": "Local identifier workbenches split body, prefixes, local vocabulary, and official boundaries."
+      },
+      {
+        "title": "IVA / cedula juridica and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, privacy, OCR, locale, and data-quality tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Costa Rica registry, tax, bank, postal, identity, or legal status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /costa-rica/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring local separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing jurisdictions",
+        "text": "Do not reuse non-Costa Rican examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry lookup remains the source of truth for Costa Rica.",
+        "status": "official boundary"
+      },
+      {
+        "title": "IVA / cedula juridica",
+        "text": "Tax validity and filing acceptance require the responsible tax authority or provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "local privacy/data protection",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "Cedula, Cedula juridica, IVA / cedula juridica, codigo postal, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN / cuenta cliente, SWIFT/BIC, payment reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "es / es; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "CRC amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "Cedula, Cedula juridica, codigo postal, phone, address, and local banking labels need jurisdiction-specific copy.",
+        "status": "available"
+      }
+    ],
+    "searchHints": [
+      "Cedula",
+      "Cedula juridica",
+      "IVA / cedula juridica",
+      "codigo postal",
+      "phone",
+      "IBAN / cuenta cliente",
+      "SWIFT/BIC",
+      "payment reference"
+    ],
+    "routes": [
+      {
+        "title": "Costa Rican Cedula Validator",
+        "href": "/en/costa-rica/costa-rica-cedula-validator/",
+        "text": "Validate local personal identifier shape, split visible evidence, and keep official identity status out of browser-only results.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Costa Rican Cedula juridica Validator",
+        "href": "/en/costa-rica/costa-rica-cedula-juridica-validator/",
+        "text": "Inspect company or registry identifier shape, prefixes, local vocabulary, and official registry handoff boundaries.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Costa Rican IVA / cedula juridica Inspector",
+        "href": "/en/costa-rica/costa-rica-tax-id-inspector/",
+        "text": "Normalize tax identifier snippets, inspect local body evidence, and prepare official tax-authority handoff notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Costa Rican Company Onboarding Auditor",
+        "href": "/en/costa-rica/costa-rica-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for identifier, address, banking, tax, and privacy readiness.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican Business Registry Readiness Helper",
+        "href": "/en/costa-rica/costa-rica-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or filing workflow.",
+        "category": "government"
+      },
+      {
+        "title": "Costa Rican ID Card Format Helper",
+        "href": "/en/costa-rica/costa-rica-id-card-format-helper/",
+        "text": "Inspect identity-card snippets, document numbers, dates, and privacy boundaries without proving identity.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Costa Rican MRZ / Passport Parser",
+        "href": "/en/costa-rica/costa-rica-passport-mrz-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Costa Rican IBAN / cuenta cliente Inspector",
+        "href": "/en/costa-rica/costa-rica-domestic-bank-account-inspector/",
+        "text": "Inspect domestic bank account slices, routing blocks, account text, and payment-provider boundaries.",
+        "category": "finance"
+      },
+      {
+        "title": "Costa Rican BIC / SWIFT Inspector",
+        "href": "/en/costa-rica/costa-rica-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for cross-border banking integrations.",
+        "category": "finance"
+      },
+      {
+        "title": "Costa Rican domestic payment reference Helper",
+        "href": "/en/costa-rica/costa-rica-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting.",
+        "category": "finance"
+      },
+      {
+        "title": "Costa Rican Remittance Text Builder",
+        "href": "/en/costa-rica/costa-rica-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, tax, and local payment reference evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Costa Rican Bank Statement Parser",
+        "href": "/en/costa-rica/costa-rica-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, counterparty, reference, and local decimal conventions.",
+        "category": "finance"
+      },
+      {
+        "title": "Costa Rican CRC Decimal Currency Formatter",
+        "href": "/en/costa-rica/costa-rica-currency-decimal-formatter/",
+        "text": "Normalize local amount strings, decimal separators, grouping, and API-safe numeric previews.",
+        "category": "finance"
+      },
+      {
+        "title": "Costa Rican codigo postal Validator",
+        "href": "/en/costa-rica/costa-rica-postal-code-validator/",
+        "text": "Validate postal/address locality shape, split locality hints, and preserve official postal lookup boundaries.",
+        "category": "address"
+      },
+      {
+        "title": "Costa Rican Address Normalizer",
+        "href": "/en/costa-rica/costa-rica-address-normalizer/",
+        "text": "Normalize street, locality, administrative area, postal code, and country lines for local forms.",
+        "category": "address"
+      },
+      {
+        "title": "Costa Rican Phone Number Validator",
+        "href": "/en/costa-rica/costa-rica-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes.",
+        "category": "address"
+      },
+      {
+        "title": "Costa Rican Date Locale Formatter",
+        "href": "/en/costa-rica/costa-rica-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics.",
+        "category": "localization"
+      },
+      {
+        "title": "Costa Rican CSV Locale Normalizer",
+        "href": "/en/costa-rica/costa-rica-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for decimal, date, postal, phone, tax, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican Document OCR Fixer",
+        "href": "/en/costa-rica/costa-rica-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Costa Rican Privacy Redaction Helper",
+        "href": "/en/costa-rica/costa-rica-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets.",
+        "category": "privacy"
+      },
+      {
+        "title": "Costa Rican Data Quality Workbench",
+        "href": "/en/costa-rica/costa-rica-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican API Payload Auditor",
+        "href": "/en/costa-rica/costa-rica-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, banking, dates, amounts, and official boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican State / Province Code Mapper",
+        "href": "/en/costa-rica/costa-rica-state-province-code-mapper/",
+        "text": "Map local administrative area labels, abbreviations, and address payload hints for browser-only form routing.",
+        "category": "address"
+      },
+      {
+        "title": "Costa Rican Locality Autocomplete Fixture Builder",
+        "href": "/en/costa-rica/costa-rica-locality-autocomplete-fixture-builder/",
+        "text": "Build country-local city, district, postal, and address fixtures for autocomplete QA without live geocoding.",
+        "category": "address"
+      },
+      {
+        "title": "Costa Rican Government Form Field Normalizer",
+        "href": "/en/costa-rica/costa-rica-government-form-field-normalizer/",
+        "text": "Normalize local government-form labels, identifier fields, dates, and address lines before portal handoff.",
+        "category": "government"
+      },
+      {
+        "title": "Costa Rican Tax Invoice Field Auditor",
+        "href": "/en/costa-rica/costa-rica-tax-invoice-field-auditor/",
+        "text": "Audit invoice snippets for local tax IDs, currency, address, date, line totals, and official filing boundaries.",
+        "category": "tax"
+      },
+      {
+        "title": "Costa Rican Sales Tax / VAT Threshold Checklist",
+        "href": "/en/costa-rica/costa-rica-sales-tax-vat-threshold-checklist/",
+        "text": "Inspect revenue, registration, local tax labels, and threshold handoff notes without making legal conclusions.",
+        "category": "tax"
+      },
+      {
+        "title": "Costa Rican Withholding Tax Form Helper",
+        "href": "/en/costa-rica/costa-rica-withholding-tax-form-helper/",
+        "text": "Prepare local withholding-tax form evidence, payee IDs, dates, amounts, and review notes for finance teams.",
+        "category": "tax"
+      },
+      {
+        "title": "Costa Rican Customs / Import Code Inspector",
+        "href": "/en/costa-rica/costa-rica-customs-import-code-inspector/",
+        "text": "Inspect customs references, importer IDs, invoice fields, currency, and shipment handoff evidence.",
+        "category": "logistics"
+      },
+      {
+        "title": "Costa Rican Payroll ID Intake Helper",
+        "href": "/en/costa-rica/costa-rica-payroll-id-intake-helper/",
+        "text": "Check employee intake payloads for local personal IDs, tax IDs, dates, address, and privacy-safe masking.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Costa Rican Benefits / Social Number Redaction Helper",
+        "href": "/en/costa-rica/costa-rica-benefits-social-number-redaction/",
+        "text": "Mask local social, benefits, tax, phone, and address evidence before logs, tickets, or screenshots.",
+        "category": "privacy"
+      },
+      {
+        "title": "Costa Rican Business License Checklist",
+        "href": "/en/costa-rica/costa-rica-business-license-checklist/",
+        "text": "Audit local business-license intake evidence, registry IDs, addresses, tax labels, and official lookup boundaries.",
+        "category": "government"
+      },
+      {
+        "title": "Costa Rican Ownership / KYB Payload Auditor",
+        "href": "/en/costa-rica/costa-rica-ownership-kyb-payload-auditor/",
+        "text": "Inspect KYB payloads for company IDs, beneficial-owner fields, addresses, dates, and masked evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican Sanctions Screening Payload Helper",
+        "href": "/en/costa-rica/costa-rica-sanctions-screening-payload-helper/",
+        "text": "Prepare offline screening payloads with names, addresses, identifiers, and no false match-status claims.",
+        "category": "privacy"
+      },
+      {
+        "title": "Costa Rican Bank Routing Handoff Checklist",
+        "href": "/en/costa-rica/costa-rica-bank-routing-handoff-checklist/",
+        "text": "Check routing, account, branch, currency, payment reference, and provider-boundary fields before bank handoff.",
+        "category": "finance"
+      },
+      {
+        "title": "Costa Rican Payout Recipient Validator",
+        "href": "/en/costa-rica/costa-rica-payout-recipient-validator/",
+        "text": "Inspect payout recipient payloads for local name, account, tax, phone, address, currency, and retry-safe evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Costa Rican Refund Reference Builder",
+        "href": "/en/costa-rica/costa-rica-refund-reference-builder/",
+        "text": "Build local refund references from invoice, customer, payment, amount, and reconciliation fields.",
+        "category": "finance"
+      },
+      {
+        "title": "Costa Rican Chargeback Evidence Pack Helper",
+        "href": "/en/costa-rica/costa-rica-chargeback-evidence-pack-helper/",
+        "text": "Organize browser-only payment, invoice, address, date, and customer evidence for dispute workflows.",
+        "category": "finance"
+      },
+      {
+        "title": "Costa Rican Ecommerce Checkout Locale Auditor",
+        "href": "/en/costa-rica/costa-rica-ecommerce-checkout-locale-auditor/",
+        "text": "Audit checkout payloads for local address, phone, postal, currency, date, and tax-field assumptions.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican Shipping Label Normalizer",
+        "href": "/en/costa-rica/costa-rica-shipping-label-normalizer/",
+        "text": "Normalize local shipping-label blocks, recipient names, postal/locality fields, phone, and delivery notes.",
+        "category": "logistics"
+      },
+      {
+        "title": "Costa Rican Customs Address Line Helper",
+        "href": "/en/costa-rica/costa-rica-customs-address-line-helper/",
+        "text": "Split exporter/importer address lines, locality, postal data, country code, and customs-safe payloads.",
+        "category": "logistics"
+      },
+      {
+        "title": "Costa Rican Vehicle Registration Format Helper",
+        "href": "/en/costa-rica/costa-rica-vehicle-registration-format-helper/",
+        "text": "Inspect vehicle-registration snippets, plate shapes, region hints, and official transport boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Costa Rican Driver License Format Helper",
+        "href": "/en/costa-rica/costa-rica-driver-license-format-helper/",
+        "text": "Inspect driving-license snippets, dates, document numbers, and privacy-safe evidence for transport intake.",
+        "category": "documents"
+      },
+      {
+        "title": "Costa Rican Utility Bill Address Proof Auditor",
+        "href": "/en/costa-rica/costa-rica-utility-bill-address-proof-auditor/",
+        "text": "Audit utility-bill OCR text for names, dates, address lines, account numbers, and masked support evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Costa Rican KYC Document Bundle Auditor",
+        "href": "/en/costa-rica/costa-rica-kyc-document-bundle-auditor/",
+        "text": "Check KYC document bundles for local ID, tax, address, date, file labels, and official-boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Costa Rican Invoice Number Format Helper",
+        "href": "/en/costa-rica/costa-rica-invoice-number-format-helper/",
+        "text": "Normalize invoice-number patterns, series, date fragments, counterparty hints, and duplicate-risk notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Costa Rican Receipt Tax Line Parser",
+        "href": "/en/costa-rica/costa-rica-receipt-tax-line-parser/",
+        "text": "Parse receipt text for tax labels, totals, currency, dates, and local decimal/grouping evidence.",
+        "category": "tax"
+      },
+      {
+        "title": "Costa Rican Phone Extension Normalizer",
+        "href": "/en/costa-rica/costa-rica-phone-extension-normalizer/",
+        "text": "Normalize local phone numbers with extension, country prefix, national blocks, and CRM-safe output.",
+        "category": "address"
+      },
+      {
+        "title": "Costa Rican Business Hours / Time Zone Helper",
+        "href": "/en/costa-rica/costa-rica-timezone-business-hours-helper/",
+        "text": "Preview local business-hour windows, date cutoffs, support handoffs, and timezone caveats.",
+        "category": "localization"
+      },
+      {
+        "title": "Costa Rican Holiday Calendar Fixture Builder",
+        "href": "/en/costa-rica/costa-rica-holiday-calendar-fixture-builder/",
+        "text": "Build local calendar fixtures and holiday-review payloads without claiming official holiday coverage.",
+        "category": "localization"
+      },
+      {
+        "title": "Costa Rican Name Parser / Transliteration Helper",
+        "href": "/en/costa-rica/costa-rica-name-parser-transliteration-helper/",
+        "text": "Split local personal/company names, accents, casing, transliteration, and search-key fixtures.",
+        "category": "localization"
+      },
+      {
+        "title": "Costa Rican Email Domain Locality Checker",
+        "href": "/en/costa-rica/costa-rica-email-domain-locality-checker/",
+        "text": "Inspect email/domain strings for local TLD hints, plus addressing, masking, and no-deliverability boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican Form Autofill Fixture Generator",
+        "href": "/en/costa-rica/costa-rica-form-autofill-fixture-generator/",
+        "text": "Generate browser-only local form fixtures for IDs, tax, phone, postal, address, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican Webhook Local Payload Fixture",
+        "href": "/en/costa-rica/costa-rica-webhook-local-payload-fixture/",
+        "text": "Build webhook payload fixtures with local IDs, tax, currency, dates, masked fields, and replay metadata.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican GraphQL Input Auditor",
+        "href": "/en/costa-rica/costa-rica-graphql-input-auditor/",
+        "text": "Audit GraphQL-style input objects for local identifiers, tax fields, dates, amounts, and nullable hazards.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican OpenAPI Country Schema Helper",
+        "href": "/en/costa-rica/costa-rica-openapi-country-schema-helper/",
+        "text": "Draft and inspect OpenAPI schema snippets for local identifiers, address, phone, payment, and tax fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican SQL Seed Data Builder",
+        "href": "/en/costa-rica/costa-rica-sql-seed-data-builder/",
+        "text": "Build local seed-data rows for identifiers, tax, address, phone, amount, and bank fixtures.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican JSON Schema Local Rules Helper",
+        "href": "/en/costa-rica/costa-rica-json-schema-local-rules-helper/",
+        "text": "Inspect JSON Schema rules for local field names, patterns, examples, and official-boundary copy.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican Test Case Matrix Builder",
+        "href": "/en/costa-rica/costa-rica-test-case-matrix-builder/",
+        "text": "Generate valid, invalid, short, wrong-country, masking, and boundary test-case matrices for local workflows.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Costa Rican Data Retention Policy Helper",
+        "href": "/en/costa-rica/costa-rica-data-retention-policy-helper/",
+        "text": "Organize local retention, masking, audit-log, and deletion checklist fields without giving legal advice.",
+        "category": "privacy"
+      },
+      {
+        "title": "Costa Rican Accessibility Form Label Auditor",
+        "href": "/en/costa-rica/costa-rica-accessibility-form-label-auditor/",
+        "text": "Audit local form labels, autocomplete names, error copy, and screen-reader hints for identifier workflows.",
+        "category": "developer-tools"
+      }
+    ]
+  }
+}

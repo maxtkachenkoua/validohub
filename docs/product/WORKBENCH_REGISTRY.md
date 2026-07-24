@@ -48,7 +48,8 @@ Current global expansion adds these first-class workbenches: Phone E.164 Validat
   - Compact Brazil-scale country tool header, input, result card, validation pipeline, field breakdown, quality notes, advanced analysis, copy, and download controls.
   - Config validation for suite identity, country metadata, theme colors, tool names, codes, summaries, samples, quality notes, official-boundary copy, duplicate ids, and raw-payload sample labels.
   - Local overflow and wrapping rules for long primary values, field cards, JSON payloads, and advanced analysis.
-  - Hardened sample/debug UX: multiple valid/invalid/short/wrong-prefix/edge examples, invalid fixtures forced to review, interactive repair actions, single-hierarchy evidence breakdown, visible hover/focus states, and fresh IBAN generation on every Generate click.
+  - Hardened sample/debug UX: multiple valid/invalid/short/wrong-prefix/edge examples, invalid fixtures forced to review, interactive repair actions, single-hierarchy anatomy/evidence breakdown, visible hover/focus states, and fresh IBAN generation on every Generate click.
+  - Shared segment-anatomy enrichment for factory country tools: identifiers, tax/company IDs, VAT/customs, bank/account/payment references, IBAN/BIC, phone, postal, vehicle, date, amount, and developer-data payloads now expose readable parts wherever the local format supports it.
   - Explicit non-migration guard: Brazil, Poland, France, and Netherlands must not import or call the factory without a separate user-approved migration task.
 - Known future ideas:
   - Per-country generator that emits factory configs from a researched country tool matrix.

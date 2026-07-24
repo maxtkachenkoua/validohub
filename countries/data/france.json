@@ -1,9 +1,9 @@
 {
   "id": "france",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/france-outline.svg",
+    "outlineSrc": "/assets/images/countries/france-outline.png",
     "outlineAlt": "France country outline",
-    "mapSrc": "/assets/images/countries/france-location.svg",
+    "mapSrc": "/assets/images/countries/france-location.png",
     "mapAlt": "World map with France location marker",
     "mapMarker": {
       "x": 48,

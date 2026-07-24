@@ -160,7 +160,6 @@
       .join('');
     const hero = [
       '<section class="generic-premium-hero" aria-label="' + escape(config.title) + ' workbench overview">',
-      '  <div class="generic-premium-mark" aria-hidden="true">' + escape(config.mark || config.title.slice(0, 4).toUpperCase()) + '</div>',
       '  <div class="generic-premium-copy">',
       '    <p class="generic-premium-kicker">' + escape(config.kicker || 'Browser workbench') + '</p>',
       '    <h3>' + escape(config.title) + '</h3>',
@@ -172,9 +171,42 @@
       '    <strong>Runs locally</strong>',
       '    <small>No upload, database, runtime API, or server-side execution.</small>',
       '  </div>',
-      '</section>'
+      '</section>',
+      integrationTraps(config)
     ].join('');
     workbench.form.insertAdjacentHTML('afterbegin', hero);
+  }
+
+  function integrationTrapItems(config) {
+    if (Array.isArray(config.integrationTraps) && config.integrationTraps.length) {
+      return config.integrationTraps.slice(0, 10);
+    }
+    const title = String(config.title || 'this tool').toLowerCase();
+    const kind = String(config.kind || config.theme || '').toLowerCase();
+    const items = [
+      'Do not treat browser-local output as proof that a production API, account, domain, certificate, or external service accepts the value.',
+      'Keep raw input, normalized output, masked output, and exported JSON as separate fields in integration tests.',
+      'Retain negative fixtures: malformed, risky, short, expired, weak, and wrong-context samples catch regressions faster than happy paths.',
+      'Do not paste secrets, customer records, or live credentials into tickets or screenshots; use masked output for handoff.'
+    ];
+    if (/security|jwt|oauth|cookie|tls|dns|spf|dmarc|secret|cors|header|csp/.test(title + ' ' + kind)) {
+      items.push('Treat security findings as static evidence and re-check live deployment headers, DNS, keys, and runtime policy before release.');
+    } else if (/json|csv|schema|avro|protobuf|rag|vector|dataset|data|base64|diff/.test(title + ' ' + kind)) {
+      items.push('Do not infer schema compatibility from one sample; keep versioned fixtures and representative malformed rows.');
+    } else if (/uuid|iban|phone|postal|slug|case|regex|hash|url/.test(title + ' ' + kind)) {
+      items.push('Validate target-runtime behavior separately when languages, encodings, regex engines, locales, or checksum rules differ.');
+    } else {
+      items.push('Copy the developer JSON into tests so future changes preserve the same local evidence fields.');
+    }
+    return items.slice(0, 6);
+  }
+
+  function integrationTraps(config) {
+    const items = integrationTrapItems(config);
+    return '<section class="generic-integration-traps" aria-label="Integration traps">' +
+      '<div><p class="generic-premium-kicker">Integration traps</p><h4>Save implementation time</h4><span>Common failure points to catch before wiring this into production.</span></div>' +
+      '<ul>' + items.map((item) => '<li>' + escape(item) + '</li>').join('') + '</ul>' +
+      '</section>';
   }
 
   function enrichResult(config, result) {

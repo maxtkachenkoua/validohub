@@ -1,9 +1,9 @@
 {
   "id": "montenegro",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/montenegro-outline.svg",
+    "outlineSrc": "/assets/images/countries/montenegro-outline.png",
     "outlineAlt": "Montenegro country outline",
-    "mapSrc": "/assets/images/countries/montenegro-location.svg",
+    "mapSrc": "/assets/images/countries/montenegro-location.png",
     "mapAlt": "World map with Montenegro location marker",
     "mapMarker": {
       "x": 53,

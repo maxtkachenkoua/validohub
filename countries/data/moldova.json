@@ -1,9 +1,9 @@
 {
   "id": "moldova",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/moldova-outline.svg",
+    "outlineSrc": "/assets/images/countries/moldova-outline.png",
     "outlineAlt": "Moldova country outline",
-    "mapSrc": "/assets/images/countries/moldova-location.svg",
+    "mapSrc": "/assets/images/countries/moldova-location.png",
     "mapAlt": "World map with Moldova location marker",
     "mapMarker": {
       "x": 59,

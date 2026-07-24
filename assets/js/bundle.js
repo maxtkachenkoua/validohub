@@ -110,6 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeSuggestionIndex = -1;
     let visibleMatches = [];
     let activeIntent = 'all';
+    intentFilters.forEach(button => {
+      const isActive = button.classList.contains('is-active');
+      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      if (isActive) button.setAttribute('aria-current', 'true');
+    });
 
     const countrySearchId = input.id || searchForm.getAttribute('id') || window.location.pathname;
     const recentKey = `validohub.country.search.recent.${countrySearchId}`;
@@ -288,7 +293,13 @@ document.addEventListener('DOMContentLoaded', () => {
     intentFilters.forEach(button => {
       button.addEventListener('click', () => {
         activeIntent = button.dataset.countryIntent || 'all';
-        intentFilters.forEach(item => item.classList.toggle('is-active', item === button));
+        intentFilters.forEach(item => {
+          const isActive = item === button;
+          item.classList.toggle('is-active', isActive);
+          item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+          if (isActive) item.setAttribute('aria-current', 'true');
+          else item.removeAttribute('aria-current');
+        });
         updateCountryToolSearch(input.value);
       });
     });
@@ -333,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const countEl = group.querySelector('.vh-country-group-count');
         if (countEl) {
           const totalRows = group.querySelectorAll('.vh-country-catalog-row').length;
-          countEl.textContent = query || activeIntent !== 'all' ? `${visibleRows}/${totalRows}` : String(totalRows);
+          countEl.textContent = query ? `${visibleRows}/${totalRows}` : String(totalRows);
         }
         const isEmpty = visibleRows === 0;
         const shouldHideGroup = !matchesActiveIntent || isEmpty;

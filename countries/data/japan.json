@@ -1,6 +1,17 @@
 {
   "id": "japan",
-  "visualAssets": null,
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/japan-outline.png",
+    "outlineAlt": "Japan country outline",
+    "mapSrc": "/assets/images/countries/japan-location.png",
+    "mapAlt": "World map with Japan location marker",
+    "mapMarker": {
+      "x": 50,
+      "y": 50,
+      "label": "Japan"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
   "catalog": {
     "id": "japan",
     "flag": "🇯🇵",

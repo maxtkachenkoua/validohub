@@ -29,7 +29,30 @@ const COUNTRY_RUNTIME_BY_SLUG = {
   bolivia: 'bolivia-suite.js',
   argentina: 'argentina-suite.js',
   brazil: 'brazil-suite.js',
-  poland: 'poland-suite.js'
+  poland: 'poland-suite.js',
+  "united-states": 'united-states-suite.js',
+  canada: 'canada-suite.js',
+  mexico: 'mexico-suite.js',
+  belize: 'belize-suite.js',
+  guatemala: 'guatemala-suite.js',
+  'el-salvador': 'el-salvador-suite.js',
+  honduras: 'honduras-suite.js',
+  nicaragua: 'nicaragua-suite.js',
+  'costa-rica': 'costa-rica-suite.js',
+  panama: 'panama-suite.js',
+  bahamas: 'bahamas-suite.js',
+  cuba: 'cuba-suite.js',
+  jamaica: 'jamaica-suite.js',
+  haiti: 'haiti-suite.js',
+  'dominican-republic': 'dominican-republic-suite.js',
+  'antigua-and-barbuda': 'antigua-and-barbuda-suite.js',
+  dominica: 'dominica-suite.js',
+  'saint-kitts-and-nevis': 'saint-kitts-and-nevis-suite.js',
+  'saint-lucia': 'saint-lucia-suite.js',
+  'saint-vincent-and-the-grenadines': 'saint-vincent-and-the-grenadines-suite.js',
+  grenada: 'grenada-suite.js',
+  barbados: 'barbados-suite.js',
+  'trinidad-and-tobago': 'trinidad-and-tobago-suite.js',
 };
 
 const LEGACY_RICH_LAYER = 'country-legacy-rich-layer.js';
@@ -90,7 +113,30 @@ const COUNTRY_ALGORITHM_BY_SLUG = {
   colombia: 'validohub.colombia-suite',
   chile: 'validohub.chile-suite',
   bolivia: 'validohub.bolivia-suite',
-  argentina: 'validohub.argentina-suite'
+  argentina: 'validohub.argentina-suite',
+  "united-states": 'validohub.united-states-suite',
+  canada: 'validohub.canada-suite',
+  mexico: 'validohub.mexico-suite',
+  belize: 'validohub.belize-suite',
+  guatemala: 'validohub.guatemala-suite',
+  'el-salvador': 'validohub.el-salvador-suite',
+  honduras: 'validohub.honduras-suite',
+  nicaragua: 'validohub.nicaragua-suite',
+  'costa-rica': 'validohub.costa-rica-suite',
+  panama: 'validohub.panama-suite',
+  bahamas: 'validohub.bahamas-suite',
+  cuba: 'validohub.cuba-suite',
+  jamaica: 'validohub.jamaica-suite',
+  haiti: 'validohub.haiti-suite',
+  'dominican-republic': 'validohub.dominican-republic-suite',
+  'antigua-and-barbuda': 'validohub.antigua-and-barbuda-suite',
+  dominica: 'validohub.dominica-suite',
+  'saint-kitts-and-nevis': 'validohub.saint-kitts-and-nevis-suite',
+  'saint-lucia': 'validohub.saint-lucia-suite',
+  'saint-vincent-and-the-grenadines': 'validohub.saint-vincent-and-the-grenadines-suite',
+  grenada: 'validohub.grenada-suite',
+  barbados: 'validohub.barbados-suite',
+  'trinidad-and-tobago': 'validohub.trinidad-and-tobago-suite',
 };
 
 const FACTORY_COUNTRY_SLUGS = new Set([
@@ -134,7 +180,30 @@ const FACTORY_COUNTRY_SLUGS = new Set([
   'ukraine',
   'united-kingdom',
   'vatican-city',
-  'argentina'
+  'argentina',
+  'united-states',
+  'canada',
+  'mexico',
+  'belize',
+  'guatemala',
+  'el-salvador',
+  'honduras',
+  'nicaragua',
+  'costa-rica',
+  'panama',
+  'bahamas',
+  'cuba',
+  'jamaica',
+  'haiti',
+  'dominican-republic',
+  'antigua-and-barbuda',
+  'dominica',
+  'saint-kitts-and-nevis',
+  'saint-lucia',
+  'saint-vincent-and-the-grenadines',
+  'grenada',
+  'barbados',
+  'trinidad-and-tobago'
 ]);
 
 function usage() {
@@ -234,6 +303,89 @@ async function renderEnglishCountryFromSource(country, assetsManifest) {
   return routeRegistry;
 }
 
+async function renderEnglishCountryToolPages(country, assetsManifest) {
+  const dataPath = resolve(projectRoot, 'countries', 'data', `${country}.json`);
+  if (!(await pathExists(dataPath))) return 0;
+  const data = JSON.parse(await readFile(dataPath, 'utf8'));
+  const routes = Array.isArray(data.hub?.routes) ? data.hub.routes : [];
+  if (!routes.length) return 0;
+
+  const layoutTemplate = await readFile(resolve(projectRoot, 'templates', 'layout.html'), 'utf8');
+  const runtimeTags = runtimeScriptsForCountry(country)
+    .map(script => `<script src="/assets/js/tools/${script}?v=country-premium-20260719"></script>`)
+    .join('\n');
+  const relatedCards = routes.slice(0, 12).map(route => `
+    <a href="${escapeHtml(route.href)}" class="link-card">
+      <span>${escapeHtml(route.title)}</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  `).join('');
+  let rendered = 0;
+
+  for (const route of routes) {
+    const href = String(route.href || '');
+    if (!href.startsWith(`/en/${country}/`) || !href.endsWith('/')) continue;
+    const title = route.title || `${data.catalog.name} Workbench`;
+    const summary = route.text || route.summary || `Browser-only ${data.catalog.name} developer workbench.`;
+    const category = route.category || 'country';
+    const headHtml = `
+  <title>${escapeHtml(title)} | ValidoHub</title>
+  <meta name="description" content="${escapeHtml(summary)}">
+  <link rel="canonical" href="https://validohub.com${escapeHtml(href)}">
+  <link rel="stylesheet" href="${assetsManifest.css}">
+`;
+    const breadcrumbsHtml = `<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/${escapeHtml(country)}/">${escapeHtml(data.catalog.name)}</a></li>
+      <li><a href="/en/categories/${escapeHtml(category)}/">${escapeHtml(category.replace(/-/g, ' '))}</a></li>
+      <li><span>${escapeHtml(title)}</span></li>
+    </ol>
+  </nav>`;
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: title,
+      description: summary,
+      url: `https://validohub.com${href}`,
+      applicationCategory: 'DeveloperApplication',
+      operatingSystem: 'All'
+    };
+    const contentHtml = `
+        <header class="page-intro">
+          <span class="eyebrow">${escapeHtml(data.catalog.name)} workbench</span>
+          <h1>${escapeHtml(title)}</h1>
+          <p>${escapeHtml(summary)}</p>
+        </header>
+
+        <section class="workbench-card csf-static-host" aria-label="Premium country workbench" data-algorithm-id="validohub.${escapeHtml(country)}-suite"></section>
+
+        <section class="related-section">
+          <div class="section-heading">
+            <span class="eyebrow">Related tools</span>
+            <h2>Continue with related ${escapeHtml(data.catalog.name)} tools</h2>
+          </div>
+          <div class="card-grid">${relatedCards}</div>
+        </section>`;
+    const assembledHtml = layoutTemplate
+      .replaceAll('{{ HEAD }}', () => headHtml)
+      .replaceAll('{{ HEADER }}', () => '')
+      .replaceAll('{{ BREADCRUMBS }}', () => breadcrumbsHtml)
+      .replaceAll('{{ HERO }}', () => '')
+      .replaceAll('{{ CONTENT }}', () => contentHtml)
+      .replaceAll('{{ FOOTER }}', () => '')
+      .replaceAll('{{ JSON_LD }}', () => `<script type="application/ld+json">${escapeHtmlJson(JSON.stringify(jsonLd))}</script>`)
+      .replaceAll('{{ SCRIPTS }}', () => `<script src="${assetsManifest.js}" defer></script>\n${runtimeTags}`);
+
+    const outputFilePath = resolve(siteRoot, href.replace(/^\//, ''), 'index.html');
+    await mkdir(dirname(outputFilePath), { recursive: true });
+    await writeFile(outputFilePath, assembledHtml, 'utf8');
+    rendered += 1;
+  }
+
+  return rendered;
+}
+
 async function configuredLocales() {
   const siteConfig = await readFile(resolve(projectRoot, 'site.yaml'), 'utf8');
   const inline = siteConfig.match(/^locales:\s*\[(.*?)\]\s*$/m);
@@ -255,6 +407,22 @@ async function scanHtmlFiles(dir) {
 
 function escapeRegExp(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function escapeHtmlJson(value) {
+  return String(value ?? '')
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026');
 }
 
 function routeFromFile(filePath) {
@@ -380,6 +548,34 @@ async function syncRuntimeAssets(country) {
   }
 }
 
+function isRasterVisualAsset(assetPath) {
+  return /\.(?:avif|jpe?g|png|webp)$/i.test(String(assetPath || ''));
+}
+
+async function syncCountryVisualAssets(country) {
+  const dataPath = resolve(projectRoot, 'countries', 'data', `${country}.json`);
+  if (!(await pathExists(dataPath))) return 0;
+
+  const model = JSON.parse(await readFile(dataPath, 'utf8'));
+  const visualPaths = [
+    model.visualAssets?.outlineSrc,
+    model.visualAssets?.mapSrc
+  ].filter(isRasterVisualAsset);
+
+  let copied = 0;
+  for (const assetPath of visualPaths) {
+    const relativePath = assetPath.replace(/^\//, '');
+    const sourcePath = resolve(projectRoot, relativePath);
+    if (!(await pathExists(sourcePath))) continue;
+    const targetPath = resolve(siteRoot, relativePath);
+    await mkdir(dirname(targetPath), { recursive: true });
+    await cp(sourcePath, targetPath);
+    copied += 1;
+  }
+
+  return copied;
+}
+
 async function materializeLocaleCountry({ country, locale, locales }) {
   const sourceDir = resolve(siteRoot, 'en', country);
   const targetDir = resolve(siteRoot, locale, country);
@@ -483,7 +679,11 @@ async function main() {
   console.log(`✓ Compiled assets: ${assetsManifest.css}, ${assetsManifest.js}`);
   await renderEnglishCountryFromSource(country, assetsManifest);
   console.log(`✓ Rendered /en/${country}/ from source`);
+  const renderedToolPages = await renderEnglishCountryToolPages(country, assetsManifest);
+  if (renderedToolPages) console.log(`✓ Rendered ${renderedToolPages} country tool pages from source`);
   await syncRuntimeAssets(country);
+  const visualAssets = await syncCountryVisualAssets(country);
+  console.log(`✓ Synced ${visualAssets} country visual assets`);
   const assetLinkUpdates = await refreshSelectedCountryRouteAssets(country, locales, assetsManifest);
   console.log(`✓ Refreshed current CSS/JS bundle links on ${assetLinkUpdates} selected country/portal pages`);
   const runtimeUpdates = await refreshEnglishCountryRuntimeScripts(country);

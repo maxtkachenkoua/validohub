@@ -1,4 +1,34 @@
 
+## 2026-07-24 - Shared Tool Hero and Country Visual Rules Hardening
+
+- Removed decorative acronym/logo tiles and hero-side Examples panels from the shared country-suite and generic-suite tool shells; samples remain near the input where they are actionable.
+- Added shared Integration traps blocks for country-scoped and global tools so every workbench carries concrete developer time-savers and common integration mistakes without per-tool filler.
+- Recorded the country raster visual rule: generate outline and location as independent final assets, use national flag colors, keep continent maps neutral except for the target country, and reject paired/cropped images, vertical split panels, white side gutters, satellite textures, and accidental neighboring-country highlights.
+- Kept Valido Engine untouched and verified the shared runtime changes with scoped build:tools and scoped Colombia build.
+
+## 2026-07-24 - North America Premium Batch V1
+
+- Added browser-only premium country suites for 23 North America countries: United States, Canada, Mexico, Belize, Guatemala, El Salvador, Honduras, Nicaragua, Costa Rica, Panama, Bahamas, Cuba, Jamaica, Haiti, Dominican Republic, Antigua and Barbuda, Dominica, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, Grenada, Barbados, and Trinidad and Tobago.
+- Added `docs/product/NORTH_AMERICA_PREMIUM_SUITE_SPEC.md` and `scripts/generate-north-america-premium-batch.mjs`; generated suites include 22 local workbenches per country with field anatomy, quality notes, batch/debug/API layers, and Integration traps.
+- Extended the route registry and scoped country dev builder so JSON-backed `countries/data/*.json` `hub.routes` materialize real country tool pages without requiring legacy YAML route files.
+- Updated release/scoped build mappings and premium audit mappings for the new Country Suite Factory runtimes; scoped audits passed for United States, Canada, Mexico, and Jamaica.
+- Updated `audit:country-premium -- --country <slug>` to use English-only scoped checks during development and to treat JSON `hub.routes` as valid factory-suite tool source data.
+- Hardened country visual rendering so missing raster PNG assets do not render broken images; North America pages without generated premium PNG maps omit the visual cards until those assets are produced.
+- Ran scoped English-only `build:country` for all 23 North America countries and kept Valido Engine untouched.
+
+## 2026-07-23 - Country Tool Anatomy Breakdown V1
+
+- Added shared Country Suite Factory anatomy enrichment so factory-based country tools explain local value segments instead of only showing generic evidence cards.
+- Structured values now expose readable prefixes, body blocks, registry/type blocks, check/control digits, routing/account pieces, postal/phone/vehicle/date/amount parts, display-only punctuation, and official-boundary notes where the format supports it.
+- Browser-verified Colombia NIT `900.123.456-7` on the generated local site: the UI now shows `900` as registry prefix, `123456` as registry body, and `7` as check digit.
+- Removed the duplicate compact segment/strip rendering for generated anatomy results so users see one detailed anatomy card grid instead of repeated values.
+- Completed civic main-city profiles for every current country hub so full-premium countries no longer fall back to a single capital plus `population varies by source`; microstates use honest town/quarter/district context.
+- Audited local IBAN coverage: every country whose data contains IBAN workflows has both a country-scoped validator and generator; non-IBAN markets continue to use domestic account/payment tools instead of fake IBAN routes.
+- Strengthened country hub intent filters so the selected block has a visible active pill, check marker, counter styling, and `aria-pressed`/`aria-current` state.
+- Restyled country hub catalog group headers as distinct section bands with accent rails and separated child lists so selected parent categories no longer blend into their first tool rows.
+- Simplified country catalog group counters so category clicks show the plain total while `visible/total` fractions appear only during text search; count badges now resize safely.
+- Kept Valido Engine untouched; scoped Colombia/Peru/Uruguay checks, country-suite audit, and Peru/Uruguay premium audits passed.
+
 ## 2026-07-23 - Global Tools Deep Premium Lens V1
 
 - Upgraded the shared Batch 4-7 global runtime in `assets/js/tools/generic-suite.js` from mostly generic static signal/risk counting into domain-specific browser-only lenses.
@@ -942,3 +972,31 @@ Added 15 global premium workbenches across Web/API Quality, Data & Integration, 
 ## Global Premium Tools Batch 4-7
 
 Added 20 global premium workbenches across Cloud / DevOps, AI / Data / RAG, Backend / API, and Frontend / QA. These continue the browser-only premium standard with local static analyzers, tool-specific samples, validation pipelines, field breakdowns, quality notes, Developer API previews, and snapshot JSON.
+
+## Guyana Country Visual Assets
+
+- Replaced the Guyana country visual cards with premium raster assets for the outline and South America location map.
+- Taught the country visual renderer to support raster assets through `<img>` while preserving inline SVG support.
+- Updated scoped `build:country` to copy country visual PNG/WebP/JPG assets into `generated/validohub`, so local country rebuilds render the images without a full build.
+- Removed visible headings/captions from country visual cards and recorded the Guyana raster-visual standard: image-only cards, tight framing, no decorative clutter, no LLM-invented outline blobs, and national-flag color gradients/accent glow for future country visuals.
+- Added Argentina raster country visuals using the same compact overlay-label card standard and Argentina flag palette.
+- Added Chile, Peru, and Colombia raster country visuals using the same compact overlay-label card standard and national flag palettes.
+
+## Full Country Raster Visual Migration
+
+- Replaced all existing country shape/location visual references with saved premium raster PNG assets under `assets/images/countries/`.
+- Ensured 59/59 country data files now carry non-null PNG `visualAssets`, including planned Canada, Japan, Mexico, and United States entries that previously had no visuals.
+- Reconfirmed the Guyana-style rule: compact overlay labels only, no large headings/captions, no generated SVG blobs, tight framing, national-flag color palettes, and no build-time image regeneration.
+
+## North America Follow-Up Hardening
+
+- Fixed the North America generator baseline so all 23 country suites produce 61 browser-only local workbenches instead of a shallow 22-tool set.
+- Added 3-4 main-city civic snapshot data for North America countries and documented that a single-capital fallback is not acceptable for full-premium country suites.
+- Rebuilt the English Countries portal after North America generation so `/en/countries/` includes the `North America` group with all 23 countries.
+- Replaced the USA, Canada, and Mexico source raster assets with checked non-split-panel outline/location PNGs as the control set for the remaining North America visual cleanup.
+- Fixed North America hero clocks by replacing placeholder `Local time zone varies by territory/region` values with real IANA zones for all 23 countries and hardening the renderer so invalid pseudo-zones do not produce dead clocks.
+
+## 2026-07-24 Baseline Checkpoint
+
+- Recorded the current North America/country-visual checkpoint in `docs/ai/NEXT_CHAT_HANDOFF.md`, including the accepted visual rules, the paused/unaccepted country image cleanup, the stale CSS bundle-link risk on older generated country pages, and the requirement to run country scoped builds sequentially.
+- Preserved the current dirty worktree as a baseline commit by request so later visual/runtime regressions can be compared against this checkpoint.

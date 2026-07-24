@@ -1,9 +1,9 @@
 {
   "id": "andorra",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/andorra-outline.svg",
+    "outlineSrc": "/assets/images/countries/andorra-outline.png",
     "outlineAlt": "Andorra country outline",
-    "mapSrc": "/assets/images/countries/andorra-location.svg",
+    "mapSrc": "/assets/images/countries/andorra-location.png",
     "mapAlt": "World map with Andorra location marker",
     "mapMarker": {
       "x": 45,

@@ -1,27 +1,45 @@
 {
   "id": "mexico",
-  "visualAssets": null,
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/mexico-outline.png",
+    "outlineAlt": "Mexico country outline",
+    "mapSrc": "/assets/images/countries/mexico-location.png",
+    "mapAlt": "Mexico location map",
+    "mapMarker": {
+      "x": 31,
+      "y": 48,
+      "label": "Mexico City"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
   "catalog": {
     "id": "mexico",
     "flag": "🇲🇽",
     "name": "Mexico",
+    "nativeName": "Mexico",
     "iso2": "MX",
     "iso3": "MEX",
     "continent": "North America",
-    "region": "North America",
+    "region": "North America / Latin America",
     "language": "Spanish",
     "currency": "MXN",
     "currencyName": "Mexican peso",
-    "status": "planned",
-    "summary": "Future hub for Mexican RFC, CURP, address, and payment implementation context.",
+    "status": "available",
+    "summary": "Premium Mexico developer hub for RFC, CURP, NSS, postal code, CLABE, phone, CLABE, SPEI, CoDi handoff, SWIFT, CFDI, locale, privacy, documents, banking, tax, and browser-only data-quality workflows.",
     "identifiers": [
       "RFC",
       "CURP",
-      "postal code"
+      "NSS",
+      "postal code",
+      "CLABE",
+      "phone"
     ],
     "payments": [
       "CLABE",
-      "SPEI"
+      "SPEI",
+      "CoDi handoff",
+      "SWIFT",
+      "CFDI"
     ],
     "features": [
       "payments",
@@ -29,17 +47,630 @@
       "government",
       "banking"
     ],
-    "availableWorkbenches": [],
-    "plannedWorkbenches": [
-      "RFC Validator",
-      "CURP Validator",
-      "CLABE Notes"
+    "availableWorkbenches": [
+      "Mexican CURP Validator",
+      "Mexican RFC Validator",
+      "Mexican SAT RFC / IVA Inspector",
+      "Mexican Company Onboarding Auditor",
+      "Mexican Business Registry Readiness Helper",
+      "Mexican ID Card Format Helper",
+      "Mexican MRZ / Passport Parser",
+      "Mexican CLABE Inspector",
+      "Mexican BIC / SWIFT Inspector",
+      "Mexican SPEI / CLABE Helper",
+      "Mexican Remittance Text Builder",
+      "Mexican Bank Statement Parser",
+      "Mexican MXN Decimal Currency Formatter",
+      "Mexican codigo postal Validator",
+      "Mexican Address Normalizer",
+      "Mexican Phone Number Validator",
+      "Mexican Date Locale Formatter",
+      "Mexican CSV Locale Normalizer",
+      "Mexican Document OCR Fixer",
+      "Mexican Privacy Redaction Helper",
+      "Mexican Data Quality Workbench",
+      "Mexican API Payload Auditor",
+      "Mexican State / Province Code Mapper",
+      "Mexican Locality Autocomplete Fixture Builder",
+      "Mexican Government Form Field Normalizer",
+      "Mexican Tax Invoice Field Auditor",
+      "Mexican Sales Tax / VAT Threshold Checklist",
+      "Mexican Withholding Tax Form Helper",
+      "Mexican Customs / Import Code Inspector",
+      "Mexican Payroll ID Intake Helper",
+      "Mexican Benefits / Social Number Redaction Helper",
+      "Mexican Business License Checklist",
+      "Mexican Ownership / KYB Payload Auditor",
+      "Mexican Sanctions Screening Payload Helper",
+      "Mexican Bank Routing Handoff Checklist",
+      "Mexican Payout Recipient Validator",
+      "Mexican Refund Reference Builder",
+      "Mexican Chargeback Evidence Pack Helper",
+      "Mexican Ecommerce Checkout Locale Auditor",
+      "Mexican Shipping Label Normalizer",
+      "Mexican Customs Address Line Helper",
+      "Mexican Vehicle Registration Format Helper",
+      "Mexican Driver License Format Helper",
+      "Mexican Utility Bill Address Proof Auditor",
+      "Mexican KYC Document Bundle Auditor",
+      "Mexican Invoice Number Format Helper",
+      "Mexican Receipt Tax Line Parser",
+      "Mexican Phone Extension Normalizer",
+      "Mexican Business Hours / Time Zone Helper",
+      "Mexican Holiday Calendar Fixture Builder",
+      "Mexican Name Parser / Transliteration Helper",
+      "Mexican Email Domain Locality Checker",
+      "Mexican Form Autofill Fixture Generator",
+      "Mexican Webhook Local Payload Fixture",
+      "Mexican GraphQL Input Auditor",
+      "Mexican OpenAPI Country Schema Helper",
+      "Mexican SQL Seed Data Builder",
+      "Mexican JSON Schema Local Rules Helper",
+      "Mexican Test Case Matrix Builder",
+      "Mexican Data Retention Policy Helper",
+      "Mexican Accessibility Form Label Auditor"
     ],
-    "completion": 20,
+    "plannedWorkbenches": [
+      "Live SAT / public registry handoff lookup",
+      "Live tax/registry status confirmation",
+      "Live bank ownership lookup"
+    ],
+    "completion": 100,
     "coordinates": {
-      "x": 32,
+      "x": 31,
       "y": 48
-    }
+    },
+    "searchHints": [
+      "RFC",
+      "CURP",
+      "NSS",
+      "postal code",
+      "CLABE",
+      "phone",
+      "CLABE",
+      "SPEI"
+    ]
   },
-  "hub": null
+  "hub": {
+    "flag": "🇲🇽",
+    "name": "Mexico",
+    "badge": "Premium Mexico developer suite",
+    "description": "Developer intelligence and browser-only workbenches for mexican identifiers, tax, payments, banking, locale conventions, privacy, documents, and integration QA.",
+    "metadata": {
+      "nativeName": "Mexico",
+      "population": "approximately 130M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Mexico City",
+      "continent": "North America",
+      "region": "North America / Latin America",
+      "languages": "Spanish",
+      "currency": "Mexican peso",
+      "currencyCode": "MXN",
+      "callingCode": "+52",
+      "internetTld": ".mx",
+      "drivingSide": "Right",
+      "iso2": "MX",
+      "iso3": "MEX",
+      "isoNumeric": "484",
+      "locale": "es-MX",
+      "icuLocale": "es_MX",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour where used; local display varies",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, locality/administrative area, postal code, Mexico",
+      "postalCodeFormat": "codigo postal",
+      "primaryTimeZone": "America/Mexico_City",
+      "measurementSystem": "Metric-first",
+      "paperSize": "Letter and/or A4 by workflow",
+      "emergencyNumber": "local emergency number varies",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "es-MX",
+      "cldrLocale": "es_MX",
+      "metricVsImperial": "Metric-first"
+    },
+    "visualIdentity": {
+      "countryId": "mexico",
+      "outlineLabel": "Mexico outline",
+      "mapLabel": "Mexico in North America",
+      "continentBadge": "North America",
+      "flagLabel": "Mexico flag",
+      "heroAccentPrimary": "0 99 65",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "206 17 38"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "61",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "CURP and RFC",
+        "text": "Local identifier workbenches split body, prefixes, local vocabulary, and official boundaries."
+      },
+      {
+        "title": "SAT RFC / IVA and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, privacy, OCR, locale, and data-quality tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Mexico registry, tax, bank, postal, identity, or legal status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /mexico/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring local separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing jurisdictions",
+        "text": "Do not reuse non-Mexican examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "SAT / public registry handoff",
+        "text": "Official business registry lookup remains the source of truth for Mexico.",
+        "status": "official boundary"
+      },
+      {
+        "title": "SAT RFC / IVA",
+        "text": "Tax validity and filing acceptance require the responsible tax authority or provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "LFPDPPP privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "RFC, CURP, NSS, postal code, CLABE, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "CLABE, SPEI, CoDi handoff, SWIFT, CFDI",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "es-MX / es_MX; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "MXN amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "CURP, RFC, codigo postal, phone, address, and local banking labels need jurisdiction-specific copy.",
+        "status": "available"
+      }
+    ],
+    "searchHints": [
+      "RFC",
+      "CURP",
+      "NSS",
+      "postal code",
+      "CLABE",
+      "phone",
+      "CLABE",
+      "SPEI"
+    ],
+    "routes": [
+      {
+        "title": "Mexican CURP Validator",
+        "href": "/en/mexico/mexico-curp-validator/",
+        "text": "Validate local personal identifier shape, split visible evidence, and keep official identity status out of browser-only results.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Mexican RFC Validator",
+        "href": "/en/mexico/mexico-rfc-validator/",
+        "text": "Inspect company or registry identifier shape, prefixes, local vocabulary, and official registry handoff boundaries.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Mexican SAT RFC / IVA Inspector",
+        "href": "/en/mexico/mexico-tax-id-inspector/",
+        "text": "Normalize tax identifier snippets, inspect local body evidence, and prepare official tax-authority handoff notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Mexican Company Onboarding Auditor",
+        "href": "/en/mexico/mexico-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for identifier, address, banking, tax, and privacy readiness.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican Business Registry Readiness Helper",
+        "href": "/en/mexico/mexico-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or filing workflow.",
+        "category": "government"
+      },
+      {
+        "title": "Mexican ID Card Format Helper",
+        "href": "/en/mexico/mexico-id-card-format-helper/",
+        "text": "Inspect identity-card snippets, document numbers, dates, and privacy boundaries without proving identity.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Mexican MRZ / Passport Parser",
+        "href": "/en/mexico/mexico-passport-mrz-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Mexican CLABE Inspector",
+        "href": "/en/mexico/mexico-domestic-bank-account-inspector/",
+        "text": "Inspect domestic bank account slices, routing blocks, account text, and payment-provider boundaries.",
+        "category": "finance"
+      },
+      {
+        "title": "Mexican BIC / SWIFT Inspector",
+        "href": "/en/mexico/mexico-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for cross-border banking integrations.",
+        "category": "finance"
+      },
+      {
+        "title": "Mexican SPEI / CLABE Helper",
+        "href": "/en/mexico/mexico-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting.",
+        "category": "finance"
+      },
+      {
+        "title": "Mexican Remittance Text Builder",
+        "href": "/en/mexico/mexico-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, tax, and local payment reference evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Mexican Bank Statement Parser",
+        "href": "/en/mexico/mexico-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, counterparty, reference, and local decimal conventions.",
+        "category": "finance"
+      },
+      {
+        "title": "Mexican MXN Decimal Currency Formatter",
+        "href": "/en/mexico/mexico-currency-decimal-formatter/",
+        "text": "Normalize local amount strings, decimal separators, grouping, and API-safe numeric previews.",
+        "category": "finance"
+      },
+      {
+        "title": "Mexican codigo postal Validator",
+        "href": "/en/mexico/mexico-postal-code-validator/",
+        "text": "Validate postal/address locality shape, split locality hints, and preserve official postal lookup boundaries.",
+        "category": "address"
+      },
+      {
+        "title": "Mexican Address Normalizer",
+        "href": "/en/mexico/mexico-address-normalizer/",
+        "text": "Normalize street, locality, administrative area, postal code, and country lines for local forms.",
+        "category": "address"
+      },
+      {
+        "title": "Mexican Phone Number Validator",
+        "href": "/en/mexico/mexico-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes.",
+        "category": "address"
+      },
+      {
+        "title": "Mexican Date Locale Formatter",
+        "href": "/en/mexico/mexico-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics.",
+        "category": "localization"
+      },
+      {
+        "title": "Mexican CSV Locale Normalizer",
+        "href": "/en/mexico/mexico-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for decimal, date, postal, phone, tax, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican Document OCR Fixer",
+        "href": "/en/mexico/mexico-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Mexican Privacy Redaction Helper",
+        "href": "/en/mexico/mexico-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets.",
+        "category": "privacy"
+      },
+      {
+        "title": "Mexican Data Quality Workbench",
+        "href": "/en/mexico/mexico-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican API Payload Auditor",
+        "href": "/en/mexico/mexico-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, banking, dates, amounts, and official boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican State / Province Code Mapper",
+        "href": "/en/mexico/mexico-state-province-code-mapper/",
+        "text": "Map local administrative area labels, abbreviations, and address payload hints for browser-only form routing.",
+        "category": "address"
+      },
+      {
+        "title": "Mexican Locality Autocomplete Fixture Builder",
+        "href": "/en/mexico/mexico-locality-autocomplete-fixture-builder/",
+        "text": "Build country-local city, district, postal, and address fixtures for autocomplete QA without live geocoding.",
+        "category": "address"
+      },
+      {
+        "title": "Mexican Government Form Field Normalizer",
+        "href": "/en/mexico/mexico-government-form-field-normalizer/",
+        "text": "Normalize local government-form labels, identifier fields, dates, and address lines before portal handoff.",
+        "category": "government"
+      },
+      {
+        "title": "Mexican Tax Invoice Field Auditor",
+        "href": "/en/mexico/mexico-tax-invoice-field-auditor/",
+        "text": "Audit invoice snippets for local tax IDs, currency, address, date, line totals, and official filing boundaries.",
+        "category": "tax"
+      },
+      {
+        "title": "Mexican Sales Tax / VAT Threshold Checklist",
+        "href": "/en/mexico/mexico-sales-tax-vat-threshold-checklist/",
+        "text": "Inspect revenue, registration, local tax labels, and threshold handoff notes without making legal conclusions.",
+        "category": "tax"
+      },
+      {
+        "title": "Mexican Withholding Tax Form Helper",
+        "href": "/en/mexico/mexico-withholding-tax-form-helper/",
+        "text": "Prepare local withholding-tax form evidence, payee IDs, dates, amounts, and review notes for finance teams.",
+        "category": "tax"
+      },
+      {
+        "title": "Mexican Customs / Import Code Inspector",
+        "href": "/en/mexico/mexico-customs-import-code-inspector/",
+        "text": "Inspect customs references, importer IDs, invoice fields, currency, and shipment handoff evidence.",
+        "category": "logistics"
+      },
+      {
+        "title": "Mexican Payroll ID Intake Helper",
+        "href": "/en/mexico/mexico-payroll-id-intake-helper/",
+        "text": "Check employee intake payloads for local personal IDs, tax IDs, dates, address, and privacy-safe masking.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Mexican Benefits / Social Number Redaction Helper",
+        "href": "/en/mexico/mexico-benefits-social-number-redaction/",
+        "text": "Mask local social, benefits, tax, phone, and address evidence before logs, tickets, or screenshots.",
+        "category": "privacy"
+      },
+      {
+        "title": "Mexican Business License Checklist",
+        "href": "/en/mexico/mexico-business-license-checklist/",
+        "text": "Audit local business-license intake evidence, registry IDs, addresses, tax labels, and official lookup boundaries.",
+        "category": "government"
+      },
+      {
+        "title": "Mexican Ownership / KYB Payload Auditor",
+        "href": "/en/mexico/mexico-ownership-kyb-payload-auditor/",
+        "text": "Inspect KYB payloads for company IDs, beneficial-owner fields, addresses, dates, and masked evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican Sanctions Screening Payload Helper",
+        "href": "/en/mexico/mexico-sanctions-screening-payload-helper/",
+        "text": "Prepare offline screening payloads with names, addresses, identifiers, and no false match-status claims.",
+        "category": "privacy"
+      },
+      {
+        "title": "Mexican Bank Routing Handoff Checklist",
+        "href": "/en/mexico/mexico-bank-routing-handoff-checklist/",
+        "text": "Check routing, account, branch, currency, payment reference, and provider-boundary fields before bank handoff.",
+        "category": "finance"
+      },
+      {
+        "title": "Mexican Payout Recipient Validator",
+        "href": "/en/mexico/mexico-payout-recipient-validator/",
+        "text": "Inspect payout recipient payloads for local name, account, tax, phone, address, currency, and retry-safe evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Mexican Refund Reference Builder",
+        "href": "/en/mexico/mexico-refund-reference-builder/",
+        "text": "Build local refund references from invoice, customer, payment, amount, and reconciliation fields.",
+        "category": "finance"
+      },
+      {
+        "title": "Mexican Chargeback Evidence Pack Helper",
+        "href": "/en/mexico/mexico-chargeback-evidence-pack-helper/",
+        "text": "Organize browser-only payment, invoice, address, date, and customer evidence for dispute workflows.",
+        "category": "finance"
+      },
+      {
+        "title": "Mexican Ecommerce Checkout Locale Auditor",
+        "href": "/en/mexico/mexico-ecommerce-checkout-locale-auditor/",
+        "text": "Audit checkout payloads for local address, phone, postal, currency, date, and tax-field assumptions.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican Shipping Label Normalizer",
+        "href": "/en/mexico/mexico-shipping-label-normalizer/",
+        "text": "Normalize local shipping-label blocks, recipient names, postal/locality fields, phone, and delivery notes.",
+        "category": "logistics"
+      },
+      {
+        "title": "Mexican Customs Address Line Helper",
+        "href": "/en/mexico/mexico-customs-address-line-helper/",
+        "text": "Split exporter/importer address lines, locality, postal data, country code, and customs-safe payloads.",
+        "category": "logistics"
+      },
+      {
+        "title": "Mexican Vehicle Registration Format Helper",
+        "href": "/en/mexico/mexico-vehicle-registration-format-helper/",
+        "text": "Inspect vehicle-registration snippets, plate shapes, region hints, and official transport boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Mexican Driver License Format Helper",
+        "href": "/en/mexico/mexico-driver-license-format-helper/",
+        "text": "Inspect driving-license snippets, dates, document numbers, and privacy-safe evidence for transport intake.",
+        "category": "documents"
+      },
+      {
+        "title": "Mexican Utility Bill Address Proof Auditor",
+        "href": "/en/mexico/mexico-utility-bill-address-proof-auditor/",
+        "text": "Audit utility-bill OCR text for names, dates, address lines, account numbers, and masked support evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Mexican KYC Document Bundle Auditor",
+        "href": "/en/mexico/mexico-kyc-document-bundle-auditor/",
+        "text": "Check KYC document bundles for local ID, tax, address, date, file labels, and official-boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Mexican Invoice Number Format Helper",
+        "href": "/en/mexico/mexico-invoice-number-format-helper/",
+        "text": "Normalize invoice-number patterns, series, date fragments, counterparty hints, and duplicate-risk notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Mexican Receipt Tax Line Parser",
+        "href": "/en/mexico/mexico-receipt-tax-line-parser/",
+        "text": "Parse receipt text for tax labels, totals, currency, dates, and local decimal/grouping evidence.",
+        "category": "tax"
+      },
+      {
+        "title": "Mexican Phone Extension Normalizer",
+        "href": "/en/mexico/mexico-phone-extension-normalizer/",
+        "text": "Normalize local phone numbers with extension, country prefix, national blocks, and CRM-safe output.",
+        "category": "address"
+      },
+      {
+        "title": "Mexican Business Hours / Time Zone Helper",
+        "href": "/en/mexico/mexico-timezone-business-hours-helper/",
+        "text": "Preview local business-hour windows, date cutoffs, support handoffs, and timezone caveats.",
+        "category": "localization"
+      },
+      {
+        "title": "Mexican Holiday Calendar Fixture Builder",
+        "href": "/en/mexico/mexico-holiday-calendar-fixture-builder/",
+        "text": "Build local calendar fixtures and holiday-review payloads without claiming official holiday coverage.",
+        "category": "localization"
+      },
+      {
+        "title": "Mexican Name Parser / Transliteration Helper",
+        "href": "/en/mexico/mexico-name-parser-transliteration-helper/",
+        "text": "Split local personal/company names, accents, casing, transliteration, and search-key fixtures.",
+        "category": "localization"
+      },
+      {
+        "title": "Mexican Email Domain Locality Checker",
+        "href": "/en/mexico/mexico-email-domain-locality-checker/",
+        "text": "Inspect email/domain strings for local TLD hints, plus addressing, masking, and no-deliverability boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican Form Autofill Fixture Generator",
+        "href": "/en/mexico/mexico-form-autofill-fixture-generator/",
+        "text": "Generate browser-only local form fixtures for IDs, tax, phone, postal, address, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican Webhook Local Payload Fixture",
+        "href": "/en/mexico/mexico-webhook-local-payload-fixture/",
+        "text": "Build webhook payload fixtures with local IDs, tax, currency, dates, masked fields, and replay metadata.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican GraphQL Input Auditor",
+        "href": "/en/mexico/mexico-graphql-input-auditor/",
+        "text": "Audit GraphQL-style input objects for local identifiers, tax fields, dates, amounts, and nullable hazards.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican OpenAPI Country Schema Helper",
+        "href": "/en/mexico/mexico-openapi-country-schema-helper/",
+        "text": "Draft and inspect OpenAPI schema snippets for local identifiers, address, phone, payment, and tax fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican SQL Seed Data Builder",
+        "href": "/en/mexico/mexico-sql-seed-data-builder/",
+        "text": "Build local seed-data rows for identifiers, tax, address, phone, amount, and bank fixtures.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican JSON Schema Local Rules Helper",
+        "href": "/en/mexico/mexico-json-schema-local-rules-helper/",
+        "text": "Inspect JSON Schema rules for local field names, patterns, examples, and official-boundary copy.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican Test Case Matrix Builder",
+        "href": "/en/mexico/mexico-test-case-matrix-builder/",
+        "text": "Generate valid, invalid, short, wrong-country, masking, and boundary test-case matrices for local workflows.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Mexican Data Retention Policy Helper",
+        "href": "/en/mexico/mexico-data-retention-policy-helper/",
+        "text": "Organize local retention, masking, audit-log, and deletion checklist fields without giving legal advice.",
+        "category": "privacy"
+      },
+      {
+        "title": "Mexican Accessibility Form Label Auditor",
+        "href": "/en/mexico/mexico-accessibility-form-label-auditor/",
+        "text": "Audit local form labels, autocomplete names, error copy, and screen-reader hints for identifier workflows.",
+        "category": "developer-tools"
+      }
+    ]
+  }
 }

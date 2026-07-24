@@ -1,9 +1,9 @@
 {
   "id": "czechia",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/czechia-outline.svg",
+    "outlineSrc": "/assets/images/countries/czechia-outline.png",
     "outlineAlt": "Czechia country outline",
-    "mapSrc": "/assets/images/countries/czechia-location.svg",
+    "mapSrc": "/assets/images/countries/czechia-location.png",
     "mapAlt": "World map with Czechia location marker",
     "mapMarker": {
       "x": 51,

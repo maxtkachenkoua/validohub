@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises';
+import { access, readFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { countryThemeStyleAttr } from './country-theme-style.mjs';
@@ -57,6 +57,30 @@ function escapeHtml(value) {
     .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;');
+}
+
+function isRasterAsset(assetPath) {
+  return /\.(?:avif|jpe?g|png|webp)$/i.test(String(assetPath || ''));
+}
+
+async function pathExists(filePath) {
+  try {
+    await access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function renderCountryVisualAsset(assetPath, altText) {
+  const fullPath = resolve(projectRoot, assetPath.replace(/^\//, ''));
+  if (isRasterAsset(assetPath)) {
+    if (!(await pathExists(fullPath))) return '';
+    return `<img src="${escapeHtml(assetPath)}" alt="${escapeHtml(altText)}" loading="lazy" decoding="async">`;
+  }
+
+  const rawSvg = await readFile(fullPath, 'utf8');
+  return cleanSvg(rawSvg);
 }
 
 const HERO_CLOCK_PROFILES = {
@@ -140,7 +164,14 @@ function normalizeTimeZone(value) {
   const raw = String(value || '').trim();
   if (!raw) return '';
   const match = raw.match(/[A-Za-z]+\/[A-Za-z0-9_+\-]+(?:\/[A-Za-z0-9_+\-]+)?/);
-  return match ? match[0] : '';
+  const timeZone = match ? match[0] : '';
+  if (!timeZone) return '';
+  try {
+    new Intl.DateTimeFormat('en-US', { timeZone }).format(new Date());
+    return timeZone;
+  } catch {
+    return '';
+  }
 }
 
 function getCountryValidatorRoutes(model, routeRegistry) {
@@ -238,20 +269,15 @@ export async function renderCountryOutlineCard(model) {
   const assetPath = model.visualAssets.outlineSrc;
   if (!assetPath) return '';
 
-  const fullPath = resolve(projectRoot, assetPath.replace(/^\//, ''));
-  const rawSvg = await readFile(fullPath, 'utf8');
-  const cleanedSvg = cleanSvg(rawSvg);
+  const visualAsset = await renderCountryVisualAsset(assetPath, model.visualAssets.outlineAlt || `${model.displayName} country outline`);
+  if (!visualAsset) return '';
 
   const html = `
-    <section class="vh-card vh-country-outline">
-      <div class="section-heading">
-        <span class="vh-eyebrow">Country Shape</span>
-        <h3>Official administrative outline</h3>
-      </div>
+    <section class="vh-card vh-country-outline" aria-label="${escapeHtml(model.visualAssets.outlineAlt || `${model.displayName} country outline`)}">
+      <span class="vh-country-visual-label">Country Shape</span>
       <div class="vh-country-visual-art">
-        ${cleanedSvg}
+        ${visualAsset}
       </div>
-      <p class="vh-country-visual-caption">${escapeHtml(model.displayName)} Shape Outline</p>
     </section>
   `;
   return cleanHtml(html);
@@ -261,20 +287,15 @@ export async function renderCountryLocationMapCard(model) {
   const assetPath = model.visualAssets.mapSrc;
   if (!assetPath) return '';
 
-  const fullPath = resolve(projectRoot, assetPath.replace(/^\//, ''));
-  const rawSvg = await readFile(fullPath, 'utf8');
-  const cleanedSvg = cleanSvg(rawSvg);
+  const visualAsset = await renderCountryVisualAsset(assetPath, model.visualAssets.mapAlt || `${model.displayName} map highlight`);
+  if (!visualAsset) return '';
 
   const html = `
-    <section class="vh-card vh-country-location-map">
-      <div class="section-heading">
-        <span class="vh-eyebrow">Location</span>
-        <h3>Geographic position in ${escapeHtml(model.region)}</h3>
-      </div>
+    <section class="vh-card vh-country-location-map" aria-label="${escapeHtml(model.visualAssets.mapAlt || `${model.displayName} map highlight`)}">
+      <span class="vh-country-visual-label">Location</span>
       <div class="vh-country-visual-art">
-        ${cleanedSvg}
+        ${visualAsset}
       </div>
-      <p class="vh-country-visual-caption">${escapeHtml(model.displayName)} Map Highlight</p>
     </section>
   `;
   return cleanHtml(html);

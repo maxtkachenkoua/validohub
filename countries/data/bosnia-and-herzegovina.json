@@ -1,9 +1,9 @@
 {
   "id": "bosnia-and-herzegovina",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/bosnia-and-herzegovina-outline.svg",
+    "outlineSrc": "/assets/images/countries/bosnia-and-herzegovina-outline.png",
     "outlineAlt": "Bosnia and Herzegovina country outline",
-    "mapSrc": "/assets/images/countries/bosnia-and-herzegovina-location.svg",
+    "mapSrc": "/assets/images/countries/bosnia-and-herzegovina-location.png",
     "mapAlt": "World map with Bosnia and Herzegovina location marker",
     "mapMarker": {
       "x": 52,

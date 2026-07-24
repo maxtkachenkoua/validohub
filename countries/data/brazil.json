@@ -1,9 +1,9 @@
 {
   "id": "brazil",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/brazil-outline.svg",
+    "outlineSrc": "/assets/images/countries/brazil-outline.png",
     "outlineAlt": "Brazil country outline",
-    "mapSrc": "/assets/images/countries/brazil-location.svg",
+    "mapSrc": "/assets/images/countries/brazil-location.png",
     "mapAlt": "World map with Brazil location marker",
     "mapMarker": {
       "x": 49,

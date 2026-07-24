@@ -1,9 +1,9 @@
 {
   "id": "denmark",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/denmark-outline.svg",
+    "outlineSrc": "/assets/images/countries/denmark-outline.png",
     "outlineAlt": "Denmark country outline",
-    "mapSrc": "/assets/images/countries/denmark-location.svg",
+    "mapSrc": "/assets/images/countries/denmark-location.png",
     "mapAlt": "World map with Denmark location marker",
     "mapMarker": {
       "x": 51,

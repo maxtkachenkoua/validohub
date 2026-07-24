@@ -1,0 +1,673 @@
+{
+  "id": "jamaica",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/jamaica-outline.png",
+    "outlineAlt": "Jamaica country outline",
+    "mapSrc": "/assets/images/countries/jamaica-location.png",
+    "mapAlt": "Jamaica location map",
+    "mapMarker": {
+      "x": 34,
+      "y": 48,
+      "label": "Kingston"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "jamaica",
+    "flag": "🇯🇲",
+    "name": "Jamaica",
+    "nativeName": "Jamaica",
+    "iso2": "JM",
+    "iso3": "JAM",
+    "continent": "North America",
+    "region": "North America / Caribbean and Central America",
+    "language": "English",
+    "currency": "JMD",
+    "currencyName": "Jamaican dollar",
+    "status": "available",
+    "summary": "Premium Jamaica developer hub for TRN, company number, GCT / TRN, postal zone, phone, domestic bank account, SWIFT/BIC, payment reference, locale, privacy, documents, banking, tax, and browser-only data-quality workflows.",
+    "identifiers": [
+      "TRN",
+      "company number",
+      "GCT / TRN",
+      "postal zone",
+      "phone"
+    ],
+    "payments": [
+      "domestic bank account",
+      "SWIFT/BIC",
+      "payment reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Jamaican TRN Validator",
+      "Jamaican company number Validator",
+      "Jamaican GCT / TRN Inspector",
+      "Jamaican Company Onboarding Auditor",
+      "Jamaican Business Registry Readiness Helper",
+      "Jamaican ID Card Format Helper",
+      "Jamaican MRZ / Passport Parser",
+      "Jamaican domestic bank account Inspector",
+      "Jamaican BIC / SWIFT Inspector",
+      "Jamaican domestic payment reference Helper",
+      "Jamaican Remittance Text Builder",
+      "Jamaican Bank Statement Parser",
+      "Jamaican JMD Decimal Currency Formatter",
+      "Jamaican postal zone Validator",
+      "Jamaican Address Normalizer",
+      "Jamaican Phone Number Validator",
+      "Jamaican Date Locale Formatter",
+      "Jamaican CSV Locale Normalizer",
+      "Jamaican Document OCR Fixer",
+      "Jamaican Privacy Redaction Helper",
+      "Jamaican Data Quality Workbench",
+      "Jamaican API Payload Auditor",
+      "Jamaican State / Province Code Mapper",
+      "Jamaican Locality Autocomplete Fixture Builder",
+      "Jamaican Government Form Field Normalizer",
+      "Jamaican Tax Invoice Field Auditor",
+      "Jamaican Sales Tax / VAT Threshold Checklist",
+      "Jamaican Withholding Tax Form Helper",
+      "Jamaican Customs / Import Code Inspector",
+      "Jamaican Payroll ID Intake Helper",
+      "Jamaican Benefits / Social Number Redaction Helper",
+      "Jamaican Business License Checklist",
+      "Jamaican Ownership / KYB Payload Auditor",
+      "Jamaican Sanctions Screening Payload Helper",
+      "Jamaican Bank Routing Handoff Checklist",
+      "Jamaican Payout Recipient Validator",
+      "Jamaican Refund Reference Builder",
+      "Jamaican Chargeback Evidence Pack Helper",
+      "Jamaican Ecommerce Checkout Locale Auditor",
+      "Jamaican Shipping Label Normalizer",
+      "Jamaican Customs Address Line Helper",
+      "Jamaican Vehicle Registration Format Helper",
+      "Jamaican Driver License Format Helper",
+      "Jamaican Utility Bill Address Proof Auditor",
+      "Jamaican KYC Document Bundle Auditor",
+      "Jamaican Invoice Number Format Helper",
+      "Jamaican Receipt Tax Line Parser",
+      "Jamaican Phone Extension Normalizer",
+      "Jamaican Business Hours / Time Zone Helper",
+      "Jamaican Holiday Calendar Fixture Builder",
+      "Jamaican Name Parser / Transliteration Helper",
+      "Jamaican Email Domain Locality Checker",
+      "Jamaican Form Autofill Fixture Generator",
+      "Jamaican Webhook Local Payload Fixture",
+      "Jamaican GraphQL Input Auditor",
+      "Jamaican OpenAPI Country Schema Helper",
+      "Jamaican SQL Seed Data Builder",
+      "Jamaican JSON Schema Local Rules Helper",
+      "Jamaican Test Case Matrix Builder",
+      "Jamaican Data Retention Policy Helper",
+      "Jamaican Accessibility Form Label Auditor"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live tax/registry status confirmation",
+      "Live bank ownership lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 34,
+      "y": 48
+    },
+    "searchHints": [
+      "TRN",
+      "company number",
+      "GCT / TRN",
+      "postal zone",
+      "phone",
+      "domestic bank account",
+      "SWIFT/BIC",
+      "payment reference"
+    ]
+  },
+  "hub": {
+    "flag": "🇯🇲",
+    "name": "Jamaica",
+    "badge": "Premium Jamaica developer suite",
+    "description": "Developer intelligence and browser-only workbenches for jamaican identifiers, tax, payments, banking, locale conventions, privacy, documents, and integration QA.",
+    "metadata": {
+      "nativeName": "Jamaica",
+      "population": "approximately 2.8M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Kingston",
+      "continent": "North America",
+      "region": "North America / Caribbean and Central America",
+      "languages": "English",
+      "currency": "Jamaican dollar",
+      "currencyCode": "JMD",
+      "callingCode": "+1-876",
+      "internetTld": ".jm",
+      "drivingSide": "Right",
+      "iso2": "JM",
+      "iso3": "JAM",
+      "isoNumeric": "388",
+      "locale": "en",
+      "icuLocale": "en",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour where used; local display varies",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, locality/administrative area, postal code, Jamaica",
+      "postalCodeFormat": "postal zone",
+      "primaryTimeZone": "America/Jamaica",
+      "measurementSystem": "Metric-first",
+      "paperSize": "Letter/A4 varies by workflow",
+      "emergencyNumber": "local emergency number varies",
+      "weekStarts": "Sunday/Monday by workflow",
+      "rtlSupport": "No",
+      "unicodeLocale": "en",
+      "cldrLocale": "en",
+      "metricVsImperial": "Metric-first"
+    },
+    "visualIdentity": {
+      "countryId": "jamaica",
+      "outlineLabel": "Jamaica outline",
+      "mapLabel": "Jamaica in North America",
+      "continentBadge": "North America",
+      "flagLabel": "Jamaica flag",
+      "heroAccentPrimary": "0 155 58",
+      "heroAccentSecondary": "254 209 0",
+      "heroAccentTertiary": "0 0 0"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "61",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "TRN and company number",
+        "text": "Local identifier workbenches split body, prefixes, local vocabulary, and official boundaries."
+      },
+      {
+        "title": "GCT / TRN and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, privacy, OCR, locale, and data-quality tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Jamaica registry, tax, bank, postal, identity, or legal status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /jamaica/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring local separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing jurisdictions",
+        "text": "Do not reuse non-Jamaican examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry lookup remains the source of truth for Jamaica.",
+        "status": "official boundary"
+      },
+      {
+        "title": "GCT / TRN",
+        "text": "Tax validity and filing acceptance require the responsible tax authority or provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "local privacy/data protection",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "TRN, company number, GCT / TRN, postal zone, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "domestic bank account, SWIFT/BIC, payment reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en / en; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "JMD amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "TRN, company number, postal zone, phone, address, and local banking labels need jurisdiction-specific copy.",
+        "status": "available"
+      }
+    ],
+    "searchHints": [
+      "TRN",
+      "company number",
+      "GCT / TRN",
+      "postal zone",
+      "phone",
+      "domestic bank account",
+      "SWIFT/BIC",
+      "payment reference"
+    ],
+    "routes": [
+      {
+        "title": "Jamaican TRN Validator",
+        "href": "/en/jamaica/jamaica-trn-validator/",
+        "text": "Validate local personal identifier shape, split visible evidence, and keep official identity status out of browser-only results.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Jamaican company number Validator",
+        "href": "/en/jamaica/jamaica-company-number-validator/",
+        "text": "Inspect company or registry identifier shape, prefixes, local vocabulary, and official registry handoff boundaries.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Jamaican GCT / TRN Inspector",
+        "href": "/en/jamaica/jamaica-tax-id-inspector/",
+        "text": "Normalize tax identifier snippets, inspect local body evidence, and prepare official tax-authority handoff notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Jamaican Company Onboarding Auditor",
+        "href": "/en/jamaica/jamaica-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for identifier, address, banking, tax, and privacy readiness.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican Business Registry Readiness Helper",
+        "href": "/en/jamaica/jamaica-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or filing workflow.",
+        "category": "government"
+      },
+      {
+        "title": "Jamaican ID Card Format Helper",
+        "href": "/en/jamaica/jamaica-id-card-format-helper/",
+        "text": "Inspect identity-card snippets, document numbers, dates, and privacy boundaries without proving identity.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Jamaican MRZ / Passport Parser",
+        "href": "/en/jamaica/jamaica-passport-mrz-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Jamaican domestic bank account Inspector",
+        "href": "/en/jamaica/jamaica-domestic-bank-account-inspector/",
+        "text": "Inspect domestic bank account slices, routing blocks, account text, and payment-provider boundaries.",
+        "category": "finance"
+      },
+      {
+        "title": "Jamaican BIC / SWIFT Inspector",
+        "href": "/en/jamaica/jamaica-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for cross-border banking integrations.",
+        "category": "finance"
+      },
+      {
+        "title": "Jamaican domestic payment reference Helper",
+        "href": "/en/jamaica/jamaica-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting.",
+        "category": "finance"
+      },
+      {
+        "title": "Jamaican Remittance Text Builder",
+        "href": "/en/jamaica/jamaica-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, tax, and local payment reference evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Jamaican Bank Statement Parser",
+        "href": "/en/jamaica/jamaica-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, counterparty, reference, and local decimal conventions.",
+        "category": "finance"
+      },
+      {
+        "title": "Jamaican JMD Decimal Currency Formatter",
+        "href": "/en/jamaica/jamaica-currency-decimal-formatter/",
+        "text": "Normalize local amount strings, decimal separators, grouping, and API-safe numeric previews.",
+        "category": "finance"
+      },
+      {
+        "title": "Jamaican postal zone Validator",
+        "href": "/en/jamaica/jamaica-postal-code-validator/",
+        "text": "Validate postal/address locality shape, split locality hints, and preserve official postal lookup boundaries.",
+        "category": "address"
+      },
+      {
+        "title": "Jamaican Address Normalizer",
+        "href": "/en/jamaica/jamaica-address-normalizer/",
+        "text": "Normalize street, locality, administrative area, postal code, and country lines for local forms.",
+        "category": "address"
+      },
+      {
+        "title": "Jamaican Phone Number Validator",
+        "href": "/en/jamaica/jamaica-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes.",
+        "category": "address"
+      },
+      {
+        "title": "Jamaican Date Locale Formatter",
+        "href": "/en/jamaica/jamaica-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics.",
+        "category": "localization"
+      },
+      {
+        "title": "Jamaican CSV Locale Normalizer",
+        "href": "/en/jamaica/jamaica-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for decimal, date, postal, phone, tax, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican Document OCR Fixer",
+        "href": "/en/jamaica/jamaica-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Jamaican Privacy Redaction Helper",
+        "href": "/en/jamaica/jamaica-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets.",
+        "category": "privacy"
+      },
+      {
+        "title": "Jamaican Data Quality Workbench",
+        "href": "/en/jamaica/jamaica-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican API Payload Auditor",
+        "href": "/en/jamaica/jamaica-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, banking, dates, amounts, and official boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican State / Province Code Mapper",
+        "href": "/en/jamaica/jamaica-state-province-code-mapper/",
+        "text": "Map local administrative area labels, abbreviations, and address payload hints for browser-only form routing.",
+        "category": "address"
+      },
+      {
+        "title": "Jamaican Locality Autocomplete Fixture Builder",
+        "href": "/en/jamaica/jamaica-locality-autocomplete-fixture-builder/",
+        "text": "Build country-local city, district, postal, and address fixtures for autocomplete QA without live geocoding.",
+        "category": "address"
+      },
+      {
+        "title": "Jamaican Government Form Field Normalizer",
+        "href": "/en/jamaica/jamaica-government-form-field-normalizer/",
+        "text": "Normalize local government-form labels, identifier fields, dates, and address lines before portal handoff.",
+        "category": "government"
+      },
+      {
+        "title": "Jamaican Tax Invoice Field Auditor",
+        "href": "/en/jamaica/jamaica-tax-invoice-field-auditor/",
+        "text": "Audit invoice snippets for local tax IDs, currency, address, date, line totals, and official filing boundaries.",
+        "category": "tax"
+      },
+      {
+        "title": "Jamaican Sales Tax / VAT Threshold Checklist",
+        "href": "/en/jamaica/jamaica-sales-tax-vat-threshold-checklist/",
+        "text": "Inspect revenue, registration, local tax labels, and threshold handoff notes without making legal conclusions.",
+        "category": "tax"
+      },
+      {
+        "title": "Jamaican Withholding Tax Form Helper",
+        "href": "/en/jamaica/jamaica-withholding-tax-form-helper/",
+        "text": "Prepare local withholding-tax form evidence, payee IDs, dates, amounts, and review notes for finance teams.",
+        "category": "tax"
+      },
+      {
+        "title": "Jamaican Customs / Import Code Inspector",
+        "href": "/en/jamaica/jamaica-customs-import-code-inspector/",
+        "text": "Inspect customs references, importer IDs, invoice fields, currency, and shipment handoff evidence.",
+        "category": "logistics"
+      },
+      {
+        "title": "Jamaican Payroll ID Intake Helper",
+        "href": "/en/jamaica/jamaica-payroll-id-intake-helper/",
+        "text": "Check employee intake payloads for local personal IDs, tax IDs, dates, address, and privacy-safe masking.",
+        "category": "national-identifiers"
+      },
+      {
+        "title": "Jamaican Benefits / Social Number Redaction Helper",
+        "href": "/en/jamaica/jamaica-benefits-social-number-redaction/",
+        "text": "Mask local social, benefits, tax, phone, and address evidence before logs, tickets, or screenshots.",
+        "category": "privacy"
+      },
+      {
+        "title": "Jamaican Business License Checklist",
+        "href": "/en/jamaica/jamaica-business-license-checklist/",
+        "text": "Audit local business-license intake evidence, registry IDs, addresses, tax labels, and official lookup boundaries.",
+        "category": "government"
+      },
+      {
+        "title": "Jamaican Ownership / KYB Payload Auditor",
+        "href": "/en/jamaica/jamaica-ownership-kyb-payload-auditor/",
+        "text": "Inspect KYB payloads for company IDs, beneficial-owner fields, addresses, dates, and masked evidence.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican Sanctions Screening Payload Helper",
+        "href": "/en/jamaica/jamaica-sanctions-screening-payload-helper/",
+        "text": "Prepare offline screening payloads with names, addresses, identifiers, and no false match-status claims.",
+        "category": "privacy"
+      },
+      {
+        "title": "Jamaican Bank Routing Handoff Checklist",
+        "href": "/en/jamaica/jamaica-bank-routing-handoff-checklist/",
+        "text": "Check routing, account, branch, currency, payment reference, and provider-boundary fields before bank handoff.",
+        "category": "finance"
+      },
+      {
+        "title": "Jamaican Payout Recipient Validator",
+        "href": "/en/jamaica/jamaica-payout-recipient-validator/",
+        "text": "Inspect payout recipient payloads for local name, account, tax, phone, address, currency, and retry-safe evidence.",
+        "category": "finance"
+      },
+      {
+        "title": "Jamaican Refund Reference Builder",
+        "href": "/en/jamaica/jamaica-refund-reference-builder/",
+        "text": "Build local refund references from invoice, customer, payment, amount, and reconciliation fields.",
+        "category": "finance"
+      },
+      {
+        "title": "Jamaican Chargeback Evidence Pack Helper",
+        "href": "/en/jamaica/jamaica-chargeback-evidence-pack-helper/",
+        "text": "Organize browser-only payment, invoice, address, date, and customer evidence for dispute workflows.",
+        "category": "finance"
+      },
+      {
+        "title": "Jamaican Ecommerce Checkout Locale Auditor",
+        "href": "/en/jamaica/jamaica-ecommerce-checkout-locale-auditor/",
+        "text": "Audit checkout payloads for local address, phone, postal, currency, date, and tax-field assumptions.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican Shipping Label Normalizer",
+        "href": "/en/jamaica/jamaica-shipping-label-normalizer/",
+        "text": "Normalize local shipping-label blocks, recipient names, postal/locality fields, phone, and delivery notes.",
+        "category": "logistics"
+      },
+      {
+        "title": "Jamaican Customs Address Line Helper",
+        "href": "/en/jamaica/jamaica-customs-address-line-helper/",
+        "text": "Split exporter/importer address lines, locality, postal data, country code, and customs-safe payloads.",
+        "category": "logistics"
+      },
+      {
+        "title": "Jamaican Vehicle Registration Format Helper",
+        "href": "/en/jamaica/jamaica-vehicle-registration-format-helper/",
+        "text": "Inspect vehicle-registration snippets, plate shapes, region hints, and official transport boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Jamaican Driver License Format Helper",
+        "href": "/en/jamaica/jamaica-driver-license-format-helper/",
+        "text": "Inspect driving-license snippets, dates, document numbers, and privacy-safe evidence for transport intake.",
+        "category": "documents"
+      },
+      {
+        "title": "Jamaican Utility Bill Address Proof Auditor",
+        "href": "/en/jamaica/jamaica-utility-bill-address-proof-auditor/",
+        "text": "Audit utility-bill OCR text for names, dates, address lines, account numbers, and masked support evidence.",
+        "category": "documents"
+      },
+      {
+        "title": "Jamaican KYC Document Bundle Auditor",
+        "href": "/en/jamaica/jamaica-kyc-document-bundle-auditor/",
+        "text": "Check KYC document bundles for local ID, tax, address, date, file labels, and official-boundary notes.",
+        "category": "documents"
+      },
+      {
+        "title": "Jamaican Invoice Number Format Helper",
+        "href": "/en/jamaica/jamaica-invoice-number-format-helper/",
+        "text": "Normalize invoice-number patterns, series, date fragments, counterparty hints, and duplicate-risk notes.",
+        "category": "tax"
+      },
+      {
+        "title": "Jamaican Receipt Tax Line Parser",
+        "href": "/en/jamaica/jamaica-receipt-tax-line-parser/",
+        "text": "Parse receipt text for tax labels, totals, currency, dates, and local decimal/grouping evidence.",
+        "category": "tax"
+      },
+      {
+        "title": "Jamaican Phone Extension Normalizer",
+        "href": "/en/jamaica/jamaica-phone-extension-normalizer/",
+        "text": "Normalize local phone numbers with extension, country prefix, national blocks, and CRM-safe output.",
+        "category": "address"
+      },
+      {
+        "title": "Jamaican Business Hours / Time Zone Helper",
+        "href": "/en/jamaica/jamaica-timezone-business-hours-helper/",
+        "text": "Preview local business-hour windows, date cutoffs, support handoffs, and timezone caveats.",
+        "category": "localization"
+      },
+      {
+        "title": "Jamaican Holiday Calendar Fixture Builder",
+        "href": "/en/jamaica/jamaica-holiday-calendar-fixture-builder/",
+        "text": "Build local calendar fixtures and holiday-review payloads without claiming official holiday coverage.",
+        "category": "localization"
+      },
+      {
+        "title": "Jamaican Name Parser / Transliteration Helper",
+        "href": "/en/jamaica/jamaica-name-parser-transliteration-helper/",
+        "text": "Split local personal/company names, accents, casing, transliteration, and search-key fixtures.",
+        "category": "localization"
+      },
+      {
+        "title": "Jamaican Email Domain Locality Checker",
+        "href": "/en/jamaica/jamaica-email-domain-locality-checker/",
+        "text": "Inspect email/domain strings for local TLD hints, plus addressing, masking, and no-deliverability boundaries.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican Form Autofill Fixture Generator",
+        "href": "/en/jamaica/jamaica-form-autofill-fixture-generator/",
+        "text": "Generate browser-only local form fixtures for IDs, tax, phone, postal, address, and banking fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican Webhook Local Payload Fixture",
+        "href": "/en/jamaica/jamaica-webhook-local-payload-fixture/",
+        "text": "Build webhook payload fixtures with local IDs, tax, currency, dates, masked fields, and replay metadata.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican GraphQL Input Auditor",
+        "href": "/en/jamaica/jamaica-graphql-input-auditor/",
+        "text": "Audit GraphQL-style input objects for local identifiers, tax fields, dates, amounts, and nullable hazards.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican OpenAPI Country Schema Helper",
+        "href": "/en/jamaica/jamaica-openapi-country-schema-helper/",
+        "text": "Draft and inspect OpenAPI schema snippets for local identifiers, address, phone, payment, and tax fields.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican SQL Seed Data Builder",
+        "href": "/en/jamaica/jamaica-sql-seed-data-builder/",
+        "text": "Build local seed-data rows for identifiers, tax, address, phone, amount, and bank fixtures.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican JSON Schema Local Rules Helper",
+        "href": "/en/jamaica/jamaica-json-schema-local-rules-helper/",
+        "text": "Inspect JSON Schema rules for local field names, patterns, examples, and official-boundary copy.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican Test Case Matrix Builder",
+        "href": "/en/jamaica/jamaica-test-case-matrix-builder/",
+        "text": "Generate valid, invalid, short, wrong-country, masking, and boundary test-case matrices for local workflows.",
+        "category": "developer-tools"
+      },
+      {
+        "title": "Jamaican Data Retention Policy Helper",
+        "href": "/en/jamaica/jamaica-data-retention-policy-helper/",
+        "text": "Organize local retention, masking, audit-log, and deletion checklist fields without giving legal advice.",
+        "category": "privacy"
+      },
+      {
+        "title": "Jamaican Accessibility Form Label Auditor",
+        "href": "/en/jamaica/jamaica-accessibility-form-label-auditor/",
+        "text": "Audit local form labels, autocomplete names, error copy, and screen-reader hints for identifier workflows.",
+        "category": "developer-tools"
+      }
+    ]
+  }
+}

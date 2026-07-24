@@ -1,9 +1,9 @@
 {
   "id": "finland",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/finland-outline.svg",
+    "outlineSrc": "/assets/images/countries/finland-outline.png",
     "outlineAlt": "Finland country outline",
-    "mapSrc": "/assets/images/countries/finland-location.svg",
+    "mapSrc": "/assets/images/countries/finland-location.png",
     "mapAlt": "World map with Finland location marker",
     "mapMarker": {
       "x": 58,

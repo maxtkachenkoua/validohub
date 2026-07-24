@@ -1,9 +1,9 @@
 {
   "id": "netherlands",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/netherlands-outline.svg",
+    "outlineSrc": "/assets/images/countries/netherlands-outline.png",
     "outlineAlt": "Netherlands country outline",
-    "mapSrc": "/assets/images/countries/netherlands-location.svg",
+    "mapSrc": "/assets/images/countries/netherlands-location.png",
     "mapAlt": "World map with Netherlands location marker",
     "mapMarker": {
       "x": 49,

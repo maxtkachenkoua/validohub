@@ -137,6 +137,23 @@ export async function buildRouteRegistry() {
           sourceOwner: 'node',
           metadata: countryData
         });
+
+        for (const toolRoute of countryData.hub.routes || []) {
+          const toolPath = toolRoute.href || '';
+          if (!toolPath.startsWith(`/en/${slug}/`) || registry.has(toolPath)) continue;
+          registry.register(toolPath, {
+            type: 'validator',
+            title: toolRoute.title || `${countryData.catalog.name} Workbench`,
+            sourceOwner: 'node',
+            metadata: {
+              country: slug,
+              countryCode: countryData.catalog.iso2,
+              category: toolRoute.category || 'country',
+              summary: toolRoute.text || toolRoute.summary || '',
+              algorithmId: `validohub.${slug}-suite`
+            }
+          });
+        }
       }
     }
   }

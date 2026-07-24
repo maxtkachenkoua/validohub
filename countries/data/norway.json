@@ -1,9 +1,9 @@
 {
   "id": "norway",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/norway-outline.svg",
+    "outlineSrc": "/assets/images/countries/norway-outline.png",
     "outlineAlt": "Norway country outline",
-    "mapSrc": "/assets/images/countries/norway-location.svg",
+    "mapSrc": "/assets/images/countries/norway-location.png",
     "mapAlt": "World map with Norway location marker",
     "mapMarker": {
       "x": 52,

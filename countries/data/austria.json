@@ -1,9 +1,9 @@
 {
   "id": "austria",
   "visualAssets": {
-    "outlineSrc": "/assets/images/countries/austria-outline.svg",
+    "outlineSrc": "/assets/images/countries/austria-outline.png",
     "outlineAlt": "Austria country outline",
-    "mapSrc": "/assets/images/countries/austria-location.svg",
+    "mapSrc": "/assets/images/countries/austria-location.png",
     "mapAlt": "World map with Austria location marker",
     "mapMarker": {
       "x": 50,

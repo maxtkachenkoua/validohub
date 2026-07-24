@@ -55,6 +55,8 @@
     developerHandling: 'Developer handling',
     qualityNote: 'Quality note',
     qualityNotesSummary: 'What this tool proves locally and what must stay outside the browser.',
+    integrationTraps: 'Integration traps',
+    integrationTrapsSummary: 'Time-saving checks that prevent common implementation bugs.',
     advancedAnalysis: 'Advanced analysis',
     localStructuralSlices: 'Local structural slices.',
     presets: 'Examples',
@@ -614,6 +616,197 @@
     return { label, pass: !!ok, text: ok ? passText : reviewText };
   }
 
+  function digitBlocks(value, sizes, labels, notes) {
+    const ds = digitsOnly(value);
+    const parts = [];
+    let offset = 0;
+    sizes.forEach((size, index) => {
+      const slice = ds.slice(offset, offset + size);
+      offset += size;
+      if (!slice && index < sizes.length - 1) return;
+      parts.push(fieldSlice(labels[index], slice || 'not detected', notes[index] || 'Local number segment.'));
+    });
+    return parts;
+  }
+
+  function hasMeaningfulAnatomy(result) {
+    const labels = asArray(result && result.breakdown).map((part) => text(part && part.label).toLowerCase());
+    const joined = labels.join(' ');
+    const hits = ['country prefix', 'check digit', 'check digits', 'control digit', 'verifier', 'bank code', 'account number', 'body digits', 'identifier body', 'registry key', 'numeric area', 'letter pair', 'subscriber'].filter((needle) => joined.includes(needle));
+    return hits.length >= 2;
+  }
+
+  function anatomyFallbackChunks(value, labelPrefix) {
+    const ds = digitsOnly(value);
+    if (ds.length >= 8) {
+      const body = ds.slice(0, -1);
+      return [
+        fieldSlice(labelPrefix + ' body', body, 'Main local identifier digits before the final control/check position.'),
+        fieldSlice('control/check digit', ds.slice(-1), 'Trailing digit commonly used as a checksum, control, or registry handoff digit.'),
+        fieldSlice('display grouping', text(value).replace(/[A-Z0-9]/gi, '').trim() || 'none', 'Punctuation is display-only unless the official format says otherwise.'),
+        fieldSlice('official boundary', 'offline only', 'Live ownership, existence, status, and assignment are not proven in the browser.', 'red')
+      ];
+    }
+    return [
+      fieldSlice('source payload', shortValue(value, 120), 'Browser-local source value.'),
+      fieldSlice('visible characters', String(text(value).length), 'Input length after local normalization.'),
+      fieldSlice('official boundary', 'offline only', 'Live status remains outside this browser workbench.', 'red')
+    ];
+  }
+
+  function buildAnatomySlices(suite, tool, result) {
+    if (hasMeaningfulAnatomy(result)) return [];
+    const value = text(result && (result.normalized || result.primary)).trim();
+    if (!value) return [];
+    const id = text(tool.id).toLowerCase();
+    const kind = text(tool.kind).toLowerCase();
+    const topic = [id, kind, tool.code, tool.name, tool.category].map((item) => text(item).toLowerCase()).join(' ');
+    const ds = digitsOnly(value);
+    const compact = alnumOnly(value);
+    const countryCode = text((suite.country && suite.country.iso2) || countryCodeForSuite(suite, tool, compact)).slice(0, 2).toUpperCase();
+
+    if (/iban/.test(topic) && compact.length >= 8) {
+      return [
+        fieldSlice('country prefix', compact.slice(0, 2), 'IBAN ISO country code; expected ' + (countryCode || 'route country') + '.'),
+        fieldSlice('check digits', compact.slice(2, 4), 'ISO 13616 MOD-97 check digits.'),
+        fieldSlice('BBAN/account body', compact.slice(4), 'Country-local bank/account body carried after the prefix and check digits.'),
+        fieldSlice('MOD-97 remainder', String(ibanRemainder(compact)), 'Valid IBANs verify to remainder 1.', ibanRemainder(compact) === 1 ? 'green' : 'red')
+      ];
+    }
+
+    if (/bic|swift/.test(topic) && compact.length >= 8) {
+      return [
+        fieldSlice('institution code', compact.slice(0, 4), 'Four-letter bank or institution identifier.'),
+        fieldSlice('country code', compact.slice(4, 6), 'Two-letter routing country segment.'),
+        fieldSlice('location code', compact.slice(6, 8), 'Location/routing evidence.'),
+        fieldSlice('branch code', compact.slice(8) || 'primary office', 'Optional three-character branch segment.')
+      ];
+    }
+
+    if (/phone|e164/.test(topic) && ds.length >= 7) {
+      const routeCode = text(suite.country && suite.country.phone || '').replace(/\D/g, '');
+      const hasCountry = routeCode && ds.startsWith(routeCode);
+      const national = hasCountry ? ds.slice(routeCode.length) : ds;
+      return [
+        fieldSlice('calling code', hasCountry ? '+' + routeCode : 'not detected', 'Expected route calling prefix when present.'),
+        fieldSlice('national number', national, 'Subscriber/area evidence after country prefix.'),
+        fieldSlice('area or mobile hint', national.slice(0, Math.min(3, national.length)), 'Leading national digits used only as an offline routing hint.'),
+        fieldSlice('official boundary', 'offline only', 'Line activity, portability, and ownership require carrier/provider lookup.', 'red')
+      ];
+    }
+
+    if (/postal|postcode|zip/.test(topic) && ds.length >= 4) {
+      return [
+        fieldSlice('postal area', ds.slice(0, Math.min(3, ds.length - 2)), 'Leading postal routing or area evidence.'),
+        fieldSlice('delivery/local block', ds.slice(Math.min(3, ds.length - 2)), 'Remaining postal digits for local delivery/display shape.'),
+        fieldSlice('display punctuation', text(value).replace(/[A-Z0-9]/gi, '').trim() || 'none', 'Separators are display hints, not live address proof.'),
+        fieldSlice('official boundary', 'offline only', 'Address existence and delivery status require postal/geocoding systems.', 'red')
+      ];
+    }
+
+    if (/plate|vehicle|vin/.test(topic)) {
+      const vin = compact.match(/[A-HJ-NPR-Z0-9]{17}/) ? compact : '';
+      if (vin) {
+        return [
+          fieldSlice('WMI', vin.slice(0, 3), 'World manufacturer identifier.'),
+          fieldSlice('VDS', vin.slice(3, 9), 'Vehicle descriptor section.'),
+          fieldSlice('VIS', vin.slice(9), 'Vehicle identifier section.'),
+          fieldSlice('official boundary', 'offline only', 'Registration, ownership, and inspection status require vehicle authority lookup.', 'red')
+        ];
+      }
+      return [
+        fieldSlice('plate prefix', compact.slice(0, Math.min(3, compact.length)), 'Leading plate/region evidence when the local format supports it.'),
+        fieldSlice('plate serial', compact.slice(Math.min(3, compact.length)), 'Remaining registration display body.'),
+        fieldSlice('normalized display', compact, 'Uppercase alphanumeric plate-like value.'),
+        fieldSlice('official boundary', 'offline only', 'Registration status is not browser-proved.', 'red')
+      ];
+    }
+
+    if (/date|calendar|week/.test(topic)) {
+      const match = value.match(/(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})|(\d{1,2})[-/.](\d{1,2})[-/.](\d{4})/);
+      return [
+        fieldSlice('detected date', match ? match[0] : value, 'Date-like value found in browser input.'),
+        fieldSlice('route locale pattern', text(suite.country && suite.country.date || 'local date'), 'Country display convention for UI parsing.'),
+        fieldSlice('ISO handoff', match && match[1] ? match[0] : 'requires parser confirmation', 'Prefer ISO storage at API/database boundaries.'),
+        fieldSlice('official boundary', 'offline only', 'Holiday, filing, and legal deadlines require the official calendar/source.', 'red')
+      ];
+    }
+
+    if (/amount|money|currency|taxrate|decimal/.test(topic)) {
+      return [
+        fieldSlice('amount text', value, 'Browser-local amount/currency display.'),
+        fieldSlice('currency', text(suite.country && suite.country.currency || 'local currency'), 'Route currency context.'),
+        fieldSlice('decimal convention', text(suite.country && suite.country.decimal || 'local decimal'), 'Locale decimal separator expectation.'),
+        fieldSlice('grouping convention', text(suite.country && suite.country.thousands || 'local grouping'), 'Locale thousands/grouping separator expectation.')
+      ];
+    }
+
+    if (/ruc|nit|rut|vat|tax|company|register|business|customs|procurement|invoice|fiscal|einvoice/.test(topic) && ds.length >= 8) {
+      if (ds.length === 11) {
+        return digitBlocks(ds, [2, 8, 1], ['taxpayer type prefix', 'registration body', 'check digit'], ['Leading local taxpayer/person/company type block.', 'Main registry body used for official handoff.', 'Trailing local control/check digit.']);
+      }
+      if (ds.length === 10) {
+        return digitBlocks(ds, [3, 6, 1], ['registry prefix', 'registry body', 'check digit'], ['Leading assignment/type block visible in many local tax IDs.', 'Main company/tax registry body.', 'Trailing verification digit or official handoff digit.']);
+      }
+      if (ds.length >= 12) {
+        const front = Math.min(4, ds.length - 7);
+        return digitBlocks(ds, [front, ds.length - front - 1, 1], ['registry/root block', 'entity body', 'check digit'], ['Leading registry/root evidence.', 'Main company/tax body.', 'Trailing control/check digit.']);
+      }
+      return anatomyFallbackChunks(value, 'tax identifier');
+    }
+
+    if (/dni|cedula|c[eé]dula|personal|identity|national|social|passport|permit|health|id-card/.test(topic) && ds.length >= 6) {
+      if (ds.length === 8) {
+        return digitBlocks(ds, [7, 1], ['identity body', 'control digit'], ['Seven-digit identity body.', 'Trailing local control/check digit or official handoff digit.']);
+      }
+      if (ds.length === 9) {
+        return digitBlocks(ds, [8, 1], ['identity body', 'control digit'], ['Eight-digit identity body.', 'Trailing local control/check digit or official handoff digit.']);
+      }
+      if (ds.length === 10) {
+        return digitBlocks(ds, [3, 6, 1], ['assignment prefix', 'identity body', 'control digit'], ['Leading assignment/series block.', 'Main identity body.', 'Trailing local control/check digit.']);
+      }
+      return anatomyFallbackChunks(value, 'identity');
+    }
+
+    if (/bank|account|payment|transfer|remittance|debit/.test(topic) && (ds.length >= 6 || compact.length >= 8)) {
+      const target = ds.length >= 6 ? ds : compact;
+      const prefixSize = Math.min(4, Math.max(2, Math.floor(target.length / 5)));
+      return [
+        fieldSlice('routing/prefix block', target.slice(0, prefixSize), 'Leading bank, branch, processor, or domestic routing evidence.'),
+        fieldSlice('account/reference body', target.slice(prefixSize, -1) || target.slice(prefixSize), 'Main payment or account reference body.'),
+        fieldSlice('control/check hint', target.length > prefixSize + 2 ? target.slice(-1) : 'not detected', 'Trailing digit/character where the local format uses one.'),
+        fieldSlice('official boundary', 'offline only', 'Ownership, balance, payment acceptance, and bank/provider status require live systems.', 'red')
+      ];
+    }
+
+    if (/csv|json|api|data|form|ocr|privacy|redaction|fixture|slug|regex|copy|transliteration|smoketest/.test(topic)) {
+      const lines = text(value).split(/\r?\n/).filter((line) => line.trim());
+      return [
+        fieldSlice('source payload', shortValue(value, 120), 'Browser-local source value.'),
+        fieldSlice('line count', String(lines.length || 1), 'Input rows available to the local parser.'),
+        fieldSlice('detected digits', ds ? shortValue(ds, 80) : 'not detected', 'Identifier-like numeric evidence found inside the payload.'),
+        fieldSlice('official boundary', 'offline only', 'Live registry, identity, tax, banking, or delivery status is not checked.', 'red')
+      ];
+    }
+
+    return anatomyFallbackChunks(value, 'local value');
+  }
+
+  function addAnatomyToResult(suite, tool, result) {
+    const anatomy = buildAnatomySlices(suite, tool, result);
+    if (!anatomy.length) return result;
+    const existing = asArray(result && result.breakdown);
+    const next = Object.assign({}, result, {
+      breakdownTitle: /evidence breakdown|field breakdown/i.test(text(result && result.breakdownTitle))
+        ? text(result.breakdownTitle).replace(/evidence breakdown|field breakdown/i, 'anatomy & evidence breakdown')
+        : (text(result && result.breakdownTitle) || tool.name + ' anatomy & evidence breakdown'),
+      breakdownSummary: 'Segment-level anatomy, local parser evidence, and official-boundary notes for browser-only debugging.',
+      breakdown: anatomy.concat(existing.filter((part) => !anatomy.some((slice) => text(slice.label).toLowerCase() === text(part && part.label).toLowerCase())).slice(0, 8))
+    });
+    next.developerJson = Object.assign({}, result && result.developerJson, { anatomy });
+    return next;
+  }
+
   function withToolSpecificContext(suite, tool, result) {
     const countryName = suite.country.name;
     const topic = [tool.code, tool.name].filter(Boolean).join(' / ');
@@ -647,10 +840,10 @@
         { action: 'use-short', label: 'Try short sample', detail: 'See the length and parser guard fail cleanly.' },
         { action: 'copy-normalized', label: 'Copy current normalized value', detail: normalized || 'No normalized value yet.' }
       ];
-    return Object.assign({}, result, {
+    return addAnatomyToResult(suite, tool, Object.assign({}, result, {
       qualityNotes: localNotes,
       suggestions
-    });
+    }));
   }
 
   function forceIntentionalReview(suite, tool, input, result, intent) {
@@ -1490,7 +1683,7 @@
       }
       .csf-hero-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.25fr) minmax(16rem, .75fr);
+        grid-template-columns: minmax(0, 1fr);
         gap: 1.25rem;
         align-items: center;
       }
@@ -2341,6 +2534,7 @@
         .csf-hero-grid,
         .csf-context-grid { grid-template-columns: 1fr; }
         .csf-context-cards { grid-template-columns: 1fr; }
+        .csf-trap-list { grid-template-columns: 1fr; }
         .csf-presets-grid { grid-template-columns: 1fr; }
         .csf-rich-grid { grid-template-columns: 1fr; }
         .csf-rich-head { flex-direction: column; }
@@ -2541,31 +2735,57 @@
   function renderHero(suite, tool) {
     const labels = labelsFor(suite);
     const chips = asArray(tool.chips).length ? tool.chips : [labels.browserOnly, labels.offlineChecks, formatLabel(labels.countrySpecific, suite), labels.fieldBreakdown, labels.qualityNotes];
-    const related = suite.tools
-      .filter((item) => item.id !== tool.id)
-      .slice(0, 8)
-      .map((item) => localizeTool(suite, item));
     return `
       <section class="csf-hero">
         <div class="csf-hero-grid">
           <div>
             <span class="csf-kicker">${esc(formatLabel(labels.workbench, suite))}</span>
-            <div class="csf-mark">${esc(tool.code)}</div>
             <h2 class="csf-title">${esc(tool.name)}</h2>
             <p class="csf-summary">${esc(tool.summary)}</p>
             <div class="csf-chips">${chips.map((chip) => `<span class="csf-chip">${esc(chip)}</span>`).join('')}</div>
-          </div>
-          <div class="csf-samples">
-            <span>${esc(labels.samplesAndRelated)}</span>
-            <div class="csf-related-links" aria-label="${esc(labels.relatedTools)}">
-              ${related.slice(0, 5).map((item) => `<a href="${esc(`${localePrefix()}${suite.country.slug}/${item.id}/`)}">${esc(shortValue(item.name, 34))}</a>`).join('')}
-            </div>
           </div>
         </div>
       </section>
     `;
   }
 
+  function integrationTrapItems(suite, tool) {
+    const custom = asArray(tool.integrationTraps).filter(Boolean);
+    if (custom.length) return custom.slice(0, 10);
+    const countryName = suite.country && suite.country.name || 'this country';
+    const name = String(tool.name || '').toLowerCase();
+    const kind = String(tool.kind || '').toLowerCase();
+    const items = [
+      'Do not treat a browser-local pass as proof that an official ' + countryName + ' registry record exists.',
+      'Normalize display punctuation separately from raw payload storage so masks, exports, and form submissions stay consistent.',
+      'Keep valid, invalid, short, and wrong-context fixtures in tests instead of replacing everything with generated happy paths.',
+      'Persist ' + countryName + ' country/locale context with exported JSON so downstream validators do not apply another country\'s rules.'
+    ];
+    if (/iban|bank|payment|swift|bic|account|sepa|remittance/.test(name + ' ' + kind)) {
+      items.push('Do not skip checksum, bank-code, and account-field replay when grouping, masking, or generating payment fixtures.');
+    } else if (/tax|vat|invoice|company|business|register|registry|customs/.test(name + ' ' + kind)) {
+      items.push('Separate syntax/checksum evidence from live tax, VAT, company, or customs status lookup.');
+    } else if (/address|postal|phone|date|locale|csv|slug/.test(name + ' ' + kind)) {
+      items.push('Do not assume formatted local text proves deliverability, assignment, or user ownership.');
+    } else {
+      items.push('Mask or redact raw personal data before moving debugger output into tickets, logs, screenshots, or shared fixtures.');
+    }
+    return items.slice(0, 6);
+  }
+
+  function renderIntegrationTraps(suite, tool) {
+    const labels = labelsFor(suite);
+    const items = integrationTrapItems(suite, tool);
+    return `
+      <section class="csf-panel csf-traps" aria-label="${esc(labels.integrationTraps)}">
+        <div class="csf-section-head">
+          <span class="csf-icon">!</span>
+          <div><h3>${esc(labels.integrationTraps)}</h3><p>${esc(labels.integrationTrapsSummary)}</p></div>
+        </div>
+        <ul class="csf-trap-list">${items.map((item) => `<li>${esc(item)}</li>`).join('')}</ul>
+      </section>
+    `;
+  }
   function renderInput(suite, tool) {
     const labels = labelsFor(suite);
     return `
@@ -2762,7 +2982,14 @@
 
   function renderBreakdown(suite, result) {
     const labels = labelsFor(suite);
-    const strip = renderTokenStrip(result);
+    const isGeneratedAnatomy = asArray(result && result.developerJson && result.developerJson.anatomy).length > 0;
+    const strip = isGeneratedAnatomy ? '' : renderTokenStrip(result);
+    const segments = isGeneratedAnatomy ? '' : `<div class="csf-segments">${result.breakdown.map((part) => `
+            <article class="csf-segment">
+              <strong>${esc(part.value)}</strong>
+              <span>${esc(part.label)}</span>
+            </article>
+          `).join('')}</div>`;
     return `
       <section class="csf-panel csf-breakdown">
         <div class="csf-section-head">
@@ -2771,12 +2998,7 @@
         </div>
         <div class="csf-breakdown-body">
           ${strip ? `<div class="csf-strip-panel"><span class="csf-strip-label">${esc(labels.identifierBreakdown)}</span>${strip}<p class="csf-note">${esc(labels.hoverBreakdown)}</p></div>` : ''}
-          <div class="csf-segments">${result.breakdown.map((part) => `
-            <article class="csf-segment">
-              <strong>${esc(part.value)}</strong>
-              <span>${esc(part.label)}</span>
-            </article>
-          `).join('')}</div>
+          ${segments}
           ${cardGrid(result.breakdown)}
         </div>
       </section>
@@ -2878,7 +3100,7 @@
       rootElement.style.setProperty('--csf-accent', suite.theme.accent);
       rootElement.style.setProperty('--csf-accent-2', suite.theme.accent2);
       rootElement.style.setProperty('--csf-accent-3', suite.theme.accent3 || '#f59e0b');
-      rootElement.innerHTML = `${renderHero(suite, tool)}${renderToolContext(suite, tool)}${renderRichLayer(suite, tool)}${renderInput(suite, tool)}<div data-csf-output></div>`;
+      rootElement.innerHTML = `${renderHero(suite, tool)}${renderToolContext(suite, tool)}${renderIntegrationTraps(suite, tool)}${renderRichLayer(suite, tool)}${renderInput(suite, tool)}<div data-csf-output></div>`;
 
       const input = rootElement.querySelector('[data-csf-input]');
       const output = rootElement.querySelector('[data-csf-output]');

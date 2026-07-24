@@ -6,7 +6,15 @@ const ROOT = process.cwd();
 const args = process.argv.slice(2);
 const CORE_LOCALES = ['en', 'es', 'pt-BR', 'de', 'fr', 'pl', 'uk'];
 const ACTIVE_BASELINE_COUNTRIES = ['brazil', 'poland', 'france', 'netherlands', 'switzerland', 'germany', 'italy', 'spain'];
-const FACTORY_COUNTRIES = new Set(['switzerland', 'germany', 'italy', 'spain', 'argentina', 'bolivia', 'chile', 'colombia', 'ecuador', 'guyana', 'paraguay', 'peru', 'suriname', 'uruguay', 'venezuela']);
+const FACTORY_COUNTRIES = new Set([
+  'switzerland', 'germany', 'italy', 'spain', 'argentina', 'bolivia', 'chile', 'colombia',
+  'ecuador', 'guyana', 'paraguay', 'peru', 'suriname', 'uruguay', 'venezuela',
+  'united-states', 'canada', 'mexico', 'belize', 'guatemala', 'el-salvador', 'honduras',
+  'nicaragua', 'costa-rica', 'panama', 'bahamas', 'cuba', 'jamaica', 'haiti',
+  'dominican-republic', 'antigua-and-barbuda', 'dominica', 'saint-kitts-and-nevis',
+  'saint-lucia', 'saint-vincent-and-the-grenadines', 'grenada', 'barbados',
+  'trinidad-and-tobago'
+]);
 const RUNTIME_BY_ALGORITHM = new Map([
   ['validohub.brazil-pix', 'pix.js'],
   ['validohub.brazil-suite', 'brazil-suite.js'],
@@ -68,6 +76,29 @@ const RUNTIME_BY_ALGORITHM = new Map([
   ['validohub.colombia-suite', 'colombia-suite.js'],
   ['validohub.chile-suite', 'chile-suite.js'],
   ['validohub.bolivia-suite', 'bolivia-suite.js'],
+  ['validohub.united-states-suite', 'united-states-suite.js'],
+  ['validohub.canada-suite', 'canada-suite.js'],
+  ['validohub.mexico-suite', 'mexico-suite.js'],
+  ['validohub.belize-suite', 'belize-suite.js'],
+  ['validohub.guatemala-suite', 'guatemala-suite.js'],
+  ['validohub.el-salvador-suite', 'el-salvador-suite.js'],
+  ['validohub.honduras-suite', 'honduras-suite.js'],
+  ['validohub.nicaragua-suite', 'nicaragua-suite.js'],
+  ['validohub.costa-rica-suite', 'costa-rica-suite.js'],
+  ['validohub.panama-suite', 'panama-suite.js'],
+  ['validohub.bahamas-suite', 'bahamas-suite.js'],
+  ['validohub.cuba-suite', 'cuba-suite.js'],
+  ['validohub.jamaica-suite', 'jamaica-suite.js'],
+  ['validohub.haiti-suite', 'haiti-suite.js'],
+  ['validohub.dominican-republic-suite', 'dominican-republic-suite.js'],
+  ['validohub.antigua-and-barbuda-suite', 'antigua-and-barbuda-suite.js'],
+  ['validohub.dominica-suite', 'dominica-suite.js'],
+  ['validohub.saint-kitts-and-nevis-suite', 'saint-kitts-and-nevis-suite.js'],
+  ['validohub.saint-lucia-suite', 'saint-lucia-suite.js'],
+  ['validohub.saint-vincent-and-the-grenadines-suite', 'saint-vincent-and-the-grenadines-suite.js'],
+  ['validohub.grenada-suite', 'grenada-suite.js'],
+  ['validohub.barbados-suite', 'barbados-suite.js'],
+  ['validohub.trinidad-and-tobago-suite', 'trinidad-and-tobago-suite.js'],
   ['validohub.portugal-suite', 'portugal-suite.js']
 ]);
 const FOREIGN_TERMS = {
@@ -156,6 +187,26 @@ function loadCountryData(slug) {
   const rel = path.join('countries/data', slug + '.json');
   if (!fileExists(rel)) return null;
   try { return JSON.parse(readFile(rel)); } catch (error) { return { __parseError: error.message }; }
+}
+function routeToolId(slug, href) {
+  return String(href || '').match(new RegExp(`/${escapeRegExp(slug)}/([^/]+)/`))?.[1] || '';
+}
+function loadCountryDataTools(slug, data) {
+  const routes = Array.isArray(data?.hub?.routes) ? data.hub.routes : [];
+  const routeIds = routes.map((route) => routeToolId(slug, route.href)).filter(Boolean);
+  return routes.map((route, index) => {
+    const id = routeToolId(slug, route.href);
+    return {
+      file: `countries/data/${slug}.json#hub.routes[${index}]`,
+      id,
+      name: route.title || id,
+      algorithmId: `validohub.${slug}-suite`,
+      category: route.category || 'country',
+      forms: ['textarea'],
+      capabilities: ['browser-only', 'offline-checks', 'field-breakdown', 'integration-traps'],
+      relatedTools: routeIds.filter((candidate) => candidate && candidate !== id).slice(0, 5)
+    };
+  }).filter((tool) => tool.id);
 }
 function generatedToolDirs(slug, locale = 'en') {
   const dir = abs(path.join('generated/validohub', locale, slug));
@@ -253,15 +304,20 @@ function scanRuntime(slug, tools, result) {
 function evaluateCountry(slug, locales) {
   const data = loadCountryData(slug);
   const yamlExists = fileExists(path.join('countries', slug + '.yaml'));
-  const tools = loadCountryTools(slug);
+  const yamlTools = loadCountryTools(slug);
+  const dataTools = loadCountryDataTools(slug, data);
+  const tools = yamlTools.length ? yamlTools : dataTools;
   const toolIds = tools.map((t) => t.id || t.file.replace(/\.yaml$/, ''));
   const generatedEnglish = generatedToolDirs(slug, 'en');
-  const result = { slug, name: data?.name ?? slug, iso2: data?.iso2 ?? null, catalogStatus: data?.catalog?.status ?? 'unknown', completion: data?.catalog?.completion ?? null, yamlExists, toolCount: tools.length, availableWorkbenchCount: Array.isArray(data?.availableWorkbenches) ? data.availableWorkbenches.length : 0, plannedWorkbenchCount: Array.isArray(data?.plannedWorkbenches) ? data.plannedWorkbenches.length : 0, generatedEnglishToolPages: generatedEnglish.length, checkedGeneratedPages: 0, algorithms: [], runtimes: [], state: 'unknown', blockers: [], warnings: [] };
+  const availableWorkbenchCount = Array.isArray(data?.availableWorkbenches)
+    ? data.availableWorkbenches.length
+    : dataTools.length;
+  const result = { slug, name: data?.name ?? slug, iso2: data?.iso2 ?? null, catalogStatus: data?.catalog?.status ?? 'unknown', completion: data?.catalog?.completion ?? null, yamlExists, dataRouteToolCount: dataTools.length, toolCount: tools.length, availableWorkbenchCount, plannedWorkbenchCount: Array.isArray(data?.plannedWorkbenches) ? data.plannedWorkbenches.length : 0, generatedEnglishToolPages: generatedEnglish.length, checkedGeneratedPages: 0, algorithms: [], runtimes: [], state: 'unknown', blockers: [], warnings: [] };
   if (data?.__parseError) result.blockers.push(`${slug}: country data JSON parse error: ${data.__parseError}`);
   if (fileExists('assets/js/bundle.js') && /mountOfficialLanguageQuickActions\(localeState/i.test(readFile('assets/js/bundle.js'))) {
     result.blockers.push(`${slug}: country breadcrumb official-language quick action is enabled in bundle.js`);
   }
-  if ((result.catalogStatus === 'available' || tools.length > 0) && !yamlExists) result.blockers.push(`${slug}: country yaml missing for available/tool country`);
+  if ((result.catalogStatus === 'available' || tools.length > 0) && !yamlExists && dataTools.length === 0) result.blockers.push(`${slug}: country yaml missing for available/tool country`);
   if (tools.length > 0 && result.availableWorkbenchCount !== tools.length) result.warnings.push(`${slug}: availableWorkbenches (${result.availableWorkbenchCount}) differs from tool YAML count (${tools.length})`);
   const seen = new Set();
   for (const tool of tools) {
@@ -305,7 +361,7 @@ function writeReports(results) {
   fs.writeFileSync(path.join(outDir, 'country-premium-readiness.md'), lines.join('\n') + '\n');
 }
 
-const locales = parseSiteLocales();
+const locales = selectedCountry ? ['en'] : parseSiteLocales();
 const countries = selectedCountry ? [selectedCountry] : [...new Set([...ACTIVE_BASELINE_COUNTRIES, ...countryYamlSlugs(), ...countryDataSlugs()])].sort();
 const results = countries.map((slug) => evaluateCountry(slug, locales));
 if (writeReport) writeReports(results);
