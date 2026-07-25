@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: ML
+slug: mali
+name:
+  en: Mali
+region: Africa
+languages:
+  - fr
+currency: XOF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

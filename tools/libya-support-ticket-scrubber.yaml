@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: libya-support-ticket-scrubber
+kind: tool
+module: validohub
+country: LY
+category: privacy
+status: active
+name:
+  en: "Libyan Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.libya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent LY-ID-123456, 001 1234567890, Central business district, Tripoli 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [libya-integration-smoke-test-builder, libya-national-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Libyan Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

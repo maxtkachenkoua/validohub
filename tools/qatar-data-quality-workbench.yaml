@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-data-quality-workbench
+kind: tool
+module: validohub
+country: QA
+category: developer-tools
+status: active
+name:
+  en: "Qatari Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"QA\",\"qid\":\"29012345678\",\"iban\":\"QA58DOHB00001234567890ABCDEFG\",\"naps\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-json-fixture-generator, qatar-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

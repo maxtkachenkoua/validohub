@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: IR
+category: tax
+status: active
+name:
+  en: "Iranian tax invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IR\",\"nationalCode\":\"0084575941\",\"sheba\":\"IR820540102680020817909002\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-tax-authority-handoff-helper, iran-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian tax invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

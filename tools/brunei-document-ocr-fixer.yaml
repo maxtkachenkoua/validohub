@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-document-ocr-fixer
+kind: tool
+module: validohub
+country: BN
+category: documents
+status: active
+name:
+  en: "Bruneian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "00-123456 TIN1234567 001 1234567890 BS8711 Bandar Seri Begawan"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [brunei-privacy-redaction-helper, brunei-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

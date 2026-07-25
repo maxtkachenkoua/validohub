@@ -1,0 +1,642 @@
+{
+  "id": "ghana",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/ghana-outline.png",
+    "outlineAlt": "Ghana country outline",
+    "mapSrc": "/assets/images/countries/ghana-location.png",
+    "mapAlt": "World map with Ghana location marker",
+    "mapMarker": {
+      "x": 45,
+      "y": 55,
+      "label": "Ghana"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "ghana",
+    "flag": "🇬🇭",
+    "name": "Ghana",
+    "nativeName": "Ghana",
+    "iso2": "GH",
+    "iso3": "GHA",
+    "continent": "Africa",
+    "region": "Africa",
+    "language": "English",
+    "currency": "GHS",
+    "currencyName": "Ghanaian cedi",
+    "status": "available",
+    "summary": "Premium Ghana developer hub for National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone, bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "National ID boundary",
+      "company registration number",
+      "tax number / VAT boundary",
+      "postal/address code",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "domestic transfer reference",
+      "SWIFT/BIC",
+      "invoice reference",
+      "payment reconciliation"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Ghanaian national ID boundary Validator",
+      "Ghanaian company registration number Validator",
+      "Ghanaian tax number / VAT boundary Validator",
+      "Ghanaian Customs / Importer Code Helper",
+      "Ghanaian social security boundary Helper",
+      "Ghanaian Company Onboarding Auditor",
+      "Ghanaian business registry Readiness Helper",
+      "Ghanaian ID Card Format Helper",
+      "Ghanaian Passport Number Helper",
+      "Ghanaian MRZ / Passport Parser",
+      "Ghana Bank Account Validator",
+      "Ghana Bank Account Fixture Generator",
+      "Ghanaian Domestic Bank Account Inspector",
+      "Ghanaian BIC / SWIFT Inspector",
+      "Ghanaian Domestic Transfer Helper",
+      "Ghanaian Direct Debit / Auto-Debit Mandate Helper",
+      "Ghanaian bank transfer / payment reference Reference Helper",
+      "Ghanaian Remittance Text Builder",
+      "Ghanaian Payment Reconciliation Helper",
+      "Ghanaian Bank Statement Parser",
+      "Ghanaian Masked Bank Account Formatter",
+      "Ghanaian GHS Decimal Currency Formatter",
+      "Ghanaian Tax Rate Sanity Helper",
+      "Ghanaian Tax Return Field Helper",
+      "Ghanaian Invoice Number Helper",
+      "Ghanaian tax invoice Readiness Checker",
+      "Ghanaian Tax Authority Handoff Helper",
+      "Ghanaian Accounting Audit Trail Checklist Helper",
+      "Ghanaian Postal Code Validator",
+      "Ghanaian Address Normalizer",
+      "Ghanaian Address Transliteration Normalizer",
+      "Ghanaian Region / Province Code Mapper",
+      "Ghanaian Municipality Code Inspector",
+      "Ghanaian Phone Number Validator",
+      "Ghanaian Phone E.164 Formatter",
+      "Ghanaian Date Locale Formatter",
+      "Ghanaian CSV Locale Normalizer",
+      "Ghanaian Slug Normalizer",
+      "Ghanaian Document OCR Fixer",
+      "Ghanaian data protection / privacy boundary Redaction Helper",
+      "Ghanaian PII Masker",
+      "Ghanaian Personal Data Fixture Helper",
+      "Ghanaian Driving Licence Format Helper",
+      "Ghanaian Residence Permit Format Helper",
+      "Ghanaian Health Card Format Helper",
+      "Ghanaian Vehicle Plate Inspector",
+      "Ghanaian VIN Validator",
+      "Ghanaian Vehicle Data Redaction Helper",
+      "Ghanaian Customs Declaration Helper",
+      "Ghanaian Postal Tracking Helper",
+      "Ghanaian Data Quality Workbench",
+      "Ghanaian JSON Fixture Helper",
+      "Ghanaian Regex Pack Helper",
+      "Ghanaian API Payload Auditor",
+      "Ghanaian Form Field Auditor",
+      "Ghanaian Locale Number Parser",
+      "Ghanaian Calendar Week Helper",
+      "Ghanaian Company Suffix Normalizer",
+      "Ghanaian Procurement Identifier Helper",
+      "Ghanaian Locale Copy Checker",
+      "Ghanaian Support Ticket Scrubber",
+      "Ghanaian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 45,
+      "y": 55
+    },
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇬🇭",
+    "name": "Ghana",
+    "badge": "Premium Ghana developer suite",
+    "description": "Developer intelligence and browser-only workbenches for ghanaian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Ghana",
+      "population": "approximately 34M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Accra",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "languages": "English",
+      "currency": "Ghanaian cedi",
+      "currencyCode": "GHS",
+      "callingCode": "+233",
+      "internetTld": ".gh",
+      "drivingSide": "Right",
+      "iso2": "GH",
+      "iso3": "GHA",
+      "isoNumeric": "288",
+      "locale": "en-GH",
+      "icuLocale": "en_GH",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Ghana",
+      "postalCodeFormat": "postal/address code",
+      "primaryTimeZone": "Africa/Abidjan (GMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112 / 999",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "en-GH",
+      "cldrLocale": "en_GH",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type D / Type G",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "ghana",
+      "outlineLabel": "Ghana outline",
+      "mapLabel": "Ghana in the world",
+      "continentBadge": "Africa",
+      "flagLabel": "Ghana flag",
+      "heroAccentPrimary": "206 17 38",
+      "heroAccentSecondary": "252 209 22",
+      "heroAccentTertiary": "0 107 63"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax number / VAT boundary and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Ghana registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /ghana/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Ghanaian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Ghana.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax number / VAT boundary",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "data protection / privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en-GH / en_GH; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "GHS amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, company registration number, postal/address code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type D / Type G",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112 / 999",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Ghanaian national ID boundary Validator",
+        "href": "/en/ghana/ghana-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Ghanaian company registration number Validator",
+        "href": "/en/ghana/ghana-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Ghanaian tax number / VAT boundary Validator",
+        "href": "/en/ghana/ghana-tax-id-validator/",
+        "text": "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Ghanaian Customs / Importer Code Helper",
+        "href": "/en/ghana/ghana-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Ghanaian social security boundary Helper",
+        "href": "/en/ghana/ghana-social-security-boundary-social-insurance-helper/",
+        "text": "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Ghanaian Company Onboarding Auditor",
+        "href": "/en/ghana/ghana-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Ghanaian business registry Readiness Helper",
+        "href": "/en/ghana/ghana-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+      },
+      {
+        "title": "Ghanaian ID Card Format Helper",
+        "href": "/en/ghana/ghana-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Ghanaian Passport Number Helper",
+        "href": "/en/ghana/ghana-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Ghanaian MRZ / Passport Parser",
+        "href": "/en/ghana/ghana-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Ghana Bank Account Validator",
+        "href": "/en/ghana/ghana-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Ghana Bank Account Fixture Generator",
+        "href": "/en/ghana/ghana-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Ghanaian Domestic Bank Account Inspector",
+        "href": "/en/ghana/ghana-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Ghanaian BIC / SWIFT Inspector",
+        "href": "/en/ghana/ghana-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Ghana banking integrations."
+      },
+      {
+        "title": "Ghanaian Domestic Transfer Helper",
+        "href": "/en/ghana/ghana-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Ghanaian Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/ghana/ghana-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Ghanaian bank transfer / payment reference Reference Helper",
+        "href": "/en/ghana/ghana-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Ghanaian Remittance Text Builder",
+        "href": "/en/ghana/ghana-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Ghanaian Payment Reconciliation Helper",
+        "href": "/en/ghana/ghana-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Ghanaian Bank Statement Parser",
+        "href": "/en/ghana/ghana-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Ghanaian Masked Bank Account Formatter",
+        "href": "/en/ghana/ghana-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Ghanaian GHS Decimal Currency Formatter",
+        "href": "/en/ghana/ghana-currency-decimal-formatter/",
+        "text": "Normalize GHS amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Ghanaian Tax Rate Sanity Helper",
+        "href": "/en/ghana/ghana-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Ghanaian Tax Return Field Helper",
+        "href": "/en/ghana/ghana-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Ghanaian Invoice Number Helper",
+        "href": "/en/ghana/ghana-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Ghanaian tax invoice Readiness Checker",
+        "href": "/en/ghana/ghana-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Ghanaian Tax Authority Handoff Helper",
+        "href": "/en/ghana/ghana-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Ghanaian Accounting Audit Trail Checklist Helper",
+        "href": "/en/ghana/ghana-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Ghanaian Postal Code Validator",
+        "href": "/en/ghana/ghana-postal-code-validator/",
+        "text": "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Ghanaian Address Normalizer",
+        "href": "/en/ghana/ghana-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Ghanaian Address Transliteration Normalizer",
+        "href": "/en/ghana/ghana-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Ghanaian Region / Province Code Mapper",
+        "href": "/en/ghana/ghana-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Ghanaian Municipality Code Inspector",
+        "href": "/en/ghana/ghana-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Ghanaian Phone Number Validator",
+        "href": "/en/ghana/ghana-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Ghanaian Phone E.164 Formatter",
+        "href": "/en/ghana/ghana-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Ghanaian Date Locale Formatter",
+        "href": "/en/ghana/ghana-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Ghanaian CSV Locale Normalizer",
+        "href": "/en/ghana/ghana-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Ghana decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Ghanaian Slug Normalizer",
+        "href": "/en/ghana/ghana-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Ghanaian Document OCR Fixer",
+        "href": "/en/ghana/ghana-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Ghanaian data protection / privacy boundary Redaction Helper",
+        "href": "/en/ghana/ghana-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Ghanaian PII Masker",
+        "href": "/en/ghana/ghana-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Ghanaian Personal Data Fixture Helper",
+        "href": "/en/ghana/ghana-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Ghanaian Driving Licence Format Helper",
+        "href": "/en/ghana/ghana-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Ghanaian Residence Permit Format Helper",
+        "href": "/en/ghana/ghana-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Ghanaian Health Card Format Helper",
+        "href": "/en/ghana/ghana-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Ghanaian Vehicle Plate Inspector",
+        "href": "/en/ghana/ghana-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Ghanaian VIN Validator",
+        "href": "/en/ghana/ghana-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Ghanaian Vehicle Data Redaction Helper",
+        "href": "/en/ghana/ghana-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Ghanaian Customs Declaration Helper",
+        "href": "/en/ghana/ghana-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Ghanaian Postal Tracking Helper",
+        "href": "/en/ghana/ghana-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Ghanaian Data Quality Workbench",
+        "href": "/en/ghana/ghana-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Ghanaian JSON Fixture Helper",
+        "href": "/en/ghana/ghana-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Ghanaian Regex Pack Helper",
+        "href": "/en/ghana/ghana-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Ghanaian API Payload Auditor",
+        "href": "/en/ghana/ghana-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Ghanaian Form Field Auditor",
+        "href": "/en/ghana/ghana-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Ghanaian Locale Number Parser",
+        "href": "/en/ghana/ghana-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Ghana."
+      },
+      {
+        "title": "Ghanaian Calendar Week Helper",
+        "href": "/en/ghana/ghana-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Ghanaian Company Suffix Normalizer",
+        "href": "/en/ghana/ghana-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Ghanaian Procurement Identifier Helper",
+        "href": "/en/ghana/ghana-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Ghanaian Locale Copy Checker",
+        "href": "/en/ghana/ghana-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Ghanaian Support Ticket Scrubber",
+        "href": "/en/ghana/ghana-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Ghanaian Integration Smoke Test Builder",
+        "href": "/en/ghana/ghana-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

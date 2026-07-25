@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-company-suffix-normalizer
+kind: tool
+module: validohub
+country: PG
+category: developer-tools
+status: active
+name:
+  en: "Papua New Guinean Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Papua New Guinea Sample Holding Ltd PG-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-procurement-identifier-helper, papua-new-guinea-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

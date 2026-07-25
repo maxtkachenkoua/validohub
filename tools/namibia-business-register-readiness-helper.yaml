@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: namibia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: NA
+category: government
+status: active
+name:
+  en: "Namibian business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.namibia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "NA-REG-123456 NA123456789 Central business district, Windhoek 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [namibia-id-card-format-helper, namibia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Namibian business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: oman-pasi-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: OM
+category: national-identifiers
+status: active
+name:
+  en: "Omani PASI boundary Helper"
+summary:
+  en: "Split PASI boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.oman-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "PASI-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [oman-company-onboarding-auditor, oman-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Omani PASI boundary Helper | ValidoHub"
+  description:
+    en: "Split PASI boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

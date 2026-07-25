@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-document-ocr-fixer
+kind: tool
+module: validohub
+country: AZ
+category: documents
+status: active
+name:
+  en: "Azerbaijani Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "ABC1234 9900003611 NABZ 137010001944 AZ1000 Baku"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-privacy-redaction-helper, azerbaijan-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

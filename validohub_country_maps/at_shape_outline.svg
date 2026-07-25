@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-66.82 -68.80 562.14 564.39" role="img">
+  <title>Austria country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="7.78" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="at" d="M430.46,403.459l-0.562,1.167l0.483,0.83l2.015-0.415h1.711l1.857,1.572l3.95-0.717l2.904-1.729l0.743-1.167l-0.112-1.504l-2.611-1.954l-3.501,0.035l-0.294,1.988l-3.683,1.797L430.46,403.459L430.46,403.459z"/>
+  </g>
+</svg>

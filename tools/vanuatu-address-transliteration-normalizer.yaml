@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vanuatu-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: VU
+category: address
+status: active
+name:
+  en: "Vanuatuan Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vanuatu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Lini Highway, Port Vila"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vanuatu-region-code-mapper, vanuatu-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vanuatuan Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nigeria-address-normalizer
+kind: tool
+module: validohub
+country: NG
+category: address
+status: active
+name:
+  en: "Nigerian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nigeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Central business district, Abuja 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nigeria-address-transliteration-normalizer, nigeria-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nigerian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

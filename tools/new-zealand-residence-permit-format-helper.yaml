@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-residence-permit-format-helper
+kind: tool
+module: validohub
+country: NZ
+category: documents
+status: active
+name:
+  en: "New Zealand Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "NZ PERMIT 2026 123-456-789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-health-card-format-helper, new-zealand-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

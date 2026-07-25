@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-residence-permit-format-helper
+kind: tool
+module: validohub
+country: GE
+category: documents
+status: active
+name:
+  en: "Georgian Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "GE PERMIT 2026 01001012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-health-card-format-helper, georgia-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

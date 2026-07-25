@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: comoros-business-register-readiness-helper
+kind: tool
+module: validohub
+country: KM
+category: government
+status: active
+name:
+  en: "Comorian business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.comoros-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "KM-REG-123456 KM123456789 Central business district, Moroni 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [comoros-id-card-format-helper, comoros-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Comorian business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

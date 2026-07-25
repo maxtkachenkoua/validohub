@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: niger-tax-return-field-helper
+kind: tool
+module: validohub
+country: NE
+category: tax
+status: active
+name:
+  en: "Nigerien Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.niger-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary; NE123456789; period 2026-07; 1,234.56 XOF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [niger-invoice-number-helper, niger-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nigerien Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

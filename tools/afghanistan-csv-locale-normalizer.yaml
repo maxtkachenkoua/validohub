@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: afghanistan-csv-locale-normalizer
+kind: tool
+module: validohub
+country: AF
+category: developer-tools
+status: active
+name:
+  en: "Afghan CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Afghanistan decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.afghanistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 AFN;2026/07/21;TIN123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [afghanistan-slug-normalizer, afghanistan-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Afghan CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Afghanistan decimal, date, postal, phone, tax, and banking fields."

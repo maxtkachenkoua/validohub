@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-support-ticket-scrubber
+kind: tool
+module: validohub
+country: KG
+category: privacy
+status: active
+name:
+  en: "Kyrgyz Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 20101200123456, 109 1234567890123456, Chuy Avenue 1, Bishkek 720000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-integration-smoke-test-builder, kyrgyzstan-pin-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

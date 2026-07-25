@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palau-business-registration-number-validator
+kind: tool
+module: validohub
+country: PW
+category: national-identifiers
+status: active
+name:
+  en: "Palauan business registration number Validator"
+summary:
+  en: "Inspect business registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "PW-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palau-tax-id-validator, palau-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palauan business registration number Validator | ValidoHub"
+  description:
+    en: "Inspect business registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

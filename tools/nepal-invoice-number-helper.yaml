@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-invoice-number-helper
+kind: tool
+module: validohub
+country: NP
+category: tax
+status: active
+name:
+  en: "Nepali Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 500123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-e-invoicing-readiness-checker, nepal-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

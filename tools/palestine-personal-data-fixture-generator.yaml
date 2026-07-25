@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: PS
+category: privacy
+status: active
+name:
+  en: "Palestinian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "401234567\\nAl-Manara 1, Ramallah P600\\n+970 59 123 4567"
+    actions: [generate, validate, explain]
+related:
+  explicit: [palestine-driving-licence-format-helper, palestine-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

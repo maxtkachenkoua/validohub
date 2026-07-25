@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ghana-csv-locale-normalizer
+kind: tool
+module: validohub
+country: GH
+category: developer-tools
+status: active
+name:
+  en: "Ghanaian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Ghana decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ghana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 GHS;24/07/2026;GH123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ghana-slug-normalizer, ghana-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ghanaian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Ghana decimal, date, postal, phone, tax, and banking fields."

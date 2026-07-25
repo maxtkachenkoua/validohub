@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-document-ocr-fixer
+kind: tool
+module: validohub
+country: TJ
+category: documents
+status: active
+name:
+  en: "Tajik Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "123456789 123456789 3501012345678901 734000 Dushanbe"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-privacy-redaction-helper, tajikistan-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

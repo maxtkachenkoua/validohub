@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-invoice-number-helper
+kind: tool
+module: validohub
+country: AZ
+category: tax
+status: active
+name:
+  en: "Azerbaijani Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 9900003611"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-e-invoicing-readiness-checker, azerbaijan-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

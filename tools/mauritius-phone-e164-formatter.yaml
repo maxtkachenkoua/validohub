@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritius-phone-e164-formatter
+kind: tool
+module: validohub
+country: MU
+category: address
+status: active
+name:
+  en: "Mauritian Phone E.164 Formatter"
+summary:
+  en: "Normalize local phone input to E.164-style previews and split country/national evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritius-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "E164 input"
+        required: true
+        placeholder:
+          en: "+230 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritius-date-locale-formatter, mauritius-csv-locale-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritian Phone E.164 Formatter | ValidoHub"
+  description:
+    en: "Normalize local phone input to E.164-style previews and split country/national evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-africa-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: ZA
+category: tax
+status: active
+name:
+  en: "South African Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-africa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary 20% base 1,234.56 ZAR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-africa-tax-return-field-helper, south-africa-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South African Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

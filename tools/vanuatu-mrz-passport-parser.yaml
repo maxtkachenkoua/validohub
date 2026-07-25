@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vanuatu-mrz-passport-parser
+kind: tool
+module: validohub
+country: VU
+category: national-identifiers
+status: active
+name:
+  en: "Vanuatuan MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vanuatu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<VUTSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567VUT8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vanuatu-bank-account-validator, vanuatu-bank-account-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vanuatuan MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

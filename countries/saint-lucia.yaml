@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: LC
+slug: saint-lucia
+name:
+  en: "Saint Lucia"
+region: North America
+languages:
+  - en
+currency: XCD
+relatedCountries:
+  - DM
+  - VC
+  - BB

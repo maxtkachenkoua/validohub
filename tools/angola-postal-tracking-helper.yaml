@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: angola-postal-tracking-helper
+kind: tool
+module: validohub
+country: AO
+category: logistics
+status: active
+name:
+  en: "Angolan Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.angola-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1000 Luanda"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [angola-data-quality-workbench, angola-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Angolan Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

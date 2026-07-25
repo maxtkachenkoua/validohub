@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-tax-id-validator
+kind: tool
+module: validohub
+country: TR
+category: national-identifiers
+status: active
+name:
+  en: "Turkish Vergi Kimlik Numarasi Validator"
+summary:
+  en: "Normalize Vergi Kimlik Numarasi identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-customs-importer-code-helper, turkey-sgk-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish Vergi Kimlik Numarasi Validator | ValidoHub"
+  description:
+    en: "Normalize Vergi Kimlik Numarasi identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

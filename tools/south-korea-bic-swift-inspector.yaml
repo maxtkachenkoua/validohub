@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-bic-swift-inspector
+kind: tool
+module: validohub
+country: KR
+category: finance
+status: active
+name:
+  en: "South Korean BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for South Korea banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDKR2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-domestic-transfer-helper, south-korea-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for South Korea banking integrations."

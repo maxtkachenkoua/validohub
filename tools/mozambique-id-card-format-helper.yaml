@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mozambique-id-card-format-helper
+kind: tool
+module: validohub
+country: MZ
+category: national-identifiers
+status: active
+name:
+  en: "Mozambican ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mozambique-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "MZ-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mozambique-passport-number-helper, mozambique-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mozambican ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

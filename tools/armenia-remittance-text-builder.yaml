@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: armenia-remittance-text-builder
+kind: tool
+module: validohub
+country: AM
+category: finance
+status: active
+name:
+  en: "Armenian Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.armenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 01234567 1 234.56 AMD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [armenia-payment-reconciliation-helper, armenia-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Armenian Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

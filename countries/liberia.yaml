@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: LR
+slug: liberia
+name:
+  en: Liberia
+region: Africa
+languages:
+  - en
+currency: LRD
+relatedCountries:
+  - ZA
+  - NG
+  - KE

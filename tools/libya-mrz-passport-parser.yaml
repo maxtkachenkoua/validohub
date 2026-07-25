@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: libya-mrz-passport-parser
+kind: tool
+module: validohub
+country: LY
+category: national-identifiers
+status: active
+name:
+  en: "Libyan MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.libya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<LBYSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567LBY8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [libya-bank-account-validator, libya-bank-account-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Libyan MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

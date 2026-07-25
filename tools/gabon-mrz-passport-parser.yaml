@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gabon-mrz-passport-parser
+kind: tool
+module: validohub
+country: GA
+category: national-identifiers
+status: active
+name:
+  en: "Gabonese MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gabon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<GABSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567GAB8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gabon-bank-account-validator, gabon-bank-account-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gabonese MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-company-registration-number-validator
+kind: tool
+module: validohub
+country: GM
+category: national-identifiers
+status: active
+name:
+  en: "Gambian company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "GM-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-tax-id-validator, gambia-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

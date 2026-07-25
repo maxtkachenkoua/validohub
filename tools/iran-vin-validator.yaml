@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-vin-validator
+kind: tool
+module: validohub
+country: IR
+category: transport
+status: active
+name:
+  en: "Iranian VIN Validator"
+summary:
+  en: "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VIN input"
+        required: true
+        placeholder:
+          en: "WVWZZZ1JZXW000001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-vehicle-data-redaction-helper, iran-customs-declaration-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian VIN Validator | ValidoHub"
+  description:
+    en: "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."

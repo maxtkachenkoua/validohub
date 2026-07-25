@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-slug-normalizer
+kind: tool
+module: validohub
+country: SA
+category: developer-tools
+status: active
+name:
+  en: "Saudi Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Saudi Arabia sample company King Fahd Road 1, Riyadh 12211"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-document-ocr-fixer, saudi-arabia-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: myanmar-pii-masker
+kind: tool
+module: validohub
+country: MM
+category: privacy
+status: active
+name:
+  en: "Myanmar PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.myanmar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "12/LaMaNa(N)123456 +95 9 123 456789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [myanmar-personal-data-fixture-generator, myanmar-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Myanmar PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

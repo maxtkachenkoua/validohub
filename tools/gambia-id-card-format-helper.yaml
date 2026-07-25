@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-id-card-format-helper
+kind: tool
+module: validohub
+country: GM
+category: national-identifiers
+status: active
+name:
+  en: "Gambian ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "GM-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-passport-number-helper, gambia-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

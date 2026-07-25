@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: ID
+slug: indonesia
+name:
+  en: Indonesia
+region: Asia
+languages:
+  - id
+currency: IDR
+relatedCountries:
+  - SG
+  - MY
+  - PH

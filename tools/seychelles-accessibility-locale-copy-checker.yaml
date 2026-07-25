@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: seychelles-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: SC
+category: localization
+status: active
+name:
+  en: "Seychellois Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.seychelles-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "national ID boundary input, postal/address code input, amount 1,234.56 SCR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [seychelles-support-ticket-scrubber, seychelles-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Seychellois Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-bank-account-fixture-generator
+kind: tool
+module: validohub
+country: BH
+category: finance
+status: active
+name:
+  en: "Bahrain Bank Account Fixture Generator"
+summary:
+  en: "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BGEN input"
+        required: true
+        placeholder:
+          en: "BMAG 1299123456"
+    actions: [generate, validate, explain]
+related:
+  explicit: [bahrain-bank-account-inspector, bahrain-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahrain Bank Account Fixture Generator | ValidoHub"
+  description:
+    en: "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."

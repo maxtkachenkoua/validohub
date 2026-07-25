@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: BD
+category: transport
+status: active
+name:
+  en: "Bangladeshi Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "DHAKA METRO GA 12-3456 WVWZZZ1JZXW000001 1990123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-customs-declaration-helper, bangladesh-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

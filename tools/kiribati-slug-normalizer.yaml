@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kiribati-slug-normalizer
+kind: tool
+module: validohub
+country: KI
+category: developer-tools
+status: active
+name:
+  en: "I-Kiribati Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kiribati-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Kiribati sample company Bairiki, South Tarawa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kiribati-document-ocr-fixer, kiribati-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "I-Kiribati Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

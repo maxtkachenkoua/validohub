@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-company-onboarding-auditor
+kind: tool
+module: validohub
+country: LK
+category: developer-tools
+status: active
+name:
+  en: "Sri Lankan Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"LK\",\"nic\":\"199012345678\",\"vat\":\"104567890\",\"cefts\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-business-register-readiness-helper, sri-lanka-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."

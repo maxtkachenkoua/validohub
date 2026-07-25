@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: libya-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: LY
+category: address
+status: active
+name:
+  en: "Libyan Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.libya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Central business district, Tripoli 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [libya-region-code-mapper, libya-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Libyan Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

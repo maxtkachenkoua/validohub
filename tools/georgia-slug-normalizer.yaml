@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-slug-normalizer
+kind: tool
+module: validohub
+country: GE
+category: developer-tools
+status: active
+name:
+  en: "Georgian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Georgia sample company Rustaveli Avenue 1, Tbilisi 0105"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-document-ocr-fixer, georgia-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

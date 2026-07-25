@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-payment-reference-helper
+kind: tool
+module: validohub
+country: TJ
+category: finance
+status: active
+name:
+  en: "Tajik Korti Milli / bank reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "Korti Milli / bank reference REF 2026-001 1 234,56 TJS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-remittance-text-builder, tajikistan-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Korti Milli / bank reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

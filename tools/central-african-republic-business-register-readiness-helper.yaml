@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-business-register-readiness-helper
+kind: tool
+module: validohub
+country: CF
+category: government
+status: active
+name:
+  en: "Central African business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "CF-REG-123456 CF123456789 Central business district, Bangui 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-id-card-format-helper, central-african-republic-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

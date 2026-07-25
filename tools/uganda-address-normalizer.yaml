@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uganda-address-normalizer
+kind: tool
+module: validohub
+country: UG
+category: address
+status: active
+name:
+  en: "Ugandan Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uganda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Central business district, Kampala 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uganda-address-transliteration-normalizer, uganda-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ugandan Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

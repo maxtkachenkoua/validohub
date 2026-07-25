@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kenya-business-register-readiness-helper
+kind: tool
+module: validohub
+country: KE
+category: government
+status: active
+name:
+  en: "Kenyan business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kenya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "KE-REG-123456 KE123456789 Central business district, Nairobi 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kenya-id-card-format-helper, kenya-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kenyan business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

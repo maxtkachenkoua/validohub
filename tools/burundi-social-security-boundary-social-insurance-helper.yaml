@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-social-security-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: BI
+category: national-identifiers
+status: active
+name:
+  en: "Burundian social security boundary Helper"
+summary:
+  en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "BI-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-company-onboarding-auditor, burundi-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian social security boundary Helper | ValidoHub"
+  description:
+    en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

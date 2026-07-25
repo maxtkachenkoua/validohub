@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-postal-tracking-helper
+kind: tool
+module: validohub
+country: MN
+category: logistics
+status: active
+name:
+  en: "Mongolian Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 14200 Ulaanbaatar"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-data-quality-workbench, mongolia-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

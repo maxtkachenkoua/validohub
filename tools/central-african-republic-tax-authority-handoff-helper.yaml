@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: CF
+category: tax
+status: active
+name:
+  en: "Central African Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "CF123456789 24/07/2026 1,234.56 XAF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-accounting-audit-trail-checklist-generator, central-african-republic-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

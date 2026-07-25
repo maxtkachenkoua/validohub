@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mozambique-domestic-transfer-helper
+kind: tool
+module: validohub
+country: MZ
+category: finance
+status: active
+name:
+  en: "Mozambican Domestic Transfer Helper"
+summary:
+  en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mozambique-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "001 1234567890\\n1,234.56 MZN\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mozambique-direct-debit-mandate-helper, mozambique-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mozambican Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."

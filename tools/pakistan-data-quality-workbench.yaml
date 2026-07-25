@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-data-quality-workbench
+kind: tool
+module: validohub
+country: PK
+category: developer-tools
+status: active
+name:
+  en: "Pakistani Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PK\",\"cnic\":\"35202-1234567-1\",\"iban\":\"PK36SCBL0000001123456702\",\"raast\":\"+923001234567\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-json-fixture-generator, pakistan-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

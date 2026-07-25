@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { buildRouteRegistry } from './route-registry.mjs';
 import { compileCountriesPortal, compileHomePortal, compileToolsPortal } from './build-countries-portal.mjs';
 import { applyFinalLocalizationPass } from './localization-pass.mjs';
+import { refreshGeneratedAssetLinks } from './dev-asset-links.mjs';
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDir, '..');
@@ -100,6 +101,8 @@ async function main() {
   const assetsManifest = await compileDesignAssets();
   await syncPortalRuntimeAssets();
   console.log(`✓ Compiled assets: ${assetsManifest.css}, ${assetsManifest.js}`);
+  const globalAssetLinks = await refreshGeneratedAssetLinks(siteRoot, assetsManifest);
+  console.log(`✓ Refreshed current CSS/JS bundle links on ${globalAssetLinks.updated} generated pages (checked ${globalAssetLinks.checked})`);
 
   const routeRegistry = await buildRouteRegistry();
   const homeRoute = routeRegistry.get('/en/');

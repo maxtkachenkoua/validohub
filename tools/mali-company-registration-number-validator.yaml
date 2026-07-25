@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mali-company-registration-number-validator
+kind: tool
+module: validohub
+country: ML
+category: national-identifiers
+status: active
+name:
+  en: "Malian company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mali-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "ML-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mali-tax-id-validator, mali-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malian company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

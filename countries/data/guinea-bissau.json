@@ -1,0 +1,642 @@
+{
+  "id": "guinea-bissau",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/guinea-bissau-outline.png",
+    "outlineAlt": "Guinea-Bissau country outline",
+    "mapSrc": "/assets/images/countries/guinea-bissau-location.png",
+    "mapAlt": "World map with Guinea-Bissau location marker",
+    "mapMarker": {
+      "x": 45,
+      "y": 55,
+      "label": "Guinea-Bissau"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "guinea-bissau",
+    "flag": "🇬🇼",
+    "name": "Guinea-Bissau",
+    "nativeName": "Guine-Bissau",
+    "iso2": "GW",
+    "iso3": "GNB",
+    "continent": "Africa",
+    "region": "Africa",
+    "language": "Portuguese",
+    "currency": "XOF",
+    "currencyName": "West African CFA franc",
+    "status": "available",
+    "summary": "Premium Guinea-Bissau developer hub for National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone, bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "National ID boundary",
+      "company registration number",
+      "tax number / VAT boundary",
+      "postal/address code",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "domestic transfer reference",
+      "SWIFT/BIC",
+      "invoice reference",
+      "payment reconciliation"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Bissau-Guinean national ID boundary Validator",
+      "Bissau-Guinean company registration number Validator",
+      "Bissau-Guinean tax number / VAT boundary Validator",
+      "Bissau-Guinean Customs / Importer Code Helper",
+      "Bissau-Guinean social security boundary Helper",
+      "Bissau-Guinean Company Onboarding Auditor",
+      "Bissau-Guinean business registry Readiness Helper",
+      "Bissau-Guinean ID Card Format Helper",
+      "Bissau-Guinean Passport Number Helper",
+      "Bissau-Guinean MRZ / Passport Parser",
+      "Guinea-Bissau Bank Account Validator",
+      "Guinea-Bissau Bank Account Fixture Generator",
+      "Bissau-Guinean Domestic Bank Account Inspector",
+      "Bissau-Guinean BIC / SWIFT Inspector",
+      "Bissau-Guinean Domestic Transfer Helper",
+      "Bissau-Guinean Direct Debit / Auto-Debit Mandate Helper",
+      "Bissau-Guinean bank transfer / payment reference Reference Helper",
+      "Bissau-Guinean Remittance Text Builder",
+      "Bissau-Guinean Payment Reconciliation Helper",
+      "Bissau-Guinean Bank Statement Parser",
+      "Bissau-Guinean Masked Bank Account Formatter",
+      "Bissau-Guinean XOF Decimal Currency Formatter",
+      "Bissau-Guinean Tax Rate Sanity Helper",
+      "Bissau-Guinean Tax Return Field Helper",
+      "Bissau-Guinean Invoice Number Helper",
+      "Bissau-Guinean tax invoice Readiness Checker",
+      "Bissau-Guinean Tax Authority Handoff Helper",
+      "Bissau-Guinean Accounting Audit Trail Checklist Helper",
+      "Bissau-Guinean Postal Code Validator",
+      "Bissau-Guinean Address Normalizer",
+      "Bissau-Guinean Address Transliteration Normalizer",
+      "Bissau-Guinean Region / Province Code Mapper",
+      "Bissau-Guinean Municipality Code Inspector",
+      "Bissau-Guinean Phone Number Validator",
+      "Bissau-Guinean Phone E.164 Formatter",
+      "Bissau-Guinean Date Locale Formatter",
+      "Bissau-Guinean CSV Locale Normalizer",
+      "Bissau-Guinean Slug Normalizer",
+      "Bissau-Guinean Document OCR Fixer",
+      "Bissau-Guinean data protection / privacy boundary Redaction Helper",
+      "Bissau-Guinean PII Masker",
+      "Bissau-Guinean Personal Data Fixture Helper",
+      "Bissau-Guinean Driving Licence Format Helper",
+      "Bissau-Guinean Residence Permit Format Helper",
+      "Bissau-Guinean Health Card Format Helper",
+      "Bissau-Guinean Vehicle Plate Inspector",
+      "Bissau-Guinean VIN Validator",
+      "Bissau-Guinean Vehicle Data Redaction Helper",
+      "Bissau-Guinean Customs Declaration Helper",
+      "Bissau-Guinean Postal Tracking Helper",
+      "Bissau-Guinean Data Quality Workbench",
+      "Bissau-Guinean JSON Fixture Helper",
+      "Bissau-Guinean Regex Pack Helper",
+      "Bissau-Guinean API Payload Auditor",
+      "Bissau-Guinean Form Field Auditor",
+      "Bissau-Guinean Locale Number Parser",
+      "Bissau-Guinean Calendar Week Helper",
+      "Bissau-Guinean Company Suffix Normalizer",
+      "Bissau-Guinean Procurement Identifier Helper",
+      "Bissau-Guinean Locale Copy Checker",
+      "Bissau-Guinean Support Ticket Scrubber",
+      "Bissau-Guinean Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 45,
+      "y": 55
+    },
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇬🇼",
+    "name": "Guinea-Bissau",
+    "badge": "Premium Guinea-Bissau developer suite",
+    "description": "Developer intelligence and browser-only workbenches for bissau-guinean identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Guine-Bissau",
+      "population": "approximately 2.2M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Bissau",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "languages": "Portuguese",
+      "currency": "West African CFA franc",
+      "currencyCode": "XOF",
+      "callingCode": "+245",
+      "internetTld": ".gw",
+      "drivingSide": "Right",
+      "iso2": "GW",
+      "iso3": "GNB",
+      "isoNumeric": "624",
+      "locale": "pt-GW",
+      "icuLocale": "pt_GW",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Space",
+      "addressFormat": "Street, number, postal code, locality, Guinea-Bissau",
+      "postalCodeFormat": "postal/address code",
+      "primaryTimeZone": "Africa/Abidjan (GMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112 / 117",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "pt-GW",
+      "cldrLocale": "pt_GW",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C",
+      "voltage": "220V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "guinea-bissau",
+      "outlineLabel": "Guinea-Bissau outline",
+      "mapLabel": "Guinea-Bissau in the world",
+      "continentBadge": "Africa",
+      "flagLabel": "Guinea-Bissau flag",
+      "heroAccentPrimary": "206 17 38",
+      "heroAccentSecondary": "252 209 22",
+      "heroAccentTertiary": "0 158 73"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax number / VAT boundary and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Guinea-Bissau registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /guinea-bissau/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Space rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Bissau-Guinean examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Guinea-Bissau.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax number / VAT boundary",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "data protection / privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "pt-GW / pt_GW; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "XOF amounts use Comma (,) and Space.",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, company registration number, postal/address code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "220V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112 / 117",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Bissau-Guinean national ID boundary Validator",
+        "href": "/en/guinea-bissau/guinea-bissau-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Bissau-Guinean company registration number Validator",
+        "href": "/en/guinea-bissau/guinea-bissau-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Bissau-Guinean tax number / VAT boundary Validator",
+        "href": "/en/guinea-bissau/guinea-bissau-tax-id-validator/",
+        "text": "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Bissau-Guinean Customs / Importer Code Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Bissau-Guinean social security boundary Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-social-security-boundary-social-insurance-helper/",
+        "text": "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Bissau-Guinean Company Onboarding Auditor",
+        "href": "/en/guinea-bissau/guinea-bissau-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Bissau-Guinean business registry Readiness Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+      },
+      {
+        "title": "Bissau-Guinean ID Card Format Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Bissau-Guinean Passport Number Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Bissau-Guinean MRZ / Passport Parser",
+        "href": "/en/guinea-bissau/guinea-bissau-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Guinea-Bissau Bank Account Validator",
+        "href": "/en/guinea-bissau/guinea-bissau-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Guinea-Bissau Bank Account Fixture Generator",
+        "href": "/en/guinea-bissau/guinea-bissau-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Bissau-Guinean Domestic Bank Account Inspector",
+        "href": "/en/guinea-bissau/guinea-bissau-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Bissau-Guinean BIC / SWIFT Inspector",
+        "href": "/en/guinea-bissau/guinea-bissau-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Guinea-Bissau banking integrations."
+      },
+      {
+        "title": "Bissau-Guinean Domestic Transfer Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Bissau-Guinean Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Bissau-Guinean bank transfer / payment reference Reference Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Bissau-Guinean Remittance Text Builder",
+        "href": "/en/guinea-bissau/guinea-bissau-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Bissau-Guinean Payment Reconciliation Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Bissau-Guinean Bank Statement Parser",
+        "href": "/en/guinea-bissau/guinea-bissau-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Bissau-Guinean Masked Bank Account Formatter",
+        "href": "/en/guinea-bissau/guinea-bissau-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Bissau-Guinean XOF Decimal Currency Formatter",
+        "href": "/en/guinea-bissau/guinea-bissau-currency-decimal-formatter/",
+        "text": "Normalize XOF amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Bissau-Guinean Tax Rate Sanity Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Bissau-Guinean Tax Return Field Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Bissau-Guinean Invoice Number Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Bissau-Guinean tax invoice Readiness Checker",
+        "href": "/en/guinea-bissau/guinea-bissau-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Bissau-Guinean Tax Authority Handoff Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Bissau-Guinean Accounting Audit Trail Checklist Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Bissau-Guinean Postal Code Validator",
+        "href": "/en/guinea-bissau/guinea-bissau-postal-code-validator/",
+        "text": "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Bissau-Guinean Address Normalizer",
+        "href": "/en/guinea-bissau/guinea-bissau-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Bissau-Guinean Address Transliteration Normalizer",
+        "href": "/en/guinea-bissau/guinea-bissau-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Bissau-Guinean Region / Province Code Mapper",
+        "href": "/en/guinea-bissau/guinea-bissau-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Bissau-Guinean Municipality Code Inspector",
+        "href": "/en/guinea-bissau/guinea-bissau-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Bissau-Guinean Phone Number Validator",
+        "href": "/en/guinea-bissau/guinea-bissau-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Bissau-Guinean Phone E.164 Formatter",
+        "href": "/en/guinea-bissau/guinea-bissau-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Bissau-Guinean Date Locale Formatter",
+        "href": "/en/guinea-bissau/guinea-bissau-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Bissau-Guinean CSV Locale Normalizer",
+        "href": "/en/guinea-bissau/guinea-bissau-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Guinea-Bissau decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Bissau-Guinean Slug Normalizer",
+        "href": "/en/guinea-bissau/guinea-bissau-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Bissau-Guinean Document OCR Fixer",
+        "href": "/en/guinea-bissau/guinea-bissau-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Bissau-Guinean data protection / privacy boundary Redaction Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Bissau-Guinean PII Masker",
+        "href": "/en/guinea-bissau/guinea-bissau-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Bissau-Guinean Personal Data Fixture Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Bissau-Guinean Driving Licence Format Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Bissau-Guinean Residence Permit Format Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Bissau-Guinean Health Card Format Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Bissau-Guinean Vehicle Plate Inspector",
+        "href": "/en/guinea-bissau/guinea-bissau-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Bissau-Guinean VIN Validator",
+        "href": "/en/guinea-bissau/guinea-bissau-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Bissau-Guinean Vehicle Data Redaction Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Bissau-Guinean Customs Declaration Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Bissau-Guinean Postal Tracking Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Bissau-Guinean Data Quality Workbench",
+        "href": "/en/guinea-bissau/guinea-bissau-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Bissau-Guinean JSON Fixture Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Bissau-Guinean Regex Pack Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Bissau-Guinean API Payload Auditor",
+        "href": "/en/guinea-bissau/guinea-bissau-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Bissau-Guinean Form Field Auditor",
+        "href": "/en/guinea-bissau/guinea-bissau-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Bissau-Guinean Locale Number Parser",
+        "href": "/en/guinea-bissau/guinea-bissau-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Guinea-Bissau."
+      },
+      {
+        "title": "Bissau-Guinean Calendar Week Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Bissau-Guinean Company Suffix Normalizer",
+        "href": "/en/guinea-bissau/guinea-bissau-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Bissau-Guinean Procurement Identifier Helper",
+        "href": "/en/guinea-bissau/guinea-bissau-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Bissau-Guinean Locale Copy Checker",
+        "href": "/en/guinea-bissau/guinea-bissau-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Bissau-Guinean Support Ticket Scrubber",
+        "href": "/en/guinea-bissau/guinea-bissau-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Bissau-Guinean Integration Smoke Test Builder",
+        "href": "/en/guinea-bissau/guinea-bissau-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

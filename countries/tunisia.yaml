@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: TN
+slug: tunisia
+name:
+  en: Tunisia
+region: Africa
+languages:
+  - ar
+currency: TND
+relatedCountries:
+  - ZA
+  - NG
+  - KE

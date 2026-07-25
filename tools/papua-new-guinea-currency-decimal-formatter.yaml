@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-currency-decimal-formatter
+kind: tool
+module: validohub
+country: PG
+category: finance
+status: active
+name:
+  en: "Papua New Guinean PGK Decimal Currency Formatter"
+summary:
+  en: "Normalize PGK amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 PGK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-tax-rate-sanity-helper, papua-new-guinea-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean PGK Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize PGK amount strings, decimal separators, grouping, and API-safe numeric previews."

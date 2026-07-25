@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: djibouti-customs-declaration-helper
+kind: tool
+module: validohub
+country: DJ
+category: government
+status: active
+name:
+  en: "Djiboutian Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.djibouti-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "DJ123456789 HS 8471 1,234.56 DJF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [djibouti-postal-tracking-helper, djibouti-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Djiboutian Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

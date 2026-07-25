@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palau-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: PW
+category: localization
+status: active
+name:
+  en: "Palauan Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "national ID boundary input, state/locality input, amount 1,234.56 USD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palau-support-ticket-scrubber, palau-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palauan Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

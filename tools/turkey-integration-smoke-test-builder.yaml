@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: TR
+category: developer-tools
+status: active
+name:
+  en: "Turkish Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TR\",\"tckn\":\"10000000146\",\"iban\":\"TR330006100519786457841326\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [turkey-t-c-kimlik-boundary-validator, turkey-mersis-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

@@ -1,0 +1,642 @@
+{
+  "id": "australia",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/australia-outline.png",
+    "outlineAlt": "Australia country outline",
+    "mapSrc": "/assets/images/countries/australia-location.png",
+    "mapAlt": "World map with Australia location marker",
+    "mapMarker": {
+      "x": 77,
+      "y": 78,
+      "label": "Australia"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "australia",
+    "flag": "🇦🇺",
+    "name": "Australia",
+    "nativeName": "Australia",
+    "iso2": "AU",
+    "iso3": "AUS",
+    "continent": "Oceania",
+    "region": "Oceania",
+    "language": "English",
+    "currency": "AUD",
+    "currencyName": "Australian dollar",
+    "status": "available",
+    "summary": "Premium Australia developer hub for Tax File Number boundary, Australian Business Number, GST registration boundary, postcode, phone, BSB/account number, PayID / Osko handoff, BPAY reference, SWIFT/BIC, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "Tax File Number boundary",
+      "Australian Business Number",
+      "GST registration boundary",
+      "postcode",
+      "phone"
+    ],
+    "payments": [
+      "BSB/account number",
+      "PayID / Osko handoff",
+      "BPAY reference",
+      "SWIFT/BIC",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Australian TFN boundary Validator",
+      "Australian ABN / ACN Validator",
+      "Australian GST / ABN Validator",
+      "Australian Customs / Importer Code Helper",
+      "Australian Medicare boundary Helper",
+      "Australian Company Onboarding Auditor",
+      "Australian ASIC / ABR Readiness Helper",
+      "Australian ID Card Format Helper",
+      "Australian Passport Number Helper",
+      "Australian MRZ / Passport Parser",
+      "Australia Bank Account Validator",
+      "Australia Bank Account Fixture Generator",
+      "Australian Domestic Bank Account Inspector",
+      "Australian BIC / SWIFT Inspector",
+      "Australian Domestic Transfer Helper",
+      "Australian Direct Debit / Auto-Debit Mandate Helper",
+      "Australian BSB / BPAY / PayID reference Reference Helper",
+      "Australian Remittance Text Builder",
+      "Australian Payment Reconciliation Helper",
+      "Australian Bank Statement Parser",
+      "Australian Masked Bank Account Formatter",
+      "Australian AUD Decimal Currency Formatter",
+      "Australian Tax Rate Sanity Helper",
+      "Australian Tax Return Field Helper",
+      "Australian Invoice Number Helper",
+      "Australian tax invoice Readiness Checker",
+      "Australian Tax Authority Handoff Helper",
+      "Australian Accounting Audit Trail Checklist Helper",
+      "Australian Postal Code Validator",
+      "Australian Address Normalizer",
+      "Australian Address Transliteration Normalizer",
+      "Australian Region / Province Code Mapper",
+      "Australian Municipality Code Inspector",
+      "Australian Phone Number Validator",
+      "Australian Phone E.164 Formatter",
+      "Australian Date Locale Formatter",
+      "Australian CSV Locale Normalizer",
+      "Australian Slug Normalizer",
+      "Australian Document OCR Fixer",
+      "Australian Privacy Act privacy Redaction Helper",
+      "Australian PII Masker",
+      "Australian Personal Data Fixture Helper",
+      "Australian Driving Licence Format Helper",
+      "Australian Residence Permit Format Helper",
+      "Australian Health Card Format Helper",
+      "Australian Vehicle Plate Inspector",
+      "Australian VIN Validator",
+      "Australian Vehicle Data Redaction Helper",
+      "Australian Customs Declaration Helper",
+      "Australian Postal Tracking Helper",
+      "Australian Data Quality Workbench",
+      "Australian JSON Fixture Helper",
+      "Australian Regex Pack Helper",
+      "Australian API Payload Auditor",
+      "Australian Form Field Auditor",
+      "Australian Locale Number Parser",
+      "Australian Calendar Week Helper",
+      "Australian Company Suffix Normalizer",
+      "Australian Procurement Identifier Helper",
+      "Australian Locale Copy Checker",
+      "Australian Support Ticket Scrubber",
+      "Australian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live ASIC / ABR lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 77,
+      "y": 78
+    },
+    "searchHints": [
+      "TFN",
+      "ABN",
+      "ACN",
+      "BSB",
+      "BPAY",
+      "POSTCODE"
+    ]
+  },
+  "hub": {
+    "flag": "🇦🇺",
+    "name": "Australia",
+    "badge": "Premium Australia developer suite",
+    "description": "Developer intelligence and browser-only workbenches for australian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Australia",
+      "population": "approximately 27M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Canberra",
+      "continent": "Oceania",
+      "region": "Australia and New Zealand",
+      "languages": "English",
+      "currency": "Australian dollar",
+      "currencyCode": "AUD",
+      "callingCode": "+61",
+      "internetTld": ".au",
+      "drivingSide": "Right",
+      "iso2": "AU",
+      "iso3": "AUS",
+      "isoNumeric": "036",
+      "locale": "en-AU",
+      "icuLocale": "en_AU",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Australia",
+      "postalCodeFormat": "postcode",
+      "primaryTimeZone": "Oceania/Abidjan (GMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "000 / 112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "en-AU",
+      "cldrLocale": "en_AU",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type I",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "australia",
+      "outlineLabel": "Australia outline",
+      "mapLabel": "Australia in the world",
+      "continentBadge": "Oceania",
+      "flagLabel": "Australia flag",
+      "heroAccentPrimary": "1 33 105",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "228 0 43"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "TFN boundary and ABN / ACN",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "GST / ABN and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Australia registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /australia/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Australian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "ASIC / ABR",
+        "text": "Official business registry or company lookup remains the source of truth for Australia.",
+        "status": "official boundary"
+      },
+      {
+        "title": "GST / ABN",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "Privacy Act privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "Tax File Number boundary, Australian Business Number, GST registration boundary, postcode, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "BSB/account number, PayID / Osko handoff, BPAY reference, SWIFT/BIC, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en-AU / en_AU; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "AUD amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "TFN boundary, ABN / ACN, postcode, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type I",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "000 / 112",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "TFN",
+      "ABN",
+      "ACN",
+      "BSB",
+      "BPAY",
+      "POSTCODE"
+    ],
+    "routes": [
+      {
+        "title": "Australian TFN boundary Validator",
+        "href": "/en/australia/australia-tfn-boundary-validator/",
+        "text": "Validate TFN boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Australian ABN / ACN Validator",
+        "href": "/en/australia/australia-abn-acn-validator/",
+        "text": "Inspect ABN / ACN structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Australian GST / ABN Validator",
+        "href": "/en/australia/australia-tax-id-validator/",
+        "text": "Normalize GST / ABN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Australian Customs / Importer Code Helper",
+        "href": "/en/australia/australia-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Australian Medicare boundary Helper",
+        "href": "/en/australia/australia-medicare-boundary-social-insurance-helper/",
+        "text": "Split Medicare boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Australian Company Onboarding Auditor",
+        "href": "/en/australia/australia-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for ABN / ACN, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Australian ASIC / ABR Readiness Helper",
+        "href": "/en/australia/australia-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated ASIC / ABR lookup or company registry workflow."
+      },
+      {
+        "title": "Australian ID Card Format Helper",
+        "href": "/en/australia/australia-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Australian Passport Number Helper",
+        "href": "/en/australia/australia-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Australian MRZ / Passport Parser",
+        "href": "/en/australia/australia-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Australia Bank Account Validator",
+        "href": "/en/australia/australia-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Australia Bank Account Fixture Generator",
+        "href": "/en/australia/australia-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Australian Domestic Bank Account Inspector",
+        "href": "/en/australia/australia-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Australian BIC / SWIFT Inspector",
+        "href": "/en/australia/australia-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Australia banking integrations."
+      },
+      {
+        "title": "Australian Domestic Transfer Helper",
+        "href": "/en/australia/australia-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Australian Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/australia/australia-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Australian BSB / BPAY / PayID reference Reference Helper",
+        "href": "/en/australia/australia-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Australian Remittance Text Builder",
+        "href": "/en/australia/australia-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Australian Payment Reconciliation Helper",
+        "href": "/en/australia/australia-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Australian Bank Statement Parser",
+        "href": "/en/australia/australia-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Australian Masked Bank Account Formatter",
+        "href": "/en/australia/australia-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Australian AUD Decimal Currency Formatter",
+        "href": "/en/australia/australia-currency-decimal-formatter/",
+        "text": "Normalize AUD amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Australian Tax Rate Sanity Helper",
+        "href": "/en/australia/australia-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Australian Tax Return Field Helper",
+        "href": "/en/australia/australia-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Australian Invoice Number Helper",
+        "href": "/en/australia/australia-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Australian tax invoice Readiness Checker",
+        "href": "/en/australia/australia-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Australian Tax Authority Handoff Helper",
+        "href": "/en/australia/australia-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Australian Accounting Audit Trail Checklist Helper",
+        "href": "/en/australia/australia-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Australian Postal Code Validator",
+        "href": "/en/australia/australia-postal-code-validator/",
+        "text": "Validate postcode shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Australian Address Normalizer",
+        "href": "/en/australia/australia-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Australian Address Transliteration Normalizer",
+        "href": "/en/australia/australia-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Australian Region / Province Code Mapper",
+        "href": "/en/australia/australia-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Australian Municipality Code Inspector",
+        "href": "/en/australia/australia-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Australian Phone Number Validator",
+        "href": "/en/australia/australia-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Australian Phone E.164 Formatter",
+        "href": "/en/australia/australia-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Australian Date Locale Formatter",
+        "href": "/en/australia/australia-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Australian CSV Locale Normalizer",
+        "href": "/en/australia/australia-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Australia decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Australian Slug Normalizer",
+        "href": "/en/australia/australia-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Australian Document OCR Fixer",
+        "href": "/en/australia/australia-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Australian Privacy Act privacy Redaction Helper",
+        "href": "/en/australia/australia-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Australian PII Masker",
+        "href": "/en/australia/australia-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Australian Personal Data Fixture Helper",
+        "href": "/en/australia/australia-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Australian Driving Licence Format Helper",
+        "href": "/en/australia/australia-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Australian Residence Permit Format Helper",
+        "href": "/en/australia/australia-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Australian Health Card Format Helper",
+        "href": "/en/australia/australia-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Australian Vehicle Plate Inspector",
+        "href": "/en/australia/australia-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Australian VIN Validator",
+        "href": "/en/australia/australia-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Australian Vehicle Data Redaction Helper",
+        "href": "/en/australia/australia-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Australian Customs Declaration Helper",
+        "href": "/en/australia/australia-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Australian Postal Tracking Helper",
+        "href": "/en/australia/australia-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Australian Data Quality Workbench",
+        "href": "/en/australia/australia-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Australian JSON Fixture Helper",
+        "href": "/en/australia/australia-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Australian Regex Pack Helper",
+        "href": "/en/australia/australia-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Australian API Payload Auditor",
+        "href": "/en/australia/australia-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Australian Form Field Auditor",
+        "href": "/en/australia/australia-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Australian Locale Number Parser",
+        "href": "/en/australia/australia-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Australia."
+      },
+      {
+        "title": "Australian Calendar Week Helper",
+        "href": "/en/australia/australia-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Australian Company Suffix Normalizer",
+        "href": "/en/australia/australia-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Australian Procurement Identifier Helper",
+        "href": "/en/australia/australia-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Australian Locale Copy Checker",
+        "href": "/en/australia/australia-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Australian Support Ticket Scrubber",
+        "href": "/en/australia/australia-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Australian Integration Smoke Test Builder",
+        "href": "/en/australia/australia-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

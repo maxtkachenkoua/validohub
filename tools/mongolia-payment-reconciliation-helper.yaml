@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: MN
+category: finance
+status: active
+name:
+  en: "Mongolian Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "2026.07.21; 1,234,567 MNT; 050 1234567890; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-bank-statement-parser, mongolia-masked-bank-account-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

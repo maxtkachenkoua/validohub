@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritius-currency-decimal-formatter
+kind: tool
+module: validohub
+country: MU
+category: finance
+status: active
+name:
+  en: "Mauritian MUR Decimal Currency Formatter"
+summary:
+  en: "Normalize MUR amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritius-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 MUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritius-tax-rate-sanity-helper, mauritius-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritian MUR Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize MUR amount strings, decimal separators, grouping, and API-safe numeric previews."

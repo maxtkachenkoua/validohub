@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-remittance-text-builder
+kind: tool
+module: validohub
+country: MY
+category: finance
+status: active
+name:
+  en: "Malaysian Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 C1234567890 1,234.56 MYR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-payment-reconciliation-helper, malaysia-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

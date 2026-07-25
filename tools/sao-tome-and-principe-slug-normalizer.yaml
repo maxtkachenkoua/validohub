@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-slug-normalizer
+kind: tool
+module: validohub
+country: ST
+category: developer-tools
+status: active
+name:
+  en: "Sao Tomean Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Sao Tome and Principe sample company Central business district, Sao Tome 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-document-ocr-fixer, sao-tome-and-principe-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

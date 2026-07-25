@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-bic-swift-inspector
+kind: tool
+module: validohub
+country: PK
+category: finance
+status: active
+name:
+  en: "Pakistani BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Pakistan banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDPK2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-domestic-transfer-helper, pakistan-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Pakistan banking integrations."

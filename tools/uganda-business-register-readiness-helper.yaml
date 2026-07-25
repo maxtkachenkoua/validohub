@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uganda-business-register-readiness-helper
+kind: tool
+module: validohub
+country: UG
+category: government
+status: active
+name:
+  en: "Ugandan business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uganda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "UG-REG-123456 UG123456789 Central business district, Kampala 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uganda-id-card-format-helper, uganda-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ugandan business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

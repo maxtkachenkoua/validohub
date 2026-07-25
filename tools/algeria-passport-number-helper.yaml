@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: algeria-passport-number-helper
+kind: tool
+module: validohub
+country: DZ
+category: national-identifiers
+status: active
+name:
+  en: "Algerian Passport Number Helper"
+summary:
+  en: "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.algeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PASS input"
+        required: true
+        placeholder:
+          en: "P<DZAALGERIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [algeria-mrz-passport-parser, algeria-bank-account-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Algerian Passport Number Helper | ValidoHub"
+  description:
+    en: "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-mrz-passport-parser
+kind: tool
+module: validohub
+country: TO
+category: national-identifiers
+status: active
+name:
+  en: "Tongan MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<TONSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567TON8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-bank-account-validator, tonga-bank-account-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

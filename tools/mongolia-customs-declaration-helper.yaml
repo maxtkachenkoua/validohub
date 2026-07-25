@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-customs-declaration-helper
+kind: tool
+module: validohub
+country: MN
+category: government
+status: active
+name:
+  en: "Mongolian Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "9012345 HS 8471 1,234,567 MNT"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-postal-tracking-helper, mongolia-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

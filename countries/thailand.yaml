@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: TH
+slug: thailand
+name:
+  en: Thailand
+region: Asia
+languages:
+  - th
+currency: THB
+relatedCountries:
+  - MY
+  - VN
+  - SG

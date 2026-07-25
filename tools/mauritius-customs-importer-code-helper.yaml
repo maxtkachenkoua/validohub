@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritius-customs-importer-code-helper
+kind: tool
+module: validohub
+country: MU
+category: national-identifiers
+status: active
+name:
+  en: "Mauritian Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritius-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "MUMU-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritius-social-security-boundary-social-insurance-helper, mauritius-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritian Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

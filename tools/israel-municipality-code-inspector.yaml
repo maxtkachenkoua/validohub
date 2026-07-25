@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-municipality-code-inspector
+kind: tool
+module: validohub
+country: IL
+category: address
+status: active
+name:
+  en: "Israeli Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Jaffa Road 1, Jerusalem 9100001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [israel-phone-number-validator, israel-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

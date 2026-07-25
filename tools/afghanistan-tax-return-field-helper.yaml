@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: afghanistan-tax-return-field-helper
+kind: tool
+module: validohub
+country: AF
+category: tax
+status: active
+name:
+  en: "Afghan Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.afghanistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "TIN; TIN123456789; period 2026-07; 1,234.56 AFN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [afghanistan-invoice-number-helper, afghanistan-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Afghan Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

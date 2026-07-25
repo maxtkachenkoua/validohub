@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: AE
+category: tax
+status: active
+name:
+  en: "UAE VAT tax invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AE\",\"trn\":\"100123456700003\",\"iban\":\"AE070331234567890123456\",\"wps\":\"salary-file\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-tax-authority-handoff-helper, united-arab-emirates-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE VAT tax invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

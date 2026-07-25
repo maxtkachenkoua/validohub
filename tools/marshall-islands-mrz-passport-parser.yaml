@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-mrz-passport-parser
+kind: tool
+module: validohub
+country: MH
+category: national-identifiers
+status: active
+name:
+  en: "Marshallese MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<MHLSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567MHL8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-bank-account-validator, marshall-islands-bank-account-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

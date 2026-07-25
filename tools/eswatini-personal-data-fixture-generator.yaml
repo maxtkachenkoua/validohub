@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: eswatini-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: SZ
+category: privacy
+status: active
+name:
+  en: "Swazi Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.eswatini-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "SZ-ID-123456\\nCentral business district, Mbabane 1000\\n+268 123 456 789"
+    actions: [generate, validate, explain]
+related:
+  explicit: [eswatini-driving-licence-format-helper, eswatini-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swazi Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

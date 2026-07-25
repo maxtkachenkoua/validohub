@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: timor-leste-api-payload-auditor
+kind: tool
+module: validohub
+country: TL
+category: developer-tools
+status: active
+name:
+  en: "Timorese API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.timor-leste-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TL\",\"tin\":\"TIN1234567\",\"rtimor\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [timor-leste-form-field-auditor, timor-leste-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Timorese API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-health-card-format-helper
+kind: tool
+module: validohub
+country: CN
+category: documents
+status: active
+name:
+  en: "Chinese Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "110101199003078877 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-vehicle-plate-inspector, china-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: libya-social-security-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: LY
+category: national-identifiers
+status: active
+name:
+  en: "Libyan social security boundary Helper"
+summary:
+  en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.libya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "LY-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [libya-company-onboarding-auditor, libya-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Libyan social security boundary Helper | ValidoHub"
+  description:
+    en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

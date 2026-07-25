@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-json-fixture-generator
+kind: tool
+module: validohub
+country: PS
+category: developer-tools
+status: active
+name:
+  en: "Palestinian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PS\",\"id\":\"401234567\",\"iban\":\"PS92PALS000000000400123456702\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [palestine-regex-pack-helper, palestine-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

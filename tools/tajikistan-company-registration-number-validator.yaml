@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-company-registration-number-validator
+kind: tool
+module: validohub
+country: TJ
+category: national-identifiers
+status: active
+name:
+  en: "Tajik company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "TJ1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-tax-id-validator, tajikistan-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

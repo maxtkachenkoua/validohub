@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: KP
+category: developer-tools
+status: active
+name:
+  en: "North Korean Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KP\",\"resident\":\"KP-900101-123456\",\"boundary\":\"official-lookup-required\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [north-korea-resident-certificate-boundary-validator, north-korea-organization-registration-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

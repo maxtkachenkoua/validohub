@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MG
+slug: madagascar
+name:
+  en: Madagascar
+region: Africa
+languages:
+  - fr
+currency: MGA
+relatedCountries:
+  - ZA
+  - NG
+  - KE

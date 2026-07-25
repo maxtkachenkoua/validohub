@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tunisia-document-ocr-fixer
+kind: tool
+module: validohub
+country: TN
+category: documents
+status: active
+name:
+  en: "Tunisian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tunisia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "TN-ID-123456 TN123456789 001 1234567890 1000 Tunis"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tunisia-privacy-redaction-helper, tunisia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tunisian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

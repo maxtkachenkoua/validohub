@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: democratic-republic-of-the-congo-driving-licence-format-helper
+kind: tool
+module: validohub
+country: CD
+category: documents
+status: active
+name:
+  en: "Congolese Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.democratic-republic-of-the-congo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "CD-ID-123456 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [democratic-republic-of-the-congo-residence-permit-format-helper, democratic-republic-of-the-congo-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Congolese Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

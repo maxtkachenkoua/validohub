@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malawi-address-normalizer
+kind: tool
+module: validohub
+country: MW
+category: address
+status: active
+name:
+  en: "Malawian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malawi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Central business district, Lilongwe 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malawi-address-transliteration-normalizer, malawi-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malawian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

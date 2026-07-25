@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vanuatu-form-field-auditor
+kind: tool
+module: validohub
+country: VU
+category: developer-tools
+status: active
+name:
+  en: "Vanuatuan Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vanuatu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=VU123456789&postal=Port Vila&phone=+678 12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vanuatu-locale-number-parser, vanuatu-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vanuatuan Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

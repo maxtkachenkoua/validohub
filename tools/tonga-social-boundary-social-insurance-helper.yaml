@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-social-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: TO
+category: national-identifiers
+status: active
+name:
+  en: "Tongan social boundary Helper"
+summary:
+  en: "Split social boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "TO-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-company-onboarding-auditor, tonga-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan social boundary Helper | ValidoHub"
+  description:
+    en: "Split social boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

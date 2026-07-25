@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-bank-account-inspector
+kind: tool
+module: validohub
+country: TM
+category: finance
+status: active
+name:
+  en: "Turkmen Domestic Bank Account Inspector"
+summary:
+  en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "3901012345678901"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkmenistan-bic-swift-inspector, turkmenistan-domestic-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen Domestic Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-support-ticket-scrubber
+kind: tool
+module: validohub
+country: UZ
+category: privacy
+status: active
+name:
+  en: "Uzbek Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 30101876543212, 00444 20208000123456789001, Amir Temur Avenue 1, Tashkent 100000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-integration-smoke-test-builder, uzbekistan-pinfl-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

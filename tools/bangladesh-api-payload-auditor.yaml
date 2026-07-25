@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-api-payload-auditor
+kind: tool
+module: validohub
+country: BD
+category: developer-tools
+status: active
+name:
+  en: "Bangladeshi API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BD\",\"tin\":\"123456789012\",\"routing\":\"145\",\"beftn\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-form-field-auditor, bangladesh-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-resident-id-boundary-validator
+kind: tool
+module: validohub
+country: CN
+category: national-identifiers
+status: active
+name:
+  en: "Chinese Resident ID boundary Validator"
+summary:
+  en: "Validate Resident ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "110101199003078877"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-uscc-validator, china-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese Resident ID boundary Validator | ValidoHub"
+  description:
+    en: "Validate Resident ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

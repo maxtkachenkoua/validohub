@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-postal-tracking-helper
+kind: tool
+module: validohub
+country: JO
+category: logistics
+status: active
+name:
+  en: "Jordanian Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 11118 Amman"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-data-quality-workbench, jordan-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

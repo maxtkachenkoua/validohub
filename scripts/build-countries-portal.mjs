@@ -284,6 +284,246 @@ function renderHomeCountryCards(countryRoutes) {
     }).join('\n');
 }
 
+function rgbTripletToHex(rgbTriplet, fallback = '#0f766e') {
+  const parts = String(rgbTriplet || '').trim().split(/\s+/).map(part => Number(part));
+  if (parts.length < 3 || parts.some(part => !Number.isFinite(part))) return fallback;
+  return `#${parts.slice(0, 3).map(part => Math.max(0, Math.min(255, Math.round(part))).toString(16).padStart(2, '0')).join('')}`;
+}
+
+const COUNTRY_MAP_FLAG_PALETTES = {
+  brazil: ['#009739', '#fedd00', '#012169'],
+  canada: ['#d80621', '#ffffff', '#d80621'],
+  chile: ['#0039a6', '#ffffff', '#d52b1e'],
+  france: ['#0055a4', '#ffffff', '#ef4135'],
+  germany: ['#000000', '#dd0000', '#ffce00'],
+  ghana: ['#ce1126', '#fcd116', '#006b3f'],
+  italy: ['#008c45', '#f4f5f0', '#cd212a'],
+  japan: ['#ffffff', '#bc002d', '#ffffff'],
+  kenya: ['#000000', '#bb0000', '#006600'],
+  mexico: ['#006847', '#ffffff', '#ce1126'],
+  netherlands: ['#ae1c28', '#ffffff', '#21468b'],
+  poland: ['#ffffff', '#dc143c', '#dc143c'],
+  spain: ['#aa151b', '#f1bf00', '#aa151b'],
+  switzerland: ['#ff0000', '#ffffff', '#ff0000'],
+  'united-kingdom': ['#012169', '#ffffff', '#c8102e'],
+  'united-states': ['#b22234', '#ffffff', '#3c3b6e']
+};
+
+function buildHomeMapCountry(route) {
+  const data = route.metadata;
+  const metadata = data.hub?.metadata || {};
+  const visualIdentity = data.hub?.visualIdentity || {};
+  const workbenchCount = (data.catalog.availableWorkbenches || []).length;
+  const identifiers = (data.catalog.identifiers || []).slice(0, 3);
+  const payments = (data.catalog.payments || []).slice(0, 2);
+  const primary = rgbTripletToHex(visualIdentity.heroAccentPrimary, '#0f766e');
+  const secondary = rgbTripletToHex(visualIdentity.heroAccentSecondary, '#ffffff');
+  const tertiary = rgbTripletToHex(visualIdentity.heroAccentTertiary, '#2563eb');
+  const colors = COUNTRY_MAP_FLAG_PALETTES[data.id] || [primary, secondary, tertiary];
+
+  return {
+    slug: data.id,
+    href: route.path,
+    name: data.catalog.name,
+    flag: data.catalog.flag,
+    iso2: data.catalog.iso2,
+    iso3: data.catalog.iso3,
+    continent: data.catalog.continent,
+    region: data.catalog.region || metadata.region || data.catalog.continent,
+    capital: metadata.capital || 'Capital varies by source',
+    currency: data.catalog.currency || metadata.currencyCode || '',
+    language: data.catalog.language || metadata.languages || '',
+    workbenchCount,
+    identifiers,
+    payments,
+    colors,
+    outlineSrc: data.hero?.outlineSrc || data.hub?.hero?.outlineSrc || `/assets/images/countries/${data.id}-outline.png`,
+    coordinates: data.catalog.coordinates || { x: 50, y: 50 }
+  };
+}
+
+function renderHomeWorldMapMarkers(countries, supportedIso2) {
+  const missing = countries.filter(country => !supportedIso2.has(String(country.iso2 || '').toUpperCase()));
+  const grouped = new Map();
+
+  return missing.map(country => {
+    const key = `${Math.round(country.coordinates.x)}:${Math.round(country.coordinates.y)}`;
+    const index = grouped.get(key) || 0;
+    grouped.set(key, index + 1);
+    const angle = (index * 58) * Math.PI / 180;
+    const radius = index === 0 ? 0 : 1.8 + (index % 3) * 0.65;
+    const x = Math.max(2, Math.min(98, Number(country.coordinates.x) + Math.cos(angle) * radius));
+    const y = Math.max(3, Math.min(97, Number(country.coordinates.y) + Math.sin(angle) * radius));
+    const colorA = country.colors[0];
+    const colorB = country.colors[1];
+    const colorC = country.colors[2];
+
+    return `
+      <button class="vh-home-world-marker"
+              type="button"
+              style="left:${x.toFixed(2)}%; top:${y.toFixed(2)}%; --vh-map-a:${colorA}; --vh-map-b:${colorB}; --vh-map-c:${colorC};"
+              data-vh-world-country
+              data-country-slug="${escapeHtml(country.slug)}"
+              data-country-href="${escapeHtml(country.href)}"
+              data-country-name="${escapeHtml(country.name)}"
+              data-country-flag="${escapeHtml(country.flag)}"
+              data-country-iso="${escapeHtml(`${country.iso2} / ${country.iso3}`)}"
+              data-country-region="${escapeHtml(country.region)}"
+              data-country-continent="${escapeHtml(country.continent)}"
+              data-country-capital="${escapeHtml(country.capital)}"
+              data-country-currency="${escapeHtml(country.currency)}"
+              data-country-language="${escapeHtml(country.language)}"
+              data-country-workbenches="${country.workbenchCount}"
+              data-country-signals="${escapeHtml([...country.identifiers, ...country.payments].join(' · ') || 'Local developer formats')}"
+              aria-label="Open ${escapeHtml(country.name)} developer hub">
+        <span>${escapeHtml(country.flag)}</span>
+      </button>
+    `;
+  }).join('\n');
+}
+
+async function renderHomeWorldMap(countryRoutes, metrics) {
+  const countries = countryRoutes.map(buildHomeMapCountry);
+  const byIso2 = new Map(countries.map(country => [String(country.iso2 || '').toLowerCase(), country]));
+  const rawSvg = await readFile(resolve(projectRoot, 'assets', 'images', 'countries', 'world-map.svg'), 'utf8');
+  const supportedIso2 = new Set([...rawSvg.matchAll(/\bid="([a-z]{2})"/g)].map(match => match[1].toUpperCase()).filter(iso2 => byIso2.has(iso2.toLowerCase())));
+  const gradients = countries.map(country => {
+    const [a, b, c] = country.colors;
+    return `
+      <linearGradient id="vh-home-flag-${country.slug}" x1="0%" x2="100%" y1="0%" y2="0%">
+        <stop offset="0%" stop-color="${a}"></stop>
+        <stop offset="48%" stop-color="${b}"></stop>
+        <stop offset="100%" stop-color="${c}"></stop>
+      </linearGradient>
+    `;
+  }).join('\n');
+
+  let svg = rawSvg
+    .replace('<svg ', '<svg class="vh-home-world-svg" ')
+    .replace('role="img"', 'role="img" focusable="false"')
+    .replace(/<title id="title">.*?<\/title>/s, '<title id="title">Interactive ValidoHub world coverage map</title>')
+    .replace(/<desc id="desc">.*?<\/desc>/s, '<desc id="desc">Countries are colored with their flag palette. Hover or focus a country for a short developer hub preview; click to open it.</desc>');
+
+  svg = svg.replace(/(<svg\b[^>]*>)/, `$1\n<defs>${gradients}</defs>`);
+
+  for (const country of countries) {
+    const iso2 = String(country.iso2 || '').toLowerCase();
+    const attrs = [
+      `id="vh-home-world-${country.slug}"`,
+      'class="vh-home-world-country"',
+      'tabindex="0"',
+      'role="link"',
+      'data-vh-world-country',
+      `data-country-slug="${escapeHtml(country.slug)}"`,
+      `data-country-href="${escapeHtml(country.href)}"`,
+      `data-country-name="${escapeHtml(country.name)}"`,
+      `data-country-flag="${escapeHtml(country.flag)}"`,
+      `data-country-iso="${escapeHtml(`${country.iso2} / ${country.iso3}`)}"`,
+      `data-country-region="${escapeHtml(country.region)}"`,
+      `data-country-continent="${escapeHtml(country.continent)}"`,
+      `data-country-capital="${escapeHtml(country.capital)}"`,
+      `data-country-currency="${escapeHtml(country.currency)}"`,
+      `data-country-language="${escapeHtml(country.language)}"`,
+      `data-country-workbenches="${country.workbenchCount}"`,
+      `data-country-signals="${escapeHtml([...country.identifiers, ...country.payments].join(' · ') || 'Local developer formats')}"`,
+      `aria-label="Open ${escapeHtml(country.name)} developer hub"`,
+      `style="fill:url(#vh-home-flag-${country.slug})"`
+    ].join(' ');
+    svg = svg.replace(new RegExp(`(<(?:path|g)\\s+)id="${iso2}"`), `$1${attrs}`);
+  }
+
+  const markerHtml = renderHomeWorldMapMarkers(countries, supportedIso2);
+
+  return `
+    <section class="vh-home-section vh-home-world-section vh-home-search-results" id="home-world-map" aria-labelledby="home-world-map-title">
+      <div class="vh-home-section-head">
+        <span class="vh-eyebrow">World Coverage</span>
+        <h2 id="home-world-map-title">Open any country from the live map.</h2>
+        <p>All ${metrics.totalCountries} official country hubs are reachable from one surface. Countries use their flag palette; hover for a quick integration snapshot, click to open the local developer portal.</p>
+      </div>
+      <div class="vh-home-world-shell">
+        <div class="vh-home-world-map" data-vh-world-map>
+          ${svg}
+          <div class="vh-home-world-marker-layer" aria-hidden="false">
+            ${markerHtml}
+          </div>
+          <div class="vh-home-world-popover" data-vh-world-popover role="status" aria-live="polite">
+            <div class="vh-home-world-popover-top">
+              <span data-vh-world-popover-flag>🌍</span>
+              <div>
+                <strong data-vh-world-popover-name>Choose a country</strong>
+                <em data-vh-world-popover-region>Hover or focus the map</em>
+              </div>
+            </div>
+            <dl>
+              <div><dt>ISO</dt><dd data-vh-world-popover-iso>--</dd></div>
+              <div><dt>Capital</dt><dd data-vh-world-popover-capital>--</dd></div>
+              <div><dt>Currency</dt><dd data-vh-world-popover-currency>--</dd></div>
+              <div><dt>Tools</dt><dd data-vh-world-popover-tools>--</dd></div>
+            </dl>
+            <p data-vh-world-popover-signals>Local identifiers and payment formats.</p>
+          </div>
+        </div>
+        <aside class="vh-home-world-panel" aria-label="World map summary">
+          <div><strong>${metrics.totalCountries}</strong><span>country hubs online</span></div>
+          <div><strong>${metrics.totalWorkbenches}</strong><span>browser-only workbenches</span></div>
+          <div><strong>${metrics.totalIdentifiers}</strong><span>identifier families indexed</span></div>
+          <a href="/en/countries/">Open Countries Portal</a>
+        </aside>
+      </div>
+    </section>
+  `;
+}
+
+async function renderCountriesWorldMap(countryRoutes) {
+  const countries = countryRoutes.map(buildHomeMapCountry);
+  const byIso2 = new Map(countries.map(country => [String(country.iso2 || '').toLowerCase(), country]));
+  const rawSvg = await readFile(resolve(projectRoot, 'assets', 'images', 'countries', 'world-map.svg'), 'utf8');
+  const mapDefs = `
+    <filter id="vh-countries-premium-lift" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#0f172a" flood-opacity="0.18"></feDropShadow>
+      <feDropShadow dx="0" dy="-1" stdDeviation="0.65" flood-color="#ffffff" flood-opacity="0.55"></feDropShadow>
+    </filter>
+  `;
+  let svg = rawSvg
+    .replace('<svg ', '<svg class="vh-countries-world-svg" aria-label="Interactive ValidoHub countries map" ')
+    .replace('role="img"', 'role="img" focusable="false"')
+    .replace(/<title id="title">.*?<\/title>/s, '')
+    .replace(/<desc id="desc">.*?<\/desc>/s, '<desc id="desc">Neutral world atlas. Hover or focus a country to reveal a premium country-shape preview; click to open the country hub.</desc>');
+
+  svg = svg.replace(/(<svg\b[^>]*>)/, `$1\n<defs>${mapDefs}</defs>`);
+
+  for (const country of countries) {
+    const iso2 = String(country.iso2 || '').toLowerCase();
+    const attrs = [
+      `id="vh-countries-world-${country.slug}"`,
+      `class="vh-countries-world-country vh-marker-${country.slug}"`,
+      'tabindex="0"',
+      'role="link"',
+      'data-vh-countries-map-item',
+      `data-country-id="${escapeHtml(country.slug)}"`,
+      `data-country-name="${escapeHtml(country.name)}"`,
+      `data-country-href="${escapeHtml(country.href)}"`,
+      `data-country-outline="${escapeHtml(country.outlineSrc)}"`,
+      `aria-label="Open ${escapeHtml(country.name)} hub"`,
+      `style="--vh-map-a:${country.colors[0]}; --vh-map-b:${country.colors[1]}; --vh-map-c:${country.colors[2]};"`
+    ].join(' ');
+    svg = svg.replace(new RegExp(`(<(?:path|g)\\s+)id="${iso2}"`), `$1${attrs}`);
+  }
+
+  return `
+    <div class="vh-countries-world-map" data-vh-countries-world-map>
+      ${svg}
+      <div class="vh-countries-map-tooltip" data-vh-countries-map-tooltip role="status" aria-live="polite">
+        <span class="vh-countries-map-tooltip-art">
+          <img src="" alt="" loading="lazy" decoding="async" data-vh-countries-map-tooltip-image>
+        </span>
+        <strong data-vh-countries-map-tooltip-name>Country</strong>
+      </div>
+    </div>
+  `;
+}
+
 export async function compileHomePortal(routeRegistry, assetsManifest) {
   console.log('--- Pass 2a: Rendering Home Portal ---');
   const layoutTemplate = await readFile(resolve(projectRoot, 'templates', 'layout.html'), 'utf8');
@@ -316,6 +556,7 @@ export async function compileHomePortal(routeRegistry, assetsManifest) {
     { path: '/en/germany/germany-iban-generator/', kicker: 'Germany', summary: 'Generate German IBAN fixture payloads.', keywords: ['generator', 'payments'] }
   ], 'vh-home-tool-card-compact');
   const featuredCountriesHtml = renderHomeCountryCards(countryRoutes);
+  const worldMapHtml = await renderHomeWorldMap(countryRoutes, metrics);
 
   const headHtml = `
     <title>ValidoHub | Browser-only developer workbenches for global formats</title>
@@ -421,6 +662,8 @@ export async function compileHomePortal(routeRegistry, assetsManifest) {
           ${generatorToolsHtml}
         </div>
       </section>
+
+      ${worldMapHtml}
 
       <section class="vh-home-section vh-home-map-band" aria-labelledby="home-countries">
         <div class="vh-home-section-head">
@@ -728,20 +971,7 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest, opti
     totalPayments,
     totalAvailableGuides
   } = collectCountryPortalMetrics(countryRoutes);
-
-  const markersHtml = countryRoutes.map(r => {
-    const d = r.metadata;
-    const coords = d.catalog.coordinates || { x: 50, y: 50 };
-    const status = d.catalog.status || 'planned';
-    return `
-      <a class="vh-countries-map-marker vh-marker-${d.id} status-${status}" 
-         href="${r.path}" 
-         data-country-id="${d.id}" 
-         aria-label="${escapeHtml(d.catalog.name)} ${status === 'available' ? 'Hub' : 'Roadmap'}">
-        <span>${escapeHtml(d.catalog.flag)}</span>
-      </a>
-    `;
-  }).join('\n');
+  const worldMapHtml = await renderCountriesWorldMap(countryRoutes);
 
   const continents = ['South America', 'Europe', 'North America', 'Asia', 'Africa', 'Oceania'];
   const continentGridsHtml = continents.map(continent => {
@@ -858,6 +1088,8 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest, opti
               <option value="Europe">Europe</option>
               <option value="North America">North America</option>
               <option value="Asia">Asia</option>
+              <option value="Africa">Africa</option>
+              <option value="Oceania">Oceania</option>
             </select>
           </label>
           <label class="vh-countries-select-filter">
@@ -886,12 +1118,9 @@ export async function compileCountriesPortal(routeRegistry, assetsManifest, opti
         <div class="section-heading">
           <span class="vh-eyebrow">World Map</span>
           <h2>Explore country coverage</h2>
-          <p>Hover a marker or country card to preview a country. Click available countries to open the developer hub.</p>
+          <p>Hover a country to see its premium shape preview. Click a country shape to open the developer hub.</p>
         </div>
-        <div class="vh-countries-world-map">
-          <img class="vh-countries-world-map-image" src="/assets/images/countries/world-map.svg" alt="World map with ValidoHub country coverage markers" loading="lazy" decoding="async">
-          ${markersHtml}
-        </div>
+        ${worldMapHtml}
       </section>
 
       <!-- Country Directory Layout (Grids + Preview Sidebar) -->

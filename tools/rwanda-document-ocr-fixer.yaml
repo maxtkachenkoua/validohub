@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: rwanda-document-ocr-fixer
+kind: tool
+module: validohub
+country: RW
+category: documents
+status: active
+name:
+  en: "Rwandan Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.rwanda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "RW-ID-123456 RW123456789 001 1234567890 1000 Kigali"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [rwanda-privacy-redaction-helper, rwanda-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Rwandan Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

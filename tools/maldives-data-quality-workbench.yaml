@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-data-quality-workbench
+kind: tool
+module: validohub
+country: MV
+category: developer-tools
+status: active
+name:
+  en: "Maldivian Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MV\",\"gst\":\"GST123456\",\"bank\":\"0011234567890\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [maldives-json-fixture-generator, maldives-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

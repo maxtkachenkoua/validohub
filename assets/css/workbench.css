@@ -1414,7 +1414,7 @@ select:focus {
 
 .generic-premium-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(13rem, 0.32fr);
+  grid-template-columns: minmax(3.65rem, auto) minmax(0, 1fr) minmax(13rem, 0.32fr);
   gap: 1rem;
   align-items: stretch;
   margin: 0 0 1.05rem;

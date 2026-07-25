@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-fin-code-boundary-validator
+kind: tool
+module: validohub
+country: AZ
+category: national-identifiers
+status: active
+name:
+  en: "Azerbaijani FIN code boundary Validator"
+summary:
+  en: "Validate FIN code boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "ABC1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-company-registration-number-validator, azerbaijan-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani FIN code boundary Validator | ValidoHub"
+  description:
+    en: "Validate FIN code boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

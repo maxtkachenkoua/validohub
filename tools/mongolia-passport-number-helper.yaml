@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-passport-number-helper
+kind: tool
+module: validohub
+country: MN
+category: national-identifiers
+status: active
+name:
+  en: "Mongolian Passport Number Helper"
+summary:
+  en: "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PASS input"
+        required: true
+        placeholder:
+          en: "P<MNGMONGOLIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-mrz-passport-parser, mongolia-bank-account-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Passport Number Helper | ValidoHub"
+  description:
+    en: "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."

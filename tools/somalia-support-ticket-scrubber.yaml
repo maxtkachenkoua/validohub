@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: somalia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: SO
+category: privacy
+status: active
+name:
+  en: "Somali Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.somalia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent SO-ID-123456, 001 1234567890, Central business district, Mogadishu 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [somalia-integration-smoke-test-builder, somalia-national-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Somali Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

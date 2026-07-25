@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-medicare-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: AU
+category: national-identifiers
+status: active
+name:
+  en: "Australian Medicare boundary Helper"
+summary:
+  en: "Split Medicare boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "Medicare 2123456701"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-company-onboarding-auditor, australia-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian Medicare boundary Helper | ValidoHub"
+  description:
+    en: "Split Medicare boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

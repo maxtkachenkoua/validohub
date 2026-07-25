@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chad-phone-number-validator
+kind: tool
+module: validohub
+country: TD
+category: address
+status: active
+name:
+  en: "Chadian Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chad-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+235 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chad-phone-e164-formatter, chad-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chadian Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

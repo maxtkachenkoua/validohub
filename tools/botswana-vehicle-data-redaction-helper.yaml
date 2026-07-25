@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: botswana-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: BW
+category: transport
+status: active
+name:
+  en: "Botswana Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.botswana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "BW 1234 WVWZZZ1JZXW000001 BW-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [botswana-customs-declaration-helper, botswana-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Botswana Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

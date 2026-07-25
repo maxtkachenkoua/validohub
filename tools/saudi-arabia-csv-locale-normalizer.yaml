@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-csv-locale-normalizer
+kind: tool
+module: validohub
+country: SA
+category: developer-tools
+status: active
+name:
+  en: "Saudi CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Saudi Arabia decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 SAR;21/07/2026;300123456700003"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-slug-normalizer, saudi-arabia-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Saudi Arabia decimal, date, postal, phone, tax, and banking fields."

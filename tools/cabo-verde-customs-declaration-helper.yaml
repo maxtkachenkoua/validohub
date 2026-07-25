@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-customs-declaration-helper
+kind: tool
+module: validohub
+country: CV
+category: government
+status: active
+name:
+  en: "Cabo Verdean Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "CV123456789 HS 8471 1,234.56 CVE"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-postal-tracking-helper, cabo-verde-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

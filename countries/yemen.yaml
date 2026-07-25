@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: YE
+slug: yemen
+name:
+  en: Yemen
+region: Asia
+languages:
+  - ar
+currency: YER
+relatedCountries:
+  - SA
+  - OM
+  - AE

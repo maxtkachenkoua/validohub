@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: SA
+category: localization
+status: active
+name:
+  en: "Saudi Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "National ID boundary input, postal code input, amount 1,234.56 SAR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-support-ticket-scrubber, saudi-arabia-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

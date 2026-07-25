@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-driving-licence-format-helper
+kind: tool
+module: validohub
+country: BH
+category: documents
+status: active
+name:
+  en: "Bahraini Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "900101123 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-residence-permit-format-helper, bahrain-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

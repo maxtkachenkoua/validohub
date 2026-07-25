@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: BN
+category: privacy
+status: active
+name:
+  en: "Bruneian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "00-123456\\nJalan Sultan 1, Bandar Seri Begawan BS8711\\n+673 712 3456"
+    actions: [generate, validate, explain]
+related:
+  explicit: [brunei-driving-licence-format-helper, brunei-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

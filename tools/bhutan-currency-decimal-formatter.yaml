@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bhutan-currency-decimal-formatter
+kind: tool
+module: validohub
+country: BT
+category: finance
+status: active
+name:
+  en: "Bhutanese BTN Decimal Currency Formatter"
+summary:
+  en: "Normalize BTN amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bhutan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 BTN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bhutan-tax-rate-sanity-helper, bhutan-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bhutanese BTN Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize BTN amount strings, decimal separators, grouping, and API-safe numeric previews."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: angola-locale-number-parser
+kind: tool
+module: validohub
+country: AO
+category: localization
+status: active
+name:
+  en: "Angolan Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Angola."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.angola-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 AOA"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [angola-calendar-week-helper, angola-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Angolan Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Angola."

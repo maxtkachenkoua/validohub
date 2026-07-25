@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: madagascar-document-ocr-fixer
+kind: tool
+module: validohub
+country: MG
+category: documents
+status: active
+name:
+  en: "Malagasy Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.madagascar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "MG-ID-123456 MG123456789 001 1234567890 1000 Antananarivo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [madagascar-privacy-redaction-helper, madagascar-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malagasy Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

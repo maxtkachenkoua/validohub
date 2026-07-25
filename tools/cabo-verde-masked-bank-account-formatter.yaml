@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-masked-bank-account-formatter
+kind: tool
+module: validohub
+country: CV
+category: finance
+status: active
+name:
+  en: "Cabo Verdean Masked Bank Account Formatter"
+summary:
+  en: "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-currency-decimal-formatter, cabo-verde-tax-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Masked Bank Account Formatter | ValidoHub"
+  description:
+    en: "Create log-safe bank-account previews while preserving routing and account-tail evidence."

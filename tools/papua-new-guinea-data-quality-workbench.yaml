@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-data-quality-workbench
+kind: tool
+module: validohub
+country: PG
+category: developer-tools
+status: active
+name:
+  en: "Papua New Guinean Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PG\",\"tin\":\"PG123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-json-fixture-generator, papua-new-guinea-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

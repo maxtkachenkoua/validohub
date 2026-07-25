@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CD
+slug: democratic-republic-of-the-congo
+name:
+  en: Democratic Republic of the Congo
+region: Africa
+languages:
+  - fr
+currency: CDF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

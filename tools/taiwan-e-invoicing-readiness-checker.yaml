@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: TW
+category: tax
+status: active
+name:
+  en: "Taiwanese eGUI invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TW\",\"gui\":\"12345675\",\"bankCode\":\"004\",\"egui\":\"AB12345678\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-tax-authority-handoff-helper, taiwan-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese eGUI invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

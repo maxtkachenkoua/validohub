@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-form-field-auditor
+kind: tool
+module: validohub
+country: NP
+category: developer-tools
+status: active
+name:
+  en: "Nepali Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=500123456&postal=44600 Kathmandu&phone=+977 984 1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-locale-number-parser, nepal-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-slug-normalizer
+kind: tool
+module: validohub
+country: BN
+category: developer-tools
+status: active
+name:
+  en: "Bruneian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Brunei sample company Jalan Sultan 1, Bandar Seri Begawan BS8711"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [brunei-document-ocr-fixer, brunei-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

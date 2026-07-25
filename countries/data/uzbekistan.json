@@ -1,0 +1,642 @@
+{
+  "id": "uzbekistan",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/uzbekistan-outline.png",
+    "outlineAlt": "Uzbekistan country outline",
+    "mapSrc": "/assets/images/countries/uzbekistan-location.png",
+    "mapAlt": "World map with Uzbekistan location marker",
+    "mapMarker": {
+      "x": 58,
+      "y": 47,
+      "label": "Uzbekistan"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "uzbekistan",
+    "flag": "🇺🇿",
+    "name": "Uzbekistan",
+    "nativeName": "Ozbekiston",
+    "iso2": "UZ",
+    "iso3": "UZB",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Uzbek",
+    "currency": "UZS",
+    "currencyName": "Uzbekistani som",
+    "status": "available",
+    "summary": "Premium Uzbekistan developer hub for PINFL boundary, STIR / company tax number, VAT number, postal code, phone, bank MFO/account, Humo/Uzcard handoff, Click/Payme reference, SWIFT, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "PINFL boundary",
+      "STIR / company tax number",
+      "VAT number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "bank MFO/account",
+      "Humo/Uzcard handoff",
+      "Click/Payme reference",
+      "SWIFT",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Uzbek PINFL boundary Validator",
+      "Uzbek STIR / company tax number Validator",
+      "Uzbek STIR / QQS Validator",
+      "Uzbek Customs / Importer Code Helper",
+      "Uzbek INPS boundary Helper",
+      "Uzbek Company Onboarding Auditor",
+      "Uzbek company registry Readiness Helper",
+      "Uzbek ID Card Format Helper",
+      "Uzbek Passport Number Helper",
+      "Uzbek MRZ / Passport Parser",
+      "Uzbekistan Bank Account Validator",
+      "Uzbekistan Bank Account Fixture Generator",
+      "Uzbek Domestic Bank Account Inspector",
+      "Uzbek BIC / SWIFT Inspector",
+      "Uzbek Domestic Transfer Helper",
+      "Uzbek Direct Debit / Auto-Debit Mandate Helper",
+      "Uzbek Humo / Uzcard reference Reference Helper",
+      "Uzbek Remittance Text Builder",
+      "Uzbek Payment Reconciliation Helper",
+      "Uzbek Bank Statement Parser",
+      "Uzbek Masked Bank Account Formatter",
+      "Uzbek UZS Decimal Currency Formatter",
+      "Uzbek Tax Rate Sanity Helper",
+      "Uzbek Tax Return Field Helper",
+      "Uzbek Invoice Number Helper",
+      "Uzbek e-invoice / hisob-faktura Readiness Checker",
+      "Uzbek Tax Authority Handoff Helper",
+      "Uzbek Accounting Audit Trail Checklist Helper",
+      "Uzbek Postal Code Validator",
+      "Uzbek Address Normalizer",
+      "Uzbek Address Transliteration Normalizer",
+      "Uzbek Region / Province Code Mapper",
+      "Uzbek Municipality Code Inspector",
+      "Uzbek Phone Number Validator",
+      "Uzbek Phone E.164 Formatter",
+      "Uzbek Date Locale Formatter",
+      "Uzbek CSV Locale Normalizer",
+      "Uzbek Slug Normalizer",
+      "Uzbek Document OCR Fixer",
+      "Uzbek personal-data privacy Redaction Helper",
+      "Uzbek PII Masker",
+      "Uzbek Personal Data Fixture Helper",
+      "Uzbek Driving Licence Format Helper",
+      "Uzbek Residence Permit Format Helper",
+      "Uzbek Health Card Format Helper",
+      "Uzbek Vehicle Plate Inspector",
+      "Uzbek VIN Validator",
+      "Uzbek Vehicle Data Redaction Helper",
+      "Uzbek Customs Declaration Helper",
+      "Uzbek Postal Tracking Helper",
+      "Uzbek Data Quality Workbench",
+      "Uzbek JSON Fixture Helper",
+      "Uzbek Regex Pack Helper",
+      "Uzbek API Payload Auditor",
+      "Uzbek Form Field Auditor",
+      "Uzbek Locale Number Parser",
+      "Uzbek Calendar Week Helper",
+      "Uzbek Company Suffix Normalizer",
+      "Uzbek Procurement Identifier Helper",
+      "Uzbek Locale Copy Checker",
+      "Uzbek Support Ticket Scrubber",
+      "Uzbek Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live company registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 58,
+      "y": 47
+    },
+    "searchHints": [
+      "PINFL",
+      "STIR",
+      "MFO",
+      "HUMO",
+      "UZCARD",
+      "PAYME"
+    ]
+  },
+  "hub": {
+    "flag": "🇺🇿",
+    "name": "Uzbekistan",
+    "badge": "Premium Uzbekistan developer suite",
+    "description": "Developer intelligence and browser-only workbenches for uzbek identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Ozbekiston",
+      "population": "approximately 37M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Tashkent",
+      "continent": "Asia",
+      "region": "Central Asia",
+      "languages": "Uzbek",
+      "currency": "Uzbekistani som",
+      "currencyCode": "UZS",
+      "callingCode": "+998",
+      "internetTld": ".uz",
+      "drivingSide": "Right",
+      "iso2": "UZ",
+      "iso3": "UZB",
+      "isoNumeric": "860",
+      "locale": "uz-UZ",
+      "icuLocale": "uz_UZ",
+      "dateFormat": "DD.MM.YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Space grouping",
+      "addressFormat": "Street, number, postal code, locality, Uzbekistan",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Tashkent (UZT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "102 / 103",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "uz-UZ",
+      "cldrLocale": "uz_UZ",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "220V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "uzbekistan",
+      "outlineLabel": "Uzbekistan outline",
+      "mapLabel": "Uzbekistan in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Uzbekistan flag",
+      "heroAccentPrimary": "30 181 58",
+      "heroAccentSecondary": "0 153 181",
+      "heroAccentTertiary": "206 17 38"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "PINFL boundary and STIR / company tax number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "STIR / QQS and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Uzbekistan registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /uzbekistan/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Space grouping rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Uzbek examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "company registry",
+        "text": "Official business registry or company lookup remains the source of truth for Uzbekistan.",
+        "status": "official boundary"
+      },
+      {
+        "title": "STIR / QQS",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "PINFL boundary, STIR / company tax number, VAT number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank MFO/account, Humo/Uzcard handoff, Click/Payme reference, SWIFT, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "uz-UZ / uz_UZ; date DD.MM.YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "UZS amounts use Comma (,) and Space grouping.",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "PINFL boundary, STIR / company tax number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "220V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "102 / 103",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "PINFL",
+      "STIR",
+      "MFO",
+      "HUMO",
+      "UZCARD",
+      "PAYME"
+    ],
+    "routes": [
+      {
+        "title": "Uzbek PINFL boundary Validator",
+        "href": "/en/uzbekistan/uzbekistan-pinfl-boundary-validator/",
+        "text": "Validate PINFL boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Uzbek STIR / company tax number Validator",
+        "href": "/en/uzbekistan/uzbekistan-stir-company-tax-number-validator/",
+        "text": "Inspect STIR / company tax number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Uzbek STIR / QQS Validator",
+        "href": "/en/uzbekistan/uzbekistan-tax-id-validator/",
+        "text": "Normalize STIR / QQS identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Uzbek Customs / Importer Code Helper",
+        "href": "/en/uzbekistan/uzbekistan-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Uzbek INPS boundary Helper",
+        "href": "/en/uzbekistan/uzbekistan-inps-boundary-social-insurance-helper/",
+        "text": "Split INPS boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Uzbek Company Onboarding Auditor",
+        "href": "/en/uzbekistan/uzbekistan-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for STIR / company tax number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Uzbek company registry Readiness Helper",
+        "href": "/en/uzbekistan/uzbekistan-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated company registry lookup or company registry workflow."
+      },
+      {
+        "title": "Uzbek ID Card Format Helper",
+        "href": "/en/uzbekistan/uzbekistan-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Uzbek Passport Number Helper",
+        "href": "/en/uzbekistan/uzbekistan-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Uzbek MRZ / Passport Parser",
+        "href": "/en/uzbekistan/uzbekistan-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Uzbekistan Bank Account Validator",
+        "href": "/en/uzbekistan/uzbekistan-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Uzbekistan Bank Account Fixture Generator",
+        "href": "/en/uzbekistan/uzbekistan-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Uzbek Domestic Bank Account Inspector",
+        "href": "/en/uzbekistan/uzbekistan-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Uzbek BIC / SWIFT Inspector",
+        "href": "/en/uzbekistan/uzbekistan-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Uzbekistan banking integrations."
+      },
+      {
+        "title": "Uzbek Domestic Transfer Helper",
+        "href": "/en/uzbekistan/uzbekistan-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Uzbek Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/uzbekistan/uzbekistan-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Uzbek Humo / Uzcard reference Reference Helper",
+        "href": "/en/uzbekistan/uzbekistan-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Uzbek Remittance Text Builder",
+        "href": "/en/uzbekistan/uzbekistan-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Uzbek Payment Reconciliation Helper",
+        "href": "/en/uzbekistan/uzbekistan-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Uzbek Bank Statement Parser",
+        "href": "/en/uzbekistan/uzbekistan-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Uzbek Masked Bank Account Formatter",
+        "href": "/en/uzbekistan/uzbekistan-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Uzbek UZS Decimal Currency Formatter",
+        "href": "/en/uzbekistan/uzbekistan-currency-decimal-formatter/",
+        "text": "Normalize UZS amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Uzbek Tax Rate Sanity Helper",
+        "href": "/en/uzbekistan/uzbekistan-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Uzbek Tax Return Field Helper",
+        "href": "/en/uzbekistan/uzbekistan-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Uzbek Invoice Number Helper",
+        "href": "/en/uzbekistan/uzbekistan-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Uzbek e-invoice / hisob-faktura Readiness Checker",
+        "href": "/en/uzbekistan/uzbekistan-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Uzbek Tax Authority Handoff Helper",
+        "href": "/en/uzbekistan/uzbekistan-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Uzbek Accounting Audit Trail Checklist Helper",
+        "href": "/en/uzbekistan/uzbekistan-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Uzbek Postal Code Validator",
+        "href": "/en/uzbekistan/uzbekistan-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Uzbek Address Normalizer",
+        "href": "/en/uzbekistan/uzbekistan-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Uzbek Address Transliteration Normalizer",
+        "href": "/en/uzbekistan/uzbekistan-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Uzbek Region / Province Code Mapper",
+        "href": "/en/uzbekistan/uzbekistan-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Uzbek Municipality Code Inspector",
+        "href": "/en/uzbekistan/uzbekistan-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Uzbek Phone Number Validator",
+        "href": "/en/uzbekistan/uzbekistan-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Uzbek Phone E.164 Formatter",
+        "href": "/en/uzbekistan/uzbekistan-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Uzbek Date Locale Formatter",
+        "href": "/en/uzbekistan/uzbekistan-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Uzbek CSV Locale Normalizer",
+        "href": "/en/uzbekistan/uzbekistan-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Uzbekistan decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Uzbek Slug Normalizer",
+        "href": "/en/uzbekistan/uzbekistan-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Uzbek Document OCR Fixer",
+        "href": "/en/uzbekistan/uzbekistan-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Uzbek personal-data privacy Redaction Helper",
+        "href": "/en/uzbekistan/uzbekistan-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Uzbek PII Masker",
+        "href": "/en/uzbekistan/uzbekistan-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Uzbek Personal Data Fixture Helper",
+        "href": "/en/uzbekistan/uzbekistan-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Uzbek Driving Licence Format Helper",
+        "href": "/en/uzbekistan/uzbekistan-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Uzbek Residence Permit Format Helper",
+        "href": "/en/uzbekistan/uzbekistan-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Uzbek Health Card Format Helper",
+        "href": "/en/uzbekistan/uzbekistan-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Uzbek Vehicle Plate Inspector",
+        "href": "/en/uzbekistan/uzbekistan-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Uzbek VIN Validator",
+        "href": "/en/uzbekistan/uzbekistan-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Uzbek Vehicle Data Redaction Helper",
+        "href": "/en/uzbekistan/uzbekistan-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Uzbek Customs Declaration Helper",
+        "href": "/en/uzbekistan/uzbekistan-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Uzbek Postal Tracking Helper",
+        "href": "/en/uzbekistan/uzbekistan-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Uzbek Data Quality Workbench",
+        "href": "/en/uzbekistan/uzbekistan-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Uzbek JSON Fixture Helper",
+        "href": "/en/uzbekistan/uzbekistan-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Uzbek Regex Pack Helper",
+        "href": "/en/uzbekistan/uzbekistan-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Uzbek API Payload Auditor",
+        "href": "/en/uzbekistan/uzbekistan-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Uzbek Form Field Auditor",
+        "href": "/en/uzbekistan/uzbekistan-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Uzbek Locale Number Parser",
+        "href": "/en/uzbekistan/uzbekistan-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Uzbekistan."
+      },
+      {
+        "title": "Uzbek Calendar Week Helper",
+        "href": "/en/uzbekistan/uzbekistan-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Uzbek Company Suffix Normalizer",
+        "href": "/en/uzbekistan/uzbekistan-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Uzbek Procurement Identifier Helper",
+        "href": "/en/uzbekistan/uzbekistan-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Uzbek Locale Copy Checker",
+        "href": "/en/uzbekistan/uzbekistan-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Uzbek Support Ticket Scrubber",
+        "href": "/en/uzbekistan/uzbekistan-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Uzbek Integration Smoke Test Builder",
+        "href": "/en/uzbekistan/uzbekistan-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

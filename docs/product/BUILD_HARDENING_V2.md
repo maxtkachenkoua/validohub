@@ -10,6 +10,8 @@ Use scoped builds first:
 - `npm run build:country -- --country <slug> [--locales en,pl]` updates one country hub and its already-generated local tool pages.
 - `npm run build:tools -- --slugs <slug-a>,<slug-b> [--locales en]` updates shared assets, runtime scripts, /en/tools/, and selected already-generated global tool pages.
 
+All scoped builds that recompile shared hashed CSS/JS assets must also refresh generated HTML bundle links across the existing generated preview tree. This prevents pages outside the selected country/tool scope from pointing at a deleted old bundle hash and appearing unstyled in local preview.
+
 Use scoped audits next:
 
 - `npm run audit:country-premium -- --country <slug>` for a country contract check.
@@ -38,3 +40,5 @@ A small scoped tools loop should be seconds, not tens of minutes. Example smoke 
 ## AI Rule
 
 Before running a full build, ask: can this be validated with `build:portal`, `build:country`, or `build:tools` plus a scoped audit? If yes, do the scoped path. Full build is a release gate, not a normal edit loop.
+
+If a scoped asset rebuild changes `/assets/css/bundle.*.css` or `/assets/js/bundle.*.js`, verify that no generated HTML still references a missing bundle before browser sign-off.

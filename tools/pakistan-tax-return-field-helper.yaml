@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-tax-return-field-helper
+kind: tool
+module: validohub
+country: PK
+category: tax
+status: active
+name:
+  en: "Pakistani Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "FBR NTN / STRN; 1234567-8; period 2026-07; 1,234.56 PKR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-invoice-number-helper, pakistan-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

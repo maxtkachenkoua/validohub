@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-bank-account-validator
+kind: tool
+module: validohub
+country: PK
+category: finance
+status: active
+name:
+  en: "Pakistan Bank Account Validator"
+summary:
+  en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "SCBL 0000001123456702"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-bank-account-fixture-generator, pakistan-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistan Bank Account Validator | ValidoHub"
+  description:
+    en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."

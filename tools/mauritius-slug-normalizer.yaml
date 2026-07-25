@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritius-slug-normalizer
+kind: tool
+module: validohub
+country: MU
+category: developer-tools
+status: active
+name:
+  en: "Mauritian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritius-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Mauritius sample company Central business district, Port Louis 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritius-document-ocr-fixer, mauritius-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

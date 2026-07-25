@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: laos-tax-return-field-helper
+kind: tool
+module: validohub
+country: LA
+category: tax
+status: active
+name:
+  en: "Lao Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.laos-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "TIN; TIN123456789; period 2026-07; 1,234,567 LAK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [laos-invoice-number-helper, laos-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lao Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

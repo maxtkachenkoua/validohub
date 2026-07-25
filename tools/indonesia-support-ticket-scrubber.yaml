@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: ID
+category: privacy
+status: active
+name:
+  en: "Indonesian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 3174010101900001, 014 1234567890, Jl. Thamrin 1, Jakarta 10110"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-integration-smoke-test-builder, indonesia-nik-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

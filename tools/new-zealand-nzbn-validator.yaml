@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-nzbn-validator
+kind: tool
+module: validohub
+country: NZ
+category: national-identifiers
+status: active
+name:
+  en: "New Zealand NZBN Validator"
+summary:
+  en: "Inspect NZBN structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "9429000000000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-tax-id-validator, new-zealand-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand NZBN Validator | ValidoHub"
+  description:
+    en: "Inspect NZBN structure, registry-style prefixes, control digits, and official lookup boundaries."

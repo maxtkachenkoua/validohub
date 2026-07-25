@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-company-suffix-normalizer
+kind: tool
+module: validohub
+country: UZ
+category: developer-tools
+status: active
+name:
+  en: "Uzbek Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Uzbekistan Sample Holding Ltd 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-procurement-identifier-helper, uzbekistan-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

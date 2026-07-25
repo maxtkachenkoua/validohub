@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-support-ticket-scrubber
+kind: tool
+module: validohub
+country: PH
+category: privacy
+status: active
+name:
+  en: "Philippine Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1234-5678-9012-3456, 010 1234567890, Ayala Avenue 1, Makati 1226"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [philippines-integration-smoke-test-builder, philippines-philsys-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: senegal-bic-swift-inspector
+kind: tool
+module: validohub
+country: SN
+category: finance
+status: active
+name:
+  en: "Senegalese BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Senegal banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.senegal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDSN2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [senegal-domestic-transfer-helper, senegal-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Senegalese BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Senegal banking integrations."

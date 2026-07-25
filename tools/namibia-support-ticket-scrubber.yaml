@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: namibia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: NA
+category: privacy
+status: active
+name:
+  en: "Namibian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.namibia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent NA-ID-123456, 001 1234567890, Central business district, Windhoek 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [namibia-integration-smoke-test-builder, namibia-national-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Namibian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

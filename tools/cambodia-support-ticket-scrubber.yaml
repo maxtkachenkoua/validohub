@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: KH
+category: privacy
+status: active
+name:
+  en: "Cambodian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 010123456789, 001 1234567890, Preah Monivong Blvd 1, Phnom Penh 12000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-integration-smoke-test-builder, cambodia-national-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

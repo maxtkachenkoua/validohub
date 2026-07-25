@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liberia-postal-code-validator
+kind: tool
+module: validohub
+country: LR
+category: address
+status: active
+name:
+  en: "Liberian Postal Code Validator"
+summary:
+  en: "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liberia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "1000 Monrovia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liberia-address-normalizer, liberia-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liberian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."

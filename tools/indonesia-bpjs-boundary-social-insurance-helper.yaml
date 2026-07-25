@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-bpjs-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: ID
+category: national-identifiers
+status: active
+name:
+  en: "Indonesian BPJS boundary Helper"
+summary:
+  en: "Split BPJS boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "0001234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-company-onboarding-auditor, indonesia-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian BPJS boundary Helper | ValidoHub"
+  description:
+    en: "Split BPJS boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

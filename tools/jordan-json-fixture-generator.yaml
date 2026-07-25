@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-json-fixture-generator
+kind: tool
+module: validohub
+country: JO
+category: developer-tools
+status: active
+name:
+  en: "Jordanian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"JO\",\"national\":\"9901011234\",\"iban\":\"JO94CBJO0010000000000131000302\",\"cliq\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [jordan-regex-pack-helper, jordan-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

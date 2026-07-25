@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-83.38 -85.23 708.87 716.81" role="img">
+  <title>Seychelles country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.82" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <g id="sc">
+        <path d="M535.676,548.87l-0.525,1.062l1.442,1.192l1.056-1.192L535.676,548.87L535.676,548.87z"/>
+        <path d="M543.049,540.919l-1.582,1.062l1.186,1.857h1.582L543.049,540.919L543.049,540.919z"/>
+        <path d="M543.706,545.56l-1.055,1.193l0.786,1.192l1.442,0.269l0.13-2.522L543.706,545.56L543.706,545.56z"/>
+    </g>
+  </g>
+</svg>

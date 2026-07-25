@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-regex-pack-helper
+kind: tool
+module: validohub
+country: IR
+category: developer-tools
+status: active
+name:
+  en: "Iranian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "national code boundary national company ID postal code  054 020817909002"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-api-payload-auditor, iran-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

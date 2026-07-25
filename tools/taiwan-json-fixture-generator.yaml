@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-json-fixture-generator
+kind: tool
+module: validohub
+country: TW
+category: developer-tools
+status: active
+name:
+  en: "Taiwanese JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TW\",\"gui\":\"12345675\",\"bankCode\":\"004\",\"egui\":\"AB12345678\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [taiwan-regex-pack-helper, taiwan-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

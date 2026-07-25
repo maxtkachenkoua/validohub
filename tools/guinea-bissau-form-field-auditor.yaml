@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-form-field-auditor
+kind: tool
+module: validohub
+country: GW
+category: developer-tools
+status: active
+name:
+  en: "Bissau-Guinean Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=GW123456789&postal=1000 Bissau&phone=+245 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-bissau-locale-number-parser, guinea-bissau-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bissau-Guinean Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

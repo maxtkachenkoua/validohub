@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-locale-number-parser
+kind: tool
+module: validohub
+country: CV
+category: localization
+status: active
+name:
+  en: "Cabo Verdean Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Cabo Verde."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 CVE"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-calendar-week-helper, cabo-verde-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Cabo Verde."

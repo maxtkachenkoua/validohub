@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: WS
+slug: samoa
+name:
+  en: Samoa
+region: Oceania
+languages:
+  - en
+currency: WST
+relatedCountries:
+  - TO
+  - FJ
+  - TV

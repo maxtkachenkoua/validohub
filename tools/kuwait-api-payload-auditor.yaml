@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-api-payload-auditor
+kind: tool
+module: validohub
+country: KW
+category: developer-tools
+status: active
+name:
+  en: "Kuwaiti API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KW\",\"civilId\":\"290010112345\",\"iban\":\"KW81CBKU0000000000001234560101\",\"knet\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-form-field-auditor, kuwait-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

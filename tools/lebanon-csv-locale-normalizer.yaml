@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-csv-locale-normalizer
+kind: tool
+module: validohub
+country: LB
+category: developer-tools
+status: active
+name:
+  en: "Lebanese CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Lebanon decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234,567 LBP;21/07/2026;1234567-601"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lebanon-slug-normalizer, lebanon-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Lebanon decimal, date, postal, phone, tax, and banking fields."

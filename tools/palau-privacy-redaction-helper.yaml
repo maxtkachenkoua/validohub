@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palau-privacy-redaction-helper
+kind: tool
+module: validohub
+country: PW
+category: privacy
+status: active
+name:
+  en: "Palauan privacy boundary Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PW\",\"taxNumber\":\"PW123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palau-pii-masker, palau-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palauan privacy boundary Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

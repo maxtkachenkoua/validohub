@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-62.52 -80.21 491.68 654.50" role="img">
+  <title>Senegal country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="6.81" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="sn" d="M372.424,498.771l-5.792-0.141l0,0l1.072,2.603l0.596-1.607l7.271,0.761l0.806-0.028l3.405,0.12l0.121-1.504l-3.111-3.733l-3.467-4.693l-2.152-0.898l-1.661,0.424l0,0l-3.405,2.472l-0.776,1.384l-0.242,1.383l1.253,0.899l4.185-0.061l2.688-0.728l0.303,1.322l-0.241,1.746L372.424,498.771z"/>
+  </g>
+</svg>

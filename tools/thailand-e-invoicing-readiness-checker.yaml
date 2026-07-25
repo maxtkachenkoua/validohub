@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: TH
+category: tax
+status: active
+name:
+  en: "Thai e-Tax invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TH\",\"taxId\":\"0105559123456\",\"promptPay\":\"+66812345678\",\"amount\":\"1,234.56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-tax-authority-handoff-helper, thailand-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai e-Tax invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

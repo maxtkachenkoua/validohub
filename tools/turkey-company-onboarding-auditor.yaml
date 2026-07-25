@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-company-onboarding-auditor
+kind: tool
+module: validohub
+country: TR
+category: developer-tools
+status: active
+name:
+  en: "Turkish Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for MERSIS number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TR\",\"tckn\":\"10000000146\",\"iban\":\"TR330006100519786457841326\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-business-register-readiness-helper, turkey-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for MERSIS number, VAT, address, banking, and official registry handoff readiness."

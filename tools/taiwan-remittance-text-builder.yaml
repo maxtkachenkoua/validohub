@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-remittance-text-builder
+kind: tool
+module: validohub
+country: TW
+category: finance
+status: active
+name:
+  en: "Taiwanese Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 12345675 1,234 TWD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-payment-reconciliation-helper, taiwan-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

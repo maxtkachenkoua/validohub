@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: SY
+category: developer-tools
+status: active
+name:
+  en: "Syrian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SY\",\"tax\":\"TAX123456\",\"payment\":\"official-boundary\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [syria-national-number-boundary-validator, syria-commercial-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

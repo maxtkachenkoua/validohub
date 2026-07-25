@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-bank-statement-parser
+kind: tool
+module: validohub
+country: AZ
+category: finance
+status: active
+name:
+  en: "Azerbaijani Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "21.07.2026; 1 234,56 AZN; NABZ 137010001944; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-masked-bank-account-formatter, azerbaijan-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."

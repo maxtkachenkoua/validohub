@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-company-suffix-normalizer
+kind: tool
+module: validohub
+country: BN
+category: developer-tools
+status: active
+name:
+  en: "Bruneian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Brunei Sample Holding Ltd RC123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [brunei-procurement-identifier-helper, brunei-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

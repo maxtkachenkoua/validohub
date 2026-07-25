@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: HN
+slug: honduras
+name:
+  en: "Honduras"
+region: North America
+languages:
+  - es
+currency: HNL
+relatedCountries:
+  - GT
+  - SV
+  - NI

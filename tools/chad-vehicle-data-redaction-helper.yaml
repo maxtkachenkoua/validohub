@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chad-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: TD
+category: transport
+status: active
+name:
+  en: "Chadian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chad-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "TD 1234 WVWZZZ1JZXW000001 TD-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chad-customs-declaration-helper, chad-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chadian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

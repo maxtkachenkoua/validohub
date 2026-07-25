@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-customs-declaration-helper
+kind: tool
+module: validohub
+country: BH
+category: government
+status: active
+name:
+  en: "Bahraini Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "220012345600002 HS 8471 1,234.560 BHD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-postal-tracking-helper, bahrain-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

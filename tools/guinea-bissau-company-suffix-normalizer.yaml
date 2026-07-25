@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-company-suffix-normalizer
+kind: tool
+module: validohub
+country: GW
+category: developer-tools
+status: active
+name:
+  en: "Bissau-Guinean Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Guinea-Bissau Sample Holding Ltd GW-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-bissau-procurement-identifier-helper, guinea-bissau-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bissau-Guinean Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

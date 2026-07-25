@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-tax-id-validator
+kind: tool
+module: validohub
+country: BD
+category: national-identifiers
+status: active
+name:
+  en: "Bangladeshi TIN / BIN Validator"
+summary:
+  en: "Normalize TIN / BIN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-customs-importer-code-helper, bangladesh-nid-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi TIN / BIN Validator | ValidoHub"
+  description:
+    en: "Normalize TIN / BIN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

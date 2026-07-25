@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-locale-number-parser
+kind: tool
+module: validohub
+country: MN
+category: localization
+status: active
+name:
+  en: "Mongolian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Mongolia."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234,567 MNT"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-calendar-week-helper, mongolia-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Mongolia."

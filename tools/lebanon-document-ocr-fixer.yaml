@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-document-ocr-fixer
+kind: tool
+module: validohub
+country: LB
+category: documents
+status: active
+name:
+  en: "Lebanese Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "1234567890 1234567-601 0999 1001901229114 1107 2020 Beirut"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lebanon-privacy-redaction-helper, lebanon-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

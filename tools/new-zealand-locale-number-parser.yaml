@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-locale-number-parser
+kind: tool
+module: validohub
+country: NZ
+category: localization
+status: active
+name:
+  en: "New Zealand Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for New Zealand."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 NZD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-calendar-week-helper, new-zealand-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for New Zealand."

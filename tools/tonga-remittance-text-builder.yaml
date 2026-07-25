@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-remittance-text-builder
+kind: tool
+module: validohub
+country: TO
+category: finance
+status: active
+name:
+  en: "Tongan Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 TO123456789 1,234.56 TOP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-payment-reconciliation-helper, tonga-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

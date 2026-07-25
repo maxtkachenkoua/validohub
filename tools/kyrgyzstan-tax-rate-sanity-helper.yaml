@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: KG
+category: tax
+status: active
+name:
+  en: "Kyrgyz Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "TIN 20% base 1 234,56 KGS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-tax-return-field-helper, kyrgyzstan-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

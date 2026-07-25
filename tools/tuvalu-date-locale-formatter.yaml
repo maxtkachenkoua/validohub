@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tuvalu-date-locale-formatter
+kind: tool
+module: validohub
+country: TV
+category: localization
+status: active
+name:
+  en: "Tuvaluan Date Locale Formatter"
+summary:
+  en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tuvalu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "24/07/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tuvalu-csv-locale-normalizer, tuvalu-slug-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tuvaluan Date Locale Formatter | ValidoHub"
+  description:
+    en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."

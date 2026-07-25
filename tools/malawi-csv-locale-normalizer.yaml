@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malawi-csv-locale-normalizer
+kind: tool
+module: validohub
+country: MW
+category: developer-tools
+status: active
+name:
+  en: "Malawian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Malawi decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malawi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 MWK;24/07/2026;MW123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malawi-slug-normalizer, malawi-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malawian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Malawi decimal, date, postal, phone, tax, and banking fields."

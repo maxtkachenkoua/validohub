@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-mrz-passport-parser
+kind: tool
+module: validohub
+country: NZ
+category: national-identifiers
+status: active
+name:
+  en: "New Zealand MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<NZLSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567NZL8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-bank-account-validator, new-zealand-bank-account-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

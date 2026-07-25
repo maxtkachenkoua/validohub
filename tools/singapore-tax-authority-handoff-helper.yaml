@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: SG
+category: tax
+status: active
+name:
+  en: "Singapore Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "M91234567X 21/07/2026 1,234.56 SGD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-accounting-audit-trail-checklist-generator, singapore-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

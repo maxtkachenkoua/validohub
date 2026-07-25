@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-nid-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: PG
+category: national-identifiers
+status: active
+name:
+  en: "Papua New Guinean NID boundary Helper"
+summary:
+  en: "Split NID boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "PG-NID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-company-onboarding-auditor, papua-new-guinea-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean NID boundary Helper | ValidoHub"
+  description:
+    en: "Split NID boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

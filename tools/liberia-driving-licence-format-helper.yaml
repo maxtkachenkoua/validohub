@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liberia-driving-licence-format-helper
+kind: tool
+module: validohub
+country: LR
+category: documents
+status: active
+name:
+  en: "Liberian Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liberia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "LR-ID-123456 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liberia-residence-permit-format-helper, liberia-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liberian Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

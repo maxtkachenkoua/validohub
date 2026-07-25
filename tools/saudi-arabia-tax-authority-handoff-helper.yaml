@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: SA
+category: tax
+status: active
+name:
+  en: "Saudi Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "300123456700003 21/07/2026 1,234.56 SAR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-accounting-audit-trail-checklist-generator, saudi-arabia-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

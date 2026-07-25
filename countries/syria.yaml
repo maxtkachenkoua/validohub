@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SY
+slug: syria
+name:
+  en: Syria
+region: Asia
+languages:
+  - ar
+currency: SYP
+relatedCountries:
+  - JO
+  - LB
+  - IQ

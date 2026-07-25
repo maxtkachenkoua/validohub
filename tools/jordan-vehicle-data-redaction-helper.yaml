@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: JO
+category: transport
+status: active
+name:
+  en: "Jordanian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "12-34567 WVWZZZ1JZXW000001 9901011234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-customs-declaration-helper, jordan-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

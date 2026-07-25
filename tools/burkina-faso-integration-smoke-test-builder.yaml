@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burkina-faso-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: BF
+category: developer-tools
+status: active
+name:
+  en: "Burkinabe Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.burkina-faso-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BF\",\"taxNumber\":\"BF123456789\",\"paymentReference\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [burkina-faso-national-id-boundary-validator, burkina-faso-company-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burkinabe Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

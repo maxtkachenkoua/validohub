@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-company-suffix-normalizer
+kind: tool
+module: validohub
+country: GN
+category: developer-tools
+status: active
+name:
+  en: "Guinean Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Guinea Sample Holding Ltd GN-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-procurement-identifier-helper, guinea-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guinean Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-invoice-number-helper
+kind: tool
+module: validohub
+country: CV
+category: tax
+status: active
+name:
+  en: "Cabo Verdean Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 CV123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-e-invoicing-readiness-checker, cabo-verde-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

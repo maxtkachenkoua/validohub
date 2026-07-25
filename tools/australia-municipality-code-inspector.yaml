@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-municipality-code-inspector
+kind: tool
+module: validohub
+country: AU
+category: address
+status: active
+name:
+  en: "Australian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "1 National Circuit, Canberra ACT 2600"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-phone-number-validator, australia-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

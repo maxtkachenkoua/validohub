@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-document-ocr-fixer
+kind: tool
+module: validohub
+country: UZ
+category: documents
+status: active
+name:
+  en: "Uzbek Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "30101876543212 123456789 00444 20208000123456789001 100000 Tashkent"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-privacy-redaction-helper, uzbekistan-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

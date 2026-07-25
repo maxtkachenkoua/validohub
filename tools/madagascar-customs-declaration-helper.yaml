@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: madagascar-customs-declaration-helper
+kind: tool
+module: validohub
+country: MG
+category: government
+status: active
+name:
+  en: "Malagasy Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.madagascar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "MG123456789 HS 8471 1,234.56 MGA"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [madagascar-postal-tracking-helper, madagascar-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malagasy Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

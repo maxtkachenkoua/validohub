@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: micronesia-phone-number-validator
+kind: tool
+module: validohub
+country: FM
+category: address
+status: active
+name:
+  en: "Micronesian Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.micronesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+691 320 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [micronesia-phone-e164-formatter, micronesia-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Micronesian Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

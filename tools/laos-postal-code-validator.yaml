@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: laos-postal-code-validator
+kind: tool
+module: validohub
+country: LA
+category: address
+status: active
+name:
+  en: "Lao Postal Code Validator"
+summary:
+  en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.laos-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "01000 Vientiane"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [laos-address-normalizer, laos-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lao Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."

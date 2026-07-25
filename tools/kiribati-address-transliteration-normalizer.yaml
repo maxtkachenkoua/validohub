@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kiribati-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: KI
+category: address
+status: active
+name:
+  en: "I-Kiribati Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kiribati-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Bairiki, South Tarawa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kiribati-region-code-mapper, kiribati-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "I-Kiribati Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-company-suffix-normalizer
+kind: tool
+module: validohub
+country: IR
+category: developer-tools
+status: active
+name:
+  en: "Iranian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Iran Sample Holding Ltd 10101234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-procurement-identifier-helper, iran-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

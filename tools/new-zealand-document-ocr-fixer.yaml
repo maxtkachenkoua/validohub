@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-document-ocr-fixer
+kind: tool
+module: validohub
+country: NZ
+category: documents
+status: active
+name:
+  en: "New Zealand Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "123-456-789 123456789 12-1234-1234567-00 6011 Wellington"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-privacy-redaction-helper, new-zealand-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

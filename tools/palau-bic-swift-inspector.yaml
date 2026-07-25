@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palau-bic-swift-inspector
+kind: tool
+module: validohub
+country: PW
+category: finance
+status: active
+name:
+  en: "Palauan BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Palau banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDPW2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palau-domestic-transfer-helper, palau-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palauan BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Palau banking integrations."

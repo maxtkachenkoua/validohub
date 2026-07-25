@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-personal-number-boundary-validator
+kind: tool
+module: validohub
+country: GE
+category: national-identifiers
+status: active
+name:
+  en: "Georgian personal number boundary Validator"
+summary:
+  en: "Validate personal number boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "01001012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-identification-number-validator, georgia-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian personal number boundary Validator | ValidoHub"
+  description:
+    en: "Validate personal number boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

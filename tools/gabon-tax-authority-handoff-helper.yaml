@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gabon-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: GA
+category: tax
+status: active
+name:
+  en: "Gabonese Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gabon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "GA123456789 24/07/2026 1,234.56 XAF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gabon-accounting-audit-trail-checklist-generator, gabon-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gabonese Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

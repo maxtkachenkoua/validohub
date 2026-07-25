@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: botswana-procurement-identifier-helper
+kind: tool
+module: validohub
+country: BW
+category: government
+status: active
+name:
+  en: "Botswana Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.botswana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "BW-REG-123456 PO-2026-001 BW123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [botswana-accessibility-locale-copy-checker, botswana-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Botswana Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

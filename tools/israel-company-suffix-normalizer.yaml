@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-company-suffix-normalizer
+kind: tool
+module: validohub
+country: IL
+category: developer-tools
+status: active
+name:
+  en: "Israeli Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Israel Sample Holding Ltd 512345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [israel-procurement-identifier-helper, israel-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

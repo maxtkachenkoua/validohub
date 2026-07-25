@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-payment-reference-helper
+kind: tool
+module: validohub
+country: MH
+category: finance
+status: active
+name:
+  en: "Marshallese wire/payment reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "wire/payment reference REF 2026-001 1,234.56 USD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-remittance-text-builder, marshall-islands-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese wire/payment reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

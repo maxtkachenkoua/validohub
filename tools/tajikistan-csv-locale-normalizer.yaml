@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-csv-locale-normalizer
+kind: tool
+module: validohub
+country: TJ
+category: developer-tools
+status: active
+name:
+  en: "Tajik CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Tajikistan decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1 234,56 TJS;21.07.2026;123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-slug-normalizer, tajikistan-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Tajikistan decimal, date, postal, phone, tax, and banking fields."

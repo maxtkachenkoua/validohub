@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-company-suffix-normalizer
+kind: tool
+module: validohub
+country: MH
+category: developer-tools
+status: active
+name:
+  en: "Marshallese Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Marshall Islands Sample Holding Ltd MH-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-procurement-identifier-helper, marshall-islands-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

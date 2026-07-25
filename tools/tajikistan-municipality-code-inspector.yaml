@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-municipality-code-inspector
+kind: tool
+module: validohub
+country: TJ
+category: address
+status: active
+name:
+  en: "Tajik Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Rudaki Avenue 1, Dushanbe 734000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-phone-number-validator, tajikistan-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

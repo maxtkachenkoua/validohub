@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: somalia-slug-normalizer
+kind: tool
+module: validohub
+country: SO
+category: developer-tools
+status: active
+name:
+  en: "Somali Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.somalia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Somalia sample company Central business district, Mogadishu 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [somalia-document-ocr-fixer, somalia-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Somali Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

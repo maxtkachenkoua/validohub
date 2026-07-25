@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-company-suffix-normalizer
+kind: tool
+module: validohub
+country: BI
+category: developer-tools
+status: active
+name:
+  en: "Burundian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Burundi Sample Holding Ltd BI-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-procurement-identifier-helper, burundi-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

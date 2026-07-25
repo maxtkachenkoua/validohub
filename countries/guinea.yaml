@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: GN
+slug: guinea
+name:
+  en: Guinea
+region: Africa
+languages:
+  - fr
+currency: GNF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

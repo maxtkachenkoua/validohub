@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-privacy-redaction-helper
+kind: tool
+module: validohub
+country: TW
+category: privacy
+status: active
+name:
+  en: "Taiwanese PDPA privacy Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TW\",\"gui\":\"12345675\",\"bankCode\":\"004\",\"egui\":\"AB12345678\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-pii-masker, taiwan-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese PDPA privacy Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

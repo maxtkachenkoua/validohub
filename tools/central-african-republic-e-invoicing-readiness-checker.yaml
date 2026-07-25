@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: CF
+category: tax
+status: active
+name:
+  en: "Central African tax invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CF\",\"taxNumber\":\"CF123456789\",\"paymentReference\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-tax-authority-handoff-helper, central-african-republic-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African tax invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

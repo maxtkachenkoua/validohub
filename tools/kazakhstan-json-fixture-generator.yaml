@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-json-fixture-generator
+kind: tool
+module: validohub
+country: KZ
+category: developer-tools
+status: active
+name:
+  en: "Kazakh JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KZ\",\"iin\":\"900101300123\",\"bin\":\"120940012345\",\"iban\":\"KZ86125KZT5004100100\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [kazakhstan-regex-pack-helper, kazakhstan-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

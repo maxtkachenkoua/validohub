@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: SB
+category: tax
+status: active
+name:
+  en: "Solomon Islands Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "SB123456789 24/07/2026 1,234.56 SBD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-accounting-audit-trail-checklist-generator, solomon-islands-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

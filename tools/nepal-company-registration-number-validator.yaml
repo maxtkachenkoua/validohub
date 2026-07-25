@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-company-registration-number-validator
+kind: tool
+module: validohub
+country: NP
+category: national-identifiers
+status: active
+name:
+  en: "Nepali company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "123456/078/079"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-tax-id-validator, nepal-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

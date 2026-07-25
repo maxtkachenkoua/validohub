@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-postal-code-validator
+kind: tool
+module: validohub
+country: KW
+category: address
+status: active
+name:
+  en: "Kuwaiti Postal Code Validator"
+summary:
+  en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "13001 Kuwait City"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-address-normalizer, kuwait-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."

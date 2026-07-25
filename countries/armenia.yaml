@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: AM
+slug: armenia
+name:
+  en: Armenia
+region: Asia
+languages:
+  - hy
+currency: AMD
+relatedCountries:
+  - GE
+  - AZ
+  - IR

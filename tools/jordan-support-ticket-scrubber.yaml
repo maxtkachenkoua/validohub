@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-support-ticket-scrubber
+kind: tool
+module: validohub
+country: JO
+category: privacy
+status: active
+name:
+  en: "Jordanian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 9901011234, CBJO 131000302, Zahran Street 1, Amman 11118"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-integration-smoke-test-builder, jordan-national-number-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

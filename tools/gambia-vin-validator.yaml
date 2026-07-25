@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-vin-validator
+kind: tool
+module: validohub
+country: GM
+category: transport
+status: active
+name:
+  en: "Gambian VIN Validator"
+summary:
+  en: "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VIN input"
+        required: true
+        placeholder:
+          en: "WVWZZZ1JZXW000001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-vehicle-data-redaction-helper, gambia-customs-declaration-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian VIN Validator | ValidoHub"
+  description:
+    en: "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."

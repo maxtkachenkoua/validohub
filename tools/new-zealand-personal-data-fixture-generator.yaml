@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: NZ
+category: privacy
+status: active
+name:
+  en: "New Zealand Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "123-456-789\\n1 Molesworth Street, Wellington 6011\\n+64 21 123 4567"
+    actions: [generate, validate, explain]
+related:
+  explicit: [new-zealand-driving-licence-format-helper, new-zealand-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

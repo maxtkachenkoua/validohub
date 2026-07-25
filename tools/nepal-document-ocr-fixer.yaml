@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-document-ocr-fixer
+kind: tool
+module: validohub
+country: NP
+category: documents
+status: active
+name:
+  en: "Nepali Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "27-01-76-12345 500123456 001 1234567890123 44600 Kathmandu"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-privacy-redaction-helper, nepal-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

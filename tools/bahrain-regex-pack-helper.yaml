@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-regex-pack-helper
+kind: tool
+module: validohub
+country: BH
+category: developer-tools
+status: active
+name:
+  en: "Bahraini Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "CPR boundary commercial registration number block/address code  BMAG 1299123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-api-payload-auditor, bahrain-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

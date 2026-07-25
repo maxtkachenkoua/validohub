@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: KP
+category: tax
+status: active
+name:
+  en: "North Korean trade invoice boundary Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KP\",\"resident\":\"KP-900101-123456\",\"boundary\":\"official-lookup-required\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-tax-authority-handoff-helper, north-korea-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean trade invoice boundary Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

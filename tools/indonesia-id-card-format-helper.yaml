@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-id-card-format-helper
+kind: tool
+module: validohub
+country: ID
+category: national-identifiers
+status: active
+name:
+  en: "Indonesian ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "3174010101900001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-passport-number-helper, indonesia-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

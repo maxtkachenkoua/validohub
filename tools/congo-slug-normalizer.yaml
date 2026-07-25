@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: congo-slug-normalizer
+kind: tool
+module: validohub
+country: CG
+category: developer-tools
+status: active
+name:
+  en: "Congolese Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.congo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Republic of the Congo sample company Central business district, Brazzaville 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [congo-document-ocr-fixer, congo-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Congolese Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

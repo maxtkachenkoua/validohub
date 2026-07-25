@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-domestic-transfer-helper
+kind: tool
+module: validohub
+country: ST
+category: finance
+status: active
+name:
+  en: "Sao Tomean Domestic Transfer Helper"
+summary:
+  en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "001 1234567890\\n1,234.56 STN\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-direct-debit-mandate-helper, sao-tome-and-principe-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."

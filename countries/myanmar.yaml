@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MM
+slug: myanmar
+name:
+  en: Myanmar
+region: Asia
+languages:
+  - my
+currency: MMK
+relatedCountries:
+  - TH
+  - BD
+  - SG

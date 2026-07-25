@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: PS
+category: tax
+status: active
+name:
+  en: "Palestinian VAT invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PS\",\"id\":\"401234567\",\"iban\":\"PS92PALS000000000400123456702\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-tax-authority-handoff-helper, palestine-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian VAT invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

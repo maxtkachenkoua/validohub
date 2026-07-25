@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: somalia-phone-number-validator
+kind: tool
+module: validohub
+country: SO
+category: address
+status: active
+name:
+  en: "Somali Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.somalia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+252 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [somalia-phone-e164-formatter, somalia-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Somali Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

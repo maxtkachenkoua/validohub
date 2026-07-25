@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: FJ
+category: tax
+status: active
+name:
+  en: "Fijian Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "FRCS tax / VAT boundary 20% base 1,234.56 FJD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-tax-return-field-helper, fiji-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

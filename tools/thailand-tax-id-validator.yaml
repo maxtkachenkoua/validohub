@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-tax-id-validator
+kind: tool
+module: validohub
+country: TH
+category: national-identifiers
+status: active
+name:
+  en: "Thai Revenue Department tax ID Validator"
+summary:
+  en: "Normalize Revenue Department tax ID identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "0105559123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-customs-importer-code-helper, thailand-social-security-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai Revenue Department tax ID Validator | ValidoHub"
+  description:
+    en: "Normalize Revenue Department tax ID identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

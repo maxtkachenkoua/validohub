@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: QA
+slug: qatar
+name:
+  en: Qatar
+region: Asia
+languages:
+  - ar
+currency: QAR
+relatedCountries:
+  - AE
+  - SA
+  - KW

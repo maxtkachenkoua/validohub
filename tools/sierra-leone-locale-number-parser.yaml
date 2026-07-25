@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sierra-leone-locale-number-parser
+kind: tool
+module: validohub
+country: SL
+category: localization
+status: active
+name:
+  en: "Sierra Leonean Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Sierra Leone."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sierra-leone-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 SLE"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sierra-leone-calendar-week-helper, sierra-leone-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sierra Leonean Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Sierra Leone."

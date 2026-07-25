@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: SB
+category: address
+status: active
+name:
+  en: "Solomon Islands Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Mendana Avenue, Honiara"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-region-code-mapper, solomon-islands-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

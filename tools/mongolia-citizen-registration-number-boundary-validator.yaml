@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-citizen-registration-number-boundary-validator
+kind: tool
+module: validohub
+country: MN
+category: national-identifiers
+status: active
+name:
+  en: "Mongolian Citizen registration number boundary Validator"
+summary:
+  en: "Validate Citizen registration number boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "УА90010123"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-state-registration-number-validator, mongolia-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Citizen registration number boundary Validator | ValidoHub"
+  description:
+    en: "Validate Citizen registration number boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

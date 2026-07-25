@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: KN
+slug: saint-kitts-and-nevis
+name:
+  en: "Saint Kitts and Nevis"
+region: North America
+languages:
+  - en
+currency: XCD
+relatedCountries:
+  - AG
+  - DM
+  - LC

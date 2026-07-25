@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: libya-slug-normalizer
+kind: tool
+module: validohub
+country: LY
+category: developer-tools
+status: active
+name:
+  en: "Libyan Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.libya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Libya sample company Central business district, Tripoli 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [libya-document-ocr-fixer, libya-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Libyan Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

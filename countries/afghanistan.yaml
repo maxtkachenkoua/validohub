@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: AF
+slug: afghanistan
+name:
+  en: Afghanistan
+region: Asia
+languages:
+  - fa
+currency: AFN
+relatedCountries:
+  - PK
+  - IR
+  - TJ

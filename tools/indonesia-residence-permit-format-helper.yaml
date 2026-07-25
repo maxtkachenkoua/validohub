@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-residence-permit-format-helper
+kind: tool
+module: validohub
+country: ID
+category: documents
+status: active
+name:
+  en: "Indonesian Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "ID PERMIT 2026 3174010101900001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-health-card-format-helper, indonesia-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

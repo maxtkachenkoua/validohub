@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: VN
+slug: vietnam
+name:
+  en: Vietnam
+region: Asia
+languages:
+  - vi
+currency: VND
+relatedCountries:
+  - TH
+  - CN
+  - SG

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-csv-locale-normalizer
+kind: tool
+module: validohub
+country: TM
+category: developer-tools
+status: active
+name:
+  en: "Turkmen CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Turkmenistan decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1 234,56 TMT;21.07.2026;12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkmenistan-slug-normalizer, turkmenistan-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Turkmenistan decimal, date, postal, phone, tax, and banking fields."

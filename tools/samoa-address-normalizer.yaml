@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: samoa-address-normalizer
+kind: tool
+module: validohub
+country: WS
+category: address
+status: active
+name:
+  en: "Samoan Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.samoa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Beach Road, Apia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [samoa-address-transliteration-normalizer, samoa-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Samoan Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

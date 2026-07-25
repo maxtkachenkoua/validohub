@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-bic-swift-inspector
+kind: tool
+module: validohub
+country: PS
+category: finance
+status: active
+name:
+  en: "Palestinian BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Palestine banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDPS2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-domestic-transfer-helper, palestine-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Palestine banking integrations."

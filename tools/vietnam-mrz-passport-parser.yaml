@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-mrz-passport-parser
+kind: tool
+module: validohub
+country: VN
+category: national-identifiers
+status: active
+name:
+  en: "Vietnamese MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<VNMSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567VNM8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vietnam-bank-account-validator, vietnam-bank-account-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

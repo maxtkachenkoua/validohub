@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ghana-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: GH
+category: localization
+status: active
+name:
+  en: "Ghanaian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ghana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "national ID boundary input, postal/address code input, amount 1,234.56 GHS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ghana-support-ticket-scrubber, ghana-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ghanaian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

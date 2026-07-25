@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: LB
+category: tax
+status: active
+name:
+  en: "Lebanese Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "VAT / tax number 20% base 1,234,567 LBP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lebanon-tax-return-field-helper, lebanon-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

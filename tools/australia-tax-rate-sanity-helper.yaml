@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: AU
+category: tax
+status: active
+name:
+  en: "Australian Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "GST / ABN 20% base 1,234.56 AUD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-tax-return-field-helper, australia-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

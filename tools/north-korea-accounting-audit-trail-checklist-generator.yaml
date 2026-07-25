@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-accounting-audit-trail-checklist-generator
+kind: tool
+module: validohub
+country: KP
+category: tax
+status: active
+name:
+  en: "North Korean Accounting Audit Trail Checklist Helper"
+summary:
+  en: "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "AUDIT input"
+        required: true
+        placeholder:
+          en: "invoice 2026.07.21 1,234 KPW TAX123456"
+    actions: [generate, validate, explain]
+related:
+  explicit: [north-korea-postal-code-validator, north-korea-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Accounting Audit Trail Checklist Helper | ValidoHub"
+  description:
+    en: "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."

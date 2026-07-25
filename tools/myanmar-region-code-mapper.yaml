@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: myanmar-region-code-mapper
+kind: tool
+module: validohub
+country: MM
+category: address
+status: active
+name:
+  en: "Myanmar Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.myanmar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "15011 Naypyidaw"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [myanmar-municipality-code-inspector, myanmar-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Myanmar Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

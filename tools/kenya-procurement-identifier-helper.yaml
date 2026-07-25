@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kenya-procurement-identifier-helper
+kind: tool
+module: validohub
+country: KE
+category: government
+status: active
+name:
+  en: "Kenyan Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kenya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "KE-REG-123456 PO-2026-001 KE123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kenya-accessibility-locale-copy-checker, kenya-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kenyan Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

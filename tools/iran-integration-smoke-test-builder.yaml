@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: IR
+category: developer-tools
+status: active
+name:
+  en: "Iranian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IR\",\"nationalCode\":\"0084575941\",\"sheba\":\"IR820540102680020817909002\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [iran-national-code-boundary-validator, iran-national-company-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: AU
+category: tax
+status: active
+name:
+  en: "Australian tax invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AU\",\"abn\":\"51824753556\",\"bsb\":\"062000\",\"amount\":\"1,234.56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-tax-authority-handoff-helper, australia-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian tax invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

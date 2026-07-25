@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-csv-locale-normalizer
+kind: tool
+module: validohub
+country: AZ
+category: developer-tools
+status: active
+name:
+  en: "Azerbaijani CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Azerbaijan decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1 234,56 AZN;21.07.2026;9900003611"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-slug-normalizer, azerbaijan-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Azerbaijan decimal, date, postal, phone, tax, and banking fields."

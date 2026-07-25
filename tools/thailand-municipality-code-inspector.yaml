@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-municipality-code-inspector
+kind: tool
+module: validohub
+country: TH
+category: address
+status: active
+name:
+  en: "Thai Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Sukhumvit Road 1, Bangkok 10110"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-phone-number-validator, thailand-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: oman-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: OM
+category: localization
+status: active
+name:
+  en: "Omani Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.oman-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "Civil number boundary input, postal code input, amount 1,234.560 OMR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [oman-support-ticket-scrubber, oman-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Omani Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

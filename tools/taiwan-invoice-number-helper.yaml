@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-invoice-number-helper
+kind: tool
+module: validohub
+country: TW
+category: tax
+status: active
+name:
+  en: "Taiwanese Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 12345675"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-e-invoicing-readiness-checker, taiwan-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

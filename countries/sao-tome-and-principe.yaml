@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: ST
+slug: sao-tome-and-principe
+name:
+  en: Sao Tome and Principe
+region: Africa
+languages:
+  - pt
+currency: STN
+relatedCountries:
+  - ZA
+  - NG
+  - KE

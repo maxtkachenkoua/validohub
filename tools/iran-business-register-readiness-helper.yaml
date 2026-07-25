@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-business-register-readiness-helper
+kind: tool
+module: validohub
+country: IR
+category: government
+status: active
+name:
+  en: "Iranian Company Registration Office Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Company Registration Office lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "10101234567 411111111111 Valiasr Street 1, Tehran 11369-12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-id-card-format-helper, iran-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Company Registration Office Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Company Registration Office lookup or company registry workflow."

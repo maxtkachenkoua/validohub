@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-vehicle-plate-inspector
+kind: tool
+module: validohub
+country: CV
+category: transport
+status: active
+name:
+  en: "Cabo Verdean Vehicle Plate Inspector"
+summary:
+  en: "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PLATE input"
+        required: true
+        placeholder:
+          en: "CV 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-vin-validator, cabo-verde-vehicle-data-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Vehicle Plate Inspector | ValidoHub"
+  description:
+    en: "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."

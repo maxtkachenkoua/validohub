@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-39.31 -73.95 334.09 632.27" role="img">
+  <title>Dominica country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="4.63" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="dm" d="M256.23,485.371l-0.761,1.616l0.917,1.228l1.141-0.994L256.23,485.371L256.23,485.371z"/>
+  </g>
+</svg>

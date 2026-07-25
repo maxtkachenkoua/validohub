@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-json-fixture-generator
+kind: tool
+module: validohub
+country: AZ
+category: developer-tools
+status: active
+name:
+  en: "Azerbaijani JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AZ\",\"voen\":\"9900003611\",\"iban\":\"AZ21NABZ00000000137010001944\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [azerbaijan-regex-pack-helper, azerbaijan-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

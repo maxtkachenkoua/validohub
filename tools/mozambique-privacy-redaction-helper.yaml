@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mozambique-privacy-redaction-helper
+kind: tool
+module: validohub
+country: MZ
+category: privacy
+status: active
+name:
+  en: "Mozambican data protection / privacy boundary Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mozambique-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MZ\",\"taxNumber\":\"MZ123456789\",\"paymentReference\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mozambique-pii-masker, mozambique-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mozambican data protection / privacy boundary Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

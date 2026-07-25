@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: TO
+slug: tonga
+name:
+  en: Tonga
+region: Oceania
+languages:
+  - en
+currency: TOP
+relatedCountries:
+  - WS
+  - FJ
+  - TV

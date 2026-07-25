@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-privacy-redaction-helper
+kind: tool
+module: validohub
+country: ST
+category: privacy
+status: active
+name:
+  en: "Sao Tomean data protection / privacy boundary Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"ST\",\"taxNumber\":\"ST123456789\",\"paymentReference\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-pii-masker, sao-tome-and-principe-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean data protection / privacy boundary Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

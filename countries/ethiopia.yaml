@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: ET
+slug: ethiopia
+name:
+  en: Ethiopia
+region: Africa
+languages:
+  - am
+currency: ETB
+relatedCountries:
+  - ZA
+  - NG
+  - KE

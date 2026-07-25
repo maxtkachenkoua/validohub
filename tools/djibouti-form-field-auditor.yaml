@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: djibouti-form-field-auditor
+kind: tool
+module: validohub
+country: DJ
+category: developer-tools
+status: active
+name:
+  en: "Djiboutian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.djibouti-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=DJ123456789&postal=1000 Djibouti&phone=+253 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [djibouti-locale-number-parser, djibouti-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Djiboutian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

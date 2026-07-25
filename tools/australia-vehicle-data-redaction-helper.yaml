@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: AU
+category: transport
+status: active
+name:
+  en: "Australian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "ABC123 WVWZZZ1JZXW000001 123 456 782"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-customs-declaration-helper, australia-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

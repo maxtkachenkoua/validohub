@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SZ
+slug: eswatini
+name:
+  en: Eswatini
+region: Africa
+languages:
+  - en
+currency: SZL
+relatedCountries:
+  - ZA
+  - NG
+  - KE

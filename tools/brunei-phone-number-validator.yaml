@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-phone-number-validator
+kind: tool
+module: validohub
+country: BN
+category: address
+status: active
+name:
+  en: "Bruneian Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+673 712 3456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [brunei-phone-e164-formatter, brunei-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

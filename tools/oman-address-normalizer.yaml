@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: oman-address-normalizer
+kind: tool
+module: validohub
+country: OM
+category: address
+status: active
+name:
+  en: "Omani Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.oman-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Sultan Qaboos Street 1, Muscat 100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [oman-address-transliteration-normalizer, oman-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Omani Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

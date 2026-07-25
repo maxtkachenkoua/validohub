@@ -1,0 +1,642 @@
+{
+  "id": "burkina-faso",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/burkina-faso-outline.png",
+    "outlineAlt": "Burkina Faso country outline",
+    "mapSrc": "/assets/images/countries/burkina-faso-location.png",
+    "mapAlt": "World map with Burkina Faso location marker",
+    "mapMarker": {
+      "x": 45,
+      "y": 55,
+      "label": "Burkina Faso"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "burkina-faso",
+    "flag": "🇧🇫",
+    "name": "Burkina Faso",
+    "nativeName": "Burkina Faso",
+    "iso2": "BF",
+    "iso3": "BFA",
+    "continent": "Africa",
+    "region": "Africa",
+    "language": "French",
+    "currency": "XOF",
+    "currencyName": "West African CFA franc",
+    "status": "available",
+    "summary": "Premium Burkina Faso developer hub for National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone, bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "National ID boundary",
+      "company registration number",
+      "tax number / VAT boundary",
+      "postal/address code",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "domestic transfer reference",
+      "SWIFT/BIC",
+      "invoice reference",
+      "payment reconciliation"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Burkinabe national ID boundary Validator",
+      "Burkinabe company registration number Validator",
+      "Burkinabe tax number / VAT boundary Validator",
+      "Burkinabe Customs / Importer Code Helper",
+      "Burkinabe social security boundary Helper",
+      "Burkinabe Company Onboarding Auditor",
+      "Burkinabe business registry Readiness Helper",
+      "Burkinabe ID Card Format Helper",
+      "Burkinabe Passport Number Helper",
+      "Burkinabe MRZ / Passport Parser",
+      "Burkina Faso Bank Account Validator",
+      "Burkina Faso Bank Account Fixture Generator",
+      "Burkinabe Domestic Bank Account Inspector",
+      "Burkinabe BIC / SWIFT Inspector",
+      "Burkinabe Domestic Transfer Helper",
+      "Burkinabe Direct Debit / Auto-Debit Mandate Helper",
+      "Burkinabe bank transfer / payment reference Reference Helper",
+      "Burkinabe Remittance Text Builder",
+      "Burkinabe Payment Reconciliation Helper",
+      "Burkinabe Bank Statement Parser",
+      "Burkinabe Masked Bank Account Formatter",
+      "Burkinabe XOF Decimal Currency Formatter",
+      "Burkinabe Tax Rate Sanity Helper",
+      "Burkinabe Tax Return Field Helper",
+      "Burkinabe Invoice Number Helper",
+      "Burkinabe tax invoice Readiness Checker",
+      "Burkinabe Tax Authority Handoff Helper",
+      "Burkinabe Accounting Audit Trail Checklist Helper",
+      "Burkinabe Postal Code Validator",
+      "Burkinabe Address Normalizer",
+      "Burkinabe Address Transliteration Normalizer",
+      "Burkinabe Region / Province Code Mapper",
+      "Burkinabe Municipality Code Inspector",
+      "Burkinabe Phone Number Validator",
+      "Burkinabe Phone E.164 Formatter",
+      "Burkinabe Date Locale Formatter",
+      "Burkinabe CSV Locale Normalizer",
+      "Burkinabe Slug Normalizer",
+      "Burkinabe Document OCR Fixer",
+      "Burkinabe data protection / privacy boundary Redaction Helper",
+      "Burkinabe PII Masker",
+      "Burkinabe Personal Data Fixture Helper",
+      "Burkinabe Driving Licence Format Helper",
+      "Burkinabe Residence Permit Format Helper",
+      "Burkinabe Health Card Format Helper",
+      "Burkinabe Vehicle Plate Inspector",
+      "Burkinabe VIN Validator",
+      "Burkinabe Vehicle Data Redaction Helper",
+      "Burkinabe Customs Declaration Helper",
+      "Burkinabe Postal Tracking Helper",
+      "Burkinabe Data Quality Workbench",
+      "Burkinabe JSON Fixture Helper",
+      "Burkinabe Regex Pack Helper",
+      "Burkinabe API Payload Auditor",
+      "Burkinabe Form Field Auditor",
+      "Burkinabe Locale Number Parser",
+      "Burkinabe Calendar Week Helper",
+      "Burkinabe Company Suffix Normalizer",
+      "Burkinabe Procurement Identifier Helper",
+      "Burkinabe Locale Copy Checker",
+      "Burkinabe Support Ticket Scrubber",
+      "Burkinabe Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 45,
+      "y": 55
+    },
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇧🇫",
+    "name": "Burkina Faso",
+    "badge": "Premium Burkina Faso developer suite",
+    "description": "Developer intelligence and browser-only workbenches for burkinabe identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Burkina Faso",
+      "population": "approximately 23M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Ouagadougou",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "languages": "French",
+      "currency": "West African CFA franc",
+      "currencyCode": "XOF",
+      "callingCode": "+226",
+      "internetTld": ".bf",
+      "drivingSide": "Right",
+      "iso2": "BF",
+      "iso3": "BFA",
+      "isoNumeric": "854",
+      "locale": "fr-BF",
+      "icuLocale": "fr_BF",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Space",
+      "addressFormat": "Street, number, postal code, locality, Burkina Faso",
+      "postalCodeFormat": "postal/address code",
+      "primaryTimeZone": "Africa/Abidjan (GMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "17 / 18",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "fr-BF",
+      "cldrLocale": "fr_BF",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type E",
+      "voltage": "220V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "burkina-faso",
+      "outlineLabel": "Burkina Faso outline",
+      "mapLabel": "Burkina Faso in the world",
+      "continentBadge": "Africa",
+      "flagLabel": "Burkina Faso flag",
+      "heroAccentPrimary": "239 43 45",
+      "heroAccentSecondary": "0 158 73",
+      "heroAccentTertiary": "252 209 22"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax number / VAT boundary and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Burkina Faso registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /burkina-faso/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Space rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Burkinabe examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Burkina Faso.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax number / VAT boundary",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "data protection / privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "fr-BF / fr_BF; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "XOF amounts use Comma (,) and Space.",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, company registration number, postal/address code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type E",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "220V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "17 / 18",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Burkinabe national ID boundary Validator",
+        "href": "/en/burkina-faso/burkina-faso-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Burkinabe company registration number Validator",
+        "href": "/en/burkina-faso/burkina-faso-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Burkinabe tax number / VAT boundary Validator",
+        "href": "/en/burkina-faso/burkina-faso-tax-id-validator/",
+        "text": "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Burkinabe Customs / Importer Code Helper",
+        "href": "/en/burkina-faso/burkina-faso-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Burkinabe social security boundary Helper",
+        "href": "/en/burkina-faso/burkina-faso-social-security-boundary-social-insurance-helper/",
+        "text": "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Burkinabe Company Onboarding Auditor",
+        "href": "/en/burkina-faso/burkina-faso-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Burkinabe business registry Readiness Helper",
+        "href": "/en/burkina-faso/burkina-faso-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+      },
+      {
+        "title": "Burkinabe ID Card Format Helper",
+        "href": "/en/burkina-faso/burkina-faso-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Burkinabe Passport Number Helper",
+        "href": "/en/burkina-faso/burkina-faso-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Burkinabe MRZ / Passport Parser",
+        "href": "/en/burkina-faso/burkina-faso-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Burkina Faso Bank Account Validator",
+        "href": "/en/burkina-faso/burkina-faso-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Burkina Faso Bank Account Fixture Generator",
+        "href": "/en/burkina-faso/burkina-faso-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Burkinabe Domestic Bank Account Inspector",
+        "href": "/en/burkina-faso/burkina-faso-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Burkinabe BIC / SWIFT Inspector",
+        "href": "/en/burkina-faso/burkina-faso-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Burkina Faso banking integrations."
+      },
+      {
+        "title": "Burkinabe Domestic Transfer Helper",
+        "href": "/en/burkina-faso/burkina-faso-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Burkinabe Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/burkina-faso/burkina-faso-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Burkinabe bank transfer / payment reference Reference Helper",
+        "href": "/en/burkina-faso/burkina-faso-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Burkinabe Remittance Text Builder",
+        "href": "/en/burkina-faso/burkina-faso-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Burkinabe Payment Reconciliation Helper",
+        "href": "/en/burkina-faso/burkina-faso-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Burkinabe Bank Statement Parser",
+        "href": "/en/burkina-faso/burkina-faso-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Burkinabe Masked Bank Account Formatter",
+        "href": "/en/burkina-faso/burkina-faso-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Burkinabe XOF Decimal Currency Formatter",
+        "href": "/en/burkina-faso/burkina-faso-currency-decimal-formatter/",
+        "text": "Normalize XOF amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Burkinabe Tax Rate Sanity Helper",
+        "href": "/en/burkina-faso/burkina-faso-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Burkinabe Tax Return Field Helper",
+        "href": "/en/burkina-faso/burkina-faso-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Burkinabe Invoice Number Helper",
+        "href": "/en/burkina-faso/burkina-faso-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Burkinabe tax invoice Readiness Checker",
+        "href": "/en/burkina-faso/burkina-faso-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Burkinabe Tax Authority Handoff Helper",
+        "href": "/en/burkina-faso/burkina-faso-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Burkinabe Accounting Audit Trail Checklist Helper",
+        "href": "/en/burkina-faso/burkina-faso-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Burkinabe Postal Code Validator",
+        "href": "/en/burkina-faso/burkina-faso-postal-code-validator/",
+        "text": "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Burkinabe Address Normalizer",
+        "href": "/en/burkina-faso/burkina-faso-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Burkinabe Address Transliteration Normalizer",
+        "href": "/en/burkina-faso/burkina-faso-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Burkinabe Region / Province Code Mapper",
+        "href": "/en/burkina-faso/burkina-faso-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Burkinabe Municipality Code Inspector",
+        "href": "/en/burkina-faso/burkina-faso-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Burkinabe Phone Number Validator",
+        "href": "/en/burkina-faso/burkina-faso-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Burkinabe Phone E.164 Formatter",
+        "href": "/en/burkina-faso/burkina-faso-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Burkinabe Date Locale Formatter",
+        "href": "/en/burkina-faso/burkina-faso-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Burkinabe CSV Locale Normalizer",
+        "href": "/en/burkina-faso/burkina-faso-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Burkina Faso decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Burkinabe Slug Normalizer",
+        "href": "/en/burkina-faso/burkina-faso-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Burkinabe Document OCR Fixer",
+        "href": "/en/burkina-faso/burkina-faso-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Burkinabe data protection / privacy boundary Redaction Helper",
+        "href": "/en/burkina-faso/burkina-faso-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Burkinabe PII Masker",
+        "href": "/en/burkina-faso/burkina-faso-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Burkinabe Personal Data Fixture Helper",
+        "href": "/en/burkina-faso/burkina-faso-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Burkinabe Driving Licence Format Helper",
+        "href": "/en/burkina-faso/burkina-faso-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Burkinabe Residence Permit Format Helper",
+        "href": "/en/burkina-faso/burkina-faso-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Burkinabe Health Card Format Helper",
+        "href": "/en/burkina-faso/burkina-faso-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Burkinabe Vehicle Plate Inspector",
+        "href": "/en/burkina-faso/burkina-faso-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Burkinabe VIN Validator",
+        "href": "/en/burkina-faso/burkina-faso-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Burkinabe Vehicle Data Redaction Helper",
+        "href": "/en/burkina-faso/burkina-faso-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Burkinabe Customs Declaration Helper",
+        "href": "/en/burkina-faso/burkina-faso-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Burkinabe Postal Tracking Helper",
+        "href": "/en/burkina-faso/burkina-faso-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Burkinabe Data Quality Workbench",
+        "href": "/en/burkina-faso/burkina-faso-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Burkinabe JSON Fixture Helper",
+        "href": "/en/burkina-faso/burkina-faso-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Burkinabe Regex Pack Helper",
+        "href": "/en/burkina-faso/burkina-faso-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Burkinabe API Payload Auditor",
+        "href": "/en/burkina-faso/burkina-faso-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Burkinabe Form Field Auditor",
+        "href": "/en/burkina-faso/burkina-faso-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Burkinabe Locale Number Parser",
+        "href": "/en/burkina-faso/burkina-faso-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Burkina Faso."
+      },
+      {
+        "title": "Burkinabe Calendar Week Helper",
+        "href": "/en/burkina-faso/burkina-faso-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Burkinabe Company Suffix Normalizer",
+        "href": "/en/burkina-faso/burkina-faso-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Burkinabe Procurement Identifier Helper",
+        "href": "/en/burkina-faso/burkina-faso-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Burkinabe Locale Copy Checker",
+        "href": "/en/burkina-faso/burkina-faso-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Burkinabe Support Ticket Scrubber",
+        "href": "/en/burkina-faso/burkina-faso-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Burkinabe Integration Smoke Test Builder",
+        "href": "/en/burkina-faso/burkina-faso-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

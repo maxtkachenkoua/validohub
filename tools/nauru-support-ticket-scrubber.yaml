@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nauru-support-ticket-scrubber
+kind: tool
+module: validohub
+country: NR
+category: privacy
+status: active
+name:
+  en: "Nauruan Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nauru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent NR-ID-123456, 001 1234567890, Yaren District, Nauru"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nauru-integration-smoke-test-builder, nauru-national-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nauruan Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-form-field-auditor
+kind: tool
+module: validohub
+country: MV
+category: developer-tools
+status: active
+name:
+  en: "Maldivian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=GST123456&postal=Male 20026&phone=+960 777 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [maldives-locale-number-parser, maldives-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

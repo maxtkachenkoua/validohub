@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-api-payload-auditor
+kind: tool
+module: validohub
+country: JP
+category: developer-tools
+status: active
+name:
+  en: "Japanese API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"JP\",\"corporateNumber\":\"1234567890123\",\"invoiceNumber\":\"T1234567890123\",\"amount\":\"1,234\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-form-field-auditor, japan-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

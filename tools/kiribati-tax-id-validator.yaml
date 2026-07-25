@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kiribati-tax-id-validator
+kind: tool
+module: validohub
+country: KI
+category: national-identifiers
+status: active
+name:
+  en: "I-Kiribati tax boundary Validator"
+summary:
+  en: "Normalize tax boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kiribati-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "KI123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kiribati-customs-importer-code-helper, kiribati-social-protection-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "I-Kiribati tax boundary Validator | ValidoHub"
+  description:
+    en: "Normalize tax boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

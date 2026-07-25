@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: eswatini-bank-account-inspector
+kind: tool
+module: validohub
+country: SZ
+category: finance
+status: active
+name:
+  en: "Swazi Domestic Bank Account Inspector"
+summary:
+  en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.eswatini-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [eswatini-bic-swift-inspector, eswatini-domestic-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swazi Domestic Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."

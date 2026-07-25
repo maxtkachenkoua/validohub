@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-document-ocr-fixer
+kind: tool
+module: validohub
+country: CN
+category: documents
+status: active
+name:
+  en: "Chinese Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "110101199003078877 91310000MA1FL0AB1C 102100099996 6222020200001234567 100000 Beijing"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-privacy-redaction-helper, china-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

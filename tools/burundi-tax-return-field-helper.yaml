@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-tax-return-field-helper
+kind: tool
+module: validohub
+country: BI
+category: tax
+status: active
+name:
+  en: "Burundian Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary; BI123456789; period 2026-07; 1,234.56 BIF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-invoice-number-helper, burundi-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

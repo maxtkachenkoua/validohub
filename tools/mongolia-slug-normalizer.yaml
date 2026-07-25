@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-slug-normalizer
+kind: tool
+module: validohub
+country: MN
+category: developer-tools
+status: active
+name:
+  en: "Mongolian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Mongolia sample company Peace Avenue 1, Ulaanbaatar 14200"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-document-ocr-fixer, mongolia-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

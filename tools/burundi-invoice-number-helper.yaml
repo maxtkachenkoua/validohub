@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-invoice-number-helper
+kind: tool
+module: validohub
+country: BI
+category: tax
+status: active
+name:
+  en: "Burundian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 BI123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-e-invoicing-readiness-checker, burundi-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

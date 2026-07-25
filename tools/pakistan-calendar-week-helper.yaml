@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-calendar-week-helper
+kind: tool
+module: validohub
+country: PK
+category: localization
+status: active
+name:
+  en: "Pakistani Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "21/07/2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-company-suffix-normalizer, pakistan-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

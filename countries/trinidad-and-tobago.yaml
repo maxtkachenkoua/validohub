@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: TT
+slug: trinidad-and-tobago
+name:
+  en: "Trinidad and Tobago"
+region: North America
+languages:
+  - en
+currency: TTD
+relatedCountries:
+  - GD
+  - BB
+  - VE

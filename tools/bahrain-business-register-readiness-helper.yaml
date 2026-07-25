@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-business-register-readiness-helper
+kind: tool
+module: validohub
+country: BH
+category: government
+status: active
+name:
+  en: "Bahraini Sijilat registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Sijilat registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "123456-1 220012345600002 Government Avenue 1, Manama, Block 316"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-id-card-format-helper, bahrain-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Sijilat registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Sijilat registry lookup or company registry workflow."

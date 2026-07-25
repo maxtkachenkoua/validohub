@@ -676,3 +676,30 @@ Runtime source: `assets/js/tools/<country>-suite.js` using `country-suite-factor
 Countries: Argentina (argentina), Bolivia (bolivia), Chile (chile), Colombia (colombia), Ecuador (ecuador), Guyana (guyana), Paraguay (paraguay), Peru (peru), Suriname (suriname), Uruguay (uruguay), Venezuela (venezuela).
 
 Each country registers broad browser-only workbenches across identifiers, tax/invoicing, domestic banking/payments, address, phone, locale formatting, privacy/redaction, documents, vehicles, logistics, and developer QA. Domestic account/payment helpers replace IBAN-specific pages where the country does not use IBAN.
+
+
+## Asia Premium Batch V2
+
+Runtime source: `assets/js/tools/<country>-suite.js` using `country-suite-factory.js`.
+
+Countries: Japan (japan), India (india), Singapore (singapore), South Korea (south-korea), United Arab Emirates (united-arab-emirates).
+
+Each country registers quality-driven active browser-only workbenches covering identifiers, VAT/tax, payments, banking, address, phone, locale formatting, privacy/redaction, documents, vehicles, logistics, and developer QA. Field breakdown, tool-context explanation, valid/invalid fixtures, fresh generator output, copy feedback, and official boundary copy are mandatory for every route.
+
+
+## Africa Baseline Batch V1
+
+Runtime source: `assets/js/tools/<country>-suite.js` using `country-suite-factory.js`.
+
+Countries: Algeria (algeria), Angola (angola), Benin (benin), Botswana (botswana), Burkina Faso (burkina-faso), Burundi (burundi), Cabo Verde (cabo-verde), Cameroon (cameroon), Central African Republic (central-african-republic), Chad (chad), Comoros (comoros), Republic of the Congo (congo), Cote dIvoire (cote-d-ivoire), Democratic Republic of the Congo (democratic-republic-of-the-congo), Djibouti (djibouti), Egypt (egypt), Equatorial Guinea (equatorial-guinea), Eritrea (eritrea), Eswatini (eswatini), Ethiopia (ethiopia), Gabon (gabon), Gambia (gambia), Ghana (ghana), Guinea (guinea), Guinea-Bissau (guinea-bissau), Kenya (kenya), Lesotho (lesotho), Liberia (liberia), Libya (libya), Madagascar (madagascar), Malawi (malawi), Mali (mali), Mauritania (mauritania), Mauritius (mauritius), Morocco (morocco), Mozambique (mozambique), Namibia (namibia), Niger (niger), Nigeria (nigeria), Rwanda (rwanda), Sao Tome and Principe (sao-tome-and-principe), Senegal (senegal), Seychelles (seychelles), Sierra Leone (sierra-leone), Somalia (somalia), South Africa (south-africa), South Sudan (south-sudan), Sudan (sudan), Tanzania (tanzania), Togo (togo), Tunisia (tunisia), Uganda (uganda), Zambia (zambia), Zimbabwe (zimbabwe).
+
+Each country registers quality-driven active browser-only workbenches covering identifiers, VAT/tax, payments, banking, address, phone, locale formatting, privacy/redaction, documents, vehicles, logistics, and developer QA. Field breakdown, tool-context explanation, valid/invalid fixtures, fresh generator output, copy feedback, and official boundary copy are mandatory for every route.
+
+
+## Oceania Baseline Batch V1
+
+Runtime source: `assets/js/tools/<country>-suite.js` using `country-suite-factory.js`.
+
+Countries: Australia (australia), Fiji (fiji), Kiribati (kiribati), Marshall Islands (marshall-islands), Micronesia (micronesia), Nauru (nauru), New Zealand (new-zealand), Palau (palau), Papua New Guinea (papua-new-guinea), Samoa (samoa), Solomon Islands (solomon-islands), Tonga (tonga), Tuvalu (tuvalu), Vanuatu (vanuatu).
+
+Each country registers quality-driven active browser-only workbenches covering identifiers, VAT/tax, payments, banking, address, phone, locale formatting, privacy/redaction, documents, vehicles, logistics, and developer QA. Field breakdown, tool-context explanation, valid/invalid fixtures, fresh generator output, copy feedback, and official boundary copy are mandatory for every route.

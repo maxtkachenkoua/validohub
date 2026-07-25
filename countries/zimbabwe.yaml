@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: ZW
+slug: zimbabwe
+name:
+  en: Zimbabwe
+region: Africa
+languages:
+  - en
+currency: ZWL
+relatedCountries:
+  - ZA
+  - NG
+  - KE

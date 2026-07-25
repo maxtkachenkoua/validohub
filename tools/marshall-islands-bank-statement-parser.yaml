@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-bank-statement-parser
+kind: tool
+module: validohub
+country: MH
+category: finance
+status: active
+name:
+  en: "Marshallese Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "07/24/2026; 1,234.56 USD; 001 1234567890; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-masked-bank-account-formatter, marshall-islands-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."

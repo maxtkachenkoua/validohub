@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-api-payload-auditor
+kind: tool
+module: validohub
+country: GM
+category: developer-tools
+status: active
+name:
+  en: "Gambian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"GM\",\"taxNumber\":\"GM123456789\",\"paymentReference\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-form-field-auditor, gambia-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

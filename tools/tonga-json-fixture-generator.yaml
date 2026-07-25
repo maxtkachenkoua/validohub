@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-json-fixture-generator
+kind: tool
+module: validohub
+country: TO
+category: developer-tools
+status: active
+name:
+  en: "Tongan JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TO\",\"taxNumber\":\"TO123456789\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [tonga-regex-pack-helper, tonga-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

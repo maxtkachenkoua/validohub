@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-invoice-number-helper
+kind: tool
+module: validohub
+country: ID
+category: tax
+status: active
+name:
+  en: "Indonesian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 01.234.567.8-901.000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-e-invoicing-readiness-checker, indonesia-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

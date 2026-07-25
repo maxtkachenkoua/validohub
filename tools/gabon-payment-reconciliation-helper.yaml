@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gabon-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: GA
+category: finance
+status: active
+name:
+  en: "Gabonese Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gabon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "24/07/2026; 1,234.56 XAF; 001 1234567890; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gabon-bank-statement-parser, gabon-masked-bank-account-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gabonese Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

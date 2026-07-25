@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-form-field-auditor
+kind: tool
+module: validohub
+country: NZ
+category: developer-tools
+status: active
+name:
+  en: "New Zealand Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=123456789&postal=6011 Wellington&phone=+64 21 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-locale-number-parser, new-zealand-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

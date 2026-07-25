@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: AZ
+category: privacy
+status: active
+name:
+  en: "Azerbaijani Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "ABC1234\\nNeftchilar Avenue 1, Baku AZ1000\\n+994 50 123 45 67"
+    actions: [generate, validate, explain]
+related:
+  explicit: [azerbaijan-driving-licence-format-helper, azerbaijan-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-customs-importer-code-helper
+kind: tool
+module: validohub
+country: KR
+category: national-identifiers
+status: active
+name:
+  en: "South Korean Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "KR123-45-67890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-rrn-boundary-social-insurance-helper, south-korea-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

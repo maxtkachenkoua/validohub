@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-business-register-readiness-helper
+kind: tool
+module: validohub
+country: VN
+category: government
+status: active
+name:
+  en: "Vietnamese Business Registration Portal Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Business Registration Portal lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "0101234567 0101234567 1 Trang Tien, Hanoi 100000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vietnam-id-card-format-helper, vietnam-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese Business Registration Portal Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Business Registration Portal lookup or company registry workflow."

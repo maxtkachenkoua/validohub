@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CI
+slug: cote-d-ivoire
+name:
+  en: Cote dIvoire
+region: Africa
+languages:
+  - fr
+currency: XOF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

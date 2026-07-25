@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: LB
+category: privacy
+status: active
+name:
+  en: "Lebanese Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "1234567890\\nHamra Street 1, Beirut 1107 2020\\n+961 3 123 456"
+    actions: [generate, validate, explain]
+related:
+  explicit: [lebanon-driving-licence-format-helper, lebanon-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

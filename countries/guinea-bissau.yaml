@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: GW
+slug: guinea-bissau
+name:
+  en: Guinea-Bissau
+region: Africa
+languages:
+  - pt
+currency: XOF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

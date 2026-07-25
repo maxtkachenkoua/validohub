@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-bic-swift-inspector
+kind: tool
+module: validohub
+country: TJ
+category: finance
+status: active
+name:
+  en: "Tajik BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Tajikistan banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDTJ2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-domestic-transfer-helper, tajikistan-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Tajikistan banking integrations."

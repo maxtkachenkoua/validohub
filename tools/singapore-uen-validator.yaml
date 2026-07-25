@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-uen-validator
+kind: tool
+module: validohub
+country: SG
+category: national-identifiers
+status: active
+name:
+  en: "Singapore UEN Validator"
+summary:
+  en: "Inspect UEN structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "201912345K"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-tax-id-validator, singapore-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore UEN Validator | ValidoHub"
+  description:
+    en: "Inspect UEN structure, registry-style prefixes, control digits, and official lookup boundaries."

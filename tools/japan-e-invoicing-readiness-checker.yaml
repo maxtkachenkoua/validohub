@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: JP
+category: tax
+status: active
+name:
+  en: "Japanese Qualified Invoice / T-number Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"JP\",\"corporateNumber\":\"1234567890123\",\"invoiceNumber\":\"T1234567890123\",\"amount\":\"1,234\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-tax-authority-handoff-helper, japan-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Qualified Invoice / T-number Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

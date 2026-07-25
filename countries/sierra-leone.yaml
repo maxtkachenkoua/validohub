@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SL
+slug: sierra-leone
+name:
+  en: Sierra Leone
+region: Africa
+languages:
+  - en
+currency: SLE
+relatedCountries:
+  - ZA
+  - NG
+  - KE

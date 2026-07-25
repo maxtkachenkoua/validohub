@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-document-ocr-fixer
+kind: tool
+module: validohub
+country: GN
+category: documents
+status: active
+name:
+  en: "Guinean Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "GN-ID-123456 GN123456789 001 1234567890 1000 Conakry"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-privacy-redaction-helper, guinea-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guinean Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-api-payload-auditor
+kind: tool
+module: validohub
+country: PS
+category: developer-tools
+status: active
+name:
+  en: "Palestinian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PS\",\"id\":\"401234567\",\"iban\":\"PS92PALS000000000400123456702\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-form-field-auditor, palestine-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

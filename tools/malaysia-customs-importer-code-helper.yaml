@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-customs-importer-code-helper
+kind: tool
+module: validohub
+country: MY
+category: national-identifiers
+status: active
+name:
+  en: "Malaysian Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "MY201901234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-epf-boundary-social-insurance-helper, malaysia-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

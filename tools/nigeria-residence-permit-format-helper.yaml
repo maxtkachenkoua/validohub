@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nigeria-residence-permit-format-helper
+kind: tool
+module: validohub
+country: NG
+category: documents
+status: active
+name:
+  en: "Nigerian Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nigeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "NG PERMIT 2026 NG-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nigeria-health-card-format-helper, nigeria-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nigerian Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

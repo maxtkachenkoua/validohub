@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100.69 -86.01 709.22 664.64" role="img">
+  <title>Somalia country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.20" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="so" d="M526.703,501.941l3.777-1.452l1.34,0.804l-0.147,3.354l-3.482,9.923l-18.854,20.19l-2.187-1.503l-0.147-8.521l2.835-3.26l6.018-1.857l8.824-9.318l2.31-2.058l0.647-3.008L526.703,501.941L526.703,501.941z"/>
+  </g>
+</svg>

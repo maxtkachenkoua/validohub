@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: afghanistan-privacy-redaction-helper
+kind: tool
+module: validohub
+country: AF
+category: privacy
+status: active
+name:
+  en: "Afghan personal-data privacy boundary Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.afghanistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AF\",\"tin\":\"TIN123456789\",\"bank\":\"0011234567890\",\"payment\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [afghanistan-pii-masker, afghanistan-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Afghan personal-data privacy boundary Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

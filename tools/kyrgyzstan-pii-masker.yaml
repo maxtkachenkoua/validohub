@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-pii-masker
+kind: tool
+module: validohub
+country: KG
+category: privacy
+status: active
+name:
+  en: "Kyrgyz PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "20101200123456 +996 700 123 456 109 1234567890123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-personal-data-fixture-generator, kyrgyzstan-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: AZ
+category: finance
+status: active
+name:
+  en: "Azerbaijani Direct Debit / Auto-Debit Mandate Helper"
+summary:
+  en: "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DD input"
+        required: true
+        placeholder:
+          en: "MANDATE-2026-001 NABZ 137010001944"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-payment-reference-helper, azerbaijan-remittance-text-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani Direct Debit / Auto-Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."

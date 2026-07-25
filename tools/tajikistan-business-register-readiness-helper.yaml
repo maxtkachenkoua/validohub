@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-business-register-readiness-helper
+kind: tool
+module: validohub
+country: TJ
+category: government
+status: active
+name:
+  en: "Tajik Tax Committee registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Tax Committee registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "TJ1234567 123456789 Rudaki Avenue 1, Dushanbe 734000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-id-card-format-helper, tajikistan-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Tax Committee registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Tax Committee registry lookup or company registry workflow."

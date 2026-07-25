@@ -1,0 +1,642 @@
+{
+  "id": "sri-lanka",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/sri-lanka-outline.png",
+    "outlineAlt": "Sri Lanka country outline",
+    "mapSrc": "/assets/images/countries/sri-lanka-location.png",
+    "mapAlt": "World map with Sri Lanka location marker",
+    "mapMarker": {
+      "x": 66,
+      "y": 61,
+      "label": "Sri Lanka"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "sri-lanka",
+    "flag": "🇱🇰",
+    "name": "Sri Lanka",
+    "nativeName": "Sri Lanka",
+    "iso2": "LK",
+    "iso3": "LKA",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Sinhala and Tamil",
+    "currency": "LKR",
+    "currencyName": "Sri Lankan rupee",
+    "status": "available",
+    "summary": "Premium Sri Lanka developer hub for NIC boundary, company registration number, TIN / VAT, postal code, phone, bank branch/account, LankaPay handoff, CEFTS reference, SWIFT, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "NIC boundary",
+      "company registration number",
+      "TIN / VAT",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "bank branch/account",
+      "LankaPay handoff",
+      "CEFTS reference",
+      "SWIFT",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Sri Lankan NIC boundary Validator",
+      "Sri Lankan company registration number Validator",
+      "Sri Lankan TIN / VAT Validator",
+      "Sri Lankan Customs / Importer Code Helper",
+      "Sri Lankan EPF / ETF boundary Helper",
+      "Sri Lankan Company Onboarding Auditor",
+      "Sri Lankan ROC registry Readiness Helper",
+      "Sri Lankan ID Card Format Helper",
+      "Sri Lankan Passport Number Helper",
+      "Sri Lankan MRZ / Passport Parser",
+      "Sri Lanka Bank Account Validator",
+      "Sri Lanka Bank Account Fixture Generator",
+      "Sri Lankan Domestic Bank Account Inspector",
+      "Sri Lankan BIC / SWIFT Inspector",
+      "Sri Lankan Domestic Transfer Helper",
+      "Sri Lankan Direct Debit / Auto-Debit Mandate Helper",
+      "Sri Lankan LankaPay / CEFTS reference Reference Helper",
+      "Sri Lankan Remittance Text Builder",
+      "Sri Lankan Payment Reconciliation Helper",
+      "Sri Lankan Bank Statement Parser",
+      "Sri Lankan Masked Bank Account Formatter",
+      "Sri Lankan LKR Decimal Currency Formatter",
+      "Sri Lankan Tax Rate Sanity Helper",
+      "Sri Lankan Tax Return Field Helper",
+      "Sri Lankan Invoice Number Helper",
+      "Sri Lankan VAT invoice Readiness Checker",
+      "Sri Lankan Tax Authority Handoff Helper",
+      "Sri Lankan Accounting Audit Trail Checklist Helper",
+      "Sri Lankan Postal Code Validator",
+      "Sri Lankan Address Normalizer",
+      "Sri Lankan Address Transliteration Normalizer",
+      "Sri Lankan Region / Province Code Mapper",
+      "Sri Lankan Municipality Code Inspector",
+      "Sri Lankan Phone Number Validator",
+      "Sri Lankan Phone E.164 Formatter",
+      "Sri Lankan Date Locale Formatter",
+      "Sri Lankan CSV Locale Normalizer",
+      "Sri Lankan Slug Normalizer",
+      "Sri Lankan Document OCR Fixer",
+      "Sri Lankan PDPA privacy Redaction Helper",
+      "Sri Lankan PII Masker",
+      "Sri Lankan Personal Data Fixture Helper",
+      "Sri Lankan Driving Licence Format Helper",
+      "Sri Lankan Residence Permit Format Helper",
+      "Sri Lankan Health Card Format Helper",
+      "Sri Lankan Vehicle Plate Inspector",
+      "Sri Lankan VIN Validator",
+      "Sri Lankan Vehicle Data Redaction Helper",
+      "Sri Lankan Customs Declaration Helper",
+      "Sri Lankan Postal Tracking Helper",
+      "Sri Lankan Data Quality Workbench",
+      "Sri Lankan JSON Fixture Helper",
+      "Sri Lankan Regex Pack Helper",
+      "Sri Lankan API Payload Auditor",
+      "Sri Lankan Form Field Auditor",
+      "Sri Lankan Locale Number Parser",
+      "Sri Lankan Calendar Week Helper",
+      "Sri Lankan Company Suffix Normalizer",
+      "Sri Lankan Procurement Identifier Helper",
+      "Sri Lankan Locale Copy Checker",
+      "Sri Lankan Support Ticket Scrubber",
+      "Sri Lankan Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live ROC registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 66,
+      "y": 61
+    },
+    "searchHints": [
+      "NIC",
+      "TIN",
+      "VAT",
+      "LANKAPAY",
+      "CEFTS",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇱🇰",
+    "name": "Sri Lanka",
+    "badge": "Premium Sri Lanka developer suite",
+    "description": "Developer intelligence and browser-only workbenches for sri lankan identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Sri Lanka",
+      "population": "approximately 22M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Sri Jayawardenepura Kotte",
+      "continent": "Asia",
+      "region": "South Asia",
+      "languages": "Sinhala and Tamil",
+      "currency": "Sri Lankan rupee",
+      "currencyCode": "LKR",
+      "callingCode": "+94",
+      "internetTld": ".lk",
+      "drivingSide": "Right",
+      "iso2": "LK",
+      "iso3": "LKA",
+      "isoNumeric": "144",
+      "locale": "en-LK",
+      "icuLocale": "en_LK",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Sri Lanka",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Colombo (IST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "119 / 110",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "en-LK",
+      "cldrLocale": "en_LK",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type D / Type G",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "sri-lanka",
+      "outlineLabel": "Sri Lanka outline",
+      "mapLabel": "Sri Lanka in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Sri Lanka flag",
+      "heroAccentPrimary": "141 21 58",
+      "heroAccentSecondary": "255 183 0",
+      "heroAccentTertiary": "0 83 78"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "NIC boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "TIN / VAT and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Sri Lanka registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /sri-lanka/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Sri Lankan examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "ROC registry",
+        "text": "Official business registry or company lookup remains the source of truth for Sri Lanka.",
+        "status": "official boundary"
+      },
+      {
+        "title": "TIN / VAT",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "PDPA privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "NIC boundary, company registration number, TIN / VAT, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank branch/account, LankaPay handoff, CEFTS reference, SWIFT, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en-LK / en_LK; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "LKR amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "NIC boundary, company registration number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type D / Type G",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "119 / 110",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NIC",
+      "TIN",
+      "VAT",
+      "LANKAPAY",
+      "CEFTS",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Sri Lankan NIC boundary Validator",
+        "href": "/en/sri-lanka/sri-lanka-nic-boundary-validator/",
+        "text": "Validate NIC boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Sri Lankan company registration number Validator",
+        "href": "/en/sri-lanka/sri-lanka-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Sri Lankan TIN / VAT Validator",
+        "href": "/en/sri-lanka/sri-lanka-tax-id-validator/",
+        "text": "Normalize TIN / VAT identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Sri Lankan Customs / Importer Code Helper",
+        "href": "/en/sri-lanka/sri-lanka-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Sri Lankan EPF / ETF boundary Helper",
+        "href": "/en/sri-lanka/sri-lanka-epf-etf-boundary-social-insurance-helper/",
+        "text": "Split EPF / ETF boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Sri Lankan Company Onboarding Auditor",
+        "href": "/en/sri-lanka/sri-lanka-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Sri Lankan ROC registry Readiness Helper",
+        "href": "/en/sri-lanka/sri-lanka-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated ROC registry lookup or company registry workflow."
+      },
+      {
+        "title": "Sri Lankan ID Card Format Helper",
+        "href": "/en/sri-lanka/sri-lanka-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Sri Lankan Passport Number Helper",
+        "href": "/en/sri-lanka/sri-lanka-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Sri Lankan MRZ / Passport Parser",
+        "href": "/en/sri-lanka/sri-lanka-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Sri Lanka Bank Account Validator",
+        "href": "/en/sri-lanka/sri-lanka-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Sri Lanka Bank Account Fixture Generator",
+        "href": "/en/sri-lanka/sri-lanka-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Sri Lankan Domestic Bank Account Inspector",
+        "href": "/en/sri-lanka/sri-lanka-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Sri Lankan BIC / SWIFT Inspector",
+        "href": "/en/sri-lanka/sri-lanka-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Sri Lanka banking integrations."
+      },
+      {
+        "title": "Sri Lankan Domestic Transfer Helper",
+        "href": "/en/sri-lanka/sri-lanka-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Sri Lankan Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/sri-lanka/sri-lanka-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Sri Lankan LankaPay / CEFTS reference Reference Helper",
+        "href": "/en/sri-lanka/sri-lanka-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Sri Lankan Remittance Text Builder",
+        "href": "/en/sri-lanka/sri-lanka-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Sri Lankan Payment Reconciliation Helper",
+        "href": "/en/sri-lanka/sri-lanka-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Sri Lankan Bank Statement Parser",
+        "href": "/en/sri-lanka/sri-lanka-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Sri Lankan Masked Bank Account Formatter",
+        "href": "/en/sri-lanka/sri-lanka-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Sri Lankan LKR Decimal Currency Formatter",
+        "href": "/en/sri-lanka/sri-lanka-currency-decimal-formatter/",
+        "text": "Normalize LKR amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Sri Lankan Tax Rate Sanity Helper",
+        "href": "/en/sri-lanka/sri-lanka-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Sri Lankan Tax Return Field Helper",
+        "href": "/en/sri-lanka/sri-lanka-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Sri Lankan Invoice Number Helper",
+        "href": "/en/sri-lanka/sri-lanka-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Sri Lankan VAT invoice Readiness Checker",
+        "href": "/en/sri-lanka/sri-lanka-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Sri Lankan Tax Authority Handoff Helper",
+        "href": "/en/sri-lanka/sri-lanka-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Sri Lankan Accounting Audit Trail Checklist Helper",
+        "href": "/en/sri-lanka/sri-lanka-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Sri Lankan Postal Code Validator",
+        "href": "/en/sri-lanka/sri-lanka-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Sri Lankan Address Normalizer",
+        "href": "/en/sri-lanka/sri-lanka-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Sri Lankan Address Transliteration Normalizer",
+        "href": "/en/sri-lanka/sri-lanka-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Sri Lankan Region / Province Code Mapper",
+        "href": "/en/sri-lanka/sri-lanka-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Sri Lankan Municipality Code Inspector",
+        "href": "/en/sri-lanka/sri-lanka-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Sri Lankan Phone Number Validator",
+        "href": "/en/sri-lanka/sri-lanka-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Sri Lankan Phone E.164 Formatter",
+        "href": "/en/sri-lanka/sri-lanka-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Sri Lankan Date Locale Formatter",
+        "href": "/en/sri-lanka/sri-lanka-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Sri Lankan CSV Locale Normalizer",
+        "href": "/en/sri-lanka/sri-lanka-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Sri Lanka decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Sri Lankan Slug Normalizer",
+        "href": "/en/sri-lanka/sri-lanka-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Sri Lankan Document OCR Fixer",
+        "href": "/en/sri-lanka/sri-lanka-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Sri Lankan PDPA privacy Redaction Helper",
+        "href": "/en/sri-lanka/sri-lanka-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Sri Lankan PII Masker",
+        "href": "/en/sri-lanka/sri-lanka-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Sri Lankan Personal Data Fixture Helper",
+        "href": "/en/sri-lanka/sri-lanka-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Sri Lankan Driving Licence Format Helper",
+        "href": "/en/sri-lanka/sri-lanka-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Sri Lankan Residence Permit Format Helper",
+        "href": "/en/sri-lanka/sri-lanka-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Sri Lankan Health Card Format Helper",
+        "href": "/en/sri-lanka/sri-lanka-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Sri Lankan Vehicle Plate Inspector",
+        "href": "/en/sri-lanka/sri-lanka-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Sri Lankan VIN Validator",
+        "href": "/en/sri-lanka/sri-lanka-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Sri Lankan Vehicle Data Redaction Helper",
+        "href": "/en/sri-lanka/sri-lanka-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Sri Lankan Customs Declaration Helper",
+        "href": "/en/sri-lanka/sri-lanka-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Sri Lankan Postal Tracking Helper",
+        "href": "/en/sri-lanka/sri-lanka-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Sri Lankan Data Quality Workbench",
+        "href": "/en/sri-lanka/sri-lanka-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Sri Lankan JSON Fixture Helper",
+        "href": "/en/sri-lanka/sri-lanka-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Sri Lankan Regex Pack Helper",
+        "href": "/en/sri-lanka/sri-lanka-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Sri Lankan API Payload Auditor",
+        "href": "/en/sri-lanka/sri-lanka-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Sri Lankan Form Field Auditor",
+        "href": "/en/sri-lanka/sri-lanka-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Sri Lankan Locale Number Parser",
+        "href": "/en/sri-lanka/sri-lanka-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Sri Lanka."
+      },
+      {
+        "title": "Sri Lankan Calendar Week Helper",
+        "href": "/en/sri-lanka/sri-lanka-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Sri Lankan Company Suffix Normalizer",
+        "href": "/en/sri-lanka/sri-lanka-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Sri Lankan Procurement Identifier Helper",
+        "href": "/en/sri-lanka/sri-lanka-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Sri Lankan Locale Copy Checker",
+        "href": "/en/sri-lanka/sri-lanka-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Sri Lankan Support Ticket Scrubber",
+        "href": "/en/sri-lanka/sri-lanka-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Sri Lankan Integration Smoke Test Builder",
+        "href": "/en/sri-lanka/sri-lanka-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

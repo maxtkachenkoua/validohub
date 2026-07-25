@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: myanmar-slug-normalizer
+kind: tool
+module: validohub
+country: MM
+category: developer-tools
+status: active
+name:
+  en: "Myanmar Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.myanmar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Myanmar sample company Yaza Htarni Road 1, Naypyidaw 15011"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [myanmar-document-ocr-fixer, myanmar-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Myanmar Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

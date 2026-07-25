@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: PH
+category: finance
+status: active
+name:
+  en: "Philippine Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "07/21/2026; 1,234.56 PHP; 010 1234567890; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [philippines-bank-statement-parser, philippines-masked-bank-account-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

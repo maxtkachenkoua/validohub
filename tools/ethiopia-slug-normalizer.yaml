@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ethiopia-slug-normalizer
+kind: tool
+module: validohub
+country: ET
+category: developer-tools
+status: active
+name:
+  en: "Ethiopian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ethiopia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Ethiopia sample company Central business district, Addis Ababa 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ethiopia-document-ocr-fixer, ethiopia-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ethiopian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

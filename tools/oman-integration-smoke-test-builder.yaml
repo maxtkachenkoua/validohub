@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: oman-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: OM
+category: developer-tools
+status: active
+name:
+  en: "Omani Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.oman-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"OM\",\"civil\":\"12345678\",\"iban\":\"OM810001000000000123456789\",\"omannet\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [oman-civil-number-boundary-validator, oman-commercial-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Omani Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

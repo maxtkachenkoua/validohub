@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-company-onboarding-auditor
+kind: tool
+module: validohub
+country: AU
+category: developer-tools
+status: active
+name:
+  en: "Australian Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for ABN / ACN, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AU\",\"abn\":\"51824753556\",\"bsb\":\"062000\",\"amount\":\"1,234.56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-business-register-readiness-helper, australia-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for ABN / ACN, VAT, address, banking, and official registry handoff readiness."

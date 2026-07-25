@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: benin-id-card-format-helper
+kind: tool
+module: validohub
+country: BJ
+category: national-identifiers
+status: active
+name:
+  en: "Beninese ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.benin-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "BJ-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [benin-passport-number-helper, benin-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Beninese ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

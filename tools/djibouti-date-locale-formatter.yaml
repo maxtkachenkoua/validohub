@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: djibouti-date-locale-formatter
+kind: tool
+module: validohub
+country: DJ
+category: localization
+status: active
+name:
+  en: "Djiboutian Date Locale Formatter"
+summary:
+  en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.djibouti-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "24/07/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [djibouti-csv-locale-normalizer, djibouti-slug-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Djiboutian Date Locale Formatter | ValidoHub"
+  description:
+    en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-bic-swift-inspector
+kind: tool
+module: validohub
+country: GW
+category: finance
+status: active
+name:
+  en: "Bissau-Guinean BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Guinea-Bissau banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDGW2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-bissau-domestic-transfer-helper, guinea-bissau-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bissau-Guinean BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Guinea-Bissau banking integrations."

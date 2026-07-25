@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iraq-pii-masker
+kind: tool
+module: validohub
+country: IQ
+category: privacy
+status: active
+name:
+  en: "Iraqi PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iraq-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "123456789012 +964 770 123 4567 RRAF 123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iraq-personal-data-fixture-generator, iraq-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iraqi PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

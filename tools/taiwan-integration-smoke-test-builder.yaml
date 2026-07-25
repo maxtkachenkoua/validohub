@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: TW
+category: developer-tools
+status: active
+name:
+  en: "Taiwanese Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TW\",\"gui\":\"12345675\",\"bankCode\":\"004\",\"egui\":\"AB12345678\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [taiwan-national-id-boundary-validator, taiwan-gui-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

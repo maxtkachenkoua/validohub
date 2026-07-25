@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burkina-faso-postal-code-validator
+kind: tool
+module: validohub
+country: BF
+category: address
+status: active
+name:
+  en: "Burkinabe Postal Code Validator"
+summary:
+  en: "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burkina-faso-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "1000 Ouagadougou"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burkina-faso-address-normalizer, burkina-faso-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burkinabe Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."

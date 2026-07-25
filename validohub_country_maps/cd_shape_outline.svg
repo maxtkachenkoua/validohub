@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-85.93 -96.05 592.30 726.47" role="img">
+  <title>DR Congo country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="8.20" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="cd" d="M438.023,546.597l8.912-0.155l1.808,2.567l-0.069,1.893l0.665,0.605h4.426l1.271-2.499h1.808l0.734,0.742l2.479-0.069l0.735,8.714l4.287,0.139v0.675l11.521,5.195l0.536,1.012h2.411l-0.268-3.648l-4.356-2.092l0.269-2.766l1.876-4.392l4.287-0.139l-3.683-12.224l0.068-5.195l5.826-9.11l0.068-1.278l-0.874-0.477l0.035-2.472l-1.062-0.095l-1.072-1.366l-17.59-0.795l-3.226,3.138l-5.28-3.475l-1.858,1.141l-1.348,11.35l-3.337,2.575l-1.003,2.283l0.179,3.381l-6.017,4.918l-1.6-0.726l0.216,0.94L438.023,546.597L438.023,546.597z"/>
+  </g>
+</svg>

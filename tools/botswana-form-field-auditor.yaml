@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: botswana-form-field-auditor
+kind: tool
+module: validohub
+country: BW
+category: developer-tools
+status: active
+name:
+  en: "Botswana Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.botswana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=BW123456789&postal=1000 Gaborone&phone=+267 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [botswana-locale-number-parser, botswana-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Botswana Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

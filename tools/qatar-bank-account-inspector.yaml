@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-bank-account-inspector
+kind: tool
+module: validohub
+country: QA
+category: finance
+status: active
+name:
+  en: "Qatari Domestic Bank Account Inspector"
+summary:
+  en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "DOHB 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-bic-swift-inspector, qatar-domestic-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Domestic Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."

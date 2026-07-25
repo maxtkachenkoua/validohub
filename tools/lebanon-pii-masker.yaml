@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-pii-masker
+kind: tool
+module: validohub
+country: LB
+category: privacy
+status: active
+name:
+  en: "Lebanese PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1234567890 +961 3 123 456 0999 1001901229114"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lebanon-personal-data-fixture-generator, lebanon-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: KP
+category: privacy
+status: active
+name:
+  en: "North Korean Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "KP-900101-123456\\nCentral District 1, Pyongyang 999093\\n+850 2 123 4567"
+    actions: [generate, validate, explain]
+related:
+  explicit: [north-korea-driving-licence-format-helper, north-korea-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

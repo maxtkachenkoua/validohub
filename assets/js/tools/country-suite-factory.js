@@ -2752,25 +2752,97 @@
   function integrationTrapItems(suite, tool) {
     const custom = asArray(tool.integrationTraps).filter(Boolean);
     if (custom.length) return custom.slice(0, 10);
+    const primary = [
+      tool.id,
+      tool.name,
+      tool.code,
+      tool.kind,
+      tool.category
+    ].map(text).join(' ').toLowerCase();
+    const joined = [
+      primary,
+      tool.summary,
+      asArray(tool.chips).join(' ')
+    ].map(text).join(' ').toLowerCase();
+    const has = (pattern) => pattern.test(joined);
+    const hasPrimary = (pattern) => pattern.test(primary);
     const countryName = suite.country && suite.country.name || 'this country';
-    const name = String(tool.name || '').toLowerCase();
-    const kind = String(tool.kind || '').toLowerCase();
-    const items = [
-      'Do not treat a browser-local pass as proof that an official ' + countryName + ' registry record exists.',
-      'Normalize display punctuation separately from raw payload storage so masks, exports, and form submissions stay consistent.',
-      'Keep valid, invalid, short, and wrong-context fixtures in tests instead of replacing everything with generated happy paths.',
-      'Persist ' + countryName + ' country/locale context with exported JSON so downstream validators do not apply another country\'s rules.'
-    ];
-    if (/iban|bank|payment|swift|bic|account|sepa|remittance/.test(name + ' ' + kind)) {
-      items.push('Do not skip checksum, bank-code, and account-field replay when grouping, masking, or generating payment fixtures.');
-    } else if (/tax|vat|invoice|company|business|register|registry|customs/.test(name + ' ' + kind)) {
-      items.push('Separate syntax/checksum evidence from live tax, VAT, company, or customs status lookup.');
-    } else if (/address|postal|phone|date|locale|csv|slug/.test(name + ' ' + kind)) {
-      items.push('Do not assume formatted local text proves deliverability, assignment, or user ownership.');
-    } else {
-      items.push('Mask or redact raw personal data before moving debugger output into tickets, logs, screenshots, or shared fixtures.');
+    const localeNote = `Persist ${countryName} country and locale metadata with exported fixtures so downstream services do not silently apply another market's rules.`;
+    const fixtureNote = 'Keep success, malformed, short, wrong-prefix, and edge-case fixtures in CI; generated happy paths alone miss most integration regressions.';
+
+    if (hasPrimary(/tax|vat|tin|ein|ssn|itin|invoice|receipt|company|business|registry|register|customs|importer|procurement|license|licence|kyb|ownership/)) {
+      return [
+        'Separate format/checksum evidence from official registration, filing, tax-status, and company-status lookups.',
+        'Do not auto-pad, truncate, or “repair” submitted identifiers unless the user can see the original value and approve the normalized value.',
+        'Version tax and invoice fixtures by jurisdiction and filing period; old samples can stay syntactically valid while business rules change.',
+        'Keep company, branch, tax, and invoice fields as named payload properties instead of collapsing everything into one display string.',
+        fixtureNote,
+        localeNote
+      ];
     }
-    return items.slice(0, 6);
+
+    if (hasPrimary(/privacy|pii|redact|mask|scrubber|retention|support ticket|personal data|fixture generator|json fixture|seed|test case|regex|slug|transliteration/)) {
+      return [
+        'Decide which fields are safe fixtures and which are personal data before exporting JSON, screenshots, or test seeds.',
+        'Keep reversible masking out of shared logs; use irreversible redaction for tickets, analytics, demos, and vendor handoffs.',
+        'Test Unicode, mixed scripts, emoji, long names, punctuation, and copied spreadsheet cells before using generated fixtures in CI.',
+        'Do not let generated fake data resemble real customer records closely enough to be mistaken for production data.',
+        fixtureNote,
+        localeNote
+      ];
+    }
+
+    if (hasPrimary(/api|payload|openapi|graphql|webhook|csv|sql|schema|integration|smoke|audit trail|data quality|ocr|document/)) {
+      return [
+        'Keep normalized fields, raw source text, and parser diagnostics separate so API consumers can debug rejects without re-parsing the display string.',
+        'Test batch imports with empty rows, duplicate rows, extra columns, bad encodings, pasted spreadsheet quotes, and mixed newline styles.',
+        'Do not make API success depend on UI-only formatting; server payloads should carry explicit country, locale, currency, and field-type metadata.',
+        'Use stable error codes for integration tests, not only translated human-readable messages.',
+        fixtureNote,
+        localeNote
+      ];
+    }
+
+    if (hasPrimary(/passport|mrz|identity|national id|id card|citizen|personal|social|health|driving|driver|vehicle|plate|vin|residence/)) {
+      return [
+        'Mask personal identifiers by default in logs, screenshots, analytics events, and support tickets; expose raw values only in the local form state.',
+        'Do not treat a local pattern match as proof of identity, age, residency, entitlement, vehicle ownership, or document authenticity.',
+        'Keep document type, issuing country, serial/body, check digit, and expiry fields separate so OCR corrections do not corrupt the whole value.',
+        'Test lowercase, transliterated names, OCR-confused characters, pasted separators, and expired/edge-date samples.',
+        fixtureNote,
+        localeNote
+      ];
+    }
+
+    if (hasPrimary(/address|postal|postcode|zip|phone|e164|locality|municipality|region|province|state|timezone|time zone|holiday|calendar|date|hours/)) {
+      return [
+        'Do not treat formatted address, postal, or phone syntax as proof of deliverability, number ownership, or service coverage.',
+        'Preserve the user-entered display value alongside normalized components; users often need local punctuation for invoices, labels, and support forms.',
+        'Test leading zeroes, local-language place names, region aliases, mobile/fixed-line prefixes, and pasted international formats.',
+        'Keep timezone, calendar, and holiday logic explicit in payloads instead of inferring it from browser locale.',
+        fixtureNote,
+        localeNote
+      ];
+    }
+
+    if (hasPrimary(/iban|bban|bank|account|routing|swift|bic|payment|sepa|ach|fedwire|bpay|pix|remittance|payout|refund|chargeback|reconciliation/)) {
+      return [
+        'Store the normalized routing/account payload separately from the human display mask so bank files, logs, and UI previews do not drift.',
+        'Replay checksum, bank-code, branch-code, account-body, and country-prefix slices after every formatter or masking change.',
+        'Treat a structurally valid payment reference as syntax only; ownership, settlement reachability, sanctions, and balance checks belong to payment providers or banks.',
+        'Test copy/paste with spaces, hyphens, non-breaking spaces, leading zeroes, and pasted statement text before wiring imports.',
+        fixtureNote,
+        localeNote
+      ];
+    }
+
+    return [
+      'Keep raw input, normalized value, display value, and masked preview as separate fields in forms, exports, and logs.',
+      'Do not treat local browser analysis as live official status, ownership, eligibility, or legal acceptance.',
+      'Exercise valid, invalid, short, wrong-context, pasted, and generated samples before wiring the workflow into production forms.',
+      'Record country, locale, currency, and data-source assumptions with every exported payload.',
+      'Mask personal or commercially sensitive values before sharing debugger output outside the local browser.'
+    ];
   }
 
   function renderIntegrationTraps(suite, tool) {
@@ -3100,7 +3172,7 @@
       rootElement.style.setProperty('--csf-accent', suite.theme.accent);
       rootElement.style.setProperty('--csf-accent-2', suite.theme.accent2);
       rootElement.style.setProperty('--csf-accent-3', suite.theme.accent3 || '#f59e0b');
-      rootElement.innerHTML = `${renderHero(suite, tool)}${renderToolContext(suite, tool)}${renderIntegrationTraps(suite, tool)}${renderRichLayer(suite, tool)}${renderInput(suite, tool)}<div data-csf-output></div>`;
+      rootElement.innerHTML = `${renderHero(suite, tool)}${renderToolContext(suite, tool)}${renderRichLayer(suite, tool)}${renderIntegrationTraps(suite, tool)}${renderInput(suite, tool)}<div data-csf-output></div>`;
 
       const input = rootElement.querySelector('[data-csf-input]');
       const output = rootElement.querySelector('[data-csf-output]');

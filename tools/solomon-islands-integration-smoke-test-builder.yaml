@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: SB
+category: developer-tools
+status: active
+name:
+  en: "Solomon Islands Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SB\",\"taxNumber\":\"SB123456789\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [solomon-islands-tin-boundary-validator, solomon-islands-company-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

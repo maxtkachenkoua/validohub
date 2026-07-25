@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-api-payload-auditor
+kind: tool
+module: validohub
+country: TR
+category: developer-tools
+status: active
+name:
+  en: "Turkish API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TR\",\"tckn\":\"10000000146\",\"iban\":\"TR330006100519786457841326\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-form-field-auditor, turkey-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

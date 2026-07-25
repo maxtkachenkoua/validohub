@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-realme-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: NZ
+category: national-identifiers
+status: active
+name:
+  en: "New Zealand RealMe boundary Helper"
+summary:
+  en: "Split RealMe boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "RealMe boundary"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-company-onboarding-auditor, new-zealand-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand RealMe boundary Helper | ValidoHub"
+  description:
+    en: "Split RealMe boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

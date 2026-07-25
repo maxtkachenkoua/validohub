@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: madagascar-company-suffix-normalizer
+kind: tool
+module: validohub
+country: MG
+category: developer-tools
+status: active
+name:
+  en: "Malagasy Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.madagascar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Madagascar Sample Holding Ltd MG-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [madagascar-procurement-identifier-helper, madagascar-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malagasy Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

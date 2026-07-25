@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-address-normalizer
+kind: tool
+module: validohub
+country: BI
+category: address
+status: active
+name:
+  en: "Burundian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Central business district, Gitega 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-address-transliteration-normalizer, burundi-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

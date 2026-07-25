@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: djibouti-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: DJ
+category: address
+status: active
+name:
+  en: "Djiboutian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.djibouti-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Central business district, Djibouti 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [djibouti-region-code-mapper, djibouti-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Djiboutian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-driving-licence-format-helper
+kind: tool
+module: validohub
+country: MN
+category: documents
+status: active
+name:
+  en: "Mongolian Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "УА90010123 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-residence-permit-format-helper, mongolia-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

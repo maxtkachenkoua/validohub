@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vanuatu-csv-locale-normalizer
+kind: tool
+module: validohub
+country: VU
+category: developer-tools
+status: active
+name:
+  en: "Vanuatuan CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Vanuatu decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vanuatu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234 VUV;24/07/2026;VU123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vanuatu-slug-normalizer, vanuatu-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vanuatuan CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Vanuatu decimal, date, postal, phone, tax, and banking fields."

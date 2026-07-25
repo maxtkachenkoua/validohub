@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-pii-masker
+kind: tool
+module: validohub
+country: TH
+category: privacy
+status: active
+name:
+  en: "Thai PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1101700203451 +66 81 234 5678 002 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-personal-data-fixture-generator, thailand-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

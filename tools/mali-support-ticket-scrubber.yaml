@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mali-support-ticket-scrubber
+kind: tool
+module: validohub
+country: ML
+category: privacy
+status: active
+name:
+  en: "Malian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mali-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent ML-ID-123456, 001 1234567890, Central business district, Bamako 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mali-integration-smoke-test-builder, mali-national-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

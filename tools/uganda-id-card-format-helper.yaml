@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uganda-id-card-format-helper
+kind: tool
+module: validohub
+country: UG
+category: national-identifiers
+status: active
+name:
+  en: "Ugandan ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uganda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "UG-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uganda-passport-number-helper, uganda-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ugandan ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-84.20 -85.29 682.36 683.59" role="img">
+  <title>Cameroon country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.45" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="cm" d="M428.031,519.428l2.783,2.561l-0.199,3.959l15.266-0.354l1.245-1.399l-4.375-4.711l-0.648-1.703l2.784-5.212l-1.893-3.458l-1.591-0.855v-1.755l1.841-1.202l0.104-5.463l-1.46-0.164l-0.024,2.87l-6.414,11.972l-3.925,0.199l-2.688,1.85L428.031,519.428L428.031,519.428z"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BT
+slug: bhutan
+name:
+  en: Bhutan
+region: Asia
+languages:
+  - dz
+currency: BTN
+relatedCountries:
+  - IN
+  - BD
+  - NP

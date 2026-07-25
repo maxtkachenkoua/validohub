@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chad-passport-number-helper
+kind: tool
+module: validohub
+country: TD
+category: national-identifiers
+status: active
+name:
+  en: "Chadian Passport Number Helper"
+summary:
+  en: "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chad-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PASS input"
+        required: true
+        placeholder:
+          en: "P<TCDCHADIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chad-mrz-passport-parser, chad-bank-account-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chadian Passport Number Helper | ValidoHub"
+  description:
+    en: "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."

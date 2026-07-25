@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-residence-permit-format-helper
+kind: tool
+module: validohub
+country: TH
+category: documents
+status: active
+name:
+  en: "Thai Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "TH PERMIT 2026 1101700203451"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-health-card-format-helper, thailand-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

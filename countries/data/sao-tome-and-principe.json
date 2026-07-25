@@ -1,0 +1,642 @@
+{
+  "id": "sao-tome-and-principe",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/sao-tome-and-principe-outline.png",
+    "outlineAlt": "Sao Tome and Principe country outline",
+    "mapSrc": "/assets/images/countries/sao-tome-and-principe-location.png",
+    "mapAlt": "World map with Sao Tome and Principe location marker",
+    "mapMarker": {
+      "x": 45,
+      "y": 55,
+      "label": "Sao Tome and Principe"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "sao-tome-and-principe",
+    "flag": "🇸🇹",
+    "name": "Sao Tome and Principe",
+    "nativeName": "Sao Tome e Principe",
+    "iso2": "ST",
+    "iso3": "STP",
+    "continent": "Africa",
+    "region": "Africa",
+    "language": "Portuguese",
+    "currency": "STN",
+    "currencyName": "Sao Tome and Principe dobra",
+    "status": "available",
+    "summary": "Premium Sao Tome and Principe developer hub for National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone, bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "National ID boundary",
+      "company registration number",
+      "tax number / VAT boundary",
+      "postal/address code",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "domestic transfer reference",
+      "SWIFT/BIC",
+      "invoice reference",
+      "payment reconciliation"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Sao Tomean national ID boundary Validator",
+      "Sao Tomean company registration number Validator",
+      "Sao Tomean tax number / VAT boundary Validator",
+      "Sao Tomean Customs / Importer Code Helper",
+      "Sao Tomean social security boundary Helper",
+      "Sao Tomean Company Onboarding Auditor",
+      "Sao Tomean business registry Readiness Helper",
+      "Sao Tomean ID Card Format Helper",
+      "Sao Tomean Passport Number Helper",
+      "Sao Tomean MRZ / Passport Parser",
+      "Sao Tome and Principe Bank Account Validator",
+      "Sao Tome and Principe Bank Account Fixture Generator",
+      "Sao Tomean Domestic Bank Account Inspector",
+      "Sao Tomean BIC / SWIFT Inspector",
+      "Sao Tomean Domestic Transfer Helper",
+      "Sao Tomean Direct Debit / Auto-Debit Mandate Helper",
+      "Sao Tomean bank transfer / payment reference Reference Helper",
+      "Sao Tomean Remittance Text Builder",
+      "Sao Tomean Payment Reconciliation Helper",
+      "Sao Tomean Bank Statement Parser",
+      "Sao Tomean Masked Bank Account Formatter",
+      "Sao Tomean STN Decimal Currency Formatter",
+      "Sao Tomean Tax Rate Sanity Helper",
+      "Sao Tomean Tax Return Field Helper",
+      "Sao Tomean Invoice Number Helper",
+      "Sao Tomean tax invoice Readiness Checker",
+      "Sao Tomean Tax Authority Handoff Helper",
+      "Sao Tomean Accounting Audit Trail Checklist Helper",
+      "Sao Tomean Postal Code Validator",
+      "Sao Tomean Address Normalizer",
+      "Sao Tomean Address Transliteration Normalizer",
+      "Sao Tomean Region / Province Code Mapper",
+      "Sao Tomean Municipality Code Inspector",
+      "Sao Tomean Phone Number Validator",
+      "Sao Tomean Phone E.164 Formatter",
+      "Sao Tomean Date Locale Formatter",
+      "Sao Tomean CSV Locale Normalizer",
+      "Sao Tomean Slug Normalizer",
+      "Sao Tomean Document OCR Fixer",
+      "Sao Tomean data protection / privacy boundary Redaction Helper",
+      "Sao Tomean PII Masker",
+      "Sao Tomean Personal Data Fixture Helper",
+      "Sao Tomean Driving Licence Format Helper",
+      "Sao Tomean Residence Permit Format Helper",
+      "Sao Tomean Health Card Format Helper",
+      "Sao Tomean Vehicle Plate Inspector",
+      "Sao Tomean VIN Validator",
+      "Sao Tomean Vehicle Data Redaction Helper",
+      "Sao Tomean Customs Declaration Helper",
+      "Sao Tomean Postal Tracking Helper",
+      "Sao Tomean Data Quality Workbench",
+      "Sao Tomean JSON Fixture Helper",
+      "Sao Tomean Regex Pack Helper",
+      "Sao Tomean API Payload Auditor",
+      "Sao Tomean Form Field Auditor",
+      "Sao Tomean Locale Number Parser",
+      "Sao Tomean Calendar Week Helper",
+      "Sao Tomean Company Suffix Normalizer",
+      "Sao Tomean Procurement Identifier Helper",
+      "Sao Tomean Locale Copy Checker",
+      "Sao Tomean Support Ticket Scrubber",
+      "Sao Tomean Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 45,
+      "y": 55
+    },
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇸🇹",
+    "name": "Sao Tome and Principe",
+    "badge": "Premium Sao Tome and Principe developer suite",
+    "description": "Developer intelligence and browser-only workbenches for sao tomean identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Sao Tome e Principe",
+      "population": "approximately 0.2M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Sao Tome",
+      "continent": "Africa",
+      "region": "Middle Africa / Gulf of Guinea",
+      "languages": "Portuguese",
+      "currency": "Sao Tome and Principe dobra",
+      "currencyCode": "STN",
+      "callingCode": "+239",
+      "internetTld": ".st",
+      "drivingSide": "Right",
+      "iso2": "ST",
+      "iso3": "STP",
+      "isoNumeric": "678",
+      "locale": "pt-ST",
+      "icuLocale": "pt_ST",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Space",
+      "addressFormat": "Street, number, postal code, locality, Sao Tome and Principe",
+      "postalCodeFormat": "postal/address code",
+      "primaryTimeZone": "Africa/Abidjan (GMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "pt-ST",
+      "cldrLocale": "pt_ST",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "sao-tome-and-principe",
+      "outlineLabel": "Sao Tome and Principe outline",
+      "mapLabel": "Sao Tome and Principe in the world",
+      "continentBadge": "Africa",
+      "flagLabel": "Sao Tome and Principe flag",
+      "heroAccentPrimary": "18 173 43",
+      "heroAccentSecondary": "255 206 0",
+      "heroAccentTertiary": "210 16 52"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax number / VAT boundary and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Sao Tome and Principe registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /sao-tome-and-principe/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Space rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Sao Tomean examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Sao Tome and Principe.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax number / VAT boundary",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "data protection / privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "pt-ST / pt_ST; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "STN amounts use Comma (,) and Space.",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, company registration number, postal/address code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Sao Tomean national ID boundary Validator",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Sao Tomean company registration number Validator",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Sao Tomean tax number / VAT boundary Validator",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-tax-id-validator/",
+        "text": "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Sao Tomean Customs / Importer Code Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Sao Tomean social security boundary Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-social-security-boundary-social-insurance-helper/",
+        "text": "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Sao Tomean Company Onboarding Auditor",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Sao Tomean business registry Readiness Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+      },
+      {
+        "title": "Sao Tomean ID Card Format Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Sao Tomean Passport Number Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Sao Tomean MRZ / Passport Parser",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Sao Tome and Principe Bank Account Validator",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Sao Tome and Principe Bank Account Fixture Generator",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Sao Tomean Domestic Bank Account Inspector",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Sao Tomean BIC / SWIFT Inspector",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Sao Tome and Principe banking integrations."
+      },
+      {
+        "title": "Sao Tomean Domestic Transfer Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Sao Tomean Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Sao Tomean bank transfer / payment reference Reference Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Sao Tomean Remittance Text Builder",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Sao Tomean Payment Reconciliation Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Sao Tomean Bank Statement Parser",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Sao Tomean Masked Bank Account Formatter",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Sao Tomean STN Decimal Currency Formatter",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-currency-decimal-formatter/",
+        "text": "Normalize STN amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Sao Tomean Tax Rate Sanity Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Sao Tomean Tax Return Field Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Sao Tomean Invoice Number Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Sao Tomean tax invoice Readiness Checker",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Sao Tomean Tax Authority Handoff Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Sao Tomean Accounting Audit Trail Checklist Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Sao Tomean Postal Code Validator",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-postal-code-validator/",
+        "text": "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Sao Tomean Address Normalizer",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Sao Tomean Address Transliteration Normalizer",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Sao Tomean Region / Province Code Mapper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Sao Tomean Municipality Code Inspector",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Sao Tomean Phone Number Validator",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Sao Tomean Phone E.164 Formatter",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Sao Tomean Date Locale Formatter",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Sao Tomean CSV Locale Normalizer",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Sao Tome and Principe decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Sao Tomean Slug Normalizer",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Sao Tomean Document OCR Fixer",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Sao Tomean data protection / privacy boundary Redaction Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Sao Tomean PII Masker",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Sao Tomean Personal Data Fixture Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Sao Tomean Driving Licence Format Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Sao Tomean Residence Permit Format Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Sao Tomean Health Card Format Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Sao Tomean Vehicle Plate Inspector",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Sao Tomean VIN Validator",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Sao Tomean Vehicle Data Redaction Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Sao Tomean Customs Declaration Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Sao Tomean Postal Tracking Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Sao Tomean Data Quality Workbench",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Sao Tomean JSON Fixture Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Sao Tomean Regex Pack Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Sao Tomean API Payload Auditor",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Sao Tomean Form Field Auditor",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Sao Tomean Locale Number Parser",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Sao Tome and Principe."
+      },
+      {
+        "title": "Sao Tomean Calendar Week Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Sao Tomean Company Suffix Normalizer",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Sao Tomean Procurement Identifier Helper",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Sao Tomean Locale Copy Checker",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Sao Tomean Support Ticket Scrubber",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Sao Tomean Integration Smoke Test Builder",
+        "href": "/en/sao-tome-and-principe/sao-tome-and-principe-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

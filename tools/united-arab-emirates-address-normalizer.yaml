@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-address-normalizer
+kind: tool
+module: validohub
+country: AE
+category: address
+status: active
+name:
+  en: "UAE Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Al Maryah Island, Abu Dhabi, PO Box 12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-address-transliteration-normalizer, united-arab-emirates-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

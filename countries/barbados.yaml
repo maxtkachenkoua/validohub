@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BB
+slug: barbados
+name:
+  en: "Barbados"
+region: North America
+languages:
+  - en
+currency: BBD
+relatedCountries:
+  - LC
+  - VC
+  - TT

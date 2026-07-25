@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-bank-account-inspector
+kind: tool
+module: validohub
+country: MY
+category: finance
+status: active
+name:
+  en: "Malaysian Domestic Bank Account Inspector"
+summary:
+  en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "5140 123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-bic-swift-inspector, malaysia-domestic-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Domestic Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."

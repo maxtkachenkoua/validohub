@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-company-suffix-normalizer
+kind: tool
+module: validohub
+country: CI
+category: developer-tools
+status: active
+name:
+  en: "Ivorian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Cote dIvoire Sample Holding Ltd CI-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-procurement-identifier-helper, cote-d-ivoire-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: BH
+category: privacy
+status: active
+name:
+  en: "Bahraini Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "900101123\\nGovernment Avenue 1, Manama, Block 316\\n+973 3600 1234"
+    actions: [generate, validate, explain]
+related:
+  explicit: [bahrain-driving-licence-format-helper, bahrain-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

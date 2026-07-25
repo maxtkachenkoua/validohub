@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: eswatini-locale-number-parser
+kind: tool
+module: validohub
+country: SZ
+category: localization
+status: active
+name:
+  en: "Swazi Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Eswatini."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.eswatini-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 SZL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [eswatini-calendar-week-helper, eswatini-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swazi Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Eswatini."

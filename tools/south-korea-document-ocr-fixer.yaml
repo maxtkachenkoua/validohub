@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-document-ocr-fixer
+kind: tool
+module: validohub
+country: KR
+category: documents
+status: active
+name:
+  en: "South Korean Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "900101-1234567 123-45-67890 088 1234567890123 04524 Seoul"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-privacy-redaction-helper, south-korea-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

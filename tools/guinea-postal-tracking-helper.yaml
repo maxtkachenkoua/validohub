@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-postal-tracking-helper
+kind: tool
+module: validohub
+country: GN
+category: logistics
+status: active
+name:
+  en: "Guinean Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1000 Conakry"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-data-quality-workbench, guinea-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guinean Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

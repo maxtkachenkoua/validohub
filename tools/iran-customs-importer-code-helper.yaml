@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-customs-importer-code-helper
+kind: tool
+module: validohub
+country: IR
+category: national-identifiers
+status: active
+name:
+  en: "Iranian Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "IR10101234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-social-security-boundary-social-insurance-helper, iran-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

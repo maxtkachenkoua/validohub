@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-business-register-readiness-helper
+kind: tool
+module: validohub
+country: PG
+category: government
+status: active
+name:
+  en: "Papua New Guinean IPA business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated IPA business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "PG-REG-123456 PG123456789 Waigani, Port Moresby NCD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-id-card-format-helper, papua-new-guinea-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean IPA business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated IPA business registry lookup or company registry workflow."

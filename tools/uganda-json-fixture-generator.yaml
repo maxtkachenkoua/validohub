@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uganda-json-fixture-generator
+kind: tool
+module: validohub
+country: UG
+category: developer-tools
+status: active
+name:
+  en: "Ugandan JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.uganda-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"UG\",\"taxNumber\":\"UG123456789\",\"paymentReference\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [uganda-regex-pack-helper, uganda-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ugandan JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

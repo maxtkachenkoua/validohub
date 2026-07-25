@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: KW
+category: tax
+status: active
+name:
+  en: "Kuwaiti Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "tax file number 20% base 1,234.560 KWD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-tax-return-field-helper, kuwait-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

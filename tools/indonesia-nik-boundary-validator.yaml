@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-nik-boundary-validator
+kind: tool
+module: validohub
+country: ID
+category: national-identifiers
+status: active
+name:
+  en: "Indonesian NIK boundary Validator"
+summary:
+  en: "Validate NIK boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "3174010101900001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-nib-company-registration-validator, indonesia-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian NIK boundary Validator | ValidoHub"
+  description:
+    en: "Validate NIK boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

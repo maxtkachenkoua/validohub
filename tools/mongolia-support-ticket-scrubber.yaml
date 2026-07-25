@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: MN
+category: privacy
+status: active
+name:
+  en: "Mongolian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent УА90010123, 050 1234567890, Peace Avenue 1, Ulaanbaatar 14200"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-integration-smoke-test-builder, mongolia-citizen-registration-number-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

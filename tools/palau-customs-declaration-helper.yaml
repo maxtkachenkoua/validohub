@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palau-customs-declaration-helper
+kind: tool
+module: validohub
+country: PW
+category: government
+status: active
+name:
+  en: "Palauan Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "PW123456789 HS 8471 1,234.56 USD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palau-postal-tracking-helper, palau-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palauan Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-company-suffix-normalizer
+kind: tool
+module: validohub
+country: MY
+category: developer-tools
+status: active
+name:
+  en: "Malaysian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Malaysia Sample Holding Ltd 201901234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-procurement-identifier-helper, malaysia-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-health-card-format-helper
+kind: tool
+module: validohub
+country: CI
+category: documents
+status: active
+name:
+  en: "Ivorian Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "CI-ID-123456 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-vehicle-plate-inspector, cote-d-ivoire-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

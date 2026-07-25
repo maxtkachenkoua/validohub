@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: UZ
+slug: uzbekistan
+name:
+  en: Uzbekistan
+region: Asia
+languages:
+  - uz
+currency: UZS
+relatedCountries:
+  - KZ
+  - KG
+  - TJ

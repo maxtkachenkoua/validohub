@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: GE
+category: address
+status: active
+name:
+  en: "Georgian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Rustaveli Avenue 1, Tbilisi 0105"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-region-code-mapper, georgia-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

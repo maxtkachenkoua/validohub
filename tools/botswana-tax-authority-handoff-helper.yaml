@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: botswana-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: BW
+category: tax
+status: active
+name:
+  en: "Botswana Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.botswana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "BW123456789 24/07/2026 1,234.56 BWP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [botswana-accounting-audit-trail-checklist-generator, botswana-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Botswana Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burkina-faso-slug-normalizer
+kind: tool
+module: validohub
+country: BF
+category: developer-tools
+status: active
+name:
+  en: "Burkinabe Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burkina-faso-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Burkina Faso sample company Central business district, Ouagadougou 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burkina-faso-document-ocr-fixer, burkina-faso-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burkinabe Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

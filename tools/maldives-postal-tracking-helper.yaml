@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-postal-tracking-helper
+kind: tool
+module: validohub
+country: MV
+category: logistics
+status: active
+name:
+  en: "Maldivian Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 Male 20026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [maldives-data-quality-workbench, maldives-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-phone-e164-formatter
+kind: tool
+module: validohub
+country: UZ
+category: address
+status: active
+name:
+  en: "Uzbek Phone E.164 Formatter"
+summary:
+  en: "Normalize local phone input to E.164-style previews and split country/national evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "E164 input"
+        required: true
+        placeholder:
+          en: "+998 90 123 45 67"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-date-locale-formatter, uzbekistan-csv-locale-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek Phone E.164 Formatter | ValidoHub"
+  description:
+    en: "Normalize local phone input to E.164-style previews and split country/national evidence."

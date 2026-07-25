@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-support-ticket-scrubber
+kind: tool
+module: validohub
+country: LK
+category: privacy
+status: active
+name:
+  en: "Sri Lankan Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 199012345678, 7010 1234567890, Galle Road 1, Colombo 00100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-integration-smoke-test-builder, sri-lanka-nic-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: CV
+category: transport
+status: active
+name:
+  en: "Cabo Verdean Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "CV 1234 WVWZZZ1JZXW000001 CV-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-customs-declaration-helper, cabo-verde-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

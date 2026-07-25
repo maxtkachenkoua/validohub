@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-privacy-redaction-helper
+kind: tool
+module: validohub
+country: PH
+category: privacy
+status: active
+name:
+  en: "Philippine Data Privacy Act privacy Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PH\",\"tin\":\"123-456-789-000\",\"instapay\":\"0101234567890\",\"amount\":\"1,234.56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [philippines-pii-masker, philippines-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine Data Privacy Act privacy Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

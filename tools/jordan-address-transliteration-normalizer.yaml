@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: JO
+category: address
+status: active
+name:
+  en: "Jordanian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Zahran Street 1, Amman 11118"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-region-code-mapper, jordan-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

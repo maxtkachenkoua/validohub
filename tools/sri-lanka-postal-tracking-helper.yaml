@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-postal-tracking-helper
+kind: tool
+module: validohub
+country: LK
+category: logistics
+status: active
+name:
+  en: "Sri Lankan Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 00100 Colombo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-data-quality-workbench, sri-lanka-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-national-code-boundary-validator
+kind: tool
+module: validohub
+country: IR
+category: national-identifiers
+status: active
+name:
+  en: "Iranian national code boundary Validator"
+summary:
+  en: "Validate national code boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "0084575941"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-national-company-id-validator, iran-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian national code boundary Validator | ValidoHub"
+  description:
+    en: "Validate national code boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

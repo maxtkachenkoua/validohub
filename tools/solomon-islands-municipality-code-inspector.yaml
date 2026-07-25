@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-municipality-code-inspector
+kind: tool
+module: validohub
+country: SB
+category: address
+status: active
+name:
+  en: "Solomon Islands Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Mendana Avenue, Honiara"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-phone-number-validator, solomon-islands-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

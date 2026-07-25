@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kiribati-social-protection-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: KI
+category: national-identifiers
+status: active
+name:
+  en: "I-Kiribati social protection boundary Helper"
+summary:
+  en: "Split social protection boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kiribati-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "KI-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kiribati-company-onboarding-auditor, kiribati-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "I-Kiribati social protection boundary Helper | ValidoHub"
+  description:
+    en: "Split social protection boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

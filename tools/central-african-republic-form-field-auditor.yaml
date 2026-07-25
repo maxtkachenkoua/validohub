@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-form-field-auditor
+kind: tool
+module: validohub
+country: CF
+category: developer-tools
+status: active
+name:
+  en: "Central African Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=CF123456789&postal=1000 Bangui&phone=+236 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-locale-number-parser, central-african-republic-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

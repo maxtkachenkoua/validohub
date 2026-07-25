@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-domestic-transfer-helper
+kind: tool
+module: validohub
+country: MN
+category: finance
+status: active
+name:
+  en: "Mongolian Domestic Transfer Helper"
+summary:
+  en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "050 1234567890\\n1,234,567 MNT\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-direct-debit-mandate-helper, mongolia-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."

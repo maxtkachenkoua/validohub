@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zimbabwe-mrz-passport-parser
+kind: tool
+module: validohub
+country: ZW
+category: national-identifiers
+status: active
+name:
+  en: "Zimbabwean MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zimbabwe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<ZWESAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567ZWE8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zimbabwe-bank-account-validator, zimbabwe-bank-account-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zimbabwean MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

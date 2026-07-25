@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: congo-procurement-identifier-helper
+kind: tool
+module: validohub
+country: CG
+category: government
+status: active
+name:
+  en: "Congolese Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.congo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "CG-REG-123456 PO-2026-001 CG123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [congo-accessibility-locale-copy-checker, congo-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Congolese Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

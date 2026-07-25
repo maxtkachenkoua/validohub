@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: laos-remittance-text-builder
+kind: tool
+module: validohub
+country: LA
+category: finance
+status: active
+name:
+  en: "Lao Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.laos-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 TIN123456789 1,234,567 LAK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [laos-payment-reconciliation-helper, laos-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lao Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

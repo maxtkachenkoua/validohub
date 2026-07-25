@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: GW
+category: address
+status: active
+name:
+  en: "Bissau-Guinean Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Central business district, Bissau 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-bissau-region-code-mapper, guinea-bissau-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bissau-Guinean Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

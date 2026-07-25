@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-75.47 -92.79 579.72 723.77" role="img">
+  <title>Angola country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="8.03" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <g id="ao">
+        <path  d="M437.366,547.461l2.948,11.003l-0.069,3.478l-4.313,4.633l-0.647,7.527l16.597,0.147l5.395,1.954l4.45-0.58l-2.594-3.251l0.01-9.282l5.101-0.217v-3.621l-4.142-0.172l-0.829-8.575l-1.746,0.024l-0.943-0.848l-1.027,0.054l-1.365,2.646h-5.255l-1.22-1.227l0.363-1.738l-1.436-2.101L437.366,547.461L437.366,547.461z"/>
+        <path d="M435.577,544.453l1.504,1.953l1.945-1.842l-0.571-1.909l-0.483-0.035L435.577,544.453L435.577,544.453z"/>
+    </g>
+  </g>
+</svg>

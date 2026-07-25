@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-company-suffix-normalizer
+kind: tool
+module: validohub
+country: IN
+category: developer-tools
+status: active
+name:
+  en: "Indian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "India Sample Holding Ltd U72900DL2020PTC123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-procurement-identifier-helper, india-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

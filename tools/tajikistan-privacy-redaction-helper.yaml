@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-privacy-redaction-helper
+kind: tool
+module: validohub
+country: TJ
+category: privacy
+status: active
+name:
+  en: "Tajik personal-data privacy Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TJ\",\"tin\":\"123456789\",\"mfo\":\"350101\",\"payment\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-pii-masker, tajikistan-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik personal-data privacy Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

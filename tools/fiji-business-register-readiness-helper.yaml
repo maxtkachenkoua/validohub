@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-business-register-readiness-helper
+kind: tool
+module: validohub
+country: FJ
+category: government
+status: active
+name:
+  en: "Fijian Registrar of Companies Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Registrar of Companies lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "FJ-REG-123456 FJ123456789 Victoria Parade, Suva"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-id-card-format-helper, fiji-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian Registrar of Companies Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Registrar of Companies lookup or company registry workflow."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: djibouti-slug-normalizer
+kind: tool
+module: validohub
+country: DJ
+category: developer-tools
+status: active
+name:
+  en: "Djiboutian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.djibouti-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Djibouti sample company Central business district, Djibouti 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [djibouti-document-ocr-fixer, djibouti-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Djiboutian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

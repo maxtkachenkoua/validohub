@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-business-corporation-number-validator
+kind: tool
+module: validohub
+country: MH
+category: national-identifiers
+status: active
+name:
+  en: "Marshallese business corporation number Validator"
+summary:
+  en: "Inspect business corporation number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "MH-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-tax-id-validator, marshall-islands-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese business corporation number Validator | ValidoHub"
+  description:
+    en: "Inspect business corporation number structure, registry-style prefixes, control digits, and official lookup boundaries."

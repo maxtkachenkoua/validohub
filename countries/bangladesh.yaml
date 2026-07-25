@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BD
+slug: bangladesh
+name:
+  en: Bangladesh
+region: Asia
+languages:
+  - bn
+currency: BDT
+relatedCountries:
+  - IN
+  - PK
+  - SG

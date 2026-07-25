@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: TJ
+category: transport
+status: active
+name:
+  en: "Tajik Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "01 1234 AA WVWZZZ1JZXW000001 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-customs-declaration-helper, tajikistan-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

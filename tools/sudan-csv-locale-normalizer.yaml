@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sudan-csv-locale-normalizer
+kind: tool
+module: validohub
+country: SD
+category: developer-tools
+status: active
+name:
+  en: "Sudanese CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Sudan decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 SDG;24/07/2026;SD123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sudan-slug-normalizer, sudan-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sudanese CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Sudan decimal, date, postal, phone, tax, and banking fields."

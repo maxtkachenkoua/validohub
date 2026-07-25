@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-passport-number-helper
+kind: tool
+module: validohub
+country: BI
+category: national-identifiers
+status: active
+name:
+  en: "Burundian Passport Number Helper"
+summary:
+  en: "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PASS input"
+        required: true
+        placeholder:
+          en: "P<BDIBURUNDIAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-mrz-passport-parser, burundi-bank-account-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian Passport Number Helper | ValidoHub"
+  description:
+    en: "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."

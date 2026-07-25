@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sudan-vehicle-plate-inspector
+kind: tool
+module: validohub
+country: SD
+category: transport
+status: active
+name:
+  en: "Sudanese Vehicle Plate Inspector"
+summary:
+  en: "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PLATE input"
+        required: true
+        placeholder:
+          en: "SD 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sudan-vin-validator, sudan-vehicle-data-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sudanese Vehicle Plate Inspector | ValidoHub"
+  description:
+    en: "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."

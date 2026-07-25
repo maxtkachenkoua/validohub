@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-tax-id-validator
+kind: tool
+module: validohub
+country: KH
+category: national-identifiers
+status: active
+name:
+  en: "Cambodian GDT TIN / VAT Validator"
+summary:
+  en: "Normalize GDT TIN / VAT identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "K001-123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-customs-importer-code-helper, cambodia-nssf-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian GDT TIN / VAT Validator | ValidoHub"
+  description:
+    en: "Normalize GDT TIN / VAT identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

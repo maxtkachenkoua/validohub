@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-residence-permit-format-helper
+kind: tool
+module: validohub
+country: TR
+category: documents
+status: active
+name:
+  en: "Turkish Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "TR PERMIT 2026 10000000146"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-health-card-format-helper, turkey-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

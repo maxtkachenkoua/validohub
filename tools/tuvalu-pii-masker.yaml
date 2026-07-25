@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tuvalu-pii-masker
+kind: tool
+module: validohub
+country: TV
+category: privacy
+status: active
+name:
+  en: "Tuvaluan PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tuvalu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "TV-ID-123456 +688 12345 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tuvalu-personal-data-fixture-generator, tuvalu-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tuvaluan PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

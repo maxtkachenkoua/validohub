@@ -1,0 +1,642 @@
+{
+  "id": "benin",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/benin-outline.png",
+    "outlineAlt": "Benin country outline",
+    "mapSrc": "/assets/images/countries/benin-location.png",
+    "mapAlt": "World map with Benin location marker",
+    "mapMarker": {
+      "x": 45,
+      "y": 55,
+      "label": "Benin"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "benin",
+    "flag": "🇧🇯",
+    "name": "Benin",
+    "nativeName": "Benin",
+    "iso2": "BJ",
+    "iso3": "BEN",
+    "continent": "Africa",
+    "region": "Africa",
+    "language": "French",
+    "currency": "XOF",
+    "currencyName": "West African CFA franc",
+    "status": "available",
+    "summary": "Premium Benin developer hub for National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone, bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "National ID boundary",
+      "company registration number",
+      "tax number / VAT boundary",
+      "postal/address code",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "domestic transfer reference",
+      "SWIFT/BIC",
+      "invoice reference",
+      "payment reconciliation"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Beninese national ID boundary Validator",
+      "Beninese company registration number Validator",
+      "Beninese tax number / VAT boundary Validator",
+      "Beninese Customs / Importer Code Helper",
+      "Beninese social security boundary Helper",
+      "Beninese Company Onboarding Auditor",
+      "Beninese business registry Readiness Helper",
+      "Beninese ID Card Format Helper",
+      "Beninese Passport Number Helper",
+      "Beninese MRZ / Passport Parser",
+      "Benin Bank Account Validator",
+      "Benin Bank Account Fixture Generator",
+      "Beninese Domestic Bank Account Inspector",
+      "Beninese BIC / SWIFT Inspector",
+      "Beninese Domestic Transfer Helper",
+      "Beninese Direct Debit / Auto-Debit Mandate Helper",
+      "Beninese bank transfer / payment reference Reference Helper",
+      "Beninese Remittance Text Builder",
+      "Beninese Payment Reconciliation Helper",
+      "Beninese Bank Statement Parser",
+      "Beninese Masked Bank Account Formatter",
+      "Beninese XOF Decimal Currency Formatter",
+      "Beninese Tax Rate Sanity Helper",
+      "Beninese Tax Return Field Helper",
+      "Beninese Invoice Number Helper",
+      "Beninese tax invoice Readiness Checker",
+      "Beninese Tax Authority Handoff Helper",
+      "Beninese Accounting Audit Trail Checklist Helper",
+      "Beninese Postal Code Validator",
+      "Beninese Address Normalizer",
+      "Beninese Address Transliteration Normalizer",
+      "Beninese Region / Province Code Mapper",
+      "Beninese Municipality Code Inspector",
+      "Beninese Phone Number Validator",
+      "Beninese Phone E.164 Formatter",
+      "Beninese Date Locale Formatter",
+      "Beninese CSV Locale Normalizer",
+      "Beninese Slug Normalizer",
+      "Beninese Document OCR Fixer",
+      "Beninese data protection / privacy boundary Redaction Helper",
+      "Beninese PII Masker",
+      "Beninese Personal Data Fixture Helper",
+      "Beninese Driving Licence Format Helper",
+      "Beninese Residence Permit Format Helper",
+      "Beninese Health Card Format Helper",
+      "Beninese Vehicle Plate Inspector",
+      "Beninese VIN Validator",
+      "Beninese Vehicle Data Redaction Helper",
+      "Beninese Customs Declaration Helper",
+      "Beninese Postal Tracking Helper",
+      "Beninese Data Quality Workbench",
+      "Beninese JSON Fixture Helper",
+      "Beninese Regex Pack Helper",
+      "Beninese API Payload Auditor",
+      "Beninese Form Field Auditor",
+      "Beninese Locale Number Parser",
+      "Beninese Calendar Week Helper",
+      "Beninese Company Suffix Normalizer",
+      "Beninese Procurement Identifier Helper",
+      "Beninese Locale Copy Checker",
+      "Beninese Support Ticket Scrubber",
+      "Beninese Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 45,
+      "y": 55
+    },
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇧🇯",
+    "name": "Benin",
+    "badge": "Premium Benin developer suite",
+    "description": "Developer intelligence and browser-only workbenches for beninese identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Benin",
+      "population": "approximately 14M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Porto-Novo",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "languages": "French",
+      "currency": "West African CFA franc",
+      "currencyCode": "XOF",
+      "callingCode": "+229",
+      "internetTld": ".bj",
+      "drivingSide": "Right",
+      "iso2": "BJ",
+      "iso3": "BEN",
+      "isoNumeric": "204",
+      "locale": "fr-BJ",
+      "icuLocale": "fr_BJ",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Space",
+      "addressFormat": "Street, number, postal code, locality, Benin",
+      "postalCodeFormat": "postal/address code",
+      "primaryTimeZone": "Africa/Abidjan (GMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "117 / 118",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "fr-BJ",
+      "cldrLocale": "fr_BJ",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type E",
+      "voltage": "220V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "benin",
+      "outlineLabel": "Benin outline",
+      "mapLabel": "Benin in the world",
+      "continentBadge": "Africa",
+      "flagLabel": "Benin flag",
+      "heroAccentPrimary": "0 135 81",
+      "heroAccentSecondary": "252 209 22",
+      "heroAccentTertiary": "232 17 45"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax number / VAT boundary and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Benin registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /benin/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Space rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Beninese examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Benin.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax number / VAT boundary",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "data protection / privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "fr-BJ / fr_BJ; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "XOF amounts use Comma (,) and Space.",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, company registration number, postal/address code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type E",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "220V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "117 / 118",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Beninese national ID boundary Validator",
+        "href": "/en/benin/benin-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Beninese company registration number Validator",
+        "href": "/en/benin/benin-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Beninese tax number / VAT boundary Validator",
+        "href": "/en/benin/benin-tax-id-validator/",
+        "text": "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Beninese Customs / Importer Code Helper",
+        "href": "/en/benin/benin-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Beninese social security boundary Helper",
+        "href": "/en/benin/benin-social-security-boundary-social-insurance-helper/",
+        "text": "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Beninese Company Onboarding Auditor",
+        "href": "/en/benin/benin-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Beninese business registry Readiness Helper",
+        "href": "/en/benin/benin-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+      },
+      {
+        "title": "Beninese ID Card Format Helper",
+        "href": "/en/benin/benin-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Beninese Passport Number Helper",
+        "href": "/en/benin/benin-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Beninese MRZ / Passport Parser",
+        "href": "/en/benin/benin-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Benin Bank Account Validator",
+        "href": "/en/benin/benin-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Benin Bank Account Fixture Generator",
+        "href": "/en/benin/benin-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Beninese Domestic Bank Account Inspector",
+        "href": "/en/benin/benin-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Beninese BIC / SWIFT Inspector",
+        "href": "/en/benin/benin-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Benin banking integrations."
+      },
+      {
+        "title": "Beninese Domestic Transfer Helper",
+        "href": "/en/benin/benin-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Beninese Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/benin/benin-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Beninese bank transfer / payment reference Reference Helper",
+        "href": "/en/benin/benin-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Beninese Remittance Text Builder",
+        "href": "/en/benin/benin-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Beninese Payment Reconciliation Helper",
+        "href": "/en/benin/benin-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Beninese Bank Statement Parser",
+        "href": "/en/benin/benin-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Beninese Masked Bank Account Formatter",
+        "href": "/en/benin/benin-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Beninese XOF Decimal Currency Formatter",
+        "href": "/en/benin/benin-currency-decimal-formatter/",
+        "text": "Normalize XOF amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Beninese Tax Rate Sanity Helper",
+        "href": "/en/benin/benin-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Beninese Tax Return Field Helper",
+        "href": "/en/benin/benin-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Beninese Invoice Number Helper",
+        "href": "/en/benin/benin-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Beninese tax invoice Readiness Checker",
+        "href": "/en/benin/benin-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Beninese Tax Authority Handoff Helper",
+        "href": "/en/benin/benin-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Beninese Accounting Audit Trail Checklist Helper",
+        "href": "/en/benin/benin-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Beninese Postal Code Validator",
+        "href": "/en/benin/benin-postal-code-validator/",
+        "text": "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Beninese Address Normalizer",
+        "href": "/en/benin/benin-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Beninese Address Transliteration Normalizer",
+        "href": "/en/benin/benin-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Beninese Region / Province Code Mapper",
+        "href": "/en/benin/benin-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Beninese Municipality Code Inspector",
+        "href": "/en/benin/benin-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Beninese Phone Number Validator",
+        "href": "/en/benin/benin-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Beninese Phone E.164 Formatter",
+        "href": "/en/benin/benin-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Beninese Date Locale Formatter",
+        "href": "/en/benin/benin-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Beninese CSV Locale Normalizer",
+        "href": "/en/benin/benin-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Benin decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Beninese Slug Normalizer",
+        "href": "/en/benin/benin-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Beninese Document OCR Fixer",
+        "href": "/en/benin/benin-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Beninese data protection / privacy boundary Redaction Helper",
+        "href": "/en/benin/benin-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Beninese PII Masker",
+        "href": "/en/benin/benin-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Beninese Personal Data Fixture Helper",
+        "href": "/en/benin/benin-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Beninese Driving Licence Format Helper",
+        "href": "/en/benin/benin-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Beninese Residence Permit Format Helper",
+        "href": "/en/benin/benin-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Beninese Health Card Format Helper",
+        "href": "/en/benin/benin-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Beninese Vehicle Plate Inspector",
+        "href": "/en/benin/benin-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Beninese VIN Validator",
+        "href": "/en/benin/benin-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Beninese Vehicle Data Redaction Helper",
+        "href": "/en/benin/benin-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Beninese Customs Declaration Helper",
+        "href": "/en/benin/benin-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Beninese Postal Tracking Helper",
+        "href": "/en/benin/benin-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Beninese Data Quality Workbench",
+        "href": "/en/benin/benin-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Beninese JSON Fixture Helper",
+        "href": "/en/benin/benin-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Beninese Regex Pack Helper",
+        "href": "/en/benin/benin-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Beninese API Payload Auditor",
+        "href": "/en/benin/benin-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Beninese Form Field Auditor",
+        "href": "/en/benin/benin-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Beninese Locale Number Parser",
+        "href": "/en/benin/benin-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Benin."
+      },
+      {
+        "title": "Beninese Calendar Week Helper",
+        "href": "/en/benin/benin-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Beninese Company Suffix Normalizer",
+        "href": "/en/benin/benin-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Beninese Procurement Identifier Helper",
+        "href": "/en/benin/benin-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Beninese Locale Copy Checker",
+        "href": "/en/benin/benin-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Beninese Support Ticket Scrubber",
+        "href": "/en/benin/benin-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Beninese Integration Smoke Test Builder",
+        "href": "/en/benin/benin-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

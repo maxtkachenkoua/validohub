@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CV
+slug: cabo-verde
+name:
+  en: Cabo Verde
+region: Africa
+languages:
+  - pt
+currency: CVE
+relatedCountries:
+  - ZA
+  - NG
+  - KE

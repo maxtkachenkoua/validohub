@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: seychelles-phone-number-validator
+kind: tool
+module: validohub
+country: SC
+category: address
+status: active
+name:
+  en: "Seychellois Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.seychelles-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+248 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [seychelles-phone-e164-formatter, seychelles-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Seychellois Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

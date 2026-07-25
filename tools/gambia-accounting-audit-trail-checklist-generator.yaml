@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-accounting-audit-trail-checklist-generator
+kind: tool
+module: validohub
+country: GM
+category: tax
+status: active
+name:
+  en: "Gambian Accounting Audit Trail Checklist Helper"
+summary:
+  en: "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "AUDIT input"
+        required: true
+        placeholder:
+          en: "invoice 24/07/2026 1,234.56 GMD GM123456789"
+    actions: [generate, validate, explain]
+related:
+  explicit: [gambia-postal-code-validator, gambia-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian Accounting Audit Trail Checklist Helper | ValidoHub"
+  description:
+    en: "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."

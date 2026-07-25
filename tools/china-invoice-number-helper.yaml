@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-invoice-number-helper
+kind: tool
+module: validohub
+country: CN
+category: tax
+status: active
+name:
+  en: "Chinese Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 91310000MA1FL0AB1C"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-e-invoicing-readiness-checker, china-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

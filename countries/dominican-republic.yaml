@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: DO
+slug: dominican-republic
+name:
+  en: "Dominican Republic"
+region: North America
+languages:
+  - es
+currency: DOP
+relatedCountries:
+  - HT
+  - JM
+  - CU

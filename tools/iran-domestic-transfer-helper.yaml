@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-domestic-transfer-helper
+kind: tool
+module: validohub
+country: IR
+category: finance
+status: active
+name:
+  en: "Iranian Domestic Transfer Helper"
+summary:
+  en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "054 020817909002\\n1,234,567 IRR\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-direct-debit-mandate-helper, iran-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."

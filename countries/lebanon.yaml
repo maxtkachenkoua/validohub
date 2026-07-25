@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: LB
+slug: lebanon
+name:
+  en: Lebanon
+region: Asia
+languages:
+  - ar
+currency: LBP
+relatedCountries:
+  - JO
+  - SY
+  - IL

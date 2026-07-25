@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palau-invoice-number-helper
+kind: tool
+module: validohub
+country: PW
+category: tax
+status: active
+name:
+  en: "Palauan Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 PW123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palau-e-invoicing-readiness-checker, palau-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palauan Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

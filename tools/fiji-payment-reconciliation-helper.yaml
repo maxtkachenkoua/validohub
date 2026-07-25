@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: FJ
+category: finance
+status: active
+name:
+  en: "Fijian Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "24/07/2026; 1,234.56 FJD; 001 1234567890; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-bank-statement-parser, fiji-masked-bank-account-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

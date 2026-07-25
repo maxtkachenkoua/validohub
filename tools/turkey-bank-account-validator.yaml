@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-bank-account-validator
+kind: tool
+module: validohub
+country: TR
+category: finance
+status: active
+name:
+  en: "Turkey Bank Account Validator"
+summary:
+  en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "0061 0519786457841326"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-bank-account-fixture-generator, turkey-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkey Bank Account Validator | ValidoHub"
+  description:
+    en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."

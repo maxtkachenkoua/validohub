@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: MV
+category: transport
+status: active
+name:
+  en: "Maldivian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "MV-1234 WVWZZZ1JZXW000001 A123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [maldives-customs-declaration-helper, maldives-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

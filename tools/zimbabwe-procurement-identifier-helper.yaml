@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zimbabwe-procurement-identifier-helper
+kind: tool
+module: validohub
+country: ZW
+category: government
+status: active
+name:
+  en: "Zimbabwean Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zimbabwe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "ZW-REG-123456 PO-2026-001 ZW123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zimbabwe-accessibility-locale-copy-checker, zimbabwe-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zimbabwean Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

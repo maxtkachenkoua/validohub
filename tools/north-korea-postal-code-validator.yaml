@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-postal-code-validator
+kind: tool
+module: validohub
+country: KP
+category: address
+status: active
+name:
+  en: "North Korean Postal Code Validator"
+summary:
+  en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "999093 Pyongyang"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-address-normalizer, north-korea-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."

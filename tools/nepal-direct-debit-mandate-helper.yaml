@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: NP
+category: finance
+status: active
+name:
+  en: "Nepali Direct Debit / Auto-Debit Mandate Helper"
+summary:
+  en: "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DD input"
+        required: true
+        placeholder:
+          en: "MANDATE-2026-001 001 1234567890123"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-payment-reference-helper, nepal-remittance-text-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali Direct Debit / Auto-Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."

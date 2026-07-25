@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-bank-account-fixture-generator
+kind: tool
+module: validohub
+country: MN
+category: finance
+status: active
+name:
+  en: "Mongolia Bank Account Fixture Generator"
+summary:
+  en: "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BGEN input"
+        required: true
+        placeholder:
+          en: "050 1234567890"
+    actions: [generate, validate, explain]
+related:
+  explicit: [mongolia-bank-account-inspector, mongolia-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolia Bank Account Fixture Generator | ValidoHub"
+  description:
+    en: "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."

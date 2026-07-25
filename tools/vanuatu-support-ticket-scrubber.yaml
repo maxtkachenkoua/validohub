@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vanuatu-support-ticket-scrubber
+kind: tool
+module: validohub
+country: VU
+category: privacy
+status: active
+name:
+  en: "Vanuatuan Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vanuatu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent VU-TIN-123456, 001 1234567890, Lini Highway, Port Vila"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vanuatu-integration-smoke-test-builder, vanuatu-tax-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vanuatuan Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

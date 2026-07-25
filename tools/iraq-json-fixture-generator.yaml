@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iraq-json-fixture-generator
+kind: tool
+module: validohub
+country: IQ
+category: developer-tools
+status: active
+name:
+  en: "Iraqi JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.iraq-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IQ\",\"tax\":\"TAX123456\",\"iban\":\"IQ20RRAF000000000123456789012\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [iraq-regex-pack-helper, iraq-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iraqi JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

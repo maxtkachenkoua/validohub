@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-vin-validator
+kind: tool
+module: validohub
+country: ID
+category: transport
+status: active
+name:
+  en: "Indonesian VIN Validator"
+summary:
+  en: "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VIN input"
+        required: true
+        placeholder:
+          en: "WVWZZZ1JZXW000001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-vehicle-data-redaction-helper, indonesia-customs-declaration-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian VIN Validator | ValidoHub"
+  description:
+    en: "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."

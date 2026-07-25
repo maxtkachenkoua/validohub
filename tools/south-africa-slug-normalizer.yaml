@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-africa-slug-normalizer
+kind: tool
+module: validohub
+country: ZA
+category: developer-tools
+status: active
+name:
+  en: "South African Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-africa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "South Africa sample company Central business district, Pretoria 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-africa-document-ocr-fixer, south-africa-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South African Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

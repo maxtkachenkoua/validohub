@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-gui-number-validator
+kind: tool
+module: validohub
+country: TW
+category: national-identifiers
+status: active
+name:
+  en: "Taiwanese GUI number Validator"
+summary:
+  en: "Inspect GUI number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "12345675"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-tax-id-validator, taiwan-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese GUI number Validator | ValidoHub"
+  description:
+    en: "Inspect GUI number structure, registry-style prefixes, control digits, and official lookup boundaries."

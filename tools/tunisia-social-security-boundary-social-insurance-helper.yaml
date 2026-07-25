@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tunisia-social-security-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: TN
+category: national-identifiers
+status: active
+name:
+  en: "Tunisian social security boundary Helper"
+summary:
+  en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tunisia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "TN-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tunisia-company-onboarding-auditor, tunisia-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tunisian social security boundary Helper | ValidoHub"
+  description:
+    en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

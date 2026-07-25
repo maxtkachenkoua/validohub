@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nigeria-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: NG
+category: tax
+status: active
+name:
+  en: "Nigerian Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nigeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary 20% base 1,234.56 NGN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nigeria-tax-return-field-helper, nigeria-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nigerian Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

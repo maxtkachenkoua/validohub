@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-invoice-number-helper
+kind: tool
+module: validohub
+country: AE
+category: tax
+status: active
+name:
+  en: "UAE Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 100123456700003"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-e-invoicing-readiness-checker, united-arab-emirates-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

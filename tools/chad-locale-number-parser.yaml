@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chad-locale-number-parser
+kind: tool
+module: validohub
+country: TD
+category: localization
+status: active
+name:
+  en: "Chadian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Chad."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chad-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 XAF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chad-calendar-week-helper, chad-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chadian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Chad."

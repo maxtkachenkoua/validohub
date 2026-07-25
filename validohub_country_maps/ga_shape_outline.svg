@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-89.42 -83.80 696.43 690.07" role="img">
+  <title>Gabon country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.55" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="ga" d="M435.438,526.646l-0.104,2.151l-4.875-0.104l-2.982,5.766l7.012,7.667l1.736-1.453l-0.052-1.503l-1.192-0.554v-1.057l2.688-1.701l2.387,1.807l2.638,0.052l-0.054-9.067l-4.176-0.196l-0.052-1.903L435.438,526.646L435.438,526.646z"/>
+  </g>
+</svg>

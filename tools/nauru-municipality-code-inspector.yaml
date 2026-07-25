@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nauru-municipality-code-inspector
+kind: tool
+module: validohub
+country: NR
+category: address
+status: active
+name:
+  en: "Nauruan Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nauru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Yaren District, Nauru"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nauru-phone-number-validator, nauru-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nauruan Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

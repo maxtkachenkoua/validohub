@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: namibia-address-normalizer
+kind: tool
+module: validohub
+country: NA
+category: address
+status: active
+name:
+  en: "Namibian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.namibia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Central business district, Windhoek 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [namibia-address-transliteration-normalizer, namibia-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Namibian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

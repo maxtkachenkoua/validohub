@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-business-register-readiness-helper
+kind: tool
+module: validohub
+country: PH
+category: government
+status: active
+name:
+  en: "Philippine SEC / DTI registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated SEC / DTI registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "CS202012345 123-456-789-000 Ayala Avenue 1, Makati 1226"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [philippines-id-card-format-helper, philippines-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine SEC / DTI registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated SEC / DTI registry lookup or company registry workflow."

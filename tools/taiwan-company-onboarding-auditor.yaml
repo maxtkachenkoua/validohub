@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-company-onboarding-auditor
+kind: tool
+module: validohub
+country: TW
+category: developer-tools
+status: active
+name:
+  en: "Taiwanese Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for GUI number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TW\",\"gui\":\"12345675\",\"bankCode\":\"004\",\"egui\":\"AB12345678\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-business-register-readiness-helper, taiwan-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for GUI number, VAT, address, banking, and official registry handoff readiness."

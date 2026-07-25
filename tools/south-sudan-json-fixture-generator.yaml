@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-sudan-json-fixture-generator
+kind: tool
+module: validohub
+country: SS
+category: developer-tools
+status: active
+name:
+  en: "South Sudanese JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.south-sudan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SS\",\"taxNumber\":\"SS123456789\",\"paymentReference\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [south-sudan-regex-pack-helper, south-sudan-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Sudanese JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

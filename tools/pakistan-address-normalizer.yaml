@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-address-normalizer
+kind: tool
+module: validohub
+country: PK
+category: address
+status: active
+name:
+  en: "Pakistani Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Jinnah Avenue 1, Islamabad 44000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-address-transliteration-normalizer, pakistan-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

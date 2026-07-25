@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-bank-statement-parser
+kind: tool
+module: validohub
+country: IN
+category: finance
+status: active
+name:
+  en: "Indian Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1,23,456.78 INR; HDFC0001234 12345678901234; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-masked-bank-account-formatter, india-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."

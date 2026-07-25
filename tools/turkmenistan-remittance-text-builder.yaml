@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-remittance-text-builder
+kind: tool
+module: validohub
+country: TM
+category: finance
+status: active
+name:
+  en: "Turkmen Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 12345678 1 234,56 TMT"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkmenistan-payment-reconciliation-helper, turkmenistan-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

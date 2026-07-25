@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-payment-reference-helper
+kind: tool
+module: validohub
+country: SG
+category: finance
+status: active
+name:
+  en: "Singapore PayNow / FAST reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "PayNow / FAST reference REF 2026-001 1,234.56 SGD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-remittance-text-builder, singapore-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore PayNow / FAST reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

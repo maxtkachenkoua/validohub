@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: libya-customs-declaration-helper
+kind: tool
+module: validohub
+country: LY
+category: government
+status: active
+name:
+  en: "Libyan Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.libya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "LY123456789 HS 8471 1,234.56 LYD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [libya-postal-tracking-helper, libya-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Libyan Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

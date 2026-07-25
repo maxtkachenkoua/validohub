@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-municipality-code-inspector
+kind: tool
+module: validohub
+country: KR
+category: address
+status: active
+name:
+  en: "South Korean Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Sejong-daero 110, Jung-gu, Seoul 04524"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-phone-number-validator, south-korea-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

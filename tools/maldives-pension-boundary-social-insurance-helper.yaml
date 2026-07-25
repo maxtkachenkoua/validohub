@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-pension-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: MV
+category: national-identifiers
+status: active
+name:
+  en: "Maldivian pension boundary Helper"
+summary:
+  en: "Split pension boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "MPAO-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [maldives-company-onboarding-auditor, maldives-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian pension boundary Helper | ValidoHub"
+  description:
+    en: "Split pension boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

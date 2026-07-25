@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: CI
+category: tax
+status: active
+name:
+  en: "Ivorian Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary 20% base 1,234.56 XOF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-tax-return-field-helper, cote-d-ivoire-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

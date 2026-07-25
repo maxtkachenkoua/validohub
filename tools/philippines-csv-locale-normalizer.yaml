@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-csv-locale-normalizer
+kind: tool
+module: validohub
+country: PH
+category: developer-tools
+status: active
+name:
+  en: "Philippine CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Philippines decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 PHP;07/21/2026;123-456-789-000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [philippines-slug-normalizer, philippines-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Philippines decimal, date, postal, phone, tax, and banking fields."

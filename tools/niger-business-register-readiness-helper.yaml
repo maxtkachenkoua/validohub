@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: niger-business-register-readiness-helper
+kind: tool
+module: validohub
+country: NE
+category: government
+status: active
+name:
+  en: "Nigerien business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.niger-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "NE-REG-123456 NE123456789 Central business district, Niamey 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [niger-id-card-format-helper, niger-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nigerien business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

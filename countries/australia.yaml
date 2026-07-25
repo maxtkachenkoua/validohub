@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: AU
+slug: australia
+name:
+  en: Australia
+region: Oceania
+languages:
+  - en
+currency: AUD
+relatedCountries:
+  - NZ
+  - PG
+  - FJ

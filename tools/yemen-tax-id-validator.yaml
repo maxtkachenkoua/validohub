@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-tax-id-validator
+kind: tool
+module: validohub
+country: YE
+category: national-identifiers
+status: active
+name:
+  en: "Yemeni tax number Validator"
+summary:
+  en: "Normalize tax number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "TAX123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-customs-importer-code-helper, yemen-social-insurance-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni tax number Validator | ValidoHub"
+  description:
+    en: "Normalize tax number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

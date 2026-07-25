@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-address-normalizer
+kind: tool
+module: validohub
+country: GE
+category: address
+status: active
+name:
+  en: "Georgian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Rustaveli Avenue 1, Tbilisi 0105"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-address-transliteration-normalizer, georgia-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

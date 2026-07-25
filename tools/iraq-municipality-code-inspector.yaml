@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iraq-municipality-code-inspector
+kind: tool
+module: validohub
+country: IQ
+category: address
+status: active
+name:
+  en: "Iraqi Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iraq-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Karrada 1, Baghdad 10001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iraq-phone-number-validator, iraq-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iraqi Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

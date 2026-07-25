@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bhutan-postal-tracking-helper
+kind: tool
+module: validohub
+country: BT
+category: logistics
+status: active
+name:
+  en: "Bhutanese Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bhutan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 11001 Thimphu"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bhutan-data-quality-workbench, bhutan-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bhutanese Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

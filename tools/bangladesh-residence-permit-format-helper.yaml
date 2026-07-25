@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-residence-permit-format-helper
+kind: tool
+module: validohub
+country: BD
+category: documents
+status: active
+name:
+  en: "Bangladeshi Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "BD PERMIT 2026 1990123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-health-card-format-helper, bangladesh-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

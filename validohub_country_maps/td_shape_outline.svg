@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-81.42 -85.50 651.59 656.20" role="img">
+  <title>Chad country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.02" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="td" d="M440.971,494.983l0.112-2.552l4.098-3.983l1.099-9.785l-2.731-5.221l1.911-0.979l18.498,9.639l-0.113,9.456l-3.259,2.775v4.875l2.136,4.132h-3.77l-6.24,6.173l-0.165,1.867l-4.605-0.061l-0.061,0.846l-2.628-0.345l-1.798-3.397l-1.351-0.666l0.174-1.037l1.693-1.297v-6.066l-2.343-0.363l-2.826-2.102L440.971,494.983L440.971,494.983L440.971,494.983z"/>
+  </g>
+</svg>

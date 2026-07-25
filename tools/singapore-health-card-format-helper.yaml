@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-health-card-format-helper
+kind: tool
+module: validohub
+country: SG
+category: documents
+status: active
+name:
+  en: "Singapore Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "S1234567D HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-vehicle-plate-inspector, singapore-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

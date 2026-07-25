@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: TD
+slug: chad
+name:
+  en: Chad
+region: Africa
+languages:
+  - fr
+currency: XAF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

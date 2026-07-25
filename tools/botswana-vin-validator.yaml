@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: botswana-vin-validator
+kind: tool
+module: validohub
+country: BW
+category: transport
+status: active
+name:
+  en: "Botswana VIN Validator"
+summary:
+  en: "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.botswana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VIN input"
+        required: true
+        placeholder:
+          en: "WVWZZZ1JZXW000001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [botswana-vehicle-data-redaction-helper, botswana-customs-declaration-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Botswana VIN Validator | ValidoHub"
+  description:
+    en: "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."

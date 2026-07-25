@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-pii-masker
+kind: tool
+module: validohub
+country: CN
+category: privacy
+status: active
+name:
+  en: "Chinese PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "110101199003078877 +86 138 0013 8000 102100099996 6222020200001234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-personal-data-fixture-generator, china-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-csv-locale-normalizer
+kind: tool
+module: validohub
+country: NP
+category: developer-tools
+status: active
+name:
+  en: "Nepali CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Nepal decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 NPR;2026/07/21;500123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-slug-normalizer, nepal-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Nepal decimal, date, postal, phone, tax, and banking fields."

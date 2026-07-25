@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lesotho-driving-licence-format-helper
+kind: tool
+module: validohub
+country: LS
+category: documents
+status: active
+name:
+  en: "Basotho Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lesotho-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "LS-ID-123456 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lesotho-residence-permit-format-helper, lesotho-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Basotho Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

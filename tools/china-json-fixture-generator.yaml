@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-json-fixture-generator
+kind: tool
+module: validohub
+country: CN
+category: developer-tools
+status: active
+name:
+  en: "Chinese JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"CN\",\"uscc\":\"91310000MA1FL0AB1C\",\"cnaps\":\"102100099996\",\"amount\":\"1,234.56\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [china-regex-pack-helper, china-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

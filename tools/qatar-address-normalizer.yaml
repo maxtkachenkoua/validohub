@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-address-normalizer
+kind: tool
+module: validohub
+country: QA
+category: address
+status: active
+name:
+  en: "Qatari Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "West Bay, Doha, PO Box 12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-address-transliteration-normalizer, qatar-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

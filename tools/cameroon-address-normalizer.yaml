@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cameroon-address-normalizer
+kind: tool
+module: validohub
+country: CM
+category: address
+status: active
+name:
+  en: "Cameroonian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cameroon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Central business district, Yaounde 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cameroon-address-transliteration-normalizer, cameroon-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cameroonian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

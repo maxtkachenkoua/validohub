@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-invoice-number-helper
+kind: tool
+module: validohub
+country: BD
+category: tax
+status: active
+name:
+  en: "Bangladeshi Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-e-invoicing-readiness-checker, bangladesh-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

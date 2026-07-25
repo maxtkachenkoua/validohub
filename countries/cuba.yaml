@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CU
+slug: cuba
+name:
+  en: "Cuba"
+region: North America
+languages:
+  - es
+currency: CUP
+relatedCountries:
+  - JM
+  - HT
+  - BS

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-company-suffix-normalizer
+kind: tool
+module: validohub
+country: KR
+category: developer-tools
+status: active
+name:
+  en: "South Korean Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "South Korea Sample Holding Ltd 123-45-67890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-procurement-identifier-helper, south-korea-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

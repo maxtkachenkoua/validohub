@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-passport-number-helper
+kind: tool
+module: validohub
+country: ST
+category: national-identifiers
+status: active
+name:
+  en: "Sao Tomean Passport Number Helper"
+summary:
+  en: "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PASS input"
+        required: true
+        placeholder:
+          en: "P<STPSAO TOMEAN<<SAMPLE<<<<<<<<<<<<<<<<<<"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-mrz-passport-parser, sao-tome-and-principe-bank-account-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Passport Number Helper | ValidoHub"
+  description:
+    en: "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."

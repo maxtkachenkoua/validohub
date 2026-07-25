@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bhutan-procurement-identifier-helper
+kind: tool
+module: validohub
+country: BT
+category: government
+status: active
+name:
+  en: "Bhutanese Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bhutan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "BT-123456 PO-2026-001 TPN1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bhutan-accessibility-locale-copy-checker, bhutan-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bhutanese Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

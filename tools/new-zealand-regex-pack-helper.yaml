@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-regex-pack-helper
+kind: tool
+module: validohub
+country: NZ
+category: developer-tools
+status: active
+name:
+  en: "New Zealand Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "IRD number boundary NZBN postcode  12-1234-1234567-00"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-api-payload-auditor, new-zealand-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

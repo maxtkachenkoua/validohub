@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-accounting-audit-trail-checklist-generator
+kind: tool
+module: validohub
+country: TR
+category: tax
+status: active
+name:
+  en: "Turkish Accounting Audit Trail Checklist Helper"
+summary:
+  en: "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "AUDIT input"
+        required: true
+        placeholder:
+          en: "invoice 21.07.2026 1.234,56 TRY 1234567890"
+    actions: [generate, validate, explain]
+related:
+  explicit: [turkey-postal-code-validator, turkey-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish Accounting Audit Trail Checklist Helper | ValidoHub"
+  description:
+    en: "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."

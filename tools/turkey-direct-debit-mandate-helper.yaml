@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: TR
+category: finance
+status: active
+name:
+  en: "Turkish Direct Debit / Auto-Debit Mandate Helper"
+summary:
+  en: "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DD input"
+        required: true
+        placeholder:
+          en: "MANDATE-2026-001 0061 0519786457841326"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-payment-reference-helper, turkey-remittance-text-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish Direct Debit / Auto-Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."

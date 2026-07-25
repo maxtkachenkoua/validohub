@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-api-payload-auditor
+kind: tool
+module: validohub
+country: SY
+category: developer-tools
+status: active
+name:
+  en: "Syrian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SY\",\"tax\":\"TAX123456\",\"payment\":\"official-boundary\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-form-field-auditor, syria-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

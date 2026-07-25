@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: IL
+slug: israel
+name:
+  en: Israel
+region: Asia
+languages:
+  - he
+currency: ILS
+relatedCountries:
+  - AE
+  - SA
+  - TR

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: eswatini-currency-decimal-formatter
+kind: tool
+module: validohub
+country: SZ
+category: finance
+status: active
+name:
+  en: "Swazi SZL Decimal Currency Formatter"
+summary:
+  en: "Normalize SZL amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.eswatini-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 SZL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [eswatini-tax-rate-sanity-helper, eswatini-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swazi SZL Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize SZL amount strings, decimal separators, grouping, and API-safe numeric previews."

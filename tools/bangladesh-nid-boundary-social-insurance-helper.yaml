@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-nid-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: BD
+category: national-identifiers
+status: active
+name:
+  en: "Bangladeshi NID boundary Helper"
+summary:
+  en: "Split NID boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1990123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-company-onboarding-auditor, bangladesh-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi NID boundary Helper | ValidoHub"
+  description:
+    en: "Split NID boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

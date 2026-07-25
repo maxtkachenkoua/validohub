@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: algeria-procurement-identifier-helper
+kind: tool
+module: validohub
+country: DZ
+category: government
+status: active
+name:
+  en: "Algerian Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.algeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "DZ-REG-123456 PO-2026-001 DZ123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [algeria-accessibility-locale-copy-checker, algeria-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Algerian Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

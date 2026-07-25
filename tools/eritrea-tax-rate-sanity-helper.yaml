@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: eritrea-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: ER
+category: tax
+status: active
+name:
+  en: "Eritrean Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.eritrea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary 20% base 1,234.56 ERN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [eritrea-tax-return-field-helper, eritrea-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Eritrean Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

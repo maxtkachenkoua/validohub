@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-78.03 -83.35 619.34 625.35" role="img">
+  <title>Cuba country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="8.58" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="cu" d="M205.904,469.846v1.1l4.599,0.086l2.169-1.263l0.337,0.926l4.512,1.098l4.011,3.622l-0.917,1.262l0.165,1.436l3.345,0.839l3.345-1.514l1.504-1.513l-2.169-1.098l-11.194-6.569l-3.924-0.424L205.904,469.846L205.904,469.846z"/>
+  </g>
+</svg>

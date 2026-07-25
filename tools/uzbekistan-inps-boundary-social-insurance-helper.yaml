@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-inps-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: UZ
+category: national-identifiers
+status: active
+name:
+  en: "Uzbek INPS boundary Helper"
+summary:
+  en: "Split INPS boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "INPS-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-company-onboarding-auditor, uzbekistan-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek INPS boundary Helper | ValidoHub"
+  description:
+    en: "Split INPS boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-philsys-boundary-validator
+kind: tool
+module: validohub
+country: PH
+category: national-identifiers
+status: active
+name:
+  en: "Philippine PhilSys boundary Validator"
+summary:
+  en: "Validate PhilSys boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "1234-5678-9012-3456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [philippines-sec-registration-number-validator, philippines-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine PhilSys boundary Validator | ValidoHub"
+  description:
+    en: "Validate PhilSys boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

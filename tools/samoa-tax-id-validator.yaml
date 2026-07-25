@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: samoa-tax-id-validator
+kind: tool
+module: validohub
+country: WS
+category: national-identifiers
+status: active
+name:
+  en: "Samoan VAGST / tax boundary Validator"
+summary:
+  en: "Normalize VAGST / tax boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.samoa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "WS123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [samoa-customs-importer-code-helper, samoa-social-protection-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Samoan VAGST / tax boundary Validator | ValidoHub"
+  description:
+    en: "Normalize VAGST / tax boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

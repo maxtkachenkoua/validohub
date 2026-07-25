@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-bic-swift-inspector
+kind: tool
+module: validohub
+country: TH
+category: finance
+status: active
+name:
+  en: "Thai BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Thailand banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDTH2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-domestic-transfer-helper, thailand-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Thailand banking integrations."

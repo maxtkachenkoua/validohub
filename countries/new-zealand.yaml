@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: NZ
+slug: new-zealand
+name:
+  en: New Zealand
+region: Oceania
+languages:
+  - en
+currency: NZD
+relatedCountries:
+  - AU
+  - FJ
+  - TO

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SD
+slug: sudan
+name:
+  en: Sudan
+region: Africa
+languages:
+  - ar
+currency: SDG
+relatedCountries:
+  - ZA
+  - NG
+  - KE

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: LB
+category: transport
+status: active
+name:
+  en: "Lebanese Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "B 123456 WVWZZZ1JZXW000001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lebanon-customs-declaration-helper, lebanon-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

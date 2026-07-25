@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-stir-company-tax-number-validator
+kind: tool
+module: validohub
+country: UZ
+category: national-identifiers
+status: active
+name:
+  en: "Uzbek STIR / company tax number Validator"
+summary:
+  en: "Inspect STIR / company tax number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-tax-id-validator, uzbekistan-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek STIR / company tax number Validator | ValidoHub"
+  description:
+    en: "Inspect STIR / company tax number structure, registry-style prefixes, control digits, and official lookup boundaries."

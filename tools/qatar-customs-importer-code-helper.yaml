@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-customs-importer-code-helper
+kind: tool
+module: validohub
+country: QA
+category: national-identifiers
+status: active
+name:
+  en: "Qatari Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "QA123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-social-insurance-boundary-social-insurance-helper, qatar-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

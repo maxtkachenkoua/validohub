@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: algeria-document-ocr-fixer
+kind: tool
+module: validohub
+country: DZ
+category: documents
+status: active
+name:
+  en: "Algerian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.algeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "DZ-ID-123456 DZ123456789 001 1234567890 1000 Algiers"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [algeria-privacy-redaction-helper, algeria-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Algerian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

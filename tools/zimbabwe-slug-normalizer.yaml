@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zimbabwe-slug-normalizer
+kind: tool
+module: validohub
+country: ZW
+category: developer-tools
+status: active
+name:
+  en: "Zimbabwean Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zimbabwe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Zimbabwe sample company Central business district, Harare 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zimbabwe-document-ocr-fixer, zimbabwe-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zimbabwean Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

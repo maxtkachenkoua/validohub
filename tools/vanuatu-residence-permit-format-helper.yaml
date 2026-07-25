@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vanuatu-residence-permit-format-helper
+kind: tool
+module: validohub
+country: VU
+category: documents
+status: active
+name:
+  en: "Vanuatuan Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vanuatu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "VU PERMIT 2026 VU-TIN-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vanuatu-health-card-format-helper, vanuatu-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vanuatuan Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: namibia-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: NA
+category: transport
+status: active
+name:
+  en: "Namibian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.namibia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "NA 1234 WVWZZZ1JZXW000001 NA-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [namibia-customs-declaration-helper, namibia-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Namibian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

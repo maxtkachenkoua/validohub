@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: armenia-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: AM
+category: transport
+status: active
+name:
+  en: "Armenian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.armenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "12 AA 345 WVWZZZ1JZXW000001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [armenia-customs-declaration-helper, armenia-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Armenian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

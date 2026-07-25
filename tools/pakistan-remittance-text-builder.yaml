@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-remittance-text-builder
+kind: tool
+module: validohub
+country: PK
+category: finance
+status: active
+name:
+  en: "Pakistani Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 1234567-8 1,234.56 PKR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-payment-reconciliation-helper, pakistan-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

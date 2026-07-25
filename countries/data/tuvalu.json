@@ -1,0 +1,642 @@
+{
+  "id": "tuvalu",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/tuvalu-outline.png",
+    "outlineAlt": "Tuvalu country outline",
+    "mapSrc": "/assets/images/countries/tuvalu-location.png",
+    "mapAlt": "World map with Tuvalu location marker",
+    "mapMarker": {
+      "x": 91,
+      "y": 69,
+      "label": "Tuvalu"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "tuvalu",
+    "flag": "🇹🇻",
+    "name": "Tuvalu",
+    "nativeName": "Tuvalu",
+    "iso2": "TV",
+    "iso3": "TUV",
+    "continent": "Oceania",
+    "region": "Oceania",
+    "language": "Tuvaluan and English",
+    "currency": "AUD",
+    "currencyName": "Australian dollar",
+    "status": "available",
+    "summary": "Premium Tuvalu developer hub for national ID boundary, company registration number, tax boundary, island/locality, phone, bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "national ID boundary",
+      "company registration number",
+      "tax boundary",
+      "island/locality",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "domestic transfer reference",
+      "SWIFT/BIC",
+      "invoice reference",
+      "payment reconciliation"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Tuvaluan national ID boundary Validator",
+      "Tuvaluan company registration number Validator",
+      "Tuvaluan tax boundary Validator",
+      "Tuvaluan Customs / Importer Code Helper",
+      "Tuvaluan social boundary Helper",
+      "Tuvaluan Company Onboarding Auditor",
+      "Tuvaluan business registry Readiness Helper",
+      "Tuvaluan ID Card Format Helper",
+      "Tuvaluan Passport Number Helper",
+      "Tuvaluan MRZ / Passport Parser",
+      "Tuvalu Bank Account Validator",
+      "Tuvalu Bank Account Fixture Generator",
+      "Tuvaluan Domestic Bank Account Inspector",
+      "Tuvaluan BIC / SWIFT Inspector",
+      "Tuvaluan Domestic Transfer Helper",
+      "Tuvaluan Direct Debit / Auto-Debit Mandate Helper",
+      "Tuvaluan bank transfer reference Reference Helper",
+      "Tuvaluan Remittance Text Builder",
+      "Tuvaluan Payment Reconciliation Helper",
+      "Tuvaluan Bank Statement Parser",
+      "Tuvaluan Masked Bank Account Formatter",
+      "Tuvaluan AUD Decimal Currency Formatter",
+      "Tuvaluan Tax Rate Sanity Helper",
+      "Tuvaluan Tax Return Field Helper",
+      "Tuvaluan Invoice Number Helper",
+      "Tuvaluan invoice Readiness Checker",
+      "Tuvaluan Tax Authority Handoff Helper",
+      "Tuvaluan Accounting Audit Trail Checklist Helper",
+      "Tuvaluan Postal Code Validator",
+      "Tuvaluan Address Normalizer",
+      "Tuvaluan Address Transliteration Normalizer",
+      "Tuvaluan Region / Province Code Mapper",
+      "Tuvaluan Municipality Code Inspector",
+      "Tuvaluan Phone Number Validator",
+      "Tuvaluan Phone E.164 Formatter",
+      "Tuvaluan Date Locale Formatter",
+      "Tuvaluan CSV Locale Normalizer",
+      "Tuvaluan Slug Normalizer",
+      "Tuvaluan Document OCR Fixer",
+      "Tuvaluan privacy boundary Redaction Helper",
+      "Tuvaluan PII Masker",
+      "Tuvaluan Personal Data Fixture Helper",
+      "Tuvaluan Driving Licence Format Helper",
+      "Tuvaluan Residence Permit Format Helper",
+      "Tuvaluan Health Card Format Helper",
+      "Tuvaluan Vehicle Plate Inspector",
+      "Tuvaluan VIN Validator",
+      "Tuvaluan Vehicle Data Redaction Helper",
+      "Tuvaluan Customs Declaration Helper",
+      "Tuvaluan Postal Tracking Helper",
+      "Tuvaluan Data Quality Workbench",
+      "Tuvaluan JSON Fixture Helper",
+      "Tuvaluan Regex Pack Helper",
+      "Tuvaluan API Payload Auditor",
+      "Tuvaluan Form Field Auditor",
+      "Tuvaluan Locale Number Parser",
+      "Tuvaluan Calendar Week Helper",
+      "Tuvaluan Company Suffix Normalizer",
+      "Tuvaluan Procurement Identifier Helper",
+      "Tuvaluan Locale Copy Checker",
+      "Tuvaluan Support Ticket Scrubber",
+      "Tuvaluan Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 91,
+      "y": 69
+    },
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "COMPANY",
+      "BANK",
+      "ISLAND",
+      "PHONE"
+    ]
+  },
+  "hub": {
+    "flag": "🇹🇻",
+    "name": "Tuvalu",
+    "badge": "Premium Tuvalu developer suite",
+    "description": "Developer intelligence and browser-only workbenches for tuvaluan identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Tuvalu",
+      "population": "approximately 0.01M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Funafuti",
+      "continent": "Oceania",
+      "region": "Polynesia",
+      "languages": "Tuvaluan and English",
+      "currency": "Australian dollar",
+      "currencyCode": "AUD",
+      "callingCode": "+688",
+      "internetTld": ".tv",
+      "drivingSide": "Right",
+      "iso2": "TV",
+      "iso3": "TUV",
+      "isoNumeric": "798",
+      "locale": "en-TV",
+      "icuLocale": "en_TV",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Tuvalu",
+      "postalCodeFormat": "island/locality",
+      "primaryTimeZone": "Oceania/Abidjan (GMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "911",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "en-TV",
+      "cldrLocale": "en_TV",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type I",
+      "voltage": "220V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "tuvalu",
+      "outlineLabel": "Tuvalu outline",
+      "mapLabel": "Tuvalu in the world",
+      "continentBadge": "Oceania",
+      "flagLabel": "Tuvalu flag",
+      "heroAccentPrimary": "91 202 232",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "207 20 43"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax boundary and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Tuvalu registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /tuvalu/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Tuvaluan examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Tuvalu.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax boundary",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "national ID boundary, company registration number, tax boundary, island/locality, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en-TV / en_TV; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "AUD amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, company registration number, island/locality, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type I",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "220V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "911",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "COMPANY",
+      "BANK",
+      "ISLAND",
+      "PHONE"
+    ],
+    "routes": [
+      {
+        "title": "Tuvaluan national ID boundary Validator",
+        "href": "/en/tuvalu/tuvalu-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Tuvaluan company registration number Validator",
+        "href": "/en/tuvalu/tuvalu-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Tuvaluan tax boundary Validator",
+        "href": "/en/tuvalu/tuvalu-tax-id-validator/",
+        "text": "Normalize tax boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Tuvaluan Customs / Importer Code Helper",
+        "href": "/en/tuvalu/tuvalu-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Tuvaluan social boundary Helper",
+        "href": "/en/tuvalu/tuvalu-social-boundary-social-insurance-helper/",
+        "text": "Split social boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Tuvaluan Company Onboarding Auditor",
+        "href": "/en/tuvalu/tuvalu-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Tuvaluan business registry Readiness Helper",
+        "href": "/en/tuvalu/tuvalu-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+      },
+      {
+        "title": "Tuvaluan ID Card Format Helper",
+        "href": "/en/tuvalu/tuvalu-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Tuvaluan Passport Number Helper",
+        "href": "/en/tuvalu/tuvalu-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Tuvaluan MRZ / Passport Parser",
+        "href": "/en/tuvalu/tuvalu-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Tuvalu Bank Account Validator",
+        "href": "/en/tuvalu/tuvalu-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Tuvalu Bank Account Fixture Generator",
+        "href": "/en/tuvalu/tuvalu-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Tuvaluan Domestic Bank Account Inspector",
+        "href": "/en/tuvalu/tuvalu-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Tuvaluan BIC / SWIFT Inspector",
+        "href": "/en/tuvalu/tuvalu-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Tuvalu banking integrations."
+      },
+      {
+        "title": "Tuvaluan Domestic Transfer Helper",
+        "href": "/en/tuvalu/tuvalu-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Tuvaluan Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/tuvalu/tuvalu-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Tuvaluan bank transfer reference Reference Helper",
+        "href": "/en/tuvalu/tuvalu-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Tuvaluan Remittance Text Builder",
+        "href": "/en/tuvalu/tuvalu-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Tuvaluan Payment Reconciliation Helper",
+        "href": "/en/tuvalu/tuvalu-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Tuvaluan Bank Statement Parser",
+        "href": "/en/tuvalu/tuvalu-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Tuvaluan Masked Bank Account Formatter",
+        "href": "/en/tuvalu/tuvalu-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Tuvaluan AUD Decimal Currency Formatter",
+        "href": "/en/tuvalu/tuvalu-currency-decimal-formatter/",
+        "text": "Normalize AUD amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Tuvaluan Tax Rate Sanity Helper",
+        "href": "/en/tuvalu/tuvalu-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Tuvaluan Tax Return Field Helper",
+        "href": "/en/tuvalu/tuvalu-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Tuvaluan Invoice Number Helper",
+        "href": "/en/tuvalu/tuvalu-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Tuvaluan invoice Readiness Checker",
+        "href": "/en/tuvalu/tuvalu-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Tuvaluan Tax Authority Handoff Helper",
+        "href": "/en/tuvalu/tuvalu-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Tuvaluan Accounting Audit Trail Checklist Helper",
+        "href": "/en/tuvalu/tuvalu-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Tuvaluan Postal Code Validator",
+        "href": "/en/tuvalu/tuvalu-postal-code-validator/",
+        "text": "Validate island/locality shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Tuvaluan Address Normalizer",
+        "href": "/en/tuvalu/tuvalu-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Tuvaluan Address Transliteration Normalizer",
+        "href": "/en/tuvalu/tuvalu-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Tuvaluan Region / Province Code Mapper",
+        "href": "/en/tuvalu/tuvalu-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Tuvaluan Municipality Code Inspector",
+        "href": "/en/tuvalu/tuvalu-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Tuvaluan Phone Number Validator",
+        "href": "/en/tuvalu/tuvalu-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Tuvaluan Phone E.164 Formatter",
+        "href": "/en/tuvalu/tuvalu-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Tuvaluan Date Locale Formatter",
+        "href": "/en/tuvalu/tuvalu-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Tuvaluan CSV Locale Normalizer",
+        "href": "/en/tuvalu/tuvalu-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Tuvalu decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Tuvaluan Slug Normalizer",
+        "href": "/en/tuvalu/tuvalu-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Tuvaluan Document OCR Fixer",
+        "href": "/en/tuvalu/tuvalu-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Tuvaluan privacy boundary Redaction Helper",
+        "href": "/en/tuvalu/tuvalu-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Tuvaluan PII Masker",
+        "href": "/en/tuvalu/tuvalu-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Tuvaluan Personal Data Fixture Helper",
+        "href": "/en/tuvalu/tuvalu-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Tuvaluan Driving Licence Format Helper",
+        "href": "/en/tuvalu/tuvalu-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Tuvaluan Residence Permit Format Helper",
+        "href": "/en/tuvalu/tuvalu-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Tuvaluan Health Card Format Helper",
+        "href": "/en/tuvalu/tuvalu-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Tuvaluan Vehicle Plate Inspector",
+        "href": "/en/tuvalu/tuvalu-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Tuvaluan VIN Validator",
+        "href": "/en/tuvalu/tuvalu-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Tuvaluan Vehicle Data Redaction Helper",
+        "href": "/en/tuvalu/tuvalu-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Tuvaluan Customs Declaration Helper",
+        "href": "/en/tuvalu/tuvalu-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Tuvaluan Postal Tracking Helper",
+        "href": "/en/tuvalu/tuvalu-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Tuvaluan Data Quality Workbench",
+        "href": "/en/tuvalu/tuvalu-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Tuvaluan JSON Fixture Helper",
+        "href": "/en/tuvalu/tuvalu-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Tuvaluan Regex Pack Helper",
+        "href": "/en/tuvalu/tuvalu-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Tuvaluan API Payload Auditor",
+        "href": "/en/tuvalu/tuvalu-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Tuvaluan Form Field Auditor",
+        "href": "/en/tuvalu/tuvalu-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Tuvaluan Locale Number Parser",
+        "href": "/en/tuvalu/tuvalu-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Tuvalu."
+      },
+      {
+        "title": "Tuvaluan Calendar Week Helper",
+        "href": "/en/tuvalu/tuvalu-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Tuvaluan Company Suffix Normalizer",
+        "href": "/en/tuvalu/tuvalu-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Tuvaluan Procurement Identifier Helper",
+        "href": "/en/tuvalu/tuvalu-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Tuvaluan Locale Copy Checker",
+        "href": "/en/tuvalu/tuvalu-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Tuvaluan Support Ticket Scrubber",
+        "href": "/en/tuvalu/tuvalu-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Tuvaluan Integration Smoke Test Builder",
+        "href": "/en/tuvalu/tuvalu-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

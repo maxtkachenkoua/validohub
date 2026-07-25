@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-tax-id-validator
+kind: tool
+module: validohub
+country: FJ
+category: national-identifiers
+status: active
+name:
+  en: "Fijian FRCS tax / VAT boundary Validator"
+summary:
+  en: "Normalize FRCS tax / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "FJ123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-customs-importer-code-helper, fiji-fnpf-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian FRCS tax / VAT boundary Validator | ValidoHub"
+  description:
+    en: "Normalize FRCS tax / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

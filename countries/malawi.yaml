@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MW
+slug: malawi
+name:
+  en: Malawi
+region: Africa
+languages:
+  - en
+currency: MWK
+relatedCountries:
+  - ZA
+  - NG
+  - KE

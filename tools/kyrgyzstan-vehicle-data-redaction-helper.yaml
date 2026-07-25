@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: KG
+category: transport
+status: active
+name:
+  en: "Kyrgyz Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "01 KG 123 ABC WVWZZZ1JZXW000001 20101200123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-customs-declaration-helper, kyrgyzstan-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

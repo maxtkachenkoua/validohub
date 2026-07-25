@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: afghanistan-data-quality-workbench
+kind: tool
+module: validohub
+country: AF
+category: developer-tools
+status: active
+name:
+  en: "Afghan Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.afghanistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AF\",\"tin\":\"TIN123456789\",\"bank\":\"0011234567890\",\"payment\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [afghanistan-json-fixture-generator, afghanistan-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Afghan Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

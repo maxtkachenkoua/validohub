@@ -313,18 +313,20 @@
 .vh-country-visual-label {
   position: absolute;
   top: 0.75rem;
-  left: 0.85rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
-  padding: 0.28rem 0.55rem;
+  padding: 0.34rem 0.78rem;
   border: 1px solid rgb(214 221 232 / 0.75);
   border-radius: 999px;
   background: rgb(255 255 255 / 0.82);
   color: var(--vh-color-muted);
-  font-size: 0.72rem;
+  font-size: clamp(0.62rem, 1.2vw, 0.72rem);
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   line-height: 1;
   text-transform: uppercase;
+  white-space: nowrap;
   backdrop-filter: blur(8px);
 }
 
@@ -337,7 +339,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--vh-color-surface-soft);
+  background: #f7efe4;
   border-radius: inherit;
   padding: 0;
   height: clamp(180px, 22vw, 230px);
@@ -356,8 +358,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transform: scale(1.04);
+  object-fit: contain;
 }
 
 /* Captions / Metadata labels */

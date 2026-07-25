@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-postal-tracking-helper
+kind: tool
+module: validohub
+country: LB
+category: logistics
+status: active
+name:
+  en: "Lebanese Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1107 2020 Beirut"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lebanon-data-quality-workbench, lebanon-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

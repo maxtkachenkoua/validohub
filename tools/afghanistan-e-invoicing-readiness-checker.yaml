@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: afghanistan-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: AF
+category: tax
+status: active
+name:
+  en: "Afghan tax invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.afghanistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AF\",\"tin\":\"TIN123456789\",\"bank\":\"0011234567890\",\"payment\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [afghanistan-tax-authority-handoff-helper, afghanistan-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Afghan tax invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

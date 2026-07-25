@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: CN
+category: privacy
+status: active
+name:
+  en: "Chinese Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "110101199003078877\\n1 Chang An Avenue, Beijing 100000\\n+86 138 0013 8000"
+    actions: [generate, validate, explain]
+related:
+  explicit: [china-driving-licence-format-helper, china-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-address-normalizer
+kind: tool
+module: validohub
+country: SY
+category: address
+status: active
+name:
+  en: "Syrian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Malki 1, Damascus 0100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-address-transliteration-normalizer, syria-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

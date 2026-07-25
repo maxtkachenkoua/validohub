@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BZ
+slug: belize
+name:
+  en: "Belize"
+region: North America
+languages:
+  - en
+currency: BZD
+relatedCountries:
+  - MX
+  - GT
+  - HN

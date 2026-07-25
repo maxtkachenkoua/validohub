@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-document-ocr-fixer
+kind: tool
+module: validohub
+country: YE
+category: documents
+status: active
+name:
+  en: "Yemeni Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "12345678901 TAX123456 001 1234567890 1247 Sanaa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-privacy-redaction-helper, yemen-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

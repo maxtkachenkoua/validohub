@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nauru-locale-number-parser
+kind: tool
+module: validohub
+country: NR
+category: localization
+status: active
+name:
+  en: "Nauruan Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Nauru."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nauru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 AUD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nauru-calendar-week-helper, nauru-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nauruan Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Nauru."

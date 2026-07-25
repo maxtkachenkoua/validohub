@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-55.00 -75.17 462.39 644.35" role="img">
+  <title>Cape Verde country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="6.40" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <g id="cv">
+        <path d="M350.01,490.264l-1.642,0.942l1.175,0.941l1.409-0.708L350.01,490.264L350.01,490.264z"/>
+        <path d="M354.046,492.165l-1.071,0.951l0.762,1.409l1.832-0.821L354.046,492.165L354.046,492.165z"/>
+        <path d="M351.704,494.836l-1.375,0.821l1.479,1.979l1.168-0.612L351.704,494.836L351.704,494.836z"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-tax-return-field-helper
+kind: tool
+module: validohub
+country: KH
+category: tax
+status: active
+name:
+  en: "Cambodian Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "GDT TIN / VAT; K001-123456789; period 2026-07; 1,234,567 KHR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-invoice-number-helper, cambodia-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

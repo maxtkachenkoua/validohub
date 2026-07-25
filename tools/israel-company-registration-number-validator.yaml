@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-company-registration-number-validator
+kind: tool
+module: validohub
+country: IL
+category: national-identifiers
+status: active
+name:
+  en: "Israeli company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "512345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [israel-tax-id-validator, israel-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

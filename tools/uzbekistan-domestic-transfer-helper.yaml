@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-domestic-transfer-helper
+kind: tool
+module: validohub
+country: UZ
+category: finance
+status: active
+name:
+  en: "Uzbek Domestic Transfer Helper"
+summary:
+  en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "00444 20208000123456789001\\n1 234 567,89 UZS\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-direct-debit-mandate-helper, uzbekistan-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."

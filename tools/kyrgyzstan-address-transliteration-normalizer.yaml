@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: KG
+category: address
+status: active
+name:
+  en: "Kyrgyz Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Chuy Avenue 1, Bishkek 720000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-region-code-mapper, kyrgyzstan-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

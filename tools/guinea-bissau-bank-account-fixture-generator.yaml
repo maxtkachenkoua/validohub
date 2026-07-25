@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-bank-account-fixture-generator
+kind: tool
+module: validohub
+country: GW
+category: finance
+status: active
+name:
+  en: "Guinea-Bissau Bank Account Fixture Generator"
+summary:
+  en: "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BGEN input"
+        required: true
+        placeholder:
+          en: "001 1234567890"
+    actions: [generate, validate, explain]
+related:
+  explicit: [guinea-bissau-bank-account-inspector, guinea-bissau-bic-swift-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guinea-Bissau Bank Account Fixture Generator | ValidoHub"
+  description:
+    en: "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."

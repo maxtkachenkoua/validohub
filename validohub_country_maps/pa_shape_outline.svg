@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-34.39 -79.52 271.39 662.74" role="img">
+  <title>Panama country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="3.76" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="pa" d="M205.68,506.748l-1.262,3.941l4.167,1.079l2.584,0.512l0.441-3.052l2.775-1.4l2.463,1.271l0.968,1.547l1.175-0.138l0.925-2.81l-3.078-1.271l-2.334-1.271l-2.333,1.59l-2.775,1.4l-2.835-1.141L205.68,506.748L205.68,506.748z"/>
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-company-suffix-normalizer
+kind: tool
+module: validohub
+country: CN
+category: developer-tools
+status: active
+name:
+  en: "Chinese Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "China Sample Holding Ltd 91310000MA1FL0AB1C"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-procurement-identifier-helper, china-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

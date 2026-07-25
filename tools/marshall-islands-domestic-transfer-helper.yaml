@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-domestic-transfer-helper
+kind: tool
+module: validohub
+country: MH
+category: finance
+status: active
+name:
+  en: "Marshallese Domestic Transfer Helper"
+summary:
+  en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "001 1234567890\\n1,234.56 USD\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-direct-debit-mandate-helper, marshall-islands-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."

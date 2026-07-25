@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-business-register-readiness-helper
+kind: tool
+module: validohub
+country: GN
+category: government
+status: active
+name:
+  en: "Guinean business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "GN-REG-123456 GN123456789 Central business district, Conakry 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-id-card-format-helper, guinea-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guinean business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

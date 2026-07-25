@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-privacy-redaction-helper
+kind: tool
+module: validohub
+country: PG
+category: privacy
+status: active
+name:
+  en: "Papua New Guinean privacy boundary Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PG\",\"tin\":\"PG123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-pii-masker, papua-new-guinea-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean privacy boundary Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

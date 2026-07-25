@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-id-card-format-helper
+kind: tool
+module: validohub
+country: AZ
+category: national-identifiers
+status: active
+name:
+  en: "Azerbaijani ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "ABC1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-passport-number-helper, azerbaijan-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

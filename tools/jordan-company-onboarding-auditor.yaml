@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-company-onboarding-auditor
+kind: tool
+module: validohub
+country: JO
+category: developer-tools
+status: active
+name:
+  en: "Jordanian Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for company national number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"JO\",\"national\":\"9901011234\",\"iban\":\"JO94CBJO0010000000000131000302\",\"cliq\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-business-register-readiness-helper, jordan-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for company national number, VAT, address, banking, and official registry handoff readiness."

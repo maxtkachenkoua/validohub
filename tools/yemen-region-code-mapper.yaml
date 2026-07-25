@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-region-code-mapper
+kind: tool
+module: validohub
+country: YE
+category: address
+status: active
+name:
+  en: "Yemeni Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "1247 Sanaa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-municipality-code-inspector, yemen-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

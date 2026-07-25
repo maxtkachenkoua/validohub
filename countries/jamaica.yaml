@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: JM
+slug: jamaica
+name:
+  en: "Jamaica"
+region: North America
+languages:
+  - en
+currency: JMD
+relatedCountries:
+  - CU
+  - HT
+  - DO

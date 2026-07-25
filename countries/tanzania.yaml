@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: TZ
+slug: tanzania
+name:
+  en: Tanzania
+region: Africa
+languages:
+  - sw
+currency: TZS
+relatedCountries:
+  - ZA
+  - NG
+  - KE

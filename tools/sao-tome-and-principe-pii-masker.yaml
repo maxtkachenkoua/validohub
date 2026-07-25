@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-pii-masker
+kind: tool
+module: validohub
+country: ST
+category: privacy
+status: active
+name:
+  en: "Sao Tomean PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "ST-ID-123456 +239 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-personal-data-fixture-generator, sao-tome-and-principe-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

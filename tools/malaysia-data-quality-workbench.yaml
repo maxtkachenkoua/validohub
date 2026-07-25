@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-data-quality-workbench
+kind: tool
+module: validohub
+country: MY
+category: developer-tools
+status: active
+name:
+  en: "Malaysian Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MY\",\"ssm\":\"201901234567\",\"tin\":\"C1234567890\",\"duitnow\":\"+60123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-json-fixture-generator, malaysia-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

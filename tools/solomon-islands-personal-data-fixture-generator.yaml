@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: SB
+category: privacy
+status: active
+name:
+  en: "Solomon Islands Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "SB-TIN-123456\\nMendana Avenue, Honiara\\n+677 12345"
+    actions: [generate, validate, explain]
+related:
+  explicit: [solomon-islands-driving-licence-format-helper, solomon-islands-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

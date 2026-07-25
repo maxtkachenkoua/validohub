@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: equatorial-guinea-postal-tracking-helper
+kind: tool
+module: validohub
+country: GQ
+category: logistics
+status: active
+name:
+  en: "Equatoguinean Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.equatorial-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1000 Malabo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [equatorial-guinea-data-quality-workbench, equatorial-guinea-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Equatoguinean Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-api-payload-auditor
+kind: tool
+module: validohub
+country: BN
+category: developer-tools
+status: active
+name:
+  en: "Bruneian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BN\",\"roc\":\"RC123456\",\"bank\":\"0011234567890\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [brunei-form-field-auditor, brunei-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

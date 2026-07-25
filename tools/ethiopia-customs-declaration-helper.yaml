@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ethiopia-customs-declaration-helper
+kind: tool
+module: validohub
+country: ET
+category: government
+status: active
+name:
+  en: "Ethiopian Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ethiopia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "ET123456789 HS 8471 1,234.56 ETB"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ethiopia-postal-tracking-helper, ethiopia-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ethiopian Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

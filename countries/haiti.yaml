@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: HT
+slug: haiti
+name:
+  en: "Haiti"
+region: North America
+languages:
+  - en
+currency: HTG
+relatedCountries:
+  - DO
+  - JM
+  - CU

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-81.45 -90.66 693.74 704.15" role="img">
+  <title>Oman country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.61" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="om" d="M532.244,481.879l6.388-3.683l1.133-5.402l-1.399-0.804l0.579-5.792l1.219-0.709l1.306,2.049l7.771,4.062v2.258l-9.413,13.854l-4.331,0.147L532.244,481.879L532.244,481.879z"/>
+  </g>
+</svg>

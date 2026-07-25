@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-business-register-readiness-helper
+kind: tool
+module: validohub
+country: KR
+category: government
+status: active
+name:
+  en: "South Korean DART / business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated DART / business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "123-45-67890 123-45-67890 Sejong-daero 110, Jung-gu, Seoul 04524"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-id-card-format-helper, south-korea-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean DART / business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated DART / business registry lookup or company registry workflow."

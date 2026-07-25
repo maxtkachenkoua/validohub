@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-region-code-mapper
+kind: tool
+module: validohub
+country: SA
+category: address
+status: active
+name:
+  en: "Saudi Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "12211 Riyadh"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-municipality-code-inspector, saudi-arabia-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: SA
+category: privacy
+status: active
+name:
+  en: "Saudi Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1001234567, 80 000000608010167519, King Fahd Road 1, Riyadh 12211"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-integration-smoke-test-builder, saudi-arabia-national-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

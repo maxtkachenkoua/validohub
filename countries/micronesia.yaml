@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: FM
+slug: micronesia
+name:
+  en: Micronesia
+region: Oceania
+languages:
+  - en
+currency: USD
+relatedCountries:
+  - MH
+  - PW
+  - PG

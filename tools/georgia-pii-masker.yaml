@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-pii-masker
+kind: tool
+module: validohub
+country: GE
+category: privacy
+status: active
+name:
+  en: "Georgian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "01001012345 +995 599 123456 NB 0101904917"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-personal-data-fixture-generator, georgia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

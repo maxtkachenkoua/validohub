@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-municipality-code-inspector
+kind: tool
+module: validohub
+country: FJ
+category: address
+status: active
+name:
+  en: "Fijian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Victoria Parade, Suva"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-phone-number-validator, fiji-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

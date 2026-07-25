@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tanzania-csv-locale-normalizer
+kind: tool
+module: validohub
+country: TZ
+category: developer-tools
+status: active
+name:
+  en: "Tanzanian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Tanzania decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tanzania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 TZS;24/07/2026;TZ123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tanzania-slug-normalizer, tanzania-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tanzanian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Tanzania decimal, date, postal, phone, tax, and banking fields."

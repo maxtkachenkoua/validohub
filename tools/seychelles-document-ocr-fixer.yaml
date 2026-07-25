@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: seychelles-document-ocr-fixer
+kind: tool
+module: validohub
+country: SC
+category: documents
+status: active
+name:
+  en: "Seychellois Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.seychelles-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "SC-ID-123456 SC123456789 001 1234567890 1000 Victoria"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [seychelles-privacy-redaction-helper, seychelles-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Seychellois Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

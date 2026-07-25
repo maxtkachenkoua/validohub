@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: PG
+category: tax
+status: active
+name:
+  en: "Papua New Guinean GST tax invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PG\",\"tin\":\"PG123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-tax-authority-handoff-helper, papua-new-guinea-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean GST tax invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

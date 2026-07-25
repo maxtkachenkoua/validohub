@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-csv-locale-normalizer
+kind: tool
+module: validohub
+country: JP
+category: developer-tools
+status: active
+name:
+  en: "Japanese CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Japan decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234 JPY;2026/07/21;T1234567890123"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-slug-normalizer, japan-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Japan decimal, date, postal, phone, tax, and banking fields."

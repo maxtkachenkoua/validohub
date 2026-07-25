@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: TH
+category: privacy
+status: active
+name:
+  en: "Thai Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "1101700203451\\nSukhumvit Road 1, Bangkok 10110\\n+66 81 234 5678"
+    actions: [generate, validate, explain]
+related:
+  explicit: [thailand-driving-licence-format-helper, thailand-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: AG
+slug: antigua-and-barbuda
+name:
+  en: "Antigua and Barbuda"
+region: North America
+languages:
+  - en
+currency: XCD
+relatedCountries:
+  - KN
+  - DM
+  - LC

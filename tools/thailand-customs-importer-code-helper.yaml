@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-customs-importer-code-helper
+kind: tool
+module: validohub
+country: TH
+category: national-identifiers
+status: active
+name:
+  en: "Thai Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "TH0105559123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-social-security-boundary-social-insurance-helper, thailand-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

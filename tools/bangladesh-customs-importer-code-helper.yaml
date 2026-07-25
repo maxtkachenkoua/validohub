@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-customs-importer-code-helper
+kind: tool
+module: validohub
+country: BD
+category: national-identifiers
+status: active
+name:
+  en: "Bangladeshi Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "BDC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-nid-boundary-social-insurance-helper, bangladesh-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

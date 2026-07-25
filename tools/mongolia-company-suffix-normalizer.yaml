@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-company-suffix-normalizer
+kind: tool
+module: validohub
+country: MN
+category: developer-tools
+status: active
+name:
+  en: "Mongolian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Mongolia Sample Holding Ltd 9012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-procurement-identifier-helper, mongolia-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-data-quality-workbench
+kind: tool
+module: validohub
+country: IN
+category: developer-tools
+status: active
+name:
+  en: "Indian Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IN\",\"pan\":\"ABCDE1234F\",\"gstin\":\"27ABCDE1234F1Z5\",\"ifsc\":\"HDFC0001234\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-json-fixture-generator, india-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

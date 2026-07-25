@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-tax-id-validator
+kind: tool
+module: validohub
+country: GE
+category: national-identifiers
+status: active
+name:
+  en: "Georgian VAT / tax number Validator"
+summary:
+  en: "Normalize VAT / tax number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "405123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-customs-importer-code-helper, georgia-social-service-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian VAT / tax number Validator | ValidoHub"
+  description:
+    en: "Normalize VAT / tax number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

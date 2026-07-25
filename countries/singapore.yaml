@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SG
+slug: singapore
+name:
+  en: Singapore
+region: Asia
+languages:
+  - en
+currency: SGD
+relatedCountries:
+  - MY
+  - ID
+  - IN

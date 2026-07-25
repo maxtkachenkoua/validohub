@@ -1,0 +1,642 @@
+{
+  "id": "israel",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/israel-outline.png",
+    "outlineAlt": "Israel country outline",
+    "mapSrc": "/assets/images/countries/israel-location.png",
+    "mapAlt": "World map with Israel location marker",
+    "mapMarker": {
+      "x": 56,
+      "y": 53,
+      "label": "Israel"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "israel",
+    "flag": "🇮🇱",
+    "name": "Israel",
+    "nativeName": "Yisrael",
+    "iso2": "IL",
+    "iso3": "ISR",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Hebrew and Arabic",
+    "currency": "ILS",
+    "currencyName": "Israeli new shekel",
+    "status": "available",
+    "summary": "Premium Israel developer hub for Teudat Zehut boundary, company number, VAT number, postal code, phone, IBAN, Masav handoff, Zahav reference, SWIFT, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "Teudat Zehut boundary",
+      "company number",
+      "VAT number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "IBAN",
+      "Masav handoff",
+      "Zahav reference",
+      "SWIFT",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Israeli Teudat Zehut boundary Validator",
+      "Israeli company registration number Validator",
+      "Israeli VAT / Osek number Validator",
+      "Israeli Customs / Importer Code Helper",
+      "Israeli Bituach Leumi boundary Helper",
+      "Israeli Company Onboarding Auditor",
+      "Israeli Companies Registrar Readiness Helper",
+      "Israeli ID Card Format Helper",
+      "Israeli Passport Number Helper",
+      "Israeli MRZ / Passport Parser",
+      "Israel Bank Account Validator",
+      "Israel Bank Account Fixture Generator",
+      "Israeli Domestic Bank Account Inspector",
+      "Israeli BIC / SWIFT Inspector",
+      "Israeli Domestic Transfer Helper",
+      "Israeli Direct Debit / Auto-Debit Mandate Helper",
+      "Israeli Masav / Zahav reference Reference Helper",
+      "Israeli Remittance Text Builder",
+      "Israeli Payment Reconciliation Helper",
+      "Israeli Bank Statement Parser",
+      "Israeli Masked Bank Account Formatter",
+      "Israeli ILS Decimal Currency Formatter",
+      "Israeli Tax Rate Sanity Helper",
+      "Israeli Tax Return Field Helper",
+      "Israeli Invoice Number Helper",
+      "Israeli tax invoice Readiness Checker",
+      "Israeli Tax Authority Handoff Helper",
+      "Israeli Accounting Audit Trail Checklist Helper",
+      "Israeli Postal Code Validator",
+      "Israeli Address Normalizer",
+      "Israeli Address Transliteration Normalizer",
+      "Israeli Region / Province Code Mapper",
+      "Israeli Municipality Code Inspector",
+      "Israeli Phone Number Validator",
+      "Israeli Phone E.164 Formatter",
+      "Israeli Date Locale Formatter",
+      "Israeli CSV Locale Normalizer",
+      "Israeli Slug Normalizer",
+      "Israeli Document OCR Fixer",
+      "Israeli Privacy Protection Law Redaction Helper",
+      "Israeli PII Masker",
+      "Israeli Personal Data Fixture Helper",
+      "Israeli Driving Licence Format Helper",
+      "Israeli Residence Permit Format Helper",
+      "Israeli Health Card Format Helper",
+      "Israeli Vehicle Plate Inspector",
+      "Israeli VIN Validator",
+      "Israeli Vehicle Data Redaction Helper",
+      "Israeli Customs Declaration Helper",
+      "Israeli Postal Tracking Helper",
+      "Israeli Data Quality Workbench",
+      "Israeli JSON Fixture Helper",
+      "Israeli Regex Pack Helper",
+      "Israeli API Payload Auditor",
+      "Israeli Form Field Auditor",
+      "Israeli Locale Number Parser",
+      "Israeli Calendar Week Helper",
+      "Israeli Company Suffix Normalizer",
+      "Israeli Procurement Identifier Helper",
+      "Israeli Locale Copy Checker",
+      "Israeli Support Ticket Scrubber",
+      "Israeli Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live Companies Registrar lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 56,
+      "y": 53
+    },
+    "searchHints": [
+      "TEUDAT ZEHUT",
+      "VAT",
+      "MASAV",
+      "ZAHAV",
+      "IBAN",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇮🇱",
+    "name": "Israel",
+    "badge": "Premium Israel developer suite",
+    "description": "Developer intelligence and browser-only workbenches for israeli identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Yisrael",
+      "population": "approximately 10M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Jerusalem",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "languages": "Hebrew and Arabic",
+      "currency": "Israeli new shekel",
+      "currencyCode": "ILS",
+      "callingCode": "+972",
+      "internetTld": ".il",
+      "drivingSide": "Right",
+      "iso2": "IL",
+      "iso3": "ISR",
+      "isoNumeric": "376",
+      "locale": "he-IL",
+      "icuLocale": "he_IL",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Israel",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Jerusalem (IST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "100 / 101 / 102",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "he-IL",
+      "cldrLocale": "he_IL",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type H",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "israel",
+      "outlineLabel": "Israel outline",
+      "mapLabel": "Israel in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Israel flag",
+      "heroAccentPrimary": "0 56 184",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "17 24 39"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Teudat Zehut boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "VAT / Osek number and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Israel registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /israel/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Israeli examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "Companies Registrar",
+        "text": "Official business registry or company lookup remains the source of truth for Israel.",
+        "status": "official boundary"
+      },
+      {
+        "title": "VAT / Osek number",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "Privacy Protection Law",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "Teudat Zehut boundary, company number, VAT number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, Masav handoff, Zahav reference, SWIFT, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "he-IL / he_IL; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "ILS amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "Teudat Zehut boundary, company registration number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type H",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "100 / 101 / 102",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "TEUDAT ZEHUT",
+      "VAT",
+      "MASAV",
+      "ZAHAV",
+      "IBAN",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Israeli Teudat Zehut boundary Validator",
+        "href": "/en/israel/israel-teudat-zehut-boundary-validator/",
+        "text": "Validate Teudat Zehut boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Israeli company registration number Validator",
+        "href": "/en/israel/israel-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Israeli VAT / Osek number Validator",
+        "href": "/en/israel/israel-tax-id-validator/",
+        "text": "Normalize VAT / Osek number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Israeli Customs / Importer Code Helper",
+        "href": "/en/israel/israel-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Israeli Bituach Leumi boundary Helper",
+        "href": "/en/israel/israel-bituach-leumi-boundary-social-insurance-helper/",
+        "text": "Split Bituach Leumi boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Israeli Company Onboarding Auditor",
+        "href": "/en/israel/israel-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Israeli Companies Registrar Readiness Helper",
+        "href": "/en/israel/israel-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated Companies Registrar lookup or company registry workflow."
+      },
+      {
+        "title": "Israeli ID Card Format Helper",
+        "href": "/en/israel/israel-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Israeli Passport Number Helper",
+        "href": "/en/israel/israel-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Israeli MRZ / Passport Parser",
+        "href": "/en/israel/israel-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Israel Bank Account Validator",
+        "href": "/en/israel/israel-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Israel Bank Account Fixture Generator",
+        "href": "/en/israel/israel-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Israeli Domestic Bank Account Inspector",
+        "href": "/en/israel/israel-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Israeli BIC / SWIFT Inspector",
+        "href": "/en/israel/israel-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Israel banking integrations."
+      },
+      {
+        "title": "Israeli Domestic Transfer Helper",
+        "href": "/en/israel/israel-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Israeli Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/israel/israel-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Israeli Masav / Zahav reference Reference Helper",
+        "href": "/en/israel/israel-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Israeli Remittance Text Builder",
+        "href": "/en/israel/israel-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Israeli Payment Reconciliation Helper",
+        "href": "/en/israel/israel-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Israeli Bank Statement Parser",
+        "href": "/en/israel/israel-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Israeli Masked Bank Account Formatter",
+        "href": "/en/israel/israel-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Israeli ILS Decimal Currency Formatter",
+        "href": "/en/israel/israel-currency-decimal-formatter/",
+        "text": "Normalize ILS amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Israeli Tax Rate Sanity Helper",
+        "href": "/en/israel/israel-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Israeli Tax Return Field Helper",
+        "href": "/en/israel/israel-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Israeli Invoice Number Helper",
+        "href": "/en/israel/israel-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Israeli tax invoice Readiness Checker",
+        "href": "/en/israel/israel-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Israeli Tax Authority Handoff Helper",
+        "href": "/en/israel/israel-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Israeli Accounting Audit Trail Checklist Helper",
+        "href": "/en/israel/israel-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Israeli Postal Code Validator",
+        "href": "/en/israel/israel-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Israeli Address Normalizer",
+        "href": "/en/israel/israel-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Israeli Address Transliteration Normalizer",
+        "href": "/en/israel/israel-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Israeli Region / Province Code Mapper",
+        "href": "/en/israel/israel-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Israeli Municipality Code Inspector",
+        "href": "/en/israel/israel-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Israeli Phone Number Validator",
+        "href": "/en/israel/israel-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Israeli Phone E.164 Formatter",
+        "href": "/en/israel/israel-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Israeli Date Locale Formatter",
+        "href": "/en/israel/israel-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Israeli CSV Locale Normalizer",
+        "href": "/en/israel/israel-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Israel decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Israeli Slug Normalizer",
+        "href": "/en/israel/israel-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Israeli Document OCR Fixer",
+        "href": "/en/israel/israel-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Israeli Privacy Protection Law Redaction Helper",
+        "href": "/en/israel/israel-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Israeli PII Masker",
+        "href": "/en/israel/israel-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Israeli Personal Data Fixture Helper",
+        "href": "/en/israel/israel-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Israeli Driving Licence Format Helper",
+        "href": "/en/israel/israel-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Israeli Residence Permit Format Helper",
+        "href": "/en/israel/israel-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Israeli Health Card Format Helper",
+        "href": "/en/israel/israel-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Israeli Vehicle Plate Inspector",
+        "href": "/en/israel/israel-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Israeli VIN Validator",
+        "href": "/en/israel/israel-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Israeli Vehicle Data Redaction Helper",
+        "href": "/en/israel/israel-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Israeli Customs Declaration Helper",
+        "href": "/en/israel/israel-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Israeli Postal Tracking Helper",
+        "href": "/en/israel/israel-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Israeli Data Quality Workbench",
+        "href": "/en/israel/israel-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Israeli JSON Fixture Helper",
+        "href": "/en/israel/israel-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Israeli Regex Pack Helper",
+        "href": "/en/israel/israel-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Israeli API Payload Auditor",
+        "href": "/en/israel/israel-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Israeli Form Field Auditor",
+        "href": "/en/israel/israel-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Israeli Locale Number Parser",
+        "href": "/en/israel/israel-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Israel."
+      },
+      {
+        "title": "Israeli Calendar Week Helper",
+        "href": "/en/israel/israel-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Israeli Company Suffix Normalizer",
+        "href": "/en/israel/israel-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Israeli Procurement Identifier Helper",
+        "href": "/en/israel/israel-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Israeli Locale Copy Checker",
+        "href": "/en/israel/israel-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Israeli Support Ticket Scrubber",
+        "href": "/en/israel/israel-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Israeli Integration Smoke Test Builder",
+        "href": "/en/israel/israel-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

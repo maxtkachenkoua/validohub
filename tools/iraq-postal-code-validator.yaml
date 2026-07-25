@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iraq-postal-code-validator
+kind: tool
+module: validohub
+country: IQ
+category: address
+status: active
+name:
+  en: "Iraqi Postal Code Validator"
+summary:
+  en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iraq-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "10001 Baghdad"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iraq-address-normalizer, iraq-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iraqi Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."

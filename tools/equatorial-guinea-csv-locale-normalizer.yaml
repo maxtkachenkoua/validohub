@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: equatorial-guinea-csv-locale-normalizer
+kind: tool
+module: validohub
+country: GQ
+category: developer-tools
+status: active
+name:
+  en: "Equatoguinean CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Equatorial Guinea decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.equatorial-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 XAF;24/07/2026;GQ123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [equatorial-guinea-slug-normalizer, equatorial-guinea-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Equatoguinean CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Equatorial Guinea decimal, date, postal, phone, tax, and banking fields."

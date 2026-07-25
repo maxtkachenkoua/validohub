@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-bank-statement-parser
+kind: tool
+module: validohub
+country: PH
+category: finance
+status: active
+name:
+  en: "Philippine Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "07/21/2026; 1,234.56 PHP; 010 1234567890; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [philippines-masked-bank-account-formatter, philippines-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."

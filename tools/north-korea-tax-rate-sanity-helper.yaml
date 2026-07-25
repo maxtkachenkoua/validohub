@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: KP
+category: tax
+status: active
+name:
+  en: "North Korean Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "tax reference boundary 20% base 1,234 KPW"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-tax-return-field-helper, north-korea-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

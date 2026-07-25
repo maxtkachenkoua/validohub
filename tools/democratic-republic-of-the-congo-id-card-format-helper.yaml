@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: democratic-republic-of-the-congo-id-card-format-helper
+kind: tool
+module: validohub
+country: CD
+category: national-identifiers
+status: active
+name:
+  en: "Congolese ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.democratic-republic-of-the-congo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "CD-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [democratic-republic-of-the-congo-passport-number-helper, democratic-republic-of-the-congo-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Congolese ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palau-slug-normalizer
+kind: tool
+module: validohub
+country: PW
+category: developer-tools
+status: active
+name:
+  en: "Palauan Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Palau sample company Ngerulmud, Melekeok State"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palau-document-ocr-fixer, palau-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palauan Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

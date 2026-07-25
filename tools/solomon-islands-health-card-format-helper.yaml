@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-health-card-format-helper
+kind: tool
+module: validohub
+country: SB
+category: documents
+status: active
+name:
+  en: "Solomon Islands Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "SB-TIN-123456 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-vehicle-plate-inspector, solomon-islands-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

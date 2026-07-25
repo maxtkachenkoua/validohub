@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-regex-pack-helper
+kind: tool
+module: validohub
+country: KP
+category: developer-tools
+status: active
+name:
+  en: "North Korean Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "resident certificate boundary organization registration boundary postal code  001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-api-payload-auditor, north-korea-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

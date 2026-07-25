@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-payment-reference-helper
+kind: tool
+module: validohub
+country: PK
+category: finance
+status: active
+name:
+  en: "Pakistani Raast / 1LINK reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "Raast / 1LINK reference REF 2026-001 1,234.56 PKR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-remittance-text-builder, pakistan-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Raast / 1LINK reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

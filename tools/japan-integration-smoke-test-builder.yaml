@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: JP
+category: developer-tools
+status: active
+name:
+  en: "Japanese Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"JP\",\"corporateNumber\":\"1234567890123\",\"invoiceNumber\":\"T1234567890123\",\"amount\":\"1,234\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [japan-my-number-validator, japan-corporate-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

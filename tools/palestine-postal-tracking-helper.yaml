@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-postal-tracking-helper
+kind: tool
+module: validohub
+country: PS
+category: logistics
+status: active
+name:
+  en: "Palestinian Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 P600 Ramallah"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-data-quality-workbench, palestine-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

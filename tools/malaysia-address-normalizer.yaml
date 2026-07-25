@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-address-normalizer
+kind: tool
+module: validohub
+country: MY
+category: address
+status: active
+name:
+  en: "Malaysian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Jalan Ampang 1, 50050 Kuala Lumpur"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-address-transliteration-normalizer, malaysia-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

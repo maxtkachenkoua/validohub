@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-invoice-number-helper
+kind: tool
+module: validohub
+country: YE
+category: tax
+status: active
+name:
+  en: "Yemeni Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 TAX123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-e-invoicing-readiness-checker, yemen-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

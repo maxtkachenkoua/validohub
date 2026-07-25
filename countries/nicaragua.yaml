@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: NI
+slug: nicaragua
+name:
+  en: "Nicaragua"
+region: North America
+languages:
+  - es
+currency: NIO
+relatedCountries:
+  - HN
+  - CR
+  - PA

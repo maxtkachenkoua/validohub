@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: botswana-customs-declaration-helper
+kind: tool
+module: validohub
+country: BW
+category: government
+status: active
+name:
+  en: "Botswana Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.botswana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "BW123456789 HS 8471 1,234.56 BWP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [botswana-postal-tracking-helper, botswana-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Botswana Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: egypt-tax-id-validator
+kind: tool
+module: validohub
+country: EG
+category: national-identifiers
+status: active
+name:
+  en: "Egyptian tax number / VAT boundary Validator"
+summary:
+  en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.egypt-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "EG123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [egypt-customs-importer-code-helper, egypt-social-security-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Egyptian tax number / VAT boundary Validator | ValidoHub"
+  description:
+    en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

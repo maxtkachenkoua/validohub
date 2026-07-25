@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-json-fixture-generator
+kind: tool
+module: validohub
+country: MN
+category: developer-tools
+status: active
+name:
+  en: "Mongolian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MN\",\"reg\":\"9012345\",\"qpay\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [mongolia-regex-pack-helper, mongolia-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-bank-account-inspector
+kind: tool
+module: validohub
+country: CN
+category: finance
+status: active
+name:
+  en: "Chinese Domestic Bank Account Inspector"
+summary:
+  en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "102100099996 6222020200001234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-bic-swift-inspector, china-domestic-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese Domestic Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-locale-number-parser
+kind: tool
+module: validohub
+country: TW
+category: localization
+status: active
+name:
+  en: "Taiwanese Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Taiwan."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234 TWD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-calendar-week-helper, taiwan-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Taiwan."

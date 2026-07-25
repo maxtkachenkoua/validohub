@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: VN
+category: transport
+status: active
+name:
+  en: "Vietnamese Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "30A-123.45 WVWZZZ1JZXW000001 001090012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vietnam-customs-declaration-helper, vietnam-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

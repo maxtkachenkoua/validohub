@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-form-field-auditor
+kind: tool
+module: validohub
+country: JP
+category: developer-tools
+status: active
+name:
+  en: "Japanese Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=T1234567890123&postal=100-0001 Tokyo&phone=+81 3 1234 5678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-locale-number-parser, japan-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

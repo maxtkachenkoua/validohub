@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: afghanistan-phone-number-validator
+kind: tool
+module: validohub
+country: AF
+category: address
+status: active
+name:
+  en: "Afghan Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.afghanistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+93 70 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [afghanistan-phone-e164-formatter, afghanistan-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Afghan Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

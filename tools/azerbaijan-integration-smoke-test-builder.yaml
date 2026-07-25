@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: AZ
+category: developer-tools
+status: active
+name:
+  en: "Azerbaijani Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AZ\",\"voen\":\"9900003611\",\"iban\":\"AZ21NABZ00000000137010001944\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [azerbaijan-fin-code-boundary-validator, azerbaijan-company-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

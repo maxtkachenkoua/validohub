@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kenya-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: KE
+category: transport
+status: active
+name:
+  en: "Kenyan Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kenya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "KE 1234 WVWZZZ1JZXW000001 KE-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kenya-customs-declaration-helper, kenya-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kenyan Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

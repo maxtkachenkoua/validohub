@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: morocco-municipality-code-inspector
+kind: tool
+module: validohub
+country: MA
+category: address
+status: active
+name:
+  en: "Moroccan Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.morocco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Central business district, Rabat 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [morocco-phone-number-validator, morocco-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moroccan Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

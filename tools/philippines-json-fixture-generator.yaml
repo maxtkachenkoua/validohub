@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-json-fixture-generator
+kind: tool
+module: validohub
+country: PH
+category: developer-tools
+status: active
+name:
+  en: "Philippine JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PH\",\"tin\":\"123-456-789-000\",\"instapay\":\"0101234567890\",\"amount\":\"1,234.56\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [philippines-regex-pack-helper, philippines-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

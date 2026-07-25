@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: afghanistan-pii-masker
+kind: tool
+module: validohub
+country: AF
+category: privacy
+status: active
+name:
+  en: "Afghan PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.afghanistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1234-567890 +93 70 123 4567 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [afghanistan-personal-data-fixture-generator, afghanistan-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Afghan PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

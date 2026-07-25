@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: KW
+category: localization
+status: active
+name:
+  en: "Kuwaiti Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "Civil ID boundary input, postal code input, amount 1,234.560 KWD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-support-ticket-scrubber, kuwait-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

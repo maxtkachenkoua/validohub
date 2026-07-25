@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-csv-locale-normalizer
+kind: tool
+module: validohub
+country: MY
+category: developer-tools
+status: active
+name:
+  en: "Malaysian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Malaysia decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 MYR;21/07/2026;C1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-slug-normalizer, malaysia-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Malaysia decimal, date, postal, phone, tax, and banking fields."

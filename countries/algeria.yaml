@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: DZ
+slug: algeria
+name:
+  en: Algeria
+region: Africa
+languages:
+  - ar
+currency: DZD
+relatedCountries:
+  - ZA
+  - NG
+  - KE

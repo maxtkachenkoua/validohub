@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-remittance-text-builder
+kind: tool
+module: validohub
+country: ST
+category: finance
+status: active
+name:
+  en: "Sao Tomean Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 ST123456789 1,234.56 STN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-payment-reconciliation-helper, sao-tome-and-principe-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

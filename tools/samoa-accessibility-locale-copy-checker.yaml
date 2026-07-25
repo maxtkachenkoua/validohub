@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: samoa-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: WS
+category: localization
+status: active
+name:
+  en: "Samoan Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.samoa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "tax ID boundary input, village/locality input, amount 1,234.56 WST"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [samoa-support-ticket-scrubber, samoa-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Samoan Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

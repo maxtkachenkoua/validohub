@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: egypt-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: EG
+category: transport
+status: active
+name:
+  en: "Egyptian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.egypt-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "EG 1234 WVWZZZ1JZXW000001 EG-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [egypt-customs-declaration-helper, egypt-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Egyptian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

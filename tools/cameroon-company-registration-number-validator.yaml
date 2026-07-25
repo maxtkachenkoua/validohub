@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cameroon-company-registration-number-validator
+kind: tool
+module: validohub
+country: CM
+category: national-identifiers
+status: active
+name:
+  en: "Cameroonian company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cameroon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "CM-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cameroon-tax-id-validator, cameroon-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cameroonian company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

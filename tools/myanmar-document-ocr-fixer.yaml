@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: myanmar-document-ocr-fixer
+kind: tool
+module: validohub
+country: MM
+category: documents
+status: active
+name:
+  en: "Myanmar Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.myanmar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "12/LaMaNa(N)123456 TIN123456789 001 1234567890 15011 Naypyidaw"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [myanmar-privacy-redaction-helper, myanmar-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Myanmar Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-procurement-identifier-helper
+kind: tool
+module: validohub
+country: MN
+category: government
+status: active
+name:
+  en: "Mongolian Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "9012345 PO-2026-001 9012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-accessibility-locale-copy-checker, mongolia-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

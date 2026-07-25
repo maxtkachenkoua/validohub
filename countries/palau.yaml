@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: PW
+slug: palau
+name:
+  en: Palau
+region: Oceania
+languages:
+  - en
+currency: USD
+relatedCountries:
+  - FM
+  - MH
+  - PG

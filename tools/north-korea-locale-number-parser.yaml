@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-locale-number-parser
+kind: tool
+module: validohub
+country: KP
+category: localization
+status: active
+name:
+  en: "North Korean Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for North Korea."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234 KPW"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-calendar-week-helper, north-korea-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for North Korea."

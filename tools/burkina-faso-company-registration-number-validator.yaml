@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burkina-faso-company-registration-number-validator
+kind: tool
+module: validohub
+country: BF
+category: national-identifiers
+status: active
+name:
+  en: "Burkinabe company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burkina-faso-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "BF-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burkina-faso-tax-id-validator, burkina-faso-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burkinabe company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-slug-normalizer
+kind: tool
+module: validohub
+country: LK
+category: developer-tools
+status: active
+name:
+  en: "Sri Lankan Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Sri Lanka sample company Galle Road 1, Colombo 00100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-document-ocr-fixer, sri-lanka-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-csv-locale-normalizer
+kind: tool
+module: validohub
+country: YE
+category: developer-tools
+status: active
+name:
+  en: "Yemeni CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Yemen decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234,567 YER;21/07/2026;TAX123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-slug-normalizer, yemen-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Yemen decimal, date, postal, phone, tax, and banking fields."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-phone-number-validator
+kind: tool
+module: validohub
+country: CN
+category: address
+status: active
+name:
+  en: "Chinese Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+86 138 0013 8000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-phone-e164-formatter, china-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-pii-masker
+kind: tool
+module: validohub
+country: IN
+category: privacy
+status: active
+name:
+  en: "Indian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "ABCDE1234F +91 98765 43210 HDFC0001234 12345678901234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-personal-data-fixture-generator, india-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

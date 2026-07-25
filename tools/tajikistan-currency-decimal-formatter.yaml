@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-currency-decimal-formatter
+kind: tool
+module: validohub
+country: TJ
+category: finance
+status: active
+name:
+  en: "Tajik TJS Decimal Currency Formatter"
+summary:
+  en: "Normalize TJS amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1 234,56 TJS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-tax-rate-sanity-helper, tajikistan-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik TJS Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize TJS amount strings, decimal separators, grouping, and API-safe numeric previews."

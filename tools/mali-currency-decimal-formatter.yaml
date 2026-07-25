@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mali-currency-decimal-formatter
+kind: tool
+module: validohub
+country: ML
+category: finance
+status: active
+name:
+  en: "Malian XOF Decimal Currency Formatter"
+summary:
+  en: "Normalize XOF amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mali-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 XOF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mali-tax-rate-sanity-helper, mali-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malian XOF Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize XOF amount strings, decimal separators, grouping, and API-safe numeric previews."

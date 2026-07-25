@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: IN
+category: developer-tools
+status: active
+name:
+  en: "Indian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IN\",\"pan\":\"ABCDE1234F\",\"gstin\":\"27ABCDE1234F1Z5\",\"ifsc\":\"HDFC0001234\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [india-pan-validator, india-cin-llpin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

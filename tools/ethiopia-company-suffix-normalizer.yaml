@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ethiopia-company-suffix-normalizer
+kind: tool
+module: validohub
+country: ET
+category: developer-tools
+status: active
+name:
+  en: "Ethiopian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ethiopia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Ethiopia Sample Holding Ltd ET-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ethiopia-procurement-identifier-helper, ethiopia-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ethiopian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

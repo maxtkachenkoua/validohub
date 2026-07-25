@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-postal-code-validator
+kind: tool
+module: validohub
+country: SG
+category: address
+status: active
+name:
+  en: "Singapore Postal Code Validator"
+summary:
+  en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "049315 Singapore"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-address-normalizer, singapore-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."

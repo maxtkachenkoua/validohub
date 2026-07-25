@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-sio-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: BH
+category: national-identifiers
+status: active
+name:
+  en: "Bahraini SIO boundary Helper"
+summary:
+  en: "Split SIO boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "SIO-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-company-onboarding-auditor, bahrain-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini SIO boundary Helper | ValidoHub"
+  description:
+    en: "Split SIO boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

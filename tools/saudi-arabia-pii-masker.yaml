@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-pii-masker
+kind: tool
+module: validohub
+country: SA
+category: privacy
+status: active
+name:
+  en: "Saudi PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1001234567 +966 50 123 4567 80 000000608010167519"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-personal-data-fixture-generator, saudi-arabia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

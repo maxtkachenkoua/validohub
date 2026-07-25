@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-invoice-number-helper
+kind: tool
+module: validohub
+country: LK
+category: tax
+status: active
+name:
+  en: "Sri Lankan Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 104567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-e-invoicing-readiness-checker, sri-lanka-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

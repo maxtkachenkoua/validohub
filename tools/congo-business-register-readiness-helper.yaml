@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: congo-business-register-readiness-helper
+kind: tool
+module: validohub
+country: CG
+category: government
+status: active
+name:
+  en: "Congolese business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.congo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "CG-REG-123456 CG123456789 Central business district, Brazzaville 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [congo-id-card-format-helper, congo-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Congolese business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

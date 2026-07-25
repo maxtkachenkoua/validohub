@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kiribati-company-onboarding-auditor
+kind: tool
+module: validohub
+country: KI
+category: developer-tools
+status: active
+name:
+  en: "I-Kiribati Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kiribati-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KI\",\"taxNumber\":\"KI123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kiribati-business-register-readiness-helper, kiribati-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "I-Kiribati Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."

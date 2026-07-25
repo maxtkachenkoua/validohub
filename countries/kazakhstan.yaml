@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: KZ
+slug: kazakhstan
+name:
+  en: Kazakhstan
+region: Asia
+languages:
+  - kk
+currency: KZT
+relatedCountries:
+  - UZ
+  - KG
+  - CN

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-driving-licence-format-helper
+kind: tool
+module: validohub
+country: CV
+category: documents
+status: active
+name:
+  en: "Cabo Verdean Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "CV-ID-123456 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-residence-permit-format-helper, cabo-verde-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

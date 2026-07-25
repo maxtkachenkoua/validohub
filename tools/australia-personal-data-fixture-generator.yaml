@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: AU
+category: privacy
+status: active
+name:
+  en: "Australian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "123 456 782\\n1 National Circuit, Canberra ACT 2600\\n+61 412 345 678"
+    actions: [generate, validate, explain]
+related:
+  explicit: [australia-driving-licence-format-helper, australia-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

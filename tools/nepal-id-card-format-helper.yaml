@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-id-card-format-helper
+kind: tool
+module: validohub
+country: NP
+category: national-identifiers
+status: active
+name:
+  en: "Nepali ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "27-01-76-12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-passport-number-helper, nepal-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

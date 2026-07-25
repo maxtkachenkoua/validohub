@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-pii-masker
+kind: tool
+module: validohub
+country: LK
+category: privacy
+status: active
+name:
+  en: "Sri Lankan PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "199012345678 +94 77 123 4567 7010 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-personal-data-fixture-generator, sri-lanka-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-pii-masker
+kind: tool
+module: validohub
+country: TM
+category: privacy
+status: active
+name:
+  en: "Turkmen PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "A1234567 +993 12 345678 3901012345678901"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkmenistan-personal-data-fixture-generator, turkmenistan-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sierra-leone-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: SL
+category: privacy
+status: active
+name:
+  en: "Sierra Leonean Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.sierra-leone-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "SL-ID-123456\\nCentral business district, Freetown 1000\\n+232 123 456 789"
+    actions: [generate, validate, explain]
+related:
+  explicit: [sierra-leone-driving-licence-format-helper, sierra-leone-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sierra Leonean Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

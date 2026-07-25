@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gabon-company-onboarding-auditor
+kind: tool
+module: validohub
+country: GA
+category: developer-tools
+status: active
+name:
+  en: "Gabonese Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gabon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"GA\",\"taxNumber\":\"GA123456789\",\"paymentReference\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gabon-business-register-readiness-helper, gabon-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gabonese Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."

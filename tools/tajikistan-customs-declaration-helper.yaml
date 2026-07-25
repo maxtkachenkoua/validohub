@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-customs-declaration-helper
+kind: tool
+module: validohub
+country: TJ
+category: government
+status: active
+name:
+  en: "Tajik Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "123456789 HS 8471 1 234,56 TJS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-postal-tracking-helper, tajikistan-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

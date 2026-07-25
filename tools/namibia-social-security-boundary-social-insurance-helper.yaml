@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: namibia-social-security-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: NA
+category: national-identifiers
+status: active
+name:
+  en: "Namibian social security boundary Helper"
+summary:
+  en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.namibia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "NA-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [namibia-company-onboarding-auditor, namibia-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Namibian social security boundary Helper | ValidoHub"
+  description:
+    en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

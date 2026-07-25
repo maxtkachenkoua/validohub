@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vanuatu-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: VU
+category: transport
+status: active
+name:
+  en: "Vanuatuan Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vanuatu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "VU 1234 WVWZZZ1JZXW000001 VU-TIN-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vanuatu-customs-declaration-helper, vanuatu-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vanuatuan Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

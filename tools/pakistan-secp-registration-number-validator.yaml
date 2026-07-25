@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-secp-registration-number-validator
+kind: tool
+module: validohub
+country: PK
+category: national-identifiers
+status: active
+name:
+  en: "Pakistani SECP registration number Validator"
+summary:
+  en: "Inspect SECP registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "0123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-tax-id-validator, pakistan-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani SECP registration number Validator | ValidoHub"
+  description:
+    en: "Inspect SECP registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

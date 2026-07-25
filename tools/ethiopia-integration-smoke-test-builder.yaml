@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ethiopia-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: ET
+category: developer-tools
+status: active
+name:
+  en: "Ethiopian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.ethiopia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"ET\",\"taxNumber\":\"ET123456789\",\"paymentReference\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [ethiopia-national-id-boundary-validator, ethiopia-company-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ethiopian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tunisia-csv-locale-normalizer
+kind: tool
+module: validohub
+country: TN
+category: developer-tools
+status: active
+name:
+  en: "Tunisian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Tunisia decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tunisia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 TND;24/07/2026;TN123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tunisia-slug-normalizer, tunisia-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tunisian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Tunisia decimal, date, postal, phone, tax, and banking fields."

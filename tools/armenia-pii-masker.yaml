@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: armenia-pii-masker
+kind: tool
+module: validohub
+country: AM
+category: privacy
+status: active
+name:
+  en: "Armenian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.armenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1234567890 +374 91 123456 001 123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [armenia-personal-data-fixture-generator, armenia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Armenian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

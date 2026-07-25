@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-bituach-leumi-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: IL
+category: national-identifiers
+status: active
+name:
+  en: "Israeli Bituach Leumi boundary Helper"
+summary:
+  en: "Split Bituach Leumi boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "123456782"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [israel-company-onboarding-auditor, israel-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli Bituach Leumi boundary Helper | ValidoHub"
+  description:
+    en: "Split Bituach Leumi boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

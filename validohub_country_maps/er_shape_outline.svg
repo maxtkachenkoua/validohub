@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-81.24 -79.94 652.79 648.64" role="img">
+  <title>Eritrea country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="8.98" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="er" d="M496.224,493.859l-0.216-5.093l3.423-3.992l0.926,0.709l1.686,5.637l8.091,6.023l-1.47,1.808l-5.922-5.091L496.224,493.859L496.224,493.859z"/>
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kenya-locale-number-parser
+kind: tool
+module: validohub
+country: KE
+category: localization
+status: active
+name:
+  en: "Kenyan Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Kenya."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kenya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 KES"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kenya-calendar-week-helper, kenya-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kenyan Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Kenya."

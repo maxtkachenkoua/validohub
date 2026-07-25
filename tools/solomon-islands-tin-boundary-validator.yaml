@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-tin-boundary-validator
+kind: tool
+module: validohub
+country: SB
+category: national-identifiers
+status: active
+name:
+  en: "Solomon Islands TIN boundary Validator"
+summary:
+  en: "Validate TIN boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "SB-TIN-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-company-registration-number-validator, solomon-islands-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands TIN boundary Validator | ValidoHub"
+  description:
+    en: "Validate TIN boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

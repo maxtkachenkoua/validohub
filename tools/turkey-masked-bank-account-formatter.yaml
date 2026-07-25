@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-masked-bank-account-formatter
+kind: tool
+module: validohub
+country: TR
+category: finance
+status: active
+name:
+  en: "Turkish Masked Bank Account Formatter"
+summary:
+  en: "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "0061 0519786457841326"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-currency-decimal-formatter, turkey-tax-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish Masked Bank Account Formatter | ValidoHub"
+  description:
+    en: "Create log-safe bank-account previews while preserving routing and account-tail evidence."

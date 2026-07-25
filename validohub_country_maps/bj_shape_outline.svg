@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-84.02 -81.44 677.48 674.56" role="img">
+  <title>Benin country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.34" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="bj" d="M411.512,515.288h1.833l0.104-5.204l2.315-3.363l-0.104-5.852l-2.102-0.052l-3.604,2.816l1.504,2.87L411.512,515.288L411.512,515.288z"/>
+  </g>
+</svg>

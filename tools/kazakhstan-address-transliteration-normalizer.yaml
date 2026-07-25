@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: KZ
+category: address
+status: active
+name:
+  en: "Kazakh Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Mangilik El Avenue 1, Astana 010000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-region-code-mapper, kazakhstan-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

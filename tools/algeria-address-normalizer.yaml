@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: algeria-address-normalizer
+kind: tool
+module: validohub
+country: DZ
+category: address
+status: active
+name:
+  en: "Algerian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.algeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Central business district, Algiers 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [algeria-address-transliteration-normalizer, algeria-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Algerian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

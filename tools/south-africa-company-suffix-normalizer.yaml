@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-africa-company-suffix-normalizer
+kind: tool
+module: validohub
+country: ZA
+category: developer-tools
+status: active
+name:
+  en: "South African Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-africa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "South Africa Sample Holding Ltd ZA-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-africa-procurement-identifier-helper, south-africa-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South African Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

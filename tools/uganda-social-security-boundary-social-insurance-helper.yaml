@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uganda-social-security-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: UG
+category: national-identifiers
+status: active
+name:
+  en: "Ugandan social security boundary Helper"
+summary:
+  en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uganda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "UG-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uganda-company-onboarding-auditor, uganda-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ugandan social security boundary Helper | ValidoHub"
+  description:
+    en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

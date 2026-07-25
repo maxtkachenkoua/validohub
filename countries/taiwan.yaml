@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: TW
+slug: taiwan
+name:
+  en: Taiwan
+region: Asia
+languages:
+  - zh
+currency: TWD
+relatedCountries:
+  - JP
+  - KR
+  - SG

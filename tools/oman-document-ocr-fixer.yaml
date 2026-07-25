@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: oman-document-ocr-fixer
+kind: tool
+module: validohub
+country: OM
+category: documents
+status: active
+name:
+  en: "Omani Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.oman-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "12345678 OM1100123456 0001 123456789 100 Muscat"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [oman-privacy-redaction-helper, oman-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Omani Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

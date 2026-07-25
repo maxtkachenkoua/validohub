@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-csv-locale-normalizer
+kind: tool
+module: validohub
+country: AE
+category: developer-tools
+status: active
+name:
+  en: "UAE CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for United Arab Emirates decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 AED;21/07/2026;100123456700003"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-slug-normalizer, united-arab-emirates-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for United Arab Emirates decimal, date, postal, phone, tax, and banking fields."

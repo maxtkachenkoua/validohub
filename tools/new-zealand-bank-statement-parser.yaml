@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-bank-statement-parser
+kind: tool
+module: validohub
+country: NZ
+category: finance
+status: active
+name:
+  en: "New Zealand Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "24/07/2026; 1,234.56 NZD; 12-1234-1234567-00; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-masked-bank-account-formatter, new-zealand-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."

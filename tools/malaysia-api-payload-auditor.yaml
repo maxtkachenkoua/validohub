@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-api-payload-auditor
+kind: tool
+module: validohub
+country: MY
+category: developer-tools
+status: active
+name:
+  en: "Malaysian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MY\",\"ssm\":\"201901234567\",\"tin\":\"C1234567890\",\"duitnow\":\"+60123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-form-field-auditor, malaysia-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

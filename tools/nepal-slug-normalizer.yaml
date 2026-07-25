@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-slug-normalizer
+kind: tool
+module: validohub
+country: NP
+category: developer-tools
+status: active
+name:
+  en: "Nepali Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Nepal sample company Durbar Marg 1, Kathmandu 44600"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-document-ocr-fixer, nepal-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

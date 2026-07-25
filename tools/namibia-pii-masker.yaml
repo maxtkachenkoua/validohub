@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: namibia-pii-masker
+kind: tool
+module: validohub
+country: NA
+category: privacy
+status: active
+name:
+  en: "Namibian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.namibia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "NA-ID-123456 +264 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [namibia-personal-data-fixture-generator, namibia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Namibian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

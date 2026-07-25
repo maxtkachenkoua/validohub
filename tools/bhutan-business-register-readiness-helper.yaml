@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bhutan-business-register-readiness-helper
+kind: tool
+module: validohub
+country: BT
+category: government
+status: active
+name:
+  en: "Bhutanese Company Registry Division Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Company Registry Division lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bhutan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "BT-123456 TPN1234567 Norzin Lam 1, Thimphu 11001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bhutan-id-card-format-helper, bhutan-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bhutanese Company Registry Division Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Company Registry Division lookup or company registry workflow."

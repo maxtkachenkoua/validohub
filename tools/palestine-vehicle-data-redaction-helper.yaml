@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: PS
+category: transport
+status: active
+name:
+  en: "Palestinian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "1-234-56 WVWZZZ1JZXW000001 401234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-customs-declaration-helper, palestine-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

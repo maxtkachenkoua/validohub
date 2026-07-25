@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-residence-permit-format-helper
+kind: tool
+module: validohub
+country: BH
+category: documents
+status: active
+name:
+  en: "Bahraini Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "BH PERMIT 2026 900101123"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-health-card-format-helper, bahrain-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-ssm-registration-number-validator
+kind: tool
+module: validohub
+country: MY
+category: national-identifiers
+status: active
+name:
+  en: "Malaysian SSM registration number Validator"
+summary:
+  en: "Inspect SSM registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "201901234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-tax-id-validator, malaysia-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian SSM registration number Validator | ValidoHub"
+  description:
+    en: "Inspect SSM registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

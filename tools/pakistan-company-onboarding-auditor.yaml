@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-company-onboarding-auditor
+kind: tool
+module: validohub
+country: PK
+category: developer-tools
+status: active
+name:
+  en: "Pakistani Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for SECP registration number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PK\",\"cnic\":\"35202-1234567-1\",\"iban\":\"PK36SCBL0000001123456702\",\"raast\":\"+923001234567\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-business-register-readiness-helper, pakistan-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for SECP registration number, VAT, address, banking, and official registry handoff readiness."

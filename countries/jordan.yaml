@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: JO
+slug: jordan
+name:
+  en: Jordan
+region: Asia
+languages:
+  - ar
+currency: JOD
+relatedCountries:
+  - SA
+  - IL
+  - AE

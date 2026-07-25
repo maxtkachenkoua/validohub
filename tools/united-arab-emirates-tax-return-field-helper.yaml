@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-tax-return-field-helper
+kind: tool
+module: validohub
+country: AE
+category: tax
+status: active
+name:
+  en: "UAE Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "VAT TRN; 100123456700003; period 2026-07; 1,234.56 AED"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-invoice-number-helper, united-arab-emirates-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

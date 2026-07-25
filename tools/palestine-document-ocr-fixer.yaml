@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-document-ocr-fixer
+kind: tool
+module: validohub
+country: PS
+category: documents
+status: active
+name:
+  en: "Palestinian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "401234567 562345678 PALS 400123456702 P600 Ramallah"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-privacy-redaction-helper, palestine-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

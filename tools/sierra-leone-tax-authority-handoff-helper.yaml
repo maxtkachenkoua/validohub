@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sierra-leone-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: SL
+category: tax
+status: active
+name:
+  en: "Sierra Leonean Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sierra-leone-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "SL123456789 24/07/2026 1,234.56 SLE"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sierra-leone-accounting-audit-trail-checklist-generator, sierra-leone-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sierra Leonean Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

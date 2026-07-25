@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zimbabwe-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: ZW
+category: localization
+status: active
+name:
+  en: "Zimbabwean Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zimbabwe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "national ID boundary input, postal/address code input, amount 1,234.56 ZWL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zimbabwe-support-ticket-scrubber, zimbabwe-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zimbabwean Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

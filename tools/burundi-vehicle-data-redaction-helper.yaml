@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: BI
+category: transport
+status: active
+name:
+  en: "Burundian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "BI 1234 WVWZZZ1JZXW000001 BI-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-customs-declaration-helper, burundi-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

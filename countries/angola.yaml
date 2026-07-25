@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: AO
+slug: angola
+name:
+  en: Angola
+region: Africa
+languages:
+  - pt
+currency: AOA
+relatedCountries:
+  - ZA
+  - NG
+  - KE

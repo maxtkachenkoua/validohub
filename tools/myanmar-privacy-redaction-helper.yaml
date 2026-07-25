@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: myanmar-privacy-redaction-helper
+kind: tool
+module: validohub
+country: MM
+category: privacy
+status: active
+name:
+  en: "Myanmar privacy boundary Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.myanmar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MM\",\"nrc\":\"12/LaMaNa(N)123456\",\"tin\":\"TIN123456789\",\"mpu\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [myanmar-pii-masker, myanmar-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Myanmar privacy boundary Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

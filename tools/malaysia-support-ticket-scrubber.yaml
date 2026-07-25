@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-support-ticket-scrubber
+kind: tool
+module: validohub
+country: MY
+category: privacy
+status: active
+name:
+  en: "Malaysian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 900101-14-5678, 5140 123456789012, Jalan Ampang 1, 50050 Kuala Lumpur"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-integration-smoke-test-builder, malaysia-mykad-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

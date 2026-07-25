@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-document-ocr-fixer
+kind: tool
+module: validohub
+country: MH
+category: documents
+status: active
+name:
+  en: "Marshallese Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "MH-ID-123456 MH123456789 001 1234567890 Majuro MH 96960"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-privacy-redaction-helper, marshall-islands-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

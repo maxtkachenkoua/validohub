@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-document-ocr-fixer
+kind: tool
+module: validohub
+country: MN
+category: documents
+status: active
+name:
+  en: "Mongolian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "УА90010123 9012345 050 1234567890 14200 Ulaanbaatar"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-privacy-redaction-helper, mongolia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

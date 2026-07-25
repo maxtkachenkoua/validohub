@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-payment-reference-helper
+kind: tool
+module: validohub
+country: UZ
+category: finance
+status: active
+name:
+  en: "Uzbek Humo / Uzcard reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "Humo / Uzcard reference REF 2026-001 1 234 567,89 UZS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-remittance-text-builder, uzbekistan-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek Humo / Uzcard reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

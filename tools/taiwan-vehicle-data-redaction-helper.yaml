@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: TW
+category: transport
+status: active
+name:
+  en: "Taiwanese Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "ABC-1234 WVWZZZ1JZXW000001 A123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-customs-declaration-helper, taiwan-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

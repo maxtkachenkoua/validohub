@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-csv-locale-normalizer
+kind: tool
+module: validohub
+country: SB
+category: developer-tools
+status: active
+name:
+  en: "Solomon Islands CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Solomon Islands decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 SBD;24/07/2026;SB123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-slug-normalizer, solomon-islands-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Solomon Islands decimal, date, postal, phone, tax, and banking fields."

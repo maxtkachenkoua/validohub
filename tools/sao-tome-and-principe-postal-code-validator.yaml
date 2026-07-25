@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-postal-code-validator
+kind: tool
+module: validohub
+country: ST
+category: address
+status: active
+name:
+  en: "Sao Tomean Postal Code Validator"
+summary:
+  en: "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "1000 Sao Tome"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-address-normalizer, sao-tome-and-principe-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."

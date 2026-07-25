@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: armenia-locale-number-parser
+kind: tool
+module: validohub
+country: AM
+category: localization
+status: active
+name:
+  en: "Armenian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Armenia."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.armenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1 234.56 AMD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [armenia-calendar-week-helper, armenia-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Armenian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Armenia."

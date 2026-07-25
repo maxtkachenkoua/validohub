@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-id-card-format-helper
+kind: tool
+module: validohub
+country: KG
+category: national-identifiers
+status: active
+name:
+  en: "Kyrgyz ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "20101200123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-passport-number-helper, kyrgyzstan-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

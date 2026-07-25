@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: libya-national-id-boundary-validator
+kind: tool
+module: validohub
+country: LY
+category: national-identifiers
+status: active
+name:
+  en: "Libyan national ID boundary Validator"
+summary:
+  en: "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.libya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "LY-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [libya-company-registration-number-validator, libya-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Libyan national ID boundary Validator | ValidoHub"
+  description:
+    en: "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

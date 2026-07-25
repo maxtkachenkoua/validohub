@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-document-ocr-fixer
+kind: tool
+module: validohub
+country: VN
+category: documents
+status: active
+name:
+  en: "Vietnamese Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "001090012345 0101234567 9704 1234567890 100000 Hanoi"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vietnam-privacy-redaction-helper, vietnam-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

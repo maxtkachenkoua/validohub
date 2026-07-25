@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sudan-form-field-auditor
+kind: tool
+module: validohub
+country: SD
+category: developer-tools
+status: active
+name:
+  en: "Sudanese Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=SD123456789&postal=1000 Khartoum&phone=+249 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sudan-locale-number-parser, sudan-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sudanese Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

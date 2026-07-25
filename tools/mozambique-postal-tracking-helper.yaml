@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mozambique-postal-tracking-helper
+kind: tool
+module: validohub
+country: MZ
+category: logistics
+status: active
+name:
+  en: "Mozambican Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mozambique-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1000 Maputo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mozambique-data-quality-workbench, mozambique-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mozambican Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

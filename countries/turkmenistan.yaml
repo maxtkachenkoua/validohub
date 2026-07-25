@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: TM
+slug: turkmenistan
+name:
+  en: Turkmenistan
+region: Asia
+languages:
+  - tk
+currency: TMT
+relatedCountries:
+  - UZ
+  - TJ
+  - PK

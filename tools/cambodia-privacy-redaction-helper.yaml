@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-privacy-redaction-helper
+kind: tool
+module: validohub
+country: KH
+category: privacy
+status: active
+name:
+  en: "Cambodian personal-data privacy Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KH\",\"tin\":\"K001-123456789\",\"bakong\":\"khqr-inv-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-pii-masker, cambodia-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian personal-data privacy Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

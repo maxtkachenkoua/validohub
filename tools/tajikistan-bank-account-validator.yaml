@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-bank-account-validator
+kind: tool
+module: validohub
+country: TJ
+category: finance
+status: active
+name:
+  en: "Tajikistan Bank Account Validator"
+summary:
+  en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "3501012345678901"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-bank-account-fixture-generator, tajikistan-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajikistan Bank Account Validator | ValidoHub"
+  description:
+    en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."

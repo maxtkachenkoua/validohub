@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-postal-code-validator
+kind: tool
+module: validohub
+country: TO
+category: address
+status: active
+name:
+  en: "Tongan Postal Code Validator"
+summary:
+  en: "Validate village/locality shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "Nukuʻalofa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-address-normalizer, tonga-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate village/locality shape, split area/delivery hints, and preserve official postal lookup boundaries."

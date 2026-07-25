@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-social-security-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: ST
+category: national-identifiers
+status: active
+name:
+  en: "Sao Tomean social security boundary Helper"
+summary:
+  en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "ST-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-company-onboarding-auditor, sao-tome-and-principe-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean social security boundary Helper | ValidoHub"
+  description:
+    en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

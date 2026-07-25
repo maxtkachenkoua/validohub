@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liberia-locale-number-parser
+kind: tool
+module: validohub
+country: LR
+category: localization
+status: active
+name:
+  en: "Liberian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Liberia."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liberia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 LRD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liberia-calendar-week-helper, liberia-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liberian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Liberia."

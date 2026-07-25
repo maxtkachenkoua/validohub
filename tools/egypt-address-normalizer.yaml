@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: egypt-address-normalizer
+kind: tool
+module: validohub
+country: EG
+category: address
+status: active
+name:
+  en: "Egyptian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.egypt-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Central business district, Cairo 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [egypt-address-transliteration-normalizer, egypt-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Egyptian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

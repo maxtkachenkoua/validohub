@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: EG
+slug: egypt
+name:
+  en: Egypt
+region: Africa
+languages:
+  - ar
+currency: EGP
+relatedCountries:
+  - ZA
+  - NG
+  - KE

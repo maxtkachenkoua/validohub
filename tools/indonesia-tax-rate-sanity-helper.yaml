@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: ID
+category: tax
+status: active
+name:
+  en: "Indonesian Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "NPWP 20% base 1.234.567,89 IDR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-tax-return-field-helper, indonesia-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

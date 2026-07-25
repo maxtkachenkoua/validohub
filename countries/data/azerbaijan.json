@@ -1,0 +1,642 @@
+{
+  "id": "azerbaijan",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/azerbaijan-outline.png",
+    "outlineAlt": "Azerbaijan country outline",
+    "mapSrc": "/assets/images/countries/azerbaijan-location.png",
+    "mapAlt": "World map with Azerbaijan location marker",
+    "mapMarker": {
+      "x": 56,
+      "y": 50,
+      "label": "Azerbaijan"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "azerbaijan",
+    "flag": "🇦🇿",
+    "name": "Azerbaijan",
+    "nativeName": "Azerbaycan",
+    "iso2": "AZ",
+    "iso3": "AZE",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Azerbaijani",
+    "currency": "AZN",
+    "currencyName": "Azerbaijani manat",
+    "status": "available",
+    "summary": "Premium Azerbaijan developer hub for FIN code boundary, VOEN / TIN, company registration number, postal code, phone, IBAN, AZIPS / XOHKS reference, bank code, SWIFT, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "FIN code boundary",
+      "VOEN / TIN",
+      "company registration number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "IBAN",
+      "AZIPS / XOHKS reference",
+      "bank code",
+      "SWIFT",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Azerbaijani FIN code boundary Validator",
+      "Azerbaijani company registration number Validator",
+      "Azerbaijani VOEN / TIN Validator",
+      "Azerbaijani Customs / Importer Code Helper",
+      "Azerbaijani social insurance boundary Helper",
+      "Azerbaijani Company Onboarding Auditor",
+      "Azerbaijani State Tax Service registry Readiness Helper",
+      "Azerbaijani ID Card Format Helper",
+      "Azerbaijani Passport Number Helper",
+      "Azerbaijani MRZ / Passport Parser",
+      "Azerbaijan Bank Account Validator",
+      "Azerbaijan Bank Account Fixture Generator",
+      "Azerbaijani Domestic Bank Account Inspector",
+      "Azerbaijani BIC / SWIFT Inspector",
+      "Azerbaijani Domestic Transfer Helper",
+      "Azerbaijani Direct Debit / Auto-Debit Mandate Helper",
+      "Azerbaijani AZIPS / XOHKS reference Reference Helper",
+      "Azerbaijani Remittance Text Builder",
+      "Azerbaijani Payment Reconciliation Helper",
+      "Azerbaijani Bank Statement Parser",
+      "Azerbaijani Masked Bank Account Formatter",
+      "Azerbaijani AZN Decimal Currency Formatter",
+      "Azerbaijani Tax Rate Sanity Helper",
+      "Azerbaijani Tax Return Field Helper",
+      "Azerbaijani Invoice Number Helper",
+      "Azerbaijani e-invoice Readiness Checker",
+      "Azerbaijani Tax Authority Handoff Helper",
+      "Azerbaijani Accounting Audit Trail Checklist Helper",
+      "Azerbaijani Postal Code Validator",
+      "Azerbaijani Address Normalizer",
+      "Azerbaijani Address Transliteration Normalizer",
+      "Azerbaijani Region / Province Code Mapper",
+      "Azerbaijani Municipality Code Inspector",
+      "Azerbaijani Phone Number Validator",
+      "Azerbaijani Phone E.164 Formatter",
+      "Azerbaijani Date Locale Formatter",
+      "Azerbaijani CSV Locale Normalizer",
+      "Azerbaijani Slug Normalizer",
+      "Azerbaijani Document OCR Fixer",
+      "Azerbaijani personal-data privacy Redaction Helper",
+      "Azerbaijani PII Masker",
+      "Azerbaijani Personal Data Fixture Helper",
+      "Azerbaijani Driving Licence Format Helper",
+      "Azerbaijani Residence Permit Format Helper",
+      "Azerbaijani Health Card Format Helper",
+      "Azerbaijani Vehicle Plate Inspector",
+      "Azerbaijani VIN Validator",
+      "Azerbaijani Vehicle Data Redaction Helper",
+      "Azerbaijani Customs Declaration Helper",
+      "Azerbaijani Postal Tracking Helper",
+      "Azerbaijani Data Quality Workbench",
+      "Azerbaijani JSON Fixture Helper",
+      "Azerbaijani Regex Pack Helper",
+      "Azerbaijani API Payload Auditor",
+      "Azerbaijani Form Field Auditor",
+      "Azerbaijani Locale Number Parser",
+      "Azerbaijani Calendar Week Helper",
+      "Azerbaijani Company Suffix Normalizer",
+      "Azerbaijani Procurement Identifier Helper",
+      "Azerbaijani Locale Copy Checker",
+      "Azerbaijani Support Ticket Scrubber",
+      "Azerbaijani Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live State Tax Service registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 56,
+      "y": 50
+    },
+    "searchHints": [
+      "FIN",
+      "VOEN",
+      "IBAN",
+      "AZIPS",
+      "XOHKS",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇦🇿",
+    "name": "Azerbaijan",
+    "badge": "Premium Azerbaijan developer suite",
+    "description": "Developer intelligence and browser-only workbenches for azerbaijani identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Azerbaycan",
+      "population": "approximately 10.3M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Baku",
+      "continent": "Asia",
+      "region": "Caucasus / Western Asia",
+      "languages": "Azerbaijani",
+      "currency": "Azerbaijani manat",
+      "currencyCode": "AZN",
+      "callingCode": "+994",
+      "internetTld": ".az",
+      "drivingSide": "Right",
+      "iso2": "AZ",
+      "iso3": "AZE",
+      "isoNumeric": "031",
+      "locale": "az-AZ",
+      "icuLocale": "az_AZ",
+      "dateFormat": "DD.MM.YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Space grouping",
+      "addressFormat": "Street, number, postal code, locality, Azerbaijan",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Baku (AZT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "az-AZ",
+      "cldrLocale": "az_AZ",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "220V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "azerbaijan",
+      "outlineLabel": "Azerbaijan outline",
+      "mapLabel": "Azerbaijan in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Azerbaijan flag",
+      "heroAccentPrimary": "0 181 226",
+      "heroAccentSecondary": "239 51 64",
+      "heroAccentTertiary": "80 158 47"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "FIN code boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "VOEN / TIN and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Azerbaijan registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /azerbaijan/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Space grouping rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Azerbaijani examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "State Tax Service registry",
+        "text": "Official business registry or company lookup remains the source of truth for Azerbaijan.",
+        "status": "official boundary"
+      },
+      {
+        "title": "VOEN / TIN",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "FIN code boundary, VOEN / TIN, company registration number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, AZIPS / XOHKS reference, bank code, SWIFT, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "az-AZ / az_AZ; date DD.MM.YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "AZN amounts use Comma (,) and Space grouping.",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "FIN code boundary, company registration number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "220V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "FIN",
+      "VOEN",
+      "IBAN",
+      "AZIPS",
+      "XOHKS",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Azerbaijani FIN code boundary Validator",
+        "href": "/en/azerbaijan/azerbaijan-fin-code-boundary-validator/",
+        "text": "Validate FIN code boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Azerbaijani company registration number Validator",
+        "href": "/en/azerbaijan/azerbaijan-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Azerbaijani VOEN / TIN Validator",
+        "href": "/en/azerbaijan/azerbaijan-tax-id-validator/",
+        "text": "Normalize VOEN / TIN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Azerbaijani Customs / Importer Code Helper",
+        "href": "/en/azerbaijan/azerbaijan-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Azerbaijani social insurance boundary Helper",
+        "href": "/en/azerbaijan/azerbaijan-social-insurance-boundary-social-insurance-helper/",
+        "text": "Split social insurance boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Azerbaijani Company Onboarding Auditor",
+        "href": "/en/azerbaijan/azerbaijan-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Azerbaijani State Tax Service registry Readiness Helper",
+        "href": "/en/azerbaijan/azerbaijan-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated State Tax Service registry lookup or company registry workflow."
+      },
+      {
+        "title": "Azerbaijani ID Card Format Helper",
+        "href": "/en/azerbaijan/azerbaijan-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Azerbaijani Passport Number Helper",
+        "href": "/en/azerbaijan/azerbaijan-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Azerbaijani MRZ / Passport Parser",
+        "href": "/en/azerbaijan/azerbaijan-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Azerbaijan Bank Account Validator",
+        "href": "/en/azerbaijan/azerbaijan-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Azerbaijan Bank Account Fixture Generator",
+        "href": "/en/azerbaijan/azerbaijan-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Azerbaijani Domestic Bank Account Inspector",
+        "href": "/en/azerbaijan/azerbaijan-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Azerbaijani BIC / SWIFT Inspector",
+        "href": "/en/azerbaijan/azerbaijan-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Azerbaijan banking integrations."
+      },
+      {
+        "title": "Azerbaijani Domestic Transfer Helper",
+        "href": "/en/azerbaijan/azerbaijan-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Azerbaijani Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/azerbaijan/azerbaijan-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Azerbaijani AZIPS / XOHKS reference Reference Helper",
+        "href": "/en/azerbaijan/azerbaijan-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Azerbaijani Remittance Text Builder",
+        "href": "/en/azerbaijan/azerbaijan-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Azerbaijani Payment Reconciliation Helper",
+        "href": "/en/azerbaijan/azerbaijan-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Azerbaijani Bank Statement Parser",
+        "href": "/en/azerbaijan/azerbaijan-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Azerbaijani Masked Bank Account Formatter",
+        "href": "/en/azerbaijan/azerbaijan-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Azerbaijani AZN Decimal Currency Formatter",
+        "href": "/en/azerbaijan/azerbaijan-currency-decimal-formatter/",
+        "text": "Normalize AZN amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Azerbaijani Tax Rate Sanity Helper",
+        "href": "/en/azerbaijan/azerbaijan-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Azerbaijani Tax Return Field Helper",
+        "href": "/en/azerbaijan/azerbaijan-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Azerbaijani Invoice Number Helper",
+        "href": "/en/azerbaijan/azerbaijan-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Azerbaijani e-invoice Readiness Checker",
+        "href": "/en/azerbaijan/azerbaijan-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Azerbaijani Tax Authority Handoff Helper",
+        "href": "/en/azerbaijan/azerbaijan-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Azerbaijani Accounting Audit Trail Checklist Helper",
+        "href": "/en/azerbaijan/azerbaijan-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Azerbaijani Postal Code Validator",
+        "href": "/en/azerbaijan/azerbaijan-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Azerbaijani Address Normalizer",
+        "href": "/en/azerbaijan/azerbaijan-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Azerbaijani Address Transliteration Normalizer",
+        "href": "/en/azerbaijan/azerbaijan-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Azerbaijani Region / Province Code Mapper",
+        "href": "/en/azerbaijan/azerbaijan-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Azerbaijani Municipality Code Inspector",
+        "href": "/en/azerbaijan/azerbaijan-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Azerbaijani Phone Number Validator",
+        "href": "/en/azerbaijan/azerbaijan-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Azerbaijani Phone E.164 Formatter",
+        "href": "/en/azerbaijan/azerbaijan-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Azerbaijani Date Locale Formatter",
+        "href": "/en/azerbaijan/azerbaijan-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Azerbaijani CSV Locale Normalizer",
+        "href": "/en/azerbaijan/azerbaijan-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Azerbaijan decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Azerbaijani Slug Normalizer",
+        "href": "/en/azerbaijan/azerbaijan-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Azerbaijani Document OCR Fixer",
+        "href": "/en/azerbaijan/azerbaijan-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Azerbaijani personal-data privacy Redaction Helper",
+        "href": "/en/azerbaijan/azerbaijan-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Azerbaijani PII Masker",
+        "href": "/en/azerbaijan/azerbaijan-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Azerbaijani Personal Data Fixture Helper",
+        "href": "/en/azerbaijan/azerbaijan-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Azerbaijani Driving Licence Format Helper",
+        "href": "/en/azerbaijan/azerbaijan-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Azerbaijani Residence Permit Format Helper",
+        "href": "/en/azerbaijan/azerbaijan-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Azerbaijani Health Card Format Helper",
+        "href": "/en/azerbaijan/azerbaijan-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Azerbaijani Vehicle Plate Inspector",
+        "href": "/en/azerbaijan/azerbaijan-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Azerbaijani VIN Validator",
+        "href": "/en/azerbaijan/azerbaijan-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Azerbaijani Vehicle Data Redaction Helper",
+        "href": "/en/azerbaijan/azerbaijan-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Azerbaijani Customs Declaration Helper",
+        "href": "/en/azerbaijan/azerbaijan-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Azerbaijani Postal Tracking Helper",
+        "href": "/en/azerbaijan/azerbaijan-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Azerbaijani Data Quality Workbench",
+        "href": "/en/azerbaijan/azerbaijan-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Azerbaijani JSON Fixture Helper",
+        "href": "/en/azerbaijan/azerbaijan-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Azerbaijani Regex Pack Helper",
+        "href": "/en/azerbaijan/azerbaijan-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Azerbaijani API Payload Auditor",
+        "href": "/en/azerbaijan/azerbaijan-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Azerbaijani Form Field Auditor",
+        "href": "/en/azerbaijan/azerbaijan-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Azerbaijani Locale Number Parser",
+        "href": "/en/azerbaijan/azerbaijan-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Azerbaijan."
+      },
+      {
+        "title": "Azerbaijani Calendar Week Helper",
+        "href": "/en/azerbaijan/azerbaijan-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Azerbaijani Company Suffix Normalizer",
+        "href": "/en/azerbaijan/azerbaijan-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Azerbaijani Procurement Identifier Helper",
+        "href": "/en/azerbaijan/azerbaijan-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Azerbaijani Locale Copy Checker",
+        "href": "/en/azerbaijan/azerbaijan-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Azerbaijani Support Ticket Scrubber",
+        "href": "/en/azerbaijan/azerbaijan-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Azerbaijani Integration Smoke Test Builder",
+        "href": "/en/azerbaijan/azerbaijan-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritania-postal-tracking-helper
+kind: tool
+module: validohub
+country: MR
+category: logistics
+status: active
+name:
+  en: "Mauritanian Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1000 Nouakchott"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritania-data-quality-workbench, mauritania-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritanian Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

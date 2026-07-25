@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: TM
+category: developer-tools
+status: active
+name:
+  en: "Turkmen Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TM\",\"tax\":\"12345678\",\"bank\":\"3901012345678901\",\"payment\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [turkmenistan-passport-id-boundary-validator, turkmenistan-company-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-bic-swift-inspector
+kind: tool
+module: validohub
+country: IL
+category: finance
+status: active
+name:
+  en: "Israeli BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Israel banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDIL2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [israel-domestic-transfer-helper, israel-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Israel banking integrations."

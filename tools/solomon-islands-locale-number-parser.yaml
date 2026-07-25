@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-locale-number-parser
+kind: tool
+module: validohub
+country: SB
+category: localization
+status: active
+name:
+  en: "Solomon Islands Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Solomon Islands."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 SBD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-calendar-week-helper, solomon-islands-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Solomon Islands."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-phone-e164-formatter
+kind: tool
+module: validohub
+country: KR
+category: address
+status: active
+name:
+  en: "South Korean Phone E.164 Formatter"
+summary:
+  en: "Normalize local phone input to E.164-style previews and split country/national evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "E164 input"
+        required: true
+        placeholder:
+          en: "+82 10 1234 5678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-date-locale-formatter, south-korea-csv-locale-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean Phone E.164 Formatter | ValidoHub"
+  description:
+    en: "Normalize local phone input to E.164-style previews and split country/national evidence."

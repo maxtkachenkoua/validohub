@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iraq-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: IQ
+category: developer-tools
+status: active
+name:
+  en: "Iraqi Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.iraq-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IQ\",\"tax\":\"TAX123456\",\"iban\":\"IQ20RRAF000000000123456789012\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [iraq-national-card-boundary-validator, iraq-company-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iraqi Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

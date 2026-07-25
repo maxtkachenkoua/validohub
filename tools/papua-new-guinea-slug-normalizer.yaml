@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-slug-normalizer
+kind: tool
+module: validohub
+country: PG
+category: developer-tools
+status: active
+name:
+  en: "Papua New Guinean Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Papua New Guinea sample company Waigani, Port Moresby NCD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-document-ocr-fixer, papua-new-guinea-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

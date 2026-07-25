@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MZ
+slug: mozambique
+name:
+  en: Mozambique
+region: Africa
+languages:
+  - pt
+currency: MZN
+relatedCountries:
+  - ZA
+  - NG
+  - KE

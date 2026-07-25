@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-remittance-text-builder
+kind: tool
+module: validohub
+country: MH
+category: finance
+status: active
+name:
+  en: "Marshallese Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 MH123456789 1,234.56 USD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-payment-reconciliation-helper, marshall-islands-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

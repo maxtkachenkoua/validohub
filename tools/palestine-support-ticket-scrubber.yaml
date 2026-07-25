@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-support-ticket-scrubber
+kind: tool
+module: validohub
+country: PS
+category: privacy
+status: active
+name:
+  en: "Palestinian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 401234567, PALS 400123456702, Al-Manara 1, Ramallah P600"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-integration-smoke-test-builder, palestine-id-number-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

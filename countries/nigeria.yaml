@@ -1,0 +1,12 @@
+schemaVersion: 1
+code: NG
+slug: nigeria
+name:
+  en: Nigeria
+region: Africa
+languages:
+  - en
+currency: NGN
+relatedCountries:
+  - ZA
+  - KE

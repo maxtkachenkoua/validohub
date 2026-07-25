@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: NP
+category: tax
+status: active
+name:
+  en: "Nepali Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "PAN / VAT 20% base 1,234.56 NPR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-tax-return-field-helper, nepal-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

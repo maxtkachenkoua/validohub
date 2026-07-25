@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liberia-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: LR
+category: tax
+status: active
+name:
+  en: "Liberian Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liberia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary 20% base 1,234.56 LRD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liberia-tax-return-field-helper, liberia-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liberian Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

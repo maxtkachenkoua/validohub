@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: IN
+category: tax
+status: active
+name:
+  en: "Indian Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "GSTIN 20% base 1,23,456.78 INR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-tax-return-field-helper, india-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-business-register-readiness-helper
+kind: tool
+module: validohub
+country: KW
+category: government
+status: active
+name:
+  en: "Kuwaiti MOCI registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated MOCI registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "123456 TF123456 Arabian Gulf Street 1, Kuwait City 13001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-id-card-format-helper, kuwait-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti MOCI registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated MOCI registry lookup or company registry workflow."

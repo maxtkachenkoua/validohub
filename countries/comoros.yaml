@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: KM
+slug: comoros
+name:
+  en: Comoros
+region: Africa
+languages:
+  - fr
+currency: KMF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

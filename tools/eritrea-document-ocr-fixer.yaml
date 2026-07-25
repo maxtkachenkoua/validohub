@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: eritrea-document-ocr-fixer
+kind: tool
+module: validohub
+country: ER
+category: documents
+status: active
+name:
+  en: "Eritrean Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.eritrea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "ER-ID-123456 ER123456789 001 1234567890 1000 Asmara"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [eritrea-privacy-redaction-helper, eritrea-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Eritrean Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

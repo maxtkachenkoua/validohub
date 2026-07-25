@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: PG
+category: developer-tools
+status: active
+name:
+  en: "Papua New Guinean Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PG\",\"tin\":\"PG123456789\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [papua-new-guinea-tin-boundary-validator, papua-new-guinea-company-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

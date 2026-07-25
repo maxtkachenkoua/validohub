@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: timor-leste-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: TL
+category: address
+status: active
+name:
+  en: "Timorese Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.timor-leste-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Avenida Nicolau Lobato 1, Dili 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [timor-leste-region-code-mapper, timor-leste-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Timorese Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

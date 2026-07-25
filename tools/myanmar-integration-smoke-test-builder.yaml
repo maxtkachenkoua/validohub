@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: myanmar-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: MM
+category: developer-tools
+status: active
+name:
+  en: "Myanmar Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.myanmar-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MM\",\"nrc\":\"12/LaMaNa(N)123456\",\"tin\":\"TIN123456789\",\"mpu\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [myanmar-nrc-boundary-validator, myanmar-dica-company-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Myanmar Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

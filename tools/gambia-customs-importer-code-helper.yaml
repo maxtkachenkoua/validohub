@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-customs-importer-code-helper
+kind: tool
+module: validohub
+country: GM
+category: national-identifiers
+status: active
+name:
+  en: "Gambian Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "GMGM-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-social-security-boundary-social-insurance-helper, gambia-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

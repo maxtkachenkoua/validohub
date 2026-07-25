@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gabon-postal-tracking-helper
+kind: tool
+module: validohub
+country: GA
+category: logistics
+status: active
+name:
+  en: "Gabonese Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gabon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1000 Libreville"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gabon-data-quality-workbench, gabon-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gabonese Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-api-payload-auditor
+kind: tool
+module: validohub
+country: TO
+category: developer-tools
+status: active
+name:
+  en: "Tongan API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TO\",\"taxNumber\":\"TO123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-form-field-auditor, tonga-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

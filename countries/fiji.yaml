@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: FJ
+slug: fiji
+name:
+  en: Fiji
+region: Oceania
+languages:
+  - en
+currency: FJD
+relatedCountries:
+  - AU
+  - NZ
+  - PG

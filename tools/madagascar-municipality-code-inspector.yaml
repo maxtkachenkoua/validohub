@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: madagascar-municipality-code-inspector
+kind: tool
+module: validohub
+country: MG
+category: address
+status: active
+name:
+  en: "Malagasy Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.madagascar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Central business district, Antananarivo 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [madagascar-phone-number-validator, madagascar-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malagasy Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

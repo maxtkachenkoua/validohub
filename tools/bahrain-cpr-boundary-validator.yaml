@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-cpr-boundary-validator
+kind: tool
+module: validohub
+country: BH
+category: national-identifiers
+status: active
+name:
+  en: "Bahraini CPR boundary Validator"
+summary:
+  en: "Validate CPR boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "900101123"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-commercial-registration-number-validator, bahrain-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini CPR boundary Validator | ValidoHub"
+  description:
+    en: "Validate CPR boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

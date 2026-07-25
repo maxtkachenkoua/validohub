@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-form-field-auditor
+kind: tool
+module: validohub
+country: KZ
+category: developer-tools
+status: active
+name:
+  en: "Kazakh Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=120940012345&postal=010000 Astana&phone=+7 701 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-locale-number-parser, kazakhstan-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

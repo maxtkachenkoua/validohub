@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nauru-customs-declaration-helper
+kind: tool
+module: validohub
+country: NR
+category: government
+status: active
+name:
+  en: "Nauruan Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nauru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "NR123456789 HS 8471 1,234.56 AUD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nauru-postal-tracking-helper, nauru-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nauruan Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

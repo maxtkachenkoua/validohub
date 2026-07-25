@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sudan-tax-id-validator
+kind: tool
+module: validohub
+country: SD
+category: national-identifiers
+status: active
+name:
+  en: "Sudanese tax number / VAT boundary Validator"
+summary:
+  en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "SD123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sudan-customs-importer-code-helper, sudan-social-security-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sudanese tax number / VAT boundary Validator | ValidoHub"
+  description:
+    en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

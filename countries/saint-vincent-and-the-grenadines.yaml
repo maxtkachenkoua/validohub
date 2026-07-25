@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: VC
+slug: saint-vincent-and-the-grenadines
+name:
+  en: "Saint Vincent and the Grenadines"
+region: North America
+languages:
+  - en
+currency: XCD
+relatedCountries:
+  - LC
+  - GD
+  - BB

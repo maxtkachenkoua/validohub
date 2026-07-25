@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-company-suffix-normalizer
+kind: tool
+module: validohub
+country: GM
+category: developer-tools
+status: active
+name:
+  en: "Gambian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Gambia Sample Holding Ltd GM-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-procurement-identifier-helper, gambia-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

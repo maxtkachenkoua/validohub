@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-bank-account-validator
+kind: tool
+module: validohub
+country: UZ
+category: finance
+status: active
+name:
+  en: "Uzbekistan Bank Account Validator"
+summary:
+  en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "00444 20208000123456789001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-bank-account-fixture-generator, uzbekistan-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbekistan Bank Account Validator | ValidoHub"
+  description:
+    en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."

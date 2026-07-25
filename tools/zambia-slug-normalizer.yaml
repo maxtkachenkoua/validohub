@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zambia-slug-normalizer
+kind: tool
+module: validohub
+country: ZM
+category: developer-tools
+status: active
+name:
+  en: "Zambian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Zambia sample company Central business district, Lusaka 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zambia-document-ocr-fixer, zambia-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zambian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

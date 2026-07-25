@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: libya-residence-permit-format-helper
+kind: tool
+module: validohub
+country: LY
+category: documents
+status: active
+name:
+  en: "Libyan Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.libya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "LY PERMIT 2026 LY-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [libya-health-card-format-helper, libya-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Libyan Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bhutan-customs-importer-code-helper
+kind: tool
+module: validohub
+country: BT
+category: national-identifiers
+status: active
+name:
+  en: "Bhutanese Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bhutan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "BTBT-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bhutan-social-protection-boundary-social-insurance-helper, bhutan-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bhutanese Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

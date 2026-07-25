@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: AE
+category: localization
+status: active
+name:
+  en: "UAE Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "Emirates ID boundary input, PO Box / Makani input, amount 1,234.56 AED"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-support-ticket-scrubber, united-arab-emirates-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

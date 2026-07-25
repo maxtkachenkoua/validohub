@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: MV
+category: localization
+status: active
+name:
+  en: "Maldivian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "National ID boundary input, island/address code input, amount 1,234.56 MVR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [maldives-support-ticket-scrubber, maldives-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-data-quality-workbench
+kind: tool
+module: validohub
+country: PS
+category: developer-tools
+status: active
+name:
+  en: "Palestinian Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PS\",\"id\":\"401234567\",\"iban\":\"PS92PALS000000000400123456702\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-json-fixture-generator, palestine-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

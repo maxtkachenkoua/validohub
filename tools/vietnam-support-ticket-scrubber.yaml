@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-support-ticket-scrubber
+kind: tool
+module: validohub
+country: VN
+category: privacy
+status: active
+name:
+  en: "Vietnamese Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 001090012345, 9704 1234567890, 1 Trang Tien, Hanoi 100000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vietnam-integration-smoke-test-builder, vietnam-citizen-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

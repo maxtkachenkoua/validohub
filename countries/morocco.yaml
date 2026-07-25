@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MA
+slug: morocco
+name:
+  en: Morocco
+region: Africa
+languages:
+  - ar
+currency: MAD
+relatedCountries:
+  - ZA
+  - NG
+  - KE

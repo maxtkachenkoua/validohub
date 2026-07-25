@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: AZ
+slug: azerbaijan
+name:
+  en: Azerbaijan
+region: Asia
+languages:
+  - az
+currency: AZN
+relatedCountries:
+  - GE
+  - AM
+  - TR

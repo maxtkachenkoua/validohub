@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zimbabwe-postal-code-validator
+kind: tool
+module: validohub
+country: ZW
+category: address
+status: active
+name:
+  en: "Zimbabwean Postal Code Validator"
+summary:
+  en: "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zimbabwe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "1000 Harare"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zimbabwe-address-normalizer, zimbabwe-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zimbabwean Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."

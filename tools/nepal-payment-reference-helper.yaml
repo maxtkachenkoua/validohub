@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-payment-reference-helper
+kind: tool
+module: validohub
+country: NP
+category: finance
+status: active
+name:
+  en: "Nepali connectIPS / Fonepay reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "connectIPS / Fonepay reference REF 2026-001 1,234.56 NPR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-remittance-text-builder, nepal-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali connectIPS / Fonepay reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

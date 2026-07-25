@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: SB
+category: tax
+status: active
+name:
+  en: "Solomon Islands Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "GST / tax boundary 20% base 1,234.56 SBD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-tax-return-field-helper, solomon-islands-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

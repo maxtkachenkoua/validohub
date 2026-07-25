@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-tax-return-field-helper
+kind: tool
+module: validohub
+country: YE
+category: tax
+status: active
+name:
+  en: "Yemeni Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number; TAX123456; period 2026-07; 1,234,567 YER"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-invoice-number-helper, yemen-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

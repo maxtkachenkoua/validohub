@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-form-field-auditor
+kind: tool
+module: validohub
+country: KH
+category: developer-tools
+status: active
+name:
+  en: "Cambodian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=K001-123456789&postal=12000 Phnom Penh&phone=+855 12 345 678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-locale-number-parser, cambodia-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

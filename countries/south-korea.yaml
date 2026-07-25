@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: KR
+slug: south-korea
+name:
+  en: South Korea
+region: Asia
+languages:
+  - ko
+currency: KRW
+relatedCountries:
+  - JP
+  - CN
+  - SG

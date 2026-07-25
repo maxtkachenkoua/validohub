@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: myanmar-company-suffix-normalizer
+kind: tool
+module: validohub
+country: MM
+category: developer-tools
+status: active
+name:
+  en: "Myanmar Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.myanmar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Myanmar Sample Holding Ltd 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [myanmar-procurement-identifier-helper, myanmar-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Myanmar Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

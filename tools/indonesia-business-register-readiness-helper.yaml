@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: ID
+category: government
+status: active
+name:
+  en: "Indonesian OSS / AHU registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated OSS / AHU registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "8120001234567 01.234.567.8-901.000 Jl. Thamrin 1, Jakarta 10110"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-id-card-format-helper, indonesia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian OSS / AHU registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated OSS / AHU registry lookup or company registry workflow."

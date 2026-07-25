@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-pii-masker
+kind: tool
+module: validohub
+country: CF
+category: privacy
+status: active
+name:
+  en: "Central African PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "CF-ID-123456 +236 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-personal-data-fixture-generator, central-african-republic-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: timor-leste-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: TL
+category: tax
+status: active
+name:
+  en: "Timorese Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.timor-leste-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "TIN1234567 21/07/2026 1,234.56 USD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [timor-leste-accounting-audit-trail-checklist-generator, timor-leste-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Timorese Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

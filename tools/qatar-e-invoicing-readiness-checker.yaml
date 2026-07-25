@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: QA
+category: tax
+status: active
+name:
+  en: "Qatari tax invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"QA\",\"qid\":\"29012345678\",\"iban\":\"QA58DOHB00001234567890ABCDEFG\",\"naps\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-tax-authority-handoff-helper, qatar-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari tax invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

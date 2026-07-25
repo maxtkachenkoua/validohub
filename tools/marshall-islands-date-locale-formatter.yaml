@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-date-locale-formatter
+kind: tool
+module: validohub
+country: MH
+category: localization
+status: active
+name:
+  en: "Marshallese Date Locale Formatter"
+summary:
+  en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "07/24/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-csv-locale-normalizer, marshall-islands-slug-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Date Locale Formatter | ValidoHub"
+  description:
+    en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."

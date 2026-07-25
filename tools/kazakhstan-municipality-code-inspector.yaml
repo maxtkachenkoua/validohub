@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-municipality-code-inspector
+kind: tool
+module: validohub
+country: KZ
+category: address
+status: active
+name:
+  en: "Kazakh Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Mangilik El Avenue 1, Astana 010000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-phone-number-validator, kazakhstan-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

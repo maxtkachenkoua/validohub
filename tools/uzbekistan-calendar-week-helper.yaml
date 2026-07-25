@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-calendar-week-helper
+kind: tool
+module: validohub
+country: UZ
+category: localization
+status: active
+name:
+  en: "Uzbek Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "21.07.2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-company-suffix-normalizer, uzbekistan-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-business-register-readiness-helper
+kind: tool
+module: validohub
+country: ST
+category: government
+status: active
+name:
+  en: "Sao Tomean business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "ST-REG-123456 ST123456789 Central business district, Sao Tome 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-id-card-format-helper, sao-tome-and-principe-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: botswana-document-ocr-fixer
+kind: tool
+module: validohub
+country: BW
+category: documents
+status: active
+name:
+  en: "Botswana Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.botswana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "BW-ID-123456 BW123456789 001 1234567890 1000 Gaborone"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [botswana-privacy-redaction-helper, botswana-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Botswana Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

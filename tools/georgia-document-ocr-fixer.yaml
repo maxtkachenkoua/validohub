@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-document-ocr-fixer
+kind: tool
+module: validohub
+country: GE
+category: documents
+status: active
+name:
+  en: "Georgian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "01001012345 405123456 NB 0101904917 0105 Tbilisi"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-privacy-redaction-helper, georgia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

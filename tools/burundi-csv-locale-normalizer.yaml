@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-csv-locale-normalizer
+kind: tool
+module: validohub
+country: BI
+category: developer-tools
+status: active
+name:
+  en: "Burundian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Burundi decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 BIF;24/07/2026;BI123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-slug-normalizer, burundi-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Burundi decimal, date, postal, phone, tax, and banking fields."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-driving-licence-format-helper
+kind: tool
+module: validohub
+country: ST
+category: documents
+status: active
+name:
+  en: "Sao Tomean Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "ST-ID-123456 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-residence-permit-format-helper, sao-tome-and-principe-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

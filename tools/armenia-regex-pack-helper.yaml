@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: armenia-regex-pack-helper
+kind: tool
+module: validohub
+country: AM
+category: developer-tools
+status: active
+name:
+  en: "Armenian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.armenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "public services number boundary state register number postal code  001 123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [armenia-api-payload-auditor, armenia-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Armenian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

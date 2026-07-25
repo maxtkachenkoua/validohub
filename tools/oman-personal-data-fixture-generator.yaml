@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: oman-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: OM
+category: privacy
+status: active
+name:
+  en: "Omani Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.oman-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "12345678\\nSultan Qaboos Street 1, Muscat 100\\n+968 9123 4567"
+    actions: [generate, validate, explain]
+related:
+  explicit: [oman-driving-licence-format-helper, oman-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Omani Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

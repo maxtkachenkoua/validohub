@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: somalia-address-normalizer
+kind: tool
+module: validohub
+country: SO
+category: address
+status: active
+name:
+  en: "Somali Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.somalia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Central business district, Mogadishu 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [somalia-address-transliteration-normalizer, somalia-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Somali Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

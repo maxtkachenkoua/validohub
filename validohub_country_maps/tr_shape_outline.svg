@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-79.07 -67.98 623.87 557.29" role="img">
+  <title>Turkey country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="7.72" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="tr" d="M472.812,421.906l-2.305-1.426l-1.271-1.013l-2.138,0.916l0,0l-1.477,3.74l2.219-0.5l1.562-1.188l3.438,0.938l-1.946,1.877L465.719,425l-1.91,2.093v1.021l1.22,1.021v1.123l-0.511,1.332l0.511,1.123l1.625-0.812l1.625,1.737l-0.406,1.228l-0.604,0.82l0.907,1.021l4.461,0.916l3.139-1.331v-1.937l1.521,0.303l3.648,2.144l3.948-0.614l1.721-1.633l1.114,0.406v1.841h1.521l1.313-2.55l11.549-1.229l5.04-0.613l-1.331-1.746l-0.025-2.359l1.011-1.21l-3.682-2.956l0.197-2.551h-2.022l-3.354-1.643l0,0l-1.929,2.041l-7.088-0.209l-4.253-2.549l-4.082,0.366l-4.544,2.729L472.812,421.906z"/>
+  </g>
+</svg>

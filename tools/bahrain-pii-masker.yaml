@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-pii-masker
+kind: tool
+module: validohub
+country: BH
+category: privacy
+status: active
+name:
+  en: "Bahraini PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "900101123 +973 3600 1234 BMAG 1299123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-personal-data-fixture-generator, bahrain-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

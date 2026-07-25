@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: KH
+category: address
+status: active
+name:
+  en: "Cambodian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Preah Monivong Blvd 1, Phnom Penh 12000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-region-code-mapper, cambodia-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-currency-decimal-formatter
+kind: tool
+module: validohub
+country: MH
+category: finance
+status: active
+name:
+  en: "Marshallese USD Decimal Currency Formatter"
+summary:
+  en: "Normalize USD amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 USD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-tax-rate-sanity-helper, marshall-islands-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese USD Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize USD amount strings, decimal separators, grouping, and API-safe numeric previews."

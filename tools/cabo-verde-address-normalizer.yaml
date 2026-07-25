@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-address-normalizer
+kind: tool
+module: validohub
+country: CV
+category: address
+status: active
+name:
+  en: "Cabo Verdean Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Central business district, Praia 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-address-transliteration-normalizer, cabo-verde-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

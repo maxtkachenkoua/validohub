@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-pii-masker
+kind: tool
+module: validohub
+country: BD
+category: privacy
+status: active
+name:
+  en: "Bangladeshi PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "1990123456789 +880 1712 345678 145 1234567890123"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-personal-data-fixture-generator, bangladesh-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

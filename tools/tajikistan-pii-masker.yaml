@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-pii-masker
+kind: tool
+module: validohub
+country: TJ
+category: privacy
+status: active
+name:
+  en: "Tajik PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "123456789 +992 90 123 4567 3501012345678901"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-personal-data-fixture-generator, tajikistan-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-id-card-format-helper
+kind: tool
+module: validohub
+country: AE
+category: national-identifiers
+status: active
+name:
+  en: "UAE ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "784-1990-1234567-1"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-passport-number-helper, united-arab-emirates-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

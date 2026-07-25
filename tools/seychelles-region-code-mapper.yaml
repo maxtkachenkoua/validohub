@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: seychelles-region-code-mapper
+kind: tool
+module: validohub
+country: SC
+category: address
+status: active
+name:
+  en: "Seychellois Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.seychelles-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "1000 Victoria"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [seychelles-municipality-code-inspector, seychelles-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Seychellois Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

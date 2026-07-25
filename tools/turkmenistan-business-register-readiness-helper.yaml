@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-business-register-readiness-helper
+kind: tool
+module: validohub
+country: TM
+category: government
+status: active
+name:
+  en: "Turkmen business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "TM-123456 12345678 Magtymguly Avenue 1, Ashgabat 744000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkmenistan-id-card-format-helper, turkmenistan-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-json-fixture-generator
+kind: tool
+module: validohub
+country: GM
+category: developer-tools
+status: active
+name:
+  en: "Gambian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"GM\",\"taxNumber\":\"GM123456789\",\"paymentReference\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [gambia-regex-pack-helper, gambia-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

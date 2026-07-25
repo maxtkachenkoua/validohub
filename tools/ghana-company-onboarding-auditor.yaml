@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ghana-company-onboarding-auditor
+kind: tool
+module: validohub
+country: GH
+category: developer-tools
+status: active
+name:
+  en: "Ghanaian Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ghana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"GH\",\"taxNumber\":\"GH123456789\",\"paymentReference\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ghana-business-register-readiness-helper, ghana-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ghanaian Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."

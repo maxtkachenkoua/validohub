@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-customs-importer-code-helper
+kind: tool
+module: validohub
+country: MV
+category: national-identifiers
+status: active
+name:
+  en: "Maldivian Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "MVC-012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [maldives-pension-boundary-social-insurance-helper, maldives-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

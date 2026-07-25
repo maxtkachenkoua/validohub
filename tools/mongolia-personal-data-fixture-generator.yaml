@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: MN
+category: privacy
+status: active
+name:
+  en: "Mongolian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "УА90010123\\nPeace Avenue 1, Ulaanbaatar 14200\\n+976 9911 2233"
+    actions: [generate, validate, explain]
+related:
+  explicit: [mongolia-driving-licence-format-helper, mongolia-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

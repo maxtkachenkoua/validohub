@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-business-register-readiness-helper
+kind: tool
+module: validohub
+country: PS
+category: government
+status: active
+name:
+  en: "Palestinian Companies Controller registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Companies Controller registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "562345678 562345678 Al-Manara 1, Ramallah P600"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-id-card-format-helper, palestine-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Companies Controller registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Companies Controller registry lookup or company registry workflow."

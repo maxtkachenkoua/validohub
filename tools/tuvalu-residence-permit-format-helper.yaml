@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tuvalu-residence-permit-format-helper
+kind: tool
+module: validohub
+country: TV
+category: documents
+status: active
+name:
+  en: "Tuvaluan Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tuvalu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "TV PERMIT 2026 TV-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tuvalu-health-card-format-helper, tuvalu-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tuvaluan Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

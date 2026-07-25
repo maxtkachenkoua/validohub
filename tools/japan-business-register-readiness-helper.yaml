@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-business-register-readiness-helper
+kind: tool
+module: validohub
+country: JP
+category: government
+status: active
+name:
+  en: "Japanese Houjin Bangou / Legal Affairs Bureau Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Houjin Bangou / Legal Affairs Bureau lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "1234567890123 T1234567890123 1-1 Chiyoda, Chiyoda-ku, Tokyo 100-0001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-id-card-format-helper, japan-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Houjin Bangou / Legal Affairs Bureau Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Houjin Bangou / Legal Affairs Bureau lookup or company registry workflow."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chad-remittance-text-builder
+kind: tool
+module: validohub
+country: TD
+category: finance
+status: active
+name:
+  en: "Chadian Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chad-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 TD123456789 1,234.56 XAF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chad-payment-reconciliation-helper, chad-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chadian Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-bic-swift-inspector
+kind: tool
+module: validohub
+country: NZ
+category: finance
+status: active
+name:
+  en: "New Zealand BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for New Zealand banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDNZ2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-domestic-transfer-helper, new-zealand-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for New Zealand banking integrations."

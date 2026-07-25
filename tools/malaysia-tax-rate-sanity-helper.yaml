@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: MY
+category: tax
+status: active
+name:
+  en: "Malaysian Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "TIN / SST 20% base 1,234.56 MYR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-tax-return-field-helper, malaysia-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

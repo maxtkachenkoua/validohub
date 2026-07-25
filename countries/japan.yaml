@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: JP
+slug: japan
+name:
+  en: Japan
+region: Asia
+languages:
+  - ja
+currency: JPY
+relatedCountries:
+  - KR
+  - CN
+  - TW

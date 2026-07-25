@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-business-register-readiness-helper
+kind: tool
+module: validohub
+country: JO
+category: government
+status: active
+name:
+  en: "Jordanian Companies Control Department Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Companies Control Department lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "200123456 123456789 Zahran Street 1, Amman 11118"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-id-card-format-helper, jordan-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Companies Control Department Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Companies Control Department lookup or company registry workflow."

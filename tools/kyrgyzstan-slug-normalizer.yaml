@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-slug-normalizer
+kind: tool
+module: validohub
+country: KG
+category: developer-tools
+status: active
+name:
+  en: "Kyrgyz Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Kyrgyzstan sample company Chuy Avenue 1, Bishkek 720000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-document-ocr-fixer, kyrgyzstan-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

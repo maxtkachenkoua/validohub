@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-document-ocr-fixer
+kind: tool
+module: validohub
+country: AE
+category: documents
+status: active
+name:
+  en: "UAE Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "784-1990-1234567-1 100123456700003 033 1234567890123456 PO Box 12345 Abu Dhabi"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-privacy-redaction-helper, united-arab-emirates-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

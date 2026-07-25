@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-tax-return-field-helper
+kind: tool
+module: validohub
+country: GW
+category: tax
+status: active
+name:
+  en: "Bissau-Guinean Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary; GW123456789; period 2026-07; 1,234.56 XOF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-bissau-invoice-number-helper, guinea-bissau-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bissau-Guinean Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

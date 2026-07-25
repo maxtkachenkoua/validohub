@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-social-fund-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: KG
+category: national-identifiers
+status: active
+name:
+  en: "Kyrgyz social fund boundary Helper"
+summary:
+  en: "Split social fund boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "SF-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-company-onboarding-auditor, kyrgyzstan-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz social fund boundary Helper | ValidoHub"
+  description:
+    en: "Split social fund boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

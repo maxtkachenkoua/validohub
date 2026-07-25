@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: timor-leste-id-card-format-helper
+kind: tool
+module: validohub
+country: TL
+category: national-identifiers
+status: active
+name:
+  en: "Timorese ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.timor-leste-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "TL-1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [timor-leste-passport-number-helper, timor-leste-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Timorese ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

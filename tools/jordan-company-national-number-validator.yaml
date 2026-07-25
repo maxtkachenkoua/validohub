@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-company-national-number-validator
+kind: tool
+module: validohub
+country: JO
+category: national-identifiers
+status: active
+name:
+  en: "Jordanian company national number Validator"
+summary:
+  en: "Inspect company national number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "200123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-tax-id-validator, jordan-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian company national number Validator | ValidoHub"
+  description:
+    en: "Inspect company national number structure, registry-style prefixes, control digits, and official lookup boundaries."

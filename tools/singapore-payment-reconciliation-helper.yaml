@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: SG
+category: finance
+status: active
+name:
+  en: "Singapore Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1,234.56 SGD; 7171 001 123456789; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-bank-statement-parser, singapore-masked-bank-account-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-65.02 -99.19 486.11 652.77" role="img">
+  <title>Mauritania country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="6.73" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="mr" d="M364.998,478.266l1.885,2.463l-0.389,10.65l2.74-1.972l1.952-0.397l2.741,0.985l3.128,4.34l2.939-1.971l14.288-0.199l-3.526-23.866l3.786-0.018l-7.054-5.402l0.009,3.51l-8.93,0.01l-0.043,6.698l-2.567-0.009l-0.328,4.944L364.998,478.266L364.998,478.266z"/>
+  </g>
+</svg>

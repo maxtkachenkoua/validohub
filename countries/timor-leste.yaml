@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: TL
+slug: timor-leste
+name:
+  en: Timor-Leste
+region: Asia
+languages:
+  - pt
+currency: USD
+relatedCountries:
+  - ID
+  - SG
+  - AU

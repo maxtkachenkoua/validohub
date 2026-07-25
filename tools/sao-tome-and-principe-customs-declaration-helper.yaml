@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-customs-declaration-helper
+kind: tool
+module: validohub
+country: ST
+category: government
+status: active
+name:
+  en: "Sao Tomean Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "ST123456789 HS 8471 1,234.56 STN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-postal-tracking-helper, sao-tome-and-principe-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

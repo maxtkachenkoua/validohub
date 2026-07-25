@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: laos-csv-locale-normalizer
+kind: tool
+module: validohub
+country: LA
+category: developer-tools
+status: active
+name:
+  en: "Lao CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Laos decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.laos-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234,567 LAK;21/07/2026;TIN123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [laos-slug-normalizer, laos-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lao CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Laos decimal, date, postal, phone, tax, and banking fields."

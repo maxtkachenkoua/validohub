@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chad-driving-licence-format-helper
+kind: tool
+module: validohub
+country: TD
+category: documents
+status: active
+name:
+  en: "Chadian Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chad-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "TD-ID-123456 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chad-residence-permit-format-helper, chad-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chadian Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

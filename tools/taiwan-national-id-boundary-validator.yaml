@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-national-id-boundary-validator
+kind: tool
+module: validohub
+country: TW
+category: national-identifiers
+status: active
+name:
+  en: "Taiwanese National ID boundary Validator"
+summary:
+  en: "Validate National ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "A123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-gui-number-validator, taiwan-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese National ID boundary Validator | ValidoHub"
+  description:
+    en: "Validate National ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: TV
+slug: tuvalu
+name:
+  en: Tuvalu
+region: Oceania
+languages:
+  - en
+currency: AUD
+relatedCountries:
+  - KI
+  - WS
+  - FJ

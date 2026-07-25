@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-csv-locale-normalizer
+kind: tool
+module: validohub
+country: PG
+category: developer-tools
+status: active
+name:
+  en: "Papua New Guinean CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Papua New Guinea decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 PGK;24/07/2026;PG123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-slug-normalizer, papua-new-guinea-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Papua New Guinea decimal, date, postal, phone, tax, and banking fields."

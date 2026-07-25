@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-company-onboarding-auditor
+kind: tool
+module: validohub
+country: TH
+category: developer-tools
+status: active
+name:
+  en: "Thai Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for Juristic Person number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TH\",\"taxId\":\"0105559123456\",\"promptPay\":\"+66812345678\",\"amount\":\"1,234.56\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-business-register-readiness-helper, thailand-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for Juristic Person number, VAT, address, banking, and official registry handoff readiness."

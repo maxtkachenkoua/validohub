@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-86.01 -88.45 650.39 674.27" role="img">
+  <title>South Sudan country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.01" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="ss" d="M489.336,508.019l-2.04,0.898l0.647,3.553h2.542l3.448,5.004l-2.767,0.354l-0.709,1.288l-0.069,1.857l-8.298-0.146l-0.848-1.288l-5.8-0.328l-10.649-10.962l1.063-0.64l4.517-1.364l9.897,0.754l3.366-0.754l2.235-2.996L489.336,508.019z"/>
+  </g>
+</svg>

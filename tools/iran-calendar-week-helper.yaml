@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-calendar-week-helper
+kind: tool
+module: validohub
+country: IR
+category: localization
+status: active
+name:
+  en: "Iranian Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "1405/04/30 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-company-suffix-normalizer, iran-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

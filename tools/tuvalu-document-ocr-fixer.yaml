@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tuvalu-document-ocr-fixer
+kind: tool
+module: validohub
+country: TV
+category: documents
+status: active
+name:
+  en: "Tuvaluan Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tuvalu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "TV-ID-123456 TV123456789 001 1234567890 Funafuti"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tuvalu-privacy-redaction-helper, tuvalu-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tuvaluan Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

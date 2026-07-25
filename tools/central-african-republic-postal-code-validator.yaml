@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-postal-code-validator
+kind: tool
+module: validohub
+country: CF
+category: address
+status: active
+name:
+  en: "Central African Postal Code Validator"
+summary:
+  en: "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "1000 Bangui"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-address-normalizer, central-african-republic-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."

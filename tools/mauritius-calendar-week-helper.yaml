@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritius-calendar-week-helper
+kind: tool
+module: validohub
+country: MU
+category: localization
+status: active
+name:
+  en: "Mauritian Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritius-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "24/07/2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritius-company-suffix-normalizer, mauritius-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritian Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

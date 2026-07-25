@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: togo-company-suffix-normalizer
+kind: tool
+module: validohub
+country: TG
+category: developer-tools
+status: active
+name:
+  en: "Togolese Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.togo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Togo Sample Holding Ltd TG-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [togo-procurement-identifier-helper, togo-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Togolese Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

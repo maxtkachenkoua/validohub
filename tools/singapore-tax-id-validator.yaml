@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-tax-id-validator
+kind: tool
+module: validohub
+country: SG
+category: national-identifiers
+status: active
+name:
+  en: "Singapore GST Validator"
+summary:
+  en: "Normalize GST identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "M91234567X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-customs-importer-code-helper, singapore-cpf-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore GST Validator | ValidoHub"
+  description:
+    en: "Normalize GST identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

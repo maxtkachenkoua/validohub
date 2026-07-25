@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-slug-normalizer
+kind: tool
+module: validohub
+country: TM
+category: developer-tools
+status: active
+name:
+  en: "Turkmen Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Turkmenistan sample company Magtymguly Avenue 1, Ashgabat 744000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkmenistan-document-ocr-fixer, turkmenistan-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

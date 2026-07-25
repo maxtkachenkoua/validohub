@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-bic-swift-inspector
+kind: tool
+module: validohub
+country: SY
+category: finance
+status: active
+name:
+  en: "Syrian BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Syria banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDSY2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-domestic-transfer-helper, syria-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Syria banking integrations."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-postal-code-validator
+kind: tool
+module: validohub
+country: ID
+category: address
+status: active
+name:
+  en: "Indonesian Postal Code Validator"
+summary:
+  en: "Validate kode pos shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "10110 Jakarta"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-address-normalizer, indonesia-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate kode pos shape, split area/delivery hints, and preserve official postal lookup boundaries."

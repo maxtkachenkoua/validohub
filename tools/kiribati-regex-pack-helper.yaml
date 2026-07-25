@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kiribati-regex-pack-helper
+kind: tool
+module: validohub
+country: KI
+category: developer-tools
+status: active
+name:
+  en: "I-Kiribati Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kiribati-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "national ID boundary company registration number island/locality  001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kiribati-api-payload-auditor, kiribati-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "I-Kiribati Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

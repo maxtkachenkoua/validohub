@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-pii-masker
+kind: tool
+module: validohub
+country: TO
+category: privacy
+status: active
+name:
+  en: "Tongan PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "TO-TIN-123456 +676 12345 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-personal-data-fixture-generator, tonga-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

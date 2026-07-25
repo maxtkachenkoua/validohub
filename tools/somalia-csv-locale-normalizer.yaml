@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: somalia-csv-locale-normalizer
+kind: tool
+module: validohub
+country: SO
+category: developer-tools
+status: active
+name:
+  en: "Somali CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Somalia decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.somalia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 SOS;24/07/2026;SO123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [somalia-slug-normalizer, somalia-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Somali CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Somalia decimal, date, postal, phone, tax, and banking fields."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-currency-decimal-formatter
+kind: tool
+module: validohub
+country: SY
+category: finance
+status: active
+name:
+  en: "Syrian SYP Decimal Currency Formatter"
+summary:
+  en: "Normalize SYP amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234,567 SYP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-tax-rate-sanity-helper, syria-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian SYP Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize SYP amount strings, decimal separators, grouping, and API-safe numeric previews."

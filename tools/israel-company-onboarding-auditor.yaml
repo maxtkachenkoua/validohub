@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-company-onboarding-auditor
+kind: tool
+module: validohub
+country: IL
+category: developer-tools
+status: active
+name:
+  en: "Israeli Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IL\",\"id\":\"123456782\",\"iban\":\"IL620108000000099999999\",\"vat\":\"512345678\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [israel-business-register-readiness-helper, israel-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."

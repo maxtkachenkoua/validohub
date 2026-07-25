@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-residence-permit-format-helper
+kind: tool
+module: validohub
+country: GM
+category: documents
+status: active
+name:
+  en: "Gambian Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "GM PERMIT 2026 GM-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-health-card-format-helper, gambia-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

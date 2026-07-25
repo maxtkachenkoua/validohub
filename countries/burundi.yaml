@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BI
+slug: burundi
+name:
+  en: Burundi
+region: Africa
+languages:
+  - fr
+currency: BIF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

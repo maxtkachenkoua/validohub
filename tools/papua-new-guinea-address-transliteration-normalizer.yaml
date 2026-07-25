@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: PG
+category: address
+status: active
+name:
+  en: "Papua New Guinean Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Waigani, Port Moresby NCD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-region-code-mapper, papua-new-guinea-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

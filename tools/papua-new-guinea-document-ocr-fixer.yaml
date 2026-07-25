@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-document-ocr-fixer
+kind: tool
+module: validohub
+country: PG
+category: documents
+status: active
+name:
+  en: "Papua New Guinean Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "PG-TIN-123456 PG123456789 001 1234567890 Port Moresby NCD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-privacy-redaction-helper, papua-new-guinea-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

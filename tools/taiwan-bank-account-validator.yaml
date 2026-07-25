@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-bank-account-validator
+kind: tool
+module: validohub
+country: TW
+category: finance
+status: active
+name:
+  en: "Taiwan Bank Account Validator"
+summary:
+  en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "004 123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-bank-account-fixture-generator, taiwan-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwan Bank Account Validator | ValidoHub"
+  description:
+    en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."

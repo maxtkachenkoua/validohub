@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sierra-leone-document-ocr-fixer
+kind: tool
+module: validohub
+country: SL
+category: documents
+status: active
+name:
+  en: "Sierra Leonean Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sierra-leone-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "SL-ID-123456 SL123456789 001 1234567890 1000 Freetown"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sierra-leone-privacy-redaction-helper, sierra-leone-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sierra Leonean Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

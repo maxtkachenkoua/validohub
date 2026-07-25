@@ -1,0 +1,642 @@
+{
+  "id": "afghanistan",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/afghanistan-outline.png",
+    "outlineAlt": "Afghanistan country outline",
+    "mapSrc": "/assets/images/countries/afghanistan-location.png",
+    "mapAlt": "World map with Afghanistan location marker",
+    "mapMarker": {
+      "x": 61,
+      "y": 51,
+      "label": "Afghanistan"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "afghanistan",
+    "flag": "🇦🇫",
+    "name": "Afghanistan",
+    "nativeName": "Afghanistan",
+    "iso2": "AF",
+    "iso3": "AFG",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Dari and Pashto",
+    "currency": "AFN",
+    "currencyName": "Afghan afghani",
+    "status": "available",
+    "summary": "Premium Afghanistan developer hub for Tazkira boundary, TIN, company registration number, postal code, phone, bank account, APS handoff, SWIFT, hawala reference boundary, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "Tazkira boundary",
+      "TIN",
+      "company registration number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "APS handoff",
+      "SWIFT",
+      "hawala reference boundary",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Afghan Tazkira boundary Validator",
+      "Afghan company registration number Validator",
+      "Afghan TIN Validator",
+      "Afghan Customs / Importer Code Helper",
+      "Afghan social protection boundary Helper",
+      "Afghan Company Onboarding Auditor",
+      "Afghan ACBR / business registry Readiness Helper",
+      "Afghan ID Card Format Helper",
+      "Afghan Passport Number Helper",
+      "Afghan MRZ / Passport Parser",
+      "Afghanistan Bank Account Validator",
+      "Afghanistan Bank Account Fixture Generator",
+      "Afghan Domestic Bank Account Inspector",
+      "Afghan BIC / SWIFT Inspector",
+      "Afghan Domestic Transfer Helper",
+      "Afghan Direct Debit / Auto-Debit Mandate Helper",
+      "Afghan APS / bank transfer reference Reference Helper",
+      "Afghan Remittance Text Builder",
+      "Afghan Payment Reconciliation Helper",
+      "Afghan Bank Statement Parser",
+      "Afghan Masked Bank Account Formatter",
+      "Afghan AFN Decimal Currency Formatter",
+      "Afghan Tax Rate Sanity Helper",
+      "Afghan Tax Return Field Helper",
+      "Afghan Invoice Number Helper",
+      "Afghan tax invoice Readiness Checker",
+      "Afghan Tax Authority Handoff Helper",
+      "Afghan Accounting Audit Trail Checklist Helper",
+      "Afghan Postal Code Validator",
+      "Afghan Address Normalizer",
+      "Afghan Address Transliteration Normalizer",
+      "Afghan Region / Province Code Mapper",
+      "Afghan Municipality Code Inspector",
+      "Afghan Phone Number Validator",
+      "Afghan Phone E.164 Formatter",
+      "Afghan Date Locale Formatter",
+      "Afghan CSV Locale Normalizer",
+      "Afghan Slug Normalizer",
+      "Afghan Document OCR Fixer",
+      "Afghan personal-data privacy boundary Redaction Helper",
+      "Afghan PII Masker",
+      "Afghan Personal Data Fixture Helper",
+      "Afghan Driving Licence Format Helper",
+      "Afghan Residence Permit Format Helper",
+      "Afghan Health Card Format Helper",
+      "Afghan Vehicle Plate Inspector",
+      "Afghan VIN Validator",
+      "Afghan Vehicle Data Redaction Helper",
+      "Afghan Customs Declaration Helper",
+      "Afghan Postal Tracking Helper",
+      "Afghan Data Quality Workbench",
+      "Afghan JSON Fixture Helper",
+      "Afghan Regex Pack Helper",
+      "Afghan API Payload Auditor",
+      "Afghan Form Field Auditor",
+      "Afghan Locale Number Parser",
+      "Afghan Calendar Week Helper",
+      "Afghan Company Suffix Normalizer",
+      "Afghan Procurement Identifier Helper",
+      "Afghan Locale Copy Checker",
+      "Afghan Support Ticket Scrubber",
+      "Afghan Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live ACBR / business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 61,
+      "y": 51
+    },
+    "searchHints": [
+      "TAZKIRA",
+      "TIN",
+      "ACBR",
+      "APS",
+      "BANK",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇦🇫",
+    "name": "Afghanistan",
+    "badge": "Premium Afghanistan developer suite",
+    "description": "Developer intelligence and browser-only workbenches for afghan identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Afghanistan",
+      "population": "approximately 43M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Kabul",
+      "continent": "Asia",
+      "region": "South Asia / Central Asia",
+      "languages": "Dari and Pashto",
+      "currency": "Afghan afghani",
+      "currencyCode": "AFN",
+      "callingCode": "+93",
+      "internetTld": ".af",
+      "drivingSide": "Right",
+      "iso2": "AF",
+      "iso3": "AFG",
+      "isoNumeric": "004",
+      "locale": "fa-AF",
+      "icuLocale": "fa_AF",
+      "dateFormat": "YYYY/MM/DD",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Afghanistan",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Kabul (AFT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "119 / 102",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "fa-AF",
+      "cldrLocale": "fa_AF",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "220V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "afghanistan",
+      "outlineLabel": "Afghanistan outline",
+      "mapLabel": "Afghanistan in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Afghanistan flag",
+      "heroAccentPrimary": "0 0 0",
+      "heroAccentSecondary": "211 32 17",
+      "heroAccentTertiary": "0 122 54"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Tazkira boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "TIN and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Afghanistan registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /afghanistan/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Afghan examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "ACBR / business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Afghanistan.",
+        "status": "official boundary"
+      },
+      {
+        "title": "TIN",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "Tazkira boundary, TIN, company registration number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, APS handoff, SWIFT, hawala reference boundary, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "fa-AF / fa_AF; date YYYY/MM/DD.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "AFN amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "Tazkira boundary, company registration number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "220V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "119 / 102",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "TAZKIRA",
+      "TIN",
+      "ACBR",
+      "APS",
+      "BANK",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Afghan Tazkira boundary Validator",
+        "href": "/en/afghanistan/afghanistan-tazkira-boundary-validator/",
+        "text": "Validate Tazkira boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Afghan company registration number Validator",
+        "href": "/en/afghanistan/afghanistan-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Afghan TIN Validator",
+        "href": "/en/afghanistan/afghanistan-tax-id-validator/",
+        "text": "Normalize TIN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Afghan Customs / Importer Code Helper",
+        "href": "/en/afghanistan/afghanistan-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Afghan social protection boundary Helper",
+        "href": "/en/afghanistan/afghanistan-social-protection-boundary-social-insurance-helper/",
+        "text": "Split social protection boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Afghan Company Onboarding Auditor",
+        "href": "/en/afghanistan/afghanistan-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Afghan ACBR / business registry Readiness Helper",
+        "href": "/en/afghanistan/afghanistan-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated ACBR / business registry lookup or company registry workflow."
+      },
+      {
+        "title": "Afghan ID Card Format Helper",
+        "href": "/en/afghanistan/afghanistan-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Afghan Passport Number Helper",
+        "href": "/en/afghanistan/afghanistan-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Afghan MRZ / Passport Parser",
+        "href": "/en/afghanistan/afghanistan-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Afghanistan Bank Account Validator",
+        "href": "/en/afghanistan/afghanistan-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Afghanistan Bank Account Fixture Generator",
+        "href": "/en/afghanistan/afghanistan-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Afghan Domestic Bank Account Inspector",
+        "href": "/en/afghanistan/afghanistan-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Afghan BIC / SWIFT Inspector",
+        "href": "/en/afghanistan/afghanistan-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Afghanistan banking integrations."
+      },
+      {
+        "title": "Afghan Domestic Transfer Helper",
+        "href": "/en/afghanistan/afghanistan-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Afghan Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/afghanistan/afghanistan-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Afghan APS / bank transfer reference Reference Helper",
+        "href": "/en/afghanistan/afghanistan-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Afghan Remittance Text Builder",
+        "href": "/en/afghanistan/afghanistan-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Afghan Payment Reconciliation Helper",
+        "href": "/en/afghanistan/afghanistan-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Afghan Bank Statement Parser",
+        "href": "/en/afghanistan/afghanistan-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Afghan Masked Bank Account Formatter",
+        "href": "/en/afghanistan/afghanistan-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Afghan AFN Decimal Currency Formatter",
+        "href": "/en/afghanistan/afghanistan-currency-decimal-formatter/",
+        "text": "Normalize AFN amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Afghan Tax Rate Sanity Helper",
+        "href": "/en/afghanistan/afghanistan-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Afghan Tax Return Field Helper",
+        "href": "/en/afghanistan/afghanistan-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Afghan Invoice Number Helper",
+        "href": "/en/afghanistan/afghanistan-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Afghan tax invoice Readiness Checker",
+        "href": "/en/afghanistan/afghanistan-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Afghan Tax Authority Handoff Helper",
+        "href": "/en/afghanistan/afghanistan-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Afghan Accounting Audit Trail Checklist Helper",
+        "href": "/en/afghanistan/afghanistan-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Afghan Postal Code Validator",
+        "href": "/en/afghanistan/afghanistan-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Afghan Address Normalizer",
+        "href": "/en/afghanistan/afghanistan-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Afghan Address Transliteration Normalizer",
+        "href": "/en/afghanistan/afghanistan-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Afghan Region / Province Code Mapper",
+        "href": "/en/afghanistan/afghanistan-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Afghan Municipality Code Inspector",
+        "href": "/en/afghanistan/afghanistan-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Afghan Phone Number Validator",
+        "href": "/en/afghanistan/afghanistan-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Afghan Phone E.164 Formatter",
+        "href": "/en/afghanistan/afghanistan-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Afghan Date Locale Formatter",
+        "href": "/en/afghanistan/afghanistan-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Afghan CSV Locale Normalizer",
+        "href": "/en/afghanistan/afghanistan-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Afghanistan decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Afghan Slug Normalizer",
+        "href": "/en/afghanistan/afghanistan-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Afghan Document OCR Fixer",
+        "href": "/en/afghanistan/afghanistan-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Afghan personal-data privacy boundary Redaction Helper",
+        "href": "/en/afghanistan/afghanistan-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Afghan PII Masker",
+        "href": "/en/afghanistan/afghanistan-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Afghan Personal Data Fixture Helper",
+        "href": "/en/afghanistan/afghanistan-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Afghan Driving Licence Format Helper",
+        "href": "/en/afghanistan/afghanistan-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Afghan Residence Permit Format Helper",
+        "href": "/en/afghanistan/afghanistan-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Afghan Health Card Format Helper",
+        "href": "/en/afghanistan/afghanistan-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Afghan Vehicle Plate Inspector",
+        "href": "/en/afghanistan/afghanistan-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Afghan VIN Validator",
+        "href": "/en/afghanistan/afghanistan-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Afghan Vehicle Data Redaction Helper",
+        "href": "/en/afghanistan/afghanistan-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Afghan Customs Declaration Helper",
+        "href": "/en/afghanistan/afghanistan-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Afghan Postal Tracking Helper",
+        "href": "/en/afghanistan/afghanistan-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Afghan Data Quality Workbench",
+        "href": "/en/afghanistan/afghanistan-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Afghan JSON Fixture Helper",
+        "href": "/en/afghanistan/afghanistan-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Afghan Regex Pack Helper",
+        "href": "/en/afghanistan/afghanistan-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Afghan API Payload Auditor",
+        "href": "/en/afghanistan/afghanistan-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Afghan Form Field Auditor",
+        "href": "/en/afghanistan/afghanistan-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Afghan Locale Number Parser",
+        "href": "/en/afghanistan/afghanistan-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Afghanistan."
+      },
+      {
+        "title": "Afghan Calendar Week Helper",
+        "href": "/en/afghanistan/afghanistan-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Afghan Company Suffix Normalizer",
+        "href": "/en/afghanistan/afghanistan-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Afghan Procurement Identifier Helper",
+        "href": "/en/afghanistan/afghanistan-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Afghan Locale Copy Checker",
+        "href": "/en/afghanistan/afghanistan-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Afghan Support Ticket Scrubber",
+        "href": "/en/afghanistan/afghanistan-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Afghan Integration Smoke Test Builder",
+        "href": "/en/afghanistan/afghanistan-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

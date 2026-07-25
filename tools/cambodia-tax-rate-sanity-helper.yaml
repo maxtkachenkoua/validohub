@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: KH
+category: tax
+status: active
+name:
+  en: "Cambodian Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "GDT TIN / VAT 20% base 1,234,567 KHR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-tax-return-field-helper, cambodia-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: micronesia-csv-locale-normalizer
+kind: tool
+module: validohub
+country: FM
+category: developer-tools
+status: active
+name:
+  en: "Micronesian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Micronesia decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.micronesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 USD;07/24/2026;FM123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [micronesia-slug-normalizer, micronesia-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Micronesian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Micronesia decimal, date, postal, phone, tax, and banking fields."

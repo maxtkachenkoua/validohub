@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mozambique-document-ocr-fixer
+kind: tool
+module: validohub
+country: MZ
+category: documents
+status: active
+name:
+  en: "Mozambican Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mozambique-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "MZ-ID-123456 MZ123456789 001 1234567890 1000 Maputo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mozambique-privacy-redaction-helper, mozambique-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mozambican Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

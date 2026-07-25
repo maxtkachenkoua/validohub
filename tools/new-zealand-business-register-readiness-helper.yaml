@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-business-register-readiness-helper
+kind: tool
+module: validohub
+country: NZ
+category: government
+status: active
+name:
+  en: "New Zealand Companies Office / NZBN Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Companies Office / NZBN lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "9429000000000 123456789 1 Molesworth Street, Wellington 6011"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-id-card-format-helper, new-zealand-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Companies Office / NZBN Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Companies Office / NZBN lookup or company registry workflow."

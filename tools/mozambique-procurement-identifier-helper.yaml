@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mozambique-procurement-identifier-helper
+kind: tool
+module: validohub
+country: MZ
+category: government
+status: active
+name:
+  en: "Mozambican Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mozambique-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "MZ-REG-123456 PO-2026-001 MZ123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mozambique-accessibility-locale-copy-checker, mozambique-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mozambican Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

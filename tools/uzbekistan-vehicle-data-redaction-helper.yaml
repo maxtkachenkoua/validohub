@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: UZ
+category: transport
+status: active
+name:
+  en: "Uzbek Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "01 A 123 AB WVWZZZ1JZXW000001 30101876543212"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-customs-declaration-helper, uzbekistan-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

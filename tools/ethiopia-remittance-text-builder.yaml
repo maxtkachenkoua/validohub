@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ethiopia-remittance-text-builder
+kind: tool
+module: validohub
+country: ET
+category: finance
+status: active
+name:
+  en: "Ethiopian Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ethiopia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 ET123456789 1,234.56 ETB"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ethiopia-payment-reconciliation-helper, ethiopia-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ethiopian Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

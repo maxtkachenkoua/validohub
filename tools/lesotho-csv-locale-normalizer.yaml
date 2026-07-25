@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lesotho-csv-locale-normalizer
+kind: tool
+module: validohub
+country: LS
+category: developer-tools
+status: active
+name:
+  en: "Basotho CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Lesotho decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lesotho-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 LSL;24/07/2026;LS123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lesotho-slug-normalizer, lesotho-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Basotho CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Lesotho decimal, date, postal, phone, tax, and banking fields."

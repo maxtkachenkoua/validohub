@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: algeria-locale-number-parser
+kind: tool
+module: validohub
+country: DZ
+category: localization
+status: active
+name:
+  en: "Algerian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Algeria."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.algeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 DZD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [algeria-calendar-week-helper, algeria-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Algerian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Algeria."

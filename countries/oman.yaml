@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: OM
+slug: oman
+name:
+  en: Oman
+region: Asia
+languages:
+  - ar
+currency: OMR
+relatedCountries:
+  - AE
+  - SA
+  - QA

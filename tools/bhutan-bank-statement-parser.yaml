@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bhutan-bank-statement-parser
+kind: tool
+module: validohub
+country: BT
+category: finance
+status: active
+name:
+  en: "Bhutanese Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bhutan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1,234.56 BTN; 001 1234567890; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bhutan-masked-bank-account-formatter, bhutan-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bhutanese Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."

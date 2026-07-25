@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: oman-bank-account-validator
+kind: tool
+module: validohub
+country: OM
+category: finance
+status: active
+name:
+  en: "Oman Bank Account Validator"
+summary:
+  en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.oman-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "0001 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [oman-bank-account-fixture-generator, oman-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Oman Bank Account Validator | ValidoHub"
+  description:
+    en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."

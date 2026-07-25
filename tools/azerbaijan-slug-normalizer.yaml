@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-slug-normalizer
+kind: tool
+module: validohub
+country: AZ
+category: developer-tools
+status: active
+name:
+  en: "Azerbaijani Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Azerbaijan sample company Neftchilar Avenue 1, Baku AZ1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-document-ocr-fixer, azerbaijan-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-currency-decimal-formatter
+kind: tool
+module: validohub
+country: ID
+category: finance
+status: active
+name:
+  en: "Indonesian IDR Decimal Currency Formatter"
+summary:
+  en: "Normalize IDR amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1.234.567,89 IDR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-tax-rate-sanity-helper, indonesia-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian IDR Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize IDR amount strings, decimal separators, grouping, and API-safe numeric previews."

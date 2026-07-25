@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: CI
+category: finance
+status: active
+name:
+  en: "Ivorian Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "24/07/2026; 1,234.56 XOF; 001 1234567890; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-bank-statement-parser, cote-d-ivoire-masked-bank-account-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

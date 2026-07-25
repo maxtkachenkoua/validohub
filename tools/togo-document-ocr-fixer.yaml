@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: togo-document-ocr-fixer
+kind: tool
+module: validohub
+country: TG
+category: documents
+status: active
+name:
+  en: "Togolese Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.togo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "TG-ID-123456 TG123456789 001 1234567890 1000 Lome"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [togo-privacy-redaction-helper, togo-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Togolese Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

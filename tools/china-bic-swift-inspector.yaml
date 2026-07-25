@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-bic-swift-inspector
+kind: tool
+module: validohub
+country: CN
+category: finance
+status: active
+name:
+  en: "Chinese BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for China banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDCN2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-domestic-transfer-helper, china-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for China banking integrations."

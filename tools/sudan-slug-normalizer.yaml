@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sudan-slug-normalizer
+kind: tool
+module: validohub
+country: SD
+category: developer-tools
+status: active
+name:
+  en: "Sudanese Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Sudan sample company Central business district, Khartoum 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sudan-document-ocr-fixer, sudan-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sudanese Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

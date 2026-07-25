@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-customs-importer-code-helper
+kind: tool
+module: validohub
+country: GE
+category: national-identifiers
+status: active
+name:
+  en: "Georgian Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "GE405123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-social-service-boundary-social-insurance-helper, georgia-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

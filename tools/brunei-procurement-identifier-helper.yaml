@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-procurement-identifier-helper
+kind: tool
+module: validohub
+country: BN
+category: government
+status: active
+name:
+  en: "Bruneian Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "RC123456 PO-2026-001 TIN1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [brunei-accessibility-locale-copy-checker, brunei-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

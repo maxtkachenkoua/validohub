@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-municipality-code-inspector
+kind: tool
+module: validohub
+country: PS
+category: address
+status: active
+name:
+  en: "Palestinian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Al-Manara 1, Ramallah P600"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-phone-number-validator, palestine-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

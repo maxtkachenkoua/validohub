@@ -1,0 +1,12 @@
+schemaVersion: 1
+code: ZA
+slug: south-africa
+name:
+  en: South Africa
+region: Africa
+languages:
+  - en
+currency: ZAR
+relatedCountries:
+  - NG
+  - KE

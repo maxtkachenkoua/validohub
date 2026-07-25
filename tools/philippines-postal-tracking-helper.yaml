@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-postal-tracking-helper
+kind: tool
+module: validohub
+country: PH
+category: logistics
+status: active
+name:
+  en: "Philippine Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1000 Manila"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [philippines-data-quality-workbench, philippines-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

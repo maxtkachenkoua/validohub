@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kenya-tax-id-validator
+kind: tool
+module: validohub
+country: KE
+category: national-identifiers
+status: active
+name:
+  en: "Kenyan tax number / VAT boundary Validator"
+summary:
+  en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kenya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "KE123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kenya-customs-importer-code-helper, kenya-social-security-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kenyan tax number / VAT boundary Validator | ValidoHub"
+  description:
+    en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-nric-fin-validator
+kind: tool
+module: validohub
+country: SG
+category: national-identifiers
+status: active
+name:
+  en: "Singapore NRIC / FIN Validator"
+summary:
+  en: "Validate NRIC / FIN shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "S1234567D"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-uen-validator, singapore-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore NRIC / FIN Validator | ValidoHub"
+  description:
+    en: "Validate NRIC / FIN shape, split date/control/body evidence, and prepare privacy-safe debugging output."

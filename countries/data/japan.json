@@ -6,8 +6,8 @@
     "mapSrc": "/assets/images/countries/japan-location.png",
     "mapAlt": "World map with Japan location marker",
     "mapMarker": {
-      "x": 50,
-      "y": 50,
+      "x": 73,
+      "y": 38,
       "label": "Japan"
     },
     "source": "Premium raster country visual generated once for ValidoHub country navigation"
@@ -16,6 +16,7 @@
     "id": "japan",
     "flag": "🇯🇵",
     "name": "Japan",
+    "nativeName": "Nihon / Nippon",
     "iso2": "JP",
     "iso3": "JPN",
     "continent": "Asia",
@@ -23,31 +24,619 @@
     "language": "Japanese",
     "currency": "JPY",
     "currencyName": "Japanese yen",
-    "status": "planned",
-    "summary": "Future hub for Japanese localization, address formats, era dates, and payment context.",
+    "status": "available",
+    "summary": "Premium Japan developer hub for My Number, Corporate Number, Consumption tax invoice number, postal code, phone, Zengin bank code, domestic transfer, SWIFT, Konbini payment reference, Pay-easy handoff, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
     "identifiers": [
       "My Number",
-      "postal code"
+      "Corporate Number",
+      "Consumption tax invoice number",
+      "postal code",
+      "phone"
     ],
     "payments": [
-      "bank codes",
-      "domestic transfers"
+      "Zengin bank code",
+      "domestic transfer",
+      "SWIFT",
+      "Konbini payment reference",
+      "Pay-easy handoff"
     ],
     "features": [
+      "payments",
       "identity",
       "government",
       "banking"
     ],
-    "availableWorkbenches": [],
-    "plannedWorkbenches": [
-      "Japanese Address Notes",
-      "Japan Postal Code Notes"
+    "availableWorkbenches": [
+      "Japanese My Number Validator",
+      "Japanese Corporate Number Validator",
+      "Japanese Consumption tax / T-number Validator",
+      "Japanese Customs / Importer Code Helper",
+      "Japanese basic pension number boundary Helper",
+      "Japanese Company Onboarding Auditor",
+      "Japanese Houjin Bangou / Legal Affairs Bureau Readiness Helper",
+      "Japanese ID Card Format Helper",
+      "Japanese Passport Number Helper",
+      "Japanese MRZ / Passport Parser",
+      "Japan Bank Account Validator",
+      "Japan Bank Account Fixture Generator",
+      "Japanese Domestic Bank Account Inspector",
+      "Japanese BIC / SWIFT Inspector",
+      "Japanese Domestic Transfer Helper",
+      "Japanese Direct Debit / Auto-Debit Mandate Helper",
+      "Japanese Zengin / Pay-easy reference Reference Helper",
+      "Japanese Remittance Text Builder",
+      "Japanese Payment Reconciliation Helper",
+      "Japanese Bank Statement Parser",
+      "Japanese Masked Bank Account Formatter",
+      "Japanese JPY Decimal Currency Formatter",
+      "Japanese Tax Rate Sanity Helper",
+      "Japanese Tax Return Field Helper",
+      "Japanese Invoice Number Helper",
+      "Japanese Qualified Invoice / T-number Readiness Checker",
+      "Japanese Tax Authority Handoff Helper",
+      "Japanese Accounting Audit Trail Checklist Helper",
+      "Japanese Postal Code Validator",
+      "Japanese Address Normalizer",
+      "Japanese Address Transliteration Normalizer",
+      "Japanese Region / Province Code Mapper",
+      "Japanese Municipality Code Inspector",
+      "Japanese Phone Number Validator",
+      "Japanese Phone E.164 Formatter",
+      "Japanese Date Locale Formatter",
+      "Japanese CSV Locale Normalizer",
+      "Japanese Slug Normalizer",
+      "Japanese Document OCR Fixer",
+      "Japanese APPI privacy Redaction Helper",
+      "Japanese PII Masker",
+      "Japanese Personal Data Fixture Helper",
+      "Japanese Driving Licence Format Helper",
+      "Japanese Residence Permit Format Helper",
+      "Japanese Health Card Format Helper",
+      "Japanese Vehicle Plate Inspector",
+      "Japanese VIN Validator",
+      "Japanese Vehicle Data Redaction Helper",
+      "Japanese Customs Declaration Helper",
+      "Japanese Postal Tracking Helper",
+      "Japanese Data Quality Workbench",
+      "Japanese JSON Fixture Helper",
+      "Japanese Regex Pack Helper",
+      "Japanese API Payload Auditor",
+      "Japanese Form Field Auditor",
+      "Japanese Locale Number Parser",
+      "Japanese Calendar Week Helper",
+      "Japanese Company Suffix Normalizer",
+      "Japanese Procurement Identifier Helper",
+      "Japanese Locale Copy Checker",
+      "Japanese Support Ticket Scrubber",
+      "Japanese Integration Smoke Test Builder"
     ],
-    "completion": 20,
+    "plannedWorkbenches": [
+      "Live Houjin Bangou / Legal Affairs Bureau lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
     "coordinates": {
-      "x": 71,
-      "y": 37
-    }
+      "x": 73,
+      "y": 38
+    },
+    "searchHints": [
+      "MY NUMBER",
+      "HOUJIN BANGOU",
+      "T-NUMBER",
+      "ZENGIN",
+      "PAY-EASY",
+      "POSTAL"
+    ]
   },
-  "hub": null
+  "hub": {
+    "flag": "🇯🇵",
+    "name": "Japan",
+    "badge": "Premium Japan developer suite",
+    "description": "Developer intelligence and browser-only workbenches for japanese identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Nihon / Nippon",
+      "population": "approximately 124M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Tokyo",
+      "continent": "Asia",
+      "region": "East Asia",
+      "languages": "Japanese",
+      "currency": "Japanese yen",
+      "currencyCode": "JPY",
+      "callingCode": "+81",
+      "internetTld": ".jp",
+      "drivingSide": "Right",
+      "iso2": "JP",
+      "iso3": "JPN",
+      "isoNumeric": "392",
+      "locale": "ja-JP",
+      "icuLocale": "ja_JP",
+      "dateFormat": "YYYY/MM/DD",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Japan",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Tokyo (JST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "110 / 119",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "ja-JP",
+      "cldrLocale": "ja_JP",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type A / Type B",
+      "voltage": "100V",
+      "frequency": "50Hz east / 60Hz west"
+    },
+    "visualIdentity": {
+      "countryId": "japan",
+      "outlineLabel": "Japan outline",
+      "mapLabel": "Japan in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Japan flag",
+      "heroAccentPrimary": "188 0 45",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "17 24 39"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "My Number and Corporate Number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "Consumption tax / T-number and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Japan registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /japan/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Japanese examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "Houjin Bangou / Legal Affairs Bureau",
+        "text": "Official business registry or company lookup remains the source of truth for Japan.",
+        "status": "official boundary"
+      },
+      {
+        "title": "Consumption tax / T-number",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "APPI privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "My Number, Corporate Number, Consumption tax invoice number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "Zengin bank code, domestic transfer, SWIFT, Konbini payment reference, Pay-easy handoff",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "ja-JP / ja_JP; date YYYY/MM/DD.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "JPY amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "My Number, Corporate Number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type A / Type B",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "100V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz east / 60Hz west",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "110 / 119",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "MY NUMBER",
+      "HOUJIN BANGOU",
+      "T-NUMBER",
+      "ZENGIN",
+      "PAY-EASY",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Japanese My Number Validator",
+        "href": "/en/japan/japan-my-number-validator/",
+        "text": "Validate My Number shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Japanese Corporate Number Validator",
+        "href": "/en/japan/japan-corporate-number-validator/",
+        "text": "Inspect Corporate Number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Japanese Consumption tax / T-number Validator",
+        "href": "/en/japan/japan-tax-id-validator/",
+        "text": "Normalize Consumption tax / T-number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Japanese Customs / Importer Code Helper",
+        "href": "/en/japan/japan-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Japanese basic pension number boundary Helper",
+        "href": "/en/japan/japan-basic-pension-number-boundary-social-insurance-helper/",
+        "text": "Split basic pension number boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Japanese Company Onboarding Auditor",
+        "href": "/en/japan/japan-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for Corporate Number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Japanese Houjin Bangou / Legal Affairs Bureau Readiness Helper",
+        "href": "/en/japan/japan-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated Houjin Bangou / Legal Affairs Bureau lookup or company registry workflow."
+      },
+      {
+        "title": "Japanese ID Card Format Helper",
+        "href": "/en/japan/japan-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Japanese Passport Number Helper",
+        "href": "/en/japan/japan-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Japanese MRZ / Passport Parser",
+        "href": "/en/japan/japan-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Japan Bank Account Validator",
+        "href": "/en/japan/japan-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Japan Bank Account Fixture Generator",
+        "href": "/en/japan/japan-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Japanese Domestic Bank Account Inspector",
+        "href": "/en/japan/japan-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Japanese BIC / SWIFT Inspector",
+        "href": "/en/japan/japan-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Japan banking integrations."
+      },
+      {
+        "title": "Japanese Domestic Transfer Helper",
+        "href": "/en/japan/japan-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Japanese Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/japan/japan-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Japanese Zengin / Pay-easy reference Reference Helper",
+        "href": "/en/japan/japan-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Japanese Remittance Text Builder",
+        "href": "/en/japan/japan-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Japanese Payment Reconciliation Helper",
+        "href": "/en/japan/japan-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Japanese Bank Statement Parser",
+        "href": "/en/japan/japan-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Japanese Masked Bank Account Formatter",
+        "href": "/en/japan/japan-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Japanese JPY Decimal Currency Formatter",
+        "href": "/en/japan/japan-currency-decimal-formatter/",
+        "text": "Normalize JPY amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Japanese Tax Rate Sanity Helper",
+        "href": "/en/japan/japan-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Japanese Tax Return Field Helper",
+        "href": "/en/japan/japan-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Japanese Invoice Number Helper",
+        "href": "/en/japan/japan-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Japanese Qualified Invoice / T-number Readiness Checker",
+        "href": "/en/japan/japan-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Japanese Tax Authority Handoff Helper",
+        "href": "/en/japan/japan-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Japanese Accounting Audit Trail Checklist Helper",
+        "href": "/en/japan/japan-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Japanese Postal Code Validator",
+        "href": "/en/japan/japan-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Japanese Address Normalizer",
+        "href": "/en/japan/japan-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Japanese Address Transliteration Normalizer",
+        "href": "/en/japan/japan-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Japanese Region / Province Code Mapper",
+        "href": "/en/japan/japan-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Japanese Municipality Code Inspector",
+        "href": "/en/japan/japan-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Japanese Phone Number Validator",
+        "href": "/en/japan/japan-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Japanese Phone E.164 Formatter",
+        "href": "/en/japan/japan-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Japanese Date Locale Formatter",
+        "href": "/en/japan/japan-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Japanese CSV Locale Normalizer",
+        "href": "/en/japan/japan-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Japan decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Japanese Slug Normalizer",
+        "href": "/en/japan/japan-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Japanese Document OCR Fixer",
+        "href": "/en/japan/japan-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Japanese APPI privacy Redaction Helper",
+        "href": "/en/japan/japan-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Japanese PII Masker",
+        "href": "/en/japan/japan-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Japanese Personal Data Fixture Helper",
+        "href": "/en/japan/japan-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Japanese Driving Licence Format Helper",
+        "href": "/en/japan/japan-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Japanese Residence Permit Format Helper",
+        "href": "/en/japan/japan-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Japanese Health Card Format Helper",
+        "href": "/en/japan/japan-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Japanese Vehicle Plate Inspector",
+        "href": "/en/japan/japan-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Japanese VIN Validator",
+        "href": "/en/japan/japan-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Japanese Vehicle Data Redaction Helper",
+        "href": "/en/japan/japan-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Japanese Customs Declaration Helper",
+        "href": "/en/japan/japan-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Japanese Postal Tracking Helper",
+        "href": "/en/japan/japan-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Japanese Data Quality Workbench",
+        "href": "/en/japan/japan-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Japanese JSON Fixture Helper",
+        "href": "/en/japan/japan-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Japanese Regex Pack Helper",
+        "href": "/en/japan/japan-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Japanese API Payload Auditor",
+        "href": "/en/japan/japan-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Japanese Form Field Auditor",
+        "href": "/en/japan/japan-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Japanese Locale Number Parser",
+        "href": "/en/japan/japan-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Japan."
+      },
+      {
+        "title": "Japanese Calendar Week Helper",
+        "href": "/en/japan/japan-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Japanese Company Suffix Normalizer",
+        "href": "/en/japan/japan-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Japanese Procurement Identifier Helper",
+        "href": "/en/japan/japan-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Japanese Locale Copy Checker",
+        "href": "/en/japan/japan-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Japanese Support Ticket Scrubber",
+        "href": "/en/japan/japan-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Japanese Integration Smoke Test Builder",
+        "href": "/en/japan/japan-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
 }

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nauru-data-quality-workbench
+kind: tool
+module: validohub
+country: NR
+category: developer-tools
+status: active
+name:
+  en: "Nauruan Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nauru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NR\",\"company\":\"NR-REG-123456\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nauru-json-fixture-generator, nauru-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nauruan Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

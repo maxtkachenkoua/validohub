@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-csv-locale-normalizer
+kind: tool
+module: validohub
+country: KP
+category: developer-tools
+status: active
+name:
+  en: "North Korean CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for North Korea decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234 KPW;2026.07.21;TAX123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-slug-normalizer, north-korea-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for North Korea decimal, date, postal, phone, tax, and banking fields."

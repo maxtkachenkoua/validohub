@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-postal-tracking-helper
+kind: tool
+module: validohub
+country: ST
+category: logistics
+status: active
+name:
+  en: "Sao Tomean Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1000 Sao Tome"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-data-quality-workbench, sao-tome-and-principe-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

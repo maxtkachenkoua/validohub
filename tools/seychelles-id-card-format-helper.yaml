@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: seychelles-id-card-format-helper
+kind: tool
+module: validohub
+country: SC
+category: national-identifiers
+status: active
+name:
+  en: "Seychellois ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.seychelles-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "SC-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [seychelles-passport-number-helper, seychelles-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Seychellois ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

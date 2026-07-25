@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-privacy-redaction-helper
+kind: tool
+module: validohub
+country: KW
+category: privacy
+status: active
+name:
+  en: "Kuwaiti data privacy boundary Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KW\",\"civilId\":\"290010112345\",\"iban\":\"KW81CBKU0000000000001234560101\",\"knet\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-pii-masker, kuwait-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti data privacy boundary Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

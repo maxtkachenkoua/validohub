@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-102.17 -83.54 856.01 657.38" role="img">
+  <title>Cambodia country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.10" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="kh" d="M655.076,497.982l3.535,3.776l6.576-4.875l0.579-7.692l-3.396,2.343l-1.764-0.985l-2.396-0.32l-1.341-0.941l-0.648,0.035l-1.754,2.878l0.285,1.332l1.781,0.994l-0.216,2.705L655.076,497.982L655.076,497.982z"/>
+  </g>
+</svg>

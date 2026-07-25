@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-payment-reference-helper
+kind: tool
+module: validohub
+country: GN
+category: finance
+status: active
+name:
+  en: "Guinean bank transfer / payment reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "bank transfer / payment reference REF 2026-001 1,234.56 GNF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-remittance-text-builder, guinea-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guinean bank transfer / payment reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

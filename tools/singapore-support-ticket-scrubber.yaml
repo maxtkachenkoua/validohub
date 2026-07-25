@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-support-ticket-scrubber
+kind: tool
+module: validohub
+country: SG
+category: privacy
+status: active
+name:
+  en: "Singapore Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent S1234567D, 7171 001 123456789, 1 Raffles Place, Singapore 048616"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-integration-smoke-test-builder, singapore-nric-fin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

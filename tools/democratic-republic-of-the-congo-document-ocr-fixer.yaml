@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: democratic-republic-of-the-congo-document-ocr-fixer
+kind: tool
+module: validohub
+country: CD
+category: documents
+status: active
+name:
+  en: "Congolese Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.democratic-republic-of-the-congo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "CD-ID-123456 CD123456789 001 1234567890 1000 Kinshasa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [democratic-republic-of-the-congo-privacy-redaction-helper, democratic-republic-of-the-congo-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Congolese Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tanzania-postal-code-validator
+kind: tool
+module: validohub
+country: TZ
+category: address
+status: active
+name:
+  en: "Tanzanian Postal Code Validator"
+summary:
+  en: "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tanzania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "1000 Dodoma"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tanzania-address-normalizer, tanzania-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tanzanian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."

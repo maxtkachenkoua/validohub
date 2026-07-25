@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: namibia-customs-importer-code-helper
+kind: tool
+module: validohub
+country: NA
+category: national-identifiers
+status: active
+name:
+  en: "Namibian Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.namibia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "NANA-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [namibia-social-security-boundary-social-insurance-helper, namibia-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Namibian Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: algeria-driving-licence-format-helper
+kind: tool
+module: validohub
+country: DZ
+category: documents
+status: active
+name:
+  en: "Algerian Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.algeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "DZ-ID-123456 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [algeria-residence-permit-format-helper, algeria-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Algerian Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

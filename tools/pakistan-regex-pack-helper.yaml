@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-regex-pack-helper
+kind: tool
+module: validohub
+country: PK
+category: developer-tools
+status: active
+name:
+  en: "Pakistani Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "CNIC boundary SECP registration number postal code  SCBL 0000001123456702"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-api-payload-auditor, pakistan-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

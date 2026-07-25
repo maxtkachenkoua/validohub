@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: SA
+category: government
+status: active
+name:
+  en: "Saudi Ministry of Commerce registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Ministry of Commerce registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "1010123456 300123456700003 King Fahd Road 1, Riyadh 12211"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-id-card-format-helper, saudi-arabia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi Ministry of Commerce registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Ministry of Commerce registry lookup or company registry workflow."

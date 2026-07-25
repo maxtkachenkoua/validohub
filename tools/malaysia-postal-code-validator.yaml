@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-postal-code-validator
+kind: tool
+module: validohub
+country: MY
+category: address
+status: active
+name:
+  en: "Malaysian Postal Code Validator"
+summary:
+  en: "Validate postcode shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "50050 Kuala Lumpur"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-address-normalizer, malaysia-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postcode shape, split area/delivery hints, and preserve official postal lookup boundaries."

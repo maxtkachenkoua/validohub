@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-region-code-mapper
+kind: tool
+module: validohub
+country: QA
+category: address
+status: active
+name:
+  en: "Qatari Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "PO Box 12345 Doha"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-municipality-code-inspector, qatar-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

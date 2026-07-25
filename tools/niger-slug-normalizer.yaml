@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: niger-slug-normalizer
+kind: tool
+module: validohub
+country: NE
+category: developer-tools
+status: active
+name:
+  en: "Nigerien Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.niger-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Niger sample company Central business district, Niamey 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [niger-document-ocr-fixer, niger-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nigerien Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

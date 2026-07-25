@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-customs-importer-code-helper
+kind: tool
+module: validohub
+country: TW
+category: national-identifiers
+status: active
+name:
+  en: "Taiwanese Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "TW12345675"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-labor-insurance-boundary-social-insurance-helper, taiwan-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: IR
+slug: iran
+name:
+  en: Iran
+region: Asia
+languages:
+  - fa
+currency: IRR
+relatedCountries:
+  - AF
+  - PK
+  - AZ

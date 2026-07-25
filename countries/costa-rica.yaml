@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CR
+slug: costa-rica
+name:
+  en: "Costa Rica"
+region: North America
+languages:
+  - es
+currency: CRC
+relatedCountries:
+  - NI
+  - PA
+  - MX

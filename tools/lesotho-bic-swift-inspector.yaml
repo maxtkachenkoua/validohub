@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lesotho-bic-swift-inspector
+kind: tool
+module: validohub
+country: LS
+category: finance
+status: active
+name:
+  en: "Basotho BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Lesotho banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lesotho-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDLS2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lesotho-domestic-transfer-helper, lesotho-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Basotho BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Lesotho banking integrations."

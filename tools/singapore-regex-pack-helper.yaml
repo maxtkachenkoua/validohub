@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-regex-pack-helper
+kind: tool
+module: validohub
+country: SG
+category: developer-tools
+status: active
+name:
+  en: "Singapore Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "NRIC / FIN UEN postal code  7171 001 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-api-payload-auditor, singapore-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

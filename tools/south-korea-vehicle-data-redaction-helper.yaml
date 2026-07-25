@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: KR
+category: transport
+status: active
+name:
+  en: "South Korean Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "12가 3456 WVWZZZ1JZXW000001 900101-1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-customs-declaration-helper, south-korea-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

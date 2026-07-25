@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kiribati-region-code-mapper
+kind: tool
+module: validohub
+country: KI
+category: address
+status: active
+name:
+  en: "I-Kiribati Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kiribati-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "South Tarawa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kiribati-municipality-code-inspector, kiribati-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "I-Kiribati Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

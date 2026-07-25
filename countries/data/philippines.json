@@ -1,0 +1,642 @@
+{
+  "id": "philippines",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/philippines-outline.png",
+    "outlineAlt": "Philippines country outline",
+    "mapSrc": "/assets/images/countries/philippines-location.png",
+    "mapAlt": "World map with Philippines location marker",
+    "mapMarker": {
+      "x": 72,
+      "y": 61,
+      "label": "Philippines"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "philippines",
+    "flag": "🇵🇭",
+    "name": "Philippines",
+    "nativeName": "Pilipinas",
+    "iso2": "PH",
+    "iso3": "PHL",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Filipino and English",
+    "currency": "PHP",
+    "currencyName": "Philippine peso",
+    "status": "available",
+    "summary": "Premium Philippines developer hub for PhilSys boundary, SEC registration number, TIN, ZIP code, phone, bank code/account, InstaPay handoff, PESONet handoff, SWIFT, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "PhilSys boundary",
+      "SEC registration number",
+      "TIN",
+      "ZIP code",
+      "phone"
+    ],
+    "payments": [
+      "bank code/account",
+      "InstaPay handoff",
+      "PESONet handoff",
+      "SWIFT",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Philippine PhilSys boundary Validator",
+      "Philippine SEC registration number Validator",
+      "Philippine BIR TIN Validator",
+      "Philippine Customs / Importer Code Helper",
+      "Philippine SSS / GSIS boundary Helper",
+      "Philippine Company Onboarding Auditor",
+      "Philippine SEC / DTI registry Readiness Helper",
+      "Philippine ID Card Format Helper",
+      "Philippine Passport Number Helper",
+      "Philippine MRZ / Passport Parser",
+      "Philippines Bank Account Validator",
+      "Philippines Bank Account Fixture Generator",
+      "Philippine Domestic Bank Account Inspector",
+      "Philippine BIC / SWIFT Inspector",
+      "Philippine Domestic Transfer Helper",
+      "Philippine Direct Debit / Auto-Debit Mandate Helper",
+      "Philippine InstaPay / PESONet reference Reference Helper",
+      "Philippine Remittance Text Builder",
+      "Philippine Payment Reconciliation Helper",
+      "Philippine Bank Statement Parser",
+      "Philippine Masked Bank Account Formatter",
+      "Philippine PHP Decimal Currency Formatter",
+      "Philippine Tax Rate Sanity Helper",
+      "Philippine Tax Return Field Helper",
+      "Philippine Invoice Number Helper",
+      "Philippine BIR invoice Readiness Checker",
+      "Philippine Tax Authority Handoff Helper",
+      "Philippine Accounting Audit Trail Checklist Helper",
+      "Philippine Postal Code Validator",
+      "Philippine Address Normalizer",
+      "Philippine Address Transliteration Normalizer",
+      "Philippine Region / Province Code Mapper",
+      "Philippine Municipality Code Inspector",
+      "Philippine Phone Number Validator",
+      "Philippine Phone E.164 Formatter",
+      "Philippine Date Locale Formatter",
+      "Philippine CSV Locale Normalizer",
+      "Philippine Slug Normalizer",
+      "Philippine Document OCR Fixer",
+      "Philippine Data Privacy Act privacy Redaction Helper",
+      "Philippine PII Masker",
+      "Philippine Personal Data Fixture Helper",
+      "Philippine Driving Licence Format Helper",
+      "Philippine Residence Permit Format Helper",
+      "Philippine Health Card Format Helper",
+      "Philippine Vehicle Plate Inspector",
+      "Philippine VIN Validator",
+      "Philippine Vehicle Data Redaction Helper",
+      "Philippine Customs Declaration Helper",
+      "Philippine Postal Tracking Helper",
+      "Philippine Data Quality Workbench",
+      "Philippine JSON Fixture Helper",
+      "Philippine Regex Pack Helper",
+      "Philippine API Payload Auditor",
+      "Philippine Form Field Auditor",
+      "Philippine Locale Number Parser",
+      "Philippine Calendar Week Helper",
+      "Philippine Company Suffix Normalizer",
+      "Philippine Procurement Identifier Helper",
+      "Philippine Locale Copy Checker",
+      "Philippine Support Ticket Scrubber",
+      "Philippine Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live SEC / DTI registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 72,
+      "y": 61
+    },
+    "searchHints": [
+      "TIN",
+      "PHILSYS",
+      "SEC",
+      "INSTAPAY",
+      "PESONET",
+      "ZIP"
+    ]
+  },
+  "hub": {
+    "flag": "🇵🇭",
+    "name": "Philippines",
+    "badge": "Premium Philippines developer suite",
+    "description": "Developer intelligence and browser-only workbenches for philippine identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Pilipinas",
+      "population": "approximately 116M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Manila",
+      "continent": "Asia",
+      "region": "Southeast Asia",
+      "languages": "Filipino and English",
+      "currency": "Philippine peso",
+      "currencyCode": "PHP",
+      "callingCode": "+63",
+      "internetTld": ".ph",
+      "drivingSide": "Right",
+      "iso2": "PH",
+      "iso3": "PHL",
+      "isoNumeric": "608",
+      "locale": "en-PH",
+      "icuLocale": "en_PH",
+      "dateFormat": "MM/DD/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Philippines",
+      "postalCodeFormat": "ZIP code",
+      "primaryTimeZone": "Asia/Manila (PHT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "911",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "en-PH",
+      "cldrLocale": "en_PH",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type A / Type B / Type C",
+      "voltage": "220V",
+      "frequency": "60Hz"
+    },
+    "visualIdentity": {
+      "countryId": "philippines",
+      "outlineLabel": "Philippines outline",
+      "mapLabel": "Philippines in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Philippines flag",
+      "heroAccentPrimary": "0 56 168",
+      "heroAccentSecondary": "206 17 38",
+      "heroAccentTertiary": "252 209 22"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "PhilSys boundary and SEC registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "BIR TIN and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Philippines registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /philippines/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Philippine examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "SEC / DTI registry",
+        "text": "Official business registry or company lookup remains the source of truth for Philippines.",
+        "status": "official boundary"
+      },
+      {
+        "title": "BIR TIN",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "Data Privacy Act privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "PhilSys boundary, SEC registration number, TIN, ZIP code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank code/account, InstaPay handoff, PESONet handoff, SWIFT, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en-PH / en_PH; date MM/DD/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "PHP amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "PhilSys boundary, SEC registration number, ZIP code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type A / Type B / Type C",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "220V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "60Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "911",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "TIN",
+      "PHILSYS",
+      "SEC",
+      "INSTAPAY",
+      "PESONET",
+      "ZIP"
+    ],
+    "routes": [
+      {
+        "title": "Philippine PhilSys boundary Validator",
+        "href": "/en/philippines/philippines-philsys-boundary-validator/",
+        "text": "Validate PhilSys boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Philippine SEC registration number Validator",
+        "href": "/en/philippines/philippines-sec-registration-number-validator/",
+        "text": "Inspect SEC registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Philippine BIR TIN Validator",
+        "href": "/en/philippines/philippines-tax-id-validator/",
+        "text": "Normalize BIR TIN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Philippine Customs / Importer Code Helper",
+        "href": "/en/philippines/philippines-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Philippine SSS / GSIS boundary Helper",
+        "href": "/en/philippines/philippines-sss-gsis-boundary-social-insurance-helper/",
+        "text": "Split SSS / GSIS boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Philippine Company Onboarding Auditor",
+        "href": "/en/philippines/philippines-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for SEC registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Philippine SEC / DTI registry Readiness Helper",
+        "href": "/en/philippines/philippines-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated SEC / DTI registry lookup or company registry workflow."
+      },
+      {
+        "title": "Philippine ID Card Format Helper",
+        "href": "/en/philippines/philippines-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Philippine Passport Number Helper",
+        "href": "/en/philippines/philippines-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Philippine MRZ / Passport Parser",
+        "href": "/en/philippines/philippines-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Philippines Bank Account Validator",
+        "href": "/en/philippines/philippines-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Philippines Bank Account Fixture Generator",
+        "href": "/en/philippines/philippines-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Philippine Domestic Bank Account Inspector",
+        "href": "/en/philippines/philippines-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Philippine BIC / SWIFT Inspector",
+        "href": "/en/philippines/philippines-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Philippines banking integrations."
+      },
+      {
+        "title": "Philippine Domestic Transfer Helper",
+        "href": "/en/philippines/philippines-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Philippine Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/philippines/philippines-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Philippine InstaPay / PESONet reference Reference Helper",
+        "href": "/en/philippines/philippines-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Philippine Remittance Text Builder",
+        "href": "/en/philippines/philippines-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Philippine Payment Reconciliation Helper",
+        "href": "/en/philippines/philippines-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Philippine Bank Statement Parser",
+        "href": "/en/philippines/philippines-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Philippine Masked Bank Account Formatter",
+        "href": "/en/philippines/philippines-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Philippine PHP Decimal Currency Formatter",
+        "href": "/en/philippines/philippines-currency-decimal-formatter/",
+        "text": "Normalize PHP amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Philippine Tax Rate Sanity Helper",
+        "href": "/en/philippines/philippines-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Philippine Tax Return Field Helper",
+        "href": "/en/philippines/philippines-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Philippine Invoice Number Helper",
+        "href": "/en/philippines/philippines-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Philippine BIR invoice Readiness Checker",
+        "href": "/en/philippines/philippines-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Philippine Tax Authority Handoff Helper",
+        "href": "/en/philippines/philippines-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Philippine Accounting Audit Trail Checklist Helper",
+        "href": "/en/philippines/philippines-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Philippine Postal Code Validator",
+        "href": "/en/philippines/philippines-postal-code-validator/",
+        "text": "Validate ZIP code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Philippine Address Normalizer",
+        "href": "/en/philippines/philippines-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Philippine Address Transliteration Normalizer",
+        "href": "/en/philippines/philippines-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Philippine Region / Province Code Mapper",
+        "href": "/en/philippines/philippines-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Philippine Municipality Code Inspector",
+        "href": "/en/philippines/philippines-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Philippine Phone Number Validator",
+        "href": "/en/philippines/philippines-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Philippine Phone E.164 Formatter",
+        "href": "/en/philippines/philippines-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Philippine Date Locale Formatter",
+        "href": "/en/philippines/philippines-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Philippine CSV Locale Normalizer",
+        "href": "/en/philippines/philippines-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Philippines decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Philippine Slug Normalizer",
+        "href": "/en/philippines/philippines-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Philippine Document OCR Fixer",
+        "href": "/en/philippines/philippines-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Philippine Data Privacy Act privacy Redaction Helper",
+        "href": "/en/philippines/philippines-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Philippine PII Masker",
+        "href": "/en/philippines/philippines-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Philippine Personal Data Fixture Helper",
+        "href": "/en/philippines/philippines-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Philippine Driving Licence Format Helper",
+        "href": "/en/philippines/philippines-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Philippine Residence Permit Format Helper",
+        "href": "/en/philippines/philippines-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Philippine Health Card Format Helper",
+        "href": "/en/philippines/philippines-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Philippine Vehicle Plate Inspector",
+        "href": "/en/philippines/philippines-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Philippine VIN Validator",
+        "href": "/en/philippines/philippines-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Philippine Vehicle Data Redaction Helper",
+        "href": "/en/philippines/philippines-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Philippine Customs Declaration Helper",
+        "href": "/en/philippines/philippines-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Philippine Postal Tracking Helper",
+        "href": "/en/philippines/philippines-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Philippine Data Quality Workbench",
+        "href": "/en/philippines/philippines-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Philippine JSON Fixture Helper",
+        "href": "/en/philippines/philippines-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Philippine Regex Pack Helper",
+        "href": "/en/philippines/philippines-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Philippine API Payload Auditor",
+        "href": "/en/philippines/philippines-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Philippine Form Field Auditor",
+        "href": "/en/philippines/philippines-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Philippine Locale Number Parser",
+        "href": "/en/philippines/philippines-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Philippines."
+      },
+      {
+        "title": "Philippine Calendar Week Helper",
+        "href": "/en/philippines/philippines-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Philippine Company Suffix Normalizer",
+        "href": "/en/philippines/philippines-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Philippine Procurement Identifier Helper",
+        "href": "/en/philippines/philippines-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Philippine Locale Copy Checker",
+        "href": "/en/philippines/philippines-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Philippine Support Ticket Scrubber",
+        "href": "/en/philippines/philippines-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Philippine Integration Smoke Test Builder",
+        "href": "/en/philippines/philippines-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

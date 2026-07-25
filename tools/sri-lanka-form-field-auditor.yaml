@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-form-field-auditor
+kind: tool
+module: validohub
+country: LK
+category: developer-tools
+status: active
+name:
+  en: "Sri Lankan Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=104567890&postal=00100 Colombo&phone=+94 77 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-locale-number-parser, sri-lanka-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

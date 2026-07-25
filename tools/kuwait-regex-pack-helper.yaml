@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-regex-pack-helper
+kind: tool
+module: validohub
+country: KW
+category: developer-tools
+status: active
+name:
+  en: "Kuwaiti Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "Civil ID boundary commercial registration number postal code  CBKU 1234560101"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-api-payload-auditor, kuwait-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

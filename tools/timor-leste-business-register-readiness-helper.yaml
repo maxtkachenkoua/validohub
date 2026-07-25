@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: timor-leste-business-register-readiness-helper
+kind: tool
+module: validohub
+country: TL
+category: government
+status: active
+name:
+  en: "Timorese SERVE business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated SERVE business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.timor-leste-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "SERVE-123456 TIN1234567 Avenida Nicolau Lobato 1, Dili 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [timor-leste-id-card-format-helper, timor-leste-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Timorese SERVE business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated SERVE business registry lookup or company registry workflow."

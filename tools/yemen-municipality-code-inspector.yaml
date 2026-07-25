@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-municipality-code-inspector
+kind: tool
+module: validohub
+country: YE
+category: address
+status: active
+name:
+  en: "Yemeni Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Al-Zubayri Street 1, Sanaa 1247"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-phone-number-validator, yemen-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

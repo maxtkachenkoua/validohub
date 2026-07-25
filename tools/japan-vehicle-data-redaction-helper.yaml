@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: JP
+category: transport
+status: active
+name:
+  en: "Japanese Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "品川 300 あ 12-34 WVWZZZ1JZXW000001 123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-customs-declaration-helper, japan-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

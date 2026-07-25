@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liberia-tax-return-field-helper
+kind: tool
+module: validohub
+country: LR
+category: tax
+status: active
+name:
+  en: "Liberian Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liberia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary; LR123456789; period 2026-07; 1,234.56 LRD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liberia-invoice-number-helper, liberia-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liberian Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

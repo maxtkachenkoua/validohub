@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-form-field-auditor
+kind: tool
+module: validohub
+country: TR
+category: developer-tools
+status: active
+name:
+  en: "Turkish Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=1234567890&postal=06420 Ankara&phone=+90 532 123 45 67"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-locale-number-parser, turkey-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

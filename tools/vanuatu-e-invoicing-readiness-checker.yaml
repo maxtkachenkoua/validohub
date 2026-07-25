@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vanuatu-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: VU
+category: tax
+status: active
+name:
+  en: "Vanuatuan VAT tax invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vanuatu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"VU\",\"taxNumber\":\"VU123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vanuatu-tax-authority-handoff-helper, vanuatu-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vanuatuan VAT tax invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-locale-number-parser
+kind: tool
+module: validohub
+country: VN
+category: localization
+status: active
+name:
+  en: "Vietnamese Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Vietnam."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1.234.567 VND"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vietnam-calendar-week-helper, vietnam-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Vietnam."

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-84.90 -79.43 608.63 582.39" role="img">
+  <title>Algeria country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="8.06" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="dz" d="M424.625,435.764l-3.526-1.186l-14.677,2.758l-3.198,2.429l1.953,10.088l-5.835,0.233l-3.509,5.646l-8.359,2.005l0.025,4.105l27.532,21.048l4.692,0.398l15.654-12.231l-1.565-1.971l-2.938-0.398l-1.764-2.955V453.5l-1.177-1.184l0.199-3.155l-3.13-3.155l-0.389-3.354l1.366-0.986l-0.59-3.553L424.625,435.764L424.625,435.764z"/>
+  </g>
+</svg>

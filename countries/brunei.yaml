@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BN
+slug: brunei
+name:
+  en: Brunei
+region: Asia
+languages:
+  - ms
+currency: BND
+relatedCountries:
+  - MY
+  - SG
+  - ID

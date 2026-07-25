@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: micronesia-municipality-code-inspector
+kind: tool
+module: validohub
+country: FM
+category: address
+status: active
+name:
+  en: "Micronesian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.micronesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Palikir, Pohnpei State"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [micronesia-phone-number-validator, micronesia-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Micronesian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

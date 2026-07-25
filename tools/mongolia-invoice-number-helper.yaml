@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-invoice-number-helper
+kind: tool
+module: validohub
+country: MN
+category: tax
+status: active
+name:
+  en: "Mongolian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 9012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-e-invoicing-readiness-checker, mongolia-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

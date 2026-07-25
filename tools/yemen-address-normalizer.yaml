@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-address-normalizer
+kind: tool
+module: validohub
+country: YE
+category: address
+status: active
+name:
+  en: "Yemeni Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Al-Zubayri Street 1, Sanaa 1247"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-address-transliteration-normalizer, yemen-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

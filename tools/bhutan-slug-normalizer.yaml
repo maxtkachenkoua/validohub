@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bhutan-slug-normalizer
+kind: tool
+module: validohub
+country: BT
+category: developer-tools
+status: active
+name:
+  en: "Bhutanese Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bhutan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Bhutan sample company Norzin Lam 1, Thimphu 11001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bhutan-document-ocr-fixer, bhutan-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bhutanese Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

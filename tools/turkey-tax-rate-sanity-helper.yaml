@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: TR
+category: tax
+status: active
+name:
+  en: "Turkish Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "Vergi Kimlik Numarasi 20% base 1.234,56 TRY"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-tax-return-field-helper, turkey-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-residence-permit-format-helper
+kind: tool
+module: validohub
+country: CF
+category: documents
+status: active
+name:
+  en: "Central African Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "CF PERMIT 2026 CF-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-health-card-format-helper, central-african-republic-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

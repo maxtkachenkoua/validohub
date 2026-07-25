@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: democratic-republic-of-the-congo-residence-permit-format-helper
+kind: tool
+module: validohub
+country: CD
+category: documents
+status: active
+name:
+  en: "Congolese Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.democratic-republic-of-the-congo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "CD PERMIT 2026 CD-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [democratic-republic-of-the-congo-health-card-format-helper, democratic-republic-of-the-congo-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Congolese Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

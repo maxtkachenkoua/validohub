@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: senegal-bank-account-inspector
+kind: tool
+module: validohub
+country: SN
+category: finance
+status: active
+name:
+  en: "Senegalese Domestic Bank Account Inspector"
+summary:
+  en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.senegal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [senegal-bic-swift-inspector, senegal-domestic-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Senegalese Domestic Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."

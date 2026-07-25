@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tunisia-residence-permit-format-helper
+kind: tool
+module: validohub
+country: TN
+category: documents
+status: active
+name:
+  en: "Tunisian Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tunisia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "TN PERMIT 2026 TN-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tunisia-health-card-format-helper, tunisia-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tunisian Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

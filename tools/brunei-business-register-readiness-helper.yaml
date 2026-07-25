@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-business-register-readiness-helper
+kind: tool
+module: validohub
+country: BN
+category: government
+status: active
+name:
+  en: "Bruneian ROCBN registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated ROCBN registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "RC123456 TIN1234567 Jalan Sultan 1, Bandar Seri Begawan BS8711"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [brunei-id-card-format-helper, brunei-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian ROCBN registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated ROCBN registry lookup or company registry workflow."

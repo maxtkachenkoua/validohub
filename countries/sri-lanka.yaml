@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: LK
+slug: sri-lanka
+name:
+  en: Sri Lanka
+region: Asia
+languages:
+  - si
+currency: LKR
+relatedCountries:
+  - IN
+  - SG
+  - BD

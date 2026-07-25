@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: angola-slug-normalizer
+kind: tool
+module: validohub
+country: AO
+category: developer-tools
+status: active
+name:
+  en: "Angolan Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.angola-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Angola sample company Central business district, Luanda 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [angola-document-ocr-fixer, angola-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Angolan Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

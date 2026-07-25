@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-locale-number-parser
+kind: tool
+module: validohub
+country: QA
+category: localization
+status: active
+name:
+  en: "Qatari Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Qatar."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 QAR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-calendar-week-helper, qatar-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Qatar."

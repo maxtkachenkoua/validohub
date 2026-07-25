@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: LY
+slug: libya
+name:
+  en: Libya
+region: Africa
+languages:
+  - ar
+currency: LYD
+relatedCountries:
+  - ZA
+  - NG
+  - KE

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-municipality-code-inspector
+kind: tool
+module: validohub
+country: GE
+category: address
+status: active
+name:
+  en: "Georgian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Rustaveli Avenue 1, Tbilisi 0105"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-phone-number-validator, georgia-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

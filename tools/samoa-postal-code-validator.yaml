@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: samoa-postal-code-validator
+kind: tool
+module: validohub
+country: WS
+category: address
+status: active
+name:
+  en: "Samoan Postal Code Validator"
+summary:
+  en: "Validate village/locality shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.samoa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "Apia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [samoa-address-normalizer, samoa-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Samoan Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate village/locality shape, split area/delivery hints, and preserve official postal lookup boundaries."

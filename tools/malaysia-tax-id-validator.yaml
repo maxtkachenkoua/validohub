@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-tax-id-validator
+kind: tool
+module: validohub
+country: MY
+category: national-identifiers
+status: active
+name:
+  en: "Malaysian TIN / SST Validator"
+summary:
+  en: "Normalize TIN / SST identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "C1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-customs-importer-code-helper, malaysia-epf-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian TIN / SST Validator | ValidoHub"
+  description:
+    en: "Normalize TIN / SST identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

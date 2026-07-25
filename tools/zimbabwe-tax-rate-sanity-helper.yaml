@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zimbabwe-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: ZW
+category: tax
+status: active
+name:
+  en: "Zimbabwean Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zimbabwe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary 20% base 1,234.56 ZWL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zimbabwe-tax-return-field-helper, zimbabwe-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zimbabwean Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

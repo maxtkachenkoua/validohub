@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-bic-swift-inspector
+kind: tool
+module: validohub
+country: UZ
+category: finance
+status: active
+name:
+  en: "Uzbek BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Uzbekistan banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDUZ2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-domestic-transfer-helper, uzbekistan-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Uzbekistan banking integrations."

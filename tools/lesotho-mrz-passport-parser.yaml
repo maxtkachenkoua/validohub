@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lesotho-mrz-passport-parser
+kind: tool
+module: validohub
+country: LS
+category: national-identifiers
+status: active
+name:
+  en: "Basotho MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lesotho-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<LSOSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567LSO8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lesotho-bank-account-validator, lesotho-bank-account-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Basotho MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

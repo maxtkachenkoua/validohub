@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-77.79 -79.88 663.32 655.25" role="img">
+  <title>Djibouti country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.07" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="dj" d="M508.991,499.771l-0.493,2.903l3.424-0.052l0.052-4.271l-1.253-0.77L508.991,499.771L508.991,499.771z"/>
+  </g>
+</svg>

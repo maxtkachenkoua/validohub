@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-support-ticket-scrubber
+kind: tool
+module: validohub
+country: CV
+category: privacy
+status: active
+name:
+  en: "Cabo Verdean Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent CV-ID-123456, 001 1234567890, Central business district, Praia 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-integration-smoke-test-builder, cabo-verde-national-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

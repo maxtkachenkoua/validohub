@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uganda-residence-permit-format-helper
+kind: tool
+module: validohub
+country: UG
+category: documents
+status: active
+name:
+  en: "Ugandan Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uganda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "UG PERMIT 2026 UG-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uganda-health-card-format-helper, uganda-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ugandan Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

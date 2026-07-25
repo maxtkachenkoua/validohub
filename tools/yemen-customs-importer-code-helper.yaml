@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-customs-importer-code-helper
+kind: tool
+module: validohub
+country: YE
+category: national-identifiers
+status: active
+name:
+  en: "Yemeni Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "YEYE-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-social-insurance-boundary-social-insurance-helper, yemen-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

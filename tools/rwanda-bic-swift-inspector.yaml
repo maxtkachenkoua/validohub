@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: rwanda-bic-swift-inspector
+kind: tool
+module: validohub
+country: RW
+category: finance
+status: active
+name:
+  en: "Rwandan BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Rwanda banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.rwanda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDRW2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [rwanda-domestic-transfer-helper, rwanda-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Rwandan BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Rwanda banking integrations."

@@ -1,0 +1,642 @@
+{
+  "id": "yemen",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/yemen-outline.png",
+    "outlineAlt": "Yemen country outline",
+    "mapSrc": "/assets/images/countries/yemen-location.png",
+    "mapAlt": "World map with Yemen location marker",
+    "mapMarker": {
+      "x": 58,
+      "y": 61,
+      "label": "Yemen"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "yemen",
+    "flag": "🇾🇪",
+    "name": "Yemen",
+    "nativeName": "Al-Yaman",
+    "iso2": "YE",
+    "iso3": "YEM",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Arabic",
+    "currency": "YER",
+    "currencyName": "Yemeni rial",
+    "status": "available",
+    "summary": "Premium Yemen developer hub for national ID boundary, commercial registration number, tax number, postal code, phone, bank account boundary, central bank payment reference, SWIFT boundary, remittance reference, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "national ID boundary",
+      "commercial registration number",
+      "tax number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "bank account boundary",
+      "central bank payment reference",
+      "SWIFT boundary",
+      "remittance reference",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Yemeni national ID boundary Validator",
+      "Yemeni commercial registration number Validator",
+      "Yemeni tax number Validator",
+      "Yemeni Customs / Importer Code Helper",
+      "Yemeni social insurance boundary Helper",
+      "Yemeni Company Onboarding Auditor",
+      "Yemeni commercial registry boundary Readiness Helper",
+      "Yemeni ID Card Format Helper",
+      "Yemeni Passport Number Helper",
+      "Yemeni MRZ / Passport Parser",
+      "Yemen Bank Account Validator",
+      "Yemen Bank Account Fixture Generator",
+      "Yemeni Domestic Bank Account Inspector",
+      "Yemeni BIC / SWIFT Inspector",
+      "Yemeni Domestic Transfer Helper",
+      "Yemeni Direct Debit / Auto-Debit Mandate Helper",
+      "Yemeni bank/remittance reference boundary Reference Helper",
+      "Yemeni Remittance Text Builder",
+      "Yemeni Payment Reconciliation Helper",
+      "Yemeni Bank Statement Parser",
+      "Yemeni Masked Bank Account Formatter",
+      "Yemeni YER Decimal Currency Formatter",
+      "Yemeni Tax Rate Sanity Helper",
+      "Yemeni Tax Return Field Helper",
+      "Yemeni Invoice Number Helper",
+      "Yemeni tax invoice Readiness Checker",
+      "Yemeni Tax Authority Handoff Helper",
+      "Yemeni Accounting Audit Trail Checklist Helper",
+      "Yemeni Postal Code Validator",
+      "Yemeni Address Normalizer",
+      "Yemeni Address Transliteration Normalizer",
+      "Yemeni Region / Province Code Mapper",
+      "Yemeni Municipality Code Inspector",
+      "Yemeni Phone Number Validator",
+      "Yemeni Phone E.164 Formatter",
+      "Yemeni Date Locale Formatter",
+      "Yemeni CSV Locale Normalizer",
+      "Yemeni Slug Normalizer",
+      "Yemeni Document OCR Fixer",
+      "Yemeni personal-data privacy boundary Redaction Helper",
+      "Yemeni PII Masker",
+      "Yemeni Personal Data Fixture Helper",
+      "Yemeni Driving Licence Format Helper",
+      "Yemeni Residence Permit Format Helper",
+      "Yemeni Health Card Format Helper",
+      "Yemeni Vehicle Plate Inspector",
+      "Yemeni VIN Validator",
+      "Yemeni Vehicle Data Redaction Helper",
+      "Yemeni Customs Declaration Helper",
+      "Yemeni Postal Tracking Helper",
+      "Yemeni Data Quality Workbench",
+      "Yemeni JSON Fixture Helper",
+      "Yemeni Regex Pack Helper",
+      "Yemeni API Payload Auditor",
+      "Yemeni Form Field Auditor",
+      "Yemeni Locale Number Parser",
+      "Yemeni Calendar Week Helper",
+      "Yemeni Company Suffix Normalizer",
+      "Yemeni Procurement Identifier Helper",
+      "Yemeni Locale Copy Checker",
+      "Yemeni Support Ticket Scrubber",
+      "Yemeni Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live commercial registry boundary lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 58,
+      "y": 61
+    },
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "COMMERCIAL",
+      "REMITTANCE",
+      "POSTAL",
+      "YER"
+    ]
+  },
+  "hub": {
+    "flag": "🇾🇪",
+    "name": "Yemen",
+    "badge": "Premium Yemen developer suite",
+    "description": "Developer intelligence and browser-only workbenches for yemeni identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Al-Yaman",
+      "population": "approximately 35M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Sanaa",
+      "continent": "Asia",
+      "region": "Western Asia / Arabian Peninsula",
+      "languages": "Arabic",
+      "currency": "Yemeni rial",
+      "currencyCode": "YER",
+      "callingCode": "+967",
+      "internetTld": ".ye",
+      "drivingSide": "Right",
+      "iso2": "YE",
+      "iso3": "YEM",
+      "isoNumeric": "887",
+      "locale": "ar-YE",
+      "icuLocale": "ar_YE",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Yemen",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Aden (AST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "199 / 191",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "ar-YE",
+      "cldrLocale": "ar_YE",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type A / Type D / Type G",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "yemen",
+      "outlineLabel": "Yemen outline",
+      "mapLabel": "Yemen in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Yemen flag",
+      "heroAccentPrimary": "206 17 38",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "0 0 0"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and commercial registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax number and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Yemen registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /yemen/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Yemeni examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "commercial registry boundary",
+        "text": "Official business registry or company lookup remains the source of truth for Yemen.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax number",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "national ID boundary, commercial registration number, tax number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account boundary, central bank payment reference, SWIFT boundary, remittance reference, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "ar-YE / ar_YE; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "YER amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, commercial registration number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type A / Type D / Type G",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "199 / 191",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "COMMERCIAL",
+      "REMITTANCE",
+      "POSTAL",
+      "YER"
+    ],
+    "routes": [
+      {
+        "title": "Yemeni national ID boundary Validator",
+        "href": "/en/yemen/yemen-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Yemeni commercial registration number Validator",
+        "href": "/en/yemen/yemen-commercial-registration-number-validator/",
+        "text": "Inspect commercial registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Yemeni tax number Validator",
+        "href": "/en/yemen/yemen-tax-id-validator/",
+        "text": "Normalize tax number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Yemeni Customs / Importer Code Helper",
+        "href": "/en/yemen/yemen-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Yemeni social insurance boundary Helper",
+        "href": "/en/yemen/yemen-social-insurance-boundary-social-insurance-helper/",
+        "text": "Split social insurance boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Yemeni Company Onboarding Auditor",
+        "href": "/en/yemen/yemen-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for commercial registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Yemeni commercial registry boundary Readiness Helper",
+        "href": "/en/yemen/yemen-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated commercial registry boundary lookup or company registry workflow."
+      },
+      {
+        "title": "Yemeni ID Card Format Helper",
+        "href": "/en/yemen/yemen-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Yemeni Passport Number Helper",
+        "href": "/en/yemen/yemen-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Yemeni MRZ / Passport Parser",
+        "href": "/en/yemen/yemen-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Yemen Bank Account Validator",
+        "href": "/en/yemen/yemen-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Yemen Bank Account Fixture Generator",
+        "href": "/en/yemen/yemen-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Yemeni Domestic Bank Account Inspector",
+        "href": "/en/yemen/yemen-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Yemeni BIC / SWIFT Inspector",
+        "href": "/en/yemen/yemen-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Yemen banking integrations."
+      },
+      {
+        "title": "Yemeni Domestic Transfer Helper",
+        "href": "/en/yemen/yemen-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Yemeni Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/yemen/yemen-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Yemeni bank/remittance reference boundary Reference Helper",
+        "href": "/en/yemen/yemen-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Yemeni Remittance Text Builder",
+        "href": "/en/yemen/yemen-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Yemeni Payment Reconciliation Helper",
+        "href": "/en/yemen/yemen-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Yemeni Bank Statement Parser",
+        "href": "/en/yemen/yemen-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Yemeni Masked Bank Account Formatter",
+        "href": "/en/yemen/yemen-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Yemeni YER Decimal Currency Formatter",
+        "href": "/en/yemen/yemen-currency-decimal-formatter/",
+        "text": "Normalize YER amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Yemeni Tax Rate Sanity Helper",
+        "href": "/en/yemen/yemen-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Yemeni Tax Return Field Helper",
+        "href": "/en/yemen/yemen-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Yemeni Invoice Number Helper",
+        "href": "/en/yemen/yemen-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Yemeni tax invoice Readiness Checker",
+        "href": "/en/yemen/yemen-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Yemeni Tax Authority Handoff Helper",
+        "href": "/en/yemen/yemen-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Yemeni Accounting Audit Trail Checklist Helper",
+        "href": "/en/yemen/yemen-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Yemeni Postal Code Validator",
+        "href": "/en/yemen/yemen-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Yemeni Address Normalizer",
+        "href": "/en/yemen/yemen-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Yemeni Address Transliteration Normalizer",
+        "href": "/en/yemen/yemen-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Yemeni Region / Province Code Mapper",
+        "href": "/en/yemen/yemen-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Yemeni Municipality Code Inspector",
+        "href": "/en/yemen/yemen-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Yemeni Phone Number Validator",
+        "href": "/en/yemen/yemen-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Yemeni Phone E.164 Formatter",
+        "href": "/en/yemen/yemen-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Yemeni Date Locale Formatter",
+        "href": "/en/yemen/yemen-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Yemeni CSV Locale Normalizer",
+        "href": "/en/yemen/yemen-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Yemen decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Yemeni Slug Normalizer",
+        "href": "/en/yemen/yemen-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Yemeni Document OCR Fixer",
+        "href": "/en/yemen/yemen-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Yemeni personal-data privacy boundary Redaction Helper",
+        "href": "/en/yemen/yemen-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Yemeni PII Masker",
+        "href": "/en/yemen/yemen-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Yemeni Personal Data Fixture Helper",
+        "href": "/en/yemen/yemen-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Yemeni Driving Licence Format Helper",
+        "href": "/en/yemen/yemen-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Yemeni Residence Permit Format Helper",
+        "href": "/en/yemen/yemen-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Yemeni Health Card Format Helper",
+        "href": "/en/yemen/yemen-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Yemeni Vehicle Plate Inspector",
+        "href": "/en/yemen/yemen-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Yemeni VIN Validator",
+        "href": "/en/yemen/yemen-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Yemeni Vehicle Data Redaction Helper",
+        "href": "/en/yemen/yemen-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Yemeni Customs Declaration Helper",
+        "href": "/en/yemen/yemen-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Yemeni Postal Tracking Helper",
+        "href": "/en/yemen/yemen-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Yemeni Data Quality Workbench",
+        "href": "/en/yemen/yemen-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Yemeni JSON Fixture Helper",
+        "href": "/en/yemen/yemen-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Yemeni Regex Pack Helper",
+        "href": "/en/yemen/yemen-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Yemeni API Payload Auditor",
+        "href": "/en/yemen/yemen-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Yemeni Form Field Auditor",
+        "href": "/en/yemen/yemen-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Yemeni Locale Number Parser",
+        "href": "/en/yemen/yemen-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Yemen."
+      },
+      {
+        "title": "Yemeni Calendar Week Helper",
+        "href": "/en/yemen/yemen-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Yemeni Company Suffix Normalizer",
+        "href": "/en/yemen/yemen-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Yemeni Procurement Identifier Helper",
+        "href": "/en/yemen/yemen-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Yemeni Locale Copy Checker",
+        "href": "/en/yemen/yemen-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Yemeni Support Ticket Scrubber",
+        "href": "/en/yemen/yemen-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Yemeni Integration Smoke Test Builder",
+        "href": "/en/yemen/yemen-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

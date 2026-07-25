@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-tax-id-validator
+kind: tool
+module: validohub
+country: ID
+category: national-identifiers
+status: active
+name:
+  en: "Indonesian NPWP Validator"
+summary:
+  en: "Normalize NPWP identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "01.234.567.8-901.000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-customs-importer-code-helper, indonesia-bpjs-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian NPWP Validator | ValidoHub"
+  description:
+    en: "Normalize NPWP identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

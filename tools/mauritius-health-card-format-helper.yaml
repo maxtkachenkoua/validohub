@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritius-health-card-format-helper
+kind: tool
+module: validohub
+country: MU
+category: documents
+status: active
+name:
+  en: "Mauritian Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritius-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "MU-ID-123456 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritius-vehicle-plate-inspector, mauritius-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritian Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-address-normalizer
+kind: tool
+module: validohub
+country: FJ
+category: address
+status: active
+name:
+  en: "Fijian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Victoria Parade, Suva"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-address-transliteration-normalizer, fiji-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-health-card-format-helper
+kind: tool
+module: validohub
+country: AU
+category: documents
+status: active
+name:
+  en: "Australian Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "123 456 782 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-vehicle-plate-inspector, australia-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

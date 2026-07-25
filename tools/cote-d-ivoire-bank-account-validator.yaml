@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-bank-account-validator
+kind: tool
+module: validohub
+country: CI
+category: finance
+status: active
+name:
+  en: "Cote dIvoire Bank Account Validator"
+summary:
+  en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-bank-account-fixture-generator, cote-d-ivoire-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cote dIvoire Bank Account Validator | ValidoHub"
+  description:
+    en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."

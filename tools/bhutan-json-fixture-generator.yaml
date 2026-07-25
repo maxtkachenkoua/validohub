@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bhutan-json-fixture-generator
+kind: tool
+module: validohub
+country: BT
+category: developer-tools
+status: active
+name:
+  en: "Bhutanese JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.bhutan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BT\",\"cid\":\"10101001234\",\"tpn\":\"TPN1234567\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [bhutan-regex-pack-helper, bhutan-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bhutanese JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

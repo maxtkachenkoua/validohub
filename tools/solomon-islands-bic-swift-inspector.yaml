@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-bic-swift-inspector
+kind: tool
+module: validohub
+country: SB
+category: finance
+status: active
+name:
+  en: "Solomon Islands BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Solomon Islands banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDSB2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-domestic-transfer-helper, solomon-islands-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Solomon Islands banking integrations."

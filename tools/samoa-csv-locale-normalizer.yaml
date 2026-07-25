@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: samoa-csv-locale-normalizer
+kind: tool
+module: validohub
+country: WS
+category: developer-tools
+status: active
+name:
+  en: "Samoan CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Samoa decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.samoa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 WST;24/07/2026;WS123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [samoa-slug-normalizer, samoa-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Samoan CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Samoa decimal, date, postal, phone, tax, and banking fields."

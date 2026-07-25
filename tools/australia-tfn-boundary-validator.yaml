@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-tfn-boundary-validator
+kind: tool
+module: validohub
+country: AU
+category: national-identifiers
+status: active
+name:
+  en: "Australian TFN boundary Validator"
+summary:
+  en: "Validate TFN boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "123 456 782"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-abn-acn-validator, australia-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian TFN boundary Validator | ValidoHub"
+  description:
+    en: "Validate TFN boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

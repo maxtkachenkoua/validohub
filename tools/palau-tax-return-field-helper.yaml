@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palau-tax-return-field-helper
+kind: tool
+module: validohub
+country: PW
+category: tax
+status: active
+name:
+  en: "Palauan Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax boundary; PW123456789; period 2026-07; 1,234.56 USD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palau-invoice-number-helper, palau-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palauan Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

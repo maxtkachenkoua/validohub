@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-79.54 -88.37 645.11 689.26" role="img">
+  <title>Kenya country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="8.93" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="ke" d="M491.142,521.365l2.3,4.484l-2.759,5.783l-0.361,1.754l13.77,8.516l4.271-6.708l-2.161-1.754l-0.043-8.835l2.705-2.956l-4.313,1.435l-3.259,0.044l-5.1-4.305l-1.608-0.692l-2.98,0.276l-0.526,0.883L491.142,521.365L491.142,521.365z"/>
+  </g>
+</svg>

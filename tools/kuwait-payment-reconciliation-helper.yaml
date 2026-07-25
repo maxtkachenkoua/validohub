@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: KW
+category: finance
+status: active
+name:
+  en: "Kuwaiti Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1,234.560 KWD; CBKU 1234560101; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-bank-statement-parser, kuwait-masked-bank-account-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

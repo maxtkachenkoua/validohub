@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-company-onboarding-auditor
+kind: tool
+module: validohub
+country: KZ
+category: developer-tools
+status: active
+name:
+  en: "Kazakh Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for BIN, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KZ\",\"iin\":\"900101300123\",\"bin\":\"120940012345\",\"iban\":\"KZ86125KZT5004100100\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-business-register-readiness-helper, kazakhstan-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for BIN, VAT, address, banking, and official registry handoff readiness."

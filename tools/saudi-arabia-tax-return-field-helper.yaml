@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-tax-return-field-helper
+kind: tool
+module: validohub
+country: SA
+category: tax
+status: active
+name:
+  en: "Saudi Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "ZATCA VAT number; 300123456700003; period 2026-07; 1,234.56 SAR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-invoice-number-helper, saudi-arabia-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

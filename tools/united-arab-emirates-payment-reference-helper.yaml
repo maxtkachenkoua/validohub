@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-payment-reference-helper
+kind: tool
+module: validohub
+country: AE
+category: finance
+status: active
+name:
+  en: "UAE UAEFTS / WPS reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "UAEFTS / WPS reference REF 2026-001 1,234.56 AED"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-remittance-text-builder, united-arab-emirates-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE UAEFTS / WPS reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

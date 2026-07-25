@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sierra-leone-mrz-passport-parser
+kind: tool
+module: validohub
+country: SL
+category: national-identifiers
+status: active
+name:
+  en: "Sierra Leonean MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sierra-leone-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<SLESAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567SLE8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sierra-leone-bank-account-validator, sierra-leone-bank-account-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sierra Leonean MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

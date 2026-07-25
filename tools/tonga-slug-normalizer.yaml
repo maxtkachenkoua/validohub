@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-slug-normalizer
+kind: tool
+module: validohub
+country: TO
+category: developer-tools
+status: active
+name:
+  en: "Tongan Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Tonga sample company Taufaʻahau Road, Nukuʻalofa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-document-ocr-fixer, tonga-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-80.12 -79.73 658.89 658.45" role="img">
+  <title>Costa Rica country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.12" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="cr" d="M202.905,502.745l1.202,2.352l0.977,1.297l-1.314,3.898l-2.507-1.764l-4.097-3.752v-2.48L202.905,502.745L202.905,502.745z"/>
+  </g>
+</svg>

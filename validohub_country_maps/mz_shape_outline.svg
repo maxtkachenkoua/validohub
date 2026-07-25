@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-101.56 -105.34 788.95 793.22" role="img">
+  <title>Mozambique country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="10.92" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="mz" d="M482.791,596.359l2.326,1.928l5.479-3.335l0.881-4.953v-8.178l8.791-7.191l1.506,0.053l5.322-5.107l-0.828-10.529l-13.81,1.743l0.519,3.338l2.02,1.757l0.57,5.731l-4.756,4.642l-1.141-2.603l0.207-3.44l-2.74-2.973l-6.725,3.13l6.258,3.182l0.209,9.274l-4.141,6.146L482.791,596.359L482.791,596.359z"/>
+  </g>
+</svg>

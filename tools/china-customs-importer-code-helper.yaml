@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-customs-importer-code-helper
+kind: tool
+module: validohub
+country: CN
+category: national-identifiers
+status: active
+name:
+  en: "Chinese Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "CN91310000MA1FL0AB1C"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-social-security-boundary-social-insurance-helper, china-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-csv-locale-normalizer
+kind: tool
+module: validohub
+country: PS
+category: developer-tools
+status: active
+name:
+  en: "Palestinian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Palestine decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 ILS;21/07/2026;562345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-slug-normalizer, palestine-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Palestine decimal, date, postal, phone, tax, and banking fields."

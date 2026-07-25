@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-privacy-redaction-helper
+kind: tool
+module: validohub
+country: MH
+category: privacy
+status: active
+name:
+  en: "Marshallese privacy boundary Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MH\",\"company\":\"MH-REG-123456\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-pii-masker, marshall-islands-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese privacy boundary Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

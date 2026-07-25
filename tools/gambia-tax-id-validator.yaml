@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-tax-id-validator
+kind: tool
+module: validohub
+country: GM
+category: national-identifiers
+status: active
+name:
+  en: "Gambian tax number / VAT boundary Validator"
+summary:
+  en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "GM123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-customs-importer-code-helper, gambia-social-security-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian tax number / VAT boundary Validator | ValidoHub"
+  description:
+    en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: democratic-republic-of-the-congo-form-field-auditor
+kind: tool
+module: validohub
+country: CD
+category: developer-tools
+status: active
+name:
+  en: "Congolese Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.democratic-republic-of-the-congo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=CD123456789&postal=1000 Kinshasa&phone=+243 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [democratic-republic-of-the-congo-locale-number-parser, democratic-republic-of-the-congo-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Congolese Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

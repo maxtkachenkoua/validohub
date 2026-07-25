@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chad-region-code-mapper
+kind: tool
+module: validohub
+country: TD
+category: address
+status: active
+name:
+  en: "Chadian Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chad-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "1000 NDjamena"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chad-municipality-code-inspector, chad-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chadian Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

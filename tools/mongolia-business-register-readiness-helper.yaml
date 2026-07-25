@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: MN
+category: government
+status: active
+name:
+  en: "Mongolian Legal Entities Registration Office Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Legal Entities Registration Office lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "9012345 9012345 Peace Avenue 1, Ulaanbaatar 14200"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-id-card-format-helper, mongolia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Legal Entities Registration Office Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Legal Entities Registration Office lookup or company registry workflow."

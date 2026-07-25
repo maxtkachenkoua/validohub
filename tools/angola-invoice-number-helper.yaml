@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: angola-invoice-number-helper
+kind: tool
+module: validohub
+country: AO
+category: tax
+status: active
+name:
+  en: "Angolan Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.angola-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 AO123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [angola-e-invoicing-readiness-checker, angola-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Angolan Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

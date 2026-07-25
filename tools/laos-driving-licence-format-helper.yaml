@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: laos-driving-licence-format-helper
+kind: tool
+module: validohub
+country: LA
+category: documents
+status: active
+name:
+  en: "Lao Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.laos-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "010123456789 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [laos-residence-permit-format-helper, laos-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lao Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

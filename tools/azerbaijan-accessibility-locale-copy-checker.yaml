@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: AZ
+category: localization
+status: active
+name:
+  en: "Azerbaijani Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "FIN code boundary input, postal code input, amount 1 234,56 AZN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-support-ticket-scrubber, azerbaijan-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

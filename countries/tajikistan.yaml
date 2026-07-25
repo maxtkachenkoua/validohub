@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: TJ
+slug: tajikistan
+name:
+  en: Tajikistan
+region: Asia
+languages:
+  - tg
+currency: TJS
+relatedCountries:
+  - UZ
+  - KG
+  - PK

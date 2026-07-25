@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: ST
+category: transport
+status: active
+name:
+  en: "Sao Tomean Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "ST 1234 WVWZZZ1JZXW000001 ST-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-customs-declaration-helper, sao-tome-and-principe-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-79.84 -64.94 611.00 512.91" role="img">
+  <title>Ukraine country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="7.10" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="ua" d="M460.662,388.791l-2.507,1.409l0.622,2.663l-2.316,4.884l0.02,2.151l1.089,0.691l6.983,0.346l1.954-1.615l2.092,0.699l2.999,4.002l-2.194,3.942l2.61,0.761l3.414-3.933l1.954,0.354l1.815,1.262l-1.601,2.109l2.161,3.371h2.299l1.185-2.248l2.438-0.494l0.069-1.823l-4.529-0.7l0.14-1.963h4.391l4.737-3.794l2.092-1.824l0.345-5.757l-9.336-0.838l-3.829-5.402l-2.646-0.908l-3.207,0.139l-1.443,3.569l-6.57,0.087l-2.135-0.986L460.662,388.791L460.662,388.791z"/>
+  </g>
+</svg>

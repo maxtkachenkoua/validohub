@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-85.40 -99.93 692.26 747.67" role="img">
+  <title>Madagascar country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.59" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="mg" d="M526.988,561.474l-1.842,4.374l-3.154,5.566l-5.523,0.396l-2.369,2.783l0.397,8.488l-3.423,3.977l0.396,6.761l2.897,3.311l3.423-0.396l3.423-2.524l-0.787-3.977l7.894-13.657l-1.582-1.72l1.582-3.312l1.711,0.526l0.526-1.322l-1.582-6.76l-0.924-2.784L526.988,561.474L526.988,561.474z"/>
+  </g>
+</svg>

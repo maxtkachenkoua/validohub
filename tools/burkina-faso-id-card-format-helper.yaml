@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burkina-faso-id-card-format-helper
+kind: tool
+module: validohub
+country: BF
+category: national-identifiers
+status: active
+name:
+  en: "Burkinabe ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burkina-faso-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "BF-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burkina-faso-passport-number-helper, burkina-faso-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burkinabe ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

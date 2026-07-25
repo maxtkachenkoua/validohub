@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-domestic-transfer-helper
+kind: tool
+module: validohub
+country: CI
+category: finance
+status: active
+name:
+  en: "Ivorian Domestic Transfer Helper"
+summary:
+  en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "001 1234567890\\n1,234.56 XOF\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-direct-debit-mandate-helper, cote-d-ivoire-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."

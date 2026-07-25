@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ethiopia-pii-masker
+kind: tool
+module: validohub
+country: ET
+category: privacy
+status: active
+name:
+  en: "Ethiopian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ethiopia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "ET-ID-123456 +251 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ethiopia-personal-data-fixture-generator, ethiopia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ethiopian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

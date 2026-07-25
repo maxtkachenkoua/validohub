@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-date-locale-formatter
+kind: tool
+module: validohub
+country: AZ
+category: localization
+status: active
+name:
+  en: "Azerbaijani Date Locale Formatter"
+summary:
+  en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "21.07.2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-csv-locale-normalizer, azerbaijan-slug-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani Date Locale Formatter | ValidoHub"
+  description:
+    en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."

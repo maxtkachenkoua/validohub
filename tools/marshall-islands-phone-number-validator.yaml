@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-phone-number-validator
+kind: tool
+module: validohub
+country: MH
+category: address
+status: active
+name:
+  en: "Marshallese Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+692 247 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-phone-e164-formatter, marshall-islands-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

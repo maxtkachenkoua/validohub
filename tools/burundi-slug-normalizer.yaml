@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-slug-normalizer
+kind: tool
+module: validohub
+country: BI
+category: developer-tools
+status: active
+name:
+  en: "Burundian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Burundi sample company Central business district, Gitega 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-document-ocr-fixer, burundi-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

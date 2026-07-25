@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-tax-id-validator
+kind: tool
+module: validohub
+country: JO
+category: national-identifiers
+status: active
+name:
+  en: "Jordanian Income and Sales Tax number Validator"
+summary:
+  en: "Normalize Income and Sales Tax number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-customs-importer-code-helper, jordan-ssc-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Income and Sales Tax number Validator | ValidoHub"
+  description:
+    en: "Normalize Income and Sales Tax number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

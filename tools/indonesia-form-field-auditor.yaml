@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-form-field-auditor
+kind: tool
+module: validohub
+country: ID
+category: developer-tools
+status: active
+name:
+  en: "Indonesian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=01.234.567.8-901.000&postal=10110 Jakarta&phone=+62 812 3456 7890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-locale-number-parser, indonesia-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

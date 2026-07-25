@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: rwanda-social-security-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: RW
+category: national-identifiers
+status: active
+name:
+  en: "Rwandan social security boundary Helper"
+summary:
+  en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.rwanda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "RW-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [rwanda-company-onboarding-auditor, rwanda-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Rwandan social security boundary Helper | ValidoHub"
+  description:
+    en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

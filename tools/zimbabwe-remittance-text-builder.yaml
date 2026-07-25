@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zimbabwe-remittance-text-builder
+kind: tool
+module: validohub
+country: ZW
+category: finance
+status: active
+name:
+  en: "Zimbabwean Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zimbabwe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 ZW123456789 1,234.56 ZWL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zimbabwe-payment-reconciliation-helper, zimbabwe-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zimbabwean Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

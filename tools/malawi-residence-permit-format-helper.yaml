@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malawi-residence-permit-format-helper
+kind: tool
+module: validohub
+country: MW
+category: documents
+status: active
+name:
+  en: "Malawian Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malawi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "MW PERMIT 2026 MW-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malawi-health-card-format-helper, malawi-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malawian Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

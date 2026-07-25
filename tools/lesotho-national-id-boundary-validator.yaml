@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lesotho-national-id-boundary-validator
+kind: tool
+module: validohub
+country: LS
+category: national-identifiers
+status: active
+name:
+  en: "Basotho national ID boundary Validator"
+summary:
+  en: "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lesotho-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "LS-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lesotho-company-registration-number-validator, lesotho-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Basotho national ID boundary Validator | ValidoHub"
+  description:
+    en: "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

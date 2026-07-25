@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: comoros-tax-return-field-helper
+kind: tool
+module: validohub
+country: KM
+category: tax
+status: active
+name:
+  en: "Comorian Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.comoros-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary; KM123456789; period 2026-07; 1,234.56 KMF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [comoros-invoice-number-helper, comoros-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Comorian Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

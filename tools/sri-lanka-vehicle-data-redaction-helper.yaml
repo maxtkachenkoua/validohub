@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: LK
+category: transport
+status: active
+name:
+  en: "Sri Lankan Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "WP ABC-1234 WVWZZZ1JZXW000001 199012345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-customs-declaration-helper, sri-lanka-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

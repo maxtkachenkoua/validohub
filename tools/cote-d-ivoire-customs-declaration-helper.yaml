@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-customs-declaration-helper
+kind: tool
+module: validohub
+country: CI
+category: government
+status: active
+name:
+  en: "Ivorian Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "CI123456789 HS 8471 1,234.56 XOF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-postal-tracking-helper, cote-d-ivoire-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

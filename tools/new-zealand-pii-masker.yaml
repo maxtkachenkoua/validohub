@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-pii-masker
+kind: tool
+module: validohub
+country: NZ
+category: privacy
+status: active
+name:
+  en: "New Zealand PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "123-456-789 +64 21 123 4567 12-1234-1234567-00"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-personal-data-fixture-generator, new-zealand-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

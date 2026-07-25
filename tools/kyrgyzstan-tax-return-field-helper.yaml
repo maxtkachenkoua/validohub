@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-tax-return-field-helper
+kind: tool
+module: validohub
+country: KG
+category: tax
+status: active
+name:
+  en: "Kyrgyz Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "TIN; 12345678901234; period 2026-07; 1 234,56 KGS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-invoice-number-helper, kyrgyzstan-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

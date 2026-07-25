@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-tax-id-validator
+kind: tool
+module: validohub
+country: AU
+category: national-identifiers
+status: active
+name:
+  en: "Australian GST / ABN Validator"
+summary:
+  en: "Normalize GST / ABN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "51824753556"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-customs-importer-code-helper, australia-medicare-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian GST / ABN Validator | ValidoHub"
+  description:
+    en: "Normalize GST / ABN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

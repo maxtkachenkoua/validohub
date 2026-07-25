@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-document-ocr-fixer
+kind: tool
+module: validohub
+country: BH
+category: documents
+status: active
+name:
+  en: "Bahraini Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "900101123 220012345600002 BMAG 1299123456 Block 316 Manama"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-privacy-redaction-helper, bahrain-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

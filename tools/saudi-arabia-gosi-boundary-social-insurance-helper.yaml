@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-gosi-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: SA
+category: national-identifiers
+status: active
+name:
+  en: "Saudi GOSI boundary Helper"
+summary:
+  en: "Split GOSI boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1001234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-company-onboarding-auditor, saudi-arabia-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi GOSI boundary Helper | ValidoHub"
+  description:
+    en: "Split GOSI boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-residence-permit-format-helper
+kind: tool
+module: validohub
+country: QA
+category: documents
+status: active
+name:
+  en: "Qatari Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "QA PERMIT 2026 29012345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-health-card-format-helper, qatar-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

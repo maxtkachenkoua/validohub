@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-health-card-format-helper
+kind: tool
+module: validohub
+country: JO
+category: documents
+status: active
+name:
+  en: "Jordanian Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "9901011234 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-vehicle-plate-inspector, jordan-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

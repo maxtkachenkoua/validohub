@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: PK
+category: privacy
+status: active
+name:
+  en: "Pakistani Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "35202-1234567-1\\nJinnah Avenue 1, Islamabad 44000\\n+92 300 1234567"
+    actions: [generate, validate, explain]
+related:
+  explicit: [pakistan-driving-licence-format-helper, pakistan-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

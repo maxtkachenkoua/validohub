@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burkina-faso-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: BF
+category: transport
+status: active
+name:
+  en: "Burkinabe Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burkina-faso-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "BF 1234 WVWZZZ1JZXW000001 BF-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burkina-faso-customs-declaration-helper, burkina-faso-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burkinabe Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

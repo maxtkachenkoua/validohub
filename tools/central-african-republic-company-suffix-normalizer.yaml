@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-company-suffix-normalizer
+kind: tool
+module: validohub
+country: CF
+category: developer-tools
+status: active
+name:
+  en: "Central African Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Central African Republic Sample Holding Ltd CF-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-procurement-identifier-helper, central-african-republic-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

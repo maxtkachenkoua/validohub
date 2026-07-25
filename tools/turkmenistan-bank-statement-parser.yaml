@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-bank-statement-parser
+kind: tool
+module: validohub
+country: TM
+category: finance
+status: active
+name:
+  en: "Turkmen Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "21.07.2026; 1 234,56 TMT; 3901012345678901; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkmenistan-masked-bank-account-formatter, turkmenistan-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."

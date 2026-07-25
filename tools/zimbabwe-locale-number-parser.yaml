@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zimbabwe-locale-number-parser
+kind: tool
+module: validohub
+country: ZW
+category: localization
+status: active
+name:
+  en: "Zimbabwean Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Zimbabwe."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zimbabwe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 ZWL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zimbabwe-calendar-week-helper, zimbabwe-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zimbabwean Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Zimbabwe."

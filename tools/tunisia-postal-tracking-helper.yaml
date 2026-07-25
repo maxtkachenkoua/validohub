@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tunisia-postal-tracking-helper
+kind: tool
+module: validohub
+country: TN
+category: logistics
+status: active
+name:
+  en: "Tunisian Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tunisia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1000 Tunis"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tunisia-data-quality-workbench, tunisia-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tunisian Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

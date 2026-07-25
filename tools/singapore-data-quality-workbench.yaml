@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-data-quality-workbench
+kind: tool
+module: validohub
+country: SG
+category: developer-tools
+status: active
+name:
+  en: "Singapore Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SG\",\"uen\":\"201912345K\",\"nric\":\"S1234567D\",\"paynow\":\"+6581234567\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-json-fixture-generator, singapore-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

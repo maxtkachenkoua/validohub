@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: AU
+category: developer-tools
+status: active
+name:
+  en: "Australian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AU\",\"abn\":\"51824753556\",\"bsb\":\"062000\",\"amount\":\"1,234.56\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [australia-tfn-boundary-validator, australia-abn-acn-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

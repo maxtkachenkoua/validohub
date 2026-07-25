@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-remittance-text-builder
+kind: tool
+module: validohub
+country: ID
+category: finance
+status: active
+name:
+  en: "Indonesian Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 01.234.567.8-901.000 1.234.567,89 IDR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-payment-reconciliation-helper, indonesia-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

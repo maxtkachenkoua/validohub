@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-resident-certificate-boundary-validator
+kind: tool
+module: validohub
+country: KP
+category: national-identifiers
+status: active
+name:
+  en: "North Korean resident certificate boundary Validator"
+summary:
+  en: "Validate resident certificate boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "KP-900101-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-organization-registration-boundary-validator, north-korea-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean resident certificate boundary Validator | ValidoHub"
+  description:
+    en: "Validate resident certificate boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

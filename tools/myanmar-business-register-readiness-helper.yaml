@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: myanmar-business-register-readiness-helper
+kind: tool
+module: validohub
+country: MM
+category: government
+status: active
+name:
+  en: "Myanmar DICA registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated DICA registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.myanmar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "123456789 TIN123456789 Yaza Htarni Road 1, Naypyidaw 15011"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [myanmar-id-card-format-helper, myanmar-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Myanmar DICA registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated DICA registry lookup or company registry workflow."

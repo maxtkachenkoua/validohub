@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-form-field-auditor
+kind: tool
+module: validohub
+country: KG
+category: developer-tools
+status: active
+name:
+  en: "Kyrgyz Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=12345678901234&postal=720000 Bishkek&phone=+996 700 123 456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-locale-number-parser, kyrgyzstan-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

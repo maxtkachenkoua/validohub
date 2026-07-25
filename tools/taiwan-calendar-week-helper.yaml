@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-calendar-week-helper
+kind: tool
+module: validohub
+country: TW
+category: localization
+status: active
+name:
+  en: "Taiwanese Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "2026/07/21 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-company-suffix-normalizer, taiwan-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

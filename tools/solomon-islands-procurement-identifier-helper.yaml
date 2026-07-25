@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-procurement-identifier-helper
+kind: tool
+module: validohub
+country: SB
+category: government
+status: active
+name:
+  en: "Solomon Islands Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "SB-REG-123456 PO-2026-001 SB123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-accessibility-locale-copy-checker, solomon-islands-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

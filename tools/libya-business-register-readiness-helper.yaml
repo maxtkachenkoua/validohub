@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: libya-business-register-readiness-helper
+kind: tool
+module: validohub
+country: LY
+category: government
+status: active
+name:
+  en: "Libyan business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.libya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "LY-REG-123456 LY123456789 Central business district, Tripoli 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [libya-id-card-format-helper, libya-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Libyan business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

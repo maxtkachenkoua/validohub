@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-tax-return-field-helper
+kind: tool
+module: validohub
+country: IN
+category: tax
+status: active
+name:
+  en: "Indian Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "GSTIN; 27ABCDE1234F1Z5; period 2026-07; 1,23,456.78 INR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-invoice-number-helper, india-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

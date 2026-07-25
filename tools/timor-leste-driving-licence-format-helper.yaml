@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: timor-leste-driving-licence-format-helper
+kind: tool
+module: validohub
+country: TL
+category: documents
+status: active
+name:
+  en: "Timorese Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.timor-leste-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "TL-1234567 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [timor-leste-residence-permit-format-helper, timor-leste-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Timorese Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

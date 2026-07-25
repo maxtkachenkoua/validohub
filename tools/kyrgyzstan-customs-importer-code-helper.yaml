@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-customs-importer-code-helper
+kind: tool
+module: validohub
+country: KG
+category: national-identifiers
+status: active
+name:
+  en: "Kyrgyz Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "KG12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-social-fund-boundary-social-insurance-helper, kyrgyzstan-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

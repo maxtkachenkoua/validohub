@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: KI
+slug: kiribati
+name:
+  en: Kiribati
+region: Oceania
+languages:
+  - en
+currency: AUD
+relatedCountries:
+  - FJ
+  - TV
+  - MH

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-domestic-transfer-helper
+kind: tool
+module: validohub
+country: JP
+category: finance
+status: active
+name:
+  en: "Japanese Domestic Transfer Helper"
+summary:
+  en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "0001 001 1234567\\n1,234 JPY\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-direct-debit-mandate-helper, japan-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."

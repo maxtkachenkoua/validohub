@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritius-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: MU
+category: localization
+status: active
+name:
+  en: "Mauritian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritius-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "national ID boundary input, postal/address code input, amount 1,234.56 MUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritius-support-ticket-scrubber, mauritius-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-business-register-readiness-helper
+kind: tool
+module: validohub
+country: KG
+category: government
+status: active
+name:
+  en: "Kyrgyz Ministry of Justice registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Ministry of Justice registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "12345678 12345678901234 Chuy Avenue 1, Bishkek 720000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-id-card-format-helper, kyrgyzstan-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz Ministry of Justice registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Ministry of Justice registry lookup or company registry workflow."

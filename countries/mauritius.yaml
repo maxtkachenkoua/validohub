@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MU
+slug: mauritius
+name:
+  en: Mauritius
+region: Africa
+languages:
+  - en
+currency: MUR
+relatedCountries:
+  - ZA
+  - NG
+  - KE

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liberia-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: LR
+category: localization
+status: active
+name:
+  en: "Liberian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liberia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "national ID boundary input, postal/address code input, amount 1,234.56 LRD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liberia-support-ticket-scrubber, liberia-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liberian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

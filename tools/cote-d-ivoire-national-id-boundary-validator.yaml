@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-national-id-boundary-validator
+kind: tool
+module: validohub
+country: CI
+category: national-identifiers
+status: active
+name:
+  en: "Ivorian national ID boundary Validator"
+summary:
+  en: "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "CI-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-company-registration-number-validator, cote-d-ivoire-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian national ID boundary Validator | ValidoHub"
+  description:
+    en: "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

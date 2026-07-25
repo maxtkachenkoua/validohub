@@ -1,0 +1,642 @@
+{
+  "id": "lebanon",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/lebanon-outline.png",
+    "outlineAlt": "Lebanon country outline",
+    "mapSrc": "/assets/images/countries/lebanon-location.png",
+    "mapAlt": "World map with Lebanon location marker",
+    "mapMarker": {
+      "x": 55,
+      "y": 52,
+      "label": "Lebanon"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "lebanon",
+    "flag": "🇱🇧",
+    "name": "Lebanon",
+    "nativeName": "Lubnan",
+    "iso2": "LB",
+    "iso3": "LBN",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Arabic",
+    "currency": "LBP",
+    "currencyName": "Lebanese pound",
+    "status": "available",
+    "summary": "Premium Lebanon developer hub for national ID boundary, commercial registration number, VAT number, postal code, phone, IBAN, BDL transfer reference, SWIFT, bank account, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "national ID boundary",
+      "commercial registration number",
+      "VAT number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "IBAN",
+      "BDL transfer reference",
+      "SWIFT",
+      "bank account",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Lebanese national ID boundary Validator",
+      "Lebanese commercial registration number Validator",
+      "Lebanese VAT / tax number Validator",
+      "Lebanese Customs / Importer Code Helper",
+      "Lebanese NSSF boundary Helper",
+      "Lebanese Company Onboarding Auditor",
+      "Lebanese Commercial Register Readiness Helper",
+      "Lebanese ID Card Format Helper",
+      "Lebanese Passport Number Helper",
+      "Lebanese MRZ / Passport Parser",
+      "Lebanon Bank Account Validator",
+      "Lebanon Bank Account Fixture Generator",
+      "Lebanese Domestic Bank Account Inspector",
+      "Lebanese BIC / SWIFT Inspector",
+      "Lebanese Domestic Transfer Helper",
+      "Lebanese Direct Debit / Auto-Debit Mandate Helper",
+      "Lebanese IBAN / BDL reference Reference Helper",
+      "Lebanese Remittance Text Builder",
+      "Lebanese Payment Reconciliation Helper",
+      "Lebanese Bank Statement Parser",
+      "Lebanese Masked Bank Account Formatter",
+      "Lebanese LBP Decimal Currency Formatter",
+      "Lebanese Tax Rate Sanity Helper",
+      "Lebanese Tax Return Field Helper",
+      "Lebanese Invoice Number Helper",
+      "Lebanese VAT invoice Readiness Checker",
+      "Lebanese Tax Authority Handoff Helper",
+      "Lebanese Accounting Audit Trail Checklist Helper",
+      "Lebanese Postal Code Validator",
+      "Lebanese Address Normalizer",
+      "Lebanese Address Transliteration Normalizer",
+      "Lebanese Region / Province Code Mapper",
+      "Lebanese Municipality Code Inspector",
+      "Lebanese Phone Number Validator",
+      "Lebanese Phone E.164 Formatter",
+      "Lebanese Date Locale Formatter",
+      "Lebanese CSV Locale Normalizer",
+      "Lebanese Slug Normalizer",
+      "Lebanese Document OCR Fixer",
+      "Lebanese personal-data privacy boundary Redaction Helper",
+      "Lebanese PII Masker",
+      "Lebanese Personal Data Fixture Helper",
+      "Lebanese Driving Licence Format Helper",
+      "Lebanese Residence Permit Format Helper",
+      "Lebanese Health Card Format Helper",
+      "Lebanese Vehicle Plate Inspector",
+      "Lebanese VIN Validator",
+      "Lebanese Vehicle Data Redaction Helper",
+      "Lebanese Customs Declaration Helper",
+      "Lebanese Postal Tracking Helper",
+      "Lebanese Data Quality Workbench",
+      "Lebanese JSON Fixture Helper",
+      "Lebanese Regex Pack Helper",
+      "Lebanese API Payload Auditor",
+      "Lebanese Form Field Auditor",
+      "Lebanese Locale Number Parser",
+      "Lebanese Calendar Week Helper",
+      "Lebanese Company Suffix Normalizer",
+      "Lebanese Procurement Identifier Helper",
+      "Lebanese Locale Copy Checker",
+      "Lebanese Support Ticket Scrubber",
+      "Lebanese Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live Commercial Register lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 55,
+      "y": 52
+    },
+    "searchHints": [
+      "VAT",
+      "IBAN",
+      "BDL",
+      "NSSF",
+      "COMMERCIAL REGISTER",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇱🇧",
+    "name": "Lebanon",
+    "badge": "Premium Lebanon developer suite",
+    "description": "Developer intelligence and browser-only workbenches for lebanese identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Lubnan",
+      "population": "approximately 5.5M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Beirut",
+      "continent": "Asia",
+      "region": "Western Asia / Levant",
+      "languages": "Arabic",
+      "currency": "Lebanese pound",
+      "currencyCode": "LBP",
+      "callingCode": "+961",
+      "internetTld": ".lb",
+      "drivingSide": "Right",
+      "iso2": "LB",
+      "iso3": "LBN",
+      "isoNumeric": "422",
+      "locale": "ar-LB",
+      "icuLocale": "ar_LB",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Lebanon",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Beirut (EET/EEST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112 / 140",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "ar-LB",
+      "cldrLocale": "ar_LB",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type D / Type G",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "lebanon",
+      "outlineLabel": "Lebanon outline",
+      "mapLabel": "Lebanon in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Lebanon flag",
+      "heroAccentPrimary": "237 28 36",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "0 166 81"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and commercial registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "VAT / tax number and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Lebanon registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /lebanon/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Lebanese examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "Commercial Register",
+        "text": "Official business registry or company lookup remains the source of truth for Lebanon.",
+        "status": "official boundary"
+      },
+      {
+        "title": "VAT / tax number",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "national ID boundary, commercial registration number, VAT number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, BDL transfer reference, SWIFT, bank account, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "ar-LB / ar_LB; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "LBP amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, commercial registration number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type D / Type G",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112 / 140",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "VAT",
+      "IBAN",
+      "BDL",
+      "NSSF",
+      "COMMERCIAL REGISTER",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Lebanese national ID boundary Validator",
+        "href": "/en/lebanon/lebanon-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Lebanese commercial registration number Validator",
+        "href": "/en/lebanon/lebanon-commercial-registration-number-validator/",
+        "text": "Inspect commercial registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Lebanese VAT / tax number Validator",
+        "href": "/en/lebanon/lebanon-tax-id-validator/",
+        "text": "Normalize VAT / tax number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Lebanese Customs / Importer Code Helper",
+        "href": "/en/lebanon/lebanon-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Lebanese NSSF boundary Helper",
+        "href": "/en/lebanon/lebanon-nssf-boundary-social-insurance-helper/",
+        "text": "Split NSSF boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Lebanese Company Onboarding Auditor",
+        "href": "/en/lebanon/lebanon-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for commercial registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Lebanese Commercial Register Readiness Helper",
+        "href": "/en/lebanon/lebanon-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated Commercial Register lookup or company registry workflow."
+      },
+      {
+        "title": "Lebanese ID Card Format Helper",
+        "href": "/en/lebanon/lebanon-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Lebanese Passport Number Helper",
+        "href": "/en/lebanon/lebanon-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Lebanese MRZ / Passport Parser",
+        "href": "/en/lebanon/lebanon-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Lebanon Bank Account Validator",
+        "href": "/en/lebanon/lebanon-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Lebanon Bank Account Fixture Generator",
+        "href": "/en/lebanon/lebanon-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Lebanese Domestic Bank Account Inspector",
+        "href": "/en/lebanon/lebanon-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Lebanese BIC / SWIFT Inspector",
+        "href": "/en/lebanon/lebanon-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Lebanon banking integrations."
+      },
+      {
+        "title": "Lebanese Domestic Transfer Helper",
+        "href": "/en/lebanon/lebanon-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Lebanese Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/lebanon/lebanon-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Lebanese IBAN / BDL reference Reference Helper",
+        "href": "/en/lebanon/lebanon-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Lebanese Remittance Text Builder",
+        "href": "/en/lebanon/lebanon-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Lebanese Payment Reconciliation Helper",
+        "href": "/en/lebanon/lebanon-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Lebanese Bank Statement Parser",
+        "href": "/en/lebanon/lebanon-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Lebanese Masked Bank Account Formatter",
+        "href": "/en/lebanon/lebanon-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Lebanese LBP Decimal Currency Formatter",
+        "href": "/en/lebanon/lebanon-currency-decimal-formatter/",
+        "text": "Normalize LBP amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Lebanese Tax Rate Sanity Helper",
+        "href": "/en/lebanon/lebanon-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Lebanese Tax Return Field Helper",
+        "href": "/en/lebanon/lebanon-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Lebanese Invoice Number Helper",
+        "href": "/en/lebanon/lebanon-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Lebanese VAT invoice Readiness Checker",
+        "href": "/en/lebanon/lebanon-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Lebanese Tax Authority Handoff Helper",
+        "href": "/en/lebanon/lebanon-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Lebanese Accounting Audit Trail Checklist Helper",
+        "href": "/en/lebanon/lebanon-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Lebanese Postal Code Validator",
+        "href": "/en/lebanon/lebanon-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Lebanese Address Normalizer",
+        "href": "/en/lebanon/lebanon-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Lebanese Address Transliteration Normalizer",
+        "href": "/en/lebanon/lebanon-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Lebanese Region / Province Code Mapper",
+        "href": "/en/lebanon/lebanon-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Lebanese Municipality Code Inspector",
+        "href": "/en/lebanon/lebanon-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Lebanese Phone Number Validator",
+        "href": "/en/lebanon/lebanon-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Lebanese Phone E.164 Formatter",
+        "href": "/en/lebanon/lebanon-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Lebanese Date Locale Formatter",
+        "href": "/en/lebanon/lebanon-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Lebanese CSV Locale Normalizer",
+        "href": "/en/lebanon/lebanon-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Lebanon decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Lebanese Slug Normalizer",
+        "href": "/en/lebanon/lebanon-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Lebanese Document OCR Fixer",
+        "href": "/en/lebanon/lebanon-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Lebanese personal-data privacy boundary Redaction Helper",
+        "href": "/en/lebanon/lebanon-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Lebanese PII Masker",
+        "href": "/en/lebanon/lebanon-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Lebanese Personal Data Fixture Helper",
+        "href": "/en/lebanon/lebanon-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Lebanese Driving Licence Format Helper",
+        "href": "/en/lebanon/lebanon-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Lebanese Residence Permit Format Helper",
+        "href": "/en/lebanon/lebanon-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Lebanese Health Card Format Helper",
+        "href": "/en/lebanon/lebanon-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Lebanese Vehicle Plate Inspector",
+        "href": "/en/lebanon/lebanon-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Lebanese VIN Validator",
+        "href": "/en/lebanon/lebanon-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Lebanese Vehicle Data Redaction Helper",
+        "href": "/en/lebanon/lebanon-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Lebanese Customs Declaration Helper",
+        "href": "/en/lebanon/lebanon-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Lebanese Postal Tracking Helper",
+        "href": "/en/lebanon/lebanon-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Lebanese Data Quality Workbench",
+        "href": "/en/lebanon/lebanon-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Lebanese JSON Fixture Helper",
+        "href": "/en/lebanon/lebanon-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Lebanese Regex Pack Helper",
+        "href": "/en/lebanon/lebanon-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Lebanese API Payload Auditor",
+        "href": "/en/lebanon/lebanon-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Lebanese Form Field Auditor",
+        "href": "/en/lebanon/lebanon-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Lebanese Locale Number Parser",
+        "href": "/en/lebanon/lebanon-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Lebanon."
+      },
+      {
+        "title": "Lebanese Calendar Week Helper",
+        "href": "/en/lebanon/lebanon-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Lebanese Company Suffix Normalizer",
+        "href": "/en/lebanon/lebanon-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Lebanese Procurement Identifier Helper",
+        "href": "/en/lebanon/lebanon-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Lebanese Locale Copy Checker",
+        "href": "/en/lebanon/lebanon-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Lebanese Support Ticket Scrubber",
+        "href": "/en/lebanon/lebanon-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Lebanese Integration Smoke Test Builder",
+        "href": "/en/lebanon/lebanon-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-csv-locale-normalizer
+kind: tool
+module: validohub
+country: SY
+category: developer-tools
+status: active
+name:
+  en: "Syrian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Syria decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234,567 SYP;21/07/2026;TAX123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-slug-normalizer, syria-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Syria decimal, date, postal, phone, tax, and banking fields."

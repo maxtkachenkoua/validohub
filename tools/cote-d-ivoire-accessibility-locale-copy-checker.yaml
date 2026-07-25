@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: CI
+category: localization
+status: active
+name:
+  en: "Ivorian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "national ID boundary input, postal/address code input, amount 1,234.56 XOF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-support-ticket-scrubber, cote-d-ivoire-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

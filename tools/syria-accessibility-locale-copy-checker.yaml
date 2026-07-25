@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: SY
+category: localization
+status: active
+name:
+  en: "Syrian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "national number boundary input, postal code input, amount 1,234,567 SYP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-support-ticket-scrubber, syria-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

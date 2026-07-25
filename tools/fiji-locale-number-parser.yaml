@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-locale-number-parser
+kind: tool
+module: validohub
+country: FJ
+category: localization
+status: active
+name:
+  en: "Fijian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Fiji."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 FJD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-calendar-week-helper, fiji-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Fiji."

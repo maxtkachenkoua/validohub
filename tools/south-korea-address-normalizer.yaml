@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-address-normalizer
+kind: tool
+module: validohub
+country: KR
+category: address
+status: active
+name:
+  en: "South Korean Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Sejong-daero 110, Jung-gu, Seoul 04524"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-address-transliteration-normalizer, south-korea-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: micronesia-regex-pack-helper
+kind: tool
+module: validohub
+country: FM
+category: developer-tools
+status: active
+name:
+  en: "Micronesian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.micronesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "national ID boundary company registration number state/island locality  001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [micronesia-api-payload-auditor, micronesia-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Micronesian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

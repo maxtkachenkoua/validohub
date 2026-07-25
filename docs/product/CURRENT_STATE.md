@@ -6,6 +6,8 @@ This document records the current ValidoHub and Valido Engine boundary so future
 
 ValidoHub now has scoped development loops so agents do not run the full generated-site build for routine edits. Use `npm run build:portal`, `npm run build:country -- --country <slug>`, or `npm run build:tools -- --slugs <slug-a>,<slug-b>` first, then run the matching scoped audit. `npm run build:full` / `npm run audit:full` are release gates. See `docs/product/BUILD_HARDENING_V2.md`.
 
+Scoped asset rebuilds now refresh generated HTML bundle links across the existing generated preview tree after recompiling hashed shared CSS/JS. This keeps pages outside the selected country/tool scope from becoming unstyled because they still reference an old deleted bundle hash.
+
 ## Premium Country Contract
 
 Full-premium country work is now gated by `docs/product/PREMIUM_COUNTRY_CONTRACT.md` and `npm run audit:country-premium -- --country <slug>`. The gate checks generated country pages, runtime field-breakdown coverage, related-link locality, foreign fallback copy, empty hub cards, `[object Object]`, generic tool shells, and readiness reporting before future country batches start.
@@ -351,3 +353,34 @@ Global Tools Deep Premium Lens V1 upgrades the shared Batch 4-7 runtime from mos
 ## South America Premium Batch V1
 
 South America excluding Brazil is generated as full premium on Country Suite Factory V1. Countries: Argentina (argentina), Bolivia (bolivia), Chile (chile), Colombia (colombia), Ecuador (ecuador), Guyana (guyana), Paraguay (paraguay), Peru (peru), Suriname (suriname), Uruguay (uruguay), Venezuela (venezuela). The batch uses domestic banking/payment rails instead of false IBAN/SEPA assumptions, adds local identifiers, tax/invoice helpers, privacy, vehicle/document/logistics, locale, and developer QA workbenches with field breakdowns and official-boundary copy.
+
+
+## Asia Premium Batch V2
+
+Asia coverage is generated as full premium with Country Suite Factory V1. Each country uses quality-driven local developer workbenches, field breakdown on every tool, seven production runtime locales, validate/generate affordances where safe, same-country related links, rich country hub sections, and explicit official/live lookup boundaries. Russia and Belarus remain excluded; transcontinental and disputed territories require an explicit product decision.
+
+
+## Africa Baseline Batch V1
+
+Africa coverage is generated as a baseline country-suite skeleton with Country Suite Factory V1. Each country uses quality-driven local developer workbenches, field breakdown on every tool, seven production runtime locales, validate/generate affordances where safe, same-country related links, rich country hub sections, and explicit official/live lookup boundaries. Western Sahara is not included in this 54-country source batch because no approved source outline/location asset exists yet; disputed territories require an explicit product decision.
+
+
+## Oceania Baseline Batch V1
+
+Oceania coverage is generated as a baseline country-suite skeleton with Country Suite Factory V1. Each country uses quality-driven local developer workbenches, field breakdown on every tool, seven production runtime locales, validate/generate affordances where safe, same-country related links, rich country hub sections, and explicit official/live lookup boundaries. Only UN member sovereign Oceania countries are included; territories and dependencies require an explicit product decision before inclusion.
+
+## All-Country Source And Visual Baseline
+
+Country source/data/image coverage is aligned at 194 source countries: Asia 48, Europe 43, Africa 54, North America 23, South America 12, and Oceania 14. Russia and Belarus remain excluded by product decision. Taiwan, Palestine, and Vatican City remain in the current country source set.
+
+Africa and Oceania now use the Ghana/Kenya-approved premium 3D raster visual baseline for country shape and location images. United States visuals have been regenerated with explicit stars-and-stripes artwork. North America has YAML source manifests for all 23 generated country suites, not only JSON data/runtime sources.
+
+The country hero visual renderer preserves wide island/archipelago artwork without cropping by fitting images inside a warm studio frame. Future country visual work should keep the same standard: independent raster assets, no baked text, no split panels, no gutters, no neighboring-country highlights, and no procedural flat scaffolds as final source assets.
+
+## Approved Premium Site Baseline
+
+As of 2026-07-26, the current revision is the user-approved premium baseline and should be treated as the rollback point for future large experiments. It includes all 194 current source countries, premium 3D raster country visuals, Africa/Oceania/United States visual completion, scoped build hardening, and the Countries Portal interactive world map.
+
+The accepted Countries Portal map standard is a neutral atlas at rest with no square, diamond, or circular flag fallback markers. Hover/focus should keep the active SVG country shape subtle and show a premium mini-card that uses the saved country outline raster asset. Do not regress to bright full-map flag fills or flat SVG flag-painting as the primary hover effect.
+
+Known remaining map limitation: the base atlas geometry is simplified. Improving country contour fidelity requires a dedicated high-detail atlas asset pipeline rather than CSS-only tuning or ad hoc path edits.

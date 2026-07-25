@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: togo-id-card-format-helper
+kind: tool
+module: validohub
+country: TG
+category: national-identifiers
+status: active
+name:
+  en: "Togolese ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.togo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "TG-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [togo-passport-number-helper, togo-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Togolese ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

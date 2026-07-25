@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-company-suffix-normalizer
+kind: tool
+module: validohub
+country: PS
+category: developer-tools
+status: active
+name:
+  en: "Palestinian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Palestine Sample Holding Ltd 562345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-procurement-identifier-helper, palestine-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

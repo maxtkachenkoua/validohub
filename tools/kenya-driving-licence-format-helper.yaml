@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kenya-driving-licence-format-helper
+kind: tool
+module: validohub
+country: KE
+category: documents
+status: active
+name:
+  en: "Kenyan Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kenya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "KE-ID-123456 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kenya-residence-permit-format-helper, kenya-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kenyan Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

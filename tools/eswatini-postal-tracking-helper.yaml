@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: eswatini-postal-tracking-helper
+kind: tool
+module: validohub
+country: SZ
+category: logistics
+status: active
+name:
+  en: "Swazi Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.eswatini-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1000 Mbabane"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [eswatini-data-quality-workbench, eswatini-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swazi Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

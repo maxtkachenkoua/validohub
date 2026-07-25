@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-bic-swift-inspector
+kind: tool
+module: validohub
+country: AZ
+category: finance
+status: active
+name:
+  en: "Azerbaijani BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Azerbaijan banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDAZ2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-domestic-transfer-helper, azerbaijan-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Azerbaijan banking integrations."

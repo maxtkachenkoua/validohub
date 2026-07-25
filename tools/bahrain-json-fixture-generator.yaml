@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-json-fixture-generator
+kind: tool
+module: validohub
+country: BH
+category: developer-tools
+status: active
+name:
+  en: "Bahraini JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"BH\",\"cpr\":\"900101123\",\"iban\":\"BH67BMAG00001299123456\",\"benefitPay\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [bahrain-regex-pack-helper, bahrain-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

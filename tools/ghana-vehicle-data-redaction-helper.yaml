@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ghana-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: GH
+category: transport
+status: active
+name:
+  en: "Ghanaian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ghana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "GH 1234 WVWZZZ1JZXW000001 GH-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ghana-customs-declaration-helper, ghana-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ghanaian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

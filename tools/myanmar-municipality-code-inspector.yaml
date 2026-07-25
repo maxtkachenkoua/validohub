@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: myanmar-municipality-code-inspector
+kind: tool
+module: validohub
+country: MM
+category: address
+status: active
+name:
+  en: "Myanmar Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.myanmar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Yaza Htarni Road 1, Naypyidaw 15011"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [myanmar-phone-number-validator, myanmar-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Myanmar Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

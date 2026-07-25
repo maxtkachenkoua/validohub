@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-calendar-week-helper
+kind: tool
+module: validohub
+country: CN
+category: localization
+status: active
+name:
+  en: "Chinese Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "2026-07-21 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-company-suffix-normalizer, china-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

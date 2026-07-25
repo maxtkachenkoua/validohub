@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-pii-masker
+kind: tool
+module: validohub
+country: PG
+category: privacy
+status: active
+name:
+  en: "Papua New Guinean PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "PG-TIN-123456 +675 7123 4567 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-personal-data-fixture-generator, papua-new-guinea-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

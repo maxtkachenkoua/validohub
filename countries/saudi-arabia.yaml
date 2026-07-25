@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SA
+slug: saudi-arabia
+name:
+  en: Saudi Arabia
+region: Asia
+languages:
+  - ar
+currency: SAR
+relatedCountries:
+  - AE
+  - QA
+  - PK

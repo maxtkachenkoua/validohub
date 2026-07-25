@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-tax-id-validator
+kind: tool
+module: validohub
+country: ST
+category: national-identifiers
+status: active
+name:
+  en: "Sao Tomean tax number / VAT boundary Validator"
+summary:
+  en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "ST123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-customs-importer-code-helper, sao-tome-and-principe-social-security-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean tax number / VAT boundary Validator | ValidoHub"
+  description:
+    en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

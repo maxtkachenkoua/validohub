@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cameroon-bic-swift-inspector
+kind: tool
+module: validohub
+country: CM
+category: finance
+status: active
+name:
+  en: "Cameroonian BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Cameroon banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cameroon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDCM2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cameroon-domestic-transfer-helper, cameroon-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cameroonian BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Cameroon banking integrations."

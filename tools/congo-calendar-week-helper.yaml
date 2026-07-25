@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: congo-calendar-week-helper
+kind: tool
+module: validohub
+country: CG
+category: localization
+status: active
+name:
+  en: "Congolese Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.congo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "24/07/2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [congo-company-suffix-normalizer, congo-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Congolese Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

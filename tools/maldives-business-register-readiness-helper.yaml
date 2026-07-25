@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-business-register-readiness-helper
+kind: tool
+module: validohub
+country: MV
+category: government
+status: active
+name:
+  en: "Maldivian Ministry of Economic Development registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Ministry of Economic Development registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "C-012345 GST123456 Majeedhee Magu 1, Male 20026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [maldives-id-card-format-helper, maldives-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian Ministry of Economic Development registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Ministry of Economic Development registry lookup or company registry workflow."

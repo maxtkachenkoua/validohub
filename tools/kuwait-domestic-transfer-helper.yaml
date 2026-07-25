@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-domestic-transfer-helper
+kind: tool
+module: validohub
+country: KW
+category: finance
+status: active
+name:
+  en: "Kuwaiti Domestic Transfer Helper"
+summary:
+  en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "CBKU 1234560101\\n1,234.560 KWD\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-direct-debit-mandate-helper, kuwait-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."

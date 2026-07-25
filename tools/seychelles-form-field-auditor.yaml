@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: seychelles-form-field-auditor
+kind: tool
+module: validohub
+country: SC
+category: developer-tools
+status: active
+name:
+  en: "Seychellois Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.seychelles-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=SC123456789&postal=1000 Victoria&phone=+248 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [seychelles-locale-number-parser, seychelles-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Seychellois Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

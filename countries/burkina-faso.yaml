@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BF
+slug: burkina-faso
+name:
+  en: Burkina Faso
+region: Africa
+languages:
+  - fr
+currency: XOF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

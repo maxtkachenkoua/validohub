@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-document-ocr-fixer
+kind: tool
+module: validohub
+country: TO
+category: documents
+status: active
+name:
+  en: "Tongan Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "TO-TIN-123456 TO123456789 001 1234567890 Nukuʻalofa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-privacy-redaction-helper, tonga-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

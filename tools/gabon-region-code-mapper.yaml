@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gabon-region-code-mapper
+kind: tool
+module: validohub
+country: GA
+category: address
+status: active
+name:
+  en: "Gabonese Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gabon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "1000 Libreville"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gabon-municipality-code-inspector, gabon-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gabonese Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

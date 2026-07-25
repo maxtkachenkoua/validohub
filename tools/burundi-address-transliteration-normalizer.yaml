@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: BI
+category: address
+status: active
+name:
+  en: "Burundian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Central business district, Gitega 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-region-code-mapper, burundi-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

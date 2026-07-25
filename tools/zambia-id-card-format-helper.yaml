@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zambia-id-card-format-helper
+kind: tool
+module: validohub
+country: ZM
+category: national-identifiers
+status: active
+name:
+  en: "Zambian ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "ZM-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zambia-passport-number-helper, zambia-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zambian ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

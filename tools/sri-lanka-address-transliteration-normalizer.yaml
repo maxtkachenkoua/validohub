@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: LK
+category: address
+status: active
+name:
+  en: "Sri Lankan Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Galle Road 1, Colombo 00100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-region-code-mapper, sri-lanka-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

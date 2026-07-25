@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-company-onboarding-auditor
+kind: tool
+module: validohub
+country: JP
+category: developer-tools
+status: active
+name:
+  en: "Japanese Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for Corporate Number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"JP\",\"corporateNumber\":\"1234567890123\",\"invoiceNumber\":\"T1234567890123\",\"amount\":\"1,234\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-business-register-readiness-helper, japan-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for Corporate Number, VAT, address, banking, and official registry handoff readiness."

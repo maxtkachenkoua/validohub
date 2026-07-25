@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-identification-number-validator
+kind: tool
+module: validohub
+country: GE
+category: national-identifiers
+status: active
+name:
+  en: "Georgian identification number Validator"
+summary:
+  en: "Inspect identification number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "405123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-tax-id-validator, georgia-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian identification number Validator | ValidoHub"
+  description:
+    en: "Inspect identification number structure, registry-style prefixes, control digits, and official lookup boundaries."

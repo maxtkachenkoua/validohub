@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-municipality-code-inspector
+kind: tool
+module: validohub
+country: JO
+category: address
+status: active
+name:
+  en: "Jordanian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Zahran Street 1, Amman 11118"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-phone-number-validator, jordan-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

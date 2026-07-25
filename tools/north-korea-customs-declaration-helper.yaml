@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-customs-declaration-helper
+kind: tool
+module: validohub
+country: KP
+category: government
+status: active
+name:
+  en: "North Korean Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "TAX123456 HS 8471 1,234 KPW"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-postal-tracking-helper, north-korea-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

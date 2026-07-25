@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-business-register-readiness-helper
+kind: tool
+module: validohub
+country: TO
+category: government
+status: active
+name:
+  en: "Tongan business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "TO-REG-123456 TO123456789 Taufaʻahau Road, Nukuʻalofa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-id-card-format-helper, tonga-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

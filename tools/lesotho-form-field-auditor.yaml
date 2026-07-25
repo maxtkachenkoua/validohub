@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lesotho-form-field-auditor
+kind: tool
+module: validohub
+country: LS
+category: developer-tools
+status: active
+name:
+  en: "Basotho Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lesotho-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=LS123456789&postal=1000 Maseru&phone=+266 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lesotho-locale-number-parser, lesotho-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Basotho Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-07-24T11:18:46.974Z",
+  "generatedAt": "2026-07-25T03:20:39.987Z",
   "results": [
     {
-      "slug": "trinidad-and-tobago",
-      "name": "trinidad-and-tobago",
+      "slug": "ghana",
+      "name": "ghana",
       "iso2": null,
       "catalogStatus": "available",
       "completion": 100,
-      "yamlExists": false,
-      "dataRouteToolCount": 61,
-      "toolCount": 61,
-      "availableWorkbenchCount": 61,
+      "yamlExists": true,
+      "dataRouteToolCount": 62,
+      "toolCount": 62,
+      "availableWorkbenchCount": 62,
       "plannedWorkbenchCount": 0,
-      "generatedEnglishToolPages": 61,
-      "checkedGeneratedPages": 61,
+      "generatedEnglishToolPages": 62,
+      "checkedGeneratedPages": 62,
       "algorithms": [
-        "validohub.trinidad-and-tobago-suite"
+        "validohub.ghana-suite"
       ],
       "runtimes": [
-        "trinidad-and-tobago-suite.js"
+        "ghana-suite.js"
       ],
       "state": "full-premium-ready",
       "blockers": [],

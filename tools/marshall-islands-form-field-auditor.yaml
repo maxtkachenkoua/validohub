@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-form-field-auditor
+kind: tool
+module: validohub
+country: MH
+category: developer-tools
+status: active
+name:
+  en: "Marshallese Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=MH123456789&postal=Majuro MH 96960&phone=+692 247 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-locale-number-parser, marshall-islands-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

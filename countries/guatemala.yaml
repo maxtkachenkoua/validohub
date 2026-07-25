@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: GT
+slug: guatemala
+name:
+  en: "Guatemala"
+region: North America
+languages:
+  - es
+currency: GTQ
+relatedCountries:
+  - MX
+  - BZ
+  - SV

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-customs-importer-code-helper
+kind: tool
+module: validohub
+country: NZ
+category: national-identifiers
+status: active
+name:
+  en: "New Zealand Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "NZ9429000000000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-realme-boundary-social-insurance-helper, new-zealand-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

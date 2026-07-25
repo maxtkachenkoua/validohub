@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chad-date-locale-formatter
+kind: tool
+module: validohub
+country: TD
+category: localization
+status: active
+name:
+  en: "Chadian Date Locale Formatter"
+summary:
+  en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chad-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "24/07/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chad-csv-locale-normalizer, chad-slug-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chadian Date Locale Formatter | ValidoHub"
+  description:
+    en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."

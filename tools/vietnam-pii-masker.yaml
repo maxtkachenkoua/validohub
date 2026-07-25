@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-pii-masker
+kind: tool
+module: validohub
+country: VN
+category: privacy
+status: active
+name:
+  en: "Vietnamese PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "001090012345 +84 912 345 678 9704 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vietnam-personal-data-fixture-generator, vietnam-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

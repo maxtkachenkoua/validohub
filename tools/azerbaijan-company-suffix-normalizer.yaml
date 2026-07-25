@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-company-suffix-normalizer
+kind: tool
+module: validohub
+country: AZ
+category: developer-tools
+status: active
+name:
+  en: "Azerbaijani Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Azerbaijan Sample Holding Ltd AZ1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-procurement-identifier-helper, azerbaijan-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

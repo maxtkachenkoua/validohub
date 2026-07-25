@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-csv-locale-normalizer
+kind: tool
+module: validohub
+country: IR
+category: developer-tools
+status: active
+name:
+  en: "Iranian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Iran decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234,567 IRR;1405/04/30;411111111111"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-slug-normalizer, iran-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Iran decimal, date, postal, phone, tax, and banking fields."

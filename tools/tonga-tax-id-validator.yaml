@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-tax-id-validator
+kind: tool
+module: validohub
+country: TO
+category: national-identifiers
+status: active
+name:
+  en: "Tongan consumption tax boundary Validator"
+summary:
+  en: "Normalize consumption tax boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "TO123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-customs-importer-code-helper, tonga-social-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan consumption tax boundary Validator | ValidoHub"
+  description:
+    en: "Normalize consumption tax boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

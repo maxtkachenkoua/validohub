@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-address-normalizer
+kind: tool
+module: validohub
+country: IR
+category: address
+status: active
+name:
+  en: "Iranian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Valiasr Street 1, Tehran 11369-12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-address-transliteration-normalizer, iran-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

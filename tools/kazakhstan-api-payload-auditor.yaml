@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-api-payload-auditor
+kind: tool
+module: validohub
+country: KZ
+category: developer-tools
+status: active
+name:
+  en: "Kazakh API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KZ\",\"iin\":\"900101300123\",\"bin\":\"120940012345\",\"iban\":\"KZ86125KZT5004100100\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-form-field-auditor, kazakhstan-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

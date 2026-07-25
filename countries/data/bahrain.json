@@ -1,0 +1,642 @@
+{
+  "id": "bahrain",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/bahrain-outline.png",
+    "outlineAlt": "Bahrain country outline",
+    "mapSrc": "/assets/images/countries/bahrain-location.png",
+    "mapAlt": "World map with Bahrain location marker",
+    "mapMarker": {
+      "x": 58,
+      "y": 55,
+      "label": "Bahrain"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "bahrain",
+    "flag": "🇧🇭",
+    "name": "Bahrain",
+    "nativeName": "Al-Bahrayn",
+    "iso2": "BH",
+    "iso3": "BHR",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Arabic",
+    "currency": "BHD",
+    "currencyName": "Bahraini dinar",
+    "status": "available",
+    "summary": "Premium Bahrain developer hub for CPR boundary, commercial registration number, VAT account number, block/address code, phone, IBAN, BenefitPay handoff, EFTS reference, SWIFT, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "CPR boundary",
+      "commercial registration number",
+      "VAT account number",
+      "block/address code",
+      "phone"
+    ],
+    "payments": [
+      "IBAN",
+      "BenefitPay handoff",
+      "EFTS reference",
+      "SWIFT",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Bahraini CPR boundary Validator",
+      "Bahraini commercial registration number Validator",
+      "Bahraini VAT account number Validator",
+      "Bahraini Customs / Importer Code Helper",
+      "Bahraini SIO boundary Helper",
+      "Bahraini Company Onboarding Auditor",
+      "Bahraini Sijilat registry Readiness Helper",
+      "Bahraini ID Card Format Helper",
+      "Bahraini Passport Number Helper",
+      "Bahraini MRZ / Passport Parser",
+      "Bahrain Bank Account Validator",
+      "Bahrain Bank Account Fixture Generator",
+      "Bahraini Domestic Bank Account Inspector",
+      "Bahraini BIC / SWIFT Inspector",
+      "Bahraini Domestic Transfer Helper",
+      "Bahraini Direct Debit / Auto-Debit Mandate Helper",
+      "Bahraini BenefitPay / EFTS reference Reference Helper",
+      "Bahraini Remittance Text Builder",
+      "Bahraini Payment Reconciliation Helper",
+      "Bahraini Bank Statement Parser",
+      "Bahraini Masked Bank Account Formatter",
+      "Bahraini BHD Decimal Currency Formatter",
+      "Bahraini Tax Rate Sanity Helper",
+      "Bahraini Tax Return Field Helper",
+      "Bahraini Invoice Number Helper",
+      "Bahraini VAT invoice Readiness Checker",
+      "Bahraini Tax Authority Handoff Helper",
+      "Bahraini Accounting Audit Trail Checklist Helper",
+      "Bahraini Postal Code Validator",
+      "Bahraini Address Normalizer",
+      "Bahraini Address Transliteration Normalizer",
+      "Bahraini Region / Province Code Mapper",
+      "Bahraini Municipality Code Inspector",
+      "Bahraini Phone Number Validator",
+      "Bahraini Phone E.164 Formatter",
+      "Bahraini Date Locale Formatter",
+      "Bahraini CSV Locale Normalizer",
+      "Bahraini Slug Normalizer",
+      "Bahraini Document OCR Fixer",
+      "Bahraini PDPL privacy Redaction Helper",
+      "Bahraini PII Masker",
+      "Bahraini Personal Data Fixture Helper",
+      "Bahraini Driving Licence Format Helper",
+      "Bahraini Residence Permit Format Helper",
+      "Bahraini Health Card Format Helper",
+      "Bahraini Vehicle Plate Inspector",
+      "Bahraini VIN Validator",
+      "Bahraini Vehicle Data Redaction Helper",
+      "Bahraini Customs Declaration Helper",
+      "Bahraini Postal Tracking Helper",
+      "Bahraini Data Quality Workbench",
+      "Bahraini JSON Fixture Helper",
+      "Bahraini Regex Pack Helper",
+      "Bahraini API Payload Auditor",
+      "Bahraini Form Field Auditor",
+      "Bahraini Locale Number Parser",
+      "Bahraini Calendar Week Helper",
+      "Bahraini Company Suffix Normalizer",
+      "Bahraini Procurement Identifier Helper",
+      "Bahraini Locale Copy Checker",
+      "Bahraini Support Ticket Scrubber",
+      "Bahraini Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live Sijilat registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 58,
+      "y": 55
+    },
+    "searchHints": [
+      "CPR",
+      "CR",
+      "VAT",
+      "IBAN",
+      "BENEFITPAY",
+      "EFTS"
+    ]
+  },
+  "hub": {
+    "flag": "🇧🇭",
+    "name": "Bahrain",
+    "badge": "Premium Bahrain developer suite",
+    "description": "Developer intelligence and browser-only workbenches for bahraini identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Al-Bahrayn",
+      "population": "approximately 1.6M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Manama",
+      "continent": "Asia",
+      "region": "Western Asia / Gulf",
+      "languages": "Arabic",
+      "currency": "Bahraini dinar",
+      "currencyCode": "BHD",
+      "callingCode": "+973",
+      "internetTld": ".bh",
+      "drivingSide": "Right",
+      "iso2": "BH",
+      "iso3": "BHR",
+      "isoNumeric": "048",
+      "locale": "ar-BH",
+      "icuLocale": "ar_BH",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Bahrain",
+      "postalCodeFormat": "block/address code",
+      "primaryTimeZone": "Asia/Bahrain (AST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "999",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "ar-BH",
+      "cldrLocale": "ar_BH",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type G",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "bahrain",
+      "outlineLabel": "Bahrain outline",
+      "mapLabel": "Bahrain in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Bahrain flag",
+      "heroAccentPrimary": "206 17 38",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "17 24 39"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "CPR boundary and commercial registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "VAT account number and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Bahrain registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /bahrain/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Bahraini examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "Sijilat registry",
+        "text": "Official business registry or company lookup remains the source of truth for Bahrain.",
+        "status": "official boundary"
+      },
+      {
+        "title": "VAT account number",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "PDPL privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "CPR boundary, commercial registration number, VAT account number, block/address code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, BenefitPay handoff, EFTS reference, SWIFT, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "ar-BH / ar_BH; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "BHD amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "CPR boundary, commercial registration number, block/address code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type G",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "999",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "CPR",
+      "CR",
+      "VAT",
+      "IBAN",
+      "BENEFITPAY",
+      "EFTS"
+    ],
+    "routes": [
+      {
+        "title": "Bahraini CPR boundary Validator",
+        "href": "/en/bahrain/bahrain-cpr-boundary-validator/",
+        "text": "Validate CPR boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Bahraini commercial registration number Validator",
+        "href": "/en/bahrain/bahrain-commercial-registration-number-validator/",
+        "text": "Inspect commercial registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Bahraini VAT account number Validator",
+        "href": "/en/bahrain/bahrain-tax-id-validator/",
+        "text": "Normalize VAT account number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Bahraini Customs / Importer Code Helper",
+        "href": "/en/bahrain/bahrain-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Bahraini SIO boundary Helper",
+        "href": "/en/bahrain/bahrain-sio-boundary-social-insurance-helper/",
+        "text": "Split SIO boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Bahraini Company Onboarding Auditor",
+        "href": "/en/bahrain/bahrain-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for commercial registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Bahraini Sijilat registry Readiness Helper",
+        "href": "/en/bahrain/bahrain-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated Sijilat registry lookup or company registry workflow."
+      },
+      {
+        "title": "Bahraini ID Card Format Helper",
+        "href": "/en/bahrain/bahrain-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Bahraini Passport Number Helper",
+        "href": "/en/bahrain/bahrain-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Bahraini MRZ / Passport Parser",
+        "href": "/en/bahrain/bahrain-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Bahrain Bank Account Validator",
+        "href": "/en/bahrain/bahrain-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Bahrain Bank Account Fixture Generator",
+        "href": "/en/bahrain/bahrain-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Bahraini Domestic Bank Account Inspector",
+        "href": "/en/bahrain/bahrain-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Bahraini BIC / SWIFT Inspector",
+        "href": "/en/bahrain/bahrain-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Bahrain banking integrations."
+      },
+      {
+        "title": "Bahraini Domestic Transfer Helper",
+        "href": "/en/bahrain/bahrain-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Bahraini Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/bahrain/bahrain-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Bahraini BenefitPay / EFTS reference Reference Helper",
+        "href": "/en/bahrain/bahrain-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Bahraini Remittance Text Builder",
+        "href": "/en/bahrain/bahrain-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Bahraini Payment Reconciliation Helper",
+        "href": "/en/bahrain/bahrain-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Bahraini Bank Statement Parser",
+        "href": "/en/bahrain/bahrain-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Bahraini Masked Bank Account Formatter",
+        "href": "/en/bahrain/bahrain-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Bahraini BHD Decimal Currency Formatter",
+        "href": "/en/bahrain/bahrain-currency-decimal-formatter/",
+        "text": "Normalize BHD amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Bahraini Tax Rate Sanity Helper",
+        "href": "/en/bahrain/bahrain-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Bahraini Tax Return Field Helper",
+        "href": "/en/bahrain/bahrain-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Bahraini Invoice Number Helper",
+        "href": "/en/bahrain/bahrain-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Bahraini VAT invoice Readiness Checker",
+        "href": "/en/bahrain/bahrain-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Bahraini Tax Authority Handoff Helper",
+        "href": "/en/bahrain/bahrain-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Bahraini Accounting Audit Trail Checklist Helper",
+        "href": "/en/bahrain/bahrain-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Bahraini Postal Code Validator",
+        "href": "/en/bahrain/bahrain-postal-code-validator/",
+        "text": "Validate block/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Bahraini Address Normalizer",
+        "href": "/en/bahrain/bahrain-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Bahraini Address Transliteration Normalizer",
+        "href": "/en/bahrain/bahrain-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Bahraini Region / Province Code Mapper",
+        "href": "/en/bahrain/bahrain-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Bahraini Municipality Code Inspector",
+        "href": "/en/bahrain/bahrain-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Bahraini Phone Number Validator",
+        "href": "/en/bahrain/bahrain-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Bahraini Phone E.164 Formatter",
+        "href": "/en/bahrain/bahrain-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Bahraini Date Locale Formatter",
+        "href": "/en/bahrain/bahrain-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Bahraini CSV Locale Normalizer",
+        "href": "/en/bahrain/bahrain-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Bahrain decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Bahraini Slug Normalizer",
+        "href": "/en/bahrain/bahrain-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Bahraini Document OCR Fixer",
+        "href": "/en/bahrain/bahrain-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Bahraini PDPL privacy Redaction Helper",
+        "href": "/en/bahrain/bahrain-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Bahraini PII Masker",
+        "href": "/en/bahrain/bahrain-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Bahraini Personal Data Fixture Helper",
+        "href": "/en/bahrain/bahrain-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Bahraini Driving Licence Format Helper",
+        "href": "/en/bahrain/bahrain-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Bahraini Residence Permit Format Helper",
+        "href": "/en/bahrain/bahrain-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Bahraini Health Card Format Helper",
+        "href": "/en/bahrain/bahrain-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Bahraini Vehicle Plate Inspector",
+        "href": "/en/bahrain/bahrain-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Bahraini VIN Validator",
+        "href": "/en/bahrain/bahrain-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Bahraini Vehicle Data Redaction Helper",
+        "href": "/en/bahrain/bahrain-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Bahraini Customs Declaration Helper",
+        "href": "/en/bahrain/bahrain-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Bahraini Postal Tracking Helper",
+        "href": "/en/bahrain/bahrain-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Bahraini Data Quality Workbench",
+        "href": "/en/bahrain/bahrain-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Bahraini JSON Fixture Helper",
+        "href": "/en/bahrain/bahrain-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Bahraini Regex Pack Helper",
+        "href": "/en/bahrain/bahrain-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Bahraini API Payload Auditor",
+        "href": "/en/bahrain/bahrain-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Bahraini Form Field Auditor",
+        "href": "/en/bahrain/bahrain-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Bahraini Locale Number Parser",
+        "href": "/en/bahrain/bahrain-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Bahrain."
+      },
+      {
+        "title": "Bahraini Calendar Week Helper",
+        "href": "/en/bahrain/bahrain-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Bahraini Company Suffix Normalizer",
+        "href": "/en/bahrain/bahrain-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Bahraini Procurement Identifier Helper",
+        "href": "/en/bahrain/bahrain-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Bahraini Locale Copy Checker",
+        "href": "/en/bahrain/bahrain-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Bahraini Support Ticket Scrubber",
+        "href": "/en/bahrain/bahrain-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Bahraini Integration Smoke Test Builder",
+        "href": "/en/bahrain/bahrain-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

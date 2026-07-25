@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: RW
+slug: rwanda
+name:
+  en: Rwanda
+region: Africa
+languages:
+  - en
+currency: RWF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

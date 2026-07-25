@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chad-form-field-auditor
+kind: tool
+module: validohub
+country: TD
+category: developer-tools
+status: active
+name:
+  en: "Chadian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chad-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=TD123456789&postal=1000 NDjamena&phone=+235 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chad-locale-number-parser, chad-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chadian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

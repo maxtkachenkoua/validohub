@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: NP
+category: finance
+status: active
+name:
+  en: "Nepali Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "2026/07/21; 1,234.56 NPR; 001 1234567890123; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-bank-statement-parser, nepal-masked-bank-account-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

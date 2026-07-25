@@ -1,0 +1,642 @@
+{
+  "id": "united-arab-emirates",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/united-arab-emirates-outline.png",
+    "outlineAlt": "United Arab Emirates country outline",
+    "mapSrc": "/assets/images/countries/united-arab-emirates-location.png",
+    "mapAlt": "World map with United Arab Emirates location marker",
+    "mapMarker": {
+      "x": 60,
+      "y": 57,
+      "label": "United Arab Emirates"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "united-arab-emirates",
+    "flag": "🇦🇪",
+    "name": "United Arab Emirates",
+    "nativeName": "Al-Imarat al-Arabiyah al-Muttahidah",
+    "iso2": "AE",
+    "iso3": "ARE",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Arabic",
+    "currency": "AED",
+    "currencyName": "UAE dirham",
+    "status": "available",
+    "summary": "Premium United Arab Emirates developer hub for Emirates ID boundary, TRN, trade license number, Makani/address, phone, IBAN, UAEFTS handoff, SWIFT, WPS file helper, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "Emirates ID boundary",
+      "TRN",
+      "trade license number",
+      "Makani/address",
+      "phone"
+    ],
+    "payments": [
+      "IBAN",
+      "UAEFTS handoff",
+      "SWIFT",
+      "WPS file helper",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "UAE Emirates ID boundary Validator",
+      "UAE trade license number Validator",
+      "UAE VAT TRN Validator",
+      "UAE Customs / Importer Code Helper",
+      "UAE WPS employee boundary Helper",
+      "UAE Company Onboarding Auditor",
+      "UAE DED / free-zone registry Readiness Helper",
+      "UAE ID Card Format Helper",
+      "UAE Passport Number Helper",
+      "UAE MRZ / Passport Parser",
+      "United Arab Emirates Bank Account Validator",
+      "United Arab Emirates Bank Account Fixture Generator",
+      "UAE Domestic Bank Account Inspector",
+      "UAE BIC / SWIFT Inspector",
+      "UAE Domestic Transfer Helper",
+      "UAE Direct Debit / Auto-Debit Mandate Helper",
+      "UAE UAEFTS / WPS reference Reference Helper",
+      "UAE Remittance Text Builder",
+      "UAE Payment Reconciliation Helper",
+      "UAE Bank Statement Parser",
+      "UAE Masked Bank Account Formatter",
+      "UAE AED Decimal Currency Formatter",
+      "UAE Tax Rate Sanity Helper",
+      "UAE Tax Return Field Helper",
+      "UAE Invoice Number Helper",
+      "UAE VAT tax invoice Readiness Checker",
+      "UAE Tax Authority Handoff Helper",
+      "UAE Accounting Audit Trail Checklist Helper",
+      "UAE Postal Code Validator",
+      "UAE Address Normalizer",
+      "UAE Address Transliteration Normalizer",
+      "UAE Region / Province Code Mapper",
+      "UAE Municipality Code Inspector",
+      "UAE Phone Number Validator",
+      "UAE Phone E.164 Formatter",
+      "UAE Date Locale Formatter",
+      "UAE CSV Locale Normalizer",
+      "UAE Slug Normalizer",
+      "UAE Document OCR Fixer",
+      "UAE PDPL privacy Redaction Helper",
+      "UAE PII Masker",
+      "UAE Personal Data Fixture Helper",
+      "UAE Driving Licence Format Helper",
+      "UAE Residence Permit Format Helper",
+      "UAE Health Card Format Helper",
+      "UAE Vehicle Plate Inspector",
+      "UAE VIN Validator",
+      "UAE Vehicle Data Redaction Helper",
+      "UAE Customs Declaration Helper",
+      "UAE Postal Tracking Helper",
+      "UAE Data Quality Workbench",
+      "UAE JSON Fixture Helper",
+      "UAE Regex Pack Helper",
+      "UAE API Payload Auditor",
+      "UAE Form Field Auditor",
+      "UAE Locale Number Parser",
+      "UAE Calendar Week Helper",
+      "UAE Company Suffix Normalizer",
+      "UAE Procurement Identifier Helper",
+      "UAE Locale Copy Checker",
+      "UAE Support Ticket Scrubber",
+      "UAE Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live DED / free-zone registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 60,
+      "y": 57
+    },
+    "searchHints": [
+      "TRN",
+      "EMIRATES ID",
+      "IBAN",
+      "UAEFTS",
+      "WPS",
+      "MAKANI"
+    ]
+  },
+  "hub": {
+    "flag": "🇦🇪",
+    "name": "United Arab Emirates",
+    "badge": "Premium United Arab Emirates developer suite",
+    "description": "Developer intelligence and browser-only workbenches for uae identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Al-Imarat al-Arabiyah al-Muttahidah",
+      "population": "approximately 10.2M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Abu Dhabi",
+      "continent": "Asia",
+      "region": "Western Asia / Gulf",
+      "languages": "Arabic",
+      "currency": "UAE dirham",
+      "currencyCode": "AED",
+      "callingCode": "+971",
+      "internetTld": ".ae",
+      "drivingSide": "Right",
+      "iso2": "AE",
+      "iso3": "ARE",
+      "isoNumeric": "784",
+      "locale": "en-AE",
+      "icuLocale": "en_AE",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, United Arab Emirates",
+      "postalCodeFormat": "PO Box / Makani",
+      "primaryTimeZone": "Asia/Dubai (GST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "999 / 998",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "en-AE",
+      "cldrLocale": "en_AE",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type G",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "united-arab-emirates",
+      "outlineLabel": "United Arab Emirates outline",
+      "mapLabel": "United Arab Emirates in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "United Arab Emirates flag",
+      "heroAccentPrimary": "0 115 47",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "255 0 0"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Emirates ID boundary and trade license number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "VAT TRN and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official United Arab Emirates registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /united-arab-emirates/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-UAE examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "DED / free-zone registry",
+        "text": "Official business registry or company lookup remains the source of truth for United Arab Emirates.",
+        "status": "official boundary"
+      },
+      {
+        "title": "VAT TRN",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "PDPL privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "Emirates ID boundary, TRN, trade license number, Makani/address, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, UAEFTS handoff, SWIFT, WPS file helper, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en-AE / en_AE; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "AED amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "Emirates ID boundary, trade license number, PO Box / Makani, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type G",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "999 / 998",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "TRN",
+      "EMIRATES ID",
+      "IBAN",
+      "UAEFTS",
+      "WPS",
+      "MAKANI"
+    ],
+    "routes": [
+      {
+        "title": "UAE Emirates ID boundary Validator",
+        "href": "/en/united-arab-emirates/united-arab-emirates-emirates-id-boundary-validator/",
+        "text": "Validate Emirates ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "UAE trade license number Validator",
+        "href": "/en/united-arab-emirates/united-arab-emirates-trade-license-number-validator/",
+        "text": "Inspect trade license number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "UAE VAT TRN Validator",
+        "href": "/en/united-arab-emirates/united-arab-emirates-tax-id-validator/",
+        "text": "Normalize VAT TRN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "UAE Customs / Importer Code Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "UAE WPS employee boundary Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-wps-employee-boundary-social-insurance-helper/",
+        "text": "Split WPS employee boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "UAE Company Onboarding Auditor",
+        "href": "/en/united-arab-emirates/united-arab-emirates-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for trade license number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "UAE DED / free-zone registry Readiness Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated DED / free-zone registry lookup or company registry workflow."
+      },
+      {
+        "title": "UAE ID Card Format Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "UAE Passport Number Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "UAE MRZ / Passport Parser",
+        "href": "/en/united-arab-emirates/united-arab-emirates-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "United Arab Emirates Bank Account Validator",
+        "href": "/en/united-arab-emirates/united-arab-emirates-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "United Arab Emirates Bank Account Fixture Generator",
+        "href": "/en/united-arab-emirates/united-arab-emirates-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "UAE Domestic Bank Account Inspector",
+        "href": "/en/united-arab-emirates/united-arab-emirates-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "UAE BIC / SWIFT Inspector",
+        "href": "/en/united-arab-emirates/united-arab-emirates-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for United Arab Emirates banking integrations."
+      },
+      {
+        "title": "UAE Domestic Transfer Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "UAE Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "UAE UAEFTS / WPS reference Reference Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "UAE Remittance Text Builder",
+        "href": "/en/united-arab-emirates/united-arab-emirates-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "UAE Payment Reconciliation Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "UAE Bank Statement Parser",
+        "href": "/en/united-arab-emirates/united-arab-emirates-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "UAE Masked Bank Account Formatter",
+        "href": "/en/united-arab-emirates/united-arab-emirates-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "UAE AED Decimal Currency Formatter",
+        "href": "/en/united-arab-emirates/united-arab-emirates-currency-decimal-formatter/",
+        "text": "Normalize AED amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "UAE Tax Rate Sanity Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "UAE Tax Return Field Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "UAE Invoice Number Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "UAE VAT tax invoice Readiness Checker",
+        "href": "/en/united-arab-emirates/united-arab-emirates-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "UAE Tax Authority Handoff Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "UAE Accounting Audit Trail Checklist Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "UAE Postal Code Validator",
+        "href": "/en/united-arab-emirates/united-arab-emirates-postal-code-validator/",
+        "text": "Validate PO Box / Makani shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "UAE Address Normalizer",
+        "href": "/en/united-arab-emirates/united-arab-emirates-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "UAE Address Transliteration Normalizer",
+        "href": "/en/united-arab-emirates/united-arab-emirates-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "UAE Region / Province Code Mapper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "UAE Municipality Code Inspector",
+        "href": "/en/united-arab-emirates/united-arab-emirates-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "UAE Phone Number Validator",
+        "href": "/en/united-arab-emirates/united-arab-emirates-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "UAE Phone E.164 Formatter",
+        "href": "/en/united-arab-emirates/united-arab-emirates-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "UAE Date Locale Formatter",
+        "href": "/en/united-arab-emirates/united-arab-emirates-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "UAE CSV Locale Normalizer",
+        "href": "/en/united-arab-emirates/united-arab-emirates-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for United Arab Emirates decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "UAE Slug Normalizer",
+        "href": "/en/united-arab-emirates/united-arab-emirates-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "UAE Document OCR Fixer",
+        "href": "/en/united-arab-emirates/united-arab-emirates-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "UAE PDPL privacy Redaction Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "UAE PII Masker",
+        "href": "/en/united-arab-emirates/united-arab-emirates-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "UAE Personal Data Fixture Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "UAE Driving Licence Format Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "UAE Residence Permit Format Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "UAE Health Card Format Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "UAE Vehicle Plate Inspector",
+        "href": "/en/united-arab-emirates/united-arab-emirates-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "UAE VIN Validator",
+        "href": "/en/united-arab-emirates/united-arab-emirates-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "UAE Vehicle Data Redaction Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "UAE Customs Declaration Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "UAE Postal Tracking Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "UAE Data Quality Workbench",
+        "href": "/en/united-arab-emirates/united-arab-emirates-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "UAE JSON Fixture Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "UAE Regex Pack Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "UAE API Payload Auditor",
+        "href": "/en/united-arab-emirates/united-arab-emirates-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "UAE Form Field Auditor",
+        "href": "/en/united-arab-emirates/united-arab-emirates-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "UAE Locale Number Parser",
+        "href": "/en/united-arab-emirates/united-arab-emirates-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for United Arab Emirates."
+      },
+      {
+        "title": "UAE Calendar Week Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "UAE Company Suffix Normalizer",
+        "href": "/en/united-arab-emirates/united-arab-emirates-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "UAE Procurement Identifier Helper",
+        "href": "/en/united-arab-emirates/united-arab-emirates-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "UAE Locale Copy Checker",
+        "href": "/en/united-arab-emirates/united-arab-emirates-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "UAE Support Ticket Scrubber",
+        "href": "/en/united-arab-emirates/united-arab-emirates-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "UAE Integration Smoke Test Builder",
+        "href": "/en/united-arab-emirates/united-arab-emirates-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

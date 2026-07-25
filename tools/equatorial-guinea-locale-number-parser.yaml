@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: equatorial-guinea-locale-number-parser
+kind: tool
+module: validohub
+country: GQ
+category: localization
+status: active
+name:
+  en: "Equatoguinean Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Equatorial Guinea."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.equatorial-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 XAF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [equatorial-guinea-calendar-week-helper, equatorial-guinea-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Equatoguinean Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Equatorial Guinea."

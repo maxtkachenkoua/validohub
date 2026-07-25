@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mozambique-customs-declaration-helper
+kind: tool
+module: validohub
+country: MZ
+category: government
+status: active
+name:
+  en: "Mozambican Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mozambique-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "MZ123456789 HS 8471 1,234.56 MZN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mozambique-postal-tracking-helper, mozambique-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mozambican Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

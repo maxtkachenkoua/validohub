@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-address-normalizer
+kind: tool
+module: validohub
+country: SG
+category: address
+status: active
+name:
+  en: "Singapore Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "1 Raffles Place, Singapore 048616"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-address-transliteration-normalizer, singapore-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

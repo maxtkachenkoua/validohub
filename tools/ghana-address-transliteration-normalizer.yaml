@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ghana-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: GH
+category: address
+status: active
+name:
+  en: "Ghanaian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ghana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Central business district, Accra 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ghana-region-code-mapper, ghana-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ghanaian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

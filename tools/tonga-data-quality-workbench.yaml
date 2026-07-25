@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-data-quality-workbench
+kind: tool
+module: validohub
+country: TO
+category: developer-tools
+status: active
+name:
+  en: "Tongan Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TO\",\"taxNumber\":\"TO123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-json-fixture-generator, tonga-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

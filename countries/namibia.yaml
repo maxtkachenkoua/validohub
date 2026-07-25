@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: NA
+slug: namibia
+name:
+  en: Namibia
+region: Africa
+languages:
+  - en
+currency: NAD
+relatedCountries:
+  - ZA
+  - NG
+  - KE

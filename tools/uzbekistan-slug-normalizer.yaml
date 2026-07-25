@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-slug-normalizer
+kind: tool
+module: validohub
+country: UZ
+category: developer-tools
+status: active
+name:
+  en: "Uzbek Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Uzbekistan sample company Amir Temur Avenue 1, Tashkent 100000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-document-ocr-fixer, uzbekistan-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

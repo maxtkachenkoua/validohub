@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: afghanistan-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: AF
+category: tax
+status: active
+name:
+  en: "Afghan Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.afghanistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "TIN123456789 2026/07/21 1,234.56 AFN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [afghanistan-accounting-audit-trail-checklist-generator, afghanistan-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Afghan Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

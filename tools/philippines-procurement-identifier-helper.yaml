@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-procurement-identifier-helper
+kind: tool
+module: validohub
+country: PH
+category: government
+status: active
+name:
+  en: "Philippine Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "CS202012345 PO-2026-001 123-456-789-000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [philippines-accessibility-locale-copy-checker, philippines-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

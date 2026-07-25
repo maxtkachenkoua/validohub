@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: TR
+slug: turkey
+name:
+  en: Turkey
+region: Asia
+languages:
+  - tr
+currency: TRY
+relatedCountries:
+  - GE
+  - AZ
+  - JO

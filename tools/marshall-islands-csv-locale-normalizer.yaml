@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-csv-locale-normalizer
+kind: tool
+module: validohub
+country: MH
+category: developer-tools
+status: active
+name:
+  en: "Marshallese CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Marshall Islands decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 USD;07/24/2026;MH123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-slug-normalizer, marshall-islands-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Marshall Islands decimal, date, postal, phone, tax, and banking fields."

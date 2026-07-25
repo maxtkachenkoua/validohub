@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-regex-pack-helper
+kind: tool
+module: validohub
+country: BD
+category: developer-tools
+status: active
+name:
+  en: "Bangladeshi Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "NID boundary RJSC registration number postal code  145 1234567890123"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-api-payload-auditor, bangladesh-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-phone-number-validator
+kind: tool
+module: validohub
+country: PK
+category: address
+status: active
+name:
+  en: "Pakistani Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+92 300 1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-phone-e164-formatter, pakistan-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

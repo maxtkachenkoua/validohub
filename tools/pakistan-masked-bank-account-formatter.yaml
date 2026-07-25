@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-masked-bank-account-formatter
+kind: tool
+module: validohub
+country: PK
+category: finance
+status: active
+name:
+  en: "Pakistani Masked Bank Account Formatter"
+summary:
+  en: "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "SCBL 0000001123456702"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-currency-decimal-formatter, pakistan-tax-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Masked Bank Account Formatter | ValidoHub"
+  description:
+    en: "Create log-safe bank-account previews while preserving routing and account-tail evidence."

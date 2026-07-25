@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-business-register-readiness-helper
+kind: tool
+module: validohub
+country: BI
+category: government
+status: active
+name:
+  en: "Burundian business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "BI-REG-123456 BI123456789 Central business district, Gitega 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-id-card-format-helper, burundi-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

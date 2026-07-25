@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-json-fixture-generator
+kind: tool
+module: validohub
+country: VN
+category: developer-tools
+status: active
+name:
+  en: "Vietnamese JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"VN\",\"taxCode\":\"0101234567\",\"napas\":\"9704\",\"vietqr\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [vietnam-regex-pack-helper, vietnam-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

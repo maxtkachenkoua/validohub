@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-support-ticket-scrubber
+kind: tool
+module: validohub
+country: BD
+category: privacy
+status: active
+name:
+  en: "Bangladeshi Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1990123456789, 145 1234567890123, Motijheel Road 1, Dhaka 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-integration-smoke-test-builder, bangladesh-nid-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

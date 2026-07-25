@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SO
+slug: somalia
+name:
+  en: Somalia
+region: Africa
+languages:
+  - so
+currency: SOS
+relatedCountries:
+  - ZA
+  - NG
+  - KE

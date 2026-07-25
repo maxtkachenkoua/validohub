@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-data-quality-workbench
+kind: tool
+module: validohub
+country: LB
+category: developer-tools
+status: active
+name:
+  en: "Lebanese Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"LB\",\"vat\":\"1234567-601\",\"iban\":\"LB62099900000001001901229114\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lebanon-json-fixture-generator, lebanon-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

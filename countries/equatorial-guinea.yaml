@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: GQ
+slug: equatorial-guinea
+name:
+  en: Equatorial Guinea
+region: Africa
+languages:
+  - es
+currency: XAF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

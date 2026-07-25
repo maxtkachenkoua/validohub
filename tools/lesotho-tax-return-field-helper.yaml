@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lesotho-tax-return-field-helper
+kind: tool
+module: validohub
+country: LS
+category: tax
+status: active
+name:
+  en: "Basotho Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lesotho-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary; LS123456789; period 2026-07; 1,234.56 LSL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lesotho-invoice-number-helper, lesotho-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Basotho Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

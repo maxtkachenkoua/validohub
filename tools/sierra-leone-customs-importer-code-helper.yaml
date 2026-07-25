@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sierra-leone-customs-importer-code-helper
+kind: tool
+module: validohub
+country: SL
+category: national-identifiers
+status: active
+name:
+  en: "Sierra Leonean Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sierra-leone-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "SLSL-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sierra-leone-social-security-boundary-social-insurance-helper, sierra-leone-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sierra Leonean Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

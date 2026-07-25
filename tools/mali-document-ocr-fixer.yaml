@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mali-document-ocr-fixer
+kind: tool
+module: validohub
+country: ML
+category: documents
+status: active
+name:
+  en: "Malian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mali-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "ML-ID-123456 ML123456789 001 1234567890 1000 Bamako"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mali-privacy-redaction-helper, mali-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

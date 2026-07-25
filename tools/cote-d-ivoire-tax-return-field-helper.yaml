@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-tax-return-field-helper
+kind: tool
+module: validohub
+country: CI
+category: tax
+status: active
+name:
+  en: "Ivorian Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary; CI123456789; period 2026-07; 1,234.56 XOF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-invoice-number-helper, cote-d-ivoire-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

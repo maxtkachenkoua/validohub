@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: egypt-pii-masker
+kind: tool
+module: validohub
+country: EG
+category: privacy
+status: active
+name:
+  en: "Egyptian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.egypt-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "EG-ID-123456 +20 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [egypt-personal-data-fixture-generator, egypt-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Egyptian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

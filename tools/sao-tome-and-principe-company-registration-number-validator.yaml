@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-company-registration-number-validator
+kind: tool
+module: validohub
+country: ST
+category: national-identifiers
+status: active
+name:
+  en: "Sao Tomean company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "ST-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-tax-id-validator, sao-tome-and-principe-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

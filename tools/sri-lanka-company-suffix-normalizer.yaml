@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-company-suffix-normalizer
+kind: tool
+module: validohub
+country: LK
+category: developer-tools
+status: active
+name:
+  en: "Sri Lankan Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Sri Lanka Sample Holding Ltd PV123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-procurement-identifier-helper, sri-lanka-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

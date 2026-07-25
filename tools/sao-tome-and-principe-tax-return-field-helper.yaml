@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-tax-return-field-helper
+kind: tool
+module: validohub
+country: ST
+category: tax
+status: active
+name:
+  en: "Sao Tomean Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary; ST123456789; period 2026-07; 1,234.56 STN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-invoice-number-helper, sao-tome-and-principe-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

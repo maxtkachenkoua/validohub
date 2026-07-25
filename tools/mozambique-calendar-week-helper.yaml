@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mozambique-calendar-week-helper
+kind: tool
+module: validohub
+country: MZ
+category: localization
+status: active
+name:
+  en: "Mozambican Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mozambique-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "24/07/2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mozambique-company-suffix-normalizer, mozambique-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mozambican Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

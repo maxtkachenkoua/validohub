@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-procurement-identifier-helper
+kind: tool
+module: validohub
+country: MV
+category: government
+status: active
+name:
+  en: "Maldivian Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "C-012345 PO-2026-001 GST123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [maldives-accessibility-locale-copy-checker, maldives-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

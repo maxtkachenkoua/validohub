@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-company-registration-number-validator
+kind: tool
+module: validohub
+country: BI
+category: national-identifiers
+status: active
+name:
+  en: "Burundian company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "BI-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-tax-id-validator, burundi-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-payment-reference-helper
+kind: tool
+module: validohub
+country: BD
+category: finance
+status: active
+name:
+  en: "Bangladeshi BEFTN / NPSB reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "BEFTN / NPSB reference REF 2026-001 1,234.56 BDT"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-remittance-text-builder, bangladesh-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi BEFTN / NPSB reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

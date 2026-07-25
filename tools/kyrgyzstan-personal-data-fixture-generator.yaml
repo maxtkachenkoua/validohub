@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: KG
+category: privacy
+status: active
+name:
+  en: "Kyrgyz Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "20101200123456\\nChuy Avenue 1, Bishkek 720000\\n+996 700 123 456"
+    actions: [generate, validate, explain]
+related:
+  explicit: [kyrgyzstan-driving-licence-format-helper, kyrgyzstan-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: LB
+category: localization
+status: active
+name:
+  en: "Lebanese Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "national ID boundary input, postal code input, amount 1,234,567 LBP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lebanon-support-ticket-scrubber, lebanon-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

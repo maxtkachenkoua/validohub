@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: ST
+category: localization
+status: active
+name:
+  en: "Sao Tomean Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "national ID boundary input, postal/address code input, amount 1,234.56 STN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-support-ticket-scrubber, sao-tome-and-principe-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

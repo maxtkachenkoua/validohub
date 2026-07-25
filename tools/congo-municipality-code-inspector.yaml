@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: congo-municipality-code-inspector
+kind: tool
+module: validohub
+country: CG
+category: address
+status: active
+name:
+  en: "Congolese Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.congo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Central business district, Brazzaville 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [congo-phone-number-validator, congo-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Congolese Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

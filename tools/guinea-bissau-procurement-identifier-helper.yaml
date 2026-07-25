@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-procurement-identifier-helper
+kind: tool
+module: validohub
+country: GW
+category: government
+status: active
+name:
+  en: "Bissau-Guinean Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "GW-REG-123456 PO-2026-001 GW123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-bissau-accessibility-locale-copy-checker, guinea-bissau-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bissau-Guinean Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-document-ocr-fixer
+kind: tool
+module: validohub
+country: TW
+category: documents
+status: active
+name:
+  en: "Taiwanese Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "A123456789 12345675 004 123456789012 100 Taipei"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-privacy-redaction-helper, taiwan-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bhutan-calendar-week-helper
+kind: tool
+module: validohub
+country: BT
+category: localization
+status: active
+name:
+  en: "Bhutanese Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bhutan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "21/07/2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bhutan-company-suffix-normalizer, bhutan-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bhutanese Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-slug-normalizer
+kind: tool
+module: validohub
+country: TJ
+category: developer-tools
+status: active
+name:
+  en: "Tajik Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Tajikistan sample company Rudaki Avenue 1, Dushanbe 734000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-document-ocr-fixer, tajikistan-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

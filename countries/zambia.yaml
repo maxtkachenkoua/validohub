@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: ZM
+slug: zambia
+name:
+  en: Zambia
+region: Africa
+languages:
+  - en
+currency: ZMW
+relatedCountries:
+  - ZA
+  - NG
+  - KE

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: congo-residence-permit-format-helper
+kind: tool
+module: validohub
+country: CG
+category: documents
+status: active
+name:
+  en: "Congolese Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.congo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "CG PERMIT 2026 CG-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [congo-health-card-format-helper, congo-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Congolese Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

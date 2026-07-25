@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-pii-masker
+kind: tool
+module: validohub
+country: AE
+category: privacy
+status: active
+name:
+  en: "UAE PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "784-1990-1234567-1 +971 50 123 4567 033 1234567890123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-personal-data-fixture-generator, united-arab-emirates-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

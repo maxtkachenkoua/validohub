@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-64.63 -91.18 524.20 683.19" role="img">
+  <title>Ghana country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="7.26" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="gh" d="M399.091,513.179l0.968,2.273l2.524,3.959l1.4-0.052l3.819-2.171l-0.268-12.354l-2.957-0.864l-4.141,0.112L399.091,513.179L399.091,513.179z"/>
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-remittance-text-builder
+kind: tool
+module: validohub
+country: TJ
+category: finance
+status: active
+name:
+  en: "Tajik Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 123456789 1 234,56 TJS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-payment-reconciliation-helper, tajikistan-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

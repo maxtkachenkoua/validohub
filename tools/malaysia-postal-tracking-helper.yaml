@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-postal-tracking-helper
+kind: tool
+module: validohub
+country: MY
+category: logistics
+status: active
+name:
+  en: "Malaysian Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 50050 Kuala Lumpur"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-data-quality-workbench, malaysia-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

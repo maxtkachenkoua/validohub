@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: libya-address-normalizer
+kind: tool
+module: validohub
+country: LY
+category: address
+status: active
+name:
+  en: "Libyan Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.libya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Central business district, Tripoli 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [libya-address-transliteration-normalizer, libya-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Libyan Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

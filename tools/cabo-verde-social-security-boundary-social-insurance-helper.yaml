@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-social-security-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: CV
+category: national-identifiers
+status: active
+name:
+  en: "Cabo Verdean social security boundary Helper"
+summary:
+  en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "CV-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-company-onboarding-auditor, cabo-verde-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean social security boundary Helper | ValidoHub"
+  description:
+    en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

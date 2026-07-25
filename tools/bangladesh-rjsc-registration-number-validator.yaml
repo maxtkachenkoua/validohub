@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-rjsc-registration-number-validator
+kind: tool
+module: validohub
+country: BD
+category: national-identifiers
+status: active
+name:
+  en: "Bangladeshi RJSC registration number Validator"
+summary:
+  en: "Inspect RJSC registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "C-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-tax-id-validator, bangladesh-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi RJSC registration number Validator | ValidoHub"
+  description:
+    en: "Inspect RJSC registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

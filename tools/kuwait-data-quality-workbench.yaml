@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-data-quality-workbench
+kind: tool
+module: validohub
+country: KW
+category: developer-tools
+status: active
+name:
+  en: "Kuwaiti Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KW\",\"civilId\":\"290010112345\",\"iban\":\"KW81CBKU0000000000001234560101\",\"knet\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-json-fixture-generator, kuwait-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

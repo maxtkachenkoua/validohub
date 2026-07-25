@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nigeria-company-suffix-normalizer
+kind: tool
+module: validohub
+country: NG
+category: developer-tools
+status: active
+name:
+  en: "Nigerian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nigeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Nigeria Sample Holding Ltd NG-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nigeria-procurement-identifier-helper, nigeria-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nigerian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

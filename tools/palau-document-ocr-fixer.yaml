@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palau-document-ocr-fixer
+kind: tool
+module: validohub
+country: PW
+category: documents
+status: active
+name:
+  en: "Palauan Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "PW-ID-123456 PW123456789 001 1234567890 Ngerulmud, Melekeok"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palau-privacy-redaction-helper, palau-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palauan Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

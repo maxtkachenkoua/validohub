@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-88.19 -93.01 696.93 702.38" role="img">
+  <title>Turkmenistan country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.65" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="tm" d="M528.328,418.561l-0.535,2.273h-3.588v3.078l3.854,2.541l-1.191,3.482v1.608l1.599,0.269l2.127-2.811l4.789-1.07l10.234,3.881l0.129,2.809l5.714,0.536l6.38-6.698l-0.796-2.145l-4.253-0.935l-11.964-7.771l-0.535-2.81h-4.521l-1.997,3.753h-1.997L528.328,418.561L528.328,418.561z"/>
+  </g>
+</svg>

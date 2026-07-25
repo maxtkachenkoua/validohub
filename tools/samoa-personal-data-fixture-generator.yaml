@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: samoa-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: WS
+category: privacy
+status: active
+name:
+  en: "Samoan Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.samoa-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "WS-TIN-123456\\nBeach Road, Apia\\n+685 12345"
+    actions: [generate, validate, explain]
+related:
+  explicit: [samoa-driving-licence-format-helper, samoa-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Samoan Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

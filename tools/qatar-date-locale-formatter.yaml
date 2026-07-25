@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-date-locale-formatter
+kind: tool
+module: validohub
+country: QA
+category: localization
+status: active
+name:
+  en: "Qatari Date Locale Formatter"
+summary:
+  en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "21/07/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-csv-locale-normalizer, qatar-slug-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Date Locale Formatter | ValidoHub"
+  description:
+    en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."

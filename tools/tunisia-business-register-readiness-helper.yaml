@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tunisia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: TN
+category: government
+status: active
+name:
+  en: "Tunisian business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tunisia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "TN-REG-123456 TN123456789 Central business district, Tunis 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tunisia-id-card-format-helper, tunisia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tunisian business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

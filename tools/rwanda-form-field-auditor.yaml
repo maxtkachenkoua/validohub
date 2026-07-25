@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: rwanda-form-field-auditor
+kind: tool
+module: validohub
+country: RW
+category: developer-tools
+status: active
+name:
+  en: "Rwandan Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.rwanda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=RW123456789&postal=1000 Kigali&phone=+250 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [rwanda-locale-number-parser, rwanda-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Rwandan Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

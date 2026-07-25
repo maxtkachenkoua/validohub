@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lesotho-company-registration-number-validator
+kind: tool
+module: validohub
+country: LS
+category: national-identifiers
+status: active
+name:
+  en: "Basotho company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lesotho-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "LS-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lesotho-tax-id-validator, lesotho-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Basotho company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

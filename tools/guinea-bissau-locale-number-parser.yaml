@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-locale-number-parser
+kind: tool
+module: validohub
+country: GW
+category: localization
+status: active
+name:
+  en: "Bissau-Guinean Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Guinea-Bissau."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 XOF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-bissau-calendar-week-helper, guinea-bissau-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bissau-Guinean Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Guinea-Bissau."

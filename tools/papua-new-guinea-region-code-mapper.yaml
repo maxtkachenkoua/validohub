@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-region-code-mapper
+kind: tool
+module: validohub
+country: PG
+category: address
+status: active
+name:
+  en: "Papua New Guinean Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "Port Moresby NCD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-municipality-code-inspector, papua-new-guinea-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-municipality-code-inspector
+kind: tool
+module: validohub
+country: CF
+category: address
+status: active
+name:
+  en: "Central African Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Central business district, Bangui 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-phone-number-validator, central-african-republic-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

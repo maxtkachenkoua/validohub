@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-slug-normalizer
+kind: tool
+module: validohub
+country: SG
+category: developer-tools
+status: active
+name:
+  en: "Singapore Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Singapore sample company 1 Raffles Place, Singapore 048616"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-document-ocr-fixer, singapore-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

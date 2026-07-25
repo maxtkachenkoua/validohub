@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-cin-llpin-validator
+kind: tool
+module: validohub
+country: IN
+category: national-identifiers
+status: active
+name:
+  en: "Indian CIN / LLPIN Validator"
+summary:
+  en: "Inspect CIN / LLPIN structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "U72900DL2020PTC123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-tax-id-validator, india-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian CIN / LLPIN Validator | ValidoHub"
+  description:
+    en: "Inspect CIN / LLPIN structure, registry-style prefixes, control digits, and official lookup boundaries."

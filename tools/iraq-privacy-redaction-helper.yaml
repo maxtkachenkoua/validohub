@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iraq-privacy-redaction-helper
+kind: tool
+module: validohub
+country: IQ
+category: privacy
+status: active
+name:
+  en: "Iraqi personal-data privacy boundary Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iraq-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IQ\",\"tax\":\"TAX123456\",\"iban\":\"IQ20RRAF000000000123456789012\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iraq-pii-masker, iraq-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iraqi personal-data privacy boundary Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

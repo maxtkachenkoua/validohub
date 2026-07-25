@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ethiopia-csv-locale-normalizer
+kind: tool
+module: validohub
+country: ET
+category: developer-tools
+status: active
+name:
+  en: "Ethiopian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Ethiopia decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ethiopia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 ETB;24/07/2026;ET123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ethiopia-slug-normalizer, ethiopia-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ethiopian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Ethiopia decimal, date, postal, phone, tax, and banking fields."

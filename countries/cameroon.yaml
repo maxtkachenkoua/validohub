@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CM
+slug: cameroon
+name:
+  en: Cameroon
+region: Africa
+languages:
+  - fr
+currency: XAF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-form-field-auditor
+kind: tool
+module: validohub
+country: IR
+category: developer-tools
+status: active
+name:
+  en: "Iranian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=411111111111&postal=11369-12345 Tehran&phone=+98 912 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-locale-number-parser, iran-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

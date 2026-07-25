@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-support-ticket-scrubber
+kind: tool
+module: validohub
+country: CN
+category: privacy
+status: active
+name:
+  en: "Chinese Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 110101199003078877, 102100099996 6222020200001234567, 1 Chang An Avenue, Beijing 100000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-integration-smoke-test-builder, china-resident-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-business-register-readiness-helper
+kind: tool
+module: validohub
+country: TW
+category: government
+status: active
+name:
+  en: "Taiwanese MOEA business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated MOEA business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "12345675 12345675 Zhongxiao East Road 1, Taipei 100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-id-card-format-helper, taiwan-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese MOEA business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated MOEA business registry lookup or company registry workflow."

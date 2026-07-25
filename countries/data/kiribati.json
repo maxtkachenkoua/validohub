@@ -1,0 +1,642 @@
+{
+  "id": "kiribati",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/kiribati-outline.png",
+    "outlineAlt": "Kiribati country outline",
+    "mapSrc": "/assets/images/countries/kiribati-location.png",
+    "mapAlt": "World map with Kiribati location marker",
+    "mapMarker": {
+      "x": 92,
+      "y": 58,
+      "label": "Kiribati"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "kiribati",
+    "flag": "🇰🇮",
+    "name": "Kiribati",
+    "nativeName": "Kiribati",
+    "iso2": "KI",
+    "iso3": "KIR",
+    "continent": "Oceania",
+    "region": "Oceania",
+    "language": "English and Gilbertese",
+    "currency": "AUD",
+    "currencyName": "Australian dollar",
+    "status": "available",
+    "summary": "Premium Kiribati developer hub for national ID boundary, company registration number, tax boundary, island/locality, phone, bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "national ID boundary",
+      "company registration number",
+      "tax boundary",
+      "island/locality",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "domestic transfer reference",
+      "SWIFT/BIC",
+      "invoice reference",
+      "payment reconciliation"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "I-Kiribati national ID boundary Validator",
+      "I-Kiribati company registration number Validator",
+      "I-Kiribati tax boundary Validator",
+      "I-Kiribati Customs / Importer Code Helper",
+      "I-Kiribati social protection boundary Helper",
+      "I-Kiribati Company Onboarding Auditor",
+      "I-Kiribati business registry Readiness Helper",
+      "I-Kiribati ID Card Format Helper",
+      "I-Kiribati Passport Number Helper",
+      "I-Kiribati MRZ / Passport Parser",
+      "Kiribati Bank Account Validator",
+      "Kiribati Bank Account Fixture Generator",
+      "I-Kiribati Domestic Bank Account Inspector",
+      "I-Kiribati BIC / SWIFT Inspector",
+      "I-Kiribati Domestic Transfer Helper",
+      "I-Kiribati Direct Debit / Auto-Debit Mandate Helper",
+      "I-Kiribati bank transfer reference Reference Helper",
+      "I-Kiribati Remittance Text Builder",
+      "I-Kiribati Payment Reconciliation Helper",
+      "I-Kiribati Bank Statement Parser",
+      "I-Kiribati Masked Bank Account Formatter",
+      "I-Kiribati AUD Decimal Currency Formatter",
+      "I-Kiribati Tax Rate Sanity Helper",
+      "I-Kiribati Tax Return Field Helper",
+      "I-Kiribati Invoice Number Helper",
+      "I-Kiribati tax invoice Readiness Checker",
+      "I-Kiribati Tax Authority Handoff Helper",
+      "I-Kiribati Accounting Audit Trail Checklist Helper",
+      "I-Kiribati Postal Code Validator",
+      "I-Kiribati Address Normalizer",
+      "I-Kiribati Address Transliteration Normalizer",
+      "I-Kiribati Region / Province Code Mapper",
+      "I-Kiribati Municipality Code Inspector",
+      "I-Kiribati Phone Number Validator",
+      "I-Kiribati Phone E.164 Formatter",
+      "I-Kiribati Date Locale Formatter",
+      "I-Kiribati CSV Locale Normalizer",
+      "I-Kiribati Slug Normalizer",
+      "I-Kiribati Document OCR Fixer",
+      "I-Kiribati privacy boundary Redaction Helper",
+      "I-Kiribati PII Masker",
+      "I-Kiribati Personal Data Fixture Helper",
+      "I-Kiribati Driving Licence Format Helper",
+      "I-Kiribati Residence Permit Format Helper",
+      "I-Kiribati Health Card Format Helper",
+      "I-Kiribati Vehicle Plate Inspector",
+      "I-Kiribati VIN Validator",
+      "I-Kiribati Vehicle Data Redaction Helper",
+      "I-Kiribati Customs Declaration Helper",
+      "I-Kiribati Postal Tracking Helper",
+      "I-Kiribati Data Quality Workbench",
+      "I-Kiribati JSON Fixture Helper",
+      "I-Kiribati Regex Pack Helper",
+      "I-Kiribati API Payload Auditor",
+      "I-Kiribati Form Field Auditor",
+      "I-Kiribati Locale Number Parser",
+      "I-Kiribati Calendar Week Helper",
+      "I-Kiribati Company Suffix Normalizer",
+      "I-Kiribati Procurement Identifier Helper",
+      "I-Kiribati Locale Copy Checker",
+      "I-Kiribati Support Ticket Scrubber",
+      "I-Kiribati Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 92,
+      "y": 58
+    },
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "COMPANY",
+      "BANK",
+      "ISLAND",
+      "PHONE"
+    ]
+  },
+  "hub": {
+    "flag": "🇰🇮",
+    "name": "Kiribati",
+    "badge": "Premium Kiribati developer suite",
+    "description": "Developer intelligence and browser-only workbenches for i-kiribati identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Kiribati",
+      "population": "approximately 0.13M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "South Tarawa",
+      "continent": "Oceania",
+      "region": "Micronesia",
+      "languages": "English and Gilbertese",
+      "currency": "Australian dollar",
+      "currencyCode": "AUD",
+      "callingCode": "+686",
+      "internetTld": ".ki",
+      "drivingSide": "Right",
+      "iso2": "KI",
+      "iso3": "KIR",
+      "isoNumeric": "296",
+      "locale": "en-KI",
+      "icuLocale": "en_KI",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Kiribati",
+      "postalCodeFormat": "island/locality",
+      "primaryTimeZone": "Oceania/Abidjan (GMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "999 / 994 / 993",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "en-KI",
+      "cldrLocale": "en_KI",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type I",
+      "voltage": "240V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "kiribati",
+      "outlineLabel": "Kiribati outline",
+      "mapLabel": "Kiribati in the world",
+      "continentBadge": "Oceania",
+      "flagLabel": "Kiribati flag",
+      "heroAccentPrimary": "206 17 38",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "0 63 135"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax boundary and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Kiribati registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /kiribati/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-I-Kiribati examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Kiribati.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax boundary",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "national ID boundary, company registration number, tax boundary, island/locality, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en-KI / en_KI; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "AUD amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, company registration number, island/locality, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type I",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "240V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "999 / 994 / 993",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "COMPANY",
+      "BANK",
+      "ISLAND",
+      "PHONE"
+    ],
+    "routes": [
+      {
+        "title": "I-Kiribati national ID boundary Validator",
+        "href": "/en/kiribati/kiribati-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "I-Kiribati company registration number Validator",
+        "href": "/en/kiribati/kiribati-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "I-Kiribati tax boundary Validator",
+        "href": "/en/kiribati/kiribati-tax-id-validator/",
+        "text": "Normalize tax boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "I-Kiribati Customs / Importer Code Helper",
+        "href": "/en/kiribati/kiribati-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "I-Kiribati social protection boundary Helper",
+        "href": "/en/kiribati/kiribati-social-protection-boundary-social-insurance-helper/",
+        "text": "Split social protection boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "I-Kiribati Company Onboarding Auditor",
+        "href": "/en/kiribati/kiribati-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "I-Kiribati business registry Readiness Helper",
+        "href": "/en/kiribati/kiribati-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+      },
+      {
+        "title": "I-Kiribati ID Card Format Helper",
+        "href": "/en/kiribati/kiribati-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "I-Kiribati Passport Number Helper",
+        "href": "/en/kiribati/kiribati-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "I-Kiribati MRZ / Passport Parser",
+        "href": "/en/kiribati/kiribati-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Kiribati Bank Account Validator",
+        "href": "/en/kiribati/kiribati-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Kiribati Bank Account Fixture Generator",
+        "href": "/en/kiribati/kiribati-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "I-Kiribati Domestic Bank Account Inspector",
+        "href": "/en/kiribati/kiribati-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "I-Kiribati BIC / SWIFT Inspector",
+        "href": "/en/kiribati/kiribati-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Kiribati banking integrations."
+      },
+      {
+        "title": "I-Kiribati Domestic Transfer Helper",
+        "href": "/en/kiribati/kiribati-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "I-Kiribati Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/kiribati/kiribati-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "I-Kiribati bank transfer reference Reference Helper",
+        "href": "/en/kiribati/kiribati-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "I-Kiribati Remittance Text Builder",
+        "href": "/en/kiribati/kiribati-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "I-Kiribati Payment Reconciliation Helper",
+        "href": "/en/kiribati/kiribati-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "I-Kiribati Bank Statement Parser",
+        "href": "/en/kiribati/kiribati-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "I-Kiribati Masked Bank Account Formatter",
+        "href": "/en/kiribati/kiribati-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "I-Kiribati AUD Decimal Currency Formatter",
+        "href": "/en/kiribati/kiribati-currency-decimal-formatter/",
+        "text": "Normalize AUD amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "I-Kiribati Tax Rate Sanity Helper",
+        "href": "/en/kiribati/kiribati-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "I-Kiribati Tax Return Field Helper",
+        "href": "/en/kiribati/kiribati-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "I-Kiribati Invoice Number Helper",
+        "href": "/en/kiribati/kiribati-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "I-Kiribati tax invoice Readiness Checker",
+        "href": "/en/kiribati/kiribati-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "I-Kiribati Tax Authority Handoff Helper",
+        "href": "/en/kiribati/kiribati-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "I-Kiribati Accounting Audit Trail Checklist Helper",
+        "href": "/en/kiribati/kiribati-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "I-Kiribati Postal Code Validator",
+        "href": "/en/kiribati/kiribati-postal-code-validator/",
+        "text": "Validate island/locality shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "I-Kiribati Address Normalizer",
+        "href": "/en/kiribati/kiribati-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "I-Kiribati Address Transliteration Normalizer",
+        "href": "/en/kiribati/kiribati-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "I-Kiribati Region / Province Code Mapper",
+        "href": "/en/kiribati/kiribati-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "I-Kiribati Municipality Code Inspector",
+        "href": "/en/kiribati/kiribati-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "I-Kiribati Phone Number Validator",
+        "href": "/en/kiribati/kiribati-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "I-Kiribati Phone E.164 Formatter",
+        "href": "/en/kiribati/kiribati-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "I-Kiribati Date Locale Formatter",
+        "href": "/en/kiribati/kiribati-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "I-Kiribati CSV Locale Normalizer",
+        "href": "/en/kiribati/kiribati-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Kiribati decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "I-Kiribati Slug Normalizer",
+        "href": "/en/kiribati/kiribati-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "I-Kiribati Document OCR Fixer",
+        "href": "/en/kiribati/kiribati-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "I-Kiribati privacy boundary Redaction Helper",
+        "href": "/en/kiribati/kiribati-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "I-Kiribati PII Masker",
+        "href": "/en/kiribati/kiribati-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "I-Kiribati Personal Data Fixture Helper",
+        "href": "/en/kiribati/kiribati-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "I-Kiribati Driving Licence Format Helper",
+        "href": "/en/kiribati/kiribati-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "I-Kiribati Residence Permit Format Helper",
+        "href": "/en/kiribati/kiribati-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "I-Kiribati Health Card Format Helper",
+        "href": "/en/kiribati/kiribati-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "I-Kiribati Vehicle Plate Inspector",
+        "href": "/en/kiribati/kiribati-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "I-Kiribati VIN Validator",
+        "href": "/en/kiribati/kiribati-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "I-Kiribati Vehicle Data Redaction Helper",
+        "href": "/en/kiribati/kiribati-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "I-Kiribati Customs Declaration Helper",
+        "href": "/en/kiribati/kiribati-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "I-Kiribati Postal Tracking Helper",
+        "href": "/en/kiribati/kiribati-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "I-Kiribati Data Quality Workbench",
+        "href": "/en/kiribati/kiribati-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "I-Kiribati JSON Fixture Helper",
+        "href": "/en/kiribati/kiribati-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "I-Kiribati Regex Pack Helper",
+        "href": "/en/kiribati/kiribati-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "I-Kiribati API Payload Auditor",
+        "href": "/en/kiribati/kiribati-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "I-Kiribati Form Field Auditor",
+        "href": "/en/kiribati/kiribati-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "I-Kiribati Locale Number Parser",
+        "href": "/en/kiribati/kiribati-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Kiribati."
+      },
+      {
+        "title": "I-Kiribati Calendar Week Helper",
+        "href": "/en/kiribati/kiribati-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "I-Kiribati Company Suffix Normalizer",
+        "href": "/en/kiribati/kiribati-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "I-Kiribati Procurement Identifier Helper",
+        "href": "/en/kiribati/kiribati-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "I-Kiribati Locale Copy Checker",
+        "href": "/en/kiribati/kiribati-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "I-Kiribati Support Ticket Scrubber",
+        "href": "/en/kiribati/kiribati-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "I-Kiribati Integration Smoke Test Builder",
+        "href": "/en/kiribati/kiribati-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

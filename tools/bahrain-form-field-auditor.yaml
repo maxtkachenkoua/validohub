@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-form-field-auditor
+kind: tool
+module: validohub
+country: BH
+category: developer-tools
+status: active
+name:
+  en: "Bahraini Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=220012345600002&postal=Block 316 Manama&phone=+973 3600 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-locale-number-parser, bahrain-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

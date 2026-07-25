@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-document-ocr-fixer
+kind: tool
+module: validohub
+country: TH
+category: documents
+status: active
+name:
+  en: "Thai Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "1101700203451 0105559123456 002 1234567890 10110 Bangkok"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-privacy-redaction-helper, thailand-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

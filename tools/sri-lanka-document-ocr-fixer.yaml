@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-document-ocr-fixer
+kind: tool
+module: validohub
+country: LK
+category: documents
+status: active
+name:
+  en: "Sri Lankan Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "199012345678 104567890 7010 1234567890 00100 Colombo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-privacy-redaction-helper, sri-lanka-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

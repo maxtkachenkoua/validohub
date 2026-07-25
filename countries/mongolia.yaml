@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MN
+slug: mongolia
+name:
+  en: Mongolia
+region: Asia
+languages:
+  - mn
+currency: MNT
+relatedCountries:
+  - CN
+  - KR
+  - JP

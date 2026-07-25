@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vanuatu-tax-id-boundary-validator
+kind: tool
+module: validohub
+country: VU
+category: national-identifiers
+status: active
+name:
+  en: "Vanuatuan tax ID boundary Validator"
+summary:
+  en: "Validate tax ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vanuatu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "VU-TIN-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vanuatu-company-registration-number-validator, vanuatu-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vanuatuan tax ID boundary Validator | ValidoHub"
+  description:
+    en: "Validate tax ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

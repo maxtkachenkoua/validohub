@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liberia-pii-masker
+kind: tool
+module: validohub
+country: LR
+category: privacy
+status: active
+name:
+  en: "Liberian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liberia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "LR-ID-123456 +231 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liberia-personal-data-fixture-generator, liberia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liberian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

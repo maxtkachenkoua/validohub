@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burkina-faso-company-suffix-normalizer
+kind: tool
+module: validohub
+country: BF
+category: developer-tools
+status: active
+name:
+  en: "Burkinabe Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burkina-faso-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Burkina Faso Sample Holding Ltd BF-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burkina-faso-procurement-identifier-helper, burkina-faso-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burkinabe Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vanuatu-json-fixture-generator
+kind: tool
+module: validohub
+country: VU
+category: developer-tools
+status: active
+name:
+  en: "Vanuatuan JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.vanuatu-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"VU\",\"taxNumber\":\"VU123456789\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [vanuatu-regex-pack-helper, vanuatu-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vanuatuan JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-support-ticket-scrubber
+kind: tool
+module: validohub
+country: CI
+category: privacy
+status: active
+name:
+  en: "Ivorian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent CI-ID-123456, 001 1234567890, Central business district, Yamoussoukro 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-integration-smoke-test-builder, cote-d-ivoire-national-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

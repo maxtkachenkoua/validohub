@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-business-register-readiness-helper
+kind: tool
+module: validohub
+country: SB
+category: government
+status: active
+name:
+  en: "Solomon Islands company registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated company registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "SB-REG-123456 SB123456789 Mendana Avenue, Honiara"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-id-card-format-helper, solomon-islands-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands company registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated company registry lookup or company registry workflow."

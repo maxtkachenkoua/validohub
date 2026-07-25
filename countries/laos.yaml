@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: LA
+slug: laos
+name:
+  en: Laos
+region: Asia
+languages:
+  - lo
+currency: LAK
+relatedCountries:
+  - TH
+  - VN
+  - KH

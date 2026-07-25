@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CN
+slug: china
+name:
+  en: China
+region: Asia
+languages:
+  - zh
+currency: CNY
+relatedCountries:
+  - JP
+  - KR
+  - SG

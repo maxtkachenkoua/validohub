@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: comoros-pii-masker
+kind: tool
+module: validohub
+country: KM
+category: privacy
+status: active
+name:
+  en: "Comorian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.comoros-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "KM-ID-123456 +269 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [comoros-personal-data-fixture-generator, comoros-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Comorian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

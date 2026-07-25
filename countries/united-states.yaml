@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: US
+slug: united-states
+name:
+  en: "United States"
+region: North America
+languages:
+  - en
+currency: USD
+relatedCountries:
+  - CA
+  - MX
+  - BS

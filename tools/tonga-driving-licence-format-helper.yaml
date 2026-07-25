@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-driving-licence-format-helper
+kind: tool
+module: validohub
+country: TO
+category: documents
+status: active
+name:
+  en: "Tongan Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "TO-TIN-123456 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-residence-permit-format-helper, tonga-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

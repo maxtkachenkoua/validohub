@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-invoice-number-helper
+kind: tool
+module: validohub
+country: QA
+category: tax
+status: active
+name:
+  en: "Qatari Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 TC1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-e-invoicing-readiness-checker, qatar-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

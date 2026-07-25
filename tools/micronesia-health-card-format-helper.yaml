@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: micronesia-health-card-format-helper
+kind: tool
+module: validohub
+country: FM
+category: documents
+status: active
+name:
+  en: "Micronesian Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.micronesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "FM-ID-123456 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [micronesia-vehicle-plate-inspector, micronesia-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Micronesian Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

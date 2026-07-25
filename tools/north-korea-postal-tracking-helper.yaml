@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-postal-tracking-helper
+kind: tool
+module: validohub
+country: KP
+category: logistics
+status: active
+name:
+  en: "North Korean Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 999093 Pyongyang"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-data-quality-workbench, north-korea-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

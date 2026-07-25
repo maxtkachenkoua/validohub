@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-customs-importer-code-helper
+kind: tool
+module: validohub
+country: SG
+category: national-identifiers
+status: active
+name:
+  en: "Singapore Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "SG201912345K"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-cpf-boundary-social-insurance-helper, singapore-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

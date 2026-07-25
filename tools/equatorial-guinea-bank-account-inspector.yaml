@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: equatorial-guinea-bank-account-inspector
+kind: tool
+module: validohub
+country: GQ
+category: finance
+status: active
+name:
+  en: "Equatoguinean Domestic Bank Account Inspector"
+summary:
+  en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.equatorial-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [equatorial-guinea-bic-swift-inspector, equatorial-guinea-domestic-transfer-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Equatoguinean Domestic Bank Account Inspector | ValidoHub"
+  description:
+    en: "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."

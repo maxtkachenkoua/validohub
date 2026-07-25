@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-form-field-auditor
+kind: tool
+module: validohub
+country: GE
+category: developer-tools
+status: active
+name:
+  en: "Georgian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=405123456&postal=0105 Tbilisi&phone=+995 599 123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-locale-number-parser, georgia-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

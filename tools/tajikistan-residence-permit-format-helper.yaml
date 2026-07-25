@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-residence-permit-format-helper
+kind: tool
+module: validohub
+country: TJ
+category: documents
+status: active
+name:
+  en: "Tajik Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "TJ PERMIT 2026 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-health-card-format-helper, tajikistan-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

@@ -1,0 +1,642 @@
+{
+  "id": "zimbabwe",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/zimbabwe-outline.png",
+    "outlineAlt": "Zimbabwe country outline",
+    "mapSrc": "/assets/images/countries/zimbabwe-location.png",
+    "mapAlt": "World map with Zimbabwe location marker",
+    "mapMarker": {
+      "x": 45,
+      "y": 55,
+      "label": "Zimbabwe"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "zimbabwe",
+    "flag": "🇿🇼",
+    "name": "Zimbabwe",
+    "nativeName": "Zimbabwe",
+    "iso2": "ZW",
+    "iso3": "ZWE",
+    "continent": "Africa",
+    "region": "Africa",
+    "language": "English, Shona, and Ndebele",
+    "currency": "ZWL",
+    "currencyName": "Zimbabwean dollar",
+    "status": "available",
+    "summary": "Premium Zimbabwe developer hub for National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone, bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "National ID boundary",
+      "company registration number",
+      "tax number / VAT boundary",
+      "postal/address code",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "domestic transfer reference",
+      "SWIFT/BIC",
+      "invoice reference",
+      "payment reconciliation"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Zimbabwean national ID boundary Validator",
+      "Zimbabwean company registration number Validator",
+      "Zimbabwean tax number / VAT boundary Validator",
+      "Zimbabwean Customs / Importer Code Helper",
+      "Zimbabwean social security boundary Helper",
+      "Zimbabwean Company Onboarding Auditor",
+      "Zimbabwean business registry Readiness Helper",
+      "Zimbabwean ID Card Format Helper",
+      "Zimbabwean Passport Number Helper",
+      "Zimbabwean MRZ / Passport Parser",
+      "Zimbabwe Bank Account Validator",
+      "Zimbabwe Bank Account Fixture Generator",
+      "Zimbabwean Domestic Bank Account Inspector",
+      "Zimbabwean BIC / SWIFT Inspector",
+      "Zimbabwean Domestic Transfer Helper",
+      "Zimbabwean Direct Debit / Auto-Debit Mandate Helper",
+      "Zimbabwean bank transfer / payment reference Reference Helper",
+      "Zimbabwean Remittance Text Builder",
+      "Zimbabwean Payment Reconciliation Helper",
+      "Zimbabwean Bank Statement Parser",
+      "Zimbabwean Masked Bank Account Formatter",
+      "Zimbabwean ZWL Decimal Currency Formatter",
+      "Zimbabwean Tax Rate Sanity Helper",
+      "Zimbabwean Tax Return Field Helper",
+      "Zimbabwean Invoice Number Helper",
+      "Zimbabwean tax invoice Readiness Checker",
+      "Zimbabwean Tax Authority Handoff Helper",
+      "Zimbabwean Accounting Audit Trail Checklist Helper",
+      "Zimbabwean Postal Code Validator",
+      "Zimbabwean Address Normalizer",
+      "Zimbabwean Address Transliteration Normalizer",
+      "Zimbabwean Region / Province Code Mapper",
+      "Zimbabwean Municipality Code Inspector",
+      "Zimbabwean Phone Number Validator",
+      "Zimbabwean Phone E.164 Formatter",
+      "Zimbabwean Date Locale Formatter",
+      "Zimbabwean CSV Locale Normalizer",
+      "Zimbabwean Slug Normalizer",
+      "Zimbabwean Document OCR Fixer",
+      "Zimbabwean data protection / privacy boundary Redaction Helper",
+      "Zimbabwean PII Masker",
+      "Zimbabwean Personal Data Fixture Helper",
+      "Zimbabwean Driving Licence Format Helper",
+      "Zimbabwean Residence Permit Format Helper",
+      "Zimbabwean Health Card Format Helper",
+      "Zimbabwean Vehicle Plate Inspector",
+      "Zimbabwean VIN Validator",
+      "Zimbabwean Vehicle Data Redaction Helper",
+      "Zimbabwean Customs Declaration Helper",
+      "Zimbabwean Postal Tracking Helper",
+      "Zimbabwean Data Quality Workbench",
+      "Zimbabwean JSON Fixture Helper",
+      "Zimbabwean Regex Pack Helper",
+      "Zimbabwean API Payload Auditor",
+      "Zimbabwean Form Field Auditor",
+      "Zimbabwean Locale Number Parser",
+      "Zimbabwean Calendar Week Helper",
+      "Zimbabwean Company Suffix Normalizer",
+      "Zimbabwean Procurement Identifier Helper",
+      "Zimbabwean Locale Copy Checker",
+      "Zimbabwean Support Ticket Scrubber",
+      "Zimbabwean Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 45,
+      "y": 55
+    },
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇿🇼",
+    "name": "Zimbabwe",
+    "badge": "Premium Zimbabwe developer suite",
+    "description": "Developer intelligence and browser-only workbenches for zimbabwean identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Zimbabwe",
+      "population": "approximately 17M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Harare",
+      "continent": "Africa",
+      "region": "Southern Africa",
+      "languages": "English, Shona, and Ndebele",
+      "currency": "Zimbabwean dollar",
+      "currencyCode": "ZWL",
+      "callingCode": "+263",
+      "internetTld": ".zw",
+      "drivingSide": "Right",
+      "iso2": "ZW",
+      "iso3": "ZWE",
+      "isoNumeric": "716",
+      "locale": "en-ZW",
+      "icuLocale": "en_ZW",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Zimbabwe",
+      "postalCodeFormat": "postal/address code",
+      "primaryTimeZone": "Africa/Abidjan (GMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "999 / 112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "en-ZW",
+      "cldrLocale": "en_ZW",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type D / Type G",
+      "voltage": "240V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "zimbabwe",
+      "outlineLabel": "Zimbabwe outline",
+      "mapLabel": "Zimbabwe in the world",
+      "continentBadge": "Africa",
+      "flagLabel": "Zimbabwe flag",
+      "heroAccentPrimary": "0 151 57",
+      "heroAccentSecondary": "252 227 0",
+      "heroAccentTertiary": "228 0 43"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax number / VAT boundary and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Zimbabwe registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /zimbabwe/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Zimbabwean examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Zimbabwe.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax number / VAT boundary",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "data protection / privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en-ZW / en_ZW; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "ZWL amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, company registration number, postal/address code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type D / Type G",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "240V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "999 / 112",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Zimbabwean national ID boundary Validator",
+        "href": "/en/zimbabwe/zimbabwe-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Zimbabwean company registration number Validator",
+        "href": "/en/zimbabwe/zimbabwe-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Zimbabwean tax number / VAT boundary Validator",
+        "href": "/en/zimbabwe/zimbabwe-tax-id-validator/",
+        "text": "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Zimbabwean Customs / Importer Code Helper",
+        "href": "/en/zimbabwe/zimbabwe-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Zimbabwean social security boundary Helper",
+        "href": "/en/zimbabwe/zimbabwe-social-security-boundary-social-insurance-helper/",
+        "text": "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Zimbabwean Company Onboarding Auditor",
+        "href": "/en/zimbabwe/zimbabwe-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Zimbabwean business registry Readiness Helper",
+        "href": "/en/zimbabwe/zimbabwe-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+      },
+      {
+        "title": "Zimbabwean ID Card Format Helper",
+        "href": "/en/zimbabwe/zimbabwe-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Zimbabwean Passport Number Helper",
+        "href": "/en/zimbabwe/zimbabwe-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Zimbabwean MRZ / Passport Parser",
+        "href": "/en/zimbabwe/zimbabwe-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Zimbabwe Bank Account Validator",
+        "href": "/en/zimbabwe/zimbabwe-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Zimbabwe Bank Account Fixture Generator",
+        "href": "/en/zimbabwe/zimbabwe-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Zimbabwean Domestic Bank Account Inspector",
+        "href": "/en/zimbabwe/zimbabwe-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Zimbabwean BIC / SWIFT Inspector",
+        "href": "/en/zimbabwe/zimbabwe-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Zimbabwe banking integrations."
+      },
+      {
+        "title": "Zimbabwean Domestic Transfer Helper",
+        "href": "/en/zimbabwe/zimbabwe-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Zimbabwean Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/zimbabwe/zimbabwe-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Zimbabwean bank transfer / payment reference Reference Helper",
+        "href": "/en/zimbabwe/zimbabwe-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Zimbabwean Remittance Text Builder",
+        "href": "/en/zimbabwe/zimbabwe-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Zimbabwean Payment Reconciliation Helper",
+        "href": "/en/zimbabwe/zimbabwe-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Zimbabwean Bank Statement Parser",
+        "href": "/en/zimbabwe/zimbabwe-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Zimbabwean Masked Bank Account Formatter",
+        "href": "/en/zimbabwe/zimbabwe-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Zimbabwean ZWL Decimal Currency Formatter",
+        "href": "/en/zimbabwe/zimbabwe-currency-decimal-formatter/",
+        "text": "Normalize ZWL amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Zimbabwean Tax Rate Sanity Helper",
+        "href": "/en/zimbabwe/zimbabwe-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Zimbabwean Tax Return Field Helper",
+        "href": "/en/zimbabwe/zimbabwe-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Zimbabwean Invoice Number Helper",
+        "href": "/en/zimbabwe/zimbabwe-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Zimbabwean tax invoice Readiness Checker",
+        "href": "/en/zimbabwe/zimbabwe-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Zimbabwean Tax Authority Handoff Helper",
+        "href": "/en/zimbabwe/zimbabwe-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Zimbabwean Accounting Audit Trail Checklist Helper",
+        "href": "/en/zimbabwe/zimbabwe-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Zimbabwean Postal Code Validator",
+        "href": "/en/zimbabwe/zimbabwe-postal-code-validator/",
+        "text": "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Zimbabwean Address Normalizer",
+        "href": "/en/zimbabwe/zimbabwe-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Zimbabwean Address Transliteration Normalizer",
+        "href": "/en/zimbabwe/zimbabwe-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Zimbabwean Region / Province Code Mapper",
+        "href": "/en/zimbabwe/zimbabwe-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Zimbabwean Municipality Code Inspector",
+        "href": "/en/zimbabwe/zimbabwe-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Zimbabwean Phone Number Validator",
+        "href": "/en/zimbabwe/zimbabwe-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Zimbabwean Phone E.164 Formatter",
+        "href": "/en/zimbabwe/zimbabwe-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Zimbabwean Date Locale Formatter",
+        "href": "/en/zimbabwe/zimbabwe-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Zimbabwean CSV Locale Normalizer",
+        "href": "/en/zimbabwe/zimbabwe-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Zimbabwe decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Zimbabwean Slug Normalizer",
+        "href": "/en/zimbabwe/zimbabwe-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Zimbabwean Document OCR Fixer",
+        "href": "/en/zimbabwe/zimbabwe-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Zimbabwean data protection / privacy boundary Redaction Helper",
+        "href": "/en/zimbabwe/zimbabwe-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Zimbabwean PII Masker",
+        "href": "/en/zimbabwe/zimbabwe-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Zimbabwean Personal Data Fixture Helper",
+        "href": "/en/zimbabwe/zimbabwe-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Zimbabwean Driving Licence Format Helper",
+        "href": "/en/zimbabwe/zimbabwe-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Zimbabwean Residence Permit Format Helper",
+        "href": "/en/zimbabwe/zimbabwe-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Zimbabwean Health Card Format Helper",
+        "href": "/en/zimbabwe/zimbabwe-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Zimbabwean Vehicle Plate Inspector",
+        "href": "/en/zimbabwe/zimbabwe-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Zimbabwean VIN Validator",
+        "href": "/en/zimbabwe/zimbabwe-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Zimbabwean Vehicle Data Redaction Helper",
+        "href": "/en/zimbabwe/zimbabwe-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Zimbabwean Customs Declaration Helper",
+        "href": "/en/zimbabwe/zimbabwe-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Zimbabwean Postal Tracking Helper",
+        "href": "/en/zimbabwe/zimbabwe-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Zimbabwean Data Quality Workbench",
+        "href": "/en/zimbabwe/zimbabwe-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Zimbabwean JSON Fixture Helper",
+        "href": "/en/zimbabwe/zimbabwe-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Zimbabwean Regex Pack Helper",
+        "href": "/en/zimbabwe/zimbabwe-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Zimbabwean API Payload Auditor",
+        "href": "/en/zimbabwe/zimbabwe-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Zimbabwean Form Field Auditor",
+        "href": "/en/zimbabwe/zimbabwe-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Zimbabwean Locale Number Parser",
+        "href": "/en/zimbabwe/zimbabwe-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Zimbabwe."
+      },
+      {
+        "title": "Zimbabwean Calendar Week Helper",
+        "href": "/en/zimbabwe/zimbabwe-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Zimbabwean Company Suffix Normalizer",
+        "href": "/en/zimbabwe/zimbabwe-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Zimbabwean Procurement Identifier Helper",
+        "href": "/en/zimbabwe/zimbabwe-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Zimbabwean Locale Copy Checker",
+        "href": "/en/zimbabwe/zimbabwe-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Zimbabwean Support Ticket Scrubber",
+        "href": "/en/zimbabwe/zimbabwe-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Zimbabwean Integration Smoke Test Builder",
+        "href": "/en/zimbabwe/zimbabwe-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

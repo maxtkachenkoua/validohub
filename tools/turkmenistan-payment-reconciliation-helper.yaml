@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: TM
+category: finance
+status: active
+name:
+  en: "Turkmen Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "21.07.2026; 1 234,56 TMT; 3901012345678901; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkmenistan-bank-statement-parser, turkmenistan-masked-bank-account-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

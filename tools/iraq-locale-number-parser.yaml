@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iraq-locale-number-parser
+kind: tool
+module: validohub
+country: IQ
+category: localization
+status: active
+name:
+  en: "Iraqi Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Iraq."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iraq-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234,567 IQD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iraq-calendar-week-helper, iraq-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iraqi Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Iraq."

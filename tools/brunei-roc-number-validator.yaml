@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-roc-number-validator
+kind: tool
+module: validohub
+country: BN
+category: national-identifiers
+status: active
+name:
+  en: "Bruneian ROC number Validator"
+summary:
+  en: "Inspect ROC number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "RC123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [brunei-tax-id-validator, brunei-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian ROC number Validator | ValidoHub"
+  description:
+    en: "Inspect ROC number structure, registry-style prefixes, control digits, and official lookup boundaries."

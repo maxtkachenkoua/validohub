@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-sudan-procurement-identifier-helper
+kind: tool
+module: validohub
+country: SS
+category: government
+status: active
+name:
+  en: "South Sudanese Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "SS-REG-123456 PO-2026-001 SS123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-sudan-accessibility-locale-copy-checker, south-sudan-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Sudanese Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

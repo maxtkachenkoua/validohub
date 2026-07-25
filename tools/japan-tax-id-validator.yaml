@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-tax-id-validator
+kind: tool
+module: validohub
+country: JP
+category: national-identifiers
+status: active
+name:
+  en: "Japanese Consumption tax / T-number Validator"
+summary:
+  en: "Normalize Consumption tax / T-number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "T1234567890123"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-customs-importer-code-helper, japan-basic-pension-number-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Consumption tax / T-number Validator | ValidoHub"
+  description:
+    en: "Normalize Consumption tax / T-number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-company-onboarding-auditor
+kind: tool
+module: validohub
+country: MH
+category: developer-tools
+status: active
+name:
+  en: "Marshallese Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for business corporation number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MH\",\"company\":\"MH-REG-123456\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-business-register-readiness-helper, marshall-islands-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for business corporation number, VAT, address, banking, and official registry handoff readiness."

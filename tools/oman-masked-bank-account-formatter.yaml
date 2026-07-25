@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: oman-masked-bank-account-formatter
+kind: tool
+module: validohub
+country: OM
+category: finance
+status: active
+name:
+  en: "Omani Masked Bank Account Formatter"
+summary:
+  en: "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.oman-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "0001 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [oman-currency-decimal-formatter, oman-tax-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Omani Masked Bank Account Formatter | ValidoHub"
+  description:
+    en: "Create log-safe bank-account previews while preserving routing and account-tail evidence."

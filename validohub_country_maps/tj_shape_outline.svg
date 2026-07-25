@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-89.51 -89.03 733.93 733.39" role="img">
+  <title>Tajikistan country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="10.15" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="tj" d="M559.74,422.234l3.552-4.408h1.34l0.467,0.984l-1.642,1.192v0.985l1.081,0.777l5.195,0.312l1.693-0.727l0.77,0.154l0.52,1.66l3.085,0.312l1.548,3.267l-0.467,0.985l-0.614,0.053l-0.612-1.245l-1.341-0.104l-2.315,0.312l-0.156,2.18l-2.316-0.155l0.104-2.75l-1.694-1.658l-2.575,2.125l0.053,1.4l-2.265,0.778h-1.341l0.104-4.824L559.74,422.234L559.74,422.234z"/>
+  </g>
+</svg>

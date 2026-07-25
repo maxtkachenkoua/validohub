@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: armenia-bank-account-validator
+kind: tool
+module: validohub
+country: AM
+category: finance
+status: active
+name:
+  en: "Armenia Bank Account Validator"
+summary:
+  en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.armenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "001 123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [armenia-bank-account-fixture-generator, armenia-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Armenia Bank Account Validator | ValidoHub"
+  description:
+    en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."

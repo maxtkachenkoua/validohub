@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tunisia-bank-statement-parser
+kind: tool
+module: validohub
+country: TN
+category: finance
+status: active
+name:
+  en: "Tunisian Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tunisia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "24/07/2026; 1,234.56 TND; 001 1234567890; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tunisia-masked-bank-account-formatter, tunisia-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tunisian Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."

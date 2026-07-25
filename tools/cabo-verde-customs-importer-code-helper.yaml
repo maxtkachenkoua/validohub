@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-customs-importer-code-helper
+kind: tool
+module: validohub
+country: CV
+category: national-identifiers
+status: active
+name:
+  en: "Cabo Verdean Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "CVCV-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-social-security-boundary-social-insurance-helper, cabo-verde-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

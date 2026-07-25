@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: liberia-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: LR
+category: address
+status: active
+name:
+  en: "Liberian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.liberia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Central business district, Monrovia 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [liberia-region-code-mapper, liberia-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Liberian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

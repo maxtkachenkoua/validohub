@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vanuatu-slug-normalizer
+kind: tool
+module: validohub
+country: VU
+category: developer-tools
+status: active
+name:
+  en: "Vanuatuan Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vanuatu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Vanuatu sample company Lini Highway, Port Vila"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vanuatu-document-ocr-fixer, vanuatu-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vanuatuan Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

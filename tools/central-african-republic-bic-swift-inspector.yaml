@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-bic-swift-inspector
+kind: tool
+module: validohub
+country: CF
+category: finance
+status: active
+name:
+  en: "Central African BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Central African Republic banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDCF2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-domestic-transfer-helper, central-african-republic-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Central African Republic banking integrations."

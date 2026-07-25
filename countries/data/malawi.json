@@ -1,0 +1,642 @@
+{
+  "id": "malawi",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/malawi-outline.png",
+    "outlineAlt": "Malawi country outline",
+    "mapSrc": "/assets/images/countries/malawi-location.png",
+    "mapAlt": "World map with Malawi location marker",
+    "mapMarker": {
+      "x": 45,
+      "y": 55,
+      "label": "Malawi"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "malawi",
+    "flag": "🇲🇼",
+    "name": "Malawi",
+    "nativeName": "Malawi",
+    "iso2": "MW",
+    "iso3": "MWI",
+    "continent": "Africa",
+    "region": "Africa",
+    "language": "English and Chichewa",
+    "currency": "MWK",
+    "currencyName": "Malawian kwacha",
+    "status": "available",
+    "summary": "Premium Malawi developer hub for National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone, bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "National ID boundary",
+      "company registration number",
+      "tax number / VAT boundary",
+      "postal/address code",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "domestic transfer reference",
+      "SWIFT/BIC",
+      "invoice reference",
+      "payment reconciliation"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Malawian national ID boundary Validator",
+      "Malawian company registration number Validator",
+      "Malawian tax number / VAT boundary Validator",
+      "Malawian Customs / Importer Code Helper",
+      "Malawian social security boundary Helper",
+      "Malawian Company Onboarding Auditor",
+      "Malawian business registry Readiness Helper",
+      "Malawian ID Card Format Helper",
+      "Malawian Passport Number Helper",
+      "Malawian MRZ / Passport Parser",
+      "Malawi Bank Account Validator",
+      "Malawi Bank Account Fixture Generator",
+      "Malawian Domestic Bank Account Inspector",
+      "Malawian BIC / SWIFT Inspector",
+      "Malawian Domestic Transfer Helper",
+      "Malawian Direct Debit / Auto-Debit Mandate Helper",
+      "Malawian bank transfer / payment reference Reference Helper",
+      "Malawian Remittance Text Builder",
+      "Malawian Payment Reconciliation Helper",
+      "Malawian Bank Statement Parser",
+      "Malawian Masked Bank Account Formatter",
+      "Malawian MWK Decimal Currency Formatter",
+      "Malawian Tax Rate Sanity Helper",
+      "Malawian Tax Return Field Helper",
+      "Malawian Invoice Number Helper",
+      "Malawian tax invoice Readiness Checker",
+      "Malawian Tax Authority Handoff Helper",
+      "Malawian Accounting Audit Trail Checklist Helper",
+      "Malawian Postal Code Validator",
+      "Malawian Address Normalizer",
+      "Malawian Address Transliteration Normalizer",
+      "Malawian Region / Province Code Mapper",
+      "Malawian Municipality Code Inspector",
+      "Malawian Phone Number Validator",
+      "Malawian Phone E.164 Formatter",
+      "Malawian Date Locale Formatter",
+      "Malawian CSV Locale Normalizer",
+      "Malawian Slug Normalizer",
+      "Malawian Document OCR Fixer",
+      "Malawian data protection / privacy boundary Redaction Helper",
+      "Malawian PII Masker",
+      "Malawian Personal Data Fixture Helper",
+      "Malawian Driving Licence Format Helper",
+      "Malawian Residence Permit Format Helper",
+      "Malawian Health Card Format Helper",
+      "Malawian Vehicle Plate Inspector",
+      "Malawian VIN Validator",
+      "Malawian Vehicle Data Redaction Helper",
+      "Malawian Customs Declaration Helper",
+      "Malawian Postal Tracking Helper",
+      "Malawian Data Quality Workbench",
+      "Malawian JSON Fixture Helper",
+      "Malawian Regex Pack Helper",
+      "Malawian API Payload Auditor",
+      "Malawian Form Field Auditor",
+      "Malawian Locale Number Parser",
+      "Malawian Calendar Week Helper",
+      "Malawian Company Suffix Normalizer",
+      "Malawian Procurement Identifier Helper",
+      "Malawian Locale Copy Checker",
+      "Malawian Support Ticket Scrubber",
+      "Malawian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 45,
+      "y": 55
+    },
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇲🇼",
+    "name": "Malawi",
+    "badge": "Premium Malawi developer suite",
+    "description": "Developer intelligence and browser-only workbenches for malawian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Malawi",
+      "population": "approximately 21M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Lilongwe",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "languages": "English and Chichewa",
+      "currency": "Malawian kwacha",
+      "currencyCode": "MWK",
+      "callingCode": "+265",
+      "internetTld": ".mw",
+      "drivingSide": "Right",
+      "iso2": "MW",
+      "iso3": "MWI",
+      "isoNumeric": "454",
+      "locale": "en-MW",
+      "icuLocale": "en_MW",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Malawi",
+      "postalCodeFormat": "postal/address code",
+      "primaryTimeZone": "Africa/Abidjan (GMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "997 / 998 / 999",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "en-MW",
+      "cldrLocale": "en_MW",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type G",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "malawi",
+      "outlineLabel": "Malawi outline",
+      "mapLabel": "Malawi in the world",
+      "continentBadge": "Africa",
+      "flagLabel": "Malawi flag",
+      "heroAccentPrimary": "0 0 0",
+      "heroAccentSecondary": "206 17 38",
+      "heroAccentTertiary": "51 158 53"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax number / VAT boundary and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Malawi registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /malawi/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Malawian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Malawi.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax number / VAT boundary",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "data protection / privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en-MW / en_MW; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "MWK amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, company registration number, postal/address code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type G",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "997 / 998 / 999",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Malawian national ID boundary Validator",
+        "href": "/en/malawi/malawi-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Malawian company registration number Validator",
+        "href": "/en/malawi/malawi-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Malawian tax number / VAT boundary Validator",
+        "href": "/en/malawi/malawi-tax-id-validator/",
+        "text": "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Malawian Customs / Importer Code Helper",
+        "href": "/en/malawi/malawi-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Malawian social security boundary Helper",
+        "href": "/en/malawi/malawi-social-security-boundary-social-insurance-helper/",
+        "text": "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Malawian Company Onboarding Auditor",
+        "href": "/en/malawi/malawi-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Malawian business registry Readiness Helper",
+        "href": "/en/malawi/malawi-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+      },
+      {
+        "title": "Malawian ID Card Format Helper",
+        "href": "/en/malawi/malawi-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Malawian Passport Number Helper",
+        "href": "/en/malawi/malawi-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Malawian MRZ / Passport Parser",
+        "href": "/en/malawi/malawi-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Malawi Bank Account Validator",
+        "href": "/en/malawi/malawi-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Malawi Bank Account Fixture Generator",
+        "href": "/en/malawi/malawi-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Malawian Domestic Bank Account Inspector",
+        "href": "/en/malawi/malawi-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Malawian BIC / SWIFT Inspector",
+        "href": "/en/malawi/malawi-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Malawi banking integrations."
+      },
+      {
+        "title": "Malawian Domestic Transfer Helper",
+        "href": "/en/malawi/malawi-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Malawian Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/malawi/malawi-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Malawian bank transfer / payment reference Reference Helper",
+        "href": "/en/malawi/malawi-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Malawian Remittance Text Builder",
+        "href": "/en/malawi/malawi-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Malawian Payment Reconciliation Helper",
+        "href": "/en/malawi/malawi-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Malawian Bank Statement Parser",
+        "href": "/en/malawi/malawi-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Malawian Masked Bank Account Formatter",
+        "href": "/en/malawi/malawi-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Malawian MWK Decimal Currency Formatter",
+        "href": "/en/malawi/malawi-currency-decimal-formatter/",
+        "text": "Normalize MWK amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Malawian Tax Rate Sanity Helper",
+        "href": "/en/malawi/malawi-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Malawian Tax Return Field Helper",
+        "href": "/en/malawi/malawi-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Malawian Invoice Number Helper",
+        "href": "/en/malawi/malawi-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Malawian tax invoice Readiness Checker",
+        "href": "/en/malawi/malawi-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Malawian Tax Authority Handoff Helper",
+        "href": "/en/malawi/malawi-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Malawian Accounting Audit Trail Checklist Helper",
+        "href": "/en/malawi/malawi-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Malawian Postal Code Validator",
+        "href": "/en/malawi/malawi-postal-code-validator/",
+        "text": "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Malawian Address Normalizer",
+        "href": "/en/malawi/malawi-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Malawian Address Transliteration Normalizer",
+        "href": "/en/malawi/malawi-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Malawian Region / Province Code Mapper",
+        "href": "/en/malawi/malawi-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Malawian Municipality Code Inspector",
+        "href": "/en/malawi/malawi-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Malawian Phone Number Validator",
+        "href": "/en/malawi/malawi-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Malawian Phone E.164 Formatter",
+        "href": "/en/malawi/malawi-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Malawian Date Locale Formatter",
+        "href": "/en/malawi/malawi-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Malawian CSV Locale Normalizer",
+        "href": "/en/malawi/malawi-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Malawi decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Malawian Slug Normalizer",
+        "href": "/en/malawi/malawi-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Malawian Document OCR Fixer",
+        "href": "/en/malawi/malawi-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Malawian data protection / privacy boundary Redaction Helper",
+        "href": "/en/malawi/malawi-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Malawian PII Masker",
+        "href": "/en/malawi/malawi-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Malawian Personal Data Fixture Helper",
+        "href": "/en/malawi/malawi-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Malawian Driving Licence Format Helper",
+        "href": "/en/malawi/malawi-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Malawian Residence Permit Format Helper",
+        "href": "/en/malawi/malawi-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Malawian Health Card Format Helper",
+        "href": "/en/malawi/malawi-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Malawian Vehicle Plate Inspector",
+        "href": "/en/malawi/malawi-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Malawian VIN Validator",
+        "href": "/en/malawi/malawi-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Malawian Vehicle Data Redaction Helper",
+        "href": "/en/malawi/malawi-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Malawian Customs Declaration Helper",
+        "href": "/en/malawi/malawi-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Malawian Postal Tracking Helper",
+        "href": "/en/malawi/malawi-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Malawian Data Quality Workbench",
+        "href": "/en/malawi/malawi-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Malawian JSON Fixture Helper",
+        "href": "/en/malawi/malawi-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Malawian Regex Pack Helper",
+        "href": "/en/malawi/malawi-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Malawian API Payload Auditor",
+        "href": "/en/malawi/malawi-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Malawian Form Field Auditor",
+        "href": "/en/malawi/malawi-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Malawian Locale Number Parser",
+        "href": "/en/malawi/malawi-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Malawi."
+      },
+      {
+        "title": "Malawian Calendar Week Helper",
+        "href": "/en/malawi/malawi-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Malawian Company Suffix Normalizer",
+        "href": "/en/malawi/malawi-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Malawian Procurement Identifier Helper",
+        "href": "/en/malawi/malawi-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Malawian Locale Copy Checker",
+        "href": "/en/malawi/malawi-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Malawian Support Ticket Scrubber",
+        "href": "/en/malawi/malawi-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Malawian Integration Smoke Test Builder",
+        "href": "/en/malawi/malawi-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tanzania-national-id-boundary-validator
+kind: tool
+module: validohub
+country: TZ
+category: national-identifiers
+status: active
+name:
+  en: "Tanzanian national ID boundary Validator"
+summary:
+  en: "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tanzania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "TZ-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tanzania-company-registration-number-validator, tanzania-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tanzanian national ID boundary Validator | ValidoHub"
+  description:
+    en: "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

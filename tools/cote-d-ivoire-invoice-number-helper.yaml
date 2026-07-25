@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-invoice-number-helper
+kind: tool
+module: validohub
+country: CI
+category: tax
+status: active
+name:
+  en: "Ivorian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 CI123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-e-invoicing-readiness-checker, cote-d-ivoire-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

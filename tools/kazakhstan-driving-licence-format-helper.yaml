@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-driving-licence-format-helper
+kind: tool
+module: validohub
+country: KZ
+category: documents
+status: active
+name:
+  en: "Kazakh Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "900101300123 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-residence-permit-format-helper, kazakhstan-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

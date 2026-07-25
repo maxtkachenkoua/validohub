@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: timor-leste-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: TL
+category: localization
+status: active
+name:
+  en: "Timorese Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.timor-leste-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "ID boundary input, postal code input, amount 1,234.56 USD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [timor-leste-support-ticket-scrubber, timor-leste-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Timorese Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

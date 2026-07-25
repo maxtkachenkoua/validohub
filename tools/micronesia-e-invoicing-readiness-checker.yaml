@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: micronesia-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: FM
+category: tax
+status: active
+name:
+  en: "Micronesian invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.micronesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"FM\",\"taxNumber\":\"FM123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [micronesia-tax-authority-handoff-helper, micronesia-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Micronesian invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

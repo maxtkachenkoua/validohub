@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: KH
+category: government
+status: active
+name:
+  en: "Cambodian MOC business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated MOC business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "00012345 K001-123456789 Preah Monivong Blvd 1, Phnom Penh 12000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-id-card-format-helper, cambodia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian MOC business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated MOC business registry lookup or company registry workflow."

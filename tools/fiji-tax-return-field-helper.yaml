@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-tax-return-field-helper
+kind: tool
+module: validohub
+country: FJ
+category: tax
+status: active
+name:
+  en: "Fijian Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "FRCS tax / VAT boundary; FJ123456789; period 2026-07; 1,234.56 FJD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-invoice-number-helper, fiji-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

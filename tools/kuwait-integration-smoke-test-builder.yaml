@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: KW
+category: developer-tools
+status: active
+name:
+  en: "Kuwaiti Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KW\",\"civilId\":\"290010112345\",\"iban\":\"KW81CBKU0000000000001234560101\",\"knet\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [kuwait-civil-id-boundary-validator, kuwait-commercial-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

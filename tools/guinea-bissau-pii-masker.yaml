@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-pii-masker
+kind: tool
+module: validohub
+country: GW
+category: privacy
+status: active
+name:
+  en: "Bissau-Guinean PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "GW-ID-123456 +245 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-bissau-personal-data-fixture-generator, guinea-bissau-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bissau-Guinean PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

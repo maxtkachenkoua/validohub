@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: angola-support-ticket-scrubber
+kind: tool
+module: validohub
+country: AO
+category: privacy
+status: active
+name:
+  en: "Angolan Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.angola-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent AO-ID-123456, 001 1234567890, Central business district, Luanda 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [angola-integration-smoke-test-builder, angola-national-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Angolan Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

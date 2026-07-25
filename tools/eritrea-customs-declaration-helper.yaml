@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: eritrea-customs-declaration-helper
+kind: tool
+module: validohub
+country: ER
+category: government
+status: active
+name:
+  en: "Eritrean Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.eritrea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "ER123456789 HS 8471 1,234.56 ERN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [eritrea-postal-tracking-helper, eritrea-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Eritrean Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-juristic-person-number-validator
+kind: tool
+module: validohub
+country: TH
+category: national-identifiers
+status: active
+name:
+  en: "Thai Juristic Person number Validator"
+summary:
+  en: "Inspect Juristic Person number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "0105559123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-tax-id-validator, thailand-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai Juristic Person number Validator | ValidoHub"
+  description:
+    en: "Inspect Juristic Person number structure, registry-style prefixes, control digits, and official lookup boundaries."

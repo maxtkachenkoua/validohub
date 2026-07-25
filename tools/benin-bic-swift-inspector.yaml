@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: benin-bic-swift-inspector
+kind: tool
+module: validohub
+country: BJ
+category: finance
+status: active
+name:
+  en: "Beninese BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Benin banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.benin-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDBJ2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [benin-domestic-transfer-helper, benin-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Beninese BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Benin banking integrations."

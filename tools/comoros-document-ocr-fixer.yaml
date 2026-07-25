@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: comoros-document-ocr-fixer
+kind: tool
+module: validohub
+country: KM
+category: documents
+status: active
+name:
+  en: "Comorian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.comoros-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "KM-ID-123456 KM123456789 001 1234567890 1000 Moroni"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [comoros-privacy-redaction-helper, comoros-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Comorian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

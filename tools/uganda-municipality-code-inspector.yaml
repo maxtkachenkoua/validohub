@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uganda-municipality-code-inspector
+kind: tool
+module: validohub
+country: UG
+category: address
+status: active
+name:
+  en: "Ugandan Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uganda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Central business district, Kampala 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uganda-phone-number-validator, uganda-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ugandan Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-privacy-redaction-helper
+kind: tool
+module: validohub
+country: TR
+category: privacy
+status: active
+name:
+  en: "Turkish KVKK privacy Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TR\",\"tckn\":\"10000000146\",\"iban\":\"TR330006100519786457841326\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-pii-masker, turkey-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish KVKK privacy Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

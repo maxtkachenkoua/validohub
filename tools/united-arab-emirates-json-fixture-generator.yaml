@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-json-fixture-generator
+kind: tool
+module: validohub
+country: AE
+category: developer-tools
+status: active
+name:
+  en: "UAE JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AE\",\"trn\":\"100123456700003\",\"iban\":\"AE070331234567890123456\",\"wps\":\"salary-file\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [united-arab-emirates-regex-pack-helper, united-arab-emirates-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

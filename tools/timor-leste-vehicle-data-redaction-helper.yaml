@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: timor-leste-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: TL
+category: transport
+status: active
+name:
+  en: "Timorese Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.timor-leste-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "TL 12-345 WVWZZZ1JZXW000001 TL-1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [timor-leste-customs-declaration-helper, timor-leste-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Timorese Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

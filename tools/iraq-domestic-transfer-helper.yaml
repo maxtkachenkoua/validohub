@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iraq-domestic-transfer-helper
+kind: tool
+module: validohub
+country: IQ
+category: finance
+status: active
+name:
+  en: "Iraqi Domestic Transfer Helper"
+summary:
+  en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iraq-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "RRAF 123456789012\\n1,234,567 IQD\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iraq-direct-debit-mandate-helper, iraq-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iraqi Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."

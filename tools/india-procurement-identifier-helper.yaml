@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-procurement-identifier-helper
+kind: tool
+module: validohub
+country: IN
+category: government
+status: active
+name:
+  en: "Indian Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "U72900DL2020PTC123456 PO-2026-001 27ABCDE1234F1Z5"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-accessibility-locale-copy-checker, india-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

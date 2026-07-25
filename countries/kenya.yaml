@@ -1,0 +1,12 @@
+schemaVersion: 1
+code: KE
+slug: kenya
+name:
+  en: Kenya
+region: Africa
+languages:
+  - en
+currency: KES
+relatedCountries:
+  - ZA
+  - NG

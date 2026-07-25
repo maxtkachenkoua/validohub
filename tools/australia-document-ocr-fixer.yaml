@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-document-ocr-fixer
+kind: tool
+module: validohub
+country: AU
+category: documents
+status: active
+name:
+  en: "Australian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "123 456 782 51824753556 062-000 12345678 2600 Canberra ACT"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-privacy-redaction-helper, australia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

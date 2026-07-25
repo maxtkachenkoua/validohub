@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-tin-boundary-validator
+kind: tool
+module: validohub
+country: FJ
+category: national-identifiers
+status: active
+name:
+  en: "Fijian TIN boundary Validator"
+summary:
+  en: "Validate TIN boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "FJ-TIN-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-company-registration-number-validator, fiji-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian TIN boundary Validator | ValidoHub"
+  description:
+    en: "Validate TIN boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

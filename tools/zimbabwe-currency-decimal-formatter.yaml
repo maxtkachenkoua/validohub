@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zimbabwe-currency-decimal-formatter
+kind: tool
+module: validohub
+country: ZW
+category: finance
+status: active
+name:
+  en: "Zimbabwean ZWL Decimal Currency Formatter"
+summary:
+  en: "Normalize ZWL amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zimbabwe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 ZWL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zimbabwe-tax-rate-sanity-helper, zimbabwe-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zimbabwean ZWL Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize ZWL amount strings, decimal separators, grouping, and API-safe numeric previews."

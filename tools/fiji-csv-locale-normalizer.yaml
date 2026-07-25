@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-csv-locale-normalizer
+kind: tool
+module: validohub
+country: FJ
+category: developer-tools
+status: active
+name:
+  en: "Fijian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Fiji decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 FJD;24/07/2026;FJ123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-slug-normalizer, fiji-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Fiji decimal, date, postal, phone, tax, and banking fields."

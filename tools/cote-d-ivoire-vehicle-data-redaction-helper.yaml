@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: CI
+category: transport
+status: active
+name:
+  en: "Ivorian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "CI 1234 WVWZZZ1JZXW000001 CI-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-customs-declaration-helper, cote-d-ivoire-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

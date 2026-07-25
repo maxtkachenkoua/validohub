@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-csv-locale-normalizer
+kind: tool
+module: validohub
+country: PK
+category: developer-tools
+status: active
+name:
+  en: "Pakistani CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Pakistan decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 PKR;21/07/2026;1234567-8"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-slug-normalizer, pakistan-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Pakistan decimal, date, postal, phone, tax, and banking fields."

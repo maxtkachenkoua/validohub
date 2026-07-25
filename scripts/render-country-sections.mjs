@@ -225,6 +225,12 @@ const CIVIC_CITY_PROFILES = {
     ['Oistins', 'approx. 0.002M', 'OI'],
     ['Holetown', 'approx. 0.001M', 'HT']
   ],
+  bahrain: [
+    ['Manama', 'approx. 0.2M city / 0.7M metro', 'MA'],
+    ['Riffa', 'approx. 0.1M', 'RI'],
+    ['Muharraq', 'approx. 0.2M governorate', 'MU'],
+    ['Hamad Town', 'approx. 0.1M', 'HT']
+  ],
   'trinidad-and-tobago': [
     ['Chaguanas', 'approx. 0.08M', 'CH'],
     ['San Fernando', 'approx. 0.05M', 'SF'],
@@ -333,17 +339,173 @@ const CIVIC_CITY_PROFILES = {
     ['Hafnarfjordur', 'approx. 0.03M', 'HF'],
     ['Akureyri', 'approx. 0.02M', 'AK']
   ],
+  bangladesh: [
+    ['Dhaka', 'approx. 10M city / 23M metro', 'DH'],
+    ['Chattogram', 'approx. 5M metro', 'CG'],
+    ['Khulna', 'approx. 1M metro', 'KH'],
+    ['Sylhet', 'approx. 0.7M metro', 'SY']
+  ],
+  china: [
+    ['Shanghai', 'approx. 25M municipality', 'SH'],
+    ['Beijing', 'approx. 22M municipality', 'BJ'],
+    ['Guangzhou', 'approx. 19M municipality', 'GZ'],
+    ['Shenzhen', 'approx. 18M municipality', 'SZ']
+  ],
+  cambodia: [
+    ['Phnom Penh', 'approx. 2.3M metro', 'PP'],
+    ['Siem Reap', 'approx. 0.25M', 'SR'],
+    ['Battambang', 'approx. 0.2M', 'BT'],
+    ['Sihanoukville', 'approx. 0.1M', 'SV']
+  ],
+  afghanistan: [
+    ['Kabul', 'approx. 4.5M', 'KA'],
+    ['Kandahar', 'approx. 0.6M', 'KD'],
+    ['Herat', 'approx. 0.6M', 'HE'],
+    ['Mazar-i-Sharif', 'approx. 0.5M', 'MS']
+  ],
+  armenia: [
+    ['Yerevan', 'approx. 1.1M', 'YE'],
+    ['Gyumri', 'approx. 0.1M', 'GY'],
+    ['Vanadzor', 'approx. 0.08M', 'VA'],
+    ['Vagharshapat', 'approx. 0.05M', 'VG']
+  ],
+  azerbaijan: [
+    ['Baku', 'approx. 2.3M city / 3M metro', 'BA'],
+    ['Ganja', 'approx. 0.3M', 'GJ'],
+    ['Sumqayit', 'approx. 0.3M', 'SQ'],
+    ['Mingachevir', 'approx. 0.1M', 'MI']
+  ],
+  bhutan: [
+    ['Thimphu', 'approx. 0.1M', 'TH'],
+    ['Phuntsholing', 'approx. 0.03M', 'PH'],
+    ['Punakha', 'approx. 0.02M district center', 'PU'],
+    ['Paro', 'approx. 0.01M', 'PA']
+  ],
+  brunei: [
+    ['Bandar Seri Begawan', 'approx. 0.1M metro', 'BS'],
+    ['Kuala Belait', 'approx. 0.03M', 'KB'],
+    ['Seria', 'approx. 0.02M', 'SE'],
+    ['Tutong', 'approx. 0.02M', 'TU']
+  ],
+  georgia: [
+    ['Tbilisi', 'approx. 1.2M', 'TB'],
+    ['Batumi', 'approx. 0.2M', 'BT'],
+    ['Kutaisi', 'approx. 0.1M', 'KU'],
+    ['Rustavi', 'approx. 0.1M', 'RU']
+  ],
+  iran: [
+    ['Tehran', 'approx. 9.5M city / 16M metro', 'TE'],
+    ['Mashhad', 'approx. 3.4M', 'MA'],
+    ['Isfahan', 'approx. 2.2M', 'IS'],
+    ['Shiraz', 'approx. 1.9M', 'SH']
+  ],
+  iraq: [
+    ['Baghdad', 'approx. 7M city / 9M metro', 'BG'],
+    ['Mosul', 'approx. 1.7M', 'MO'],
+    ['Basra', 'approx. 1.4M', 'BA'],
+    ['Erbil', 'approx. 0.9M', 'ER']
+  ],
+  kazakhstan: [
+    ['Almaty', 'approx. 2.2M', 'AL'],
+    ['Astana', 'approx. 1.4M', 'AS'],
+    ['Shymkent', 'approx. 1.2M', 'SH'],
+    ['Karaganda', 'approx. 0.5M', 'KA']
+  ],
+  lebanon: [
+    ['Beirut', 'approx. 2M metro', 'BE'],
+    ['Tripoli', 'approx. 0.2M city / 0.5M metro', 'TR'],
+    ['Sidon', 'approx. 0.2M metro', 'SI'],
+    ['Tyre', 'approx. 0.1M', 'TY']
+  ],
+  maldives: [
+    ['Male', 'approx. 0.2M metro', 'MA'],
+    ['Addu City', 'approx. 0.03M', 'AD'],
+    ['Fuvahmulah', 'approx. 0.01M', 'FU'],
+    ['Kulhudhuffushi', 'approx. 0.01M', 'KU']
+  ],
+  'north-korea': [
+    ['Pyongyang', 'approx. 3M', 'PY'],
+    ['Hamhung', 'approx. 0.8M', 'HH'],
+    ['Chongjin', 'approx. 0.6M', 'CJ'],
+    ['Nampo', 'approx. 0.4M', 'NP']
+  ],
+  palestine: [
+    ['Gaza City', 'approx. 0.7M', 'GZ'],
+    ['Hebron', 'approx. 0.2M', 'HB'],
+    ['Nablus', 'approx. 0.2M', 'NB'],
+    ['Ramallah', 'approx. 0.04M city / 0.4M governorate', 'RA']
+  ],
+  syria: [
+    ['Damascus', 'approx. 2M city / 5M metro', 'DA'],
+    ['Aleppo', 'approx. 2M', 'AL'],
+    ['Homs', 'approx. 0.8M', 'HO'],
+    ['Latakia', 'approx. 0.4M', 'LA']
+  ],
+  taiwan: [
+    ['New Taipei', 'approx. 4M', 'NT'],
+    ['Taichung', 'approx. 2.8M', 'TC'],
+    ['Kaohsiung', 'approx. 2.7M', 'KH'],
+    ['Taipei', 'approx. 2.5M', 'TP']
+  ],
+  'timor-leste': [
+    ['Dili', 'approx. 0.3M', 'DI'],
+    ['Baucau', 'approx. 0.02M', 'BA'],
+    ['Maliana', 'approx. 0.02M', 'MA'],
+    ['Suai', 'approx. 0.01M', 'SU']
+  ],
+  turkey: [
+    ['Istanbul', 'approx. 16M', 'IS'],
+    ['Ankara', 'approx. 5.8M province', 'AN'],
+    ['Izmir', 'approx. 4.5M province', 'IZ'],
+    ['Bursa', 'approx. 3.2M province', 'BU']
+  ],
+  yemen: [
+    ['Sanaa', 'approx. 3M metro', 'SA'],
+    ['Aden', 'approx. 1M', 'AD'],
+    ['Taiz', 'approx. 0.7M', 'TA'],
+    ['Al Hudaydah', 'approx. 0.6M', 'HU']
+  ],
   ireland: [
     ['Dublin', 'approx. 0.6M city / 1.3M county', 'DU'],
     ['Cork', 'approx. 0.2M', 'CK'],
     ['Limerick', 'approx. 0.1M', 'LI'],
     ['Galway', 'approx. 0.1M', 'GA']
   ],
+  india: [
+    ['Mumbai', 'approx. 12M city / 21M metro', 'MU'],
+    ['Delhi', 'approx. 11M city / 33M metro', 'DL'],
+    ['Bengaluru', 'approx. 8M city / 14M metro', 'BL'],
+    ['Hyderabad', 'approx. 7M city / 11M metro', 'HY']
+  ],
+  indonesia: [
+    ['Jakarta', 'approx. 10M city / 32M metro', 'JK'],
+    ['Surabaya', 'approx. 3M', 'SB'],
+    ['Bandung', 'approx. 2.5M', 'BD'],
+    ['Medan', 'approx. 2.4M', 'MD']
+  ],
+  israel: [
+    ['Jerusalem', 'approx. 1.0M', 'JR'],
+    ['Tel Aviv-Yafo', 'approx. 0.5M city / 4M metro', 'TA'],
+    ['Haifa', 'approx. 0.3M', 'HF'],
+    ['Rishon LeZion', 'approx. 0.3M', 'RL']
+  ],
+  jordan: [
+    ['Amman', 'approx. 4M metro', 'AM'],
+    ['Zarqa', 'approx. 1.5M governorate', 'ZA'],
+    ['Irbid', 'approx. 0.6M city / 2M governorate', 'IR'],
+    ['Aqaba', 'approx. 0.2M', 'AQ']
+  ],
   italy: [
     ['Rome', 'approx. 2.8M', 'RM'],
     ['Milan', 'approx. 1.4M', 'MI'],
     ['Naples', 'approx. 0.9M', 'NA'],
     ['Turin', 'approx. 0.8M', 'TO']
+  ],
+  japan: [
+    ['Tokyo', 'approx. 14M prefecture / 37M metro', 'TY'],
+    ['Yokohama', 'approx. 3.8M', 'YK'],
+    ['Osaka', 'approx. 2.8M city / 19M metro', 'OS'],
+    ['Nagoya', 'approx. 2.3M', 'NG']
   ],
   latvia: [
     ['Riga', 'approx. 0.6M', 'RI'],
@@ -363,17 +525,47 @@ const CIVIC_CITY_PROFILES = {
     ['Klaipeda', 'approx. 0.2M', 'KL'],
     ['Siauliai', 'approx. 0.1M', 'SI']
   ],
+  kuwait: [
+    ['Kuwait City', 'approx. 0.1M city / 3M metro', 'KW'],
+    ['Al Ahmadi', 'approx. 0.7M governorate', 'AH'],
+    ['Hawalli', 'approx. 0.2M', 'HA'],
+    ['Salmiya', 'approx. 0.2M', 'SA']
+  ],
+  kyrgyzstan: [
+    ['Bishkek', 'approx. 1.1M', 'BI'],
+    ['Osh', 'approx. 0.3M', 'OS'],
+    ['Jalal-Abad', 'approx. 0.1M', 'JA'],
+    ['Karakol', 'approx. 0.08M', 'KA']
+  ],
+  laos: [
+    ['Vientiane', 'approx. 1M prefecture', 'VI'],
+    ['Pakse', 'approx. 0.1M', 'PA'],
+    ['Savannakhet', 'approx. 0.1M', 'SA'],
+    ['Luang Prabang', 'approx. 0.06M', 'LP']
+  ],
   luxembourg: [
     ['Luxembourg City', 'approx. 0.1M', 'LU'],
     ['Esch-sur-Alzette', 'approx. 0.04M', 'ES'],
     ['Differdange', 'approx. 0.03M', 'DI'],
     ['Dudelange', 'approx. 0.02M', 'DU']
   ],
+  malaysia: [
+    ['Kuala Lumpur', 'approx. 1.9M city / 8M metro', 'KL'],
+    ['George Town', 'approx. 0.8M metro', 'GT'],
+    ['Johor Bahru', 'approx. 0.9M city / 2M metro', 'JB'],
+    ['Ipoh', 'approx. 0.8M', 'IP']
+  ],
   malta: [
     ['Birkirkara', 'approx. 0.03M', 'BI'],
     ['Mosta', 'approx. 0.02M', 'MO'],
     ['Sliema', 'approx. 0.02M', 'SL'],
     ['Valletta', 'approx. 0.006M', 'VA']
+  ],
+  mongolia: [
+    ['Ulaanbaatar', 'approx. 1.6M', 'UB'],
+    ['Erdenet', 'approx. 0.1M', 'ER'],
+    ['Darkhan', 'approx. 0.08M', 'DA'],
+    ['Choibalsan', 'approx. 0.04M', 'CH']
   ],
   moldova: [
     ['Chisinau', 'approx. 0.7M municipality', 'CH'],
@@ -411,17 +603,47 @@ const CIVIC_CITY_PROFILES = {
     ['Trondheim', 'approx. 0.2M', 'TR'],
     ['Stavanger', 'approx. 0.1M', 'ST']
   ],
+  myanmar: [
+    ['Yangon', 'approx. 5M metro', 'YA'],
+    ['Mandalay', 'approx. 1.5M', 'MD'],
+    ['Naypyidaw', 'approx. 1M union territory', 'NP'],
+    ['Mawlamyine', 'approx. 0.3M', 'MW']
+  ],
+  nepal: [
+    ['Kathmandu', 'approx. 1M city / 3M valley', 'KT'],
+    ['Pokhara', 'approx. 0.5M', 'PK'],
+    ['Lalitpur', 'approx. 0.3M', 'LP'],
+    ['Biratnagar', 'approx. 0.25M', 'BI']
+  ],
+  oman: [
+    ['Muscat', 'approx. 1.5M governorate', 'MU'],
+    ['Seeb', 'approx. 0.5M', 'SE'],
+    ['Salalah', 'approx. 0.3M', 'SL'],
+    ['Sohar', 'approx. 0.2M', 'SO']
+  ],
   paraguay: [
     ['Asuncion', 'approx. 0.5M city / 2.8M metro', 'AS'],
     ['Ciudad del Este', 'approx. 0.3M', 'CE'],
     ['San Lorenzo', 'approx. 0.3M', 'SL'],
     ['Luque', 'approx. 0.3M', 'LU']
   ],
+  pakistan: [
+    ['Karachi', 'approx. 15M city / 20M metro', 'KA'],
+    ['Lahore', 'approx. 13M', 'LA'],
+    ['Faisalabad', 'approx. 3.8M', 'FA'],
+    ['Rawalpindi', 'approx. 2.3M', 'RA']
+  ],
   peru: [
     ['Lima', 'approx. 10M metro', 'LI'],
     ['Arequipa', 'approx. 1.1M metro', 'AQ'],
     ['Trujillo', 'approx. 1.0M metro', 'TR'],
     ['Chiclayo', 'approx. 0.6M metro', 'CH']
+  ],
+  philippines: [
+    ['Quezon City', 'approx. 3M', 'QC'],
+    ['Manila', 'approx. 1.8M city / 14M metro', 'MN'],
+    ['Davao City', 'approx. 1.8M', 'DV'],
+    ['Caloocan', 'approx. 1.7M', 'CA']
   ],
   poland: [
     ['Warsaw', 'approx. 1.9M', 'WA'],
@@ -435,6 +657,12 @@ const CIVIC_CITY_PROFILES = {
     ['Vila Nova de Gaia', 'approx. 0.3M', 'VG'],
     ['Amadora', 'approx. 0.2M', 'AM']
   ],
+  qatar: [
+    ['Doha', 'approx. 1M city / 2.4M metro', 'DO'],
+    ['Al Rayyan', 'approx. 0.6M municipality', 'AR'],
+    ['Al Wakrah', 'approx. 0.3M municipality', 'AW'],
+    ['Umm Salal', 'approx. 0.1M municipality', 'US']
+  ],
   romania: [
     ['Bucharest', 'approx. 1.7M', 'BU'],
     ['Cluj-Napoca', 'approx. 0.3M', 'CJ'],
@@ -447,11 +675,23 @@ const CIVIC_CITY_PROFILES = {
     ['City of San Marino', 'approx. 0.004M', 'SM'],
     ['Domagnano', 'approx. 0.004M', 'DO']
   ],
+  'saudi-arabia': [
+    ['Riyadh', 'approx. 7.7M metro', 'RI'],
+    ['Jeddah', 'approx. 4.8M metro', 'JE'],
+    ['Mecca', 'approx. 2.4M', 'MK'],
+    ['Medina', 'approx. 1.5M', 'MD']
+  ],
   serbia: [
     ['Belgrade', 'approx. 1.4M city / 1.7M metro', 'BG'],
     ['Novi Sad', 'approx. 0.3M', 'NS'],
     ['Nis', 'approx. 0.2M', 'NI'],
     ['Kragujevac', 'approx. 0.2M', 'KG']
+  ],
+  singapore: [
+    ['Central Area', 'approx. 0.09M planning area', 'CA'],
+    ['Tampines', 'approx. 0.25M planning area', 'TP'],
+    ['Jurong West', 'approx. 0.27M planning area', 'JW'],
+    ['Woodlands', 'approx. 0.26M planning area', 'WL']
   ],
   slovakia: [
     ['Bratislava', 'approx. 0.5M', 'BA'],
@@ -471,11 +711,29 @@ const CIVIC_CITY_PROFILES = {
     ['Valencia', 'approx. 0.8M', 'VA'],
     ['Seville', 'approx. 0.7M', 'SV']
   ],
+  'sri-lanka': [
+    ['Colombo', 'approx. 0.7M city / 5.6M metro', 'CO'],
+    ['Dehiwala-Mount Lavinia', 'approx. 0.2M', 'DM'],
+    ['Moratuwa', 'approx. 0.2M', 'MO'],
+    ['Kandy', 'approx. 0.1M city / 1.5M district', 'KA']
+  ],
+  'south-korea': [
+    ['Seoul', 'approx. 9.4M city / 26M metro', 'SE'],
+    ['Busan', 'approx. 3.3M', 'BU'],
+    ['Incheon', 'approx. 3.0M', 'IC'],
+    ['Daegu', 'approx. 2.4M', 'DG']
+  ],
   suriname: [
     ['Paramaribo', 'approx. 0.2M', 'PA'],
     ['Lelydorp', 'approx. 0.02M', 'LE'],
     ['Nieuw Nickerie', 'approx. 0.01M', 'NN'],
     ['Moengo', 'approx. 0.01M', 'MO']
+  ],
+  thailand: [
+    ['Bangkok', 'approx. 5.5M city / 11M metro', 'BK'],
+    ['Nonthaburi', 'approx. 0.25M', 'NB'],
+    ['Nakhon Ratchasima', 'approx. 0.13M city / 2.6M province', 'NR'],
+    ['Chiang Mai', 'approx. 0.13M city / 1.2M metro', 'CM']
   ],
   sweden: [
     ['Stockholm', 'approx. 1.0M municipality / 1.7M urban', 'ST'],
@@ -489,6 +747,18 @@ const CIVIC_CITY_PROFILES = {
     ['Basel', 'approx. 0.2M', 'BS'],
     ['Bern', 'approx. 0.1M', 'BE']
   ],
+  tajikistan: [
+    ['Dushanbe', 'approx. 1M', 'DU'],
+    ['Khujand', 'approx. 0.2M', 'KH'],
+    ['Kulob', 'approx. 0.1M', 'KU'],
+    ['Bokhtar', 'approx. 0.1M', 'BO']
+  ],
+  turkmenistan: [
+    ['Ashgabat', 'approx. 1M', 'AS'],
+    ['Turkmenabat', 'approx. 0.3M', 'TB'],
+    ['Dasoguz', 'approx. 0.2M', 'DZ'],
+    ['Mary', 'approx. 0.2M', 'MR']
+  ],
   ukraine: [
     ['Kyiv', 'approx. 3.0M', 'KY'],
     ['Kharkiv', 'approx. 1.4M pre-war', 'KH'],
@@ -501,11 +771,29 @@ const CIVIC_CITY_PROFILES = {
     ['Leeds', 'approx. 0.8M', 'LE'],
     ['Glasgow', 'approx. 0.6M', 'GL']
   ],
+  'united-arab-emirates': [
+    ['Dubai', 'approx. 3.7M emirate', 'DU'],
+    ['Abu Dhabi', 'approx. 1.6M city / emirate hub', 'AD'],
+    ['Sharjah', 'approx. 1.3M', 'SH'],
+    ['Al Ain', 'approx. 0.8M', 'AA']
+  ],
   uruguay: [
     ['Montevideo', 'approx. 1.3M', 'MV'],
     ['Salto', 'approx. 0.1M', 'SA'],
     ['Ciudad de la Costa', 'approx. 0.1M', 'CC'],
     ['Paysandu', 'approx. 0.08M', 'PY']
+  ],
+  uzbekistan: [
+    ['Tashkent', 'approx. 3M', 'TA'],
+    ['Samarkand', 'approx. 0.6M', 'SA'],
+    ['Namangan', 'approx. 0.6M', 'NA'],
+    ['Andijan', 'approx. 0.5M', 'AN']
+  ],
+  vietnam: [
+    ['Ho Chi Minh City', 'approx. 9M city / 22M metro region', 'HC'],
+    ['Hanoi', 'approx. 8.5M municipality', 'HN'],
+    ['Hai Phong', 'approx. 2M', 'HP'],
+    ['Da Nang', 'approx. 1.2M', 'DN']
   ],
   'vatican-city': [
     ['Vatican City', 'approx. 0.0008M', 'VA'],
@@ -518,6 +806,330 @@ const CIVIC_CITY_PROFILES = {
     ['Maracaibo', 'approx. 1.7M metro', 'MA'],
     ['Valencia', 'approx. 1.5M metro', 'VA'],
     ['Barquisimeto', 'approx. 1.0M metro', 'BQ']
+  ],
+  algeria: [
+    ['Algiers', 'approx. population varies by source', 'A'],
+    ['Oran', 'approx. population varies by source', 'O'],
+    ['Constantine', 'approx. population varies by source', 'C'],
+    ['Annaba', 'approx. population varies by source', 'A']
+  ],
+  angola: [
+    ['Luanda', 'approx. population varies by source', 'L'],
+    ['Huambo', 'approx. population varies by source', 'H'],
+    ['Lobito', 'approx. population varies by source', 'L'],
+    ['Benguela', 'approx. population varies by source', 'B']
+  ],
+  benin: [
+    ['Cotonou', 'approx. population varies by source', 'C'],
+    ['Porto-Novo', 'approx. population varies by source', 'PN'],
+    ['Parakou', 'approx. population varies by source', 'P'],
+    ['Abomey-Calavi', 'approx. population varies by source', 'AC']
+  ],
+  botswana: [
+    ['Gaborone', 'approx. population varies by source', 'G'],
+    ['Francistown', 'approx. population varies by source', 'F'],
+    ['Molepolole', 'approx. population varies by source', 'M'],
+    ['Maun', 'approx. population varies by source', 'M']
+  ],
+  'burkina-faso': [
+    ['Ouagadougou', 'approx. population varies by source', 'O'],
+    ['Bobo-Dioulasso', 'approx. population varies by source', 'BD'],
+    ['Koudougou', 'approx. population varies by source', 'K'],
+    ['Ouahigouya', 'approx. population varies by source', 'O']
+  ],
+  burundi: [
+    ['Bujumbura', 'approx. population varies by source', 'B'],
+    ['Gitega', 'approx. population varies by source', 'G'],
+    ['Ngozi', 'approx. population varies by source', 'N'],
+    ['Rumonge', 'approx. population varies by source', 'R']
+  ],
+  'cabo-verde': [
+    ['Praia', 'approx. population varies by source', 'P'],
+    ['Mindelo', 'approx. population varies by source', 'M'],
+    ['Santa Maria', 'approx. population varies by source', 'S'],
+    ['Assomada', 'approx. population varies by source', 'A']
+  ],
+  cameroon: [
+    ['Douala', 'approx. population varies by source', 'D'],
+    ['Yaounde', 'approx. population varies by source', 'Y'],
+    ['Garoua', 'approx. population varies by source', 'G'],
+    ['Bamenda', 'approx. population varies by source', 'B']
+  ],
+  'central-african-republic': [
+    ['Bangui', 'approx. population varies by source', 'B'],
+    ['Bimbo', 'approx. population varies by source', 'B'],
+    ['Berberati', 'approx. population varies by source', 'B'],
+    ['Carnot', 'approx. population varies by source', 'C']
+  ],
+  chad: [
+    ['NDjamena', 'approx. population varies by source', 'N'],
+    ['Moundou', 'approx. population varies by source', 'M'],
+    ['Abeche', 'approx. population varies by source', 'A'],
+    ['Sarh', 'approx. population varies by source', 'S']
+  ],
+  comoros: [
+    ['Moroni', 'approx. population varies by source', 'M'],
+    ['Mutsamudu', 'approx. population varies by source', 'M'],
+    ['Fomboni', 'approx. population varies by source', 'F'],
+    ['Domoni', 'approx. population varies by source', 'D']
+  ],
+  congo: [
+    ['Brazzaville', 'approx. population varies by source', 'B'],
+    ['Pointe-Noire', 'approx. population varies by source', 'PN'],
+    ['Dolisie', 'approx. population varies by source', 'D'],
+    ['Nkayi', 'approx. population varies by source', 'N']
+  ],
+  'cote-d-ivoire': [
+    ['Abidjan', 'approx. population varies by source', 'A'],
+    ['Bouake', 'approx. population varies by source', 'B'],
+    ['Yamoussoukro', 'approx. population varies by source', 'Y'],
+    ['Daloa', 'approx. population varies by source', 'D']
+  ],
+  'democratic-republic-of-the-congo': [
+    ['Kinshasa', 'approx. population varies by source', 'K'],
+    ['Lubumbashi', 'approx. population varies by source', 'L'],
+    ['Mbuji-Mayi', 'approx. population varies by source', 'MM'],
+    ['Kisangani', 'approx. population varies by source', 'K']
+  ],
+  djibouti: [
+    ['Djibouti', 'approx. population varies by source', 'D'],
+    ['Ali Sabieh', 'approx. population varies by source', 'A'],
+    ['Tadjoura', 'approx. population varies by source', 'T'],
+    ['Obock', 'approx. population varies by source', 'O']
+  ],
+  egypt: [
+    ['Cairo', 'approx. population varies by source', 'C'],
+    ['Alexandria', 'approx. population varies by source', 'A'],
+    ['Giza', 'approx. population varies by source', 'G'],
+    ['Shubra El Kheima', 'approx. population varies by source', 'S']
+  ],
+  'equatorial-guinea': [
+    ['Bata', 'approx. population varies by source', 'B'],
+    ['Malabo', 'approx. population varies by source', 'M'],
+    ['Ebebiyin', 'approx. population varies by source', 'E'],
+    ['Aconibe', 'approx. population varies by source', 'A']
+  ],
+  eritrea: [
+    ['Asmara', 'approx. population varies by source', 'A'],
+    ['Keren', 'approx. population varies by source', 'K'],
+    ['Massawa', 'approx. population varies by source', 'M'],
+    ['Assab', 'approx. population varies by source', 'A']
+  ],
+  eswatini: [
+    ['Manzini', 'approx. population varies by source', 'M'],
+    ['Mbabane', 'approx. population varies by source', 'M'],
+    ['Big Bend', 'approx. population varies by source', 'B'],
+    ['Malkerns', 'approx. population varies by source', 'M']
+  ],
+  ethiopia: [
+    ['Addis Ababa', 'approx. population varies by source', 'A'],
+    ['Dire Dawa', 'approx. population varies by source', 'D'],
+    ['Mekelle', 'approx. population varies by source', 'M'],
+    ['Gondar', 'approx. population varies by source', 'G']
+  ],
+  gabon: [
+    ['Libreville', 'approx. population varies by source', 'L'],
+    ['Port-Gentil', 'approx. population varies by source', 'PG'],
+    ['Franceville', 'approx. population varies by source', 'F'],
+    ['Oyem', 'approx. population varies by source', 'O']
+  ],
+  gambia: [
+    ['Serekunda', 'approx. population varies by source', 'S'],
+    ['Brikama', 'approx. population varies by source', 'B'],
+    ['Bakau', 'approx. population varies by source', 'B'],
+    ['Banjul', 'approx. population varies by source', 'B']
+  ],
+  ghana: [
+    ['Accra', 'approx. population varies by source', 'A'],
+    ['Kumasi', 'approx. population varies by source', 'K'],
+    ['Tamale', 'approx. population varies by source', 'T'],
+    ['Sekondi-Takoradi', 'approx. population varies by source', 'ST']
+  ],
+  guinea: [
+    ['Conakry', 'approx. population varies by source', 'C'],
+    ['Nzerekore', 'approx. population varies by source', 'N'],
+    ['Kankan', 'approx. population varies by source', 'K'],
+    ['Kindia', 'approx. population varies by source', 'K']
+  ],
+  'guinea-bissau': [
+    ['Bissau', 'approx. population varies by source', 'B'],
+    ['Bafata', 'approx. population varies by source', 'B'],
+    ['Gabu', 'approx. population varies by source', 'G'],
+    ['Bissora', 'approx. population varies by source', 'B']
+  ],
+  kenya: [
+    ['Nairobi', 'approx. population varies by source', 'N'],
+    ['Mombasa', 'approx. population varies by source', 'M'],
+    ['Kisumu', 'approx. population varies by source', 'K'],
+    ['Nakuru', 'approx. population varies by source', 'N']
+  ],
+  lesotho: [
+    ['Maseru', 'approx. population varies by source', 'M'],
+    ['Teyateyaneng', 'approx. population varies by source', 'T'],
+    ['Mafeteng', 'approx. population varies by source', 'M'],
+    ['Hlotse', 'approx. population varies by source', 'H']
+  ],
+  liberia: [
+    ['Monrovia', 'approx. population varies by source', 'M'],
+    ['Gbarnga', 'approx. population varies by source', 'G'],
+    ['Buchanan', 'approx. population varies by source', 'B'],
+    ['Ganta', 'approx. population varies by source', 'G']
+  ],
+  libya: [
+    ['Tripoli', 'approx. population varies by source', 'T'],
+    ['Benghazi', 'approx. population varies by source', 'B'],
+    ['Misrata', 'approx. population varies by source', 'M'],
+    ['Bayda', 'approx. population varies by source', 'B']
+  ],
+  madagascar: [
+    ['Antananarivo', 'approx. population varies by source', 'A'],
+    ['Toamasina', 'approx. population varies by source', 'T'],
+    ['Antsirabe', 'approx. population varies by source', 'A'],
+    ['Fianarantsoa', 'approx. population varies by source', 'F']
+  ],
+  malawi: [
+    ['Lilongwe', 'approx. population varies by source', 'L'],
+    ['Blantyre', 'approx. population varies by source', 'B'],
+    ['Mzuzu', 'approx. population varies by source', 'M'],
+    ['Zomba', 'approx. population varies by source', 'Z']
+  ],
+  mali: [
+    ['Bamako', 'approx. population varies by source', 'B'],
+    ['Sikasso', 'approx. population varies by source', 'S'],
+    ['Mopti', 'approx. population varies by source', 'M'],
+    ['Segou', 'approx. population varies by source', 'S']
+  ],
+  mauritania: [
+    ['Nouakchott', 'approx. population varies by source', 'N'],
+    ['Nouadhibou', 'approx. population varies by source', 'N'],
+    ['Kiffa', 'approx. population varies by source', 'K'],
+    ['Kaedi', 'approx. population varies by source', 'K']
+  ],
+  mauritius: [
+    ['Port Louis', 'approx. population varies by source', 'P'],
+    ['Beau Bassin-Rose Hill', 'approx. population varies by source', 'BR'],
+    ['Vacoas-Phoenix', 'approx. population varies by source', 'VP'],
+    ['Curepipe', 'approx. population varies by source', 'C']
+  ],
+  morocco: [
+    ['Casablanca', 'approx. population varies by source', 'C'],
+    ['Fez', 'approx. population varies by source', 'F'],
+    ['Tangier', 'approx. population varies by source', 'T'],
+    ['Marrakesh', 'approx. population varies by source', 'M']
+  ],
+  mozambique: [
+    ['Maputo', 'approx. population varies by source', 'M'],
+    ['Matola', 'approx. population varies by source', 'M'],
+    ['Nampula', 'approx. population varies by source', 'N'],
+    ['Beira', 'approx. population varies by source', 'B']
+  ],
+  namibia: [
+    ['Windhoek', 'approx. population varies by source', 'W'],
+    ['Walvis Bay', 'approx. population varies by source', 'W'],
+    ['Swakopmund', 'approx. population varies by source', 'S'],
+    ['Rundu', 'approx. population varies by source', 'R']
+  ],
+  niger: [
+    ['Niamey', 'approx. population varies by source', 'N'],
+    ['Zinder', 'approx. population varies by source', 'Z'],
+    ['Maradi', 'approx. population varies by source', 'M'],
+    ['Agadez', 'approx. population varies by source', 'A']
+  ],
+  nigeria: [
+    ['Lagos', 'approx. population varies by source', 'L'],
+    ['Kano', 'approx. population varies by source', 'K'],
+    ['Ibadan', 'approx. population varies by source', 'I'],
+    ['Abuja', 'approx. population varies by source', 'A']
+  ],
+  rwanda: [
+    ['Kigali', 'approx. population varies by source', 'K'],
+    ['Butare', 'approx. population varies by source', 'B'],
+    ['Gitarama', 'approx. population varies by source', 'G'],
+    ['Ruhengeri', 'approx. population varies by source', 'R']
+  ],
+  'sao-tome-and-principe': [
+    ['Sao Tome', 'approx. population varies by source', 'S'],
+    ['Santo Antonio', 'approx. population varies by source', 'S'],
+    ['Neves', 'approx. population varies by source', 'N'],
+    ['Trindade', 'approx. population varies by source', 'T']
+  ],
+  senegal: [
+    ['Dakar', 'approx. population varies by source', 'D'],
+    ['Touba', 'approx. population varies by source', 'T'],
+    ['Thies', 'approx. population varies by source', 'T'],
+    ['Kaolack', 'approx. population varies by source', 'K']
+  ],
+  seychelles: [
+    ['Victoria', 'approx. population varies by source', 'V'],
+    ['Anse Boileau', 'approx. population varies by source', 'A'],
+    ['Beau Vallon', 'approx. population varies by source', 'B'],
+    ['Takamaka', 'approx. population varies by source', 'T']
+  ],
+  'sierra-leone': [
+    ['Freetown', 'approx. population varies by source', 'F'],
+    ['Bo', 'approx. population varies by source', 'B'],
+    ['Kenema', 'approx. population varies by source', 'K'],
+    ['Makeni', 'approx. population varies by source', 'M']
+  ],
+  somalia: [
+    ['Mogadishu', 'approx. population varies by source', 'M'],
+    ['Hargeisa', 'approx. population varies by source', 'H'],
+    ['Bosaso', 'approx. population varies by source', 'B'],
+    ['Kismayo', 'approx. population varies by source', 'K']
+  ],
+  'south-africa': [
+    ['Johannesburg', 'approx. population varies by source', 'J'],
+    ['Cape Town', 'approx. population varies by source', 'C'],
+    ['Durban', 'approx. population varies by source', 'D'],
+    ['Pretoria', 'approx. population varies by source', 'P']
+  ],
+  'south-sudan': [
+    ['Juba', 'approx. population varies by source', 'J'],
+    ['Malakal', 'approx. population varies by source', 'M'],
+    ['Wau', 'approx. population varies by source', 'W'],
+    ['Yei', 'approx. population varies by source', 'Y']
+  ],
+  sudan: [
+    ['Khartoum', 'approx. population varies by source', 'K'],
+    ['Omdurman', 'approx. population varies by source', 'O'],
+    ['Port Sudan', 'approx. population varies by source', 'P'],
+    ['Nyala', 'approx. population varies by source', 'N']
+  ],
+  tanzania: [
+    ['Dar es Salaam', 'approx. population varies by source', 'D'],
+    ['Mwanza', 'approx. population varies by source', 'M'],
+    ['Dodoma', 'approx. population varies by source', 'D'],
+    ['Arusha', 'approx. population varies by source', 'A']
+  ],
+  togo: [
+    ['Lome', 'approx. population varies by source', 'L'],
+    ['Sokode', 'approx. population varies by source', 'S'],
+    ['Kara', 'approx. population varies by source', 'K'],
+    ['Kpalime', 'approx. population varies by source', 'K']
+  ],
+  tunisia: [
+    ['Tunis', 'approx. population varies by source', 'T'],
+    ['Sfax', 'approx. population varies by source', 'S'],
+    ['Sousse', 'approx. population varies by source', 'S'],
+    ['Kairouan', 'approx. population varies by source', 'K']
+  ],
+  uganda: [
+    ['Kampala', 'approx. population varies by source', 'K'],
+    ['Nansana', 'approx. population varies by source', 'N'],
+    ['Kira', 'approx. population varies by source', 'K'],
+    ['Mbarara', 'approx. population varies by source', 'M']
+  ],
+  zambia: [
+    ['Lusaka', 'approx. population varies by source', 'L'],
+    ['Ndola', 'approx. population varies by source', 'N'],
+    ['Kitwe', 'approx. population varies by source', 'K'],
+    ['Livingstone', 'approx. population varies by source', 'L']
+  ],
+  zimbabwe: [
+    ['Harare', 'approx. population varies by source', 'H'],
+    ['Bulawayo', 'approx. population varies by source', 'B'],
+    ['Chitungwiza', 'approx. population varies by source', 'C'],
+    ['Mutare', 'approx. population varies by source', 'M']
   ]
 };
 
@@ -1289,9 +1901,9 @@ function groupCountryWorkbenchRoutes(routes, model = null) {
   return [...buckets, other].filter(group => group.routes.length > 0);
 }
 
-function renderExpandableRouteGroup(group, open = false) {
+function renderExpandableRouteGroup(group, open = false, extraSearchText = '') {
   const rows = group.routes.map(route => `
-    <a class="vh-country-catalog-row" data-intent-group="${escapeHtml(group.key)}" data-route-slug="${escapeHtml(routeSlug(route))}" href="${route.path}">
+    <a class="vh-country-catalog-row" data-intent-group="${escapeHtml(group.key)}" data-route-slug="${escapeHtml(routeSlug(route))}" data-search-text="${escapeHtml([route.title || '', routeSlug(route), route.path || '', getCountryRouteDescription(route), group.title, group.summary, extraSearchText].join(' '))}" href="${route.path}">
       <span>
         <strong>${escapeHtml(route.title || route.path)}</strong>
         <small>Browser-only local workbench</small>
@@ -1369,6 +1981,23 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
           : /(pesel-validator|poland-nip-validator|poland-regon-validator|poland-iban-nrb-validator|poland-vat-validator|poland-krs-inspector|poland-postal-code-validator|poland-phone-number-validator|poland-blik-code-helper|poland-ksef-invoice-xml-validator)/;
   const featured = routes.filter(route => featuredPatterns.test(routeSlug(route))).slice(0, 10);
   const groups = groupCountryWorkbenchRoutes(routes, model);
+  const catalog = model.catalog || {};
+  const countrySearchText = [
+    model.summary,
+    model.description,
+    catalog.summary,
+    ...(catalog.identifiers || []),
+    ...(catalog.payments || []),
+    ...(catalog.availableWorkbenches || []),
+    ...(model.highlights || []).map(item => item?.text || item?.label || ''),
+    ...(catalog.highlights || []).map(item => item?.text || item?.label || ''),
+    ...(model.ecosystem || []).map(item => item?.text || item?.label || ''),
+    ...(catalog.ecosystem || []).map(item => item?.text || item?.label || ''),
+    ...(model.standards || []).map(item => item?.name || item?.label || ''),
+    ...(catalog.standards || []).map(item => item?.name || item?.label || ''),
+    ...(model.developerNotes || []).map(item => item?.text || item?.label || ''),
+    ...(catalog.developerNotes || []).map(item => item?.text || item?.label || '')
+  ].join(' ');
   const intentChips = groups.map(group => `<button class="vh-country-intent-chip" type="button" data-country-intent="${escapeHtml(group.key)}">${escapeHtml(group.title)} <span>${group.routes.length}</span></button>`).join('');
 
   const routeBySlug = (patternList) => findFirstRoute(routes, patternList)?.path || routes[0].path;
@@ -1450,7 +2079,7 @@ export function renderCountryWorkbenchCatalog(model, routeRegistry) {
       ${intentChips}
     </div>
     <div class="vh-country-route-groups">
-      ${groups.map((group, index) => renderExpandableRouteGroup(group, index < 2)).join('\n')}
+      ${groups.map((group, index) => renderExpandableRouteGroup(group, index < 2, countrySearchText)).join('\n')}
     </div>
     <p class="vh-country-tool-search-empty" data-country-tool-search-empty>No matching workbenches found for this country. Try local identifiers, payments, address, phone, or tax terms.</p>
   `;

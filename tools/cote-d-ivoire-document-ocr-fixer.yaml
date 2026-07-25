@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-document-ocr-fixer
+kind: tool
+module: validohub
+country: CI
+category: documents
+status: active
+name:
+  en: "Ivorian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "CI-ID-123456 CI123456789 001 1234567890 1000 Yamoussoukro"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-privacy-redaction-helper, cote-d-ivoire-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

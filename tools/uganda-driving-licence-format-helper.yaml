@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uganda-driving-licence-format-helper
+kind: tool
+module: validohub
+country: UG
+category: documents
+status: active
+name:
+  en: "Ugandan Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uganda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "UG-ID-123456 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uganda-residence-permit-format-helper, uganda-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ugandan Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-tax-return-field-helper
+kind: tool
+module: validohub
+country: TJ
+category: tax
+status: active
+name:
+  en: "Tajik Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "TIN / VAT; 123456789; period 2026-07; 1 234,56 TJS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-invoice-number-helper, tajikistan-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

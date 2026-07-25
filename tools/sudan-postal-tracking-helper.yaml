@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sudan-postal-tracking-helper
+kind: tool
+module: validohub
+country: SD
+category: logistics
+status: active
+name:
+  en: "Sudanese Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1000 Khartoum"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sudan-data-quality-workbench, sudan-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sudanese Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

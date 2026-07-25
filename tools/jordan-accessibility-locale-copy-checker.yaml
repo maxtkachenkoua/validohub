@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: JO
+category: localization
+status: active
+name:
+  en: "Jordanian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "National number boundary input, postal code input, amount 1,234.560 JOD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-support-ticket-scrubber, jordan-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

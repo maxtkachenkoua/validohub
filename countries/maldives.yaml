@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MV
+slug: maldives
+name:
+  en: Maldives
+region: Asia
+languages:
+  - dv
+currency: MVR
+relatedCountries:
+  - LK
+  - IN
+  - SG

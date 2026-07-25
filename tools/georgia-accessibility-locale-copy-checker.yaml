@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: GE
+category: localization
+status: active
+name:
+  en: "Georgian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "personal number boundary input, postal code input, amount 1 234.56 GEL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-support-ticket-scrubber, georgia-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

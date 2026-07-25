@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-bank-statement-parser
+kind: tool
+module: validohub
+country: NP
+category: finance
+status: active
+name:
+  en: "Nepali Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "2026/07/21; 1,234.56 NPR; 001 1234567890123; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-masked-bank-account-formatter, nepal-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."

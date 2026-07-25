@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-document-ocr-fixer
+kind: tool
+module: validohub
+country: SA
+category: documents
+status: active
+name:
+  en: "Saudi Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "1001234567 300123456700003 80 000000608010167519 12211 Riyadh"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-privacy-redaction-helper, saudi-arabia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

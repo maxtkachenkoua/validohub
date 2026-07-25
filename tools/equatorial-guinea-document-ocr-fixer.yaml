@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: equatorial-guinea-document-ocr-fixer
+kind: tool
+module: validohub
+country: GQ
+category: documents
+status: active
+name:
+  en: "Equatoguinean Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.equatorial-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "GQ-ID-123456 GQ123456789 001 1234567890 1000 Malabo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [equatorial-guinea-privacy-redaction-helper, equatorial-guinea-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Equatoguinean Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

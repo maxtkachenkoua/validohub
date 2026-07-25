@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: oman-pii-masker
+kind: tool
+module: validohub
+country: OM
+category: privacy
+status: active
+name:
+  en: "Omani PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.oman-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "12345678 +968 9123 4567 0001 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [oman-personal-data-fixture-generator, oman-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Omani PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

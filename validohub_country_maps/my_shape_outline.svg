@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-109.69 -87.82 887.64 694.90" role="img">
+  <title>Malaysia country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.62" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <g id="my">
+        <path  d="M648.359,511.796l1.736,3.898l0.391,5.064l2.324,3.604l5.096,3.083l1-0.791l1.464-0.288l-0.212-1.91l-1.841-4.478l-2.697-5.731l-0.227,1.003l-3.25-0.146l-2.334-3.354L648.359,511.796L648.359,511.796z"/>
+        <path d="M675.527,526.896l2.61,3.018l10.012-3.467l1.979-7.643l4.46-0.319l4.08-2.956l-5.29-3.854l-1.211-2.119l-2.61,4.815l0.959,2.766l-1.591,2.31l-2.999-0.771l-7.27,5.333l0.188,3.086L675.527,526.896L675.527,526.896z"/>
+    </g>
+  </g>
+</svg>

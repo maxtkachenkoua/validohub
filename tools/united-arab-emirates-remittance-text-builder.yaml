@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-remittance-text-builder
+kind: tool
+module: validohub
+country: AE
+category: finance
+status: active
+name:
+  en: "UAE Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 100123456700003 1,234.56 AED"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-payment-reconciliation-helper, united-arab-emirates-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

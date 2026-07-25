@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-phone-number-validator
+kind: tool
+module: validohub
+country: CF
+category: address
+status: active
+name:
+  en: "Central African Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+236 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-phone-e164-formatter, central-african-republic-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

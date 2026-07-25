@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: armenia-state-register-number-validator
+kind: tool
+module: validohub
+country: AM
+category: national-identifiers
+status: active
+name:
+  en: "Armenian state register number Validator"
+summary:
+  en: "Inspect state register number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.armenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "271.110.123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [armenia-tax-id-validator, armenia-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Armenian state register number Validator | ValidoHub"
+  description:
+    en: "Inspect state register number structure, registry-style prefixes, control digits, and official lookup boundaries."

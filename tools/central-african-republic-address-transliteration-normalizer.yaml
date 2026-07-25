@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: CF
+category: address
+status: active
+name:
+  en: "Central African Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Central business district, Bangui 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-region-code-mapper, central-african-republic-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

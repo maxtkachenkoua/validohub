@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: GM
+category: government
+status: active
+name:
+  en: "Gambian business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "GM-REG-123456 GM123456789 Central business district, Banjul 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-id-card-format-helper, gambia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

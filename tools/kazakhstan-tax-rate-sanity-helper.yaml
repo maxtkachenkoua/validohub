@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: KZ
+category: tax
+status: active
+name:
+  en: "Kazakh Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "taxpayer number / VAT 20% base 1 234,56 KZT"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-tax-return-field-helper, kazakhstan-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

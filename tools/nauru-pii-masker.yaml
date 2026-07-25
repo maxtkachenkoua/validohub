@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nauru-pii-masker
+kind: tool
+module: validohub
+country: NR
+category: privacy
+status: active
+name:
+  en: "Nauruan PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nauru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "NR-ID-123456 +674 123 4567 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nauru-personal-data-fixture-generator, nauru-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nauruan PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

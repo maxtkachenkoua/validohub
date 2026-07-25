@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-regex-pack-helper
+kind: tool
+module: validohub
+country: BN
+category: developer-tools
+status: active
+name:
+  en: "Bruneian Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "smart identity card boundary ROC number postal code  001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [brunei-api-payload-auditor, brunei-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

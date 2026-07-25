@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: namibia-company-registration-number-validator
+kind: tool
+module: validohub
+country: NA
+category: national-identifiers
+status: active
+name:
+  en: "Namibian company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.namibia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "NA-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [namibia-tax-id-validator, namibia-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Namibian company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

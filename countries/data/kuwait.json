@@ -1,0 +1,642 @@
+{
+  "id": "kuwait",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/kuwait-outline.png",
+    "outlineAlt": "Kuwait country outline",
+    "mapSrc": "/assets/images/countries/kuwait-location.png",
+    "mapAlt": "World map with Kuwait location marker",
+    "mapMarker": {
+      "x": 58,
+      "y": 54,
+      "label": "Kuwait"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "kuwait",
+    "flag": "🇰🇼",
+    "name": "Kuwait",
+    "nativeName": "Al-Kuwayt",
+    "iso2": "KW",
+    "iso3": "KWT",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Arabic",
+    "currency": "KWD",
+    "currencyName": "Kuwaiti dinar",
+    "status": "available",
+    "summary": "Premium Kuwait developer hub for Civil ID boundary, commercial registration number, tax file number, postal code, phone, IBAN, KNET handoff, CBK reference, SWIFT, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "Civil ID boundary",
+      "commercial registration number",
+      "tax file number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "IBAN",
+      "KNET handoff",
+      "CBK reference",
+      "SWIFT",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Kuwaiti Civil ID boundary Validator",
+      "Kuwaiti commercial registration number Validator",
+      "Kuwaiti tax file number Validator",
+      "Kuwaiti Customs / Importer Code Helper",
+      "Kuwaiti PIFSS boundary Helper",
+      "Kuwaiti Company Onboarding Auditor",
+      "Kuwaiti MOCI registry Readiness Helper",
+      "Kuwaiti ID Card Format Helper",
+      "Kuwaiti Passport Number Helper",
+      "Kuwaiti MRZ / Passport Parser",
+      "Kuwait Bank Account Validator",
+      "Kuwait Bank Account Fixture Generator",
+      "Kuwaiti Domestic Bank Account Inspector",
+      "Kuwaiti BIC / SWIFT Inspector",
+      "Kuwaiti Domestic Transfer Helper",
+      "Kuwaiti Direct Debit / Auto-Debit Mandate Helper",
+      "Kuwaiti KNET / CBK reference Reference Helper",
+      "Kuwaiti Remittance Text Builder",
+      "Kuwaiti Payment Reconciliation Helper",
+      "Kuwaiti Bank Statement Parser",
+      "Kuwaiti Masked Bank Account Formatter",
+      "Kuwaiti KWD Decimal Currency Formatter",
+      "Kuwaiti Tax Rate Sanity Helper",
+      "Kuwaiti Tax Return Field Helper",
+      "Kuwaiti Invoice Number Helper",
+      "Kuwaiti tax invoice Readiness Checker",
+      "Kuwaiti Tax Authority Handoff Helper",
+      "Kuwaiti Accounting Audit Trail Checklist Helper",
+      "Kuwaiti Postal Code Validator",
+      "Kuwaiti Address Normalizer",
+      "Kuwaiti Address Transliteration Normalizer",
+      "Kuwaiti Region / Province Code Mapper",
+      "Kuwaiti Municipality Code Inspector",
+      "Kuwaiti Phone Number Validator",
+      "Kuwaiti Phone E.164 Formatter",
+      "Kuwaiti Date Locale Formatter",
+      "Kuwaiti CSV Locale Normalizer",
+      "Kuwaiti Slug Normalizer",
+      "Kuwaiti Document OCR Fixer",
+      "Kuwaiti data privacy boundary Redaction Helper",
+      "Kuwaiti PII Masker",
+      "Kuwaiti Personal Data Fixture Helper",
+      "Kuwaiti Driving Licence Format Helper",
+      "Kuwaiti Residence Permit Format Helper",
+      "Kuwaiti Health Card Format Helper",
+      "Kuwaiti Vehicle Plate Inspector",
+      "Kuwaiti VIN Validator",
+      "Kuwaiti Vehicle Data Redaction Helper",
+      "Kuwaiti Customs Declaration Helper",
+      "Kuwaiti Postal Tracking Helper",
+      "Kuwaiti Data Quality Workbench",
+      "Kuwaiti JSON Fixture Helper",
+      "Kuwaiti Regex Pack Helper",
+      "Kuwaiti API Payload Auditor",
+      "Kuwaiti Form Field Auditor",
+      "Kuwaiti Locale Number Parser",
+      "Kuwaiti Calendar Week Helper",
+      "Kuwaiti Company Suffix Normalizer",
+      "Kuwaiti Procurement Identifier Helper",
+      "Kuwaiti Locale Copy Checker",
+      "Kuwaiti Support Ticket Scrubber",
+      "Kuwaiti Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live MOCI registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 58,
+      "y": 54
+    },
+    "searchHints": [
+      "CIVIL ID",
+      "CR",
+      "IBAN",
+      "KNET",
+      "CBK",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇰🇼",
+    "name": "Kuwait",
+    "badge": "Premium Kuwait developer suite",
+    "description": "Developer intelligence and browser-only workbenches for kuwaiti identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Al-Kuwayt",
+      "population": "approximately 4.4M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Kuwait City",
+      "continent": "Asia",
+      "region": "Western Asia / Gulf",
+      "languages": "Arabic",
+      "currency": "Kuwaiti dinar",
+      "currencyCode": "KWD",
+      "callingCode": "+965",
+      "internetTld": ".kw",
+      "drivingSide": "Right",
+      "iso2": "KW",
+      "iso3": "KWT",
+      "isoNumeric": "414",
+      "locale": "ar-KW",
+      "icuLocale": "ar_KW",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Kuwait",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Kuwait (AST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "ar-KW",
+      "cldrLocale": "ar_KW",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type G",
+      "voltage": "240V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "kuwait",
+      "outlineLabel": "Kuwait outline",
+      "mapLabel": "Kuwait in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Kuwait flag",
+      "heroAccentPrimary": "0 122 61",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "206 17 38"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Civil ID boundary and commercial registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax file number and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Kuwait registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /kuwait/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Kuwaiti examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "MOCI registry",
+        "text": "Official business registry or company lookup remains the source of truth for Kuwait.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax file number",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "data privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "Civil ID boundary, commercial registration number, tax file number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, KNET handoff, CBK reference, SWIFT, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "ar-KW / ar_KW; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "KWD amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "Civil ID boundary, commercial registration number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type G",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "240V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "CIVIL ID",
+      "CR",
+      "IBAN",
+      "KNET",
+      "CBK",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Kuwaiti Civil ID boundary Validator",
+        "href": "/en/kuwait/kuwait-civil-id-boundary-validator/",
+        "text": "Validate Civil ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Kuwaiti commercial registration number Validator",
+        "href": "/en/kuwait/kuwait-commercial-registration-number-validator/",
+        "text": "Inspect commercial registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Kuwaiti tax file number Validator",
+        "href": "/en/kuwait/kuwait-tax-id-validator/",
+        "text": "Normalize tax file number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Kuwaiti Customs / Importer Code Helper",
+        "href": "/en/kuwait/kuwait-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Kuwaiti PIFSS boundary Helper",
+        "href": "/en/kuwait/kuwait-pifss-boundary-social-insurance-helper/",
+        "text": "Split PIFSS boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Kuwaiti Company Onboarding Auditor",
+        "href": "/en/kuwait/kuwait-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for commercial registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Kuwaiti MOCI registry Readiness Helper",
+        "href": "/en/kuwait/kuwait-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated MOCI registry lookup or company registry workflow."
+      },
+      {
+        "title": "Kuwaiti ID Card Format Helper",
+        "href": "/en/kuwait/kuwait-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Kuwaiti Passport Number Helper",
+        "href": "/en/kuwait/kuwait-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Kuwaiti MRZ / Passport Parser",
+        "href": "/en/kuwait/kuwait-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Kuwait Bank Account Validator",
+        "href": "/en/kuwait/kuwait-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Kuwait Bank Account Fixture Generator",
+        "href": "/en/kuwait/kuwait-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Kuwaiti Domestic Bank Account Inspector",
+        "href": "/en/kuwait/kuwait-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Kuwaiti BIC / SWIFT Inspector",
+        "href": "/en/kuwait/kuwait-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Kuwait banking integrations."
+      },
+      {
+        "title": "Kuwaiti Domestic Transfer Helper",
+        "href": "/en/kuwait/kuwait-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Kuwaiti Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/kuwait/kuwait-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Kuwaiti KNET / CBK reference Reference Helper",
+        "href": "/en/kuwait/kuwait-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Kuwaiti Remittance Text Builder",
+        "href": "/en/kuwait/kuwait-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Kuwaiti Payment Reconciliation Helper",
+        "href": "/en/kuwait/kuwait-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Kuwaiti Bank Statement Parser",
+        "href": "/en/kuwait/kuwait-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Kuwaiti Masked Bank Account Formatter",
+        "href": "/en/kuwait/kuwait-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Kuwaiti KWD Decimal Currency Formatter",
+        "href": "/en/kuwait/kuwait-currency-decimal-formatter/",
+        "text": "Normalize KWD amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Kuwaiti Tax Rate Sanity Helper",
+        "href": "/en/kuwait/kuwait-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Kuwaiti Tax Return Field Helper",
+        "href": "/en/kuwait/kuwait-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Kuwaiti Invoice Number Helper",
+        "href": "/en/kuwait/kuwait-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Kuwaiti tax invoice Readiness Checker",
+        "href": "/en/kuwait/kuwait-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Kuwaiti Tax Authority Handoff Helper",
+        "href": "/en/kuwait/kuwait-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Kuwaiti Accounting Audit Trail Checklist Helper",
+        "href": "/en/kuwait/kuwait-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Kuwaiti Postal Code Validator",
+        "href": "/en/kuwait/kuwait-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Kuwaiti Address Normalizer",
+        "href": "/en/kuwait/kuwait-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Kuwaiti Address Transliteration Normalizer",
+        "href": "/en/kuwait/kuwait-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Kuwaiti Region / Province Code Mapper",
+        "href": "/en/kuwait/kuwait-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Kuwaiti Municipality Code Inspector",
+        "href": "/en/kuwait/kuwait-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Kuwaiti Phone Number Validator",
+        "href": "/en/kuwait/kuwait-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Kuwaiti Phone E.164 Formatter",
+        "href": "/en/kuwait/kuwait-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Kuwaiti Date Locale Formatter",
+        "href": "/en/kuwait/kuwait-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Kuwaiti CSV Locale Normalizer",
+        "href": "/en/kuwait/kuwait-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Kuwait decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Kuwaiti Slug Normalizer",
+        "href": "/en/kuwait/kuwait-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Kuwaiti Document OCR Fixer",
+        "href": "/en/kuwait/kuwait-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Kuwaiti data privacy boundary Redaction Helper",
+        "href": "/en/kuwait/kuwait-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Kuwaiti PII Masker",
+        "href": "/en/kuwait/kuwait-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Kuwaiti Personal Data Fixture Helper",
+        "href": "/en/kuwait/kuwait-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Kuwaiti Driving Licence Format Helper",
+        "href": "/en/kuwait/kuwait-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Kuwaiti Residence Permit Format Helper",
+        "href": "/en/kuwait/kuwait-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Kuwaiti Health Card Format Helper",
+        "href": "/en/kuwait/kuwait-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Kuwaiti Vehicle Plate Inspector",
+        "href": "/en/kuwait/kuwait-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Kuwaiti VIN Validator",
+        "href": "/en/kuwait/kuwait-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Kuwaiti Vehicle Data Redaction Helper",
+        "href": "/en/kuwait/kuwait-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Kuwaiti Customs Declaration Helper",
+        "href": "/en/kuwait/kuwait-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Kuwaiti Postal Tracking Helper",
+        "href": "/en/kuwait/kuwait-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Kuwaiti Data Quality Workbench",
+        "href": "/en/kuwait/kuwait-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Kuwaiti JSON Fixture Helper",
+        "href": "/en/kuwait/kuwait-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Kuwaiti Regex Pack Helper",
+        "href": "/en/kuwait/kuwait-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Kuwaiti API Payload Auditor",
+        "href": "/en/kuwait/kuwait-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Kuwaiti Form Field Auditor",
+        "href": "/en/kuwait/kuwait-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Kuwaiti Locale Number Parser",
+        "href": "/en/kuwait/kuwait-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Kuwait."
+      },
+      {
+        "title": "Kuwaiti Calendar Week Helper",
+        "href": "/en/kuwait/kuwait-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Kuwaiti Company Suffix Normalizer",
+        "href": "/en/kuwait/kuwait-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Kuwaiti Procurement Identifier Helper",
+        "href": "/en/kuwait/kuwait-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Kuwaiti Locale Copy Checker",
+        "href": "/en/kuwait/kuwait-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Kuwaiti Support Ticket Scrubber",
+        "href": "/en/kuwait/kuwait-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Kuwaiti Integration Smoke Test Builder",
+        "href": "/en/kuwait/kuwait-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

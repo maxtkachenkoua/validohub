@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: botswana-tax-return-field-helper
+kind: tool
+module: validohub
+country: BW
+category: tax
+status: active
+name:
+  en: "Botswana Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.botswana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary; BW123456789; period 2026-07; 1,234.56 BWP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [botswana-invoice-number-helper, botswana-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Botswana Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

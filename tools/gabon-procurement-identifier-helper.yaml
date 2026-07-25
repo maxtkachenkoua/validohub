@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gabon-procurement-identifier-helper
+kind: tool
+module: validohub
+country: GA
+category: government
+status: active
+name:
+  en: "Gabonese Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gabon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "GA-REG-123456 PO-2026-001 GA123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gabon-accessibility-locale-copy-checker, gabon-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gabonese Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

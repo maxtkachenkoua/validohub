@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-municipality-code-inspector
+kind: tool
+module: validohub
+country: PK
+category: address
+status: active
+name:
+  en: "Pakistani Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Jinnah Avenue 1, Islamabad 44000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-phone-number-validator, pakistan-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

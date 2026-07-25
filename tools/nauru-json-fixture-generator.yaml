@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nauru-json-fixture-generator
+kind: tool
+module: validohub
+country: NR
+category: developer-tools
+status: active
+name:
+  en: "Nauruan JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.nauru-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NR\",\"company\":\"NR-REG-123456\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [nauru-regex-pack-helper, nauru-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nauruan JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

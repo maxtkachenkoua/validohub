@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-remittance-text-builder
+kind: tool
+module: validohub
+country: NP
+category: finance
+status: active
+name:
+  en: "Nepali Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 500123456 1,234.56 NPR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-payment-reconciliation-helper, nepal-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

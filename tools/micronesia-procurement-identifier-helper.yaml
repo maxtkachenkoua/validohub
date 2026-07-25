@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: micronesia-procurement-identifier-helper
+kind: tool
+module: validohub
+country: FM
+category: government
+status: active
+name:
+  en: "Micronesian Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.micronesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "FM-REG-123456 PO-2026-001 FM123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [micronesia-accessibility-locale-copy-checker, micronesia-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Micronesian Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

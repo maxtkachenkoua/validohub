@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-business-register-readiness-helper
+kind: tool
+module: validohub
+country: PK
+category: government
+status: active
+name:
+  en: "Pakistani SECP registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated SECP registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "0123456 1234567-8 Jinnah Avenue 1, Islamabad 44000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-id-card-format-helper, pakistan-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani SECP registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated SECP registry lookup or company registry workflow."

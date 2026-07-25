@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-slug-normalizer
+kind: tool
+module: validohub
+country: AE
+category: developer-tools
+status: active
+name:
+  en: "UAE Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "United Arab Emirates sample company Al Maryah Island, Abu Dhabi, PO Box 12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-document-ocr-fixer, united-arab-emirates-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-109.17 -80.94 859.04 618.73" role="img">
+  <title>Laos country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="8.57" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="la" d="M650.745,466.397l-2.092,1.062l-1.737,5.065l2.904,3.699l-0.485,4.09l0.485,0.196l4.832-2.342l6.482,7.243l-0.157,4.563l1.41,0.762l3.482-2.827l-0.285-2.238l-10.053-9.552l0.095-1.461l1.254-0.873l-0.874-2.438l-4.158-0.684L650.745,466.397L650.745,466.397z"/>
+  </g>
+</svg>

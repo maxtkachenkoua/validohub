@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nauru-api-payload-auditor
+kind: tool
+module: validohub
+country: NR
+category: developer-tools
+status: active
+name:
+  en: "Nauruan API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nauru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NR\",\"company\":\"NR-REG-123456\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nauru-form-field-auditor, nauru-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nauruan API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

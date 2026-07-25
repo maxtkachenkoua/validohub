@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SS
+slug: south-sudan
+name:
+  en: South Sudan
+region: Africa
+languages:
+  - en
+currency: SSP
+relatedCountries:
+  - ZA
+  - NG
+  - KE

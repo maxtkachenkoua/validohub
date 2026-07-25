@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: GE
+slug: georgia
+name:
+  en: Georgia
+region: Asia
+languages:
+  - ka
+currency: GEL
+relatedCountries:
+  - AM
+  - AZ
+  - TR

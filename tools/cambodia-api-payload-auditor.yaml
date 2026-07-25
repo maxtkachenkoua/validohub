@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-api-payload-auditor
+kind: tool
+module: validohub
+country: KH
+category: developer-tools
+status: active
+name:
+  en: "Cambodian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KH\",\"tin\":\"K001-123456789\",\"bakong\":\"khqr-inv-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-form-field-auditor, cambodia-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

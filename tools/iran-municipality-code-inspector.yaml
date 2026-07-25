@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-municipality-code-inspector
+kind: tool
+module: validohub
+country: IR
+category: address
+status: active
+name:
+  en: "Iranian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Valiasr Street 1, Tehran 11369-12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-phone-number-validator, iran-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

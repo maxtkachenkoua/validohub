@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritania-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: MR
+category: address
+status: active
+name:
+  en: "Mauritanian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Central business district, Nouakchott 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritania-region-code-mapper, mauritania-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritanian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

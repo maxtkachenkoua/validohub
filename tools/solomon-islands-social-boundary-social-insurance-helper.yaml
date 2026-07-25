@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-social-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: SB
+category: national-identifiers
+status: active
+name:
+  en: "Solomon Islands social boundary Helper"
+summary:
+  en: "Split social boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "SB-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-company-onboarding-auditor, solomon-islands-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands social boundary Helper | ValidoHub"
+  description:
+    en: "Split social boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

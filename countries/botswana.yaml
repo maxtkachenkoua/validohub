@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BW
+slug: botswana
+name:
+  en: Botswana
+region: Africa
+languages:
+  - en
+currency: BWP
+relatedCountries:
+  - ZA
+  - NG
+  - KE

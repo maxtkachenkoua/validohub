@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MY
+slug: malaysia
+name:
+  en: Malaysia
+region: Asia
+languages:
+  - ms
+currency: MYR
+relatedCountries:
+  - SG
+  - ID
+  - TH

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: PK
+slug: pakistan
+name:
+  en: Pakistan
+region: Asia
+languages:
+  - ur
+currency: PKR
+relatedCountries:
+  - IN
+  - AE
+  - BD

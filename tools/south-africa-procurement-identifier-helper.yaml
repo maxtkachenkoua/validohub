@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-africa-procurement-identifier-helper
+kind: tool
+module: validohub
+country: ZA
+category: government
+status: active
+name:
+  en: "South African Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-africa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "ZA-REG-123456 PO-2026-001 ZA123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-africa-accessibility-locale-copy-checker, south-africa-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South African Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

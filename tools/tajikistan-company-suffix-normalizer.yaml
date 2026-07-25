@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-company-suffix-normalizer
+kind: tool
+module: validohub
+country: TJ
+category: developer-tools
+status: active
+name:
+  en: "Tajik Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Tajikistan Sample Holding Ltd TJ1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-procurement-identifier-helper, tajikistan-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

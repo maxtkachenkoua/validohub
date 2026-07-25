@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nauru-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: NR
+category: tax
+status: active
+name:
+  en: "Nauruan invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nauru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NR\",\"company\":\"NR-REG-123456\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nauru-tax-authority-handoff-helper, nauru-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nauruan invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

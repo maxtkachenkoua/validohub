@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zambia-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: ZM
+category: transport
+status: active
+name:
+  en: "Zambian Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "ZM 1234 WVWZZZ1JZXW000001 ZM-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zambia-customs-declaration-helper, zambia-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zambian Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

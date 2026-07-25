@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-calendar-week-helper
+kind: tool
+module: validohub
+country: CI
+category: localization
+status: active
+name:
+  en: "Ivorian Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "24/07/2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-company-suffix-normalizer, cote-d-ivoire-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

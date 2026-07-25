@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: eswatini-customs-importer-code-helper
+kind: tool
+module: validohub
+country: SZ
+category: national-identifiers
+status: active
+name:
+  en: "Swazi Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.eswatini-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "SZSZ-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [eswatini-social-security-boundary-social-insurance-helper, eswatini-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swazi Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

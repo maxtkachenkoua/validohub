@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-document-ocr-fixer
+kind: tool
+module: validohub
+country: JO
+category: documents
+status: active
+name:
+  en: "Jordanian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "9901011234 123456789 CBJO 131000302 11118 Amman"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-privacy-redaction-helper, jordan-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

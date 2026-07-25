@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-slug-normalizer
+kind: tool
+module: validohub
+country: NZ
+category: developer-tools
+status: active
+name:
+  en: "New Zealand Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "New Zealand sample company 1 Molesworth Street, Wellington 6011"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-document-ocr-fixer, new-zealand-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

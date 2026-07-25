@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-id-card-format-helper
+kind: tool
+module: validohub
+country: MH
+category: national-identifiers
+status: active
+name:
+  en: "Marshallese ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "MH-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-passport-number-helper, marshall-islands-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

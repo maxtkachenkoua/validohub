@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-tax-return-field-helper
+kind: tool
+module: validohub
+country: TM
+category: tax
+status: active
+name:
+  en: "Turkmen Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number; 12345678; period 2026-07; 1 234,56 TMT"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkmenistan-invoice-number-helper, turkmenistan-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

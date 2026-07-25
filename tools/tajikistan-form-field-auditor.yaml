@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-form-field-auditor
+kind: tool
+module: validohub
+country: TJ
+category: developer-tools
+status: active
+name:
+  en: "Tajik Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=123456789&postal=734000 Dushanbe&phone=+992 90 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-locale-number-parser, tajikistan-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

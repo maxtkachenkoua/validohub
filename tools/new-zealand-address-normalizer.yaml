@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-address-normalizer
+kind: tool
+module: validohub
+country: NZ
+category: address
+status: active
+name:
+  en: "New Zealand Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "1 Molesworth Street, Wellington 6011"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-address-transliteration-normalizer, new-zealand-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

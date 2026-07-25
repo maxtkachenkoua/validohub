@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: PH
+category: privacy
+status: active
+name:
+  en: "Philippine Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "1234-5678-9012-3456\\nAyala Avenue 1, Makati 1226\\n+63 917 123 4567"
+    actions: [generate, validate, explain]
+related:
+  explicit: [philippines-driving-licence-format-helper, philippines-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

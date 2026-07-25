@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nigeria-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: NG
+category: tax
+status: active
+name:
+  en: "Nigerian Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nigeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "NG123456789 24/07/2026 1,234.56 NGN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nigeria-accounting-audit-trail-checklist-generator, nigeria-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nigerian Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tuvalu-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: TV
+category: tax
+status: active
+name:
+  en: "Tuvaluan invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tuvalu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TV\",\"taxNumber\":\"TV123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tuvalu-tax-authority-handoff-helper, tuvalu-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tuvaluan invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

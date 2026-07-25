@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-address-normalizer
+kind: tool
+module: validohub
+country: VN
+category: address
+status: active
+name:
+  en: "Vietnamese Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "1 Trang Tien, Hanoi 100000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vietnam-address-transliteration-normalizer, vietnam-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: NE
+slug: niger
+name:
+  en: Niger
+region: Africa
+languages:
+  - fr
+currency: XOF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

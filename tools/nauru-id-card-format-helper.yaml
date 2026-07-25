@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nauru-id-card-format-helper
+kind: tool
+module: validohub
+country: NR
+category: national-identifiers
+status: active
+name:
+  en: "Nauruan ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nauru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "NR-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nauru-passport-number-helper, nauru-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nauruan ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

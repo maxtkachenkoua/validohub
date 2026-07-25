@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: chad-bic-swift-inspector
+kind: tool
+module: validohub
+country: TD
+category: finance
+status: active
+name:
+  en: "Chadian BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Chad banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.chad-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDTD2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [chad-domestic-transfer-helper, chad-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chadian BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Chad banking integrations."

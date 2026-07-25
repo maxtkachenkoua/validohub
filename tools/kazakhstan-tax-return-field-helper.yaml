@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-tax-return-field-helper
+kind: tool
+module: validohub
+country: KZ
+category: tax
+status: active
+name:
+  en: "Kazakh Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "taxpayer number / VAT; 120940012345; period 2026-07; 1 234,56 KZT"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-invoice-number-helper, kazakhstan-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

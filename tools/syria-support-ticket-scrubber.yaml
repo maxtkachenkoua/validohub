@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-support-ticket-scrubber
+kind: tool
+module: validohub
+country: SY
+category: privacy
+status: active
+name:
+  en: "Syrian Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 01012345678, 001 1234567890, Malki 1, Damascus 0100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-integration-smoke-test-builder, syria-national-number-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

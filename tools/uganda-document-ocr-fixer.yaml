@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uganda-document-ocr-fixer
+kind: tool
+module: validohub
+country: UG
+category: documents
+status: active
+name:
+  en: "Ugandan Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uganda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "UG-ID-123456 UG123456789 001 1234567890 1000 Kampala"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uganda-privacy-redaction-helper, uganda-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ugandan Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

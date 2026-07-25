@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mali-slug-normalizer
+kind: tool
+module: validohub
+country: ML
+category: developer-tools
+status: active
+name:
+  en: "Malian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mali-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Mali sample company Central business district, Bamako 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mali-document-ocr-fixer, mali-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

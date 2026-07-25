@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: IQ
+slug: iraq
+name:
+  en: Iraq
+region: Asia
+languages:
+  - ar
+currency: IQD
+relatedCountries:
+  - IR
+  - JO
+  - SA

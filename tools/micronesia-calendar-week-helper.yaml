@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: micronesia-calendar-week-helper
+kind: tool
+module: validohub
+country: FM
+category: localization
+status: active
+name:
+  en: "Micronesian Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.micronesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "07/24/2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [micronesia-company-suffix-normalizer, micronesia-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Micronesian Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

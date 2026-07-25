@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vanuatu-invoice-number-helper
+kind: tool
+module: validohub
+country: VU
+category: tax
+status: active
+name:
+  en: "Vanuatuan Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vanuatu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 VU123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vanuatu-e-invoicing-readiness-checker, vanuatu-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vanuatuan Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

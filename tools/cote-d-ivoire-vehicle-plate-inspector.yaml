@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-vehicle-plate-inspector
+kind: tool
+module: validohub
+country: CI
+category: transport
+status: active
+name:
+  en: "Ivorian Vehicle Plate Inspector"
+summary:
+  en: "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PLATE input"
+        required: true
+        placeholder:
+          en: "CI 1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-vin-validator, cote-d-ivoire-vehicle-data-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Vehicle Plate Inspector | ValidoHub"
+  description:
+    en: "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."

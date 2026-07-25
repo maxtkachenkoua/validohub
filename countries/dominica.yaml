@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: DM
+slug: dominica
+name:
+  en: "Dominica"
+region: North America
+languages:
+  - en
+currency: XCD
+relatedCountries:
+  - LC
+  - AG
+  - BB

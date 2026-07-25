@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-locale-number-parser
+kind: tool
+module: validohub
+country: CI
+category: localization
+status: active
+name:
+  en: "Ivorian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Cote dIvoire."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 XOF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-calendar-week-helper, cote-d-ivoire-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Cote dIvoire."

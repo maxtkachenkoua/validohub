@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: eswatini-accounting-audit-trail-checklist-generator
+kind: tool
+module: validohub
+country: SZ
+category: tax
+status: active
+name:
+  en: "Swazi Accounting Audit Trail Checklist Helper"
+summary:
+  en: "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.eswatini-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "AUDIT input"
+        required: true
+        placeholder:
+          en: "invoice 24/07/2026 1,234.56 SZL SZ123456789"
+    actions: [generate, validate, explain]
+related:
+  explicit: [eswatini-postal-code-validator, eswatini-address-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Swazi Accounting Audit Trail Checklist Helper | ValidoHub"
+  description:
+    en: "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."

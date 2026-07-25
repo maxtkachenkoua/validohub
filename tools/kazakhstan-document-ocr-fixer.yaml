@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-document-ocr-fixer
+kind: tool
+module: validohub
+country: KZ
+category: documents
+status: active
+name:
+  en: "Kazakh Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "900101300123 120940012345 125 5004100100 010000 Astana"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-privacy-redaction-helper, kazakhstan-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

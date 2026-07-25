@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sierra-leone-health-card-format-helper
+kind: tool
+module: validohub
+country: SL
+category: documents
+status: active
+name:
+  en: "Sierra Leonean Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sierra-leone-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "SL-ID-123456 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sierra-leone-vehicle-plate-inspector, sierra-leone-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sierra Leonean Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

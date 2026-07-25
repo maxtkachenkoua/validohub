@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-municipality-code-inspector
+kind: tool
+module: validohub
+country: KP
+category: address
+status: active
+name:
+  en: "North Korean Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Central District 1, Pyongyang 999093"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-phone-number-validator, north-korea-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

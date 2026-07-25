@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: senegal-customs-declaration-helper
+kind: tool
+module: validohub
+country: SN
+category: government
+status: active
+name:
+  en: "Senegalese Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.senegal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "SN123456789 HS 8471 1,234.56 XOF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [senegal-postal-tracking-helper, senegal-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Senegalese Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: PA
+slug: panama
+name:
+  en: "Panama"
+region: North America
+languages:
+  - es
+currency: PAB/USD
+relatedCountries:
+  - CR
+  - CO
+  - MX

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tanzania-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: TZ
+category: privacy
+status: active
+name:
+  en: "Tanzanian Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.tanzania-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "TZ-ID-123456\\nCentral business district, Dodoma 1000\\n+255 123 456 789"
+    actions: [generate, validate, explain]
+related:
+  explicit: [tanzania-driving-licence-format-helper, tanzania-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tanzanian Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

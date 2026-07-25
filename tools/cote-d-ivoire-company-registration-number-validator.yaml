@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-company-registration-number-validator
+kind: tool
+module: validohub
+country: CI
+category: national-identifiers
+status: active
+name:
+  en: "Ivorian company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "CI-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-tax-id-validator, cote-d-ivoire-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-71.19 -90.81 548.46 685.04" role="img">
+  <title>Nigeria country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="7.59" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="ng" d="M413.984,515.185l3.389,0.164l4.088,4.557l1.987,0.544l1.558-0.761l2.367-0.328l0.805-3.303l3.225-2.117l3.492-0.163l6.396-11.766l-0.104-2.653l-2.955-2.273l-5.913,2.603l-7.909-0.111l-3.77-2.386l-2.688,0.596l-1.4,2.438l-0.104,6.88l-2.256,3.198L413.984,515.185L413.984,515.185z"/>
+  </g>
+</svg>

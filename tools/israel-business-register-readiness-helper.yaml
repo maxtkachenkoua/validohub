@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-business-register-readiness-helper
+kind: tool
+module: validohub
+country: IL
+category: government
+status: active
+name:
+  en: "Israeli Companies Registrar Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated Companies Registrar lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "512345678 512345678 Jaffa Road 1, Jerusalem 9100001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [israel-id-card-format-helper, israel-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli Companies Registrar Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated Companies Registrar lookup or company registry workflow."

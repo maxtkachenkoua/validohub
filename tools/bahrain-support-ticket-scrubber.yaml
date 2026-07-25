@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-support-ticket-scrubber
+kind: tool
+module: validohub
+country: BH
+category: privacy
+status: active
+name:
+  en: "Bahraini Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 900101123, BMAG 1299123456, Government Avenue 1, Manama, Block 316"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-integration-smoke-test-builder, bahrain-cpr-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

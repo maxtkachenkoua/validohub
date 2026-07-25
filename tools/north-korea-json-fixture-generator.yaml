@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-json-fixture-generator
+kind: tool
+module: validohub
+country: KP
+category: developer-tools
+status: active
+name:
+  en: "North Korean JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KP\",\"resident\":\"KP-900101-123456\",\"boundary\":\"official-lookup-required\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [north-korea-regex-pack-helper, north-korea-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-sec-registration-number-validator
+kind: tool
+module: validohub
+country: PH
+category: national-identifiers
+status: active
+name:
+  en: "Philippine SEC registration number Validator"
+summary:
+  en: "Inspect SEC registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "CS202012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [philippines-tax-id-validator, philippines-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine SEC registration number Validator | ValidoHub"
+  description:
+    en: "Inspect SEC registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-form-field-auditor
+kind: tool
+module: validohub
+country: AU
+category: developer-tools
+status: active
+name:
+  en: "Australian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=51824753556&postal=2600 Canberra ACT&phone=+61 412 345 678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-locale-number-parser, australia-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

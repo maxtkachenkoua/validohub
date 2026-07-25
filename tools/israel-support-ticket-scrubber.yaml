@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-support-ticket-scrubber
+kind: tool
+module: validohub
+country: IL
+category: privacy
+status: active
+name:
+  en: "Israeli Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 123456782, 010 800 0000099999999, Jaffa Road 1, Jerusalem 9100001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [israel-integration-smoke-test-builder, israel-teudat-zehut-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

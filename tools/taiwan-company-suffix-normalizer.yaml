@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: taiwan-company-suffix-normalizer
+kind: tool
+module: validohub
+country: TW
+category: developer-tools
+status: active
+name:
+  en: "Taiwanese Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.taiwan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Taiwan Sample Holding Ltd 12345675"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [taiwan-procurement-identifier-helper, taiwan-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Taiwanese Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

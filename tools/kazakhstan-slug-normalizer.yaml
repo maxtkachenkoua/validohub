@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-slug-normalizer
+kind: tool
+module: validohub
+country: KZ
+category: developer-tools
+status: active
+name:
+  en: "Kazakh Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Kazakhstan sample company Mangilik El Avenue 1, Astana 010000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-document-ocr-fixer, kazakhstan-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

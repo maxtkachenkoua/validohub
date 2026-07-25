@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-json-fixture-generator
+kind: tool
+module: validohub
+country: IL
+category: developer-tools
+status: active
+name:
+  en: "Israeli JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IL\",\"id\":\"123456782\",\"iban\":\"IL620108000000099999999\",\"vat\":\"512345678\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [israel-regex-pack-helper, israel-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

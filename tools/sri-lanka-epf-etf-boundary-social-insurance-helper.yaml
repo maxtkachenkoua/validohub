@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-epf-etf-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: LK
+category: national-identifiers
+status: active
+name:
+  en: "Sri Lankan EPF / ETF boundary Helper"
+summary:
+  en: "Split EPF / ETF boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "EPF 123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-company-onboarding-auditor, sri-lanka-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan EPF / ETF boundary Helper | ValidoHub"
+  description:
+    en: "Split EPF / ETF boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

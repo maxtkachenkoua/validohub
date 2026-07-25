@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-json-fixture-generator
+kind: tool
+module: validohub
+country: TM
+category: developer-tools
+status: active
+name:
+  en: "Turkmen JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"TM\",\"tax\":\"12345678\",\"bank\":\"3901012345678901\",\"payment\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [turkmenistan-regex-pack-helper, turkmenistan-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

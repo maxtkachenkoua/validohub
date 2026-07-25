@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-json-fixture-generator
+kind: tool
+module: validohub
+country: MV
+category: developer-tools
+status: active
+name:
+  en: "Maldivian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MV\",\"gst\":\"GST123456\",\"bank\":\"0011234567890\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [maldives-regex-pack-helper, maldives-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

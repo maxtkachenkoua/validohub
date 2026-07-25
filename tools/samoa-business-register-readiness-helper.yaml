@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: samoa-business-register-readiness-helper
+kind: tool
+module: validohub
+country: WS
+category: government
+status: active
+name:
+  en: "Samoan MCIL company registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated MCIL company registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.samoa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "WS-REG-123456 WS123456789 Beach Road, Apia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [samoa-id-card-format-helper, samoa-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Samoan MCIL company registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated MCIL company registry lookup or company registry workflow."

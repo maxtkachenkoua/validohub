@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: KP
+category: tax
+status: active
+name:
+  en: "North Korean Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "TAX123456 2026.07.21 1,234 KPW"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-accounting-audit-trail-checklist-generator, north-korea-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

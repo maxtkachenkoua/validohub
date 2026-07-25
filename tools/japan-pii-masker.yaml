@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-pii-masker
+kind: tool
+module: validohub
+country: JP
+category: privacy
+status: active
+name:
+  en: "Japanese PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "123456789012 +81 3 1234 5678 0001 001 1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-personal-data-fixture-generator, japan-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

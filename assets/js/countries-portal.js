@@ -10,7 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const featureCheckboxes = portal.querySelectorAll('.vh-countries-feature-chips input');
   
   const cards = portal.querySelectorAll('.vh-countries-card');
-  const markers = portal.querySelectorAll('.vh-countries-map-marker');
+  const markers = portal.querySelectorAll('[data-vh-countries-map-item]');
+  const worldMap = portal.querySelector('[data-vh-countries-world-map]');
+  const mapTooltip = portal.querySelector('[data-vh-countries-map-tooltip]');
+  const mapTooltipImage = portal.querySelector('[data-vh-countries-map-tooltip-image]');
+  const mapTooltipName = portal.querySelector('[data-vh-countries-map-tooltip-name]');
   const continentGroups = portal.querySelectorAll('.vh-countries-continent-group');
   const emptyState = portal.querySelector('.vh-countries-empty-state');
 
@@ -32,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchVal = searchInput.value.toLowerCase().trim();
     const regionVal = regionSelect.value;
     const statusVal = statusSelect.value;
+
+    if (mapTooltip) {
+      mapTooltip.classList.remove('is-visible');
+    }
     
     const checkedFeatures = [];
     featureCheckboxes.forEach(cb => {
@@ -136,9 +144,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Highlight active map marker
-    markers.forEach(m => m.classList.remove('is-active'));
+    cards.forEach(c => c.classList.remove('is-country-active'));
+    card.classList.add('is-country-active');
+    markers.forEach(m => m.classList.remove('is-country-active'));
     const marker = portal.querySelector(`.vh-marker-${card.dataset.countryId}`);
-    if (marker) marker.classList.add('is-active');
+    if (marker) marker.classList.add('is-country-active');
+  }
+
+  function getMapItem(target) {
+    if (!worldMap || !target || typeof target.closest !== 'function') return null;
+    const item = target.closest('[data-vh-countries-map-item]');
+    if (!item || !worldMap.contains(item)) return null;
+    if (item.classList.contains('is-filtered-out')) return null;
+    return item;
   }
 
   // Bind hover/focus events on cards
@@ -148,21 +166,82 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('focus', handleActivate);
   });
 
-  // Bind hover/focus events on map markers
-  markers.forEach(marker => {
-    const countryId = marker.dataset.countryId;
-    const correspondingCard = portal.querySelector(`.vh-countries-card[data-country-id="${countryId}"]`);
-    
-    if (correspondingCard) {
-      const handleActivate = () => {
-        updatePreview(correspondingCard);
-        markers.forEach(m => m.classList.remove('is-active'));
-        marker.classList.add('is-active');
-      };
-      marker.addEventListener('mouseenter', handleActivate);
-      marker.addEventListener('focus', handleActivate);
+  function positionMapTooltip(target, pointerEvent) {
+    if (!worldMap || !mapTooltip || !target) return;
+    const mapRect = worldMap.getBoundingClientRect();
+    const rect = target.getBoundingClientRect();
+    const name = target.dataset.countryName || 'Country';
+    const outlineSrc = target.dataset.countryOutline || '';
+    if (mapTooltipName) mapTooltipName.textContent = name;
+    if (mapTooltipImage && outlineSrc && mapTooltipImage.getAttribute('src') !== outlineSrc) {
+      mapTooltipImage.src = outlineSrc;
+      mapTooltipImage.alt = `${name} country shape`;
     }
-  });
+    mapTooltip.classList.add('is-visible');
+    const width = mapTooltip.offsetWidth || 210;
+    const height = mapTooltip.offsetHeight || 230;
+    const x = pointerEvent ? pointerEvent.clientX - mapRect.left : rect.left + rect.width / 2 - mapRect.left;
+    const y = pointerEvent ? pointerEvent.clientY - mapRect.top : rect.top + rect.height / 2 - mapRect.top;
+    const gap = 22;
+    const preferLeft = x > mapRect.width * 0.58;
+    const preferAbove = y > mapRect.height * 0.62;
+    const rawLeft = preferLeft ? x - width - gap : x + gap;
+    const rawTop = preferAbove ? y - height - gap : y + gap;
+    const left = Math.max(12, Math.min(mapRect.width - width - 12, rawLeft));
+    const top = Math.max(12, Math.min(mapRect.height - height - 12, rawTop));
+    mapTooltip.style.left = `${left}px`;
+    mapTooltip.style.top = `${top}px`;
+  }
+
+  function openMapCountry(target) {
+    const href = target && target.dataset.countryHref;
+    if (href) window.location.href = href;
+  }
+
+  function activateMapItem(item, pointerEvent) {
+    const countryId = item && item.dataset.countryId;
+    const correspondingCard = countryId ? portal.querySelector(`.vh-countries-card[data-country-id="${countryId}"]`) : null;
+    if (!correspondingCard) return;
+    updatePreview(correspondingCard);
+    positionMapTooltip(item, pointerEvent);
+    markers.forEach(marker => marker.classList.remove('is-country-active'));
+    item.classList.add('is-country-active');
+  }
+
+  if (worldMap && mapTooltip) {
+    worldMap.addEventListener('pointermove', event => {
+      const item = getMapItem(event.target);
+      if (!item) {
+        mapTooltip.classList.remove('is-visible');
+        return;
+      }
+      activateMapItem(item, event);
+    });
+
+    worldMap.addEventListener('focusin', event => {
+      const item = getMapItem(event.target);
+      if (item) activateMapItem(item);
+    });
+
+    worldMap.addEventListener('click', event => {
+      const item = getMapItem(event.target);
+      if (!item) return;
+      event.preventDefault();
+      openMapCountry(item);
+    });
+
+    worldMap.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      const item = getMapItem(event.target);
+      if (!item) return;
+      event.preventDefault();
+      openMapCountry(item);
+    });
+
+    worldMap.addEventListener('pointerleave', () => {
+      mapTooltip.classList.remove('is-visible');
+    });
+  }
 
   // Initialize preview panel to the default active hub (e.g. Brazil or Poland)
   const defaultCard = portal.querySelector('.vh-countries-card[data-country-id="brazil"]');

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-csv-locale-normalizer
+kind: tool
+module: validohub
+country: KH
+category: developer-tools
+status: active
+name:
+  en: "Cambodian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Cambodia decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234,567 KHR;21/07/2026;K001-123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-slug-normalizer, cambodia-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Cambodia decimal, date, postal, phone, tax, and banking fields."

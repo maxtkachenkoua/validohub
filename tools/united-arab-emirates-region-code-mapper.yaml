@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-region-code-mapper
+kind: tool
+module: validohub
+country: AE
+category: address
+status: active
+name:
+  en: "UAE Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "PO Box 12345 Abu Dhabi"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-municipality-code-inspector, united-arab-emirates-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

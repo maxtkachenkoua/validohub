@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: seychelles-company-registration-number-validator
+kind: tool
+module: validohub
+country: SC
+category: national-identifiers
+status: active
+name:
+  en: "Seychellois company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.seychelles-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "SC-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [seychelles-tax-id-validator, seychelles-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Seychellois company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

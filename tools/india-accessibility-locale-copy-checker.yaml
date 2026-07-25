@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-accessibility-locale-copy-checker
+kind: tool
+module: validohub
+country: IN
+category: localization
+status: active
+name:
+  en: "Indian Locale Copy Checker"
+summary:
+  en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "COPY input"
+        required: true
+        placeholder:
+          en: "PAN input, PIN code input, amount 1,23,456.78 INR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-support-ticket-scrubber, india-integration-smoke-test-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian Locale Copy Checker | ValidoHub"
+  description:
+    en: "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."

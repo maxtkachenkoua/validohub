@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-municipality-code-inspector
+kind: tool
+module: validohub
+country: CV
+category: address
+status: active
+name:
+  en: "Cabo Verdean Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Central business district, Praia 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-phone-number-validator, cabo-verde-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

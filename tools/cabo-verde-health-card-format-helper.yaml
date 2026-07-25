@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-health-card-format-helper
+kind: tool
+module: validohub
+country: CV
+category: documents
+status: active
+name:
+  en: "Cabo Verdean Health Card Format Helper"
+summary:
+  en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "HEALTH input"
+        required: true
+        placeholder:
+          en: "CV-ID-123456 HEALTH 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-vehicle-plate-inspector, cabo-verde-vin-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Health Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."

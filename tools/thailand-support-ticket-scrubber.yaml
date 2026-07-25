@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-support-ticket-scrubber
+kind: tool
+module: validohub
+country: TH
+category: privacy
+status: active
+name:
+  en: "Thai Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 1101700203451, 002 1234567890, Sukhumvit Road 1, Bangkok 10110"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-integration-smoke-test-builder, thailand-thai-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

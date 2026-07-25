@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: NP
+slug: nepal
+name:
+  en: Nepal
+region: Asia
+languages:
+  - ne
+currency: NPR
+relatedCountries:
+  - IN
+  - BD
+  - PK

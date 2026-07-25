@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nauru-business-register-readiness-helper
+kind: tool
+module: validohub
+country: NR
+category: government
+status: active
+name:
+  en: "Nauruan business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nauru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "NR-REG-123456 NR123456789 Yaren District, Nauru"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nauru-id-card-format-helper, nauru-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nauruan business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

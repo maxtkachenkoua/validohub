@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-business-register-readiness-helper
+kind: tool
+module: validohub
+country: CN
+category: government
+status: active
+name:
+  en: "Chinese SAMR / business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated SAMR / business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "91310000MA1FL0AB1C 91310000MA1FL0AB1C 1 Chang An Avenue, Beijing 100000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-id-card-format-helper, china-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese SAMR / business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated SAMR / business registry lookup or company registry workflow."

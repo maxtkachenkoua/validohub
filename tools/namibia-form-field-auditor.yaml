@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: namibia-form-field-auditor
+kind: tool
+module: validohub
+country: NA
+category: developer-tools
+status: active
+name:
+  en: "Namibian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.namibia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=NA123456789&postal=1000 Windhoek&phone=+264 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [namibia-locale-number-parser, namibia-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Namibian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

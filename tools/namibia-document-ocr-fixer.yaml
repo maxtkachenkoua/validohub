@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: namibia-document-ocr-fixer
+kind: tool
+module: validohub
+country: NA
+category: documents
+status: active
+name:
+  en: "Namibian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.namibia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "NA-ID-123456 NA123456789 001 1234567890 1000 Windhoek"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [namibia-privacy-redaction-helper, namibia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Namibian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

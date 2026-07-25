@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-residence-permit-format-helper
+kind: tool
+module: validohub
+country: KP
+category: documents
+status: active
+name:
+  en: "North Korean Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "KP PERMIT 2026 KP-900101-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-health-card-format-helper, north-korea-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

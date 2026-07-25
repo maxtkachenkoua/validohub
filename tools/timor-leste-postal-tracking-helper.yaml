@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: timor-leste-postal-tracking-helper
+kind: tool
+module: validohub
+country: TL
+category: logistics
+status: active
+name:
+  en: "Timorese Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.timor-leste-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 Dili 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [timor-leste-data-quality-workbench, timor-leste-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Timorese Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

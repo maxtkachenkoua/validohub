@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: IN
+category: tax
+status: active
+name:
+  en: "Indian GST e-invoice / IRN Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IN\",\"pan\":\"ABCDE1234F\",\"gstin\":\"27ABCDE1234F1Z5\",\"ifsc\":\"HDFC0001234\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-tax-authority-handoff-helper, india-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian GST e-invoice / IRN Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

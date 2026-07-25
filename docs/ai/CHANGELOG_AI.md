@@ -1,3 +1,50 @@
+## 2026-07-25 - All-country premium visual and coverage baseline checkpoint
+
+- Regenerated Africa country shape and location PNGs to the Ghana/Kenya-approved premium 3D raster style, including tactile raised outline assets and neutral-gray relief location maps with only the target country highlighted.
+- Added full Oceania source coverage for 14 sovereign UN member countries and generated premium outline/location PNGs for Australia, Fiji, Kiribati, Marshall Islands, Micronesia, Nauru, New Zealand, Palau, Papua New Guinea, Samoa, Solomon Islands, Tonga, Tuvalu, and Vanuatu.
+- Regenerated United States outline/location PNGs so USA uses unmistakable stars-and-stripes artwork instead of a generic red/white/blue treatment.
+- Restored missing North America YAML source manifests for all 23 generated North America countries so country source/data/assets coverage now lines up.
+- Adjusted country hero visual image fitting to preserve wide island/archipelago assets without cropping.
+- Verified local source coverage at 194 country YAML/data/image pairs: Asia 48, Europe 43, Africa 54, North America 23, South America 12, Oceania 14. Russia and Belarus remain excluded by product decision.
+- Ran scoped builds/audits, not a full build: Africa final five, all Oceania countries, United States, Fiji post-CSS, portal, and `npm run audit:country-suite` passed.
+
+## 2026-07-24 - Oceania baseline expansion batch
+
+- Added a documented Oceania premium generation batch for Australia (australia), Fiji (fiji), Kiribati (kiribati), Marshall Islands (marshall-islands), Micronesia (micronesia), Nauru (nauru), New Zealand (new-zealand), Palau (palau), Papua New Guinea (papua-new-guinea), Samoa (samoa), Solomon Islands (solomon-islands), Tonga (tonga), Tuvalu (tuvalu), Vanuatu (vanuatu).
+- Each country uses Country Suite Factory V1, quality-driven local workbenches, runtime localization for en/es/pt-BR/de/fr/pl/uk, mandatory field breakdown, same-country related links, validate/generate affordances, and explicit official boundaries.
+- Added `docs/product/OCEANIA_PREMIUM_SUITE_SPEC.md` so future AI sessions treat batch generation quality as a contract, not a one-off.
+
+## 2026-07-25 - Ghana/Kenya premium country visual baseline
+
+- Promoted the Ghana/Kenya imagegen-style country visual system to the finished-country baseline: independent premium 3D raster outline and location assets, no baked labels/badges, no split panels/gutters, and target-only flag-color highlights on neutral relief maps.
+- Flat procedural/SVG-derived country images are now documented as temporary scaffolding only, not the accepted premium country standard.
+
+## 2026-07-24 - Africa baseline expansion batch
+
+- Added a documented Africa premium generation batch for Algeria (algeria), Angola (angola), Benin (benin), Botswana (botswana), Burkina Faso (burkina-faso), Burundi (burundi), Cabo Verde (cabo-verde), Cameroon (cameroon), Central African Republic (central-african-republic), Chad (chad), Comoros (comoros), Republic of the Congo (congo), Cote dIvoire (cote-d-ivoire), Democratic Republic of the Congo (democratic-republic-of-the-congo), Djibouti (djibouti), Egypt (egypt), Equatorial Guinea (equatorial-guinea), Eritrea (eritrea), Eswatini (eswatini), Ethiopia (ethiopia), Gabon (gabon), Gambia (gambia), Ghana (ghana), Guinea (guinea), Guinea-Bissau (guinea-bissau), Kenya (kenya), Lesotho (lesotho), Liberia (liberia), Libya (libya), Madagascar (madagascar), Malawi (malawi), Mali (mali), Mauritania (mauritania), Mauritius (mauritius), Morocco (morocco), Mozambique (mozambique), Namibia (namibia), Niger (niger), Nigeria (nigeria), Rwanda (rwanda), Sao Tome and Principe (sao-tome-and-principe), Senegal (senegal), Seychelles (seychelles), Sierra Leone (sierra-leone), Somalia (somalia), South Africa (south-africa), South Sudan (south-sudan), Sudan (sudan), Tanzania (tanzania), Togo (togo), Tunisia (tunisia), Uganda (uganda), Zambia (zambia), Zimbabwe (zimbabwe).
+- Each country uses Country Suite Factory V1, quality-driven local workbenches, runtime localization for en/es/pt-BR/de/fr/pl/uk, mandatory field breakdown, same-country related links, validate/generate affordances, and explicit official boundaries.
+- Added `docs/product/AFRICA_BASELINE_SUITE_SPEC.md` so future AI sessions treat batch generation quality as a contract, not a one-off.
+
+## 2026-07-24 - Asia full-premium expansion batch
+
+- Added a documented Asia premium generation batch for Japan (japan), India (india), Singapore (singapore), South Korea (south-korea), United Arab Emirates (united-arab-emirates).
+- Each country uses Country Suite Factory V1, quality-driven local workbenches, runtime localization for en/es/pt-BR/de/fr/pl/uk, mandatory field breakdown, same-country related links, validate/generate affordances, and explicit official boundaries.
+- Added `docs/product/ASIA_PREMIUM_SUITE_SPEC.md` so future AI sessions treat batch generation quality as a contract, not a one-off.
+
+
+## 2026-07-24 - Broken Country Shape Raster Repair
+
+- Replaced the 32 broken 887x887 paired-composite `*-outline.png` source assets with standalone 1254x1254 country-shape raster PNGs after the Croatia test was accepted as the working style direction.
+- Regenerated only outline/source raster assets; `*-location.png` assets, country data, and Valido Engine were untouched.
+- Ran scoped sequential `npm run build:country -- --country <slug> --locales en` for all materialized repaired routes. Japan has a repaired source `japan-outline.png`, but `build:country -- --country japan --locales en` currently reports `Country route not found in source registry: japan`.
+- Verified source/generated outline PNGs match for the 31 materialized repaired countries and confirmed HTTP 200 on their local preview pages.
+
+## 2026-07-24 - Scoped Build Asset Link Refresh
+
+- Fixed the local-preview unstyled-page regression where scoped asset rebuilds deleted old hashed CSS/JS bundles while generated pages outside the selected scope still linked those old bundle names.
+- Added `scripts/dev-asset-links.mjs` and wired it into `build:country`, `build:portal`, and `build:tools` so scoped builds refresh generated HTML bundle links across the existing generated preview tree after recompiling shared assets.
+- Ran `npm run build:country -- --country albania --locales en`; it refreshed 24,130 generated pages, rebuilt the Albania English tree, and passed targeted country HTML guards.
+- Verified generated HTML no longer references missing CSS or JS bundle files. Valido Engine and country images were untouched.
 
 ## 2026-07-24 - Shared Tool Hero and Country Visual Rules Hardening
 
@@ -1000,3 +1047,10 @@ Added 20 global premium workbenches across Cloud / DevOps, AI / Data / RAG, Back
 
 - Recorded the current North America/country-visual checkpoint in `docs/ai/NEXT_CHAT_HANDOFF.md`, including the accepted visual rules, the paused/unaccepted country image cleanup, the stale CSS bundle-link risk on older generated country pages, and the requirement to run country scoped builds sequentially.
 - Preserved the current dirty worktree as a baseline commit by request so later visual/runtime regressions can be compared against this checkpoint.
+
+## 2026-07-26 Approved Premium Site Baseline
+
+- Recorded the user-approved premium ValidoHub revision as the current rollback baseline before future country-tool realism and atlas-detail work.
+- Preserved the all-country source/data/image baseline, premium 3D raster country visuals, Africa/Oceania/USA visual pass, and Countries Portal interactive neutral world map with raster country-shape hover cards.
+- Documented that the accepted Countries Portal map uses a calm neutral atlas, no fallback square/diamond/flag markers, restrained active geography outline/glow, and `assets/images/countries/*-outline.png` mini-card previews instead of flat SVG flag painting.
+- Noted the remaining atlas limitation: current world-map geometry is simplified; true higher-detail country contours require a deliberate high-detail atlas asset pipeline.

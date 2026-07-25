@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ghana-bank-statement-parser
+kind: tool
+module: validohub
+country: GH
+category: finance
+status: active
+name:
+  en: "Ghanaian Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ghana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "24/07/2026; 1,234.56 GHS; 001 1234567890; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ghana-masked-bank-account-formatter, ghana-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ghanaian Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."

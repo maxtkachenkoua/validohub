@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BH
+slug: bahrain
+name:
+  en: Bahrain
+region: Asia
+languages:
+  - ar
+currency: BHD
+relatedCountries:
+  - SA
+  - QA
+  - KW

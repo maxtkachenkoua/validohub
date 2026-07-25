@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-state-employment-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: KP
+category: national-identifiers
+status: active
+name:
+  en: "North Korean state employment boundary Helper"
+summary:
+  en: "Split state employment boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "STATE-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-company-onboarding-auditor, north-korea-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean state employment boundary Helper | ValidoHub"
+  description:
+    en: "Split state employment boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

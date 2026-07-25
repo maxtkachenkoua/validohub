@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: micronesia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: FM
+category: government
+status: active
+name:
+  en: "Micronesian business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.micronesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "FM-REG-123456 FM123456789 Palikir, Pohnpei State"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [micronesia-id-card-format-helper, micronesia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Micronesian business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

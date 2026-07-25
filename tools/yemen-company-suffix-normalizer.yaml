@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-company-suffix-normalizer
+kind: tool
+module: validohub
+country: YE
+category: developer-tools
+status: active
+name:
+  en: "Yemeni Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Yemen Sample Holding Ltd YE-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-procurement-identifier-helper, yemen-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

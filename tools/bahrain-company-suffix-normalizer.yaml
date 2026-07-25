@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-company-suffix-normalizer
+kind: tool
+module: validohub
+country: BH
+category: developer-tools
+status: active
+name:
+  en: "Bahraini Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Bahrain Sample Holding Ltd 123456-1"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-procurement-identifier-helper, bahrain-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

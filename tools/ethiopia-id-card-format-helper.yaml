@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ethiopia-id-card-format-helper
+kind: tool
+module: validohub
+country: ET
+category: national-identifiers
+status: active
+name:
+  en: "Ethiopian ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ethiopia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "ET-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ethiopia-passport-number-helper, ethiopia-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ethiopian ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-privacy-redaction-helper
+kind: tool
+module: validohub
+country: MY
+category: privacy
+status: active
+name:
+  en: "Malaysian PDPA privacy Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"MY\",\"ssm\":\"201901234567\",\"tin\":\"C1234567890\",\"duitnow\":\"+60123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-pii-masker, malaysia-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian PDPA privacy Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

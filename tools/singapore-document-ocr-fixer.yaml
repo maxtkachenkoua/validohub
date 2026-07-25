@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-document-ocr-fixer
+kind: tool
+module: validohub
+country: SG
+category: documents
+status: active
+name:
+  en: "Singapore Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "S1234567D M91234567X 7171 001 123456789 049315 Singapore"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-privacy-redaction-helper, singapore-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

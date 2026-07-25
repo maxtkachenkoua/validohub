@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-pii-masker
+kind: tool
+module: validohub
+country: MV
+category: privacy
+status: active
+name:
+  en: "Maldivian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "A123456 +960 777 1234 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [maldives-personal-data-fixture-generator, maldives-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

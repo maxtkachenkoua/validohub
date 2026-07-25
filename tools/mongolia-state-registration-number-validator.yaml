@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-state-registration-number-validator
+kind: tool
+module: validohub
+country: MN
+category: national-identifiers
+status: active
+name:
+  en: "Mongolian state registration number Validator"
+summary:
+  en: "Inspect state registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "9012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-tax-id-validator, mongolia-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian state registration number Validator | ValidoHub"
+  description:
+    en: "Inspect state registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

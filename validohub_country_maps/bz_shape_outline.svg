@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-34.08 -74.41 255.37 630.38" role="img">
+  <title>Belize country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="3.54" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="bz" d="M191.823,483.228l-0.043,3.154h0.726l2.472-4.615h-1.677L191.823,483.228L191.823,483.228z"/>
+  </g>
+</svg>

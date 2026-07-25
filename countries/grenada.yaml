@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: GD
+slug: grenada
+name:
+  en: "Grenada"
+region: North America
+languages:
+  - en
+currency: XCD
+relatedCountries:
+  - VC
+  - TT
+  - BB

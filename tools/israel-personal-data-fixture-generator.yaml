@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: IL
+category: privacy
+status: active
+name:
+  en: "Israeli Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "123456782\\nJaffa Road 1, Jerusalem 9100001\\n+972 50 123 4567"
+    actions: [generate, validate, explain]
+related:
+  explicit: [israel-driving-licence-format-helper, israel-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

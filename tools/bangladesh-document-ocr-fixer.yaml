@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-document-ocr-fixer
+kind: tool
+module: validohub
+country: BD
+category: documents
+status: active
+name:
+  en: "Bangladeshi Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "1990123456789 123456789012 145 1234567890123 1000 Dhaka"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-privacy-redaction-helper, bangladesh-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

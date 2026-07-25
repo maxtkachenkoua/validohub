@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: senegal-residence-permit-format-helper
+kind: tool
+module: validohub
+country: SN
+category: documents
+status: active
+name:
+  en: "Senegalese Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.senegal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "SN PERMIT 2026 SN-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [senegal-health-card-format-helper, senegal-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Senegalese Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: VN
+category: developer-tools
+status: active
+name:
+  en: "Vietnamese Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"VN\",\"taxCode\":\"0101234567\",\"napas\":\"9704\",\"vietqr\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [vietnam-citizen-id-boundary-validator, vietnam-enterprise-registration-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

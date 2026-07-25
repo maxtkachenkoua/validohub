@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: samoa-document-ocr-fixer
+kind: tool
+module: validohub
+country: WS
+category: documents
+status: active
+name:
+  en: "Samoan Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.samoa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "WS-TIN-123456 WS123456789 001 1234567890 Apia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [samoa-privacy-redaction-helper, samoa-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Samoan Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

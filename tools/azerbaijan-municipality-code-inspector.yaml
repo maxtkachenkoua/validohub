@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-municipality-code-inspector
+kind: tool
+module: validohub
+country: AZ
+category: address
+status: active
+name:
+  en: "Azerbaijani Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Neftchilar Avenue 1, Baku AZ1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-phone-number-validator, azerbaijan-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

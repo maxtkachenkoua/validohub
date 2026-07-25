@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-commercial-registration-number-validator
+kind: tool
+module: validohub
+country: YE
+category: national-identifiers
+status: active
+name:
+  en: "Yemeni commercial registration number Validator"
+summary:
+  en: "Inspect commercial registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "YE-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-tax-id-validator, yemen-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni commercial registration number Validator | ValidoHub"
+  description:
+    en: "Inspect commercial registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

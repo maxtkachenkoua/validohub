@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-json-fixture-generator
+kind: tool
+module: validohub
+country: KG
+category: developer-tools
+status: active
+name:
+  en: "Kyrgyz JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KG\",\"pin\":\"20101200123456\",\"bik\":\"109\",\"elsom\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [kyrgyzstan-regex-pack-helper, kyrgyzstan-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

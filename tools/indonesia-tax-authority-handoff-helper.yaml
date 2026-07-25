@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: ID
+category: tax
+status: active
+name:
+  en: "Indonesian Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "01.234.567.8-901.000 21/07/2026 1.234.567,89 IDR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-accounting-audit-trail-checklist-generator, indonesia-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

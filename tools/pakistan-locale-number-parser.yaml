@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-locale-number-parser
+kind: tool
+module: validohub
+country: PK
+category: localization
+status: active
+name:
+  en: "Pakistani Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Pakistan."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 PKR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-calendar-week-helper, pakistan-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Pakistan."

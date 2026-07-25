@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-masked-bank-account-formatter
+kind: tool
+module: validohub
+country: JO
+category: finance
+status: active
+name:
+  en: "Jordanian Masked Bank Account Formatter"
+summary:
+  en: "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "CBJO 131000302"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-currency-decimal-formatter, jordan-tax-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Masked Bank Account Formatter | ValidoHub"
+  description:
+    en: "Create log-safe bank-account previews while preserving routing and account-tail evidence."

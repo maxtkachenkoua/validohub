@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: micronesia-postal-code-validator
+kind: tool
+module: validohub
+country: FM
+category: address
+status: active
+name:
+  en: "Micronesian Postal Code Validator"
+summary:
+  en: "Validate state/island locality shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.micronesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "Palikir, Pohnpei"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [micronesia-address-normalizer, micronesia-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Micronesian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate state/island locality shape, split area/delivery hints, and preserve official postal lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: somalia-pii-masker
+kind: tool
+module: validohub
+country: SO
+category: privacy
+status: active
+name:
+  en: "Somali PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.somalia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "SO-ID-123456 +252 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [somalia-personal-data-fixture-generator, somalia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Somali PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

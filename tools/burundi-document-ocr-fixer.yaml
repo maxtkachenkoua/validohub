@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-document-ocr-fixer
+kind: tool
+module: validohub
+country: BI
+category: documents
+status: active
+name:
+  en: "Burundian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "BI-ID-123456 BI123456789 001 1234567890 1000 Gitega"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-privacy-redaction-helper, burundi-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

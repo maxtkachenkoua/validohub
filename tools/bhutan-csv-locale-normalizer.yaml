@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bhutan-csv-locale-normalizer
+kind: tool
+module: validohub
+country: BT
+category: developer-tools
+status: active
+name:
+  en: "Bhutanese CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Bhutan decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bhutan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 BTN;21/07/2026;TPN1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bhutan-slug-normalizer, bhutan-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bhutanese CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Bhutan decimal, date, postal, phone, tax, and banking fields."

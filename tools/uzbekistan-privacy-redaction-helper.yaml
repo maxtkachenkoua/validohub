@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-privacy-redaction-helper
+kind: tool
+module: validohub
+country: UZ
+category: privacy
+status: active
+name:
+  en: "Uzbek personal-data privacy Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"UZ\",\"pinfl\":\"30101876543212\",\"stir\":\"123456789\",\"mfo\":\"00444\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-pii-masker, uzbekistan-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek personal-data privacy Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

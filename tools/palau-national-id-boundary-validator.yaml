@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palau-national-id-boundary-validator
+kind: tool
+module: validohub
+country: PW
+category: national-identifiers
+status: active
+name:
+  en: "Palauan national ID boundary Validator"
+summary:
+  en: "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "PW-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palau-business-registration-number-validator, palau-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palauan national ID boundary Validator | ValidoHub"
+  description:
+    en: "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

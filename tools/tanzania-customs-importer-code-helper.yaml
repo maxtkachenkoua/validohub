@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tanzania-customs-importer-code-helper
+kind: tool
+module: validohub
+country: TZ
+category: national-identifiers
+status: active
+name:
+  en: "Tanzanian Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tanzania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "TZTZ-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tanzania-social-security-boundary-social-insurance-helper, tanzania-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tanzanian Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

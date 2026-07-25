@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritius-locale-number-parser
+kind: tool
+module: validohub
+country: MU
+category: localization
+status: active
+name:
+  en: "Mauritian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Mauritius."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritius-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 MUR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritius-calendar-week-helper, mauritius-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Mauritius."

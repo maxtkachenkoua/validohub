@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: namibia-locale-number-parser
+kind: tool
+module: validohub
+country: NA
+category: localization
+status: active
+name:
+  en: "Namibian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Namibia."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.namibia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 NAD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [namibia-calendar-week-helper, namibia-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Namibian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Namibia."

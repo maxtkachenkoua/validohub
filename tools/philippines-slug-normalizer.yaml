@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-slug-normalizer
+kind: tool
+module: validohub
+country: PH
+category: developer-tools
+status: active
+name:
+  en: "Philippine Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Philippines sample company Ayala Avenue 1, Makati 1226"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [philippines-document-ocr-fixer, philippines-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

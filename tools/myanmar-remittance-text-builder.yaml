@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: myanmar-remittance-text-builder
+kind: tool
+module: validohub
+country: MM
+category: finance
+status: active
+name:
+  en: "Myanmar Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.myanmar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 TIN123456789 1,234,567 MMK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [myanmar-payment-reconciliation-helper, myanmar-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Myanmar Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

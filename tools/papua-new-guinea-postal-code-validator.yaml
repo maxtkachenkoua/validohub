@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-postal-code-validator
+kind: tool
+module: validohub
+country: PG
+category: address
+status: active
+name:
+  en: "Papua New Guinean Postal Code Validator"
+summary:
+  en: "Validate province/locality shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "Port Moresby NCD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-address-normalizer, papua-new-guinea-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate province/locality shape, split area/delivery hints, and preserve official postal lookup boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-customs-declaration-helper
+kind: tool
+module: validohub
+country: KR
+category: government
+status: active
+name:
+  en: "South Korean Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "123-45-67890 HS 8471 1,234,567 KRW"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-postal-tracking-helper, south-korea-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

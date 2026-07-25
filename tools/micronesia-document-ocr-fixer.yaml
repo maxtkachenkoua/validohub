@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: micronesia-document-ocr-fixer
+kind: tool
+module: validohub
+country: FM
+category: documents
+status: active
+name:
+  en: "Micronesian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.micronesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "FM-ID-123456 FM123456789 001 1234567890 Palikir, Pohnpei"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [micronesia-privacy-redaction-helper, micronesia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Micronesian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

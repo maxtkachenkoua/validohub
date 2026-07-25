@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-postal-tracking-helper
+kind: tool
+module: validohub
+country: SB
+category: logistics
+status: active
+name:
+  en: "Solomon Islands Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 Honiara"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-data-quality-workbench, solomon-islands-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

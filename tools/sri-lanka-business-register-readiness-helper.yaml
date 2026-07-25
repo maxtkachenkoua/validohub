@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sri-lanka-business-register-readiness-helper
+kind: tool
+module: validohub
+country: LK
+category: government
+status: active
+name:
+  en: "Sri Lankan ROC registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated ROC registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sri-lanka-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "PV123456 104567890 Galle Road 1, Colombo 00100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sri-lanka-id-card-format-helper, sri-lanka-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sri Lankan ROC registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated ROC registry lookup or company registry workflow."

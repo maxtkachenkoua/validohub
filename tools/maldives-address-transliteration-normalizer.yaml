@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: MV
+category: address
+status: active
+name:
+  en: "Maldivian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Majeedhee Magu 1, Male 20026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [maldives-region-code-mapper, maldives-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

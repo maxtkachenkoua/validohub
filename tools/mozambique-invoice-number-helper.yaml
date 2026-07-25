@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mozambique-invoice-number-helper
+kind: tool
+module: validohub
+country: MZ
+category: tax
+status: active
+name:
+  en: "Mozambican Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mozambique-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 MZ123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mozambique-e-invoicing-readiness-checker, mozambique-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mozambican Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

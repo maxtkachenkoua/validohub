@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-currency-decimal-formatter
+kind: tool
+module: validohub
+country: IN
+category: finance
+status: active
+name:
+  en: "Indian INR Decimal Currency Formatter"
+summary:
+  en: "Normalize INR amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,23,456.78 INR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-tax-rate-sanity-helper, india-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian INR Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize INR amount strings, decimal separators, grouping, and API-safe numeric previews."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: NP
+category: transport
+status: active
+name:
+  en: "Nepali Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "BA 2 PA 1234 WVWZZZ1JZXW000001 27-01-76-12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-customs-declaration-helper, nepal-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: seychelles-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: SC
+category: transport
+status: active
+name:
+  en: "Seychellois Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.seychelles-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "SC 1234 WVWZZZ1JZXW000001 SC-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [seychelles-customs-declaration-helper, seychelles-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Seychellois Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

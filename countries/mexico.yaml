@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MX
+slug: mexico
+name:
+  en: "Mexico"
+region: North America
+languages:
+  - es
+currency: MXN
+relatedCountries:
+  - US
+  - GT
+  - BZ

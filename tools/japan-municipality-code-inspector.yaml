@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-municipality-code-inspector
+kind: tool
+module: validohub
+country: JP
+category: address
+status: active
+name:
+  en: "Japanese Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "1-1 Chiyoda, Chiyoda-ku, Tokyo 100-0001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-phone-number-validator, japan-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

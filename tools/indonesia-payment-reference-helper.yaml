@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-payment-reference-helper
+kind: tool
+module: validohub
+country: ID
+category: finance
+status: active
+name:
+  en: "Indonesian BI-FAST / QRIS reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "BI-FAST / QRIS reference REF 2026-001 1.234.567,89 IDR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-remittance-text-builder, indonesia-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian BI-FAST / QRIS reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

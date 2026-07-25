@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: YE
+category: privacy
+status: active
+name:
+  en: "Yemeni Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "12345678901\\nAl-Zubayri Street 1, Sanaa 1247\\n+967 7 123 456"
+    actions: [generate, validate, explain]
+related:
+  explicit: [yemen-driving-licence-format-helper, yemen-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

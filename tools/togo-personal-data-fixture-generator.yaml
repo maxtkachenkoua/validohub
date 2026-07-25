@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: togo-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: TG
+category: privacy
+status: active
+name:
+  en: "Togolese Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.togo-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "TG-ID-123456\\nCentral business district, Lome 1000\\n+228 123 456 789"
+    actions: [generate, validate, explain]
+related:
+  explicit: [togo-driving-licence-format-helper, togo-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Togolese Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

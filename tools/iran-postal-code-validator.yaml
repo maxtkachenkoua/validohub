@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-postal-code-validator
+kind: tool
+module: validohub
+country: IR
+category: address
+status: active
+name:
+  en: "Iranian Postal Code Validator"
+summary:
+  en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "11369-12345 Tehran"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-address-normalizer, iran-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."

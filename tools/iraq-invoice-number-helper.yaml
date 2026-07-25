@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iraq-invoice-number-helper
+kind: tool
+module: validohub
+country: IQ
+category: tax
+status: active
+name:
+  en: "Iraqi Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iraq-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 TAX123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iraq-e-invoicing-readiness-checker, iraq-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iraqi Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

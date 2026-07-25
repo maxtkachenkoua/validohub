@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-form-field-auditor
+kind: tool
+module: validohub
+country: KP
+category: developer-tools
+status: active
+name:
+  en: "North Korean Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=TAX123456&postal=999093 Pyongyang&phone=+850 2 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-locale-number-parser, north-korea-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-customs-importer-code-helper
+kind: tool
+module: validohub
+country: CF
+category: national-identifiers
+status: active
+name:
+  en: "Central African Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "CFCF-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-social-security-boundary-social-insurance-helper, central-african-republic-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

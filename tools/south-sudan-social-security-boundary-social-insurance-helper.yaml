@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-sudan-social-security-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: SS
+category: national-identifiers
+status: active
+name:
+  en: "South Sudanese social security boundary Helper"
+summary:
+  en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "SS-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-sudan-company-onboarding-auditor, south-sudan-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Sudanese social security boundary Helper | ValidoHub"
+  description:
+    en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

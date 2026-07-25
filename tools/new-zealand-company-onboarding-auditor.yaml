@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-company-onboarding-auditor
+kind: tool
+module: validohub
+country: NZ
+category: developer-tools
+status: active
+name:
+  en: "New Zealand Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for NZBN, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NZ\",\"ird\":\"123456789\",\"nzbn\":\"9429000000000\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-business-register-readiness-helper, new-zealand-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for NZBN, VAT, address, banking, and official registry handoff readiness."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-locale-number-parser
+kind: tool
+module: validohub
+country: PS
+category: localization
+status: active
+name:
+  en: "Palestinian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Palestine."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 ILS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-calendar-week-helper, palestine-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Palestine."

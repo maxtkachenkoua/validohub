@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-bank-account-validator
+kind: tool
+module: validohub
+country: KZ
+category: finance
+status: active
+name:
+  en: "Kazakhstan Bank Account Validator"
+summary:
+  en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BANK input"
+        required: true
+        placeholder:
+          en: "125 5004100100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-bank-account-fixture-generator, kazakhstan-bank-account-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakhstan Bank Account Validator | ValidoHub"
+  description:
+    en: "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."

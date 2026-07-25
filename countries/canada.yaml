@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CA
+slug: canada
+name:
+  en: "Canada"
+region: North America
+languages:
+  - en
+currency: CAD
+relatedCountries:
+  - US
+  - MX
+  - GB

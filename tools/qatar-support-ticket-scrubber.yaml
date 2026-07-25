@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-support-ticket-scrubber
+kind: tool
+module: validohub
+country: QA
+category: privacy
+status: active
+name:
+  en: "Qatari Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 29012345678, DOHB 1234567890, West Bay, Doha, PO Box 12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-integration-smoke-test-builder, qatar-qid-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

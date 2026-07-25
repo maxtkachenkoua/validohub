@@ -1,0 +1,642 @@
+{
+  "id": "mongolia",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/mongolia-outline.png",
+    "outlineAlt": "Mongolia country outline",
+    "mapSrc": "/assets/images/countries/mongolia-location.png",
+    "mapAlt": "World map with Mongolia location marker",
+    "mapMarker": {
+      "x": 66,
+      "y": 40,
+      "label": "Mongolia"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "mongolia",
+    "flag": "🇲🇳",
+    "name": "Mongolia",
+    "nativeName": "Mongol Uls",
+    "iso2": "MN",
+    "iso3": "MNG",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Mongolian",
+    "currency": "MNT",
+    "currencyName": "Mongolian togrog",
+    "status": "available",
+    "summary": "Premium Mongolia developer hub for Citizen registration number boundary, state registration number, VAT payer number, postal code, phone, bank account, ACH handoff, QPay reference, SWIFT, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "Citizen registration number boundary",
+      "state registration number",
+      "VAT payer number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "ACH handoff",
+      "QPay reference",
+      "SWIFT",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Mongolian Citizen registration number boundary Validator",
+      "Mongolian state registration number Validator",
+      "Mongolian VAT payer number Validator",
+      "Mongolian Customs / Importer Code Helper",
+      "Mongolian social insurance boundary Helper",
+      "Mongolian Company Onboarding Auditor",
+      "Mongolian Legal Entities Registration Office Readiness Helper",
+      "Mongolian ID Card Format Helper",
+      "Mongolian Passport Number Helper",
+      "Mongolian MRZ / Passport Parser",
+      "Mongolia Bank Account Validator",
+      "Mongolia Bank Account Fixture Generator",
+      "Mongolian Domestic Bank Account Inspector",
+      "Mongolian BIC / SWIFT Inspector",
+      "Mongolian Domestic Transfer Helper",
+      "Mongolian Direct Debit / Auto-Debit Mandate Helper",
+      "Mongolian QPay / bank transfer reference Reference Helper",
+      "Mongolian Remittance Text Builder",
+      "Mongolian Payment Reconciliation Helper",
+      "Mongolian Bank Statement Parser",
+      "Mongolian Masked Bank Account Formatter",
+      "Mongolian MNT Decimal Currency Formatter",
+      "Mongolian Tax Rate Sanity Helper",
+      "Mongolian Tax Return Field Helper",
+      "Mongolian Invoice Number Helper",
+      "Mongolian VAT e-barimt invoice Readiness Checker",
+      "Mongolian Tax Authority Handoff Helper",
+      "Mongolian Accounting Audit Trail Checklist Helper",
+      "Mongolian Postal Code Validator",
+      "Mongolian Address Normalizer",
+      "Mongolian Address Transliteration Normalizer",
+      "Mongolian Region / Province Code Mapper",
+      "Mongolian Municipality Code Inspector",
+      "Mongolian Phone Number Validator",
+      "Mongolian Phone E.164 Formatter",
+      "Mongolian Date Locale Formatter",
+      "Mongolian CSV Locale Normalizer",
+      "Mongolian Slug Normalizer",
+      "Mongolian Document OCR Fixer",
+      "Mongolian personal-data privacy Redaction Helper",
+      "Mongolian PII Masker",
+      "Mongolian Personal Data Fixture Helper",
+      "Mongolian Driving Licence Format Helper",
+      "Mongolian Residence Permit Format Helper",
+      "Mongolian Health Card Format Helper",
+      "Mongolian Vehicle Plate Inspector",
+      "Mongolian VIN Validator",
+      "Mongolian Vehicle Data Redaction Helper",
+      "Mongolian Customs Declaration Helper",
+      "Mongolian Postal Tracking Helper",
+      "Mongolian Data Quality Workbench",
+      "Mongolian JSON Fixture Helper",
+      "Mongolian Regex Pack Helper",
+      "Mongolian API Payload Auditor",
+      "Mongolian Form Field Auditor",
+      "Mongolian Locale Number Parser",
+      "Mongolian Calendar Week Helper",
+      "Mongolian Company Suffix Normalizer",
+      "Mongolian Procurement Identifier Helper",
+      "Mongolian Locale Copy Checker",
+      "Mongolian Support Ticket Scrubber",
+      "Mongolian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live Legal Entities Registration Office lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 66,
+      "y": 40
+    },
+    "searchHints": [
+      "REGISTRATION",
+      "VAT",
+      "QPAY",
+      "E-BARIMT",
+      "POSTAL",
+      "MNT"
+    ]
+  },
+  "hub": {
+    "flag": "🇲🇳",
+    "name": "Mongolia",
+    "badge": "Premium Mongolia developer suite",
+    "description": "Developer intelligence and browser-only workbenches for mongolian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Mongol Uls",
+      "population": "approximately 3.5M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Ulaanbaatar",
+      "continent": "Asia",
+      "region": "East Asia",
+      "languages": "Mongolian",
+      "currency": "Mongolian togrog",
+      "currencyCode": "MNT",
+      "callingCode": "+976",
+      "internetTld": ".mn",
+      "drivingSide": "Right",
+      "iso2": "MN",
+      "iso3": "MNG",
+      "isoNumeric": "496",
+      "locale": "mn-MN",
+      "icuLocale": "mn_MN",
+      "dateFormat": "YYYY.MM.DD",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Mongolia",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Ulaanbaatar (ULAT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "102 / 103 / 105",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "mn-MN",
+      "cldrLocale": "mn_MN",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type E",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "mongolia",
+      "outlineLabel": "Mongolia outline",
+      "mapLabel": "Mongolia in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Mongolia flag",
+      "heroAccentPrimary": "218 32 50",
+      "heroAccentSecondary": "0 102 179",
+      "heroAccentTertiary": "255 217 0"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Citizen registration number boundary and state registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "VAT payer number and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Mongolia registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /mongolia/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Mongolian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "Legal Entities Registration Office",
+        "text": "Official business registry or company lookup remains the source of truth for Mongolia.",
+        "status": "official boundary"
+      },
+      {
+        "title": "VAT payer number",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "Citizen registration number boundary, state registration number, VAT payer number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, ACH handoff, QPay reference, SWIFT, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "mn-MN / mn_MN; date YYYY.MM.DD.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "MNT amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "Citizen registration number boundary, state registration number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type E",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "102 / 103 / 105",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "REGISTRATION",
+      "VAT",
+      "QPAY",
+      "E-BARIMT",
+      "POSTAL",
+      "MNT"
+    ],
+    "routes": [
+      {
+        "title": "Mongolian Citizen registration number boundary Validator",
+        "href": "/en/mongolia/mongolia-citizen-registration-number-boundary-validator/",
+        "text": "Validate Citizen registration number boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Mongolian state registration number Validator",
+        "href": "/en/mongolia/mongolia-state-registration-number-validator/",
+        "text": "Inspect state registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Mongolian VAT payer number Validator",
+        "href": "/en/mongolia/mongolia-tax-id-validator/",
+        "text": "Normalize VAT payer number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Mongolian Customs / Importer Code Helper",
+        "href": "/en/mongolia/mongolia-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Mongolian social insurance boundary Helper",
+        "href": "/en/mongolia/mongolia-social-insurance-boundary-social-insurance-helper/",
+        "text": "Split social insurance boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Mongolian Company Onboarding Auditor",
+        "href": "/en/mongolia/mongolia-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for state registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Mongolian Legal Entities Registration Office Readiness Helper",
+        "href": "/en/mongolia/mongolia-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated Legal Entities Registration Office lookup or company registry workflow."
+      },
+      {
+        "title": "Mongolian ID Card Format Helper",
+        "href": "/en/mongolia/mongolia-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Mongolian Passport Number Helper",
+        "href": "/en/mongolia/mongolia-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Mongolian MRZ / Passport Parser",
+        "href": "/en/mongolia/mongolia-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Mongolia Bank Account Validator",
+        "href": "/en/mongolia/mongolia-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Mongolia Bank Account Fixture Generator",
+        "href": "/en/mongolia/mongolia-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Mongolian Domestic Bank Account Inspector",
+        "href": "/en/mongolia/mongolia-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Mongolian BIC / SWIFT Inspector",
+        "href": "/en/mongolia/mongolia-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Mongolia banking integrations."
+      },
+      {
+        "title": "Mongolian Domestic Transfer Helper",
+        "href": "/en/mongolia/mongolia-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Mongolian Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/mongolia/mongolia-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Mongolian QPay / bank transfer reference Reference Helper",
+        "href": "/en/mongolia/mongolia-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Mongolian Remittance Text Builder",
+        "href": "/en/mongolia/mongolia-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Mongolian Payment Reconciliation Helper",
+        "href": "/en/mongolia/mongolia-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Mongolian Bank Statement Parser",
+        "href": "/en/mongolia/mongolia-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Mongolian Masked Bank Account Formatter",
+        "href": "/en/mongolia/mongolia-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Mongolian MNT Decimal Currency Formatter",
+        "href": "/en/mongolia/mongolia-currency-decimal-formatter/",
+        "text": "Normalize MNT amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Mongolian Tax Rate Sanity Helper",
+        "href": "/en/mongolia/mongolia-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Mongolian Tax Return Field Helper",
+        "href": "/en/mongolia/mongolia-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Mongolian Invoice Number Helper",
+        "href": "/en/mongolia/mongolia-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Mongolian VAT e-barimt invoice Readiness Checker",
+        "href": "/en/mongolia/mongolia-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Mongolian Tax Authority Handoff Helper",
+        "href": "/en/mongolia/mongolia-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Mongolian Accounting Audit Trail Checklist Helper",
+        "href": "/en/mongolia/mongolia-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Mongolian Postal Code Validator",
+        "href": "/en/mongolia/mongolia-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Mongolian Address Normalizer",
+        "href": "/en/mongolia/mongolia-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Mongolian Address Transliteration Normalizer",
+        "href": "/en/mongolia/mongolia-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Mongolian Region / Province Code Mapper",
+        "href": "/en/mongolia/mongolia-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Mongolian Municipality Code Inspector",
+        "href": "/en/mongolia/mongolia-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Mongolian Phone Number Validator",
+        "href": "/en/mongolia/mongolia-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Mongolian Phone E.164 Formatter",
+        "href": "/en/mongolia/mongolia-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Mongolian Date Locale Formatter",
+        "href": "/en/mongolia/mongolia-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Mongolian CSV Locale Normalizer",
+        "href": "/en/mongolia/mongolia-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Mongolia decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Mongolian Slug Normalizer",
+        "href": "/en/mongolia/mongolia-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Mongolian Document OCR Fixer",
+        "href": "/en/mongolia/mongolia-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Mongolian personal-data privacy Redaction Helper",
+        "href": "/en/mongolia/mongolia-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Mongolian PII Masker",
+        "href": "/en/mongolia/mongolia-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Mongolian Personal Data Fixture Helper",
+        "href": "/en/mongolia/mongolia-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Mongolian Driving Licence Format Helper",
+        "href": "/en/mongolia/mongolia-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Mongolian Residence Permit Format Helper",
+        "href": "/en/mongolia/mongolia-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Mongolian Health Card Format Helper",
+        "href": "/en/mongolia/mongolia-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Mongolian Vehicle Plate Inspector",
+        "href": "/en/mongolia/mongolia-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Mongolian VIN Validator",
+        "href": "/en/mongolia/mongolia-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Mongolian Vehicle Data Redaction Helper",
+        "href": "/en/mongolia/mongolia-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Mongolian Customs Declaration Helper",
+        "href": "/en/mongolia/mongolia-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Mongolian Postal Tracking Helper",
+        "href": "/en/mongolia/mongolia-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Mongolian Data Quality Workbench",
+        "href": "/en/mongolia/mongolia-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Mongolian JSON Fixture Helper",
+        "href": "/en/mongolia/mongolia-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Mongolian Regex Pack Helper",
+        "href": "/en/mongolia/mongolia-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Mongolian API Payload Auditor",
+        "href": "/en/mongolia/mongolia-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Mongolian Form Field Auditor",
+        "href": "/en/mongolia/mongolia-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Mongolian Locale Number Parser",
+        "href": "/en/mongolia/mongolia-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Mongolia."
+      },
+      {
+        "title": "Mongolian Calendar Week Helper",
+        "href": "/en/mongolia/mongolia-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Mongolian Company Suffix Normalizer",
+        "href": "/en/mongolia/mongolia-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Mongolian Procurement Identifier Helper",
+        "href": "/en/mongolia/mongolia-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Mongolian Locale Copy Checker",
+        "href": "/en/mongolia/mongolia-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Mongolian Support Ticket Scrubber",
+        "href": "/en/mongolia/mongolia-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Mongolian Integration Smoke Test Builder",
+        "href": "/en/mongolia/mongolia-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

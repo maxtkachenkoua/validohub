@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sudan-customs-declaration-helper
+kind: tool
+module: validohub
+country: SD
+category: government
+status: active
+name:
+  en: "Sudanese Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "SD123456789 HS 8471 1,234.56 SDG"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sudan-postal-tracking-helper, sudan-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sudanese Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

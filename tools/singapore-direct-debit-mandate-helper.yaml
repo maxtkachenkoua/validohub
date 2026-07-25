@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: SG
+category: finance
+status: active
+name:
+  en: "Singapore Direct Debit / Auto-Debit Mandate Helper"
+summary:
+  en: "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DD input"
+        required: true
+        placeholder:
+          en: "MANDATE-2026-001 7171 001 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-payment-reference-helper, singapore-remittance-text-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Direct Debit / Auto-Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: YE
+category: address
+status: active
+name:
+  en: "Yemeni Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Al-Zubayri Street 1, Sanaa 1247"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-region-code-mapper, yemen-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

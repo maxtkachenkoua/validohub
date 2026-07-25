@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burkina-faso-municipality-code-inspector
+kind: tool
+module: validohub
+country: BF
+category: address
+status: active
+name:
+  en: "Burkinabe Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burkina-faso-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Central business district, Ouagadougou 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burkina-faso-phone-number-validator, burkina-faso-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burkinabe Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

@@ -1,0 +1,642 @@
+{
+  "id": "bhutan",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/bhutan-outline.png",
+    "outlineAlt": "Bhutan country outline",
+    "mapSrc": "/assets/images/countries/bhutan-location.png",
+    "mapAlt": "World map with Bhutan location marker",
+    "mapMarker": {
+      "x": 66,
+      "y": 52,
+      "label": "Bhutan"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "bhutan",
+    "flag": "🇧🇹",
+    "name": "Bhutan",
+    "nativeName": "Druk Yul",
+    "iso2": "BT",
+    "iso3": "BTN",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Dzongkha",
+    "currency": "BTN",
+    "currencyName": "Bhutanese ngultrum",
+    "status": "available",
+    "summary": "Premium Bhutan developer hub for CID boundary, company registration number, TPN / tax number, postal code, phone, bank account, RMA payment reference, SWIFT, mobile payment reference, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "CID boundary",
+      "company registration number",
+      "TPN / tax number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "RMA payment reference",
+      "SWIFT",
+      "mobile payment reference",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Bhutanese CID boundary Validator",
+      "Bhutanese company registration number Validator",
+      "Bhutanese TPN / tax number Validator",
+      "Bhutanese Customs / Importer Code Helper",
+      "Bhutanese social protection boundary Helper",
+      "Bhutanese Company Onboarding Auditor",
+      "Bhutanese Company Registry Division Readiness Helper",
+      "Bhutanese ID Card Format Helper",
+      "Bhutanese Passport Number Helper",
+      "Bhutanese MRZ / Passport Parser",
+      "Bhutan Bank Account Validator",
+      "Bhutan Bank Account Fixture Generator",
+      "Bhutanese Domestic Bank Account Inspector",
+      "Bhutanese BIC / SWIFT Inspector",
+      "Bhutanese Domestic Transfer Helper",
+      "Bhutanese Direct Debit / Auto-Debit Mandate Helper",
+      "Bhutanese RMA / bank transfer reference Reference Helper",
+      "Bhutanese Remittance Text Builder",
+      "Bhutanese Payment Reconciliation Helper",
+      "Bhutanese Bank Statement Parser",
+      "Bhutanese Masked Bank Account Formatter",
+      "Bhutanese BTN Decimal Currency Formatter",
+      "Bhutanese Tax Rate Sanity Helper",
+      "Bhutanese Tax Return Field Helper",
+      "Bhutanese Invoice Number Helper",
+      "Bhutanese tax invoice Readiness Checker",
+      "Bhutanese Tax Authority Handoff Helper",
+      "Bhutanese Accounting Audit Trail Checklist Helper",
+      "Bhutanese Postal Code Validator",
+      "Bhutanese Address Normalizer",
+      "Bhutanese Address Transliteration Normalizer",
+      "Bhutanese Region / Province Code Mapper",
+      "Bhutanese Municipality Code Inspector",
+      "Bhutanese Phone Number Validator",
+      "Bhutanese Phone E.164 Formatter",
+      "Bhutanese Date Locale Formatter",
+      "Bhutanese CSV Locale Normalizer",
+      "Bhutanese Slug Normalizer",
+      "Bhutanese Document OCR Fixer",
+      "Bhutanese personal-data privacy boundary Redaction Helper",
+      "Bhutanese PII Masker",
+      "Bhutanese Personal Data Fixture Helper",
+      "Bhutanese Driving Licence Format Helper",
+      "Bhutanese Residence Permit Format Helper",
+      "Bhutanese Health Card Format Helper",
+      "Bhutanese Vehicle Plate Inspector",
+      "Bhutanese VIN Validator",
+      "Bhutanese Vehicle Data Redaction Helper",
+      "Bhutanese Customs Declaration Helper",
+      "Bhutanese Postal Tracking Helper",
+      "Bhutanese Data Quality Workbench",
+      "Bhutanese JSON Fixture Helper",
+      "Bhutanese Regex Pack Helper",
+      "Bhutanese API Payload Auditor",
+      "Bhutanese Form Field Auditor",
+      "Bhutanese Locale Number Parser",
+      "Bhutanese Calendar Week Helper",
+      "Bhutanese Company Suffix Normalizer",
+      "Bhutanese Procurement Identifier Helper",
+      "Bhutanese Locale Copy Checker",
+      "Bhutanese Support Ticket Scrubber",
+      "Bhutanese Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live Company Registry Division lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 66,
+      "y": 52
+    },
+    "searchHints": [
+      "CID",
+      "TPN",
+      "RMA",
+      "BANK",
+      "POSTAL",
+      "BTN"
+    ]
+  },
+  "hub": {
+    "flag": "🇧🇹",
+    "name": "Bhutan",
+    "badge": "Premium Bhutan developer suite",
+    "description": "Developer intelligence and browser-only workbenches for bhutanese identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Druk Yul",
+      "population": "approximately 0.8M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Thimphu",
+      "continent": "Asia",
+      "region": "South Asia",
+      "languages": "Dzongkha",
+      "currency": "Bhutanese ngultrum",
+      "currencyCode": "BTN",
+      "callingCode": "+975",
+      "internetTld": ".bt",
+      "drivingSide": "Right",
+      "iso2": "BT",
+      "iso3": "BTN",
+      "isoNumeric": "064",
+      "locale": "dz-BT",
+      "icuLocale": "dz_BT",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Bhutan",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Thimphu (BTT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "113 / 112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "dz-BT",
+      "cldrLocale": "dz_BT",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type D / Type F / Type G / Type M",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "bhutan",
+      "outlineLabel": "Bhutan outline",
+      "mapLabel": "Bhutan in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Bhutan flag",
+      "heroAccentPrimary": "255 204 51",
+      "heroAccentSecondary": "255 78 18",
+      "heroAccentTertiary": "255 255 255"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "CID boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "TPN / tax number and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Bhutan registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /bhutan/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Bhutanese examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "Company Registry Division",
+        "text": "Official business registry or company lookup remains the source of truth for Bhutan.",
+        "status": "official boundary"
+      },
+      {
+        "title": "TPN / tax number",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "CID boundary, company registration number, TPN / tax number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, RMA payment reference, SWIFT, mobile payment reference, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "dz-BT / dz_BT; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "BTN amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "CID boundary, company registration number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type D / Type F / Type G / Type M",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "113 / 112",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "CID",
+      "TPN",
+      "RMA",
+      "BANK",
+      "POSTAL",
+      "BTN"
+    ],
+    "routes": [
+      {
+        "title": "Bhutanese CID boundary Validator",
+        "href": "/en/bhutan/bhutan-cid-boundary-validator/",
+        "text": "Validate CID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Bhutanese company registration number Validator",
+        "href": "/en/bhutan/bhutan-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Bhutanese TPN / tax number Validator",
+        "href": "/en/bhutan/bhutan-tax-id-validator/",
+        "text": "Normalize TPN / tax number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Bhutanese Customs / Importer Code Helper",
+        "href": "/en/bhutan/bhutan-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Bhutanese social protection boundary Helper",
+        "href": "/en/bhutan/bhutan-social-protection-boundary-social-insurance-helper/",
+        "text": "Split social protection boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Bhutanese Company Onboarding Auditor",
+        "href": "/en/bhutan/bhutan-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Bhutanese Company Registry Division Readiness Helper",
+        "href": "/en/bhutan/bhutan-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated Company Registry Division lookup or company registry workflow."
+      },
+      {
+        "title": "Bhutanese ID Card Format Helper",
+        "href": "/en/bhutan/bhutan-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Bhutanese Passport Number Helper",
+        "href": "/en/bhutan/bhutan-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Bhutanese MRZ / Passport Parser",
+        "href": "/en/bhutan/bhutan-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Bhutan Bank Account Validator",
+        "href": "/en/bhutan/bhutan-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Bhutan Bank Account Fixture Generator",
+        "href": "/en/bhutan/bhutan-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Bhutanese Domestic Bank Account Inspector",
+        "href": "/en/bhutan/bhutan-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Bhutanese BIC / SWIFT Inspector",
+        "href": "/en/bhutan/bhutan-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Bhutan banking integrations."
+      },
+      {
+        "title": "Bhutanese Domestic Transfer Helper",
+        "href": "/en/bhutan/bhutan-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Bhutanese Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/bhutan/bhutan-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Bhutanese RMA / bank transfer reference Reference Helper",
+        "href": "/en/bhutan/bhutan-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Bhutanese Remittance Text Builder",
+        "href": "/en/bhutan/bhutan-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Bhutanese Payment Reconciliation Helper",
+        "href": "/en/bhutan/bhutan-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Bhutanese Bank Statement Parser",
+        "href": "/en/bhutan/bhutan-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Bhutanese Masked Bank Account Formatter",
+        "href": "/en/bhutan/bhutan-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Bhutanese BTN Decimal Currency Formatter",
+        "href": "/en/bhutan/bhutan-currency-decimal-formatter/",
+        "text": "Normalize BTN amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Bhutanese Tax Rate Sanity Helper",
+        "href": "/en/bhutan/bhutan-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Bhutanese Tax Return Field Helper",
+        "href": "/en/bhutan/bhutan-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Bhutanese Invoice Number Helper",
+        "href": "/en/bhutan/bhutan-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Bhutanese tax invoice Readiness Checker",
+        "href": "/en/bhutan/bhutan-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Bhutanese Tax Authority Handoff Helper",
+        "href": "/en/bhutan/bhutan-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Bhutanese Accounting Audit Trail Checklist Helper",
+        "href": "/en/bhutan/bhutan-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Bhutanese Postal Code Validator",
+        "href": "/en/bhutan/bhutan-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Bhutanese Address Normalizer",
+        "href": "/en/bhutan/bhutan-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Bhutanese Address Transliteration Normalizer",
+        "href": "/en/bhutan/bhutan-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Bhutanese Region / Province Code Mapper",
+        "href": "/en/bhutan/bhutan-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Bhutanese Municipality Code Inspector",
+        "href": "/en/bhutan/bhutan-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Bhutanese Phone Number Validator",
+        "href": "/en/bhutan/bhutan-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Bhutanese Phone E.164 Formatter",
+        "href": "/en/bhutan/bhutan-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Bhutanese Date Locale Formatter",
+        "href": "/en/bhutan/bhutan-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Bhutanese CSV Locale Normalizer",
+        "href": "/en/bhutan/bhutan-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Bhutan decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Bhutanese Slug Normalizer",
+        "href": "/en/bhutan/bhutan-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Bhutanese Document OCR Fixer",
+        "href": "/en/bhutan/bhutan-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Bhutanese personal-data privacy boundary Redaction Helper",
+        "href": "/en/bhutan/bhutan-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Bhutanese PII Masker",
+        "href": "/en/bhutan/bhutan-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Bhutanese Personal Data Fixture Helper",
+        "href": "/en/bhutan/bhutan-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Bhutanese Driving Licence Format Helper",
+        "href": "/en/bhutan/bhutan-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Bhutanese Residence Permit Format Helper",
+        "href": "/en/bhutan/bhutan-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Bhutanese Health Card Format Helper",
+        "href": "/en/bhutan/bhutan-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Bhutanese Vehicle Plate Inspector",
+        "href": "/en/bhutan/bhutan-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Bhutanese VIN Validator",
+        "href": "/en/bhutan/bhutan-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Bhutanese Vehicle Data Redaction Helper",
+        "href": "/en/bhutan/bhutan-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Bhutanese Customs Declaration Helper",
+        "href": "/en/bhutan/bhutan-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Bhutanese Postal Tracking Helper",
+        "href": "/en/bhutan/bhutan-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Bhutanese Data Quality Workbench",
+        "href": "/en/bhutan/bhutan-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Bhutanese JSON Fixture Helper",
+        "href": "/en/bhutan/bhutan-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Bhutanese Regex Pack Helper",
+        "href": "/en/bhutan/bhutan-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Bhutanese API Payload Auditor",
+        "href": "/en/bhutan/bhutan-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Bhutanese Form Field Auditor",
+        "href": "/en/bhutan/bhutan-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Bhutanese Locale Number Parser",
+        "href": "/en/bhutan/bhutan-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Bhutan."
+      },
+      {
+        "title": "Bhutanese Calendar Week Helper",
+        "href": "/en/bhutan/bhutan-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Bhutanese Company Suffix Normalizer",
+        "href": "/en/bhutan/bhutan-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Bhutanese Procurement Identifier Helper",
+        "href": "/en/bhutan/bhutan-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Bhutanese Locale Copy Checker",
+        "href": "/en/bhutan/bhutan-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Bhutanese Support Ticket Scrubber",
+        "href": "/en/bhutan/bhutan-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Bhutanese Integration Smoke Test Builder",
+        "href": "/en/bhutan/bhutan-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

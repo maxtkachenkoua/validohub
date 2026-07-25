@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: egypt-company-registration-number-validator
+kind: tool
+module: validohub
+country: EG
+category: national-identifiers
+status: active
+name:
+  en: "Egyptian company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.egypt-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "EG-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [egypt-tax-id-validator, egypt-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Egyptian company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

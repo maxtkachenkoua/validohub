@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-privacy-redaction-helper
+kind: tool
+module: validohub
+country: GE
+category: privacy
+status: active
+name:
+  en: "Georgian personal-data privacy Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"GE\",\"personal\":\"01001012345\",\"iban\":\"GE29NB0000000101904917\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-pii-masker, georgia-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian personal-data privacy Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

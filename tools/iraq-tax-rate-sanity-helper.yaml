@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iraq-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: IQ
+category: tax
+status: active
+name:
+  en: "Iraqi Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iraq-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "tax number 20% base 1,234,567 IQD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iraq-tax-return-field-helper, iraq-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iraqi Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

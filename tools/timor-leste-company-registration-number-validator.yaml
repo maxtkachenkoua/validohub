@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: timor-leste-company-registration-number-validator
+kind: tool
+module: validohub
+country: TL
+category: national-identifiers
+status: active
+name:
+  en: "Timorese company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.timor-leste-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "SERVE-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [timor-leste-tax-id-validator, timor-leste-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Timorese company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

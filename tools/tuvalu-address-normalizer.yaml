@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tuvalu-address-normalizer
+kind: tool
+module: validohub
+country: TV
+category: address
+status: active
+name:
+  en: "Tuvaluan Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tuvalu-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Vaiaku, Funafuti"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tuvalu-address-transliteration-normalizer, tuvalu-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tuvaluan Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

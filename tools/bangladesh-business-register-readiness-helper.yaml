@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-business-register-readiness-helper
+kind: tool
+module: validohub
+country: BD
+category: government
+status: active
+name:
+  en: "Bangladeshi RJSC registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated RJSC registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "C-123456 123456789012 Motijheel Road 1, Dhaka 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-id-card-format-helper, bangladesh-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi RJSC registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated RJSC registry lookup or company registry workflow."

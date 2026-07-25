@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-csv-locale-normalizer
+kind: tool
+module: validohub
+country: ID
+category: developer-tools
+status: active
+name:
+  en: "Indonesian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Indonesia decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1.234.567,89 IDR;21/07/2026;01.234.567.8-901.000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-slug-normalizer, indonesia-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Indonesia decimal, date, postal, phone, tax, and banking fields."

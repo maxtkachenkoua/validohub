@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-rrn-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: KR
+category: national-identifiers
+status: active
+name:
+  en: "South Korean RRN boundary Helper"
+summary:
+  en: "Split RRN boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "900101-1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-company-onboarding-auditor, south-korea-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean RRN boundary Helper | ValidoHub"
+  description:
+    en: "Split RRN boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-csv-locale-normalizer
+kind: tool
+module: validohub
+country: KW
+category: developer-tools
+status: active
+name:
+  en: "Kuwaiti CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Kuwait decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.560 KWD;21/07/2026;TF123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-slug-normalizer, kuwait-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Kuwait decimal, date, postal, phone, tax, and banking fields."

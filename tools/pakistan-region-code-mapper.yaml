@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-region-code-mapper
+kind: tool
+module: validohub
+country: PK
+category: address
+status: active
+name:
+  en: "Pakistani Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "44000 Islamabad"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-municipality-code-inspector, pakistan-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

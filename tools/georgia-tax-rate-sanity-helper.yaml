@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: GE
+category: tax
+status: active
+name:
+  en: "Georgian Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "VAT / tax number 20% base 1 234.56 GEL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-tax-return-field-helper, georgia-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

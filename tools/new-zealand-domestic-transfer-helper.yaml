@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-domestic-transfer-helper
+kind: tool
+module: validohub
+country: NZ
+category: finance
+status: active
+name:
+  en: "New Zealand Domestic Transfer Helper"
+summary:
+  en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "12-1234-1234567-00\\n1,234.56 NZD\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-direct-debit-mandate-helper, new-zealand-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."

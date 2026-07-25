@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-phone-e164-formatter
+kind: tool
+module: validohub
+country: FJ
+category: address
+status: active
+name:
+  en: "Fijian Phone E.164 Formatter"
+summary:
+  en: "Normalize local phone input to E.164-style previews and split country/national evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "E164 input"
+        required: true
+        placeholder:
+          en: "+679 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-date-locale-formatter, fiji-csv-locale-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian Phone E.164 Formatter | ValidoHub"
+  description:
+    en: "Normalize local phone input to E.164-style previews and split country/national evidence."

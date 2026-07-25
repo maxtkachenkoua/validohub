@@ -1,0 +1,642 @@
+{
+  "id": "saudi-arabia",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/saudi-arabia-outline.png",
+    "outlineAlt": "Saudi Arabia country outline",
+    "mapSrc": "/assets/images/countries/saudi-arabia-location.png",
+    "mapAlt": "World map with Saudi Arabia location marker",
+    "mapMarker": {
+      "x": 58,
+      "y": 55,
+      "label": "Saudi Arabia"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "saudi-arabia",
+    "flag": "🇸🇦",
+    "name": "Saudi Arabia",
+    "nativeName": "Al-Mamlakah al-Arabiyah as-Suudiyah",
+    "iso2": "SA",
+    "iso3": "SAU",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Arabic",
+    "currency": "SAR",
+    "currencyName": "Saudi riyal",
+    "status": "available",
+    "summary": "Premium Saudi Arabia developer hub for National ID boundary, CR number, VAT number, postal code, phone, IBAN, SADAD reference, SARIE handoff, SWIFT, WPS reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "National ID boundary",
+      "CR number",
+      "VAT number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "IBAN",
+      "SADAD reference",
+      "SARIE handoff",
+      "SWIFT",
+      "WPS reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Saudi National ID boundary Validator",
+      "Saudi Commercial Registration number Validator",
+      "Saudi ZATCA VAT number Validator",
+      "Saudi Customs / Importer Code Helper",
+      "Saudi GOSI boundary Helper",
+      "Saudi Company Onboarding Auditor",
+      "Saudi Ministry of Commerce registry Readiness Helper",
+      "Saudi ID Card Format Helper",
+      "Saudi Passport Number Helper",
+      "Saudi MRZ / Passport Parser",
+      "Saudi Arabia Bank Account Validator",
+      "Saudi Arabia Bank Account Fixture Generator",
+      "Saudi Domestic Bank Account Inspector",
+      "Saudi BIC / SWIFT Inspector",
+      "Saudi Domestic Transfer Helper",
+      "Saudi Direct Debit / Auto-Debit Mandate Helper",
+      "Saudi SADAD / SARIE reference Reference Helper",
+      "Saudi Remittance Text Builder",
+      "Saudi Payment Reconciliation Helper",
+      "Saudi Bank Statement Parser",
+      "Saudi Masked Bank Account Formatter",
+      "Saudi SAR Decimal Currency Formatter",
+      "Saudi Tax Rate Sanity Helper",
+      "Saudi Tax Return Field Helper",
+      "Saudi Invoice Number Helper",
+      "Saudi ZATCA e-invoice Readiness Checker",
+      "Saudi Tax Authority Handoff Helper",
+      "Saudi Accounting Audit Trail Checklist Helper",
+      "Saudi Postal Code Validator",
+      "Saudi Address Normalizer",
+      "Saudi Address Transliteration Normalizer",
+      "Saudi Region / Province Code Mapper",
+      "Saudi Municipality Code Inspector",
+      "Saudi Phone Number Validator",
+      "Saudi Phone E.164 Formatter",
+      "Saudi Date Locale Formatter",
+      "Saudi CSV Locale Normalizer",
+      "Saudi Slug Normalizer",
+      "Saudi Document OCR Fixer",
+      "Saudi PDPL privacy Redaction Helper",
+      "Saudi PII Masker",
+      "Saudi Personal Data Fixture Helper",
+      "Saudi Driving Licence Format Helper",
+      "Saudi Residence Permit Format Helper",
+      "Saudi Health Card Format Helper",
+      "Saudi Vehicle Plate Inspector",
+      "Saudi VIN Validator",
+      "Saudi Vehicle Data Redaction Helper",
+      "Saudi Customs Declaration Helper",
+      "Saudi Postal Tracking Helper",
+      "Saudi Data Quality Workbench",
+      "Saudi JSON Fixture Helper",
+      "Saudi Regex Pack Helper",
+      "Saudi API Payload Auditor",
+      "Saudi Form Field Auditor",
+      "Saudi Locale Number Parser",
+      "Saudi Calendar Week Helper",
+      "Saudi Company Suffix Normalizer",
+      "Saudi Procurement Identifier Helper",
+      "Saudi Locale Copy Checker",
+      "Saudi Support Ticket Scrubber",
+      "Saudi Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live Ministry of Commerce registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 58,
+      "y": 55
+    },
+    "searchHints": [
+      "CR",
+      "VAT",
+      "ZATCA",
+      "SADAD",
+      "SARIE",
+      "IBAN"
+    ]
+  },
+  "hub": {
+    "flag": "🇸🇦",
+    "name": "Saudi Arabia",
+    "badge": "Premium Saudi Arabia developer suite",
+    "description": "Developer intelligence and browser-only workbenches for saudi identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Al-Mamlakah al-Arabiyah as-Suudiyah",
+      "population": "approximately 34M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Riyadh",
+      "continent": "Asia",
+      "region": "Western Asia / Gulf",
+      "languages": "Arabic",
+      "currency": "Saudi riyal",
+      "currencyCode": "SAR",
+      "callingCode": "+966",
+      "internetTld": ".sa",
+      "drivingSide": "Right",
+      "iso2": "SA",
+      "iso3": "SAU",
+      "isoNumeric": "682",
+      "locale": "ar-SA",
+      "icuLocale": "ar_SA",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Saudi Arabia",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Riyadh (AST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "911 / 999",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "ar-SA",
+      "cldrLocale": "ar_SA",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type G",
+      "voltage": "230V",
+      "frequency": "60Hz"
+    },
+    "visualIdentity": {
+      "countryId": "saudi-arabia",
+      "outlineLabel": "Saudi Arabia outline",
+      "mapLabel": "Saudi Arabia in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Saudi Arabia flag",
+      "heroAccentPrimary": "0 108 53",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "17 24 39"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "National ID boundary and Commercial Registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "ZATCA VAT number and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Saudi Arabia registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /saudi-arabia/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Saudi examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "Ministry of Commerce registry",
+        "text": "Official business registry or company lookup remains the source of truth for Saudi Arabia.",
+        "status": "official boundary"
+      },
+      {
+        "title": "ZATCA VAT number",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "PDPL privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "National ID boundary, CR number, VAT number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, SADAD reference, SARIE handoff, SWIFT, WPS reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "ar-SA / ar_SA; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "SAR amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "National ID boundary, Commercial Registration number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type G",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "60Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "911 / 999",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "CR",
+      "VAT",
+      "ZATCA",
+      "SADAD",
+      "SARIE",
+      "IBAN"
+    ],
+    "routes": [
+      {
+        "title": "Saudi National ID boundary Validator",
+        "href": "/en/saudi-arabia/saudi-arabia-national-id-boundary-validator/",
+        "text": "Validate National ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Saudi Commercial Registration number Validator",
+        "href": "/en/saudi-arabia/saudi-arabia-commercial-registration-number-validator/",
+        "text": "Inspect Commercial Registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Saudi ZATCA VAT number Validator",
+        "href": "/en/saudi-arabia/saudi-arabia-tax-id-validator/",
+        "text": "Normalize ZATCA VAT number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Saudi Customs / Importer Code Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Saudi GOSI boundary Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-gosi-boundary-social-insurance-helper/",
+        "text": "Split GOSI boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Saudi Company Onboarding Auditor",
+        "href": "/en/saudi-arabia/saudi-arabia-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for Commercial Registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Saudi Ministry of Commerce registry Readiness Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated Ministry of Commerce registry lookup or company registry workflow."
+      },
+      {
+        "title": "Saudi ID Card Format Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Saudi Passport Number Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Saudi MRZ / Passport Parser",
+        "href": "/en/saudi-arabia/saudi-arabia-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Saudi Arabia Bank Account Validator",
+        "href": "/en/saudi-arabia/saudi-arabia-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Saudi Arabia Bank Account Fixture Generator",
+        "href": "/en/saudi-arabia/saudi-arabia-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Saudi Domestic Bank Account Inspector",
+        "href": "/en/saudi-arabia/saudi-arabia-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Saudi BIC / SWIFT Inspector",
+        "href": "/en/saudi-arabia/saudi-arabia-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Saudi Arabia banking integrations."
+      },
+      {
+        "title": "Saudi Domestic Transfer Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Saudi Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Saudi SADAD / SARIE reference Reference Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Saudi Remittance Text Builder",
+        "href": "/en/saudi-arabia/saudi-arabia-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Saudi Payment Reconciliation Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Saudi Bank Statement Parser",
+        "href": "/en/saudi-arabia/saudi-arabia-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Saudi Masked Bank Account Formatter",
+        "href": "/en/saudi-arabia/saudi-arabia-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Saudi SAR Decimal Currency Formatter",
+        "href": "/en/saudi-arabia/saudi-arabia-currency-decimal-formatter/",
+        "text": "Normalize SAR amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Saudi Tax Rate Sanity Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Saudi Tax Return Field Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Saudi Invoice Number Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Saudi ZATCA e-invoice Readiness Checker",
+        "href": "/en/saudi-arabia/saudi-arabia-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Saudi Tax Authority Handoff Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Saudi Accounting Audit Trail Checklist Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Saudi Postal Code Validator",
+        "href": "/en/saudi-arabia/saudi-arabia-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Saudi Address Normalizer",
+        "href": "/en/saudi-arabia/saudi-arabia-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Saudi Address Transliteration Normalizer",
+        "href": "/en/saudi-arabia/saudi-arabia-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Saudi Region / Province Code Mapper",
+        "href": "/en/saudi-arabia/saudi-arabia-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Saudi Municipality Code Inspector",
+        "href": "/en/saudi-arabia/saudi-arabia-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Saudi Phone Number Validator",
+        "href": "/en/saudi-arabia/saudi-arabia-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Saudi Phone E.164 Formatter",
+        "href": "/en/saudi-arabia/saudi-arabia-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Saudi Date Locale Formatter",
+        "href": "/en/saudi-arabia/saudi-arabia-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Saudi CSV Locale Normalizer",
+        "href": "/en/saudi-arabia/saudi-arabia-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Saudi Arabia decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Saudi Slug Normalizer",
+        "href": "/en/saudi-arabia/saudi-arabia-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Saudi Document OCR Fixer",
+        "href": "/en/saudi-arabia/saudi-arabia-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Saudi PDPL privacy Redaction Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Saudi PII Masker",
+        "href": "/en/saudi-arabia/saudi-arabia-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Saudi Personal Data Fixture Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Saudi Driving Licence Format Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Saudi Residence Permit Format Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Saudi Health Card Format Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Saudi Vehicle Plate Inspector",
+        "href": "/en/saudi-arabia/saudi-arabia-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Saudi VIN Validator",
+        "href": "/en/saudi-arabia/saudi-arabia-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Saudi Vehicle Data Redaction Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Saudi Customs Declaration Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Saudi Postal Tracking Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Saudi Data Quality Workbench",
+        "href": "/en/saudi-arabia/saudi-arabia-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Saudi JSON Fixture Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Saudi Regex Pack Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Saudi API Payload Auditor",
+        "href": "/en/saudi-arabia/saudi-arabia-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Saudi Form Field Auditor",
+        "href": "/en/saudi-arabia/saudi-arabia-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Saudi Locale Number Parser",
+        "href": "/en/saudi-arabia/saudi-arabia-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Saudi Arabia."
+      },
+      {
+        "title": "Saudi Calendar Week Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Saudi Company Suffix Normalizer",
+        "href": "/en/saudi-arabia/saudi-arabia-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Saudi Procurement Identifier Helper",
+        "href": "/en/saudi-arabia/saudi-arabia-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Saudi Locale Copy Checker",
+        "href": "/en/saudi-arabia/saudi-arabia-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Saudi Support Ticket Scrubber",
+        "href": "/en/saudi-arabia/saudi-arabia-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Saudi Integration Smoke Test Builder",
+        "href": "/en/saudi-arabia/saudi-arabia-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

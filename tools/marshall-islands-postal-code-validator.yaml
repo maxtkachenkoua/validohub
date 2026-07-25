@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-postal-code-validator
+kind: tool
+module: validohub
+country: MH
+category: address
+status: active
+name:
+  en: "Marshallese Postal Code Validator"
+summary:
+  en: "Validate atoll/locality shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "Majuro MH 96960"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-address-normalizer, marshall-islands-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate atoll/locality shape, split area/delivery hints, and preserve official postal lookup boundaries."

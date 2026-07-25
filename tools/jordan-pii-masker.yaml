@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-pii-masker
+kind: tool
+module: validohub
+country: JO
+category: privacy
+status: active
+name:
+  en: "Jordanian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "9901011234 +962 7 9123 4567 CBJO 131000302"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-personal-data-fixture-generator, jordan-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

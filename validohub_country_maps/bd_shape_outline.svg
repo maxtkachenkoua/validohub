@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-97.35 -96.34 806.68 805.54" role="img">
+  <title>Bangladesh country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="11.15" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="bd" d="M616.256,457.908l-1.134,2.049l2.938,5.584l0.087,4.357l0.535,1.166l3.449,0.061l1.953-1.875l1.418,0.855l0.285,2.652l1.133-0.708l0.069-3.389l-0.951-0.112l-0.596-2.879l-2.403-0.086l-0.596-1.6l1.469-1.962l0.024-0.97h-4.269L616.256,457.908L616.256,457.908z"/>
+  </g>
+</svg>

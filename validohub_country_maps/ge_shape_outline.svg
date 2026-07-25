@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-86.95 -67.08 658.01 545.63" role="img">
+  <title>Georgia country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="7.55" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="ge" d="M495.144,415.596l2.827,3.691l3.527,1.625l2.169-0.01l3.726-1.01l0.935-1.461l-11.021-4.123L495.144,415.596L495.144,415.596z"/>
+  </g>
+</svg>

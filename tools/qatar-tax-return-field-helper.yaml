@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-tax-return-field-helper
+kind: tool
+module: validohub
+country: QA
+category: tax
+status: active
+name:
+  en: "Qatari Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax card number; TC1234567; period 2026-07; 1,234.56 QAR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-invoice-number-helper, qatar-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

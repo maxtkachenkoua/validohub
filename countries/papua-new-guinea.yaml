@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: PG
+slug: papua-new-guinea
+name:
+  en: Papua New Guinea
+region: Oceania
+languages:
+  - en
+currency: PGK
+relatedCountries:
+  - AU
+  - FJ
+  - SB

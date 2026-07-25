@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-locale-number-parser
+kind: tool
+module: validohub
+country: AE
+category: localization
+status: active
+name:
+  en: "UAE Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for United Arab Emirates."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 AED"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-calendar-week-helper, united-arab-emirates-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for United Arab Emirates."

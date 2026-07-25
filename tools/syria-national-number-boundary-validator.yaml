@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-national-number-boundary-validator
+kind: tool
+module: validohub
+country: SY
+category: national-identifiers
+status: active
+name:
+  en: "Syrian national number boundary Validator"
+summary:
+  en: "Validate national number boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "01012345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-commercial-registration-number-validator, syria-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian national number boundary Validator | ValidoHub"
+  description:
+    en: "Validate national number boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

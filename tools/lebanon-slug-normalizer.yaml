@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-slug-normalizer
+kind: tool
+module: validohub
+country: LB
+category: developer-tools
+status: active
+name:
+  en: "Lebanese Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Lebanon sample company Hamra Street 1, Beirut 1107 2020"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lebanon-document-ocr-fixer, lebanon-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

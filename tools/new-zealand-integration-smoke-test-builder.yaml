@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: NZ
+category: developer-tools
+status: active
+name:
+  en: "New Zealand Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NZ\",\"ird\":\"123456789\",\"nzbn\":\"9429000000000\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [new-zealand-ird-number-boundary-validator, new-zealand-nzbn-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

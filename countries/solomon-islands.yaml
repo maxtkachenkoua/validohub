@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SB
+slug: solomon-islands
+name:
+  en: Solomon Islands
+region: Oceania
+languages:
+  - en
+currency: SBD
+relatedCountries:
+  - PG
+  - FJ
+  - VU

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: maldives-invoice-number-helper
+kind: tool
+module: validohub
+country: MV
+category: tax
+status: active
+name:
+  en: "Maldivian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.maldives-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 GST123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [maldives-e-invoicing-readiness-checker, maldives-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Maldivian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

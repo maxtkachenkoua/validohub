@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: morocco-business-register-readiness-helper
+kind: tool
+module: validohub
+country: MA
+category: government
+status: active
+name:
+  en: "Moroccan business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.morocco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "MA-REG-123456 MA123456789 Central business district, Rabat 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [morocco-id-card-format-helper, morocco-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moroccan business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

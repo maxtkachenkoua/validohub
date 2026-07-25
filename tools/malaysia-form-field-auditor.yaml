@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-form-field-auditor
+kind: tool
+module: validohub
+country: MY
+category: developer-tools
+status: active
+name:
+  en: "Malaysian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=C1234567890&postal=50050 Kuala Lumpur&phone=+60 12 345 6789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-locale-number-parser, malaysia-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

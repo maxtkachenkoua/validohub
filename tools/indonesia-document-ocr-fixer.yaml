@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: indonesia-document-ocr-fixer
+kind: tool
+module: validohub
+country: ID
+category: documents
+status: active
+name:
+  en: "Indonesian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.indonesia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "3174010101900001 01.234.567.8-901.000 014 1234567890 10110 Jakarta"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [indonesia-privacy-redaction-helper, indonesia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indonesian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

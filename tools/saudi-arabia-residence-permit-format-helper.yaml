@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-residence-permit-format-helper
+kind: tool
+module: validohub
+country: SA
+category: documents
+status: active
+name:
+  en: "Saudi Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "SA PERMIT 2026 1001234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-health-card-format-helper, saudi-arabia-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

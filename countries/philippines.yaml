@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: PH
+slug: philippines
+name:
+  en: Philippines
+region: Asia
+languages:
+  - en
+currency: PHP
+relatedCountries:
+  - SG
+  - MY
+  - ID

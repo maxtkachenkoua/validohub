@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cameroon-tax-id-validator
+kind: tool
+module: validohub
+country: CM
+category: national-identifiers
+status: active
+name:
+  en: "Cameroonian tax number / VAT boundary Validator"
+summary:
+  en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cameroon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "CM123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cameroon-customs-importer-code-helper, cameroon-social-security-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cameroonian tax number / VAT boundary Validator | ValidoHub"
+  description:
+    en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

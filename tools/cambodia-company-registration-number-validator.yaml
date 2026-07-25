@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-company-registration-number-validator
+kind: tool
+module: validohub
+country: KH
+category: national-identifiers
+status: active
+name:
+  en: "Cambodian company registration number Validator"
+summary:
+  en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "00012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-tax-id-validator, cambodia-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian company registration number Validator | ValidoHub"
+  description:
+    en: "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."

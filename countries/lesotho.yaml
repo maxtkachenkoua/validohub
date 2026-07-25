@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: LS
+slug: lesotho
+name:
+  en: Lesotho
+region: Africa
+languages:
+  - en
+currency: LSL
+relatedCountries:
+  - ZA
+  - NG
+  - KE

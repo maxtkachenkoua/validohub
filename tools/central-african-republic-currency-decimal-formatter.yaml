@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-currency-decimal-formatter
+kind: tool
+module: validohub
+country: CF
+category: finance
+status: active
+name:
+  en: "Central African XAF Decimal Currency Formatter"
+summary:
+  en: "Normalize XAF amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 XAF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-tax-rate-sanity-helper, central-african-republic-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African XAF Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize XAF amount strings, decimal separators, grouping, and API-safe numeric previews."

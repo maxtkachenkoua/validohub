@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: afghanistan-slug-normalizer
+kind: tool
+module: validohub
+country: AF
+category: developer-tools
+status: active
+name:
+  en: "Afghan Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.afghanistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Afghanistan sample company Shahr-e Naw 1, Kabul 1001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [afghanistan-document-ocr-fixer, afghanistan-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Afghan Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

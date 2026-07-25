@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-88.74 -81.28 761.06 687.16" role="img">
+  <title>Maldives country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="9.51" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <g id="mv">
+        <path d="M582.396,516.386l0.26,2.256l1.442,0.527l0.26-1.989L582.396,516.386L582.396,516.386z"/>
+        <path d="M584.238,521.156l-0.13,2.784l1.055,0.525l0.925-1.856L584.238,521.156L584.238,521.156z"/>
+        <path d="M584.506,526.595l-0.925,0.925l1.056,0.925l1.313-0.925L584.506,526.595L584.506,526.595z"/>
+    </g>
+  </g>
+</svg>

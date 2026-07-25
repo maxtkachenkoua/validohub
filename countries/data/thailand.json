@@ -1,0 +1,642 @@
+{
+  "id": "thailand",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/thailand-outline.png",
+    "outlineAlt": "Thailand country outline",
+    "mapSrc": "/assets/images/countries/thailand-location.png",
+    "mapAlt": "World map with Thailand location marker",
+    "mapMarker": {
+      "x": 67,
+      "y": 59,
+      "label": "Thailand"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "thailand",
+    "flag": "🇹🇭",
+    "name": "Thailand",
+    "nativeName": "Prathet Thai",
+    "iso2": "TH",
+    "iso3": "THA",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Thai",
+    "currency": "THB",
+    "currencyName": "Thai baht",
+    "status": "available",
+    "summary": "Premium Thailand developer hub for Thai ID boundary, Juristic Person number, tax ID, postal code, phone, bank code/account, PromptPay proxy, BAHTNET handoff, SWIFT, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "Thai ID boundary",
+      "Juristic Person number",
+      "tax ID",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "bank code/account",
+      "PromptPay proxy",
+      "BAHTNET handoff",
+      "SWIFT",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Thai Thai ID boundary Validator",
+      "Thai Juristic Person number Validator",
+      "Thai Revenue Department tax ID Validator",
+      "Thai Customs / Importer Code Helper",
+      "Thai Social Security boundary Helper",
+      "Thai Company Onboarding Auditor",
+      "Thai DBD registry Readiness Helper",
+      "Thai ID Card Format Helper",
+      "Thai Passport Number Helper",
+      "Thai MRZ / Passport Parser",
+      "Thailand Bank Account Validator",
+      "Thailand Bank Account Fixture Generator",
+      "Thai Domestic Bank Account Inspector",
+      "Thai BIC / SWIFT Inspector",
+      "Thai Domestic Transfer Helper",
+      "Thai Direct Debit / Auto-Debit Mandate Helper",
+      "Thai PromptPay / BAHTNET reference Reference Helper",
+      "Thai Remittance Text Builder",
+      "Thai Payment Reconciliation Helper",
+      "Thai Bank Statement Parser",
+      "Thai Masked Bank Account Formatter",
+      "Thai THB Decimal Currency Formatter",
+      "Thai Tax Rate Sanity Helper",
+      "Thai Tax Return Field Helper",
+      "Thai Invoice Number Helper",
+      "Thai e-Tax invoice Readiness Checker",
+      "Thai Tax Authority Handoff Helper",
+      "Thai Accounting Audit Trail Checklist Helper",
+      "Thai Postal Code Validator",
+      "Thai Address Normalizer",
+      "Thai Address Transliteration Normalizer",
+      "Thai Region / Province Code Mapper",
+      "Thai Municipality Code Inspector",
+      "Thai Phone Number Validator",
+      "Thai Phone E.164 Formatter",
+      "Thai Date Locale Formatter",
+      "Thai CSV Locale Normalizer",
+      "Thai Slug Normalizer",
+      "Thai Document OCR Fixer",
+      "Thai PDPA privacy Redaction Helper",
+      "Thai PII Masker",
+      "Thai Personal Data Fixture Helper",
+      "Thai Driving Licence Format Helper",
+      "Thai Residence Permit Format Helper",
+      "Thai Health Card Format Helper",
+      "Thai Vehicle Plate Inspector",
+      "Thai VIN Validator",
+      "Thai Vehicle Data Redaction Helper",
+      "Thai Customs Declaration Helper",
+      "Thai Postal Tracking Helper",
+      "Thai Data Quality Workbench",
+      "Thai JSON Fixture Helper",
+      "Thai Regex Pack Helper",
+      "Thai API Payload Auditor",
+      "Thai Form Field Auditor",
+      "Thai Locale Number Parser",
+      "Thai Calendar Week Helper",
+      "Thai Company Suffix Normalizer",
+      "Thai Procurement Identifier Helper",
+      "Thai Locale Copy Checker",
+      "Thai Support Ticket Scrubber",
+      "Thai Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live DBD registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 67,
+      "y": 59
+    },
+    "searchHints": [
+      "THAI ID",
+      "DBD",
+      "PROMPTPAY",
+      "BAHTNET",
+      "PDPA",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇹🇭",
+    "name": "Thailand",
+    "badge": "Premium Thailand developer suite",
+    "description": "Developer intelligence and browser-only workbenches for thai identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Prathet Thai",
+      "population": "approximately 72M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Bangkok",
+      "continent": "Asia",
+      "region": "Southeast Asia",
+      "languages": "Thai",
+      "currency": "Thai baht",
+      "currencyCode": "THB",
+      "callingCode": "+66",
+      "internetTld": ".th",
+      "drivingSide": "Right",
+      "iso2": "TH",
+      "iso3": "THA",
+      "isoNumeric": "764",
+      "locale": "th-TH",
+      "icuLocale": "th_TH",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Thailand",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Bangkok (ICT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "191 / 1669",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "th-TH",
+      "cldrLocale": "th_TH",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type A / Type B / Type C / Type O",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "thailand",
+      "outlineLabel": "Thailand outline",
+      "mapLabel": "Thailand in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Thailand flag",
+      "heroAccentPrimary": "165 25 49",
+      "heroAccentSecondary": "244 245 248",
+      "heroAccentTertiary": "45 42 74"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Thai ID boundary and Juristic Person number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "Revenue Department tax ID and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Thailand registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /thailand/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Thai examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "DBD registry",
+        "text": "Official business registry or company lookup remains the source of truth for Thailand.",
+        "status": "official boundary"
+      },
+      {
+        "title": "Revenue Department tax ID",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "PDPA privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "Thai ID boundary, Juristic Person number, tax ID, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank code/account, PromptPay proxy, BAHTNET handoff, SWIFT, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "th-TH / th_TH; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "THB amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "Thai ID boundary, Juristic Person number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type A / Type B / Type C / Type O",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "191 / 1669",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "THAI ID",
+      "DBD",
+      "PROMPTPAY",
+      "BAHTNET",
+      "PDPA",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Thai Thai ID boundary Validator",
+        "href": "/en/thailand/thailand-thai-id-boundary-validator/",
+        "text": "Validate Thai ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Thai Juristic Person number Validator",
+        "href": "/en/thailand/thailand-juristic-person-number-validator/",
+        "text": "Inspect Juristic Person number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Thai Revenue Department tax ID Validator",
+        "href": "/en/thailand/thailand-tax-id-validator/",
+        "text": "Normalize Revenue Department tax ID identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Thai Customs / Importer Code Helper",
+        "href": "/en/thailand/thailand-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Thai Social Security boundary Helper",
+        "href": "/en/thailand/thailand-social-security-boundary-social-insurance-helper/",
+        "text": "Split Social Security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Thai Company Onboarding Auditor",
+        "href": "/en/thailand/thailand-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for Juristic Person number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Thai DBD registry Readiness Helper",
+        "href": "/en/thailand/thailand-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated DBD registry lookup or company registry workflow."
+      },
+      {
+        "title": "Thai ID Card Format Helper",
+        "href": "/en/thailand/thailand-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Thai Passport Number Helper",
+        "href": "/en/thailand/thailand-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Thai MRZ / Passport Parser",
+        "href": "/en/thailand/thailand-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Thailand Bank Account Validator",
+        "href": "/en/thailand/thailand-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Thailand Bank Account Fixture Generator",
+        "href": "/en/thailand/thailand-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Thai Domestic Bank Account Inspector",
+        "href": "/en/thailand/thailand-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Thai BIC / SWIFT Inspector",
+        "href": "/en/thailand/thailand-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Thailand banking integrations."
+      },
+      {
+        "title": "Thai Domestic Transfer Helper",
+        "href": "/en/thailand/thailand-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Thai Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/thailand/thailand-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Thai PromptPay / BAHTNET reference Reference Helper",
+        "href": "/en/thailand/thailand-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Thai Remittance Text Builder",
+        "href": "/en/thailand/thailand-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Thai Payment Reconciliation Helper",
+        "href": "/en/thailand/thailand-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Thai Bank Statement Parser",
+        "href": "/en/thailand/thailand-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Thai Masked Bank Account Formatter",
+        "href": "/en/thailand/thailand-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Thai THB Decimal Currency Formatter",
+        "href": "/en/thailand/thailand-currency-decimal-formatter/",
+        "text": "Normalize THB amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Thai Tax Rate Sanity Helper",
+        "href": "/en/thailand/thailand-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Thai Tax Return Field Helper",
+        "href": "/en/thailand/thailand-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Thai Invoice Number Helper",
+        "href": "/en/thailand/thailand-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Thai e-Tax invoice Readiness Checker",
+        "href": "/en/thailand/thailand-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Thai Tax Authority Handoff Helper",
+        "href": "/en/thailand/thailand-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Thai Accounting Audit Trail Checklist Helper",
+        "href": "/en/thailand/thailand-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Thai Postal Code Validator",
+        "href": "/en/thailand/thailand-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Thai Address Normalizer",
+        "href": "/en/thailand/thailand-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Thai Address Transliteration Normalizer",
+        "href": "/en/thailand/thailand-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Thai Region / Province Code Mapper",
+        "href": "/en/thailand/thailand-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Thai Municipality Code Inspector",
+        "href": "/en/thailand/thailand-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Thai Phone Number Validator",
+        "href": "/en/thailand/thailand-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Thai Phone E.164 Formatter",
+        "href": "/en/thailand/thailand-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Thai Date Locale Formatter",
+        "href": "/en/thailand/thailand-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Thai CSV Locale Normalizer",
+        "href": "/en/thailand/thailand-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Thailand decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Thai Slug Normalizer",
+        "href": "/en/thailand/thailand-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Thai Document OCR Fixer",
+        "href": "/en/thailand/thailand-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Thai PDPA privacy Redaction Helper",
+        "href": "/en/thailand/thailand-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Thai PII Masker",
+        "href": "/en/thailand/thailand-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Thai Personal Data Fixture Helper",
+        "href": "/en/thailand/thailand-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Thai Driving Licence Format Helper",
+        "href": "/en/thailand/thailand-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Thai Residence Permit Format Helper",
+        "href": "/en/thailand/thailand-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Thai Health Card Format Helper",
+        "href": "/en/thailand/thailand-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Thai Vehicle Plate Inspector",
+        "href": "/en/thailand/thailand-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Thai VIN Validator",
+        "href": "/en/thailand/thailand-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Thai Vehicle Data Redaction Helper",
+        "href": "/en/thailand/thailand-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Thai Customs Declaration Helper",
+        "href": "/en/thailand/thailand-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Thai Postal Tracking Helper",
+        "href": "/en/thailand/thailand-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Thai Data Quality Workbench",
+        "href": "/en/thailand/thailand-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Thai JSON Fixture Helper",
+        "href": "/en/thailand/thailand-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Thai Regex Pack Helper",
+        "href": "/en/thailand/thailand-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Thai API Payload Auditor",
+        "href": "/en/thailand/thailand-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Thai Form Field Auditor",
+        "href": "/en/thailand/thailand-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Thai Locale Number Parser",
+        "href": "/en/thailand/thailand-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Thailand."
+      },
+      {
+        "title": "Thai Calendar Week Helper",
+        "href": "/en/thailand/thailand-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Thai Company Suffix Normalizer",
+        "href": "/en/thailand/thailand-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Thai Procurement Identifier Helper",
+        "href": "/en/thailand/thailand-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Thai Locale Copy Checker",
+        "href": "/en/thailand/thailand-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Thai Support Ticket Scrubber",
+        "href": "/en/thailand/thailand-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Thai Integration Smoke Test Builder",
+        "href": "/en/thailand/thailand-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

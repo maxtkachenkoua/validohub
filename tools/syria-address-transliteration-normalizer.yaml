@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: SY
+category: address
+status: active
+name:
+  en: "Syrian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Malki 1, Damascus 0100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-region-code-mapper, syria-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

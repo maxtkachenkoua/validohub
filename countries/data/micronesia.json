@@ -1,0 +1,642 @@
+{
+  "id": "micronesia",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/micronesia-outline.png",
+    "outlineAlt": "Micronesia country outline",
+    "mapSrc": "/assets/images/countries/micronesia-location.png",
+    "mapAlt": "World map with Micronesia location marker",
+    "mapMarker": {
+      "x": 88,
+      "y": 55,
+      "label": "Micronesia"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "micronesia",
+    "flag": "🇫🇲",
+    "name": "Micronesia",
+    "nativeName": "Federated States of Micronesia",
+    "iso2": "FM",
+    "iso3": "FSM",
+    "continent": "Oceania",
+    "region": "Oceania",
+    "language": "English",
+    "currency": "USD",
+    "currencyName": "United States dollar",
+    "status": "available",
+    "summary": "Premium Micronesia developer hub for national ID boundary, company registration number, tax boundary, state/island locality, phone, bank account, wire reference, SWIFT/BIC, invoice reference, payment reconciliation, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "national ID boundary",
+      "company registration number",
+      "tax boundary",
+      "state/island locality",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "wire reference",
+      "SWIFT/BIC",
+      "invoice reference",
+      "payment reconciliation"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Micronesian national ID boundary Validator",
+      "Micronesian company registration number Validator",
+      "Micronesian tax boundary Validator",
+      "Micronesian Customs / Importer Code Helper",
+      "Micronesian social security boundary Helper",
+      "Micronesian Company Onboarding Auditor",
+      "Micronesian business registry Readiness Helper",
+      "Micronesian ID Card Format Helper",
+      "Micronesian Passport Number Helper",
+      "Micronesian MRZ / Passport Parser",
+      "Micronesia Bank Account Validator",
+      "Micronesia Bank Account Fixture Generator",
+      "Micronesian Domestic Bank Account Inspector",
+      "Micronesian BIC / SWIFT Inspector",
+      "Micronesian Domestic Transfer Helper",
+      "Micronesian Direct Debit / Auto-Debit Mandate Helper",
+      "Micronesian wire/payment reference Reference Helper",
+      "Micronesian Remittance Text Builder",
+      "Micronesian Payment Reconciliation Helper",
+      "Micronesian Bank Statement Parser",
+      "Micronesian Masked Bank Account Formatter",
+      "Micronesian USD Decimal Currency Formatter",
+      "Micronesian Tax Rate Sanity Helper",
+      "Micronesian Tax Return Field Helper",
+      "Micronesian Invoice Number Helper",
+      "Micronesian invoice Readiness Checker",
+      "Micronesian Tax Authority Handoff Helper",
+      "Micronesian Accounting Audit Trail Checklist Helper",
+      "Micronesian Postal Code Validator",
+      "Micronesian Address Normalizer",
+      "Micronesian Address Transliteration Normalizer",
+      "Micronesian Region / Province Code Mapper",
+      "Micronesian Municipality Code Inspector",
+      "Micronesian Phone Number Validator",
+      "Micronesian Phone E.164 Formatter",
+      "Micronesian Date Locale Formatter",
+      "Micronesian CSV Locale Normalizer",
+      "Micronesian Slug Normalizer",
+      "Micronesian Document OCR Fixer",
+      "Micronesian privacy boundary Redaction Helper",
+      "Micronesian PII Masker",
+      "Micronesian Personal Data Fixture Helper",
+      "Micronesian Driving Licence Format Helper",
+      "Micronesian Residence Permit Format Helper",
+      "Micronesian Health Card Format Helper",
+      "Micronesian Vehicle Plate Inspector",
+      "Micronesian VIN Validator",
+      "Micronesian Vehicle Data Redaction Helper",
+      "Micronesian Customs Declaration Helper",
+      "Micronesian Postal Tracking Helper",
+      "Micronesian Data Quality Workbench",
+      "Micronesian JSON Fixture Helper",
+      "Micronesian Regex Pack Helper",
+      "Micronesian API Payload Auditor",
+      "Micronesian Form Field Auditor",
+      "Micronesian Locale Number Parser",
+      "Micronesian Calendar Week Helper",
+      "Micronesian Company Suffix Normalizer",
+      "Micronesian Procurement Identifier Helper",
+      "Micronesian Locale Copy Checker",
+      "Micronesian Support Ticket Scrubber",
+      "Micronesian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 88,
+      "y": 55
+    },
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "COMPANY",
+      "BANK",
+      "STATE",
+      "PHONE"
+    ]
+  },
+  "hub": {
+    "flag": "🇫🇲",
+    "name": "Micronesia",
+    "badge": "Premium Micronesia developer suite",
+    "description": "Developer intelligence and browser-only workbenches for micronesian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Federated States of Micronesia",
+      "population": "approximately 0.11M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Palikir",
+      "continent": "Oceania",
+      "region": "Micronesia",
+      "languages": "English",
+      "currency": "United States dollar",
+      "currencyCode": "USD",
+      "callingCode": "+691",
+      "internetTld": ".fm",
+      "drivingSide": "Right",
+      "iso2": "FM",
+      "iso3": "FSM",
+      "isoNumeric": "583",
+      "locale": "en-FM",
+      "icuLocale": "en_FM",
+      "dateFormat": "MM/DD/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Micronesia",
+      "postalCodeFormat": "state/island locality",
+      "primaryTimeZone": "Oceania/Abidjan (GMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "911",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "en-FM",
+      "cldrLocale": "en_FM",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type A / Type B",
+      "voltage": "120V",
+      "frequency": "60Hz"
+    },
+    "visualIdentity": {
+      "countryId": "micronesia",
+      "outlineLabel": "Micronesia outline",
+      "mapLabel": "Micronesia in the world",
+      "continentBadge": "Oceania",
+      "flagLabel": "Micronesia flag",
+      "heroAccentPrimary": "117 178 221",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "17 24 39"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax boundary and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Micronesia registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /micronesia/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Micronesian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Micronesia.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax boundary",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "national ID boundary, company registration number, tax boundary, state/island locality, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, wire reference, SWIFT/BIC, invoice reference, payment reconciliation",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "en-FM / en_FM; date MM/DD/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "USD amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, company registration number, state/island locality, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type A / Type B",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "120V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "60Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "911",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "COMPANY",
+      "BANK",
+      "STATE",
+      "PHONE"
+    ],
+    "routes": [
+      {
+        "title": "Micronesian national ID boundary Validator",
+        "href": "/en/micronesia/micronesia-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Micronesian company registration number Validator",
+        "href": "/en/micronesia/micronesia-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Micronesian tax boundary Validator",
+        "href": "/en/micronesia/micronesia-tax-id-validator/",
+        "text": "Normalize tax boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Micronesian Customs / Importer Code Helper",
+        "href": "/en/micronesia/micronesia-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Micronesian social security boundary Helper",
+        "href": "/en/micronesia/micronesia-social-security-boundary-social-insurance-helper/",
+        "text": "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Micronesian Company Onboarding Auditor",
+        "href": "/en/micronesia/micronesia-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Micronesian business registry Readiness Helper",
+        "href": "/en/micronesia/micronesia-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+      },
+      {
+        "title": "Micronesian ID Card Format Helper",
+        "href": "/en/micronesia/micronesia-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Micronesian Passport Number Helper",
+        "href": "/en/micronesia/micronesia-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Micronesian MRZ / Passport Parser",
+        "href": "/en/micronesia/micronesia-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Micronesia Bank Account Validator",
+        "href": "/en/micronesia/micronesia-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Micronesia Bank Account Fixture Generator",
+        "href": "/en/micronesia/micronesia-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Micronesian Domestic Bank Account Inspector",
+        "href": "/en/micronesia/micronesia-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Micronesian BIC / SWIFT Inspector",
+        "href": "/en/micronesia/micronesia-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Micronesia banking integrations."
+      },
+      {
+        "title": "Micronesian Domestic Transfer Helper",
+        "href": "/en/micronesia/micronesia-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Micronesian Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/micronesia/micronesia-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Micronesian wire/payment reference Reference Helper",
+        "href": "/en/micronesia/micronesia-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Micronesian Remittance Text Builder",
+        "href": "/en/micronesia/micronesia-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Micronesian Payment Reconciliation Helper",
+        "href": "/en/micronesia/micronesia-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Micronesian Bank Statement Parser",
+        "href": "/en/micronesia/micronesia-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Micronesian Masked Bank Account Formatter",
+        "href": "/en/micronesia/micronesia-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Micronesian USD Decimal Currency Formatter",
+        "href": "/en/micronesia/micronesia-currency-decimal-formatter/",
+        "text": "Normalize USD amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Micronesian Tax Rate Sanity Helper",
+        "href": "/en/micronesia/micronesia-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Micronesian Tax Return Field Helper",
+        "href": "/en/micronesia/micronesia-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Micronesian Invoice Number Helper",
+        "href": "/en/micronesia/micronesia-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Micronesian invoice Readiness Checker",
+        "href": "/en/micronesia/micronesia-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Micronesian Tax Authority Handoff Helper",
+        "href": "/en/micronesia/micronesia-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Micronesian Accounting Audit Trail Checklist Helper",
+        "href": "/en/micronesia/micronesia-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Micronesian Postal Code Validator",
+        "href": "/en/micronesia/micronesia-postal-code-validator/",
+        "text": "Validate state/island locality shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Micronesian Address Normalizer",
+        "href": "/en/micronesia/micronesia-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Micronesian Address Transliteration Normalizer",
+        "href": "/en/micronesia/micronesia-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Micronesian Region / Province Code Mapper",
+        "href": "/en/micronesia/micronesia-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Micronesian Municipality Code Inspector",
+        "href": "/en/micronesia/micronesia-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Micronesian Phone Number Validator",
+        "href": "/en/micronesia/micronesia-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Micronesian Phone E.164 Formatter",
+        "href": "/en/micronesia/micronesia-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Micronesian Date Locale Formatter",
+        "href": "/en/micronesia/micronesia-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Micronesian CSV Locale Normalizer",
+        "href": "/en/micronesia/micronesia-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Micronesia decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Micronesian Slug Normalizer",
+        "href": "/en/micronesia/micronesia-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Micronesian Document OCR Fixer",
+        "href": "/en/micronesia/micronesia-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Micronesian privacy boundary Redaction Helper",
+        "href": "/en/micronesia/micronesia-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Micronesian PII Masker",
+        "href": "/en/micronesia/micronesia-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Micronesian Personal Data Fixture Helper",
+        "href": "/en/micronesia/micronesia-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Micronesian Driving Licence Format Helper",
+        "href": "/en/micronesia/micronesia-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Micronesian Residence Permit Format Helper",
+        "href": "/en/micronesia/micronesia-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Micronesian Health Card Format Helper",
+        "href": "/en/micronesia/micronesia-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Micronesian Vehicle Plate Inspector",
+        "href": "/en/micronesia/micronesia-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Micronesian VIN Validator",
+        "href": "/en/micronesia/micronesia-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Micronesian Vehicle Data Redaction Helper",
+        "href": "/en/micronesia/micronesia-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Micronesian Customs Declaration Helper",
+        "href": "/en/micronesia/micronesia-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Micronesian Postal Tracking Helper",
+        "href": "/en/micronesia/micronesia-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Micronesian Data Quality Workbench",
+        "href": "/en/micronesia/micronesia-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Micronesian JSON Fixture Helper",
+        "href": "/en/micronesia/micronesia-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Micronesian Regex Pack Helper",
+        "href": "/en/micronesia/micronesia-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Micronesian API Payload Auditor",
+        "href": "/en/micronesia/micronesia-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Micronesian Form Field Auditor",
+        "href": "/en/micronesia/micronesia-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Micronesian Locale Number Parser",
+        "href": "/en/micronesia/micronesia-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Micronesia."
+      },
+      {
+        "title": "Micronesian Calendar Week Helper",
+        "href": "/en/micronesia/micronesia-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Micronesian Company Suffix Normalizer",
+        "href": "/en/micronesia/micronesia-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Micronesian Procurement Identifier Helper",
+        "href": "/en/micronesia/micronesia-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Micronesian Locale Copy Checker",
+        "href": "/en/micronesia/micronesia-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Micronesian Support Ticket Scrubber",
+        "href": "/en/micronesia/micronesia-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Micronesian Integration Smoke Test Builder",
+        "href": "/en/micronesia/micronesia-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-slug-normalizer
+kind: tool
+module: validohub
+country: VN
+category: developer-tools
+status: active
+name:
+  en: "Vietnamese Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Vietnam sample company 1 Trang Tien, Hanoi 100000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vietnam-document-ocr-fixer, vietnam-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

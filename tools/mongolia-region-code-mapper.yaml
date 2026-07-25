@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-region-code-mapper
+kind: tool
+module: validohub
+country: MN
+category: address
+status: active
+name:
+  en: "Mongolian Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "14200 Ulaanbaatar"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-municipality-code-inspector, mongolia-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

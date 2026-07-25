@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-support-ticket-scrubber
+kind: tool
+module: validohub
+country: TM
+category: privacy
+status: active
+name:
+  en: "Turkmen Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent A1234567, 3901012345678901, Magtymguly Avenue 1, Ashgabat 744000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkmenistan-integration-smoke-test-builder, turkmenistan-passport-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

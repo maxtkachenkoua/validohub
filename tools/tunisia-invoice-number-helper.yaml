@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tunisia-invoice-number-helper
+kind: tool
+module: validohub
+country: TN
+category: tax
+status: active
+name:
+  en: "Tunisian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tunisia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 TN123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tunisia-e-invoicing-readiness-checker, tunisia-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tunisian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

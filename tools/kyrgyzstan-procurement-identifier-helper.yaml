@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-procurement-identifier-helper
+kind: tool
+module: validohub
+country: KG
+category: government
+status: active
+name:
+  en: "Kyrgyz Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "12345678 PO-2026-001 12345678901234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-accessibility-locale-copy-checker, kyrgyzstan-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

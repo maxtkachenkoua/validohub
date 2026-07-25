@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-invoice-number-helper
+kind: tool
+module: validohub
+country: FJ
+category: tax
+status: active
+name:
+  en: "Fijian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 FJ123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-e-invoicing-readiness-checker, fiji-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: togo-phone-number-validator
+kind: tool
+module: validohub
+country: TG
+category: address
+status: active
+name:
+  en: "Togolese Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.togo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+228 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [togo-phone-e164-formatter, togo-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Togolese Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

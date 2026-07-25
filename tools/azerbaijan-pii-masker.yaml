@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-pii-masker
+kind: tool
+module: validohub
+country: AZ
+category: privacy
+status: active
+name:
+  en: "Azerbaijani PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "ABC1234 +994 50 123 45 67 NABZ 137010001944"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-personal-data-fixture-generator, azerbaijan-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

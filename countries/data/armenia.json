@@ -1,0 +1,642 @@
+{
+  "id": "armenia",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/armenia-outline.png",
+    "outlineAlt": "Armenia country outline",
+    "mapSrc": "/assets/images/countries/armenia-location.png",
+    "mapAlt": "World map with Armenia location marker",
+    "mapMarker": {
+      "x": 55,
+      "y": 50,
+      "label": "Armenia"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "armenia",
+    "flag": "🇦🇲",
+    "name": "Armenia",
+    "nativeName": "Hayastan",
+    "iso2": "AM",
+    "iso3": "ARM",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Armenian",
+    "currency": "AMD",
+    "currencyName": "Armenian dram",
+    "status": "available",
+    "summary": "Premium Armenia developer hub for public services number boundary, state register number, TIN, postal code, phone, bank account, ArCa handoff, interbank payment reference, SWIFT, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "public services number boundary",
+      "state register number",
+      "TIN",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "ArCa handoff",
+      "interbank payment reference",
+      "SWIFT",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Armenian public services number boundary Validator",
+      "Armenian state register number Validator",
+      "Armenian TIN / VAT Validator",
+      "Armenian Customs / Importer Code Helper",
+      "Armenian social services boundary Helper",
+      "Armenian Company Onboarding Auditor",
+      "Armenian State Register of Legal Entities Readiness Helper",
+      "Armenian ID Card Format Helper",
+      "Armenian Passport Number Helper",
+      "Armenian MRZ / Passport Parser",
+      "Armenia Bank Account Validator",
+      "Armenia Bank Account Fixture Generator",
+      "Armenian Domestic Bank Account Inspector",
+      "Armenian BIC / SWIFT Inspector",
+      "Armenian Domestic Transfer Helper",
+      "Armenian Direct Debit / Auto-Debit Mandate Helper",
+      "Armenian ArCa / bank transfer reference Reference Helper",
+      "Armenian Remittance Text Builder",
+      "Armenian Payment Reconciliation Helper",
+      "Armenian Bank Statement Parser",
+      "Armenian Masked Bank Account Formatter",
+      "Armenian AMD Decimal Currency Formatter",
+      "Armenian Tax Rate Sanity Helper",
+      "Armenian Tax Return Field Helper",
+      "Armenian Invoice Number Helper",
+      "Armenian tax invoice Readiness Checker",
+      "Armenian Tax Authority Handoff Helper",
+      "Armenian Accounting Audit Trail Checklist Helper",
+      "Armenian Postal Code Validator",
+      "Armenian Address Normalizer",
+      "Armenian Address Transliteration Normalizer",
+      "Armenian Region / Province Code Mapper",
+      "Armenian Municipality Code Inspector",
+      "Armenian Phone Number Validator",
+      "Armenian Phone E.164 Formatter",
+      "Armenian Date Locale Formatter",
+      "Armenian CSV Locale Normalizer",
+      "Armenian Slug Normalizer",
+      "Armenian Document OCR Fixer",
+      "Armenian personal-data privacy Redaction Helper",
+      "Armenian PII Masker",
+      "Armenian Personal Data Fixture Helper",
+      "Armenian Driving Licence Format Helper",
+      "Armenian Residence Permit Format Helper",
+      "Armenian Health Card Format Helper",
+      "Armenian Vehicle Plate Inspector",
+      "Armenian VIN Validator",
+      "Armenian Vehicle Data Redaction Helper",
+      "Armenian Customs Declaration Helper",
+      "Armenian Postal Tracking Helper",
+      "Armenian Data Quality Workbench",
+      "Armenian JSON Fixture Helper",
+      "Armenian Regex Pack Helper",
+      "Armenian API Payload Auditor",
+      "Armenian Form Field Auditor",
+      "Armenian Locale Number Parser",
+      "Armenian Calendar Week Helper",
+      "Armenian Company Suffix Normalizer",
+      "Armenian Procurement Identifier Helper",
+      "Armenian Locale Copy Checker",
+      "Armenian Support Ticket Scrubber",
+      "Armenian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live State Register of Legal Entities lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 55,
+      "y": 50
+    },
+    "searchHints": [
+      "PSN",
+      "TIN",
+      "STATE REGISTER",
+      "ARCA",
+      "POSTAL",
+      "AMD"
+    ]
+  },
+  "hub": {
+    "flag": "🇦🇲",
+    "name": "Armenia",
+    "badge": "Premium Armenia developer suite",
+    "description": "Developer intelligence and browser-only workbenches for armenian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Hayastan",
+      "population": "approximately 3M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Yerevan",
+      "continent": "Asia",
+      "region": "Caucasus / Western Asia",
+      "languages": "Armenian",
+      "currency": "Armenian dram",
+      "currencyCode": "AMD",
+      "callingCode": "+374",
+      "internetTld": ".am",
+      "drivingSide": "Right",
+      "iso2": "AM",
+      "iso3": "ARM",
+      "isoNumeric": "051",
+      "locale": "hy-AM",
+      "icuLocale": "hy_AM",
+      "dateFormat": "DD.MM.YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Space grouping",
+      "addressFormat": "Street, number, postal code, locality, Armenia",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Yerevan (AMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "911 / 112",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "hy-AM",
+      "cldrLocale": "hy_AM",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "armenia",
+      "outlineLabel": "Armenia outline",
+      "mapLabel": "Armenia in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Armenia flag",
+      "heroAccentPrimary": "217 0 18",
+      "heroAccentSecondary": "0 51 160",
+      "heroAccentTertiary": "242 168 0"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "public services number boundary and state register number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "TIN / VAT and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Armenia registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /armenia/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Space grouping rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Armenian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "State Register of Legal Entities",
+        "text": "Official business registry or company lookup remains the source of truth for Armenia.",
+        "status": "official boundary"
+      },
+      {
+        "title": "TIN / VAT",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "public services number boundary, state register number, TIN, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, ArCa handoff, interbank payment reference, SWIFT, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "hy-AM / hy_AM; date DD.MM.YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "AMD amounts use Dot (.) and Space grouping.",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "public services number boundary, state register number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "911 / 112",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "PSN",
+      "TIN",
+      "STATE REGISTER",
+      "ARCA",
+      "POSTAL",
+      "AMD"
+    ],
+    "routes": [
+      {
+        "title": "Armenian public services number boundary Validator",
+        "href": "/en/armenia/armenia-public-services-number-boundary-validator/",
+        "text": "Validate public services number boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Armenian state register number Validator",
+        "href": "/en/armenia/armenia-state-register-number-validator/",
+        "text": "Inspect state register number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Armenian TIN / VAT Validator",
+        "href": "/en/armenia/armenia-tax-id-validator/",
+        "text": "Normalize TIN / VAT identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Armenian Customs / Importer Code Helper",
+        "href": "/en/armenia/armenia-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Armenian social services boundary Helper",
+        "href": "/en/armenia/armenia-social-services-boundary-social-insurance-helper/",
+        "text": "Split social services boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Armenian Company Onboarding Auditor",
+        "href": "/en/armenia/armenia-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for state register number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Armenian State Register of Legal Entities Readiness Helper",
+        "href": "/en/armenia/armenia-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated State Register of Legal Entities lookup or company registry workflow."
+      },
+      {
+        "title": "Armenian ID Card Format Helper",
+        "href": "/en/armenia/armenia-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Armenian Passport Number Helper",
+        "href": "/en/armenia/armenia-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Armenian MRZ / Passport Parser",
+        "href": "/en/armenia/armenia-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Armenia Bank Account Validator",
+        "href": "/en/armenia/armenia-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Armenia Bank Account Fixture Generator",
+        "href": "/en/armenia/armenia-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Armenian Domestic Bank Account Inspector",
+        "href": "/en/armenia/armenia-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Armenian BIC / SWIFT Inspector",
+        "href": "/en/armenia/armenia-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Armenia banking integrations."
+      },
+      {
+        "title": "Armenian Domestic Transfer Helper",
+        "href": "/en/armenia/armenia-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Armenian Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/armenia/armenia-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Armenian ArCa / bank transfer reference Reference Helper",
+        "href": "/en/armenia/armenia-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Armenian Remittance Text Builder",
+        "href": "/en/armenia/armenia-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Armenian Payment Reconciliation Helper",
+        "href": "/en/armenia/armenia-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Armenian Bank Statement Parser",
+        "href": "/en/armenia/armenia-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Armenian Masked Bank Account Formatter",
+        "href": "/en/armenia/armenia-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Armenian AMD Decimal Currency Formatter",
+        "href": "/en/armenia/armenia-currency-decimal-formatter/",
+        "text": "Normalize AMD amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Armenian Tax Rate Sanity Helper",
+        "href": "/en/armenia/armenia-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Armenian Tax Return Field Helper",
+        "href": "/en/armenia/armenia-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Armenian Invoice Number Helper",
+        "href": "/en/armenia/armenia-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Armenian tax invoice Readiness Checker",
+        "href": "/en/armenia/armenia-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Armenian Tax Authority Handoff Helper",
+        "href": "/en/armenia/armenia-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Armenian Accounting Audit Trail Checklist Helper",
+        "href": "/en/armenia/armenia-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Armenian Postal Code Validator",
+        "href": "/en/armenia/armenia-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Armenian Address Normalizer",
+        "href": "/en/armenia/armenia-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Armenian Address Transliteration Normalizer",
+        "href": "/en/armenia/armenia-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Armenian Region / Province Code Mapper",
+        "href": "/en/armenia/armenia-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Armenian Municipality Code Inspector",
+        "href": "/en/armenia/armenia-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Armenian Phone Number Validator",
+        "href": "/en/armenia/armenia-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Armenian Phone E.164 Formatter",
+        "href": "/en/armenia/armenia-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Armenian Date Locale Formatter",
+        "href": "/en/armenia/armenia-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Armenian CSV Locale Normalizer",
+        "href": "/en/armenia/armenia-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Armenia decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Armenian Slug Normalizer",
+        "href": "/en/armenia/armenia-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Armenian Document OCR Fixer",
+        "href": "/en/armenia/armenia-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Armenian personal-data privacy Redaction Helper",
+        "href": "/en/armenia/armenia-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Armenian PII Masker",
+        "href": "/en/armenia/armenia-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Armenian Personal Data Fixture Helper",
+        "href": "/en/armenia/armenia-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Armenian Driving Licence Format Helper",
+        "href": "/en/armenia/armenia-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Armenian Residence Permit Format Helper",
+        "href": "/en/armenia/armenia-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Armenian Health Card Format Helper",
+        "href": "/en/armenia/armenia-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Armenian Vehicle Plate Inspector",
+        "href": "/en/armenia/armenia-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Armenian VIN Validator",
+        "href": "/en/armenia/armenia-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Armenian Vehicle Data Redaction Helper",
+        "href": "/en/armenia/armenia-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Armenian Customs Declaration Helper",
+        "href": "/en/armenia/armenia-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Armenian Postal Tracking Helper",
+        "href": "/en/armenia/armenia-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Armenian Data Quality Workbench",
+        "href": "/en/armenia/armenia-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Armenian JSON Fixture Helper",
+        "href": "/en/armenia/armenia-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Armenian Regex Pack Helper",
+        "href": "/en/armenia/armenia-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Armenian API Payload Auditor",
+        "href": "/en/armenia/armenia-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Armenian Form Field Auditor",
+        "href": "/en/armenia/armenia-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Armenian Locale Number Parser",
+        "href": "/en/armenia/armenia-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Armenia."
+      },
+      {
+        "title": "Armenian Calendar Week Helper",
+        "href": "/en/armenia/armenia-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Armenian Company Suffix Normalizer",
+        "href": "/en/armenia/armenia-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Armenian Procurement Identifier Helper",
+        "href": "/en/armenia/armenia-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Armenian Locale Copy Checker",
+        "href": "/en/armenia/armenia-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Armenian Support Ticket Scrubber",
+        "href": "/en/armenia/armenia-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Armenian Integration Smoke Test Builder",
+        "href": "/en/armenia/armenia-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

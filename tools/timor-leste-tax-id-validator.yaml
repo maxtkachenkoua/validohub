@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: timor-leste-tax-id-validator
+kind: tool
+module: validohub
+country: TL
+category: national-identifiers
+status: active
+name:
+  en: "Timorese tax identification number Validator"
+summary:
+  en: "Normalize tax identification number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.timor-leste-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "TIN1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [timor-leste-customs-importer-code-helper, timor-leste-social-security-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Timorese tax identification number Validator | ValidoHub"
+  description:
+    en: "Normalize tax identification number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

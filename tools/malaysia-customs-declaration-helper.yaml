@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-customs-declaration-helper
+kind: tool
+module: validohub
+country: MY
+category: government
+status: active
+name:
+  en: "Malaysian Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "C1234567890 HS 8471 1,234.56 MYR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-postal-tracking-helper, malaysia-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

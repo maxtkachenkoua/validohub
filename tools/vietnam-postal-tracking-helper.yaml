@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-postal-tracking-helper
+kind: tool
+module: validohub
+country: VN
+category: logistics
+status: active
+name:
+  en: "Vietnamese Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 100000 Hanoi"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vietnam-data-quality-workbench, vietnam-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

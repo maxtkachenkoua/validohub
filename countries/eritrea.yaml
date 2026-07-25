@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: ER
+slug: eritrea
+name:
+  en: Eritrea
+region: Africa
+languages:
+  - ti
+currency: ERN
+relatedCountries:
+  - ZA
+  - NG
+  - KE

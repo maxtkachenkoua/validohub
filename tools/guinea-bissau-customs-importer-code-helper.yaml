@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-customs-importer-code-helper
+kind: tool
+module: validohub
+country: GW
+category: national-identifiers
+status: active
+name:
+  en: "Bissau-Guinean Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "GWGW-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-bissau-social-security-boundary-social-insurance-helper, guinea-bissau-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bissau-Guinean Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

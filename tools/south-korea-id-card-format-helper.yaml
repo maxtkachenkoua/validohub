@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-id-card-format-helper
+kind: tool
+module: validohub
+country: KR
+category: national-identifiers
+status: active
+name:
+  en: "South Korean ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "900101-1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-passport-number-helper, south-korea-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-data-quality-workbench
+kind: tool
+module: validohub
+country: SB
+category: developer-tools
+status: active
+name:
+  en: "Solomon Islands Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"SB\",\"taxNumber\":\"SB123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-json-fixture-generator, solomon-islands-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

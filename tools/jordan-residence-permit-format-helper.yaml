@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-residence-permit-format-helper
+kind: tool
+module: validohub
+country: JO
+category: documents
+status: active
+name:
+  en: "Jordanian Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "JO PERMIT 2026 9901011234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-health-card-format-helper, jordan-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

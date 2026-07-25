@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burkina-faso-business-register-readiness-helper
+kind: tool
+module: validohub
+country: BF
+category: government
+status: active
+name:
+  en: "Burkinabe business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burkina-faso-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "BF-REG-123456 BF123456789 Central business district, Ouagadougou 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burkina-faso-id-card-format-helper, burkina-faso-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burkinabe business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

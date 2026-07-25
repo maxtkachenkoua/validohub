@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-invoice-number-helper
+kind: tool
+module: validohub
+country: KH
+category: tax
+status: active
+name:
+  en: "Cambodian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 K001-123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-e-invoicing-readiness-checker, cambodia-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

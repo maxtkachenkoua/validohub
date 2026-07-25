@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-address-normalizer
+kind: tool
+module: validohub
+country: BH
+category: address
+status: active
+name:
+  en: "Bahraini Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Government Avenue 1, Manama, Block 316"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-address-transliteration-normalizer, bahrain-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

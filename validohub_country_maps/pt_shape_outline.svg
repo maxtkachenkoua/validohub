@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-59.88 -78.05 505.74 589.55" role="img">
+  <title>Portugal country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="7.00" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <g id="pt">
+        <path  d="M387.499,421.716l-0.536,7.478l-1.53,1.384l0.156,0.846l1.071,1.772l-0.691,2.16l1.149,0.39l2.68-0.312l-0.155-2.16l1.756-10.02l-0.382-1.383L387.499,421.716L387.499,421.716z"/>
+        <path d="M367.834,443.481l-0.934,1.185l0.934,1.185l1.408-0.709L367.834,443.481L367.834,443.481z"/>
+        <path d="M337.112,426.713l-1.175,1.184l2.107,1.185l0.234-1.649L337.112,426.713L337.112,426.713z"/>
+        <path d="M343.448,426.004l-1.408,0.941l1.175,0.941l1.876-0.476L343.448,426.004L343.448,426.004z"/>
+        <path d="M344.382,429.314l-0.7,1.892l0.935,1.185l1.175-0.941L344.382,429.314L344.382,429.314z"/>
+        <path d="M350.01,433.092l-0.467,1.184l0.701,0.709l1.875-1.184L350.01,433.092L350.01,433.092z"/>
+    </g>
+  </g>
+</svg>

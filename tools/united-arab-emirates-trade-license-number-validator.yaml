@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-trade-license-number-validator
+kind: tool
+module: validohub
+country: AE
+category: national-identifiers
+status: active
+name:
+  en: "UAE trade license number Validator"
+summary:
+  en: "Inspect trade license number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "CN-1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-tax-id-validator, united-arab-emirates-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE trade license number Validator | ValidoHub"
+  description:
+    en: "Inspect trade license number structure, registry-style prefixes, control digits, and official lookup boundaries."

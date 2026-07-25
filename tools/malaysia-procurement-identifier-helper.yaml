@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-procurement-identifier-helper
+kind: tool
+module: validohub
+country: MY
+category: government
+status: active
+name:
+  en: "Malaysian Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "201901234567 PO-2026-001 C1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-accessibility-locale-copy-checker, malaysia-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

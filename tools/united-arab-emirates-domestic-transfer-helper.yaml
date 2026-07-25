@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-domestic-transfer-helper
+kind: tool
+module: validohub
+country: AE
+category: finance
+status: active
+name:
+  en: "UAE Domestic Transfer Helper"
+summary:
+  en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "033 1234567890123456\\n1,234.56 AED\\nInvoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-direct-debit-mandate-helper, united-arab-emirates-payment-reference-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE Domestic Transfer Helper | ValidoHub"
+  description:
+    en: "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."

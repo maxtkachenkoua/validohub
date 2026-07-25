@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: AZ
+category: transport
+status: active
+name:
+  en: "Azerbaijani Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "10 AA 123 WVWZZZ1JZXW000001 ABC1234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-customs-declaration-helper, azerbaijan-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

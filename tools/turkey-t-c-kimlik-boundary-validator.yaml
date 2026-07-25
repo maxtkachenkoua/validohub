@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-t-c-kimlik-boundary-validator
+kind: tool
+module: validohub
+country: TR
+category: national-identifiers
+status: active
+name:
+  en: "Turkish T.C. Kimlik boundary Validator"
+summary:
+  en: "Validate T.C. Kimlik boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "10000000146"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-mersis-number-validator, turkey-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish T.C. Kimlik boundary Validator | ValidoHub"
+  description:
+    en: "Validate T.C. Kimlik boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

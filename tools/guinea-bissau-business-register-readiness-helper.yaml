@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-business-register-readiness-helper
+kind: tool
+module: validohub
+country: GW
+category: government
+status: active
+name:
+  en: "Bissau-Guinean business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "GW-REG-123456 GW123456789 Central business district, Bissau 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-bissau-id-card-format-helper, guinea-bissau-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bissau-Guinean business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

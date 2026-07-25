@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: somalia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: SO
+category: government
+status: active
+name:
+  en: "Somali business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.somalia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "SO-REG-123456 SO123456789 Central business district, Mogadishu 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [somalia-id-card-format-helper, somalia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Somali business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: TJ
+category: address
+status: active
+name:
+  en: "Tajik Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Rudaki Avenue 1, Dushanbe 734000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-region-code-mapper, tajikistan-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

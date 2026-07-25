@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-document-ocr-fixer
+kind: tool
+module: validohub
+country: SY
+category: documents
+status: active
+name:
+  en: "Syrian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "01012345678 TAX123456 001 1234567890 0100 Damascus"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-privacy-redaction-helper, syria-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

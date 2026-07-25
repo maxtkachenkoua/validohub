@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritius-bic-swift-inspector
+kind: tool
+module: validohub
+country: MU
+category: finance
+status: active
+name:
+  en: "Mauritian BIC / SWIFT Inspector"
+summary:
+  en: "Inspect BIC institution, country, location, and branch evidence for Mauritius banking integrations."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritius-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "BIC input"
+        required: true
+        placeholder:
+          en: "ABCDMU2X"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritius-domestic-transfer-helper, mauritius-direct-debit-mandate-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritian BIC / SWIFT Inspector | ValidoHub"
+  description:
+    en: "Inspect BIC institution, country, location, and branch evidence for Mauritius banking integrations."

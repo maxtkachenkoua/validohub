@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tunisia-form-field-auditor
+kind: tool
+module: validohub
+country: TN
+category: developer-tools
+status: active
+name:
+  en: "Tunisian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tunisia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=TN123456789&postal=1000 Tunis&phone=+216 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tunisia-locale-number-parser, tunisia-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tunisian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

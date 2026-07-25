@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: morocco-customs-importer-code-helper
+kind: tool
+module: validohub
+country: MA
+category: national-identifiers
+status: active
+name:
+  en: "Moroccan Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.morocco-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "MAMA-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [morocco-social-security-boundary-social-insurance-helper, morocco-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Moroccan Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-nssf-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: LB
+category: national-identifiers
+status: active
+name:
+  en: "Lebanese NSSF boundary Helper"
+summary:
+  en: "Split NSSF boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "NSSF-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lebanon-company-onboarding-auditor, lebanon-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese NSSF boundary Helper | ValidoHub"
+  description:
+    en: "Split NSSF boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

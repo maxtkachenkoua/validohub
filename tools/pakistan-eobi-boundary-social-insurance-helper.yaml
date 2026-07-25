@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-eobi-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: PK
+category: national-identifiers
+status: active
+name:
+  en: "Pakistani EOBI boundary Helper"
+summary:
+  en: "Split EOBI boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "EOBI-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-company-onboarding-auditor, pakistan-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani EOBI boundary Helper | ValidoHub"
+  description:
+    en: "Split EOBI boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

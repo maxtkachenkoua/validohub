@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: benin-document-ocr-fixer
+kind: tool
+module: validohub
+country: BJ
+category: documents
+status: active
+name:
+  en: "Beninese Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.benin-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "BJ-ID-123456 BJ123456789 001 1234567890 1000 Porto-Novo"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [benin-privacy-redaction-helper, benin-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Beninese Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

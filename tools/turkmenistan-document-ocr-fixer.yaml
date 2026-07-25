@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-document-ocr-fixer
+kind: tool
+module: validohub
+country: TM
+category: documents
+status: active
+name:
+  en: "Turkmen Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "A1234567 12345678 3901012345678901 744000 Ashgabat"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkmenistan-privacy-redaction-helper, turkmenistan-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-tax-id-validator
+kind: tool
+module: validohub
+country: BN
+category: national-identifiers
+status: active
+name:
+  en: "Bruneian TIN Validator"
+summary:
+  en: "Normalize TIN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "TIN1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [brunei-customs-importer-code-helper, brunei-tap-scp-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian TIN Validator | ValidoHub"
+  description:
+    en: "Normalize TIN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

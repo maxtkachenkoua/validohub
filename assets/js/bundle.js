@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
           { query: 'identifier', label: 'identifier' },
           { query: 'payment', label: 'payment' }
         ];
+    const globalSearchText = popularFallback.map(entry => entry.query).join(' ');
     const shortcutLabelByQuery = new Map(popularFallback.map(entry => [entry.query, entry.label]));
     const aliases = new Map([
       ['pasel', 'pesel'],
@@ -328,7 +329,12 @@ document.addEventListener('DOMContentLoaded', () => {
       catalog.dataset.activeIntent = activeIntent;
 
       rows.forEach(row => {
-        const haystack = normalizeSearchText(row.textContent || '');
+        const haystack = normalizeSearchText([
+          row.textContent || '',
+          row.dataset.routeSlug || '',
+          row.dataset.searchText || '',
+          globalSearchText
+        ].join(' '));
         const rowIntent = row.dataset.intentGroup || 'other';
         const matchesIntent = activeIntent === 'all' || activeIntent === rowIntent;
         const matches = matchesIntent && (!query || haystack.includes(query));

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: niger-id-card-format-helper
+kind: tool
+module: validohub
+country: NE
+category: national-identifiers
+status: active
+name:
+  en: "Nigerien ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.niger-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "NE-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [niger-passport-number-helper, niger-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nigerien ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

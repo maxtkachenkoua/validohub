@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gabon-company-suffix-normalizer
+kind: tool
+module: validohub
+country: GA
+category: developer-tools
+status: active
+name:
+  en: "Gabonese Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gabon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Gabon Sample Holding Ltd GA-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gabon-procurement-identifier-helper, gabon-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gabonese Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

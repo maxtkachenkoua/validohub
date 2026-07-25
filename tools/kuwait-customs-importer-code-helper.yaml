@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-customs-importer-code-helper
+kind: tool
+module: validohub
+country: KW
+category: national-identifiers
+status: active
+name:
+  en: "Kuwaiti Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "KW123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-pifss-boundary-social-insurance-helper, kuwait-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

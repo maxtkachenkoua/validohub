@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-address-normalizer
+kind: tool
+module: validohub
+country: AU
+category: address
+status: active
+name:
+  en: "Australian Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "1 National Circuit, Canberra ACT 2600"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-address-transliteration-normalizer, australia-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

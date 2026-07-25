@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-currency-decimal-formatter
+kind: tool
+module: validohub
+country: LB
+category: finance
+status: active
+name:
+  en: "Lebanese LBP Decimal Currency Formatter"
+summary:
+  en: "Normalize LBP amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234,567 LBP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lebanon-tax-rate-sanity-helper, lebanon-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese LBP Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize LBP amount strings, decimal separators, grouping, and API-safe numeric previews."

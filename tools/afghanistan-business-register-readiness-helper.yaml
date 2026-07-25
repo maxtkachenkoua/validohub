@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: afghanistan-business-register-readiness-helper
+kind: tool
+module: validohub
+country: AF
+category: government
+status: active
+name:
+  en: "Afghan ACBR / business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated ACBR / business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.afghanistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "AF-123456 TIN123456789 Shahr-e Naw 1, Kabul 1001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [afghanistan-id-card-format-helper, afghanistan-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Afghan ACBR / business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated ACBR / business registry lookup or company registry workflow."

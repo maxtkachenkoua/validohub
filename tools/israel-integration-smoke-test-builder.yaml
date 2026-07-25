@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: IL
+category: developer-tools
+status: active
+name:
+  en: "Israeli Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IL\",\"id\":\"123456782\",\"iban\":\"IL620108000000099999999\",\"vat\":\"512345678\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [israel-teudat-zehut-boundary-validator, israel-company-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-customs-importer-code-helper
+kind: tool
+module: validohub
+country: JP
+category: national-identifiers
+status: active
+name:
+  en: "Japanese Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "JP1234567890123"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-basic-pension-number-boundary-social-insurance-helper, japan-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

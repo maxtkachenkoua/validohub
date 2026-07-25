@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: ethiopia-document-ocr-fixer
+kind: tool
+module: validohub
+country: ET
+category: documents
+status: active
+name:
+  en: "Ethiopian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.ethiopia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "ET-ID-123456 ET123456789 001 1234567890 1000 Addis Ababa"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [ethiopia-privacy-redaction-helper, ethiopia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ethiopian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

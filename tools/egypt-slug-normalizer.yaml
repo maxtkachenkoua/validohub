@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: egypt-slug-normalizer
+kind: tool
+module: validohub
+country: EG
+category: developer-tools
+status: active
+name:
+  en: "Egyptian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.egypt-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Egypt sample company Central business district, Cairo 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [egypt-document-ocr-fixer, egypt-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Egyptian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-date-locale-formatter
+kind: tool
+module: validohub
+country: JP
+category: localization
+status: active
+name:
+  en: "Japanese Date Locale Formatter"
+summary:
+  en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "2026/07/21"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-csv-locale-normalizer, japan-slug-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Date Locale Formatter | ValidoHub"
+  description:
+    en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."

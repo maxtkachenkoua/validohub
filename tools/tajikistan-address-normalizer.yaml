@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tajikistan-address-normalizer
+kind: tool
+module: validohub
+country: TJ
+category: address
+status: active
+name:
+  en: "Tajik Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tajikistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Rudaki Avenue 1, Dushanbe 734000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tajikistan-address-transliteration-normalizer, tajikistan-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tajik Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-csv-locale-normalizer
+kind: tool
+module: validohub
+country: KZ
+category: developer-tools
+status: active
+name:
+  en: "Kazakh CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Kazakhstan decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1 234,56 KZT;21.07.2026;120940012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-slug-normalizer, kazakhstan-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Kazakhstan decimal, date, postal, phone, tax, and banking fields."

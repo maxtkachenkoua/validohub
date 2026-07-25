@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: afghanistan-regex-pack-helper
+kind: tool
+module: validohub
+country: AF
+category: developer-tools
+status: active
+name:
+  en: "Afghan Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.afghanistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "Tazkira boundary company registration number postal code  001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [afghanistan-api-payload-auditor, afghanistan-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Afghan Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

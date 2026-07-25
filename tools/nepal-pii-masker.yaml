@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-pii-masker
+kind: tool
+module: validohub
+country: NP
+category: privacy
+status: active
+name:
+  en: "Nepali PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "27-01-76-12345 +977 984 1234567 001 1234567890123"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-personal-data-fixture-generator, nepal-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

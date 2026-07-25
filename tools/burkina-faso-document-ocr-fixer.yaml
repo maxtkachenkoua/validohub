@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burkina-faso-document-ocr-fixer
+kind: tool
+module: validohub
+country: BF
+category: documents
+status: active
+name:
+  en: "Burkinabe Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burkina-faso-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "BF-ID-123456 BF123456789 001 1234567890 1000 Ouagadougou"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burkina-faso-privacy-redaction-helper, burkina-faso-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burkinabe Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

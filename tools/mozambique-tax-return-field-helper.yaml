@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mozambique-tax-return-field-helper
+kind: tool
+module: validohub
+country: MZ
+category: tax
+status: active
+name:
+  en: "Mozambican Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mozambique-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary; MZ123456789; period 2026-07; 1,234.56 MZN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mozambique-invoice-number-helper, mozambique-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mozambican Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

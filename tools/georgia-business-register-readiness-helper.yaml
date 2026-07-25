@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: GE
+category: government
+status: active
+name:
+  en: "Georgian National Agency of Public Registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated National Agency of Public Registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "405123456 405123456 Rustaveli Avenue 1, Tbilisi 0105"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-id-card-format-helper, georgia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian National Agency of Public Registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated National Agency of Public Registry lookup or company registry workflow."

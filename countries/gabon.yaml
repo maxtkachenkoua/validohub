@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: GA
+slug: gabon
+name:
+  en: Gabon
+region: Africa
+languages:
+  - fr
+currency: XAF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

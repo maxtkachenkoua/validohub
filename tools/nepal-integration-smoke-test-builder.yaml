@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: NP
+category: developer-tools
+status: active
+name:
+  en: "Nepali Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NP\",\"pan\":\"500123456\",\"bank\":\"0011234567890123\",\"connectIPS\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [nepal-citizenship-number-boundary-validator, nepal-company-registration-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

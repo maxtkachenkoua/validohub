@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: samoa-company-onboarding-auditor
+kind: tool
+module: validohub
+country: WS
+category: developer-tools
+status: active
+name:
+  en: "Samoan Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.samoa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"WS\",\"taxNumber\":\"WS123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [samoa-business-register-readiness-helper, samoa-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Samoan Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."

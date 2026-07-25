@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-api-payload-auditor
+kind: tool
+module: validohub
+country: IN
+category: developer-tools
+status: active
+name:
+  en: "Indian API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IN\",\"pan\":\"ABCDE1234F\",\"gstin\":\"27ABCDE1234F1Z5\",\"ifsc\":\"HDFC0001234\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-form-field-auditor, india-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

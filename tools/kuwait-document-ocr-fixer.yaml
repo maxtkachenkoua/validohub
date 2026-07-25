@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-document-ocr-fixer
+kind: tool
+module: validohub
+country: KW
+category: documents
+status: active
+name:
+  en: "Kuwaiti Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "290010112345 TF123456 CBKU 1234560101 13001 Kuwait City"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-privacy-redaction-helper, kuwait-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

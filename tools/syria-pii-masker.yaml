@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-pii-masker
+kind: tool
+module: validohub
+country: SY
+category: privacy
+status: active
+name:
+  en: "Syrian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "01012345678 +963 944 123 456 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-personal-data-fixture-generator, syria-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

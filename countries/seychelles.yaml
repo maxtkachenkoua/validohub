@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SC
+slug: seychelles
+name:
+  en: Seychelles
+region: Africa
+languages:
+  - en
+currency: SCR
+relatedCountries:
+  - ZA
+  - NG
+  - KE

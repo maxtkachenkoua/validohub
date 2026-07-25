@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-business-register-readiness-helper
+kind: tool
+module: validohub
+country: IN
+category: government
+status: active
+name:
+  en: "Indian MCA / GST portal Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated MCA / GST portal lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "U72900DL2020PTC123456 27ABCDE1234F1Z5 Connaught Place, New Delhi 110001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-id-card-format-helper, india-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian MCA / GST portal Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated MCA / GST portal lookup or company registry workflow."

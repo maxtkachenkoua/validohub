@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-form-field-auditor
+kind: tool
+module: validohub
+country: UZ
+category: developer-tools
+status: active
+name:
+  en: "Uzbek Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=123456789&postal=100000 Tashkent&phone=+998 90 123 45 67"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-locale-number-parser, uzbekistan-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

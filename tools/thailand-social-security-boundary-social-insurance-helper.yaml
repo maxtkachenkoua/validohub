@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-social-security-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: TH
+category: national-identifiers
+status: active
+name:
+  en: "Thai Social Security boundary Helper"
+summary:
+  en: "Split Social Security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1101700203451"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-company-onboarding-auditor, thailand-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai Social Security boundary Helper | ValidoHub"
+  description:
+    en: "Split Social Security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

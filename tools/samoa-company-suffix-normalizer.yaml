@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: samoa-company-suffix-normalizer
+kind: tool
+module: validohub
+country: WS
+category: developer-tools
+status: active
+name:
+  en: "Samoan Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.samoa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Samoa Sample Holding Ltd WS-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [samoa-procurement-identifier-helper, samoa-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Samoan Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

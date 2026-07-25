@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-procurement-identifier-helper
+kind: tool
+module: validohub
+country: PS
+category: government
+status: active
+name:
+  en: "Palestinian Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "562345678 PO-2026-001 562345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-accessibility-locale-copy-checker, palestine-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

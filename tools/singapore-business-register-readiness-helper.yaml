@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-business-register-readiness-helper
+kind: tool
+module: validohub
+country: SG
+category: government
+status: active
+name:
+  en: "Singapore ACRA Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated ACRA lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "201912345K M91234567X 1 Raffles Place, Singapore 048616"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-id-card-format-helper, singapore-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore ACRA Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated ACRA lookup or company registry workflow."

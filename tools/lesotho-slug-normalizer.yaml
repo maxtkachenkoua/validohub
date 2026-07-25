@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lesotho-slug-normalizer
+kind: tool
+module: validohub
+country: LS
+category: developer-tools
+status: active
+name:
+  en: "Basotho Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lesotho-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Lesotho sample company Central business district, Maseru 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lesotho-document-ocr-fixer, lesotho-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Basotho Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

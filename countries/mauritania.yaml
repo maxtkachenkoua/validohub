@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MR
+slug: mauritania
+name:
+  en: Mauritania
+region: Africa
+languages:
+  - ar
+currency: MRU
+relatedCountries:
+  - ZA
+  - NG
+  - KE

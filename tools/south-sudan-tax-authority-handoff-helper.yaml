@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-sudan-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: SS
+category: tax
+status: active
+name:
+  en: "South Sudanese Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "SS123456789 24/07/2026 1,234.56 SSP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-sudan-accounting-audit-trail-checklist-generator, south-sudan-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Sudanese Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

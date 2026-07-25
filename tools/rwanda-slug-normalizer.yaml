@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: rwanda-slug-normalizer
+kind: tool
+module: validohub
+country: RW
+category: developer-tools
+status: active
+name:
+  en: "Rwandan Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.rwanda-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Rwanda sample company Central business district, Kigali 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [rwanda-document-ocr-fixer, rwanda-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Rwandan Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

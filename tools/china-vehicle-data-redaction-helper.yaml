@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: china-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: CN
+category: transport
+status: active
+name:
+  en: "Chinese Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.china-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "京A12345 WVWZZZ1JZXW000001 110101199003078877"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [china-customs-declaration-helper, china-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Chinese Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

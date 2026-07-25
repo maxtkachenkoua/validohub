@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-json-fixture-generator
+kind: tool
+module: validohub
+country: PK
+category: developer-tools
+status: active
+name:
+  en: "Pakistani JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PK\",\"cnic\":\"35202-1234567-1\",\"iban\":\"PK36SCBL0000001123456702\",\"raast\":\"+923001234567\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [pakistan-regex-pack-helper, pakistan-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

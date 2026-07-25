@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: KW
+category: tax
+status: active
+name:
+  en: "Kuwaiti Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "TF123456 21/07/2026 1,234.560 KWD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-accounting-audit-trail-checklist-generator, kuwait-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

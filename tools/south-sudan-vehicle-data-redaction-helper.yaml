@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-sudan-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: SS
+category: transport
+status: active
+name:
+  en: "South Sudanese Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "SS 1234 WVWZZZ1JZXW000001 SS-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-sudan-customs-declaration-helper, south-sudan-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Sudanese Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

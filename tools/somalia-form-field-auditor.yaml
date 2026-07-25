@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: somalia-form-field-auditor
+kind: tool
+module: validohub
+country: SO
+category: developer-tools
+status: active
+name:
+  en: "Somali Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.somalia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=SO123456789&postal=1000 Mogadishu&phone=+252 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [somalia-locale-number-parser, somalia-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Somali Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

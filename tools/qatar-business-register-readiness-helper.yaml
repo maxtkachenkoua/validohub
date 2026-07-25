@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-business-register-readiness-helper
+kind: tool
+module: validohub
+country: QA
+category: government
+status: active
+name:
+  en: "Qatari MOCI registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated MOCI registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "123456 TC1234567 West Bay, Doha, PO Box 12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-id-card-format-helper, qatar-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari MOCI registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated MOCI registry lookup or company registry workflow."

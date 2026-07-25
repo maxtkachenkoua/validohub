@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-invoice-number-helper
+kind: tool
+module: validohub
+country: PS
+category: tax
+status: active
+name:
+  en: "Palestinian Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 562345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-e-invoicing-readiness-checker, palestine-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

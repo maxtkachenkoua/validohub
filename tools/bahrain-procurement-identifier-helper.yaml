@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-procurement-identifier-helper
+kind: tool
+module: validohub
+country: BH
+category: government
+status: active
+name:
+  en: "Bahraini Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "123456-1 PO-2026-001 220012345600002"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-accessibility-locale-copy-checker, bahrain-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-currency-decimal-formatter
+kind: tool
+module: validohub
+country: PS
+category: finance
+status: active
+name:
+  en: "Palestinian ILS Decimal Currency Formatter"
+summary:
+  en: "Normalize ILS amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 ILS"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-tax-rate-sanity-helper, palestine-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian ILS Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize ILS amount strings, decimal separators, grouping, and API-safe numeric previews."

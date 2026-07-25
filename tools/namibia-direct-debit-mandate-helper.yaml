@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: namibia-direct-debit-mandate-helper
+kind: tool
+module: validohub
+country: NA
+category: finance
+status: active
+name:
+  en: "Namibian Direct Debit / Auto-Debit Mandate Helper"
+summary:
+  en: "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.namibia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DD input"
+        required: true
+        placeholder:
+          en: "MANDATE-2026-001 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [namibia-payment-reference-helper, namibia-remittance-text-builder]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Namibian Direct Debit / Auto-Debit Mandate Helper | ValidoHub"
+  description:
+    en: "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."

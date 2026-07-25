@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: TO
+category: privacy
+status: active
+name:
+  en: "Tongan Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "TO-TIN-123456\\nTaufaʻahau Road, Nukuʻalofa\\n+676 12345"
+    actions: [generate, validate, explain]
+related:
+  explicit: [tonga-driving-licence-format-helper, tonga-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

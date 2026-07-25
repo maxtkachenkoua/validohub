@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mali-residence-permit-format-helper
+kind: tool
+module: validohub
+country: ML
+category: documents
+status: active
+name:
+  en: "Malian Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mali-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "ML PERMIT 2026 ML-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mali-health-card-format-helper, mali-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malian Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

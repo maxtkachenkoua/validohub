@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: DJ
+slug: djibouti
+name:
+  en: Djibouti
+region: Africa
+languages:
+  - fr
+currency: DJF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

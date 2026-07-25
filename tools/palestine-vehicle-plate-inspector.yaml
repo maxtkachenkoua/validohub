@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palestine-vehicle-plate-inspector
+kind: tool
+module: validohub
+country: PS
+category: transport
+status: active
+name:
+  en: "Palestinian Vehicle Plate Inspector"
+summary:
+  en: "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palestine-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PLATE input"
+        required: true
+        placeholder:
+          en: "1-234-56"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palestine-vin-validator, palestine-vehicle-data-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palestinian Vehicle Plate Inspector | ValidoHub"
+  description:
+    en: "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."

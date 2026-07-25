@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-remittance-text-builder
+kind: tool
+module: validohub
+country: SG
+category: finance
+status: active
+name:
+  en: "Singapore Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 M91234567X 1,234.56 SGD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-payment-reconciliation-helper, singapore-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-document-ocr-fixer
+kind: tool
+module: validohub
+country: GM
+category: documents
+status: active
+name:
+  en: "Gambian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "GM-ID-123456 GM123456789 001 1234567890 1000 Banjul"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-privacy-redaction-helper, gambia-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

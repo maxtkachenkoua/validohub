@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: ST
+category: tax
+status: active
+name:
+  en: "Sao Tomean Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary 20% base 1,234.56 STN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-tax-return-field-helper, sao-tome-and-principe-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

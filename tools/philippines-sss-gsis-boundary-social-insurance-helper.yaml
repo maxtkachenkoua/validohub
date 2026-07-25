@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: philippines-sss-gsis-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: PH
+category: national-identifiers
+status: active
+name:
+  en: "Philippine SSS / GSIS boundary Helper"
+summary:
+  en: "Split SSS / GSIS boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.philippines-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "12-3456789-0"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [philippines-company-onboarding-auditor, philippines-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Philippine SSS / GSIS boundary Helper | ValidoHub"
+  description:
+    en: "Split SSS / GSIS boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

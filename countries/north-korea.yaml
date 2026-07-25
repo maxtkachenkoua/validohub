@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: KP
+slug: north-korea
+name:
+  en: North Korea
+region: Asia
+languages:
+  - ko
+currency: KPW
+relatedCountries:
+  - KR
+  - CN
+  - JP

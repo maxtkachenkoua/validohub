@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: togo-residence-permit-format-helper
+kind: tool
+module: validohub
+country: TG
+category: documents
+status: active
+name:
+  en: "Togolese Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.togo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "TG PERMIT 2026 TG-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [togo-health-card-format-helper, togo-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Togolese Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

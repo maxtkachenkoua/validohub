@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: congo-tax-return-field-helper
+kind: tool
+module: validohub
+country: CG
+category: tax
+status: active
+name:
+  en: "Congolese Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.congo-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary; CG123456789; period 2026-07; 1,234.56 XAF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [congo-invoice-number-helper, congo-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Congolese Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

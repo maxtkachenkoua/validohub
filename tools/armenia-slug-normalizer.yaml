@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: armenia-slug-normalizer
+kind: tool
+module: validohub
+country: AM
+category: developer-tools
+status: active
+name:
+  en: "Armenian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.armenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Armenia sample company Mashtots Avenue 1, Yerevan 0010"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [armenia-document-ocr-fixer, armenia-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Armenian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

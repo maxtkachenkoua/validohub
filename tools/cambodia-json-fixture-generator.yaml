@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-json-fixture-generator
+kind: tool
+module: validohub
+country: KH
+category: developer-tools
+status: active
+name:
+  en: "Cambodian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"KH\",\"tin\":\"K001-123456789\",\"bakong\":\"khqr-inv-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [cambodia-regex-pack-helper, cambodia-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

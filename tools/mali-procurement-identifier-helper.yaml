@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mali-procurement-identifier-helper
+kind: tool
+module: validohub
+country: ML
+category: government
+status: active
+name:
+  en: "Malian Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mali-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "ML-REG-123456 PO-2026-001 ML123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mali-accessibility-locale-copy-checker, mali-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malian Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

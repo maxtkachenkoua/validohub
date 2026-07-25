@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-procurement-identifier-helper
+kind: tool
+module: validohub
+country: CV
+category: government
+status: active
+name:
+  en: "Cabo Verdean Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "CV-REG-123456 PO-2026-001 CV123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-accessibility-locale-copy-checker, cabo-verde-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

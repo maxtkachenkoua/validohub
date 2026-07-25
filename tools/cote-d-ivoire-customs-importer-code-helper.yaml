@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cote-d-ivoire-customs-importer-code-helper
+kind: tool
+module: validohub
+country: CI
+category: national-identifiers
+status: active
+name:
+  en: "Ivorian Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cote-d-ivoire-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "CICI-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cote-d-ivoire-social-security-boundary-social-insurance-helper, cote-d-ivoire-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Ivorian Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritania-customs-importer-code-helper
+kind: tool
+module: validohub
+country: MR
+category: national-identifiers
+status: active
+name:
+  en: "Mauritanian Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "MRMR-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritania-social-security-boundary-social-insurance-helper, mauritania-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritanian Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

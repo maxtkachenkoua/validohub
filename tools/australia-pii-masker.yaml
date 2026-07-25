@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-pii-masker
+kind: tool
+module: validohub
+country: AU
+category: privacy
+status: active
+name:
+  en: "Australian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "123 456 782 +61 412 345 678 062-000 12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-personal-data-fixture-generator, australia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

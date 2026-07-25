@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: AE
+slug: united-arab-emirates
+name:
+  en: United Arab Emirates
+region: Asia
+languages:
+  - ar
+currency: AED
+relatedCountries:
+  - SA
+  - QA
+  - IN

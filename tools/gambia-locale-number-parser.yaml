@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-locale-number-parser
+kind: tool
+module: validohub
+country: GM
+category: localization
+status: active
+name:
+  en: "Gambian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Gambia."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 GMD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-calendar-week-helper, gambia-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Gambia."

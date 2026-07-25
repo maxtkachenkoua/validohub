@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-postal-code-validator
+kind: tool
+module: validohub
+country: BN
+category: address
+status: active
+name:
+  en: "Bruneian Postal Code Validator"
+summary:
+  en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "POST input"
+        required: true
+        placeholder:
+          en: "BS8711 Bandar Seri Begawan"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [brunei-address-normalizer, brunei-address-transliteration-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian Postal Code Validator | ValidoHub"
+  description:
+    en: "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."

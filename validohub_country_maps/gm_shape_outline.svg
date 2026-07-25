@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-56.99 -75.58 478.97 647.28" role="img">
+  <title>Gambia country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="6.63" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="gm" d="M366.719,497.006l-0.111,0.959l5.98-0.086l0.304-0.891l-0.13-0.898l-1.721,0.7L366.719,497.006L366.719,497.006z"/>
+  </g>
+</svg>

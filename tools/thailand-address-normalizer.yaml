@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: thailand-address-normalizer
+kind: tool
+module: validohub
+country: TH
+category: address
+status: active
+name:
+  en: "Thai Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.thailand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Sukhumvit Road 1, Bangkok 10110"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [thailand-address-transliteration-normalizer, thailand-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Thai Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

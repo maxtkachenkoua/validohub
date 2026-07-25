@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: MH
+category: transport
+status: active
+name:
+  en: "Marshallese Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "MH 1234 WVWZZZ1JZXW000001 MH-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-customs-declaration-helper, marshall-islands-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

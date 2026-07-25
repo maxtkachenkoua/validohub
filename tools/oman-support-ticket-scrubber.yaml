@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: oman-support-ticket-scrubber
+kind: tool
+module: validohub
+country: OM
+category: privacy
+status: active
+name:
+  en: "Omani Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.oman-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 12345678, 0001 123456789, Sultan Qaboos Street 1, Muscat 100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [oman-integration-smoke-test-builder, oman-civil-number-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Omani Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: armenia-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: AM
+category: tax
+status: active
+name:
+  en: "Armenian Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.armenia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "TIN / VAT 20% base 1 234.56 AMD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [armenia-tax-return-field-helper, armenia-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Armenian Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

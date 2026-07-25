@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-102.04 -68.72 790.72 514.27" role="img">
+  <title>Mongolia country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="7.12" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="mn" d="M597.438,386.215l5.03-6.673l6.043,2.792l4.105,1.098l5.03-4.615l-3.414-2.517l2.248-3.172l6.707,2.369l2.325,3.812l4.199,0.112l2.196-1.634l4.521-0.182l0.985,1.678l7.512,0.38l4.754-4.849l6.578,0.69l-0.38,6.604l2.879,0.656l3.535-1.606l3.743,1.85l-0.088,0.935l-2.714,0.078l-2.827,5.93l-2.195,0.216l-8.54,11.16l-8.723,3.847l-5.455,0.424l-4.529-2.923l-5.791,3.095l-5.705-1.771l-1.617-4.141l-10.805-0.762l-5.532-9.377l-2.688-0.174L597.438,386.215L597.438,386.215z"/>
+  </g>
+</svg>

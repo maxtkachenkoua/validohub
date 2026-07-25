@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-currency-decimal-formatter
+kind: tool
+module: validohub
+country: CV
+category: finance
+status: active
+name:
+  en: "Cabo Verdean CVE Decimal Currency Formatter"
+summary:
+  en: "Normalize CVE amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 CVE"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-tax-rate-sanity-helper, cabo-verde-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean CVE Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize CVE amount strings, decimal separators, grouping, and API-safe numeric previews."

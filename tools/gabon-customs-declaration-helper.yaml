@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gabon-customs-declaration-helper
+kind: tool
+module: validohub
+country: GA
+category: government
+status: active
+name:
+  en: "Gabonese Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gabon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "GA123456789 HS 8471 1,234.56 XAF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gabon-postal-tracking-helper, gabon-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gabonese Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-procurement-identifier-helper
+kind: tool
+module: validohub
+country: UZ
+category: government
+status: active
+name:
+  en: "Uzbek Procurement Identifier Helper"
+summary:
+  en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PROC input"
+        required: true
+        placeholder:
+          en: "123456789 PO-2026-001 123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-accessibility-locale-copy-checker, uzbekistan-support-ticket-scrubber]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek Procurement Identifier Helper | ValidoHub"
+  description:
+    en: "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."

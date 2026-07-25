@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-support-ticket-scrubber
+kind: tool
+module: validohub
+country: KR
+category: privacy
+status: active
+name:
+  en: "South Korean Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 900101-1234567, 088 1234567890123, Sejong-daero 110, Jung-gu, Seoul 04524"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-integration-smoke-test-builder, south-korea-rrn-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

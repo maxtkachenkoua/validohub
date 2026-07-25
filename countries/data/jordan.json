@@ -1,0 +1,642 @@
+{
+  "id": "jordan",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/jordan-outline.png",
+    "outlineAlt": "Jordan country outline",
+    "mapSrc": "/assets/images/countries/jordan-location.png",
+    "mapAlt": "World map with Jordan location marker",
+    "mapMarker": {
+      "x": 56,
+      "y": 53,
+      "label": "Jordan"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "jordan",
+    "flag": "🇯🇴",
+    "name": "Jordan",
+    "nativeName": "Al-Urdunn",
+    "iso2": "JO",
+    "iso3": "JOR",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Arabic",
+    "currency": "JOD",
+    "currencyName": "Jordanian dinar",
+    "status": "available",
+    "summary": "Premium Jordan developer hub for National number boundary, company national number, tax number, postal code, phone, IBAN, CliQ handoff, JoMoPay reference, SWIFT, invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "National number boundary",
+      "company national number",
+      "tax number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "IBAN",
+      "CliQ handoff",
+      "JoMoPay reference",
+      "SWIFT",
+      "invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Jordanian National number boundary Validator",
+      "Jordanian company national number Validator",
+      "Jordanian Income and Sales Tax number Validator",
+      "Jordanian Customs / Importer Code Helper",
+      "Jordanian SSC boundary Helper",
+      "Jordanian Company Onboarding Auditor",
+      "Jordanian Companies Control Department Readiness Helper",
+      "Jordanian ID Card Format Helper",
+      "Jordanian Passport Number Helper",
+      "Jordanian MRZ / Passport Parser",
+      "Jordan Bank Account Validator",
+      "Jordan Bank Account Fixture Generator",
+      "Jordanian Domestic Bank Account Inspector",
+      "Jordanian BIC / SWIFT Inspector",
+      "Jordanian Domestic Transfer Helper",
+      "Jordanian Direct Debit / Auto-Debit Mandate Helper",
+      "Jordanian CliQ / JoMoPay reference Reference Helper",
+      "Jordanian Remittance Text Builder",
+      "Jordanian Payment Reconciliation Helper",
+      "Jordanian Bank Statement Parser",
+      "Jordanian Masked Bank Account Formatter",
+      "Jordanian JOD Decimal Currency Formatter",
+      "Jordanian Tax Rate Sanity Helper",
+      "Jordanian Tax Return Field Helper",
+      "Jordanian Invoice Number Helper",
+      "Jordanian sales tax invoice Readiness Checker",
+      "Jordanian Tax Authority Handoff Helper",
+      "Jordanian Accounting Audit Trail Checklist Helper",
+      "Jordanian Postal Code Validator",
+      "Jordanian Address Normalizer",
+      "Jordanian Address Transliteration Normalizer",
+      "Jordanian Region / Province Code Mapper",
+      "Jordanian Municipality Code Inspector",
+      "Jordanian Phone Number Validator",
+      "Jordanian Phone E.164 Formatter",
+      "Jordanian Date Locale Formatter",
+      "Jordanian CSV Locale Normalizer",
+      "Jordanian Slug Normalizer",
+      "Jordanian Document OCR Fixer",
+      "Jordanian personal-data privacy Redaction Helper",
+      "Jordanian PII Masker",
+      "Jordanian Personal Data Fixture Helper",
+      "Jordanian Driving Licence Format Helper",
+      "Jordanian Residence Permit Format Helper",
+      "Jordanian Health Card Format Helper",
+      "Jordanian Vehicle Plate Inspector",
+      "Jordanian VIN Validator",
+      "Jordanian Vehicle Data Redaction Helper",
+      "Jordanian Customs Declaration Helper",
+      "Jordanian Postal Tracking Helper",
+      "Jordanian Data Quality Workbench",
+      "Jordanian JSON Fixture Helper",
+      "Jordanian Regex Pack Helper",
+      "Jordanian API Payload Auditor",
+      "Jordanian Form Field Auditor",
+      "Jordanian Locale Number Parser",
+      "Jordanian Calendar Week Helper",
+      "Jordanian Company Suffix Normalizer",
+      "Jordanian Procurement Identifier Helper",
+      "Jordanian Locale Copy Checker",
+      "Jordanian Support Ticket Scrubber",
+      "Jordanian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live Companies Control Department lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 56,
+      "y": 53
+    },
+    "searchHints": [
+      "NATIONAL NUMBER",
+      "IBAN",
+      "CLIQ",
+      "JOMOPAY",
+      "TAX",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇯🇴",
+    "name": "Jordan",
+    "badge": "Premium Jordan developer suite",
+    "description": "Developer intelligence and browser-only workbenches for jordanian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Al-Urdunn",
+      "population": "approximately 11.5M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Amman",
+      "continent": "Asia",
+      "region": "Western Asia / Levant",
+      "languages": "Arabic",
+      "currency": "Jordanian dinar",
+      "currencyCode": "JOD",
+      "callingCode": "+962",
+      "internetTld": ".jo",
+      "drivingSide": "Right",
+      "iso2": "JO",
+      "iso3": "JOR",
+      "isoNumeric": "400",
+      "locale": "ar-JO",
+      "icuLocale": "ar_JO",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, Jordan",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Amman (EET/EEST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "911",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "ar-JO",
+      "cldrLocale": "ar_JO",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type F / Type G / Type J",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "jordan",
+      "outlineLabel": "Jordan outline",
+      "mapLabel": "Jordan in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "Jordan flag",
+      "heroAccentPrimary": "0 122 61",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "206 17 38"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "National number boundary and company national number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "Income and Sales Tax number and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Jordan registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /jordan/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Jordanian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "Companies Control Department",
+        "text": "Official business registry or company lookup remains the source of truth for Jordan.",
+        "status": "official boundary"
+      },
+      {
+        "title": "Income and Sales Tax number",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "personal-data privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "National number boundary, company national number, tax number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "IBAN, CliQ handoff, JoMoPay reference, SWIFT, invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "ar-JO / ar_JO; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "JOD amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "National number boundary, company national number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type F / Type G / Type J",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "911",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL NUMBER",
+      "IBAN",
+      "CLIQ",
+      "JOMOPAY",
+      "TAX",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Jordanian National number boundary Validator",
+        "href": "/en/jordan/jordan-national-number-boundary-validator/",
+        "text": "Validate National number boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Jordanian company national number Validator",
+        "href": "/en/jordan/jordan-company-national-number-validator/",
+        "text": "Inspect company national number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Jordanian Income and Sales Tax number Validator",
+        "href": "/en/jordan/jordan-tax-id-validator/",
+        "text": "Normalize Income and Sales Tax number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Jordanian Customs / Importer Code Helper",
+        "href": "/en/jordan/jordan-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Jordanian SSC boundary Helper",
+        "href": "/en/jordan/jordan-ssc-boundary-social-insurance-helper/",
+        "text": "Split SSC boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Jordanian Company Onboarding Auditor",
+        "href": "/en/jordan/jordan-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company national number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Jordanian Companies Control Department Readiness Helper",
+        "href": "/en/jordan/jordan-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated Companies Control Department lookup or company registry workflow."
+      },
+      {
+        "title": "Jordanian ID Card Format Helper",
+        "href": "/en/jordan/jordan-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Jordanian Passport Number Helper",
+        "href": "/en/jordan/jordan-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Jordanian MRZ / Passport Parser",
+        "href": "/en/jordan/jordan-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Jordan Bank Account Validator",
+        "href": "/en/jordan/jordan-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Jordan Bank Account Fixture Generator",
+        "href": "/en/jordan/jordan-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Jordanian Domestic Bank Account Inspector",
+        "href": "/en/jordan/jordan-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Jordanian BIC / SWIFT Inspector",
+        "href": "/en/jordan/jordan-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Jordan banking integrations."
+      },
+      {
+        "title": "Jordanian Domestic Transfer Helper",
+        "href": "/en/jordan/jordan-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Jordanian Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/jordan/jordan-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Jordanian CliQ / JoMoPay reference Reference Helper",
+        "href": "/en/jordan/jordan-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Jordanian Remittance Text Builder",
+        "href": "/en/jordan/jordan-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Jordanian Payment Reconciliation Helper",
+        "href": "/en/jordan/jordan-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Jordanian Bank Statement Parser",
+        "href": "/en/jordan/jordan-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Jordanian Masked Bank Account Formatter",
+        "href": "/en/jordan/jordan-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Jordanian JOD Decimal Currency Formatter",
+        "href": "/en/jordan/jordan-currency-decimal-formatter/",
+        "text": "Normalize JOD amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Jordanian Tax Rate Sanity Helper",
+        "href": "/en/jordan/jordan-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Jordanian Tax Return Field Helper",
+        "href": "/en/jordan/jordan-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Jordanian Invoice Number Helper",
+        "href": "/en/jordan/jordan-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Jordanian sales tax invoice Readiness Checker",
+        "href": "/en/jordan/jordan-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Jordanian Tax Authority Handoff Helper",
+        "href": "/en/jordan/jordan-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Jordanian Accounting Audit Trail Checklist Helper",
+        "href": "/en/jordan/jordan-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Jordanian Postal Code Validator",
+        "href": "/en/jordan/jordan-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Jordanian Address Normalizer",
+        "href": "/en/jordan/jordan-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Jordanian Address Transliteration Normalizer",
+        "href": "/en/jordan/jordan-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Jordanian Region / Province Code Mapper",
+        "href": "/en/jordan/jordan-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Jordanian Municipality Code Inspector",
+        "href": "/en/jordan/jordan-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Jordanian Phone Number Validator",
+        "href": "/en/jordan/jordan-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Jordanian Phone E.164 Formatter",
+        "href": "/en/jordan/jordan-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Jordanian Date Locale Formatter",
+        "href": "/en/jordan/jordan-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Jordanian CSV Locale Normalizer",
+        "href": "/en/jordan/jordan-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Jordan decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Jordanian Slug Normalizer",
+        "href": "/en/jordan/jordan-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Jordanian Document OCR Fixer",
+        "href": "/en/jordan/jordan-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Jordanian personal-data privacy Redaction Helper",
+        "href": "/en/jordan/jordan-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Jordanian PII Masker",
+        "href": "/en/jordan/jordan-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Jordanian Personal Data Fixture Helper",
+        "href": "/en/jordan/jordan-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Jordanian Driving Licence Format Helper",
+        "href": "/en/jordan/jordan-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Jordanian Residence Permit Format Helper",
+        "href": "/en/jordan/jordan-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Jordanian Health Card Format Helper",
+        "href": "/en/jordan/jordan-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Jordanian Vehicle Plate Inspector",
+        "href": "/en/jordan/jordan-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Jordanian VIN Validator",
+        "href": "/en/jordan/jordan-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Jordanian Vehicle Data Redaction Helper",
+        "href": "/en/jordan/jordan-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Jordanian Customs Declaration Helper",
+        "href": "/en/jordan/jordan-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Jordanian Postal Tracking Helper",
+        "href": "/en/jordan/jordan-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Jordanian Data Quality Workbench",
+        "href": "/en/jordan/jordan-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Jordanian JSON Fixture Helper",
+        "href": "/en/jordan/jordan-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Jordanian Regex Pack Helper",
+        "href": "/en/jordan/jordan-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Jordanian API Payload Auditor",
+        "href": "/en/jordan/jordan-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Jordanian Form Field Auditor",
+        "href": "/en/jordan/jordan-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Jordanian Locale Number Parser",
+        "href": "/en/jordan/jordan-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Jordan."
+      },
+      {
+        "title": "Jordanian Calendar Week Helper",
+        "href": "/en/jordan/jordan-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Jordanian Company Suffix Normalizer",
+        "href": "/en/jordan/jordan-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Jordanian Procurement Identifier Helper",
+        "href": "/en/jordan/jordan-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Jordanian Locale Copy Checker",
+        "href": "/en/jordan/jordan-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Jordanian Support Ticket Scrubber",
+        "href": "/en/jordan/jordan-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Jordanian Integration Smoke Test Builder",
+        "href": "/en/jordan/jordan-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

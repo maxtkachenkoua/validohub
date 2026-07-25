@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lesotho-region-code-mapper
+kind: tool
+module: validohub
+country: LS
+category: address
+status: active
+name:
+  en: "Basotho Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lesotho-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "1000 Maseru"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lesotho-municipality-code-inspector, lesotho-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Basotho Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

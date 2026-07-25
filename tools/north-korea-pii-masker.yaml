@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-pii-masker
+kind: tool
+module: validohub
+country: KP
+category: privacy
+status: active
+name:
+  en: "North Korean PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "KP-900101-123456 +850 2 123 4567 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-personal-data-fixture-generator, north-korea-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

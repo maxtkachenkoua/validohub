@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: QA
+category: transport
+status: active
+name:
+  en: "Qatari Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "123456 WVWZZZ1JZXW000001 29012345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-customs-declaration-helper, qatar-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

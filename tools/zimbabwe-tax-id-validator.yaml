@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zimbabwe-tax-id-validator
+kind: tool
+module: validohub
+country: ZW
+category: national-identifiers
+status: active
+name:
+  en: "Zimbabwean tax number / VAT boundary Validator"
+summary:
+  en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zimbabwe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "ZW123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zimbabwe-customs-importer-code-helper, zimbabwe-social-security-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zimbabwean tax number / VAT boundary Validator | ValidoHub"
+  description:
+    en: "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

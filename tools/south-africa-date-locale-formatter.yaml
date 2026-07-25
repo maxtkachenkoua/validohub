@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-africa-date-locale-formatter
+kind: tool
+module: validohub
+country: ZA
+category: localization
+status: active
+name:
+  en: "South African Date Locale Formatter"
+summary:
+  en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-africa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "24/07/2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-africa-csv-locale-normalizer, south-africa-slug-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South African Date Locale Formatter | ValidoHub"
+  description:
+    en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."

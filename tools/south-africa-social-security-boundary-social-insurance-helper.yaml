@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-africa-social-security-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: ZA
+category: national-identifiers
+status: active
+name:
+  en: "South African social security boundary Helper"
+summary:
+  en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-africa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "ZA-SOC-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-africa-company-onboarding-auditor, south-africa-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South African social security boundary Helper | ValidoHub"
+  description:
+    en: "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

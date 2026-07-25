@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: egypt-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: EG
+category: tax
+status: active
+name:
+  en: "Egyptian Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.egypt-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "EG123456789 24/07/2026 1,234.56 EGP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [egypt-accounting-audit-trail-checklist-generator, egypt-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Egyptian Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

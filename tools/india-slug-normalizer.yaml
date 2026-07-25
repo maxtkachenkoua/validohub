@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-slug-normalizer
+kind: tool
+module: validohub
+country: IN
+category: developer-tools
+status: active
+name:
+  en: "Indian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "India sample company Connaught Place, New Delhi 110001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-document-ocr-fixer, india-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-59.37 -81.33 488.55 668.22" role="img">
+  <title>Sierra Leone country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="6.76" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="sl" d="M372.804,509.79l4.884,4.72l3.483-4.227l-2.179-3.415l-3,0.303L372.804,509.79L372.804,509.79z"/>
+  </g>
+</svg>

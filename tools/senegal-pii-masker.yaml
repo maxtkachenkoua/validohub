@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: senegal-pii-masker
+kind: tool
+module: validohub
+country: SN
+category: privacy
+status: active
+name:
+  en: "Senegalese PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.senegal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "SN-ID-123456 +221 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [senegal-personal-data-fixture-generator, senegal-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Senegalese PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

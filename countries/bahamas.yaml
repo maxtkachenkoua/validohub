@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BS
+slug: bahamas
+name:
+  en: "Bahamas"
+region: North America
+languages:
+  - en
+currency: BSD
+relatedCountries:
+  - US
+  - CU
+  - JM

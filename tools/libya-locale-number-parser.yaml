@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: libya-locale-number-parser
+kind: tool
+module: validohub
+country: LY
+category: localization
+status: active
+name:
+  en: "Libyan Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Libya."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.libya-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 LYD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [libya-calendar-week-helper, libya-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Libyan Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Libya."

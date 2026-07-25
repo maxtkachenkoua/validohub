@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-masked-bank-account-formatter
+kind: tool
+module: validohub
+country: MY
+category: finance
+status: active
+name:
+  en: "Malaysian Masked Bank Account Formatter"
+summary:
+  en: "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MASK input"
+        required: true
+        placeholder:
+          en: "5140 123456789012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-currency-decimal-formatter, malaysia-tax-rate-sanity-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Masked Bank Account Formatter | ValidoHub"
+  description:
+    en: "Create log-safe bank-account previews while preserving routing and account-tail evidence."

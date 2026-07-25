@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nigeria-currency-decimal-formatter
+kind: tool
+module: validohub
+country: NG
+category: finance
+status: active
+name:
+  en: "Nigerian NGN Decimal Currency Formatter"
+summary:
+  en: "Normalize NGN amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nigeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 NGN"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nigeria-tax-rate-sanity-helper, nigeria-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nigerian NGN Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize NGN amount strings, decimal separators, grouping, and API-safe numeric previews."

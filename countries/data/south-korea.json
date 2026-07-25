@@ -1,0 +1,642 @@
+{
+  "id": "south-korea",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/south-korea-outline.png",
+    "outlineAlt": "South Korea country outline",
+    "mapSrc": "/assets/images/countries/south-korea-location.png",
+    "mapAlt": "World map with South Korea location marker",
+    "mapMarker": {
+      "x": 71,
+      "y": 42,
+      "label": "South Korea"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "south-korea",
+    "flag": "🇰🇷",
+    "name": "South Korea",
+    "nativeName": "Daehan Minguk",
+    "iso2": "KR",
+    "iso3": "KOR",
+    "continent": "Asia",
+    "region": "Asia",
+    "language": "Korean",
+    "currency": "KRW",
+    "currencyName": "South Korean won",
+    "status": "available",
+    "summary": "Premium South Korea developer hub for RRN boundary, Business Registration Number, corporate registration number, postal code, phone, bank code/account, virtual account, GIRO handoff, SWIFT, tax invoice reference, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "RRN boundary",
+      "Business Registration Number",
+      "corporate registration number",
+      "postal code",
+      "phone"
+    ],
+    "payments": [
+      "bank code/account",
+      "virtual account",
+      "GIRO handoff",
+      "SWIFT",
+      "tax invoice reference"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "South Korean RRN boundary Validator",
+      "South Korean Business Registration Number Validator",
+      "South Korean VAT / tax invoice number Validator",
+      "South Korean Customs / Importer Code Helper",
+      "South Korean RRN boundary Helper",
+      "South Korean Company Onboarding Auditor",
+      "South Korean DART / business registry Readiness Helper",
+      "South Korean ID Card Format Helper",
+      "South Korean Passport Number Helper",
+      "South Korean MRZ / Passport Parser",
+      "South Korea Bank Account Validator",
+      "South Korea Bank Account Fixture Generator",
+      "South Korean Domestic Bank Account Inspector",
+      "South Korean BIC / SWIFT Inspector",
+      "South Korean Domestic Transfer Helper",
+      "South Korean Direct Debit / Auto-Debit Mandate Helper",
+      "South Korean virtual account / GIRO reference Reference Helper",
+      "South Korean Remittance Text Builder",
+      "South Korean Payment Reconciliation Helper",
+      "South Korean Bank Statement Parser",
+      "South Korean Masked Bank Account Formatter",
+      "South Korean KRW Decimal Currency Formatter",
+      "South Korean Tax Rate Sanity Helper",
+      "South Korean Tax Return Field Helper",
+      "South Korean Invoice Number Helper",
+      "South Korean National Tax Service e-tax invoice Readiness Checker",
+      "South Korean Tax Authority Handoff Helper",
+      "South Korean Accounting Audit Trail Checklist Helper",
+      "South Korean Postal Code Validator",
+      "South Korean Address Normalizer",
+      "South Korean Address Transliteration Normalizer",
+      "South Korean Region / Province Code Mapper",
+      "South Korean Municipality Code Inspector",
+      "South Korean Phone Number Validator",
+      "South Korean Phone E.164 Formatter",
+      "South Korean Date Locale Formatter",
+      "South Korean CSV Locale Normalizer",
+      "South Korean Slug Normalizer",
+      "South Korean Document OCR Fixer",
+      "South Korean PIPA privacy Redaction Helper",
+      "South Korean PII Masker",
+      "South Korean Personal Data Fixture Helper",
+      "South Korean Driving Licence Format Helper",
+      "South Korean Residence Permit Format Helper",
+      "South Korean Health Card Format Helper",
+      "South Korean Vehicle Plate Inspector",
+      "South Korean VIN Validator",
+      "South Korean Vehicle Data Redaction Helper",
+      "South Korean Customs Declaration Helper",
+      "South Korean Postal Tracking Helper",
+      "South Korean Data Quality Workbench",
+      "South Korean JSON Fixture Helper",
+      "South Korean Regex Pack Helper",
+      "South Korean API Payload Auditor",
+      "South Korean Form Field Auditor",
+      "South Korean Locale Number Parser",
+      "South Korean Calendar Week Helper",
+      "South Korean Company Suffix Normalizer",
+      "South Korean Procurement Identifier Helper",
+      "South Korean Locale Copy Checker",
+      "South Korean Support Ticket Scrubber",
+      "South Korean Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live DART / business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 71,
+      "y": 42
+    },
+    "searchHints": [
+      "BRN",
+      "RRN",
+      "NTS",
+      "GIRO",
+      "VIRTUAL ACCOUNT",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇰🇷",
+    "name": "South Korea",
+    "badge": "Premium South Korea developer suite",
+    "description": "Developer intelligence and browser-only workbenches for south korean identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Daehan Minguk",
+      "population": "approximately 51.7M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Seoul",
+      "continent": "Asia",
+      "region": "East Asia",
+      "languages": "Korean",
+      "currency": "South Korean won",
+      "currencyCode": "KRW",
+      "callingCode": "+82",
+      "internetTld": ".kr",
+      "drivingSide": "Right",
+      "iso2": "KR",
+      "iso3": "KOR",
+      "isoNumeric": "410",
+      "locale": "ko-KR",
+      "icuLocale": "ko_KR",
+      "dateFormat": "YYYY.MM.DD",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Dot (.)",
+      "thousandsSeparator": "Comma (,)",
+      "addressFormat": "Street, number, postal code, locality, South Korea",
+      "postalCodeFormat": "postal code",
+      "primaryTimeZone": "Asia/Seoul (KST)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "112 / 119",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "ko-KR",
+      "cldrLocale": "ko_KR",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type F",
+      "voltage": "220V",
+      "frequency": "60Hz"
+    },
+    "visualIdentity": {
+      "countryId": "south-korea",
+      "outlineLabel": "South Korea outline",
+      "mapLabel": "South Korea in the world",
+      "continentBadge": "Asia",
+      "flagLabel": "South Korea flag",
+      "heroAccentPrimary": "205 46 58",
+      "heroAccentSecondary": "0 71 160",
+      "heroAccentTertiary": "255 255 255"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "RRN boundary and Business Registration Number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "VAT / tax invoice number and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official South Korea registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /south-korea/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Dot (.) and Comma (,) rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-South Korean examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "DART / business registry",
+        "text": "Official business registry or company lookup remains the source of truth for South Korea.",
+        "status": "official boundary"
+      },
+      {
+        "title": "VAT / tax invoice number",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "PIPA privacy",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "RRN boundary, Business Registration Number, corporate registration number, postal code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank code/account, virtual account, GIRO handoff, SWIFT, tax invoice reference",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "ko-KR / ko_KR; date YYYY.MM.DD.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "KRW amounts use Dot (.) and Comma (,).",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "RRN boundary, Business Registration Number, postal code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type F",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "220V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "60Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "112 / 119",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "BRN",
+      "RRN",
+      "NTS",
+      "GIRO",
+      "VIRTUAL ACCOUNT",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "South Korean RRN boundary Validator",
+        "href": "/en/south-korea/south-korea-rrn-boundary-validator/",
+        "text": "Validate RRN boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "South Korean Business Registration Number Validator",
+        "href": "/en/south-korea/south-korea-business-registration-number-validator/",
+        "text": "Inspect Business Registration Number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "South Korean VAT / tax invoice number Validator",
+        "href": "/en/south-korea/south-korea-tax-id-validator/",
+        "text": "Normalize VAT / tax invoice number identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "South Korean Customs / Importer Code Helper",
+        "href": "/en/south-korea/south-korea-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "South Korean RRN boundary Helper",
+        "href": "/en/south-korea/south-korea-rrn-boundary-social-insurance-helper/",
+        "text": "Split RRN boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "South Korean Company Onboarding Auditor",
+        "href": "/en/south-korea/south-korea-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for Business Registration Number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "South Korean DART / business registry Readiness Helper",
+        "href": "/en/south-korea/south-korea-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated DART / business registry lookup or company registry workflow."
+      },
+      {
+        "title": "South Korean ID Card Format Helper",
+        "href": "/en/south-korea/south-korea-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "South Korean Passport Number Helper",
+        "href": "/en/south-korea/south-korea-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "South Korean MRZ / Passport Parser",
+        "href": "/en/south-korea/south-korea-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "South Korea Bank Account Validator",
+        "href": "/en/south-korea/south-korea-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "South Korea Bank Account Fixture Generator",
+        "href": "/en/south-korea/south-korea-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "South Korean Domestic Bank Account Inspector",
+        "href": "/en/south-korea/south-korea-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "South Korean BIC / SWIFT Inspector",
+        "href": "/en/south-korea/south-korea-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for South Korea banking integrations."
+      },
+      {
+        "title": "South Korean Domestic Transfer Helper",
+        "href": "/en/south-korea/south-korea-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "South Korean Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/south-korea/south-korea-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "South Korean virtual account / GIRO reference Reference Helper",
+        "href": "/en/south-korea/south-korea-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "South Korean Remittance Text Builder",
+        "href": "/en/south-korea/south-korea-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "South Korean Payment Reconciliation Helper",
+        "href": "/en/south-korea/south-korea-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "South Korean Bank Statement Parser",
+        "href": "/en/south-korea/south-korea-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "South Korean Masked Bank Account Formatter",
+        "href": "/en/south-korea/south-korea-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "South Korean KRW Decimal Currency Formatter",
+        "href": "/en/south-korea/south-korea-currency-decimal-formatter/",
+        "text": "Normalize KRW amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "South Korean Tax Rate Sanity Helper",
+        "href": "/en/south-korea/south-korea-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "South Korean Tax Return Field Helper",
+        "href": "/en/south-korea/south-korea-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "South Korean Invoice Number Helper",
+        "href": "/en/south-korea/south-korea-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "South Korean National Tax Service e-tax invoice Readiness Checker",
+        "href": "/en/south-korea/south-korea-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "South Korean Tax Authority Handoff Helper",
+        "href": "/en/south-korea/south-korea-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "South Korean Accounting Audit Trail Checklist Helper",
+        "href": "/en/south-korea/south-korea-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "South Korean Postal Code Validator",
+        "href": "/en/south-korea/south-korea-postal-code-validator/",
+        "text": "Validate postal code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "South Korean Address Normalizer",
+        "href": "/en/south-korea/south-korea-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "South Korean Address Transliteration Normalizer",
+        "href": "/en/south-korea/south-korea-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "South Korean Region / Province Code Mapper",
+        "href": "/en/south-korea/south-korea-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "South Korean Municipality Code Inspector",
+        "href": "/en/south-korea/south-korea-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "South Korean Phone Number Validator",
+        "href": "/en/south-korea/south-korea-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "South Korean Phone E.164 Formatter",
+        "href": "/en/south-korea/south-korea-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "South Korean Date Locale Formatter",
+        "href": "/en/south-korea/south-korea-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "South Korean CSV Locale Normalizer",
+        "href": "/en/south-korea/south-korea-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for South Korea decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "South Korean Slug Normalizer",
+        "href": "/en/south-korea/south-korea-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "South Korean Document OCR Fixer",
+        "href": "/en/south-korea/south-korea-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "South Korean PIPA privacy Redaction Helper",
+        "href": "/en/south-korea/south-korea-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "South Korean PII Masker",
+        "href": "/en/south-korea/south-korea-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "South Korean Personal Data Fixture Helper",
+        "href": "/en/south-korea/south-korea-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "South Korean Driving Licence Format Helper",
+        "href": "/en/south-korea/south-korea-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "South Korean Residence Permit Format Helper",
+        "href": "/en/south-korea/south-korea-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "South Korean Health Card Format Helper",
+        "href": "/en/south-korea/south-korea-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "South Korean Vehicle Plate Inspector",
+        "href": "/en/south-korea/south-korea-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "South Korean VIN Validator",
+        "href": "/en/south-korea/south-korea-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "South Korean Vehicle Data Redaction Helper",
+        "href": "/en/south-korea/south-korea-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "South Korean Customs Declaration Helper",
+        "href": "/en/south-korea/south-korea-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "South Korean Postal Tracking Helper",
+        "href": "/en/south-korea/south-korea-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "South Korean Data Quality Workbench",
+        "href": "/en/south-korea/south-korea-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "South Korean JSON Fixture Helper",
+        "href": "/en/south-korea/south-korea-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "South Korean Regex Pack Helper",
+        "href": "/en/south-korea/south-korea-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "South Korean API Payload Auditor",
+        "href": "/en/south-korea/south-korea-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "South Korean Form Field Auditor",
+        "href": "/en/south-korea/south-korea-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "South Korean Locale Number Parser",
+        "href": "/en/south-korea/south-korea-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for South Korea."
+      },
+      {
+        "title": "South Korean Calendar Week Helper",
+        "href": "/en/south-korea/south-korea-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "South Korean Company Suffix Normalizer",
+        "href": "/en/south-korea/south-korea-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "South Korean Procurement Identifier Helper",
+        "href": "/en/south-korea/south-korea-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "South Korean Locale Copy Checker",
+        "href": "/en/south-korea/south-korea-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "South Korean Support Ticket Scrubber",
+        "href": "/en/south-korea/south-korea-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "South Korean Integration Smoke Test Builder",
+        "href": "/en/south-korea/south-korea-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

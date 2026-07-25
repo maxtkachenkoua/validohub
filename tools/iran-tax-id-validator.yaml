@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-tax-id-validator
+kind: tool
+module: validohub
+country: IR
+category: national-identifiers
+status: active
+name:
+  en: "Iranian economic code / VAT Validator"
+summary:
+  en: "Normalize economic code / VAT identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "411111111111"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-customs-importer-code-helper, iran-social-security-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian economic code / VAT Validator | ValidoHub"
+  description:
+    en: "Normalize economic code / VAT identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: azerbaijan-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: AZ
+category: tax
+status: active
+name:
+  en: "Azerbaijani e-invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.azerbaijan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AZ\",\"voen\":\"9900003611\",\"iban\":\"AZ21NABZ00000000137010001944\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [azerbaijan-tax-authority-handoff-helper, azerbaijan-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Azerbaijani e-invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: niger-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: NE
+category: privacy
+status: active
+name:
+  en: "Nigerien Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.niger-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "NE-ID-123456\\nCentral business district, Niamey 1000\\n+227 123 456 789"
+    actions: [generate, validate, explain]
+related:
+  explicit: [niger-driving-licence-format-helper, niger-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nigerien Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

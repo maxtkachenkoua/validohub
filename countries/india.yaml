@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: IN
+slug: india
+name:
+  en: India
+region: Asia
+languages:
+  - hi
+currency: INR
+relatedCountries:
+  - SG
+  - AE
+  - BD

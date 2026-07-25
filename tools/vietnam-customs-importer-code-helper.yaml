@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-customs-importer-code-helper
+kind: tool
+module: validohub
+country: VN
+category: national-identifiers
+status: active
+name:
+  en: "Vietnamese Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "VN0101234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vietnam-vssid-boundary-social-insurance-helper, vietnam-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

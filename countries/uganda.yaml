@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: UG
+slug: uganda
+name:
+  en: Uganda
+region: Africa
+languages:
+  - en
+currency: UGX
+relatedCountries:
+  - ZA
+  - NG
+  - KE

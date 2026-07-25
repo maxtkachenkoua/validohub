@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: malaysia-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: MY
+category: finance
+status: active
+name:
+  en: "Malaysian Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.malaysia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1,234.56 MYR; 5140 123456789012; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [malaysia-bank-statement-parser, malaysia-masked-bank-account-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Malaysian Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

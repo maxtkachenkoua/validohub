@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sao-tome-and-principe-region-code-mapper
+kind: tool
+module: validohub
+country: ST
+category: address
+status: active
+name:
+  en: "Sao Tomean Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sao-tome-and-principe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "1000 Sao Tome"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sao-tome-and-principe-municipality-code-inspector, sao-tome-and-principe-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sao Tomean Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

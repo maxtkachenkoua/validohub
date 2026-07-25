@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: samoa-region-code-mapper
+kind: tool
+module: validohub
+country: WS
+category: address
+status: active
+name:
+  en: "Samoan Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.samoa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "Apia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [samoa-municipality-code-inspector, samoa-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Samoan Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

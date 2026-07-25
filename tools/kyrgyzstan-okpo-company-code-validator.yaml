@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-okpo-company-code-validator
+kind: tool
+module: validohub
+country: KG
+category: national-identifiers
+status: active
+name:
+  en: "Kyrgyz OKPO company code Validator"
+summary:
+  en: "Inspect OKPO company code structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "12345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-tax-id-validator, kyrgyzstan-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz OKPO company code Validator | ValidoHub"
+  description:
+    en: "Inspect OKPO company code structure, registry-style prefixes, control digits, and official lookup boundaries."

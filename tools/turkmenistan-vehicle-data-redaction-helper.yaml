@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkmenistan-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: TM
+category: transport
+status: active
+name:
+  en: "Turkmen Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkmenistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "AG 1234 TM WVWZZZ1JZXW000001 A1234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkmenistan-customs-declaration-helper, turkmenistan-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkmen Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

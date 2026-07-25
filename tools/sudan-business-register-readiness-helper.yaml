@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sudan-business-register-readiness-helper
+kind: tool
+module: validohub
+country: SD
+category: government
+status: active
+name:
+  en: "Sudanese business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "SD-REG-123456 SD123456789 Central business district, Khartoum 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sudan-id-card-format-helper, sudan-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sudanese business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

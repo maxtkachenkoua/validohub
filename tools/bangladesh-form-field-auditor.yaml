@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-form-field-auditor
+kind: tool
+module: validohub
+country: BD
+category: developer-tools
+status: active
+name:
+  en: "Bangladeshi Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=123456789012&postal=1000 Dhaka&phone=+880 1712 345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-locale-number-parser, bangladesh-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

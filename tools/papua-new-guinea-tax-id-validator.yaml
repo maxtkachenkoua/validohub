@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-tax-id-validator
+kind: tool
+module: validohub
+country: PG
+category: national-identifiers
+status: active
+name:
+  en: "Papua New Guinean GST / IRC tax boundary Validator"
+summary:
+  en: "Normalize GST / IRC tax boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "PG123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-customs-importer-code-helper, papua-new-guinea-nid-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean GST / IRC tax boundary Validator | ValidoHub"
+  description:
+    en: "Normalize GST / IRC tax boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

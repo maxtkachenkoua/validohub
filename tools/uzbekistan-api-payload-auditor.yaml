@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-api-payload-auditor
+kind: tool
+module: validohub
+country: UZ
+category: developer-tools
+status: active
+name:
+  en: "Uzbek API Payload Auditor"
+summary:
+  en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "API input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"UZ\",\"pinfl\":\"30101876543212\",\"stir\":\"123456789\",\"mfo\":\"00444\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-form-field-auditor, uzbekistan-locale-number-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek API Payload Auditor | ValidoHub"
+  description:
+    en: "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."

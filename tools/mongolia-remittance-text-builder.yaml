@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mongolia-remittance-text-builder
+kind: tool
+module: validohub
+country: MN
+category: finance
+status: active
+name:
+  en: "Mongolian Remittance Text Builder"
+summary:
+  en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mongolia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REMIT input"
+        required: true
+        placeholder:
+          en: "Invoice 2026-001 9012345 1,234,567 MNT"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mongolia-payment-reconciliation-helper, mongolia-bank-statement-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mongolian Remittance Text Builder | ValidoHub"
+  description:
+    en: "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."

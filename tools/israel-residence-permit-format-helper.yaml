@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-residence-permit-format-helper
+kind: tool
+module: validohub
+country: IL
+category: documents
+status: active
+name:
+  en: "Israeli Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "IL PERMIT 2026 123456782"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [israel-health-card-format-helper, israel-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

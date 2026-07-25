@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: israel-bank-statement-parser
+kind: tool
+module: validohub
+country: IL
+category: finance
+status: active
+name:
+  en: "Israeli Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.israel-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "21/07/2026; 1,234.56 ILS; 010 800 0000099999999; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [israel-masked-bank-account-formatter, israel-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Israeli Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."

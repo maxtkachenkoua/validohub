@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-payment-reference-helper
+kind: tool
+module: validohub
+country: IR
+category: finance
+status: active
+name:
+  en: "Iranian Sheba / PAYA reference Reference Helper"
+summary:
+  en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PAY input"
+        required: true
+        placeholder:
+          en: "Sheba / PAYA reference REF 2026-001 1,234,567 IRR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-remittance-text-builder, iran-payment-reconciliation-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Sheba / PAYA reference Reference Helper | ValidoHub"
+  description:
+    en: "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."

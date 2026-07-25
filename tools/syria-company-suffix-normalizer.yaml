@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-company-suffix-normalizer
+kind: tool
+module: validohub
+country: SY
+category: developer-tools
+status: active
+name:
+  en: "Syrian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Syria Sample Holding Ltd SY-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-procurement-identifier-helper, syria-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

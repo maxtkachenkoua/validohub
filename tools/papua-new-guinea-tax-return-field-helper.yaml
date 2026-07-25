@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: papua-new-guinea-tax-return-field-helper
+kind: tool
+module: validohub
+country: PG
+category: tax
+status: active
+name:
+  en: "Papua New Guinean Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.papua-new-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "GST / IRC tax boundary; PG123456789; period 2026-07; 1,234.56 PGK"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [papua-new-guinea-invoice-number-helper, papua-new-guinea-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Papua New Guinean Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-personal-data-fixture-generator
+kind: tool
+module: validohub
+country: MH
+category: privacy
+status: active
+name:
+  en: "Marshallese Personal Data Fixture Helper"
+summary:
+  en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FIX input"
+        required: true
+        placeholder:
+          en: "MH-ID-123456\\nDelap, Majuro MH 96960\\n+692 247 1234"
+    actions: [generate, validate, explain]
+related:
+  explicit: [marshall-islands-driving-licence-format-helper, marshall-islands-residence-permit-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Personal Data Fixture Helper | ValidoHub"
+  description:
+    en: "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."

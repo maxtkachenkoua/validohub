@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { buildRouteRegistry } from "./route-registry.mjs";
 import { compileToolsPortal } from "./build-countries-portal.mjs";
 import { applyFinalLocalizationPass } from "./localization-pass.mjs";
+import { refreshGeneratedAssetLinks, updateBundleAssetLinks } from "./dev-asset-links.mjs";
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDir, "..");
@@ -162,12 +163,7 @@ function ensureGenericSuiteScripts(content) {
 }
 
 function updateAssetLinks(content, assetsManifest) {
-  let next = content;
-  next = next.replace(/<link rel="stylesheet" href="\/assets\/css\/bundle\.[a-f0-9]{6}\.css">/gi, "<link rel=\"stylesheet\" href=\"" + assetsManifest.css + "\">");
-  next = next.replace(/<script src="\/assets\/js\/bundle\.[a-f0-9]{6}\.js"( defer)?><\/script>/gi, "<script src=\"" + assetsManifest.js + "\" defer></script>");
-  if (!next.includes("href=\"" + assetsManifest.css + "\"")) next = next.replace("</head>", "  <link rel=\"stylesheet\" href=\"" + assetsManifest.css + "\">\n</head>");
-  if (!next.includes("src=\"" + assetsManifest.js + "\"")) next = next.replace("</body>", "<script src=\"" + assetsManifest.js + "\" defer></script>\n</body>");
-  return next;
+  return updateBundleAssetLinks(content, assetsManifest);
 }
 
 async function refreshToolPageAssets(slugs, locales, assetsManifest) {
@@ -213,6 +209,8 @@ async function main() {
   console.log("Locales: " + locales.join(", "));
   const assetsManifest = await compileDesignAssets();
   console.log("✓ Compiled assets: " + assetsManifest.css + ", " + assetsManifest.js);
+  const globalAssetLinks = await refreshGeneratedAssetLinks(siteRoot, assetsManifest);
+  console.log("✓ Refreshed current CSS/JS bundle links on " + globalAssetLinks.updated + " generated pages (checked " + globalAssetLinks.checked + ")");
   await syncRuntimeAssets();
   console.log("✓ Synced global tool runtime assets");
   await compileToolsPortal(routeRegistry, assetsManifest);

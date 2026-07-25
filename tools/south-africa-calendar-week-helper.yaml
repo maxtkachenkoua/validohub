@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-africa-calendar-week-helper
+kind: tool
+module: validohub
+country: ZA
+category: localization
+status: active
+name:
+  en: "South African Calendar Week Helper"
+summary:
+  en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-africa-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CAL input"
+        required: true
+        placeholder:
+          en: "24/07/2026 week 30"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-africa-company-suffix-normalizer, south-africa-procurement-identifier-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South African Calendar Week Helper | ValidoHub"
+  description:
+    en: "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."

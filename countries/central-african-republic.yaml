@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CF
+slug: central-african-republic
+name:
+  en: Central African Republic
+region: Africa
+languages:
+  - fr
+currency: XAF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

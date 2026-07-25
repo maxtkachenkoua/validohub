@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-business-register-readiness-helper
+kind: tool
+module: validohub
+country: MH
+category: government
+status: active
+name:
+  en: "Marshallese corporations registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated corporations registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "MH-REG-123456 MH123456789 Delap, Majuro MH 96960"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-id-card-format-helper, marshall-islands-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese corporations registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated corporations registry lookup or company registry workflow."

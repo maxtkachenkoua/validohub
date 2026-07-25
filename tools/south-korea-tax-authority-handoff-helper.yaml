@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: south-korea-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: KR
+category: tax
+status: active
+name:
+  en: "South Korean Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.south-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "123-45-67890 2026.07.21 1,234,567 KRW"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [south-korea-accounting-audit-trail-checklist-generator, south-korea-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "South Korean Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: laos-tax-id-validator
+kind: tool
+module: validohub
+country: LA
+category: national-identifiers
+status: active
+name:
+  en: "Lao TIN Validator"
+summary:
+  en: "Normalize TIN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.laos-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "TIN123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [laos-customs-importer-code-helper, laos-social-security-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lao TIN Validator | ValidoHub"
+  description:
+    en: "Normalize TIN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

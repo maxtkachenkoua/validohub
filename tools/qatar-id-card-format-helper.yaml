@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-id-card-format-helper
+kind: tool
+module: validohub
+country: QA
+category: national-identifiers
+status: active
+name:
+  en: "Qatari ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "29012345678"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-passport-number-helper, qatar-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

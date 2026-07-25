@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: algeria-customs-importer-code-helper
+kind: tool
+module: validohub
+country: DZ
+category: national-identifiers
+status: active
+name:
+  en: "Algerian Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.algeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "DZDZ-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [algeria-social-security-boundary-social-insurance-helper, algeria-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Algerian Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

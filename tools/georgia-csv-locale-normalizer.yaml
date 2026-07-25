@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-csv-locale-normalizer
+kind: tool
+module: validohub
+country: GE
+category: developer-tools
+status: active
+name:
+  en: "Georgian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Georgia decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1 234.56 GEL;21.07.2026;405123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-slug-normalizer, georgia-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Georgia decimal, date, postal, phone, tax, and banking fields."

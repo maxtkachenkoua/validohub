@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palau-e-invoicing-readiness-checker
+kind: tool
+module: validohub
+country: PW
+category: tax
+status: active
+name:
+  en: "Palauan invoice Readiness Checker"
+summary:
+  en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "EINV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"PW\",\"taxNumber\":\"PW123456789\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palau-tax-authority-handoff-helper, palau-accounting-audit-trail-checklist-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palauan invoice Readiness Checker | ValidoHub"
+  description:
+    en: "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."

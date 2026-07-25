@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-aadhaar-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: IN
+category: national-identifiers
+status: active
+name:
+  en: "Indian Aadhaar boundary Helper"
+summary:
+  en: "Split Aadhaar boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "1234 5678 9012"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-company-onboarding-auditor, india-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian Aadhaar boundary Helper | ValidoHub"
+  description:
+    en: "Split Aadhaar boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

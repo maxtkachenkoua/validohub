@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cambodia-pii-masker
+kind: tool
+module: validohub
+country: KH
+category: privacy
+status: active
+name:
+  en: "Cambodian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cambodia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "010123456789 +855 12 345 678 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cambodia-personal-data-fixture-generator, cambodia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cambodian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

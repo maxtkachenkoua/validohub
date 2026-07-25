@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-postal-tracking-helper
+kind: tool
+module: validohub
+country: CV
+category: logistics
+status: active
+name:
+  en: "Cabo Verdean Postal Tracking Helper"
+summary:
+  en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TRACK input"
+        required: true
+        placeholder:
+          en: "TRACK 2026 1000 Praia"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-data-quality-workbench, cabo-verde-json-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean Postal Tracking Helper | ValidoHub"
+  description:
+    en: "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."

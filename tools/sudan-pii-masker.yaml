@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sudan-pii-masker
+kind: tool
+module: validohub
+country: SD
+category: privacy
+status: active
+name:
+  en: "Sudanese PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sudan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "SD-ID-123456 +249 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sudan-personal-data-fixture-generator, sudan-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sudanese PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

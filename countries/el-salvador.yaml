@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: SV
+slug: el-salvador
+name:
+  en: "El Salvador"
+region: North America
+languages:
+  - es
+currency: USD
+relatedCountries:
+  - GT
+  - HN
+  - NI

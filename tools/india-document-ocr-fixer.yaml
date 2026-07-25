@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-document-ocr-fixer
+kind: tool
+module: validohub
+country: IN
+category: documents
+status: active
+name:
+  en: "Indian Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "ABCDE1234F 27ABCDE1234F1Z5 HDFC0001234 12345678901234 110001 New Delhi"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-privacy-redaction-helper, india-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

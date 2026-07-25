@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: cabo-verde-id-card-format-helper
+kind: tool
+module: validohub
+country: CV
+category: national-identifiers
+status: active
+name:
+  en: "Cabo Verdean ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.cabo-verde-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "CV-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [cabo-verde-passport-number-helper, cabo-verde-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Cabo Verdean ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

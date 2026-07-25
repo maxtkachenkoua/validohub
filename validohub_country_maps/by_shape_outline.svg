@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-73.22 -63.44 598.73 504.52" role="img">
+  <title>Belarus country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="6.99" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="by" d="M456.418,382.861l1.297,2.135l-0.519,1.703l0.086,1.349l0.476,1.616l2.68-1.521l3.329,0.086l2.334,0.959h5.922l1.729-4.141l1.037-1.564v-1.045l-3.717-5.23l-3.285-1.305l-2.68-0.303l-2.335,0.743l0.088,2.351l-3.241,4.098L456.418,382.861L456.418,382.861z"/>
+  </g>
+</svg>

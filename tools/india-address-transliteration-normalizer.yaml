@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: india-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: IN
+category: address
+status: active
+name:
+  en: "Indian Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.india-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Connaught Place, New Delhi 110001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [india-region-code-mapper, india-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Indian Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

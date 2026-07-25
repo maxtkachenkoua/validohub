@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nepal-privacy-redaction-helper
+kind: tool
+module: validohub
+country: NP
+category: privacy
+status: active
+name:
+  en: "Nepali Privacy Act boundary Redaction Helper"
+summary:
+  en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nepal-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PRIV input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"NP\",\"pan\":\"500123456\",\"bank\":\"0011234567890123\",\"connectIPS\":\"INV-2026-001\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nepal-pii-masker, nepal-personal-data-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nepali Privacy Act boundary Redaction Helper | ValidoHub"
+  description:
+    en: "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."

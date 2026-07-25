@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-pii-masker
+kind: tool
+module: validohub
+country: GM
+category: privacy
+status: active
+name:
+  en: "Gambian PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "GM-ID-123456 +220 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-personal-data-fixture-generator, gambia-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

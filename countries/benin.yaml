@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: BJ
+slug: benin
+name:
+  en: Benin
+region: Africa
+languages:
+  - fr
+currency: XOF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

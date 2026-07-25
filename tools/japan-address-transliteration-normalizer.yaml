@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: JP
+category: address
+status: active
+name:
+  en: "Japanese Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "1-1 Chiyoda, Chiyoda-ku, Tokyo 100-0001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-region-code-mapper, japan-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

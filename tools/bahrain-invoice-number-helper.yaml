@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bahrain-invoice-number-helper
+kind: tool
+module: validohub
+country: BH
+category: tax
+status: active
+name:
+  en: "Bahraini Invoice Number Helper"
+summary:
+  en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bahrain-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "INV input"
+        required: true
+        placeholder:
+          en: "INV-2026-0001 220012345600002"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bahrain-e-invoicing-readiness-checker, bahrain-tax-authority-handoff-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bahraini Invoice Number Helper | ValidoHub"
+  description:
+    en: "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."

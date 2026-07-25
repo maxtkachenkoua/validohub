@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: seychelles-tax-return-field-helper
+kind: tool
+module: validohub
+country: SC
+category: tax
+status: active
+name:
+  en: "Seychellois Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.seychelles-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax number / VAT boundary; SC123456789; period 2026-07; 1,234.56 SCR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [seychelles-invoice-number-helper, seychelles-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Seychellois Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: sierra-leone-customs-declaration-helper
+kind: tool
+module: validohub
+country: SL
+category: government
+status: active
+name:
+  en: "Sierra Leonean Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.sierra-leone-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "SL123456789 HS 8471 1,234.56 SLE"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [sierra-leone-postal-tracking-helper, sierra-leone-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Sierra Leonean Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

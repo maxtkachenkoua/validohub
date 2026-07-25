@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: comoros-currency-decimal-formatter
+kind: tool
+module: validohub
+country: KM
+category: finance
+status: active
+name:
+  en: "Comorian KMF Decimal Currency Formatter"
+summary:
+  en: "Normalize KMF amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.comoros-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 KMF"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [comoros-tax-rate-sanity-helper, comoros-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Comorian KMF Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize KMF amount strings, decimal separators, grouping, and API-safe numeric previews."

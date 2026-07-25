@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nauru-tax-rate-sanity-helper
+kind: tool
+module: validohub
+country: NR
+category: tax
+status: active
+name:
+  en: "Nauruan Tax Rate Sanity Helper"
+summary:
+  en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nauru-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RATE input"
+        required: true
+        placeholder:
+          en: "tax boundary 20% base 1,234.56 AUD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nauru-tax-return-field-helper, nauru-invoice-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nauruan Tax Rate Sanity Helper | ValidoHub"
+  description:
+    en: "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."

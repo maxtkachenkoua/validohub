@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: CG
+slug: congo
+name:
+  en: Republic of the Congo
+region: Africa
+languages:
+  - fr
+currency: XAF
+relatedCountries:
+  - ZA
+  - NG
+  - KE

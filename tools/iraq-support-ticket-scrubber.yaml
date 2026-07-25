@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iraq-support-ticket-scrubber
+kind: tool
+module: validohub
+country: IQ
+category: privacy
+status: active
+name:
+  en: "Iraqi Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iraq-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 123456789012, RRAF 123456789012, Karrada 1, Baghdad 10001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iraq-integration-smoke-test-builder, iraq-national-card-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iraqi Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

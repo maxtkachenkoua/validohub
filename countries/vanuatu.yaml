@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: VU
+slug: vanuatu
+name:
+  en: Vanuatu
+region: Oceania
+languages:
+  - en
+currency: VUV
+relatedCountries:
+  - FJ
+  - SB
+  - AU

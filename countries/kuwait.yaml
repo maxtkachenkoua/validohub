@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: KW
+slug: kuwait
+name:
+  en: Kuwait
+region: Asia
+languages:
+  - ar
+currency: KWD
+relatedCountries:
+  - SA
+  - QA
+  - AE

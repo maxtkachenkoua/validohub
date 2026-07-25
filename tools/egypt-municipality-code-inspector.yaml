@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: egypt-municipality-code-inspector
+kind: tool
+module: validohub
+country: EG
+category: address
+status: active
+name:
+  en: "Egyptian Municipality Code Inspector"
+summary:
+  en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.egypt-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MUNI input"
+        required: true
+        placeholder:
+          en: "Central business district, Cairo 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [egypt-phone-number-validator, egypt-phone-e164-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Egyptian Municipality Code Inspector | ValidoHub"
+  description:
+    en: "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."

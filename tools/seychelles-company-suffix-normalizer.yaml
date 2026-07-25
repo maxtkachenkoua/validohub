@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: seychelles-company-suffix-normalizer
+kind: tool
+module: validohub
+country: SC
+category: developer-tools
+status: active
+name:
+  en: "Seychellois Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.seychelles-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Seychelles Sample Holding Ltd SC-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [seychelles-procurement-identifier-helper, seychelles-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Seychellois Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

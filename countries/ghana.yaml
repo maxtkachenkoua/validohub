@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: GH
+slug: ghana
+name:
+  en: Ghana
+region: Africa
+languages:
+  - en
+currency: GHS
+relatedCountries:
+  - ZA
+  - NG
+  - KE

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lesotho-locale-number-parser
+kind: tool
+module: validohub
+country: LS
+category: localization
+status: active
+name:
+  en: "Basotho Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Lesotho."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lesotho-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.56 LSL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lesotho-calendar-week-helper, lesotho-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Basotho Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Lesotho."

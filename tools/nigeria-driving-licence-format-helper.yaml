@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: nigeria-driving-licence-format-helper
+kind: tool
+module: validohub
+country: NG
+category: documents
+status: active
+name:
+  en: "Nigerian Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.nigeria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "NG-ID-123456 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [nigeria-residence-permit-format-helper, nigeria-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Nigerian Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

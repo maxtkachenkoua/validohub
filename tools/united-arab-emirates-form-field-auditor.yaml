@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-form-field-auditor
+kind: tool
+module: validohub
+country: AE
+category: developer-tools
+status: active
+name:
+  en: "UAE Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=100123456700003&postal=PO Box 12345 Abu Dhabi&phone=+971 50 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-locale-number-parser, united-arab-emirates-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

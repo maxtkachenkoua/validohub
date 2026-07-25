@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: equatorial-guinea-customs-importer-code-helper
+kind: tool
+module: validohub
+country: GQ
+category: national-identifiers
+status: active
+name:
+  en: "Equatoguinean Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.equatorial-guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "GQGQ-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [equatorial-guinea-social-security-boundary-social-insurance-helper, equatorial-guinea-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Equatoguinean Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

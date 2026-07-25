@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-customs-declaration-helper
+kind: tool
+module: validohub
+country: SY
+category: government
+status: active
+name:
+  en: "Syrian Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "TAX123456 HS 8471 1,234,567 SYP"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-postal-tracking-helper, syria-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

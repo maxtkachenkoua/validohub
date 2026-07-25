@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: new-zealand-phone-number-validator
+kind: tool
+module: validohub
+country: NZ
+category: address
+status: active
+name:
+  en: "New Zealand Phone Number Validator"
+summary:
+  en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.new-zealand-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PHONE input"
+        required: true
+        placeholder:
+          en: "+64 21 123 4567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [new-zealand-phone-e164-formatter, new-zealand-date-locale-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "New Zealand Phone Number Validator | ValidoHub"
+  description:
+    en: "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."

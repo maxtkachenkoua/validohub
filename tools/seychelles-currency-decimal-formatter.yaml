@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: seychelles-currency-decimal-formatter
+kind: tool
+module: validohub
+country: SC
+category: finance
+status: active
+name:
+  en: "Seychellois SCR Decimal Currency Formatter"
+summary:
+  en: "Normalize SCR amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.seychelles-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 SCR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [seychelles-tax-rate-sanity-helper, seychelles-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Seychellois SCR Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize SCR amount strings, decimal separators, grouping, and API-safe numeric previews."

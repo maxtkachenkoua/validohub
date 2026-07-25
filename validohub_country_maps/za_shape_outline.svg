@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-98.73 -104.21 794.41 782.52" role="img">
+  <title>South Africa country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="10.83" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="za" d="M476.731,588.02l-6.829,6.311l-1.625,3.898l-5.411-0.674l-4.503,4.002l-2.991-0.294l0.241-5.531l-1.062-0.372l-0.743,11.314l-5.308-0.052l-1.6-1.886l-2.344-0.024l2.137,6.129l3.812,3.604l-2.723,3.172l1.764,3.977l4.08,1.558l3.25-2.767l9.311,0.053l0.667-0.83l4.132-0.728l13.978-13.917l-0.053-4.382l-1.495,1.937h-2.238l-2.723-2.282l1.383-3.44l2.378-0.482l-0.217-7.071L476.731,588.02L476.731,588.02z M473.455,604.011l1.306-0.052l2.118,2.299l-0.061,2.662l-2.481,1.253l-0.155,0.883l-3.785,0.043l-1.186-2.853l1.081-2.092L473.455,604.011L473.455,604.011z"/>
+  </g>
+</svg>

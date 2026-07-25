@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-csv-locale-normalizer
+kind: tool
+module: validohub
+country: AU
+category: developer-tools
+status: active
+name:
+  en: "Australian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Australia decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 AUD;24/07/2026;51824753556"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-slug-normalizer, australia-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Australia decimal, date, postal, phone, tax, and banking fields."

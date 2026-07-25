@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-84.79 -78.59 581.89 601.51" role="img">
+  <title>Libya country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="8.06" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="ly" d="M429.958,453.518l1.35-0.225l0.397-3.112h0.674l2.758-4.528l6.804,1.979l1.856,2.887l6.69,3.062l3.482-1.47l-0.338-1.471l-1.521-1.469l0.173-1.021l2.473-2.093h4.894l1.856,2.489l3.934,0.57l0.511,31.889l-2.922-0.112l-17.651-9.181l-1.91,1.081l-7.253-1.814l-1.971-2.603l-2.87-0.397l-1.458-2.603L429.958,453.518L429.958,453.518z"/>
+  </g>
+</svg>

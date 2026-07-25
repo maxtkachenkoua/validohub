@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-address-normalizer
+kind: tool
+module: validohub
+country: GW
+category: address
+status: active
+name:
+  en: "Bissau-Guinean Address Normalizer"
+summary:
+  en: "Normalize street, postal code, locality, region, and country lines for local address forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ADDR input"
+        required: true
+        placeholder:
+          en: "Central business district, Bissau 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-bissau-address-transliteration-normalizer, guinea-bissau-region-code-mapper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bissau-Guinean Address Normalizer | ValidoHub"
+  description:
+    en: "Normalize street, postal code, locality, region, and country lines for local address forms."

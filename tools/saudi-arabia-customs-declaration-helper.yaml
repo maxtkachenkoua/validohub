@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: saudi-arabia-customs-declaration-helper
+kind: tool
+module: validohub
+country: SA
+category: government
+status: active
+name:
+  en: "Saudi Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.saudi-arabia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "300123456700003 HS 8471 1,234.56 SAR"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [saudi-arabia-postal-tracking-helper, saudi-arabia-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Saudi Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: singapore-company-suffix-normalizer
+kind: tool
+module: validohub
+country: SG
+category: developer-tools
+status: active
+name:
+  en: "Singapore Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.singapore-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Singapore Sample Holding Ltd 201912345K"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [singapore-procurement-identifier-helper, singapore-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Singapore Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

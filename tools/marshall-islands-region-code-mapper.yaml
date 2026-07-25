@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-region-code-mapper
+kind: tool
+module: validohub
+country: MH
+category: address
+status: active
+name:
+  en: "Marshallese Region / Province Code Mapper"
+summary:
+  en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGION input"
+        required: true
+        placeholder:
+          en: "Majuro MH 96960"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-municipality-code-inspector, marshall-islands-phone-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Region / Province Code Mapper | ValidoHub"
+  description:
+    en: "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."

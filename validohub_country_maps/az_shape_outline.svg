@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-81.13 -67.73 667.02 549.85" role="img">
+  <title>Azerbaijan country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="7.61" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="az" d="M508.931,418.674l-0.873,1.486l4.071,5.342l1.418-0.458l2.334,2.446l1.011-4.287l2.533,0.406l-0.104-1.229l-4.165-3.646l-0.795,2.143L508.931,418.674L508.931,418.674z"/>
+  </g>
+</svg>

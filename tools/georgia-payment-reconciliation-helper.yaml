@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-payment-reconciliation-helper
+kind: tool
+module: validohub
+country: GE
+category: finance
+status: active
+name:
+  en: "Georgian Payment Reconciliation Helper"
+summary:
+  en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RECON input"
+        required: true
+        placeholder:
+          en: "21.07.2026; 1 234.56 GEL; NB 0101904917; Invoice 2026-001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-bank-statement-parser, georgia-masked-bank-account-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian Payment Reconciliation Helper | ValidoHub"
+  description:
+    en: "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."

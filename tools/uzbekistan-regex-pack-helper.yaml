@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-regex-pack-helper
+kind: tool
+module: validohub
+country: UZ
+category: developer-tools
+status: active
+name:
+  en: "Uzbek Regex Pack Helper"
+summary:
+  en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REGEX input"
+        required: true
+        placeholder:
+          en: "PINFL boundary STIR / company tax number postal code  00444 20208000123456789001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-api-payload-auditor, uzbekistan-form-field-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek Regex Pack Helper | ValidoHub"
+  description:
+    en: "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."

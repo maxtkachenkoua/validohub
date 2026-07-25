@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-81.84 -72.41 660.89 572.05" role="img">
+  <title>Iraq country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="7.92" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="iq" d="M502.793,433.637l-1.348,6.664l-5.585,4.65l0.354,2.195l5.455,0.371l8.688,7.07l4.857-0.138l0.13-1.634l1.78-1.91l2.49,1.409l0.329-0.312l-4.815-6.405l-2.282-0.139l-3.033-3.898l0.604-2.868l0.926-0.121l0.319-1.271l-4.132-4.348L502.793,433.637L502.793,433.637z"/>
+  </g>
+</svg>

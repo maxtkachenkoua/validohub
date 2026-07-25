@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-pii-masker
+kind: tool
+module: validohub
+country: KW
+category: privacy
+status: active
+name:
+  en: "Kuwaiti PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "290010112345 +965 5123 4567 CBKU 1234560101"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-personal-data-fixture-generator, kuwait-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

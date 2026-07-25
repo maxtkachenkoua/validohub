@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: NR
+slug: nauru
+name:
+  en: Nauru
+region: Oceania
+languages:
+  - en
+currency: AUD
+relatedCountries:
+  - KI
+  - FM
+  - AU

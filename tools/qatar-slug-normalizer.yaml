@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-slug-normalizer
+kind: tool
+module: validohub
+country: QA
+category: developer-tools
+status: active
+name:
+  en: "Qatari Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Qatar sample company West Bay, Doha, PO Box 12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-document-ocr-fixer, qatar-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: iran-company-onboarding-auditor
+kind: tool
+module: validohub
+country: IR
+category: developer-tools
+status: active
+name:
+  en: "Iranian Company Onboarding Auditor"
+summary:
+  en: "Audit company intake payloads for national company ID, VAT, address, banking, and official registry handoff readiness."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.iran-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "KYC input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"IR\",\"nationalCode\":\"0084575941\",\"sheba\":\"IR820540102680020817909002\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [iran-business-register-readiness-helper, iran-id-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Iranian Company Onboarding Auditor | ValidoHub"
+  description:
+    en: "Audit company intake payloads for national company ID, VAT, address, banking, and official registry handoff readiness."

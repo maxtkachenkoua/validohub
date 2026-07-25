@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: KG
+slug: kyrgyzstan
+name:
+  en: Kyrgyzstan
+region: Asia
+languages:
+  - ky
+currency: KGS
+relatedCountries:
+  - UZ
+  - TJ
+  - CN

@@ -1,0 +1,642 @@
+{
+  "id": "cote-d-ivoire",
+  "visualAssets": {
+    "outlineSrc": "/assets/images/countries/cote-d-ivoire-outline.png",
+    "outlineAlt": "Cote dIvoire country outline",
+    "mapSrc": "/assets/images/countries/cote-d-ivoire-location.png",
+    "mapAlt": "World map with Cote dIvoire location marker",
+    "mapMarker": {
+      "x": 45,
+      "y": 55,
+      "label": "Cote dIvoire"
+    },
+    "source": "Premium raster country visual generated once for ValidoHub country navigation"
+  },
+  "catalog": {
+    "id": "cote-d-ivoire",
+    "flag": "🇨🇮",
+    "name": "Cote dIvoire",
+    "nativeName": "Cote dIvoire",
+    "iso2": "CI",
+    "iso3": "CIV",
+    "continent": "Africa",
+    "region": "Africa",
+    "language": "French",
+    "currency": "XOF",
+    "currencyName": "West African CFA franc",
+    "status": "available",
+    "summary": "Premium Cote dIvoire developer hub for National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone, bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation, locale, privacy, vehicles, documents, and browser-only data-quality workflows.",
+    "identifiers": [
+      "National ID boundary",
+      "company registration number",
+      "tax number / VAT boundary",
+      "postal/address code",
+      "phone"
+    ],
+    "payments": [
+      "bank account",
+      "domestic transfer reference",
+      "SWIFT/BIC",
+      "invoice reference",
+      "payment reconciliation"
+    ],
+    "features": [
+      "payments",
+      "identity",
+      "government",
+      "banking"
+    ],
+    "availableWorkbenches": [
+      "Ivorian national ID boundary Validator",
+      "Ivorian company registration number Validator",
+      "Ivorian tax number / VAT boundary Validator",
+      "Ivorian Customs / Importer Code Helper",
+      "Ivorian social security boundary Helper",
+      "Ivorian Company Onboarding Auditor",
+      "Ivorian business registry Readiness Helper",
+      "Ivorian ID Card Format Helper",
+      "Ivorian Passport Number Helper",
+      "Ivorian MRZ / Passport Parser",
+      "Cote dIvoire Bank Account Validator",
+      "Cote dIvoire Bank Account Fixture Generator",
+      "Ivorian Domestic Bank Account Inspector",
+      "Ivorian BIC / SWIFT Inspector",
+      "Ivorian Domestic Transfer Helper",
+      "Ivorian Direct Debit / Auto-Debit Mandate Helper",
+      "Ivorian bank transfer / payment reference Reference Helper",
+      "Ivorian Remittance Text Builder",
+      "Ivorian Payment Reconciliation Helper",
+      "Ivorian Bank Statement Parser",
+      "Ivorian Masked Bank Account Formatter",
+      "Ivorian XOF Decimal Currency Formatter",
+      "Ivorian Tax Rate Sanity Helper",
+      "Ivorian Tax Return Field Helper",
+      "Ivorian Invoice Number Helper",
+      "Ivorian tax invoice Readiness Checker",
+      "Ivorian Tax Authority Handoff Helper",
+      "Ivorian Accounting Audit Trail Checklist Helper",
+      "Ivorian Postal Code Validator",
+      "Ivorian Address Normalizer",
+      "Ivorian Address Transliteration Normalizer",
+      "Ivorian Region / Province Code Mapper",
+      "Ivorian Municipality Code Inspector",
+      "Ivorian Phone Number Validator",
+      "Ivorian Phone E.164 Formatter",
+      "Ivorian Date Locale Formatter",
+      "Ivorian CSV Locale Normalizer",
+      "Ivorian Slug Normalizer",
+      "Ivorian Document OCR Fixer",
+      "Ivorian data protection / privacy boundary Redaction Helper",
+      "Ivorian PII Masker",
+      "Ivorian Personal Data Fixture Helper",
+      "Ivorian Driving Licence Format Helper",
+      "Ivorian Residence Permit Format Helper",
+      "Ivorian Health Card Format Helper",
+      "Ivorian Vehicle Plate Inspector",
+      "Ivorian VIN Validator",
+      "Ivorian Vehicle Data Redaction Helper",
+      "Ivorian Customs Declaration Helper",
+      "Ivorian Postal Tracking Helper",
+      "Ivorian Data Quality Workbench",
+      "Ivorian JSON Fixture Helper",
+      "Ivorian Regex Pack Helper",
+      "Ivorian API Payload Auditor",
+      "Ivorian Form Field Auditor",
+      "Ivorian Locale Number Parser",
+      "Ivorian Calendar Week Helper",
+      "Ivorian Company Suffix Normalizer",
+      "Ivorian Procurement Identifier Helper",
+      "Ivorian Locale Copy Checker",
+      "Ivorian Support Ticket Scrubber",
+      "Ivorian Integration Smoke Test Builder"
+    ],
+    "plannedWorkbenches": [
+      "Live business registry lookup",
+      "Live VAT/tax status confirmation",
+      "Live bank ownership lookup",
+      "Live vehicle or postal provider lookup"
+    ],
+    "completion": 100,
+    "coordinates": {
+      "x": 45,
+      "y": 55
+    },
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ]
+  },
+  "hub": {
+    "flag": "🇨🇮",
+    "name": "Cote dIvoire",
+    "badge": "Premium Cote dIvoire developer suite",
+    "description": "Developer intelligence and browser-only workbenches for ivorian identifiers, tax, payments, banking, locale conventions, privacy, documents, vehicles, and integration QA.",
+    "metadata": {
+      "nativeName": "Cote dIvoire",
+      "population": "approximately 31M",
+      "populationNote": "Approximate 2026 population estimate; do not treat as a timeless constant.",
+      "capital": "Yamoussoukro",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "languages": "French",
+      "currency": "West African CFA franc",
+      "currencyCode": "XOF",
+      "callingCode": "+225",
+      "internetTld": ".ci",
+      "drivingSide": "Right",
+      "iso2": "CI",
+      "iso3": "CIV",
+      "isoNumeric": "384",
+      "locale": "fr-CI",
+      "icuLocale": "fr_CI",
+      "dateFormat": "DD/MM/YYYY",
+      "timeFormat": "24-hour, HH:mm",
+      "decimalSeparator": "Comma (,)",
+      "thousandsSeparator": "Space",
+      "addressFormat": "Street, number, postal code, locality, Cote dIvoire",
+      "postalCodeFormat": "postal/address code",
+      "primaryTimeZone": "Africa/Abidjan (GMT)",
+      "measurementSystem": "Metric",
+      "paperSize": "A4",
+      "emergencyNumber": "110 / 111 / 180",
+      "weekStarts": "Monday",
+      "rtlSupport": "No",
+      "unicodeLocale": "fr-CI",
+      "cldrLocale": "fr_CI",
+      "metricVsImperial": "Metric-first",
+      "powerPlugTypes": "Type C / Type E",
+      "voltage": "230V",
+      "frequency": "50Hz"
+    },
+    "visualIdentity": {
+      "countryId": "cote-d-ivoire",
+      "outlineLabel": "Cote dIvoire outline",
+      "mapLabel": "Cote dIvoire in the world",
+      "continentBadge": "Africa",
+      "flagLabel": "Cote dIvoire flag",
+      "heroAccentPrimary": "247 127 0",
+      "heroAccentSecondary": "255 255 255",
+      "heroAccentTertiary": "0 158 96"
+    },
+    "stats": [
+      {
+        "label": "Premium tools",
+        "value": "62",
+        "text": "Browser-only local developer workbenches"
+      },
+      {
+        "label": "Core locales",
+        "value": "7",
+        "text": "Runtime-localized production locales"
+      },
+      {
+        "label": "Field breakdown",
+        "value": "100%",
+        "text": "Every tool exposes debug slices"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "national ID boundary and company registration number",
+        "text": "Local identifier workbenches split body, prefixes, control evidence, and official lookup boundaries."
+      },
+      {
+        "title": "tax number / VAT boundary and payments",
+        "text": "Tax, banking, payment reference, and reconciliation tools keep browser-only checks separate from regulated status."
+      },
+      {
+        "title": "Developer debugging",
+        "text": "CSV, JSON, API, form, privacy, fixture, and locale tools expose field breakdown and developer payloads."
+      }
+    ],
+    "developerNotes": [
+      {
+        "title": "No official claims",
+        "text": "Offline checks never prove official Cote dIvoire registry, tax, bank, vehicle, postal, or identity status."
+      },
+      {
+        "title": "Field breakdown required",
+        "text": "Every tool must keep named slices visible because they are the primary debugging surface."
+      },
+      {
+        "title": "Same-country links",
+        "text": "Related workbenches stay inside /cote-d-ivoire/ unless a comparison route is explicitly designed."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "title": "Treating syntax as status",
+        "text": "A passing checksum or shape check is not an official lookup result."
+      },
+      {
+        "title": "Logging raw personal data",
+        "text": "Use masked previews for tickets, logs, analytics, and screenshots."
+      },
+      {
+        "title": "Ignoring locale separators",
+        "text": "Use Comma (,) and Space rules before API normalization."
+      },
+      {
+        "title": "Mixing countries",
+        "text": "Do not reuse non-Ivorian examples, fallback copy, or related links in this suite."
+      }
+    ],
+    "officialSources": [
+      {
+        "title": "business registry",
+        "text": "Official business registry or company lookup remains the source of truth for Cote dIvoire.",
+        "status": "official boundary"
+      },
+      {
+        "title": "tax number / VAT boundary",
+        "text": "Tax validity and filing acceptance require the responsible local tax authority or approved provider.",
+        "status": "official boundary"
+      },
+      {
+        "title": "data protection / privacy boundary",
+        "text": "Privacy obligations require legal/process review outside browser-only diagnostics.",
+        "status": "official boundary"
+      }
+    ],
+    "ecosystem": [
+      {
+        "title": "Identity and tax",
+        "text": "National ID boundary, company registration number, tax number / VAT boundary, postal/address code, phone",
+        "status": "available"
+      },
+      {
+        "title": "Banking and payments",
+        "text": "bank account, domestic transfer reference, SWIFT/BIC, invoice reference, payment reconciliation",
+        "status": "available"
+      },
+      {
+        "title": "Developer data QA",
+        "text": "CSV, JSON, API, form, OCR, privacy, and fixture helpers.",
+        "status": "available"
+      }
+    ],
+    "localizationNotes": [
+      {
+        "title": "Locale",
+        "text": "fr-CI / fr_CI; date DD/MM/YYYY.",
+        "status": "available"
+      },
+      {
+        "title": "Numbers",
+        "text": "XOF amounts use Comma (,) and Space.",
+        "status": "available"
+      },
+      {
+        "title": "Forms",
+        "text": "national ID boundary, company registration number, postal/address code, phone, address, and bank-account fields need local labels.",
+        "status": "available"
+      }
+    ],
+    "technicalStandards": [
+      {
+        "title": "Plug types",
+        "value": "Type C / Type E",
+        "text": "Public utility fixture for travel, QA, and onboarding copy."
+      },
+      {
+        "title": "Electrical voltage",
+        "value": "230V",
+        "text": "Common mains voltage used by country-profile fixtures."
+      },
+      {
+        "title": "Grid frequency",
+        "value": "50Hz",
+        "text": "Common grid frequency for technical defaults."
+      },
+      {
+        "title": "Emergency number",
+        "value": "110 / 111 / 180",
+        "text": "Local emergency number fixture; official emergency-routing context may vary by service and region."
+      }
+    ],
+    "searchHints": [
+      "NATIONAL ID",
+      "TAX",
+      "VAT",
+      "COMPANY",
+      "BANK",
+      "POSTAL"
+    ],
+    "routes": [
+      {
+        "title": "Ivorian national ID boundary Validator",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-national-id-boundary-validator/",
+        "text": "Validate national ID boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+      },
+      {
+        "title": "Ivorian company registration number Validator",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-company-registration-number-validator/",
+        "text": "Inspect company registration number structure, registry-style prefixes, control digits, and official lookup boundaries."
+      },
+      {
+        "title": "Ivorian tax number / VAT boundary Validator",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-tax-id-validator/",
+        "text": "Normalize tax number / VAT boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+      },
+      {
+        "title": "Ivorian Customs / Importer Code Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-customs-importer-code-helper/",
+        "text": "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+      },
+      {
+        "title": "Ivorian social security boundary Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-social-security-boundary-social-insurance-helper/",
+        "text": "Split social security boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+      },
+      {
+        "title": "Ivorian Company Onboarding Auditor",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-company-onboarding-auditor/",
+        "text": "Audit company intake payloads for company registration number, VAT, address, banking, and official registry handoff readiness."
+      },
+      {
+        "title": "Ivorian business registry Readiness Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-business-register-readiness-helper/",
+        "text": "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+      },
+      {
+        "title": "Ivorian ID Card Format Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-id-card-format-helper/",
+        "text": "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+      },
+      {
+        "title": "Ivorian Passport Number Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-passport-number-helper/",
+        "text": "Parse passport-number snippets, nationality hints, issue/expiry dates, and MRZ handoff evidence."
+      },
+      {
+        "title": "Ivorian MRZ / Passport Parser",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-mrz-passport-parser/",
+        "text": "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+      },
+      {
+        "title": "Cote dIvoire Bank Account Validator",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-bank-account-validator/",
+        "text": "Validate local bank-account or routing shape, split bank/account blocks, and keep ownership lookup outside the browser."
+      },
+      {
+        "title": "Cote dIvoire Bank Account Fixture Generator",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-bank-account-fixture-generator/",
+        "text": "Generate local bank-account fixture payloads, split routing/account blocks, and prepare payment QA data."
+      },
+      {
+        "title": "Ivorian Domestic Bank Account Inspector",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-bank-account-inspector/",
+        "text": "Inspect domestic account slices, bank codes, branch/account blocks, and provider handoff boundaries."
+      },
+      {
+        "title": "Ivorian BIC / SWIFT Inspector",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-bic-swift-inspector/",
+        "text": "Inspect BIC institution, country, location, and branch evidence for Cote dIvoire banking integrations."
+      },
+      {
+        "title": "Ivorian Domestic Transfer Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-domestic-transfer-helper/",
+        "text": "Check creditor, local bank-account, amount, remittance, and offline payment handoff fields before bank submission."
+      },
+      {
+        "title": "Ivorian Direct Debit / Auto-Debit Mandate Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-direct-debit-mandate-helper/",
+        "text": "Inspect mandate references, creditor data, debtor account evidence, and browser-only debit readiness."
+      },
+      {
+        "title": "Ivorian bank transfer / payment reference Reference Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-payment-reference-helper/",
+        "text": "Inspect local payment references, invoice links, amount evidence, and reconciliation-safe formatting."
+      },
+      {
+        "title": "Ivorian Remittance Text Builder",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-remittance-text-builder/",
+        "text": "Build concise remittance text from invoice, customer, VAT, and local payment reference evidence."
+      },
+      {
+        "title": "Ivorian Payment Reconciliation Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-payment-reconciliation-helper/",
+        "text": "Match bank statement snippets against invoice, tax, amount, and local payment-reference evidence."
+      },
+      {
+        "title": "Ivorian Bank Statement Parser",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-bank-statement-parser/",
+        "text": "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+      },
+      {
+        "title": "Ivorian Masked Bank Account Formatter",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-masked-bank-account-formatter/",
+        "text": "Create log-safe bank-account previews while preserving routing and account-tail evidence."
+      },
+      {
+        "title": "Ivorian XOF Decimal Currency Formatter",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-currency-decimal-formatter/",
+        "text": "Normalize XOF amount strings, decimal separators, grouping, and API-safe numeric previews."
+      },
+      {
+        "title": "Ivorian Tax Rate Sanity Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-tax-rate-sanity-helper/",
+        "text": "Inspect tax-rate snippets, local tax labels, amount bases, and official rate lookup boundaries."
+      },
+      {
+        "title": "Ivorian Tax Return Field Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-tax-return-field-helper/",
+        "text": "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+      },
+      {
+        "title": "Ivorian Invoice Number Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-invoice-number-helper/",
+        "text": "Inspect invoice numbering, period hints, VAT/customer evidence, and duplicate-risk diagnostics."
+      },
+      {
+        "title": "Ivorian tax invoice Readiness Checker",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-e-invoicing-readiness-checker/",
+        "text": "Audit e-invoicing payload readiness for seller, buyer, tax, address, totals, and official submission boundaries."
+      },
+      {
+        "title": "Ivorian Tax Authority Handoff Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-tax-authority-handoff-helper/",
+        "text": "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+      },
+      {
+        "title": "Ivorian Accounting Audit Trail Checklist Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-accounting-audit-trail-checklist-generator/",
+        "text": "Generate local accounting evidence checklist for invoices, payments, tax, dates, and immutable logs."
+      },
+      {
+        "title": "Ivorian Postal Code Validator",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-postal-code-validator/",
+        "text": "Validate postal/address code shape, split area/delivery hints, and preserve official postal lookup boundaries."
+      },
+      {
+        "title": "Ivorian Address Normalizer",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-address-normalizer/",
+        "text": "Normalize street, postal code, locality, region, and country lines for local address forms."
+      },
+      {
+        "title": "Ivorian Address Transliteration Normalizer",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-address-transliteration-normalizer/",
+        "text": "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+      },
+      {
+        "title": "Ivorian Region / Province Code Mapper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-region-code-mapper/",
+        "text": "Inspect regional abbreviations, locality evidence, postal zones, and official geography lookup boundaries."
+      },
+      {
+        "title": "Ivorian Municipality Code Inspector",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-municipality-code-inspector/",
+        "text": "Inspect municipality/city evidence, address fields, postal slices, and administrative-code boundaries."
+      },
+      {
+        "title": "Ivorian Phone Number Validator",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-phone-number-validator/",
+        "text": "Validate local phone shape, country prefix, national number blocks, and contact-form safety notes."
+      },
+      {
+        "title": "Ivorian Phone E.164 Formatter",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-phone-e164-formatter/",
+        "text": "Normalize local phone input to E.164-style previews and split country/national evidence."
+      },
+      {
+        "title": "Ivorian Date Locale Formatter",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-date-locale-formatter/",
+        "text": "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+      },
+      {
+        "title": "Ivorian CSV Locale Normalizer",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-csv-locale-normalizer/",
+        "text": "Normalize CSV snippets for Cote dIvoire decimal, date, postal, phone, tax, and banking fields."
+      },
+      {
+        "title": "Ivorian Slug Normalizer",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-slug-normalizer/",
+        "text": "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+      },
+      {
+        "title": "Ivorian Document OCR Fixer",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-document-ocr-fixer/",
+        "text": "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+      },
+      {
+        "title": "Ivorian data protection / privacy boundary Redaction Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-privacy-redaction-helper/",
+        "text": "Mask personal, tax, banking, phone, and address evidence for logs and support tickets."
+      },
+      {
+        "title": "Ivorian PII Masker",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-pii-masker/",
+        "text": "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+      },
+      {
+        "title": "Ivorian Personal Data Fixture Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-personal-data-fixture-generator/",
+        "text": "Generate fixture-safe local identity/address/payment snippets with clear non-official boundaries."
+      },
+      {
+        "title": "Ivorian Driving Licence Format Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-driving-licence-format-helper/",
+        "text": "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+      },
+      {
+        "title": "Ivorian Residence Permit Format Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-residence-permit-format-helper/",
+        "text": "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+      },
+      {
+        "title": "Ivorian Health Card Format Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-health-card-format-helper/",
+        "text": "Inspect health-card or insurance snippets, personal evidence, and high-sensitivity privacy handling."
+      },
+      {
+        "title": "Ivorian Vehicle Plate Inspector",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-vehicle-plate-inspector/",
+        "text": "Inspect vehicle plate shape, regional hints, serial blocks, and official vehicle registry boundaries."
+      },
+      {
+        "title": "Ivorian VIN Validator",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-vin-validator/",
+        "text": "Validate VIN shape, split WMI/VDS/VIS evidence, and prepare vehicle-intake diagnostics."
+      },
+      {
+        "title": "Ivorian Vehicle Data Redaction Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-vehicle-data-redaction-helper/",
+        "text": "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+      },
+      {
+        "title": "Ivorian Customs Declaration Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-customs-declaration-helper/",
+        "text": "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+      },
+      {
+        "title": "Ivorian Postal Tracking Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-postal-tracking-helper/",
+        "text": "Inspect tracking strings, postal-code evidence, address snippets, and carrier-status boundaries."
+      },
+      {
+        "title": "Ivorian Data Quality Workbench",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-data-quality-workbench/",
+        "text": "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+      },
+      {
+        "title": "Ivorian JSON Fixture Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-json-fixture-generator/",
+        "text": "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+      },
+      {
+        "title": "Ivorian Regex Pack Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-regex-pack-helper/",
+        "text": "Prepare regex snippets for local identifiers, tax IDs, bank accounts, postal, phone, dates, and debug labels."
+      },
+      {
+        "title": "Ivorian API Payload Auditor",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-api-payload-auditor/",
+        "text": "Audit API payload snippets for locale, tax, identifiers, bank-account evidence, dates, amounts, and official boundaries."
+      },
+      {
+        "title": "Ivorian Form Field Auditor",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-form-field-auditor/",
+        "text": "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+      },
+      {
+        "title": "Ivorian Locale Number Parser",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-locale-number-parser/",
+        "text": "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Cote dIvoire."
+      },
+      {
+        "title": "Ivorian Calendar Week Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-calendar-week-helper/",
+        "text": "Inspect local date strings, week-start assumptions, fiscal-period labels, and ISO handoff values."
+      },
+      {
+        "title": "Ivorian Company Suffix Normalizer",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-company-suffix-normalizer/",
+        "text": "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+      },
+      {
+        "title": "Ivorian Procurement Identifier Helper",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-procurement-identifier-helper/",
+        "text": "Inspect buyer/seller identifiers, invoice references, and public-procurement handoff evidence."
+      },
+      {
+        "title": "Ivorian Locale Copy Checker",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-accessibility-locale-copy-checker/",
+        "text": "Check UI labels for local identifier names, date/currency wording, and support-safe explanations."
+      },
+      {
+        "title": "Ivorian Support Ticket Scrubber",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-support-ticket-scrubber/",
+        "text": "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+      },
+      {
+        "title": "Ivorian Integration Smoke Test Builder",
+        "href": "/en/cote-d-ivoire/cote-d-ivoire-integration-smoke-test-builder/",
+        "text": "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+      }
+    ]
+  }
+}

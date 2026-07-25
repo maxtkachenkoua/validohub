@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: micronesia-json-fixture-generator
+kind: tool
+module: validohub
+country: FM
+category: developer-tools
+status: active
+name:
+  en: "Micronesian JSON Fixture Helper"
+summary:
+  en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.micronesia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "JSON input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"FM\",\"taxNumber\":\"FM123456789\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [micronesia-regex-pack-helper, micronesia-api-payload-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Micronesian JSON Fixture Helper | ValidoHub"
+  description:
+    en: "Generate and inspect JSON fixtures for local identifiers, addresses, payments, and privacy-safe tests."

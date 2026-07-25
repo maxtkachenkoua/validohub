@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: brunei-currency-decimal-formatter
+kind: tool
+module: validohub
+country: BN
+category: finance
+status: active
+name:
+  en: "Bruneian BND Decimal Currency Formatter"
+summary:
+  en: "Normalize BND amount strings, decimal separators, grouping, and API-safe numeric previews."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.brunei-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUR input"
+        required: true
+        placeholder:
+          en: "1,234.56 BND"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [brunei-tax-rate-sanity-helper, brunei-tax-return-field-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bruneian BND Decimal Currency Formatter | ValidoHub"
+  description:
+    en: "Normalize BND amount strings, decimal separators, grouping, and API-safe numeric previews."

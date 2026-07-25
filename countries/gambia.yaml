@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: GM
+slug: gambia
+name:
+  en: Gambia
+region: Africa
+languages:
+  - en
+currency: GMD
+relatedCountries:
+  - ZA
+  - NG
+  - KE

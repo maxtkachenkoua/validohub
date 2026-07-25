@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-mersis-number-validator
+kind: tool
+module: validohub
+country: TR
+category: national-identifiers
+status: active
+name:
+  en: "Turkish MERSIS number Validator"
+summary:
+  en: "Inspect MERSIS number structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "0123456789012345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-tax-id-validator, turkey-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish MERSIS number Validator | ValidoHub"
+  description:
+    en: "Inspect MERSIS number structure, registry-style prefixes, control digits, and official lookup boundaries."

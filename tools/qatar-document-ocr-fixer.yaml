@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: qatar-document-ocr-fixer
+kind: tool
+module: validohub
+country: QA
+category: documents
+status: active
+name:
+  en: "Qatari Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.qatar-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "29012345678 TC1234567 DOHB 1234567890 PO Box 12345 Doha"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [qatar-privacy-redaction-helper, qatar-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Qatari Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: fiji-slug-normalizer
+kind: tool
+module: validohub
+country: FJ
+category: developer-tools
+status: active
+name:
+  en: "Fijian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.fiji-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Fiji sample company Victoria Parade, Suva"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [fiji-document-ocr-fixer, fiji-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Fijian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

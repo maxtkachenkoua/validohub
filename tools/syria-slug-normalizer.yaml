@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-slug-normalizer
+kind: tool
+module: validohub
+country: SY
+category: developer-tools
+status: active
+name:
+  en: "Syrian Slug Normalizer"
+summary:
+  en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SLUG input"
+        required: true
+        placeholder:
+          en: "Syria sample company Malki 1, Damascus 0100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-document-ocr-fixer, syria-privacy-redaction-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian Slug Normalizer | ValidoHub"
+  description:
+    en: "Create locale-safe URL slugs from names, addresses, and organization labels without losing display text."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritius-form-field-auditor
+kind: tool
+module: validohub
+country: MU
+category: developer-tools
+status: active
+name:
+  en: "Mauritian Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritius-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=MU123456789&postal=1000 Port Louis&phone=+230 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritius-locale-number-parser, mauritius-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritian Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

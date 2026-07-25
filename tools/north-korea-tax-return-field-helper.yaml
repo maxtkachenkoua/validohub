@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-tax-return-field-helper
+kind: tool
+module: validohub
+country: KP
+category: tax
+status: active
+name:
+  en: "North Korean Tax Return Field Helper"
+summary:
+  en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "RET input"
+        required: true
+        placeholder:
+          en: "tax reference boundary; TAX123456; period 2026-07; 1,234 KPW"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-invoice-number-helper, north-korea-e-invoicing-readiness-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Tax Return Field Helper | ValidoHub"
+  description:
+    en: "Map tax-return field labels, tax evidence, period dates, and export-safe developer payloads."

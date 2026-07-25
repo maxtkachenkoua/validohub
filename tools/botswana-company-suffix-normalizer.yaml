@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: botswana-company-suffix-normalizer
+kind: tool
+module: validohub
+country: BW
+category: developer-tools
+status: active
+name:
+  en: "Botswana Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.botswana-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Botswana Sample Holding Ltd BW-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [botswana-procurement-identifier-helper, botswana-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Botswana Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

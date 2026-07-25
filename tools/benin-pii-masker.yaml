@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: benin-pii-masker
+kind: tool
+module: validohub
+country: BJ
+category: privacy
+status: active
+name:
+  en: "Beninese PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.benin-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "BJ-ID-123456 +229 123 456 789 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [benin-personal-data-fixture-generator, benin-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Beninese PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

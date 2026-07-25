@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: central-african-republic-vehicle-data-redaction-helper
+kind: tool
+module: validohub
+country: CF
+category: transport
+status: active
+name:
+  en: "Central African Vehicle Data Redaction Helper"
+summary:
+  en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.central-african-republic-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "VEH input"
+        required: true
+        placeholder:
+          en: "CF 1234 WVWZZZ1JZXW000001 CF-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [central-african-republic-customs-declaration-helper, central-african-republic-postal-tracking-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Central African Vehicle Data Redaction Helper | ValidoHub"
+  description:
+    en: "Mask VIN, plate, owner, address, and insurance evidence for transport-support logs."

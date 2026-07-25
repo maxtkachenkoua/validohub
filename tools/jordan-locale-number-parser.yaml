@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-locale-number-parser
+kind: tool
+module: validohub
+country: JO
+category: localization
+status: active
+name:
+  en: "Jordanian Locale Number Parser"
+summary:
+  en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Jordan."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "NUM input"
+        required: true
+        placeholder:
+          en: "1,234.560 JOD"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-calendar-week-helper, jordan-company-suffix-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Locale Number Parser | ValidoHub"
+  description:
+    en: "Parse decimal/grouping variants, currency labels, and API-safe numeric values for Jordan."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: palau-residence-permit-format-helper
+kind: tool
+module: validohub
+country: PW
+category: documents
+status: active
+name:
+  en: "Palauan Residence Permit Format Helper"
+summary:
+  en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.palau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PERMIT input"
+        required: true
+        placeholder:
+          en: "PW PERMIT 2026 PW-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [palau-health-card-format-helper, palau-vehicle-plate-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Palauan Residence Permit Format Helper | ValidoHub"
+  description:
+    en: "Inspect residence-permit snippets, document IDs, nationality hints, and official status boundaries."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-bissau-mrz-passport-parser
+kind: tool
+module: validohub
+country: GW
+category: national-identifiers
+status: active
+name:
+  en: "Bissau-Guinean MRZ / Passport Parser"
+summary:
+  en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-bissau-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "MRZ input"
+        required: true
+        placeholder:
+          en: "P<GNBSAMPLE<<TEST<<<<<<<<<<<<<<<<<<<<\\nAB1234567GNB8501019M3107123<<<<<<<<<<<<<<06"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-bissau-bank-account-validator, guinea-bissau-bank-account-fixture-generator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bissau-Guinean MRZ / Passport Parser | ValidoHub"
+  description:
+    en: "Parse passport MRZ snippets, split document, nationality, dates, and checksum evidence without identity proof."

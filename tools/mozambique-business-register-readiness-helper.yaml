@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mozambique-business-register-readiness-helper
+kind: tool
+module: validohub
+country: MZ
+category: government
+status: active
+name:
+  en: "Mozambican business registry Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mozambique-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "MZ-REG-123456 MZ123456789 Central business district, Maputo 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mozambique-id-card-format-helper, mozambique-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mozambican business registry Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated business registry lookup or company registry workflow."

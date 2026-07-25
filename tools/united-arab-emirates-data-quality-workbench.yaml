@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: united-arab-emirates-data-quality-workbench
+kind: tool
+module: validohub
+country: AE
+category: developer-tools
+status: active
+name:
+  en: "UAE Data Quality Workbench"
+summary:
+  en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.united-arab-emirates-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DQ input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AE\",\"trn\":\"100123456700003\",\"iban\":\"AE070331234567890123456\",\"wps\":\"salary-file\"}"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [united-arab-emirates-json-fixture-generator, united-arab-emirates-regex-pack-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "UAE Data Quality Workbench | ValidoHub"
+  description:
+    en: "Audit mixed local data for identifiers, tax, banking, locale, privacy, and missing field evidence."

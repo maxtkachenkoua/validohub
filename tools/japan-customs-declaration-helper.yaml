@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: japan-customs-declaration-helper
+kind: tool
+module: validohub
+country: JP
+category: government
+status: active
+name:
+  en: "Japanese Customs Declaration Helper"
+summary:
+  en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.japan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUSTOMS input"
+        required: true
+        placeholder:
+          en: "T1234567890123 HS 8471 1,234 JPY"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [japan-postal-tracking-helper, japan-data-quality-workbench]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Japanese Customs Declaration Helper | ValidoHub"
+  description:
+    en: "Inspect importer code, tax, invoice, amount, HS-code, and border handoff evidence without official filing."

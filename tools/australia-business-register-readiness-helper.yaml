@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-business-register-readiness-helper
+kind: tool
+module: validohub
+country: AU
+category: government
+status: active
+name:
+  en: "Australian ASIC / ABR Readiness Helper"
+summary:
+  en: "Prepare browser-only evidence before a regulated ASIC / ABR lookup or company registry workflow."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "REG input"
+        required: true
+        placeholder:
+          en: "51 824 753 556 51824753556 1 National Circuit, Canberra ACT 2600"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-id-card-format-helper, australia-passport-number-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian ASIC / ABR Readiness Helper | ValidoHub"
+  description:
+    en: "Prepare browser-only evidence before a regulated ASIC / ABR lookup or company registry workflow."

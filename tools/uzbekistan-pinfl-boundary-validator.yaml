@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: uzbekistan-pinfl-boundary-validator
+kind: tool
+module: validohub
+country: UZ
+category: national-identifiers
+status: active
+name:
+  en: "Uzbek PINFL boundary Validator"
+summary:
+  en: "Validate PINFL boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.uzbekistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ID input"
+        required: true
+        placeholder:
+          en: "30101876543212"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [uzbekistan-stir-company-tax-number-validator, uzbekistan-tax-id-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Uzbek PINFL boundary Validator | ValidoHub"
+  description:
+    en: "Validate PINFL boundary shape, split date/control/body evidence, and prepare privacy-safe debugging output."

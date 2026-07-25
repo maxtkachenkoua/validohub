@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: bangladesh-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: BD
+category: address
+status: active
+name:
+  en: "Bangladeshi Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.bangladesh-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Motijheel Road 1, Dhaka 1000"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [bangladesh-region-code-mapper, bangladesh-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Bangladeshi Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

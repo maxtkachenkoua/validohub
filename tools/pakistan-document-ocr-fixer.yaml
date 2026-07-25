@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pakistan-document-ocr-fixer
+kind: tool
+module: validohub
+country: PK
+category: documents
+status: active
+name:
+  en: "Pakistani Document OCR Fixer"
+summary:
+  en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.pakistan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "OCR input"
+        required: true
+        placeholder:
+          en: "35202-1234567-1 1234567-8 SCBL 0000001123456702 44000 Islamabad"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [pakistan-privacy-redaction-helper, pakistan-pii-masker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Pakistani Document OCR Fixer | ValidoHub"
+  description:
+    en: "Clean OCR text for local invoices, IDs, banking strings, dates, and tax evidence."

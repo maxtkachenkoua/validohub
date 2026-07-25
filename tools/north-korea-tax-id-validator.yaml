@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-tax-id-validator
+kind: tool
+module: validohub
+country: KP
+category: national-identifiers
+status: active
+name:
+  en: "North Korean tax reference boundary Validator"
+summary:
+  en: "Normalize tax reference boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "TAX123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-customs-importer-code-helper, north-korea-state-employment-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean tax reference boundary Validator | ValidoHub"
+  description:
+    en: "Normalize tax reference boundary identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

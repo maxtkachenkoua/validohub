@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: mauritania-csv-locale-normalizer
+kind: tool
+module: validohub
+country: MR
+category: developer-tools
+status: active
+name:
+  en: "Mauritanian CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Mauritania decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.mauritania-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1,234.56 MRU;24/07/2026;MR123456789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [mauritania-slug-normalizer, mauritania-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Mauritanian CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Mauritania decimal, date, postal, phone, tax, and banking fields."

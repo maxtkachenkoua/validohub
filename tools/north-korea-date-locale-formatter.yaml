@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: north-korea-date-locale-formatter
+kind: tool
+module: validohub
+country: KP
+category: localization
+status: active
+name:
+  en: "North Korean Date Locale Formatter"
+summary:
+  en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.north-korea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DATE input"
+        required: true
+        placeholder:
+          en: "2026.07.21"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [north-korea-csv-locale-normalizer, north-korea-slug-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "North Korean Date Locale Formatter | ValidoHub"
+  description:
+    en: "Normalize local dates, ISO previews, fiscal-period hints, and locale parsing diagnostics."

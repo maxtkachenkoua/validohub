@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lebanon-customs-importer-code-helper
+kind: tool
+module: validohub
+country: LB
+category: national-identifiers
+status: active
+name:
+  en: "Lebanese Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lebanon-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "LBCR-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lebanon-nssf-boundary-social-insurance-helper, lebanon-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Lebanese Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

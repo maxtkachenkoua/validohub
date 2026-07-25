@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: timor-leste-company-suffix-normalizer
+kind: tool
+module: validohub
+country: TL
+category: developer-tools
+status: active
+name:
+  en: "Timorese Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.timor-leste-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Timor-Leste Sample Holding Ltd SERVE-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [timor-leste-procurement-identifier-helper, timor-leste-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Timorese Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

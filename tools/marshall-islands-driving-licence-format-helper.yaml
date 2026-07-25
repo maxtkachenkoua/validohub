@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: marshall-islands-driving-licence-format-helper
+kind: tool
+module: validohub
+country: MH
+category: documents
+status: active
+name:
+  en: "Marshallese Driving Licence Format Helper"
+summary:
+  en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.marshall-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "DL input"
+        required: true
+        placeholder:
+          en: "MH-ID-123456 DL 2026"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [marshall-islands-residence-permit-format-helper, marshall-islands-health-card-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Marshallese Driving Licence Format Helper | ValidoHub"
+  description:
+    en: "Inspect driving-licence snippets, dates, document numbers, and transport-intake privacy notes."

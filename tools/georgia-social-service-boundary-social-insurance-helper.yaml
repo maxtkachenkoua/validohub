@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: georgia-social-service-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: GE
+category: national-identifiers
+status: active
+name:
+  en: "Georgian social service boundary Helper"
+summary:
+  en: "Split social service boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.georgia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "SS-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [georgia-company-onboarding-auditor, georgia-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Georgian social service boundary Helper | ValidoHub"
+  description:
+    en: "Split social service boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

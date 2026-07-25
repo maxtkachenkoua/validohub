@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: vietnam-csv-locale-normalizer
+kind: tool
+module: validohub
+country: VN
+category: developer-tools
+status: active
+name:
+  en: "Vietnamese CSV Locale Normalizer"
+summary:
+  en: "Normalize CSV snippets for Vietnam decimal, date, postal, phone, tax, and banking fields."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.vietnam-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CSV input"
+        required: true
+        placeholder:
+          en: "id;amount;date;tax\\n1;1.234.567 VND;21/07/2026;0101234567"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [vietnam-slug-normalizer, vietnam-document-ocr-fixer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Vietnamese CSV Locale Normalizer | ValidoHub"
+  description:
+    en: "Normalize CSV snippets for Vietnam decimal, date, postal, phone, tax, and banking fields."

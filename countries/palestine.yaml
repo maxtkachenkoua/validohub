@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: PS
+slug: palestine
+name:
+  en: Palestine
+region: Asia
+languages:
+  - ar
+currency: ILS
+relatedCountries:
+  - JO
+  - IL
+  - LB

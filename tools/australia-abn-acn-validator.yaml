@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: australia-abn-acn-validator
+kind: tool
+module: validohub
+country: AU
+category: national-identifiers
+status: active
+name:
+  en: "Australian ABN / ACN Validator"
+summary:
+  en: "Inspect ABN / ACN structure, registry-style prefixes, control digits, and official lookup boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.australia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ORG input"
+        required: true
+        placeholder:
+          en: "51 824 753 556"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [australia-tax-id-validator, australia-customs-importer-code-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Australian ABN / ACN Validator | ValidoHub"
+  description:
+    en: "Inspect ABN / ACN structure, registry-style prefixes, control digits, and official lookup boundaries."

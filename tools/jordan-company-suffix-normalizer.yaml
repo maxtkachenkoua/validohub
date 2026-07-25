@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: jordan-company-suffix-normalizer
+kind: tool
+module: validohub
+country: JO
+category: developer-tools
+status: active
+name:
+  en: "Jordanian Company Suffix Normalizer"
+summary:
+  en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.jordan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUFFIX input"
+        required: true
+        placeholder:
+          en: "Jordan Sample Holding Ltd 200123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [jordan-procurement-identifier-helper, jordan-accessibility-locale-copy-checker]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Jordanian Company Suffix Normalizer | ValidoHub"
+  description:
+    en: "Normalize local company suffixes, registry labels, and search-key variants for onboarding forms."

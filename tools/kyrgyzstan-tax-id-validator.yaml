@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kyrgyzstan-tax-id-validator
+kind: tool
+module: validohub
+country: KG
+category: national-identifiers
+status: active
+name:
+  en: "Kyrgyz TIN Validator"
+summary:
+  en: "Normalize TIN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kyrgyzstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "12345678901234"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kyrgyzstan-customs-importer-code-helper, kyrgyzstan-social-fund-boundary-social-insurance-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kyrgyz TIN Validator | ValidoHub"
+  description:
+    en: "Normalize TIN identifiers, inspect local tax body evidence, and prepare authority handoff diagnostics."

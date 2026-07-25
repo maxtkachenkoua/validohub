@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-address-transliteration-normalizer
+kind: tool
+module: validohub
+country: KW
+category: address
+status: active
+name:
+  en: "Kuwaiti Address Transliteration Normalizer"
+summary:
+  en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "ASCII input"
+        required: true
+        placeholder:
+          en: "Arabian Gulf Street 1, Kuwait City 13001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-region-code-mapper, kuwait-municipality-code-inspector]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Address Transliteration Normalizer | ValidoHub"
+  description:
+    en: "Prepare ASCII-safe address keys while preserving local display text and search/debug evidence."

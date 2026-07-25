@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: gambia-bank-statement-parser
+kind: tool
+module: validohub
+country: GM
+category: finance
+status: active
+name:
+  en: "Gambian Bank Statement Parser"
+summary:
+  en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.gambia-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "STMT input"
+        required: true
+        placeholder:
+          en: "24/07/2026; 1,234.56 GMD; 001 1234567890; sample counterparty"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [gambia-masked-bank-account-formatter, gambia-currency-decimal-formatter]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Gambian Bank Statement Parser | ValidoHub"
+  description:
+    en: "Parse statement rows for date, amount, account/routing evidence, counterparty, reference, and local decimal conventions."

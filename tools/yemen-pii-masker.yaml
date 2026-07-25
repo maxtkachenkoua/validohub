@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: yemen-pii-masker
+kind: tool
+module: validohub
+country: YE
+category: privacy
+status: active
+name:
+  en: "Yemeni PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.yemen-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "12345678901 +967 7 123 456 001 1234567890"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [yemen-personal-data-fixture-generator, yemen-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Yemeni PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

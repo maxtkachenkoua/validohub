@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: MH
+slug: marshall-islands
+name:
+  en: Marshall Islands
+region: Oceania
+languages:
+  - en
+currency: USD
+relatedCountries:
+  - FM
+  - PW
+  - KI

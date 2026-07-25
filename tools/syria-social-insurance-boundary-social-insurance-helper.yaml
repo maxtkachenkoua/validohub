@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: syria-social-insurance-boundary-social-insurance-helper
+kind: tool
+module: validohub
+country: SY
+category: national-identifiers
+status: active
+name:
+  en: "Syrian social insurance boundary Helper"
+summary:
+  en: "Split social insurance boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.syria-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SOC input"
+        required: true
+        placeholder:
+          en: "SI-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [syria-company-onboarding-auditor, syria-business-register-readiness-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Syrian social insurance boundary Helper | ValidoHub"
+  description:
+    en: "Split social insurance boundary evidence into local body, date hints, checksum notes, and privacy-safe diagnostics."

@@ -1,0 +1,13 @@
+schemaVersion: 1
+code: KH
+slug: cambodia
+name:
+  en: Cambodia
+region: Asia
+languages:
+  - km
+currency: KHR
+relatedCountries:
+  - TH
+  - VN
+  - LA

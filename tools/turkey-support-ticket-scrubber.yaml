@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: turkey-support-ticket-scrubber
+kind: tool
+module: validohub
+country: TR
+category: privacy
+status: active
+name:
+  en: "Turkish Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.turkey-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 10000000146, 0061 0519786457841326, Ataturk Bulvari 1, Ankara 06420"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [turkey-integration-smoke-test-builder, turkey-t-c-kimlik-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Turkish Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: armenia-integration-smoke-test-builder
+kind: tool
+module: validohub
+country: AM
+category: developer-tools
+status: active
+name:
+  en: "Armenian Integration Smoke Test Builder"
+summary:
+  en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."
+capabilities:
+  - generate
+  - validate
+  - parse
+  - explain
+algorithm:
+  algorithmId: validohub.armenia-suite
+forms:
+  generate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SMOKE input"
+        required: true
+        placeholder:
+          en: "{\"country\":\"AM\",\"tin\":\"01234567\",\"arca\":\"INV-2026-001\"}"
+    actions: [generate, validate, explain]
+related:
+  explicit: [armenia-public-services-number-boundary-validator, armenia-state-register-number-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Armenian Integration Smoke Test Builder | ValidoHub"
+  description:
+    en: "Build local smoke-test evidence for forms, APIs, payments, invoices, and privacy-safe fixtures."

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-68.54 -65.26 577.93 538.48" role="img">
+  <title>Bosnia and Herzegovina country outline</title>
+  <defs>
+    <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#059669" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+  <g fill="url(#landGrad)" stroke="#059669" stroke-width="7.46" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path id="ba" d="M442.708,411.084l-0.319,0.527l5.801,5.981l2.127-3.13l-0.078-1.234l-1.857-2.256L442.708,411.084L442.708,411.084z"/>
+  </g>
+</svg>

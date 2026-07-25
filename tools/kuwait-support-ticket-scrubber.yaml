@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kuwait-support-ticket-scrubber
+kind: tool
+module: validohub
+country: KW
+category: privacy
+status: active
+name:
+  en: "Kuwaiti Support Ticket Scrubber"
+summary:
+  en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kuwait-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "SUP input"
+        required: true
+        placeholder:
+          en: "Customer sent 290010112345, CBKU 1234560101, Arabian Gulf Street 1, Kuwait City 13001"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kuwait-integration-smoke-test-builder, kuwait-civil-id-boundary-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kuwaiti Support Ticket Scrubber | ValidoHub"
+  description:
+    en: "Detect and mask local personal, payment, vehicle, tax, and address evidence in support tickets."

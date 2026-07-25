@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: kazakhstan-pii-masker
+kind: tool
+module: validohub
+country: KZ
+category: privacy
+status: active
+name:
+  en: "Kazakh PII Masker"
+summary:
+  en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.kazakhstan-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "PII input"
+        required: true
+        placeholder:
+          en: "900101300123 +7 701 123 4567 125 5004100100"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [kazakhstan-personal-data-fixture-generator, kazakhstan-driving-licence-format-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Kazakh PII Masker | ValidoHub"
+  description:
+    en: "Detect and mask local identifier, phone, address, bank, and tax evidence in plain text."

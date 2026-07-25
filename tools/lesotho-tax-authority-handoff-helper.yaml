@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: lesotho-tax-authority-handoff-helper
+kind: tool
+module: validohub
+country: LS
+category: tax
+status: active
+name:
+  en: "Basotho Tax Authority Handoff Helper"
+summary:
+  en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.lesotho-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "TAX input"
+        required: true
+        placeholder:
+          en: "LS123456789 24/07/2026 1,234.56 LSL"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [lesotho-accounting-audit-trail-checklist-generator, lesotho-postal-code-validator]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Basotho Tax Authority Handoff Helper | ValidoHub"
+  description:
+    en: "Prepare local tax evidence for browser-only QA before regulated authority portals or API submissions."

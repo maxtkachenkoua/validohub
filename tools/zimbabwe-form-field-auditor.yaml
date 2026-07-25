@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: zimbabwe-form-field-auditor
+kind: tool
+module: validohub
+country: ZW
+category: developer-tools
+status: active
+name:
+  en: "Zimbabwean Form Field Auditor"
+summary:
+  en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.zimbabwe-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "FORM input"
+        required: true
+        placeholder:
+          en: "tax=ZW123456789&postal=1000 Harare&phone=+263 123 456 789"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [zimbabwe-locale-number-parser, zimbabwe-calendar-week-helper]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Zimbabwean Form Field Auditor | ValidoHub"
+  description:
+    en: "Check local form-field labels and values for identifiers, tax, address, phone, banking, and privacy."

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: solomon-islands-customs-importer-code-helper
+kind: tool
+module: validohub
+country: SB
+category: national-identifiers
+status: active
+name:
+  en: "Solomon Islands Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.solomon-islands-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "SBSB-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [solomon-islands-social-boundary-social-insurance-helper, solomon-islands-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Solomon Islands Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

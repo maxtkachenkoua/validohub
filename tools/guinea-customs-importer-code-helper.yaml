@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: guinea-customs-importer-code-helper
+kind: tool
+module: validohub
+country: GN
+category: national-identifiers
+status: active
+name:
+  en: "Guinean Customs / Importer Code Helper"
+summary:
+  en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.guinea-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CUS input"
+        required: true
+        placeholder:
+          en: "GNGN-REG-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [guinea-social-security-boundary-social-insurance-helper, guinea-company-onboarding-auditor]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Guinean Customs / Importer Code Helper | ValidoHub"
+  description:
+    en: "Inspect customs identifiers, importer references, tax bodies, and border-process boundaries."

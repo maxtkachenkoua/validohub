@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: burundi-id-card-format-helper
+kind: tool
+module: validohub
+country: BI
+category: national-identifiers
+status: active
+name:
+  en: "Burundian ID Card Format Helper"
+summary:
+  en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.burundi-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "CARD input"
+        required: true
+        placeholder:
+          en: "BI-ID-123456"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [burundi-passport-number-helper, burundi-mrz-passport-parser]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Burundian ID Card Format Helper | ValidoHub"
+  description:
+    en: "Inspect local identity-card snippets, document numbers, dates, and privacy boundaries without proving identity."

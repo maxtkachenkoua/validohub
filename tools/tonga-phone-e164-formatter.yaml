@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: tonga-phone-e164-formatter
+kind: tool
+module: validohub
+country: TO
+category: address
+status: active
+name:
+  en: "Tongan Phone E.164 Formatter"
+summary:
+  en: "Normalize local phone input to E.164-style previews and split country/national evidence."
+capabilities:
+  - validate
+  - parse
+  - format
+  - explain
+algorithm:
+  algorithmId: validohub.tonga-suite
+forms:
+  validate:
+    inputs:
+      - type: textarea
+        name: input
+        label:
+          en: "E164 input"
+        required: true
+        placeholder:
+          en: "+676 12345"
+    actions: [validate, parse, format, explain]
+related:
+  explicit: [tonga-date-locale-formatter, tonga-csv-locale-normalizer]
+  auto:
+    sameCountry: true
+    sameCategory: true
+    sameCapability: true
+seo:
+  title:
+    en: "Tongan Phone E.164 Formatter | ValidoHub"
+  description:
+    en: "Normalize local phone input to E.164-style previews and split country/national evidence."
